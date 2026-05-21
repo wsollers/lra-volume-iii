@@ -1,0 +1,57 @@
+\begin{tikzpicture}[
+    x=1cm,y=1cm,
+    >=Latex,
+    axis/.style={thick},
+    lbl/.style={font=\small},
+    subt/.style={font=\footnotesize,text=gray!70!black}
+]
+
+% =====================================================
+% PANEL 1: OPEN INTERVAL
+% =====================================================
+\begin{scope}[yshift=2.2cm]
+
+% axis
+\draw[axis] (-3.5,0) -- (3.5,0);
+
+% interval notation markers
+\node at (-3,0) {\Large $(\, $};
+\node at (3,0) {\Large $\, )$};
+
+% labels
+\node[lbl] at (0,0.9) {Open interval $(a,b)$};
+\node[subt] at (-3,1.55) {(No minimum)};
+\node[subt] at (3,1.55) {(No maximum)};
+
+\node[lbl, above=4pt] at (-3,0) {Infimum};
+\node[lbl, above=4pt] at (3,0) {Supremum};
+
+\node[lbl, anchor=east] at (-3.6,0) {Lower bounds};
+\node[lbl, anchor=west] at (3.6,0) {Upper bounds};
+
+\end{scope}
+
+% =====================================================
+% PANEL 2: CLOSED INTERVAL
+% =====================================================
+\begin{scope}[yshift=-0.8cm]
+
+% axis
+\draw[axis] (-3.5,0) -- (3.5,0);
+
+% interval notation markers
+\node at (-3,0) {\Large $[\, $};
+\node at (3,0) {\Large $\, ]$};
+
+% labels
+\node[lbl] at (0,0.9) {Closed interval $[a,b]$};
+
+\node[lbl, below=6pt, align=center] at (-3,0) {Minimum\\$=$ Infimum};
+\node[lbl, below=6pt, align=center] at (3,0) {Maximum\\$=$ Supremum};
+
+\node[lbl, anchor=east] at (-3.6,0) {Lower bounds};
+\node[lbl, anchor=west] at (3.6,0) {Upper bounds};
+
+\end{scope}
+
+\end{tikzpicture}

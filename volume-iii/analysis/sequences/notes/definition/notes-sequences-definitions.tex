@@ -1,0 +1,164 @@
+
+\section{Definitions}
+
+
+\begin{bpnew}{defborder}{Definition: Sequence}
+% ---------------------------------------------------------
+% Definition: Sequence
+% Label: def:sequence
+% ---------------------------------------------------------
+\begin{definition}[Sequence]
+\label{def:sequence}
+
+Let $X$ be a nonempty set. A \textbf{sequence} in $X$ is a function
+\[
+    x : \mathbb{N} \to X.
+\]
+The value $x(n)$ is written $x_n$ and called the \textbf{$n$-th term} of the
+sequence. The sequence itself is denoted $(x_n)_{n \in \mathbb{N}}$, or
+simply $(x_n)$ when the index set is clear.
+\end{definition}
+\end{bpnew}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall X \neq \varnothing \;\forall x : \mathbb{N} \to X
+\;\bigl(\operatorname{Sequence}(x,X) \Longleftrightarrow x:\mathbb{N}\to X\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Definition predicate reading]
+\[
+\operatorname{Sequence}(x_n, X)
+\;:=\;
+x : \mathbb{N} \to X.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A sequence is not a set of terms but a function: the index carries
+independent weight. Two sequences $(x_n)$ and $(y_n)$ in $X$ are equal
+precisely when $x_n = y_n$ for every $n \in \mathbb{N}$, so order and
+repetition are intrinsic to the object. The notational collapse from
+$x(n)$ to $x_n$ is conventional suppression of function-application
+syntax; the underlying object remains a function $\mathbb{N} \to X$.
+When $X = \mathbb{R}$, the sequence is called a \textbf{real sequence},
+which is the default ambient context for this chapter.
+\end{remark*}
+
+\NoLocalDependencies
+\begin{example}[Constant Sequence]
+\label{ex:constant-sequence}
+
+Let $c \in \mathbb{R}$. The \textbf{constant sequence} is defined by
+\[
+    x_n := c \quad \forall n \in \mathbb{N}.
+\]
+The constant sequence converges to $c$: given any $\varepsilon > 0$,
+take $N = 1$, and observe $|x_n - c| = 0 < \varepsilon$ for all $n \ge 1$.
+It is the degenerate case of convergence in which the tail is not merely
+eventually close to $L$ but identically equal to it from the first term.
+\end{example}
+
+\begin{example}[The Sequence $(1/n)$]
+\label{ex:sequence-reciprocal}
+
+The sequence $(x_n)$ defined by
+\[
+    x_n := \frac{1}{n} \quad \forall n \in \mathbb{N}
+\]
+converges to $0$. Given $\varepsilon > 0$, the Archimedean property
+supplies $N \in \mathbb{N}$ with $N > 1/\varepsilon$, and then for all
+$n \ge N$,
+\[
+    \left|\frac{1}{n} - 0\right| = \frac{1}{n} \le \frac{1}{N} < \varepsilon.
+\]
+This is the canonical example of a sequence that approaches its limit
+monotonically from above, never reaching it. It also serves as the
+standard witness in squeeze arguments and in the proof that
+$\inf\{1/n : n \in \mathbb{N}\} = 0$.
+\end{example}
+
+\begin{example}[The Sequence $(n)$]
+\label{ex:sequence-natural}
+
+The sequence $(x_n)$ defined by
+\[
+    x_n := n \quad \forall n \in \mathbb{N}
+\]
+is divergent. For any proposed limit $L \in \mathbb{R}$, take
+$\varepsilon = 1$; the Archimedean property supplies $n \in \mathbb{N}$
+with $n > L + 1$, so $|x_n - L| = |n - L| > 1 = \varepsilon$ for
+infinitely many $n$. The sequence is unbounded, and every convergent
+sequence is bounded, so divergence also follows from that theorem once
+it is established. This is the canonical example of divergence to
+$+\infty$: the terms are not oscillating outside a neighborhood of $L$
+but growing without bound in a single direction.
+\end{example}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

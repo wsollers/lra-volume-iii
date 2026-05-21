@@ -1,0 +1,208 @@
+% =========================================================
+% Limits Superior and Inferior of Functions --- Notes
+% Chapter: continuity
+% Volume III - Analysis
+% =========================================================
+
+\subsection{Limits Superior and Inferior of Functions}
+\label{sec:limsup-liminf-functions}
+
+\begin{tcolorbox}[title={Toolkit --- Limits Superior and Inferior of Functions}]
+\begin{itemize}
+  \item $\limsup_{x\to x_0}f(x)=\inf_{\delta>0}
+    \sup\{f(x):0<|x-x_0|<\delta,\,x\in E\}$.
+  \item Both always exist in $[-\infty,+\infty]$.
+  \item $\limsup\geq\liminf$ always.
+  \item $\operatorname{FunctionLimit}(f,x_0,L)$ exists
+    $\iff\limsup=\liminf=L\in\mathbb{R}$.
+  \item Direct analogue of sequence $\limsup$/$\liminf$: replace tail
+    $\{a_n:n\geq N\}$ with punctured neighbourhood
+    $\{f(x):\operatorname{InputTolerance}(x,x_0,\delta)\}$.
+\end{itemize}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Definition (Limits Superior and Inferior of a Function)}},
+  fonttitle=\small\bfseries]
+\begin{definition}[Limits Superior and Inferior of a Function]
+\label{def:limsup-liminf-function}
+Let $f:E\to\mathbb{R}$ and let $x_0$ be an accumulation point of $E$. For each $\delta>0$ set
+\[
+U(\delta)=\{\,f(x): x\in E,\ 0<|x-x_0|<\delta\,\}.
+\]
+The extended real numbers $\limsup_{x\to x_0} f(x)$ and $\liminf_{x\to x_0} f(x)$ are defined by
+\[
+\limsup_{x\to x_0} f(x)=\inf_{\delta>0}\sup U(\delta),
+\qquad
+\liminf_{x\to x_0} f(x)=\sup_{\delta>0}\inf U(\delta),
+\]
+where each inner supremum or infimum is taken in $\overline{\mathbb{R}}$ and the outer infimum or supremum ranges over all $\delta>0$.
+\end{definition}
+\end{tcolorbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{aligned}
+&\text{Let } f:E\to\mathbb{R},\ x_0 \text{ an accumulation point of } E,\ \text{and } U(\delta)=\{f(x):x\in E,\ 0<|x-x_0|<\delta\}.\\
+&\limsup_{x\to x_0} f(x)=\inf_{\delta>0}\sup U(\delta),\\
+&\liminf_{x\to x_0} f(x)=\sup_{\delta>0}\inf U(\delta).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Definition predicate reading]
+\[
+\begin{aligned}
+\operatorname{FunctionLimsup}(L,f,E,x_0) &\coloneqq L=\inf_{\delta>0}\sup U(\delta),\\
+\operatorname{FunctionLiminf}(l,f,E,x_0) &\coloneqq l=\sup_{\delta>0}\inf U(\delta),
+\end{aligned}
+\]
+where $U(\delta)=\{f(x):x\in E,\ 0<|x-x_0|<\delta\}$.
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\begin{aligned}
+&\text{Let } f:E\to\mathbb{R},\ x_0 \text{ an accumulation point of } E,\ \text{and } U(\delta)=\{f(x):x\in E,\ 0<|x-x_0|<\delta\}.\\
+&\neg\Bigl[\limsup_{x\to x_0} f(x)=\inf_{\delta>0}\sup U(\delta)\ \land\ \liminf_{x\to x_0} f(x)=\sup_{\delta>0}\inf U(\delta)\Bigr]\\
+&\Longleftrightarrow
+\limsup_{x\to x_0} f(x)\ne\inf_{\delta>0}\sup U(\delta)
+\lor
+\liminf_{x\to x_0} f(x)\ne\sup_{\delta>0}\inf U(\delta).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\begin{aligned}
+&\neg\bigl(\operatorname{FunctionLimsup}(L,f,E,x_0)\land \operatorname{FunctionLiminf}(l,f,E,x_0)\bigr)\\
+&\Longleftrightarrow
+L\ne\inf_{\delta>0}\sup U(\delta)
+\lor
+l\ne\sup_{\delta>0}\inf U(\delta),
+\end{aligned}
+\]
+where $U(\delta)=\{f(x):x\in E,\ 0<|x-x_0|<\delta\}$.
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+The definition can fail only in structurally distinct ways: punctured neighborhoods might be empty despite the accumulation-point hypothesis, or the upper envelopes may blow up while a finite limsup is asserted, or the lower envelopes may dive to negative infinity while a finite liminf is asserted.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+\[
+\underbrace{\exists \delta>0:\ U(\delta)=\varnothing}_{\text{missing punctured samples}}
+\ \lor\
+\underbrace{\Bigl(\inf_{\delta>0}\sup U(\delta)=+\infty \land L<+\infty\Bigr)}_{\text{upper envelope blow-up}}
+\ \lor\
+\underbrace{\Bigl(\sup_{\delta>0}\inf U(\delta)=-\infty \land l>-\infty\Bigr)}_{\text{lower envelope collapse}}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The limit superior records the smallest height that eventually dominates all nearby function values, while the limit inferior records the largest depth that eventually underestimates all nearby values. Taking suprema within punctured neighborhoods captures every oscillation that can be witnessed arbitrarily close to $x_0$, and the outer infimum or supremum squeezes these oscillations to the sharpest possible bounds. Failure occurs only if the neighborhood sampling breaks down or if the oscillations race off to infinite extremal heights, signaling that no finite envelope can control the function near the accumulation point.
+\end{remark*}
+
+\NoLocalDependencies
+\begin{proposition}[$\limsup\geq\liminf$]
+\label{prop:limsup-geq-liminf-function}
+Let $A\subseteq \mathbb{R}$, let $x_0$ be a limit point of $A$, and let $f:A\to\mathbb{R}$. Then
+\[
+\limsup_{x\to x_0} f(x) \ge \liminf_{x\to x_0} f(x).
+\]
+\hyperref[prf:limsup-geq-liminf-function]{Go to proof.}
+\end{proposition}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{aligned}
+&\forall A\subseteq\mathbb{R}\;\forall f:A\to\mathbb{R}\;\forall x_0\in\mathbb{R}:\\
+&\qquad
+\Bigl(\forall \eta>0\;\exists x\in A\setminus\{x_0\}\;(|x-x_0|<\eta)\Bigr)
+\Longrightarrow
+\limsup_{x\to x_0} f(x) \ge \liminf_{x\to x_0} f(x).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The limsup records the largest cluster value that $f$ attains near $x_0$, while the liminf records the smallest cluster value. Because every subsequential limit contributing to the liminf also contributes to the limsup, the supremum of all cluster values cannot lie below their infimum. The only way equality holds is when all cluster values coincide, i.e. when the ordinary limit exists.
+\end{remark*}
+
+\begin{remark*}[Dependencies]
+\hyperref[def:limsup-liminf-function]{Definition (Limits Superior and Inferior of a Function)}.
+\end{remark*}
+
+
+\begin{proposition}[Limit Exists iff $\limsup=\liminf$]
+\label{prop:limsup-liminf-limit-criterion}
+Let $A \subseteq \mathbb{R}$, let $f \colon A \to \mathbb{R}$, let $x_0$ be a limit point of $A$ with $x_0 \in \mathbb{R}$, and let $L \in \mathbb{R}$. Then $\lim_{x \to x_0} f(x)$ exists and equals $L$ if and only if $\limsup_{x \to x_0} f(x) = \liminf_{x \to x_0} f(x) = L$.
+\hyperref[prf:limsup-liminf-limit-criterion]{Go to proof.}
+\end{proposition}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{aligned}
+&\text{Let } A \subseteq \mathbb{R},\; f \colon A \to \mathbb{R},\; x_0 \text{ a limit point of } A,\; L \in \mathbb{R}.\\
+&\left(\forall \varepsilon > 0\; \exists \delta > 0\; \forall x \in A \setminus \{x_0\}\;
+  (0 < |x - x_0| < \delta \Rightarrow |f(x) - L| < \varepsilon)\right)\\
+&\qquad\Longleftrightarrow\qquad
+\left(\limsup_{x \to x_0} f(x) = L = \liminf_{x \to x_0} f(x)\right).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{FunctionLimit}(f, A, x_0, L)
+\Longleftrightarrow
+\bigl(\limsup_{x \to x_0} f(x) = L = \liminf_{x \to x_0} f(x)\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\begin{aligned}
+&\text{Let } A \subseteq \mathbb{R},\; f \colon A \to \mathbb{R},\; x_0 \text{ a limit point of } A,\; L \in \mathbb{R}.\\
+&\Bigl[\exists \varepsilon_0>0\;\forall \delta>0\;\exists x\in A\setminus\{x_0\}\;
+\bigl(0<|x-x_0|<\delta\land |f(x)-L|\ge\varepsilon_0\bigr)\Bigr]\\
+&\qquad\Longleftrightarrow\qquad
+\bigl(\limsup_{x\to x_0} f(x)\ne L \lor \liminf_{x\to x_0} f(x)\ne L\bigr).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\neg\operatorname{FunctionLimit}(f,A,x_0,L)
+\Longleftrightarrow
+\bigl(\limsup_{x\to x_0} f(x)\ne L \lor \liminf_{x\to x_0} f(x)\ne L\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+The criterion fails only when at least one side of the equivalence breaks:
+either the function fails to approach $L$ in the epsilon-delta sense, or
+one of the two extremal envelopes near $x_0$ does not equal $L$.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+\[
+\underbrace{\exists \varepsilon_0>0\;\forall \delta>0\;\exists x\in A\setminus\{x_0\}\;
+\bigl(0<|x-x_0|<\delta\land |f(x)-L|\ge\varepsilon_0\bigr)}_{\text{limit condition fails}}
+\ \lor\
+\underbrace{\limsup_{x\to x_0} f(x)\ne L}_{\text{upper envelope mismatch}}
+\ \lor\
+\underbrace{\liminf_{x\to x_0} f(x)\ne L}_{\text{lower envelope mismatch}}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The two-sided limit of a real-valued function at a finite limit point exists precisely when the largest subsequential accumulation value and the smallest subsequential accumulation value coincide, in which case they both equal the limit. If the limsup exceeds the liminf, as happens for $f(x) = \sin(1/x)$ near $x_0 = 0$, the function oscillates between distinct cluster heights and therefore has no finite limit. The theorem isolates the limit as the unique height compatible with every oscillatory envelope and shows that agreeing envelopes are the exact signature of convergence in this local setting.
+\end{remark*}
+
+\begin{remark*}[Dependencies]
+\hyperref[def:limsup-liminf-function]{Definition~\ref*{def:limsup-liminf-function}}
+\end{remark*}

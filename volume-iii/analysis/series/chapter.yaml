@@ -1,0 +1,10 @@
+subject: series
+volume: volume-iii
+path: volume-iii/analysis/series
+display_title: ''
+status: in-progress
+dependencies:
+  prior: ''
+  next: ''
+environments: []
+proof_files: []

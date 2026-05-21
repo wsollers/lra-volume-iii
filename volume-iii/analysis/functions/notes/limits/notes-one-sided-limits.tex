@@ -1,0 +1,343 @@
+% =========================================================
+% One-Sided Limits — Notes
+% Chapter: functions
+% Section: one-sided-limits
+% Volume III · Analysis
+% =========================================================
+
+\section{One-Sided Limits}
+\label{sec:one-sided-limits}
+
+\begin{tcolorbox}[title={Toolkit --- One-Sided Limits}]
+\begin{itemize}
+  \item $\operatorname{RightLimit}(f,c,L)$: approach from $x>c$ only.
+    Input condition: $0<x-c<\delta$.
+  \item $\operatorname{LeftLimit}(f,c,L)$: approach from $x<c$ only.
+    Input condition: $0<c-x<\delta$.
+  \item Sequential criteria hold for each direction separately.
+  \item $\operatorname{FunctionLimit}(f,c,L)\iff
+    \operatorname{RightLimit}(f,c,L)\wedge\operatorname{LeftLimit}(f,c,L)$.
+\end{itemize}
+\end{tcolorbox}
+
+% ---------------------------------------------------------
+% Definition — One-Sided Limits
+% ---------------------------------------------------------
+
+\begin{tcolorbox}[colback=corbox, colframe=corborder]
+\begin{definition}[Right-Hand Limit]
+\label{def:right-hand-limit}
+Let $A\subseteq\mathbb{R}$, let $f:A\to\mathbb{R}$, let $c\in\mathbb{R}$,
+and suppose $c$ is a cluster point of $A\cap(c,\infty)$. A real number
+$L$ is the \textbf{right-hand limit} of $f$ at $c$ if
+\[
+  \forall\varepsilon>0\;\exists\delta>0\;\forall x\in A\;
+  0<x-c<\delta\Rightarrow |f(x)-L|<\varepsilon.
+\]
+\end{definition}
+\end{tcolorbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall\varepsilon>0\;\exists\delta>0\;\forall x\in A\;
+  c<x<c+\delta\Rightarrow |f(x)-L|<\varepsilon.
+\]
+\end{remark*}
+
+\begin{remark*}[Definition predicate reading]
+\[
+  \operatorname{RightLimit}(f,c,L)
+  \;\coloneqq\;
+  \forall\varepsilon>0\;\exists\delta>0\;\forall x\in A\;
+  0<x-c<\delta\Rightarrow |f(x)-L|<\varepsilon.
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+  \exists\varepsilon_0>0\;\forall\delta>0\;\exists x\in A\;
+  0<x-c<\delta\;\wedge\; |f(x)-L|\geq\varepsilon_0.
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+  \neg\,\operatorname{RightLimit}(f,c,L).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+A proposed right-hand limit fails when some positive output tolerance is
+violated arbitrarily close to $c$ from the right.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+\[
+  \exists\varepsilon_0>0\;\forall\delta>0\;\exists x\in A\;
+  0<x-c<\delta\;\wedge\; |f(x)-L|\geq\varepsilon_0.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Only inputs to the right of $c$ are tested. The value of $f$ at $c$, if
+it is defined, is irrelevant to the right-hand limit.
+\end{remark*}
+
+\begin{remark*}[Dependencies]
+\begin{itemize}
+  \item \hyperref[def:limit-function]{Limit of a Function}
+  \item \hyperref[def:cluster-point-r]{Cluster Point}
+\end{itemize}
+\end{remark*}
+
+\begin{tcolorbox}[colback=corbox, colframe=corborder]
+\begin{definition}[Left-Hand Limit]
+\label{def:left-hand-limit}
+Let $A\subseteq\mathbb{R}$, let $f:A\to\mathbb{R}$, let $c\in\mathbb{R}$,
+and suppose $c$ is a cluster point of $A\cap(-\infty,c)$. A real number
+$L$ is the \textbf{left-hand limit} of $f$ at $c$ if
+\[
+  \forall\varepsilon>0\;\exists\delta>0\;\forall x\in A\;
+  0<c-x<\delta\Rightarrow |f(x)-L|<\varepsilon.
+\]
+\end{definition}
+\end{tcolorbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall\varepsilon>0\;\exists\delta>0\;\forall x\in A\;
+  c-\delta<x<c\Rightarrow |f(x)-L|<\varepsilon.
+\]
+\end{remark*}
+
+\begin{remark*}[Definition predicate reading]
+\[
+  \operatorname{LeftLimit}(f,c,L)
+  \;\coloneqq\;
+  \forall\varepsilon>0\;\exists\delta>0\;\forall x\in A\;
+  0<c-x<\delta\Rightarrow |f(x)-L|<\varepsilon.
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+  \exists\varepsilon_0>0\;\forall\delta>0\;\exists x\in A\;
+  0<c-x<\delta\;\wedge\; |f(x)-L|\geq\varepsilon_0.
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+  \neg\,\operatorname{LeftLimit}(f,c,L).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+A proposed left-hand limit fails when some positive output tolerance is
+violated arbitrarily close to $c$ from the left.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+\[
+  \exists\varepsilon_0>0\;\forall\delta>0\;\exists x\in A\;
+  0<c-x<\delta\;\wedge\; |f(x)-L|\geq\varepsilon_0.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Only inputs to the left of $c$ are tested. This is the mirror image of
+the right-hand limit definition.
+\end{remark*}
+
+\begin{remark*}[Dependencies]
+\begin{itemize}
+  \item \hyperref[def:limit-function]{Limit of a Function}
+  \item \hyperref[def:cluster-point-r]{Cluster Point}
+\end{itemize}
+\end{remark*}
+
+% ---------------------------------------------------------
+% Theorem — Sequential Criterion for Right-Hand Limits
+% ---------------------------------------------------------
+
+\begin{theorem}[Sequential Criterion for Right-Hand Limits]
+\label{thm:sequential-criterion-right-hand-limit}
+Let $A\subseteq\mathbb{R}$, let $f:A\to\mathbb{R}$, and suppose $c$ is a
+cluster point of $A\cap(c,\infty)$. Then $\lim_{x\to c^+}f(x)=L$ if and
+only if for every sequence $(x_n)\subseteq A\cap(c,\infty)$ with
+$x_n\to c$, one has $f(x_n)\to L$.
+
+\smallskip\noindent
+\hyperref[prf:sequential-criterion-right-hand-limit]{\textit{Go to proof.}}
+\end{theorem}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{aligned}
+&\Bigl[\forall\varepsilon>0\;\exists\delta>0\;\forall x\in A\;
+  0<x-c<\delta\Rightarrow |f(x)-L|<\varepsilon\Bigr] \\
+&\quad\Longleftrightarrow
+\Bigl[\forall (x_n)\subseteq A\cap(c,\infty)\;
+  x_n\to c\Rightarrow f(x_n)\to L\Bigr].
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Definition predicate reading]
+\[
+  \operatorname{RightLimit}(f,c,L)
+  \;\Longleftrightarrow\;
+  \forall (x_n)\subseteq A\cap(c,\infty)\;
+  x_n\to c\Rightarrow f(x_n)\to L.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Right-hand limits can be tested by sequences approaching $c$ from above.
+Every such sequence must force the corresponding output sequence toward
+$L$.
+\end{remark*}
+
+\begin{remark*}[Dependencies]
+\begin{itemize}
+  \item \hyperref[def:right-hand-limit]{Right-Hand Limit}
+  \item \hyperref[def:limit-function-sequential]{Sequential Definition of Limit}
+\end{itemize}
+\end{remark*}
+
+% ---------------------------------------------------------
+% Corollary — Sequential Criterion for Left-Hand Limits
+% ---------------------------------------------------------
+
+\begin{corollary}[Sequential Criterion for Left-Hand Limits]
+\label{cor:sequential-criterion-left-hand-limit}
+Let $A\subseteq\mathbb{R}$, let $f:A\to\mathbb{R}$, and suppose $c$ is a
+cluster point of $A\cap(-\infty,c)$. Then $\lim_{x\to c^-}f(x)=L$ if and
+only if for every sequence $(x_n)\subseteq A\cap(-\infty,c)$ with
+$x_n\to c$, one has $f(x_n)\to L$.
+
+\smallskip\noindent
+\hyperref[prf:sequential-criterion-left-hand-limit]{\textit{Go to proof.}}
+\end{corollary}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{aligned}
+&\Bigl[\forall\varepsilon>0\;\exists\delta>0\;\forall x\in A\;
+  0<c-x<\delta\Rightarrow |f(x)-L|<\varepsilon\Bigr] \\
+&\quad\Longleftrightarrow
+\Bigl[\forall (x_n)\subseteq A\cap(-\infty,c)\;
+  x_n\to c\Rightarrow f(x_n)\to L\Bigr].
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Definition predicate reading]
+\[
+  \operatorname{LeftLimit}(f,c,L)
+  \;\Longleftrightarrow\;
+  \forall (x_n)\subseteq A\cap(-\infty,c)\;
+  x_n\to c\Rightarrow f(x_n)\to L.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Left-hand limits can be tested by sequences approaching $c$ from below.
+The criterion is the left-sided analogue of the right-hand sequential
+criterion.
+\end{remark*}
+
+\begin{remark*}[Dependencies]
+\begin{itemize}
+  \item \hyperref[def:left-hand-limit]{Left-Hand Limit}
+  \item \hyperref[def:limit-function-sequential]{Sequential Definition of Limit}
+\end{itemize}
+\end{remark*}
+
+% ---------------------------------------------------------
+% Theorem — Two-Sided Limit via One-Sided Limits
+% ---------------------------------------------------------
+
+\begin{theorem}[Two-Sided Limit via One-Sided Limits]
+\label{thm:two-sided-limit-iff-matching-one-sided-limits}
+Let $A\subseteq\mathbb{R}$ and let $f:A\to\mathbb{R}$. If $c$ is a
+cluster point of both $A\cap(c,\infty)$ and $A\cap(-\infty,c)$, then
+$\lim_{x\to c}f(x)=L$ if and only if both $\lim_{x\to c^+}f(x)=L$ and
+$\lim_{x\to c^-}f(x)=L$.
+
+\smallskip\noindent
+\hyperref[prf:two-sided-limit-iff-matching-one-sided-limits]{\textit{Go to proof.}}
+\end{theorem}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{aligned}
+&\Bigl[\forall\varepsilon>0\;\exists\delta>0\;\forall x\in A\;
+  0<|x-c|<\delta\Rightarrow |f(x)-L|<\varepsilon\Bigr] \\
+&\quad\Longleftrightarrow
+\Bigl[\forall\varepsilon>0\;\exists\delta_+>0\;\forall x\in A\;
+  0<x-c<\delta_+\Rightarrow |f(x)-L|<\varepsilon\Bigr] \\
+&\qquad\wedge
+\Bigl[\forall\varepsilon>0\;\exists\delta_->0\;\forall x\in A\;
+  0<c-x<\delta_-\Rightarrow |f(x)-L|<\varepsilon\Bigr].
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Definition predicate reading]
+\[
+  \operatorname{FunctionLimit}(f,c,L)
+  \;\Longleftrightarrow\;
+  \operatorname{RightLimit}(f,c,L)\wedge\operatorname{LeftLimit}(f,c,L).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\begin{aligned}
+&\exists\varepsilon_0>0\;\forall\delta>0\;\exists x\in A\;
+  0<|x-c|<\delta\;\wedge\; |f(x)-L|\geq\varepsilon_0 \\
+&\quad\Longleftrightarrow
+\Bigl[\exists\varepsilon_0>0\;\forall\delta>0\;\exists x\in A\;
+  0<x-c<\delta\;\wedge\; |f(x)-L|\geq\varepsilon_0\Bigr] \\
+&\qquad\vee
+\Bigl[\exists\varepsilon_0>0\;\forall\delta>0\;\exists x\in A\;
+  0<c-x<\delta\;\wedge\; |f(x)-L|\geq\varepsilon_0\Bigr].
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+  \neg\,\operatorname{FunctionLimit}(f,c,L)
+  \;\Longleftrightarrow\;
+  \neg\,\operatorname{RightLimit}(f,c,L)\vee\neg\,\operatorname{LeftLimit}(f,c,L).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+A two-sided limit fails precisely when the right-hand limit fails, the
+left-hand limit fails, or the two one-sided behaviours do not meet at the
+same value.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+\[
+  \neg\,\operatorname{FunctionLimit}(f,c,L)
+  \;\Longleftrightarrow\;
+  \neg\,\operatorname{RightLimit}(f,c,L)\vee\neg\,\operatorname{LeftLimit}(f,c,L).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A two-sided limit is exactly the agreement of the two one-sided tests.
+Both sides must approach the same value.
+\end{remark*}
+
+\begin{remark*}[Dependencies]
+\begin{itemize}
+  \item \hyperref[def:limit-function]{Limit of a Function}
+  \item \hyperref[def:right-hand-limit]{Right-Hand Limit}
+  \item \hyperref[def:left-hand-limit]{Left-Hand Limit}
+\end{itemize}
+\end{remark*}

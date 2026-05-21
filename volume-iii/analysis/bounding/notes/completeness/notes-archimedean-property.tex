@@ -1,0 +1,166 @@
+% =========================================================
+% Archimedean Property
+% =========================================================
+
+\subsection{Archimedean Property}
+
+\begin{remark*}[Why this requires proof]
+The Archimedean Property states that the natural numbers are unbounded in
+$\mathbb{R}$. That conclusion is not a formal consequence of the ordered-field
+axioms alone. There exist ordered fields satisfying all ordered-field axioms in
+which the natural numbers are bounded above, so the statement must be justified
+from stronger structure.
+
+The needed structure is completeness. If $\mathbb{N}$ were bounded above in
+$\mathbb{R}$, then the Least Upper Bound Property would produce a supremum
+$\alpha \in \mathbb{R}$ for $\mathbb{N}$. But then $\alpha - 1$ cannot be an
+upper bound, so there exists $n \in \mathbb{N}$ with $n > \alpha - 1$. Hence
+$n+1 > \alpha$, contradicting the fact that $\alpha$ is an upper bound of
+$\mathbb{N}$.
+
+\smallskip
+\noindent
+\hyperref[prf:archimedean-property]{\textit{Go to proof.}}
+\end{remark*}
+
+
+
+
+\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Theorem (Archimedean Property)}},
+  fonttitle=\small\bfseries]
+\begin{theorem}[Archimedean Property]
+\label{thm:archimedean-property}
+For every real number $x$, there exists a natural number $n$ such that $n>x$.
+
+\smallskip
+\noindent
+\hyperref[prf:archimedean-property]{\textit{Go to proof.}}
+\end{theorem}
+\end{tcolorbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x\in\mathbb{R}\;\exists n\in\mathbb{N}\;(n>x).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{ArchimedeanProperty}(\mathbb{R})\Longleftrightarrow
+\forall x\in\mathbb{R}\;\exists n\in\mathbb{N}\;(n>x).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\exists x\in\mathbb{R}\;\forall n\in\mathbb{N}\;(n\le x).
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\neg\operatorname{ArchimedeanProperty}(\mathbb{R})\Longleftrightarrow
+\exists x\in\mathbb{R}\;\forall n\in\mathbb{N}\;(n\le x).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+The theorem fails exactly when the natural numbers are bounded above by some real number.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+\[
+\neg\operatorname{ArchimedeanProperty}(\mathbb{R})
+=
+\underbrace{\exists x\in\mathbb{R}}_{\text{real upper bound}}
+\;\underbrace{\forall n\in\mathbb{N}\;(n\le x)}_{\text{all natural numbers remain below it}}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The Archimedean Property says that the natural numbers do not stop below any real ceiling. No real number is so large that every natural number remains below it. In this chapter, the result is a consequence of completeness: a bounded copy of $\mathbb{N}$ would have a supremum, and that supremum is contradicted by shifting one natural number upward.
+\end{remark*}
+
+\begin{remark*}[Dependencies]
+\hyperref[ax:completeness-of-reals]{Axiom~\ref*{ax:completeness-of-reals}},
+\hyperref[def:supremum]{Definition~\ref*{def:supremum}}.
+\end{remark*}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{tcolorbox}[colback=corbox, colframe=corborder, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Corollary (Archimedean Reciprocal Corollary)}},
+  fonttitle=\small\bfseries]
+\begin{corollary}[Archimedean Reciprocal Corollary]
+\label{cor:archimedean-reciprocal}
+For every $x>0$ and every $y\in\mathbb{R}$, there exists $n\in\mathbb{N}$ such that $nx>y$.
+
+\smallskip
+\noindent
+\hyperref[prf:archimedean-reciprocal]{\textit{Go to proof.}}
+\end{corollary}
+\end{tcolorbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y\in\mathbb{R}\;\bigl(x>0\rightarrow \exists n\in\mathbb{N}\;(nx>y)\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{ArchimedeanReciprocal}(\mathbb{R})\Longleftrightarrow
+\forall x,y\in\mathbb{R}\;\bigl(x>0\rightarrow \exists n\in\mathbb{N}\;(nx>y)\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\exists x,y\in\mathbb{R}\;\bigl(x>0\land \forall n\in\mathbb{N}\;(nx\le y)\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\neg\operatorname{ArchimedeanReciprocal}(\mathbb{R})\Longleftrightarrow
+\exists x,y\in\mathbb{R}\;\bigl(x>0\land \forall n\in\mathbb{N}\;(nx\le y)\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+The corollary fails when a positive real step size has all of its natural multiples bounded above by some real threshold.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+\[
+\neg\operatorname{ArchimedeanReciprocal}(\mathbb{R})
+=
+\underbrace{\exists x\in\mathbb{R}\;(x>0)}_{\text{positive step size}}
+\;\land\;
+\underbrace{\exists y\in\mathbb{R}\;\forall n\in\mathbb{N}\;(nx\le y)}_{\text{all natural multiples stay bounded}}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Any fixed positive real step eventually passes any real threshold when repeated enough times. The statement is the Archimedean Property applied after rescaling by the positive number $x$: growth by units becomes growth by steps of size $x$.
+\end{remark*}
+
+\begin{remark*}[Dependencies]
+\hyperref[thm:archimedean-property]{Theorem~\ref*{thm:archimedean-property}}.
+\end{remark*}

@@ -1,0 +1,479 @@
+% =========================================================
+% Gauges and Tagged Partitions --- Notes
+% Chapter: continuity
+% Volume III - Analysis
+% =========================================================
+
+\subsection{Gauges and Tagged Partitions}
+\label{sec:gauges-tagged-partitions}
+
+\begin{tcolorbox}[title={Toolkit --- Gauges and Tagged Partitions}]
+\begin{itemize}
+  \item A \textbf{gauge} $\delta:I\to(0,\infty)$ is a variable-width
+    tolerance function allowing the mesh to depend on position.
+  \item A tagged partition $\dot{\mathcal{P}}$ is $\delta$-fine if
+    each subinterval $I_i$ lies inside the $\delta(t_i)$-neighbourhood
+    of its tag $t_i$: $\operatorname{Within}(x,t_i,\delta(t_i))$ for
+    all $x\in[x_{i-1},x_i]$.
+  \item \textbf{Cousin's theorem}: every gauge on $[a,b]$ admits a
+    $\delta$-fine tagged partition.
+  \item Gauge proofs of Boundedness, EVT, Location of Roots, and
+    Heine--Cantor directly construct the required constants from a
+    $\delta$-fine partition.
+\end{itemize}
+\end{tcolorbox}
+
+% ---------------------------------------------------------
+% Definition --- Partition
+% ---------------------------------------------------------
+
+\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Definition (Partition)}},
+  fonttitle=\small\bfseries]
+\begin{definition}[Partition]
+\label{def:partition}
+Let $a<b$ and set $I=[a,b]$. A finite ordered set $P=\{x_0,\ldots,x_n\}$ with $n\in\mathbb{N}$ and $n\ge 1$ is a partition of $I$ if and only if $x_0=a$, $x_n=b$, and $x_0<x_1<\cdots<x_n$. In this case the closed subintervals $[x_{i-1},x_i]$ for $i=1,\ldots,n$ subdivide $I$.
+\end{definition}
+\end{tcolorbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{aligned}
+&\text{Let } a<b,\; I=[a,b],\; n\in\mathbb{N},\; n\ge 1,\; \text{and } P=\{x_0,\ldots,x_n\}\subseteq I.\\
+&P \text{ is a partition of } I\\
+&\Longleftrightarrow \bigl(x_0=a \land x_n=b \land \forall i\in\{1,\ldots,n\}\;(x_{i-1}<x_i)\bigr).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Definition predicate reading]
+\[
+\operatorname{PartitionOfInterval}(P,I) \coloneqq
+\exists n\in\mathbb{N}\;\Bigl(n\ge 1 \land P=\{x_0,\ldots,x_n\}\subseteq I
+\land x_0=\min I \land x_n=\max I
+\land \forall i\in\{1,\ldots,n\}\;(x_{i-1}<x_i)\Bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\begin{aligned}
+&\text{Let } a<b,\; I=[a,b],\; n\in\mathbb{N},\; n\ge 1,\; \text{and } P=\{x_0,\ldots,x_n\}\subseteq I.\\
+&P \text{ is not a partition of } I\\
+&\Longleftrightarrow \bigl((x_0\ne a) \lor (x_n\ne b) \lor \exists i\in\{1,\ldots,n\}\;(x_{i-1}\ge x_i)\bigr).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\neg\operatorname{PartitionOfInterval}(P,I) \Longleftrightarrow
+\forall n\in\mathbb{N}\;\Bigl(n\ge 1 \Rightarrow
+\bigl(P\ne\{x_0,\ldots,x_n\}\lor P\nsubseteq I
+\lor x_0\ne\min I \lor x_n\ne\max I
+\lor \exists i\in\{1,\ldots,n\}\;(x_{i-1}\ge x_i)\bigr)\Bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+The definition fails precisely in three ways: the left endpoint is omitted, the right endpoint is omitted, or the sequence of nodes ceases to be strictly increasing, leading to repeated or out-of-order points.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+\[
+\underbrace{x_0\ne a}_{\text{left endpoint missing}}
+\;\lor\;
+\underbrace{x_n\ne b}_{\text{right endpoint missing}}
+\;\lor\;
+\underbrace{\exists i\in\{1,\ldots,n\}\;(x_{i-1}\ge x_i)}_{\text{nodes not strictly increasing}}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A partition records the finite list of nodes that slice a closed interval into adjacent subintervals. The strict ordering ensures that every interior point appears exactly once in this linear traversal, so the induced subintervals $[x_{i-1},x_i]$ tile $[a,b]$ without overlap or gaps. Computations of Riemann sums, Darboux sums, and gauge integrals use partitions as the combinatorial scaffolding that supports sampling and measurement. Failure arises when the endpoints are not captured or when the nodes regress or stagnate, which would leave gaps or redundancies in the subdivision.
+\end{remark*}
+
+\NoLocalDependencies
+% ---------------------------------------------------------
+% Definition --- Tagged Partition
+% ---------------------------------------------------------
+
+\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Definition (Tagged Partition)}},
+  fonttitle=\small\bfseries]
+\begin{definition}[Tagged Partition]
+\label{def:tagged-partition}
+Let $a,b \in \mathbb{R}$ with $a < b$. A list $\dot{\mathcal{P}}=\{([x_{i-1},x_i],t_i)\}_{i=1}^n$ is a tagged partition of $[a,b]$ if and only if the subintervals determine a partition $P=\{[x_{i-1},x_i]\}_{i=1}^n$ of $[a,b]$ with $a=x_0 < x_1 < \cdots < x_n=b$, and each tag satisfies $t_i \in [x_{i-1},x_i]$ for $i=1,\ldots,n$. Equivalently, a tagged partition is exactly a partition $P$ of $[a,b]$ together with one tag chosen inside every subinterval of $P$.
+\end{definition}
+\end{tcolorbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{aligned}
+&\text{Let } a,b \in \mathbb{R} \text{ with } a<b, \text{ and } \dot{\mathcal{P}}=\{([x_{i-1},x_i],t_i)\}_{i=1}^n.\\
+&\dot{\mathcal{P}} \text{ is a tagged partition of } [a,b]\\
+&\Longleftrightarrow \bigl(a=x_0<\cdots<x_n=b \land \forall i \in \{1,\ldots,n\}\;(t_i \in [x_{i-1},x_i])\bigr).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Definition predicate reading]
+\[
+\operatorname{TaggedPartition}(\dot{\mathcal{P}},[a,b])
+\coloneqq
+\Bigl(\operatorname{Partition}(P,[a,b]) \land \dot{\mathcal{P}}=\{([x_{i-1},x_i],t_i)\}_{i=1}^n \land \forall i\;(t_i \in [x_{i-1},x_i])\Bigr),
+\]
+where $\operatorname{Partition}(P,[a,b])$ abbreviates $a=x_0<\cdots<x_n=b$ for $P=\{[x_{i-1},x_i]\}_{i=1}^n$.
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\begin{aligned}
+&\text{Let } a,b \in \mathbb{R} \text{ with } a<b, \text{ and } \dot{\mathcal{P}}=\{([x_{i-1},x_i],t_i)\}_{i=1}^n.\\
+&\dot{\mathcal{P}} \text{ is not a tagged partition of } [a,b]\\
+&\Longleftrightarrow
+\Bigl(x_0\ne a \lor x_n\ne b \lor
+\exists j \in \{1,\ldots,n\}\;(x_{j-1} \ge x_j) \lor
+\exists i \in \{1,\ldots,n\}\;(t_i \notin [x_{i-1},x_i])\Bigr).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\neg\operatorname{TaggedPartition}(\dot{\mathcal{P}},[a,b])
+\Longleftrightarrow
+(x_0\ne a)\lor(x_n\ne b)\lor
+\Bigl(\exists j\;(x_{j-1} \ge x_j)\Bigr) \lor \Bigl(\exists i\;(t_i \notin [x_{i-1},x_i])\Bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+A list fails to be a tagged partition either because the subintervals do not form a valid partition (the mesh is disordered or has gaps) or because at least one chosen tag lies outside its designated subinterval.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+\[
+\underbrace{x_0\ne a}_{\text{left endpoint defect}}
+\;\lor\;
+\underbrace{x_n\ne b}_{\text{right endpoint defect}}
+\;\lor\;
+\underbrace{\exists j\;(x_{j-1} \ge x_j)}_{\text{ordering defect}}
+\;\lor\;
+\underbrace{\exists i\;(t_i \notin [x_{i-1},x_i])}_{\text{tag misplaced}}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A tagged partition augments the usual subdivision of a closed interval by selecting a representative sampling point inside each component subinterval. These tags serve as evaluation points for Riemann sums and gauge integrals. The construction encapsulates both the geometric slicing of the interval and the analytic data needed for sample values. Failure occurs when the slices no longer tile the interval in order or when a sample point is chosen outside its slice, breaking the correspondence between tags and subintervals.
+\end{remark*}
+
+\begin{remark*}[Dependencies]
+\hyperref[def:partition]{Definition~\ref*{def:partition}}.
+\end{remark*}
+
+
+% ---------------------------------------------------------
+% Definition --- Gauge
+% ---------------------------------------------------------
+
+\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Definition (Gauge)}},
+  fonttitle=\small\bfseries]
+\begin{definition}[Gauge]
+\label{def:gauge}
+Let $a,b \in \mathbb{R}$ with $a<b$ and set $I=[a,b]$. A gauge on $I$ is a function $\delta:I\to(0,\infty)$.
+\end{definition}
+\end{tcolorbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{aligned}
+&\text{Let } a,b\in\mathbb{R} \text{ with } a<b, \text{ put } I=[a,b], \text{ and let } \delta:I\to\mathbb{R}.\\
+&\delta \text{ is a gauge on } I \Longleftrightarrow \forall x\in I\;(\delta(x)>0).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Definition predicate reading]
+\[
+\operatorname{Gauge}(\delta,I)
+\coloneqq
+\bigl(\delta:I\to\mathbb{R}\bigr)
+\land
+\forall x\in I\;(\delta(x)>0).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\begin{aligned}
+&\text{Let } a,b\in\mathbb{R} \text{ with } a<b, \text{ put } I=[a,b], \text{ and let } \delta:I\to\mathbb{R}.\\
+&\delta \text{ fails to be a gauge on } I \Longleftrightarrow \exists x\in I\;(\delta(x)\le 0).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\neg\operatorname{Gauge}(\delta,I)
+\Longleftrightarrow
+\neg\bigl(\delta:I\to\mathbb{R}\bigr)
+\lor
+\exists x\in I\;(\delta(x)\le 0).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+A purported gauge fails either because it is not a function from $I$ to
+\(\mathbb{R}\), or because it takes on a nonpositive value somewhere in
+$I$.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+\[
+\underbrace{\neg\bigl(\delta:I\to\mathbb{R}\bigr)}_{\text{wrong function type}}
+\;\lor\;
+\underbrace{\exists x\in I\;(\delta(x)\le 0)}_{\text{nonpositive gauge value}}
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A gauge assigns to each point of the closed interval a positive radius, encoding how tightly a tagged subinterval must cluster around that point in fine partition arguments. The sole obstruction is positivity: if any value is zero or negative, the construction cannot deliver legitimate local scales, so the gauge structure breaks down.
+\end{remark*}
+
+\NoLocalDependencies
+% ---------------------------------------------------------
+% Definition --- delta-fine Partition
+% ---------------------------------------------------------
+
+\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Definition ($\delta$-Fine Partition)}},
+  fonttitle=\small\bfseries]
+\begin{definition}[$\delta$-Fine Partition]
+\label{def:delta-fine-partition}
+Let $[a,b]$ be a closed interval, let $\delta:[a,b]\to(0,\infty)$ be a gauge, and let $\dot{\mathcal{P}}=\{([x_{i-1},x_i],t_i)\}_{i=1}^n$ be a tagged partition of $[a,b]$. The tagged partition $\dot{\mathcal{P}}$ is $\delta$-fine if and only if for every $i \in \{1,\dots,n\}$ and every $x \in [x_{i-1},x_i]$ the inequality $|x-t_i|<\delta(t_i)$ holds.
+\end{definition}
+\end{tcolorbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{aligned}
+&\text{Let } [a,b] \text{ be a closed interval, } \delta:[a,b]\to(0,\infty), \text{ and } \dot{\mathcal{P}}=\{([x_{i-1},x_i],t_i)\}_{i=1}^n \text{ a tagged partition of } [a,b].\\
+&\dot{\mathcal{P}} \text{ is }\delta\text{-fine} \Longleftrightarrow \forall i \in \{1,\dots,n\}\;\forall x \in [x_{i-1},x_i]\;( |x-t_i|<\delta(t_i)).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Definition predicate reading]
+\[
+\operatorname{DeltaFine}(\dot{\mathcal{P}},\delta) \coloneqq \forall i \in \{1,\dots,n\}\;\forall x \in [x_{i-1},x_i]\;( |x-t_i|<\delta(t_i)).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\exists i \in \{1,\dots,n\}\;\exists x \in [x_{i-1},x_i]\;
+\bigl(|x-t_i|\ge \delta(t_i)\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\neg \operatorname{DeltaFine}(\dot{\mathcal{P}},\delta) \Longleftrightarrow \exists i \in \{1,\dots,n\}\;\exists x \in [x_{i-1},x_i]\;( |x-t_i|\ge \delta(t_i)).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+A tagged partition fails to be $\delta$-fine precisely when some subinterval contains a point whose distance from its tag reaches or exceeds the available radius $\delta(t_i)$, so the corresponding subinterval is not contained in the prescribed open neighborhood around its tag.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+\[
+\underbrace{\exists i \in \{1,\dots,n\}\;\exists x \in [x_{i-1},x_i]}_{\text{choose offending subinterval and point}}
+\;\underbrace{(|x-t_i|\ge \delta(t_i))}_{\text{distance not controlled by }\delta}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A $\delta$-fine tagged partition refines the interval so that each subinterval sits entirely inside the open ball centered at its tag with radius dictated by the gauge. This ensures that when summing local contributions, every evaluation point remains within a tolerance chosen for that location, a key requirement for gauge-based integral constructions. Failure occurs when a subinterval is too wide for the tolerance prescribed at its tag, so some point of the subinterval lies on or outside the allowed neighborhood.
+\end{remark*}
+
+\begin{remark*}[Dependencies]
+\hyperref[def:gauge]{Definition \ref*{def:gauge}}; \hyperref[def:tagged-partition]{Definition \ref*{def:tagged-partition}}
+\end{remark*}
+
+
+% ---------------------------------------------------------
+% Lemma --- Every Point Is Covered by a Tag
+% ---------------------------------------------------------
+
+\begin{lemma}[Every Point Is Covered by a Tag]
+\label{lem:every-point-covered-by-tag}
+Let $\dot{\mathcal{P}}=\{([x_{i-1},x_i],t_i)\}_{i=1}^n$ be a tagged partition of $[a,b]$ that is $\delta$-fine on $[a,b]$, and let $x\in[a,b]$. Then there exists $i\in\{1,\ldots,n\}$ such that $|x-t_i|<\delta(t_i)$.
+\hyperref[prf:every-point-covered-by-tag]{Go to proof.}
+\end{lemma}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{aligned}
+&\text{Let } a<b,\; \delta:[a,b]\to(0,\infty), \text{ and } \dot{\mathcal{P}}=\{([x_{i-1},x_i],t_i)\}_{i=1}^n \text{ be }\delta\text{-fine on }[a,b].\\
+&\forall x\in[a,b]\;\exists i\in\{1,\ldots,n\}\;(|x-t_i|<\delta(t_i)).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A $\delta$-fine tagged partition matches each subinterval to a tag that lies inside the interval and records the gauge radius allowed at that tag. The lemma asserts that every point of the underlying interval falls within the gauge ball centered at one of the tags, so the gauge control at that tag can be applied to the point. This coverage property is the mechanism that transfers local control encoded by the gauge to arbitrary points of the interval.
+\end{remark*}
+
+\begin{remark*}[Dependencies]
+\hyperref[def:tagged-partition]{Definition~\ref*{def:tagged-partition}},
+\hyperref[def:delta-fine-partition]{Definition~\ref*{def:delta-fine-partition}}.
+\end{remark*}
+
+
+% ---------------------------------------------------------
+% Theorem --- Cousin's Theorem
+% ---------------------------------------------------------
+
+\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  title={\small\textbf{Theorem (Cousin's Theorem)}},
+  fonttitle=\small\bfseries]
+\begin{theorem}[Cousin's Theorem]
+\label{thm:cousins-theorem}
+Every gauge $\delta:[a,b]\to(0,\infty)$ on a closed interval $[a,b]$
+admits a $\delta$-fine tagged partition of $[a,b]$.
+\hyperref[prf:cousins-theorem]{Go to proof.}
+\end{theorem}
+\end{tcolorbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{aligned}
+&\text{Let } a,b \in \mathbb{R} \text{ with } a < b \text{ and let } \delta:[a,b]\to(0,\infty).\\
+&\exists m \in \mathbb{N}\;\exists x_0,\ldots,x_m\;\exists t_1,\ldots,t_m\\
+&\qquad\bigl(a=x_0<x_1<\cdots<x_m=b
+\land \forall j\in\{1,\ldots,m\}\;(t_j\in[x_{j-1},x_j])\\
+&\qquad\land
+\forall j\in\{1,\ldots,m\}\;[x_{j-1},x_j]\subseteq
+(t_j-\delta(t_j),t_j+\delta(t_j))\bigr).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\begin{aligned}
+\forall \delta:[a,b]\to(0,\infty)\quad
+\exists \dot{\mathcal{P}}\;\Bigl(
+&\operatorname{TaggedPartition}(\dot{\mathcal{P}},[a,b])\\
+&\land
+\operatorname{DeltaFine}(\dot{\mathcal{P}},\delta)
+\Bigr).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\begin{aligned}
+&\text{Let } a,b \in \mathbb{R} \text{ with } a < b \text{ and let } \delta:[a,b]\to(0,\infty).\\
+&\neg\Bigl(\text{there exists a }\delta\text{-fine tagged partition of }[a,b]\Bigr)\\
+&\Longleftrightarrow
+\forall m \in \mathbb{N}\;\forall x_0,\ldots,x_m\;\forall t_1,\ldots,t_m\\
+&\qquad\Bigl[
+\bigl(a=x_0<x_1<\cdots<x_m=b
+\land \forall j\;(t_j\in[x_{j-1},x_j])\bigr)\\
+&\qquad\Rightarrow
+\exists j\in\{1,\ldots,m\}\;
+[x_{j-1},x_j]\nsubseteq(t_j-\delta(t_j),t_j+\delta(t_j))
+\Bigr].
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\exists \delta:[a,b]\to(0,\infty)\;
+\forall \dot{\mathcal{P}}\;\Bigl(
+\operatorname{TaggedPartition}(\dot{\mathcal{P}},[a,b])
+\Rightarrow
+\neg\operatorname{DeltaFine}(\dot{\mathcal{P}},\delta)
+\Bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+Failure would mean that a positive gauge $\delta$ defeats every tagged
+partition: no matter how the interval is subdivided and tagged, at least
+one subinterval is not contained in the gauge neighborhood around its tag.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+\[
+\underbrace{\forall \dot{\mathcal{P}}\;
+\operatorname{TaggedPartition}(\dot{\mathcal{P}},[a,b])}_{\text{all tagged partitions}}
+\quad\Rightarrow\quad
+\underbrace{\neg\operatorname{DeltaFine}(\dot{\mathcal{P}},\delta)}_{\text{some interval escapes its gauge ball}}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The theorem is the gauge analogue of compactness for a closed interval.
+Although the allowed radius may vary from point to point, finitely many
+tagged subintervals can still be chosen so that each lies inside the
+neighborhood dictated by its own tag. The standard bisection proof uses
+the Nested Interval Property to rule out a gauge that defeats all finite
+tagged partitions.
+\end{remark*}
+
+\begin{remark*}[Dependencies]
+\hyperref[def:gauge]{Definition~\ref*{def:gauge}},
+\hyperref[def:tagged-partition]{Definition~\ref*{def:tagged-partition}},
+\hyperref[def:delta-fine-partition]{Definition~\ref*{def:delta-fine-partition}}.
+\end{remark*}
+
+% ---------------------------------------------------------
+% Remark --- Gauge Proofs of Classical Theorems
+% ---------------------------------------------------------
+
+\begin{remark*}[Gauge proofs of the four classical theorems]
+Each proof follows the same pattern: define a gauge $\delta$ from
+the continuity hypothesis, invoke Cousin's theorem for a $\delta$-fine
+partition, apply the Covering Lemma to reduce to finitely many tags,
+derive the global conclusion.
+
+\medskip
+\textbf{Boundedness.} At each $t$, continuity gives $\delta(t)$ with
+$\operatorname{Within}(x,t,\delta(t))\Rightarrow|f(x)-f(t)|\leq 1$.
+A $\delta$-fine partition with tags $t_1,\ldots,t_n$ gives
+$K=\max_i|f(t_i)|$; the Covering Lemma yields $|f(x)|\leq 1+K$ for
+all $x$.
+
+\medskip
+\textbf{EVT.} Let $M=\sup f(I)$; suppose $f(x)<M$ everywhere. At
+each $t$, take $\delta(t)$ with
+$\operatorname{Within}(x,t,\delta(t))\Rightarrow f(x)<\tfrac{1}{2}(M+f(t))$.
+A $\delta$-fine partition produces $\widetilde{M}=\tfrac{1}{2}(M+\max_if(t_i))<M$
+bounding $f$ everywhere --- contradiction.
+
+\medskip
+\textbf{Location of Roots.} Assume $f(t)\neq 0$ for all $t$. At
+each $t$, take $\delta(t)$ preserving $\operatorname{sgn}(f(t))$. A
+$\delta$-fine partition forces consistent sign from $f(a)<0$ to
+$f(b)>0$ --- contradiction.
+
+\medskip
+\textbf{Heine--Cantor.} Given $\varepsilon>0$, at each $t$ let
+$\delta(t)$ satisfy $\operatorname{Within}(x,t,2\delta(t))
+\Rightarrow|f(x)-f(t)|\leq\varepsilon/2$. A $\delta$-fine partition
+yields $\delta_\varepsilon=\min_i\delta(t_i)>0$. For $|x-u|<\delta_\varepsilon$:
+find $t_i$ covering $x$; then $|u-t_i|\leq|u-x|+|x-t_i|<2\delta(t_i)$;
+so $|f(x)-f(u)|\leq\varepsilon$.
+\end{remark*}

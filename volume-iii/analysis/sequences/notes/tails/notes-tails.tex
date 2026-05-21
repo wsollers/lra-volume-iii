@@ -1,0 +1,361 @@
+\begin{bpnew}{defborder}{Definition: $M$-Tail of a Sequence}
+% ---------------------------------------------------------
+% Definition: $M$-Tail of a Sequence
+% Label: def:m-tail
+% ---------------------------------------------------------
+\begin{definition}[$M$-Tail of a Sequence]
+\label{def:m-tail}
+
+Let $(x_n) \subseteq \mathbb{R}$ and let $M \in \mathbb{N}$. The
+\textbf{$M$-tail} of $(x_n)$ is the sequence
+\[
+    (x_n)_{n \ge M} \;:=\; \bigl(x_M,\, x_{M+1},\, x_{M+2},\, \ldots\bigr).
+\]
+\end{definition}
+\end{bpnew}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall (x_n) \subseteq \mathbb{R} \;\forall M \in \mathbb{N}
+\;\Bigl(
+    (x_n)_{n \ge M} = (x_M,x_{M+1},x_{M+2},\ldots)
+\Bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Definition predicate reading]
+\[
+\operatorname{TailSequence}(x_n,M,y_k)
+\;:=\;
+\forall k \in \mathbb{N}\;\bigl(y_k = x_{M+k-1}\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The $M$-tail discards the first $M - 1$ terms and retains everything
+from index $M$ onward. It is the formal object underlying the phrase
+\emph{all but finitely many terms}: to say that all but finitely many
+terms of $(x_n)$ satisfy a property $P$ is precisely to say that some
+$M$-tail of $(x_n)$ satisfies $P$ termwise. The index $M$ is an offset
+into the sequence, not a bound on the terms themselves; two sequences
+with identical $M$-tails share all asymptotic properties, differing
+only in finitely many initial values which convergence arguments
+discard entirely.
+\end{remark*}
+
+\begin{remark*}[Dependencies]
+\begin{itemize}
+  \item \hyperref[def:sequence]{Definition of sequence}
+\end{itemize}
+\end{remark*}
+
+
+
+\begin{bpnew}{thmborder}{Theorem: Convergence of a Tail}
+% ---------------------------------------------------------
+% Theorem: Convergence of a Tail
+% Label: thm:convergence-of-tail
+% ---------------------------------------------------------
+\begin{theorem}[Convergence of a Tail]
+\label{thm:convergence-of-tail}
+
+Let $(x_n) \subseteq \mathbb{R}$ and let $m \in \mathbb{N}$. The
+$m$-tail $(x_{m+n})_{n \in \mathbb{N}}$ converges if and only if
+$(x_n)$ converges. Moreover, in this case,
+\[
+    \lim_{n \to \infty} x_{m+n} \;=\; \lim_{n \to \infty} x_n.
+\]
+
+\smallskip
+\noindent
+\hyperref[prf:convergence-of-tail]{\textit{Go to proof.}}
+\end{theorem}
+\end{bpnew}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{aligned}
+&\forall (x_n) \subseteq \mathbb{R} \;\forall m \in \mathbb{N}\\
+&\quad\Bigl(
+    \bigl(x_{m+n}\bigr)_{n \in \mathbb{N}} \text{ converges}
+    \;\Longleftrightarrow\;
+    (x_n) \text{ converges}
+\Bigr)\\
+&\quad\land\;\Bigl(
+    (x_n) \text{ converges}
+    \;\Longrightarrow\;
+    \lim_{n\to\infty} x_{m+n} = \lim_{n\to\infty} x_n
+\Bigr).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Theorem predicate reading]
+\[
+\operatorname{TailConvergenceInvariant}(x_n,m)
+\;:=\;
+\Bigl(\exists L\in\mathbb{R}\,\operatorname{ConvergentSequence}(x_n,L)\Bigr)
+\Longleftrightarrow
+\Bigl(\exists L\in\mathbb{R}\,\operatorname{ConvergentSequence}(x_{m+n},L)\Bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Contrapositive quantified statement]
+\[
+\begin{aligned}
+&\forall (x_n) \subseteq \mathbb{R} \;\forall m \in \mathbb{N}\\
+&\quad\Bigl(
+    \bigl(x_{m+n}\bigr)_{n \in \mathbb{N}} \text{ diverges}
+    \;\Longleftrightarrow\;
+    (x_n) \text{ diverges}
+\Bigr).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Contrapositive predicate reading]
+\[
+\lnot\operatorname{TailConvergenceInvariant}(x_n,m)
+\;:=\;
+\bigl((x_n)\text{ diverges}\Longleftrightarrow (x_{m+n})_{n\in\mathbb{N}}\text{ diverges}\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Convergence is a \emph{tail property}: it depends only on the
+eventual behavior of the sequence, not on any finite initial
+segment. Discarding the first $m$ terms neither creates nor
+destroys convergence, and when the limit exists it is preserved
+exactly. This theorem formalizes the informal principle that
+finitely many terms are irrelevant to asymptotic behavior. It is
+the rigorous justification for the common proof move of assuming
+without loss of generality that $n$ is large enough for some
+auxiliary condition to hold: one simply passes to a suitable
+$m$-tail, applies the argument there, and concludes for the full
+sequence by this theorem. The contrapositive is equally useful:
+to show $(x_n)$ diverges it suffices to show that some $m$-tail
+diverges.
+\end{remark*}
+
+\begin{remark*}[Dependencies]
+\begin{itemize}
+  \item \hyperref[def:convergent-sequence]{Convergence of a Sequence}
+  \item \hyperref[def:m-tail]{$M$-Tail of a Sequence}
+  \item \hyperref[thm:uniqueness-of-limits]{Uniqueness of Limits}
+\end{itemize}
+\end{remark*}
+
+
+
+
+
+
+
+
+
+\begin{bpnew}{thmborder}{Theorem: Convergence by Domination}
+% ---------------------------------------------------------
+% Theorem: Convergence by Domination
+% Label: thm:convergence-by-domination
+% ---------------------------------------------------------
+\begin{theorem}[Convergence by Domination]
+\label{thm:convergence-by-domination}
+
+Let $(x_n) \subseteq \mathbb{R}$ and let $L \in \mathbb{R}$. Let
+$(a_n)$ be a sequence of positive real numbers with
+$\displaystyle\lim_{n \to \infty} a_n = 0$. If there exist a constant
+$c > 0$ and an index $m \in \mathbb{N}$ such that
+\[
+    |x_n - L| \;\le\; c\, a_n \qquad \forall n \ge m,
+\]
+then $\displaystyle\lim_{n \to \infty} x_n = L$.
+
+\smallskip
+\noindent
+\hyperref[prf:convergence-by-domination]{\textit{Go to proof.}}
+\end{theorem}
+\end{bpnew}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{aligned}
+&\forall (x_n) \subseteq \mathbb{R} \;\forall L \in \mathbb{R}
+ \;\forall (a_n) \subseteq (0, \infty)\\
+&\quad\Bigl(
+    \Bigl(
+        \lim_{n \to \infty} a_n = 0
+        \;\land\;
+        \exists c > 0 \;\exists m \in \mathbb{N}
+        \;\forall n \ge m \;\bigl(|x_n - L| \le c\, a_n\bigr)
+    \Bigr)
+    \;\Longrightarrow\;
+    \lim_{n \to \infty} x_n = L
+\Bigr).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Contrapositive quantified statement]
+\[
+\begin{aligned}
+&\forall (x_n) \subseteq \mathbb{R} \;\forall L \in \mathbb{R}
+ \;\forall (a_n) \subseteq (0,\infty)\\
+&\quad\Bigl(
+    \lim_{n \to \infty} x_n \neq L
+    \;\Longrightarrow\;
+    \lim_{n \to \infty} a_n \neq 0
+    \;\lor\;
+    \forall c > 0 \;\forall m \in \mathbb{N}
+    \;\exists n \ge m \;\bigl(|x_n - L| > c\, a_n\bigr)
+\Bigr).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Contrapositive predicate reading]
+\[
+\operatorname{NotDominatedByNullError}(x_n,L,a_n)
+\;:=\;
+\lim_{n\to\infty}a_n\neq 0
+\lor
+\forall c>0\,\forall m\in\mathbb{N}\,\exists n\ge m
+\bigl(|x_n-L|>c\,a_n\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The theorem is a \emph{domination principle}: it is not necessary to
+verify the $\varepsilon$-$N$ condition directly for $(x_n)$. It
+suffices to find a null sequence $(a_n)$ -- one converging to zero --
+that dominates the error $|x_n - L|$ on some tail, up to a fixed
+scalar $c$. The scalar $c$ is irrelevant to the conclusion: since
+$a_n \to 0$, the product $c\, a_n \to 0$ regardless of the size of
+$c$, and any $\varepsilon > 0$ is eventually beaten by $c\, a_n$.
+This theorem is the rigorous engine behind the common proof pattern
+of bounding $|x_n - L|$ by a simpler expression and observing that
+the simpler expression tends to zero. The canonical instance is
+$a_n = 1/n$, where domination by $c/n$ is sufficient to conclude
+convergence to $L$.
+\end{remark*}
+
+\begin{remark*}[Dependencies]
+\begin{itemize}
+  \item \hyperref[def:convergent-sequence]{Convergence of a Sequence}
+  \item \hyperref[def:m-tail]{$M$-Tail of a Sequence}
+\end{itemize}
+\end{remark*}
+
+
+
+\begin{bpnew}{thmborder}{Theorem: Ratio Limit Less Than One Implies Null}
+% ---------------------------------------------------------
+% Theorem: Ratio Limit Less Than One Implies Null
+% Label: thm:ratio-limit-less-than-one-implies-null
+% ---------------------------------------------------------
+\begin{theorem}[Ratio Limit Less Than One Implies Null]
+\label{thm:ratio-limit-less-than-one-implies-null}
+
+Let $(x_n)$ be a sequence of positive real numbers. Suppose that the
+limit
+\[
+    L := \lim_{n\to\infty}\frac{x_{n+1}}{x_n}
+\]
+exists. If $L<1$, then $(x_n)$ converges and
+\[
+    \lim_{n\to\infty} x_n = 0.
+\]
+
+\smallskip
+\noindent
+\hyperref[prf:ratio-limit-less-than-one-implies-null]{\textit{Go to proof.}}
+\end{theorem}
+\end{bpnew}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{aligned}
+&\forall (x_n)\subseteq (0,\infty)\;\forall L\in\mathbb{R}\\
+&\quad\Bigl(
+    \lim_{n\to\infty}\frac{x_{n+1}}{x_n}=L
+    \;\land\;
+    L<1
+\Bigr)
+\Longrightarrow
+\lim_{n\to\infty}x_n=0.
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Theorem predicate reading]
+\[
+\bigl(
+\operatorname{ConvergentSequence}\bigl(x_{n+1}/x_n,L\bigr)
+\land
+L<1
+\bigr)
+\Longrightarrow
+\operatorname{NullSequence}(x_n).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\begin{aligned}
+&\exists (x_n)\subseteq (0,\infty)\;\exists L\in\mathbb{R}\\
+&\quad\Bigl(
+    \lim_{n\to\infty}\frac{x_{n+1}}{x_n}=L
+    \;\land\;
+    L<1
+    \;\land\;
+    \lim_{n\to\infty}x_n\neq 0
+\Bigr).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\operatorname{ConvergentSequence}\bigl(x_{n+1}/x_n,L\bigr)
+\land
+L<1
+\land
+\operatorname{NotConvergentTo}(x_n,0).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+A failure would be a positive sequence whose consecutive ratios settle below
+one in the limit but whose terms do not tend to zero. The theorem says this
+cannot happen: once the ratio limit is less than one, some tail has ratios
+bounded by a fixed number $r<1$, forcing geometric decay.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+\[
+\underbrace{(x_n)\subseteq(0,\infty)}_{\text{positive terms}}
+\quad
+\underbrace{\lim_{n\to\infty}\frac{x_{n+1}}{x_n}=L<1}_{\text{eventual ratio gap}}
+\quad
+\underbrace{\lim_{n\to\infty}x_n\neq 0}_{\text{fails to be null}}.
+\]
+The positive-term hypothesis makes each ratio meaningful. The strict gap
+$L<1$ gives a tail on which $x_{n+1}\le r x_n$ for some $r<1$, and repeated
+iteration then gives domination by a null geometric sequence.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This is the sequence form of the ratio test. The theorem does not merely say
+that the terms decrease eventually; it says they decrease at an eventually
+geometric rate. The strict inequality $L<1$ is essential. When the ratio
+limit equals $1$, the conclusion may hold, as with $1/n$, or fail, as with
+the constant sequence $1$.
+\end{remark*}
+
+\begin{remark*}[Dependencies]
+\begin{itemize}
+  \item \hyperref[def:convergent-sequence]{Convergence of a Sequence}
+  \item \hyperref[def:null-sequence]{Null Sequence}
+  \item \hyperref[def:m-tail]{$M$-Tail of a Sequence}
+  \item \hyperref[thm:convergence-by-domination]{Convergence by Domination}
+\end{itemize}
+\end{remark*}
