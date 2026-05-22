@@ -1,0 +1,37 @@
+name: Sync volume-iii to monorepo
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'volume-iii/**'
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout lra-volume-iii
+        uses: actions/checkout@v4
+        with:
+          path: source
+
+      - name: Checkout monorepo
+        uses: actions/checkout@v4
+        with:
+          repository: wsollers/Learning-Real-Analysis
+          token: ${{ secrets.SYNC_PAT }}
+          path: monorepo
+
+      - name: Sync volume-iii/ into monorepo
+        run: |
+          rsync -av --delete source/volume-iii/ monorepo/volume-iii/
+
+      - name: Commit and push if changed
+        run: |
+          cd monorepo
+          git config user.name  "lra-sync-bot"
+          git config user.email "sync-bot@noreply.github.com"
+          git add volume-iii/
+          git diff --cached --quiet && echo "No changes to sync" && exit 0
+          git commit -m "chore: sync volume-iii from lra-volume-iii"
+          git push
