@@ -10,8 +10,6 @@ Modules:
 - `multi-repo-sync.md`
 - `theorem-explorer-pipeline.md`
 - `knowledge-pipeline.md`
-- `theorem-route-architecture.md`
-- `theorem-route-schema.md`
 - `latex-build-and-rendering.md`
 - `canonical-yaml.md`
 - `generated-file-policy.md`
