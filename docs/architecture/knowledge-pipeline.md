@@ -6,8 +6,10 @@ provider-specific agent behavior.
 
 ## Ownership
 
-- `Learning-Real-Analysis` owns the integrated LaTeX source tree and canonical
-  YAML sources.
+- Leaf volume repos own theorem/proof source files.
+- `Learning-Real-Analysis` is an assembled integration repo. It receives source
+  through sync/pull workflows and must not be treated as the canonical authoring
+  source for theorem/proof files.
 - `lra-knowledge-explorer` owns theorem extraction, graph generation, explorer
   internals, and generated explorer data.
 - `lra-pdf-extractor` may produce candidate source-ingestion artifacts, but it
@@ -24,10 +26,30 @@ The pipeline relies on:
 - statement labels using `def:`, `ax:`, `thm:`, `lem:`, `prop:`, or `cor:`,
 - proof labels using `prf:` only for proof locations,
 - canonical chapter and proof file structure,
-- canonical YAML from `Learning-Real-Analysis`.
+- leaf-owned chapter metadata where available.
 
 Dependency edges must target mathematical statement labels. A `prf:` label may
 support theorem/proof navigation, but it is not a dependency target.
+
+## Theorem Route Outputs
+
+The Phase 2 leaf route generator emits:
+
+- `build/knowledge/theorem-routes.json`
+- `build/knowledge/theorem-routes.yaml`
+- optional `build/knowledge/route-diff.json`
+- optional `build/knowledge/route-diff.md`
+
+Route artifacts distinguish stable theorem identity from movable source paths:
+
+- `theorem_id` is the stable `thm:`, `prop:`, `lem:`, or `cor:` label.
+- `theorem_tex` and `proof_tex` are current source locations.
+- `vault_path` is a durable proof-vault destination derived from stable volume
+  and chapter classification plus theorem identity.
+
+Proof files associate to theorem nodes through `\LRAProofFor{...}`. Legacy
+return links and label-root conventions may support fallback extraction, but
+they do not supersede explicit proof metadata.
 
 ## Graph And Explorer Outputs
 

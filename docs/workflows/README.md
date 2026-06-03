@@ -6,6 +6,8 @@ core governance standards.
 Modules:
 
 - `knowledge-extraction.md`
+- `theorem-route-update.md`
+- `proof-folder-refactor.md`
 - `volume-cleanup.md`
 - `generated-wrapper-sync.md`
 - `decoration-audit.md`
