@@ -17,13 +17,13 @@ Let $f : I \to \mathbb{R}$ be monotone increasing on the interval $I$, and let $
 Moreover, $f(c^{-}) \leq f(c) \leq f(c^{+})$.
 \end{theorem*}
 
-\begin{proof}
-\textbf{Professional Standard Proof.}~\\
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
 Define $S \coloneqq \{f(x) : x \in I,\, x < c\}$ and $J \coloneqq \{f(x) : x \in I,\, x > c\}$. Since $c$ is interior, there exist $a, b \in I$ with $a < c < b$. Monotonicity implies $S \subseteq (-\infty, f(b)]$ and $J \subseteq [f(a), +\infty)$, so $s \coloneqq \sup S$ and $j \coloneqq \inf J$ exist. For the left limit: given $\varepsilon > 0$, since $s - \varepsilon$ is not an upper bound of $S$, there exists $x_0 < c$ with $f(x_0) > s - \varepsilon$. Set $\delta \coloneqq c - x_0 > 0$. For $x \in (c - \delta, c) \cap I$, monotonicity gives $s - \varepsilon < f(x_0) \leq f(x) \leq s$, hence $|f(x) - s| < \varepsilon$. For the right limit: given $\varepsilon > 0$, there exists $x_1 > c$ with $f(x_1) < j + \varepsilon$. Set $\delta \coloneqq x_1 - c > 0$. For $x \in (c, c + \delta) \cap I$, monotonicity gives $j \leq f(x) \leq f(x_1) < j + \varepsilon$, hence $|f(x) - j| < \varepsilon$. The ordering follows since $f(c)$ is an upper bound of $S$ and a lower bound of $J$.
 \end{proof}
 
-\begin{proof}
-\textbf{Detailed Learning Proof.}~\\
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
 
 \textbf{Step 1.} Define the sets $S \coloneqq \{f(x) : x \in I,\, x < c\}$ and $J \coloneqq \{f(x) : x \in I,\, x > c\}$. Since $c$ is an interior point of $I$, there exist points $a, b \in I$ with $a < c < b$. The monotonicity of $f$ ensures that every element of $S$ satisfies $f(x) \leq f(b)$ and every element of $J$ satisfies $f(x) \geq f(a)$. Therefore both sets are bounded, and the supremum $s \coloneqq \sup S$ and infimum $j \coloneqq \inf J$ exist in $\mathbb{R}$.
 

@@ -11,8 +11,8 @@
 Let $I \subseteq \mathbb{R}$ be an open interval, let $c \in I$, let $f : I \to \mathbb{R}$ be differentiable at $c$, and let $\alpha \in \mathbb{R}$. Then $\alpha f$ is differentiable at $c$ and $(\alpha f)'(c) = \alpha f'(c)$.
 \end{theorem*}
 
-\begin{proof}
-\textbf{Professional Standard Proof.}~\\
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
 Set $h := \alpha f$. For $x \in I$ with $x \neq c$, the difference quotient becomes
 \[
   \frac{h(x) - h(c)}{x - c} = \frac{\alpha f(x) - \alpha f(c)}{x - c} = \alpha \cdot \frac{f(x) - f(c)}{x - c}.
@@ -24,8 +24,8 @@ By the Constant Multiple Rule for Limits,
 where the final equality follows from the differentiability of $f$ at $c$. Therefore $h'(c) = \alpha f'(c)$.
 \end{proof}
 
-\begin{proof}
-\textbf{Detailed Learning Proof.}~\\
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
 
 \textbf{Step 1.} Form the difference quotient of $h := \alpha f$. For $x \in I$ with $x \neq c$, substituting the definition of $h$ gives
 \[

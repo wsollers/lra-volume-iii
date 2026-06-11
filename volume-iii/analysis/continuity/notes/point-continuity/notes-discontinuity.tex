@@ -2,31 +2,28 @@
 % Characterization of Discontinuity --- Notes
 % =========================================================
 
-\subsection{Characterization of Discontinuity}
+\subsection*{Characterization of Discontinuity}
 \label{sec:discontinuity}
 
-\begin{tcolorbox}[title={Toolkit --- Discontinuity}]
+\begin{toolkitbox}{Toolkit --- Discontinuity}
 \begin{itemize}
   \item $\operatorname{DiscontinuousAt}(f,a)$ is the negation of $\operatorname{ContinuousAt}(f,a)$.
   \item Quantifier reversal governs failure of continuity.
   \item Three equivalent formulations: $\varepsilon$-$\delta$, sequential, neighbourhood.
   \item Taxonomy: removable, jump, essential.
 \end{itemize}
-\end{tcolorbox}
+\end{toolkitbox}
 
 % ---------------------------------------------------------
 % Definition --- Point of Discontinuity
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Point of Discontinuity)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Point of Discontinuity)}
 \begin{definition}[Point of Discontinuity]
 \label{def:point-of-discontinuity}
 Let $A \subseteq \mathbb{R}$, let $f \colon A \to \mathbb{R}$, and let $a \in A$. The function $f$ is discontinuous at $a$ if and only if $f$ is not continuous at $a$.
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -93,15 +90,12 @@ A point of discontinuity is detected by the breakdown of the usual epsilon-delta
 % Definition --- Sequential Characterization
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Sequential Characterization of Discontinuity)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Sequential Characterization of Discontinuity)}
 \begin{definition}[Sequential Characterization of Discontinuity]
 \label{def:sequential-discontinuity-at-a-point}
 Let $A \subseteq \mathbb{R}$, let $f:A \to \mathbb{R}$, and let $c \in A$. The function $f$ is discontinuous at $c$ if and only if there exists a sequence $(x_n)_{n\in\mathbb{N}} \subseteq A$ such that $x_n \to c$ while $f(x_n) \not\to f(c)$.
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -159,15 +153,12 @@ A discontinuity at $c$ can be certified by a single sequence approaching $c$ who
 % Definition --- Neighbourhood Characterization
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Neighbourhood Characterization of Discontinuity)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Neighbourhood Characterization of Discontinuity)}
 \begin{definition}[Neighbourhood Characterization of Discontinuity]
 \label{def:neighborhood-discontinuity-at-a-point}
 Let $A \subseteq \mathbb{R}$, let $f \colon A \to \mathbb{R}$, and let $c \in A$. The function $f$ is discontinuous at $c$ if and only if there exists a neighborhood $V$ of $f(c)$ such that for every neighborhood $U$ of $c$ relative to $A$ there exists $x \in U \cap A$ with $f(x) \notin V$.
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -298,10 +289,7 @@ The three characterizations of discontinuity are mutually convertible. Analysts 
 % Definition --- Types of Discontinuity
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Types of Discontinuity)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Types of Discontinuity)}
 \begin{definition}[Types of Discontinuity]
 \label{def:types-of-discontinuity-at-a-point}
 Let $A \subseteq \mathbb{R}$, let $f:A \to \mathbb{R}$, and let $x_0 \in A$ with $f$ discontinuous at $x_0$.
@@ -311,7 +299,7 @@ Let $A \subseteq \mathbb{R}$, let $f:A \to \mathbb{R}$, and let $x_0 \in A$ with
   \item \emph{Essential} iff it is not removable.
 \end{enumerate}
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[

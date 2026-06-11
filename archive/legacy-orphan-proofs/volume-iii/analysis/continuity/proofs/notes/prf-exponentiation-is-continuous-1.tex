@@ -15,13 +15,13 @@ f(x) := a^x
 is continuous.
 \end{theorem*}
 
-\begin{proof}
-\textbf{Professional Standard Proof.}~\\
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
 Let $c \in \mathbb{R}$ be arbitrary. Since $a^x = e^{x \ln a}$ for all $x \in \mathbb{R}$, the function $f(x) = a^x$ is the composition of the continuous function $g(x) = x \ln a$ and the exponential function $h(y) = e^y$. Since the composition of continuous functions is continuous, $f$ is continuous at $c$. Since $c$ was arbitrary, $f$ is continuous on $\mathbb{R}$.
 \end{proof}
 
-\begin{proof}
-\textbf{Detailed Learning Proof.}~\\
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
 
 \textbf{Step 1.} Express $a^x$ using the natural exponential function. For any positive real number $a$ and any real number $x$, we have $a^x = e^{x \ln a}$. This identity holds because $e^{\ln a} = a$, so raising both sides to the power $x$ gives $(e^{\ln a})^x = a^x$, which equals $e^{x \ln a}$ by the power rule for exponentials.
 

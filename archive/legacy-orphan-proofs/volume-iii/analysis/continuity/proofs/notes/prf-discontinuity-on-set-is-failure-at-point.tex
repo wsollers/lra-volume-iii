@@ -11,8 +11,8 @@
 Let $A \subseteq \mathbb{R}$ and let $f : A \to \mathbb{R}$. Then $f$ is discontinuous on $A$ if and only if there exists at least one point $c \in A$ at which $f$ is discontinuous.
 \end{theorem*}
 
-\begin{proof}
-\textbf{Professional Standard Proof.}~\\
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
 By definition, $f$ is continuous on $A$ if and only if $f$ is continuous at every point $c \in A$. Discontinuity on $A$ is the negation of this statement.
 
 $(\Rightarrow)$ Suppose $f$ is discontinuous on $A$. Then $f$ is not continuous on $A$, meaning the universal statement $\forall c \in A,\ f \text{ is continuous at } c$ is false. By negation of the universal quantifier, there exists $c \in A$ such that $f$ is not continuous at $c$. Hence $f$ is discontinuous at $c$.
@@ -20,8 +20,8 @@ $(\Rightarrow)$ Suppose $f$ is discontinuous on $A$. Then $f$ is not continuous 
 $(\Leftarrow)$ Suppose there exists $c \in A$ at which $f$ is discontinuous. Then $f$ fails to be continuous at this particular point of $A$, so $f$ is not continuous at every point of $A$. Therefore $f$ is not continuous on $A$, i.e., $f$ is discontinuous on $A$.
 \end{proof}
 
-\begin{proof}
-\textbf{Detailed Learning Proof.}~\\
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
 
 \textbf{Step 1.} Establish the logical framework. By definition, $f$ is continuous on $A$ if and only if $f$ is continuous at every point $c \in A$. This is a universal quantification: $\forall c \in A,\ f \text{ is continuous at } c$. Discontinuity on $A$ is precisely the negation of continuity on $A$, so it is the negation of this universal statement.
 

@@ -11,8 +11,8 @@
 Let $I \subseteq \mathbb{R}$ be an open interval, let $c \in I$, and let $f, g : I \to \mathbb{R}$ be differentiable at $c$. Then $fg$ is differentiable at $c$ and $(fg)'(c) = f'(c)g(c) + f(c)g'(c)$.
 \end{theorem*}
 
-\begin{proof}
-\textbf{Professional Standard Proof.}~\\
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
 Set $h := fg$. For $x \in I$ with $x \neq c$, the difference quotient is
 \[
   \frac{h(x) - h(c)}{x - c} = \frac{f(x)g(x) - f(c)g(c)}{x - c}.
@@ -30,8 +30,8 @@ As $x \to c$, the sum rule and product rule for limits give
 Since differentiability implies continuity, $\lim_{x \to c} f(x) = f(c)$, yielding $(fg)'(c) = f(c)g'(c) + g(c)f'(c)$.
 \end{proof}
 
-\begin{proof}
-\textbf{Detailed Learning Proof.}~\\
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
 
 \textbf{Step 1.} Form the difference quotient of the product function $h = fg$. For $x \in I$ with $x \neq c$, the difference quotient becomes
 \[

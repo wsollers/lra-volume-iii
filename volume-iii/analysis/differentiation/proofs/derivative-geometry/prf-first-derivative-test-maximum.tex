@@ -11,13 +11,13 @@
 Let $I := [a,b]$, let $f : I \to \mathbb{R}$ be continuous on $I$, and let $c \in (a,b)$ with $f$ differentiable on $(a,c)$ and $(c,b)$. If there exists $\delta > 0$ with $(c-\delta,c+\delta) \subseteq I$ and $f'(x) \geq 0$ for $x \in (c-\delta,c)$ and $f'(x) \leq 0$ for $x \in (c,c+\delta)$, then $f$ has a relative maximum at $c$.
 \end{theorem*}
 
-\begin{proof}
-\textbf{Professional Standard Proof.}~\\
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
 By the Nondecreasing theorem applied on $[c-\delta, c]$, $f'(x) \geq 0$ on $(c-\delta,c)$ implies $f$ is nondecreasing on $[c-\delta,c]$, so $f(x) \leq f(c)$ for all $x \in [c-\delta,c]$. By the Nonincreasing theorem applied on $[c,c+\delta]$, $f'(x) \leq 0$ on $(c,c+\delta)$ implies $f$ is nonincreasing on $[c,c+\delta]$, so $f(x) \leq f(c)$ for all $x \in [c,c+\delta]$. Therefore $f(x) \leq f(c)$ for all $x \in (c-\delta,c+\delta)$, establishing a relative maximum at $c$.
 \end{proof}
 
-\begin{proof}
-\textbf{Detailed Learning Proof.}~\\
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
 
 \textbf{Step 1.} Handle the left side of $c$. The function $f$ is continuous on $[c-\delta,c]$ and differentiable on $(c-\delta,c)$ with $f'(x) \geq 0$. By the Nondecreasing Iff Nonneg\-ative Derivative theorem, $f$ is nondecreasing on $[c-\delta,c]$. Therefore $f(x) \leq f(c)$ for all $x \in [c-\delta,c]$.
 

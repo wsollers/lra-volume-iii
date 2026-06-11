@@ -11,13 +11,13 @@
 Let $f : I \to \mathbb{R}$ be a monotone function on an interval $I$. Then the set of points of continuity of $f$ is dense in $I$.
 \end{theorem*}
 
-\begin{proof}
-\textbf{Professional Standard Proof.}~\\
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
 Let $D = \{x \in I : f \text{ is not continuous at } x\}$ be the set of discontinuities. By the theorem that discontinuities of a monotone function are countable, $D$ is at most countable. The set of points of continuity is $I \setminus D$. To show $I \setminus D$ is dense in $I$, let $(a, b) \subseteq I$ be any open subinterval with $a < b$. Since $(a, b)$ is uncountable while $D$ is at most countable, $(a, b) \not\subseteq D$. Therefore there exists $x \in (a, b)$ with $x \notin D$, so $(a, b) \cap (I \setminus D) \neq \emptyset$. Since every open subinterval of $I$ meets $I \setminus D$, the set $I \setminus D$ is dense in $I$.
 \end{proof}
 
-\begin{proof}
-\textbf{Detailed Learning Proof.}~\\
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
 
 \textbf{Step 1.} Define the set of discontinuities $D = \{x \in I : f \text{ is not continuous at } x\}$. By the theorem on discontinuities of monotone functions, $D$ is at most countable. This gives us precise control over the size of the set where $f$ fails to be continuous.
 

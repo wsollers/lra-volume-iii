@@ -11,13 +11,13 @@
 Let $A \subseteq \mathbb{R}$ be a non-empty set. If $A$ is bounded below, then $\sup(-A) = -\inf A$.
 \end{theorem*}
 
-\begin{proof}
-\textbf{Professional Standard Proof.}~\\
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
 Let $i = \inf A$. By definition, $i \le a$ for all $a \in A$. Multiplying by $-1$ reverses the inequality, giving $-i \ge -a$ for all $-a \in -A$. Thus, $-i$ is an upper bound of $-A$. To show it is the least upper bound, let $u$ be any upper bound of $-A$. Then $u \ge -a$ for all $a \in A$, which implies $-u \le a$. Thus, $-u$ is a lower bound of $A$. Since $i$ is the greatest lower bound, $i \ge -u$, which implies $-i \le u$. Hence $\sup(-A) = -i = -\inf A$.
 \end{proof}
 
-\begin{proof}
-\textbf{Detailed Learning Proof.}~\\
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
 
 \textbf{Step 1. Show $-i$ is an upper bound for the reflected set.}
 Let $i = \inf A$. For any element $x \in -A$, there exists an element $a \in A$ such that $x = -a$. By the definition of the infimum, $i \le a$. Multiplying both sides by $-1$ reverses the inequality:

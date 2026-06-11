@@ -11,8 +11,8 @@
 Let $f : [a,b] \to \mathbb{R}$ be continuous on $[a,b]$. If $f(a) < 0 < f(b)$ or $f(a) > 0 > f(b)$, then there exists $c \in (a,b)$ such that $f(c) = 0$.
 \end{theorem*}
 
-\begin{proof}
-\textbf{Professional Standard Proof.}~\\
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
 Without loss of generality assume $f(a) < 0 < f(b)$. Define $S := \{ x \in [a,b] \mid f(x) < 0 \}$. Since $f(a) < 0$, the set $S$ is nonempty and bounded above by $b$. By the Completeness Axiom, $s := \sup S$ exists and satisfies $s \in [a,b]$.
 
 If $f(s) > 0$, then Sign Preservation provides $\varepsilon > 0$ such that $f(x) > 0$ for all $x \in (s - \varepsilon, s + \varepsilon) \cap [a,b]$. In particular, $f(x) > 0$ on $(s - \varepsilon, s]$, so $s - \varepsilon$ is an upper bound for $S$, contradicting $s = \sup S$.
@@ -22,8 +22,8 @@ If $f(s) < 0$, then Sign Preservation provides $\varepsilon > 0$ such that $f(x)
 Therefore $f(s) = 0$. Since $f(a) \neq 0$ and $f(b) \neq 0$, the point $c := s$ lies in $(a,b)$.
 \end{proof}
 
-\begin{proof}
-\textbf{Detailed Learning Proof.}~\\
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
 
 \textbf{Step 1.} Without loss of generality, assume $f(a) < 0 < f(b)$. The case $f(a) > 0 > f(b)$ follows by considering $-f$. Define $S := \{ x \in [a,b] \mid f(x) < 0 \}$. Since $f(a) < 0$, the element $a$ belongs to $S$, so $S$ is nonempty. Since $S \subseteq [a,b]$, the set $S$ is bounded above by $b$.
 

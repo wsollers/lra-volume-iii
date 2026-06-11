@@ -16,8 +16,8 @@ Let $A \subseteq \mathbb{R}$ and let $f : A \to f(A)$ be bi-Lipschitz with bound
 Then (a)~$f$ is injective, so $f^{-1} : f(A) \to A$ exists; (b)~$f^{-1}$ is Lipschitz with constant $1/\alpha$; (c)~$f^{-1}$ is bi-Lipschitz with bounds $1/K$ and $1/\alpha$.
 \end{theorem*}
 
-\begin{proof}
-\textbf{Professional Standard Proof.}~\\
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
 Part (a): If $x \neq u$ then $|x - u| > 0$, so the lower bound gives $|f(x) - f(u)| \geq \alpha|x - u| > 0$, hence $f(x) \neq f(u)$. Thus $f$ is injective and $f^{-1}$ exists.
 
 Part (b): Let $y, v \in f(A)$ with $y = f(x)$ and $v = f(u)$ for unique $x, u \in A$. The lower bound gives $\alpha|f^{-1}(y) - f^{-1}(v)| = \alpha|x - u| \leq |f(x) - f(u)| = |y - v|$. Dividing by $\alpha > 0$ yields $|f^{-1}(y) - f^{-1}(v)| \leq \frac{1}{\alpha}|y - v|$.
@@ -25,8 +25,8 @@ Part (b): Let $y, v \in f(A)$ with $y = f(x)$ and $v = f(u)$ for unique $x, u \i
 Part (c): The upper bound gives $|y - v| = |f(x) - f(u)| \leq K|x - u| = K|f^{-1}(y) - f^{-1}(v)|$. Dividing by $K > 0$ yields $\frac{1}{K}|y - v| \leq |f^{-1}(y) - f^{-1}(v)|$. Combined with part (b), this establishes the bi-Lipschitz bounds.
 \end{proof}
 
-\begin{proof}
-\textbf{Detailed Learning Proof.}~\\
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
 
 \textbf{Step 1.} Establish injectivity of $f$. Suppose $x, u \in A$ with $x \neq u$. Then $|x - u| > 0$. The lower bi-Lipschitz bound gives $|f(x) - f(u)| \geq \alpha|x - u| > 0$ since $\alpha > 0$. Therefore $f(x) \neq f(u)$, proving $f$ is injective. Since $f : A \to f(A)$ is surjective by definition, the inverse function $f^{-1} : f(A) \to A$ exists and is well-defined.
 

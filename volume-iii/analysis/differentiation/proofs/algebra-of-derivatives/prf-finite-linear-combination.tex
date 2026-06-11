@@ -14,13 +14,13 @@ Let $I \subseteq \mathbb{R}$ be an open interval, let $c \in I$, let $n \in \mat
 \]
 \end{theorem*}
 
-\begin{proof}
-\textbf{Professional Standard Proof.}~\\
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
 The proof proceeds by induction on $n$. For $n = 1$, the result follows from the Constant Multiple Rule. For the inductive step, assume the statement holds for $n = k$ and consider $n = k+1$. Write $\sum_{i=1}^{k+1} \alpha_i f_i = \left(\sum_{i=1}^{k} \alpha_i f_i\right) + \alpha_{k+1} f_{k+1}$. By the inductive hypothesis, $\sum_{i=1}^{k} \alpha_i f_i$ is differentiable at $c$ with derivative $\sum_{i=1}^{k} \alpha_i f_i'(c)$. By the Constant Multiple Rule, $\alpha_{k+1} f_{k+1}$ is differentiable at $c$ with derivative $\alpha_{k+1} f_{k+1}'(c)$. The Sum Rule then gives the desired result.
 \end{proof}
 
-\begin{proof}
-\textbf{Detailed Learning Proof.}~\\
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
 
 \textbf{Step 1.} Base case $n = 1$. Define $h = \alpha_1 f_1$. By the Constant Multiple Rule, $h$ is differentiable at $c$ and $h'(c) = \alpha_1 f_1'(c)$. This equals $\sum_{i=1}^{1} \alpha_i f_i'(c)$, establishing the base case.
 

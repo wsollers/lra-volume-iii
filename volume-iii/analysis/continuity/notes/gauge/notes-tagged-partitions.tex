@@ -9,17 +9,14 @@
 % Vocabulary defined here is shared with the Riemann chapter.
 % ---------------------------------------------------------
 
-\subsection{Tagged Partitions and Mesh}
+\subsection*{Tagged Partitions and Mesh}
 \label{sec:tagged-partitions}
 
 % ---------------------------------------------------------
 % Definition --- Mesh of a Partition
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Mesh of a Partition)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Mesh of a Partition)}
 \begin{definition}[Mesh of a Partition]
 \label{def:mesh-of-partition}
 Let $a,b \in \mathbb{R}$ with $a<b$, and let $P=\{x_0,\ldots,x_n\}$ be a partition of $[a,b]$. A real number $m$ is the \emph{mesh} (or \emph{norm}) of $P$ if and only if
@@ -28,7 +25,7 @@ m=\max_{1\le i\le n}(x_i - x_{i-1}).
 \]
 The mesh of $P$ is denoted by $\|P\|$ and is the unique $m$ satisfying this equivalence.
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -93,15 +90,12 @@ The mesh of a finite partition records the length of the widest subinterval and 
 % Definition --- Refinement
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Refinement)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Refinement)}
 \begin{definition}[Refinement]
 \label{def:refinement-of-partition}
 Let $[a,b] \subseteq \mathbb{R}$ and let $P$ and $Q$ be partitions of $[a,b]$. Then $Q$ is a refinement of $P$ if and only if every point of $P$ is also a point of $Q$; equivalently, $P \subseteq Q$.
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -150,15 +144,12 @@ Refinement formalizes the idea of subdividing an interval more finely without lo
 % Definition --- Common Refinement
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Common Refinement)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Common Refinement)}
 \begin{definition}[Common Refinement]
 \label{def:common-refinement}
 Let $a<b$ and let $P$ and $Q$ be partitions of $[a,b]$. Their common refinement is the partition $R$ obtained by taking the union of their node sets, so $R = P \cup Q$ as sets of points in $[a,b]$.
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[

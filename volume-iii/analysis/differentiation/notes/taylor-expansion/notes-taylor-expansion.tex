@@ -1,4 +1,4 @@
-\subsection{Taylor Expansion}
+\subsection*{Taylor Expansion}
 
 \begin{tcolorbox}[colback=gray!8, colframe=gray!40, title=\textbf{Taylor Expansion Toolkit}]
 \textbf{Concept family:} Taylor polynomials, Taylor remainders, and Taylor's theorem.
@@ -25,10 +25,7 @@ left after truncating the expansion.
 % Definition --- Taylor Polynomial at a Point
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Taylor Polynomial at a Point)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Taylor Polynomial at a Point)}
 \begin{definition}[Taylor Polynomial at a Point]
 \label{def:taylor-polynomial-at-a-point}
 Let $I\subseteq\mathbb{R}$ be an interval, let $a\in I$, let
@@ -41,7 +38,7 @@ $n$ for $f$ at $a$ is
   \sum_{k=0}^{n}\frac{f^{(k)}(a)}{k!}(x-a)^k.
 \]
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -77,10 +74,7 @@ one point.
 % Definition --- Taylor Remainder
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Taylor Remainder)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Taylor Remainder)}
 \begin{definition}[Taylor Remainder]
 \label{def:taylor-remainder}
 Let $I\subseteq\mathbb{R}$ be an interval, let $a\in I$, let
@@ -91,7 +85,7 @@ function $R_{n,a}f:I\to\mathbb{R}$ defined by
   R_{n,a}f(x):=f(x)-T_{n,a}f(x).
 \]
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -115,10 +109,7 @@ or estimates for this error.
 % Definition --- Maclaurin Polynomial
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Maclaurin Polynomial)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Maclaurin Polynomial)}
 \begin{definition}[Maclaurin Polynomial]
 \label{def:maclaurin-polynomial}
 Let $n\in\mathbb{N}$, and let $f$ be defined on an interval containing
@@ -130,7 +121,7 @@ $0$ with derivatives $f^{(k)}(0)$ for $0\le k\le n$. The
   \sum_{k=0}^{n}\frac{f^{(k)}(0)}{k!}x^k.
 \]
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -157,10 +148,7 @@ the same construction.
 % Theorem --- Taylor's Theorem with Lagrange Remainder
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Theorem (Taylor's Theorem with Lagrange Remainder)}},
-  fonttitle=\small\bfseries]
+\begin{theorembox}{Theorem (Taylor's Theorem with Lagrange Remainder)}
 \begin{theorem}[Taylor's Theorem with Lagrange Remainder]
 \label{thm:taylor-theorem-lagrange-remainder}
 Let $a,b\in\mathbb{R}$ with $a<b$, let $n\in\mathbb{N}$, and let
@@ -179,7 +167,7 @@ $x\in(a,b)$, there exists $c$ strictly between $a$ and $x$ such that
 \noindent
 \hyperref[prf:taylor-theorem-lagrange-remainder]{\textit{Go to proof.}}
 \end{theorem}
-\end{tcolorbox}
+\end{theorembox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -219,10 +207,7 @@ the remainder.
 % Corollary --- Taylor Expansion with Peano Remainder
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=corbox, colframe=corborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Corollary (Taylor Expansion with Peano Remainder)}},
-  fonttitle=\small\bfseries]
+\begin{corollarybox}{Corollary (Taylor Expansion with Peano Remainder)}
 \begin{corollary}[Taylor Expansion with Peano Remainder]
 \label{cor:taylor-expansion-peano-remainder}
 Let $I\subseteq\mathbb{R}$ be an interval, let $a\in I$, let
@@ -241,7 +226,7 @@ $n$ in a neighbourhood of $a$. If $f^{(n)}$ is continuous at $a$, then
 \noindent
 \hyperref[prf:taylor-expansion-peano-remainder]{\textit{Go to proof.}}
 \end{corollary}
-\end{tcolorbox}
+\end{corollarybox}
 
 \begin{remark*}[Standard quantified statement]
 \[

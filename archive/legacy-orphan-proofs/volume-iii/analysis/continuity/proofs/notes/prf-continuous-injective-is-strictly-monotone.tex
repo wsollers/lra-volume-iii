@@ -11,13 +11,13 @@
 Let $f: [a,b] \to \mathbb{R}$ be continuous and injective. Then $f$ is strictly monotone.
 \end{theorem*}
 
-\begin{proof}
-\textbf{Professional Standard Proof.}~\\
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
 Suppose for contradiction that $f$ is not strictly monotone. Without loss of generality, assume $f(a) < f(b)$. Then there exist points $x < y < z$ in $[a,b]$ such that $f(y) > \max\{f(x), f(z)\}$ or $f(y) < \min\{f(x), f(z)\}$. Consider the first case. Choose $k$ such that $\max\{f(x), f(z)\} < k < f(y)$. By the Intermediate Value Theorem, there exists $c_1 \in (x, y)$ with $f(c_1) = k$ and $c_2 \in (y, z)$ with $f(c_2) = k$. Thus $c_1 \neq c_2$ but $f(c_1) = f(c_2)$, contradicting injectivity. The second case follows similarly.
 \end{proof}
 
-\begin{proof}
-\textbf{Detailed Learning Proof.}~\\
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
 
 \textbf{Step 1.} Assume for contradiction that $f$ is continuous, injective, but not strictly monotone. Without loss of generality, suppose $f(a) < f(b)$. The assumption that $f$ is not strictly monotone means there exist domain points whose relative ordering is not preserved by $f$.
 

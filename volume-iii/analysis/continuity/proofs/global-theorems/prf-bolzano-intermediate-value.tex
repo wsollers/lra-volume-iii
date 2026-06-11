@@ -11,13 +11,13 @@
 Let $I$ be an interval, let $f : I \to \mathbb{R}$ be continuous on $I$, let $a, b \in I$, and let $k \in \mathbb{R}$. If $f(a) < k < f(b)$ or $f(a) > k > f(b)$, then there exists $c$ between $a$ and $b$ such that $f(c) = k$.
 \end{theorem*}
 
-\begin{proof}
-\textbf{Professional Standard Proof.}~\\
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
 Without loss of generality assume $f(a) < k < f(b)$; the case $f(a) > k > f(b)$ follows by applying the same argument to $-f$, which is continuous whenever $f$ is. Define $g : I \to \mathbb{R}$ by $g(x) := f(x) - k$. Since $f$ is continuous on $I$ and $k$ is constant, the algebra of continuous functions gives that $g$ is continuous on $I$. Observe $g(a) = f(a) - k < 0$ and $g(b) = f(b) - k > 0$. Since $g$ is continuous on $I$ and $g(a) < 0 < g(b)$, the Location of Roots Theorem produces a point $c$ strictly between $a$ and $b$ such that $g(c) = 0$. Therefore $f(c) - k = 0$, which gives $f(c) = k$.
 \end{proof}
 
-\begin{proof}
-\textbf{Detailed Learning Proof.}~\\
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
 
 \textbf{Step 1.} Reduce to the case $f(a) < k < f(b)$. If instead $f(a) > k > f(b)$, apply the argument to the function $-f$. Since $f$ is continuous on $I$, the function $-f$ is also continuous on $I$. Moreover, $(-f)(a) = -f(a) < -k$ and $(-f)(b) = -f(b) > -k$, so $(-f)(a) < -k < (-f)(b)$. If the theorem holds for this case, then there exists $c$ between $a$ and $b$ such that $(-f)(c) = -k$, which means $f(c) = k$.
 

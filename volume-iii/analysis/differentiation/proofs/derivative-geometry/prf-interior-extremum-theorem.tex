@@ -11,8 +11,8 @@
 Let $I \subseteq \mathbb{R}$ be an open interval, let $f : I \to \mathbb{R}$, and let $c \in I$. If $f$ has a relative extremum at $c$ and is differentiable at $c$, then $f'(c) = 0$.
 \end{theorem*}
 
-\begin{proof}
-\textbf{Professional Standard Proof.}~\\
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
 Consider the case where $f$ has a relative maximum at $c$. By definition, there exists $\delta > 0$ such that $(c - \delta, c + \delta) \subseteq I$ and $f(x) - f(c) \leq 0$ for all $x \in (c - \delta, c + \delta)$.
 
 For $x \in (c, c + \delta)$, the quotient $\frac{f(x) - f(c)}{x - c} \leq 0$ since the numerator is nonpositive and the denominator is positive. By order preservation for limits, $f'_+(c) \leq 0$.
@@ -24,8 +24,8 @@ Since $f$ is differentiable at $c$, the one-sided derivatives exist and agree: $
 The case of a relative minimum follows by applying the argument to $-f$ at $c$.
 \end{proof}
 
-\begin{proof}
-\textbf{Detailed Learning Proof.}~\\
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
 
 \textbf{Step 1.} Establish the constraint from the relative maximum. Since $f$ has a relative maximum at $c$, by definition there exists $\delta > 0$ such that $(c - \delta, c + \delta) \subseteq I$ and $f(x) - f(c) \leq 0$ for all $x \in (c - \delta, c + \delta)$. This inequality means $f(c)$ is the largest value in the interval, so every other value satisfies $f(x) \leq f(c)$.
 

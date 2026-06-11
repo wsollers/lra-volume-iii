@@ -11,15 +11,15 @@
 Let $f \colon [a,b] \to \mathbb{R}$ be continuous on the closed bounded interval $[a,b]$. Then $f([a,b])$ is closed and bounded.
 \end{theorem*}
 
-\begin{proof}
-\textbf{Professional Standard Proof.}~\\
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
 The boundedness and closedness are established separately. For boundedness, the Boundedness Theorem implies there exists $M > 0$ such that $|f(x)| \leq M$ for all $x \in [a,b]$, so $f([a,b]) \subseteq [-M, M]$ is bounded.
 
 For closedness, let $(y_n)$ be a sequence in $f([a,b])$ converging to $y \in \mathbb{R}$. For each $n$, choose $x_n \in [a,b]$ such that $f(x_n) = y_n$. Since $(x_n)$ is bounded, the Bolzano--Weierstrass Theorem provides a subsequence $(x_{n_k})$ converging to some $c \in [a,b]$. By continuity of $f$ at $c$, $f(x_{n_k}) \to f(c)$. Since $f(x_{n_k}) = y_{n_k}$ and $y_{n_k} \to y$, uniqueness of limits gives $f(c) = y$. Therefore $y \in f([a,b])$.
 \end{proof}
 
-\begin{proof}
-\textbf{Detailed Learning Proof.}~\\
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
 
 \textbf{Step 1.} Establish boundedness of $f([a,b])$. Since $f$ is continuous on the closed bounded interval $[a,b]$, the Boundedness Theorem guarantees that $f$ is bounded on $[a,b]$. This means there exists $M > 0$ such that $|f(x)| \leq M$ for all $x \in [a,b]$. Therefore $f([a,b]) \subseteq [-M, M]$, establishing that $f([a,b])$ is bounded.
 

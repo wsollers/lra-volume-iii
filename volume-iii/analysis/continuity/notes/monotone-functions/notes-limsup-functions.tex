@@ -4,10 +4,10 @@
 % Volume III - Analysis
 % =========================================================
 
-\subsection{Limits Superior and Inferior of Functions}
+\subsection*{Limits Superior and Inferior of Functions}
 \label{sec:limsup-liminf-functions}
 
-\begin{tcolorbox}[title={Toolkit --- Limits Superior and Inferior of Functions}]
+\begin{toolkitbox}{Toolkit --- Limits Superior and Inferior of Functions}
 \begin{itemize}
   \item $\limsup_{x\to x_0}f(x)=\inf_{\delta>0}
     \sup\{f(x):0<|x-x_0|<\delta,\,x\in E\}$.
@@ -19,12 +19,9 @@
     $\{a_n:n\geq N\}$ with punctured neighbourhood
     $\{f(x):\operatorname{InputTolerance}(x,x_0,\delta)\}$.
 \end{itemize}
-\end{tcolorbox}
+\end{toolkitbox}
 
-\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Limits Superior and Inferior of a Function)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Limits Superior and Inferior of a Function)}
 \begin{definition}[Limits Superior and Inferior of a Function]
 \label{def:limsup-liminf-function}
 Let $f:E\to\mathbb{R}$ and let $x_0$ be an accumulation point of $E$. For each $\delta>0$ set
@@ -39,7 +36,7 @@ The extended real numbers $\limsup_{x\to x_0} f(x)$ and $\liminf_{x\to x_0} f(x)
 \]
 where each inner supremum or infimum is taken in $\overline{\mathbb{R}}$ and the outer infimum or supremum ranges over all $\delta>0$.
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[

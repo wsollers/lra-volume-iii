@@ -11,13 +11,13 @@
 Let $f : [a,b] \to \mathbb{R}$ be continuous. For every $k$ with $\inf f([a,b]) \leq k \leq \sup f([a,b])$, there exists $c \in [a,b]$ such that $f(c) = k$.
 \end{theorem*}
 
-\begin{proof}
-\textbf{Professional Standard Proof.}~\\
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
 The Extreme Value Theorem provides points $x_m, x_M \in [a,b]$ such that $f(x_m) = m := \inf f([a,b])$ and $f(x_M) = M := \sup f([a,b])$. For given $k$ with $m \leq k \leq M$, define $g(x) := f(x) - k$. Then $g$ is continuous on $J := [\min(x_m, x_M), \max(x_m, x_M)] \subseteq [a,b]$ with $g(x_m) = m - k \leq 0$ and $g(x_M) = M - k \geq 0$. If $g(x_m) = 0$, set $c := x_m$. If $g(x_M) = 0$, set $c := x_M$. If $g(x_m) < 0 < g(x_M)$, the Location of Roots Theorem applied to $g$ on $J$ produces $c$ with $g(c) = 0$. In all cases, $f(c) = k$.
 \end{proof}
 
-\begin{proof}
-\textbf{Detailed Learning Proof.}~\\
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
 
 \textbf{Step 1.} Apply the Extreme Value Theorem to obtain extrema witnesses. Since $[a,b]$ is a closed bounded interval and $f$ is continuous on $[a,b]$, the Extreme Value Theorem guarantees the existence of points $x_m, x_M \in [a,b]$ such that $f(x_m) = m := \inf f([a,b])$ and $f(x_M) = M := \sup f([a,b])$. These points witness where $f$ attains its minimum and maximum values on the interval.
 

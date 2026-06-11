@@ -11,8 +11,8 @@
 Let $I \subseteq \mathbb{R}$ be an interval, let $f : I \to \mathbb{R}$, let $c \in I$, and suppose $f$ is differentiable at $c$. If $f'(c) > 0$, then there exists $\delta > 0$ such that $f(x) < f(c)$ for all $x \in I$ with $c - \delta < x < c$, and $f(x) > f(c)$ for all $x \in I$ with $c < x < c + \delta$.
 \end{theorem*}
 
-\begin{proof}
-\textbf{Professional Standard Proof.}~\\
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
 Set $\varepsilon = f'(c)/2 > 0$. By differentiability of $f$ at $c$, there exists $\delta > 0$ such that for all $x \in I$ with $0 < |x-c| < \delta$,
 \[
 \left|\frac{f(x)-f(c)}{x-c} - f'(c)\right| < \varepsilon = \frac{f'(c)}{2}.
@@ -20,8 +20,8 @@ Set $\varepsilon = f'(c)/2 > 0$. By differentiability of $f$ at $c$, there exist
 This gives $\frac{f(x)-f(c)}{x-c} > f'(c) - \varepsilon = \frac{f'(c)}{2} > 0$ for all such $x$. For $x \in (c, c+\delta)$, the denominator $x - c > 0$, so $f(x) - f(c) > 0$. For $x \in (c-\delta, c)$, the denominator $x - c < 0$, so $f(x) - f(c) < 0$.
 \end{proof}
 
-\begin{proof}
-\textbf{Detailed Learning Proof.}~\\
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
 
 \textbf{Step 1.} Choose $\varepsilon$ to control the sign of the difference quotient. Since $f'(c) > 0$, set $\varepsilon := f'(c)/2$. Then $\varepsilon > 0$ and $f'(c) - \varepsilon = f'(c)/2 > 0$.
 

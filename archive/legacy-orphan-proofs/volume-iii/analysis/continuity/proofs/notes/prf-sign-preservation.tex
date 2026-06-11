@@ -15,13 +15,13 @@ Analogously, if $f(x_0) < 0$, then there exists $\delta > 0$ such that
 $f(x) < 0$ for all $x \in E$ with $|x - x_0| < \delta$.
 \end{theorem*}
 
-\begin{proof}
-\textbf{Professional Standard Proof.}~\\
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
 Without loss of generality, assume $f(x_0) \neq 0$. Set $\varepsilon_0 := |f(x_0)| > 0$. Since $f$ is continuous at $x_0$, there exists $\delta > 0$ such that for all $x \in E$ with $|x - x_0| < \delta$, one has $|f(x) - f(x_0)| < \varepsilon_0 = |f(x_0)|$. This yields $f(x_0) - |f(x_0)| < f(x) < f(x_0) + |f(x_0)|$ for all such $x$. If $f(x_0) > 0$, then $|f(x_0)| = f(x_0)$, so $f(x) > f(x_0) - f(x_0) = 0$. If $f(x_0) < 0$, then $|f(x_0)| = -f(x_0)$, so $f(x) < f(x_0) + (-f(x_0)) = 0$. The same $\delta$ works for both cases.
 \end{proof}
 
-\begin{proof}
-\textbf{Detailed Learning Proof.}~\\
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
 
 \textbf{Step 1.} Set up the continuity framework. Since $f(x_0) \neq 0$, define $\varepsilon_0 := |f(x_0)| > 0$. This choice works uniformly for both positive and negative values of $f(x_0)$.
 

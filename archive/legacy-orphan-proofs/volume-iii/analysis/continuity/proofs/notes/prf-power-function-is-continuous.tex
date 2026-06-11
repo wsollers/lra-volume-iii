@@ -11,13 +11,13 @@
 Let $f : \mathbb{R} \to \mathbb{R}$ be defined by $f(x) = x^n$ for some $n \in \mathbb{N}$. Then $f$ is a continuous function.
 \end{theorem*}
 
-\begin{proof}
-\textbf{Professional Standard Proof.}~\\
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
 The proof proceeds by induction on $n$. For the base case $n = 1$, let $x_0 \in \mathbb{R}$ and $\varepsilon > 0$. Setting $\delta := \varepsilon$, one has $|x - x_0| < \delta \Rightarrow |f(x) - f(x_0)| = |x - x_0| < \varepsilon$, establishing continuity of $f(x) = x$. For the inductive step, assume $g(x) = x^n$ is continuous. Then $x^{n+1} = x^n \cdot x = g(x) \cdot \mathrm{id}(x)$ where both $g$ and $\mathrm{id}$ are continuous. By the Product Rule for Continuous Functions, their pointwise product $f(x) = x^{n+1}$ is continuous. By induction, $f(x) = x^n$ is continuous for all $n \in \mathbb{N}$.
 \end{proof}
 
-\begin{proof}
-\textbf{Detailed Learning Proof.}~\\
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
 
 \textbf{Step 1.} Establish the base case $n = 1$. Let $x_0 \in \mathbb{R}$ and let $\varepsilon > 0$. Set $\delta := \varepsilon$. For any $x \in \mathbb{R}$ satisfying $|x - x_0| < \delta$, one has $|f(x) - f(x_0)| = |x - x_0| < \delta = \varepsilon$. This verifies the $\varepsilon$-$\delta$ definition of continuity at $x_0$, so $f(x) = x$ is continuous.
 

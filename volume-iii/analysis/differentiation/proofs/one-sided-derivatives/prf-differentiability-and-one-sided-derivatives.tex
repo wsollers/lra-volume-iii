@@ -11,15 +11,15 @@
 Let $I \subseteq \mathbb{R}$ be an open interval and let $f : I \to \mathbb{R}$. Fix $c \in I$. Then $f$ is differentiable at $c$ if and only if both one-sided derivatives $f'_-(c)$ and $f'_+(c)$ exist and are equal, in which case $f'(c) = f'_-(c) = f'_+(c)$.
 \end{theorem*}
 
-\begin{proof}
-\textbf{Professional Standard Proof.}~\\
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
 ($\Rightarrow$) If $f$ is differentiable at $c$, then by definition the two-sided limit $\lim_{x \to c} \frac{f(x) - f(c)}{x - c} = f'(c)$ exists. By the characterization of two-sided limits in terms of one-sided limits, both $f'_-(c)$ and $f'_+(c)$ exist and equal $f'(c)$.
 
 ($\Leftarrow$) If both $f'_-(c)$ and $f'_+(c)$ exist and equal some $L \in \mathbb{R}$, then both one-sided limits of the difference quotient exist and equal $L$. By the characterization of two-sided limits, the two-sided limit $\lim_{x \to c} \frac{f(x) - f(c)}{x - c} = L$ exists, so $f$ is differentiable at $c$ with $f'(c) = L$.
 \end{proof}
 
-\begin{proof}
-\textbf{Detailed Learning Proof.}~\\
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
 
 \textbf{Step 1.} Establish the forward implication: differentiability implies equal one-sided derivatives.
 

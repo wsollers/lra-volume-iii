@@ -11,13 +11,13 @@
 If $f \colon S \to \mathbb{R}$ is Lipschitz continuous, then $f$ is uniformly continuous on $S$.
 \end{theorem*}
 
-\begin{proof}
-\textbf{Professional Standard Proof.}~\\
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
 Since $f$ is Lipschitz continuous, there exists $K > 0$ such that $|f(x) - f(y)| \leq K|x - y|$ for all $x, y \in S$. Let $\varepsilon > 0$ be given. Set $\delta := \varepsilon / K > 0$. For any $x, y \in S$ with $|x - y| < \delta$, the Lipschitz condition yields $|f(x) - f(y)| \leq K|x - y| < K \cdot (\varepsilon/K) = \varepsilon$. Since $\delta$ depends only on $\varepsilon$ and $K$, the function $f$ is uniformly continuous on $S$.
 \end{proof}
 
-\begin{proof}
-\textbf{Detailed Learning Proof.}~\\
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
 
 \textbf{Step 1.} Extract the Lipschitz constant. Since $f$ is Lipschitz continuous on $S$, there exists a constant $K > 0$ such that $|f(x) - f(y)| \leq K|x - y|$ for all $x, y \in S$. This global bound controls the rate of change of $f$ everywhere on $S$.
 

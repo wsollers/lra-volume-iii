@@ -11,8 +11,8 @@
 Let $E \subseteq \mathbb{R}$, $f : E \to \mathbb{R}$, $x_0 \in E$. The $\varepsilon$-$\delta$, sequential, and neighbourhood formulations of discontinuity at $x_0$ are mutually equivalent.
 \end{theorem*}
 
-\begin{proof}
-\textbf{Professional Standard Proof.}~\\
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
 Let $E \subseteq \mathbb{R}$, $f : E \to \mathbb{R}$, and $x_0 \in E$. The three formulations are:
 \begin{enumerate}[label=\textup{(\roman*)}]
 \item $\varepsilon$-$\delta$ discontinuity: $\exists \varepsilon_0>0\;\forall \delta>0\;\exists x\in E: |x-x_0|<\delta \wedge |f(x)-f(x_0)|\ge \varepsilon_0$
@@ -27,8 +27,8 @@ For (ii)$\Rightarrow$(i): Given sequence $(x_n) \subseteq E$ with $x_n\to x_0$ a
 For (i)$\Leftrightarrow$(iii): Set $V=(f(x_0)-\varepsilon_0, f(x_0)+\varepsilon_0)$ and $U=(x_0-\delta, x_0+\delta)$. The condition $|f(x)-f(x_0)|\ge \varepsilon_0$ is equivalent to $f(x)\notin V$, establishing the equivalence.
 \end{proof}
 
-\begin{proof}
-\textbf{Detailed Learning Proof.}~\\
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
 
 \textbf{Step 1.} Establish the three equivalent formulations of discontinuity at $x_0$.
 The $\varepsilon$-$\delta$ formulation states there exists a fixed $\varepsilon_0>0$ such that for every $\delta>0$, some point $x \in E$ within distance $\delta$ of $x_0$ has $|f(x)-f(x_0)|\ge \varepsilon_0$. The sequential formulation requires a sequence in $E$ converging to $x_0$ whose image under $f$ fails to converge to $f(x_0)$. The neighbourhood formulation uses open sets: there exists a neighbourhood $V$ of $f(x_0)$ such that every neighbourhood $U$ of $x_0$ contains a point $x \in E$ with $f(x)\notin V$.

@@ -11,13 +11,13 @@
 Let $I := [a,b] \subseteq \mathbb{R}$, and let $f, g : I \to \mathbb{R}$ be continuous on $I$ and differentiable on $(a,b)$. If $f'(x) = g'(x)$ for all $x \in (a,b)$, then there exists $C \in \mathbb{R}$ such that $f(x) = g(x) + C$ for all $x \in I$.
 \end{theorem*}
 
-\begin{proof}
-\textbf{Professional Standard Proof.}~\\
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
 Define $h := f - g$. Then $h$ is continuous on $I$ and differentiable on $(a,b)$, with $h'(x) = f'(x) - g'(x) = 0$ for all $x \in (a,b)$. By the Zero Derivative Implies Constant theorem, $h$ is constant on $I$: there exists $C \in \mathbb{R}$ with $h(x) = C$ for all $x \in I$. Therefore $f(x) = g(x) + C$.
 \end{proof}
 
-\begin{proof}
-\textbf{Detailed Learning Proof.}~\\
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
 
 \textbf{Step 1.} Define the auxiliary function. Set $h := f - g$. Since $f$ and $g$ are both continuous on $I$ and differentiable on $(a,b)$, so is $h$.
 

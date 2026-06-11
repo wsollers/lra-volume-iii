@@ -11,15 +11,15 @@
 Let $A \subseteq \mathbb{R}$ and $f : A \to \mathbb{R}$. Then $f$ is not uniformly continuous on $A$ if and only if there exist $\varepsilon_0 > 0$ and sequences $(x_n)$, $(u_n)$ in $A$ such that $\lim(x_n - u_n) = 0$ and $|f(x_n) - f(u_n)| \geq \varepsilon_0$ for all $n \in \mathbb{N}$.
 \end{theorem*}
 
-\begin{proof}
-\textbf{Professional Standard Proof.}~\\
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
 $(\Rightarrow)$ If $f$ is not uniformly continuous, then there exists $\varepsilon_0 > 0$ such that for every $\delta > 0$, there exist $x, u \in A$ with $|x - u| < \delta$ and $|f(x) - f(u)| \geq \varepsilon_0$. For each $n \in \mathbb{N}$, choose $\delta = 1/n$ to obtain $x_n, u_n \in A$ with $|x_n - u_n| < 1/n$ and $|f(x_n) - f(u_n)| \geq \varepsilon_0$. The Squeeze Theorem gives $\lim(x_n - u_n) = 0$.
 
 $(\Leftarrow)$ Suppose such sequences exist and $f$ is uniformly continuous. Then for this $\varepsilon_0 > 0$, there exists $\delta > 0$ such that $|x - u| < \delta$ implies $|f(x) - f(u)| < \varepsilon_0$ for all $x, u \in A$. Since $\lim(x_n - u_n) = 0$, there exists $N$ with $|x_N - u_N| < \delta$, giving $|f(x_N) - f(u_N)| < \varepsilon_0$. This contradicts $|f(x_n) - f(u_n)| \geq \varepsilon_0$ for all $n$.
 \end{proof}
 
-\begin{proof}
-\textbf{Detailed Learning Proof.}~\\
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
 
 \textbf{Step 1.} Establish the forward direction. Assume $f$ is not uniformly continuous on $A$. By negating the definition of uniform continuity, there exists some $\varepsilon_0 > 0$ such that for every $\delta > 0$, no matter how small, there exist points $x, u \in A$ with $|x - u| < \delta$ but $|f(x) - f(u)| \geq \varepsilon_0$. This means the uniform bound fails at arbitrarily small scales.
 

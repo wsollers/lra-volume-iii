@@ -11,13 +11,13 @@
 If $f \colon S \to \mathbb{R}$ is uniformly continuous and $(x_{n})$ is a Cauchy sequence in $S$, then $(f(x_{n}))$ is a Cauchy sequence in $\mathbb{R}$.
 \end{theorem*}
 
-\begin{proof}
-\textbf{Professional Standard Proof.}~\\
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
 Let $\varepsilon > 0$ be given. By uniform continuity of $f$ on $S$, there exists $\delta > 0$ such that for all $x, y \in S$ with $|x - y| < \delta$, one has $|f(x) - f(y)| < \varepsilon$. Since $(x_{n})$ is Cauchy, there exists $N \in \mathbb{N}$ such that for all $m, n \geq N$, one has $|x_{m} - x_{n}| < \delta$. For such $m, n$, uniform continuity yields $|f(x_{m}) - f(x_{n})| < \varepsilon$. Since $\varepsilon > 0$ was arbitrary, $(f(x_{n}))$ is Cauchy.
 \end{proof}
 
-\begin{proof}
-\textbf{Detailed Learning Proof.}~\\
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
 
 \textbf{Step 1.} Apply uniform continuity to convert the target tolerance into a domain distance constraint. Given $\varepsilon > 0$, uniform continuity of $f$ on $S$ provides $\delta > 0$ such that whenever $x, y \in S$ satisfy $|x - y| < \delta$, the image points satisfy $|f(x) - f(y)| < \varepsilon$. This establishes the connection between domain proximity and image proximity at the required tolerance level.
 

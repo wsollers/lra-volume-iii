@@ -11,8 +11,8 @@
 Let $I \subseteq \mathbb{R}$ be an open interval, let $f : I \to \mathbb{R}$, and let $c \in I$. Then $f$ is differentiable at $c$ if and only if there exists a function $\varphi : I \to \mathbb{R}$, continuous at $c$, satisfying $f(x) - f(c) = \varphi(x)(x - c)$ for all $x \in I$, in which case $\varphi(c) = f'(c)$.
 \end{theorem*}
 
-\begin{proof}
-\textbf{Professional Standard Proof.}~\\
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
 $(\Rightarrow)$ Assume $f$ is differentiable at $c$. Define $\varphi : I \to \mathbb{R}$ by
 \[
   \varphi(x) :=
@@ -26,8 +26,8 @@ For $x \neq c$, multiplying by $(x-c)$ gives $f(x) - f(c) = \varphi(x)(x-c)$. Fo
 $(\Leftarrow)$ Assume $\varphi : I \to \mathbb{R}$ is continuous at $c$ with $f(x) - f(c) = \varphi(x)(x-c)$ for all $x \in I$. For $x \neq c$, dividing by $(x-c)$ gives $\frac{f(x) - f(c)}{x - c} = \varphi(x)$. By continuity of $\varphi$ at $c$, $\lim_{x \to c} \frac{f(x) - f(c)}{x - c} = \varphi(c)$. Therefore $f$ is differentiable at $c$ with $f'(c) = \varphi(c)$.
 \end{proof}
 
-\begin{proof}
-\textbf{Detailed Learning Proof.}~\\
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
 
 \textbf{Step 1.} Establish the forward direction by constructing the required function. Assume $f$ is differentiable at $c$. Define $\varphi : I \to \mathbb{R}$ by
 \[

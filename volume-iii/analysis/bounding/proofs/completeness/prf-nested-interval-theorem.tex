@@ -11,13 +11,13 @@
 Let $I_n = [a_n, b_n]$ be a sequence of non-empty closed bounded intervals such that $I_{n+1} \subseteq I_n$. Then $\bigcap_{n=1}^\infty I_n \neq \varnothing$.
 \end{theorem*}
 
-\begin{proof}
-\textbf{Professional Standard Proof.}~\\
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
 Since $I_{n+1} \subseteq I_n$, the sequence of endpoints satisfies $a_n \le a_{n+1} \le b_{n+1} \le b_n$. Thus, $(a_n)$ is monotone increasing and bounded above by $b_1$. By the Monotone Convergence Theorem, $a_n \to x$ where $x = \sup \{a_n\}$. For any fixed $k$, $a_n \le b_k$ for all $n$ (since if $n > k$, $a_n \le b_n \le b_k$, and if $n \le k$, $a_n \le a_k \le b_k$). Thus, $x = \sup \{a_n\} \le b_k$ for all $k$. Since $a_k \le x$ for all $k$, we have $a_k \le x \le b_k$, implying $x \in I_k$ for all $k \in \mathbb{N}$. Thus $x \in \bigcap I_n$.
 \end{proof}
 
-\begin{proof}
-\textbf{Detailed Learning Proof.}~\\
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
 
 \textbf{Step 1. Analyze the endpoints of the nested intervals.}
 By the definition of nesting, $[a_{n+1}, b_{n+1}] \subseteq [a_n, b_n]$. This implies the following ordering:

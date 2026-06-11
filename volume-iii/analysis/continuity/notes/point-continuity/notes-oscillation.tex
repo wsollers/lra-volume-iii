@@ -4,10 +4,10 @@
 % Volume III - Analysis
 % =========================================================
 
-\subsection{Oscillation}
+\subsection*{Oscillation}
 \label{sec:oscillation}
 
-\begin{tcolorbox}[title={Toolkit --- Oscillation}]
+\begin{toolkitbox}{Toolkit --- Oscillation}
 \begin{itemize}
   \item $\operatorname{OscillationOn}(f,E,\omega)$:
     $\omega(f;E)=\sup_{x_1,x_2\in E}|f(x_1)-f(x_2)|=\operatorname{diam}(f(E))$.
@@ -20,16 +20,13 @@
     \bigcup_{n=1}^\infty\{x:\omega(f;x)\geq 1/n\}$.
   \item Each threshold set is closed; $D(f)$ is $F_\sigma$.
 \end{itemize}
-\end{tcolorbox}
+\end{toolkitbox}
 
 % ---------------------------------------------------------
 % Definition --- Oscillation on a Set
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Oscillation on a Set)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Oscillation on a Set)}
 \begin{definition}[Oscillation on a Set]
 \label{def:oscillation-on-a-set}
 Let $A\subseteq\mathbb{R}$, let $f:A\to\mathbb{R}$, and let
@@ -40,7 +37,7 @@ $E\subseteq A$. The oscillation of $f$ on $E$ is the extended real number
 =\mathrm{diam}(f(E)).
 \]
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -107,10 +104,7 @@ close together. Zero oscillation means $f$ is constant on $E$.
 % Definition --- Oscillation at a Point
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Oscillation at a Point)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Oscillation at a Point)}
 \begin{definition}[Oscillation at a Point]
 \label{def:oscillation-at-a-point}
 Let $E \subseteq \mathbb{R}$, let $f:E \to \mathbb{R}$, and let $x_0 \in \mathbb{R}$ satisfy $U_\delta(x_0)\cap E \neq \varnothing$ for every $\delta>0$, where $U_\delta(x_0)=\{x \in \mathbb{R}: |x-x_0|<\delta\}$. The oscillation of $f$ at $x_0$ is the extended real number
@@ -122,7 +116,7 @@ Let $E \subseteq \mathbb{R}$, let $f:E \to \mathbb{R}$, and let $x_0 \in \mathbb
 \]
 with $\omega(f;A)$ denoting the oscillation of $f$ on the set $A$. Because the function $\delta \mapsto \omega\bigl(f;\,U_\delta(x_0)\cap E\bigr)$ is nonincreasing, this right-hand limit exists (possibly $+\infty$).
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -193,16 +187,13 @@ Oscillation at $x_0$ measures the largest possible jump in function values that 
 % Theorem --- Continuity iff Zero Oscillation
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Theorem (Continuity Characterised by Oscillation)}},
-  fonttitle=\small\bfseries]
+\begin{theorembox}{Theorem (Continuity Characterised by Oscillation)}
 \begin{theorem}[Continuity Characterised by Oscillation]
 \label{thm:continuity-iff-zero-oscillation}
 Let $A \subseteq \mathbb{R}$, let $f \colon A \to \mathbb{R}$, and let $c \in A$. Then $f$ is continuous at $c$ if and only if $\omega(f;c)=0$.
 \hyperref[prf:continuity-iff-zero-oscillation]{Go to proof.}
 \end{theorem}
-\end{tcolorbox}
+\end{theorembox}
 
 \begin{remark*}[Standard quantified statement]
 \[

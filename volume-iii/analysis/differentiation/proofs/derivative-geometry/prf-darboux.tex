@@ -11,13 +11,13 @@
 Let $I := [a,b] \subseteq \mathbb{R}$ and let $f : I \to \mathbb{R}$ be differentiable on $I$. If $k$ is a real number strictly between $f'(a)$ and $f'(b)$, then there exists $c \in (a,b)$ such that $f'(c) = k$.
 \end{theorem*}
 
-\begin{proof}
-\textbf{Professional Standard Proof.}~\\
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
 Without loss of generality assume $f'(a) < k < f'(b)$. Define $g(x) := f(x) - kx$. Then $g$ is continuous on $[a,b]$, differentiable on $[a,b]$, and $g'(x) = f'(x) - k$. In particular $g'(a) = f'(a) - k < 0$ and $g'(b) = f'(b) - k > 0$. By the Extreme Value Theorem, $g$ attains its minimum on $[a,b]$ at some point $c$. Since $g'(a) < 0$, the Negative Derivative Locally Decreasing lemma gives points $x > a$ near $a$ with $g(x) < g(a)$, so $c \neq a$. Since $g'(b) > 0$, the Positive Derivative Locally Increasing lemma gives points $x < b$ near $b$ with $g(x) < g(b)$, so $c \neq b$. Therefore $c \in (a,b)$, and the Interior Extremum Theorem gives $g'(c) = 0$, i.e.\ $f'(c) = k$.
 \end{proof}
 
-\begin{proof}
-\textbf{Detailed Learning Proof.}~\\
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
 
 \textbf{Step 1.} Reduce to the case $f'(a) < k < f'(b)$. If $f'(a) > k > f'(b)$, apply the argument to $-f$ (whose derivative satisfies $(-f)'(a) = -f'(a) < -k < -f'(b) = (-f)'(b)$) and note that a zero of $(-f)' + k$ is a zero of $f' - k$. Henceforth assume $f'(a) < k < f'(b)$.
 

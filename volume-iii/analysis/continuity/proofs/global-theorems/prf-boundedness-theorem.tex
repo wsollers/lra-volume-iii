@@ -11,13 +11,13 @@
 Every function continuous on a closed bounded interval $[a,b]$ is bounded on $[a,b]$.
 \end{theorem*}
 
-\begin{proof}
-\textbf{Professional Standard Proof.}~\\
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
 Let $I = [a,b]$ be a closed bounded interval and let $f : I \to \mathbb{R}$ be continuous on $I$. Suppose for contradiction that $f$ is not bounded on $I$. For each $n \in \mathbb{N}$, choose $x_n \in I$ such that $|f(x_n)| > n$. The sequence $(x_n) \subseteq [a,b]$ is bounded, so by the Bolzano--Weierstrass Theorem, it has a convergent subsequence $x_{n_k} \to x^*$ for some $x^* \in \mathbb{R}$. Since $I$ is closed and each $x_{n_k} \in I$, we have $x^* \in I$. By continuity of $f$ at $x^*$, we have $f(x_{n_k}) \to f(x^*)$, so $(f(x_{n_k}))$ is bounded. But $|f(x_{n_k})| > n_k \geq k$ for all $k \in \mathbb{N}$, so $(f(x_{n_k}))$ is unbounded. This contradiction establishes that $f$ is bounded on $I$.
 \end{proof}
 
-\begin{proof}
-\textbf{Detailed Learning Proof.}~\\
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
 
 \textbf{Step 1.} Assume for contradiction that $f$ is unbounded on $I = [a,b]$. This means that for each positive integer $n$, the set $\{x \in I : |f(x)| > n\}$ is nonempty. Therefore, for each $n \in \mathbb{N}$, there exists $x_n \in I$ such that $|f(x_n)| > n$. This constructs a sequence $(x_n)$ in $I$ with the property that the function values $f(x_n)$ grow without bound.
 

@@ -17,8 +17,8 @@ Let $I \subseteq \mathbb{R}$ be an open interval and let $f, g : I \to \mathbb{R
 \end{enumerate}
 \end{theorem*}
 
-\begin{proof}
-\textbf{Professional Standard Proof.}~\\
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
 Each result follows by pointwise application of the corresponding differentiation rule at arbitrary points $c \in I$.
 
 \textbf{Constant Multiple Rule:} Let $h := \alpha f$ and fix $c \in I$. Since $f$ is differentiable at $c$, the pointwise Constant Multiple Rule gives $h'(c) = \alpha f'(c)$. Since $c \in I$ was arbitrary, $h' = \alpha f'$ on $I$.
@@ -30,8 +30,8 @@ Each result follows by pointwise application of the corresponding differentiatio
 \textbf{Quotient Rule:} Let $h := f/g$ and fix $c \in I$. Since $g(c) \neq 0$ and $f, g$ are differentiable at $c$, the pointwise Quotient Rule gives $h'(c) = (f'(c)g(c) - f(c)g'(c))/(g(c))^2$. Since $c \in I$ was arbitrary and $g(x) \neq 0$ on all of $I$, $h' = (f'g - fg')/g^2$ on $I$.
 \end{proof}
 
-\begin{proof}
-\textbf{Detailed Learning Proof.}~\\
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
 
 \textbf{Step 1.} Establish the universal strategy. Each global differentiation rule is obtained by applying the corresponding pointwise rule at an arbitrary point $c \in I$ and concluding the function identity holds on the entire interval $I$.
 

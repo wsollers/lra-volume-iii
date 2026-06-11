@@ -4,10 +4,10 @@
 % Volume III - Analysis
 % =========================================================
 
-\subsection{Gauges and Tagged Partitions}
+\subsection*{Gauges and Tagged Partitions}
 \label{sec:gauges-tagged-partitions}
 
-\begin{tcolorbox}[title={Toolkit --- Gauges and Tagged Partitions}]
+\begin{toolkitbox}{Toolkit --- Gauges and Tagged Partitions}
 \begin{itemize}
   \item A \textbf{gauge} $\delta:I\to(0,\infty)$ is a variable-width
     tolerance function allowing the mesh to depend on position.
@@ -21,21 +21,18 @@
     Heine--Cantor directly construct the required constants from a
     $\delta$-fine partition.
 \end{itemize}
-\end{tcolorbox}
+\end{toolkitbox}
 
 % ---------------------------------------------------------
 % Definition --- Partition
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Partition)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Partition)}
 \begin{definition}[Partition]
 \label{def:partition}
 Let $a<b$ and set $I=[a,b]$. A finite ordered set $P=\{x_0,\ldots,x_n\}$ with $n\in\mathbb{N}$ and $n\ge 1$ is a partition of $I$ if and only if $x_0=a$, $x_n=b$, and $x_0<x_1<\cdots<x_n$. In this case the closed subintervals $[x_{i-1},x_i]$ for $i=1,\ldots,n$ subdivide $I$.
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -99,15 +96,12 @@ A partition records the finite list of nodes that slice a closed interval into a
 % Definition --- Tagged Partition
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Tagged Partition)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Tagged Partition)}
 \begin{definition}[Tagged Partition]
 \label{def:tagged-partition}
 Let $a,b \in \mathbb{R}$ with $a < b$. A list $\dot{\mathcal{P}}=\{([x_{i-1},x_i],t_i)\}_{i=1}^n$ is a tagged partition of $[a,b]$ if and only if the subintervals determine a partition $P=\{[x_{i-1},x_i]\}_{i=1}^n$ of $[a,b]$ with $a=x_0 < x_1 < \cdots < x_n=b$, and each tag satisfies $t_i \in [x_{i-1},x_i]$ for $i=1,\ldots,n$. Equivalently, a tagged partition is exactly a partition $P$ of $[a,b]$ together with one tag chosen inside every subinterval of $P$.
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -179,15 +173,12 @@ A tagged partition augments the usual subdivision of a closed interval by select
 % Definition --- Gauge
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Gauge)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Gauge)}
 \begin{definition}[Gauge]
 \label{def:gauge}
 Let $a,b \in \mathbb{R}$ with $a<b$ and set $I=[a,b]$. A gauge on $I$ is a function $\delta:I\to(0,\infty)$.
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -250,15 +241,12 @@ A gauge assigns to each point of the closed interval a positive radius, encoding
 % Definition --- delta-fine Partition
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition ($\delta$-Fine Partition)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition ($\delta$-Fine Partition)}
 \begin{definition}[$\delta$-Fine Partition]
 \label{def:delta-fine-partition}
 Let $[a,b]$ be a closed interval, let $\delta:[a,b]\to(0,\infty)$ be a gauge, and let $\dot{\mathcal{P}}=\{([x_{i-1},x_i],t_i)\}_{i=1}^n$ be a tagged partition of $[a,b]$. The tagged partition $\dot{\mathcal{P}}$ is $\delta$-fine if and only if for every $i \in \{1,\dots,n\}$ and every $x \in [x_{i-1},x_i]$ the inequality $|x-t_i|<\delta(t_i)$ holds.
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -341,17 +329,14 @@ A $\delta$-fine tagged partition matches each subinterval to a tag that lies ins
 % Theorem --- Cousin's Theorem
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Theorem (Cousin's Theorem)}},
-  fonttitle=\small\bfseries]
+\begin{theorembox}{Theorem (Cousin's Theorem)}
 \begin{theorem}[Cousin's Theorem]
 \label{thm:cousins-theorem}
 Every gauge $\delta:[a,b]\to(0,\infty)$ on a closed interval $[a,b]$
 admits a $\delta$-fine tagged partition of $[a,b]$.
 \hyperref[prf:cousins-theorem]{Go to proof.}
 \end{theorem}
-\end{tcolorbox}
+\end{theorembox}
 
 \begin{remark*}[Standard quantified statement]
 \[

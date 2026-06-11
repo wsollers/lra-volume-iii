@@ -1,4 +1,4 @@
-\subsection{Applications of Sequences}
+\subsection*{Applications of Sequences}
 
 \begin{tcolorbox}[colback=gray!8, colframe=gray!40, title=\textbf{Sequence Applications Toolkit}]
 \textbf{Concept family:} Numerical approximation by explicitly defined
@@ -30,10 +30,7 @@ numbers by finite decimals.
 % Definition --- Newton Sequence for sqrt(2)
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Newton Sequence for $\sqrt{2}$)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Newton Sequence for $\sqrt{2}$)}
 \begin{definition}[Newton Sequence for $\sqrt{2}$]
 \label{def:newton-sequence-sqrt-two}
 The \textbf{Newton sequence for} $\sqrt{2}$ is the real sequence $(x_n)$
@@ -45,7 +42,7 @@ defined by
   \quad\text{for every } n\in\mathbb{N}.
 \]
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -75,10 +72,7 @@ Each new term averages the current estimate with the correction $2/x_n$.
 % Theorem --- Newton Approximation of sqrt(2)
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Theorem (Newton Approximation of $\sqrt{2}$)}},
-  fonttitle=\small\bfseries]
+\begin{theorembox}{Theorem (Newton Approximation of $\sqrt{2}$)}
 \begin{theorem}[Newton Approximation of $\sqrt{2}$]
 \label{thm:newton-approximation-sqrt-two}
 Let $(x_n)$ be the Newton sequence for $\sqrt{2}$. Then $(x_n)$ converges
@@ -91,7 +85,7 @@ and
 \noindent
 \hyperref[prf:newton-approximation-sqrt-two]{\textit{Go to proof.}}
 \end{theorem}
-\end{tcolorbox}
+\end{theorembox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -125,10 +119,7 @@ to the limit identifies the limit as the positive solution of $L^2=2$.
 % Definition --- Factorial Partial Sums
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Factorial Partial Sums)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Factorial Partial Sums)}
 \begin{definition}[Factorial Partial Sums]
 \label{def:factorial-partial-sums}
 The \textbf{factorial partial-sum sequence} is the real sequence $(s_n)$
@@ -138,7 +129,7 @@ defined by
   \qquad\text{for every } n\in\mathbb{N}.
 \]
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -164,10 +155,7 @@ decrease very rapidly, so the partial sums stabilize quickly.
 % Theorem --- Factorial Partial Sums Approximate e
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Theorem (Factorial Partial Sums Approximate $e$)}},
-  fonttitle=\small\bfseries]
+\begin{theorembox}{Theorem (Factorial Partial Sums Approximate $e$)}
 \begin{theorem}[Factorial Partial Sums Approximate $e$]
 \label{thm:factorial-partial-sums-approximate-e}
 Let $(s_n)$ be the factorial partial-sum sequence. Then $(s_n)$ converges
@@ -180,7 +168,7 @@ to the Euler number $e$:
 \noindent
 \hyperref[prf:factorial-partial-sums-approximate-e]{\textit{Go to proof.}}
 \end{theorem}
-\end{tcolorbox}
+\end{theorembox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -213,10 +201,7 @@ controlled by a rapidly shrinking factorial tail.
 % Definition --- Compound-Interest Sequence
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Compound-Interest Sequence)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Compound-Interest Sequence)}
 \begin{definition}[Compound-Interest Sequence]
 \label{def:compound-interest-sequence}
 The \textbf{compound-interest sequence} is the real sequence $(c_n)$
@@ -226,7 +211,7 @@ defined by
   \qquad\text{for every } n\in\mathbb{N}.
 \]
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -252,10 +237,7 @@ when interest is compounded $n$ times at nominal rate $1$.
 % Theorem --- Compound-Interest Approximation of e
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Theorem (Compound-Interest Approximation of $e$)}},
-  fonttitle=\small\bfseries]
+\begin{theorembox}{Theorem (Compound-Interest Approximation of $e$)}
 \begin{theorem}[Compound-Interest Approximation of $e$]
 \label{thm:compound-interest-approximation-e}
 Let $(c_n)$ be the compound-interest sequence. Then
@@ -267,7 +249,7 @@ Let $(c_n)$ be the compound-interest sequence. Then
 \noindent
 \hyperref[prf:compound-interest-approximation-e]{\textit{Go to proof.}}
 \end{theorem}
-\end{tcolorbox}
+\end{theorembox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -300,10 +282,7 @@ numerically, but it explains why $e$ appears in continuous growth.
 % Definition --- Decimal Truncation Sequence
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Decimal Truncation Sequence)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Decimal Truncation Sequence)}
 \begin{definition}[Decimal Truncation Sequence]
 \label{def:decimal-truncation-sequence}
 Let $\alpha\in\mathbb{R}$. The \textbf{decimal truncation sequence} of
@@ -313,7 +292,7 @@ $\alpha$ is the real sequence $(d_n)$ defined by
   \qquad\text{for every } n\in\mathbb{N}.
 \]
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -339,10 +318,7 @@ places. Truncation is one-sided: it does not round to the nearest decimal.
 % Theorem --- Decimal Truncations Converge
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Theorem (Decimal Truncations Converge)}},
-  fonttitle=\small\bfseries]
+\begin{theorembox}{Theorem (Decimal Truncations Converge)}
 \begin{theorem}[Decimal Truncations Converge]
 \label{thm:decimal-truncations-converge}
 Let $\alpha\in\mathbb{R}$, and let $(d_n)$ be the decimal truncation
@@ -355,7 +331,7 @@ sequence of $\alpha$. Then
 \noindent
 \hyperref[prf:decimal-truncations-converge]{\textit{Go to proof.}}
 \end{theorem}
-\end{tcolorbox}
+\end{theorembox}
 
 \begin{remark*}[Standard quantified statement]
 \[

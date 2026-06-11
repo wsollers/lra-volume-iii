@@ -11,13 +11,13 @@
 Let $I \subseteq \mathbb{R}$ be an open interval, let $c \in I$, let $f : I \to \mathbb{R}$ be differentiable at $c$, and let $n \in \mathbb{N}$. Then $f^n$ is differentiable at $c$ and $(f^n)'(c) = n(f(c))^{n-1}f'(c)$.
 \end{theorem*}
 
-\begin{proof}
-\textbf{Professional Standard Proof.}~\\
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
 Set $f_1 = f_2 = \cdots = f_n = f$ in the Extended Product Rule to obtain $(f^n)'(c) = \sum_{k=1}^{n} f_k'(c) \prod_{\substack{i=1\\i\neq k}}^{n} f_i(c)$. Since each $f_k = f$, each derivative $f_k'(c) = f'(c)$ and each remaining product equals $(f(c))^{n-1}$. Therefore each term in the sum equals $f'(c)(f(c))^{n-1}$. Summing $n$ identical terms yields $(f^n)'(c) = n \cdot f'(c) \cdot (f(c))^{n-1} = n(f(c))^{n-1}f'(c)$.
 \end{proof}
 
-\begin{proof}
-\textbf{Detailed Learning Proof.}~\\
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
 
 \textbf{Step 1.} Apply the Extended Product Rule with all factors equal to $f$.
 

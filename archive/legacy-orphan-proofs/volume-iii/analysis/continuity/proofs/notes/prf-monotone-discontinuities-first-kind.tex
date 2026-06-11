@@ -12,8 +12,8 @@
 Let $f : I \to \mathbb{R}$ be monotone increasing and let $c \in I$ be an interior point. Then $f$ is continuous at $c$ if and only if $f(c^{-}) = f(c^{+})$.
 \end{theorem*}
 
-\begin{proof}
-\textbf{Professional Standard Proof.}~\\
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
 Let $f : I \to \mathbb{R}$ be monotone increasing and let $c \in I$ be an interior point.
 
 $(\Rightarrow)$ Suppose $f$ is continuous at $c$. Then $\lim_{x \to c} f(x)$ exists and equals $f(c)$. By the criterion that a two-sided limit exists if and only if both one-sided limits exist and are equal, both $\lim_{x \to c^{-}} f(x)$ and $\lim_{x \to c^{+}} f(x)$ exist and equal $f(c)$. In particular $f(c^{-}) = f(c^{+})$.
@@ -21,8 +21,8 @@ $(\Rightarrow)$ Suppose $f$ is continuous at $c$. Then $\lim_{x \to c} f(x)$ exi
 $(\Leftarrow)$ Suppose $f(c^{-}) = f(c^{+})$. By the One-Sided Limits of Monotone Functions theorem, these one-sided limits exist and satisfy the ordering $f(c^{-}) \leq f(c) \leq f(c^{+})$. Since $f(c^{-}) = f(c^{+})$, this ordering forces $f(c^{-}) = f(c) = f(c^{+})$. Hence both one-sided limits exist and equal $f(c)$, so the two-sided limit $\lim_{x \to c} f(x) = f(c)$ exists, and $f$ is continuous at $c$.
 \end{proof}
 
-\begin{proof}
-\textbf{Detailed Learning Proof.}~\\
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
 
 \textbf{Step 1.} Establish the forward direction: continuity implies equal one-sided limits.
 

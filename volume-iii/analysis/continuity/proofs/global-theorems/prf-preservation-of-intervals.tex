@@ -11,15 +11,15 @@
 Let $I \subseteq \mathbb{R}$ be an interval and let $f : I \to \mathbb{R}$ be continuous on $I$. Then $f(I)$ is an interval.
 \end{theorem*}
 
-\begin{proof}
-\textbf{Professional Standard Proof.}~\\
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
 By the Characterization of Intervals, it suffices to show that $f(I)$ is closed under betweenness: for any $y_1, y_2 \in f(I)$ with $y_1 < y_2$, every $k$ satisfying $y_1 < k < y_2$ belongs to $f(I)$.
 
 Let $y_1, y_2 \in f(I)$ with $y_1 < y_2$. By definition of the image, there exist $x_1, x_2 \in I$ with $f(x_1) = y_1$ and $f(x_2) = y_2$. Since $I$ is an interval, the subinterval $J := [\min(x_1, x_2), \max(x_1, x_2)] \subseteq I$. The function $f$ is continuous on $J$ as the restriction of a continuous function. Since $f(x_1) = y_1 < k < y_2 = f(x_2)$, the Intermediate Value Theorem applied to $f$ on $J$ produces $c \in J$ with $f(c) = k$. Since $J \subseteq I$, we have $c \in I$, so $k = f(c) \in f(I)$. Therefore $f(I)$ is closed under betweenness and is an interval.
 \end{proof}
 
-\begin{proof}
-\textbf{Detailed Learning Proof.}~\\
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
 
 \textbf{Step 1.} Establish the strategy using interval characterization.
 By the Characterization of Intervals, to prove $f(I)$ is an interval, it suffices to show that $f(I)$ is closed under betweenness. This means for any $y_1, y_2 \in f(I)$ with $y_1 < y_2$, every $k$ satisfying $y_1 < k < y_2$ must belong to $f(I)$.

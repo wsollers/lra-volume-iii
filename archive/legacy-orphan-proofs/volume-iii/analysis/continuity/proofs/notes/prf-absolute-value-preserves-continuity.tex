@@ -11,8 +11,8 @@
 Let $A \subseteq \mathbb{R}$, let $f : A \to \mathbb{R}$, and let $|f|$ be defined by $|f|(x):=|f(x)|$ for $x\in A$. If $f$ is continuous at $c\in A$ then $|f|$ is continuous at $c$; if $f$ is continuous on $A$ then $|f|$ is continuous on $A$.
 \end{theorem*}
 
-\begin{proof}
-\textbf{Professional Standard Proof.}~\\
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
 Let $A \subseteq \mathbb{R}$, let $f : A \to \mathbb{R}$, and let $|f|(x):=|f(x)|$ for $x\in A$.
 
 First, suppose $f$ is continuous at $c\in A$. Let $\varepsilon>0$. Since $f$ is continuous at $c$, there exists $\delta>0$ such that $|x-c|<\delta$ implies $|f(x)-f(c)|<\varepsilon$ for all $x\in A$. For any $x\in A$ with $|x-c|<\delta$, the reverse triangle inequality gives $\bigl||f(x)|-|f(c)|\bigr| \le |f(x)-f(c)|<\varepsilon$. Since $|f|(x)=|f(x)|$ and $|f|(c)=|f(c)|$, this shows $\bigl||f|(x)-|f|(c)\bigr|<\varepsilon$. Therefore $|f|$ is continuous at $c$.
@@ -20,8 +20,8 @@ First, suppose $f$ is continuous at $c\in A$. Let $\varepsilon>0$. Since $f$ is 
 Second, if $f$ is continuous on $A$, then $f$ is continuous at every point $c\in A$. By the first part, $|f|$ is continuous at every point $c\in A$. Therefore $|f|$ is continuous on $A$.
 \end{proof}
 
-\begin{proof}
-\textbf{Detailed Learning Proof.}~\\
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
 
 \textbf{Step 1.} Establish continuity at a point. Assume $f$ is continuous at $c\in A$ and let $\varepsilon>0$ be given. By the definition of continuity, there exists $\delta>0$ such that for every $x\in A$, if $|x-c|<\delta$ then $|f(x)-f(c)|<\varepsilon$. This gives the foundation for proving that $|f|$ is continuous at $c$.
 

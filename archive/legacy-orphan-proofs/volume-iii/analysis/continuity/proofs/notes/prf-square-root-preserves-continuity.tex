@@ -11,13 +11,13 @@
 Let $A \subseteq \mathbb{R}$ and let $f \colon A \to \mathbb{R}$ satisfy $f(x) > 0$ for all $x \in A$. If $f$ is continuous at $c \in A$, then $\sqrt{f}$ is continuous at $c$. Moreover, if $f$ is continuous on $A$, then $\sqrt{f}$ is continuous on $A$.
 \end{theorem*}
 
-\begin{proof}
-\textbf{Professional Standard Proof.}~\\
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
 It suffices to prove continuity at an arbitrary point $c \in A$. Let $\varepsilon > 0$ be given. The key identity for $u, v \geq 0$ is $|\sqrt{u} - \sqrt{v}| = \frac{|u - v|}{\sqrt{u} + \sqrt{v}}$. Applying this with $u = f(x)$ and $v = f(c)$ gives $|\sqrt{f(x)} - \sqrt{f(c)}| = \frac{|f(x) - f(c)|}{\sqrt{f(x)} + \sqrt{f(c)}}$. Since $f(c) > 0$, the denominator satisfies $\sqrt{f(x)} + \sqrt{f(c)} \geq \sqrt{f(c)} > 0$, so $|\sqrt{f(x)} - \sqrt{f(c)}| \leq \frac{|f(x) - f(c)|}{\sqrt{f(c)}}$. By continuity of $f$ at $c$, there exists $\delta > 0$ such that $x \in A$ and $|x - c| < \delta$ imply $|f(x) - f(c)| < \varepsilon\sqrt{f(c)}$. For any such $x$, $|\sqrt{f(x)} - \sqrt{f(c)}| \leq \frac{|f(x) - f(c)|}{\sqrt{f(c)}} < \varepsilon$. Since $c$ was arbitrary, continuity on $A$ follows.
 \end{proof}
 
-\begin{proof}
-\textbf{Detailed Learning Proof.}~\\
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
 
 \textbf{Step 1.} Establish the algebraic identity. For $u, v \geq 0$, the identity $|u - v| = |\sqrt{u} - \sqrt{v}|\,|\sqrt{u} + \sqrt{v}|$ holds by factoring the difference of squares. Rearranging gives $|\sqrt{u} - \sqrt{v}| = \frac{|u - v|}{\sqrt{u} + \sqrt{v}}$.
 

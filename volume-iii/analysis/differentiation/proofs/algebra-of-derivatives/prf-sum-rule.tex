@@ -11,8 +11,8 @@
 Let $I \subseteq \mathbb{R}$ be an open interval, let $c \in I$, and let $f, g : I \to \mathbb{R}$ be differentiable at $c$. Then $f + g$ is differentiable at $c$ and $(f + g)'(c) = f'(c) + g'(c)$.
 \end{theorem*}
 
-\begin{proof}
-\textbf{Professional Standard Proof.}~\\
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
 Let $h := f + g$. For $x \in I$ with $x \neq c$, the difference quotient expands as
 \[
   \frac{h(x) - h(c)}{x - c} = \frac{(f(x) + g(x)) - (f(c) + g(c))}{x - c} = \frac{f(x) - f(c)}{x - c} + \frac{g(x) - g(c)}{x - c}.
@@ -24,8 +24,8 @@ By the Sum Rule for Limits,
 where the individual limits exist and equal $f'(c)$ and $g'(c)$ by differentiability of $f$ and $g$ at $c$.
 \end{proof}
 
-\begin{proof}
-\textbf{Detailed Learning Proof.}~\\
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
 
 \textbf{Step 1.} Form and split the difference quotient of $h := f + g$. For $x \in I$ with $x \neq c$, substituting $h(x) = f(x) + g(x)$ and grouping terms gives
 \[

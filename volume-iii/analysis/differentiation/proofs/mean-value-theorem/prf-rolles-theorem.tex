@@ -11,13 +11,13 @@
 Let $a, b \in \mathbb{R}$ with $a < b$. Suppose that $f : [a,b] \to \mathbb{R}$ is continuous on $[a,b]$, differentiable on $(a,b)$, and satisfies $f(a) = f(b)$. Then there exists $c \in (a,b)$ such that $f'(c) = 0$.
 \end{theorem*}
 
-\begin{proof}
-\textbf{Professional Standard Proof.}~\\
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
 By the Extreme Value Theorem, $f$ attains a maximum $M$ and a minimum $m$ on $[a,b]$. If $M = m$ then $f$ is constant on $[a,b]$, so $f' \equiv 0$ on $(a,b)$ and any $c \in (a,b)$ serves. Otherwise $M > m$, so at least one of $M, m$ differs from $f(a) = f(b)$ and is therefore attained at some interior point $c \in (a,b)$. Since $c$ is a relative extremum and $f$ is differentiable at $c$, the Interior Extremum Theorem gives $f'(c) = 0$.
 \end{proof}
 
-\begin{proof}
-\textbf{Detailed Learning Proof.}~\\
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
 
 \textbf{Step 1.} Apply the Extreme Value Theorem. Since $f$ is continuous on the closed bounded interval $[a,b]$, the Extreme Value Theorem guarantees that $f$ attains both its maximum value $M = \max_{[a,b]} f$ and its minimum value $m = \min_{[a,b]} f$ on $[a,b]$.
 

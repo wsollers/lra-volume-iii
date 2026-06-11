@@ -5,14 +5,14 @@
 % Volume III - Analysis
 % =========================================================
 
-\subsection{Continuity}
+\subsection*{Continuity}
 \label{sec:continuity}
 
 % ---------------------------------------------------------
 % Toolkit
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[title={Toolkit --- Continuity}]
+\begin{toolkitbox}{Toolkit --- Continuity}
 \begin{itemize}
   \item Three equivalent forms: $\varepsilon$-$\delta$, neighbourhood,
     sequential. The $\varepsilon$-$\delta$ form is unpunctured
@@ -26,21 +26,18 @@
     are continuous.
   \item Composition preserves continuity.
 \end{itemize}
-\end{tcolorbox}
+\end{toolkitbox}
 
 % ---------------------------------------------------------
 % Definition --- Relative Neighborhood
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Relative Neighborhood)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Relative Neighborhood)}
 \begin{definition}[Relative Neighborhood]
 \label{def:relative-neighborhood}
 Let $E \subseteq \mathbb{R}$ and $a \in E$. A set $U \subseteq \mathbb{R}$ is a neighborhood of $a$ in $E$ if and only if there exists $\delta > 0$ such that $U = E \cap (a-\delta, a+\delta)$. Equivalently, every neighborhood of $a$ in $E$ is a set of the form $U_E(a) := E \cap (a-\delta, a+\delta)$ for some $\delta > 0$.
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -104,10 +101,7 @@ Relative neighborhoods capture the local behavior of $E$ around $a$ by intersect
 % Definition --- Continuity at a Point
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Continuity at a Point)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Continuity at a Point)}
 \begin{definition}[Continuity at a Point]
 \label{def:continuous-at-point}
 Let $A \subseteq \mathbb{R}$, let $f : A \to \mathbb{R}$, and let $c \in A$. The function $f$ is \textbf{continuous at $c$} if and only if
@@ -116,7 +110,7 @@ Let $A \subseteq \mathbb{R}$, let $f : A \to \mathbb{R}$, and let $c \in A$. The
 \bigl(|x-c| < \delta \Rightarrow |f(x)-f(c)| < \varepsilon\bigr).
 \]
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -189,10 +183,7 @@ Continuity at $c$ means that the output $f(x)$ can be kept arbitrarily close to 
 % Definition --- Continuity (Neighbourhood)
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Continuity at a Point --- Neighbourhood Form)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Continuity at a Point --- Neighbourhood Form)}
 \begin{definition}[Continuity at a Point --- Neighbourhood Form]
 \label{def:continuous-at-point-nbhd}
 Let $A \subseteq \mathbb{R}$, let $f : A \to \mathbb{R}$, and let $c \in A$. The function $f$ is continuous at $c$ if and only if for every $\varepsilon > 0$ there exists $\delta > 0$ such that
@@ -200,7 +191,7 @@ Let $A \subseteq \mathbb{R}$, let $f : A \to \mathbb{R}$, and let $c \in A$. The
 f\bigl(A \cap (c-\delta, c+\delta)\bigr) \subseteq (f(c)-\varepsilon, f(c)+\varepsilon).
 \]
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -260,15 +251,12 @@ Continuity at $c$ demands that every output tolerance around $f(c)$ has a matchi
 % Definition --- Continuity (Sequential)
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Continuity at a Point --- Sequential Form)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Continuity at a Point --- Sequential Form)}
 \begin{definition}[Continuity at a Point --- Sequential Form]
 \label{def:continuous-at-point-seq}
 Let $A \subseteq \mathbb{R}$, let $c \in A$, and let $f \colon A \to \mathbb{R}$. The function $f$ is continuous at $c$ if and only if for every sequence $(x_n)_{n\in\mathbb{N}}$ in $A$, the convergence $\lim_{n\to\infty} x_n = c$ implies $\lim_{n\to\infty} f(x_n) = f(c)$.
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[

@@ -1,4 +1,4 @@
-\subsection{Subsequences}
+\subsection*{Subsequences}
 
 \begin{exposition}
 Subsequences record what remains after passing to an infinite ordered selection
@@ -11,10 +11,7 @@ all detected by suitable subsequences.
 % Definition --- Strictly Increasing Index Map
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Strictly Increasing Index Map)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Strictly Increasing Index Map)}
 \begin{definition}[Strictly Increasing Index Map]
 \label{def:strictly-increasing-index-map}
 Let $\sigma:\mathbb{N}\to\mathbb{N}$ be a function. The function $\sigma$
@@ -25,7 +22,7 @@ is a \textbf{strictly increasing index map} if
   \text{for all } k,\ell\in\mathbb{N}.
 \]
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -76,17 +73,14 @@ arbitrary rearrangement.
 % Definition --- Subsequence
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Subsequence)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Subsequence)}
 \begin{definition}[Subsequence]
 \label{def:subsequence}
 Let $(x_n)$ be a real sequence. A \textbf{subsequence} of $(x_n)$ is a
 sequence $(x_{\sigma(k)})_{k\in\mathbb{N}}$, where
 $\sigma:\mathbb{N}\to\mathbb{N}$ is a strictly increasing index map.
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -154,10 +148,7 @@ selected term came from in the original sequence.
 % Definition --- Subsequential Limit
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Subsequential Limit)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Subsequential Limit)}
 \begin{definition}[Subsequential Limit]
 \label{def:subsequential-limit}
 Let $(x_n)$ be a real sequence and let $L\in\mathbb{R}$. The real number
@@ -167,7 +158,7 @@ subsequence $(x_{\sigma(k)})$ such that
   \lim_{k\to\infty} x_{\sigma(k)}=L.
 \]
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -214,10 +205,7 @@ subsequential limits.
 % Definition --- Has Convergent Subsequence
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Has Convergent Subsequence)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Has Convergent Subsequence)}
 \begin{definition}[Has Convergent Subsequence]
 \label{def:has-convergent-subsequence}
 Let $(x_n)$ be a real sequence. The sequence $(x_n)$ \textbf{has a
@@ -227,7 +215,7 @@ $\sigma:\mathbb{N}\to\mathbb{N}$ and a real number $L$ such that
   \lim_{k\to\infty}x_{\sigma(k)}=L.
 \]
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -268,10 +256,7 @@ the subsequential limit.
 % Theorem --- Subsequence Indices Dominate the Identity
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Theorem (Subsequence Indices Dominate the Identity)}},
-  fonttitle=\small\bfseries]
+\begin{theorembox}{Theorem (Subsequence Indices Dominate the Identity)}
 \begin{theorem}[Subsequence Indices Dominate the Identity]
 \label{thm:subsequence-indices-dominate-identity}
 Let $\sigma:\mathbb{N}\to\mathbb{N}$ be a strictly increasing index map.
@@ -286,7 +271,7 @@ Then
 \noindent
 \hyperref[prf:subsequence-indices-dominate-identity]{\textit{Go to proof.}}
 \end{theorem}
-\end{tcolorbox}
+\end{theorembox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -324,10 +309,7 @@ $k$th original position.
 % Theorem --- Subsequences Preserve Limits
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Theorem (Subsequences Preserve Limits)}},
-  fonttitle=\small\bfseries]
+\begin{theorembox}{Theorem (Subsequences Preserve Limits)}
 \begin{theorem}[Subsequences Preserve Limits]
 \label{thm:subsequences-preserve-limits}
 Let $(x_n)$ be a real sequence and let $L\in\mathbb{R}$. If $x_n\to L$,
@@ -337,7 +319,7 @@ then every subsequence of $(x_n)$ converges to $L$.
 \noindent
 \hyperref[prf:subsequences-preserve-limits]{\textit{Go to proof.}}
 \end{theorem}
-\end{tcolorbox}
+\end{theorembox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -383,10 +365,7 @@ estimate for $(x_n)$ to a tail estimate for $(x_{\sigma(k)})$.
 % Theorem --- Subsequential Limit of a Convergent Sequence
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Theorem (Subsequential Limit of a Convergent Sequence)}},
-  fonttitle=\small\bfseries]
+\begin{theorembox}{Theorem (Subsequential Limit of a Convergent Sequence)}
 \begin{theorem}[Subsequential Limit of a Convergent Sequence]
 \label{thm:subsequential-limit-of-convergent-sequence}
 Let $(x_n)$ be a real sequence and let $L\in\mathbb{R}$. If $x_n\to L$,
@@ -396,7 +375,7 @@ then $L$ is the only possible subsequential limit of $(x_n)$.
 \noindent
 \hyperref[prf:subsequential-limit-of-convergent-sequence]{\textit{Go to proof.}}
 \end{theorem}
-\end{tcolorbox}
+\end{theorembox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -440,10 +419,7 @@ forces equality.
 % Theorem --- Divergence by Two Subsequential Limits
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Theorem (Divergence by Two Subsequential Limits)}},
-  fonttitle=\small\bfseries]
+\begin{theorembox}{Theorem (Divergence by Two Subsequential Limits)}
 \begin{theorem}[Divergence by Two Subsequential Limits]
 \label{thm:divergence-by-two-subsequential-limits}
 Let $(x_n)$ be a real sequence. If $(x_n)$ has two distinct subsequential
@@ -453,7 +429,7 @@ limits, then $(x_n)$ does not converge.
 \noindent
 \hyperref[prf:divergence-by-two-subsequential-limits]{\textit{Go to proof.}}
 \end{theorem}
-\end{tcolorbox}
+\end{theorembox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -501,10 +477,7 @@ that same limit.
 % Theorem --- Boundedness Passes to Subsequences
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Theorem (Boundedness Passes to Subsequences)}},
-  fonttitle=\small\bfseries]
+\begin{theorembox}{Theorem (Boundedness Passes to Subsequences)}
 \begin{theorem}[Boundedness Passes to Subsequences]
 \label{thm:boundedness-passes-to-subsequences}
 Every subsequence of a bounded real sequence is bounded.
@@ -513,7 +486,7 @@ Every subsequence of a bounded real sequence is bounded.
 \noindent
 \hyperref[prf:boundedness-passes-to-subsequences]{\textit{Go to proof.}}
 \end{theorem}
-\end{tcolorbox}
+\end{theorembox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -557,10 +530,7 @@ for the selection.
 % Theorem --- Monotonicity Passes to Subsequences
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Theorem (Monotonicity Passes to Subsequences)}},
-  fonttitle=\small\bfseries]
+\begin{theorembox}{Theorem (Monotonicity Passes to Subsequences)}
 \begin{theorem}[Monotonicity Passes to Subsequences]
 \label{thm:monotonicity-passes-to-subsequences}
 Every subsequence of an increasing real sequence is increasing, and every
@@ -570,7 +540,7 @@ subsequence of a decreasing real sequence is decreasing.
 \noindent
 \hyperref[prf:monotonicity-passes-to-subsequences]{\textit{Go to proof.}}
 \end{theorem}
-\end{tcolorbox}
+\end{theorembox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -614,10 +584,7 @@ present in the sequence. This is why the index map must be strictly increasing.
 % Theorem --- Subsequence of a Subsequence
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Theorem (Subsequence of a Subsequence)}},
-  fonttitle=\small\bfseries]
+\begin{theorembox}{Theorem (Subsequence of a Subsequence)}
 \begin{theorem}[Subsequence of a Subsequence]
 \label{thm:subsequence-of-subsequence}
 Every subsequence of a subsequence of $(x_n)$ is a subsequence of $(x_n)$.
@@ -626,7 +593,7 @@ Every subsequence of a subsequence of $(x_n)$ is a subsequence of $(x_n)$.
 \noindent
 \hyperref[prf:subsequence-of-subsequence]{\textit{Go to proof.}}
 \end{theorem}
-\end{tcolorbox}
+\end{theorembox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -669,10 +636,7 @@ $\sigma\circ\tau$ is still strictly increasing.
 % Theorem --- Eventual Properties Pass to Subsequences
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Theorem (Eventual Properties Pass to Subsequences)}},
-  fonttitle=\small\bfseries]
+\begin{theorembox}{Theorem (Eventual Properties Pass to Subsequences)}
 \begin{theorem}[Eventual Properties Pass to Subsequences]
 \label{thm:eventual-properties-pass-to-subsequences}
 Let $P(n)$ be a property of indices. If there exists $N\in\mathbb{N}$ such
@@ -684,7 +648,7 @@ holds for every $k\ge K$.
 \noindent
 \hyperref[prf:eventual-properties-pass-to-subsequences]{\textit{Go to proof.}}
 \end{theorem}
-\end{tcolorbox}
+\end{theorembox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -727,10 +691,7 @@ the subsequence.
 % Theorem --- Frequent Properties Yield Subsequences
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Theorem (Frequent Properties Yield Subsequences)}},
-  fonttitle=\small\bfseries]
+\begin{theorembox}{Theorem (Frequent Properties Yield Subsequences)}
 \begin{theorem}[Frequent Properties Yield Subsequences]
 \label{thm:frequent-properties-yield-subsequences}
 Let $P(n)$ be a property of indices. If for every $N\in\mathbb{N}$ there
@@ -742,7 +703,7 @@ $P(\sigma(k))$ holds for every $k\in\mathbb{N}$.
 \noindent
 \hyperref[prf:frequent-properties-yield-subsequences]{\textit{Go to proof.}}
 \end{theorem}
-\end{tcolorbox}
+\end{theorembox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -785,10 +746,7 @@ construction chooses one later witness at each step.
 % Theorem --- Subsequential Limits Respect Bounds
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Theorem (Subsequential Limits Respect Bounds)}},
-  fonttitle=\small\bfseries]
+\begin{theorembox}{Theorem (Subsequential Limits Respect Bounds)}
 \begin{theorem}[Subsequential Limits Respect Bounds]
 \label{thm:subsequential-limits-respect-bounds}
 Let $(x_n)$ be a real sequence and let $L$ be a subsequential limit of
@@ -799,7 +757,7 @@ $m\le L\le M$.
 \noindent
 \hyperref[prf:subsequential-limits-respect-bounds]{\textit{Go to proof.}}
 \end{theorem}
-\end{tcolorbox}
+\end{theorembox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -842,10 +800,7 @@ subsequential limits remain inside any closed interval that contains all terms.
 % Theorem --- Squeeze Passes to Subsequences
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Theorem (Squeeze Passes to Subsequences)}},
-  fonttitle=\small\bfseries]
+\begin{theorembox}{Theorem (Squeeze Passes to Subsequences)}
 \begin{theorem}[Squeeze Passes to Subsequences]
 \label{thm:squeeze-passes-to-subsequences}
 Let $(a_n)$, $(x_n)$, and $(b_n)$ be real sequences. If
@@ -861,7 +816,7 @@ $(x_{\sigma(k)})$ there exists $K\in\mathbb{N}$ such that
 \noindent
 \hyperref[prf:squeeze-passes-to-subsequences]{\textit{Go to proof.}}
 \end{theorem}
-\end{tcolorbox}
+\end{theorembox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -904,10 +859,7 @@ subsequences.
 % Theorem --- Monotone Subsequence Theorem
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Theorem (Monotone Subsequence Theorem)}},
-  fonttitle=\small\bfseries]
+\begin{theorembox}{Theorem (Monotone Subsequence Theorem)}
 \begin{theorem}[Monotone Subsequence Theorem]
 \label{thm:monotone-subsequence-theorem}
 Every real sequence has a monotone subsequence.
@@ -916,7 +868,7 @@ Every real sequence has a monotone subsequence.
 \noindent
 \hyperref[prf:monotone-subsequence-theorem]{\textit{Go to proof.}}
 \end{theorem}
-\end{tcolorbox}
+\end{theorembox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -961,10 +913,7 @@ or there is an infinite rising chain.
 % Theorem --- Bolzano-Weierstrass Theorem for Sequences
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Theorem (Bolzano-Weierstrass Theorem for Sequences)}},
-  fonttitle=\small\bfseries]
+\begin{theorembox}{Theorem (Bolzano-Weierstrass Theorem for Sequences)}
 \begin{theorem}[Bolzano-Weierstrass Theorem for Sequences]
 \label{thm:bolzano-weierstrass-sequences}
 Every bounded real sequence has a convergent subsequence.
@@ -973,7 +922,7 @@ Every bounded real sequence has a convergent subsequence.
 \noindent
 \hyperref[prf:bolzano-weierstrass-sequences]{\textit{Go to proof.}}
 \end{theorem}
-\end{tcolorbox}
+\end{theorembox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -1018,10 +967,7 @@ ordered subsequence to which the Monotone Convergence Theorem applies.
 % Theorem --- Sequential Compactness of Closed Bounded Intervals
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Theorem (Sequential Compactness of Closed Bounded Intervals)}},
-  fonttitle=\small\bfseries]
+\begin{theorembox}{Theorem (Sequential Compactness of Closed Bounded Intervals)}
 \begin{theorem}[Sequential Compactness of Closed Bounded Intervals]
 \label{thm:sequential-compactness-closed-bounded-interval}
 Let $a,b\in\mathbb{R}$ with $a\le b$. Every sequence in $[a,b]$ has a
@@ -1031,7 +977,7 @@ convergent subsequence whose limit belongs to $[a,b]$.
 \noindent
 \hyperref[prf:sequential-compactness-closed-bounded-interval]{\textit{Go to proof.}}
 \end{theorem}
-\end{tcolorbox}
+\end{theorembox}
 
 \begin{remark*}[Standard quantified statement]
 \[

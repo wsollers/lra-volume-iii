@@ -12,13 +12,13 @@ If $f_1, f_2, \dots, f_n$ are functions on an interval $I$ to $\mathbb{R}$ that 
 \[ \left( \sum_{i=1}^{n} f_i \right)'(c) = \sum_{i=1}^{n} f_i'(c) \]
 \end{theorem*}
 
-\begin{proof}
-\textbf{Professional Standard Proof.}~\\
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
 The proof proceeds by mathematical induction on $n$. For the base case $n=1$, the statement $(f_1)'(c) = f_1'(c)$ holds trivially. Assume the statement holds for some $k \in \mathbb{N}$, so $\left( \sum_{i=1}^{k} f_i \right)'(c) = \sum_{i=1}^{k} f_i'(c)$. For $n = k+1$, let $g = \sum_{i=1}^{k} f_i$. Then $\left( \sum_{i=1}^{k+1} f_i \right)'(c) = (g + f_{k+1})'(c)$. By the sum rule for derivatives, $(g + f_{k+1})'(c) = g'(c) + f_{k+1}'(c)$. Applying the inductive hypothesis yields $g'(c) + f_{k+1}'(c) = \sum_{i=1}^{k} f_i'(c) + f_{k+1}'(c) = \sum_{i=1}^{k+1} f_i'(c)$. By mathematical induction, the statement holds for all $n \in \mathbb{N}$.
 \end{proof}
 
-\begin{proof}
-\textbf{Detailed Learning Proof.}~\\
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
 
 \textbf{Step 1.} Establish the base case for induction. For $n=1$, the statement becomes $(f_1)'(c) = f_1'(c)$, which is an identity and therefore holds trivially.
 

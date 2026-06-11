@@ -4,28 +4,44 @@
 \LRAProofFor{prop:cauchy-criterion-limits}
 
 \begin{remark*}[Return]
-\hyperref[prop:cauchy-criterion-limits]{Return to Proposition}
+\hyperref[prop:cauchy-criterion-limits]{Return to Theorem}
 \end{remark*}
 
-\begin{proposition*}[Cauchy Criterion for Function Limits]
-$\lim_{x\to c}f(x)$ exists if and only if $\forall\varepsilon>0\;\exists\delta>0\;\forall x,y \in A: 0<|x-c|<\delta \wedge 0<|y-c|<\delta \Rightarrow |f(x)-f(y)|<\varepsilon$.
-\end{proposition*}
+\begin{theorem*}[Cauchy Criterion for Function Limits]
+Let $f : A \to \mathbb{R}$ and let $c$ be a cluster point of $A$.
+Then $\lim_{x\to c}f(x)=L$ exists for some
+$L \in \mathbb{R}$ if and only if
+\[
+  \ForallOT{\varepsilon},\;
+  \ExistsIT{\delta},\;
+  \forall x, y \in A :\;
+  0<|x-c|<\delta
+  \;\wedge\;
+  0<|y-c|<\delta
+  \;\Rightarrow\;
+  |f(x)-f(y)|<\varepsilon.
+\]
 
-\textbf{Professional Standard Proof.}~\\
-% MIGRATION TODO: Existing proof content preserved; detailed/professional companion body needs review.
-\begin{proof}
-TODO
+\smallskip\noindent
+\end{theorem*}
+
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+TODO: professional standard proof for cauchy-criterion-limits.
 \end{proof}
 
-\textbf{Detailed Learning Proof.}~\\
-TODO: Expand the professional proof into a detailed learning proof.
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+TODO: detailed learning proof for cauchy-criterion-limits.
+\end{proof}
 
 \begin{remark*}[Proof structure]
-TODO: Record the proof strategy and major logical moves.
 \end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
-  \item TODO: Add mathematical dependency links.
+  \item TODO: list mathematical dependencies.
 \end{itemize}
 \end{dependencies}
+
+\clearpage

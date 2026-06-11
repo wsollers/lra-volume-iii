@@ -11,13 +11,13 @@
 Let $A, B \subseteq \mathbb{R}$ be non-empty sets bounded above. Define $A + B = \{a + b : a \in A, b \in B\}$. Then $\sup(A + B) = \sup A + \sup B$.
 \end{theorem*}
 
-\begin{proof}
-\textbf{Professional Standard Proof.}~\\
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
 Let $s_a = \sup A$ and $s_b = \sup B$. For any $x \in A+B$, $x = a+b$ for some $a \in A, b \in B$. Since $a \le s_a$ and $b \le s_b$, we have $a+b \le s_a + s_b$, so $s_a + s_b$ is an upper bound of $A+B$. Thus $\sup(A+B) \le s_a + s_b$. Conversely, for any $\varepsilon > 0$, there exist $a \in A$ and $b \in B$ such that $a > s_a - \varepsilon/2$ and $b > s_b - \varepsilon/2$. Then $a+b > s_a + s_b - \varepsilon$. Since $a+b \in A+B$, this shows $\sup(A+B) \ge s_a + s_b$. Therefore, $\sup(A+B) = s_a + s_b$.
 \end{proof}
 
-\begin{proof}
-\textbf{Detailed Learning Proof.}~\\
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
 
 \textbf{Step 1. Show $s_a + s_b$ is an upper bound for $A+B$.}
 Let $s_a = \sup A$ and $s_b = \sup B$. By definition of the supremum:

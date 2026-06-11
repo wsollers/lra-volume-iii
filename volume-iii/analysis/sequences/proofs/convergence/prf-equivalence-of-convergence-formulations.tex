@@ -8,29 +8,39 @@
 \end{remark*}
 
 \begin{theorem*}[Equivalence of Convergence Formulations]
-Let $(x_n) \subseteq \mathbb{R}$ and let $L \in \mathbb{R}$. The
-absolute-value, double-inequality, and neighborhood formulations of
-$x_n \to L$ are equivalent.
+Let $(x_n) \subseteq \mathbb{R}$ and let $L \in \mathbb{R}$. The following
+statements are equivalent.
+\begin{enumerate}[label=\textup{(\alph*)}]
+    \item $x_n \to L$.
+    \item $\forall \varepsilon > 0 \;\exists K \in \mathbb{N} \;\forall n \ge K
+          \;\bigl(|x_n - L| < \varepsilon\bigr)$.
+    \item $\forall \varepsilon > 0 \;\exists K \in \mathbb{N} \;\forall n \ge K
+          \;\bigl(L - \varepsilon < x_n < L + \varepsilon\bigr)$.
+    \item $\forall \varepsilon > 0 \;\exists K \in \mathbb{N} \;\forall n \ge K
+          \;\bigl(x_n \in V_\varepsilon(L)\bigr)$.
+\end{enumerate}
+
+\smallskip
+\noindent
 \end{theorem*}
 
-\textbf{Professional Standard Proof.}~\\
-% MIGRATION TODO: Existing proof content preserved; detailed/professional companion body needs review.
-\begin{proof}
-TODO.
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+TODO: professional standard proof for equivalence-of-convergence-formulations.
 \end{proof}
 
-\textbf{Detailed Learning Proof.}~\\
-TODO: Expand the professional proof into a detailed learning proof.
-
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+TODO: detailed learning proof for equivalence-of-convergence-formulations.
+\end{proof}
 
 \begin{remark*}[Proof structure]
-TODO.
 \end{remark*}
 
-\begin{remark*}[Dependencies]~\\
+\begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:convergent-sequence]{Convergence of a Sequence}
-  \item \hyperref[def:convergent-sequence-neighborhood]{Convergence --- Neighborhood Formulation}
-  \item \hyperref[def:epsilon-neighbourhood]{$\varepsilon$-neighbourhood}
+  \item TODO: list mathematical dependencies.
 \end{itemize}
-\end{remark*}
+\end{dependencies}
+
+\clearpage

@@ -18,13 +18,13 @@ then the composition
 is continuous at $x_0$.
 \end{theorem*}
 
-\begin{proof}
-\textbf{Professional Standard Proof.}~\\
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
 Let $\varepsilon > 0$. Since $g$ is continuous at $f(x_0)$, there exists $\delta_1 > 0$ such that for all $y \in Y$, $|y - f(x_0)| < \delta_1$ implies $|g(y) - g(f(x_0))| < \varepsilon$. Since $f$ is continuous at $x_0$, applying continuity with tolerance $\delta_1$, there exists $\delta_0 > 0$ such that for all $x \in X$, $|x - x_0| < \delta_0$ implies $|f(x) - f(x_0)| < \delta_1$. Chaining these implications: for all $x \in X$, $|x - x_0| < \delta_0$ implies $|f(x) - f(x_0)| < \delta_1$, which implies $|g(f(x)) - g(f(x_0))| < \varepsilon$. Since $h(x) = g(f(x))$ and $h(x_0) = g(f(x_0))$, this gives $|h(x) - h(x_0)| < \varepsilon$ whenever $|x - x_0| < \delta_0$. Hence $h$ is continuous at $x_0$.
 \end{proof}
 
-\begin{proof}
-\textbf{Detailed Learning Proof.}~\\
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
 
 \textbf{Step 1.} Fix $\varepsilon > 0$ and apply continuity of $g$ at $f(x_0)$. Since $g$ is continuous at $f(x_0) \in Y$, there exists $\delta_1 > 0$ such that for all $y \in Y$,
 \[

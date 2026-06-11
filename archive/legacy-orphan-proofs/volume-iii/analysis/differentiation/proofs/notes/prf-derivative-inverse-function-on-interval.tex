@@ -11,13 +11,13 @@
 Let $I \subseteq \mathbb{R}$ be an interval, and let $f : I \to \mathbb{R}$ be strictly monotone and differentiable on $I$ with $f'(x) \neq 0$ for all $x \in I$. Set $J := f(I)$ and let $g : J \to \mathbb{R}$ be the inverse of $f$. Then $g$ is differentiable on $J$ and $g' = 1/(f' \circ g)$ on $J$.
 \end{theorem*}
 
-\begin{proof}
-\textbf{Professional Standard Proof.}~\\
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
 Let $d \in J$ be arbitrary. Since $g$ is the inverse of $f$, there exists a unique $c \in I$ with $f(c) = d$, namely $c = g(d)$. By hypothesis $f$ is differentiable at $c$ with $f'(c) \neq 0$, so by the pointwise Inverse Function Theorem, $g$ is differentiable at $d$ and $g'(d) = 1/f'(c) = 1/f'(g(d)) = 1/(f' \circ g)(d)$. Since $d \in J$ was arbitrary, $g$ is differentiable on $J$ and $g' = 1/(f' \circ g)$ on $J$.
 \end{proof}
 
-\begin{proof}
-\textbf{Detailed Learning Proof.}~\\
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
 
 \textbf{Step 1.} Let $d \in J$ be arbitrary and establish the correspondence with the domain. Since $g$ is the inverse of $f$, there exists a unique $c \in I$ such that $f(c) = d$, namely $c = g(d)$. This establishes the bijective correspondence between points in the range $J$ and points in the domain $I$.
 

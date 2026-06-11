@@ -4,10 +4,10 @@
 % Volume III - Analysis
 % =========================================================
 
-\subsection{Intermediate Value Theorem}
+\subsection*{Intermediate Value Theorem}
 \label{sec:ivt}
 
-\begin{tcolorbox}[title={Toolkit --- Boundedness, Extrema, and Intermediate Values}]
+\begin{toolkitbox}{Toolkit --- Boundedness, Extrema, and Intermediate Values}
 \begin{itemize}
   \item Implication chain on $[a,b]$:
     $\operatorname{ContinuousOn}(f,[a,b])$
@@ -21,21 +21,18 @@
     is an interval (Preservation of Intervals).
   \item Darboux property: a continuous function cannot skip a value.
 \end{itemize}
-\end{tcolorbox}
+\end{toolkitbox}
 
 % ---------------------------------------------------------
 % Definition --- Bounded on a Set
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Bounded on a Set)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Bounded on a Set)}
 \begin{definition}[Bounded on a Set]
 \label{def:bounded-on-a-set}
 Let $A \subseteq \mathbb{R}$ and $f \colon A \to \mathbb{R}$. The function $f$ is bounded on $A$ if and only if there exists a constant $M>0$ such that $|f(x)| \le M$ for every $x \in A$.
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -102,16 +99,13 @@ The definition packages the informal idea that the values of $f$ stay within a f
 % Theorem --- Boundedness Theorem
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Theorem (Boundedness Theorem)}},
-  fonttitle=\small\bfseries]
+\begin{theorembox}{Theorem (Boundedness Theorem)}
 \begin{theorem}[Boundedness Theorem]
 \label{thm:boundedness-theorem}
 Let $a<b$ and let $f:[a,b]\to\mathbb{R}$ be continuous on $[a,b]$. Then there exists $M>0$ such that $|f(x)|\le M$ for every $x\in[a,b]$.
 \hyperref[prf:boundedness-theorem]{Go to proof.}
 \end{theorem}
-\end{tcolorbox}
+\end{theorembox}
 
 
 \begin{remark*}[Standard quantified statement]
@@ -177,15 +171,12 @@ Continuity ties nearby inputs to nearby outputs, and the compact interval $[a,b]
 % Definition --- Absolute Extrema
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Absolute Maximum and Absolute Minimum)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Absolute Maximum and Absolute Minimum)}
 \begin{definition}[Absolute Maximum and Absolute Minimum]
 \label{def:absolute-extrema}
 Let $A \subseteq \mathbb{R}$ and let $f \colon A \to \mathbb{R}$. A point $x^{*} \in A$ is an absolute maximum of $f$ on $A$ if and only if $f(x^{*}) \ge f(x)$ for every $x \in A$. A point $x_{*} \in A$ is an absolute minimum of $f$ on $A$ if and only if $f(x_{*}) \le f(x)$ for every $x \in A$.
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -261,16 +252,13 @@ An absolute maximum identifies the highest value that $f$ attains on its domain 
 % Theorem --- Extreme Value Theorem
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Theorem (Extreme Value Theorem)}},
-  fonttitle=\small\bfseries]
+\begin{theorembox}{Theorem (Extreme Value Theorem)}
 \begin{theorem}[Extreme Value Theorem]
 \label{thm:extreme-value-theorem}
 Let $a,b \in \mathbb{R}$ with $a<b$, and let $f:[a,b] \to \mathbb{R}$ be continuous. There exist points $x_m,x_M \in [a,b]$ such that $f(x_m) \le f(x) \le f(x_M)$ for every $x \in [a,b]$. Equivalently, $f$ attains both an absolute maximum and an absolute minimum on $[a,b]$.
 \hyperref[prf:extreme-value-theorem]{Go to proof.}
 \end{theorem}
-\end{tcolorbox}
+\end{theorembox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -363,15 +351,12 @@ the endpoint values do not have opposite signs.
 % Theorem --- Bolzano's IVT
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Theorem (Bolzano's Intermediate Value Theorem)}},
-  fonttitle=\small\bfseries]
+\begin{theorembox}{Theorem (Bolzano's Intermediate Value Theorem)}
 \begin{theorem}[Bolzano's Intermediate Value Theorem]
 \label{thm:bolzano-intermediate-value}
 Let $I \subseteq \mathbb{R}$ be an interval, let $f \colon I \to \mathbb{R}$ be continuous on $I$, and choose $a,b \in I$ with $f(a) < k < f(b)$. Then there exists $c \in I$ such that $\min\{a,b\} < c < \max\{a,b\}$ and $f(c) = k$. \hyperref[prf:bolzano-intermediate-value]{Go to proof.}
 \end{theorem}
-\end{tcolorbox}
+\end{theorembox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -417,16 +402,13 @@ A continuous real-valued function on an interval cannot skip any intermediate sc
 % Theorem --- Image of Closed Bounded Interval
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Theorem (Image of Closed Bounded Interval Is Closed Bounded Interval)}},
-  fonttitle=\small\bfseries]
+\begin{theorembox}{Theorem (Image of Closed Bounded Interval Is Closed Bounded Interval)}
 \begin{theorem}[Image of Closed Bounded Interval Is Closed Bounded Interval]
 \label{thm:image-of-closed-bounded-interval}
 Let $f:[a,b]\to\mathbb{R}$ be continuous. Then $f([a,b])=[\min_{[a,b]} f,\max_{[a,b]} f]$.
 \hyperref[prf:image-of-closed-bounded-interval]{Go to proof.}
 \end{theorem}
-\end{tcolorbox}
+\end{theorembox}
 
 \begin{remark*}[Standard quantified statement]
 \[

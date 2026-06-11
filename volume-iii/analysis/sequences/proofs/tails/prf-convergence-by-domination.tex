@@ -8,28 +8,36 @@
 \end{remark*}
 
 \begin{theorem*}[Convergence by Domination]
-Let $(x_n) \subseteq \mathbb{R}$ and let $L \in \mathbb{R}$. If
-$|x_n-L| \le c a_n$ on a tail, where $c>0$, $a_n>0$, and $a_n\to 0$,
-then $x_n\to L$.
+Let $(x_n) \subseteq \mathbb{R}$ and let $L \in \mathbb{R}$. Let
+$(a_n)$ be a sequence of positive real numbers with
+$\displaystyle\lim_{n \to \infty} a_n = 0$. If there exist a constant
+$c > 0$ and an index $m \in \mathbb{N}$ such that
+\[
+    |x_n - L| \;\le\; c\, a_n \qquad \forall n \ge m,
+\]
+then $\displaystyle\lim_{n \to \infty} x_n = L$.
+
+\smallskip
+\noindent
 \end{theorem*}
 
-\textbf{Professional Standard Proof.}~\\
-% MIGRATION TODO: Existing proof content preserved; detailed/professional companion body needs review.
-\begin{proof}
-TODO.
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+TODO: professional standard proof for convergence-by-domination.
 \end{proof}
 
-\textbf{Detailed Learning Proof.}~\\
-TODO: Expand the professional proof into a detailed learning proof.
-
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+TODO: detailed learning proof for convergence-by-domination.
+\end{proof}
 
 \begin{remark*}[Proof structure]
-TODO.
 \end{remark*}
 
-\begin{remark*}[Dependencies]~\\
+\begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:convergent-sequence]{Convergence of a Sequence}
-  \item \hyperref[def:m-tail]{$M$-Tail of a Sequence}
+  \item TODO: list mathematical dependencies.
 \end{itemize}
-\end{remark*}
+\end{dependencies}
+
+\clearpage

@@ -11,13 +11,13 @@
 Let $I \subseteq \mathbb{R}$ be an interval, and let $f : I \to \mathbb{R}$ be differentiable on $I$. Then $f$ is nonincreasing on $I$ if and only if $f'(x) \leq 0$ for all $x \in I$.
 \end{theorem*}
 
-\begin{proof}
-\textbf{Professional Standard Proof.}~\\
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
 Apply the Nondecreasing theorem to $g := -f$. Then $g'(x) = -f'(x)$, and $g$ is nondecreasing iff $f$ is nonincreasing. The theorem gives: $g$ is nondecreasing iff $g'(x) = -f'(x) \geq 0$ for all $x$, which is equivalent to $f'(x) \leq 0$ for all $x$.
 \end{proof}
 
-\begin{proof}
-\textbf{Detailed Learning Proof.}~\\
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
 
 \textbf{Step 1.} Reduce to the nondecreasing case via negation. Define $g := -f$. Then $g$ is differentiable on $I$ with $g'(x) = -f'(x)$ for all $x \in I$. Observe that $f$ is nonincreasing if and only if $g = -f$ is nondecreasing: for $a < b$, $f(a) \geq f(b) \iff -f(a) \leq -f(b) \iff g(a) \leq g(b)$.
 

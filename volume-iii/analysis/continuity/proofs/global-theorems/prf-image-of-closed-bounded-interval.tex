@@ -11,15 +11,15 @@
 Let $f : [a,b] \to \mathbb{R}$ be continuous on the closed bounded interval $[a,b]$. Then $f([a,b]) = [m, M]$, where $m = \inf f([a,b])$ and $M = \sup f([a,b])$.
 \end{theorem*}
 
-\begin{proof}
-\textbf{Professional Standard Proof.}~\\
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
 Since $[a,b]$ is closed and bounded and $f$ is continuous, the Extreme Value Theorem guarantees the existence of points $x_m, x_M \in [a,b]$ such that $f(x_m) = m := \min f([a,b])$ and $f(x_M) = M := \max f([a,b])$. Every value of $f$ lies in $[m, M]$, so $f([a,b]) \subseteq [m, M]$.
 
 For the reverse inclusion, let $k \in [m,M]$. If $k = m$, then $f(x_m) = k$, so $k \in f([a,b])$. If $k = M$, then $f(x_M) = k$, so $k \in f([a,b])$. If $m < k < M$, then $f(x_m) = m < k < M = f(x_M)$, and the Intermediate Value Theorem applied to $f$ on the subinterval $[\min(x_m, x_M), \max(x_m, x_M)] \subseteq [a,b]$ produces $c$ between $x_m$ and $x_M$ with $f(c) = k$. Therefore $[m,M] \subseteq f([a,b])$, and hence $f([a,b]) = [m, M]$.
 \end{proof}
 
-\begin{proof}
-\textbf{Detailed Learning Proof.}~\\
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
 
 \textbf{Step 1.} Apply the Extreme Value Theorem to establish endpoints.
 

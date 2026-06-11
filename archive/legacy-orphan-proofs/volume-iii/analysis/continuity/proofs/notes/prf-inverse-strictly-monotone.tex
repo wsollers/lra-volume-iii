@@ -11,13 +11,13 @@
 Let $f : I \to \mathbb{R}$ be strictly monotone on an interval $I$. Then $f$ is injective, its inverse $f^{-1} : f(I) \to I$ exists, and $f^{-1}$ is strictly monotone in the same direction as $f$.
 \end{theorem*}
 
-\begin{proof}
-\textbf{Professional Standard Proof.}~\\
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
 Without loss of generality assume $f$ is strictly increasing. For injectivity, if $x, y \in I$ with $x \neq y$, then either $x < y$ or $y < x$, so strict monotonicity gives either $f(x) < f(y)$ or $f(y) < f(x)$, hence $f(x) \neq f(y)$. Since $f$ is injective, the inverse $f^{-1} : f(I) \to I$ exists with $f^{-1}(f(x)) = x$ for all $x \in I$. For strict monotonicity of $f^{-1}$, if $u, v \in f(I)$ with $u < v$, then $u = f(x)$ and $v = f(y)$ for some $x, y \in I$. Since $f(x) < f(y)$ and $f$ is strictly increasing, $x < y$. Therefore $f^{-1}(u) = x < y = f^{-1}(v)$, so $f^{-1}$ is strictly increasing.
 \end{proof}
 
-\begin{proof}
-\textbf{Detailed Learning Proof.}~\\
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
 
 \textbf{Step 1.} Establish injectivity of $f$.
 Without loss of generality assume $f$ is strictly increasing. Let $x, y \in I$ with $x \neq y$. Since the real numbers are totally ordered, either $x < y$ or $y < x$. If $x < y$, then strict monotonicity gives $f(x) < f(y)$, so $f(x) \neq f(y)$. If $y < x$, then strict monotonicity gives $f(y) < f(x)$, so again $f(x) \neq f(y)$. Therefore $x \neq y$ implies $f(x) \neq f(y)$, proving $f$ is injective.

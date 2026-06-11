@@ -4,10 +4,10 @@
 % Volume III - Analysis
 % =========================================================
 
-\subsection{Uniform Continuity}
+\subsection*{Uniform Continuity}
 \label{sec:uniform-continuity}
 
-\begin{tcolorbox}[title={Toolkit --- Uniform Continuity}]
+\begin{toolkitbox}{Toolkit --- Uniform Continuity}
 \begin{itemize}
   \item Key distinction: $\delta=\delta(\varepsilon)$ only, not
     $\delta(\varepsilon,c)$. One $\delta$ serves all pairs in $A$.
@@ -24,21 +24,18 @@
   \item $\operatorname{UniformlyContinuous}(f,A)$ preserves Cauchy
     sequences --- the key lemma for continuous extensions.
 \end{itemize}
-\end{tcolorbox}
+\end{toolkitbox}
 
 % ---------------------------------------------------------
 % Definition --- Uniform Continuity
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Uniform Continuity)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Uniform Continuity)}
 \begin{definition}[Uniform Continuity]
 \label{def:uniform-continuity}
 Let $A \subseteq \mathbb{R}$ and let $f:A \to \mathbb{R}$. The function $f$ is uniformly continuous on $A$ if and only if for every $\varepsilon > 0$ there exists $\delta > 0$ such that for all $x,u \in A$ the implication $|x-u| < \delta \Rightarrow |f(x)-f(u)| < \varepsilon$ holds.
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -96,10 +93,7 @@ Uniform continuity demands that a single proximity scale $\delta$ answers any pr
 % Theorem --- Algebra of Uniform Continuity (General Domain)
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Theorem (Algebra of Uniform Continuity on a General Domain)}},
-  fonttitle=\small\bfseries]
+\begin{theorembox}{Theorem (Algebra of Uniform Continuity on a General Domain)}
 \begin{theorem}[Algebra of Uniform Continuity on a General Domain]
 \label{thm:algebra-of-uniform-continuity-general}
 \begin{enumerate}[label=(\alph*)]
@@ -108,7 +102,7 @@ Uniform continuity demands that a single proximity scale $\delta$ answers any pr
 \end{enumerate}
 \hyperref[prf:algebra-of-uniform-continuity-general]{Go to proof.}
 \end{theorem}
-\end{tcolorbox}
+\end{theorembox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -166,10 +160,7 @@ Uniform continuity is stable under linear combinations on any common domain, so 
 % Theorem --- Algebra of Uniform Continuity (Bounded Domain)
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Theorem (Algebra of Uniform Continuity on a Bounded Domain)}},
-  fonttitle=\small\bfseries]
+\begin{theorembox}{Theorem (Algebra of Uniform Continuity on a Bounded Domain)}
 \begin{theorem}[Algebra of Uniform Continuity on a Bounded Domain]
 \label{thm:algebra-of-uniform-continuity-bounded}
 Let $A \subseteq \mathbb{R}$ be bounded, and let $f,g:A \to \mathbb{R}$ be uniformly continuous on $A$.
@@ -179,7 +170,7 @@ Let $A \subseteq \mathbb{R}$ be bounded, and let $f,g:A \to \mathbb{R}$ be unifo
 \end{enumerate}
 \hyperref[prf:algebra-of-uniform-continuity-bounded]{Go to proof.}
 \end{theorem}
-\end{tcolorbox}
+\end{theorembox}
 
 
 \begin{remark*}[Standard quantified statement]
@@ -338,16 +329,13 @@ Uniform continuity prevents the function from pulling together inputs that are a
 % Theorem --- Heine--Cantor
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Theorem (Heine--Cantor Theorem)}},
-  fonttitle=\small\bfseries]
+\begin{theorembox}{Theorem (Heine--Cantor Theorem)}
 \begin{theorem}[Heine--Cantor Theorem]
 \label{thm:heine-cantor}
 Let $a,b \in \mathbb{R}$ with $a<b$ and let $f:[a,b]\to\mathbb{R}$ be continuous on $[a,b]$. Then $f$ is uniformly continuous on $[a,b]$.
 \hyperref[prf:heine-cantor]{Go to proof.}
 \end{theorem}
-\end{tcolorbox}
+\end{theorembox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -434,15 +422,12 @@ Uniform continuity controls the change in $f(x)$ solely through the distance bet
 % Definition --- Lipschitz Condition
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Lipschitz Condition)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Lipschitz Condition)}
 \begin{definition}[Lipschitz Condition]
 \label{def:lipschitz-condition}
 Let $A \subseteq \mathbb{R}$, let $f:A \to \mathbb{R}$, and let $K>0$. The function $f$ satisfies the Lipschitz condition on $A$ with constant $K$ if and only if $|f(x)-f(u)| \le K|x-u|$ for every $x,u \in A$.
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -564,10 +549,7 @@ The implication Lipschitz $\Rightarrow$ uniform continuity is strict. The canoni
 % Theorem --- Algebra of Lipschitz Functions
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Theorem (Algebra of Lipschitz Functions)}},
-  fonttitle=\small\bfseries]
+\begin{theorembox}{Theorem (Algebra of Lipschitz Functions)}
 \begin{theorem}[Algebra of Lipschitz Functions]
 \label{thm:algebra-of-lipschitz-functions}
 Let $A\subseteq \mathbb{R}$ and let $f,g:A\to\mathbb{R}$ be Lipschitz with constants $K_f,K_g\ge 0$ respectively.
@@ -580,7 +562,7 @@ Let $A\subseteq \mathbb{R}$ and let $f,g:A\to\mathbb{R}$ be Lipschitz with const
 \end{enumerate}
 \hyperref[prf:algebra-of-lipschitz-functions]{Go to proof.}
 \end{theorem}
-\end{tcolorbox}
+\end{theorembox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -625,10 +607,7 @@ Lipschitz functions are stable under the standard algebraic operations: scaling 
 % Definition --- Bi-Lipschitz Map
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=defbox, colframe=defborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Definition (Bi-Lipschitz Map)}},
-  fonttitle=\small\bfseries]
+\begin{definitionbox}{Definition (Bi-Lipschitz Map)}
 \begin{definition}[Bi-Lipschitz Map]
 \label{def:bi-lipschitz}
 Let $A\subseteq \mathbb{R}$ and let $f:A\to\mathbb{R}$. The map $f$ is bi-Lipschitz on $A$ if and only if there exist constants $0<\alpha\le K$ such that for every $x,u\in A$,
@@ -637,7 +616,7 @@ Let $A\subseteq \mathbb{R}$ and let $f:A\to\mathbb{R}$. The map $f$ is bi-Lipsch
 \]
 Any such pair $(\alpha,K)$ is called a bi-Lipschitz constant pair for $f$ on $A$.
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -695,10 +674,7 @@ A bi-Lipschitz map distorts every distance in $A$ by factors lying between $\alp
 % Theorem --- Inverse of Bi-Lipschitz Map Is Lipschitz
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=thmbox, colframe=thmborder, arc=2pt,
-  left=6pt, right=6pt, top=4pt, bottom=4pt,
-  title={\small\textbf{Theorem (Inverse of a Bi-Lipschitz Map Is Lipschitz)}},
-  fonttitle=\small\bfseries]
+\begin{theorembox}{Theorem (Inverse of a Bi-Lipschitz Map Is Lipschitz)}
 \begin{theorem}[Inverse of a Bi-Lipschitz Map Is Lipschitz]
 \label{thm:bilipschitz-inverse-is-lipschitz}
 Let $A \subseteq \mathbb{R}$, let $f:A \to \mathbb{R}$, and suppose there exist constants $\alpha,K>0$ such that
@@ -709,7 +685,7 @@ $\alpha |x-y| \le |f(x)-f(y)| \le K |x-y|$ for all $x,y \in A$. Then $f$ is inje
 \]
 \hyperref[prf:bilipschitz-inverse-is-lipschitz]{Go to proof.}
 \end{theorem}
-\end{tcolorbox}
+\end{theorembox}
 
 \begin{remark*}[Standard quantified statement]
 \[
