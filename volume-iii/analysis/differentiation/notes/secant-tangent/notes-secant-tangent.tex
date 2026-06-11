@@ -1,21 +1,9 @@
 % =========================================================
 % Section: Secant and Tangent Lines
 % =========================================================
-
-\begin{tcolorbox}[colback=gray!8, colframe=gray!40, title=\textbf{Secant and Tangent --- toolkit}]
-\textbf{Concept family:} The geometric objects underlying the derivative: secant lines and tangent lines.
-
-\medskip
-\textbf{Atomic items in this section:}
-\begin{itemize}
-  \item Definition: Secant Line
-  \item Definition: Tangent Line
-\end{itemize}
-\end{tcolorbox}
-
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=blue!4, colframe=blue!30]
+\begin{definitionbox}{Definition (Secant Line)}
 \begin{definition}[Secant Line]
 \label{def:secant-line}
 Let $f : A \to \mathbb{R}$, and let $x_1, x_2 \in A$ with $x_1 \neq x_2$. The \emph{secant line} determined by the points $(x_1, f(x_1))$ and $(x_2, f(x_2))$ is the unique line passing through these two points. Its slope is
@@ -23,7 +11,7 @@ Let $f : A \to \mathbb{R}$, and let $x_1, x_2 \in A$ with $x_1 \neq x_2$. The \e
 m_{\mathrm{sec}}(x_1, x_2) := \frac{f(x_2) - f(x_1)}{x_2 - x_1}.
 \]
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -40,7 +28,7 @@ With increments $\Delta x := x_2 - x_1$ and $\Delta y := f(x_2) - f(x_1)$, the s
 
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=blue!4, colframe=blue!30]
+\begin{definitionbox}{Definition (Tangent Line)}
 \begin{definition}[Tangent Line]
 \label{def:tangent-line}
 Let $f : A \to \mathbb{R}$, let $c \in A$, and suppose that $f$ is differentiable at $c$. The \emph{tangent line} to the graph of $f$ at the point $(c, f(c))$ is the line through $(c, f(c))$ with slope $f'(c)$. Its equation is
@@ -48,7 +36,7 @@ Let $f : A \to \mathbb{R}$, let $c \in A$, and suppose that $f$ is differentiabl
 y = f(c) + f'(c)(x - c).
 \]
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[

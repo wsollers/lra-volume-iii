@@ -1,42 +1,11 @@
 % =========================================================
 % Section: Algebra of Derivatives
 % =========================================================
-
-\begin{tcolorbox}[colback=gray!8, colframe=gray!40, title=\textbf{Algebra of Derivatives --- toolkit}]
-\textbf{Concept family:} The pointwise algebra rules for differentiation at a point, and their global (interval) forms.
-
-\medskip
-\textbf{Pointwise rules (at a point $c$):}
-\begin{itemize}
-  \item Theorem: Constant Multiple Rule
-  \item Theorem: Sum Rule
-  \item Theorem: Product Rule
-  \item Theorem: Quotient Rule
-  \item Corollary: Finite Sum Rule
-  \item Corollary: Extended Product Rule
-  \item Corollary: Power Rule for Integer Powers of a Function
-  \item Theorem: Finite Linear Combination Rule
-\end{itemize}
-
-\medskip
-\textbf{Global rules (on an interval $I$):}
-\begin{itemize}
-  \item Theorem: Constant Multiple Rule on an Interval
-  \item Theorem: Sum Rule on an Interval
-  \item Theorem: Product Rule on an Interval
-  \item Theorem: Quotient Rule on an Interval
-  \item Corollary: Finite Sum Rule on an Interval
-  \item Corollary: Extended Product Rule on an Interval
-  \item Corollary: Power Rule for Integer Powers of a Function on an Interval
-  \item Theorem: Finite Linear Combination Rule on an Interval
-\end{itemize}
-\end{tcolorbox}
-
 % =========================================================
 % Pointwise algebra rules
 % =========================================================
 
-\begin{tcolorbox}[colback=corbox, colframe=corborder]
+\begin{theorembox}{Theorem (Constant Multiple Rule)}
 \begin{theorem}[Constant Multiple Rule]
 \label{thm:constant-multiple-rule}
 Let $A \subseteq \mathbb{R}$, let $f : A \to \mathbb{R}$, let $c \in A$ be a limit point of $A$, and let $\alpha \in \mathbb{R}$. If $f$ is differentiable at $c$, then $\alpha f$ is differentiable at $c$, and
@@ -46,7 +15,7 @@ Let $A \subseteq \mathbb{R}$, let $f : A \to \mathbb{R}$, let $c \in A$ be a lim
 \hyperref[prf:constant-multiple]{Go to proof.}
 \hyperref[prf:constant-multiple-rule]{Go to proof.}
 \end{theorem}
-\end{tcolorbox}
+\end{theorembox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -68,7 +37,7 @@ Multiplying a function by a constant scales its derivative by the same constant.
 
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=corbox, colframe=corborder]
+\begin{theorembox}{Theorem (Sum Rule)}
 \begin{theorem}[Sum Rule]
 \label{thm:sum-rule}
 Let $A \subseteq \mathbb{R}$, let $f, g : A \to \mathbb{R}$, and let $c \in A$ be a limit point of $A$. If $f$ and $g$ are differentiable at $c$, then $f + g$ is differentiable at $c$, and
@@ -77,7 +46,7 @@ Let $A \subseteq \mathbb{R}$, let $f, g : A \to \mathbb{R}$, and let $c \in A$ b
 \]
 \hyperref[prf:sum-rule]{Go to proof.}
 \end{theorem}
-\end{tcolorbox}
+\end{theorembox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -100,7 +69,7 @@ The derivative of a sum is the sum of the derivatives. The proof is immediate: t
 
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=corbox, colframe=corborder]
+\begin{theorembox}{Theorem (Product Rule)}
 \begin{theorem}[Product Rule]
 \label{thm:product-rule}
 Let $A \subseteq \mathbb{R}$, let $f, g : A \to \mathbb{R}$, and let $c \in A$ be a limit point of $A$. If $f$ and $g$ are differentiable at $c$, then $fg$ is differentiable at $c$, and
@@ -109,7 +78,7 @@ Let $A \subseteq \mathbb{R}$, let $f, g : A \to \mathbb{R}$, and let $c \in A$ b
 \]
 \hyperref[prf:product-rule]{Go to proof.}
 \end{theorem}
-\end{tcolorbox}
+\end{theorembox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -134,7 +103,7 @@ The derivative of a product is not simply the product of the derivatives. The co
 
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=corbox, colframe=corborder]
+\begin{theorembox}{Theorem (Quotient Rule)}
 \begin{theorem}[Quotient Rule]
 \label{thm:quotient-rule}
 Let $A \subseteq \mathbb{R}$, let $f, g : A \to \mathbb{R}$, and let $c \in A$ be a limit point of $A$. Suppose that $f$ and $g$ are differentiable at $c$ and that $g(c) \neq 0$. Then $f/g$ is differentiable at $c$, and
@@ -143,7 +112,7 @@ Let $A \subseteq \mathbb{R}$, let $f, g : A \to \mathbb{R}$, and let $c \in A$ b
 \]
 \hyperref[prf:quotient-rule]{Go to proof.}
 \end{theorem}
-\end{tcolorbox}
+\end{theorembox}
 
 \begin{remark*}[Standard quantified statement]
 \[

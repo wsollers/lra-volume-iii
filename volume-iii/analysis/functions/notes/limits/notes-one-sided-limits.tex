@@ -7,24 +7,11 @@
 
 \section{One-Sided Limits}
 \label{sec:one-sided-limits}
-
-\begin{toolkitbox}{Toolkit --- One-Sided Limits}
-\begin{itemize}
-  \item $\operatorname{RightLimit}(f,c,L)$: approach from $x>c$ only.
-    Input condition: $0<x-c<\delta$.
-  \item $\operatorname{LeftLimit}(f,c,L)$: approach from $x<c$ only.
-    Input condition: $0<c-x<\delta$.
-  \item Sequential criteria hold for each direction separately.
-  \item $\operatorname{FunctionLimit}(f,c,L)\iff
-    \operatorname{RightLimit}(f,c,L)\wedge\operatorname{LeftLimit}(f,c,L)$.
-\end{itemize}
-\end{toolkitbox}
-
 % ---------------------------------------------------------
 % Definition — One-Sided Limits
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=corbox, colframe=corborder]
+\begin{definitionbox}{Definition (Right-Hand Limit)}
 \begin{definition}[Right-Hand Limit]
 \label{def:right-hand-limit}
 Let $A\subseteq\mathbb{R}$, let $f:A\to\mathbb{R}$, let $c\in\mathbb{R}$,
@@ -35,7 +22,7 @@ $L$ is the \textbf{right-hand limit} of $f$ at $c$ if
   0<x-c<\delta\Rightarrow |f(x)-L|<\varepsilon.
 \]
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -90,7 +77,7 @@ it is defined, is irrelevant to the right-hand limit.
 \end{itemize}
 \end{remark*}
 
-\begin{tcolorbox}[colback=corbox, colframe=corborder]
+\begin{definitionbox}{Definition (Left-Hand Limit)}
 \begin{definition}[Left-Hand Limit]
 \label{def:left-hand-limit}
 Let $A\subseteq\mathbb{R}$, let $f:A\to\mathbb{R}$, let $c\in\mathbb{R}$,
@@ -101,7 +88,7 @@ $L$ is the \textbf{left-hand limit} of $f$ at $c$ if
   0<c-x<\delta\Rightarrow |f(x)-L|<\varepsilon.
 \]
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[

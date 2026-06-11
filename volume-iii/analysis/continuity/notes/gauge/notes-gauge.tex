@@ -6,23 +6,6 @@
 
 \subsection*{Gauges and Tagged Partitions}
 \label{sec:gauges-tagged-partitions}
-
-\begin{toolkitbox}{Toolkit --- Gauges and Tagged Partitions}
-\begin{itemize}
-  \item A \textbf{gauge} $\delta:I\to(0,\infty)$ is a variable-width
-    tolerance function allowing the mesh to depend on position.
-  \item A tagged partition $\dot{\mathcal{P}}$ is $\delta$-fine if
-    each subinterval $I_i$ lies inside the $\delta(t_i)$-neighbourhood
-    of its tag $t_i$: $\operatorname{Within}(x,t_i,\delta(t_i))$ for
-    all $x\in[x_{i-1},x_i]$.
-  \item \textbf{Cousin's theorem}: every gauge on $[a,b]$ admits a
-    $\delta$-fine tagged partition.
-  \item Gauge proofs of Boundedness, EVT, Location of Roots, and
-    Heine--Cantor directly construct the required constants from a
-    $\delta$-fine partition.
-\end{itemize}
-\end{toolkitbox}
-
 % ---------------------------------------------------------
 % Definition --- Partition
 % ---------------------------------------------------------
@@ -168,7 +151,6 @@ A tagged partition augments the usual subdivision of a closed interval by select
 \hyperref[def:partition]{Definition~\ref*{def:partition}}.
 \end{remark*}
 
-
 % ---------------------------------------------------------
 % Definition --- Gauge
 % ---------------------------------------------------------
@@ -295,7 +277,6 @@ A $\delta$-fine tagged partition refines the interval so that each subinterval s
 \hyperref[def:gauge]{Definition \ref*{def:gauge}}; \hyperref[def:tagged-partition]{Definition \ref*{def:tagged-partition}}
 \end{remark*}
 
-
 % ---------------------------------------------------------
 % Lemma --- Every Point Is Covered by a Tag
 % ---------------------------------------------------------
@@ -323,7 +304,6 @@ A $\delta$-fine tagged partition matches each subinterval to a tag that lies ins
 \hyperref[def:tagged-partition]{Definition~\ref*{def:tagged-partition}},
 \hyperref[def:delta-fine-partition]{Definition~\ref*{def:delta-fine-partition}}.
 \end{remark*}
-
 
 % ---------------------------------------------------------
 % Theorem --- Cousin's Theorem

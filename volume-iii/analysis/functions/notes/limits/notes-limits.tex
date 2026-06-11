@@ -11,31 +11,11 @@
 % ---------------------------------------------------------
 % Toolkit
 % ---------------------------------------------------------
-
-\begin{toolkitbox}{Toolkit --- Limits of Functions}
-\begin{itemize}
-  \item $\lim_{x \to c} f(x) = L$ requires $c$ to be a cluster point
-    of $\operatorname{dom}(f)$. The value $f(c)$ is irrelevant;
-    $f$ need not be defined at $c$.
-  \item The input condition is punctured:
-    $0<|x-c|<\delta$ means
-    $0 < |x-c| < \delta$. This is what separates limits from
-    continuity, where $\operatorname{Within}(x,c,\delta)$
-    permits $x = c$.
-  \item Three equivalent forms: $\varepsilon$-$\delta$, neighbourhood,
-    sequential. The Sequential Criterion is the primary working tool.
-  \item Bridge principle: algebra of sequence limits transfers
-    automatically via the Sequential Criterion.
-  \item A finite limit implies $\exists\delta>0\;\exists M>0\;\forall x\in A\;(0<|x-c|<\delta\Rightarrow |f(x)|\leq M)$.
-  \item Limits are local: behavior far from $c$ is irrelevant.
-\end{itemize}
-\end{toolkitbox}
-
 % ---------------------------------------------------------
 % Tao scaffolding
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=propbox, colframe=propborder]
+\begin{definitionbox}{Definition ($\varepsilon$-Closeness of a Function to a Value)}
 \begin{definition}[$\varepsilon$-Closeness of a Function to a Value]
 \label{def:eps-close-function}
 Let $X \subseteq \mathbb{R}$, let $f : X \to \mathbb{R}$, let
@@ -43,8 +23,7 @@ $L \in \mathbb{R}$, and let $\varepsilon > 0$. The function $f$ is
 \textbf{$\varepsilon$-close to $L$} if $|f(x)-L|\leq\varepsilon$ for
 all $x\in X$.
 \end{definition}
-
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -63,7 +42,7 @@ condition to a punctured neighbourhood of $c$.
 
 \NoLocalDependencies
 
-\begin{tcolorbox}[colback=propbox, colframe=propborder]
+\begin{definitionbox}{Definition (Local $\delta$-Closeness Near a Point)}
 \begin{definition}[Local $\delta$-Closeness Near a Point]
 \label{def:delta-close-function}
 Let $f : X \to \mathbb{R}$, let $L \in \mathbb{R}$, let $x_0$ be
@@ -73,8 +52,7 @@ is \textbf{$\varepsilon$-close to $L$ near $x_0$ within $\delta$} if
   \forall x \in X\;\bigl(|x-x_0|<\delta\Rightarrow |f(x)-L|\leq\varepsilon\bigr).
 \]
 \end{definition}
-
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -101,7 +79,7 @@ that for every $\varepsilon$ such a $\delta$ exists.
 % Definition — Limit of a Function
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=propbox, colframe=propborder]
+\begin{definitionbox}{Definition (Limit of a Function)}
 \begin{definition}[Limit of a Function]
 \label{def:limit-function}
 Let $f : A \to \mathbb{R}$ and let $c$ be a cluster point of $A$.
@@ -115,7 +93,7 @@ $\lim_{x \to c} f(x) = L$, if
 \smallskip\noindent
 \hyperref[prf:limit-unique]{\textit{Go to uniqueness proof.}}
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -260,7 +238,7 @@ simultaneously, not just one.
 % Definition — Sequential Form of Limit
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=propbox, colframe=propborder]
+\begin{definitionbox}{Definition (Sequential Definition of Limit)}
 \begin{definition}[Sequential Definition of Limit]
 \label{def:limit-function-sequential}
 Let $f : A \to \mathbb{R}$ and let $c$ be a cluster point of $A$.
@@ -268,8 +246,7 @@ The limit $\lim_{x \to c} f(x) = L$ in the \textbf{sequential
 sense} holds if for every sequence $(x_n) \subseteq A \setminus \{c\}$
 with $x_n \to c$, the sequence $(f(x_n))$ converges to $L$.
 \end{definition}
-
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -379,6 +356,11 @@ Then $f$ has at most one limit at $c$.
   \lim_{x\to c}f(x)=L'
   \;\Rightarrow\; L = L'.
 \]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+Failure of uniqueness would mean that two distinct real numbers both satisfy
+the limit definition at the same cluster point.
 \end{remark*}
 
 \begin{remark*}[Failure mode decomposition]
@@ -762,6 +744,11 @@ $g(c_2) = L$. Then $\lim_{x\to c_1}g(f(x))=L$.
   \;\Rightarrow\;
   \lim_{x\to c_1}g(f(x))=L.
 \]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+The composition conclusion can fail if the outer function is not controlled
+at the intermediate value reached by the inner limit.
 \end{remark*}
 
 \begin{remark*}[Failure mode decomposition]

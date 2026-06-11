@@ -6,22 +6,6 @@
 
 \subsection*{Oscillation}
 \label{sec:oscillation}
-
-\begin{toolkitbox}{Toolkit --- Oscillation}
-\begin{itemize}
-  \item $\operatorname{OscillationOn}(f,E,\omega)$:
-    $\omega(f;E)=\sup_{x_1,x_2\in E}|f(x_1)-f(x_2)|=\operatorname{diam}(f(E))$.
-  \item $\operatorname{OscillationAt}(f,x_0,\omega)$:
-    $\omega(f;x_0)=\lim_{\delta\to 0^+}\omega(f;U_\delta(x_0)\cap E)$.
-    The limit exists because the function $\delta\mapsto\omega(f;U_\delta(x_0)\cap E)$
-    is nonincreasing.
-  \item $\operatorname{ContinuousAt}(f,x_0)\iff\omega(f;x_0)=0$.
-  \item Discontinuity set: $D(f)=\{x:\omega(f;x)>0\}=
-    \bigcup_{n=1}^\infty\{x:\omega(f;x)\geq 1/n\}$.
-  \item Each threshold set is closed; $D(f)$ is $F_\sigma$.
-\end{itemize}
-\end{toolkitbox}
-
 % ---------------------------------------------------------
 % Definition --- Oscillation on a Set
 % ---------------------------------------------------------
@@ -182,7 +166,6 @@ Oscillation at $x_0$ measures the largest possible jump in function values that 
 \hyperref[def:oscillation-on-a-set]{Definition~\ref*{def:oscillation-on-a-set}}
 \end{remark*}
 
-
 % ---------------------------------------------------------
 % Theorem --- Continuity iff Zero Oscillation
 % ---------------------------------------------------------
@@ -251,7 +234,6 @@ The theorem states that measuring the oscillation of $f$ near $c$ captures exact
 \hyperref[def:continuous-at-point]{Definition~\ref*{def:continuous-at-point}},
 \hyperref[def:oscillation-at-a-point]{Definition~\ref*{def:oscillation-at-a-point}}.
 \end{remark*}
-
 
 % ---------------------------------------------------------
 % Proposition --- Discontinuity Set via Oscillation

@@ -6,23 +6,6 @@
 
 \subsection*{Intermediate Value Theorem}
 \label{sec:ivt}
-
-\begin{toolkitbox}{Toolkit --- Boundedness, Extrema, and Intermediate Values}
-\begin{itemize}
-  \item Implication chain on $[a,b]$:
-    $\operatorname{ContinuousOn}(f,[a,b])$
-    $\Rightarrow\operatorname{BoundedOn}(f,[a,b])$
-    $\Rightarrow$ extrema attained
-    $\Rightarrow$ all intermediate values attained
-    $\Rightarrow$ $f([a,b])$ is a closed bounded interval.
-  \item All three hypotheses are essential: closed, bounded, continuous.
-    Drop any one and the conclusion fails.
-  \item IVT on a general interval: continuous image of any interval
-    is an interval (Preservation of Intervals).
-  \item Darboux property: a continuous function cannot skip a value.
-\end{itemize}
-\end{toolkitbox}
-
 % ---------------------------------------------------------
 % Definition --- Bounded on a Set
 % ---------------------------------------------------------
@@ -90,6 +73,10 @@ Failure occurs precisely when every proposed positive bound $M$ is exceeded by s
 \]
 \end{remark*}
 
+
+
+
+
 \begin{remark*}[Interpretation]
 The definition packages the informal idea that the values of $f$ stay within a fixed vertical strip over $A$. The witness $M$ serves as a uniform ceiling for the magnitudes $|f(x)|$, so once such an $M$ is known the graph of $f$ never escapes the band $[-M,M]$. Failure means that the outputs of $f$ grow without limit along some sequence of points inside $A$, so no finite strip can contain the entire image. Boundedness on a set is the foundational regularity hypothesis that underlies the boundedness and extreme value theorems for continuous functions on compact domains.
 \end{remark*}
@@ -106,7 +93,6 @@ Let $a<b$ and let $f:[a,b]\to\mathbb{R}$ be continuous on $[a,b]$. Then there ex
 \hyperref[prf:boundedness-theorem]{Go to proof.}
 \end{theorem}
 \end{theorembox}
-
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -158,6 +144,10 @@ Each component hypothesis is indispensable: without closedness (for instance $f(
 \]
 \end{remark*}
 
+
+
+
+
 \begin{remark*}[Interpretation]
 Continuity ties nearby inputs to nearby outputs, and the compact interval $[a,b]$ can be covered by finitely many neighborhoods in which the oscillation of $f$ is controlled; taking the maximal oscillation among this finite cover supplies a global bound. Failure typically arises when the domain lacks compactness: an omitted endpoint allows the function to escape control near the hole, an unbounded interval lets values diverge along the ray, and a point of discontinuity can spike the function without upsetting nearby behavior elsewhere.
 \end{remark*}
@@ -165,7 +155,6 @@ Continuity ties nearby inputs to nearby outputs, and the compact interval $[a,b]
 \begin{remark*}[Dependencies]
 \hyperref[def:continuous-at-point]{Definition~\ref*{def:continuous-at-point}}; \hyperref[def:bounded-on-a-set]{Definition~\ref*{def:bounded-on-a-set}}.
 \end{remark*}
-
 
 % ---------------------------------------------------------
 % Definition --- Absolute Extrema
@@ -243,6 +232,10 @@ An alleged absolute maximum can fail because the proposed point lies outside the
 \]
 \end{remark*}
 
+
+
+
+
 \begin{remark*}[Interpretation]
 An absolute maximum identifies the highest value that $f$ attains on its domain $A$, together with a point of attainment, and the absolute minimum identifies the lowest attained value. These extrema describe the global ceiling and floor of the graph restricted to $A$, so they are the endpoints of the vertical range. Failure occurs either when the candidate point is not part of the domain or when another domain point produces a superior value, reflecting that global optimization is sensitive to both membership and comparative size. Geometrically the absolute maximum sits at the tallest point of the graph above $A$, while the absolute minimum sits at the lowest point.
 \end{remark*}
@@ -276,10 +269,6 @@ Let $a,b \in \mathbb{R}$ with $a<b$, and let $f:[a,b] \to \mathbb{R}$ be continu
 \]
 \end{remark*}
 
-\begin{remark*}[Interpretation]
-Continuity on a closed and bounded interval forces the image of the interval to inherit the compact features of the domain. The function cannot escape to infinity or oscillate without settling, so it must reach both its highest and lowest values somewhere in the interval. When the hypotheses fail, the typical obstruction is the loss of compactness: on an open interval the function might drift off without achieving its supremum, and without continuity it may jump over candidate extrema.
-\end{remark*}
-
 \begin{remark*}[Failure modes]
 The theorem can fail if the compact interval hypothesis is lost, or if
 the function is not continuous on the whole interval. Without compactness
@@ -298,22 +287,25 @@ continuity the graph may jump over its supremum or infimum.
 \]
 \end{remark*}
 
+\begin{remark*}[Interpretation]
+Continuity on a closed and bounded interval forces the image of the interval to inherit the compact features of the domain. The function cannot escape to infinity or oscillate without settling, so it must reach both its highest and lowest values somewhere in the interval. When the hypotheses fail, the typical obstruction is the loss of compactness: on an open interval the function might drift off without achieving its supremum, and without continuity it may jump over candidate extrema.
+\end{remark*}
+
 \begin{remark*}[Dependencies]
 Uses \hyperref[def:absolute-extrema]{Definition \ref{def:absolute-extrema}} and \hyperref[thm:boundedness-theorem]{Theorem \ref{thm:boundedness-theorem}}.
 \end{remark*}
-
 
 % ---------------------------------------------------------
 % Theorem --- Location of Roots
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=defbox, colframe=defborder]
+\begin{theorembox}{Theorem (Location of Roots)}
 \begin{theorem}[Location of Roots]
 \label{thm:location-of-roots}
 Let $a,b \in \mathbb{R}$ with $a<b$ and let $f:[a,b]\to\mathbb{R}$ be continuous. If either $f(a)<0<f(b)$ or $f(a)>0>f(b)$, then there exists $c\in(a,b)$ such that $f(c)=0$.
 \hyperref[prf:location-of-roots]{Go to proof.}
 \end{theorem}
-\end{tcolorbox}
+\end{theorembox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -322,10 +314,6 @@ Let $a,b \in \mathbb{R}$ with $a<b$ and let $f:[a,b]\to\mathbb{R}$ be continuous
 &\bigl(f(a)<0<f(b) \lor f(a)>0>f(b)\bigr) \Rightarrow \exists c \in (a,b)\; \bigl(f(c)=0\bigr).
 \end{aligned}
 \]
-\end{remark*}
-
-\begin{remark*}[Interpretation]
-Continuity forces the image of the interval $[a,b]$ to contain every intermediate value between $f(a)$ and $f(b)$. A sign change therefore compels the graph to cross the horizontal axis, producing a root strictly inside the interval. Failure occurs when the endpoint values share the same sign or when $f$ is not continuous, because then the image need not sweep across zero. Geometrically, the theorem asserts that a continuous curve connecting opposite sides of the $x$-axis must intersect the axis somewhere in between.
 \end{remark*}
 
 \begin{remark*}[Failure modes]
@@ -342,10 +330,13 @@ the endpoint values do not have opposite signs.
 \]
 \end{remark*}
 
+\begin{remark*}[Interpretation]
+Continuity forces the image of the interval $[a,b]$ to contain every intermediate value between $f(a)$ and $f(b)$. A sign change therefore compels the graph to cross the horizontal axis, producing a root strictly inside the interval. Failure occurs when the endpoint values share the same sign or when $f$ is not continuous, because then the image need not sweep across zero. Geometrically, the theorem asserts that a continuous curve connecting opposite sides of the $x$-axis must intersect the axis somewhere in between.
+\end{remark*}
+
 \begin{remark*}[Dependencies]
 \hyperref[thm:bolzano-intermediate-value]{Bolzano's Intermediate Value Theorem}.
 \end{remark*}
-
 
 % ---------------------------------------------------------
 % Theorem --- Bolzano's IVT
@@ -439,18 +430,17 @@ The statement combines the extreme value theorem, which supplies both a minimum 
 \hyperref[thm:bolzano-intermediate-value]{Bolzano's Intermediate Value Theorem}
 \end{remark*}
 
-
 % ---------------------------------------------------------
 % Theorem --- Preservation of Intervals
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=defbox, colframe=defborder]
+\begin{theorembox}{Theorem (Preservation of Intervals)}
 \begin{theorem}[Preservation of Intervals]
 \label{thm:preservation-of-intervals}
 Let $I \subseteq \mathbb{R}$ be an interval and let $f:I \to \mathbb{R}$ be continuous. Then $f(I)$ is an interval.
 \hyperref[prf:preservation-of-intervals]{Go to proof.}
 \end{theorem}
-\end{tcolorbox}
+\end{theorembox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -511,18 +501,17 @@ Continuous functions cannot tear gaps open inside their images of intervals. Onc
 \hyperref[thm:bolzano-intermediate-value]{thm:bolzano-intermediate-value}
 \end{remark*}
 
-
 % ---------------------------------------------------------
 % Theorem --- Darboux Property
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=defbox, colframe=defborder]
+\begin{theorembox}{Theorem (Darboux Property)}
 \begin{theorem}[Darboux Property]
 \label{thm:darboux-property}
 Let $a,b\in\mathbb{R}$ satisfy $a<b$, let $f:[a,b]\to\mathbb{R}$ be continuous, and fix $c\in\mathbb{R}$. If $f(x)\neq c$ for every $x\in[a,b]$, then either $f(x)>c$ for all $x\in[a,b]$ or $f(x)<c$ for all $x\in[a,b]$.
 \hyperref[prf:darboux-property]{Go to proof.}
 \end{theorem}
-\end{tcolorbox}
+\end{theorembox}
 
 \begin{remark*}[Standard quantified statement]
 \[

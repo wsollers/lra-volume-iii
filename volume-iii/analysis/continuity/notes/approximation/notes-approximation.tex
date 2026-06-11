@@ -6,19 +6,6 @@
 
 \subsection*{Approximation of Continuous Functions}
 \label{sec:approximation}
-
-\begin{toolkitbox}{Toolkit --- Approximation}
-\begin{itemize}
-  \item Hierarchy: step functions $\subset$ piecewise linear $\subset$
-    polynomials. All three classes are dense in $(C([a,b]),\|\cdot\|_\infty)$.
-  \item All three results use Heine--Cantor: $\operatorname{UniformlyContinuous}(f,[a,b])$
-    provides the controlling $\delta$.
-  \item Bernstein polynomials: $B_n(x)=\sum_{k=0}^n f(k/n)\binom{n}{k}x^k(1-x)^{n-k}$.
-  \item Step function approximation feeds directly into Riemann
-    integrability of continuous functions.
-\end{itemize}
-\end{toolkitbox}
-
 % ---------------------------------------------------------
 % Theorem --- Step Function Approximation
 % ---------------------------------------------------------
@@ -92,7 +79,6 @@ Uniform continuity on $[a,b]$ guarantees that $f$ does not oscillate rapidly at 
 \begin{remark*}[Dependencies]
 \hyperref[thm:heine-cantor]{Heine--Cantor Theorem}.
 \end{remark*}
-
 
 % ---------------------------------------------------------
 % Definition --- Piecewise Linear Function
@@ -246,12 +232,11 @@ Every continuous function on a closed interval can be uniformly approximated by 
 Depends on \hyperref[thm:bernstein-approximation]{thm:bernstein-approximation}.
 \end{remark*}
 
-
 % ---------------------------------------------------------
 % Definition --- Bernstein Polynomial
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[title={Definition --- Bernstein Polynomial}]
+\begin{definitionbox}{Definition (Bernstein Polynomial)}
 \begin{definition}[Bernstein Polynomial]
 \label{def:bernstein-polynomial}
 Let $n \in \mathbb{N}$ and let $f:[0,1]\to\mathbb{R}$.
@@ -261,18 +246,7 @@ if and only if, for every $x \in [0,1]$,
 B_n(x)=\sum_{k=0}^{n} f\!\left(\frac{k}{n}\right)\binom{n}{k}x^k(1-x)^{n-k}.
 \]
 \end{definition}
-
-\begin{remark*}[Standard quantified statement]
-\[
-\begin{aligned}
-&B_n \text{ is the } n\text{th Bernstein polynomial of } f \\
-&\quad\Longleftrightarrow\quad
-\forall x \in [0,1],\;
-B_n(x)=\sum_{k=0}^{n} f\!\left(\frac{k}{n}\right)\binom{n}{k}x^k(1-x)^{n-k}.
-\end{aligned}
-\]
-\end{remark*}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[

@@ -6,25 +6,7 @@
 
 \subsection*{Monotone Functions and Continuity}
 \label{sec:monotone-functions}
-
-\begin{toolkitbox}{Toolkit --- Monotone Functions}
-\begin{itemize}
-  \item Every monotone function has $\operatorname{LeftLimit}$ and
-    $\operatorname{RightLimit}$ at every interior point.
-  \item $\operatorname{ContinuousAt}(f,c)\iff f(c^-)=f(c)=f(c^+)
-    \iff j_f(c)=0$.
-  \item All discontinuities of a monotone function are of first kind
-    --- jump only, no oscillation.
-  \item At most countably many discontinuities: disjoint jump
-    intervals inject into $\mathbb{Q}$.
-  \item Strictly monotone and continuous on $I$ $\Rightarrow$
-    $f^{-1}$ exists, is strictly monotone, and is continuous.
-  \item $\operatorname{ContinuousOn}(f,[a,b])\wedge\operatorname{Injective}(f)
-    \iff f$ strictly monotone.
-\end{itemize}
-\end{toolkitbox}
-
-\begin{tcolorbox}[colback=propbox, colframe=propborder]
+\begin{theorembox}{Theorem (One-Sided Limits of Monotone Functions)}
 \begin{theorem}[One-Sided Limits of Monotone Functions]
 \label{thm:monotone-one-sided-limits}
 Let $I \subseteq \mathbb{R}$ be an interval, let $c$ be interior to $I$, and let $f:I\to\mathbb{R}$ be increasing. Define
@@ -41,7 +23,7 @@ Then both one-sided limits exist and satisfy
 \]
 \hyperref[prf:monotone-one-sided-limits]{Go to proof.}
 \end{theorem}
-\end{tcolorbox}
+\end{theorembox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -77,13 +59,13 @@ For an increasing function, the values just to the left of $c$ form a monotone i
 \end{remark*}
 
 \NoLocalDependencies
-\begin{tcolorbox}[colback=propbox, colframe=propborder]
+\begin{corollarybox}{Corollary (Continuity Criterion for Monotone Functions)}
 \begin{corollary}[Continuity Criterion for Monotone Functions]
 \label{cor:monotone-continuity-criterion}
 Let $I \subseteq \mathbb{R}$ be an interval, let $f:I \to \mathbb{R}$ be monotone increasing, and let $c$ be an interior point of $I$. Then $f$ is continuous at $c$ if and only if its one-sided limits satisfy $f(c^-)=f(c)=f(c^+)$, where $f(c^-)=\lim_{x\to c^-} f(x)$ and $f(c^+)=\lim_{x\to c^+} f(x)$.
 \hyperref[prf:monotone-continuity-criterion]{Go to proof.}
 \end{corollary}
-\end{tcolorbox}
+\end{corollarybox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -148,7 +130,6 @@ A monotone graph possesses finite one-sided limits at every interior point. Cont
 \begin{remark*}[Dependencies]
 \hyperref[def:continuous-at-point]{Definition~\ref*{def:continuous-at-point}}; \hyperref[thm:monotone-one-sided-limits]{Theorem~\ref*{thm:monotone-one-sided-limits}}.
 \end{remark*}
-
 
 \begin{definitionbox}{Definition (Jump of a Function)}
 \begin{definition}[Jump of a Function]
@@ -254,13 +235,13 @@ jump records a discontinuity of first kind.
 \hyperref[thm:monotone-one-sided-limits]{Theorem~\ref*{thm:monotone-one-sided-limits}}.
 \end{remark*}
 
-\begin{tcolorbox}[colback=propbox, colframe=propborder]
+\begin{propositionbox}{Proposition (Discontinuities of a Monotone Function Are of First Kind)}
 \begin{proposition}[Discontinuities of a Monotone Function Are of First Kind]
 \label{prop:monotone-discontinuities-first-kind}
 Let $I \subseteq \mathbb{R}$ be an interval, let $f:I \to \mathbb{R}$ be monotone, and let $a \in I$ be such that there exist points of $I$ strictly less and strictly greater than $a$. If $f$ is discontinuous at $a$, then both one-sided limits $\lim_{x\uparrow a} f(x)$ and $\lim_{x\downarrow a} f(x)$ exist in $\mathbb{R}$.
 \hyperref[prf:monotone-discontinuities-first-kind]{Go to proof.}
 \end{proposition}
-\end{tcolorbox}
+\end{propositionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -291,14 +272,13 @@ A monotone graph can jump only by settling on distinct finite one-sided limits; 
 \hyperref[def:point-of-discontinuity]{Definition~\ref{def:point-of-discontinuity}}
 \end{remark*}
 
-
-\begin{tcolorbox}[colback=propbox, colframe=propborder]
+\begin{corollarybox}{Corollary (Jump Intervals Are Disjoint)}
 \begin{corollary}[Jump Intervals Are Disjoint]
 \label{cor:jump-intervals-for-monotone-discontinuities}
 Let $I \subseteq \mathbb{R}$ be an interval and let $f:I \to \mathbb{R}$ be nondecreasing. If $a,b \in I$ are distinct points of discontinuity of $f$, then the open intervals $(f(a^-),f(a^+))$ and $(f(b^-),f(b^+))$ are disjoint.%
 \hyperref[prf:jump-intervals-for-monotone-discontinuities]{Go to proof.}
 \end{corollary}
-\end{tcolorbox}
+\end{corollarybox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -337,7 +317,6 @@ The corollary states that a nondecreasing function assigns disjoint open value i
 \hyperref[def:jump-of-function]{Definition~\ref*{def:jump-of-function}}; \hyperref[prop:monotone-discontinuities-first-kind]{Proposition~\ref*{prop:monotone-discontinuities-first-kind}}
 \end{remark*}
 
-
 \begin{theorembox}{Theorem (Discontinuities of a Monotone Function Are Countable)}
 \begin{theorem}[Discontinuities of a Monotone Function Are Countable]
 \label{thm:monotone-discontinuities-countable}
@@ -368,14 +347,13 @@ Every discontinuity of a monotone function is a jump discontinuity with a nondeg
 \hyperref[thm:monotone-one-sided-limits]{Theorem~\ref{thm:monotone-one-sided-limits}} and \hyperref[cor:jump-intervals-for-monotone-discontinuities]{Corollary~\ref{cor:jump-intervals-for-monotone-discontinuities}}.
 \end{remark*}
 
-
-\begin{tcolorbox}[colback=propbox, colframe=propborder]
+\begin{corollarybox}{Corollary (Monotone Function Is Continuous on a Dense Set)}
 \begin{corollary}[Monotone Function Is Continuous on a Dense Set]
 \label{cor:monotone-continuous-on-dense-set}
 Let $f:[a,b]\to\mathbb{R}$ be monotone. Then the set $\{x\in[a,b]:f \text{ is continuous at } x\}$ is dense in $[a,b]$.
 \hyperref[prf:monotone-continuous-on-dense-set]{Go to proof.}
 \end{corollary}
-\end{tcolorbox}
+\end{corollarybox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -419,14 +397,13 @@ A monotone function on a closed interval can only jump at most countably many ti
 \hyperref[thm:monotone-discontinuities-countable]{Discontinuities of a Monotone Function Are Countable}
 \end{remark*}
 
-
-\begin{tcolorbox}[colback=propbox, colframe=propborder]
+\begin{propositionbox}{Proposition (Continuous Injective Is Strictly Monotone)}
 \begin{proposition}[Continuous Injective Is Strictly Monotone]
 \label{prop:continuous-injective-iff-strictly-monotone}
 Let $f:[a,b]\to\mathbb{R}$ be continuous on $[a,b]$. Then $f$ is injective if and only if $f$ is strictly monotone on $[a,b]$.
 \hyperref[prf:continuous-injective-iff-strictly-monotone]{Go to proof.}
 \end{proposition}
-\end{tcolorbox}
+\end{propositionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -455,7 +432,6 @@ A continuous function on a closed interval cannot reverse direction without repe
 \begin{remark*}[Dependencies]
 \hyperref[thm:bolzano-intermediate-value]{Bolzano's Intermediate Value Theorem}.
 \end{remark*}
-
 
 \begin{theorembox}{Theorem (Continuous Inverse Theorem)}
 \begin{theorem}[Continuous Inverse Theorem]

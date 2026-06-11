@@ -6,26 +6,6 @@
 
 \subsection*{Uniform Continuity}
 \label{sec:uniform-continuity}
-
-\begin{toolkitbox}{Toolkit --- Uniform Continuity}
-\begin{itemize}
-  \item Key distinction: $\delta=\delta(\varepsilon)$ only, not
-    $\delta(\varepsilon,c)$. One $\delta$ serves all pairs in $A$.
-  \item Input condition: $\operatorname{Within}(x,u,\delta)$ --- both
-    $x$ and $u$ range freely, no puncturing.
-  \item Implication chain: $\operatorname{Lipschitz}(f,A)
-    \Rightarrow\operatorname{UniformlyContinuous}(f,A)
-    \Rightarrow\operatorname{ContinuousOn}(f,A)$.
-    Both implications are strict.
-  \item Heine--Cantor: $\operatorname{ContinuousOn}(f,[a,b])
-    \Rightarrow\operatorname{UniformlyContinuous}(f,[a,b])$.
-  \item Failure criterion: sequences $(x_n),(u_n)$ with
-    $x_n-u_n\to 0$ but $|f(x_n)-f(u_n)|\geq\varepsilon_0$.
-  \item $\operatorname{UniformlyContinuous}(f,A)$ preserves Cauchy
-    sequences --- the key lemma for continuous extensions.
-\end{itemize}
-\end{toolkitbox}
-
 % ---------------------------------------------------------
 % Definition --- Uniform Continuity
 % ---------------------------------------------------------
@@ -83,6 +63,10 @@ The definition fails exactly when a single positive tolerance $\varepsilon_{0}$ 
 \underbrace{\exists x,u \in A \; (|x-u| < \delta \land |f(x)-f(u)| \ge \varepsilon_{0})}_{\text{bad witness pair}}.
 \]
 \end{remark*}
+
+
+
+
 
 \begin{remark*}[Interpretation]
 Uniform continuity demands that a single proximity scale $\delta$ answers any prescribed accuracy $\varepsilon$ simultaneously across the whole domain. The negation shows what goes wrong: a fixed output tolerance resists all choices of $\delta$ because pairs of nearby inputs can always be found that stretch the function values too far apart. Geometrically, the graph of a uniformly continuous function can be traversed with a ruler of length $\delta$ horizontally and $\varepsilon$ vertically without ever overstepping the vertical tolerance, whereas a nonuniformly continuous function exhibits spikes that defeat every fixed ruler length.
@@ -155,7 +139,6 @@ Uniform continuity is stable under linear combinations on any common domain, so 
 \hyperref[def:uniform-continuity]{Definition~\ref*{def:uniform-continuity}}.
 \end{remark*}
 
-
 % ---------------------------------------------------------
 % Theorem --- Algebra of Uniform Continuity (Bounded Domain)
 % ---------------------------------------------------------
@@ -171,7 +154,6 @@ Let $A \subseteq \mathbb{R}$ be bounded, and let $f,g:A \to \mathbb{R}$ be unifo
 \hyperref[prf:algebra-of-uniform-continuity-bounded]{Go to proof.}
 \end{theorem}
 \end{theorembox}
-
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -230,18 +212,17 @@ Bounded subsets of $\mathbb{R}$ prevent the product of two uniformly continuous 
 \hyperref[def:uniform-continuity]{Definition~\ref*{def:uniform-continuity}}.
 \end{remark*}
 
-
 % ---------------------------------------------------------
 % Proposition --- Sequential Characterization of Uniform Continuity
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=propbox, colframe=propborder]
+\begin{propositionbox}{Proposition (Sequential Characterization of Uniform Continuity)}
 \begin{proposition}[Sequential Characterization of Uniform Continuity]
 \label{prop:sequential-uniform-continuity}
 Let $A \subseteq \mathbb{R}$ and let $f:A \to \mathbb{R}$. Then $f$ is uniformly continuous on $A$ if and only if for every pair of sequences $(x_n)$ and $(y_n)$ in $A$ with $\lim_{n \to \infty} (x_n - y_n) = 0$ we have $\lim_{n \to \infty} (f(x_n) - f(y_n)) = 0$.
 \hyperref[prf:sequential-uniform-continuity]{Go to proof.}
 \end{proposition}
-\end{tcolorbox}
+\end{propositionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -324,7 +305,6 @@ Uniform continuity prevents the function from pulling together inputs that are a
 \hyperref[def:uniform-continuity]{Definition~\ref*{def:uniform-continuity}}
 \end{remark*}
 
-
 % ---------------------------------------------------------
 % Theorem --- Heine--Cantor
 % ---------------------------------------------------------
@@ -378,18 +358,17 @@ Continuity on the compact interval $[a,b]$ forces a single modulus of continuity
 \hyperref[def:uniform-continuity]{Definition~\ref*{def:uniform-continuity}}.
 \end{remark*}
 
-
 % ---------------------------------------------------------
 % Proposition --- Uniform Continuity Preserves Cauchy Sequences
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=propbox, colframe=propborder]
+\begin{propositionbox}{Proposition (Uniform Continuity Preserves Cauchy Sequences)}
 \begin{proposition}[Uniform Continuity Preserves Cauchy Sequences]
 \label{prop:uniform-continuity-cauchy}
 Let $S \subseteq \mathbb{R}$, let $f:S \to \mathbb{R}$, and let $(x_n)$ be a sequence in $S$. If $f$ is uniformly continuous on $S$ and $(x_n)$ is a Cauchy sequence in $S$, then $(f(x_n))$ is a Cauchy sequence in $\mathbb{R}$.
 \hyperref[prf:uniform-continuity-cauchy]{Go to proof.}
 \end{proposition}
-\end{tcolorbox}
+\end{propositionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -416,7 +395,6 @@ Uniform continuity controls the change in $f(x)$ solely through the distance bet
 \hyperref[def:uniform-continuity]{Definition~\ref{def:uniform-continuity}};
 \hyperref[def:cauchy-sequence]{Definition~\ref{def:cauchy-sequence}}.
 \end{remark*}
-
 
 % ---------------------------------------------------------
 % Definition --- Lipschitz Condition
@@ -490,13 +468,13 @@ The Lipschitz condition requires a single constant $K$ that simultaneously bound
 % Proposition --- Lipschitz Implies UC
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=propbox, colframe=propborder]
+\begin{propositionbox}{Proposition (Lipschitz Implies Uniform Continuity)}
 \begin{proposition}[Lipschitz Implies Uniform Continuity]
 \label{prop:lipschitz-implies-uc}
 Let $A \subseteq \mathbb{R}$ and $f:A \to \mathbb{R}$. If there exists $K \ge 0$ such that $|f(x)-f(y)| \le K |x-y|$ for all $x,y \in A$, then $f$ is uniformly continuous on $A$.
 \hyperref[prf:lipschitz-implies-uc]{Go to proof.}
 \end{proposition}
-\end{tcolorbox}
+\end{propositionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -511,10 +489,6 @@ Let $A \subseteq \mathbb{R}$ and $f:A \to \mathbb{R}$. If there exists $K \ge 0$
 \[
 \bigl[\exists K \ge 0\; \operatorname{Lipschitz}(f,A,K)\bigr] \Rightarrow \operatorname{UniformlyContinuous}(f,A).
 \]
-\end{remark*}
-
-\begin{remark*}[Interpretation]
-A Lipschitz bound controls the variation of $f$ by the distance between inputs with a single constant $K$, so the same $K$ yields a usable $\delta = \varepsilon/K$ for every pair of points at once, proving uniform continuity. When $K=0$ the function is constant and trivially uniform. Failure of uniform continuity would force two points arbitrarily close together whose images stay a fixed distance apart, contradicting the Lipschitz inequality.
 \end{remark*}
 
 \begin{remark*}[Contrapositive quantified statement]
@@ -536,6 +510,10 @@ If $f$ fails to be uniformly continuous on $A$, then $f$ is not Lipschitz on $A$
 \]
 \end{remark*}
 
+\begin{remark*}[Interpretation]
+A Lipschitz bound controls the variation of $f$ by the distance between inputs with a single constant $K$, so the same $K$ yields a usable $\delta = \varepsilon/K$ for every pair of points at once, proving uniform continuity. When $K=0$ the function is constant and trivially uniform. Failure of uniform continuity would force two points arbitrarily close together whose images stay a fixed distance apart, contradicting the Lipschitz inequality.
+\end{remark*}
+
 \begin{remark*}[Strict implication note]
 The implication Lipschitz $\Rightarrow$ uniform continuity is strict. The canonical counterexample is $f(x)=\sqrt{x}$ on $[0,1]$, which is uniformly continuous by the Heine--Cantor theorem but satisfies $|f(x)-f(0)|/|x-0| = 1/\sqrt{x} \to \infty$ as $x \to 0^+$, so no Lipschitz constant exists at the origin. This distinction is relevant to GPU Lipschitz-constant estimation: uniform continuity of a simulation function does not supply a computable $K$ for the Lipschitz condition; only an explicit Lipschitz bound does.
 \end{remark*}
@@ -543,7 +521,6 @@ The implication Lipschitz $\Rightarrow$ uniform continuity is strict. The canoni
 \begin{remark*}[Dependencies]
 \hyperref[def:lipschitz-condition]{Definition \ref*{def:lipschitz-condition}}, \hyperref[def:uniform-continuity]{Definition \ref*{def:uniform-continuity}}.
 \end{remark*}
-
 
 % ---------------------------------------------------------
 % Theorem --- Algebra of Lipschitz Functions
@@ -601,7 +578,6 @@ Lipschitz functions are stable under the standard algebraic operations: scaling 
 \begin{remark*}[Dependencies]
 \hyperref[def:lipschitz-condition]{Definition~\ref{def:lipschitz-condition}}, \hyperref[def:bounded-on-a-set]{Definition~\ref{def:bounded-on-a-set}}
 \end{remark*}
-
 
 % ---------------------------------------------------------
 % Definition --- Bi-Lipschitz Map

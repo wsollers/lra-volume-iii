@@ -22,7 +22,7 @@ where the \emph{binomial coefficients} are
 \end{theorembox}
 \label{thm:binomial}
 
-\begin{remark*}[Fully quantified form]
+\begin{remark*}[Standard quantified statement]
 \(\forall n \in \mathbb{N},\; \forall x,y \in \mathbb{R}: \displaystyle(x+y)^n = \sum_{k=0}^{n}\binom{n}{k}x^{n-k}y^{k}\).
 \end{remark*}
 
@@ -36,6 +36,7 @@ a sum of products.
 
 \section*{Basic Properties of Binomial Coefficients}
 
+\begin{remark*}[Basic properties of binomial coefficients]
 \begin{align*}
 \binom{n}{0} &= 1, &
 \binom{n}{n} &= 1, &
@@ -50,6 +51,7 @@ They also satisfy the \emph{Pascal recursion}:
 \]
 This recursion produces Pascal's triangle, in which each entry is the
 sum of the two entries directly above it.
+\end{remark*}
 
 \begin{center}
 \begin{tikzpicture}[scale=1]
@@ -73,8 +75,10 @@ expansion.
 
 \section*{Connection with Discrete Calculus}
 
+\begin{remark*}[Connection with discrete calculus]
 The binomial theorem plays a central role in discrete calculus because
 difference operators naturally produce binomial coefficients.
+\end{remark*}
 
 \begin{proposition}[Higher difference formula]
 \label{prop:higher-diff-formula}
@@ -89,7 +93,7 @@ f(x+k).
 \hyperref[prf:higher-diff-formula]{Go to proof.}
 \end{proposition}
 
-\begin{remark*}[Fully quantified form]
+\begin{remark*}[Standard quantified statement]
 \(\forall n \in \mathbb{N},\; \forall f : \mathbb{Z}\to\mathbb{R},\; \forall x \in \mathbb{Z}:\;
 \Delta^n f(x) = \displaystyle\sum_{k=0}^{n}(-1)^{n-k}\binom{n}{k}f(x+k)\).
 \end{remark*}
@@ -103,6 +107,7 @@ This derivation is carried out in full in the Difference Operators section.
 
 \section*{Explicit Examples}
 
+\begin{remark*}[Explicit examples]
 Applying the difference operator repeatedly to a function \(f\) yields
 \[
 \begin{aligned}
@@ -114,3 +119,4 @@ Applying the difference operator repeatedly to a function \(f\) yields
 The coefficients \(1, 2, 1\) and \(1, 3, 3, 1\) are precisely the rows of
 Pascal's triangle, confirming that binomial coefficients determine the pattern
 of coefficients in higher-order finite differences.
+\end{remark*}

@@ -7,23 +7,6 @@
 
 \section{Subsets of $\mathbb{R}$}
 \label{sec:subsets-of-R}
-
-\begin{toolkitbox}{Toolkit --- Subsets of $\mathbb{R}$}
-\begin{itemize}
-  \item Cluster point (= limit point = accumulation point): every
-    $\varepsilon$-neighbourhood contains a \emph{distinct} point of $X$.
-    Adherent point: every neighbourhood contains \emph{some} point of $X$.
-  \item $\operatorname{Within}(x,c,r)$: the unpunctured ball condition
-    $|x-c| < r$. Used for adherence and continuity.
-  \item $\operatorname{InputTolerance}(x,c,\delta)$: the punctured ball
-    $0 < |x-c| < \delta$. Used for cluster points and function limits.
-  \item Closed $\iff$ $\overline{X} = X$ $\iff$ sequentially closed.
-  \item Heine--Borel: $X\text{ is closed}$ and
-    $X\text{ is bounded}$ $\iff$ every sequence in $X$ has a
-    subsequence converging to a limit in $X$.
-\end{itemize}
-\end{toolkitbox}
-
 \begin{remark*}[Terminological note]
 Cluster point = limit point = accumulation point. Bartle and Lebl use
 \emph{cluster point}; Rudin uses \emph{limit point}; Tao uses both.
@@ -34,7 +17,7 @@ Adherent point (Tao) is the weaker notion that includes isolated points.
 % Definition — epsilon-Neighbourhood
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=corbox, colframe=corborder]
+\begin{definitionbox}{Definition ($\varepsilon$-Neighbourhood)}
 \begin{definition}[$\varepsilon$-Neighbourhood]
 \label{def:epsilon-neighbourhood}
 Let $x\in\mathbb{R}$ and let $\varepsilon>0$. The
@@ -44,7 +27,7 @@ Let $x\in\mathbb{R}$ and let $\varepsilon>0$. The
   =\{y\in\mathbb{R}: |y-x|<\varepsilon\}.
 \]
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -59,7 +42,7 @@ $\varepsilon$ centered at $x$.
 
 \NoLocalDependencies
 
-\begin{tcolorbox}[colback=corbox, colframe=corborder]
+\begin{definitionbox}{Definition (Deleted $\varepsilon$-Neighbourhood)}
 \begin{definition}[Deleted $\varepsilon$-Neighbourhood]
 \label{def:deleted-epsilon-neighbourhood}
 Let $x\in\mathbb{R}$ and let $\varepsilon>0$. The
@@ -69,7 +52,7 @@ Let $x\in\mathbb{R}$ and let $\varepsilon>0$. The
   =\{y\in\mathbb{R}:0<|y-x|<\varepsilon\}.
 \]
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -92,7 +75,7 @@ input region used in limit definitions.
 % Definition — Cluster Point
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=corbox, colframe=corborder]
+\begin{definitionbox}{Definition (Cluster Point)}
 \begin{definition}[Cluster Point]
 \label{def:cluster-point-r}
 Let $X \subseteq \mathbb{R}$ and $x \in \mathbb{R}$. The point $x$
@@ -103,7 +86,7 @@ is a \textbf{cluster point} of $X$ if
   |y-x|<\varepsilon.
 \]
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -197,7 +180,7 @@ the $\varepsilon$-$\delta$ definition with the sequential language.
 % Definition — Adherent Point and Isolated Point
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=corbox, colframe=corborder]
+\begin{definitionbox}{Definition (Adherent Point)}
 \begin{definition}[Adherent Point]
 \label{def:adherent-point-r}
 Let $X\subseteq\mathbb{R}$ and let $x\in\mathbb{R}$. The point $x$ is
@@ -206,7 +189,7 @@ an \textbf{adherent point} of $X$ if
   \forall\varepsilon>0\;\exists y\in X\;(|y-x|<\varepsilon).
 \]
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -239,7 +222,7 @@ $x$, including possibly $x$ itself.
 \end{itemize}
 \end{remark*}
 
-\begin{tcolorbox}[colback=corbox, colframe=corborder]
+\begin{definitionbox}{Definition (Isolated Point)}
 \begin{definition}[Isolated Point]
 \label{def:isolated-point-r}
 Let $X\subseteq\mathbb{R}$ and let $x\in X$. The point $x$ is an
@@ -248,7 +231,7 @@ Let $X\subseteq\mathbb{R}$ and let $x\in X$. The point $x$ is an
   \exists\varepsilon>0\;\bigl(V_\varepsilon(x)\cap X=\{x\}\bigr).
 \]
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -286,7 +269,7 @@ no other points of the set.
 % Definition — Interior, Exterior, Boundary
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=corbox, colframe=corborder]
+\begin{definitionbox}{Definition (Interior Point)}
 \begin{definition}[Interior Point]
 \label{def:interior-point-r}
 Let $X\subseteq\mathbb{R}$ and let $x\in\mathbb{R}$. The point $x$ is
@@ -295,7 +278,7 @@ an \textbf{interior point} of $X$ if
   \exists\varepsilon>0\;\bigl(V_\varepsilon(x)\subseteq X\bigr).
 \]
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -319,7 +302,7 @@ An interior point has a full open neighbourhood contained in the set.
 \end{itemize}
 \end{remark*}
 
-\begin{tcolorbox}[colback=corbox, colframe=corborder]
+\begin{definitionbox}{Definition (Boundary Point)}
 \begin{definition}[Boundary Point]
 \label{def:boundary-point-r}
 Let $X\subseteq\mathbb{R}$ and let $x\in\mathbb{R}$. The point $x$ is
@@ -329,7 +312,7 @@ a \textbf{boundary point} of $X$ if
   \wedge\bigl(V_\varepsilon(x)\cap X^c\neq\emptyset\bigr).
 \]
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -357,7 +340,7 @@ neighbourhood.
 \end{itemize}
 \end{remark*}
 
-\begin{tcolorbox}[colback=corbox, colframe=corborder]
+\begin{definitionbox}{Definition (Interior)}
 \begin{definition}[Interior]
 \label{def:interior-r}
 Let $X\subseteq\mathbb{R}$. The \textbf{interior} of $X$ is
@@ -365,7 +348,7 @@ Let $X\subseteq\mathbb{R}$. The \textbf{interior} of $X$ is
   X^\circ:=\{x\in\mathbb{R}:\exists\varepsilon>0\;V_\varepsilon(x)\subseteq X\}.
 \]
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -384,7 +367,7 @@ whole neighbourhood.
 \end{itemize}
 \end{remark*}
 
-\begin{tcolorbox}[colback=corbox, colframe=corborder]
+\begin{definitionbox}{Definition (Boundary)}
 \begin{definition}[Boundary]
 \label{def:boundary-r}
 Let $X\subseteq\mathbb{R}$. The \textbf{boundary} of $X$ is
@@ -392,7 +375,7 @@ Let $X\subseteq\mathbb{R}$. The \textbf{boundary} of $X$ is
   \partial X:=\{x\in\mathbb{R}:\forall\varepsilon>0\;(V_\varepsilon(x)\cap X\neq\emptyset\wedge V_\varepsilon(x)\cap X^c\neq\emptyset)\}.
 \]
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -415,13 +398,16 @@ inside and outside of the set.
 % ---------------------------------------------------------
 % Definition — Closure
 % ---------------------------------------------------------
-
-\begin{tcolorbox}[title={Definition --- Closure}]
+\begin{definitionbox}{Definition (Closure)}
 \begin{definition}[Closure]
 \label{def:closure-r}
-$\overline{X} := \{x\in\mathbb{R}:\forall\varepsilon>0\;V_\varepsilon(x)\cap X\neq\emptyset\}$.
+\[
+\overline{X}
+:=
+\{x\in\mathbb{R}:\forall\varepsilon>0\;V_\varepsilon(x)\cap X\neq\emptyset\}.
+\]
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -492,12 +478,12 @@ limit points that are approached separately by the two sets.
 % Definition — Closed Set
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=corbox, colframe=corborder]
+\begin{definitionbox}{Definition (Closed Subset of $\mathbb{R}$)}
 \begin{definition}[Closed Subset of $\mathbb{R}$]
 \label{def:closed-set-r}
 $E\text{ is closed} \iff \overline{E} = E$.
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -616,13 +602,13 @@ interval this is free.
 % Definition — Bounded Subset
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=corbox, colframe=corborder]
+\begin{definitionbox}{Definition (Bounded Subset of $\mathbb{R}$)}
 \begin{definition}[Bounded Subset of $\mathbb{R}$]
 \label{def:bounded-set-r}
 $X\text{ is bounded} \iff \exists M>0,\;\forall x\in X:
 |x|\leq M$.
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -683,6 +669,10 @@ a limit in $X$.
 \]
 \end{remark*}
 
+\begin{remark*}[Failure modes]
+The compactness conclusion fails when either closedness or boundedness fails.
+\end{remark*}
+
 \begin{remark*}[Failure mode decomposition]
 Either $X\text{ is bounded}$ fails --- a sequence escapes to
 $\pm\infty$ --- or $X\text{ is closed}$ fails --- a convergent
@@ -708,14 +698,14 @@ subsequence in $X$.
 % Definition — True Near a Point
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=corbox, colframe=corborder]
+\begin{definitionbox}{Definition (True Near a Point)}
 \begin{definition}[True Near a Point]
 \label{def:true-near}
 Property $P(f(x))$ is \textbf{true near $x_0$} if
 $\exists\delta>0,\;\forall x : 0<|x-x_0|<
 \delta) \Rightarrow P(f(x))$.
 \end{definition}
-\end{tcolorbox}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[

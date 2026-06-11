@@ -4,42 +4,6 @@
 
 \section{Modulus}
 \label{sec:modulus}
-
-\begin{toolkitbox}{Toolkit: Modulus}
-The absolute value (modulus) of a real number is the fundamental measure
-of its magnitude, stripped of sign.  The atomic notions formalised below
-are:
-\begin{itemize}
-  \item \textbf{absolute value} --- the piecewise definition
-        $\lvert a \rvert := \max(a, -a)$;
-  \item \textbf{nonnegativity} --- $\lvert a \rvert \ge 0$ for all
-        $a \in \mathbb{R}$;
-  \item \textbf{zero characterisation} --- $\lvert a \rvert = 0$ if and
-        only if $a = 0$;
-  \item \textbf{self-or-negation} --- $\lvert a \rvert$ equals either $a$
-        or $-a$;
-  \item \textbf{symmetry} --- $\lvert -a \rvert = \lvert a \rvert$;
-  \item \textbf{multiplicativity} --- $\lvert ab \rvert =
-        \lvert a \rvert \lvert b \rvert$;
-  \item \textbf{quotient rule} --- $\lvert a/b \rvert =
-        \lvert a \rvert / \lvert b \rvert$ for $b \ne 0$;
-  \item \textbf{bound by modulus} ---
-        $-\lvert a \rvert \le a \le \lvert a \rvert$;
-  \item \textbf{nonstrict modulus inequality} ---
-        $\lvert a \rvert \le r \iff -r \le a \le r$;
-  \item \textbf{strict modulus inequality} ---
-        $\lvert a \rvert < r \iff -r < a < r$;
-  \item \textbf{triangle inequality} ---
-        $\lvert a + b \rvert \le \lvert a \rvert + \lvert b \rvert$;
-  \item \textbf{reverse triangle inequality} ---
-        $\lvert \lvert a \rvert - \lvert b \rvert \rvert
-        \le \lvert a - b \rvert$;
-  \item \textbf{generalised triangle inequality} ---
-        $\lvert \sum_{k=1}^{n} a_k \rvert
-        \le \sum_{k=1}^{n} \lvert a_k \rvert$.
-\end{itemize}
-\end{toolkitbox}
-
 % ---------------------------------------------------------
 % def:absolute-value
 % ---------------------------------------------------------
@@ -98,6 +62,12 @@ For all $a \in \mathbb{R}$,
 \]
 \end{theorem}
 
+
+
+\begin{remark*}[Proof]
+\hyperref[prf:absolute-value-nonneg]{Go to proof.}
+\end{remark*}
+
 \begin{remark*}[Standard quantified statement]
 \[
   \forall a \in \mathbb{R},\quad \lvert a \rvert \ge 0.
@@ -108,10 +78,6 @@ For all $a \in \mathbb{R}$,
 \hyperref[def:absolute-value]{Absolute value},
 \hyperref[thm:squares-nonnegative]{squares are nonnegative},
 \hyperref[def:ordered-field]{ordered field}.
-\end{remark*}
-
-\begin{remark*}[Proof]
-\hyperref[prf:absolute-value-nonneg]{Go to proof.}
 \end{remark*}
 
 % ---------------------------------------------------------
@@ -126,6 +92,12 @@ For all $a \in \mathbb{R}$,
 \]
 \end{theorem}
 
+
+
+\begin{remark*}[Proof]
+\hyperref[prf:absolute-value-zero-iff-zero]{Go to proof.}
+\end{remark*}
+
 \begin{remark*}[Standard quantified statement]
 \[
   \forall a \in \mathbb{R},\quad
@@ -139,10 +111,6 @@ For all $a \in \mathbb{R}$,
 \hyperref[def:ordered-field]{ordered field}.
 \end{remark*}
 
-\begin{remark*}[Proof]
-\hyperref[prf:absolute-value-zero-iff-zero]{Go to proof.}
-\end{remark*}
-
 % ---------------------------------------------------------
 % thm:absolute-value-self-or-neg
 % ---------------------------------------------------------
@@ -153,6 +121,12 @@ For all $a \in \mathbb{R}$, either $\lvert a \rvert = a$ or
 $\lvert a \rvert = -a$.
 \end{theorem}
 
+
+
+\begin{remark*}[Proof]
+\hyperref[prf:absolute-value-self-or-neg]{Go to proof.}
+\end{remark*}
+
 \begin{remark*}[Standard quantified statement]
 \[
   \forall a \in \mathbb{R},\quad
@@ -162,10 +136,6 @@ $\lvert a \rvert = -a$.
 
 \begin{remark*}[Dependencies]
 \hyperref[def:absolute-value]{Absolute value}.
-\end{remark*}
-
-\begin{remark*}[Proof]
-\hyperref[prf:absolute-value-self-or-neg]{Go to proof.}
 \end{remark*}
 
 % ---------------------------------------------------------
@@ -180,6 +150,12 @@ For all $a \in \mathbb{R}$,
 \]
 \end{theorem}
 
+
+
+\begin{remark*}[Proof]
+\hyperref[prf:absolute-value-symmetric]{Go to proof.}
+\end{remark*}
+
 \begin{remark*}[Standard quantified statement]
 \[
   \forall a \in \mathbb{R},\quad \lvert -a \rvert = \lvert a \rvert.
@@ -189,10 +165,6 @@ For all $a \in \mathbb{R}$,
 \begin{remark*}[Dependencies]
 \hyperref[def:absolute-value]{Absolute value},
 \hyperref[thm:double-negation]{double negation}.
-\end{remark*}
-
-\begin{remark*}[Proof]
-\hyperref[prf:absolute-value-symmetric]{Go to proof.}
 \end{remark*}
 
 % ---------------------------------------------------------
@@ -206,6 +178,12 @@ For all $a, b \in \mathbb{R}$,
   \lvert ab \rvert = \lvert a \rvert\,\lvert b \rvert.
 \]
 \end{theorem}
+
+
+
+\begin{remark*}[Proof]
+\hyperref[prf:absolute-value-product]{Go to proof.}
+\end{remark*}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -221,10 +199,6 @@ For all $a, b \in \mathbb{R}$,
 \hyperref[thm:squares-nonnegative]{squares are nonnegative}.
 \end{remark*}
 
-\begin{remark*}[Proof]
-\hyperref[prf:absolute-value-product]{Go to proof.}
-\end{remark*}
-
 % ---------------------------------------------------------
 % thm:absolute-value-quotient
 % ---------------------------------------------------------
@@ -237,6 +211,12 @@ For all $a \in \mathbb{R}$ and $b \in \mathbb{R}$ with $b \ne 0$,
   = \frac{\lvert a \rvert}{\lvert b \rvert}.
 \]
 \end{theorem}
+
+
+
+\begin{remark*}[Proof]
+\hyperref[prf:absolute-value-quotient]{Go to proof.}
+\end{remark*}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -255,10 +235,6 @@ For all $a \in \mathbb{R}$ and $b \in \mathbb{R}$ with $b \ne 0$,
 multiplicative inverse}.
 \end{remark*}
 
-\begin{remark*}[Proof]
-\hyperref[prf:absolute-value-quotient]{Go to proof.}
-\end{remark*}
-
 % ---------------------------------------------------------
 % thm:absolute-value-bounds
 % ---------------------------------------------------------
@@ -271,6 +247,12 @@ For all $a \in \mathbb{R}$,
 \]
 \end{theorem}
 
+
+
+\begin{remark*}[Proof]
+\hyperref[prf:absolute-value-bounds]{Go to proof.}
+\end{remark*}
+
 \begin{remark*}[Standard quantified statement]
 \[
   \forall a \in \mathbb{R},\quad
@@ -282,10 +264,6 @@ For all $a \in \mathbb{R}$,
 \hyperref[def:absolute-value]{Absolute value},
 \hyperref[thm:absolute-value-nonneg]{absolute value is nonnegative},
 \hyperref[def:ordered-field]{ordered field}.
-\end{remark*}
-
-\begin{remark*}[Proof]
-\hyperref[prf:absolute-value-bounds]{Go to proof.}
 \end{remark*}
 
 % ---------------------------------------------------------
@@ -301,6 +279,12 @@ For all $a \in \mathbb{R}$ and $r \ge 0$,
 \]
 \end{theorem}
 \end{theorembox}
+
+
+
+\begin{remark*}[Proof]
+\hyperref[prf:absolute-value-le-iff]{Go to proof.}
+\end{remark*}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -325,10 +309,6 @@ $a - \varepsilon \le x \le a + \varepsilon$.
 \hyperref[def:ordered-field]{ordered field}.
 \end{remark*}
 
-\begin{remark*}[Proof]
-\hyperref[prf:absolute-value-le-iff]{Go to proof.}
-\end{remark*}
-
 % ---------------------------------------------------------
 % thm:absolute-value-lt-iff
 % ---------------------------------------------------------
@@ -340,6 +320,12 @@ For all $a \in \mathbb{R}$ and $r > 0$,
   \lvert a \rvert < r \iff -r < a < r.
 \]
 \end{theorem}
+
+
+
+\begin{remark*}[Proof]
+\hyperref[prf:absolute-value-lt-iff]{Go to proof.}
+\end{remark*}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -356,10 +342,6 @@ For all $a \in \mathbb{R}$ and $r > 0$,
 \hyperref[def:ordered-field]{ordered field}.
 \end{remark*}
 
-\begin{remark*}[Proof]
-\hyperref[prf:absolute-value-lt-iff]{Go to proof.}
-\end{remark*}
-
 % ---------------------------------------------------------
 % thm:triangle-inequality
 % ---------------------------------------------------------
@@ -373,6 +355,12 @@ For all $a, b \in \mathbb{R}$,
 \]
 \end{theorem}
 \end{theorembox}
+
+
+
+\begin{remark*}[Proof]
+\hyperref[prf:triangle-inequality]{Go to proof.}
+\end{remark*}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -396,10 +384,6 @@ does not exceed the sum of the other two.
 \hyperref[def:ordered-field]{ordered field}.
 \end{remark*}
 
-\begin{remark*}[Proof]
-\hyperref[prf:triangle-inequality]{Go to proof.}
-\end{remark*}
-
 % ---------------------------------------------------------
 % thm:reverse-triangle-inequality
 % ---------------------------------------------------------
@@ -412,6 +396,12 @@ For all $a, b \in \mathbb{R}$,
   \le \lvert a - b \rvert.
 \]
 \end{theorem}
+
+
+
+\begin{remark*}[Proof]
+\hyperref[prf:reverse-triangle-inequality]{Go to proof.}
+\end{remark*}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -434,10 +424,6 @@ function is not uniformly continuous or that a sequence does not converge.
 \hyperref[thm:absolute-value-symmetric]{absolute value is symmetric}.
 \end{remark*}
 
-\begin{remark*}[Proof]
-\hyperref[prf:reverse-triangle-inequality]{Go to proof.}
-\end{remark*}
-
 % ---------------------------------------------------------
 % thm:absolute-value-sum-bound
 % ---------------------------------------------------------
@@ -451,6 +437,12 @@ For all $n \in \mathbb{N}$ and $a_1, \ldots, a_n \in \mathbb{R}$,
 \]
 \end{theorem}
 
+
+
+\begin{remark*}[Proof]
+\hyperref[prf:absolute-value-sum-bound]{Go to proof.}
+\end{remark*}
+
 \begin{remark*}[Standard quantified statement]
 \[
   \forall n \in \mathbb{N},\;
@@ -463,8 +455,4 @@ For all $n \in \mathbb{N}$ and $a_1, \ldots, a_n \in \mathbb{R}$,
 \begin{remark*}[Dependencies]
 \hyperref[def:absolute-value]{Absolute value},
 \hyperref[thm:triangle-inequality]{triangle inequality}.
-\end{remark*}
-
-\begin{remark*}[Proof]
-\hyperref[prf:absolute-value-sum-bound]{Go to proof.}
 \end{remark*}

@@ -6,21 +6,6 @@
 
 \subsection*{Limits Superior and Inferior of Functions}
 \label{sec:limsup-liminf-functions}
-
-\begin{toolkitbox}{Toolkit --- Limits Superior and Inferior of Functions}
-\begin{itemize}
-  \item $\limsup_{x\to x_0}f(x)=\inf_{\delta>0}
-    \sup\{f(x):0<|x-x_0|<\delta,\,x\in E\}$.
-  \item Both always exist in $[-\infty,+\infty]$.
-  \item $\limsup\geq\liminf$ always.
-  \item $\operatorname{FunctionLimit}(f,x_0,L)$ exists
-    $\iff\limsup=\liminf=L\in\mathbb{R}$.
-  \item Direct analogue of sequence $\limsup$/$\liminf$: replace tail
-    $\{a_n:n\geq N\}$ with punctured neighbourhood
-    $\{f(x):\operatorname{InputTolerance}(x,x_0,\delta)\}$.
-\end{itemize}
-\end{toolkitbox}
-
 \begin{definitionbox}{Definition (Limits Superior and Inferior of a Function)}
 \begin{definition}[Limits Superior and Inferior of a Function]
 \label{def:limsup-liminf-function}
@@ -131,7 +116,6 @@ The limsup records the largest cluster value that $f$ attains near $x_0$, while 
 \begin{remark*}[Dependencies]
 \hyperref[def:limsup-liminf-function]{Definition (Limits Superior and Inferior of a Function)}.
 \end{remark*}
-
 
 \begin{proposition}[Limit Exists iff $\limsup=\liminf$]
 \label{prop:limsup-liminf-limit-criterion}

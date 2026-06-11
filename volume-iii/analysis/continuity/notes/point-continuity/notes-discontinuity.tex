@@ -4,16 +4,6 @@
 
 \subsection*{Characterization of Discontinuity}
 \label{sec:discontinuity}
-
-\begin{toolkitbox}{Toolkit --- Discontinuity}
-\begin{itemize}
-  \item $\operatorname{DiscontinuousAt}(f,a)$ is the negation of $\operatorname{ContinuousAt}(f,a)$.
-  \item Quantifier reversal governs failure of continuity.
-  \item Three equivalent formulations: $\varepsilon$-$\delta$, sequential, neighbourhood.
-  \item Taxonomy: removable, jump, essential.
-\end{itemize}
-\end{toolkitbox}
-
 % ---------------------------------------------------------
 % Definition --- Point of Discontinuity
 % ---------------------------------------------------------
@@ -228,7 +218,7 @@ Discontinuity means a fixed output neighborhood $V$ is perpetually missed no mat
 % Lemma --- Equivalence
 % ---------------------------------------------------------
 
-\begin{tcolorbox}[colback=defbox, colframe=defborder]
+\begin{lemmabox}{Lemma (Equivalent Formulations of Discontinuity at a Point)}
 \begin{lemma}[Equivalent Formulations of Discontinuity at a Point]
 \label{lem:equivalent-discontinuity-at-a-point}
 Let $A\subseteq \mathbb{R}$, let $f:A\to\mathbb{R}$, and let $c\in A$. The following are equivalent:
@@ -241,7 +231,7 @@ Let $A\subseteq \mathbb{R}$, let $f:A\to\mathbb{R}$, and let $c\in A$. The follo
 \smallskip\noindent
 \hyperref[prf:equivalent-discontinuity-at-a-point]{\textit{Go to proof.}}
 \end{lemma}
-\end{tcolorbox}
+\end{lemmabox}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -317,6 +307,26 @@ Let $A \subseteq \mathbb{R}$, let $f:A \to \mathbb{R}$, and let $x_0 \in A$ with
 \operatorname{RemovableDiscontinuity}(f,x_0) &\coloneqq \exists L \in \mathbb{R}\; \bigl(\operatorname{FunctionLimit}(f,A,x_0,L) \land L \ne f(x_0)\bigr).\\
 \operatorname{JumpDiscontinuity}(f,x_0) &\coloneqq \exists L_{-}, L_{+} \in \mathbb{R}\; \bigl(\operatorname{LeftLimit}(f,A,x_0,L_{-}) \land \operatorname{RightLimit}(f,A,x_0,L_{+}) \land L_{-} \ne L_{+}\bigr).\\
 \operatorname{EssentialDiscontinuity}(f,x_0) &\coloneqq \neg \operatorname{RemovableDiscontinuity}(f,x_0).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\begin{aligned}
+\neg\text{Removable}
+&\Longleftrightarrow
+\forall L \in \mathbb{R}\;
+\bigl(\lim_{x \to x_0} f(x) \ne L \lor L = f(x_0)\bigr),\\
+\neg\text{Jump}
+&\Longleftrightarrow
+\forall L_-,L_+ \in \mathbb{R}\;
+\bigl(\lim_{x \to x_0^-} f(x)\ne L_-
+\lor \lim_{x \to x_0^+} f(x)\ne L_+
+\lor L_-=L_+\bigr),\\
+\neg\text{Essential}
+&\Longleftrightarrow
+\text{Removable}.
 \end{aligned}
 \]
 \end{remark*}
