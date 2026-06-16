@@ -288,96 +288,117 @@ def dependency_blocks(window: str) -> list[tuple[str, str, int]]:
     return sorted(blocks, key=lambda item: item[2])
 
 
+def repo_roots_for_edges(root: Path, universe: Universe) -> list[tuple[Path, str, bool]]:
+    repos_root = Path(universe.repos_root)
+    target_repo = root.name
+    repo_roots: list[tuple[Path, str, bool]] = []
+    for repo in universe.repos:
+        repo_root = repos_root / repo
+        if repo_root.exists():
+            repo_roots.append((repo_root.resolve(), repo, repo == target_repo))
+    if not repo_roots:
+        repo_roots.append((root.resolve(), target_repo, True))
+    return repo_roots
+
+
 def extract_edges_from_universe(root: Path, universe: Universe, universe_ref: str = "") -> EdgeReport:
     by_label = label_index(universe)
-    repo = root.name
+    target_repo = root.name
     issues: list[Issue] = []
     edges: list[Edge] = []
     declarations: list[dict[str, Any]] = []
 
-    for path in active_tex_files(root):
-        raw = path.read_text(encoding="utf-8", errors="replace")
-        text = strip_comments(raw)
-        blocks = formal_blocks(text)
-        for begin, end_pos in blocks:
-            block_text = text[begin.start() : end_pos]
-            formal_labels = [
-                label for label in LABEL_RE.findall(block_text)
-                if label.split(":", 1)[0] in FORMAL_PREFIXES
-            ]
-            if len(formal_labels) != 1:
-                continue
-            source = formal_labels[0]
-            source_matches = by_label.get(source, [])
-            source_id = source_matches[0].id if len(source_matches) == 1 else None
-            line = line_at(text, begin.start())
-            window_start = end_pos
-            window_end = next_boundary(text, window_start)
-            window = text[window_start:window_end]
-            dep_blocks = dependency_blocks(window)
-            declaration = {
-                "source": source,
-                "source_id": source_id,
-                "repo": repo,
-                "file": rel(path, root),
-                "line": line,
-                "dependency_block_count": len(dep_blocks),
-                "declaration": "missing",
-            }
-            if not dep_blocks:
-                issues.append(Issue("warning", "missing_dependency_declaration", f"{source} has no dependency declaration.", repo, rel(path, root), line, source))
-                declarations.append(declaration)
-                continue
-            if len(dep_blocks) > 1:
-                issues.append(Issue("warning", "multiple_dependency_declarations", f"{source} has multiple dependency declarations.", repo, rel(path, root), line, source))
-            block_kind, body, block_offset = dep_blocks[-1]
-            declaration["declaration"] = block_kind
-            declaration["dependency_line"] = line_at(text, window_start + block_offset)
-            if block_kind == "dependencies_remark":
-                issues.append(Issue("warning", "legacy_dependency_remark", f"{source} uses remark*[Dependencies] instead of dependencies environment.", repo, rel(path, root), int(declaration["dependency_line"]), source))
-            if block_kind == "no_local":
-                declarations.append(declaration)
-                continue
-            hyperrefs = list(HYPERREF_RE.finditer(body))
-            if not hyperrefs and "TODO" not in body:
-                issues.append(Issue("error", "dependencies_without_hyperref", f"{source} dependency block has no hyperref targets.", repo, rel(path, root), int(declaration["dependency_line"]), source))
-            for ref in hyperrefs:
-                target = ref.group("label").strip()
-                display = (ref.group("text") or "").strip()
-                target_matches = by_label.get(target, [])
-                status = "ok"
-                target_id = None
-                if target.startswith("prf:"):
-                    status = "invalid_proof_target"
-                    issues.append(Issue("error", "dependency_targets_proof", f"{source} targets proof label {target}.", repo, rel(path, root), int(declaration["dependency_line"]), source, target))
-                elif ":" not in target or target.split(":", 1)[0] not in FORMAL_PREFIXES:
-                    status = "invalid_target_prefix"
-                    issues.append(Issue("error", "invalid_dependency_target_prefix", f"{source} targets non-formal label {target}.", repo, rel(path, root), int(declaration["dependency_line"]), source, target))
-                elif len(target_matches) == 0:
-                    status = "missing_target"
-                    issues.append(Issue("error", "missing_dependency_target", f"{source} targets unknown label {target}.", repo, rel(path, root), int(declaration["dependency_line"]), source, target))
-                elif len(target_matches) > 1:
-                    status = "ambiguous_target"
-                    issues.append(Issue("error", "ambiguous_dependency_target", f"{source} target {target} has multiple global matches.", repo, rel(path, root), int(declaration["dependency_line"]), source, target))
-                else:
-                    target_id = target_matches[0].id
-                edges.append(
-                    Edge(
-                        source=source,
-                        target=target,
-                        source_id=source_id,
-                        target_id=target_id,
-                        display=display,
-                        repo=repo,
-                        file=rel(path, root),
-                        line=int(declaration["dependency_line"]),
-                        block_kind=block_kind,
-                        status=status,
+    for repo_root, repo, report_issues in repo_roots_for_edges(root, universe):
+        for path in active_tex_files(repo_root):
+            raw = path.read_text(encoding="utf-8", errors="replace")
+            text = strip_comments(raw)
+            blocks = formal_blocks(text)
+            for begin, end_pos in blocks:
+                block_text = text[begin.start() : end_pos]
+                formal_labels = [
+                    label for label in LABEL_RE.findall(block_text)
+                    if label.split(":", 1)[0] in FORMAL_PREFIXES
+                ]
+                if len(formal_labels) != 1:
+                    continue
+                source = formal_labels[0]
+                source_matches = by_label.get(source, [])
+                source_id = source_matches[0].id if len(source_matches) == 1 else None
+                line = line_at(text, begin.start())
+                window_start = end_pos
+                window_end = next_boundary(text, window_start)
+                window = text[window_start:window_end]
+                dep_blocks = dependency_blocks(window)
+                declaration = {
+                    "source": source,
+                    "source_id": source_id,
+                    "repo": repo,
+                    "file": rel(path, repo_root),
+                    "line": line,
+                    "dependency_block_count": len(dep_blocks),
+                    "declaration": "missing",
+                }
+                if not dep_blocks:
+                    if report_issues:
+                        issues.append(Issue("warning", "missing_dependency_declaration", f"{source} has no dependency declaration.", repo, rel(path, repo_root), line, source))
+                    declarations.append(declaration)
+                    continue
+                if len(dep_blocks) > 1:
+                    if report_issues:
+                        issues.append(Issue("warning", "multiple_dependency_declarations", f"{source} has multiple dependency declarations.", repo, rel(path, repo_root), line, source))
+                block_kind, body, block_offset = dep_blocks[-1]
+                declaration["declaration"] = block_kind
+                declaration["dependency_line"] = line_at(text, window_start + block_offset)
+                if block_kind == "dependencies_remark":
+                    if report_issues:
+                        issues.append(Issue("warning", "legacy_dependency_remark", f"{source} uses remark*[Dependencies] instead of dependencies environment.", repo, rel(path, repo_root), int(declaration["dependency_line"]), source))
+                if block_kind == "no_local":
+                    declarations.append(declaration)
+                    continue
+                hyperrefs = list(HYPERREF_RE.finditer(body))
+                if report_issues and not hyperrefs and "TODO" not in body:
+                    issues.append(Issue("error", "dependencies_without_hyperref", f"{source} dependency block has no hyperref targets.", repo, rel(path, repo_root), int(declaration["dependency_line"]), source))
+                for ref in hyperrefs:
+                    target = ref.group("label").strip()
+                    display = (ref.group("text") or "").strip()
+                    target_matches = by_label.get(target, [])
+                    status = "ok"
+                    target_id = None
+                    if target.startswith("prf:"):
+                        status = "invalid_proof_target"
+                        if report_issues:
+                            issues.append(Issue("error", "dependency_targets_proof", f"{source} targets proof label {target}.", repo, rel(path, repo_root), int(declaration["dependency_line"]), source, target))
+                    elif ":" not in target or target.split(":", 1)[0] not in FORMAL_PREFIXES:
+                        status = "invalid_target_prefix"
+                        if report_issues:
+                            issues.append(Issue("error", "invalid_dependency_target_prefix", f"{source} targets non-formal label {target}.", repo, rel(path, repo_root), int(declaration["dependency_line"]), source, target))
+                    elif len(target_matches) == 0:
+                        status = "missing_target"
+                        if report_issues:
+                            issues.append(Issue("error", "missing_dependency_target", f"{source} targets unknown label {target}.", repo, rel(path, repo_root), int(declaration["dependency_line"]), source, target))
+                    elif len(target_matches) > 1:
+                        status = "ambiguous_target"
+                        if report_issues:
+                            issues.append(Issue("error", "ambiguous_dependency_target", f"{source} target {target} has multiple global matches.", repo, rel(path, repo_root), int(declaration["dependency_line"]), source, target))
+                    else:
+                        target_id = target_matches[0].id
+                    edges.append(
+                        Edge(
+                            source=source,
+                            target=target,
+                            source_id=source_id,
+                            target_id=target_id,
+                            display=display,
+                            repo=repo,
+                            file=rel(path, repo_root),
+                            line=int(declaration["dependency_line"]),
+                            block_kind=block_kind,
+                            status=status,
+                        )
                     )
-                )
-            declarations.append(declaration)
+                declarations.append(declaration)
 
-    return EdgeReport(str(root), repo, universe_ref, edges, declarations, issues)
+    return EdgeReport(str(root), target_repo, universe_ref, edges, declarations, issues)
 
 
 def extract_edges(root: Path, universe_path: Path) -> EdgeReport:
