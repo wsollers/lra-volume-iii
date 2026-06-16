@@ -162,9 +162,9 @@ The definition fails in two distinct ways: either the point $x_0$ has a puncture
 Oscillation at $x_0$ measures the largest possible jump in function values that survives after one zooms in arbitrarily tightly around $x_0$. The shrinking neighborhoods $U_r(x_0)\cap E$ supply finer and finer samples, and the oscillation on each such set records the spread of $f$ there. If these spreads settle to a single number, that number captures the local variability; it is zero precisely when $f$ becomes arbitrarily close to a single value, i.e., when $f$ is continuous at $x_0$. Failure occurs either because $x_0$ has no nearby domain points or because the spreads fluctuate indefinitely, reflecting wild local behavior.
 \end{remark*}
 
-\begin{remark*}[Dependencies]
+\begin{dependencies}
 \hyperref[def:oscillation-on-a-set]{Definition~\ref*{def:oscillation-on-a-set}}
-\end{remark*}
+\end{dependencies}
 
 % ---------------------------------------------------------
 % Theorem --- Continuity iff Zero Oscillation
@@ -230,10 +230,10 @@ The equivalence fails precisely in two mutually exclusive ways: either $f$ remai
 The theorem states that measuring the oscillation of $f$ near $c$ captures exactly the same local regularity as the classical $\varepsilon$-$\delta$ definition of continuity. If oscillation collapses to zero, every pair of nearby function values becomes arbitrarily close, forcing $f(x)$ to approach $f(c)$. Conversely, any discontinuity manifests as a nonzero oscillation, because nearby points can produce separated outputs. The standard failure therefore arises from detecting a residual jump or oscillatory behavior in arbitrarily small neighborhoods of $c$.
 \end{remark*}
 
-\begin{remark*}[Dependencies]
+\begin{dependencies}
 \hyperref[def:continuous-at-point]{Definition~\ref*{def:continuous-at-point}},
 \hyperref[def:oscillation-at-a-point]{Definition~\ref*{def:oscillation-at-a-point}}.
-\end{remark*}
+\end{dependencies}
 
 % ---------------------------------------------------------
 % Proposition --- Discontinuity Set via Oscillation
@@ -321,7 +321,7 @@ x\notin D(f)\land \omega(f;x)>0 & \text{(Type II)},\\[4pt]
 Oscillation detects discontinuity quantitatively: every discontinuity forces $\omega(f;x)$ to stay above some positive threshold, and conversely the vanishing of oscillation characterises continuity. Because each set $\{x\in E:\omega(f;x)\ge 1/n\}$ is closed, the discontinuity set $D(f)$ is an $F_{\sigma}$, a countable union of closed sets. This structural description is the gateway to measure-theoretic criteria such as the Lebesgue characterisation of Riemann integrability, where the size of $D(f)$ controls integrability.
 \end{remark*}
 
-\begin{remark*}[Dependencies]
+\begin{dependencies}
 \hyperref[def:point-of-discontinuity]{Definition~\ref*{def:point-of-discontinuity}};
 \hyperref[def:oscillation-at-a-point]{Definition~\ref*{def:oscillation-at-a-point}}.
-\end{remark*}
+\end{dependencies}

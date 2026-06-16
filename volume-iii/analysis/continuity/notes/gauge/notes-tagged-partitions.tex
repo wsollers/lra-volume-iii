@@ -81,9 +81,9 @@ Failure occurs either when $m$ underestimates the largest subinterval of $P$ or 
 The mesh of a finite partition records the length of the widest subinterval and thus measures the resolution of the partition. Refining a partition strictly decreases or preserves this value, so a small mesh signals uniformly short subintervals, a critical input for Riemann and gauge integral estimates. Failure arises when a proposed number does not coincide with the actual maximum subinterval length, either because some subinterval is longer than the proposal or because all subintervals are shorter.
 \end{remark*}
 
-\begin{remark*}[Dependencies]
+\begin{dependencies}
 \hyperref[def:interval-partition]{Definition~\ref{def:interval-partition}}.
-\end{remark*}
+\end{dependencies}
 
 
 % ---------------------------------------------------------
@@ -135,9 +135,9 @@ Failure occurs precisely when some point listed in P fails to appear in Q, meani
 Refinement formalizes the idea of subdividing an interval more finely without losing any previously chosen partition points. The condition $P \subseteq Q$ guarantees that every subinterval defined by $P$ is still represented when one passes to $Q$, allowing comparisons of sums or integrals computed on different meshes. Failure means that $Q$ discards at least one point of $P$, so information tied to that breakpoint would be lost when transitioning between partitions.
 \end{remark*}
 
-\begin{remark*}[Dependencies]
+\begin{dependencies}
 \hyperref[def:interval-partition]{Definition~\ref*{def:interval-partition}}.
-\end{remark*}
+\end{dependencies}
 
 
 % ---------------------------------------------------------
@@ -207,6 +207,6 @@ R \ne P \cup Q
 Forming the common refinement of two partitions simply collects every partition point that either partition already uses, producing the unique partition whose nodes are exactly those existing ones. No new nodes are created beyond those already in P or Q, and none are discarded; the construction merely merges the lists so that later comparisons, such as evaluating tagged sums on both partitions simultaneously, can be performed without further adjustment.
 \end{remark*}
 
-\begin{remark*}[Dependencies]
+\begin{dependencies}
 \hyperref[def:interval-partition]{Definition~\ref*{def:interval-partition}}
-\end{remark*}
+\end{dependencies}

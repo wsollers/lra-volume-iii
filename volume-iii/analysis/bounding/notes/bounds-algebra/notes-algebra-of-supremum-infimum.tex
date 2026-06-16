@@ -78,9 +78,9 @@ m_1=m_2.
 A maximum is not merely a high point of the set; it is the greatest point of the set. If two elements both claim that role, each must sit above the other, and antisymmetry of the real order forces them to be the same number.
 \end{remark*}
 
-\begin{remark*}[Dependencies]
+\begin{dependencies}
 \hyperref[def:maximum]{Maximum}.
-\end{remark*}
+\end{dependencies}
 
 
 % =========================================================
@@ -155,9 +155,9 @@ s_1=s_2.
 The supremum is the least possible ceiling over a set. Two ceilings can both be least only if neither one is actually above the other, so the order on $\mathbb{R}$ identifies them as the same number.
 \end{remark*}
 
-\begin{remark*}[Dependencies]
+\begin{dependencies}
 \hyperref[def:supremum]{Supremum}.
-\end{remark*}
+\end{dependencies}
 
 
 % =========================================================
@@ -232,10 +232,10 @@ The implication could fail only if the greatest element of $A$ were not the leas
 A maximum belongs to the set and sits above every element of the set. That makes it an upper bound, and no smaller upper bound can exist because it would have to sit below the maximum while still bounding the maximum itself.
 \end{remark*}
 
-\begin{remark*}[Dependencies]
+\begin{dependencies}
 \hyperref[def:maximum]{Maximum};
 \hyperref[def:supremum]{Supremum}.
-\end{remark*}
+\end{dependencies}
 
 
 % =========================================================
@@ -310,10 +310,10 @@ The implication could fail only if the least upper bound belonged to the set but
 A supremum is usually only a least ceiling. When that ceiling is actually a member of the set, it becomes the greatest element of the set, so the extremal value is attained rather than merely approached.
 \end{remark*}
 
-\begin{remark*}[Dependencies]
+\begin{dependencies}
 \hyperref[def:supremum]{Supremum};
 \hyperref[def:maximum]{Maximum}.
-\end{remark*}
+\end{dependencies}
 
 
 
@@ -394,9 +394,9 @@ The implication could fail only if some $x\in A$ exceeded $u$. Since $A\subseteq
 A bound for a larger set automatically bounds every smaller set inside it. Inclusion can only remove possible counterexamples, so it cannot destroy an existing upper bound.
 \end{remark*}
 
-\begin{remark*}[Dependencies]
+\begin{dependencies}
 \hyperref[def:upper-bound]{Upper Bound}.
-\end{remark*}
+\end{dependencies}
 
 
 % =========================================================
@@ -466,11 +466,11 @@ A\subseteq B
 Making a set larger can only push its least ceiling upward or leave it unchanged. It cannot lower the supremum, because the larger set contains all of the old points that already had to be bounded.
 \end{remark*}
 
-\begin{remark*}[Dependencies]
+\begin{dependencies}
 \hyperref[def:upper-bound]{Upper Bound};
 \hyperref[def:supremum]{Supremum};
 \hyperref[lem:subset-inclusion-preserves-upper-bounds]{Subset Inclusion Preserves Upper Bounds}.
-\end{remark*}
+\end{dependencies}
 
 
 % =========================================================
@@ -553,10 +553,10 @@ s\le u&\Longrightarrow
 Once the supremum is known, all upper bounds are exactly the real numbers at or above it. The supremum is therefore the threshold where upper bounds begin.
 \end{remark*}
 
-\begin{remark*}[Dependencies]
+\begin{dependencies}
 \hyperref[def:upper-bound]{Upper Bound};
 \hyperref[def:supremum]{Supremum}.
-\end{remark*}
+\end{dependencies}
 
 
 % =========================================================
@@ -622,10 +622,10 @@ The statement could fail only if some element of $A$ sat strictly above $\sup A$
 The supremum is a ceiling for the set. It may or may not be a point of the set, but every actual element of the set must lie at or below it.
 \end{remark*}
 
-\begin{remark*}[Dependencies]
+\begin{dependencies}
 \hyperref[def:upper-bound]{Upper Bound};
 \hyperref[def:supremum]{Supremum}.
-\end{remark*}
+\end{dependencies}
 
 
 % =========================================================
@@ -694,10 +694,10 @@ The inequality could fail only if the greatest lower bound were strictly above t
 A nonempty bounded set cannot have its floor above its ceiling. Any point of the set witnesses the bridge from the infimum up to the supremum.
 \end{remark*}
 
-\begin{remark*}[Dependencies]
+\begin{dependencies}
 \hyperref[def:infimum]{Infimum};
 \hyperref[def:supremum]{Supremum}.
-\end{remark*}
+\end{dependencies}
 
 
 % =========================================================
@@ -773,11 +773,11 @@ The comparison could fail only if the supremum of $A$ rose above the supremum of
 This criterion compares two sets without requiring inclusion. If every point of $A$ can be matched below some point of $B$, then $B$ reaches at least as high as $A$ in the supremum sense.
 \end{remark*}
 
-\begin{remark*}[Dependencies]
+\begin{dependencies}
 \hyperref[def:supremum]{Supremum};
 \hyperref[prop:every-element-lies-below-the-supremum]{Every Element Lies Below the Supremum};
 \hyperref[prop:upper-bound-comparison-with-the-supremum]{Upper Bound Comparison with the Supremum}.
-\end{remark*}
+\end{dependencies}
 
 
 
@@ -850,10 +850,10 @@ The formula could fail only if translation either failed to preserve upper bound
 Translation shifts the entire set and all of its ceilings by the same amount. The least ceiling therefore shifts by exactly that amount.
 \end{remark*}
 
-\begin{remark*}[Dependencies]
+\begin{dependencies}
 \hyperref[def:upper-bound]{Upper Bound};
 \hyperref[def:supremum]{Supremum}.
-\end{remark*}
+\end{dependencies}
 
 
 
@@ -922,10 +922,10 @@ The formula could fail only if multiplying by a positive scalar failed to preser
 Positive scaling stretches the set without reversing order. The least ceiling stretches by the same positive factor.
 \end{remark*}
 
-\begin{remark*}[Dependencies]
+\begin{dependencies}
 \hyperref[def:upper-bound]{Upper Bound};
 \hyperref[def:supremum]{Supremum}.
-\end{remark*}
+\end{dependencies}
 
 
 \begin{theorembox}{Theorem (Scalar Multiplication by a Negative Scalar)}
@@ -994,12 +994,12 @@ The formula could fail only if negative multiplication did not reverse lower bou
 Negative scaling reflects the set and changes floors into ceilings. The lowest point threshold of $A$ becomes the highest point threshold of the reflected and scaled set.
 \end{remark*}
 
-\begin{remark*}[Dependencies]
+\begin{dependencies}
 \hyperref[def:lower-bound]{Lower Bound};
 \hyperref[def:upper-bound]{Upper Bound};
 \hyperref[def:infimum]{Infimum};
 \hyperref[def:supremum]{Supremum}.
-\end{remark*}
+\end{dependencies}
 
 
 \begin{theorembox}{Theorem (Negation Exchanges Supremum and Infimum)}
@@ -1068,12 +1068,12 @@ The theorem could fail only if negation did not convert lower bounds into upper 
 Negation reflects the real line through the origin. Floors become ceilings, so the infimum of the original set becomes the negative of the supremum of the reflected set.
 \end{remark*}
 
-\begin{remark*}[Dependencies]
+\begin{dependencies}
 \hyperref[def:lower-bound]{Lower Bound};
 \hyperref[def:upper-bound]{Upper Bound};
 \hyperref[def:infimum]{Infimum};
 \hyperref[def:supremum]{Supremum}.
-\end{remark*}
+\end{dependencies}
 
 
 
@@ -1149,10 +1149,10 @@ a\le \sup A,\quad b\le \sup B
 The highest limiting value of all pairwise sums is obtained by combining values that approach the separate ceilings of $A$ and $B$.
 \end{remark*}
 
-\begin{remark*}[Dependencies]
+\begin{dependencies}
 \hyperref[def:supremum]{Supremum};
 \hyperref[def:epsilon-characterization-of-supremum]{Epsilon Characterization of Supremum}.
-\end{remark*}
+\end{dependencies}
 
 
 
@@ -1239,12 +1239,12 @@ A-B=A+(-B),
 The largest possible difference comes from making the first term as large as possible and the subtracted term as small as possible.
 \end{remark*}
 
-\begin{remark*}[Dependencies]
+\begin{dependencies}
 \hyperref[def:supremum]{Supremum};
 \hyperref[def:infimum]{Infimum};
 \hyperref[thm:negation-exchange-sup-inf]{Negation Exchanges Supremum and Infimum};
 \hyperref[thm:supremum-sum-set]{Supremum of a Sum Set}.
-\end{remark*}
+\end{dependencies}
 
 
 \begin{theorembox}{Theorem (Supremum of a Dilation)}
@@ -1312,13 +1312,13 @@ The formula separates into the cases $\lambda>0$, $\lambda=0$, and $\lambda<0$. 
 A dilation either preserves the order, collapses all points to zero, or reverses the order. The displayed maximum packages those three cases into one formula.
 \end{remark*}
 
-\begin{remark*}[Dependencies]
+\begin{dependencies}
 \hyperref[def:supremum]{Supremum};
 \hyperref[def:infimum]{Infimum};
 \hyperref[def:maximum]{Maximum};
 \hyperref[thm:scalar-mult-positive]{Scalar Multiplication by a Positive Scalar};
 \hyperref[thm:scalar-mult-negative]{Scalar Multiplication by a Negative Scalar}.
-\end{remark*}
+\end{dependencies}
 
 
 \begin{theorembox}{Theorem (Supremum of the Absolute-Value Image)}
@@ -1383,12 +1383,12 @@ The formula could fail only if the farthest absolute-value size were not achieve
 The absolute-value image measures distance from the origin. For a bounded subset of the real line, the largest possible distance is controlled by whichever extremal endpoint lies farther from zero.
 \end{remark*}
 
-\begin{remark*}[Dependencies]
+\begin{dependencies}
 \hyperref[def:supremum]{Supremum};
 \hyperref[def:infimum]{Infimum};
 \hyperref[def:maximum]{Maximum};
 \hyperref[prop:every-element-lies-below-the-supremum]{Every Element Lies Below the Supremum}.
-\end{remark*}
+\end{dependencies}
 
 
 
@@ -1460,11 +1460,11 @@ The lower inequality could fail only if a sum fell below the sum of the two lowe
 Every element of the sum set is built from one element of $A$ and one element of $B$. Adding the individual lower and upper controls gives immediate lower and upper controls for every such sum.
 \end{remark*}
 
-\begin{remark*}[Dependencies]
+\begin{dependencies}
 \hyperref[def:infimum]{Infimum};
 \hyperref[def:supremum]{Supremum};
 \hyperref[thm:supremum-sum-set]{Supremum of a Sum Set}.
-\end{remark*}
+\end{dependencies}
 
 
 
@@ -1531,9 +1531,9 @@ are separate assertions unless $S=T$ and $\le_S=\le_T$ on the elements being com
 An upper bound is not only about the subset; it is also about where the subset lives. Changing the ambient order changes the universe of possible bounds and the comparison used to test them.
 \end{remark*}
 
-\begin{remark*}[Dependencies]
+\begin{dependencies}
 \hyperref[def:upper-bound]{Upper Bound}.
-\end{remark*}
+\end{dependencies}
 
 
 \begin{propositionbox}{Proposition (Suprema Depend on the Ambient Set)}
@@ -1590,10 +1590,10 @@ s\text{ cannot be the supremum of }A\text{ relative to }S.
 Suprema are least upper bounds inside a chosen universe. Enlarging or shrinking that universe can create or remove the point that should serve as the least ceiling.
 \end{remark*}
 
-\begin{remark*}[Dependencies]
+\begin{dependencies}
 \hyperref[def:upper-bound]{Upper Bound};
 \hyperref[def:supremum]{Supremum}.
-\end{remark*}
+\end{dependencies}
 
 
 \begin{theorembox}{Theorem (Ambient Existence of Supremum)}
@@ -1655,11 +1655,11 @@ s=\sup_{S'} A,\quad s\notin S,\quad
 Completeness is an ambient property. A larger ordered universe can fill a gap that remains absent in a smaller ordered universe.
 \end{remark*}
 
-\begin{remark*}[Dependencies]
+\begin{dependencies}
 \hyperref[def:upper-bound]{Upper Bound};
 \hyperref[def:supremum]{Supremum};
 \hyperref[prop:suprema-ambient-set]{Suprema Depend on the Ambient Set}.
-\end{remark*}
+\end{dependencies}
 
 
 
@@ -1723,11 +1723,11 @@ s^2>2 &\Longrightarrow s\text{ is not the least upper bound of }A.
 The set wants $\sqrt{2}$ as its least ceiling, but that number is not rational. The rational ambient set therefore has a visible gap where the supremum should be.
 \end{remark*}
 
-\begin{remark*}[Dependencies]
+\begin{dependencies}
 \hyperref[def:upper-bound]{Upper Bound};
 \hyperref[def:supremum]{Supremum};
 \hyperref[thm:ambient-existence-supremum]{Ambient Existence of Supremum}.
-\end{remark*}
+\end{dependencies}
 
 
 

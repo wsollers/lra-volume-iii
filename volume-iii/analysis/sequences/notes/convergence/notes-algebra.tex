@@ -41,11 +41,11 @@ the definition; convergence enters only when the behavior of the resulting
 sequence is studied.
 \end{remark*}
 
-\begin{remark*}[Dependencies]\hfill
+\begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:sequence]{Sequence}
 \end{itemize}
-\end{remark*}
+\end{dependencies}
 
 % ---------------------------------------------------------
 % Definition --- Pointwise Difference of Sequences
@@ -78,12 +78,12 @@ The difference sequence subtracts corresponding terms. It is equivalently the
 sum of $(x_n)$ with the pointwise negation of $(y_n)$.
 \end{remark*}
 
-\begin{remark*}[Dependencies]\hfill
+\begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:sequence]{Sequence}
   \item \hyperref[def:pointwise-sum-sequence]{Pointwise Sum of Sequences}
 \end{itemize}
-\end{remark*}
+\end{dependencies}
 
 % ---------------------------------------------------------
 % Definition --- Scalar Multiple of a Sequence
@@ -117,11 +117,11 @@ Scalar multiplication rescales every term by the same real number. It changes
 the vertical scale of the sequence but not its indexing.
 \end{remark*}
 
-\begin{remark*}[Dependencies]\hfill
+\begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:sequence]{Sequence}
 \end{itemize}
-\end{remark*}
+\end{dependencies}
 
 % ---------------------------------------------------------
 % Definition --- Pointwise Negation of a Sequence
@@ -154,11 +154,11 @@ Pointwise negation reflects the sequence across zero. It is the special scalar
 multiple corresponding to the scalar $-1$.
 \end{remark*}
 
-\begin{remark*}[Dependencies]\hfill
+\begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:scalar-multiple-sequence]{Scalar Multiple of a Sequence}
 \end{itemize}
-\end{remark*}
+\end{dependencies}
 
 % ---------------------------------------------------------
 % Definition --- Pointwise Product of Sequences
@@ -192,11 +192,11 @@ limits is subtler than the sum law because one factor must be controlled while
 the other is approximated.
 \end{remark*}
 
-\begin{remark*}[Dependencies]\hfill
+\begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:sequence]{Sequence}
 \end{itemize}
-\end{remark*}
+\end{dependencies}
 
 % ---------------------------------------------------------
 % Definition --- Reciprocal Sequence
@@ -234,11 +234,11 @@ the sequence-level construction itself requires nonzero terms wherever it is
 defined.
 \end{remark*}
 
-\begin{remark*}[Dependencies]\hfill
+\begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:sequence]{Sequence}
 \end{itemize}
-\end{remark*}
+\end{dependencies}
 
 % ---------------------------------------------------------
 % Definition --- Pointwise Quotient of Sequences
@@ -274,12 +274,12 @@ The quotient sequence is the product of $(x_n)$ with the reciprocal of
 $(y_n)$. Its convergence law is therefore a product law plus a reciprocal law.
 \end{remark*}
 
-\begin{remark*}[Dependencies]\hfill
+\begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:pointwise-product-sequence]{Pointwise Product of Sequences}
   \item \hyperref[def:reciprocal-sequence]{Reciprocal Sequence}
 \end{itemize}
-\end{remark*}
+\end{dependencies}
 
 % ---------------------------------------------------------
 % Definition --- Square Sequence
@@ -312,11 +312,11 @@ The square sequence is the product of a sequence with itself. Its limit law is
 therefore a direct specialization of the product law.
 \end{remark*}
 
-\begin{remark*}[Dependencies]\hfill
+\begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:pointwise-product-sequence]{Pointwise Product of Sequences}
 \end{itemize}
-\end{remark*}
+\end{dependencies}
 
 % ---------------------------------------------------------
 % Definition --- Absolute Value Sequence
@@ -349,11 +349,11 @@ The absolute value sequence records the magnitude of each term. It removes
 sign information while preserving distance from zero.
 \end{remark*}
 
-\begin{remark*}[Dependencies]\hfill
+\begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:sequence]{Sequence}
 \end{itemize}
-\end{remark*}
+\end{dependencies}
 
 % ---------------------------------------------------------
 % Definition --- Square Root Sequence
@@ -389,11 +389,11 @@ terms. The nonnegativity hypothesis is part of the construction, not a proof
 artifact.
 \end{remark*}
 
-\begin{remark*}[Dependencies]\hfill
+\begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:sequence]{Sequence}
 \end{itemize}
-\end{remark*}
+\end{dependencies}
 
 % ---------------------------------------------------------
 % Theorem --- Limit of a Scalar Multiple
@@ -443,12 +443,12 @@ same scalar. The case $\alpha=0$ collapses the sequence to the constant zero
 sequence.
 \end{remark*}
 
-\begin{remark*}[Dependencies]\hfill
+\begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:convergent-sequence]{Convergence of a Sequence}
   \item \hyperref[def:scalar-multiple-sequence]{Scalar Multiple of a Sequence}
 \end{itemize}
-\end{remark*}
+\end{dependencies}
 
 % ---------------------------------------------------------
 % Theorem --- Limit of a Sum
@@ -499,13 +499,13 @@ taking limits. The proof splits a target tolerance into two smaller tolerances,
 one for each summand.
 \end{remark*}
 
-\begin{remark*}[Dependencies]\hfill
+\begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:convergent-sequence]{Convergence of a Sequence}
   \item \hyperref[def:pointwise-sum-sequence]{Pointwise Sum of Sequences}
   \item \hyperref[thm:triangle-inequality]{Triangle Inequality}
 \end{itemize}
-\end{remark*}
+\end{dependencies}
 
 % ---------------------------------------------------------
 % Theorem --- Limit of a Negation
@@ -547,12 +547,12 @@ Negation is scalar multiplication by $-1$, so this theorem is the scalar
 multiple law in its most common special case.
 \end{remark*}
 
-\begin{remark*}[Dependencies]\hfill
+\begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:limit-of-scalar-multiple]{Limit of a Scalar Multiple}
   \item \hyperref[def:pointwise-negation-sequence]{Pointwise Negation of a Sequence}
 \end{itemize}
-\end{remark*}
+\end{dependencies}
 
 % ---------------------------------------------------------
 % Theorem --- Limit of a Difference
@@ -602,13 +602,13 @@ The difference law follows by adding $(x_n)$ to the negation of $(y_n)$.
 It is therefore not a new analytic mechanism, but a useful named rule.
 \end{remark*}
 
-\begin{remark*}[Dependencies]\hfill
+\begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:limit-of-a-sum]{Limit of a Sum}
   \item \hyperref[thm:limit-of-a-negation]{Limit of a Negation}
   \item \hyperref[def:pointwise-difference-sequence]{Pointwise Difference of Sequences}
 \end{itemize}
-\end{remark*}
+\end{dependencies}
 
 % ---------------------------------------------------------
 % Theorem --- Limit of a Product
@@ -659,13 +659,13 @@ is eventually bounded, so one factor can be controlled while the other is made
 small.
 \end{remark*}
 
-\begin{remark*}[Dependencies]\hfill
+\begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:convergent-sequence]{Convergence of a Sequence}
   \item \hyperref[def:pointwise-product-sequence]{Pointwise Product of Sequences}
   \item \hyperref[def:bounded-sequence]{Bounded Sequence}
 \end{itemize}
-\end{remark*}
+\end{dependencies}
 
 % ---------------------------------------------------------
 % Theorem --- Nonzero Limit is Eventually Nonzero
@@ -703,11 +703,11 @@ This is the denominator-control result needed for reciprocal and quotient
 rules.
 \end{remark*}
 
-\begin{remark*}[Dependencies]\hfill
+\begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:convergent-sequence]{Convergence of a Sequence}
 \end{itemize}
-\end{remark*}
+\end{dependencies}
 
 % ---------------------------------------------------------
 % Theorem --- Limit of a Reciprocal
@@ -751,12 +751,12 @@ Reciprocation is continuous away from zero. The nonzero limit supplies a tail
 on which the denominators stay uniformly separated from zero.
 \end{remark*}
 
-\begin{remark*}[Dependencies]\hfill
+\begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:reciprocal-sequence]{Reciprocal Sequence}
   \item \hyperref[thm:nonzero-limit-eventually-nonzero]{Nonzero Limit is Eventually Nonzero}
 \end{itemize}
-\end{remark*}
+\end{dependencies}
 
 % ---------------------------------------------------------
 % Theorem --- Limit of a Quotient
@@ -809,13 +809,13 @@ $(y_n)$. The condition $M\neq 0$ prevents the limiting denominator from
 collapsing.
 \end{remark*}
 
-\begin{remark*}[Dependencies]\hfill
+\begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:pointwise-quotient-sequence]{Pointwise Quotient of Sequences}
   \item \hyperref[thm:limit-of-a-product]{Limit of a Product}
   \item \hyperref[thm:limit-of-a-reciprocal]{Limit of a Reciprocal}
 \end{itemize}
-\end{remark*}
+\end{dependencies}
 
 % ---------------------------------------------------------
 % Theorem --- Limit of a Square
@@ -857,12 +857,12 @@ Squaring preserves limits because it is multiplication of a sequence by
 itself.
 \end{remark*}
 
-\begin{remark*}[Dependencies]\hfill
+\begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:square-sequence]{Square Sequence}
   \item \hyperref[thm:limit-of-a-product]{Limit of a Product}
 \end{itemize}
-\end{remark*}
+\end{dependencies}
 
 % ---------------------------------------------------------
 % Theorem --- Limit of an Absolute Value
@@ -904,12 +904,12 @@ Taking absolute values cannot increase distance by more than the original
 distance: the magnitude function is continuous on $\mathbb{R}$.
 \end{remark*}
 
-\begin{remark*}[Dependencies]\hfill
+\begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:absolute-value-sequence]{Absolute Value Sequence}
   \item \hyperref[thm:triangle-inequality]{Triangle Inequality}
 \end{itemize}
-\end{remark*}
+\end{dependencies}
 
 % ---------------------------------------------------------
 % Theorem --- Positive Limit is Eventually Positive
@@ -944,11 +944,11 @@ positive half-line. This result is the sign-control counterpart of the
 eventual nonzero theorem.
 \end{remark*}
 
-\begin{remark*}[Dependencies]\hfill
+\begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:convergent-sequence]{Convergence of a Sequence}
 \end{itemize}
-\end{remark*}
+\end{dependencies}
 
 % ---------------------------------------------------------
 % Theorem --- Limit of a Square Root
@@ -993,12 +993,12 @@ zero the proof uses the order relation; away from zero it can be rationalized
 by multiplying by the conjugate.
 \end{remark*}
 
-\begin{remark*}[Dependencies]\hfill
+\begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:square-root-sequence]{Square Root Sequence}
   \item \hyperref[def:convergent-sequence]{Convergence of a Sequence}
 \end{itemize}
-\end{remark*}
+\end{dependencies}
 
 % ---------------------------------------------------------
 % Theorem --- Polynomial Sequence Limit
@@ -1043,14 +1043,14 @@ and products. The theorem packages those algebra laws into one reusable
 composition principle.
 \end{remark*}
 
-\begin{remark*}[Dependencies]\hfill
+\begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:limit-of-a-sum]{Limit of a Sum}
   \item \hyperref[thm:limit-of-scalar-multiple]{Limit of a Scalar Multiple}
   \item \hyperref[thm:limit-of-a-product]{Limit of a Product}
   \item \hyperref[thm:limit-of-a-square]{Limit of a Square}
 \end{itemize}
-\end{remark*}
+\end{dependencies}
 
 % ---------------------------------------------------------
 % Theorem --- Rational Sequence Limit
@@ -1108,10 +1108,10 @@ pointwise condition $q(x_n)\neq 0$ keeps every term of the quotient sequence
 defined.
 \end{remark*}
 
-\begin{remark*}[Dependencies]\hfill
+\begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:polynomial-sequence-limit]{Polynomial Sequence Limit}
   \item \hyperref[thm:limit-of-a-quotient]{Limit of a Quotient}
   \item \hyperref[thm:nonzero-limit-eventually-nonzero]{Nonzero Limit is Eventually Nonzero}
 \end{itemize}
-\end{remark*}
+\end{dependencies}

@@ -127,9 +127,9 @@ Continuity can fail only through a jump: either the graph arrives at $c$ from th
 A monotone graph possesses finite one-sided limits at every interior point. Continuity at $c$ demands that these approach values exactly meet the function value, so the graph neither overshoots nor undershoots when passing through $c$. Any failure manifests as a jump discontinuity: the graph either leaps upward at $c$ or remains below the right-hand approach. This criterion is indispensable when classifying discontinuities of monotone functions, since it converts continuity into a simple equality check between the function value and the adjacent plateau levels.
 \end{remark*}
 
-\begin{remark*}[Dependencies]
+\begin{dependencies}
 \hyperref[def:continuous-at-point]{Definition~\ref*{def:continuous-at-point}}; \hyperref[thm:monotone-one-sided-limits]{Theorem~\ref*{thm:monotone-one-sided-limits}}.
-\end{remark*}
+\end{dependencies}
 
 \begin{definitionbox}{Definition (Jump of a Function)}
 \begin{definition}[Jump of a Function]
@@ -231,9 +231,9 @@ that point. A zero jump means the two limiting heights agree; a positive
 jump records a discontinuity of first kind.
 \end{remark*}
 
-\begin{remark*}[Dependencies]
+\begin{dependencies}
 \hyperref[thm:monotone-one-sided-limits]{Theorem~\ref*{thm:monotone-one-sided-limits}}.
-\end{remark*}
+\end{dependencies}
 
 \begin{propositionbox}{Proposition (Discontinuities of a Monotone Function Are of First Kind)}
 \begin{proposition}[Discontinuities of a Monotone Function Are of First Kind]
@@ -268,9 +268,9 @@ Let $I \subseteq \mathbb{R}$ be an interval, let $f:I \to \mathbb{R}$ be monoton
 A monotone graph can jump only by settling on distinct finite one-sided limits; it cannot oscillate wildly or blow up to infinity at a point of discontinuity. Thus every discontinuity of a monotone function is a jump discontinuity of the first kind, which explains why such functions are easy to integrate and why their exceptional sets are well behaved. Geometrically, the graph approaches a finite height from the left and another finite height from the right before making the jump.
 \end{remark*}
 
-\begin{remark*}[Dependencies]
+\begin{dependencies}
 \hyperref[def:point-of-discontinuity]{Definition~\ref{def:point-of-discontinuity}}
-\end{remark*}
+\end{dependencies}
 
 \begin{corollarybox}{Corollary (Jump Intervals Are Disjoint)}
 \begin{corollary}[Jump Intervals Are Disjoint]
@@ -313,9 +313,9 @@ a\neq b,\\
 The corollary states that a nondecreasing function assigns disjoint open value intervals to distinct jump discontinuities. Because the function never reverses direction, the lower one-sided limit at the later point cannot drop below the upper one-sided limit at the earlier point, so the corresponding ranges cannot overlap. This distinction of jump intervals ensures that the cumulative vertical jumps of a monotone function stay separated, preventing the graph from revisiting the same band of values via different discontinuities.
 \end{remark*}
 
-\begin{remark*}[Dependencies]
+\begin{dependencies}
 \hyperref[def:jump-of-function]{Definition~\ref*{def:jump-of-function}}; \hyperref[prop:monotone-discontinuities-first-kind]{Proposition~\ref*{prop:monotone-discontinuities-first-kind}}
-\end{remark*}
+\end{dependencies}
 
 \begin{theorembox}{Theorem (Discontinuities of a Monotone Function Are Countable)}
 \begin{theorem}[Discontinuities of a Monotone Function Are Countable]
@@ -343,9 +343,9 @@ Let $I \subseteq \mathbb{R}$ be an interval and let $f:I\to\mathbb{R}$ be monoto
 Every discontinuity of a monotone function is a jump discontinuity with a nondegenerate vertical gap $(f(c^-),f(c^+))$. Distinct discontinuities yield pairwise disjoint gaps, and each such interval contains a rational number. Associating to every discontinuity the rational number inside its gap produces an injection of the discontinuity set into $\mathbb{Q}$, forcing the set to be countable. The only way the conclusion could fail would be the existence of uncountably many disjoint jump intervals, which is impossible because the rationals are countable.
 \end{remark*}
 
-\begin{remark*}[Dependencies]
+\begin{dependencies}
 \hyperref[thm:monotone-one-sided-limits]{Theorem~\ref{thm:monotone-one-sided-limits}} and \hyperref[cor:jump-intervals-for-monotone-discontinuities]{Corollary~\ref{cor:jump-intervals-for-monotone-discontinuities}}.
-\end{remark*}
+\end{dependencies}
 
 \begin{corollarybox}{Corollary (Monotone Function Is Continuous on a Dense Set)}
 \begin{corollary}[Monotone Function Is Continuous on a Dense Set]
@@ -393,9 +393,9 @@ Let $f:[a,b]\to\mathbb{R}$ be monotone. Then the set $\{x\in[a,b]:f \text{ is co
 A monotone function on a closed interval can only jump at most countably many times, so the points of discontinuity leave room inside every subinterval for a continuity point. Thus, although the function may fail to be continuous at isolated or countably many locations, continuity still occurs throughout any interval one inspects. This property ensures that monotone functions retain many features of continuous functions when arguments depend only on dense sets of continuity points.
 \end{remark*}
 
-\begin{remark*}[Dependencies]
+\begin{dependencies}
 \hyperref[thm:monotone-discontinuities-countable]{Discontinuities of a Monotone Function Are Countable}
-\end{remark*}
+\end{dependencies}
 
 \begin{propositionbox}{Proposition (Continuous Injective Is Strictly Monotone)}
 \begin{proposition}[Continuous Injective Is Strictly Monotone]
@@ -429,9 +429,9 @@ Let $f:[a,b]\to\mathbb{R}$ be continuous on $[a,b]$. Then $f$ is injective if an
 A continuous function on a closed interval cannot reverse direction without repeating a value, so injectivity enforces a single increasing or decreasing trend across the entire domain. Conversely any strictly monotone map is automatically injective. The result emphasizes that topological constraints supplied by continuity interact with order-theoretic injectivity to force global monotonicity; failure occurs precisely when the graph turns back on itself, producing repeated values. Geometrically the continuous injective graph must cross each horizontal line at most once, which is only possible when the graph rises everywhere or falls everywhere.
 \end{remark*}
 
-\begin{remark*}[Dependencies]
+\begin{dependencies}
 \hyperref[thm:bolzano-intermediate-value]{Bolzano's Intermediate Value Theorem}.
-\end{remark*}
+\end{dependencies}
 
 \begin{theorembox}{Theorem (Continuous Inverse Theorem)}
 \begin{theorem}[Continuous Inverse Theorem]

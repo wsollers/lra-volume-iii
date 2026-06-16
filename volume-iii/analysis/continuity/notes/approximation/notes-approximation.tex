@@ -76,9 +76,9 @@ The statement fails precisely when a continuous $f$ and tolerance $\varepsilon$ 
 Uniform continuity on $[a,b]$ guarantees that $f$ does not oscillate rapidly at small scales, so subdividing the interval finely enough allows a step function to track $f$ within any prescribed uniform error. The typical construction samples $f$ at one point of each subinterval and keeps that value constant across the piece. Failure would mean that no matter how the interval is partitioned, some subinterval forces an error at least $\varepsilon$, contradicting uniform continuity. The result is a foundational approximation fact used to show that continuous functions on compact intervals are Riemann integrable and to connect continuous functions with simple combinatorial models.
 \end{remark*}
 
-\begin{remark*}[Dependencies]
+\begin{dependencies}
 \hyperref[thm:heine-cantor]{Heine--Cantor Theorem}.
-\end{remark*}
+\end{dependencies}
 
 % ---------------------------------------------------------
 % Definition --- Piecewise Linear Function
@@ -230,9 +230,9 @@ Let $f:[a,b]\to\mathbb{R}$ be continuous. For every $\varepsilon>0$ there exists
 Every continuous function on a closed interval can be uniformly approximated by polynomials, so polynomials are dense in the space of continuous functions under the supremum norm. The result holds because convolutions with Bernstein polynomials preserve continuity and converge uniformly to the original function. Failure would mean there exists a uniform tolerance that no polynomial can match, contradicting the approximation scheme built from Bernstein polynomials. Geometrically, the theorem states that the graph of a continuous function can be matched arbitrarily well by the graph of a polynomial, so polynomial graphs form a flexible mesh that can shadow any continuous curve on a compact interval.
 \end{remark*}
 
-\begin{remark*}[Dependencies]
+\begin{dependencies}
 Depends on \hyperref[thm:bernstein-approximation]{thm:bernstein-approximation}.
-\end{remark*}
+\end{dependencies}
 
 % ---------------------------------------------------------
 % Definition --- Bernstein Polynomial
@@ -304,6 +304,6 @@ Let $f:[0,1]\to\mathbb{R}$ be continuous, and for each $n\in\mathbb{N}$ let $B_n
 The theorem asserts that the Bernstein polynomials of a continuous function on $[0,1]$ converge uniformly to the original function, so the entire graph of $f$ can be approximated to any prescribed sup-norm accuracy by explicit degree-$n$ polynomials once $n$ is large enough. The proof works by showing that the Bernstein operators preserve positivity and linear growth while averaging values of $f$, which forces the uniform error to vanish as $n\to\infty$. This matters because it gives an elementary constructive route from continuous functions to polynomials, strengthening the Weierstrass approximation theorem with a concrete approximating sequence. The approximation can fail only when $f$ is not continuous on $[0,1]$, in which case the Bernstein polynomials may smooth out jumps and no longer capture the original function in the sup norm. Geometrically, each $B_n$ is a convex combination of the samples $f(k/n)$, so the polygons formed by these samples become finer and eventually hug the graph of $f$ everywhere on the interval.
 \end{remark*}
 
-\begin{remark*}[Dependencies]
+\begin{dependencies}
 \hyperref[def:continuous-at-point]{Definition (Continuity at a Point)}, \hyperref[def:bernstein-polynomial]{Definition (Bernstein Polynomial)}.
-\end{remark*}
+\end{dependencies}

@@ -152,9 +152,9 @@ Each component hypothesis is indispensable: without closedness (for instance $f(
 Continuity ties nearby inputs to nearby outputs, and the compact interval $[a,b]$ can be covered by finitely many neighborhoods in which the oscillation of $f$ is controlled; taking the maximal oscillation among this finite cover supplies a global bound. Failure typically arises when the domain lacks compactness: an omitted endpoint allows the function to escape control near the hole, an unbounded interval lets values diverge along the ray, and a point of discontinuity can spike the function without upsetting nearby behavior elsewhere.
 \end{remark*}
 
-\begin{remark*}[Dependencies]
+\begin{dependencies}
 \hyperref[def:continuous-at-point]{Definition~\ref*{def:continuous-at-point}}; \hyperref[def:bounded-on-a-set]{Definition~\ref*{def:bounded-on-a-set}}.
-\end{remark*}
+\end{dependencies}
 
 % ---------------------------------------------------------
 % Definition --- Absolute Extrema
@@ -291,9 +291,9 @@ continuity the graph may jump over its supremum or infimum.
 Continuity on a closed and bounded interval forces the image of the interval to inherit the compact features of the domain. The function cannot escape to infinity or oscillate without settling, so it must reach both its highest and lowest values somewhere in the interval. When the hypotheses fail, the typical obstruction is the loss of compactness: on an open interval the function might drift off without achieving its supremum, and without continuity it may jump over candidate extrema.
 \end{remark*}
 
-\begin{remark*}[Dependencies]
+\begin{dependencies}
 Uses \hyperref[def:absolute-extrema]{Definition \ref{def:absolute-extrema}} and \hyperref[thm:boundedness-theorem]{Theorem \ref{thm:boundedness-theorem}}.
-\end{remark*}
+\end{dependencies}
 
 % ---------------------------------------------------------
 % Theorem --- Location of Roots
@@ -334,9 +334,9 @@ the endpoint values do not have opposite signs.
 Continuity forces the image of the interval $[a,b]$ to contain every intermediate value between $f(a)$ and $f(b)$. A sign change therefore compels the graph to cross the horizontal axis, producing a root strictly inside the interval. Failure occurs when the endpoint values share the same sign or when $f$ is not continuous, because then the image need not sweep across zero. Geometrically, the theorem asserts that a continuous curve connecting opposite sides of the $x$-axis must intersect the axis somewhere in between.
 \end{remark*}
 
-\begin{remark*}[Dependencies]
+\begin{dependencies}
 \hyperref[thm:bolzano-intermediate-value]{Bolzano's Intermediate Value Theorem}.
-\end{remark*}
+\end{dependencies}
 
 % ---------------------------------------------------------
 % Theorem --- Bolzano's IVT
@@ -425,10 +425,10 @@ f([a,b])=[\min_{[a,b]} f,\max_{[a,b]} f].
 The statement combines the extreme value theorem, which supplies both a minimum and a maximum on $[a,b]$, with the intermediate value theorem, which fills in every intermediate value between them. Consequently the image $f([a,b])$ is a closed interval with endpoints given by the absolute extremal values of $f$ on $[a,b]$, showing that continuous functions map compact intervals onto compact intervals without introducing gaps.
 \end{remark*}
 
-\begin{remark*}[Dependencies]
+\begin{dependencies}
 \hyperref[thm:extreme-value-theorem]{Extreme Value Theorem},
 \hyperref[thm:bolzano-intermediate-value]{Bolzano's Intermediate Value Theorem}
-\end{remark*}
+\end{dependencies}
 
 % ---------------------------------------------------------
 % Theorem --- Preservation of Intervals
@@ -497,9 +497,9 @@ y\notin f(I).
 Continuous functions cannot tear gaps open inside their images of intervals. Once the function achieves two output values, continuity and the Intermediate Value Theorem force every intermediate value to occur as well, so the image remains an interval even when $I$ is unbounded or half-open. Failure occurs precisely when continuity breaks, because discontinuities can skip intermediate heights and leave disconnected image sets.
 \end{remark*}
 
-\begin{remark*}[Dependencies]
+\begin{dependencies}
 \hyperref[thm:bolzano-intermediate-value]{thm:bolzano-intermediate-value}
-\end{remark*}
+\end{dependencies}
 
 % ---------------------------------------------------------
 % Theorem --- Darboux Property
@@ -578,6 +578,6 @@ Let $a,b\in\mathbb{R}$ satisfy $a<b$, let $f:[a,b]\to\mathbb{R}$ be continuous, 
 A continuous function on a compact interval cannot oscillate across a level c without actually attaining that level. Stated contrapositive fashion, if c is never taken then the entire graph lies strictly above or strictly below the horizontal line y=c. The only way this guarantee can fail is when the function produces values on both sides of c, in which case continuity forces a crossing point. Geometrically the conclusion describes the image of a connected set under a continuous map: it is an interval, so omitting c forces the image to stay in one of the open half-lines determined by c.
 \end{remark*}
 
-\begin{remark*}[Dependencies]
+\begin{dependencies}
 \hyperref[thm:bolzano-intermediate-value]{Bolzano's Intermediate Value Theorem}.
-\end{remark*}
+\end{dependencies}

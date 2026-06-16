@@ -75,13 +75,13 @@ f(a)\ne f(b).
 If a differentiable function returns to the same value at both endpoints of an interval, the derivative must vanish somewhere in between. Geometrically: if the curve starts and ends at the same height, at some interior point the tangent line is horizontal. The proof combines two ingredients --- the Extreme Value Theorem guarantees that a continuous function on a closed bounded interval attains its maximum and minimum, and the Interior Extremum Theorem guarantees that at an interior extremum the derivative is zero. If both extrema occur at the endpoints then $f$ is constant and $f' \equiv 0$ throughout. Rolle's Theorem is the special case of the MVT where the secant slope is zero.
 \end{remark*}
 
-\begin{remark*}[Dependencies]
+\begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:interior-extremum-theorem]{Theorem: Interior Extremum Theorem}
   \item \hyperref[thm:extreme-value-theorem]{Theorem: Extreme Value Theorem}
   \item \hyperref[def:derivative-at-a-point]{Definition: Derivative at a Point}
 \end{itemize}
-\end{remark*}
+\end{dependencies}
 
 % ---------------------------------------------------------
 
@@ -151,9 +151,9 @@ f \text{ not differentiable on } (a,b).
 The MVT asserts that the instantaneous rate of change equals the average rate of change at some interior point. Geometrically: the tangent line at some point $c$ is parallel to the secant line through $(a,f(a))$ and $(b,f(b))$. The proof reduces to Rolle's Theorem by subtracting the secant: define $g(x) = f(x) - \tfrac{f(b)-f(a)}{b-a}(x-a)$, which satisfies $g(a)=g(b)=f(a)$, then apply Rolle's. The theorem is an existence result, not a construction: it guarantees some $c$ exists but gives no formula for it. Its immediate corollaries --- the constant function corollary, the monotonicity corollary, and the Lipschitz bound corollary --- each flow from the MVT by a one-line argument and are the theorem's primary applications.
 \end{remark*}
 
-\begin{remark*}[Dependencies]
+\begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:rolles-theorem]{Theorem: Rolle's Theorem}
   \item \hyperref[def:derivative-at-a-point]{Definition: Derivative at a Point}
 \end{itemize}
-\end{remark*}
+\end{dependencies}

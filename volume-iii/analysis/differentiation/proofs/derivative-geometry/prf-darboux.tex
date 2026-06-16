@@ -41,7 +41,7 @@ g'(a) = f'(a) - k < 0 \qquad \text{and} \qquad g'(b) = f'(b) - k > 0.
 The proof constructs an auxiliary function $g = f - kx$ that shifts the target value $k$ to a zero of $g'$. The strategy then has two phases. First, the EVT guarantees $g$ attains its minimum on $[a,b]$. Second, the sign conditions $g'(a) < 0$ and $g'(b) > 0$ --- derived from $f'(a) < k < f'(b)$ --- are used via the local behavior lemmas to show the minimum lies strictly in the interior: near $a$ the function is decreasing (so $a$ is not a min), and near $b$ it is increasing (so $b$ is not a min). The Interior Extremum Theorem then converts the interior minimum into the equation $g'(c) = 0$. The proof does not require continuity of $f'$; differentiability of $f$ alone is sufficient.
 \end{remark*}
 
-\begin{remark*}[Dependencies]~\\
+\begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:extreme-value-theorem]{Theorem: Extreme Value Theorem}
   \item \hyperref[thm:interior-extremum-theorem]{Theorem: Interior Extremum Theorem}
@@ -49,6 +49,6 @@ The proof constructs an auxiliary function $g = f - kx$ that shifts the target v
   \item \hyperref[lem:negative-derivative-implies-locally-decreasing]{Lemma: Negative Derivative Implies Locally Decreasing}
   \item \hyperref[def:derivative-at-a-point]{Definition: Derivative at a Point}
 \end{itemize}
-\end{remark*}
+\end{dependencies}
 
 \clearpage

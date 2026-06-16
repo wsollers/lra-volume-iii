@@ -43,11 +43,11 @@ The recursion is Newton's method applied to the equation $x^2-2=0$.
 Each new term averages the current estimate with the correction $2/x_n$.
 \end{remark*}
 
-\begin{remark*}[Dependencies]\hfill
+\begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:sequence]{Sequence}
 \end{itemize}
-\end{remark*}
+\end{dependencies}
 
 % ---------------------------------------------------------
 % Theorem --- Newton Approximation of sqrt(2)
@@ -87,14 +87,14 @@ $\sqrt{2}$, so monotone convergence supplies a limit. Passing the recursion
 to the limit identifies the limit as the positive solution of $L^2=2$.
 \end{remark*}
 
-\begin{remark*}[Dependencies]\hfill
+\begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:newton-sequence-sqrt-two]{Newton Sequence for $\sqrt{2}$}
   \item \hyperref[thm:monotone-convergence-theorem]{Monotone Convergence Theorem}
   \item \hyperref[thm:rational-sequence-limit]{Rational Sequence Limit}
   \item \hyperref[def:square-root-sequence]{Square Root Sequence}
 \end{itemize}
-\end{remark*}
+\end{dependencies}
 
 % ---------------------------------------------------------
 % Definition --- Factorial Partial Sums
@@ -126,11 +126,11 @@ The sequence adds the reciprocal factorial terms one at a time. The terms
 decrease very rapidly, so the partial sums stabilize quickly.
 \end{remark*}
 
-\begin{remark*}[Dependencies]\hfill
+\begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:sequence]{Sequence}
 \end{itemize}
-\end{remark*}
+\end{dependencies}
 
 % ---------------------------------------------------------
 % Theorem --- Factorial Partial Sums Approximate e
@@ -170,13 +170,13 @@ practice the approximation is efficient because the error after $n$ terms is
 controlled by a rapidly shrinking factorial tail.
 \end{remark*}
 
-\begin{remark*}[Dependencies]\hfill
+\begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:factorial-partial-sums]{Factorial Partial Sums}
   \item \hyperref[def:number-e]{The Number $e$}
   \item \hyperref[thm:cauchy-criterion-real-sequences]{Cauchy Criterion for Real Sequences}
 \end{itemize}
-\end{remark*}
+\end{dependencies}
 
 % ---------------------------------------------------------
 % Definition --- Compound-Interest Sequence
@@ -208,11 +208,11 @@ The term $c_n$ is the value of one unit of principal after one unit of time
 when interest is compounded $n$ times at nominal rate $1$.
 \end{remark*}
 
-\begin{remark*}[Dependencies]\hfill
+\begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:sequence]{Sequence}
 \end{itemize}
-\end{remark*}
+\end{dependencies}
 
 % ---------------------------------------------------------
 % Theorem --- Compound-Interest Approximation of e
@@ -251,13 +251,13 @@ converging to the same constant as the factorial partial sums. It is slower
 numerically, but it explains why $e$ appears in continuous growth.
 \end{remark*}
 
-\begin{remark*}[Dependencies]\hfill
+\begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:compound-interest-sequence]{Compound-Interest Sequence}
   \item \hyperref[def:number-e]{The Number $e$}
   \item \hyperref[thm:sequence-squeeze-theorem]{Sequence Squeeze Theorem}
 \end{itemize}
-\end{remark*}
+\end{dependencies}
 
 % ---------------------------------------------------------
 % Definition --- Decimal Truncation Sequence
@@ -289,11 +289,11 @@ The number $d_n$ is obtained by cutting $\alpha$ off after $n$ decimal
 places. Truncation is one-sided: it does not round to the nearest decimal.
 \end{remark*}
 
-\begin{remark*}[Dependencies]\hfill
+\begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:sequence]{Sequence}
 \end{itemize}
-\end{remark*}
+\end{dependencies}
 
 % ---------------------------------------------------------
 % Theorem --- Decimal Truncations Converge
@@ -333,9 +333,9 @@ than $10^{-n}$. This is one of the most concrete examples of convergence:
 finite decimal data can approximate a real number to arbitrary accuracy.
 \end{remark*}
 
-\begin{remark*}[Dependencies]\hfill
+\begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:decimal-truncation-sequence]{Decimal Truncation Sequence}
   \item \hyperref[thm:sequence-squeeze-theorem]{Sequence Squeeze Theorem}
 \end{itemize}
-\end{remark*}
+\end{dependencies}

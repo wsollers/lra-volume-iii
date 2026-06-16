@@ -49,12 +49,12 @@ y = f(c) + f'(c)(x - c).
 The tangent line is the limit of the family of secant lines through $(c, f(c))$ and $(x, f(x))$ as $x \to c$. More precisely: the slope $m_{\mathrm{sec}}(c, x) = (f(x)-f(c))/(x-c)$ converges to $f'(c)$, so the tangent line is the line whose slope is that limit. It is also the unique linear function $\ell(x) = f(c) + f'(c)(x-c)$ satisfying $\ell(c) = f(c)$ and $\ell'(c) = f'(c)$ --- the best first-order approximation to $f$ near $c$. The error $f(x) - \ell(x) = o(x-c)$ as $x \to c$, meaning it vanishes faster than the displacement.
 \end{remark*}
 
-\begin{remark*}[Dependencies]
+\begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:secant-line]{Definition: Secant Line}
   \item \hyperref[def:derivative-at-a-point]{Definition: Derivative at a Point}
 \end{itemize}
-\end{remark*}
+\end{dependencies}
 
 % Figure: secant and tangent lines --- extracted to figure file
 \input{volume-iii/analysis/differentiation/notes/secant-tangent/figure1}

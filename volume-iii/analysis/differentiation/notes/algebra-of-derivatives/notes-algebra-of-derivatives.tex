@@ -28,12 +28,12 @@ Let $A \subseteq \mathbb{R}$, let $f : A \to \mathbb{R}$, let $c \in A$ be a lim
 Multiplying a function by a constant scales its derivative by the same constant. The proof is one line: the scalar $\alpha$ factors out of the difference quotient algebraically, then the Constant Multiple Rule for Limits passes it through the limit. Differentiation is therefore homogeneous of degree one with respect to scalar multiplication.
 \end{remark*}
 
-\begin{remark*}[Dependencies]
+\begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:derivative-at-a-point]{Definition: Derivative at a Point}
   \item \hyperref[thm:limit-constant-multiple]{Constant Multiple Rule for Limits}
 \end{itemize}
-\end{remark*}
+\end{dependencies}
 
 % ---------------------------------------------------------
 
@@ -60,12 +60,12 @@ Let $A \subseteq \mathbb{R}$, let $f, g : A \to \mathbb{R}$, and let $c \in A$ b
 The derivative of a sum is the sum of the derivatives. The proof is immediate: the difference quotient of $f+g$ splits linearly into the sum of the individual difference quotients, and the Sum Rule for Limits distributes the limit across the sum. Together with the Constant Multiple Rule, this establishes that differentiation is a linear operation: $(\alpha f + \beta g)' = \alpha f' + \beta g'$.
 \end{remark*}
 
-\begin{remark*}[Dependencies]
+\begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:derivative-at-a-point]{Definition: Derivative at a Point}
   \item \hyperref[thm:limit-sum]{Sum Rule for Limits}
 \end{itemize}
-\end{remark*}
+\end{dependencies}
 
 % ---------------------------------------------------------
 
@@ -92,14 +92,14 @@ Let $A \subseteq \mathbb{R}$, let $f, g : A \to \mathbb{R}$, and let $c \in A$ b
 The derivative of a product is not simply the product of the derivatives. The correct formula adds two terms: the rate of change of $f$ weighted by the current value of $g$, plus the rate of change of $g$ weighted by the current value of $f$. The proof inserts the auxiliary term $f(x)g(c)$ to decouple the increments of $f$ and $g$, isolating the individual difference quotients. Continuity of $f$ at $c$ (which follows from differentiability) is used to evaluate $\lim_{x\to c} f(x) = f(c)$ in one of the factors.
 \end{remark*}
 
-\begin{remark*}[Dependencies]
+\begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:derivative-at-a-point]{Definition: Derivative at a Point}
   \item \hyperref[thm:differentiable-implies-continuous]{Theorem: Differentiable Implies Continuous}
   \item \hyperref[thm:limit-sum]{Sum Rule for Limits}
   \item \hyperref[thm:limit-product]{Product Rule for Limits}
 \end{itemize}
-\end{remark*}
+\end{dependencies}
 
 % ---------------------------------------------------------
 
@@ -126,7 +126,7 @@ Let $A \subseteq \mathbb{R}$, let $f, g : A \to \mathbb{R}$, and let $c \in A$ b
 The quotient rule is the product rule applied to $f \cdot g^{-1}$, but stated directly. The hypothesis $g(c) \neq 0$ ensures the quotient is defined near $c$ — continuity of $g$ (from its differentiability) and the non-vanishing limit theorem guarantee $g(x) \neq 0$ in a deleted neighbourhood of $c$, so the difference quotient of $f/g$ is well-defined throughout. The add-and-subtract technique with $f(c)g(c)$ decouples the increments of $f$ and $g$ in the numerator, exactly as in the product rule proof.
 \end{remark*}
 
-\begin{remark*}[Dependencies]
+\begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:derivative-at-a-point]{Definition: Derivative at a Point}
   \item \hyperref[thm:differentiable-implies-continuous]{Theorem: Differentiable Implies Continuous}
@@ -135,7 +135,7 @@ The quotient rule is the product rule applied to $f \cdot g^{-1}$, but stated di
   \item \hyperref[thm:limit-product]{Product Rule for Limits}
   \item \hyperref[thm:limit-quotient]{Quotient Rule for Limits}
 \end{itemize}
-\end{remark*}
+\end{dependencies}
 
 % ---------------------------------------------------------
 
@@ -158,12 +158,12 @@ Let $A \subseteq \mathbb{R}$, let $f_1, \dots, f_n : A \to \mathbb{R}$, let $\al
 \]
 \end{remark*}
 
-\begin{remark*}[Dependencies]
+\begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:sum-rule]{Theorem: Sum Rule}
   \item \hyperref[thm:constant-multiple-rule]{Theorem: Constant Multiple Rule}
 \end{itemize}
-\end{remark*}
+\end{dependencies}
 
 % ---------------------------------------------------------
 
@@ -190,11 +190,11 @@ f_k'(c) \prod_{\substack{i=1\\i\neq k}}^{n} f_i(c).
 \]
 \end{remark*}
 
-\begin{remark*}[Dependencies]
+\begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:product-rule]{Theorem: Product Rule}
 \end{itemize}
-\end{remark*}
+\end{dependencies}
 
 % ---------------------------------------------------------
 
@@ -218,11 +218,11 @@ Let $A \subseteq \mathbb{R}$, let $f : A \to \mathbb{R}$, let $c \in A$ be a lim
 \]
 \end{remark*}
 
-\begin{remark*}[Dependencies]
+\begin{dependencies}
 \begin{itemize}
   \item \hyperref[cor:extended-product-rule]{Corollary: Extended Product Rule}
 \end{itemize}
-\end{remark*}
+\end{dependencies}
 
 % ---------------------------------------------------------
 
@@ -250,12 +250,12 @@ Let $A \subseteq \mathbb{R}$, let $f_1, \dots, f_n : A \to \mathbb{R}$, let $\al
 The Finite Linear Combination Rule is the full statement that differentiation is a \emph{linear operator}: it commutes with scalar multiplication and addition simultaneously, for any finite collection of differentiable functions. This is not a separate theorem from the Constant Multiple and Sum Rules — it is their inductive closure. Stated in operator language: if $\mathcal{D}(I)$ denotes the vector space of functions differentiable at $c$, then $D_c : \mathcal{D}(I) \to \mathbb{R}$ defined by $D_c(f) = f'(c)$ is a linear functional. The Finite Linear Combination Rule says $D_c(\sum_i \alpha_i f_i) = \sum_i \alpha_i D_c(f_i)$.
 \end{remark*}
 
-\begin{remark*}[Dependencies]
+\begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:constant-multiple-rule]{Theorem: Constant Multiple Rule}
   \item \hyperref[thm:sum-rule]{Theorem: Sum Rule}
 \end{itemize}
-\end{remark*}
+\end{dependencies}
 
 % =========================================================
 % Global (interval) algebra rules
@@ -280,11 +280,11 @@ Let $I \subseteq \mathbb{R}$ be an interval, let $f : I \to \mathbb{R}$, and let
 \]
 \end{remark*}
 
-\begin{remark*}[Dependencies]
+\begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:constant-multiple-rule]{Theorem: Constant Multiple Rule}
 \end{itemize}
-\end{remark*}
+\end{dependencies}
 
 % ---------------------------------------------------------
 
@@ -307,11 +307,11 @@ Let $I \subseteq \mathbb{R}$ be an interval, and let $f, g : I \to \mathbb{R}$. 
 \]
 \end{remark*}
 
-\begin{remark*}[Dependencies]
+\begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:sum-rule]{Theorem: Sum Rule}
 \end{itemize}
-\end{remark*}
+\end{dependencies}
 
 % ---------------------------------------------------------
 
@@ -334,11 +334,11 @@ Let $I \subseteq \mathbb{R}$ be an interval, and let $f, g : I \to \mathbb{R}$. 
 \]
 \end{remark*}
 
-\begin{remark*}[Dependencies]
+\begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:product-rule]{Theorem: Product Rule}
 \end{itemize}
-\end{remark*}
+\end{dependencies}
 
 % ---------------------------------------------------------
 
@@ -361,11 +361,11 @@ Let $I \subseteq \mathbb{R}$ be an interval, and let $f, g : I \to \mathbb{R}$. 
 \]
 \end{remark*}
 
-\begin{remark*}[Dependencies]
+\begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:quotient-rule]{Theorem: Quotient Rule}
 \end{itemize}
-\end{remark*}
+\end{dependencies}
 
 % ---------------------------------------------------------
 
@@ -388,11 +388,11 @@ Let $I \subseteq \mathbb{R}$ be an interval, let $f_1, \dots, f_n : I \to \mathb
 \]
 \end{remark*}
 
-\begin{remark*}[Dependencies]
+\begin{dependencies}
 \begin{itemize}
   \item \hyperref[cor:finite-sum-rule]{Corollary: Finite Sum Rule}
 \end{itemize}
-\end{remark*}
+\end{dependencies}
 
 % ---------------------------------------------------------
 
@@ -417,11 +417,11 @@ Let $I \subseteq \mathbb{R}$ be an interval, and let $f_1, \dots, f_n : I \to \m
 \]
 \end{remark*}
 
-\begin{remark*}[Dependencies]
+\begin{dependencies}
 \begin{itemize}
   \item \hyperref[cor:extended-product-rule]{Corollary: Extended Product Rule}
 \end{itemize}
-\end{remark*}
+\end{dependencies}
 
 % ---------------------------------------------------------
 
@@ -444,11 +444,11 @@ Let $I \subseteq \mathbb{R}$ be an interval, let $f : I \to \mathbb{R}$, and let
 \]
 \end{remark*}
 
-\begin{remark*}[Dependencies]
+\begin{dependencies}
 \begin{itemize}
   \item \hyperref[cor:power-rule-special-case]{Corollary: Power Rule for Integer Powers of a Function}
 \end{itemize}
-\end{remark*}
+\end{dependencies}
 
 % ---------------------------------------------------------
 
@@ -481,11 +481,11 @@ The pointwise statements above --- each proved at a single point $c$ --- extend 
 These equalities hold as functions on $I$. The Finite Linear Combination Rule in its global form is precisely the statement that $D : \mathcal{D}(I) \to \mathcal{F}(I)$ defined by $D(f) = f'$ is a linear map between function spaces, where $\mathcal{F}(I)$ denotes functions on $I$. The interval variants are not separate theorems --- they are the pointwise results collected into function notation by applying the pointwise result at each $x \in I$.
 \end{remark*}
 
-\begin{remark*}[Dependencies]
+\begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:finite-linear-combination-rule]{Theorem: Finite Linear Combination Rule}
 \end{itemize}
-\end{remark*}
+\end{dependencies}
 
 % ---------------------------------------------------------
 
