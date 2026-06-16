@@ -470,7 +470,11 @@ of the points themselves.
 The Lipschitz condition requires a single constant $K$ that simultaneously bounds the rate at which $f$ can stretch distances across the entire set $A$. It encapsulates a global slope cap: every secant line through the graph has absolute slope at most $K$. Failure occurs once a single pair of points forces a steeper secant, signaling that no uniform control constant works on the whole domain. Geometrically, the graph of a Lipschitz function lies inside a cone of opening determined by $K$, so nearby points cannot be blown apart faster than $K$ times their original spacing.
 \end{remark*}
 
-\NoLocalDependencies
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:function]{Function}
+\end{itemize}
+\end{dependencies}
 % ---------------------------------------------------------
 % Proposition --- Lipschitz Implies UC
 % ---------------------------------------------------------
@@ -652,7 +656,11 @@ The property fails either because $f$ collapses some pair of points faster than 
 A bi-Lipschitz map distorts every distance in $A$ by factors lying between $\alpha$ and $K$, so it is simultaneously Lipschitz and has a Lipschitz inverse defined on its image. This two-sided control guarantees injectivity and preserves geometric features such as relative spacing up to uniform scaling, while failures arise precisely from excessive collapsing or stretching of some pair of points.
 \end{remark*}
 
-\NoLocalDependencies
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:function]{Function}
+\end{itemize}
+\end{dependencies}
 % ---------------------------------------------------------
 % Theorem --- Inverse of Bi-Lipschitz Map Is Lipschitz
 % ---------------------------------------------------------
