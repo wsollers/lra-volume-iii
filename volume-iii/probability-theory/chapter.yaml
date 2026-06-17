@@ -1,6 +1,10 @@
-chapter: probability-theory
+subject: probability-theory
+display_title: Probability Theory
 volume: volume-iii
-path: volume-iii/probability-theory
-display_title: "Probability Theory"
 status: planned
-entries: []
+path: volume-iii/probability-theory
+dependencies:
+  prior: ''
+  next: ''
+environments: []
+proof_files: []

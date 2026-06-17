@@ -1,6 +1,10 @@
-chapter: measure-theory
+subject: measure-theory
+display_title: Measure Theory
 volume: volume-iii
-path: volume-iii/measure-theory
-display_title: "Measure Theory"
 status: planned
-entries: []
+path: volume-iii/measure-theory
+dependencies:
+  prior: ''
+  next: ''
+environments: []
+proof_files: []

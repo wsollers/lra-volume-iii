@@ -1,6 +1,10 @@
-chapter: quantum-calculus
+subject: quantum-calculus
+display_title: Quantum Calculus
 volume: volume-iii
-path: volume-iii/quantum-calculus
-display_title: "Quantum Calculus"
 status: planned
-entries: []
+path: volume-iii/quantum-calculus
+dependencies:
+  prior: ''
+  next: ''
+environments: []
+proof_files: []

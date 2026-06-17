@@ -1,6 +1,10 @@
-chapter: complex-analysis
+subject: complex-analysis
+display_title: Complex Analysis
 volume: volume-iii
-path: volume-iii/complex-analysis
-display_title: "Complex Analysis"
 status: planned
-entries: []
+path: volume-iii/complex-analysis
+dependencies:
+  prior: ''
+  next: ''
+environments: []
+proof_files: []

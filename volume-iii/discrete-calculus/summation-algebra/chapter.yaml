@@ -1,10 +1,9 @@
-subject: series
+subject: summation-algebra
 display_title: ''
-volume: volume-iii
+volume: ''
 status: in-progress
 dependencies:
   prior: ''
   next: ''
-path: volume-iii/analysis/series
 environments: []
 proof_files: []
