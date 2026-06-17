@@ -2,10 +2,10 @@ subject: foundations
 display_title: Discrete Calculus Foundations
 volume: volume-iii
 status: active
-path: volume-iii/discrete-calculus/foundations
 dependencies:
   prior: ''
   next: ''
+path: volume-iii/discrete-calculus/foundations
 environments:
 - label: prop:higher-diff-formula
   type: prop

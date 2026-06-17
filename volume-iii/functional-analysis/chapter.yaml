@@ -2,9 +2,9 @@ subject: functional-analysis
 display_title: Functional Analysis
 volume: volume-iii
 status: planned
-path: volume-iii/functional-analysis
 dependencies:
   prior: ''
   next: ''
+path: volume-iii/functional-analysis
 environments: []
 proof_files: []

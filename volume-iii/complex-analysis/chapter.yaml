@@ -2,9 +2,9 @@ subject: complex-analysis
 display_title: Complex Analysis
 volume: volume-iii
 status: planned
-path: volume-iii/complex-analysis
 dependencies:
   prior: ''
   next: ''
+path: volume-iii/complex-analysis
 environments: []
 proof_files: []

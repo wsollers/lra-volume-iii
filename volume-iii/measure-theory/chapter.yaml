@@ -2,9 +2,9 @@ subject: measure-theory
 display_title: Measure Theory
 volume: volume-iii
 status: planned
-path: volume-iii/measure-theory
 dependencies:
   prior: ''
   next: ''
+path: volume-iii/measure-theory
 environments: []
 proof_files: []
