@@ -1,0 +1,3351 @@
+{
+  "volume_root": "F:\\repos\\lra-volume-iii\\volume-iii",
+  "records": [
+    {
+      "code": "proofs_index_routes_exercises",
+      "message": "proofs/exercises/index.tex must be routed only from the chapter router, not from proofs/index.tex.",
+      "path": "analysis/function-sequences/proofs/index.tex",
+      "line": 0,
+      "severity": "warning"
+    },
+    {
+      "code": "proofs_index_routes_exercises",
+      "message": "proofs/exercises/index.tex must be routed only from the chapter router, not from proofs/index.tex.",
+      "path": "analysis/riemann-integration/proofs/index.tex",
+      "line": 0,
+      "severity": "warning"
+    },
+    {
+      "code": "proofs_index_routes_exercises",
+      "message": "proofs/exercises/index.tex must be routed only from the chapter router, not from proofs/index.tex.",
+      "path": "analysis/series/proofs/index.tex",
+      "line": 0,
+      "severity": "warning"
+    },
+    {
+      "code": "proofs_index_routes_exercises",
+      "message": "proofs/exercises/index.tex must be routed only from the chapter router, not from proofs/index.tex.",
+      "path": "complex-analysis/proofs/index.tex",
+      "line": 0,
+      "severity": "warning"
+    },
+    {
+      "code": "proofs_index_routes_exercises",
+      "message": "proofs/exercises/index.tex must be routed only from the chapter router, not from proofs/index.tex.",
+      "path": "functional-analysis/proofs/index.tex",
+      "line": 0,
+      "severity": "warning"
+    },
+    {
+      "code": "proofs_index_routes_exercises",
+      "message": "proofs/exercises/index.tex must be routed only from the chapter router, not from proofs/index.tex.",
+      "path": "measure-theory/proofs/index.tex",
+      "line": 0,
+      "severity": "warning"
+    },
+    {
+      "code": "proofs_index_routes_exercises",
+      "message": "proofs/exercises/index.tex must be routed only from the chapter router, not from proofs/index.tex.",
+      "path": "number-theory/elementary-number-theory/proofs/index.tex",
+      "line": 0,
+      "severity": "warning"
+    },
+    {
+      "code": "proofs_index_routes_exercises",
+      "message": "proofs/exercises/index.tex must be routed only from the chapter router, not from proofs/index.tex.",
+      "path": "probability-theory/proofs/index.tex",
+      "line": 0,
+      "severity": "warning"
+    },
+    {
+      "code": "proofs_index_routes_exercises",
+      "message": "proofs/exercises/index.tex must be routed only from the chapter router, not from proofs/index.tex.",
+      "path": "quantum-calculus/proofs/index.tex",
+      "line": 0,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_detailed_body",
+      "message": "Missing Detailed Learning proof body.",
+      "path": "analysis/bounding/proofs/bounds-algebra/prf-supremum-in-the-set-is-the-maximum.tex",
+      "line": 0,
+      "severity": "warning"
+    },
+    {
+      "code": "label_root_mismatch",
+      "message": "Proof label root must match LRAProofFor root.",
+      "path": "analysis/differentiation/proofs/algebra-of-derivatives/prf-constant-multiple.tex",
+      "line": 0,
+      "severity": "warning"
+    },
+    {
+      "code": "label_root_mismatch",
+      "message": "Proof label root must match LRAProofFor root.",
+      "path": "analysis/differentiation/proofs/algebra-of-derivatives/prf-differentiation-on-set.tex",
+      "line": 0,
+      "severity": "warning"
+    },
+    {
+      "code": "label_root_mismatch",
+      "message": "Proof label root must match LRAProofFor root.",
+      "path": "analysis/differentiation/proofs/algebra-of-derivatives/prf-finite-linear-combination.tex",
+      "line": 0,
+      "severity": "warning"
+    },
+    {
+      "code": "label_root_mismatch",
+      "message": "Proof label root must match LRAProofFor root.",
+      "path": "analysis/differentiation/proofs/algebra-of-derivatives/prf-finite-product-rule.tex",
+      "line": 0,
+      "severity": "warning"
+    },
+    {
+      "code": "label_root_mismatch",
+      "message": "Proof label root must match LRAProofFor root.",
+      "path": "analysis/differentiation/proofs/algebra-of-derivatives/prf-special-case-product-rule.tex",
+      "line": 0,
+      "severity": "warning"
+    },
+    {
+      "code": "label_root_mismatch",
+      "message": "Proof label root must match LRAProofFor root.",
+      "path": "analysis/differentiation/proofs/derivative-definition/prf-uniqueness-of-derivative.tex",
+      "line": 0,
+      "severity": "warning"
+    },
+    {
+      "code": "label_root_mismatch",
+      "message": "Proof label root must match LRAProofFor root.",
+      "path": "analysis/differentiation/proofs/derivative-geometry/prf-relative-extremum-derivatives-equal-0-or-dont-exist.tex",
+      "line": 0,
+      "severity": "warning"
+    },
+    {
+      "code": "label_root_mismatch",
+      "message": "Proof label root must match LRAProofFor root.",
+      "path": "analysis/functions/proofs/subsets-real-line/prf-heine-borel.tex",
+      "line": 0,
+      "severity": "warning"
+    },
+    {
+      "code": "todo_outside_stub_layers",
+      "message": "Proof stubs may use TODO only in proof bodies, proof-structure, or dependencies.",
+      "path": "analysis/continuity/proofs/approximation/prf-bernstein-approximation.tex",
+      "line": 11,
+      "severity": "warning"
+    },
+    {
+      "code": "todo_outside_stub_layers",
+      "message": "Proof stubs may use TODO only in proof bodies, proof-structure, or dependencies.",
+      "path": "analysis/continuity/proofs/approximation/prf-piecewise-linear-approximation.tex",
+      "line": 11,
+      "severity": "warning"
+    },
+    {
+      "code": "proof_file_order_mismatch",
+      "message": "Proof files must be routed in source theorem order.",
+      "path": "analysis/differentiation/proofs/algebra-of-derivatives/index.tex",
+      "line": 0,
+      "severity": "warning"
+    },
+    {
+      "code": "proof_file_order_mismatch",
+      "message": "Proof files must be routed in source theorem order.",
+      "path": "analysis/differentiation/proofs/derivative-definition/index.tex",
+      "line": 0,
+      "severity": "warning"
+    },
+    {
+      "code": "proof_file_order_mismatch",
+      "message": "Proof files must be routed in source theorem order.",
+      "path": "analysis/differentiation/proofs/derivative-geometry/index.tex",
+      "line": 0,
+      "severity": "warning"
+    },
+    {
+      "code": "proof_file_order_mismatch",
+      "message": "Proof files must be routed in source theorem order.",
+      "path": "analysis/functions/proofs/subsets-real-line/index.tex",
+      "line": 0,
+      "severity": "warning"
+    },
+    {
+      "code": "unrouted_notes_topic_body",
+      "message": "notes/secant-tangent/figure1.tex is not routed from notes/secant-tangent/index.tex.",
+      "path": "analysis/differentiation/notes/secant-tangent/figure1.tex",
+      "line": 0,
+      "severity": "warning"
+    },
+    {
+      "code": "inline_tikzpicture",
+      "message": "Nontrivial TikZ must live in a dedicated figure source file.",
+      "path": "analysis/bounding/notes/bounds-extremals/notes-supremum.tex",
+      "line": 876,
+      "severity": "warning"
+    },
+    {
+      "code": "inline_tikzpicture",
+      "message": "Nontrivial TikZ must live in a dedicated figure source file.",
+      "path": "analysis/differentiation/notes/secant-tangent/figure1.tex",
+      "line": 9,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_interpretation",
+      "message": "Interpretation remark is missing.",
+      "path": "analysis/differentiation/notes/algebra-of-derivatives/notes-algebra-of-derivatives.tex",
+      "line": 143,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_interpretation",
+      "message": "Interpretation remark is missing.",
+      "path": "analysis/differentiation/notes/algebra-of-derivatives/notes-algebra-of-derivatives.tex",
+      "line": 171,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_interpretation",
+      "message": "Interpretation remark is missing.",
+      "path": "analysis/differentiation/notes/algebra-of-derivatives/notes-algebra-of-derivatives.tex",
+      "line": 202,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_interpretation",
+      "message": "Interpretation remark is missing.",
+      "path": "analysis/differentiation/notes/algebra-of-derivatives/notes-algebra-of-derivatives.tex",
+      "line": 265,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_interpretation",
+      "message": "Interpretation remark is missing.",
+      "path": "analysis/differentiation/notes/algebra-of-derivatives/notes-algebra-of-derivatives.tex",
+      "line": 292,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_interpretation",
+      "message": "Interpretation remark is missing.",
+      "path": "analysis/differentiation/notes/algebra-of-derivatives/notes-algebra-of-derivatives.tex",
+      "line": 319,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_interpretation",
+      "message": "Interpretation remark is missing.",
+      "path": "analysis/differentiation/notes/algebra-of-derivatives/notes-algebra-of-derivatives.tex",
+      "line": 346,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_interpretation",
+      "message": "Interpretation remark is missing.",
+      "path": "analysis/differentiation/notes/algebra-of-derivatives/notes-algebra-of-derivatives.tex",
+      "line": 373,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_interpretation",
+      "message": "Interpretation remark is missing.",
+      "path": "analysis/differentiation/notes/algebra-of-derivatives/notes-algebra-of-derivatives.tex",
+      "line": 400,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_interpretation",
+      "message": "Interpretation remark is missing.",
+      "path": "analysis/differentiation/notes/algebra-of-derivatives/notes-algebra-of-derivatives.tex",
+      "line": 429,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_interpretation",
+      "message": "Interpretation remark is missing.",
+      "path": "analysis/differentiation/notes/derivative-geometry/notes-derivative-geometry.tex",
+      "line": 45,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_interpretation",
+      "message": "Interpretation remark is missing.",
+      "path": "analysis/differentiation/notes/derivative-geometry/notes-derivative-geometry.tex",
+      "line": 84,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_interpretation",
+      "message": "Interpretation remark is missing.",
+      "path": "analysis/differentiation/notes/derivative-geometry/notes-derivative-geometry.tex",
+      "line": 199,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_interpretation",
+      "message": "Interpretation remark is missing.",
+      "path": "analysis/differentiation/notes/derivative-geometry/notes-understanding-derivatives.tex",
+      "line": 7,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_interpretation",
+      "message": "Interpretation remark is missing.",
+      "path": "analysis/differentiation/notes/derivative-geometry/notes-understanding-derivatives.tex",
+      "line": 39,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_interpretation",
+      "message": "Interpretation remark is missing.",
+      "path": "analysis/differentiation/notes/derivative-geometry/notes-understanding-derivatives.tex",
+      "line": 210,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_interpretation",
+      "message": "Interpretation remark is missing.",
+      "path": "analysis/differentiation/notes/derivative-geometry/notes-understanding-derivatives.tex",
+      "line": 304,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_interpretation",
+      "message": "Interpretation remark is missing.",
+      "path": "analysis/differentiation/notes/derivative-geometry/notes-understanding-derivatives.tex",
+      "line": 389,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_interpretation",
+      "message": "Interpretation remark is missing.",
+      "path": "analysis/differentiation/notes/one-sided-derivatives/notes-one-sided-derivatives.tex",
+      "line": 63,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_interpretation",
+      "message": "Interpretation remark is missing.",
+      "path": "analysis/elementary-functions/notes/hyperbolic/notes-hyperbolic.tex",
+      "line": 18,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_interpretation",
+      "message": "Interpretation remark is missing.",
+      "path": "analysis/elementary-functions/notes/hyperbolic/notes-hyperbolic.tex",
+      "line": 100,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_interpretation",
+      "message": "Interpretation remark is missing.",
+      "path": "analysis/elementary-functions/notes/hyperbolic/notes-hyperbolic.tex",
+      "line": 141,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_interpretation",
+      "message": "Interpretation remark is missing.",
+      "path": "analysis/elementary-functions/notes/hyperbolic/notes-hyperbolic.tex",
+      "line": 202,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_interpretation",
+      "message": "Interpretation remark is missing.",
+      "path": "analysis/elementary-functions/notes/hyperbolic/notes-hyperbolic.tex",
+      "line": 252,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_interpretation",
+      "message": "Interpretation remark is missing.",
+      "path": "analysis/elementary-functions/notes/logarithmic/notes-logarithmic.tex",
+      "line": 18,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_interpretation",
+      "message": "Interpretation remark is missing.",
+      "path": "analysis/elementary-functions/notes/logarithmic/notes-logarithmic.tex",
+      "line": 102,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_interpretation",
+      "message": "Interpretation remark is missing.",
+      "path": "analysis/elementary-functions/notes/logarithmic/notes-logarithmic.tex",
+      "line": 151,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_interpretation",
+      "message": "Interpretation remark is missing.",
+      "path": "analysis/elementary-functions/notes/power-exponential/notes-power-exponential.tex",
+      "line": 101,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_interpretation",
+      "message": "Interpretation remark is missing.",
+      "path": "analysis/elementary-functions/notes/power-exponential/notes-power-exponential.tex",
+      "line": 204,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_interpretation",
+      "message": "Interpretation remark is missing.",
+      "path": "analysis/elementary-functions/notes/power-exponential/notes-power-exponential.tex",
+      "line": 253,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_interpretation",
+      "message": "Interpretation remark is missing.",
+      "path": "analysis/elementary-functions/notes/trigonometric/notes-trigonometric.tex",
+      "line": 18,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_interpretation",
+      "message": "Interpretation remark is missing.",
+      "path": "analysis/elementary-functions/notes/trigonometric/notes-trigonometric.tex",
+      "line": 80,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_interpretation",
+      "message": "Interpretation remark is missing.",
+      "path": "analysis/elementary-functions/notes/trigonometric/notes-trigonometric.tex",
+      "line": 127,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_interpretation",
+      "message": "Interpretation remark is missing.",
+      "path": "analysis/elementary-functions/notes/trigonometric/notes-trigonometric.tex",
+      "line": 189,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_interpretation",
+      "message": "Interpretation remark is missing.",
+      "path": "analysis/elementary-functions/notes/trigonometric/notes-trigonometric.tex",
+      "line": 228,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_interpretation",
+      "message": "Interpretation remark is missing.",
+      "path": "analysis/elementary-functions/notes/trigonometric/notes-trigonometric.tex",
+      "line": 292,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_interpretation",
+      "message": "Interpretation remark is missing.",
+      "path": "analysis/elementary-functions/notes/trigonometric/notes-trigonometric.tex",
+      "line": 345,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_interpretation",
+      "message": "Interpretation remark is missing.",
+      "path": "analysis/functions/notes/algebra-of-functions/notes-algebra-of-functions.tex",
+      "line": 85,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_interpretation",
+      "message": "Interpretation remark is missing.",
+      "path": "analysis/functions/notes/algebra-of-functions/notes-algebra-of-functions.tex",
+      "line": 203,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "def:infimum has nonstandard decoration block 'maximum versus supremum'.",
+      "path": "analysis/bounding/notes/bounds-extremals/notes-supremum.tex",
+      "line": 592,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "ax:completeness-of-reals has nonstandard decoration block 'axiom predicate reading'.",
+      "path": "analysis/bounding/notes/completeness/notes-axiom-of-completess.tex",
+      "line": 143,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "cor:every-open-interval-contains-rational-and-irrational has nonstandard decoration block 'zoom invariance and structural consequences'.",
+      "path": "analysis/bounding/notes/completeness/notes-density.tex",
+      "line": 338,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "thm:cousins-theorem has nonstandard decoration block 'gauge proofs of the four classical theorems'.",
+      "path": "analysis/continuity/notes/gauge/notes-gauge.tex",
+      "line": 408,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "prop:lipschitz-implies-uc has nonstandard decoration block 'strict implication note'.",
+      "path": "analysis/continuity/notes/uniform-continuity/notes-uniform-continuity.tex",
+      "line": 513,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "thm:finite-linear-combination-rule-interval has nonstandard decoration block 'inverse function --- forward note'.",
+      "path": "analysis/differentiation/notes/algebra-of-derivatives/notes-algebra-of-derivatives.tex",
+      "line": 485,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "def:hyperbolic has nonstandard decoration block 'contrast with trigonometric functions'.",
+      "path": "analysis/elementary-functions/notes/hyperbolic/notes-hyperbolic.tex",
+      "line": 67,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "prop:hyperbolic-pythagorean has nonstandard decoration block 'proof'.",
+      "path": "analysis/elementary-functions/notes/hyperbolic/notes-hyperbolic.tex",
+      "line": 118,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "prop:hyperbolic-addition has nonstandard decoration block 'proof strategy'.",
+      "path": "analysis/elementary-functions/notes/hyperbolic/notes-hyperbolic.tex",
+      "line": 173,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "prop:hyperbolic-addition has nonstandard decoration block 'comparison with trigonometric addition formulas'.",
+      "path": "analysis/elementary-functions/notes/hyperbolic/notes-hyperbolic.tex",
+      "line": 178,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "prop:tanh-limits has nonstandard decoration block 'proof strategy'.",
+      "path": "analysis/elementary-functions/notes/hyperbolic/notes-hyperbolic.tex",
+      "line": 231,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "def:inverse-hyperbolic has nonstandard decoration block 'derivation of $\\operatorname{arcsinh}$'.",
+      "path": "analysis/elementary-functions/notes/hyperbolic/notes-hyperbolic.tex",
+      "line": 296,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "def:inverse-hyperbolic has nonstandard decoration block 'derivatives'.",
+      "path": "analysis/elementary-functions/notes/hyperbolic/notes-hyperbolic.tex",
+      "line": 302,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "def:natural-logarithm has nonstandard decoration block 'two definitions, same function'.",
+      "path": "analysis/elementary-functions/notes/logarithmic/notes-logarithmic.tex",
+      "line": 58,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "def:natural-logarithm has nonstandard decoration block 'key properties'.",
+      "path": "analysis/elementary-functions/notes/logarithmic/notes-logarithmic.tex",
+      "line": 65,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "def:natural-logarithm has nonstandard decoration block 'general logarithm'.",
+      "path": "analysis/elementary-functions/notes/logarithmic/notes-logarithmic.tex",
+      "line": 79,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "prop:limit-logarithm-fundamental has nonstandard decoration block 'equivalence with exponential limit'.",
+      "path": "analysis/elementary-functions/notes/logarithmic/notes-logarithmic.tex",
+      "line": 124,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "prop:limit-logarithm-fundamental has nonstandard decoration block 'proof strategy'.",
+      "path": "analysis/elementary-functions/notes/logarithmic/notes-logarithmic.tex",
+      "line": 132,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "prop:power-dominates-log has nonstandard decoration block 'proof strategy'.",
+      "path": "analysis/elementary-functions/notes/logarithmic/notes-logarithmic.tex",
+      "line": 181,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "prop:power-dominates-log has nonstandard decoration block 'significance'.",
+      "path": "analysis/elementary-functions/notes/logarithmic/notes-logarithmic.tex",
+      "line": 187,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "def:power-function has nonstandard decoration block 'laws of exponents'.",
+      "path": "analysis/elementary-functions/notes/power-exponential/notes-power-exponential.tex",
+      "line": 38,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "def:exponential has nonstandard decoration block 'key properties'.",
+      "path": "analysis/elementary-functions/notes/power-exponential/notes-power-exponential.tex",
+      "line": 121,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "def:exponential has nonstandard decoration block 'general exponential'.",
+      "path": "analysis/elementary-functions/notes/power-exponential/notes-power-exponential.tex",
+      "line": 133,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "prop:limit-compound-interest has nonstandard decoration block 'proof strategy'.",
+      "path": "analysis/elementary-functions/notes/power-exponential/notes-power-exponential.tex",
+      "line": 233,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "prop:exponential-dominates-power has nonstandard decoration block 'proof strategy'.",
+      "path": "analysis/elementary-functions/notes/power-exponential/notes-power-exponential.tex",
+      "line": 280,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "prop:exponential-dominates-power has nonstandard decoration block 'growth hierarchy'.",
+      "path": "analysis/elementary-functions/notes/power-exponential/notes-power-exponential.tex",
+      "line": 285,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "def:sine-cosine has nonstandard decoration block 'key properties'.",
+      "path": "analysis/elementary-functions/notes/trigonometric/notes-trigonometric.tex",
+      "line": 43,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "def:sine-cosine has nonstandard decoration block 'relationship to $e^{ix}$'.",
+      "path": "analysis/elementary-functions/notes/trigonometric/notes-trigonometric.tex",
+      "line": 54,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "prop:pythagorean-identity has nonstandard decoration block 'proof strategy'.",
+      "path": "analysis/elementary-functions/notes/trigonometric/notes-trigonometric.tex",
+      "line": 107,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "prop:trig-addition-formulas has nonstandard decoration block 'proof strategy'.",
+      "path": "analysis/elementary-functions/notes/trigonometric/notes-trigonometric.tex",
+      "line": 159,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "prop:trig-addition-formulas has nonstandard decoration block 'derived identities'.",
+      "path": "analysis/elementary-functions/notes/trigonometric/notes-trigonometric.tex",
+      "line": 164,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "def:other-trig has nonstandard decoration block 'pythagorean identities for $\\tan$'.",
+      "path": "analysis/elementary-functions/notes/trigonometric/notes-trigonometric.tex",
+      "line": 207,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "def:inverse-trig has nonstandard decoration block 'key limits of $\\arctan$'.",
+      "path": "analysis/elementary-functions/notes/trigonometric/notes-trigonometric.tex",
+      "line": 266,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "thm:fundamental-trig-limit has nonstandard decoration block 'proof strategy --- series'.",
+      "path": "analysis/elementary-functions/notes/trigonometric/notes-trigonometric.tex",
+      "line": 314,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "thm:fundamental-trig-limit has nonstandard decoration block 'proof strategy --- geometric squeeze'.",
+      "path": "analysis/elementary-functions/notes/trigonometric/notes-trigonometric.tex",
+      "line": 319,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "thm:fundamental-trig-limit has nonstandard decoration block 'significance'.",
+      "path": "analysis/elementary-functions/notes/trigonometric/notes-trigonometric.tex",
+      "line": 326,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "prop:limit-one-minus-cos has nonstandard decoration block 'proof strategy'.",
+      "path": "analysis/elementary-functions/notes/trigonometric/notes-trigonometric.tex",
+      "line": 377,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "thm:limit-implies-local-bounding has nonstandard decoration block 'proof sketch'.",
+      "path": "analysis/functions/notes/limits/notes-limits.tex",
+      "line": 518,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "prop:limit-absolute-value has nonstandard decoration block 'proof strategy'.",
+      "path": "analysis/functions/notes/limits/notes-limits.tex",
+      "line": 711,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "def:closure-r has nonstandard decoration block 'canonical examples'.",
+      "path": "analysis/functions/notes/subsets-real-line/notes-subsets-of-R.tex",
+      "line": 422,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "lem:closure-elementary has nonstandard decoration block 'failure of equality in (iii)'.",
+      "path": "analysis/functions/notes/subsets-real-line/notes-subsets-of-R.tex",
+      "line": 456,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "thm:cluster-values-are-subsequential-limits has nonstandard decoration block 'theorem predicate reading'.",
+      "path": "analysis/sequences/notes/cluster-values/notes-cluster-values.tex",
+      "line": 82,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "thm:bounded-sequences-have-cluster-values has nonstandard decoration block 'theorem predicate reading'.",
+      "path": "analysis/sequences/notes/cluster-values/notes-cluster-values.tex",
+      "line": 133,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "thm:limsup-liminf-extremal-cluster-values has nonstandard decoration block 'theorem predicate reading'.",
+      "path": "analysis/sequences/notes/cluster-values/notes-cluster-values.tex",
+      "line": 199,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "thm:equivalence-of-convergence-formulations has nonstandard decoration block 'theorem predicate reading'.",
+      "path": "analysis/sequences/notes/convergence/notes-convergence.tex",
+      "line": 240,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "thm:uniqueness-of-limits has nonstandard decoration block 'theorem predicate reading'.",
+      "path": "analysis/sequences/notes/convergence/notes-limits.tex",
+      "line": 23,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "thm:limit-preserves-eventual-order has nonstandard decoration block 'theorem predicate reading'.",
+      "path": "analysis/sequences/notes/convergence/notes-limits.tex",
+      "line": 133,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "thm:strict-limit-separation-gives-eventual-order has nonstandard decoration block 'theorem predicate reading'.",
+      "path": "analysis/sequences/notes/convergence/notes-limits.tex",
+      "line": 197,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "thm:eventual-strict-comparison-preserves-weak-limit-order has nonstandard decoration block 'theorem predicate reading'.",
+      "path": "analysis/sequences/notes/convergence/notes-limits.tex",
+      "line": 268,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "thm:constant-comparison-for-sequence-limits has nonstandard decoration block 'theorem predicate reading'.",
+      "path": "analysis/sequences/notes/convergence/notes-limits.tex",
+      "line": 360,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "thm:constant-squeeze-theorem has nonstandard decoration block 'theorem predicate reading'.",
+      "path": "analysis/sequences/notes/convergence/notes-limits.tex",
+      "line": 440,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "thm:sequence-squeeze-theorem has nonstandard decoration block 'theorem predicate reading'.",
+      "path": "analysis/sequences/notes/convergence/notes-limits.tex",
+      "line": 498,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "thm:absolute-value-squeeze-theorem has nonstandard decoration block 'theorem predicate reading'.",
+      "path": "analysis/sequences/notes/convergence/notes-limits.tex",
+      "line": 561,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "def:sequence has nonstandard decoration block 'constant sequence'.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 40,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "def:sequence has nonstandard decoration block 'the sequence $(1/n)$'.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 53,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "def:sequence has nonstandard decoration block 'the sequence $(n)$'.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 72,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "thm:liminf-squeeze-under-eventual-order has nonstandard decoration block 'illustrative cases'.",
+      "path": "analysis/sequences/notes/liminf-limsup/notes-liminf-limsup.tex",
+      "line": 717,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "thm:monotone-convergence-theorem has nonstandard decoration block 'theorem predicate reading'.",
+      "path": "analysis/sequences/notes/monotonicity/notes-monotonicity.tex",
+      "line": 553,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "thm:strict-monotonicity-implies-monotonicity has nonstandard decoration block 'theorem predicate reading'.",
+      "path": "analysis/sequences/notes/monotonicity/notes-monotonicity.tex",
+      "line": 691,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "thm:bounded-monotone-sequence-equivalences has nonstandard decoration block 'theorem predicate reading'.",
+      "path": "analysis/sequences/notes/monotonicity/notes-monotonicity.tex",
+      "line": 761,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "thm:eventually-monotone-convergence-theorem has nonstandard decoration block 'theorem predicate reading'.",
+      "path": "analysis/sequences/notes/monotonicity/notes-monotonicity.tex",
+      "line": 840,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "thm:unbounded-monotone-divergence has nonstandard decoration block 'theorem predicate reading'.",
+      "path": "analysis/sequences/notes/monotonicity/notes-monotonicity.tex",
+      "line": 918,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "thm:algebraic-transformations-preserve-monotonicity has nonstandard decoration block 'theorem predicate reading'.",
+      "path": "analysis/sequences/notes/monotonicity/notes-monotonicity.tex",
+      "line": 991,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "thm:increasing-sequence-limit-as-supremum has nonstandard decoration block 'theorem predicate reading'.",
+      "path": "analysis/sequences/notes/order-limits/notes-order-limits.tex",
+      "line": 33,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "thm:decreasing-sequence-limit-as-infimum has nonstandard decoration block 'theorem predicate reading'.",
+      "path": "analysis/sequences/notes/order-limits/notes-order-limits.tex",
+      "line": 91,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "thm:tail-suprema-and-infima-converge has nonstandard decoration block 'theorem predicate reading'.",
+      "path": "analysis/sequences/notes/order-limits/notes-order-limits.tex",
+      "line": 152,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "thm:bounded-sequence-has-limsup-and-liminf has nonstandard decoration block 'theorem predicate reading'.",
+      "path": "analysis/sequences/notes/order-limits/notes-order-limits.tex",
+      "line": 215,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "thm:subsequence-indices-dominate-identity has nonstandard decoration block 'theorem predicate reading'.",
+      "path": "analysis/sequences/notes/subsequences/notes-subsequences.tex",
+      "line": 274,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "thm:subsequences-preserve-limits has nonstandard decoration block 'theorem predicate reading'.",
+      "path": "analysis/sequences/notes/subsequences/notes-subsequences.tex",
+      "line": 332,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "thm:subsequential-limit-of-convergent-sequence has nonstandard decoration block 'theorem predicate reading'.",
+      "path": "analysis/sequences/notes/subsequences/notes-subsequences.tex",
+      "line": 387,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "thm:divergence-by-two-subsequential-limits has nonstandard decoration block 'theorem predicate reading'.",
+      "path": "analysis/sequences/notes/subsequences/notes-subsequences.tex",
+      "line": 443,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "thm:boundedness-passes-to-subsequences has nonstandard decoration block 'theorem predicate reading'.",
+      "path": "analysis/sequences/notes/subsequences/notes-subsequences.tex",
+      "line": 499,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "thm:monotonicity-passes-to-subsequences has nonstandard decoration block 'theorem predicate reading'.",
+      "path": "analysis/sequences/notes/subsequences/notes-subsequences.tex",
+      "line": 552,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "thm:subsequence-of-subsequence has nonstandard decoration block 'theorem predicate reading'.",
+      "path": "analysis/sequences/notes/subsequences/notes-subsequences.tex",
+      "line": 606,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "thm:eventual-properties-pass-to-subsequences has nonstandard decoration block 'theorem predicate reading'.",
+      "path": "analysis/sequences/notes/subsequences/notes-subsequences.tex",
+      "line": 657,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "thm:frequent-properties-yield-subsequences has nonstandard decoration block 'theorem predicate reading'.",
+      "path": "analysis/sequences/notes/subsequences/notes-subsequences.tex",
+      "line": 713,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "thm:subsequential-limits-respect-bounds has nonstandard decoration block 'theorem predicate reading'.",
+      "path": "analysis/sequences/notes/subsequences/notes-subsequences.tex",
+      "line": 768,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "thm:squeeze-passes-to-subsequences has nonstandard decoration block 'theorem predicate reading'.",
+      "path": "analysis/sequences/notes/subsequences/notes-subsequences.tex",
+      "line": 822,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "thm:monotone-subsequence-theorem has nonstandard decoration block 'theorem predicate reading'.",
+      "path": "analysis/sequences/notes/subsequences/notes-subsequences.tex",
+      "line": 881,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "thm:bolzano-weierstrass-sequences has nonstandard decoration block 'theorem predicate reading'.",
+      "path": "analysis/sequences/notes/subsequences/notes-subsequences.tex",
+      "line": 936,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "thm:sequential-compactness-closed-bounded-interval has nonstandard decoration block 'theorem predicate reading'.",
+      "path": "analysis/sequences/notes/subsequences/notes-subsequences.tex",
+      "line": 996,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "thm:convergence-of-tail has nonstandard decoration block 'theorem predicate reading'.",
+      "path": "analysis/sequences/notes/tails/notes-tails.tex",
+      "line": 80,
+      "severity": "warning"
+    },
+    {
+      "code": "unknown_decoration_block",
+      "message": "thm:ratio-limit-less-than-one-implies-null has nonstandard decoration block 'theorem predicate reading'.",
+      "path": "analysis/sequences/notes/tails/notes-tails.tex",
+      "line": 273,
+      "severity": "warning"
+    },
+    {
+      "code": "non_reference_voice",
+      "message": "Strategy: The Choice of Leastness Method block uses first-person plural: 'we'. Use impersonal reference voice.",
+      "path": "analysis/bounding/proofs/bounds-algebra/prf-negation-exchange-sup-inf.tex",
+      "line": 41,
+      "severity": "warning"
+    },
+    {
+      "code": "non_reference_voice",
+      "message": "Strategy: The Choice of Leastness Method block uses first-person plural: 'we'. Use impersonal reference voice.",
+      "path": "analysis/bounding/proofs/completeness/prf-archimedean-reciprocal.tex",
+      "line": 40,
+      "severity": "warning"
+    },
+    {
+      "code": "non_reference_voice",
+      "message": "Strategy: The Choice of Leastness Method block uses direct reader address: 'your'. Use impersonal reference voice.",
+      "path": "analysis/bounding/proofs/completeness/prf-archimedean-reciprocal.tex",
+      "line": 40,
+      "severity": "warning"
+    },
+    {
+      "code": "non_reference_voice",
+      "message": "Interpretation block uses first-person plural: 'us'. Use impersonal reference voice.",
+      "path": "analysis/continuity/notes/limits-at-infinity/notes-limits-at-infinity.tex",
+      "line": 143,
+      "severity": "warning"
+    },
+    {
+      "code": "non_reference_voice",
+      "message": "Interpretation block uses first-person plural: 'we'. Use impersonal reference voice.",
+      "path": "analysis/differentiation/notes/derivative-geometry/notes-derivative-geometry.tex",
+      "line": 37,
+      "severity": "warning"
+    },
+    {
+      "code": "non_reference_voice",
+      "message": "Interpretation block uses first-person plural: 'we'. Use impersonal reference voice.",
+      "path": "analysis/differentiation/notes/derivative-geometry/notes-understanding-derivatives.tex",
+      "line": 374,
+      "severity": "warning"
+    },
+    {
+      "code": "non_reference_voice",
+      "message": "Interpretation block uses classroom voice: 'class'. Use impersonal reference voice.",
+      "path": "analysis/differentiation/notes/derivative-geometry/notes-understanding-derivatives.tex",
+      "line": 456,
+      "severity": "warning"
+    },
+    {
+      "code": "non_reference_voice",
+      "message": "Failure modes block uses first-person plural: 'we'. Use impersonal reference voice.",
+      "path": "analysis/differentiation/notes/mean-value-theorem/notes-mean-value-theorem.tex",
+      "line": 41,
+      "severity": "warning"
+    },
+    {
+      "code": "ocr_like_label",
+      "message": "Label appears to include prose/OCR filler: prop:uniqueness-of-the-maximum.",
+      "path": "analysis/bounding/notes/bounds-algebra/notes-algebra-of-supremum-infimum.tex",
+      "line": 11,
+      "severity": "warning"
+    },
+    {
+      "code": "ocr_like_label",
+      "message": "Label appears to include prose/OCR filler: prop:uniqueness-of-the-supremum.",
+      "path": "analysis/bounding/notes/bounds-algebra/notes-algebra-of-supremum-infimum.tex",
+      "line": 91,
+      "severity": "warning"
+    },
+    {
+      "code": "ocr_like_label",
+      "message": "Label appears to include prose/OCR filler: prop:supremum-in-the-set-is-the-maximum.",
+      "path": "analysis/bounding/notes/bounds-algebra/notes-algebra-of-supremum-infimum.tex",
+      "line": 246,
+      "severity": "warning"
+    },
+    {
+      "code": "ocr_like_label",
+      "message": "Label appears to include prose/OCR filler: prop:upper-bound-comparison-with-the-supremum.",
+      "path": "analysis/bounding/notes/bounds-algebra/notes-algebra-of-supremum-infimum.tex",
+      "line": 481,
+      "severity": "warning"
+    },
+    {
+      "code": "ocr_like_label",
+      "message": "Label appears to include prose/OCR filler: prop:every-element-lies-below-the-supremum.",
+      "path": "analysis/bounding/notes/bounds-algebra/notes-algebra-of-supremum-infimum.tex",
+      "line": 567,
+      "severity": "warning"
+    },
+    {
+      "code": "weak_label_slug",
+      "message": "Label slug should be lowercase kebab-case with readable terms: def:minimum.",
+      "path": "analysis/bounding/notes/bounds-extremals/notes-supremum.tex",
+      "line": 301,
+      "severity": "warning"
+    },
+    {
+      "code": "weak_label_slug",
+      "message": "Label slug should be lowercase kebab-case with readable terms: def:maximum.",
+      "path": "analysis/bounding/notes/bounds-extremals/notes-supremum.tex",
+      "line": 360,
+      "severity": "warning"
+    },
+    {
+      "code": "weak_label_slug",
+      "message": "Label slug should be lowercase kebab-case with readable terms: def:supremum.",
+      "path": "analysis/bounding/notes/bounds-extremals/notes-supremum.tex",
+      "line": 420,
+      "severity": "warning"
+    },
+    {
+      "code": "weak_label_slug",
+      "message": "Label slug should be lowercase kebab-case with readable terms: def:infimum.",
+      "path": "analysis/bounding/notes/bounds-extremals/notes-supremum.tex",
+      "line": 491,
+      "severity": "warning"
+    },
+    {
+      "code": "duplicate_label",
+      "message": "Duplicate label fig:supremum-algebra; first seen in analysis/bounding/notes/bounds-algebra/figure-supremum-algebra.tex.",
+      "path": "analysis/bounding/notes/bounds-extremals/notes-supremum.tex",
+      "line": 984,
+      "severity": "warning"
+    },
+    {
+      "code": "ocr_like_label",
+      "message": "Label appears to include prose/OCR filler: cor:every-open-interval-contains-rational-and-irrational.",
+      "path": "analysis/bounding/notes/completeness/notes-density.tex",
+      "line": 262,
+      "severity": "warning"
+    },
+    {
+      "code": "weak_label_slug",
+      "message": "Label slug should be lowercase kebab-case with readable terms: def:gauge.",
+      "path": "analysis/continuity/notes/gauge/notes-gauge.tex",
+      "line": 160,
+      "severity": "warning"
+    },
+    {
+      "code": "ocr_like_label",
+      "message": "Label appears to include prose/OCR filler: cor:jump-intervals-for-monotone-discontinuities.",
+      "path": "analysis/continuity/notes/monotone-functions/notes-monotone-functions.tex",
+      "line": 277,
+      "severity": "warning"
+    },
+    {
+      "code": "ocr_like_label",
+      "message": "Label appears to include prose/OCR filler: thm:uniqueness-of-the-derivative.",
+      "path": "analysis/differentiation/notes/derivative-definition/notes-derivative-definition.tex",
+      "line": 350,
+      "severity": "warning"
+    },
+    {
+      "code": "ocr_like_label",
+      "message": "Label appears to include prose/OCR filler: prop:derivative-of-the-identity.",
+      "path": "analysis/differentiation/notes/derivative-definition/notes-derivative-definition.tex",
+      "line": 410,
+      "severity": "warning"
+    },
+    {
+      "code": "weak_label_slug",
+      "message": "Label slug should be lowercase kebab-case with readable terms: thm:darboux.",
+      "path": "analysis/differentiation/notes/derivative-geometry/notes-understanding-derivatives.tex",
+      "line": 424,
+      "severity": "warning"
+    },
+    {
+      "code": "ocr_like_label",
+      "message": "Label appears to include prose/OCR filler: thm:differentiability-and-one-sided-derivatives.",
+      "path": "analysis/differentiation/notes/one-sided-derivatives/notes-one-sided-derivatives.tex",
+      "line": 116,
+      "severity": "warning"
+    },
+    {
+      "code": "weak_label_slug",
+      "message": "Label slug should be lowercase kebab-case with readable terms: def:hyperbolic.",
+      "path": "analysis/elementary-functions/notes/hyperbolic/notes-hyperbolic.tex",
+      "line": 19,
+      "severity": "warning"
+    },
+    {
+      "code": "weak_label_slug",
+      "message": "Label slug should be lowercase kebab-case with readable terms: def:exponential.",
+      "path": "analysis/elementary-functions/notes/power-exponential/notes-power-exponential.tex",
+      "line": 102,
+      "severity": "warning"
+    },
+    {
+      "code": "ocr_like_label",
+      "message": "Label appears to include prose/OCR filler: thm:cauchy-sequence-with-convergent-subsequence.",
+      "path": "analysis/sequences/notes/cauchy/notes-cauchy.tex",
+      "line": 194,
+      "severity": "warning"
+    },
+    {
+      "code": "ocr_like_label",
+      "message": "Label appears to include prose/OCR filler: thm:constant-comparison-for-sequence-limits.",
+      "path": "analysis/sequences/notes/convergence/notes-limits.tex",
+      "line": 326,
+      "severity": "warning"
+    },
+    {
+      "code": "ocr_like_label",
+      "message": "Label appears to include prose/OCR filler: thm:bounded-sequence-iff-bounded-above-and-below.",
+      "path": "analysis/sequences/notes/definition/notes-null-constant-sequences.tex",
+      "line": 1141,
+      "severity": "warning"
+    },
+    {
+      "code": "ocr_like_label",
+      "message": "Label appears to include prose/OCR filler: thm:absolute-bound-gives-upper-and-lower-bounds.",
+      "path": "analysis/sequences/notes/definition/notes-null-constant-sequences.tex",
+      "line": 1201,
+      "severity": "warning"
+    },
+    {
+      "code": "ocr_like_label",
+      "message": "Label appears to include prose/OCR filler: thm:upper-and-lower-bounds-give-absolute-bound.",
+      "path": "analysis/sequences/notes/definition/notes-null-constant-sequences.tex",
+      "line": 1245,
+      "severity": "warning"
+    },
+    {
+      "code": "weak_label_slug",
+      "message": "Label slug should be lowercase kebab-case with readable terms: def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 11,
+      "severity": "warning"
+    },
+    {
+      "code": "ocr_like_label",
+      "message": "Label appears to include prose/OCR filler: thm:tail-suprema-and-infima-converge.",
+      "path": "analysis/sequences/notes/order-limits/notes-order-limits.tex",
+      "line": 131,
+      "severity": "warning"
+    },
+    {
+      "code": "ocr_like_label",
+      "message": "Label appears to include prose/OCR filler: thm:bounded-sequence-has-limsup-and-liminf.",
+      "path": "analysis/sequences/notes/order-limits/notes-order-limits.tex",
+      "line": 200,
+      "severity": "warning"
+    },
+    {
+      "code": "weak_label_slug",
+      "message": "Label slug should be lowercase kebab-case with readable terms: def:subsequence.",
+      "path": "analysis/sequences/notes/subsequences/notes-subsequences.tex",
+      "line": 78,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_dependencies",
+      "message": "def:hyperbolic lacks a dependencies declaration.",
+      "path": "analysis/elementary-functions/notes/hyperbolic/notes-hyperbolic.tex",
+      "line": 18,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_dependencies",
+      "message": "prop:hyperbolic-pythagorean lacks a dependencies declaration.",
+      "path": "analysis/elementary-functions/notes/hyperbolic/notes-hyperbolic.tex",
+      "line": 100,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_dependencies",
+      "message": "prop:hyperbolic-addition lacks a dependencies declaration.",
+      "path": "analysis/elementary-functions/notes/hyperbolic/notes-hyperbolic.tex",
+      "line": 141,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_dependencies",
+      "message": "prop:tanh-limits lacks a dependencies declaration.",
+      "path": "analysis/elementary-functions/notes/hyperbolic/notes-hyperbolic.tex",
+      "line": 202,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_dependencies",
+      "message": "def:inverse-hyperbolic lacks a dependencies declaration.",
+      "path": "analysis/elementary-functions/notes/hyperbolic/notes-hyperbolic.tex",
+      "line": 252,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_dependencies",
+      "message": "def:natural-logarithm lacks a dependencies declaration.",
+      "path": "analysis/elementary-functions/notes/logarithmic/notes-logarithmic.tex",
+      "line": 18,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_dependencies",
+      "message": "prop:limit-logarithm-fundamental lacks a dependencies declaration.",
+      "path": "analysis/elementary-functions/notes/logarithmic/notes-logarithmic.tex",
+      "line": 102,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_dependencies",
+      "message": "prop:power-dominates-log lacks a dependencies declaration.",
+      "path": "analysis/elementary-functions/notes/logarithmic/notes-logarithmic.tex",
+      "line": 151,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_dependencies",
+      "message": "def:power-function lacks a dependencies declaration.",
+      "path": "analysis/elementary-functions/notes/power-exponential/notes-power-exponential.tex",
+      "line": 19,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_dependencies",
+      "message": "def:number-e lacks a dependencies declaration.",
+      "path": "analysis/elementary-functions/notes/power-exponential/notes-power-exponential.tex",
+      "line": 70,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_dependencies",
+      "message": "def:exponential lacks a dependencies declaration.",
+      "path": "analysis/elementary-functions/notes/power-exponential/notes-power-exponential.tex",
+      "line": 101,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_dependencies",
+      "message": "prop:limit-exponential-fundamental lacks a dependencies declaration.",
+      "path": "analysis/elementary-functions/notes/power-exponential/notes-power-exponential.tex",
+      "line": 152,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_dependencies",
+      "message": "prop:limit-compound-interest lacks a dependencies declaration.",
+      "path": "analysis/elementary-functions/notes/power-exponential/notes-power-exponential.tex",
+      "line": 204,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_dependencies",
+      "message": "prop:exponential-dominates-power lacks a dependencies declaration.",
+      "path": "analysis/elementary-functions/notes/power-exponential/notes-power-exponential.tex",
+      "line": 253,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_dependencies",
+      "message": "def:sine-cosine lacks a dependencies declaration.",
+      "path": "analysis/elementary-functions/notes/trigonometric/notes-trigonometric.tex",
+      "line": 18,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_dependencies",
+      "message": "prop:pythagorean-identity lacks a dependencies declaration.",
+      "path": "analysis/elementary-functions/notes/trigonometric/notes-trigonometric.tex",
+      "line": 80,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_dependencies",
+      "message": "prop:trig-addition-formulas lacks a dependencies declaration.",
+      "path": "analysis/elementary-functions/notes/trigonometric/notes-trigonometric.tex",
+      "line": 127,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_dependencies",
+      "message": "def:other-trig lacks a dependencies declaration.",
+      "path": "analysis/elementary-functions/notes/trigonometric/notes-trigonometric.tex",
+      "line": 189,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_dependencies",
+      "message": "def:inverse-trig lacks a dependencies declaration.",
+      "path": "analysis/elementary-functions/notes/trigonometric/notes-trigonometric.tex",
+      "line": 228,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_dependencies",
+      "message": "thm:fundamental-trig-limit lacks a dependencies declaration.",
+      "path": "analysis/elementary-functions/notes/trigonometric/notes-trigonometric.tex",
+      "line": 292,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_dependencies",
+      "message": "prop:limit-one-minus-cos lacks a dependencies declaration.",
+      "path": "analysis/elementary-functions/notes/trigonometric/notes-trigonometric.tex",
+      "line": 345,
+      "severity": "warning"
+    },
+    {
+      "code": "legacy_dependency_remark",
+      "message": "def:strictly-increasing-index-map uses remark*[Dependencies] instead of the dependencies environment.",
+      "path": "analysis/sequences/notes/subsequences/notes-subsequences.tex",
+      "line": 65,
+      "severity": "warning"
+    },
+    {
+      "code": "dependencies_without_hyperref",
+      "message": "def:strictly-increasing-index-map dependency block has no hyperref targets.",
+      "path": "analysis/sequences/notes/subsequences/notes-subsequences.tex",
+      "line": 65,
+      "severity": "warning"
+    },
+    {
+      "code": "invalid_formal_label_count",
+      "message": "theorem should have exactly one formal label; found ['thm:formal-difference-equivalence-relation', 'thm:men-equiv'].",
+      "path": "F:/repos/lra-volume-iii/volume-ii/integers/notes/construction-of-z/notes-construction-of-z.tex",
+      "line": 77,
+      "severity": "warning"
+    },
+    {
+      "code": "invalid_formal_label_count",
+      "message": "theorem should have exactly one formal label; found ['thm:triangle-inequality-on-z', 'thm:men-absolute-value-properties'].",
+      "path": "F:/repos/lra-volume-iii/volume-ii/integers/notes/order-on-z/notes-order-on-z.tex",
+      "line": 413,
+      "severity": "warning"
+    },
+    {
+      "code": "duplicate_global_label",
+      "message": "Label def:ring-of-sets appears 2 times globally.",
+      "path": "F:/repos/lra-volume-iii",
+      "line": 1,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_dependency_target",
+      "message": "thm:quotient-rule targets unknown label thm:limit-nonvanishing.",
+      "path": "analysis/differentiation/notes/algebra-of-derivatives/notes-algebra-of-derivatives.tex",
+      "line": 129,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_dependency_target",
+      "message": "thm:chain-rule targets unknown label thm:continuity-composition.",
+      "path": "analysis/differentiation/notes/chain-rule/notes-caratheodory.tex",
+      "line": 123,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_dependency_target",
+      "message": "thm:chain-rule targets unknown label thm:continuity-product.",
+      "path": "analysis/differentiation/notes/chain-rule/notes-caratheodory.tex",
+      "line": 123,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_dependency_declaration",
+      "message": "def:hyperbolic has no dependency declaration.",
+      "path": "analysis/elementary-functions/notes/hyperbolic/notes-hyperbolic.tex",
+      "line": 18,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_dependency_declaration",
+      "message": "prop:hyperbolic-pythagorean has no dependency declaration.",
+      "path": "analysis/elementary-functions/notes/hyperbolic/notes-hyperbolic.tex",
+      "line": 100,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_dependency_declaration",
+      "message": "prop:hyperbolic-addition has no dependency declaration.",
+      "path": "analysis/elementary-functions/notes/hyperbolic/notes-hyperbolic.tex",
+      "line": 141,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_dependency_declaration",
+      "message": "prop:tanh-limits has no dependency declaration.",
+      "path": "analysis/elementary-functions/notes/hyperbolic/notes-hyperbolic.tex",
+      "line": 202,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_dependency_declaration",
+      "message": "def:inverse-hyperbolic has no dependency declaration.",
+      "path": "analysis/elementary-functions/notes/hyperbolic/notes-hyperbolic.tex",
+      "line": 252,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_dependency_declaration",
+      "message": "def:natural-logarithm has no dependency declaration.",
+      "path": "analysis/elementary-functions/notes/logarithmic/notes-logarithmic.tex",
+      "line": 18,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_dependency_declaration",
+      "message": "prop:limit-logarithm-fundamental has no dependency declaration.",
+      "path": "analysis/elementary-functions/notes/logarithmic/notes-logarithmic.tex",
+      "line": 102,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_dependency_declaration",
+      "message": "prop:power-dominates-log has no dependency declaration.",
+      "path": "analysis/elementary-functions/notes/logarithmic/notes-logarithmic.tex",
+      "line": 151,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_dependency_declaration",
+      "message": "def:power-function has no dependency declaration.",
+      "path": "analysis/elementary-functions/notes/power-exponential/notes-power-exponential.tex",
+      "line": 19,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_dependency_declaration",
+      "message": "def:number-e has no dependency declaration.",
+      "path": "analysis/elementary-functions/notes/power-exponential/notes-power-exponential.tex",
+      "line": 70,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_dependency_declaration",
+      "message": "def:exponential has no dependency declaration.",
+      "path": "analysis/elementary-functions/notes/power-exponential/notes-power-exponential.tex",
+      "line": 101,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_dependency_declaration",
+      "message": "prop:limit-exponential-fundamental has no dependency declaration.",
+      "path": "analysis/elementary-functions/notes/power-exponential/notes-power-exponential.tex",
+      "line": 152,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_dependency_declaration",
+      "message": "prop:limit-compound-interest has no dependency declaration.",
+      "path": "analysis/elementary-functions/notes/power-exponential/notes-power-exponential.tex",
+      "line": 204,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_dependency_declaration",
+      "message": "prop:exponential-dominates-power has no dependency declaration.",
+      "path": "analysis/elementary-functions/notes/power-exponential/notes-power-exponential.tex",
+      "line": 253,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_dependency_declaration",
+      "message": "def:sine-cosine has no dependency declaration.",
+      "path": "analysis/elementary-functions/notes/trigonometric/notes-trigonometric.tex",
+      "line": 18,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_dependency_declaration",
+      "message": "prop:pythagorean-identity has no dependency declaration.",
+      "path": "analysis/elementary-functions/notes/trigonometric/notes-trigonometric.tex",
+      "line": 80,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_dependency_declaration",
+      "message": "prop:trig-addition-formulas has no dependency declaration.",
+      "path": "analysis/elementary-functions/notes/trigonometric/notes-trigonometric.tex",
+      "line": 127,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_dependency_declaration",
+      "message": "def:other-trig has no dependency declaration.",
+      "path": "analysis/elementary-functions/notes/trigonometric/notes-trigonometric.tex",
+      "line": 189,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_dependency_declaration",
+      "message": "def:inverse-trig has no dependency declaration.",
+      "path": "analysis/elementary-functions/notes/trigonometric/notes-trigonometric.tex",
+      "line": 228,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_dependency_declaration",
+      "message": "thm:fundamental-trig-limit has no dependency declaration.",
+      "path": "analysis/elementary-functions/notes/trigonometric/notes-trigonometric.tex",
+      "line": 292,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_dependency_declaration",
+      "message": "prop:limit-one-minus-cos has no dependency declaration.",
+      "path": "analysis/elementary-functions/notes/trigonometric/notes-trigonometric.tex",
+      "line": 345,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_dependency_target",
+      "message": "thm:limit-of-a-sum targets unknown label thm:triangle-inequality.",
+      "path": "analysis/sequences/notes/convergence/notes-algebra.tex",
+      "line": 502,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_dependency_target",
+      "message": "thm:limit-of-an-absolute-value targets unknown label thm:triangle-inequality.",
+      "path": "analysis/sequences/notes/convergence/notes-algebra.tex",
+      "line": 907,
+      "severity": "warning"
+    },
+    {
+      "code": "missing_dependency_target",
+      "message": "thm:uniqueness-of-limits targets unknown label thm:triangle-inequality.",
+      "path": "analysis/sequences/notes/convergence/notes-limits.tex",
+      "line": 101,
+      "severity": "warning"
+    },
+    {
+      "code": "legacy_dependency_remark",
+      "message": "def:strictly-increasing-index-map uses remark*[Dependencies] instead of dependencies environment.",
+      "path": "analysis/sequences/notes/subsequences/notes-subsequences.tex",
+      "line": 65,
+      "severity": "warning"
+    },
+    {
+      "code": "dependencies_without_hyperref",
+      "message": "def:strictly-increasing-index-map dependency block has no hyperref targets.",
+      "path": "analysis/sequences/notes/subsequences/notes-subsequences.tex",
+      "line": 65,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "prop:uniqueness-of-the-maximum dependency closure reaches non-root leaf def:maximum.",
+      "path": "analysis/bounding/notes/bounds-extremals/notes-supremum.tex",
+      "line": 359,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "prop:uniqueness-of-the-supremum dependency closure reaches non-root leaf def:upper-bound.",
+      "path": "analysis/bounding/notes/bounds-extremals/notes-supremum.tex",
+      "line": 184,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "prop:maximum-implies-supremum dependency closure reaches non-root leaf def:upper-bound.",
+      "path": "analysis/bounding/notes/bounds-extremals/notes-supremum.tex",
+      "line": 184,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "prop:supremum-in-the-set-is-the-maximum dependency closure reaches non-root leaf def:maximum.",
+      "path": "analysis/bounding/notes/bounds-extremals/notes-supremum.tex",
+      "line": 359,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "lem:subset-inclusion-preserves-upper-bounds dependency closure reaches non-root leaf def:upper-bound.",
+      "path": "analysis/bounding/notes/bounds-extremals/notes-supremum.tex",
+      "line": 184,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:supremum-is-monotone-under-inclusion dependency closure reaches non-root leaf def:upper-bound.",
+      "path": "analysis/bounding/notes/bounds-extremals/notes-supremum.tex",
+      "line": 184,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "prop:upper-bound-comparison-with-the-supremum dependency closure reaches non-root leaf def:upper-bound.",
+      "path": "analysis/bounding/notes/bounds-extremals/notes-supremum.tex",
+      "line": 184,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "prop:every-element-lies-below-the-supremum dependency closure reaches non-root leaf def:upper-bound.",
+      "path": "analysis/bounding/notes/bounds-extremals/notes-supremum.tex",
+      "line": 184,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:infimum-less-than-supremum dependency closure reaches non-root leaf def:upper-bound.",
+      "path": "analysis/bounding/notes/bounds-extremals/notes-supremum.tex",
+      "line": 184,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "prop:order-comparison-of-suprema dependency closure reaches non-root leaf def:upper-bound.",
+      "path": "analysis/bounding/notes/bounds-extremals/notes-supremum.tex",
+      "line": 184,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:translation-invariance-supremum dependency closure reaches non-root leaf def:upper-bound.",
+      "path": "analysis/bounding/notes/bounds-extremals/notes-supremum.tex",
+      "line": 184,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:scalar-mult-positive dependency closure reaches non-root leaf def:upper-bound.",
+      "path": "analysis/bounding/notes/bounds-extremals/notes-supremum.tex",
+      "line": 184,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:scalar-mult-negative dependency closure reaches non-root leaf def:upper-bound.",
+      "path": "analysis/bounding/notes/bounds-extremals/notes-supremum.tex",
+      "line": 184,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:negation-exchange-sup-inf dependency closure reaches non-root leaf def:upper-bound.",
+      "path": "analysis/bounding/notes/bounds-extremals/notes-supremum.tex",
+      "line": 184,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:supremum-sum-set dependency closure reaches non-root leaf def:upper-bound.",
+      "path": "analysis/bounding/notes/bounds-extremals/notes-supremum.tex",
+      "line": 184,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:supremum-difference-set dependency closure reaches non-root leaf def:upper-bound.",
+      "path": "analysis/bounding/notes/bounds-extremals/notes-supremum.tex",
+      "line": 184,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:supremum-dilation dependency closure reaches non-root leaf def:upper-bound.",
+      "path": "analysis/bounding/notes/bounds-extremals/notes-supremum.tex",
+      "line": 184,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:supremum-absolute-value-image dependency closure reaches non-root leaf def:upper-bound.",
+      "path": "analysis/bounding/notes/bounds-extremals/notes-supremum.tex",
+      "line": 184,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "prop:bounds-sum-set dependency closure reaches non-root leaf def:upper-bound.",
+      "path": "analysis/bounding/notes/bounds-extremals/notes-supremum.tex",
+      "line": 184,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "prop:upper-bounds-ambient-order dependency closure reaches non-root leaf def:upper-bound.",
+      "path": "analysis/bounding/notes/bounds-extremals/notes-supremum.tex",
+      "line": 184,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "prop:suprema-ambient-set dependency closure reaches non-root leaf def:upper-bound.",
+      "path": "analysis/bounding/notes/bounds-extremals/notes-supremum.tex",
+      "line": 184,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:ambient-existence-supremum dependency closure reaches non-root leaf def:upper-bound.",
+      "path": "analysis/bounding/notes/bounds-extremals/notes-supremum.tex",
+      "line": 184,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "lem:rational-gap-suprema dependency closure reaches non-root leaf def:upper-bound.",
+      "path": "analysis/bounding/notes/bounds-extremals/notes-supremum.tex",
+      "line": 184,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:lub-property-implies-existence-of-suprema dependency closure reaches non-root leaf def:upper-bound.",
+      "path": "analysis/bounding/notes/bounds-extremals/notes-supremum.tex",
+      "line": 184,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "prop:upper-bound-property-of-supremum dependency closure reaches non-root leaf def:upper-bound.",
+      "path": "analysis/bounding/notes/bounds-extremals/notes-supremum.tex",
+      "line": 184,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:archimedean-property dependency closure reaches non-root leaf def:upper-bound.",
+      "path": "analysis/bounding/notes/bounds-extremals/notes-supremum.tex",
+      "line": 184,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "cor:archimedean-reciprocal dependency closure reaches non-root leaf def:upper-bound.",
+      "path": "analysis/bounding/notes/bounds-extremals/notes-supremum.tex",
+      "line": 184,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:density-of-rationals-in-reals dependency closure reaches non-root leaf def:upper-bound.",
+      "path": "analysis/bounding/notes/bounds-extremals/notes-supremum.tex",
+      "line": 184,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:density-of-irrationals-in-reals dependency closure reaches non-root leaf def:upper-bound.",
+      "path": "analysis/bounding/notes/bounds-extremals/notes-supremum.tex",
+      "line": 184,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "cor:every-open-interval-contains-rational-and-irrational dependency closure reaches non-root leaf def:upper-bound.",
+      "path": "analysis/bounding/notes/bounds-extremals/notes-supremum.tex",
+      "line": 184,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:nested-interval-theorem dependency closure reaches non-root leaf def:upper-bound.",
+      "path": "analysis/bounding/notes/bounds-extremals/notes-supremum.tex",
+      "line": 184,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:step-function-approximation dependency closure reaches non-root leaf def:uniform-continuity.",
+      "path": "analysis/continuity/notes/uniform-continuity/notes-uniform-continuity.tex",
+      "line": 14,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:piecewise-linear-approximation dependency closure reaches non-root leaf thm:piecewise-linear-approximation.",
+      "path": "analysis/continuity/notes/approximation/notes-approximation.tex",
+      "line": 178,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:weierstrass-approximation dependency closure reaches non-root leaf def:bernstein-polynomial.",
+      "path": "analysis/continuity/notes/approximation/notes-approximation.tex",
+      "line": 242,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:bernstein-approximation dependency closure reaches non-root leaf def:bernstein-polynomial.",
+      "path": "analysis/continuity/notes/approximation/notes-approximation.tex",
+      "line": 242,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "lem:every-point-covered-by-tag dependency closure reaches non-root leaf def:interval-partition.",
+      "path": "analysis/continuity/notes/gauge/notes-gauge.tex",
+      "line": 14,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:cousins-theorem dependency closure reaches non-root leaf def:interval-partition.",
+      "path": "analysis/continuity/notes/gauge/notes-gauge.tex",
+      "line": 14,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:boundedness-theorem dependency closure reaches non-root leaf def:bounded-on-a-set.",
+      "path": "analysis/continuity/notes/global-theorems/notes-ivt.tex",
+      "line": 14,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:extreme-value-theorem dependency closure reaches non-root leaf def:bounded-on-a-set.",
+      "path": "analysis/continuity/notes/global-theorems/notes-ivt.tex",
+      "line": 14,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:location-of-roots dependency closure reaches non-root leaf thm:bolzano-intermediate-value.",
+      "path": "analysis/continuity/notes/global-theorems/notes-ivt.tex",
+      "line": 346,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:bolzano-intermediate-value dependency closure reaches non-root leaf thm:bolzano-intermediate-value.",
+      "path": "analysis/continuity/notes/global-theorems/notes-ivt.tex",
+      "line": 346,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:image-of-closed-bounded-interval dependency closure reaches non-root leaf thm:bolzano-intermediate-value.",
+      "path": "analysis/continuity/notes/global-theorems/notes-ivt.tex",
+      "line": 346,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:preservation-of-intervals dependency closure reaches non-root leaf thm:bolzano-intermediate-value.",
+      "path": "analysis/continuity/notes/global-theorems/notes-ivt.tex",
+      "line": 346,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:darboux-property dependency closure reaches non-root leaf thm:bolzano-intermediate-value.",
+      "path": "analysis/continuity/notes/global-theorems/notes-ivt.tex",
+      "line": 346,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "prop:limsup-geq-liminf-function dependency closure reaches non-root leaf def:limsup-liminf-function.",
+      "path": "analysis/continuity/notes/monotone-functions/notes-limsup-functions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "prop:limsup-liminf-limit-criterion dependency closure reaches non-root leaf def:limsup-liminf-function.",
+      "path": "analysis/continuity/notes/monotone-functions/notes-limsup-functions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:monotone-one-sided-limits dependency closure reaches non-root leaf thm:monotone-one-sided-limits.",
+      "path": "analysis/continuity/notes/monotone-functions/notes-monotone-functions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "cor:monotone-continuity-criterion dependency closure reaches non-root leaf thm:monotone-one-sided-limits.",
+      "path": "analysis/continuity/notes/monotone-functions/notes-monotone-functions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "prop:monotone-discontinuities-first-kind dependency closure reaches non-root leaf def:epsilon-neighbourhood.",
+      "path": "analysis/functions/notes/subsets-real-line/notes-subsets-of-R.tex",
+      "line": 21,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "cor:jump-intervals-for-monotone-discontinuities dependency closure reaches non-root leaf def:epsilon-neighbourhood.",
+      "path": "analysis/functions/notes/subsets-real-line/notes-subsets-of-R.tex",
+      "line": 21,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:monotone-discontinuities-countable dependency closure reaches non-root leaf def:epsilon-neighbourhood.",
+      "path": "analysis/functions/notes/subsets-real-line/notes-subsets-of-R.tex",
+      "line": 21,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "cor:monotone-continuous-on-dense-set dependency closure reaches non-root leaf def:epsilon-neighbourhood.",
+      "path": "analysis/functions/notes/subsets-real-line/notes-subsets-of-R.tex",
+      "line": 21,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "prop:continuous-injective-iff-strictly-monotone dependency closure reaches non-root leaf thm:bolzano-intermediate-value.",
+      "path": "analysis/continuity/notes/global-theorems/notes-ivt.tex",
+      "line": 346,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:continuous-inverse-theorem dependency closure reaches non-root leaf thm:continuous-inverse-theorem.",
+      "path": "analysis/continuity/notes/monotone-functions/notes-monotone-functions.tex",
+      "line": 437,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "lem:equivalent-discontinuity-at-a-point dependency closure reaches non-root leaf def:relative-neighborhood.",
+      "path": "analysis/continuity/notes/point-continuity/notes-continuity.tex",
+      "line": 19,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:continuity-iff-zero-oscillation dependency closure reaches non-root leaf def:oscillation-on-a-set.",
+      "path": "analysis/continuity/notes/point-continuity/notes-oscillation.tex",
+      "line": 14,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "prop:discontinuity-set-via-oscillation dependency closure reaches non-root leaf def:oscillation-on-a-set.",
+      "path": "analysis/continuity/notes/point-continuity/notes-oscillation.tex",
+      "line": 14,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:algebra-of-uniform-continuity-general dependency closure reaches non-root leaf def:uniform-continuity.",
+      "path": "analysis/continuity/notes/uniform-continuity/notes-uniform-continuity.tex",
+      "line": 14,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:algebra-of-uniform-continuity-bounded dependency closure reaches non-root leaf def:uniform-continuity.",
+      "path": "analysis/continuity/notes/uniform-continuity/notes-uniform-continuity.tex",
+      "line": 14,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "prop:sequential-uniform-continuity dependency closure reaches non-root leaf def:uniform-continuity.",
+      "path": "analysis/continuity/notes/uniform-continuity/notes-uniform-continuity.tex",
+      "line": 14,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:heine-cantor dependency closure reaches non-root leaf def:uniform-continuity.",
+      "path": "analysis/continuity/notes/uniform-continuity/notes-uniform-continuity.tex",
+      "line": 14,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "prop:uniform-continuity-cauchy dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "prop:lipschitz-implies-uc dependency closure reaches non-root leaf def:uniform-continuity.",
+      "path": "analysis/continuity/notes/uniform-continuity/notes-uniform-continuity.tex",
+      "line": 14,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:algebra-of-lipschitz-functions dependency closure reaches non-root leaf def:bounded-on-a-set.",
+      "path": "analysis/continuity/notes/global-theorems/notes-ivt.tex",
+      "line": 14,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:bilipschitz-inverse-is-lipschitz dependency closure reaches non-root leaf def:bi-lipschitz.",
+      "path": "analysis/continuity/notes/uniform-continuity/notes-uniform-continuity.tex",
+      "line": 587,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:constant-multiple-rule dependency closure reaches non-root leaf def:pointwise-scalar-multiple-of-a-function.",
+      "path": "analysis/functions/notes/real-valued-functions/notes-real-valued-functions.tex",
+      "line": 90,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:sum-rule dependency closure reaches non-root leaf def:pointwise-sum-of-functions.",
+      "path": "analysis/functions/notes/real-valued-functions/notes-real-valued-functions.tex",
+      "line": 15,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:product-rule dependency closure reaches non-root leaf def:pointwise-product-of-functions.",
+      "path": "analysis/functions/notes/real-valued-functions/notes-real-valued-functions.tex",
+      "line": 65,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:quotient-rule dependency closure reaches non-root leaf def:pointwise-quotient-of-functions.",
+      "path": "analysis/functions/notes/real-valued-functions/notes-real-valued-functions.tex",
+      "line": 165,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "cor:finite-sum-rule dependency closure reaches non-root leaf def:pointwise-scalar-multiple-of-a-function.",
+      "path": "analysis/functions/notes/real-valued-functions/notes-real-valued-functions.tex",
+      "line": 90,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "cor:extended-product-rule dependency closure reaches non-root leaf def:pointwise-product-of-functions.",
+      "path": "analysis/functions/notes/real-valued-functions/notes-real-valued-functions.tex",
+      "line": 65,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "cor:power-rule-special-case dependency closure reaches non-root leaf def:pointwise-product-of-functions.",
+      "path": "analysis/functions/notes/real-valued-functions/notes-real-valued-functions.tex",
+      "line": 65,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:finite-linear-combination-rule dependency closure reaches non-root leaf def:pointwise-sum-of-functions.",
+      "path": "analysis/functions/notes/real-valued-functions/notes-real-valued-functions.tex",
+      "line": 15,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:constant-multiple-rule-interval dependency closure reaches non-root leaf def:pointwise-scalar-multiple-of-a-function.",
+      "path": "analysis/functions/notes/real-valued-functions/notes-real-valued-functions.tex",
+      "line": 90,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:sum-rule-interval dependency closure reaches non-root leaf def:pointwise-sum-of-functions.",
+      "path": "analysis/functions/notes/real-valued-functions/notes-real-valued-functions.tex",
+      "line": 15,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:product-rule-interval dependency closure reaches non-root leaf def:pointwise-product-of-functions.",
+      "path": "analysis/functions/notes/real-valued-functions/notes-real-valued-functions.tex",
+      "line": 65,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:quotient-rule-interval dependency closure reaches non-root leaf def:pointwise-quotient-of-functions.",
+      "path": "analysis/functions/notes/real-valued-functions/notes-real-valued-functions.tex",
+      "line": 165,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "cor:finite-sum-rule-interval dependency closure reaches non-root leaf def:pointwise-scalar-multiple-of-a-function.",
+      "path": "analysis/functions/notes/real-valued-functions/notes-real-valued-functions.tex",
+      "line": 90,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "cor:extended-product-rule-interval dependency closure reaches non-root leaf def:pointwise-product-of-functions.",
+      "path": "analysis/functions/notes/real-valued-functions/notes-real-valued-functions.tex",
+      "line": 65,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "cor:power-rule-special-case-interval dependency closure reaches non-root leaf def:pointwise-product-of-functions.",
+      "path": "analysis/functions/notes/real-valued-functions/notes-real-valued-functions.tex",
+      "line": 65,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:finite-linear-combination-rule-interval dependency closure reaches non-root leaf def:pointwise-sum-of-functions.",
+      "path": "analysis/functions/notes/real-valued-functions/notes-real-valued-functions.tex",
+      "line": 15,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:caratheodory-characterization-of-differentiability dependency closure reaches non-root leaf def:epsilon-neighbourhood.",
+      "path": "analysis/functions/notes/subsets-real-line/notes-subsets-of-R.tex",
+      "line": 21,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:chain-rule dependency closure reaches non-root leaf def:epsilon-neighbourhood.",
+      "path": "analysis/functions/notes/subsets-real-line/notes-subsets-of-R.tex",
+      "line": 21,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:derivative-equivalence dependency closure reaches non-root leaf def:sequential-definition-of-derivative-at-a-point.",
+      "path": "analysis/differentiation/notes/derivative-definition/notes-derivative-definition.tex",
+      "line": 122,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "prop:derivative-h-form-equivalence dependency closure reaches non-root leaf def:derivative-at-a-point.",
+      "path": "analysis/differentiation/notes/derivative-definition/notes-derivative-definition.tex",
+      "line": 7,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:differentiable-implies-continuous dependency closure reaches non-root leaf def:epsilon-neighbourhood.",
+      "path": "analysis/functions/notes/subsets-real-line/notes-subsets-of-R.tex",
+      "line": 21,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:uniqueness-of-the-derivative dependency closure reaches non-root leaf def:derivative-at-a-point.",
+      "path": "analysis/differentiation/notes/derivative-definition/notes-derivative-definition.tex",
+      "line": 7,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "prop:derivative-of-the-identity dependency closure reaches non-root leaf prop:derivative-of-the-identity.",
+      "path": "analysis/differentiation/notes/derivative-definition/notes-derivative-definition.tex",
+      "line": 409,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:interior-extremum-theorem dependency closure reaches non-root leaf def:derivative-at-a-point.",
+      "path": "analysis/differentiation/notes/derivative-definition/notes-derivative-definition.tex",
+      "line": 7,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:necessary-condition-extremum dependency closure reaches non-root leaf def:derivative-at-a-point.",
+      "path": "analysis/differentiation/notes/derivative-definition/notes-derivative-definition.tex",
+      "line": 7,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "cor:necessary-condition-extremum dependency closure reaches non-root leaf def:derivative-at-a-point.",
+      "path": "analysis/differentiation/notes/derivative-definition/notes-derivative-definition.tex",
+      "line": 7,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:zero-derivative-implies-constant dependency closure reaches non-root leaf def:derivative-at-a-point.",
+      "path": "analysis/differentiation/notes/derivative-definition/notes-derivative-definition.tex",
+      "line": 7,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "cor:equal-derivatives-constant-difference dependency closure reaches non-root leaf def:derivative-at-a-point.",
+      "path": "analysis/differentiation/notes/derivative-definition/notes-derivative-definition.tex",
+      "line": 7,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:nondecreasing-iff-nonneg-derivative dependency closure reaches non-root leaf def:derivative-at-a-point.",
+      "path": "analysis/differentiation/notes/derivative-definition/notes-derivative-definition.tex",
+      "line": 7,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:nonincreasing-iff-nonpos-derivative dependency closure reaches non-root leaf def:derivative-at-a-point.",
+      "path": "analysis/differentiation/notes/derivative-definition/notes-derivative-definition.tex",
+      "line": 7,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "lem:positive-derivative-implies-locally-increasing dependency closure reaches non-root leaf def:derivative-at-a-point.",
+      "path": "analysis/differentiation/notes/derivative-definition/notes-derivative-definition.tex",
+      "line": 7,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "lem:negative-derivative-implies-locally-decreasing dependency closure reaches non-root leaf def:derivative-at-a-point.",
+      "path": "analysis/differentiation/notes/derivative-definition/notes-derivative-definition.tex",
+      "line": 7,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:first-derivative-test-maximum dependency closure reaches non-root leaf def:relative-minimum.",
+      "path": "analysis/differentiation/notes/derivative-geometry/notes-derivative-geometry.tex",
+      "line": 7,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:first-derivative-test-minimum dependency closure reaches non-root leaf def:relative-minimum.",
+      "path": "analysis/differentiation/notes/derivative-geometry/notes-derivative-geometry.tex",
+      "line": 7,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:darboux dependency closure reaches non-root leaf def:derivative-at-a-point.",
+      "path": "analysis/differentiation/notes/derivative-definition/notes-derivative-definition.tex",
+      "line": 7,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:rolles-theorem dependency closure reaches non-root leaf def:derivative-at-a-point.",
+      "path": "analysis/differentiation/notes/derivative-definition/notes-derivative-definition.tex",
+      "line": 7,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:mean-value-theorem dependency closure reaches non-root leaf def:derivative-at-a-point.",
+      "path": "analysis/differentiation/notes/derivative-definition/notes-derivative-definition.tex",
+      "line": 7,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:differentiability-and-one-sided-derivatives dependency closure reaches non-root leaf def:derivative-at-a-point.",
+      "path": "analysis/differentiation/notes/derivative-definition/notes-derivative-definition.tex",
+      "line": 7,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:taylor-theorem-lagrange-remainder dependency closure reaches non-root leaf def:pointwise-product-of-functions.",
+      "path": "analysis/functions/notes/real-valued-functions/notes-real-valued-functions.tex",
+      "line": 65,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "cor:taylor-expansion-peano-remainder dependency closure reaches non-root leaf def:derivative-at-a-point.",
+      "path": "analysis/differentiation/notes/derivative-definition/notes-derivative-definition.tex",
+      "line": 7,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "prop:composition-injective dependency closure reaches non-root leaf prop:composition-injective.",
+      "path": "analysis/functions/notes/algebra-of-functions/notes-algebra-of-functions.tex",
+      "line": 21,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "prop:composition-surjective dependency closure reaches non-root leaf prop:composition-surjective.",
+      "path": "analysis/functions/notes/algebra-of-functions/notes-algebra-of-functions.tex",
+      "line": 85,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "cor:composition-bijective dependency closure reaches non-root leaf cor:composition-bijective.",
+      "path": "analysis/functions/notes/algebra-of-functions/notes-algebra-of-functions.tex",
+      "line": 117,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "prop:inverse-bijection dependency closure reaches non-root leaf prop:inverse-bijection.",
+      "path": "analysis/functions/notes/algebra-of-functions/notes-algebra-of-functions.tex",
+      "line": 203,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "prop:preimage-union-intersection dependency closure reaches non-root leaf prop:preimage-union-intersection.",
+      "path": "analysis/functions/notes/algebra-of-functions/notes-algebra-of-functions.tex",
+      "line": 236,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:limit-sum dependency closure reaches non-root leaf def:pointwise-sum-of-functions.",
+      "path": "analysis/functions/notes/real-valued-functions/notes-real-valued-functions.tex",
+      "line": 15,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:limit-difference dependency closure reaches non-root leaf def:pointwise-difference-of-functions.",
+      "path": "analysis/functions/notes/real-valued-functions/notes-real-valued-functions.tex",
+      "line": 40,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:limit-scalar-multiple dependency closure reaches non-root leaf def:pointwise-scalar-multiple-of-a-function.",
+      "path": "analysis/functions/notes/real-valued-functions/notes-real-valued-functions.tex",
+      "line": 90,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:limit-product dependency closure reaches non-root leaf def:pointwise-product-of-functions.",
+      "path": "analysis/functions/notes/real-valued-functions/notes-real-valued-functions.tex",
+      "line": 65,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:limit-quotient dependency closure reaches non-root leaf def:pointwise-quotient-of-functions.",
+      "path": "analysis/functions/notes/real-valued-functions/notes-real-valued-functions.tex",
+      "line": 165,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "prop:limit-neighbourhood-equiv dependency closure reaches non-root leaf def:epsilon-neighbourhood.",
+      "path": "analysis/functions/notes/subsets-real-line/notes-subsets-of-R.tex",
+      "line": 21,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:limit-unique dependency closure reaches non-root leaf def:epsilon-neighbourhood.",
+      "path": "analysis/functions/notes/subsets-real-line/notes-subsets-of-R.tex",
+      "line": 21,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "prop:sequential-criterion-limits dependency closure reaches non-root leaf def:epsilon-neighbourhood.",
+      "path": "analysis/functions/notes/subsets-real-line/notes-subsets-of-R.tex",
+      "line": 21,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "cor:limit-three-equiv dependency closure reaches non-root leaf def:epsilon-neighbourhood.",
+      "path": "analysis/functions/notes/subsets-real-line/notes-subsets-of-R.tex",
+      "line": 21,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:limit-implies-local-bounding dependency closure reaches non-root leaf def:epsilon-neighbourhood.",
+      "path": "analysis/functions/notes/subsets-real-line/notes-subsets-of-R.tex",
+      "line": 21,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:bounded-limits dependency closure reaches non-root leaf def:epsilon-neighbourhood.",
+      "path": "analysis/functions/notes/subsets-real-line/notes-subsets-of-R.tex",
+      "line": 21,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:squeeze-function-limits dependency closure reaches non-root leaf def:epsilon-neighbourhood.",
+      "path": "analysis/functions/notes/subsets-real-line/notes-subsets-of-R.tex",
+      "line": 21,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:limits-are-local dependency closure reaches non-root leaf def:epsilon-neighbourhood.",
+      "path": "analysis/functions/notes/subsets-real-line/notes-subsets-of-R.tex",
+      "line": 21,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "prop:limit-absolute-value dependency closure reaches non-root leaf def:epsilon-neighbourhood.",
+      "path": "analysis/functions/notes/subsets-real-line/notes-subsets-of-R.tex",
+      "line": 21,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:composition-of-limits dependency closure reaches non-root leaf def:epsilon-neighbourhood.",
+      "path": "analysis/functions/notes/subsets-real-line/notes-subsets-of-R.tex",
+      "line": 21,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:monotone-limit-theorem dependency closure reaches non-root leaf def:epsilon-neighbourhood.",
+      "path": "analysis/functions/notes/subsets-real-line/notes-subsets-of-R.tex",
+      "line": 21,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "prop:cauchy-criterion-limits dependency closure reaches non-root leaf def:epsilon-neighbourhood.",
+      "path": "analysis/functions/notes/subsets-real-line/notes-subsets-of-R.tex",
+      "line": 21,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:sequential-criterion-right-hand-limit dependency closure reaches non-root leaf def:epsilon-neighbourhood.",
+      "path": "analysis/functions/notes/subsets-real-line/notes-subsets-of-R.tex",
+      "line": 21,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "cor:sequential-criterion-left-hand-limit dependency closure reaches non-root leaf def:epsilon-neighbourhood.",
+      "path": "analysis/functions/notes/subsets-real-line/notes-subsets-of-R.tex",
+      "line": 21,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:two-sided-limit-iff-matching-one-sided-limits dependency closure reaches non-root leaf def:epsilon-neighbourhood.",
+      "path": "analysis/functions/notes/subsets-real-line/notes-subsets-of-R.tex",
+      "line": 21,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:cluster-point-sequential dependency closure reaches non-root leaf def:epsilon-neighbourhood.",
+      "path": "analysis/functions/notes/subsets-real-line/notes-subsets-of-R.tex",
+      "line": 21,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "lem:closure-elementary dependency closure reaches non-root leaf def:epsilon-neighbourhood.",
+      "path": "analysis/functions/notes/subsets-real-line/notes-subsets-of-R.tex",
+      "line": 21,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "cor:closed-iff-seq-limits dependency closure reaches non-root leaf def:epsilon-neighbourhood.",
+      "path": "analysis/functions/notes/subsets-real-line/notes-subsets-of-R.tex",
+      "line": 21,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "cor:interval-all-limit-points dependency closure reaches non-root leaf def:epsilon-neighbourhood.",
+      "path": "analysis/functions/notes/subsets-real-line/notes-subsets-of-R.tex",
+      "line": 21,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:heine-borel-subsets-real-line dependency closure reaches non-root leaf def:bounded-set-r.",
+      "path": "analysis/functions/notes/subsets-real-line/notes-subsets-of-R.tex",
+      "line": 614,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:newton-approximation-sqrt-two dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:factorial-partial-sums-approximate-e dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:compound-interest-approximation-e dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:decimal-truncations-converge dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:convergent-sequences-are-cauchy dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:cauchy-sequences-are-bounded dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:cauchy-sequence-with-convergent-subsequence dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:cauchy-criterion-real-sequences dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:cauchy-criterion-via-tails dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:cauchy-tail-diameter-criterion dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:cauchy-successive-differences-vanish dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:scalar-multiple-cauchy-sequence dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:sum-cauchy-sequences dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:difference-cauchy-sequences dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:linear-combination-cauchy-sequences dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:product-cauchy-sequences dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:reciprocal-cauchy-sequence dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:quotient-cauchy-sequences dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:absolute-value-cauchy-sequence dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:cluster-values-are-subsequential-limits dependency closure reaches non-root leaf def:strictly-increasing-index-map.",
+      "path": "analysis/sequences/notes/subsequences/notes-subsequences.tex",
+      "line": 15,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:bounded-sequences-have-cluster-values dependency closure reaches non-root leaf def:strictly-increasing-index-map.",
+      "path": "analysis/sequences/notes/subsequences/notes-subsequences.tex",
+      "line": 15,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:limsup-liminf-extremal-cluster-values dependency closure reaches non-root leaf def:strictly-increasing-index-map.",
+      "path": "analysis/sequences/notes/subsequences/notes-subsequences.tex",
+      "line": 15,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:limit-of-scalar-multiple dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:limit-of-a-sum dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:limit-of-a-negation dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:limit-of-a-difference dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:limit-of-a-product dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:nonzero-limit-eventually-nonzero dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:limit-of-a-reciprocal dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:limit-of-a-quotient dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:limit-of-a-square dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:limit-of-an-absolute-value dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:positive-limit-eventually-positive dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:limit-of-a-square-root dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:polynomial-sequence-limit dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:rational-sequence-limit dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:equivalence-of-convergence-formulations dependency closure reaches non-root leaf def:epsilon-neighbourhood.",
+      "path": "analysis/functions/notes/subsets-real-line/notes-subsets-of-R.tex",
+      "line": 21,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:uniqueness-of-limits dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:limit-preserves-eventual-order dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:strict-limit-separation-gives-eventual-order dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:eventual-strict-comparison-preserves-weak-limit-order dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:constant-comparison-for-sequence-limits dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:constant-squeeze-theorem dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:sequence-squeeze-theorem dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:absolute-value-squeeze-theorem dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:constant-sequence-convergence dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:zero-sequence-is-null dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:constant-null-sequence dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:difference-from-limit-is-null dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:ultimately-constant-sequence-convergence dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:constant-implies-ultimately-constant dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:ultimately-zero-sequence-is-null dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:ultimately-constant-null-sequence dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:tail-equality-preserves-convergence dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:eventually-bounded-above-tail-formulation dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:eventually-bounded-below-tail-formulation dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:eventually-bounded-tail-formulation dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:bounded-sequence-iff-bounded-above-and-below dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:absolute-bound-gives-upper-and-lower-bounds dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:upper-and-lower-bounds-give-absolute-bound dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:divergence-to-infinity-implies-real-divergence dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:two-subsequential-limits-force-divergence dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:unbounded-above-has-positive-infinity-subsequence dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:unbounded-below-has-negative-infinity-subsequence dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:bounded-divergence-produces-two-subsequential-limits dependency closure reaches non-root leaf def:strictly-increasing-index-map.",
+      "path": "analysis/sequences/notes/subsequences/notes-subsequences.tex",
+      "line": 15,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:tail-suprema-are-decreasing dependency closure reaches non-root leaf def:upper-bound.",
+      "path": "analysis/bounding/notes/bounds-extremals/notes-supremum.tex",
+      "line": 184,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:tail-infima-are-increasing dependency closure reaches non-root leaf def:lower-bound.",
+      "path": "analysis/bounding/notes/bounds-extremals/notes-supremum.tex",
+      "line": 242,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:liminf-below-limsup dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:convergence-iff-liminf-equals-limsup dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:limsup-largest-subsequential-limit dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:liminf-smallest-subsequential-limit dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:oscillation-criterion-via-liminf-limsup dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:limsup-comparison-under-eventual-order dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:liminf-comparison-under-eventual-order dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:limsup-squeeze-under-eventual-order dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:liminf-squeeze-under-eventual-order dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:monotone-convergence-theorem dependency closure reaches non-root leaf def:lower-bound.",
+      "path": "analysis/bounding/notes/bounds-extremals/notes-supremum.tex",
+      "line": 242,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:strict-monotonicity-implies-monotonicity dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:bounded-monotone-sequence-equivalences dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:eventually-monotone-convergence-theorem dependency closure reaches non-root leaf def:lower-bound.",
+      "path": "analysis/bounding/notes/bounds-extremals/notes-supremum.tex",
+      "line": 242,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:unbounded-monotone-divergence dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:algebraic-transformations-preserve-monotonicity dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:increasing-sequence-limit-as-supremum dependency closure reaches non-root leaf def:lower-bound.",
+      "path": "analysis/bounding/notes/bounds-extremals/notes-supremum.tex",
+      "line": 242,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:decreasing-sequence-limit-as-infimum dependency closure reaches non-root leaf def:lower-bound.",
+      "path": "analysis/bounding/notes/bounds-extremals/notes-supremum.tex",
+      "line": 242,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:tail-suprema-and-infima-converge dependency closure reaches non-root leaf def:lower-bound.",
+      "path": "analysis/bounding/notes/bounds-extremals/notes-supremum.tex",
+      "line": 242,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:bounded-sequence-has-limsup-and-liminf dependency closure reaches non-root leaf def:lower-bound.",
+      "path": "analysis/bounding/notes/bounds-extremals/notes-supremum.tex",
+      "line": 242,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:subsequence-indices-dominate-identity dependency closure reaches non-root leaf def:strictly-increasing-index-map.",
+      "path": "analysis/sequences/notes/subsequences/notes-subsequences.tex",
+      "line": 15,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:subsequences-preserve-limits dependency closure reaches non-root leaf def:strictly-increasing-index-map.",
+      "path": "analysis/sequences/notes/subsequences/notes-subsequences.tex",
+      "line": 15,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:subsequential-limit-of-convergent-sequence dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:divergence-by-two-subsequential-limits dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:boundedness-passes-to-subsequences dependency closure reaches non-root leaf def:strictly-increasing-index-map.",
+      "path": "analysis/sequences/notes/subsequences/notes-subsequences.tex",
+      "line": 15,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:monotonicity-passes-to-subsequences dependency closure reaches non-root leaf def:strictly-increasing-index-map.",
+      "path": "analysis/sequences/notes/subsequences/notes-subsequences.tex",
+      "line": 15,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:subsequence-of-subsequence dependency closure reaches non-root leaf def:strictly-increasing-index-map.",
+      "path": "analysis/sequences/notes/subsequences/notes-subsequences.tex",
+      "line": 15,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:eventual-properties-pass-to-subsequences dependency closure reaches non-root leaf def:strictly-increasing-index-map.",
+      "path": "analysis/sequences/notes/subsequences/notes-subsequences.tex",
+      "line": 15,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:frequent-properties-yield-subsequences dependency closure reaches non-root leaf def:strictly-increasing-index-map.",
+      "path": "analysis/sequences/notes/subsequences/notes-subsequences.tex",
+      "line": 15,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:subsequential-limits-respect-bounds dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:squeeze-passes-to-subsequences dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:monotone-subsequence-theorem dependency closure reaches non-root leaf def:strictly-increasing-index-map.",
+      "path": "analysis/sequences/notes/subsequences/notes-subsequences.tex",
+      "line": 15,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:bolzano-weierstrass-sequences dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:sequential-compactness-closed-bounded-interval dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:convergence-of-tail dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:convergence-by-domination dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    },
+    {
+      "code": "closure_leaf_not_allowed_root",
+      "message": "thm:ratio-limit-less-than-one-implies-null dependency closure reaches non-root leaf def:sequence.",
+      "path": "analysis/sequences/notes/definition/notes-sequences-definitions.tex",
+      "line": 10,
+      "severity": "warning"
+    }
+  ]
+}
