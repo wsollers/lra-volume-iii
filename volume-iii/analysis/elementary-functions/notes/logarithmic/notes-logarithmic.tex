@@ -28,17 +28,7 @@ Equivalently, $\ln x$ is defined by the integral
   \ln x \;:=\; \int_1^x \frac{1}{t}\, dt.
 \]
 \end{definition}
-\end{definitionbox}
-
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:exponential]{Exponential Function}
-  \item \hyperref[prop:inverse-bijection]{Inverse Bijection}
-  \item \hyperref[thm:continuous-inverse-theorem]{Continuous Inverse Theorem}
-\end{itemize}
-\end{dependencies}
-
-\begin{remark*}[Standard quantified statement]
+\end{definitionbox}\begin{remark*}[Standard quantified statement]
 \[
   \forall x > 0 :\; e^{\ln x} = x.
   \qquad
@@ -107,6 +97,14 @@ the binary logarithm is $\log_2$.
 % ---------------------------------------------------------
 
 \begin{propositionbox}{Proposition (Fundamental Logarithmic Limit)}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:exponential]{Exponential Function}
+  \item \hyperref[prop:inverse-bijection]{Inverse Bijection}
+  \item \hyperref[thm:continuous-inverse-theorem]{Continuous Inverse Theorem}
+\end{itemize}
+\end{dependencies}
 \begin{proposition}[Fundamental Logarithmic Limit]
 \label{prop:limit-logarithm-fundamental}
 \[
@@ -116,17 +114,7 @@ the binary logarithm is $\log_2$.
 \smallskip\noindent
 \hyperref[prf:limit-logarithm-fundamental]{\textit{Go to proof.}}
 \end{proposition}
-\end{propositionbox}
-
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:natural-logarithm]{Natural Logarithm}
-  \item \hyperref[prop:limit-exponential-fundamental]{Fundamental Exponential Limit}
-  \item \hyperref[def:limit-function]{Function Limit}
-\end{itemize}
-\end{dependencies}
-
-\begin{remark*}[Standard quantified statement]
+\end{propositionbox}\begin{remark*}[Standard quantified statement]
 \[
   \forall\varepsilon > 0,\;
   \exists\delta > 0 :\;
@@ -164,6 +152,14 @@ for $|x| < 1$). Dividing by $x$ gives $1 - x/2 + x^2/3 - \cdots
 % ---------------------------------------------------------
 
 \begin{propositionbox}{Proposition (Every Power Dominates the Logarithm)}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:natural-logarithm]{Natural Logarithm}
+  \item \hyperref[prop:limit-exponential-fundamental]{Fundamental Exponential Limit}
+  \item \hyperref[def:limit-function]{Function Limit}
+\end{itemize}
+\end{dependencies}
 \begin{proposition}[Every Power Dominates the Logarithm]
 \label{prop:power-dominates-log}
 For every $r > 0$:
@@ -176,18 +172,7 @@ For every $r > 0$:
 \smallskip\noindent
 \hyperref[prf:power-dominates-log]{\textit{Go to proof.}}
 \end{proposition}
-\end{propositionbox}
-
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:natural-logarithm]{Natural Logarithm}
-  \item \hyperref[def:power-function]{Power Function}
-  \item \hyperref[prop:exponential-dominates-power]{Exponential Dominates Every Power}
-  \item \hyperref[def:limit-at-infinity]{Limit at Infinity}
-\end{itemize}
-\end{dependencies}
-
-\begin{remark*}[Standard quantified statement]
+\end{propositionbox}\begin{remark*}[Standard quantified statement]
 \[
   \forall r > 0 :\;
   \lim_{x \to \infty} x^{-r} \ln x = 0
@@ -229,3 +214,12 @@ The second limit says that near $0^+$, the positive power $x^r$
 wins over the logarithmic blow-up $|\ln x| \to \infty$. Used in
 integrability arguments near $0$.
 \end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:natural-logarithm]{Natural Logarithm}
+  \item \hyperref[def:power-function]{Power Function}
+  \item \hyperref[prop:exponential-dominates-power]{Exponential Dominates Every Power}
+  \item \hyperref[def:limit-at-infinity]{Limit at Infinity}
+\end{itemize}
+\end{dependencies}
