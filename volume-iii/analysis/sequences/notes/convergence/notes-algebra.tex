@@ -124,6 +124,49 @@ the vertical scale of the sequence but not its indexing.
 \end{dependencies}
 
 % ---------------------------------------------------------
+% Definition --- Linear Combination of Sequences
+% ---------------------------------------------------------
+
+\begin{definitionbox}{Definition (Linear Combination of Real Sequences)}
+\begin{definition}[Linear Combination of Real Sequences]
+\label{def:linear-combination-of-real-sequences}
+Let $(x_n)$ and $(y_n)$ be real sequences, and let
+$\alpha,\beta\in\mathbb{R}$.  The real linear combination
+$\alpha(x_n)+\beta(y_n)$ is the real sequence $(\alpha x_n+\beta y_n)$
+defined by
+\[
+(\alpha x+\beta y)_n := \alpha x_n+\beta y_n
+\qquad
+\text{for every } n\in\mathbb{N}.
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{aligned}
+&\text{Let } (x_n),(y_n) \text{ be real sequences and }
+  \alpha,\beta\in\mathbb{R}.\\
+&\forall n\in\mathbb{N}\;\bigl((\alpha x+\beta y)_n
+  =\alpha x_n+\beta y_n\bigr).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A linear combination of sequences is built term by term from scalar
+multiples and sums. It is the common algebraic shape behind sequence limit
+rules and Cauchy closure under addition and scalar multiplication.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:scalar-multiple-sequence]{Scalar Multiple of a Sequence}
+  \item \hyperref[def:pointwise-sum-sequence]{Pointwise Sum of Sequences}
+\end{itemize}
+\end{dependencies}
+
+% ---------------------------------------------------------
 % Definition --- Pointwise Negation of a Sequence
 % ---------------------------------------------------------
 

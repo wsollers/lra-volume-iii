@@ -290,6 +290,48 @@ explicit $\delta$ functions.
 \end{dependencies}
 
 % ---------------------------------------------------------
+% Definition — Neighbourhood Form of Limit
+% ---------------------------------------------------------
+
+\begin{definitionbox}{Definition (Neighbourhood Form of Limit)}
+\begin{definition}[Neighbourhood Form of Limit]
+\label{def:limit-function-neighbourhood}
+Let $f : A \to \mathbb{R}$ and let $c$ be a cluster point of $A$.
+The limit $\lim_{x\to c}f(x)=L$ in the \textbf{neighbourhood
+sense} holds if for every $\varepsilon$-neighbourhood
+$V_\varepsilon(L)$ there exists a deleted $\delta$-neighbourhood
+$V_\delta^*(c)$ such that
+\[
+  x\in V_\delta^*(c)\cap A
+  \quad\Longrightarrow\quad
+  f(x)\in V_\varepsilon(L).
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall\varepsilon>0\;\exists\delta>0\;\forall x\in V_\delta^*(c)\cap A\;
+  f(x)\in V_\varepsilon(L).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The neighbourhood form packages the same local limit condition in
+terms of sets around the input point and output value. The domain is
+still restricted to $A$, and the neighbourhood of $c$ is deleted so
+the value of $f$ at $c$ itself is irrelevant.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:limit-function]{Limit of a Function}
+  \item \hyperref[def:epsilon-neighbourhood]{$\varepsilon$-Neighbourhood}
+  \item \hyperref[def:deleted-epsilon-neighbourhood]{Deleted $\varepsilon$-Neighbourhood}
+\end{itemize}
+\end{dependencies}
+
+% ---------------------------------------------------------
 % Proposition — Neighbourhood Form
 % ---------------------------------------------------------
 
@@ -333,6 +375,7 @@ continuity used in metric space topology.
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:limit-function]{Limit of a Function}
+  \item \hyperref[def:limit-function-neighbourhood]{Neighbourhood Form of Limit}
   \item \hyperref[def:epsilon-neighbourhood]{$\varepsilon$-Neighbourhood}
   \item \hyperref[def:deleted-epsilon-neighbourhood]{Deleted $\varepsilon$-Neighbourhood}
 \end{itemize}
@@ -493,6 +536,8 @@ results and constructing counterexamples.
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:limit-function]{Limit of a Function}
+  \item \hyperref[def:limit-function-neighbourhood]{Neighbourhood Form of Limit}
+  \item \hyperref[def:limit-function-sequential]{Sequential Definition of Limit}
   \item \hyperref[prop:limit-neighbourhood-equiv]{Neighbourhood Form of the Limit}
   \item \hyperref[prop:sequential-criterion-limits]{Sequential Criterion for Function Limits}
 \end{itemize}
