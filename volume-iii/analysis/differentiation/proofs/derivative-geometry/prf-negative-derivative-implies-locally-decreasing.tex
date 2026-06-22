@@ -13,30 +13,20 @@ Let $I \subseteq \mathbb{R}$ be an interval, let $f : I \to \mathbb{R}$, let $c 
 
 \begin{proof}[Professional Standard Proof]
 \LRAProofBodyStart
-Apply the Positive Derivative lemma to $-f$ at $c$. Since $(-f)'(c) = -f'(c) > 0$, there exists $\delta > 0$ such that $-f(x) < -f(c)$ for $x \in (c,c+\delta)$ and $-f(x) > -f(c)$ for $x \in (c-\delta,c)$. Multiplying by $-1$ reverses the inequalities and gives the result.
+TODO: professional standard proof for negative-derivative-implies-locally-decreasing.
 \end{proof}
 
 \begin{proof}[Detailed Learning Proof]
 \LRAProofBodyStart
-
-\textbf{Step 1.} Reduce to the positive derivative case. Define $h := -f$. Then $h$ is differentiable at $c$ and $h'(c) = -f'(c) > 0$ since $f'(c) < 0$.
-
-\textbf{Step 2.} Apply the Positive Derivative Implies Locally Increasing lemma to $h$. Since $h'(c) > 0$, there exists $\delta > 0$ such that:
-\begin{itemize}
-  \item $h(x) < h(c)$ for all $x \in I$ with $c - \delta < x < c$, and
-  \item $h(x) > h(c)$ for all $x \in I$ with $c < x < c + \delta$.
-\end{itemize}
-
-\textbf{Step 3.} Translate back to $f$. Substituting $h = -f$ and $h(c) = -f(c)$: $-f(x) < -f(c)$ gives $f(x) > f(c)$ for $x \in (c-\delta,c)$, and $-f(x) > -f(c)$ gives $f(x) < f(c)$ for $x \in (c,c+\delta)$.
+TODO: detailed learning proof for negative-derivative-implies-locally-decreasing.
 \end{proof}
 
 \begin{remark*}[Proof structure]
-A one-line reduction to the symmetric lemma via $h = -f$. No new $\varepsilon$-$\delta$ argument is needed.
 \end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[lem:positive-derivative-implies-locally-increasing]{Lemma: Positive Derivative Implies Locally Increasing}
+  \item TODO: list mathematical dependencies.
 \end{itemize}
 \end{dependencies}
 
