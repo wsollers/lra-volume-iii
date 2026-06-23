@@ -1,20 +1,21 @@
 # Volume III Proofs To Do
 
 Proof-writing order is dependency-first among active TODO proof labels, with the generated proof/status report order used as the stable tie-breaker.
-Use the empty `()` marker to record completion, for example `(✓)`.
+Use `✅` to record completion after the canonical proof file has both proof bodies populated and validated.
 
-Total proofs to do: 251
+Open proofs to do: 247
+Completed in this tracker: 4
 
-1. () `prop:every-element-lies-below-the-supremum` — **Every Element Lies Below the Supremum**
+1. (✅) `prop:every-element-lies-below-the-supremum` — **Every Element Lies Below the Supremum**
    > **Statement.** Let $A\subseteq\mathbb{R}$ be nonempty and bounded above, and let $s=\sup A$. Then $x\le s$ for every $x\in A$.
 
-2. () `thm:infimum-less-than-supremum` — **Infimum Is Less Than or Equal to the Supremum**
+2. (✅) `thm:infimum-less-than-supremum` — **Infimum Is Less Than or Equal to the Supremum**
    > **Statement.** Let $A\subseteq\mathbb{R}$ be nonempty, bounded below, and bounded above. Then $\inf A\le \sup A$.
 
-3. () `prop:maximum-implies-supremum` — **Maximum Implies Supremum**
+3. (✅) `prop:maximum-implies-supremum` — **Maximum Implies Supremum**
    > **Statement.** Let $A\subseteq\mathbb{R}$ and let $m\in A$. If $m$ is a maximum of $A$, then $m=\sup A$.
 
-4. () `thm:negation-exchange-sup-inf` — **Negation Exchanges Supremum and Infimum**
+4. (✅) `thm:negation-exchange-sup-inf` — **Negation Exchanges Supremum and Infimum**
    > **Statement.** Let $A\subseteq\mathbb{R}$ be nonempty and bounded below. Then $-A=\{-a:a\in A\}$ is bounded above and
    > \[
    >  \sup(-A)=-\inf A.
