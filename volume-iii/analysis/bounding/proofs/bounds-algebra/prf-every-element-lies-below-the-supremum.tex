@@ -13,20 +13,40 @@ If $s = \sup A$, then for every $x \in A$, $x \le s$.
 
 \begin{proof}[Professional Standard Proof]
 \LRAProofBodyStart
-TODO: professional standard proof for every-element-lies-below-the-supremum.
+Since \(s=\sup A\), the definition of supremum says, in particular, that
+\(s\) is an upper bound of \(A\). Hence every element of \(A\) lies below
+\(s\): for every \(x\in A\),
+\[
+x\le s.
+\]
 \end{proof}
 
 \begin{proof}[Detailed Learning Proof]
 \LRAProofBodyStart
-TODO: detailed learning proof for every-element-lies-below-the-supremum.
+Let \(x\in A\) be arbitrary. We need to prove that \(x\le s\).
+
+The hypothesis \(s=\sup A\) means that \(s\) is the least upper bound of
+\(A\). In particular, before using the ``least'' part, we know that \(s\) is
+an upper bound of \(A\). By the definition of upper bound, this means that
+every element of \(A\) is less than or equal to \(s\). Since \(x\in A\), it
+follows that
+\[
+x\le s.
+\]
+
+Because \(x\in A\) was arbitrary, \(x\le s\) for every \(x\in A\).
 \end{proof}
 
 \begin{remark*}[Proof structure]
+This proof only unpacks the definition of supremum. The conclusion uses the
+upper-bound part of \(s=\sup A\); the minimality of \(s\) among upper bounds is
+not needed.
 \end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
-  \item TODO: list mathematical dependencies.
+  \item \hyperref[def:upper-bound]{Upper Bound}
+  \item \hyperref[def:supremum]{Supremum}
 \end{itemize}
 \end{dependencies}
 

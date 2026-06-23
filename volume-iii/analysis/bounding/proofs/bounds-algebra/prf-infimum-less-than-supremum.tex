@@ -13,20 +13,62 @@ For any non-empty bounded set $A \subseteq \mathbb{R}$, the infimum of $A$ is le
 
 \begin{proof}[Professional Standard Proof]
 \LRAProofBodyStart
-TODO: professional standard proof for infimum-less-than-supremum.
+Because \(A\) is nonempty, choose \(x\in A\). Since \(\inf A\) is a lower
+bound of \(A\), we have
+\[
+\inf A\le x.
+\]
+Since \(\sup A\) is an upper bound of \(A\), we have
+\[
+x\le \sup A.
+\]
+By transitivity of the order on \(\mathbb{R}\),
+\[
+\inf A\le \sup A.
+\]
 \end{proof}
 
 \begin{proof}[Detailed Learning Proof]
 \LRAProofBodyStart
-TODO: detailed learning proof for infimum-less-than-supremum.
+The set \(A\) is nonempty, so there exists an element \(x\in A\).
+
+By definition, \(\inf A\) is the greatest lower bound of \(A\). In
+particular, it is a lower bound of \(A\). Thus every element of \(A\) lies
+above \(\inf A\), so for our chosen \(x\in A\),
+\[
+\inf A\le x.
+\]
+
+Similarly, \(\sup A\) is the least upper bound of \(A\). In particular, it is
+an upper bound of \(A\). Thus every element of \(A\) lies below \(\sup A\), so
+for the same \(x\in A\),
+\[
+x\le \sup A.
+\]
+
+Combining the two inequalities gives
+\[
+\inf A\le x\le \sup A.
+\]
+Therefore
+\[
+\inf A\le \sup A.
+\]
 \end{proof}
 
 \begin{remark*}[Proof structure]
+Choose one element of the nonempty set. The lower-bound part of the infimum
+definition places \(\inf A\) below that element, and the upper-bound part of
+the supremum definition places the element below \(\sup A\). Transitivity
+finishes the comparison.
 \end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
-  \item TODO: list mathematical dependencies.
+  \item \hyperref[def:lower-bound]{Lower Bound}
+  \item \hyperref[def:upper-bound]{Upper Bound}
+  \item \hyperref[def:infimum]{Infimum}
+  \item \hyperref[def:supremum]{Supremum}
 \end{itemize}
 \end{dependencies}
 

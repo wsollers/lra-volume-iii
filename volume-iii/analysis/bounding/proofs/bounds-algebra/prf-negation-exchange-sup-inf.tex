@@ -13,12 +13,95 @@ Let $A \subseteq \mathbb{R}$ be a non-empty set. If $A$ is bounded below, then $
 
 \begin{proof}[Professional Standard Proof]
 \LRAProofBodyStart
-TODO: professional standard proof for negation-exchange-sup-inf.
+Let \(i=\inf A\). We prove that \(-i\) is the supremum of \(-A\).
+
+First let \(y\in -A\). Then \(y=-x\) for some \(x\in A\). Since \(i\) is a
+lower bound of \(A\), we have \(i\le x\). Multiplying by \(-1\) reverses the
+inequality, so
+\[
+y=-x\le -i.
+\]
+Thus \(-i\) is an upper bound of \(-A\). In particular, \(-A\) is bounded
+above.
+
+Now let \(u\) be any upper bound of \(-A\). For every \(x\in A\), the element
+\(-x\) belongs to \(-A\), so
+\[
+-x\le u.
+\]
+Multiplying by \(-1\) gives
+\[
+-u\le x
+\]
+for every \(x\in A\). Hence \(-u\) is a lower bound of \(A\). Since \(i=\inf A\)
+is the greatest lower bound of \(A\), we have \(-u\le i\). Multiplying by
+\(-1\) again gives
+\[
+-i\le u.
+\]
+Therefore every upper bound \(u\) of \(-A\) lies above \(-i\). Since \(-i\) is
+itself an upper bound of \(-A\), it is the least upper bound of \(-A\). Hence
+\[
+\sup(-A)=-i=-\inf A.
+\]
 \end{proof}
 
 \begin{proof}[Detailed Learning Proof]
 \LRAProofBodyStart
-TODO: detailed learning proof for negation-exchange-sup-inf.
+Set
+\[
+i=\inf A.
+\]
+We want to show that \(-i\) is the least upper bound of the reflected set
+\[
+-A=\{-a:a\in A\}.
+\]
+
+First we show that \(-i\) is an upper bound of \(-A\). Take an arbitrary
+element \(y\in -A\). By the definition of \(-A\), there is some \(x\in A\)
+such that
+\[
+y=-x.
+\]
+Because \(i=\inf A\), the number \(i\) is a lower bound of \(A\). Thus
+\[
+i\le x.
+\]
+After multiplying by \(-1\), the inequality reverses:
+\[
+-x\le -i.
+\]
+Since \(y=-x\), this gives \(y\le -i\). Therefore every element of \(-A\) is
+less than or equal to \(-i\), so \(-i\) is an upper bound of \(-A\). This also
+shows that \(-A\) is bounded above.
+
+It remains to show that \(-i\) is the least upper bound. Let \(u\) be any
+upper bound of \(-A\). Then every element of \(-A\) is less than or equal to
+\(u\). In particular, for each \(x\in A\), the element \(-x\in -A\), so
+\[
+-x\le u.
+\]
+Multiplying by \(-1\) reverses the inequality:
+\[
+-u\le x.
+\]
+This holds for every \(x\in A\), so \(-u\) is a lower bound of \(A\). Since
+\(i=\inf A\) is the greatest lower bound of \(A\), every lower bound of \(A\)
+is less than or equal to \(i\). Hence
+\[
+-u\le i.
+\]
+Multiplying by \(-1\) one more time gives
+\[
+-i\le u.
+\]
+Thus every upper bound \(u\) of \(-A\) lies above \(-i\).
+
+We have shown that \(-i\) is an upper bound of \(-A\) and that every upper
+bound of \(-A\) is at least \(-i\). By the definition of supremum,
+\[
+\sup(-A)=-i=-\inf A.
+\]
 \end{proof}
 
 \begin{remark*}[Strategy: The Choice of Leastness Method]
@@ -26,11 +109,17 @@ In this proof, we establish the "leastness" property by comparing $-i$ against a
 \end{remark*}
 
 \begin{remark*}[Proof structure]
+Negation reverses order. Lower bounds of \(A\) become upper bounds of \(-A\),
+and the greatest lower bound becomes the least upper bound after multiplying
+all inequalities by \(-1\).
 \end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
-  \item TODO: list mathematical dependencies.
+  \item \hyperref[def:lower-bound]{Lower Bound}
+  \item \hyperref[def:upper-bound]{Upper Bound}
+  \item \hyperref[def:infimum]{Infimum}
+  \item \hyperref[def:supremum]{Supremum}
 \end{itemize}
 \end{dependencies}
 

@@ -13,20 +13,60 @@ If a set $A \subseteq \mathbb{R}$ has a maximum $m$, then $m$ is also the suprem
 
 \begin{proof}[Professional Standard Proof]
 \LRAProofBodyStart
-TODO: professional standard proof for maximum-implies-supremum.
+Suppose \(m\) is a maximum of \(A\). Then \(m\in A\) and
+\[
+x\le m
+\]
+for every \(x\in A\). Hence \(m\) is an upper bound of \(A\).
+
+Now let \(u\) be any upper bound of \(A\). Since \(m\in A\), the upper-bound
+property of \(u\) gives \(m\le u\). Thus every upper bound \(u\) of \(A\)
+satisfies \(m\le u\). Therefore \(m\) is the least upper bound of \(A\), so
+\[
+m=\sup A.
+\]
 \end{proof}
 
 \begin{proof}[Detailed Learning Proof]
 \LRAProofBodyStart
-TODO: detailed learning proof for maximum-implies-supremum.
+We prove that \(m\) satisfies the two defining properties of the supremum of
+\(A\).
+
+First, since \(m\) is a maximum of \(A\), the definition of maximum gives
+\[
+m\in A
+\qquad\text{and}\qquad
+x\le m \quad\text{for every }x\in A.
+\]
+The second condition says exactly that \(m\) is an upper bound of \(A\).
+
+Second, we show that \(m\) is the least upper bound. Let \(u\) be an arbitrary
+upper bound of \(A\). Because \(u\) is an upper bound, every element of \(A\)
+is less than or equal to \(u\). Since \(m\in A\), we may apply this to the
+element \(m\) itself and obtain
+\[
+m\le u.
+\]
+Thus every upper bound \(u\) of \(A\) lies above \(m\).
+
+So \(m\) is an upper bound of \(A\), and every upper bound of \(A\) is at least
+\(m\). By the definition of supremum,
+\[
+m=\sup A.
+\]
 \end{proof}
 
 \begin{remark*}[Proof structure]
+A maximum is already an upper bound because it dominates every element of the
+set. It is least among upper bounds because it is itself an element of the set:
+any upper bound must bound \(m\) too.
 \end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
-  \item TODO: list mathematical dependencies.
+  \item \hyperref[def:maximum]{Maximum}
+  \item \hyperref[def:upper-bound]{Upper Bound}
+  \item \hyperref[def:supremum]{Supremum}
 \end{itemize}
 \end{dependencies}
 
