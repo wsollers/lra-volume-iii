@@ -7,6 +7,8 @@
 \hyperref[thm:scalar-mult-positive]{Return to Theorem}
 \end{remark*}
 
+\ProofVaultURL{https://github.com/wsollers/lra-proof-vault/tree/master/volume-iii/bounding/thm-scalar-mult-positive}
+
 \begin{theorem*}[Scalar Multiplication by a Positive Scalar]
 Let $A\subseteq\mathbb{R}$ be nonempty and bounded above, and let $k>0$. Then
 \[
@@ -18,20 +20,67 @@ Let $A\subseteq\mathbb{R}$ be nonempty and bounded above, and let $k>0$. Then
 
 \begin{proof}[Professional Standard Proof]
 \LRAProofBodyStart
-TODO: professional standard proof for scalar-mult-positive.
+Let $s=\sup A$. Since $s$ is an upper bound of $A$, we have $a\le s$ for
+every $a\in A$. Because $k>0$, multiplication by $k$ preserves order, so
+$ka\le ks$ for every $a\in A$. Thus $ks$ is an upper bound of $kA$.
+
+Let $t=\sup(kA)$. Since $ks$ is an upper bound of $kA$, the least-upper-bound
+property gives $t\le ks$. Conversely, since $t$ is an upper bound of $kA$,
+we have $ka\le t$ for every $a\in A$. Dividing by $k>0$ gives
+$a\le t/k$ for every $a\in A$, so $t/k$ is an upper bound of $A$. Since
+$s=\sup A$, we get $s\le t/k$, and multiplying by $k>0$ gives $ks\le t$.
+Hence $t=ks$, so $\sup(kA)=k\sup A$.
 \end{proof}
 
 \begin{proof}[Detailed Learning Proof]
 \LRAProofBodyStart
-TODO: detailed learning proof for scalar-mult-positive.
+Set $s=\sup A$. We prove that $ks$ is exactly the least upper bound of
+$kA$.
+
+First we show that $ks$ is an upper bound of $kA$. Let $y\in kA$. By the
+definition of $kA$, there is some $a\in A$ such that $y=ka$. Since
+$s=\sup A$, every element of $A$ is at most $s$, so $a\le s$. Because
+$k>0$, multiplication by $k$ preserves the inequality, and therefore
+$ka\le ks$. Hence $y\le ks$. Since $y\in kA$ was arbitrary, $ks$ is an
+upper bound of $kA$.
+
+Now let $t=\sup(kA)$. From the preceding paragraph, $ks$ is an upper bound
+of $kA$, so the defining leastness of $t$ gives
+\[
+  t\le ks.
+\]
+It remains to prove the reverse inequality. Since $t$ is an upper bound of
+$kA$, for each $a\in A$ the element $ka$ belongs to $kA$ and therefore
+$ka\le t$. Because $k>0$, dividing by $k$ preserves order, so
+\[
+  a\le \frac{t}{k}
+\]
+for every $a\in A$. Thus $t/k$ is an upper bound of $A$. Since $s=\sup A$,
+$s$ is less than or equal to every upper bound of $A$, so
+\[
+  s\le \frac{t}{k}.
+\]
+Multiplying by $k>0$ gives $ks\le t$.
+
+Together, $t\le ks$ and $ks\le t$ imply $t=ks$. Since
+$t=\sup(kA)$ and $s=\sup A$, this is precisely
+\[
+  \sup(kA)=k\sup A.
+\]
 \end{proof}
 
 \begin{remark*}[Proof structure]
+Show that the proposed value $k\sup A$ is an upper bound of $kA$, then use
+the least-upper-bound property in the reverse direction by dividing an
+arbitrary upper bound of $kA$ by the positive scalar $k$.
 \end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
-  \item TODO: list mathematical dependencies.
+  \item \hyperref[def:upper-bound]{Upper bound}.
+  \item \hyperref[def:supremum]{Supremum}.
+  \item \hyperref[prop:upper-bound-comparison-with-the-supremum]{Upper Bound Comparison with the Supremum}.
+  \item \hyperref[thm:ineq-nonstrict-multiply-positive]{Multiplication by a positive scalar preserves non-strict order}.
 \end{itemize}
 \end{dependencies}
 

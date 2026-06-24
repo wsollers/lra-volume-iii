@@ -1,10 +1,10 @@
 # Volume III Proofs To Do
 
 Proof-writing order is dependency-first among active TODO proof labels, with the generated proof/status report order used as the stable tie-breaker.
-Use `✅` to record completion after the canonical proof file has both proof bodies populated and validated.
+Use `✅` to record completion after the proof is accepted, memorialized, canonically backlinked, both proof bodies and dependencies are populated, and the proof-vault follow-up gate validates the result.
 
-Open proofs to do: 247
-Completed in this tracker: 4
+Open proofs to do: 245
+Completed in this tracker: 6
 
 1. (✅) `prop:every-element-lies-below-the-supremum` — **Every Element Lies Below the Supremum**
    > **Statement.** Let $A\subseteq\mathbb{R}$ be nonempty and bounded above, and let $s=\sup A$. Then $x\le s$ for every $x\in A$.
@@ -21,7 +21,7 @@ Completed in this tracker: 4
    >  \sup(-A)=-\inf A.
    > \]
 
-5. () `thm:scalar-mult-negative` — **Scalar Multiplication by a Negative Scalar**
+5. (✅) `thm:scalar-mult-negative` — **Scalar Multiplication by a Negative Scalar**
    > **Statement.** Let $A\subseteq\mathbb{R}$ be nonempty and bounded below, and let $k<0$. Then
    > \[
    >  \sup(kA)=k\inf A,
@@ -29,7 +29,7 @@ Completed in this tracker: 4
    >  kA=\{ka:a\in A\}.
    > \]
 
-6. () `thm:scalar-mult-positive` — **Scalar Multiplication by a Positive Scalar**
+6. (✅) `thm:scalar-mult-positive` — **Scalar Multiplication by a Positive Scalar**
    > **Statement.** Let $A\subseteq\mathbb{R}$ be nonempty and bounded above, and let $k>0$. Then
    > \[
    >  \sup(kA)=k\sup A,

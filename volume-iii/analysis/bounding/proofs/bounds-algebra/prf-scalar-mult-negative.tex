@@ -7,6 +7,8 @@
 \hyperref[thm:scalar-mult-negative]{Return to Theorem}
 \end{remark*}
 
+\ProofVaultURL{https://github.com/wsollers/lra-proof-vault/tree/master/volume-iii/bounding/thm-scalar-mult-negative}
+
 \begin{theorem*}[Scalar Multiplication by a Negative Scalar]
 Let $A\subseteq\mathbb{R}$ be nonempty and bounded below, and let $k<0$. Then
 \[
@@ -18,20 +20,80 @@ Let $A\subseteq\mathbb{R}$ be nonempty and bounded below, and let $k<0$. Then
 
 \begin{proof}[Professional Standard Proof]
 \LRAProofBodyStart
-TODO: professional standard proof for scalar-mult-negative.
+Let $N=-k$. Since $k<0$, we have $N>0$. Also
+\[
+  kA=\{ka:a\in A\}=\{N(-a):a\in A\}=N(-A).
+\]
+Because $A$ is bounded below, the set $-A$ is bounded above. By scalar
+multiplication by a positive scalar,
+\[
+  \sup(N(-A))=N\sup(-A).
+\]
+By the theorem that negation exchanges supremum and infimum,
+\[
+  \sup(-A)=-\inf A.
+\]
+Therefore
+\[
+  \sup(kA)=\sup(N(-A))=N\sup(-A)=N(-\inf A)=-N\inf A.
+\]
+Since $N=-k$, we have $-N=k$, and hence $\sup(kA)=k\inf A$.
 \end{proof}
 
 \begin{proof}[Detailed Learning Proof]
 \LRAProofBodyStart
-TODO: detailed learning proof for scalar-mult-negative.
+We reduce the negative-scalar case to two results that are already known:
+positive scalar multiplication of suprema, and the exchange of supremum and
+infimum under negation.
+
+Let $N=-k$. The hypothesis $k<0$ implies $N>0$. For every $a\in A$,
+\[
+  ka=(-N)a=N(-a).
+\]
+Therefore the image of $A$ under multiplication by $k$ is the same set as the
+image of $-A$ under multiplication by the positive scalar $N$:
+\[
+  kA=N(-A).
+\]
+
+Since $A$ is bounded below, negating all of its elements produces a set
+$-A=\{-a:a\in A\}$ that is bounded above. The positive-scalar theorem applies
+to the nonempty bounded-above set $-A$ and the positive scalar $N$, so
+\[
+  \sup(N(-A))=N\sup(-A).
+\]
+The negation theorem gives
+\[
+  \sup(-A)=-\inf A.
+\]
+Substituting this into the preceding equality yields
+\[
+  \sup(N(-A))=N(-\inf A).
+\]
+
+Finally, because $kA=N(-A)$, the two sets have the same supremum. Hence
+\[
+  \sup(kA)=\sup(N(-A))=N(-\inf A)=-N\inf A.
+\]
+Since $N=-k$, we have $-N=k$. Thus
+\[
+  \sup(kA)=k\inf A,
+\]
+as required.
 \end{proof}
 
 \begin{remark*}[Proof structure]
+Convert the negative multiplier $k$ into a positive multiplier $N=-k$ applied
+to the negated set $-A$. Then combine the positive-scalar supremum formula
+with the theorem that negation exchanges supremum and infimum.
 \end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
-  \item TODO: list mathematical dependencies.
+  \item \hyperref[thm:scalar-mult-positive]{Scalar Multiplication by a Positive Scalar}.
+  \item \hyperref[thm:negation-exchange-sup-inf]{Negation Exchanges Supremum and Infimum}.
+  \item \hyperref[def:supremum]{Supremum}.
+  \item \hyperref[def:infimum]{Infimum}.
 \end{itemize}
 \end{dependencies}
 
