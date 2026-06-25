@@ -365,11 +365,11 @@ Completed in this tracker: 6
    > **Statement.**
    > For every $x>0$ and every $y\in\mathbb{R}$, there exists $n\in\mathbb{N}$ such that $nx>y$.
 
-57. () `thm:density-of-rationals-in-reals` — **Density of the Rational Numbers in $ $**
+57. () `thm:density-of-rationals-in-reals` — **Density of the Rational Numbers in $\mathbb{R}$**
    > **Statement.**
    > For every $a,b\in\mathbb{R}$ with $a<b$, there exists $q\in\mathbb{Q}$ such that $a<q<b$.
 
-58. () `thm:density-of-irrationals-in-reals` — **Density of the Irrational Numbers in $ $**
+58. () `thm:density-of-irrationals-in-reals` — **Density of the Irrational Numbers in $\mathbb{R}$**
    > **Statement.**
    > For every $a,b\in\mathbb{R}$ with $a<b$, there exists $s\in\mathbb{R}\setminus\mathbb{Q}$ such that $a<s<b$.
 
@@ -432,7 +432,7 @@ Completed in this tracker: 6
    > **Statement.**
    > If $I$ is an interval, then every $x\in I$ is a cluster point of $I$.
 
-70. () `thm:heine-borel-subsets-real-line` — **Heine--Borel Theorem for $ $**
+70. () `thm:heine-borel-subsets-real-line` — **Heine--Borel Theorem for $\mathbb{R}$**
    > **Statement.**
    > $X\text{ is closed} \wedge X\text{ is bounded}$
    > $\iff$ every $(a_n)\subseteq X$ has a subsequence converging to
@@ -504,7 +504,7 @@ Completed in this tracker: 6
    >  \lim_{n\to\infty}x_n=\inf\{x_n:n\in\mathbb{N}\}.
    >  \]
 
-81. () `thm:newton-approximation-sqrt-two` — **Newton Approximation of $ $**
+81. () `thm:newton-approximation-sqrt-two` — **Newton Approximation of $\sqrt{2}$**
    > **Statement.**
    > Let $(x_n)$ be the Newton sequence for $\sqrt{2}$. Then $(x_n)$ converges
    > and
@@ -1147,7 +1147,7 @@ Completed in this tracker: 6
    > **Statement.**
    > A set $F\subseteq\mathbb{R}$ is closed if and only if it contains every one of its limit points.
 
-176. () `thm:compact-implies-closed-bounded` — **Compact Subsets of $ $ Are Closed and Bounded**
+176. () `thm:compact-implies-closed-bounded` — **Compact Subsets of $\mathbb{R}$ Are Closed and Bounded**
    > **Statement.**
    > If $K\subseteq\mathbb{R}$ is compact, then $K$ is closed and bounded.
 
@@ -1155,7 +1155,7 @@ Completed in this tracker: 6
    > **Statement.**
    > Every closed bounded interval $[a,b]\subseteq\mathbb{R}$ is compact.
 
-178. () `thm:heine-borel` — **Heine--Borel Theorem for $ $**
+178. () `thm:heine-borel` — **Heine--Borel Theorem for $\mathbb{R}$**
    > **Statement.**
    > A set $K\subseteq\mathbb{R}$ is compact if and only if $K$ is closed and bounded.
 
@@ -1191,7 +1191,7 @@ Completed in this tracker: 6
    >  \cosh(x+y) = \cosh x \cosh y + \sinh x \sinh y.
    > \]
 
-185. () `prop:tanh-limits` — **Limits of $ $**
+185. () `prop:tanh-limits` — **Limits of $\tanh$**
    > **Statement.**
    > \[
    >  \lim_{x \to +\infty} \tanh x = 1,
@@ -1492,14 +1492,14 @@ Completed in this tracker: 6
    > $\lim_{x\to c}f(x)=L$ if and only if both $\lim_{x\to c^+}f(x)=L$ and
    > $\lim_{x\to c^-}f(x)=L$.
 
-229. () `prop:limsup-geq-liminf-function` — **$ $**
+229. () `prop:limsup-geq-liminf-function` — **$\limsup\geq\liminf$**
    > **Statement.**
    > Let $A\subseteq \mathbb{R}$, let $x_0$ be a limit point of $A$, and let $f:A\to\mathbb{R}$. Then
    > \[
    > \limsup_{x\to x_0} f(x) \ge \liminf_{x\to x_0} f(x).
    > \]
 
-230. () `prop:limsup-liminf-limit-criterion` — **Limit Exists iff $ = $**
+230. () `prop:limsup-liminf-limit-criterion` — **Limit Exists iff $\limsup=\liminf$**
    > **Statement.**
    > Let $A \subseteq \mathbb{R}$, let $f \colon A \to \mathbb{R}$, let $x_0$ be a limit point of $A$ with $x_0 \in \mathbb{R}$, and let $L \in \mathbb{R}$. Then $\lim_{x \to x_0} f(x)$ exists and equals $L$ if and only if $\limsup_{x \to x_0} f(x) = \liminf_{x \to x_0} f(x) = L$.
 
@@ -1731,7 +1731,7 @@ Completed in this tracker: 6
    > \left(\sum_{i=1}^{n} \alpha_i f_i\right)'(x) = \sum_{i=1}^{n} \alpha_i f_i'(x) \qquad \text{for all } x \in I.
    > \]
 
-266. () `thm:caratheodory-characterization-of-differentiability` — **Carath\' e odory Characterization of Differentiability**
+266. () `thm:caratheodory-characterization-of-differentiability` — **Carath\'{e}odory Characterization of Differentiability**
    > **Statement.**
    > Let $I \subseteq \mathbb{R}$ be an interval, let $f : I \to \mathbb{R}$, and let $c \in I$. The following are equivalent:
    > - [label=(\roman*)]
