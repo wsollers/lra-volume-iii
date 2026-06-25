@@ -1,0 +1,62 @@
+% =========================================================
+% volume-iii-differentiation-main.tex --- Standalone book root
+% Volume III: Classical Analysis / Differentiation
+% =========================================================
+\documentclass[12pt, a4paper]{report}
+\input{common/volume-preamble}
+
+\begin{document}
+\ExplSyntaxOff
+\renewcommand{\familydefault}{\rmdefault}
+
+\pagenumbering{roman}
+\begin{titlepage}
+\centering
+\vspace*{3.5cm}
+
+{\Large\scshape Volume III\par}
+\vspace{0.35cm}
+{\large Classical Analysis\par}
+
+\vspace{1.4cm}
+
+{\Huge\bfseries Differentiation\par}
+
+\vspace{0.6cm}
+{\large\itshape Self-Study Notes\par}
+
+\vfill
+
+{\large William Sollers\par}
+\vspace{0.35cm}
+{\large \today\par}
+
+\vfill
+
+{\large\scshape From Cantor to Ito\par}
+\end{titlepage}
+
+\clearpage
+\thispagestyle{plain}
+\chapter*{Front Matter}
+\noindent\textbf{Series.} From Cantor to Ito\\[0.5em]
+\textbf{Volume.} Volume III: Classical Analysis\\[0.5em]
+\textbf{Book.} Differentiation
+
+\clearpage
+\tableofcontents
+\clearpage
+\pagenumbering{arabic}
+
+\input{volume-iii/book-analysis-iii/index}
+
+\clearpage
+\bibliographystyle{plainnat}
+\bibliography{%
+  bibliography/volume-iii-analysis%
+}
+
+\printindex[tech]
+\printindex[dep]
+
+\end{document}

@@ -1,0 +1,12 @@
+subject: series
+display_title: ''
+volume: volume-iii
+status: planned
+dependencies:
+  prior: ''
+  next: ''
+path: volume-iii/book-analysis-i/series
+environments: []
+proof_files: []
+
+book: book-analysis-i

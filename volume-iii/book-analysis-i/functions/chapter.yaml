@@ -1,0 +1,227 @@
+subject: functions
+display_title: Functions
+volume: volume-iii
+status: in-progress
+dependencies:
+  prior: ''
+  next: ''
+environments:
+- label: prop:composition-injective
+  type: prop
+  file: notes\algebra-of-functions\notes-algebra-of-functions.tex
+  display_title: Composition of Injections Is Injective
+  proof_file: null
+- label: prop:composition-surjective
+  type: prop
+  file: notes\algebra-of-functions\notes-algebra-of-functions.tex
+  display_title: Composition of Surjections Is Surjective
+  proof_file: null
+- label: cor:composition-bijective
+  type: cor
+  file: notes\algebra-of-functions\notes-algebra-of-functions.tex
+  display_title: Composition of Bijections Is Bijective
+  proof_file: null
+- label: prop:inverse-bijection
+  type: prop
+  file: notes\algebra-of-functions\notes-algebra-of-functions.tex
+  display_title: Inverse of a Bijection Is a Bijection
+  proof_file: null
+- label: prop:preimage-union-intersection
+  type: prop
+  file: notes\algebra-of-functions\notes-algebra-of-functions.tex
+  display_title: Preimage Distributes over Union and Intersection
+  proof_file: null
+- label: def:pointwise-sum-of-functions
+  type: def
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Pointwise Sum of Functions
+  proof_file: null
+- label: def:pointwise-difference-of-functions
+  type: def
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Pointwise Difference of Functions
+  proof_file: null
+- label: def:pointwise-product-of-functions
+  type: def
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Pointwise Product of Functions
+  proof_file: null
+- label: def:pointwise-scalar-multiple-of-a-function
+  type: def
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Pointwise Scalar Multiple of a Function
+  proof_file: null
+- label: def:pointwise-absolute-value-of-a-function
+  type: def
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Pointwise Absolute Value of a Function
+  proof_file: null
+- label: def:pointwise-maximum-of-two-functions
+  type: def
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Pointwise Maximum of Two Functions
+  proof_file: null
+- label: def:pointwise-quotient-of-functions
+  type: def
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Pointwise Quotient of Functions
+  proof_file: null
+- label: def:function-bounded-above
+  type: def
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Bounded Above Function
+  proof_file: null
+- label: def:function-bounded-below
+  type: def
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Bounded Below Function
+  proof_file: null
+- label: def:function-bounded
+  type: def
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Bounded Function
+  proof_file: null
+- label: def:function-supremum-on-set
+  type: def
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Supremum of a Function on a Set
+  proof_file: null
+- label: def:function-infimum-on-set
+  type: def
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Infimum of a Function on a Set
+  proof_file: null
+- label: def:function-maximum-point
+  type: def
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Maximum Point of a Function
+  proof_file: null
+- label: def:function-minimum-point
+  type: def
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Minimum Point of a Function
+  proof_file: null
+- label: def:function-increasing
+  type: def
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Increasing Function
+  proof_file: null
+- label: def:function-strictly-increasing
+  type: def
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Strictly Increasing Function
+  proof_file: null
+- label: def:function-decreasing
+  type: def
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Decreasing Function
+  proof_file: null
+- label: def:function-strictly-decreasing
+  type: def
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Strictly Decreasing Function
+  proof_file: null
+- label: def:function-monotone
+  type: def
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Monotone Function
+  proof_file: null
+- label: def:function-constant
+  type: def
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Constant Function
+  proof_file: null
+- label: def:epsilon-neighbourhood
+  type: def
+  file: notes\subsets-real-line\notes-subsets-of-R.tex
+  display_title: $\varepsilon$-Neighbourhood
+  proof_file: null
+- label: def:deleted-epsilon-neighbourhood
+  type: def
+  file: notes\subsets-real-line\notes-subsets-of-R.tex
+  display_title: Deleted $\varepsilon$-Neighbourhood
+  proof_file: null
+- label: def:cluster-point-r
+  type: def
+  file: notes\subsets-real-line\notes-subsets-of-R.tex
+  display_title: Cluster Point
+  proof_file: null
+- label: thm:cluster-point-sequential
+  type: thm
+  file: notes\subsets-real-line\notes-subsets-of-R.tex
+  display_title: Sequential Characterization of Cluster Points
+  proof_file: null
+- label: def:adherent-point-r
+  type: def
+  file: notes\subsets-real-line\notes-subsets-of-R.tex
+  display_title: Adherent Point
+  proof_file: null
+- label: def:isolated-point-r
+  type: def
+  file: notes\subsets-real-line\notes-subsets-of-R.tex
+  display_title: Isolated Point
+  proof_file: null
+- label: def:interior-point-r
+  type: def
+  file: notes\subsets-real-line\notes-subsets-of-R.tex
+  display_title: Interior Point
+  proof_file: null
+- label: def:boundary-point-r
+  type: def
+  file: notes\subsets-real-line\notes-subsets-of-R.tex
+  display_title: Boundary Point
+  proof_file: null
+- label: def:interior-r
+  type: def
+  file: notes\subsets-real-line\notes-subsets-of-R.tex
+  display_title: Interior
+  proof_file: null
+- label: def:boundary-r
+  type: def
+  file: notes\subsets-real-line\notes-subsets-of-R.tex
+  display_title: Boundary
+  proof_file: null
+- label: def:closure-r
+  type: def
+  file: notes\subsets-real-line\notes-subsets-of-R.tex
+  display_title: Closure
+  proof_file: null
+- label: lem:closure-elementary
+  type: lem
+  file: notes\subsets-real-line\notes-subsets-of-R.tex
+  display_title: Elementary Properties of Closures
+  proof_file: null
+- label: def:closed-set-r
+  type: def
+  file: notes\subsets-real-line\notes-subsets-of-R.tex
+  display_title: Closed Subset of $\mathbb{R}$
+  proof_file: null
+- label: cor:closed-iff-seq-limits
+  type: cor
+  file: notes\subsets-real-line\notes-subsets-of-R.tex
+  display_title: Closed iff Sequentially Closed
+  proof_file: null
+- label: cor:interval-all-limit-points
+  type: cor
+  file: notes\subsets-real-line\notes-subsets-of-R.tex
+  display_title: Every Point of an Interval Is a Cluster Point
+  proof_file: null
+- label: def:bounded-set-r
+  type: def
+  file: notes\subsets-real-line\notes-subsets-of-R.tex
+  display_title: Bounded Subset of $\mathbb{R}$
+  proof_file: null
+- label: thm:heine-borel-subsets-real-line
+  type: thm
+  file: notes\subsets-real-line\notes-subsets-of-R.tex
+  display_title: Heine--Borel Theorem for $\mathbb{R}$
+  proof_file: null
+- label: def:true-near
+  type: def
+  file: notes\subsets-real-line\notes-subsets-of-R.tex
+  display_title: True Near a Point
+  proof_file: null
+proof_files: []
+
+book: book-analysis-i
+path: volume-iii/book-analysis-i/functions

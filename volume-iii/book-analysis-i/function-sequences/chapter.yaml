@@ -1,0 +1,11 @@
+subject: function-sequences
+display_title: ''
+volume: volume-iii
+status: in-progress
+dependencies:
+  prior: ''
+  next: ''
+path: volume-iii/book-analysis-i/function-sequences
+book: book-analysis-i
+environments: []
+proof_files: []
