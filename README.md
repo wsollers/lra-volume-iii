@@ -1,29 +1,52 @@
 # lra-volume-iii
 
-**Volume III: Classical Analysis** — Overleaf-ready standalone repository.
+**Volume III: Classical Analysis** - Overleaf-ready standalone repository.
 
 ## Structure
 
 ```text
-volume-iii.tex          — full-volume root (Overleaf main document)
-volume-iii-<book>.tex   — individual book roots
-common/               — shared LaTeX infrastructure supplied by lra-common; ignored here
-bibliography/         — per-book bibliography shards
-volume-iii/             — all LaTeX content for this volume
+volume-iii.tex                    - full-volume root (Overleaf main document)
+volume-<roman>-<book>.tex - individual book roots
+bibliography/             - per-book bibliography shards
+volume-iii/                - all LaTeX content for this volume
 ```
+
+Shared LaTeX infrastructure comes from sibling `../lra-common`; do not commit a local `common/` directory here.
 
 ## Overleaf
 
-Upload or checkout `common/` beside this repository's TeX roots, then set the main document to `volume-iii.tex` for the full volume or to one of the book roots:
+Use `volume-iii.tex` for the full volume, or one of the book roots:
 
 ```text
 volume-iii-bounds-sequences-and-series.tex, volume-iii-continuity.tex, volume-iii-differentiation.tex, volume-iii-integration.tex
 ```
 
-`common/` is ignored by git in this volume repo; edit shared infrastructure in `lra-common`.
+For Overleaf, provide `common/` beside the TeX roots as local project staging only. Edit shared infrastructure in `lra-common`.
 
-## Building locally
+## Building Locally
+
+Validate only:
 
 ```powershell
-python F:\repos\lra-governance\tools\governance\build_volume_docker.py --root F:\repos\lra-volume-iii --common-root F:\repos\lra-common
+python ..\lra-governance\scripts\build_volume.py --root . --validate-only
 ```
+
+Build all full-volume and book roots in digital mode:
+
+```powershell
+python ..\lra-governance\tools\governance\build_volume_docker.py --root . --common-root ..\lra-common --output-dir build\digital
+```
+
+Build all full-volume and book roots in print mode:
+
+```powershell
+python ..\lra-governance\tools\governance\build_volume_docker.py --root . --common-root ..\lra-common --print-edition --output-dir build\print
+```
+
+Build one book root:
+
+```powershell
+python ..\lra-governance\tools\governance\build_volume_docker.py --root . --common-root ..\lra-common --tex-root volume-iii-bounds-sequences-and-series.tex --output-dir build\digital
+```
+
+
