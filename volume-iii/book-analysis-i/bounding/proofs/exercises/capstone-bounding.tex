@@ -2,8 +2,8 @@
 \else
 \expandafter\gdef\csname LRABoundingCapstoneRendered\endcsname{}
 
-\newpage
 \phantomsection
+\label{prf:capstone-bounding}
 \label{cap:bounding}
 
 \begin{tcolorbox}[
@@ -11,17 +11,227 @@
   colframe=gray!40,
   arc=2pt,
   left=8pt, right=8pt, top=6pt, bottom=6pt,
-  title={\small\textbf{Capstone Problem}},
+  title={\small\textbf{Capstone Theorem: The Minimax Inequality}},
   fonttitle=\small\bfseries
 ]
-\textbf{Problem.}
-TODO: state one synthesizing problem for Bounding, using only concepts at or
-before this chapter in the registry.
+\textbf{Theorem.}
+If \(X\) and \(Y\) are nonempty sets and
+\(\Phi:X\times Y\to\mathbb{R}\) is bounded, then
+\[
+  \sup_{x \in X}\inf_{y \in Y}\Phi(x,y)
+  \le
+  \inf_{y \in Y}\sup_{x \in X}\Phi(x,y).
+\]
 \end{tcolorbox}
 
-\begin{remark*}[Dependency ceiling]
-The capstone may use only results routed at or before this chapter.
+\begin{remark*}[Abstract]
+This capstone proves that a player who must commit first cannot guarantee
+more than the opposing player can force by committing second. No topology,
+continuity, compactness, or convexity is involved. The proof uses only the
+order meaning of supremum and infimum, plus boundedness to ensure that all
+displayed extrema are real numbers.
 \end{remark*}
+
+\begin{remark*}[Notation]
+For each \(x\in X\), call
+\[
+  r(x):=\inf_{y\in Y}\Phi(x,y)
+\]
+the floor of the row indexed by \(x\). For each \(y\in Y\), call
+\[
+  c(y):=\sup_{x\in X}\Phi(x,y)
+\]
+the ceiling of the column indexed by \(y\). The lower and upper values are
+\[
+  \underline V:=\sup_{x\in X}r(x),
+  \qquad
+  \overline V:=\inf_{y\in Y}c(y).
+\]
+The theorem is the comparison \(\underline V\le\overline V\).
+\end{remark*}
+
+\begin{remark*}[Orientation]
+The theorem should be read against a simpler warning about coupled and
+independent indices. If \(f,g:X\to\mathbb{R}\) are bounded, then
+\[
+  \sup_{x\in X}\bigl(f(x)+g(x)\bigr)
+  \le
+  \sup_{x\in X} f(x)+\sup_{x\in X} g(x),
+\]
+and the inequality can be strict when the two suprema occur at different
+points. By contrast, the independent grid identity
+\[
+  \sup_{(x,y)\in X\times Y}\bigl(f(x)+g(y)\bigr)
+  =
+  \sup_{x\in X} f(x)+\sup_{y\in Y} g(y)
+\]
+is exactly the result proved in
+\hyperref[thm:supremum-sum-set]{Supremum of a Sum Set}. The minimax
+inequality is another place where the order and independence of indices
+matter.
+\end{remark*}
+
+\begin{remark*}[Lemma 1: existence of the displayed extrema]
+The row floors \(r(x)\), column ceilings \(c(y)\), lower value
+\(\underline V\), and upper value \(\overline V\) all exist as real numbers.
+
+\emph{Proof task.}
+Use the bounds \(m\le\Phi(x,y)\le M\). Each row image
+\(\{\Phi(x_0,y):y\in Y\}\) and each column image
+\(\{\Phi(x,y_0):x\in X\}\) is nonempty and bounded because \(X\) and \(Y\)
+are nonempty. Therefore each row has an infimum and each column has a
+supremum. The family of row floors is bounded by \(m\) and \(M\), and the
+family of column ceilings is also bounded by \(m\) and \(M\). Apply the
+chapter's existence machinery for suprema and infima.
+\end{remark*}
+
+\begin{remark*}[Lemma 2: the bridge]
+For every \(x_0\in X\) and \(y_0\in Y\),
+\[
+  r(x_0)
+  =
+  \inf_{y\in Y}\Phi(x_0,y)
+  \le
+  \Phi(x_0,y_0)
+  \le
+  \sup_{x\in X}\Phi(x,y_0)
+  =
+  c(y_0).
+\]
+
+\emph{Proof task.}
+The left inequality is the lower-bound property of the row infimum. The
+right inequality is the upper-bound property of the column supremum. The
+single point-height \(\Phi(x_0,y_0)\) is the bridge between the row floor
+and the column ceiling.
+\end{remark*}
+
+\begin{remark*}[Proposition 1: every column ceiling dominates the lower value]
+For every fixed \(y_0\in Y\),
+\[
+  \underline V \le c(y_0).
+\]
+
+\emph{Proof task.}
+By Lemma 2, \(r(x)\le c(y_0)\) for every \(x\in X\). Thus \(c(y_0)\) is an
+upper bound for the set of row floors \(\{r(x):x\in X\}\). Since
+\(\underline V\) is the supremum of that set, the upper-bound comparison
+property gives \(\underline V\le c(y_0)\).
+\end{remark*}
+
+\begin{remark*}[Proof of the theorem]
+Proposition 1 holds for every \(y_0\in Y\). Hence \(\underline V\) is a
+lower bound for the set of column ceilings \(\{c(y):y\in Y\}\). Since
+\(\overline V\) is the infimum of that set,
+\[
+  \underline V
+  \le
+  \inf_{y\in Y}c(y)
+  =
+  \overline V.
+\]
+Expanding the definitions of \(r\), \(c\), \(\underline V\), and
+\(\overline V\) gives
+\[
+  \sup_{x \in X}\inf_{y \in Y}\Phi(x,y)
+  \le
+  \inf_{y \in Y}\sup_{x \in X}\Phi(x,y).
+\]
+\end{remark*}
+
+\begin{remark*}[Proposition 2: a saddle point forces equality]
+Call \((x^\ast,y^\ast)\) a saddle point of \(\Phi\) if
+\[
+  \Phi(x,y^\ast)
+  \le
+  \Phi(x^\ast,y^\ast)
+  \le
+  \Phi(x^\ast,y)
+  \qquad
+  \text{for all } x\in X,\ y\in Y.
+\]
+If a saddle point exists, then
+\[
+  \underline V=\overline V=\Phi(x^\ast,y^\ast).
+\]
+
+\emph{Proof task.}
+The left saddle inequality makes \(\Phi(x^\ast,y^\ast)\) the supremum of
+the column at \(y^\ast\). The right saddle inequality makes it the
+infimum of the row at \(x^\ast\). Thus
+\[
+  \overline V \le \Phi(x^\ast,y^\ast) \le \underline V.
+\]
+Combine this with the minimax inequality
+\(\underline V\le\overline V\).
+\end{remark*}
+
+\begin{remark*}[Application: one-step pursuit on the circle]
+Let \(\mathbb{S}^1=\mathbb{R}/\mathbb{Z}\), with wrap-around metric
+\[
+  d_{\mathbb{S}^1}(a,b)
+  =
+  \min_{k\in\mathbb{Z}} |a-b+k|
+  \in
+  \left[0,\frac12\right].
+\]
+Place a pursuer at \(0\) and an evader at \(d_0\in(0,\frac12]\). In one
+step the pursuer chooses \(u\in[-s_P,s_P]\), and the evader chooses
+\(v\in[-s_E,s_E]\), where \(s_P,s_E>0\). Define
+\[
+  \Psi(v,u):=d_{\mathbb{S}^1}\bigl(u,d_0+v\bigr).
+\]
+The evader maximizes distance and the pursuer minimizes distance, so the
+one-step lower and upper values are
+\[
+  \sup_{v\in[-s_E,s_E]}\inf_{u\in[-s_P,s_P]}\Psi(v,u)
+  \le
+  \inf_{u\in[-s_P,s_P]}\sup_{v\in[-s_E,s_E]}\Psi(v,u).
+\]
+As a final task, determine whether this circle model has a saddle point,
+and compare the result with the corresponding one-step model on the line.
+\end{remark*}
+
+\begin{remark*}[Limits of the theorem]
+Equality need not hold without extra structure. In particular,
+\(\underline V=\overline V\) does not by itself imply that a saddle point
+exists. Existence of saddle points or equality of values usually requires
+additional hypotheses such as compactness, convexity in one variable, and
+concavity in the other. Those hypotheses belong to later minimax theorems,
+not to this bounds-only result.
+\end{remark*}
+
+\begin{remark*}[Dependencies to state]
+\begin{itemize}
+  \item \hyperref[def:supremum]{Supremum}
+  \item \hyperref[def:infimum]{Infimum}
+\end{itemize}
+\end{remark*}
+
+\begin{remark*}[Dependencies to prove]
+\begin{itemize}
+  \item \hyperref[def:supremum]{Supremum}
+  \item \hyperref[def:infimum]{Infimum}
+  \item \hyperref[prop:upper-bound-comparison-with-the-supremum]{Upper-Bound Comparison with the Supremum}
+  \item \hyperref[thm:infimum-less-than-supremum]{Infimum Less Than Supremum}
+  \item \hyperref[thm:supremum-sum-set]{Supremum of a Sum Set}
+\end{itemize}
+\end{remark*}
+
+\begin{remark*}[Dependency ceiling]
+This capstone may use only the order, supremum, infimum, and boundedness
+results routed at or before the Bounds chapter.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:supremum]{Supremum}
+  \item \hyperref[def:infimum]{Infimum}
+  \item \hyperref[prop:upper-bound-comparison-with-the-supremum]{Upper-Bound Comparison with the Supremum}
+  \item \hyperref[thm:infimum-less-than-supremum]{Infimum Less Than Supremum}
+  \item \hyperref[thm:supremum-sum-set]{Supremum of a Sum Set}
+\end{itemize}
+\end{dependencies}
 
 \clearpage
 \fi
