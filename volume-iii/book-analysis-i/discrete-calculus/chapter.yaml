@@ -1,0 +1,11 @@
+subject: discrete-calculus
+display_title: Discrete Calculus
+volume: volume-iii
+status: active
+dependencies:
+  prior: functions
+  next: sequences
+path: volume-iii/book-analysis-i/discrete-calculus
+book: book-analysis-i
+environments: []
+proof_files: []

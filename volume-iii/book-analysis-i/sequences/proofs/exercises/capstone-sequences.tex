@@ -1,0 +1,242 @@
+\ifcsname LRASequencesCapstoneRendered\endcsname
+\else
+\expandafter\gdef\csname LRASequencesCapstoneRendered\endcsname{}
+
+\phantomsection
+\label{prf:capstone-sequences}
+\label{cap:sequences}
+
+\begin{tcolorbox}[
+  colback=gray!6,
+  colframe=gray!40,
+  arc=2pt,
+  left=8pt, right=8pt, top=6pt, bottom=6pt,
+  title={\small\textbf{Capstone Theorem: The Contraction Mapping Principle on \(\mathbb{R}\)}},
+  fonttitle=\small\bfseries
+]
+\textbf{Theorem.}
+Let \(f:\mathbb{R}\to\mathbb{R}\). Suppose there is a constant
+\(L\) with \(0\le L<1\) such that
+\[
+  |f(x)-f(y)|\le L|x-y|
+  \qquad
+  \text{for all }x,y\in\mathbb{R}.
+\]
+Fix \(x_0\in\mathbb{R}\), and define \(x_{n+1}=f(x_n)\). Then
+\((x_n)\) converges to a point \(x^\ast\in\mathbb{R}\),
+\[
+  f(x^\ast)=x^\ast,
+\]
+this fixed point is unique, every starting point converges to it, and
+\[
+  |x_n-x^\ast|\le L^n|x_0-x^\ast|,
+  \qquad
+  |x_n-x^\ast|\le \frac{L^n}{1-L}|x_1-x_0|.
+\]
+\end{tcolorbox}
+
+\begin{remark*}[Abstract]
+This capstone is the chapter's completeness payoff. The hypothesis is only a
+distance-shrinking inequality; no continuity theorem is used. The orbit first
+proves itself Cauchy by geometric decay of its successive steps. Completeness
+then supplies a limit, and only afterward does the contraction inequality
+identify that limit as the fixed point.
+\end{remark*}
+
+\begin{remark*}[Orientation]
+The orbit is the sequence
+\[
+  x_0,\quad f(x_0),\quad f(f(x_0)),\quad \ldots .
+\]
+A fixed point is a point \(x^\ast\) satisfying \(f(x^\ast)=x^\ast\). The
+contraction hypothesis says that applying \(f\) pulls every pair of points at
+least a factor \(L<1\) closer. The proof cannot aim at \(x^\ast\), because no
+fixed point has been produced yet. Instead it shows that the orbit crowds
+together internally, invokes the Cauchy criterion, and then checks what the
+limit must be.
+\end{remark*}
+
+\begin{remark*}[Step 1: one step is controlled by the previous step]
+For every \(n\ge 1\),
+\[
+  |x_{n+1}-x_n|
+  =
+  |f(x_n)-f(x_{n-1})|
+  \le
+  L|x_n-x_{n-1}|.
+\]
+This is the contraction hypothesis applied to the pair
+\((x_n,x_{n-1})\).
+\end{remark*}
+
+\begin{remark*}[Step 2: every step is controlled by the first step]
+For every \(n\ge 0\),
+\[
+  |x_{n+1}-x_n|\le L^n|x_1-x_0|.
+\]
+The case \(n=0\) is equality. If the estimate holds at \(n-1\), then Step 1
+gives
+\[
+  |x_{n+1}-x_n|
+  \le
+  L|x_n-x_{n-1}|
+  \le
+  L\cdot L^{n-1}|x_1-x_0|
+  =
+  L^n|x_1-x_0|.
+\]
+Induction proves the estimate.
+\end{remark*}
+
+\begin{remark*}[Step 3: the orbit is Cauchy]
+Let \(m>n\). Telescoping and applying the triangle inequality gives
+\[
+  |x_m-x_n|
+  =
+  \left|\sum_{k=n}^{m-1}(x_{k+1}-x_k)\right|
+  \le
+  \sum_{k=n}^{m-1}|x_{k+1}-x_k|
+  \le
+  \sum_{k=n}^{m-1}L^k|x_1-x_0|.
+\]
+Since \(0\le L<1\),
+\[
+  \sum_{k=n}^{m-1}L^k
+  =
+  L^n\frac{1-L^{m-n}}{1-L}
+  \le
+  \frac{L^n}{1-L}.
+\]
+Hence
+\[
+  |x_m-x_n|
+  \le
+  \frac{L^n}{1-L}|x_1-x_0|. \tag{\(\ast\)}
+\]
+Because \(L^n\to0\), the right-hand side tends to \(0\). Thus for every
+\(\varepsilon>0\) there is \(N\) such that \(m>n\ge N\) implies
+\(|x_m-x_n|<\varepsilon\). The orbit is Cauchy.
+\end{remark*}
+
+\begin{remark*}[Step 4: completeness produces the limit]
+By the Cauchy criterion for real sequences, every Cauchy sequence of real
+numbers converges. Therefore there is \(x^\ast\in\mathbb{R}\) such that
+\[
+  x_n\to x^\ast .
+\]
+This is the only step in which a limit not given by a formula is brought into
+existence.
+\end{remark*}
+
+\begin{remark*}[Step 5: the limit is a fixed point]
+For every \(n\),
+\[
+\begin{aligned}
+  |x^\ast-f(x^\ast)|
+  &\le |x^\ast-x_{n+1}|+|x_{n+1}-f(x^\ast)|\\
+  &= |x^\ast-x_{n+1}|+|f(x_n)-f(x^\ast)|\\
+  &\le |x^\ast-x_{n+1}|+L|x_n-x^\ast|.
+\end{aligned}
+\]
+The shifted sequence \(x_{n+1}\) also converges to \(x^\ast\), and
+\(|x_n-x^\ast|\to0\). The right-hand side therefore tends to \(0\). Since
+\(|x^\ast-f(x^\ast)|\) is a fixed nonnegative number bounded above by a null
+sequence, it is \(0\). Hence \(f(x^\ast)=x^\ast\).
+\end{remark*}
+
+\begin{remark*}[Step 6: uniqueness and convergence from every start]
+If \(p\) and \(q\) are fixed points, then
+\[
+  |p-q|
+  =
+  |f(p)-f(q)|
+  \le
+  L|p-q|.
+\]
+Thus
+\[
+  0\le (1-L)|p-q|\le0.
+\]
+Since \(1-L>0\), we have \(|p-q|=0\), so \(p=q\). The construction above
+started from an arbitrary \(x_0\), and uniqueness forces every such orbit to
+converge to the same fixed point.
+\end{remark*}
+
+\begin{remark*}[Step 7: rates]
+Once \(x^\ast\) is known to be fixed,
+\[
+  |x_n-x^\ast|
+  =
+  |f(x_{n-1})-f(x^\ast)|
+  \le
+  L|x_{n-1}-x^\ast|.
+\]
+Induction gives
+\[
+  |x_n-x^\ast|\le L^n|x_0-x^\ast|.
+\]
+For the computable estimate, fix \(n\) in \((\ast)\) and let \(m\to\infty\).
+Using \(x_m\to x^\ast\) and preservation of eventual order under limits gives
+\[
+  |x_n-x^\ast|
+  \le
+  \frac{L^n}{1-L}|x_1-x_0|.
+\]
+\end{remark*}
+
+\begin{remark*}[Limits of the theorem]
+The strict inequality \(L<1\) is essential. At \(L=1\), a map may preserve
+distances without having any fixed point; for example \(f(x)=x+1\). The
+general theorem replaces \(\mathbb{R}\) by any complete metric space and
+\(|x-y|\) by the metric \(d(x,y)\). That version is the Banach fixed-point
+theorem and belongs to the metric-spaces layer.
+\end{remark*}
+
+\begin{remark*}[Forward connection]
+Later, the continuity chapter names the hypothesis as a Lipschitz condition
+with constant \(L<1\). Here the name is deliberately avoided: the proof uses
+only the inequality, geometric decay, and Cauchy completeness. The same
+iteration idea becomes Picard iteration when differential equations are
+recast as fixed-point problems for integral operators.
+\end{remark*}
+
+\begin{remark*}[Dependencies to state]
+\begin{itemize}
+  \item \hyperref[def:sequence]{Sequence}
+  \item \hyperref[def:convergent-sequence]{Convergence of a Sequence}
+  \item \hyperref[def:cauchy-sequence]{Cauchy Sequence}
+\end{itemize}
+\end{remark*}
+
+\begin{remark*}[Dependencies to prove]
+\begin{itemize}
+  \item \hyperref[thm:cauchy-criterion-real-sequences]{Cauchy Criterion for Real Sequences}
+  \item \hyperref[thm:ratio-limit-less-than-one-implies-null]{Ratio Limit Less Than One Implies Null}
+  \item \hyperref[thm:subsequences-preserve-limits]{Subsequences Preserve Limits}
+  \item \hyperref[thm:constant-comparison-for-sequence-limits]{Constant Comparison for Sequence Limits}
+  \item \hyperref[thm:limit-preserves-eventual-order]{Limit Preserves Eventual Order}
+\end{itemize}
+\end{remark*}
+
+\begin{remark*}[Dependency ceiling]
+This capstone may use only real-number arithmetic, absolute value and the
+triangle inequality, finite geometric sums, and sequence results routed at or
+before the Sequences chapter. It must not use continuity, Lipschitz maps as a
+named concept, metric-space completeness, or the Banach fixed-point theorem.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:sequence]{Sequence}
+  \item \hyperref[def:convergent-sequence]{Convergence of a Sequence}
+  \item \hyperref[def:cauchy-sequence]{Cauchy Sequence}
+  \item \hyperref[thm:cauchy-criterion-real-sequences]{Cauchy Criterion for Real Sequences}
+  \item \hyperref[thm:ratio-limit-less-than-one-implies-null]{Ratio Limit Less Than One Implies Null}
+  \item \hyperref[thm:subsequences-preserve-limits]{Subsequences Preserve Limits}
+  \item \hyperref[thm:constant-comparison-for-sequence-limits]{Constant Comparison for Sequence Limits}
+  \item \hyperref[thm:limit-preserves-eventual-order]{Limit Preserves Eventual Order}
+\end{itemize}
+\end{dependencies}
+
+\clearpage
+\fi
