@@ -1,5 +1,5 @@
 % =========================================================
-% volume-iii.tex --- Standalone root for Volume III
+% volume-iii.tex --- Standalone volume root
 % Volume III: Classical Analysis
 %
 % Build (local): latexmk -lualatex volume-iii.tex
@@ -13,11 +13,10 @@
 \renewcommand{\familydefault}{\rmdefault}
 
 \pagenumbering{roman}
-\input{volume-iii/hilbert-quote}
-\input{volume-iii/volume-iii-title}
-\input{volume-iii/torus}
+\input{volume-iii/frontmatter}
+\LRAFrontMatterPage{From Cantor to Ito}{Classical Analysis}{}{Augustin-Louis Cauchy}{1789-1857}{images/cauchy.png}
+\input{common/dedication}
 
-\clearpage
 \tableofcontents
 \clearpage
 \pagenumbering{arabic}
@@ -31,7 +30,7 @@
   bibliography/volume-iii-bounds-sequences-and-series,%
   bibliography/volume-iii-continuity,%
   bibliography/volume-iii-differentiation,%
-  bibliography/volume-iii-integration%
+  bibliography/volume-iii-integration
 }
 
 \printindex[tech]
