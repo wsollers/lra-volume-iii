@@ -1,0 +1,888 @@
+\begin{remark*}[Exposition]
+Tao introduces finite series by first fixing a finite real sequence indexed
+by consecutive integers and then defining its sum recursively
+\cite{TaoAnalysis1}. The source bundles these conventions into one
+definition; here they are split into atomic definitions.
+\end{remark*}
+
+\begin{definitionbox}{Definition (Finite Real Sequence on an Integer Interval)}
+% ---------------------------------------------------------
+% Definition: Finite Real Sequence on an Integer Interval
+% Label: def:finite-real-sequence-integer-interval
+% Source: Tao, Analysis I, Definition 7.1.1
+% ---------------------------------------------------------
+\begin{definition}[Finite Real Sequence on an Integer Interval]
+\label{def:finite-real-sequence-integer-interval}
+
+Let \(m,n \in \mathbb{Z}\) with \(m \le n\). A finite real sequence indexed
+from \(m\) to \(n\) is an assignment of a real number \(a_i\) to each
+integer \(i\) satisfying \(m \le i \le n\). We denote such a sequence by
+\((a_i)_{i=m}^{n}\).
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Interpretation]
+The indices form the integer interval \(\{m,m+1,\ldots,n\}\). The notation
+\((a_i)_{i=m}^{n}\) records both the terms and the finite range of indices
+on which the terms are defined.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:real-sequence]{Real Sequence}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition (Empty Finite Sum)}
+% ---------------------------------------------------------
+% Definition: Empty Finite Sum
+% Label: def:empty-finite-sum
+% Source: Tao, Analysis I, Definition 7.1.1
+% ---------------------------------------------------------
+\begin{definition}[Empty Finite Sum]
+\label{def:empty-finite-sum}
+
+Let \(m,n \in \mathbb{Z}\). If \(n < m\), the finite sum from \(m\) to
+\(n\) is defined by
+\[
+  \sum_{i=m}^{n} a_i := 0.
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Interpretation]
+When the upper index lies below the lower index, there are no terms to
+add. The sum is therefore assigned the additive identity \(0\).
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:finite-real-sequence-integer-interval]{Finite Real Sequence on an Integer Interval}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition (Finite Sum)}
+% ---------------------------------------------------------
+% Definition: Finite Sum
+% Label: def:finite-sum
+% Source: Tao, Analysis I, Definition 7.1.1
+% ---------------------------------------------------------
+\begin{definition}[Finite Sum]
+\label{def:finite-sum}
+
+Let \(m,n \in \mathbb{Z}\), and let real numbers \(a_i\) be assigned
+for the relevant integer indices. The notation
+\[
+  \sum_{i=m}^{n} a_i
+\]
+denotes the finite sum, or finite series, of the terms indexed from
+\(m\) to \(n\).
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \sum_{i=m}^{n} a_i
+  \quad\text{denotes the finite sum of the terms } a_i
+  \text{ indexed by } m \le i \le n.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This definition fixes the notation and name of the object being defined.
+The value of the object is then determined by the empty-sum convention
+and the recursive rule below.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:finite-real-sequence-integer-interval]{Finite Real Sequence on an Integer Interval}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition (Recursive Finite Sum)}
+% ---------------------------------------------------------
+% Definition: Recursive Finite Sum
+% Label: def:recursive-finite-sum
+% Source: Tao, Analysis I, Definition 7.1.1
+% ---------------------------------------------------------
+\begin{definition}[Recursive Finite Sum]
+\label{def:recursive-finite-sum}
+
+Let \(m \in \mathbb{Z}\), and let real numbers \(a_i\) be assigned for
+the relevant indices. The finite sum, also called a finite series, is
+defined recursively from the empty finite sum by the rule
+\[
+  \sum_{i=m}^{n+1} a_i
+  :=
+  \left(\sum_{i=m}^{n} a_i\right) + a_{n+1}
+  \qquad \text{whenever } n \ge m-1.
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall m,n \in \mathbb{Z},\quad
+  n \ge m-1
+  \Longrightarrow
+  \sum_{i=m}^{n+1} a_i
+  :=
+  \left(\sum_{i=m}^{n} a_i\right)+a_{n+1}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The recursive rule says that extending the upper endpoint by one index
+extends the sum by adding exactly the new last term. Together with the
+empty-sum convention, this determines every finite sum.
+\end{remark*}
+
+\begin{remark*}[Examples]
+For a sequence indexed from \(m\), the first few cases are
+\[
+  \sum_{i=m}^{m-2} a_i = 0,\qquad
+  \sum_{i=m}^{m-1} a_i = 0,\qquad
+  \sum_{i=m}^{m} a_i = a_m,
+\]
+and
+\[
+  \sum_{i=m}^{m+1} a_i = a_m+a_{m+1},\qquad
+  \sum_{i=m}^{m+2} a_i = a_m+a_{m+1}+a_{m+2}.
+\]
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:empty-finite-sum]{Empty Finite Sum}
+  \item \hyperref[def:finite-sum]{Finite Sum}
+  \item \hyperref[def:finite-real-sequence-integer-interval]{Finite Real Sequence on an Integer Interval}
+\end{itemize}
+\end{dependencies}
+
+\begin{lemmabox}{Lemma (Splitting a Finite Sum)}
+% ---------------------------------------------------------
+% Lemma: Splitting a Finite Sum
+% Label: lem:finite-sum-splitting
+% Source: Tao, Analysis I, Lemma 7.1.4(a)
+% ---------------------------------------------------------
+\begin{lemma}[Splitting a Finite Sum]
+\label{lem:finite-sum-splitting}
+
+Let \(m \le n < p\) be integers, and let \(a_i\) be a real number
+assigned to each integer \(i\) satisfying \(m \le i \le p\). Then
+\[
+  \sum_{i=m}^{n} a_i
+  +
+  \sum_{i=n+1}^{p} a_i
+  =
+  \sum_{i=m}^{p} a_i.
+\]
+
+\smallskip
+\noindent
+\hyperref[prf:finite-sum-splitting]{\textit{Go to proof.}}
+\end{lemma}
+\end{lemmabox}
+
+\begin{remark*}[Interpretation]
+A finite sum over one integer interval may be split into two adjacent
+finite sums without changing its value.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:recursive-finite-sum]{Recursive Finite Sum}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition (Summation over a Finite Set)}
+% ---------------------------------------------------------
+% Definition: Summation over a Finite Set
+% Label: def:summation-over-finite-set
+% Source: Tao, Analysis I, Definition 7.1.6
+% ---------------------------------------------------------
+\begin{definition}[Summation over a Finite Set]
+\label{def:summation-over-finite-set}
+
+Let \(X\) be a finite set with \(n\) elements, where \(n \in \mathbb{N}\),
+and let \(f:X\to\mathbb{R}\). Choose a bijection
+\[
+  g:\{i\in\mathbb{N}:1\le i\le n\}\to X.
+\]
+The finite sum of \(f\) over \(X\) is defined by
+\[
+  \sum_{x\in X} f(x)
+  :=
+  \sum_{i=1}^{n} f(g(i)).
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  X=\{g(1),\ldots,g(n)\}
+  \quad\Longrightarrow\quad
+  \sum_{x\in X} f(x)
+  :=
+  \sum_{i=1}^{n} f(g(i)).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The definition computes a sum over an unordered finite set by first listing
+its elements through a bijection from \(\{1,\ldots,n\}\). The notation
+\(\sum_{x\in X}f(x)\) records the set being summed over; the chosen listing
+is auxiliary.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:finite-sum]{Finite Sum}
+\end{itemize}
+\end{dependencies}
+
+\begin{propositionbox}{Proposition (Finite Summations Are Well-Defined)}
+% ---------------------------------------------------------
+% Proposition: Finite Summations Are Well-Defined
+% Label: prop:finite-summations-well-defined
+% Source: Tao, Analysis I, Proposition 7.1.8
+% ---------------------------------------------------------
+\begin{proposition}[Finite Summations Are Well-Defined]
+\label{prop:finite-summations-well-defined}
+
+Let \(X\) be a finite set with \(n\) elements, where \(n \in \mathbb{N}\),
+let \(f:X\to\mathbb{R}\), and let
+\[
+  g:\{i\in\mathbb{N}:1\le i\le n\}\to X
+  \qquad\text{and}\qquad
+  h:\{i\in\mathbb{N}:1\le i\le n\}\to X
+\]
+be bijections. Then
+\[
+  \sum_{i=1}^{n} f(g(i))
+  =
+  \sum_{i=1}^{n} f(h(i)).
+\]
+
+\smallskip
+\noindent
+\hyperref[prf:finite-summations-well-defined]{\textit{Go to proof.}}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Interpretation]
+The value of a finite summation over a finite set does not depend on which
+bijection is used to list the elements of that set. Tao notes that the
+corresponding issue for summations over infinite sets is more complicated.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:summation-over-finite-set]{Summation over a Finite Set}
+\end{itemize}
+\end{dependencies}
+
+\begin{propositionbox}{Proposition (Empty Finite Set Summation)}
+% ---------------------------------------------------------
+% Proposition: Empty Finite Set Summation
+% Label: prop:empty-finite-set-summation
+% Source: Tao, Analysis I, Proposition 7.1.11(a)
+% ---------------------------------------------------------
+\begin{proposition}[Empty Finite Set Summation]
+\label{prop:empty-finite-set-summation}
+
+If \(X\) is empty, and \(f:X\to\mathbb{R}\) is a function, then
+\[
+  \sum_{x\in X} f(x)=0.
+\]
+
+\smallskip
+\noindent
+\hyperref[prf:empty-finite-set-summation]{\textit{Go to proof.}}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Interpretation]
+The finite summation over the empty set has value \(0\).
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:summation-over-finite-set]{Summation over a Finite Set}
+\end{itemize}
+\end{dependencies}
+
+\begin{propositionbox}{Proposition (Singleton Finite Set Summation)}
+% ---------------------------------------------------------
+% Proposition: Singleton Finite Set Summation
+% Label: prop:singleton-finite-set-summation
+% Source: Tao, Analysis I, Proposition 7.1.11(b)
+% ---------------------------------------------------------
+\begin{proposition}[Singleton Finite Set Summation]
+\label{prop:singleton-finite-set-summation}
+
+If \(X\) consists of a single element, \(X=\{x_0\}\), and
+\(f:X\to\mathbb{R}\) is a function, then
+\[
+  \sum_{x\in X} f(x)=f(x_0).
+\]
+
+\smallskip
+\noindent
+\hyperref[prf:singleton-finite-set-summation]{\textit{Go to proof.}}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Interpretation]
+Summing a function over a one-element set gives the value of the function
+at that element.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:summation-over-finite-set]{Summation over a Finite Set}
+\end{itemize}
+\end{dependencies}
+
+\begin{propositionbox}{Proposition (Substitution for Finite Set Summation)}
+% ---------------------------------------------------------
+% Proposition: Substitution for Finite Set Summation
+% Label: prop:substitution-finite-set-summation
+% Source: Tao, Analysis I, Proposition 7.1.11(c)
+% ---------------------------------------------------------
+\begin{proposition}[Substitution for Finite Set Summation]
+\label{prop:substitution-finite-set-summation}
+
+If \(X\) is a finite set, \(f:X\to\mathbb{R}\) is a function, and
+\(g:Y\to X\) is a bijection, then
+\[
+  \sum_{x\in X} f(x)
+  =
+  \sum_{y\in Y} f(g(y)).
+\]
+
+\smallskip
+\noindent
+\hyperref[prf:substitution-finite-set-summation]{\textit{Go to proof.}}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Interpretation]
+A finite summation over \(X\) may be computed by summing over any set
+bijective with \(X\), after composing the summand with the bijection.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:summation-over-finite-set]{Summation over a Finite Set}
+  \item \hyperref[prop:finite-summations-well-defined]{Finite Summations Are Well-Defined}
+\end{itemize}
+\end{dependencies}
+
+\begin{propositionbox}{Proposition (Integer Interval as a Finite Set)}
+% ---------------------------------------------------------
+% Proposition: Integer Interval as a Finite Set
+% Label: prop:integer-interval-finite-set-summation
+% Source: Tao, Analysis I, Proposition 7.1.11(d)
+% ---------------------------------------------------------
+\begin{proposition}[Integer Interval as a Finite Set]
+\label{prop:integer-interval-finite-set-summation}
+
+Let \(n \le m\) be integers, and let
+\[
+  X:=\{i\in\mathbb{Z}:n\le i\le m\}.
+\]
+If \(a_i\) is a real number assigned to each integer \(i\in X\), then
+\[
+  \sum_{i=n}^{m} a_i
+  =
+  \sum_{i\in X} a_i.
+\]
+
+\smallskip
+\noindent
+\hyperref[prf:integer-interval-finite-set-summation]{\textit{Go to proof.}}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Interpretation]
+Summing over a consecutive integer interval agrees with summing over that
+same interval regarded as a finite set.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:finite-sum]{Finite Sum}
+  \item \hyperref[def:summation-over-finite-set]{Summation over a Finite Set}
+\end{itemize}
+\end{dependencies}
+
+\begin{propositionbox}{Proposition (Disjoint Union Finite Set Summation)}
+% ---------------------------------------------------------
+% Proposition: Disjoint Union Finite Set Summation
+% Label: prop:disjoint-union-finite-set-summation
+% Source: Tao, Analysis I, Proposition 7.1.11(e)
+% ---------------------------------------------------------
+\begin{proposition}[Disjoint Union Finite Set Summation]
+\label{prop:disjoint-union-finite-set-summation}
+
+Let \(X\) and \(Y\) be disjoint finite sets, so \(X\cap Y=\emptyset\),
+and let \(f:X\cup Y\to\mathbb{R}\) be a function. Then
+\[
+  \sum_{z\in X\cup Y} f(z)
+  =
+  \left(\sum_{x\in X} f(x)\right)
+  +
+  \left(\sum_{y\in Y} f(y)\right).
+\]
+
+\smallskip
+\noindent
+\hyperref[prf:disjoint-union-finite-set-summation]{\textit{Go to proof.}}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Interpretation]
+A sum over a disjoint union splits into the sum over each component set.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:summation-over-finite-set]{Summation over a Finite Set}
+\end{itemize}
+\end{dependencies}
+
+\begin{propositionbox}{Proposition (Addition Rule for Finite Set Summation)}
+% ---------------------------------------------------------
+% Proposition: Addition Rule for Finite Set Summation
+% Label: prop:addition-rule-finite-set-summation
+% Source: Tao, Analysis I, Proposition 7.1.11(f)
+% ---------------------------------------------------------
+\begin{proposition}[Addition Rule for Finite Set Summation]
+\label{prop:addition-rule-finite-set-summation}
+
+Let \(X\) be a finite set, and let \(f:X\to\mathbb{R}\) and
+\(g:X\to\mathbb{R}\) be functions. Then
+\[
+  \sum_{x\in X} (f(x)+g(x))
+  =
+  \sum_{x\in X} f(x)
+  +
+  \sum_{x\in X} g(x).
+\]
+
+\smallskip
+\noindent
+\hyperref[prf:addition-rule-finite-set-summation]{\textit{Go to proof.}}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Interpretation]
+Finite set summation distributes over pointwise addition.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:summation-over-finite-set]{Summation over a Finite Set}
+\end{itemize}
+\end{dependencies}
+
+\begin{propositionbox}{Proposition (Scalar Multiplication Rule for Finite Set Summation)}
+% ---------------------------------------------------------
+% Proposition: Scalar Multiplication Rule for Finite Set Summation
+% Label: prop:scalar-multiplication-rule-finite-set-summation
+% Source: Tao, Analysis I, Proposition 7.1.11(g)
+% ---------------------------------------------------------
+\begin{proposition}[Scalar Multiplication Rule for Finite Set Summation]
+\label{prop:scalar-multiplication-rule-finite-set-summation}
+
+Let \(X\) be a finite set, let \(f:X\to\mathbb{R}\) be a function, and
+let \(c\) be a real number. Then
+\[
+  \sum_{x\in X} c f(x)
+  =
+  c \sum_{x\in X} f(x).
+\]
+
+\smallskip
+\noindent
+\hyperref[prf:scalar-multiplication-rule-finite-set-summation]{\textit{Go to proof.}}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Interpretation]
+A constant scalar may be pulled outside a finite set summation.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:summation-over-finite-set]{Summation over a Finite Set}
+\end{itemize}
+\end{dependencies}
+
+\begin{propositionbox}{Proposition (Monotonicity for Finite Set Summation)}
+% ---------------------------------------------------------
+% Proposition: Monotonicity for Finite Set Summation
+% Label: prop:monotonicity-finite-set-summation
+% Source: Tao, Analysis I, Proposition 7.1.11(h)
+% ---------------------------------------------------------
+\begin{proposition}[Monotonicity for Finite Set Summation]
+\label{prop:monotonicity-finite-set-summation}
+
+Let \(X\) be a finite set, and let \(f:X\to\mathbb{R}\) and
+\(g:X\to\mathbb{R}\) be functions such that \(f(x)\le g(x)\) for all
+\(x\in X\). Then
+\[
+  \sum_{x\in X} f(x)
+  \le
+  \sum_{x\in X} g(x).
+\]
+
+\smallskip
+\noindent
+\hyperref[prf:monotonicity-finite-set-summation]{\textit{Go to proof.}}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \bigl(\forall x\in X,\ f(x)\le g(x)\bigr)
+  \Longrightarrow
+  \sum_{x\in X} f(x)
+  \le
+  \sum_{x\in X} g(x).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Pointwise order between two functions on a finite set gives the same
+order between their finite sums.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:summation-over-finite-set]{Summation over a Finite Set}
+\end{itemize}
+\end{dependencies}
+
+\begin{propositionbox}{Proposition (Triangle Inequality for Finite Set Summation)}
+% ---------------------------------------------------------
+% Proposition: Triangle Inequality for Finite Set Summation
+% Label: prop:triangle-inequality-finite-set-summation
+% Source: Tao, Analysis I, Proposition 7.1.11(i)
+% ---------------------------------------------------------
+\begin{proposition}[Triangle Inequality for Finite Set Summation]
+\label{prop:triangle-inequality-finite-set-summation}
+
+Let \(X\) be a finite set, and let \(f:X\to\mathbb{R}\) be a function.
+Then
+\[
+  \left\lvert \sum_{x\in X} f(x) \right\rvert
+  \le
+  \sum_{x\in X} \lvert f(x)\rvert.
+\]
+
+\smallskip
+\noindent
+\hyperref[prf:triangle-inequality-finite-set-summation]{\textit{Go to proof.}}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Interpretation]
+The absolute value of a finite set summation is bounded by the
+corresponding finite set summation of absolute values.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:summation-over-finite-set]{Summation over a Finite Set}
+\end{itemize}
+\end{dependencies}
+
+\begin{lemmabox}{Lemma (Iterated Summation over a Product)}
+% ---------------------------------------------------------
+% Lemma: Iterated Summation over a Product
+% Label: lem:iterated-summation-over-product
+% Source: Tao, Analysis I, Lemma 7.1.13
+% ---------------------------------------------------------
+\begin{lemma}[Iterated Summation over a Product]
+\label{lem:iterated-summation-over-product}
+
+Let \(X\) and \(Y\) be finite sets, and let
+\(f:X\times Y\to\mathbb{R}\) be a function. Then
+\[
+  \sum_{x\in X}
+  \left(
+    \sum_{y\in Y} f(x,y)
+  \right)
+  =
+  \sum_{(x,y)\in X\times Y} f(x,y).
+\]
+
+\smallskip
+\noindent
+\hyperref[prf:iterated-summation-over-product]{\textit{Go to proof.}}
+\end{lemma}
+\end{lemmabox}
+
+\begin{remark*}[Interpretation]
+Summing first over \(Y\) for each \(x\in X\), and then summing those
+values over \(X\), gives the same value as summing over the product set
+\(X\times Y\).
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:summation-over-finite-set]{Summation over a Finite Set}
+\end{itemize}
+\end{dependencies}
+
+\begin{corollarybox}{Corollary (Fubini's Theorem for Finite Series)}
+% ---------------------------------------------------------
+% Corollary: Fubini's Theorem for Finite Series
+% Label: cor:fubini-theorem-finite-series
+% Source: Tao, Analysis I, Corollary 7.1.14
+% ---------------------------------------------------------
+\begin{corollary}[Fubini's Theorem for Finite Series]
+\label{cor:fubini-theorem-finite-series}
+
+Let \(X\) and \(Y\) be finite sets, and let
+\(f:X\times Y\to\mathbb{R}\) be a function. Then
+\[
+  \sum_{x\in X}
+  \left(
+    \sum_{y\in Y} f(x,y)
+  \right)
+  =
+  \sum_{(x,y)\in X\times Y} f(x,y)
+  =
+  \sum_{(y,x)\in Y\times X} f(x,y)
+  =
+  \sum_{y\in Y}
+  \left(
+    \sum_{x\in X} f(x,y)
+  \right).
+\]
+
+\smallskip
+\noindent
+\hyperref[prf:fubini-theorem-finite-series]{\textit{Go to proof.}}
+\end{corollary}
+\end{corollarybox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \sum_{x\in X}\left(\sum_{y\in Y} f(x,y)\right)
+  =
+  \sum_{y\in Y}\left(\sum_{x\in X} f(x,y)\right).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+For a function on a finite product set, the order of summation over the two
+finite factors may be interchanged.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[lem:iterated-summation-over-product]{Iterated Summation over a Product}
+  \item \hyperref[def:summation-over-finite-set]{Summation over a Finite Set}
+\end{itemize}
+\end{dependencies}
+
+\begin{lemmabox}{Lemma (Reindexing a Finite Sum)}
+% ---------------------------------------------------------
+% Lemma: Reindexing a Finite Sum
+% Label: lem:finite-sum-reindexing
+% Source: Tao, Analysis I, Lemma 7.1.4(b)
+% ---------------------------------------------------------
+\begin{lemma}[Reindexing a Finite Sum]
+\label{lem:finite-sum-reindexing}
+
+Let \(m \le n\) be integers, let \(k\) be an integer, and let \(a_i\)
+be a real number assigned to each integer \(i\) satisfying \(m \le i
+\le n\). Then
+\[
+  \sum_{i=m}^{n} a_i
+  =
+  \sum_{j=m+k}^{n+k} a_{j-k}.
+\]
+
+\smallskip
+\noindent
+\hyperref[prf:finite-sum-reindexing]{\textit{Go to proof.}}
+\end{lemma}
+\end{lemmabox}
+
+\begin{remark*}[Interpretation]
+Shifting every index by the same integer changes the labels of the
+summation but not the ordered list of terms being summed.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:recursive-finite-sum]{Recursive Finite Sum}
+\end{itemize}
+\end{dependencies}
+
+\begin{lemmabox}{Lemma (Finite Sum of Sums)}
+% ---------------------------------------------------------
+% Lemma: Finite Sum of Sums
+% Label: lem:finite-sum-of-sums
+% Source: Tao, Analysis I, Lemma 7.1.4(c)
+% ---------------------------------------------------------
+\begin{lemma}[Finite Sum of Sums]
+\label{lem:finite-sum-of-sums}
+
+Let \(m \le n\) be integers, and let \(a_i\) and \(b_i\) be real
+numbers assigned to each integer \(i\) satisfying \(m \le i \le n\).
+Then
+\[
+  \sum_{i=m}^{n} (a_i+b_i)
+  =
+  \left(\sum_{i=m}^{n} a_i\right)
+  +
+  \left(\sum_{i=m}^{n} b_i\right).
+\]
+
+\smallskip
+\noindent
+\hyperref[prf:finite-sum-of-sums]{\textit{Go to proof.}}
+\end{lemma}
+\end{lemmabox}
+
+\begin{remark*}[Interpretation]
+Finite summation distributes over termwise addition.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:recursive-finite-sum]{Recursive Finite Sum}
+\end{itemize}
+\end{dependencies}
+
+\begin{lemmabox}{Lemma (Finite Sum of Scalar Multiples)}
+% ---------------------------------------------------------
+% Lemma: Finite Sum of Scalar Multiples
+% Label: lem:finite-sum-scalar-multiple
+% Source: Tao, Analysis I, Lemma 7.1.4(d)
+% ---------------------------------------------------------
+\begin{lemma}[Finite Sum of Scalar Multiples]
+\label{lem:finite-sum-scalar-multiple}
+
+Let \(m \le n\) be integers, let \(a_i\) be a real number assigned to
+each integer \(i\) satisfying \(m \le i \le n\), and let
+\(c \in \mathbb{R}\). Then
+\[
+  \sum_{i=m}^{n} (c a_i)
+  =
+  c\left(\sum_{i=m}^{n} a_i\right).
+\]
+
+\smallskip
+\noindent
+\hyperref[prf:finite-sum-scalar-multiple]{\textit{Go to proof.}}
+\end{lemma}
+\end{lemmabox}
+
+\begin{remark*}[Interpretation]
+A common scalar factor may be pulled outside a finite sum.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:recursive-finite-sum]{Recursive Finite Sum}
+\end{itemize}
+\end{dependencies}
+
+\begin{lemmabox}{Lemma (Triangle Inequality for Finite Series)}
+% ---------------------------------------------------------
+% Lemma: Triangle Inequality for Finite Series
+% Label: lem:triangle-inequality-finite-series
+% Source: Tao, Analysis I, Lemma 7.1.4(e)
+% ---------------------------------------------------------
+\begin{lemma}[Triangle Inequality for Finite Series]
+\label{lem:triangle-inequality-finite-series}
+
+Let \(m \le n\) be integers, and let \(a_i\) be a real number assigned
+to each integer \(i\) satisfying \(m \le i \le n\). Then
+\[
+  \left\lvert \sum_{i=m}^{n} a_i \right\rvert
+  \le
+  \sum_{i=m}^{n} \lvert a_i\rvert.
+\]
+
+\smallskip
+\noindent
+\hyperref[prf:triangle-inequality-finite-series]{\textit{Go to proof.}}
+\end{lemma}
+\end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall m,n \in \mathbb{Z},\quad
+  m \le n
+  \Longrightarrow
+  \left\lvert \sum_{i=m}^{n} a_i \right\rvert
+  \le
+  \sum_{i=m}^{n} \lvert a_i\rvert.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The absolute value of a finite series is bounded by the corresponding
+finite series of absolute values.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:recursive-finite-sum]{Recursive Finite Sum}
+\end{itemize}
+\end{dependencies}
+
+\begin{lemmabox}{Lemma (Comparison Test for Finite Series)}
+% ---------------------------------------------------------
+% Lemma: Comparison Test for Finite Series
+% Label: lem:comparison-test-finite-series
+% Source: Tao, Analysis I, Lemma 7.1.4(f)
+% ---------------------------------------------------------
+\begin{lemma}[Comparison Test for Finite Series]
+\label{lem:comparison-test-finite-series}
+
+Let \(m \le n\) be integers, and let \(a_i\) and \(b_i\) be real
+numbers assigned to each integer \(i\) satisfying \(m \le i \le n\).
+Suppose that \(a_i \le b_i\) for all \(i\) satisfying \(m \le i \le n\).
+Then
+\[
+  \sum_{i=m}^{n} a_i
+  \le
+  \sum_{i=m}^{n} b_i.
+\]
+
+\smallskip
+\noindent
+\hyperref[prf:comparison-test-finite-series]{\textit{Go to proof.}}
+\end{lemma}
+\end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall i\,(m \le i \le n \Longrightarrow a_i \le b_i)
+  \Longrightarrow
+  \sum_{i=m}^{n} a_i
+  \le
+  \sum_{i=m}^{n} b_i.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Termwise comparison of two finite series gives comparison of their finite
+sums.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:recursive-finite-sum]{Recursive Finite Sum}
+\end{itemize}
+\end{dependencies}

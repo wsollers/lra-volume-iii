@@ -1,0 +1,50 @@
+\newpage
+\phantomsection
+\label{prf:fubini-theorem-finite-series}
+\LRAProofFor{cor:fubini-theorem-finite-series}
+
+\begin{remark*}[Return]
+\hyperref[cor:fubini-theorem-finite-series]{Return to Corollary}
+\end{remark*}
+
+\begin{corollary*}[Fubini's Theorem for Finite Series]
+Let \(X\) and \(Y\) be finite sets, and let
+\(f:X\times Y\to\mathbb{R}\) be a function. Then
+\[
+  \sum_{x\in X}
+  \left(
+    \sum_{y\in Y} f(x,y)
+  \right)
+  =
+  \sum_{(x,y)\in X\times Y} f(x,y)
+  =
+  \sum_{(y,x)\in Y\times X} f(x,y)
+  =
+  \sum_{y\in Y}
+  \left(
+    \sum_{x\in X} f(x,y)
+  \right).
+\]
+\end{corollary*}
+
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+TODO: professional standard proof for fubini-theorem-finite-series.
+\end{proof}
+
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+TODO: detailed learning proof for fubini-theorem-finite-series.
+\end{proof}
+
+\begin{remark*}[Proof structure]
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[lem:iterated-summation-over-product]{Iterated Summation over a Product}
+  \item \hyperref[def:summation-over-finite-set]{Summation over a Finite Set}
+\end{itemize}
+\end{dependencies}
+
+\clearpage

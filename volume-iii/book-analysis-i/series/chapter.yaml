@@ -1,12 +1,132 @@
 subject: series
 display_title: ''
 volume: volume-iii
-status: planned
+status: in-progress
 dependencies:
   prior: ''
   next: ''
 path: volume-iii/book-analysis-i/series
-environments: []
+environments:
+- label: def:finite-real-sequence-integer-interval
+  type: def
+  file: notes\finite-series\finite-series.tex
+  display_title: Finite Real Sequence on an Integer Interval
+  proof_file: null
+- label: def:empty-finite-sum
+  type: def
+  file: notes\finite-series\finite-series.tex
+  display_title: Empty Finite Sum
+  proof_file: null
+- label: def:finite-sum
+  type: def
+  file: notes\finite-series\finite-series.tex
+  display_title: Finite Sum
+  proof_file: null
+- label: def:recursive-finite-sum
+  type: def
+  file: notes\finite-series\finite-series.tex
+  display_title: Recursive Finite Sum
+  proof_file: null
+- label: lem:finite-sum-splitting
+  type: lem
+  file: notes\finite-series\finite-series.tex
+  display_title: Splitting a Finite Sum
+  proof_file: proofs\finite-series\prf-finite-sum-splitting.tex
+- label: lem:finite-sum-reindexing
+  type: lem
+  file: notes\finite-series\finite-series.tex
+  display_title: Reindexing a Finite Sum
+  proof_file: proofs\finite-series\prf-finite-sum-reindexing.tex
+- label: lem:finite-sum-of-sums
+  type: lem
+  file: notes\finite-series\finite-series.tex
+  display_title: Finite Sum of Sums
+  proof_file: proofs\finite-series\prf-finite-sum-of-sums.tex
+- label: lem:finite-sum-scalar-multiple
+  type: lem
+  file: notes\finite-series\finite-series.tex
+  display_title: Finite Sum of Scalar Multiples
+  proof_file: proofs\finite-series\prf-finite-sum-scalar-multiple.tex
+- label: lem:triangle-inequality-finite-series
+  type: lem
+  file: notes\finite-series\finite-series.tex
+  display_title: Triangle Inequality for Finite Series
+  proof_file: proofs\finite-series\prf-triangle-inequality-finite-series.tex
+- label: lem:comparison-test-finite-series
+  type: lem
+  file: notes\finite-series\finite-series.tex
+  display_title: Comparison Test for Finite Series
+  proof_file: proofs\finite-series\prf-comparison-test-finite-series.tex
+- label: def:summation-over-finite-set
+  type: def
+  file: notes\finite-series\finite-series.tex
+  display_title: Summation over a Finite Set
+  proof_file: null
+- label: prop:finite-summations-well-defined
+  type: prop
+  file: notes\finite-series\finite-series.tex
+  display_title: Finite Summations Are Well-Defined
+  proof_file: proofs\finite-series\prf-finite-summations-well-defined.tex
+- label: prop:empty-finite-set-summation
+  type: prop
+  file: notes\finite-series\finite-series.tex
+  display_title: Empty Finite Set Summation
+  proof_file: proofs\finite-series\prf-empty-finite-set-summation.tex
+- label: prop:singleton-finite-set-summation
+  type: prop
+  file: notes\finite-series\finite-series.tex
+  display_title: Singleton Finite Set Summation
+  proof_file: proofs\finite-series\prf-singleton-finite-set-summation.tex
+- label: prop:substitution-finite-set-summation
+  type: prop
+  file: notes\finite-series\finite-series.tex
+  display_title: Substitution for Finite Set Summation
+  proof_file: proofs\finite-series\prf-substitution-finite-set-summation.tex
+- label: prop:integer-interval-finite-set-summation
+  type: prop
+  file: notes\finite-series\finite-series.tex
+  display_title: Integer Interval as a Finite Set
+  proof_file: proofs\finite-series\prf-integer-interval-finite-set-summation.tex
+- label: prop:disjoint-union-finite-set-summation
+  type: prop
+  file: notes\finite-series\finite-series.tex
+  display_title: Disjoint Union Finite Set Summation
+  proof_file: proofs\finite-series\prf-disjoint-union-finite-set-summation.tex
+- label: prop:addition-rule-finite-set-summation
+  type: prop
+  file: notes\finite-series\finite-series.tex
+  display_title: Addition Rule for Finite Set Summation
+  proof_file: proofs\finite-series\prf-addition-rule-finite-set-summation.tex
+- label: prop:scalar-multiplication-rule-finite-set-summation
+  type: prop
+  file: notes\finite-series\finite-series.tex
+  display_title: Scalar Multiplication Rule for Finite Set Summation
+  proof_file: proofs\finite-series\prf-scalar-multiplication-rule-finite-set-summation.tex
+- label: prop:monotonicity-finite-set-summation
+  type: prop
+  file: notes\finite-series\finite-series.tex
+  display_title: Monotonicity for Finite Set Summation
+  proof_file: proofs\finite-series\prf-monotonicity-finite-set-summation.tex
+- label: prop:triangle-inequality-finite-set-summation
+  type: prop
+  file: notes\finite-series\finite-series.tex
+  display_title: Triangle Inequality for Finite Set Summation
+  proof_file: proofs\finite-series\prf-triangle-inequality-finite-set-summation.tex
+- label: lem:iterated-summation-over-product
+  type: lem
+  file: notes\finite-series\finite-series.tex
+  display_title: Iterated Summation over a Product
+  proof_file: proofs\finite-series\prf-iterated-summation-over-product.tex
+- label: cor:fubini-theorem-finite-series
+  type: cor
+  file: notes\finite-series\finite-series.tex
+  display_title: Fubini's Theorem for Finite Series
+  proof_file: proofs\finite-series\prf-fubini-theorem-finite-series.tex
+- label: def:formal-infinite-series
+  type: def
+  file: notes\infinite-series\infinite-series.tex
+  display_title: Formal Infinite Series
+  proof_file: null
 proof_files: []
 
 book: book-analysis-i
