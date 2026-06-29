@@ -1,18 +1,20 @@
 \section{Asymptotic Notation}
 \label{sec:asymptotic-notation}
 
-\begin{toolkitbox}{Toolkit: Asymptotic Notation}
-Asymptotic notation records relative size near a limiting process. The atomic
-notions formalised below are:
-\begin{itemize}
-  \item \textbf{little-o at a point} --- one function is negligible compared
-        with another as the input approaches a point;
-  \item \textbf{little-o at infinity} --- the same negligible comparison along
-        an unbounded input range;
-  \item \textbf{increment form} --- the notation $r(h)=o(h)$ as $h\to 0$;
-  \item \textbf{algebra rules} --- sums and bounded factors preserve
-        negligible errors;
-\end{itemize}
+\begin{toolkitbox}{Asymptotic Notation --- Quick Reference}
+\small
+\begin{tabular}{l l}
+\toprule
+\textbf{Concept/Statement} & \textbf{Meaning/Role}\\
+\midrule
+\hyperref[def:little-o-at-a-point]{Little-$o$ at a point} & One function is negligible relative to another near a point.\\
+\hyperref[def:little-o-at-infinity]{Little-$o$ at infinity} & Negligibility along an unbounded input range.\\
+\hyperref[def:increment-little-o]{Increment little-$o$} & The local error notation $r(h)=o(h)$ as $h\to0$.\\
+\hyperref[prop:little-o-quotient-characterization]{Quotient criterion} & Little-$o$ is detected by a quotient tending to $0$.\\
+\hyperref[prop:little-o-sum-rule]{Sum rule} & Negligible errors add.\\
+\hyperref[prop:little-o-bounded-factor-rule]{Bounded factor rule} & Bounded multipliers preserve negligible errors.\\
+\bottomrule
+\end{tabular}
 \end{toolkitbox}
 
 \input{volume-iii/book-analysis-i/real-analysis/notes/asymptotic-notation/notes-asymptotic-notation}

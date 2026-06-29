@@ -1,17 +1,21 @@
-\section{Taylor Expansion}
+\section{Taylor: Construction and Its Error}
 
-\begin{toolkitbox}{Taylor Expansion Toolkit}
-\textbf{Concept family:} Taylor polynomials, Taylor remainders, and Taylor's theorem.
-
-\medskip
-\textbf{Atomic items in this section:}
-\begin{itemize}
-  \item Definition: Taylor Polynomial at a Point
-  \item Definition: Taylor Remainder
-  \item Definition: Maclaurin Polynomial
-  \item Theorem: Taylor's Theorem with Lagrange Remainder
-  \item Corollary: Taylor Expansion with Peano Remainder
-\end{itemize}
+\begin{toolkitbox}{Taylor Expansion --- Quick Reference}
+\small
+\begin{tabular}{l l}
+\toprule
+\textbf{Concept} & \textbf{Meaning} \\
+\midrule
+\hyperref[def:taylor-polynomial-at-a-point]{Taylor polynomial} & Polynomial forced by derivative data at a point \\
+\hyperref[def:taylor-remainder]{Taylor remainder} & Exact error after subtracting the Taylor polynomial \\
+\hyperref[def:maclaurin-polynomial]{Maclaurin polynomial} & Taylor polynomial centered at \(0\) \\
+\hyperref[thm:taylor-theorem-lagrange-remainder]{Lagrange remainder} & Error controlled by an intermediate derivative value \\
+\hyperref[cor:taylor-expansion-peano-remainder]{Peano remainder} & Local asymptotic error smaller than the retained order \\
+\hyperref[ex:sinx-limit]{Example: \((\sin x-x)/x^3\)} & Taylor and L'H\^{o}pital compared on one limit \\
+\hyperref[prop:flat-function]{Flat function} & Smooth function whose Taylor series misses it \\
+\bottomrule
+\end{tabular}
 \end{toolkitbox}
 
 \input{volume-iii/book-analysis-iii/differentiation/notes/taylor-expansion/notes-taylor-expansion}
+\input{volume-iii/book-analysis-iii/differentiation/notes/taylor-expansion/notes-differential}

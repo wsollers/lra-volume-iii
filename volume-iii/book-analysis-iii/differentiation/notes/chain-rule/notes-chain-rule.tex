@@ -1,0 +1,216 @@
+% =========================================================
+% Section: Chain Rule
+% =========================================================
+% ---------------------------------------------------------
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Chain Rule]
+\label{thm:chain-rule}
+Let $I, J \subseteq \mathbb{R}$ be intervals, let $f : I \to \mathbb{R}$ and $g : J \to \mathbb{R}$, and suppose that $f(I) \subseteq J$. Let $c \in I$. If $f$ is differentiable at $c$ and $g$ is differentiable at $f(c)$, then the composition $g \circ f$ is differentiable at $c$, and
+\[
+(g \circ f)'(c) = g'(f(c))\,f'(c).
+\]
+\hyperref[prf:chain-rule]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \operatorname{DifferentiableAt}(f,c)
+  \land
+  \operatorname{DifferentiableAt}(g,f(c))
+  \Longrightarrow
+  (g\circ f)'(c)=g'(f(c))f'(c).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The derivative of a composition is the derivative of the outside function evaluated at the inside value, multiplied by the derivative of the inside function.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Let $\phi_f$ and $\phi_g$ be the Carath\'{e}odory slope factors for $f$ at $c$
+and $g$ at $f(c)$. Then
+\[
+g(f(x))-g(f(c))
+  =
+\phi_g(f(x))(f(x)-f(c))
+  =
+\phi_g(f(x))\phi_f(x)(x-c).
+\]
+The new slope factor is
+\[
+  \phi_{g\circ f}(x)=\phi_g(f(x))\phi_f(x),
+\]
+which is continuous at $c$ and has value $g'(f(c))f'(c)$. This proof never
+divides by $f(x)-f(c)$, so it avoids the failure in the informal
+$\Delta g/\Delta f \cdot \Delta f/\Delta x$ argument when $f(x)=f(c)$ near
+$c$.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:caratheodory-characterization-of-differentiability]{Theorem: Carath\'{e}odory Characterization of Differentiability}
+  \item \hyperref[thm:differentiable-implies-continuous]{Theorem: Differentiable Implies Continuous}
+  \item \hyperref[thm:composition-of-limits]{Theorem: Composition of Limits}
+  \item \hyperref[thm:limit-product]{Theorem: Product Rule for Function Limits}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Leibniz Rule)}
+\begin{theorem}[Leibniz Rule]
+\label{thm:leibniz-rule}
+Let \(I\subseteq\mathbb{R}\) be an interval, let \(x\in I\), and suppose
+that \(f,g:I\to\mathbb{R}\) are \(n\)-times differentiable on a
+neighbourhood of \(x\). Then \(fg\) is \(n\)-times differentiable at \(x\),
+and
+\[
+  (fg)^{(n)}(x)
+  =
+  \sum_{k=0}^{n}\binom{n}{k}f^{(k)}(x)g^{(n-k)}(x).
+\]
+\hyperref[prf:leibniz-rule]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \operatorname{Diff}^{n}(f,x)\land\operatorname{Diff}^{n}(g,x)
+  \Longrightarrow
+  (fg)^{(n)}(x)
+  =
+  \sum_{k=0}^{n}\binom{n}{k}f^{(k)}(x)g^{(n-k)}(x).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The binomial pattern is not an accident. Each of the \(n\) differentiations
+lands on either \(f\) or \(g\), and \(\binom{n}{k}\) counts the ways to send
+exactly \(k\) differentiations to \(f\). At \(n=1\), this is the ordinary
+product rule.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:product-rule]{Theorem: Product Rule}
+  \item \hyperref[def:higher-derivatives]{Definition: Higher Derivatives}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Faa di Bruno's Formula)}
+\begin{theorem}[Faa di Bruno's Formula]
+\label{thm:faa-di-bruno}
+Let \(I,J\subseteq\mathbb{R}\) be intervals, let \(x\in I\), suppose
+\(g:I\to J\) is \(n\)-times differentiable on a neighbourhood of \(x\), and
+suppose \(f:J\to\mathbb{R}\) is \(n\)-times differentiable on a neighbourhood
+of \(g(x)\). Then \(f\circ g\) is \(n\)-times differentiable at \(x\), and
+\[
+  \frac{d^n}{dx^n}f(g(x))
+  =
+  \sum_{\sum_{m=1}^{n}mk_m=n}
+  \frac{n!}{\prod_{m=1}^{n}k_m!\,(m!)^{k_m}}\,
+  f^{(k)}(g(x))
+  \prod_{m=1}^{n}\bigl(g^{(m)}(x)\bigr)^{k_m},
+\]
+where \(k_m\geq0\) and \(k=\sum_{m=1}^{n}k_m\).
+\hyperref[prf:faa-di-bruno]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \operatorname{Diff}^{n}(g,x)\land\operatorname{Diff}^{n}(f,g(x))
+  \Longrightarrow
+  (f\circ g)^{(n)}(x)
+  =
+  \sum_{\sum mk_m=n}
+  \frac{n!}{\prod_m k_m!\,(m!)^{k_m}}\,
+  f^{(k)}(g(x))\prod_m\bigl(g^{(m)}(x)\bigr)^{k_m}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The chain rule gives the first derivative of a composition. Repeated
+differentiation is deeper: product-rule terms and chain-rule terms interlace,
+and the bookkeeping is governed by integer partitions. Faa di Bruno's
+formula is the all-orders chain rule.
+\end{remark*}
+
+\begin{remark*}[Hypotheses]
+Smoothness is more than this formula needs. The \(n\)-th order statement
+requires \(n\) derivatives of \(g\) near \(x\) and \(n\) derivatives of \(f\)
+near \(g(x)\). At \(n=1\), the formula is exactly the chain rule.
+\end{remark*}
+
+\begin{remark*}[Structural reading]
+The tuple \((k_1,\ldots,k_n)\) records an integer partition of \(n\): \(k_m\)
+is the number of parts of size \(m\). The coefficient
+\[
+  \frac{n!}{\prod_m k_m!\,(m!)^{k_m}}
+\]
+counts set partitions with that block-size profile. The outer derivative
+\(f^{(k)}\) is differentiated once per block, while each block of size \(m\)
+contributes one factor \(g^{(m)}\).
+\end{remark*}
+
+\begin{remark*}[Normalization]
+The formula uses the bare-product normalization: the coefficient contains
+\((m!)^{k_m}\), and the product contains \(\bigl(g^{(m)}(x)\bigr)^{k_m}\).
+Equivalently, one may put \(g^{(m)}(x)/m!\) inside the product and remove
+\((m!)^{k_m}\) from the denominator. Mixing these two conventions gives the
+wrong coefficients.
+\end{remark*}
+
+\begin{remark*}[Cross-volume callback]
+The constraint \(\sum_m mk_m=n\) is precisely the multiplicity form of an
+integer partition of \(n\). Thus the number of summands is \(p(n)\), the
+partition function from the discrete and number-system material, now
+appearing as bookkeeping for iterated differentiation.
+\end{remark*}
+
+\begin{remark*}[Scope]
+This theorem is enrichment, not a critical dependency for the integration,
+measure, or manifold arcs. It is included because it is the complete
+all-orders chain rule and a useful callback to partitions.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:chain-rule]{Theorem: Chain Rule}
+  \item \hyperref[thm:leibniz-rule]{Theorem: Leibniz Rule}
+  \item \hyperref[def:higher-derivatives]{Definition: Higher Derivatives}
+  \item \hyperref[def:class-ck]{Definition: Class \(C^k\)}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Example (Faa di Bruno at \(n=2\))}
+\phantomsection\label{ex:faa-di-bruno-n2}
+\begin{remark*}[Worked example]
+The partitions of \(2\) are represented by \((k_1,k_2)=(2,0)\) and
+\((0,1)\). The first gives \(f''(g)(g')^2\), and the second gives
+\(f'(g)g''\). Hence
+\[
+  (f\circ g)''
+  =
+  f''(g)(g')^2+f'(g)g''.
+\]
+The coefficient on \(f'(g)g''\) is \(1\), which is the quickest check that
+the normalization has not been mixed.
+\end{remark*}
+\end{definitionbox}
+
+\begin{definitionbox}{Example (Faa di Bruno at \(n=3\))}
+\phantomsection\label{ex:faa-di-bruno-n3}
+\begin{remark*}[Worked example]
+The partitions of \(3\) produce the three terms
+\[
+  (f\circ g)'''
+  =
+  f'''(g)(g')^3
+  +3f''(g)g'g''
+  +f'(g)g'''.
+\]
+The middle coefficient \(3\) counts the three ways to choose which
+differentiation contributes the second-derivative block of \(g\).
+\end{remark*}
+\end{definitionbox}

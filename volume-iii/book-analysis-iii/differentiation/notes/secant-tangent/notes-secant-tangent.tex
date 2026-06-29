@@ -3,6 +3,14 @@
 % =========================================================
 % ---------------------------------------------------------
 
+\begin{remark*}[Section guide]
+Before the derivative is a formula it is a question: what straight line best
+matches a curve at a single point? The route in is indirect: choose a second
+point, draw the computable secant line, and let that point slide toward the
+first. If the secants settle toward a limiting line, that line is the tangent
+and its slope is the derivative.
+\end{remark*}
+
 \begin{definitionbox}{Definition (Secant Line)}
 \begin{definition}[Secant Line]
 \label{def:secant-line}
@@ -25,6 +33,30 @@ With increments $\Delta x := x_2 - x_1$ and $\Delta y := f(x_2) - f(x_1)$, the s
 \end{remark*}
 
 \NoLocalDependencies
+
+% ---------------------------------------------------------
+
+\begin{definitionbox}{Definition (Difference Quotient)}
+\begin{definition}[Difference Quotient]
+\label{def:difference-quotient}
+Let $f:A\to\mathbb{R}$, let $c\in A$, and let $x\in A$ with $x\neq c$. The \emph{difference quotient} of $f$ from $c$ to $x$ is
+\[
+  m_{\sec}(c,x)
+  :=
+  \frac{f(x)-f(c)}{x-c}.
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Interpretation]
+The difference quotient is the slope of the secant line through $(c,f(c))$ and $(x,f(x))$. It is the quantity whose limiting value, when it exists as $x\to c$, becomes the derivative.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:secant-line]{Secant Line}
+\end{itemize}
+\end{dependencies}
 
 % ---------------------------------------------------------
 

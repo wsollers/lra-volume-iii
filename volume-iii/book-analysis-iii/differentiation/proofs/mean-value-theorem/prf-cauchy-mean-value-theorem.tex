@@ -1,0 +1,74 @@
+\newpage
+\phantomsection
+\label{prf:cauchy-mean-value-theorem}
+\LRAProofFor{thm:cauchy-mean-value-theorem}
+
+\begin{remark*}[Return]
+\hyperref[thm:cauchy-mean-value-theorem]{Return to Theorem}
+\end{remark*}
+
+\begin{theorem*}[Cauchy Mean Value Theorem]
+Let \(a,b\in\mathbb{R}\) with \(a<b\). Suppose that \(f,g:[a,b]\to\mathbb{R}\) are continuous on \([a,b]\) and differentiable on \((a,b)\). Then there exists \(c\in(a,b)\) such that
+\[
+  (f(b)-f(a))g'(c)=(g(b)-g(a))f'(c).
+\]
+If \(g'(x)\neq 0\) for every \(x\in(a,b)\), then \(g(b)\neq g(a)\) and the corresponding quotient identity holds.
+\end{theorem*}
+
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+Define
+\[
+  h(x)=\bigl(f(b)-f(a)\bigr)g(x)-\bigl(g(b)-g(a)\bigr)f(x).
+\]
+As a linear combination of \(f\) and \(g\), the function \(h\) is continuous on \([a,b]\) and differentiable on \((a,b)\). Direct evaluation gives
+\[
+  h(a)=f(b)g(a)-g(b)f(a)=h(b).
+\]
+Rolle's Theorem therefore gives \(c\in(a,b)\) such that \(h'(c)=0\). Since
+\[
+  h'(x)=\bigl(f(b)-f(a)\bigr)g'(x)-\bigl(g(b)-g(a)\bigr)f'(x),
+\]
+the equality \(h'(c)=0\) is exactly
+\[
+  \bigl(f(b)-f(a)\bigr)g'(c)=\bigl(g(b)-g(a)\bigr)f'(c).
+\]
+If \(g'\neq 0\) on \((a,b)\), then \(g(b)\neq g(a)\); otherwise Rolle's Theorem applied to \(g\) would give an interior point where \(g'=0\). Dividing by \(g'(c)(g(b)-g(a))\) gives the quotient form.
+\end{proof}
+
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+The goal is to reduce the two-function statement to Rolle's Theorem. The auxiliary function \(h\) is chosen so that its endpoint values cancel:
+\[
+\begin{aligned}
+h(a)
+  &= (f(b)-f(a))g(a)-(g(b)-g(a))f(a)\\
+  &= f(b)g(a)-f(a)g(a)-g(b)f(a)+g(a)f(a)\\
+  &= f(b)g(a)-g(b)f(a),
+\end{aligned}
+\]
+and similarly
+\[
+\begin{aligned}
+h(b)
+  &= (f(b)-f(a))g(b)-(g(b)-g(a))f(b)\\
+  &= f(b)g(b)-f(a)g(b)-g(b)f(b)+g(a)f(b)\\
+  &= f(b)g(a)-g(b)f(a).
+\end{aligned}
+\]
+Thus \(h(a)=h(b)\). Rolle's Theorem gives \(h'(c)=0\) for some \(c\in(a,b)\), and differentiating \(h\) gives the cross-multiplied identity. The ratio form is only a division of that identity after the hypotheses guarantee that neither denominator is zero.
+\end{proof}
+
+\begin{remark*}[Proof structure]
+Build one auxiliary function, verify equal endpoint values, apply Rolle's Theorem, and then differentiate the auxiliary function.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:rolles-theorem]{Theorem: Rolle's Theorem}
+  \item \hyperref[thm:sum-rule]{Theorem: Sum Rule}
+  \item \hyperref[thm:constant-multiple-rule]{Theorem: Constant Multiple Rule}
+\end{itemize}
+\end{dependencies}
+
+\clearpage

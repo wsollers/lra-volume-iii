@@ -1,0 +1,38 @@
+\newpage
+\phantomsection
+\label{prf:first-order-peano-remainder}
+\LRAProofFor{cor:first-order-peano-remainder}
+
+\begin{remark*}[Return]
+\hyperref[cor:first-order-peano-remainder]{Return to Corollary}
+\end{remark*}
+
+\begin{corollary*}[First-Order Peano Remainder]
+Let $f$ be differentiable at $c$. Then $f(c+h)=f(c)+f'(c)h+o(h)$ as $h\to 0$.
+\end{corollary*}
+
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+By differentiability,
+\[
+  \frac{f(c+h)-f(c)}{h}\to f'(c).
+\]
+Thus $f(c+h)-f(c)=f'(c)h+h\varepsilon(h)$ with $\varepsilon(h)\to0$, which is exactly the stated $o(h)$ form.
+\end{proof}
+
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+The derivative definition says the difference quotient differs from $f'(c)$ by a quantity that tends to zero. Multiplying by $h$ turns that error into a term smaller than $h$.
+\end{proof}
+
+\begin{remark*}[Proof structure]
+Rewrite the derivative limit as an error term $\varepsilon(h)\to 0$, then multiply by $h$.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:derivative-at-a-point]{Derivative at a Point}
+\end{itemize}
+\end{dependencies}
+
+\clearpage

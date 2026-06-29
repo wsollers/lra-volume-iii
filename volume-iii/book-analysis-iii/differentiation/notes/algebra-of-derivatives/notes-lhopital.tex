@@ -1,0 +1,108 @@
+\subsection{Indeterminate Forms: L'H\^{o}pital's Rule}
+\label{sec:lhopital}
+
+\begin{theorembox}{Theorem (L'H\^{o}pital's Rule, \(0/0\) Form)}
+\begin{theorem}[L'H\^{o}pital's Rule, \(0/0\) Form]
+\label{thm:lhopital-zero-over-zero}
+Let \(a<b\), and let \(f,g:(a,b)\to\mathbb{R}\) be differentiable with \(g'(x)\neq 0\) for every \(x\in(a,b)\). Suppose
+\[
+  \lim_{x\to a^+}f(x)=\lim_{x\to a^+}g(x)=0
+  \qquad\text{and}\qquad
+  \lim_{x\to a^+}\frac{f'(x)}{g'(x)}=L
+\]
+for \(L\in\mathbb{R}\cup\{-\infty,+\infty\}\). Then
+\[
+  \lim_{x\to a^+}\frac{f(x)}{g(x)}=L.
+\]
+The analogous statements at left-hand endpoints, at two-sided interior points, and at infinity follow by the same reductions.
+\hyperref[prf:lhopital-zero-over-zero]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \left(
+  \lim_{x\to a^+}f(x)=0
+  \land
+  \lim_{x\to a^+}g(x)=0
+  \land
+  \lim_{x\to a^+}\frac{f'(x)}{g'(x)}=L
+  \right)
+  \Longrightarrow
+  \lim_{x\to a^+}\frac{f(x)}{g(x)}=L.
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+The rule is a one-way implication and is routinely misapplied.
+\begin{itemize}
+  \item \emph{Form not indeterminate.} If \(f/g\) is not genuinely \(0/0\),
+        differentiating numerator and denominator can answer a different
+        problem.
+  \item \emph{\(\lim f'/g'\) fails to exist.} With \(f(x)=x+\sin x\) and
+        \(g(x)=x\) as \(x\to+\infty\), the quotient \(f/g\to1\), but
+        \(f'/g'=1+\cos x\) oscillates. Absence of \(\lim f'/g'\) says
+        nothing by itself about \(\lim f/g\).
+  \item \emph{\(g'\) vanishes near the target.} The denominator derivative
+        must stay nonzero so the Cauchy Mean Value Theorem applies and the
+        derivative ratio is defined.
+\end{itemize}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The \(0/0\) form is the Cauchy Mean Value Theorem read as a limit law. On a shrinking interval, a ratio of changes in \(f\) and \(g\) is represented by a ratio of derivatives at an interior point. If the derivative ratio settles, the original quotient is forced to settle to the same value.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:cauchy-mean-value-theorem]{Theorem: Cauchy Mean Value Theorem}
+  \item \hyperref[def:limit-function]{Definition: Limit of a Function}
+  \item \hyperref[thm:squeeze-function-limits]{Theorem: Squeeze Theorem for Function Limits}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem (L'H\^{o}pital's Rule, \(\infty/\infty\) Form)}
+\begin{theorem}[L'H\^{o}pital's Rule, \(\infty/\infty\) Form]
+\label{thm:lhopital-infinity-over-infinity}
+Let \(a<b\), and let \(f,g:(a,b)\to\mathbb{R}\) be differentiable with \(g'(x)\neq 0\) for every \(x\in(a,b)\). Suppose
+\[
+  \lim_{x\to a^+}|g(x)|=+\infty
+  \qquad\text{and}\qquad
+  \lim_{x\to a^+}\frac{f'(x)}{g'(x)}=L
+\]
+for \(L\in\mathbb{R}\cup\{-\infty,+\infty\}\). Then
+\[
+  \lim_{x\to a^+}\frac{f(x)}{g(x)}=L.
+\]
+No separate hypothesis on \(\lim_{x\to a^+}f(x)\) is required.
+\hyperref[prf:lhopital-infinity-over-infinity]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \left(
+  \lim_{x\to a^+}|g(x)|=+\infty
+  \land
+  \lim_{x\to a^+}\frac{f'(x)}{g'(x)}=L
+  \right)
+  \Longrightarrow
+  \lim_{x\to a^+}\frac{f(x)}{g(x)}=L.
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+L'H\^{o}pital's Rule is a one-way implication and requires an indeterminate form. If the quotient is not of type \(0/0\) or \(\infty/\infty\), differentiating numerator and denominator can change the problem. The derivative ratio must also have a limit: for \(f(x)=x+\sin x\) and \(g(x)=x\) as \(x\to+\infty\), the quotient \(f/g\) tends to \(1\), but \(f'/g'=1+\cos x\) has no limit.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The \(\infty/\infty\) form compares two functions whose magnitudes escape. The Cauchy Mean Value Theorem controls the quotient after subtracting fixed endpoint values, and the divergent denominator makes those fixed values negligible.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:cauchy-mean-value-theorem]{Theorem: Cauchy Mean Value Theorem}
+  \item \hyperref[def:limit-function]{Definition: Limit of a Function}
+  \item \hyperref[thm:squeeze-function-limits]{Theorem: Squeeze Theorem for Function Limits}
+\end{itemize}
+\end{dependencies}

@@ -1,0 +1,74 @@
+\newpage
+\phantomsection
+\label{prf:leibniz-rule}
+\LRAProofFor{thm:leibniz-rule}
+
+\begin{remark*}[Return]
+\hyperref[thm:leibniz-rule]{Return to Theorem}
+\end{remark*}
+
+\begin{theorem*}[Leibniz Rule]
+Let \(I\subseteq\mathbb{R}\) be an interval, let \(x\in I\), and suppose
+that \(f,g:I\to\mathbb{R}\) are \(n\)-times differentiable on a
+neighbourhood of \(x\). Then
+\[
+  (fg)^{(n)}(x)
+  =
+  \sum_{k=0}^{n}\binom{n}{k}f^{(k)}(x)g^{(n-k)}(x).
+\]
+\end{theorem*}
+
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+Proceed by induction on \(n\). For \(n=1\), the statement is the product
+rule:
+\[
+  (fg)'=f'g+fg'.
+\]
+Assume the formula holds at order \(n\). Differentiating once more and using
+the product rule term by term gives
+\[
+\begin{aligned}
+  (fg)^{(n+1)}
+  &=
+  \sum_{k=0}^{n}\binom{n}{k}
+  \bigl(f^{(k+1)}g^{(n-k)}+f^{(k)}g^{(n-k+1)}\bigr)\\
+  &=
+  \sum_{k=1}^{n+1}\binom{n}{k-1}f^{(k)}g^{(n+1-k)}
+  +
+  \sum_{k=0}^{n}\binom{n}{k}f^{(k)}g^{(n+1-k)}.
+\end{aligned}
+\]
+The endpoint terms are \(fg^{(n+1)}\) and \(f^{(n+1)}g\). For
+\(1\leq k\leq n\), the coefficient of
+\(f^{(k)}g^{(n+1-k)}\) is
+\[
+  \binom{n}{k-1}+\binom{n}{k}=\binom{n+1}{k}
+\]
+by Pascal's identity. Therefore the order \(n+1\) formula holds.
+\end{proof}
+
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+The formula counts where the differentiations land. After \(n\)
+differentiations, a term with \(k\) hits on \(f\) and \(n-k\) hits on \(g\)
+has coefficient \(\binom{n}{k}\). Differentiating once more can create a
+term with \(k\) hits on \(f\) in two ways: either the previous term had
+\(k-1\) hits on \(f\) and the new derivative hits \(f\), or the previous term
+already had \(k\) hits on \(f\) and the new derivative hits \(g\). These two
+counts add by Pascal's identity, giving the next binomial coefficient.
+\end{proof}
+
+\begin{remark*}[Proof structure]
+Induct on \(n\), differentiate termwise, shift one index, and recombine
+coefficients with Pascal's identity.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:product-rule]{Theorem: Product Rule}
+  \item \hyperref[def:higher-derivatives]{Definition: Higher Derivatives}
+\end{itemize}
+\end{dependencies}
+
+\clearpage

@@ -1,0 +1,51 @@
+\newpage
+\phantomsection
+\label{prf:bounded-second-derivative-implies-c11}
+\LRAProofFor{cor:bounded-second-derivative-implies-c11}
+
+\begin{remark*}[Return]
+\hyperref[cor:bounded-second-derivative-implies-c11]{Return to Corollary}
+\end{remark*}
+
+\begin{corollary*}[Bounded Second Derivative Implies \(C^{1,1}\)]
+Let \(I\subseteq\mathbb{R}\) be an interval and let \(f\in C^2(I)\). If
+\(|f''(x)|\leq M\) for all \(x\in I\), then \(f\in C^{1,1}(I)\), and \(f'\)
+is Lipschitz with constant \(M\).
+\end{corollary*}
+
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+Since \(f\in C^2(I)\), the derivative \(f'\) is differentiable on \(I\) and
+\((f')'=f''\). The hypothesis gives \(|(f')'(x)|\leq M\) for every
+\(x\in I\). Applying the derivative-bound-implies-Lipschitz corollary to
+the function \(f'\) yields
+\[
+  |f'(x)-f'(y)|\leq M|x-y|
+  \qquad\text{for all }x,y\in I.
+\]
+Thus \(f'\) is Lipschitz with constant \(M\). Because \(f\in C^2(I)\) also
+implies \(f\in C^1(I)\), the definition gives \(f\in C^{1,1}(I)\).
+\end{proof}
+
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+The derivative-bound corollary turns a pointwise slope bound into a global
+Lipschitz estimate. Here the function whose slope is being bounded is not
+\(f\), but \(f'\). Its derivative is \(f''\). If \(|f''|\leq M\), then the
+slope of \(f'\) is bounded by \(M\), so \(f'\) changes by at most
+\(M|x-y|\) between any two points \(x,y\in I\). That is exactly the
+Lipschitz condition required in the definition of \(C^{1,1}\).
+\end{proof}
+
+\begin{remark*}[Proof structure]
+Apply the derivative-bound Lipschitz theorem one derivative level higher.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[cor:derivative-bound-implies-lipschitz]{Corollary: Derivative Bound Implies Lipschitz}
+  \item \hyperref[def:class-c11]{Definition: Lipschitz-Derivative Class \(C^{1,1}\)}
+\end{itemize}
+\end{dependencies}
+
+\clearpage

@@ -1,0 +1,38 @@
+\newpage
+\phantomsection
+\label{prf:derivative-of-a-constant}
+\LRAProofFor{prop:derivative-of-a-constant}
+
+\begin{remark*}[Return]
+\hyperref[prop:derivative-of-a-constant]{Return to Proposition}
+\end{remark*}
+
+\begin{proposition*}[Derivative of a Constant]
+Let $k\in\mathbb{R}$ and let $f(x)=k$ for all $x\in\mathbb{R}$. Then $f'(c)=0$ for every $c\in\mathbb{R}$.
+\end{proposition*}
+
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+For $x\neq c$,
+\[
+  \frac{f(x)-f(c)}{x-c}=\frac{k-k}{x-c}=0.
+\]
+Hence the difference quotient has limit $0$ as $x\to c$.
+\end{proof}
+
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+The numerator of every secant slope is zero because the function takes the same value at every input. Therefore every secant slope is zero, and the limiting secant slope is zero.
+\end{proof}
+
+\begin{remark*}[Proof structure]
+Compute the difference quotient directly and observe that it is identically zero.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:derivative-at-a-point]{Derivative at a Point}
+\end{itemize}
+\end{dependencies}
+
+\clearpage

@@ -1,0 +1,81 @@
+\section{\texorpdfstring{Reading the Graph from \(f'\) and \(f''\)}{Reading the Graph from f' and f''}}
+
+\subsection{First-Order Shape}
+
+\begin{toolkitbox}{First-Order Shape --- Quick Reference}
+\small
+\begin{tabular}{l l}
+\toprule
+\textbf{Statement} & \textbf{Role} \\
+\midrule
+\hyperref[thm:zero-derivative-implies-constant]{Zero derivative} & Vanishing derivative forces constant behavior \\
+\hyperref[cor:equal-derivatives-constant-difference]{Equal derivatives} & Functions differ by a constant \\
+\hyperref[thm:nondecreasing-iff-nonneg-derivative]{Nonnegative derivative} & Detects nondecreasing behavior \\
+\hyperref[thm:nonincreasing-iff-nonpos-derivative]{Nonpositive derivative} & Detects nonincreasing behavior \\
+\hyperref[lem:positive-derivative-implies-locally-increasing]{Positive derivative} & Local increasing behavior \\
+\hyperref[lem:negative-derivative-implies-locally-decreasing]{Negative derivative} & Local decreasing behavior \\
+\hyperref[thm:first-derivative-test-maximum]{First derivative test: max} & Sign change detects a local maximum \\
+\hyperref[thm:first-derivative-test-minimum]{First derivative test: min} & Sign change detects a local minimum \\
+\bottomrule
+\end{tabular}
+\end{toolkitbox}
+
+\input{volume-iii/book-analysis-iii/differentiation/notes/graph-reading/notes-understanding-derivatives}
+
+\subsection{Second-Order Shape}
+
+\begin{toolkitbox}{Second-Order Shape --- Quick Reference}
+\small
+\begin{tabular}{l l}
+\toprule
+\textbf{Concept} & \textbf{Role} \\
+\midrule
+\hyperref[def:second-derivative]{Second derivative} & Derivative of the derivative \\
+\hyperref[def:higher-derivatives]{Higher derivatives} & Iterated derivatives \(f^{(n)}\) \\
+\hyperref[thm:second-derivative-convexity-test]{Convexity test} & \(f''\geq 0\) detects convexity \\
+\hyperref[thm:second-derivative-concavity-test]{Concavity test} & \(f''\leq 0\) detects concavity \\
+\hyperref[thm:second-derivative-test]{Second derivative test} & Classifies critical points \\
+\hyperref[prop:inflection-point-necessary-condition]{Inflection condition} & Continuous \(f''\) changes sign through zero \\
+\bottomrule
+\end{tabular}
+\end{toolkitbox}
+
+\input{volume-iii/book-analysis-iii/differentiation/notes/graph-reading/notes-second-order-shape}
+
+\subsection{Darboux's Theorem}
+
+\begin{toolkitbox}{Darboux --- Quick Reference}
+\small
+\begin{tabular}{l l}
+\toprule
+\textbf{Statement} & \textbf{Role} \\
+\midrule
+\hyperref[thm:darboux]{Darboux's Theorem} & Derivatives have the intermediate value property \\
+\bottomrule
+\end{tabular}
+\end{toolkitbox}
+
+\input{volume-iii/book-analysis-iii/differentiation/notes/graph-reading/notes-darboux}
+
+\subsection{Smoothness Classes}
+
+\begin{toolkitbox}{Smoothness Classes --- Quick Reference}
+\small
+\begin{tabular}{l l}
+\toprule
+\textbf{Concept} & \textbf{Meaning} \\
+\midrule
+\hyperref[def:class-c1]{Class \(C^1\)} & Differentiable with continuous first derivative \\
+\hyperref[def:class-ck]{Class \(C^k\)} & \(k\) derivatives with continuous top derivative \\
+\hyperref[def:class-cinfty]{Class \(C^\infty\)} & Continuous derivatives of every order \\
+\hyperref[def:class-comega]{Class \(C^\omega\)} & Equal to local Taylor series \\
+\hyperref[thm:smoothness-tower]{Smoothness tower} & Strict hierarchy \(C^\omega\subsetneq C^\infty\subsetneq\cdots\) \\
+\hyperref[def:class-c11]{Class \(C^{1,1}\)} & \(C^1\) with Lipschitz first derivative \\
+\hyperref[thm:c11-placement]{Placement of \(C^{1,1}\)} & Refines the gap between \(C^1\) and \(C^2\) \\
+\hyperref[cor:bounded-second-derivative-implies-c11]{Bounded \(f''\)} & Bounded second derivative gives \(C^{1,1}\) \\
+\hyperref[ex:x2sin]{Example: differentiable not \(C^1\)} & Oscillatory derivative discontinuity at \(0\) \\
+\bottomrule
+\end{tabular}
+\end{toolkitbox}
+
+\input{volume-iii/book-analysis-iii/differentiation/notes/graph-reading/notes-smoothness-classes}

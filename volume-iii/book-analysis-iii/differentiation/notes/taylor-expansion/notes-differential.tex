@@ -1,0 +1,184 @@
+\subsection{The Differential}
+\label{sec:differential}
+
+\begin{remark*}[Interpretation]
+The derivative value $f'(c)\in\mathbb{R}$ is a number. The differential $df_c$ is a linear map from increments to first-order changes. In one dimension these two objects are represented by the same scalar, but they play different roles.
+\end{remark*}
+
+\begin{definitionbox}{Definition (Differentiability by a Differential)}
+\begin{definition}[Differentiability by a Differential]
+\label{def:differentiability-by-a-differential}
+Let $f$ be defined on a neighbourhood of $c\in\mathbb{R}$. The function $f$ is \emph{differentiable at $c$ in the differential sense} if there exists a linear map $L:\mathbb{R}\to\mathbb{R}$ such that
+\[
+  f(c+h)-f(c)=L(h)+o(h)
+  \qquad\text{as } h\to 0.
+\]
+In that case the \emph{differential} of $f$ at $c$ is $df_c:=L$.
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \exists L:\mathbb{R}\to\mathbb{R}\text{ linear such that }
+  f(c+h)-f(c)=L(h)+o(h).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The differential is the linear part of the increment. The function itself is approximated affinely by $f(c)+df_c(x-c)$, while $df_c$ alone is the linear map acting on the displacement.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[cor:first-order-peano-remainder]{First-Order Peano Remainder}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Differential and Derivative Agree)}
+\begin{theorem}[Differential and Derivative Agree]
+\label{thm:differential-and-derivative-agree}
+Let $f$ be defined on a neighbourhood of $c\in\mathbb{R}$. Then $f$ is differentiable at $c$ in the ordinary derivative sense if and only if it is differentiable at $c$ in the differential sense. When this holds,
+\[
+  df_c(h)=f'(c)h.
+\]
+\hyperref[prf:differential-and-derivative-agree]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \operatorname{DifferentiableAt}(f,c)
+  \Longleftrightarrow
+  \exists df_c\text{ with }df_c(h)=f'(c)h.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This theorem is the bridge from the slope number to the linear map. The one-dimensional derivative is multiplication by the scalar $f'(c)$.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:derivative-at-a-point]{Derivative at a Point}
+  \item \hyperref[def:differentiability-by-a-differential]{Differentiability by a Differential}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Uniqueness of the Differential)}
+\begin{theorem}[Uniqueness of the Differential]
+\label{thm:uniqueness-of-the-differential}
+If $L_1,L_2:\mathbb{R}\to\mathbb{R}$ are linear maps and
+\[
+  f(c+h)-f(c)=L_1(h)+o(h)=L_2(h)+o(h)
+  \qquad\text{as } h\to 0,
+\]
+then $L_1=L_2$.
+\hyperref[prf:uniqueness-of-the-differential]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \bigl(L_1(h)-L_2(h)=o(h)\bigr)\Longrightarrow L_1=L_2.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The differential is not a choice of linear approximation among many. If a first-order linear part exists, it is forced.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:differentiability-by-a-differential]{Differentiability by a Differential}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Differential Continuity Criterion)}
+\begin{theorem}[Differential Continuity Criterion]
+\label{thm:differential-continuity-criterion}
+If $f$ is differentiable at $c$ in the differential sense, then $f$ is continuous at $c$.
+\hyperref[prf:differential-continuity-criterion]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \operatorname{DifferentiableByDifferentialAt}(f,c)
+  \Longrightarrow
+  \operatorname{ContinuousAt}(f,c).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+From $f(c+h)-f(c)=df_c(h)+o(h)$, both terms on the right tend to zero as $h\to 0$. Continuity is therefore immediate in the differential language.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:differentiability-by-a-differential]{Differentiability by a Differential}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Chain Rule for Differentials)}
+\begin{theorem}[Chain Rule for Differentials]
+\label{thm:chain-rule-for-differentials}
+If $f$ is differentiable at $c$ and $g$ is differentiable at $f(c)$, then
+\[
+  d(g\circ f)_c=dg_{f(c)}\circ df_c.
+\]
+\hyperref[prf:chain-rule-for-differentials]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  d(g\circ f)_c=dg_{f(c)}\circ df_c.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+In one dimension this says that composing two scalar multiplications multiplies their scalars. In several variables the same formula becomes matrix multiplication.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:chain-rule]{Chain Rule}
+  \item \hyperref[thm:differential-and-derivative-agree]{Differential and Derivative Agree}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Linearity of the Differential)}
+\begin{theorem}[Linearity of the Differential]
+\label{thm:linearity-of-the-differential}
+If $f$ and $g$ are differentiable at $c$ and $\alpha,\beta\in\mathbb{R}$, then
+\[
+  d(\alpha f+\beta g)_c=\alpha\,df_c+\beta\,dg_c.
+\]
+\hyperref[prf:linearity-of-the-differential]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  d(\alpha f+\beta g)_c=\alpha\,df_c+\beta\,dg_c.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The differential packages the linearity of differentiation as equality of linear maps.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+On a manifold, the same construction becomes a tangent map
+\[
+  T_cf:T_cM\to T_{f(c)}N.
+\]
+The one-dimensional differential is the prototype: replace real increments by tangent vectors and replace scalar multiplication by a linear map between tangent spaces.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:finite-linear-combination-rule]{Finite Linear Combination Rule}
+  \item \hyperref[thm:differential-and-derivative-agree]{Differential and Derivative Agree}
+\end{itemize}
+\end{dependencies}

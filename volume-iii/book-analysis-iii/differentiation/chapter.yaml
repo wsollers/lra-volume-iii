@@ -88,6 +88,26 @@ environments:
   file: notes\algebra-of-derivatives\notes-algebra-of-derivatives.tex
   display_title: Finite Linear Combination Rule on an Interval
   proof_file: null
+- label: thm:inverse-function-theorem-one-variable
+  type: thm
+  file: notes\algebra-of-derivatives\notes-inverse-function.tex
+  display_title: Inverse Function Theorem, One Variable
+  proof_file: null
+- label: cor:inverse-function-derivative
+  type: cor
+  file: notes\algebra-of-derivatives\notes-inverse-function.tex
+  display_title: Derivative of the Inverse Function
+  proof_file: null
+- label: thm:lhopital-zero-over-zero
+  type: thm
+  file: notes\algebra-of-derivatives\notes-lhopital.tex
+  display_title: L'Hopital's Rule, 0/0 Form
+  proof_file: null
+- label: thm:lhopital-infinity-over-infinity
+  type: thm
+  file: notes\algebra-of-derivatives\notes-lhopital.tex
+  display_title: L'Hopital's Rule, Infinity/Infinity Form
+  proof_file: null
 - label: def:caratheodory-factorization
   type: def
   file: notes\chain-rule\notes-caratheodory.tex
@@ -168,65 +188,90 @@ environments:
   file: notes\derivative-geometry\notes-derivative-geometry.tex
   display_title: Necessary Condition for an Interior Extremum
   proof_file: null
-- label: cor:necessary-condition-extremum
+- label: cor:relative-extremum-necessary-condition
   type: cor
   file: notes\derivative-geometry\notes-derivative-geometry.tex
   display_title: Necessary Condition for an Extremum
   proof_file: null
 - label: def:increasing-at-a-point
   type: def
-  file: notes\derivative-geometry\notes-understanding-derivatives.tex
+  file: notes\graph-reading\notes-understanding-derivatives.tex
   display_title: Increasing at a Point
   proof_file: null
 - label: def:decreasing-at-a-point
   type: def
-  file: notes\derivative-geometry\notes-understanding-derivatives.tex
+  file: notes\graph-reading\notes-understanding-derivatives.tex
   display_title: Decreasing at a Point
   proof_file: null
 - label: thm:zero-derivative-implies-constant
   type: thm
-  file: notes\derivative-geometry\notes-understanding-derivatives.tex
+  file: notes\graph-reading\notes-understanding-derivatives.tex
   display_title: Zero Derivative Implies Constant
   proof_file: null
 - label: cor:equal-derivatives-constant-difference
   type: cor
-  file: notes\derivative-geometry\notes-understanding-derivatives.tex
+  file: notes\graph-reading\notes-understanding-derivatives.tex
   display_title: Equal Derivatives Imply Difference Is Constant
   proof_file: null
 - label: thm:nondecreasing-iff-nonneg-derivative
   type: thm
-  file: notes\derivative-geometry\notes-understanding-derivatives.tex
+  file: notes\graph-reading\notes-understanding-derivatives.tex
   display_title: Nondecreasing Iff Nonnegative Derivative
   proof_file: null
 - label: thm:nonincreasing-iff-nonpos-derivative
   type: thm
-  file: notes\derivative-geometry\notes-understanding-derivatives.tex
+  file: notes\graph-reading\notes-understanding-derivatives.tex
   display_title: Nonincreasing Iff Nonpositive Derivative
   proof_file: null
 - label: lem:positive-derivative-implies-locally-increasing
   type: lem
-  file: notes\derivative-geometry\notes-understanding-derivatives.tex
+  file: notes\graph-reading\notes-understanding-derivatives.tex
   display_title: Positive Derivative Implies Locally Increasing
   proof_file: null
 - label: lem:negative-derivative-implies-locally-decreasing
   type: lem
-  file: notes\derivative-geometry\notes-understanding-derivatives.tex
+  file: notes\graph-reading\notes-understanding-derivatives.tex
   display_title: Negative Derivative Implies Locally Decreasing
   proof_file: null
 - label: thm:first-derivative-test-maximum
   type: thm
-  file: notes\derivative-geometry\notes-understanding-derivatives.tex
+  file: notes\graph-reading\notes-understanding-derivatives.tex
   display_title: 'First Derivative Test: Relative Maximum'
   proof_file: null
 - label: thm:first-derivative-test-minimum
   type: thm
-  file: notes\derivative-geometry\notes-understanding-derivatives.tex
+  file: notes\graph-reading\notes-understanding-derivatives.tex
   display_title: 'First Derivative Test: Relative Minimum'
   proof_file: null
 - label: thm:darboux
   type: thm
-  file: notes\derivative-geometry\notes-understanding-derivatives.tex
+  file: notes\graph-reading\notes-understanding-derivatives.tex
   display_title: Darboux's Theorem
+  proof_file: null
+- label: def:class-c1
+  type: def
+  file: notes\graph-reading\notes-smoothness-classes.tex
+  display_title: Continuously Differentiable; Class C^1
+  proof_file: null
+- label: def:class-ck
+  type: def
+  file: notes\graph-reading\notes-smoothness-classes.tex
+  display_title: Class C^k
+  proof_file: null
+- label: def:class-cinfty
+  type: def
+  file: notes\graph-reading\notes-smoothness-classes.tex
+  display_title: Smooth Function; Class C^\infty
+  proof_file: null
+- label: def:class-comega
+  type: def
+  file: notes\graph-reading\notes-smoothness-classes.tex
+  display_title: Real-Analytic Function; Class C^\omega
+  proof_file: null
+- label: thm:smoothness-tower
+  type: thm
+  file: notes\graph-reading\notes-smoothness-classes.tex
+  display_title: The Smoothness Tower
   proof_file: null
 - label: thm:rolles-theorem
   type: thm
@@ -237,6 +282,16 @@ environments:
   type: thm
   file: notes\mean-value-theorem\notes-mean-value-theorem.tex
   display_title: Mean Value Theorem
+  proof_file: null
+- label: thm:cauchy-mean-value-theorem
+  type: thm
+  file: notes\mean-value-theorem\notes-mean-value-theorem.tex
+  display_title: Cauchy Mean Value Theorem
+  proof_file: null
+- label: cor:derivative-bound-implies-lipschitz
+  type: cor
+  file: notes\mean-value-theorem\notes-mean-value-theorem.tex
+  display_title: Derivative Bound Implies Lipschitz
   proof_file: null
 - label: def:left-hand-derivative
   type: def
@@ -287,5 +342,15 @@ environments:
   type: cor
   file: notes\taylor-expansion\notes-taylor-expansion.tex
   display_title: Taylor Expansion with Peano Remainder
+  proof_file: null
+- label: cor:first-order-peano-remainder
+  type: cor
+  file: notes\taylor-expansion\notes-taylor-expansion.tex
+  display_title: First-Order Peano Remainder
+  proof_file: null
+- label: prop:flat-function
+  type: prop
+  file: notes\taylor-expansion\notes-taylor-expansion.tex
+  display_title: 'The Flat Function: Smooth but Not Analytic'
   proof_file: null
 proof_files: []

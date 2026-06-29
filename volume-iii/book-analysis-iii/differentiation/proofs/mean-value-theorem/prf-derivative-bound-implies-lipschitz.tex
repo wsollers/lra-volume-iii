@@ -1,0 +1,55 @@
+\newpage
+\phantomsection
+\label{prf:derivative-bound-implies-lipschitz}
+\LRAProofFor{cor:derivative-bound-implies-lipschitz}
+
+\begin{remark*}[Return]
+\hyperref[cor:derivative-bound-implies-lipschitz]{Return to Corollary}
+\end{remark*}
+
+\begin{corollary*}[Derivative Bound Implies Lipschitz]
+Let \(I\subseteq\mathbb{R}\) be an interval and let \(f:I\to\mathbb{R}\) be differentiable on \(I\). If \(|f'(x)|\leq M\) for every \(x\in I\), then
+\[
+  |f(x)-f(y)|\leq M|x-y|
+  \qquad\text{for every }x,y\in I.
+\]
+\end{corollary*}
+
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+Fix \(x,y\in I\). If \(x=y\), the inequality is immediate. Otherwise, relabel if necessary so that \(x<y\). Since \(I\) is an interval, \([x,y]\subseteq I\). The Mean Value Theorem gives \(c\in(x,y)\) such that
+\[
+  f(y)-f(x)=f'(c)(y-x).
+\]
+Taking absolute values and using \(|f'(c)|\leq M\), we obtain
+\[
+  |f(y)-f(x)|=|f'(c)|\,|y-x|\leq M|y-x|.
+\]
+This is the Lipschitz inequality with constant \(M\).
+\end{proof}
+
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+The derivative bound controls tangent slopes. The Mean Value Theorem turns one of those tangent slopes into the secant slope between \(x\) and \(y\). Because \(I\) is an interval, every point between \(x\) and \(y\) stays inside the domain, so the MVT applies on \([x,y]\). The resulting point \(c\) satisfies
+\[
+  \frac{f(y)-f(x)}{y-x}=f'(c).
+\]
+The assumed derivative bound gives
+\[
+  \left|\frac{f(y)-f(x)}{y-x}\right|\leq M.
+\]
+Multiplying by \(|y-x|\) gives the desired estimate. The case \(x=y\) contributes \(0\leq 0\), so no separate constant is needed.
+\end{proof}
+
+\begin{remark*}[Proof structure]
+Apply the MVT on the interval between two arbitrary points, then bound the resulting derivative value.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:mean-value-theorem]{Theorem: Mean Value Theorem}
+  \item \hyperref[def:lipschitz-condition]{Definition: Lipschitz Condition}
+\end{itemize}
+\end{dependencies}
+
+\clearpage

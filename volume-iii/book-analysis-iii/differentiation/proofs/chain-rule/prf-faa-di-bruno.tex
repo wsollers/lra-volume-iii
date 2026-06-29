@@ -1,0 +1,93 @@
+\newpage
+\phantomsection
+\label{prf:faa-di-bruno}
+\LRAProofFor{thm:faa-di-bruno}
+
+\begin{remark*}[Return]
+\hyperref[thm:faa-di-bruno]{Return to Theorem}
+\end{remark*}
+
+\begin{theorem*}[Faa di Bruno's Formula]
+Under the hypotheses of \hyperref[thm:faa-di-bruno]{Faa di Bruno's Formula},
+\[
+  \frac{d^n}{dx^n}f(g(x))
+  =
+  \sum_{\sum_{m=1}^{n}mk_m=n}
+  \frac{n!}{\prod_{m=1}^{n}k_m!\,(m!)^{k_m}}\,
+  f^{(k)}(g(x))
+  \prod_{m=1}^{n}\bigl(g^{(m)}(x)\bigr)^{k_m},
+\]
+where \(k=\sum_{m=1}^{n}k_m\).
+\end{theorem*}
+
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+The proof is by induction on \(n\). At \(n=1\), the only tuple is
+\(k_1=1\), so the formula reads
+\[
+  (f\circ g)'=f'(g)g',
+\]
+which is the chain rule.
+
+Assume the formula holds at order \(n\). Differentiate one summand
+\[
+  C_{\mathbf{k}}\,f^{(k)}(g)\prod_{m=1}^{n}\bigl(g^{(m)}\bigr)^{k_m},
+  \qquad
+  C_{\mathbf{k}}=\frac{n!}{\prod_{m=1}^{n}k_m!\,(m!)^{k_m}}.
+\]
+There are two types of contributions. A derivative may hit
+\(f^{(k)}(g)\); by the chain rule this creates
+\(f^{(k+1)}(g)g'\), which adds one block of size \(1\). Or a derivative may
+hit one of the \(k_m\) factors \(g^{(m)}\); by the product rule this raises
+one block of size \(m\) to a block of size \(m+1\), with multiplicity
+\(k_m\).
+
+Thus differentiating the order-\(n\) partition sum produces exactly the
+tuples \(\mathbf{j}=(j_1,\ldots,j_{n+1})\) satisfying
+\(\sum m j_m=n+1\). Conversely, each such tuple arises uniquely from one of
+these two inverse moves: either remove one size-\(1\) block, or lower one
+block of size \(m+1\) to size \(m\). The coefficient attached to a fixed
+\(\mathbf{j}\) is therefore the sum of the contributions of all inverse
+moves. The elementary factorial simplification is precisely the recurrence
+for the number of set partitions with block multiplicities \(\mathbf{j}\):
+\[
+  \frac{(n+1)!}{\prod_{m=1}^{n+1}j_m!\,(m!)^{j_m}}.
+\]
+This is the desired coefficient at order \(n+1\), completing the induction.
+\end{proof}
+
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+The tuple \((k_1,\ldots,k_n)\) records how the \(n\) differentiations have
+been grouped. A block of size \(m\) means that \(m\) differentiations have
+combined to produce a factor \(g^{(m)}\). The number \(k=\sum k_m\) counts
+how many blocks there are, so the outside function has been differentiated
+\(k\) times.
+
+When differentiating once more, there are only two possible events. The new
+derivative may start a new size-\(1\) block by hitting the outer factor
+\(f^{(k)}(g)\), or it may enlarge an existing block by hitting one of the
+inner factors \(g^{(m)}\). The factorial coefficient keeps track of how many
+ways the same block-size pattern can occur: \(m!\) removes order inside a
+block, and \(k_m!\) removes order among equal-size blocks.
+
+The cleaner proof, once Taylor expansions are available, is to compose the
+Taylor series of \(f\) and \(g\) and read off the coefficient of the
+\(n\)-th power. That proof explains the same partition sum as coefficient
+collection by total inner degree.
+\end{proof}
+
+\begin{remark*}[Proof structure]
+Induct on order. The inductive step differentiates the partition sum and
+re-indexes the resulting terms by the partitions of \(n+1\).
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:chain-rule]{Theorem: Chain Rule}
+  \item \hyperref[thm:leibniz-rule]{Theorem: Leibniz Rule}
+  \item \hyperref[def:higher-derivatives]{Definition: Higher Derivatives}
+\end{itemize}
+\end{dependencies}
+
+\clearpage

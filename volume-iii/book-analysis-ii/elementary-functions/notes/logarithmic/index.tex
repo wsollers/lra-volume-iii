@@ -1,19 +1,16 @@
 \section{The Logarithm}
 
-\begin{toolkitbox}{Toolkit --- Logarithmic Functions}
-\begin{itemize}
-  \item $\ln : (0,\infty) \to \mathbb{R}$: inverse of $e^x$.
-    Equivalently, $\ln x = \int_1^x 1/t\, dt$.
-  \item Functional equation: $\ln(xy) = \ln x + \ln y$.
-    Converts products to sums.
-  \item $(\ln x)' = 1/x$;\; $\ln 1 = 0$;\; $\ln e = 1$.
-  \item Change of base: $\log_a x = \ln x / \ln a$.
-  \item Fundamental logarithmic limit:
-    $\lim_{x \to 0}\ln(1+x)/x = 1$.
-  \item Growth dominance: for all $r > 0$,
-    $(\ln x)/x^r \to 0$ as $x \to \infty$ and
-    $x^r \ln x \to 0$ as $x \to 0^+$.
-\end{itemize}
+\begin{toolkitbox}{Logarithmic Functions --- Quick Reference}
+\small
+\begin{tabular}{l l}
+\toprule
+\textbf{Concept} & \textbf{Meaning} \\
+\midrule
+\hyperref[def:natural-logarithm]{Natural logarithm} & Inverse of the exponential on \((0,\infty)\) \\
+\hyperref[prop:limit-logarithm-fundamental]{Fundamental logarithmic limit} & \(\ln(1+x)/x\to 1\) \\
+\hyperref[prop:power-dominates-log]{Power dominates log} & Logarithmic growth is below every positive power \\
+\bottomrule
+\end{tabular}
 \end{toolkitbox}
 
 \input{volume-iii/book-analysis-ii/elementary-functions/notes/logarithmic/notes-logarithmic}
