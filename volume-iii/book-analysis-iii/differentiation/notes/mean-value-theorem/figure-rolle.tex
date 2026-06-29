@@ -1,0 +1,29 @@
+\begin{figure}[H]
+\centering
+\resizebox{0.72\linewidth}{!}{%
+\begin{tikzpicture}[scale=0.82]
+  \def\h{1.5*sin(72*\x)}
+  \glowcurve{color=atlasred, domain=0:5, axis=-1.7, top=1.9, expr={\h}}
+  \draw[atlas axes] (0,0)--(5.4,0);
+  \draw[atlas axes] (0,-1.9)--(0,2.1);
+  \pgfmathsetmacro\xmax{1.25}
+  \pgfmathsetmacro\xmin{3.75}
+  \draw[atlas probe,atlasred] (\xmax-0.9,1.5)--(\xmax+0.9,1.5);
+  \draw[atlas probe,atlasred] (\xmin-0.9,-1.5)--(\xmin+0.9,-1.5);
+  \node[atlas dot] at (\xmax,1.5){};
+  \node[atlas dot] at (\xmin,-1.5){};
+  \node[atlas dot] at (0,0){};
+  \node[atlas dot] at (5,0){};
+  \node[atlas label,above] at (\xmax,1.62){\footnotesize horizontal tangent};
+  \node[atlas label,below] at (\xmin,-1.62){\footnotesize horizontal tangent};
+  \node[atlas label] at (3.95,0.62){\footnotesize$y=f(x)$};
+  \node[atlas label,below left=-1pt] at (0,0){\footnotesize$a$};
+  \node[atlas label,below right=-1pt] at (5,0){\footnotesize$b$};
+  \node[atlas label,below] at (2.5,-1.95){\scriptsize$a<c<b$};
+  \node[atlas label] at (2.25,1.2){\scriptsize$f(a)=f(b)$};
+  \node[atlas label] at (2.55,0.55){\scriptsize$f'(c)=0$};
+\end{tikzpicture}%
+}
+\caption{Rolle's Theorem: equal endpoint heights force a horizontal tangent.}
+\label{fig:rolle}
+\end{figure}

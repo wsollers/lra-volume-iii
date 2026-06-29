@@ -1,0 +1,25 @@
+\begin{figure}[H]
+\centering
+\resizebox{0.82\linewidth}{!}{%
+\begin{tikzpicture}[scale=0.82]
+  \def\mn{0.7*(\x-1.1)*(\x-1.1)+0.5}
+  \glowcurve{color=atlasteal, domain=0.1:2.1, axis=0, top=3.0, expr={\mn}}
+  \node[atlas dot] at (1.1,0.5){};
+  \draw[dropline] (1.1,0.5)--(1.1,0);
+  \node[atlas label,below] at (1.1,-0.05){\footnotesize$c$};
+  \node[atlas label,below,align=center] at (1.0,-0.40)
+    {\tiny$f'(c)=0$ and\\[-1pt]$f''(c)>0\Rightarrow$ min};
+  \begin{scope}[xshift=3.4cm]
+    \def\mx{2.6-0.7*(\x-1.1)*(\x-1.1)}
+    \glowcurve{color=atlasorange, domain=0.1:2.1, axis=0, top=3.0, expr={\mx}}
+    \node[atlas dot] at (1.1,2.6){};
+    \draw[dropline] (1.1,2.6)--(1.1,0);
+    \node[atlas label,below] at (1.1,-0.05){\footnotesize$c$};
+    \node[atlas label,below,align=center] at (1.2,-0.40)
+      {\tiny$f'(c)=0$ and\\[-1pt]$f''(c)<0\Rightarrow$ max};
+  \end{scope}
+\end{tikzpicture}%
+}
+\caption{Second derivative test: the sign of \(f''(c)\) decides the local shape at a critical point.}
+\label{fig:second-derivative-tests}
+\end{figure}

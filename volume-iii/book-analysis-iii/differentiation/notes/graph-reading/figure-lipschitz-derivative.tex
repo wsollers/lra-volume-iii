@@ -1,0 +1,25 @@
+\begin{figure}[H]
+\centering
+\resizebox{0.76\linewidth}{!}{%
+\begin{tikzpicture}[scale=0.82]
+  \def\lf{2.0+1.05*sin(80*\x)*0.9+0.16*\x}
+  \glowcurve{color=atlasblue, domain=0.0:4.2, axis=0, top=4.2, expr={\lf}}
+  \draw[atlas axes] (0,0)--(4.8,0);
+  \draw[atlas axes] (0,0)--(0,4.4);
+  \def\L{0.85}
+  \draw[atlas probe,atlasconegreen] (0,3.6)--(4.2,{3.6-\L*4.2});
+  \draw[atlas probe,atlasconegreen] (0,0.5)--(4.2,{0.5+\L*4.2});
+  \draw[atlas probe,atlasconegreen] (0,1.0)--(4.2,{1.0+\L*4.2});
+  \draw[atlas probe,atlasconegreen] (0,3.1)--(4.2,{3.1-\L*4.2});
+  \node[atlas label,above] at (2.1,4.15){\scriptsize$|f'(x)-f'(y)|\le L|x-y|$};
+  \node[atlas label,left] at (0,3.9){\scriptsize$-L$};
+  \node[atlas label,left] at (0,0.5){\scriptsize$\pm L$};
+  \node[atlas label,right] at (4.2,4.0){\scriptsize$\pm L$};
+  \node[atlas label,right] at (4.2,0.6){\scriptsize$\pm L$};
+  \node[atlas label,right] at (3.4,3.1){\scriptsize$y=f(x)$};
+  \node[atlas label] at (2.5,1.0){\scriptsize$-L$};
+\end{tikzpicture}%
+}
+\caption{A Lipschitz derivative changes at a uniformly bounded rate.}
+\label{fig:lipschitz-derivative}
+\end{figure}

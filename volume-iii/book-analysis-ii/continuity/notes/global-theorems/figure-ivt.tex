@@ -1,0 +1,31 @@
+\begin{figure}[H]
+\centering
+\resizebox{0.72\linewidth}{!}{%
+\begin{tikzpicture}[scale=0.82]
+  \def\g{1.1+0.52*\x+0.45*sin(132*\x)}
+  \glowcurve{color=atlasgreen, domain=0.4:4.6, axis=0, top=4.6, expr={\g}}
+  \draw[atlas axes] (0,0)--(5.2,0);
+  \draw[atlas axes] (0,0)--(0,4.6);
+  \pgfmathsetmacro\ga{1.1+0.52*0.4+0.45*sin(132*0.4)}
+  \pgfmathsetmacro\gb{1.1+0.52*4.6+0.45*sin(132*4.6)}
+  \pgfmathsetmacro\cN{2.5}
+  \pgfmathsetmacro\N{1.1+0.52*\cN+0.45*sin(132*\cN)}
+  \draw[atlas probe,atlasink] (0,\N)--(5.0,\N);
+  \draw[dropline] (\cN,\N)--(\cN,0);
+  \node[atlas dot] at (\cN,\N){};
+  \draw[dropline] (0.4,\ga)--(0,\ga);
+  \draw[dropline] (4.6,\gb)--(0,\gb);
+  \node[atlas label,left] at (0,\ga){\footnotesize$f(a)$};
+  \node[atlas label,left] at (0,\N){\footnotesize$k$};
+  \node[atlas label,left] at (0,\gb){\footnotesize$f(b)$};
+  \node[atlas label,above=1pt] at (\cN,\N){\footnotesize$c$};
+  \node[atlas label,above left] at (\cN-0.1,\N+0.3){\footnotesize$f(c)=k$};
+  \node[atlas label,above right] at (3.5,4.0){\footnotesize$y=f(x)$};
+  \node[atlas label,below] at (0.4,-0.05){\footnotesize$a$};
+  \node[atlas label,below] at (2.55,-0.05){\scriptsize$a<c<b$};
+  \node[atlas label,below] at (4.6,-0.05){\footnotesize$b$};
+\end{tikzpicture}%
+}
+\caption{Intermediate Value Theorem: a continuous path hits every intermediate height.}
+\label{fig:ivt}
+\end{figure}

@@ -1,0 +1,33 @@
+\begin{figure}[H]
+\centering
+\resizebox{0.72\linewidth}{!}{%
+\begin{tikzpicture}[scale=0.82]
+  \def\f{0.16*\x*\x+0.20*\x+0.55}
+  \glowcurve{color=atlasblue, domain=0.5:4.5, axis=0, top=4.6, expr={\f}}
+  \draw[atlas axes] (0,0)--(5.2,0);
+  \draw[atlas axes] (0,0)--(0,4.6);
+  \pgfmathsetmacro\fa{0.16*0.5*0.5+0.20*0.5+0.55}
+  \pgfmathsetmacro\fb{0.16*4.5*4.5+0.20*4.5+0.55}
+  \pgfmathsetmacro\msec{(\fb-\fa)/(4.5-0.5)}
+  \pgfmathsetmacro\cc{(\msec-0.20)/0.32}
+  \pgfmathsetmacro\fc{0.16*\cc*\cc+0.20*\cc+0.55}
+  \draw[atlas probe,atlasgreen] (0.5,\fa)--(4.5,\fb);
+  \draw[atlas probe,atlasred] ({\cc-1.7},{\fc-\msec*1.7})--({\cc+1.7},{\fc+\msec*1.7});
+  \draw[dropline] (0.5,\fa)--(0.5,0);
+  \draw[dropline] (\cc,\fc)--(\cc,0);
+  \draw[dropline] (4.5,\fb)--(4.5,0);
+  \node[atlas dot] at (0.5,\fa){};
+  \node[atlas dot] at (4.5,\fb){};
+  \node[atlas dot] at (\cc,\fc){};
+  \node[atlas label,left=1pt] at (0.5,\fa){\footnotesize$(a,f(a))$};
+  \node[atlas label,above right=-1pt] at (4.5,\fb){\footnotesize$(b,f(b))$};
+  \node[atlas label,above right] at (3.2,2.35){\footnotesize$y=f(x)$};
+  \node[atlas label,below right=1pt] at (\cc,\fc){\scriptsize$f'(c)=\dfrac{f(b)-f(a)}{b-a}$};
+  \node[atlas label,below] at (0.5,-0.05){\footnotesize$a$};
+  \node[atlas label,below] at (2.5,-0.05){\scriptsize$a<c<b$};
+  \node[atlas label,below] at (4.5,-0.05){\footnotesize$b$};
+\end{tikzpicture}%
+}
+\caption{Mean Value Theorem: an interior tangent matches the secant slope.}
+\label{fig:mvt}
+\end{figure}

@@ -1,0 +1,33 @@
+\begin{figure}[H]
+\centering
+\resizebox{0.82\linewidth}{!}{%
+\begin{tikzpicture}[scale=0.82]
+  \def\cu{0.55*(\x-1.1)*(\x-1.1)+0.3}
+  \glowcurve{color=atlasgold, domain=0.0:2.2, axis=0, top=3.0, expr={\cu}}
+  \foreach \t in {0.5,1.7}{
+    \pgfmathsetmacro\yt{0.55*(\t-1.1)*(\t-1.1)+0.3}
+    \pgfmathsetmacro\mt{1.10*(\t-1.1)}
+    \draw[atlas probe,atlasgold!75!atlasink] (\t-0.7,{\yt-\mt*0.7})--(\t+0.7,{\yt+\mt*0.7});
+  }
+  \node[atlas label,above right] at (1.7,2.0){\scriptsize convex};
+  \node[atlas label] at (1.1,1.55){\scriptsize$f''(x)>0$};
+  \node[atlas label,below] at (1.1,0.05){\scriptsize tangents below};
+  \begin{scope}[xshift=3.4cm]
+    \def\hp{1.45+0.55*(\x-1.1)-0.34*(\x-1.1)*(\x-1.1)*(\x-1.1)}
+    \glowcurve{color=atlasmagenta, domain=0.0:2.2, axis=0, top=3.0, expr={\hp}}
+    \foreach \t in {0.45,1.75}{
+      \pgfmathsetmacro\yt{1.45+0.55*(\t-1.1)-0.34*(\t-1.1)*(\t-1.1)*(\t-1.1)}
+      \pgfmathsetmacro\mt{0.55-1.02*(\t-1.1)*(\t-1.1)}
+      \draw[atlas probe,atlasmagenta!80!atlasink] (\t-0.55,{\yt-\mt*0.55})--(\t+0.55,{\yt+\mt*0.55});
+    }
+    \node[atlas dot] at (1.1,1.45){};
+    \node[atlas label,below] at (0.55,0.55){\scriptsize convex side};
+    \node[atlas label,above] at (1.7,2.35){\scriptsize concave side};
+    \node[atlas label,right,align=left] at (1.2,0.95)
+      {\scriptsize inflection\\[-1pt]point};
+  \end{scope}
+\end{tikzpicture}%
+}
+\caption{Convexity, concavity, and the change of bending at an inflection point.}
+\label{fig:concavity-convexity}
+\end{figure}
