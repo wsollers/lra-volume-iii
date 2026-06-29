@@ -5,23 +5,21 @@
 
 \section{Uniform Continuity}
 
-\begin{toolkitbox}{Toolkit --- Uniform Continuity}
-\begin{itemize}
-  \item Key distinction: $\delta=\delta(\varepsilon)$ only, not
-    $\delta(\varepsilon,c)$. One $\delta$ serves all pairs in $A$.
-  \item Input condition: $\operatorname{Within}(x,u,\delta)$ --- both
-    $x$ and $u$ range freely, no puncturing.
-  \item Implication chain: $\operatorname{Lipschitz}(f,A)
-    \Rightarrow\operatorname{UniformlyContinuous}(f,A)
-    \Rightarrow\operatorname{ContinuousOn}(f,A)$.
-    Both implications are strict.
-  \item Heine--Cantor: $\operatorname{ContinuousOn}(f,[a,b])
-    \Rightarrow\operatorname{UniformlyContinuous}(f,[a,b])$.
-  \item Failure criterion: sequences $(x_n),(u_n)$ with
-    $x_n-u_n\to 0$ but $|f(x_n)-f(u_n)|\geq\varepsilon_0$.
-  \item $\operatorname{UniformlyContinuous}(f,A)$ preserves Cauchy
-    sequences --- the key lemma for continuous extensions.
-\end{itemize}
+\begin{toolkitbox}{Uniform Continuity --- Quick Reference}
+\small
+\begin{tabular}{l l}
+\toprule
+\textbf{Concept/Statement} & \textbf{Meaning/Role}\\
+\midrule
+\hyperref[def:uniform-continuity]{Uniform continuity} & One $\delta(\varepsilon)$ works for all pairs in the domain.\\
+\hyperref[prop:sequential-uniform-continuity]{Sequential test} & Close inputs with separated outputs witness failure.\\
+\hyperref[thm:heine-cantor]{Heine--Cantor} & Continuity on $[a,b]$ upgrades to uniform continuity.\\
+\hyperref[prop:uniform-continuity-cauchy]{Cauchy preservation} & Uniform continuity preserves Cauchy sequences.\\
+\hyperref[def:lipschitz-condition]{Lipschitz} & A global slope bound gives a uniform modulus.\\
+\hyperref[prop:lipschitz-implies-uc]{Lipschitz $\Rightarrow$ uniform} & Lipschitz control implies uniform continuity.\\
+\hyperref[def:bi-lipschitz]{Bi-Lipschitz maps} & Distances are controlled above and below.\\
+\bottomrule
+\end{tabular}
 \end{toolkitbox}
 
 

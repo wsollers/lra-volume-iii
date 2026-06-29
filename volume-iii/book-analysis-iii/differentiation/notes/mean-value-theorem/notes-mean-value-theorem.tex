@@ -3,6 +3,14 @@
 % =========================================================
 % ---------------------------------------------------------
 
+\begin{remark*}[Section guide]
+Rolle's theorem says that a differentiable curve returning to the same height
+must level off somewhere between. The Mean Value Theorem tilts that picture:
+between any two points, some interior tangent runs parallel to the chord.
+Cauchy's version compares two functions at once and later powers
+L'H\^{o}pital's rule.
+\end{remark*}
+
 \begin{theorembox}{Theorem (Rolle's Theorem)}
 \begin{theorem}[Rolle's Theorem]
 \label{thm:rolles-theorem}
@@ -195,8 +203,36 @@ If, in addition, $g'(x)\neq 0$ for every $x\in(a,b)$, then $g(b)\neq g(a)$ and
 \(\operatorname{CauchyMVT}(f,g,[a,b])\) asserts the existence of an interior point where the velocity vector \((g'(c),f'(c))\) is parallel to the chord vector \((g(b)-g(a),f(b)-f(a))\). Taking \(g(x)=x\) recovers the ordinary Mean Value Theorem.
 \end{remark*}
 
+\begin{remark*}[Negated quantified statement]
+\[
+  \forall c\in(a,b):\ 
+  \bigl(f(b)-f(a)\bigr)g'(c)\neq
+  \bigl(g(b)-g(a)\bigr)f'(c).
+\]
+\end{remark*}
+
 \begin{remark*}[Failure modes]
 The continuity and differentiability hypotheses fail for the same reasons they fail in the ordinary MVT: jumps break endpoint-to-interior control, and corners leave no derivative to match. The quotient form has the additional nonvanishing hypothesis \(g'\neq 0\) on \((a,b)\); without it the cross-multiplied conclusion may still hold, but the displayed quotient can be undefined.
+\end{remark*}
+
+\begin{remark*}[Contrapositive quantified statement]
+\[
+\begin{aligned}
+&\bigl(\forall c\in(a,b):\ (f(b)-f(a))g'(c)\neq(g(b)-g(a))f'(c)\bigr)\\
+&\quad\Longrightarrow\
+\neg\operatorname{ContinuousOn}(f,[a,b])
+\vee \neg\operatorname{ContinuousOn}(g,[a,b])
+\vee \neg\operatorname{DifferentiableOn}(f,(a,b))
+\vee \neg\operatorname{DifferentiableOn}(g,(a,b)).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Contrapositive predicate reading]
+If no interior point makes the derivative pair \((g'(c),f'(c))\) parallel to
+the chord pair \((g(b)-g(a),f(b)-f(a))\), then at least one of the four
+regularity hypotheses fails: continuity of \(f\) or \(g\) on \([a,b]\), or
+differentiability of \(f\) or \(g\) on \((a,b)\).
 \end{remark*}
 
 \begin{remark*}[Interpretation]

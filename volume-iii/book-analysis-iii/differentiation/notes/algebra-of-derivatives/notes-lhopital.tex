@@ -33,6 +33,22 @@ The analogous statements at left-hand endpoints, at two-sided interior points, a
 \]
 \end{remark*}
 
+\begin{remark*}[Failure modes]
+The rule is a one-way implication and is routinely misapplied.
+\begin{itemize}
+  \item \emph{Form not indeterminate.} If \(f/g\) is not genuinely \(0/0\),
+        differentiating numerator and denominator can answer a different
+        problem.
+  \item \emph{\(\lim f'/g'\) fails to exist.} With \(f(x)=x+\sin x\) and
+        \(g(x)=x\) as \(x\to+\infty\), the quotient \(f/g\to1\), but
+        \(f'/g'=1+\cos x\) oscillates. Absence of \(\lim f'/g'\) says
+        nothing by itself about \(\lim f/g\).
+  \item \emph{\(g'\) vanishes near the target.} The denominator derivative
+        must stay nonzero so the Cauchy Mean Value Theorem applies and the
+        derivative ratio is defined.
+\end{itemize}
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 The \(0/0\) form is the Cauchy Mean Value Theorem read as a limit law. On a shrinking interval, a ratio of changes in \(f\) and \(g\) is represented by a ratio of derivatives at an interior point. If the derivative ratio settles, the original quotient is forced to settle to the same value.
 \end{remark*}

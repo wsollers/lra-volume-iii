@@ -5,50 +5,54 @@
 
 \section{Limits}
 
-\begin{toolkitbox}{Toolkit --- One-Sided Limits}
-\begin{itemize}
-  \item $\operatorname{RightLimit}(f,c,L)$: approach from $x>c$ only.
-    Input condition: $0<x-c<\delta$.
-  \item $\operatorname{LeftLimit}(f,c,L)$: approach from $x<c$ only.
-    Input condition: $0<c-x<\delta$.
-  \item Sequential criteria hold for each direction separately.
-  \item $\operatorname{FunctionLimit}(f,c,L)\iff
-    \operatorname{RightLimit}(f,c,L)\wedge\operatorname{LeftLimit}(f,c,L)$.
-\end{itemize}
+\begin{toolkitbox}{One-Sided Limits --- Quick Reference}
+\small
+\begin{tabular}{l l}
+\toprule
+\textbf{Concept/Statement} & \textbf{Meaning/Role}\\
+\midrule
+\hyperref[def:right-hand-limit]{Right-hand limit} & Approach the point from inputs larger than $c$.\\
+\hyperref[def:left-hand-limit]{Left-hand limit} & Approach the point from inputs smaller than $c$.\\
+\hyperref[thm:sequential-criterion-right-hand-limit]{Right sequential criterion} & Test right limits by right-approaching sequences.\\
+\hyperref[cor:sequential-criterion-left-hand-limit]{Left sequential criterion} & Test left limits by left-approaching sequences.\\
+\hyperref[thm:two-sided-limit-iff-matching-one-sided-limits]{Matching criterion} & Two-sided limits exist exactly when side limits agree.\\
+\bottomrule
+\end{tabular}
 \end{toolkitbox}
 
 
-\begin{toolkitbox}{Toolkit --- Limits of Functions}
-\begin{itemize}
-  \item $\lim_{x \to c} f(x) = L$ requires $c$ to be a cluster point
-    of $\operatorname{dom}(f)$. The value $f(c)$ is irrelevant;
-    $f$ need not be defined at $c$.
-  \item The input condition is punctured:
-    $0<|x-c|<\delta$ means
-    $0 < |x-c| < \delta$. This is what separates limits from
-    continuity, where $\operatorname{Within}(x,c,\delta)$
-    permits $x = c$.
-  \item Three equivalent forms: $\varepsilon$-$\delta$, neighbourhood,
-    sequential. The Sequential Criterion is the primary working tool.
-  \item Bridge principle: algebra of sequence limits transfers
-    automatically via the Sequential Criterion.
-  \item A finite limit implies $\exists\delta>0\;\exists M>0\;\forall x\in A\;(0<|x-c|<\delta\Rightarrow |f(x)|\leq M)$.
-  \item Limits are local: behavior far from $c$ is irrelevant.
-\end{itemize}
+\begin{toolkitbox}{Limits of Functions --- Quick Reference}
+\small
+\begin{tabular}{l l}
+\toprule
+\textbf{Concept/Statement} & \textbf{Meaning/Role}\\
+\midrule
+\hyperref[def:limit-function]{Function limit} & Punctured input control near a cluster point.\\
+\hyperref[def:limit-function-sequential]{Sequential limit} & All approaching sequences have the same output limit.\\
+\hyperref[def:limit-function-neighbourhood]{Neighbourhood limit} & Neighbourhood formulation of the same condition.\\
+\hyperref[thm:limit-unique]{Uniqueness} & A function has at most one limit at a point.\\
+\hyperref[prop:sequential-criterion-limits]{Sequential criterion} & Sequence convergence is the main working test.\\
+\hyperref[thm:limit-implies-local-bounding]{Local boundedness} & Finite limits bound the function near the point.\\
+\hyperref[thm:squeeze-function-limits]{Squeeze theorem} & Ordered comparison transfers limits.\\
+\hyperref[thm:limits-are-local]{Locality} & Only behaviour near the approach point matters.\\
+\bottomrule
+\end{tabular}
 \end{toolkitbox}
 
 
-\begin{toolkitbox}{Toolkit --- Algebra of Limits}
-\begin{itemize}
-  \item All five rules follow from the Sequential Criterion plus
-    algebra of sequence limits. No new $\varepsilon$-$\delta$ work.
-  \item Bridge: $(x_n)\subseteq A\setminus\{c\}$, $x_n\to c$
-    $\Rightarrow$ $f(x_n)\to L$, $g(x_n)\to M$
-    $\Rightarrow$ apply sequence algebra
-    $\Rightarrow$ lift back by Sequential Criterion.
-  \item Quotient: $M\neq 0$ forces $\operatorname{BoundedAwayFromZeroNear}(g,c)$,
-    making $f/g$ well-defined on a punctured neighbourhood.
-\end{itemize}
+\begin{toolkitbox}{Algebra of Limits --- Quick Reference}
+\small
+\begin{tabular}{l l}
+\toprule
+\textbf{Concept/Statement} & \textbf{Meaning/Role}\\
+\midrule
+\hyperref[thm:limit-sum]{Sum rule} & Limits add pointwise.\\
+\hyperref[thm:limit-difference]{Difference rule} & Limits subtract pointwise.\\
+\hyperref[thm:limit-scalar-multiple]{Scalar multiple rule} & Scalars pass through limits.\\
+\hyperref[thm:limit-product]{Product rule} & Products of finite limits multiply.\\
+\hyperref[thm:limit-quotient]{Quotient rule} & Division is valid when the denominator limit is nonzero.\\
+\bottomrule
+\end{tabular}
 \end{toolkitbox}
 
 

@@ -1,17 +1,19 @@
 \section{Power Functions and the Exponential}
 
-\begin{toolkitbox}{Toolkit --- Power and Exponential Functions}
-\begin{itemize}
-  \item $e^x := \sum_{n=0}^\infty x^n/n!$: absolutely convergent for
-    all $x \in \mathbb{R}$; functional equation $e^{x+y} = e^x e^y$;
-    self-derivative $(e^x)' = e^x$.
-  \item $e := \sum_{n=0}^\infty 1/n! = \lim_{n\to\infty}(1+1/n)^n$.
-  \item Real power: $x^r := e^{r\ln x}$ for $x > 0$, $r \in \mathbb{R}$.
-    Unifies integer, rational, and irrational exponents.
-  \item Growth hierarchy: $\ln x \ll x^r \ll e^x$ as $x \to \infty$
-    for any $r > 0$.
-  \item Fundamental exponential limit: $\lim_{x \to 0}(e^x-1)/x = 1$.
-\end{itemize}
+\begin{toolkitbox}{Power and Exponential Functions --- Quick Reference}
+\small
+\begin{tabular}{l l}
+\toprule
+\textbf{Concept} & \textbf{Meaning} \\
+\midrule
+\hyperref[def:power-function]{Power function} & Real powers \(x^r\) on positive inputs \\
+\hyperref[def:number-e]{The number \(e\)} & Series and compound-interest limit definitions \\
+\hyperref[def:exponential]{Exponential function} & Power series with \(e^{x+y}=e^xe^y\) \\
+\hyperref[prop:limit-exponential-fundamental]{Fundamental exponential limit} & \((e^x-1)/x\to 1\) \\
+\hyperref[prop:limit-compound-interest]{Compound-interest limit} & \((1+1/n)^n\to e\) \\
+\hyperref[prop:exponential-dominates-power]{Growth hierarchy} & \(e^x\) dominates powers at infinity \\
+\bottomrule
+\end{tabular}
 \end{toolkitbox}
 
 \input{volume-iii/book-analysis-ii/elementary-functions/notes/power-exponential/notes-power-exponential}

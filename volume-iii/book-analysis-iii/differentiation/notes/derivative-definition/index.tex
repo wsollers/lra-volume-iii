@@ -1,21 +1,26 @@
 \section{The Derivative}
 
-\begin{toolkitbox}{Derivative Definition --- toolkit}
-\textbf{Concept family:} The derivative at a point, and its three equivalent formulations.
-
-\medskip
-\textbf{Atomic items in this section:}
-\begin{itemize}
-  \item Definition: Derivative at a Point (epsilon--delta form)
-  \item Definition: Topological Definition of Derivative at a Point
-  \item Definition: Sequential Definition of Derivative at a Point
-  \item Theorem: Equivalence of Definitions of the Derivative at a Point
-  \item Proposition: Derivative: $h$-Form Equivalence
-  \item Theorem: Differentiable Implies Continuous
-  \item Theorem: Uniqueness of the Derivative
-  \item Proposition: Derivative of the Identity
-  \item Proposition: Derivative of a Constant
-\end{itemize}
+\begin{toolkitbox}{Derivative Definition --- Quick Reference}
+\small
+\begin{tabular}{l l}
+\toprule
+\textbf{Concept} & \textbf{Meaning} \\
+\midrule
+\hyperref[def:derivative-at-a-point]{Derivative at a point} & Epsilon--delta limiting secant slope \\
+\hyperref[ex:x2-derivative]{Example: derivative of \(x^2\)} & The definition in a removable-singularity computation \\
+\hyperref[def:topological-definition-of-derivative-at-a-point]{Topological derivative} & Neighbourhood formulation of the same limit \\
+\hyperref[def:sequential-definition-of-derivative-at-a-point]{Sequential derivative} & Sequence test for differentiability \\
+\hyperref[thm:derivative-equivalence]{Equivalent definitions} & Epsilon--delta, topological, and sequential forms agree \\
+\hyperref[prop:derivative-h-form-equivalence]{$h$-form} & Difference quotient written with \(x=c+h\) \\
+\hyperref[thm:differentiable-implies-continuous]{Differentiability implies continuity} & Differentiability is stronger than continuity \\
+\hyperref[ex:cont-not-diff-corner]{Example: one corner} & Continuous but not differentiable at one point \\
+\hyperref[ex:cont-not-diff-sawtooth]{Example: sawtooth} & Continuous with infinitely many isolated corners \\
+\hyperref[ex:weierstrass]{Example: Weierstrass function} & Continuous and nowhere differentiable \\
+\hyperref[thm:uniqueness-of-the-derivative]{Uniqueness} & The derivative value is single-valued \\
+\hyperref[prop:derivative-of-the-identity]{Identity derivative} & Base case \(D(x)=1\) \\
+\hyperref[prop:derivative-of-a-constant]{Constant derivative} & Base case \(D(C)=0\) \\
+\bottomrule
+\end{tabular}
 \end{toolkitbox}
 
 \input{volume-iii/book-analysis-iii/differentiation/notes/derivative-definition/notes-derivative-definition}

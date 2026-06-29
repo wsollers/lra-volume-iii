@@ -1,19 +1,21 @@
 \section{\texorpdfstring{Subsets of $\mathbb{R}$}{Subsets of R}}
 
-\begin{toolkitbox}{Toolkit --- Subsets of $\mathbb{R}$}
-\begin{itemize}
-  \item Cluster point (= limit point = accumulation point): every
-    $\varepsilon$-neighbourhood contains a \emph{distinct} point of $X$.
-    Adherent point: every neighbourhood contains \emph{some} point of $X$.
-  \item $\operatorname{Within}(x,c,r)$: the unpunctured ball condition
-    $|x-c| < r$. Used for adherence and continuity.
-  \item $\operatorname{InputTolerance}(x,c,\delta)$: the punctured ball
-    $0 < |x-c| < \delta$. Used for cluster points and function limits.
-  \item Closed $\iff$ $\overline{X} = X$ $\iff$ sequentially closed.
-  \item Heine--Borel: $X\text{ is closed}$ and
-    $X\text{ is bounded}$ $\iff$ every sequence in $X$ has a
-    subsequence converging to a limit in $X$.
-\end{itemize}
+\begin{toolkitbox}{Subsets of $\mathbb{R}$ --- Quick Reference}
+\small
+\begin{tabular}{l l}
+\toprule
+\textbf{Concept} & \textbf{Meaning} \\
+\midrule
+\hyperref[def:epsilon-neighbourhood]{Epsilon neighbourhood} & Unpunctured condition \(|x-c|<r\) \\
+\hyperref[def:deleted-epsilon-neighbourhood]{Deleted neighbourhood} & Punctured condition \(0<|x-c|<\delta\) \\
+\hyperref[def:cluster-point-r]{Cluster point} & Every neighbourhood contains a distinct point of \(X\) \\
+\hyperref[def:adherent-point-r]{Adherent point} & Every neighbourhood contains some point of \(X\) \\
+\hyperref[def:closure-r]{Closure} & Points adherent to \(X\) \\
+\hyperref[def:closed-set-r]{Closed set} & Set containing its closure or sequential limits \\
+\hyperref[def:bounded-set-r]{Bounded set} & Set contained in a large interval \\
+\hyperref[thm:heine-borel-subsets-real-line]{Heine--Borel} & Closed and bounded iff sequentially compact in \(\mathbb{R}\) \\
+\bottomrule
+\end{tabular}
 \end{toolkitbox}
 
 \input{volume-iii/book-analysis-i/functions/notes/subsets-real-line/notes-subsets-of-R}

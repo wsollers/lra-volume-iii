@@ -1,19 +1,20 @@
 \section{Trigonometric Functions}
 
-\begin{toolkitbox}{Toolkit --- Trigonometric Functions}
-\begin{itemize}
-  \item $\sin x$ and $\cos x$ are defined by absolutely convergent
-    power series; properties are derived analytically, not from
-    geometry.
-  \item Pythagorean identity: $\sin^2 x + \cos^2 x = 1$. Proof:
-    the derivative of the left side is $0$ and its value at $0$
-    is $1$.
-  \item Addition formulas follow from $e^{i(x+y)} = e^{ix}e^{iy}$.
-  \item Fundamental trigonometric limit: $\lim_{x \to 0}\sin x/x = 1$.
-  \item Second fundamental limit: $\lim_{x\to 0}(1-\cos x)/x^2 = 1/2$.
-  \item Inverse functions $\arcsin$, $\arccos$, $\arctan$ are defined
-    by restricting $\sin$, $\cos$, $\tan$ to monotone subdomains.
-\end{itemize}
+\begin{toolkitbox}{Trigonometric Functions --- Quick Reference}
+\small
+\begin{tabular}{l l}
+\toprule
+\textbf{Concept} & \textbf{Meaning} \\
+\midrule
+\hyperref[def:sine-cosine]{Sine and cosine} & Defined analytically by power series \\
+\hyperref[prop:pythagorean-identity]{Pythagorean identity} & \(\sin^2x+\cos^2x=1\) \\
+\hyperref[prop:trig-addition-formulas]{Addition formulas} & Angle addition identities from exponentials \\
+\hyperref[def:other-trig]{Other trig functions} & Tangent, cotangent, secant, cosecant \\
+\hyperref[def:inverse-trig]{Inverse trig functions} & Inverses on monotone restricted domains \\
+\hyperref[thm:fundamental-trig-limit]{Fundamental trig limit} & \(\sin x/x\to 1\) as \(x\to 0\) \\
+\hyperref[prop:limit-one-minus-cos]{Second trig limit} & \((1-\cos x)/x^2\to 1/2\) \\
+\bottomrule
+\end{tabular}
 \end{toolkitbox}
 
 \input{volume-iii/book-analysis-ii/elementary-functions/notes/trigonometric/notes-trigonometric}

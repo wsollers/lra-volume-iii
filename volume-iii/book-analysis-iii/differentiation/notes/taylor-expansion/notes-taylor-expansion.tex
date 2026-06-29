@@ -1,10 +1,11 @@
 \label{sec:taylor}
 
 \begin{exposition}
-Taylor expansion approximates a differentiable function near a point by a
-polynomial whose coefficients are forced by the derivatives at that point.
-The polynomial records the local data, while the remainder records the error
-left after truncating the expansion.
+Taylor's theorem is the derivative's most ambitious claim: local behaviour to
+finite order is encoded by derivatives at one point, with an error term that
+can be estimated. The first-order case is the seed of the closing reframe,
+where the derivative stops being only a number \(f'(c)\) and becomes the
+linear map \(h\mapsto f'(c)h\).
 \end{exposition}
 
 % ---------------------------------------------------------
@@ -275,6 +276,37 @@ The first-order Peano formula is the derivative rewritten as an approximation th
   \item \hyperref[def:derivative-at-a-point]{Derivative at a Point}
 \end{itemize}
 \end{dependencies}
+
+\begin{definitionbox}{Example (\((\sin x-x)/x^3\) Two Ways)}
+\phantomsection\label{ex:sinx-limit}
+\begin{remark*}[Worked example]
+Taylor expansion gives
+\[
+  \sin x=x-\frac{x^3}{6}+o(x^3),
+\]
+so
+\[
+  \frac{\sin x-x}{x^3}
+  =
+  \frac{-x^3/6+o(x^3)}{x^3}
+  \longrightarrow
+  -\frac16.
+\]
+L'H\^{o}pital's rule reaches the same value by three differentiations:
+\[
+  \lim_{x\to0}\frac{\sin x-x}{x^3}
+  =
+  \lim_{x\to0}\frac{\cos x-1}{3x^2}
+  =
+  \lim_{x\to0}\frac{-\sin x}{6x}
+  =
+  \lim_{x\to0}\frac{-\cos x}{6}
+  =
+  -\frac16.
+\]
+Taylor exposes the reason for the answer: the limit is the cubic coefficient.
+\end{remark*}
+\end{definitionbox}
 
 % ---------------------------------------------------------
 

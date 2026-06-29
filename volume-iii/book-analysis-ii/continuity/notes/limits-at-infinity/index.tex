@@ -5,17 +5,18 @@
 
 \section{Limits at Infinity}
 
-\begin{toolkitbox}{Toolkit --- Limits at Infinity}
-\begin{itemize}
-  \item $+\infty$ is adherent to $X$ iff $\neg\,\operatorname{BoundedSet}(X)$
-    above ($\sup X=+\infty$).
-  \item $\operatorname{LimitAtInfinity}(f,+\infty,L)$: replace
-    $\operatorname{InputTolerance}(x,c,\delta)$ with $x>M$.
-    Same $\operatorname{OutputTolerance}(f(x),L,\varepsilon)$.
-  \item All standard limit laws carry over unchanged.
-  \item Sequential characterisation: $\operatorname{LimitAtInfinity}
-    (f,+\infty,L)\iff f(x_n)\to L$ for every $x_n\to+\infty$ in $X$.
-\end{itemize}
+\begin{toolkitbox}{Limits at Infinity --- Quick Reference}
+\small
+\begin{tabular}{l l}
+\toprule
+\textbf{Concept/Statement} & \textbf{Meaning/Role}\\
+\midrule
+\hyperref[def:infinite-adherent-points]{Infinite adherent points} & Unboundedness makes $\pm\infty$ available as approach points.\\
+\hyperref[def:limit-at-infinity]{Limit at infinity} & Replace $0<|x-c|<\delta$ by sufficiently large $|x|$.\\
+\hyperref[prop:sequential-criterion-limits]{Sequential criterion} & Limits at infinity are tested along escaping sequences.\\
+\hyperref[thm:limit-sum]{Limit laws} & Algebraic limit rules carry over unchanged.\\
+\bottomrule
+\end{tabular}
 \end{toolkitbox}
 
 

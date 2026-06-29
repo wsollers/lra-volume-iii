@@ -1,16 +1,21 @@
 \section{Real-Valued Functions}
 
-\begin{toolkitbox}{Toolkit --- Real-Valued Functions}
-\begin{itemize}
-  \item Pointwise operations: sum, difference, product, quotient,
-    scalar multiple, absolute value, max, min. All purely algebraic
-    --- no limits involved. $fg$ is pointwise product, not composition.
-  \item $\operatorname{BoundedOn}(f,A)$: $\exists B>0,\;\forall x\in A:
-    |f(x)|\leq B$.
-  \item $\operatorname{MonotoneFunction}(f,A)$: increasing or decreasing.
-  \item Maximum attained at $x^*$: $f(x^*) = \sup f(A)$, $x^*\in A$.
-    Supremum need not be attained.
-\end{itemize}
+\begin{toolkitbox}{Real-Valued Functions --- Quick Reference}
+\small
+\begin{tabular}{l l}
+\toprule
+\textbf{Concept} & \textbf{Meaning} \\
+\midrule
+\hyperref[def:pointwise-sum-of-functions]{Pointwise sum} & Algebraic addition of function values \\
+\hyperref[def:pointwise-product-of-functions]{Pointwise product} & Product \(fg\), distinct from composition \\
+\hyperref[def:pointwise-quotient-of-functions]{Pointwise quotient} & Quotient where denominator is nonzero \\
+\hyperref[def:function-bounded]{Bounded function} & A single bound controls all values on \(A\) \\
+\hyperref[def:function-supremum-on-set]{Supremum on a set} & Least upper bound of \(f(A)\) \\
+\hyperref[def:function-maximum-point]{Maximum point} & Point where the supremum is attained \\
+\hyperref[def:function-monotone]{Monotone function} & Increasing or decreasing behavior on a set \\
+\hyperref[def:function-constant]{Constant function} & Same value at every input \\
+\bottomrule
+\end{tabular}
 \end{toolkitbox}
 
 \input{volume-iii/book-analysis-i/functions/notes/real-valued-functions/notes-real-valued-functions}

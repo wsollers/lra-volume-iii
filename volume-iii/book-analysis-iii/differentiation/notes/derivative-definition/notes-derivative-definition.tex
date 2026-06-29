@@ -3,6 +3,13 @@
 % =========================================================
 % ---------------------------------------------------------
 
+\begin{remark*}[Section guide]
+The derivative is the number the secant slopes approach, but the word
+``limit'' has three useful faces. The epsilon--delta form is the contract;
+the topological form strips it to neighbourhoods; the sequential form is the
+disproving tool, since one bad approach sequence is enough.
+\end{remark*}
+
 \begin{definitionbox}{Definition (Derivative at a Point)}
 \begin{definition}[Derivative at a Point]
 \label{def:derivative-at-a-point}
@@ -63,6 +70,24 @@ The derivative is a limit of slopes of secant lines. The $\varepsilon$-$\delta$ 
   \item \hyperref[def:limit-function]{Limit of a Function}
 \end{itemize}
 \end{dependencies}
+
+\begin{definitionbox}{Example (Derivative of \(x^2\) from the Definition)}
+\phantomsection\label{ex:x2-derivative}
+\begin{remark*}[Worked example]
+Let \(f(x)=x^2\) and fix \(c\in\mathbb{R}\). For \(x\neq c\),
+\[
+  \frac{f(x)-f(c)}{x-c}
+  =
+  \frac{x^2-c^2}{x-c}
+  =
+  x+c.
+\]
+The singularity has been removed by exact algebra, so the limit as
+\(x\to c\) is \(2c\). Hence \(f'(c)=2c\). Read through
+Carath\'{e}odory, this is the factor \(\varphi(x)=x+c\), continuous at
+\(c\) with \(\varphi(c)=2c\).
+\end{remark*}
+\end{definitionbox}
 
 % ---------------------------------------------------------
 
@@ -301,6 +326,32 @@ The $h$-form substitutes $x = c + h$ in the difference quotient. It is the stand
 \end{itemize}
 \end{dependencies}
 
+\begin{remark*}[Discrete and continuous change]
+The forward difference operator
+\[
+  \Delta f(n)=f(n+1)-f(n)
+\]
+is the discrete analogue of the derivative. The \(h\)-form above is its
+continuous descendant: replace the fixed step \(1\) by a shrinking step
+\(h\), divide by \(h\), and pass to the limit.
+
+The kinship matters, but so does the divergence. The discrete product rule
+has an unavoidable shift:
+\[
+  \Delta(fg)(n)
+  =
+  (\Delta f)(n)g(n)+f(n+1)(\Delta g)(n).
+\]
+The continuous product rule loses this shift because \(f(x+h)\to f(x)\) as
+\(h\to0\). Likewise, ordinary powers are not the clean basis for \(\Delta\);
+falling factorials are:
+\[
+  \Delta\,x^{\underline{k}}=k\,x^{\underline{k-1}}.
+\]
+Passing to the limit is therefore not just a sharpening of a quotient. It
+restores symmetries that the discrete operator must carry as shifts.
+\end{remark*}
+
 % ---------------------------------------------------------
 
 \subsection{First Consequences}
@@ -362,6 +413,77 @@ Differentiability is strictly stronger than continuity: the existence of a well-
   \item \hyperref[def:continuous-at-point]{Continuity at a Point}
 \end{itemize}
 \end{dependencies}
+
+\begin{remark*}[Converse failure]
+The theorem runs one way only. Differentiability forces continuity, but
+continuity does not force differentiability. The negation of the converse is
+\[
+  \exists f\;\exists c:\;
+  \operatorname{ContinuousAt}(f,c)\land
+  \neg\operatorname{DifferentiableAt}(f,c).
+\]
+The examples below escalate the failure: one corner, infinitely many isolated
+corners, and no differentiability anywhere.
+\end{remark*}
+
+\begin{definitionbox}{Example (One Corner: \(|x|\))}
+\phantomsection\label{ex:cont-not-diff-corner}
+\begin{remark*}[Worked example]
+The function \(f(x)=|x|\) is continuous on \(\mathbb{R}\), but it is not
+differentiable at \(0\). Its one-sided derivatives are \(-1\) and \(+1\), so
+the two one-sided slopes do not agree. Thus a single corner is enough to
+separate continuity from differentiability.
+\end{remark*}
+\end{definitionbox}
+
+\begin{definitionbox}{Example (Finitely Many Corners: A Sawtooth)}
+\phantomsection\label{ex:cont-not-diff-sawtooth}
+\begin{remark*}[Worked example]
+On a compact interval, a triangular sawtooth made from finitely many line
+segments can be continuous while failing to be differentiable at each corner.
+For example,
+\[
+  s(x)=
+  \begin{cases}
+    x, & 0\leq x\leq 1,\\
+    2-x, & 1\leq x\leq 2,
+  \end{cases}
+\]
+is continuous on \([0,2]\), but the left derivative at \(1\) is \(1\) and the
+right derivative is \(-1\). Adding more teeth gives any finite number of
+corner failures without breaking continuity.
+\end{remark*}
+\end{definitionbox}
+
+\begin{definitionbox}{Example (The Weierstrass Function)}
+\phantomsection\label{ex:weierstrass}
+\begin{remark*}[Worked example]
+For \(0<a<1\) and an odd integer \(b\) satisfying
+\(ab>1+\frac{3}{2}\pi\), the Weierstrass function
+\[
+  W(x)=\sum_{n=0}^{\infty}a^n\cos(b^n\pi x)
+\]
+is continuous on \(\mathbb{R}\), because the series converges uniformly by
+the Weierstrass \(M\)-test. Classically, under the displayed condition, it is
+differentiable at no point. Thus continuity may hold everywhere while
+differentiability holds nowhere.
+\end{remark*}
+\end{definitionbox}
+
+\begin{remark*}[Proof status]
+The continuity of \(W\) follows from uniform convergence once the
+function-series machinery is available. The nowhere-differentiability proof
+is a classical result of Weierstrass and is deferred to the function-series
+development; it is used here only as a counterexample to the converse of
+Differentiable Implies Continuous.
+\end{remark*}
+
+\begin{remark*}[Forward flag]
+Brownian motion has sample paths that are almost surely continuous
+everywhere and differentiable nowhere. This is the stochastic analogue of the
+Weierstrass phenomenon and one reason ordinary calculus must be replaced by
+the It\^o integral in stochastic analysis.
+\end{remark*}
 
 % ---------------------------------------------------------
 

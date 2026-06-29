@@ -1,20 +1,18 @@
 \section{Hyperbolic Functions}
 
-\begin{toolkitbox}{Toolkit --- Hyperbolic Functions}
-\begin{itemize}
-  \item $\cosh x = (e^x + e^{-x})/2$: even part of $e^x$;\;
-    $\cosh x \geq 1$;\; $\cosh 0 = 1$.
-  \item $\sinh x = (e^x - e^{-x})/2$: odd part of $e^x$;\;
-    bijective $\mathbb{R} \to \mathbb{R}$.
-  \item $e^x = \cosh x + \sinh x$ for all $x$.
-  \item Hyperbolic Pythagorean: $\cosh^2 x - \sinh^2 x = 1$
-    (note the minus sign, not plus).
-  \item $(\sinh x)' = \cosh x$;\; $(\cosh x)' = \sinh x$
-    (no sign change, unlike trigonometric).
-  \item $\tanh x \in (-1,1)$ for all $x$;\;
-    $\tanh x \to \pm 1$ as $x \to \pm\infty$.
-  \item Inverse hyperbolic functions have explicit logarithmic formulas.
-\end{itemize}
+\begin{toolkitbox}{Hyperbolic Functions --- Quick Reference}
+\small
+\begin{tabular}{l l}
+\toprule
+\textbf{Concept} & \textbf{Meaning} \\
+\midrule
+\hyperref[def:hyperbolic]{Hyperbolic functions} & \(\sinh\) and \(\cosh\) from even/odd exponential parts \\
+\hyperref[prop:hyperbolic-pythagorean]{Hyperbolic Pythagorean identity} & \(\cosh^2x-\sinh^2x=1\) \\
+\hyperref[prop:hyperbolic-addition]{Addition formulas} & Hyperbolic angle-addition identities \\
+\hyperref[prop:tanh-limits]{Tanh limits} & \(\tanh x\to\pm 1\) as \(x\to\pm\infty\) \\
+\hyperref[def:inverse-hyperbolic]{Inverse hyperbolic functions} & Logarithmic inverse formulas \\
+\bottomrule
+\end{tabular}
 \end{toolkitbox}
 
 \input{volume-iii/book-analysis-ii/elementary-functions/notes/hyperbolic/notes-hyperbolic}

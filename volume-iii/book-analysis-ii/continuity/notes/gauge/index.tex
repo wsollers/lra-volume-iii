@@ -5,20 +5,21 @@
 
 \section{Gauge}
 
-\begin{toolkitbox}{Toolkit --- Gauges and Tagged Partitions}
-\begin{itemize}
-  \item A \textbf{gauge} $\delta:I\to(0,\infty)$ is a variable-width
-    tolerance function allowing the mesh to depend on position.
-  \item A tagged partition $\dot{\mathcal{P}}$ is $\delta$-fine if
-    each subinterval $I_i$ lies inside the $\delta(t_i)$-neighbourhood
-    of its tag $t_i$: $\operatorname{Within}(x,t_i,\delta(t_i))$ for
-    all $x\in[x_{i-1},x_i]$.
-  \item \textbf{Cousin's theorem}: every gauge on $[a,b]$ admits a
-    $\delta$-fine tagged partition.
-  \item Gauge proofs of Boundedness, EVT, Location of Roots, and
-    Heine--Cantor directly construct the required constants from a
-    $\delta$-fine partition.
-\end{itemize}
+\begin{toolkitbox}{Gauges and Tagged Partitions --- Quick Reference}
+\small
+\begin{tabular}{l l}
+\toprule
+\textbf{Concept/Statement} & \textbf{Meaning/Role}\\
+\midrule
+\hyperref[def:interval-partition]{Interval partition} & Finite subdivision of a compact interval.\\
+\hyperref[def:tagged-partition]{Tagged partition} & Each subinterval carries a selected tag.\\
+\hyperref[def:gauge]{Gauge} & A position-dependent positive tolerance.\\
+\hyperref[def:delta-fine-partition]{$\delta$-fine partition} & Each subinterval lies within its tag's gauge window.\\
+\hyperref[thm:cousins-theorem]{Cousin's theorem} & Every gauge on $[a,b]$ admits a fine tagged partition.\\
+\hyperref[def:mesh-of-partition]{Mesh} & The largest subinterval length.\\
+\hyperref[def:common-refinement]{Common refinement} & A partition refining two given partitions.\\
+\bottomrule
+\end{tabular}
 \end{toolkitbox}
 
 

@@ -5,16 +5,20 @@
 
 \section{Approximation}
 
-\begin{toolkitbox}{Toolkit --- Approximation}
-\begin{itemize}
-  \item Hierarchy: step functions $\subset$ piecewise linear $\subset$
-    polynomials. All three classes are dense in $(C([a,b]),\|\cdot\|_\infty)$.
-  \item All three results use Heine--Cantor: $\operatorname{UniformlyContinuous}(f,[a,b])$
-    provides the controlling $\delta$.
-  \item Bernstein polynomials: $B_n(x)=\sum_{k=0}^n f(k/n)\binom{n}{k}x^k(1-x)^{n-k}$.
-  \item Step function approximation feeds directly into Riemann
-    integrability of continuous functions.
-\end{itemize}
+\begin{toolkitbox}{Approximation --- Quick Reference}
+\small
+\begin{tabular}{l l}
+\toprule
+\textbf{Concept/Statement} & \textbf{Meaning/Role}\\
+\midrule
+\hyperref[thm:step-function-approximation]{Step approximation} & Uniform approximation by step functions.\\
+\hyperref[def:piecewise-linear-function]{Piecewise linear function} & Linear pieces joined across a partition.\\
+\hyperref[thm:piecewise-linear-approximation]{PL approximation} & Uniform approximation by polygonal functions.\\
+\hyperref[thm:weierstrass-approximation]{Weierstrass} & Uniform polynomial approximation on compact intervals.\\
+\hyperref[def:bernstein-polynomial]{Bernstein polynomial} & Constructive polynomial approximants on $[0,1]$.\\
+\hyperref[thm:bernstein-approximation]{Bernstein convergence} & Bernstein polynomials converge uniformly.\\
+\bottomrule
+\end{tabular}
 \end{toolkitbox}
 
 
