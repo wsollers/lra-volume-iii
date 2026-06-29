@@ -9,23 +9,23 @@
 
 \begin{toolkitbox}{Bisection and NIP Toolkit --- Quick Reference}
 \small
-\begin{tabular}{l l l l}
+\begin{tabular}{l l l}
 \toprule
-\textbf{Label} & \textbf{Statement} & \textbf{Proof method} & \textbf{Detail} \\
+\textbf{Label}  & \textbf{Statement}  & \textbf{Proof method} \\
 \midrule
-NIP
-  & $\bigcap_{n=1}^{\infty}I_n\neq\emptyset$ for nested closed bounded intervals
-  & Supremum of left endpoints
-  & \hyperref[thm:nested-interval-property]{$\downarrow$} \\[4pt]
-IVT
-  & $f$ continuous, $f(a)<L<f(b)$
+\hyperref[thm:nested-interval-property]{NIP}
+   & $\bigcap_{n=1}^{\infty}I_n\neq\emptyset$ for nested closed bounded intervals
+   & Supremum of left endpoints
+  \\[4pt]
+\hyperref[prop:ivt-bisection]{IVT}
+   & $f$ continuous, $f(a)<L<f(b)$
     $\Rightarrow\exists\,c\in(a,b),\;f(c)=L$
-  & Bisection $+$ NIP
-  & \hyperref[prop:ivt-bisection]{$\downarrow$} \\[4pt]
-UNC
-  & $\mathbb{R}$ is uncountable
-  & Nested interval diagonalisation
-  & \hyperref[prop:r-uncountable]{$\downarrow$} \\
+   & Bisection $+$ NIP
+  \\[4pt]
+\hyperref[prop:r-uncountable]{UNC}
+   & $\mathbb{R}$ is uncountable
+   & Nested interval diagonalisation
+  \\
 \bottomrule
 \end{tabular}
 \end{toolkitbox}

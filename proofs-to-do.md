@@ -3,8 +3,8 @@
 Proof-writing order is dependency-first among active TODO proof labels, with the generated knowledge graph order used as the stable tie-breaker.
 Use `✅` to record completion after the canonical proof file has both proof bodies populated and validated.
 
-Open proofs to do: 282
-Completed in this tracker: 6
+Open proofs to do: 281
+Completed in this tracker: 7
 
 1. () `thm:ineq-add-both-sides` — **Addition Preserves Strict Inequality**
    > **Statement.**
@@ -377,7 +377,7 @@ Completed in this tracker: 6
    > **Statement.**
    > Every open interval in $\mathbb{R}$ contains both a rational number and an irrational number.
 
-60. () `thm:nested-interval-theorem` — **Nested Interval Property**
+60. (✅) `thm:nested-interval-theorem` — **Nested Interval Property**
    > **Statement.**
    > Let $(I_n)$ be a sequence of nonempty closed intervals in $\mathbb{R}$. If $I_{n+1}\subseteq I_n$ for every $n\in\mathbb{N}$, then
    > \[
