@@ -28,6 +28,30 @@ With increments $\Delta x := x_2 - x_1$ and $\Delta y := f(x_2) - f(x_1)$, the s
 
 % ---------------------------------------------------------
 
+\begin{definitionbox}{Definition (Difference Quotient)}
+\begin{definition}[Difference Quotient]
+\label{def:difference-quotient}
+Let $f:A\to\mathbb{R}$, let $c\in A$, and let $x\in A$ with $x\neq c$. The \emph{difference quotient} of $f$ from $c$ to $x$ is
+\[
+  m_{\sec}(c,x)
+  :=
+  \frac{f(x)-f(c)}{x-c}.
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Interpretation]
+The difference quotient is the slope of the secant line through $(c,f(c))$ and $(x,f(x))$. It is the quantity whose limiting value, when it exists as $x\to c$, becomes the derivative.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:secant-line]{Secant Line}
+\end{itemize}
+\end{dependencies}
+
+% ---------------------------------------------------------
+
 \begin{definitionbox}{Definition (Tangent Line)}
 \begin{definition}[Tangent Line]
 \label{def:tangent-line}

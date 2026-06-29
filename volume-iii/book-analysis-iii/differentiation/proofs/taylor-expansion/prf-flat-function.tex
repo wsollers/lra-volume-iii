@@ -1,0 +1,58 @@
+\newpage
+\phantomsection
+\label{prf:flat-function}
+\LRAProofFor{prop:flat-function}
+
+\begin{remark*}[Return]
+\hyperref[prop:flat-function]{Return to Proposition}
+\end{remark*}
+
+\begin{proposition*}[The Flat Function: Smooth but Not Analytic]
+The function \(f(x)=e^{-1/x^2}\) for \(x\neq 0\), with \(f(0)=0\), is smooth on \(\mathbb{R}\), has \(f^{(n)}(0)=0\) for every \(n\), and is not analytic at \(0\).
+\end{proposition*}
+
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+First note the decay lemma: for every integer \(k\geq 0\),
+\[
+  \lim_{x\to 0}x^{-k}e^{-1/x^2}=0.
+\]
+Indeed, with \(t=1/x^2\), the magnitude has the form \(t^{k/2}e^{-t}\), and exponential decay dominates every polynomial power.
+
+For \(x\neq 0\), induction shows that
+\[
+  f^{(n)}(x)=P_n(1/x)e^{-1/x^2}
+\]
+for some polynomial \(P_n\). Differentiating \(P_n(1/x)e^{-1/x^2}\) produces another expression of the same form, so the claim persists for all \(n\).
+
+The derivatives at \(0\) vanish by induction. The base case is \(f(0)=0\). If \(f^{(n)}(0)=0\), then
+\[
+  f^{(n+1)}(0)
+  =
+  \lim_{x\to 0}\frac{f^{(n)}(x)-f^{(n)}(0)}{x}
+  =
+  \lim_{x\to 0}\frac{P_n(1/x)e^{-1/x^2}}{x}=0
+\]
+by the decay lemma. The same lemma gives continuity of each \(f^{(n)}\) at \(0\), so \(f\in C^\infty(\mathbb{R})\).
+
+Since every derivative at \(0\) is \(0\), the Maclaurin series is the zero series. But \(f(x)>0\) for every \(x\neq 0\), so the series cannot equal \(f\) on any neighbourhood of \(0\). Hence \(f\) is not analytic at \(0\).
+\end{proof}
+
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+The function is flat because the factor \(e^{-1/x^2}\) goes to zero faster than any reciprocal power of \(x\) blows up. Every derivative away from \(0\) is a polynomial in \(1/x\) times the same exponential factor. At \(0\), the difference quotients therefore contain only terms of the form \(x^{-k}e^{-1/x^2}\), and each tends to \(0\). Thus all derivative data at \(0\) vanish. Analyticity would require the Taylor series built from that data to recover the function near \(0\), but the Taylor series is identically zero while the function is positive off the origin.
+\end{proof}
+
+\begin{remark*}[Proof structure]
+Prove exponential decay against powers, show all derivatives have polynomial-times-exponential form, then conclude every derivative at \(0\) vanishes.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:class-cinfty]{Definition: Smooth Function; Class \(C^\infty\)}
+  \item \hyperref[def:class-comega]{Definition: Real-Analytic Function; Class \(C^\omega\)}
+  \item \hyperref[def:maclaurin-polynomial]{Definition: Maclaurin Polynomial}
+\end{itemize}
+\end{dependencies}
+
+\clearpage

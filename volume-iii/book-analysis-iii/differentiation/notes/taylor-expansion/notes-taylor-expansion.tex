@@ -1,4 +1,5 @@
-\subsection*{Taylor Expansion}
+\label{sec:taylor}
+
 \begin{exposition}
 Taylor expansion approximates a differentiable function near a point by a
 polynomial whose coefficients are forced by the derivatives at that point.
@@ -239,5 +240,90 @@ smaller than $(x-a)^n$ near the center.
   \item \hyperref[def:taylor-remainder]{Taylor Remainder}
   \item \hyperref[def:limit-function]{Limit of a Function}
   \item \hyperref[def:derivative-at-a-point]{Derivative at a Point}
+\end{itemize}
+\end{dependencies}
+
+% ---------------------------------------------------------
+
+\begin{corollarybox}{Corollary (First-Order Peano Remainder)}
+\begin{corollary}[First-Order Peano Remainder]
+\label{cor:first-order-peano-remainder}
+Let $f$ be differentiable at $c$. Then, as $h\to 0$,
+\[
+  f(c+h)=f(c)+f'(c)h+o(h).
+\]
+\hyperref[prf:first-order-peano-remainder]{Go to proof.}
+\end{corollary}
+\end{corollarybox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{DifferentiableAt}(f,c)
+\;\Rightarrow\;
+\lim_{h\to 0}
+\frac{f(c+h)-f(c)-f'(c)h}{h}
+=0.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The first-order Peano formula is the derivative rewritten as an approximation theorem. It says that the affine approximation $f(c)+f'(c)h$ captures all first-order change, and the remaining error is smaller than $h$ itself.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:derivative-at-a-point]{Derivative at a Point}
+\end{itemize}
+\end{dependencies}
+
+% ---------------------------------------------------------
+
+\begin{propositionbox}{Proposition (The Flat Function: Smooth but Not Analytic)}
+\begin{proposition}[The Flat Function: Smooth but Not Analytic]
+\label{prop:flat-function}
+Define \(f:\mathbb{R}\to\mathbb{R}\) by
+\[
+  f(x)=
+  \begin{cases}
+    e^{-1/x^2}, & x\neq 0,\\
+    0, & x=0.
+  \end{cases}
+\]
+Then:
+\begin{enumerate}
+  \item \(f\in C^\infty(\mathbb{R})\);
+  \item \(f^{(n)}(0)=0\) for every \(n\geq 0\);
+  \item the Maclaurin series of \(f\) is identically \(0\), so \(f\notin C^\omega\) on any neighbourhood of \(0\).
+\end{enumerate}
+In particular, \(C^\infty(\mathbb{R})\setminus C^\omega(\mathbb{R})\neq\varnothing\).
+\hyperref[prf:flat-function]{Go to proof.}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \left(
+  \forall n\in\mathbb{N}: f^{(n)}(0)=0
+  \right)
+  \land
+  \left(
+  \forall r>0\;\exists x:\ 0<|x|<r\land f(x)\neq 0
+  \right)
+  \Longrightarrow
+  f\in C^\infty\setminus C^\omega.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The Taylor series sees only derivative data at the center, and all of that data is zero for the flat function at \(0\). The function is nevertheless positive away from \(0\). This separates smoothness from analyticity and supplies the strictness witness referenced by the smoothness tower.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:higher-derivatives]{Definition: Higher Derivatives}
+  \item \hyperref[def:class-cinfty]{Definition: Smooth Function; Class \(C^\infty\)}
+  \item \hyperref[def:class-comega]{Definition: Real-Analytic Function; Class \(C^\omega\)}
+  \item \hyperref[def:maclaurin-polynomial]{Definition: Maclaurin Polynomial}
+  \item \hyperref[thm:smoothness-tower]{Theorem: The Smoothness Tower}
 \end{itemize}
 \end{dependencies}

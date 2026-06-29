@@ -1,0 +1,58 @@
+% =========================================================
+% Section: Chain Rule
+% =========================================================
+% ---------------------------------------------------------
+
+\begin{theorembox}{Theorem}
+\begin{theorem}[Chain Rule]
+\label{thm:chain-rule}
+Let $I, J \subseteq \mathbb{R}$ be intervals, let $f : I \to \mathbb{R}$ and $g : J \to \mathbb{R}$, and suppose that $f(I) \subseteq J$. Let $c \in I$. If $f$ is differentiable at $c$ and $g$ is differentiable at $f(c)$, then the composition $g \circ f$ is differentiable at $c$, and
+\[
+(g \circ f)'(c) = g'(f(c))\,f'(c).
+\]
+\hyperref[prf:chain-rule]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \operatorname{DifferentiableAt}(f,c)
+  \land
+  \operatorname{DifferentiableAt}(g,f(c))
+  \Longrightarrow
+  (g\circ f)'(c)=g'(f(c))f'(c).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The derivative of a composition is the derivative of the outside function evaluated at the inside value, multiplied by the derivative of the inside function.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Let $\phi_f$ and $\phi_g$ be the Carath\'{e}odory slope factors for $f$ at $c$
+and $g$ at $f(c)$. Then
+\[
+g(f(x))-g(f(c))
+  =
+\phi_g(f(x))(f(x)-f(c))
+  =
+\phi_g(f(x))\phi_f(x)(x-c).
+\]
+The new slope factor is
+\[
+  \phi_{g\circ f}(x)=\phi_g(f(x))\phi_f(x),
+\]
+which is continuous at $c$ and has value $g'(f(c))f'(c)$. This proof never
+divides by $f(x)-f(c)$, so it avoids the failure in the informal
+$\Delta g/\Delta f \cdot \Delta f/\Delta x$ argument when $f(x)=f(c)$ near
+$c$.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:caratheodory-characterization-of-differentiability]{Theorem: Carath\'{e}odory Characterization of Differentiability}
+  \item \hyperref[thm:differentiable-implies-continuous]{Theorem: Differentiable Implies Continuous}
+  \item \hyperref[thm:composition-of-limits]{Theorem: Composition of Limits}
+  \item \hyperref[thm:limit-product]{Theorem: Product Rule for Function Limits}
+\end{itemize}
+\end{dependencies}

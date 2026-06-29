@@ -303,6 +303,8 @@ The $h$-form substitutes $x = c + h$ in the difference quotient. It is the stand
 
 % ---------------------------------------------------------
 
+\subsection{First Consequences}
+
 \begin{theorembox}{Theorem (Differentiable Implies Continuous)}
 \begin{theorem}[Differentiable Implies Continuous]
 \label{thm:differentiable-implies-continuous}
@@ -369,7 +371,7 @@ Differentiability is strictly stronger than continuity: the existence of a well-
 Let $f : A \to \mathbb{R}$ and $c \in A$. If $f$ is differentiable at $c$, its derivative is unique.
 
 \smallskip\noindent
-\hyperref[prf:uniqueness-of-derivative]{\textit{Go to proof.}}
+\hyperref[prf:uniqueness-of-the-derivative]{\textit{Go to proof.}}
 \hyperref[prf:uniqueness-of-the-derivative]{Go to proof.}
 \end{theorem}
 \end{theorembox}
@@ -447,5 +449,34 @@ The identity function has slope $1$ everywhere. It is the base case for computin
 \begin{itemize}
   \item \hyperref[def:derivative-at-a-point]{Derivative at a Point}
   \item \hyperref[def:function]{Function}
+\end{itemize}
+\end{dependencies}
+
+% ---------------------------------------------------------
+
+\begin{propositionbox}{Proposition (Derivative of a Constant)}
+\begin{proposition}[Derivative of a Constant]
+\label{prop:derivative-of-a-constant}
+Let $k\in\mathbb{R}$ and let $f(x)=k$ for all $x\in\mathbb{R}$. Then $f'(c)=0$ for every $c\in\mathbb{R}$.
+
+\smallskip\noindent
+\hyperref[prf:derivative-of-a-constant]{Go to proof.}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall k\in\mathbb{R}\,\forall c\in\mathbb{R}:\;
+  \frac{d}{dx}[k]\big|_{x=c}=0.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A constant function has zero change across every secant line, so its instantaneous rate of change is zero everywhere. Together with the derivative of the identity, this is one of the base cases for the algebraic computation rules.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:derivative-at-a-point]{Derivative at a Point}
 \end{itemize}
 \end{dependencies}

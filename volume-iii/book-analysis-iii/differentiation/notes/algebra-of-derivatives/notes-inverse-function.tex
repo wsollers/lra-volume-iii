@@ -1,0 +1,94 @@
+\subsection{Inverting the Operation}
+
+\begin{theorembox}{Theorem (Inverse Function Theorem, One Variable)}
+\begin{theorem}[Inverse Function Theorem, One Variable]
+\label{thm:inverse-function-theorem-one-variable}
+Let \(I\subseteq\mathbb{R}\) be an open interval, let \(f:I\to\mathbb{R}\) be of class \(C^1\), and let \(c\in I\) satisfy \(f'(c)\neq 0\). Then there exist open intervals \(U\subseteq I\) and \(V\subseteq\mathbb{R}\), with \(c\in U\) and \(f(c)\in V\), such that:
+\begin{enumerate}
+  \item \(f|_U:U\to V\) is a bijection;
+  \item the inverse \(g=(f|_U)^{-1}:V\to U\) is of class \(C^1\);
+  \item for every \(y\in V\),
+  \[
+    g'(y)=\frac{1}{f'(g(y))}.
+  \]
+\end{enumerate}
+\hyperref[prf:inverse-function-theorem-one-variable]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{aligned}
+&f\in C^1(I)\land c\in I\land f'(c)\neq 0\\
+&\quad\Longrightarrow
+\exists U\ni c\;\exists V\ni f(c)\;
+\bigl[
+\operatorname{Bijective}(f|_U,U,V)
+\land
+(f|_U)^{-1}\in C^1(V)
+\land
+\forall y\in V:\ ((f|_U)^{-1})'(y)=1/f'((f|_U)^{-1}(y))
+\bigr].
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\(\operatorname{LocallyInvertible}(f,c)\) holds with a \(C^1\) local inverse. The condition \(f'(c)\neq 0\) upgrades local set-theoretic invertibility to local analytic invertibility: the inverse exists as a differentiable function and has controlled derivative.
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+The hypotheses fail in different ways.
+\begin{itemize}
+  \item If \(f'(c)=0\), the inverse may exist without being differentiable. The map \(f(x)=x^3\) is globally bijective, but its inverse \(x\mapsto x^{1/3}\) is not differentiable at \(0\).
+  \item If \(f'\) is not continuous at \(c\), the sign of \(f'\) need not persist near \(c\). Mere differentiability with \(f'(c)\neq 0\) is therefore not enough to force local monotonicity or local invertibility.
+\end{itemize}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This theorem is the existence result behind the inverse-derivative formula. A continuous nonzero derivative keeps its sign on a small interval; constant sign forces strict monotonicity; strict monotonicity gives a local inverse; and the Carath\'{e}odory characterization upgrades that inverse to a differentiable map with reciprocal slope. In several variables, the condition \(f'(c)\neq 0\) becomes invertibility of the differential.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:class-c1]{Definition: Continuously Differentiable; Class \(C^1\)}
+  \item \hyperref[thm:nondecreasing-iff-nonneg-derivative]{Theorem: Monotonicity from the Sign of the Derivative}
+  \item \hyperref[thm:continuous-inverse-theorem]{Theorem: Continuous Inverse Theorem}
+  \item \hyperref[thm:caratheodory-characterization-of-differentiability]{Theorem: Carath\'{e}odory Characterization of Differentiability}
+\end{itemize}
+\end{dependencies}
+
+\begin{corollarybox}{Corollary (Derivative of the Inverse Function)}
+\begin{corollary}[Derivative of the Inverse Function]
+\label{cor:inverse-function-derivative}
+Under the hypotheses of \hyperref[thm:inverse-function-theorem-one-variable]{the one-variable Inverse Function Theorem}, the local inverse \(g\) satisfies
+\[
+  g'=\frac{1}{f'\circ g}
+\]
+on \(V\). More globally, if \(f:I\to J\) is a \(C^1\) bijection with \(f'(x)\neq 0\) for every \(x\in I\), then \(f^{-1}:J\to I\) is \(C^1\) and
+\[
+  (f^{-1})'(y)=\frac{1}{f'(f^{-1}(y))}
+  \qquad\text{for every }y\in J.
+\]
+\hyperref[prf:inverse-function-derivative]{Go to proof.}
+\end{corollary}
+\end{corollarybox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  g=(f|_U)^{-1}
+  \Longrightarrow
+  \forall y\in V:\ g'(y)=\frac{1}{f'(g(y))}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The formula says that undoing a differentiable change of variable reverses the local stretch factor. If \(f\) multiplies small increments near \(x\) by \(f'(x)\), then its inverse multiplies corresponding increments near \(f(x)\) by \(1/f'(x)\).
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:inverse-function-theorem-one-variable]{Theorem: Inverse Function Theorem, One Variable}
+  \item \hyperref[thm:chain-rule]{Theorem: Chain Rule}
+\end{itemize}
+\end{dependencies}

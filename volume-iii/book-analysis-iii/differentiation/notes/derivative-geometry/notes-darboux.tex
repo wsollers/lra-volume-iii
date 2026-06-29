@@ -1,0 +1,39 @@
+% =========================================================
+% Section: Darboux's Theorem
+% =========================================================
+% ---------------------------------------------------------
+
+\begin{theorembox}{Theorem (Darboux's Theorem)}
+\begin{theorem}[Darboux's Theorem]
+\label{thm:darboux}
+Let $I := [a,b] \subseteq \mathbb{R}$ and let $f : I \to \mathbb{R}$ be differentiable on $I$. If $k$ is a real number strictly between $f'(a)$ and $f'(b)$, then there exists $c \in (a,b)$ such that
+\[
+f'(c) = k.
+\]
+\hyperref[prf:darboux]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall k\;\bigl(\min(f'(a),f'(b)) < k < \max(f'(a),f'(b))
+\;\Rightarrow\; \exists c \in (a,b)\;(f'(c)=k)\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The Intermediate Value Theorem says continuous functions have the intermediate
+value property. Darboux's theorem says derivatives also have that property even
+when the derivative is not continuous. Thus a derivative cannot have a jump
+discontinuity. The proof uses differentiability of $f$ to construct an
+auxiliary function $g(x)=f(x)-kx$ and then applies the Extreme Value Theorem
+and the Interior Extremum Theorem.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:extreme-value-theorem]{Theorem: Extreme Value Theorem}
+  \item \hyperref[thm:interior-extremum-theorem]{Theorem: Interior Extremum Theorem}
+  \item \hyperref[def:derivative-at-a-point]{Definition: Derivative at a Point}
+\end{itemize}
+\end{dependencies}

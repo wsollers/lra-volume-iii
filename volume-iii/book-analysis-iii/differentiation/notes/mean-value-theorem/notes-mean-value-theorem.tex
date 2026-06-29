@@ -157,3 +157,108 @@ The MVT asserts that the instantaneous rate of change equals the average rate of
   \item \hyperref[def:derivative-at-a-point]{Definition: Derivative at a Point}
 \end{itemize}
 \end{dependencies}
+
+% ---------------------------------------------------------
+
+\begin{theorembox}{Theorem (Cauchy Mean Value Theorem)}
+\begin{theorem}[Cauchy Mean Value Theorem]
+\label{thm:cauchy-mean-value-theorem}
+Let $a,b\in\mathbb{R}$ with $a<b$. Suppose that $f,g:[a,b]\to\mathbb{R}$ are continuous on $[a,b]$ and differentiable on $(a,b)$. Then there exists $c\in(a,b)$ such that
+\[
+  \bigl(f(b)-f(a)\bigr)g'(c)
+  =
+  \bigl(g(b)-g(a)\bigr)f'(c).
+\]
+If, in addition, $g'(x)\neq 0$ for every $x\in(a,b)$, then $g(b)\neq g(a)$ and
+\[
+  \frac{f'(c)}{g'(c)}
+  =
+  \frac{f(b)-f(a)}{g(b)-g(a)}.
+\]
+\hyperref[prf:cauchy-mean-value-theorem]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\begin{align*}
+&\operatorname{ContinuousOn}(f,[a,b])
+\land \operatorname{ContinuousOn}(g,[a,b])
+\land \operatorname{DifferentiableOn}(f,(a,b))
+\land \operatorname{DifferentiableOn}(g,(a,b))\\
+&\quad\Longrightarrow\;
+\exists c\in(a,b)\;
+\bigl[(f(b)-f(a))g'(c)=(g(b)-g(a))f'(c)\bigr].
+\end{align*}
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\(\operatorname{CauchyMVT}(f,g,[a,b])\) asserts the existence of an interior point where the velocity vector \((g'(c),f'(c))\) is parallel to the chord vector \((g(b)-g(a),f(b)-f(a))\). Taking \(g(x)=x\) recovers the ordinary Mean Value Theorem.
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+The continuity and differentiability hypotheses fail for the same reasons they fail in the ordinary MVT: jumps break endpoint-to-interior control, and corners leave no derivative to match. The quotient form has the additional nonvanishing hypothesis \(g'\neq 0\) on \((a,b)\); without it the cross-multiplied conclusion may still hold, but the displayed quotient can be undefined.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This is the parametric Mean Value Theorem. For the planar curve \(t\mapsto(g(t),f(t))\), some interior tangent is parallel to the chord joining its endpoints. It compares two rates of change rather than comparing one function to the horizontal axis. This is the form that later underlies L'Hopital-type ratio arguments and the Cauchy form of Taylor's remainder.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:rolles-theorem]{Theorem: Rolle's Theorem}
+  \item \hyperref[def:derivative-at-a-point]{Definition: Derivative at a Point}
+  \item \hyperref[thm:sum-rule]{Theorem: Sum Rule}
+  \item \hyperref[thm:constant-multiple-rule]{Theorem: Constant Multiple Rule}
+\end{itemize}
+\end{dependencies}
+
+% ---------------------------------------------------------
+
+\begin{corollarybox}{Corollary (Derivative Bound Implies Lipschitz)}
+\begin{corollary}[Derivative Bound Implies Lipschitz]
+\label{cor:derivative-bound-implies-lipschitz}
+Let \(I\subseteq\mathbb{R}\) be an interval and let \(f:I\to\mathbb{R}\) be differentiable on \(I\). If there exists \(M\geq 0\) such that
+\[
+  |f'(x)|\leq M
+  \qquad\text{for every }x\in I,
+\]
+then \(f\) is Lipschitz on \(I\) with constant \(M\):
+\[
+  |f(x)-f(y)|\leq M|x-y|
+  \qquad\text{for every }x,y\in I.
+\]
+\hyperref[prf:derivative-bound-implies-lipschitz]{Go to proof.}
+\end{corollary}
+\end{corollarybox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \bigl(\exists M\geq 0\;\forall x\in I:\ |f'(x)|\leq M\bigr)
+  \Longrightarrow
+  \forall x,y\in I:\ |f(x)-f(y)|\leq M|x-y|.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{BoundedDerivativeOn}(f,I,M)
+  \Longrightarrow
+  \operatorname{Lipschitz}(f,I,M).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+The derivative bound must hold throughout the interval. A function such as \(f(x)=\sqrt{x}\) on \([0,1]\) is continuous and uniformly continuous, but its derivative is unbounded near \(0\), so no global Lipschitz constant follows from this test. The interval hypothesis is also essential: across a disconnected gap, the MVT cannot compare the two components.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This corollary converts a pointwise slope bound into a global modulus of continuity. It is the precise bridge from derivative estimates to the Lipschitz condition: controlling the size of \(f'\) controls every secant slope on the interval.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:mean-value-theorem]{Theorem: Mean Value Theorem}
+  \item \hyperref[def:lipschitz-condition]{Definition: Lipschitz Condition}
+  \item \hyperref[def:derivative-at-a-point]{Definition: Derivative at a Point}
+\end{itemize}
+\end{dependencies}

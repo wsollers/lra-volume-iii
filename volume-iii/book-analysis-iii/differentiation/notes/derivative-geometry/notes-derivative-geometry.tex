@@ -79,6 +79,10 @@ then $f$ has a \emph{strict relative maximum} at $c$.
 \]
 \end{remark*}
 
+\begin{remark*}[Interpretation]
+A relative maximum is a point whose function value is at least as large as all nearby function values in the domain.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:relative-minimum]{Definition: Relative Minimum}
@@ -108,6 +112,10 @@ Let $A \subseteq \mathbb{R}$, let $f : A \to \mathbb{R}$, and let $c \in A$. We 
 \;\Longleftrightarrow\;
 \operatorname{LocalMinimum}(f, c) \;\lor\; \operatorname{LocalMaximum}(f, c).
 \]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Relative extrema are the local turning candidates of a graph: nearby values lie all on one side of $f(c)$.
 \end{remark*}
 
 \begin{dependencies}
@@ -177,7 +185,6 @@ Let $I \subseteq \mathbb{R}$ be an open interval, let $f : I \to \mathbb{R}$, an
 \[
 f'(c) = 0.
 \]
-\hyperref[prf:relative-extremum-derivatives-equal-0-or-dont-exist]{Go to proof.}
 \hyperref[prf:necessary-condition-extremum]{Go to proof.}
 \end{theorem}
 \end{theorembox}
@@ -204,13 +211,12 @@ This is a weakening of the Interior Extremum Theorem that drops the differentiab
 
 \begin{corollarybox}{Corollary}
 \begin{corollary}[Necessary Condition for an Extremum]
-\label{cor:necessary-condition-extremum}
+\label{cor:relative-extremum-necessary-condition}
 Let $I \subseteq \mathbb{R}$ be an open interval, let $f : I \to \mathbb{R}$, and let $c \in I$. If $f$ has a relative extremum at $c$, then
 \[
 f'(c) = 0 \quad \text{or} \quad f'(c) \text{ does not exist.}
 \]
-\hyperref[prf:relative-extremum-derivatives-equal-0-or-dont-exist]{Go to proof.}
-\hyperref[prf:necessary-condition-extremum]{Go to proof.}
+\hyperref[prf:relative-extremum-necessary-condition]{Go to proof.}
 \end{corollary}
 \end{corollarybox}
 
@@ -220,6 +226,10 @@ f'(c) = 0 \quad \text{or} \quad f'(c) \text{ does not exist.}
 \;\Rightarrow\;
 \operatorname{DerivativeAt}(f,c,0) \;\lor\; \lnot\operatorname{DifferentiableAt}(f,c).
 \]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+An extremum can occur only at a critical point: either the derivative vanishes or the derivative fails to exist.
 \end{remark*}
 
 \begin{dependencies}

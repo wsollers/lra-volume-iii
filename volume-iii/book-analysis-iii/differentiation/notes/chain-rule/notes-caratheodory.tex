@@ -1,6 +1,8 @@
 % =========================================================
 % Section: Carath\'{e}odory Factorization and Chain Rule
 % =========================================================
+\subsection{Carath\'{e}odory Characterization}
+
 % ---------------------------------------------------------
 
 \begin{definitionbox}{Definition (Carath\'{e}odory Factorization)}
@@ -63,7 +65,7 @@ f(x) = f(c) + (x-c)\,\phi(x) \qquad \text{for all } x \in I.
 \]
 \end{enumerate}
 In this case, $\phi(c) = f'(c)$.
-\hyperref[prf:caratheodory-theorem]{Go to proof.}
+\hyperref[prf:caratheodory-characterization-of-differentiability]{Go to proof.}
 \hyperref[prf:caratheodory-characterization-of-differentiability]{Go to proof.}
 \end{theorem}
 \end{theorembox}
@@ -88,43 +90,5 @@ This theorem establishes that differentiability and the existence of a Carath\'{
   \item \hyperref[def:caratheodory-factorization]{Definition: Carath\'{e}odory Factorization}
   \item \hyperref[def:derivative-at-a-point]{Definition: Derivative at a Point}
   \item \hyperref[def:continuous-at-point]{Definition: Continuous at a Point}
-\end{itemize}
-\end{dependencies}
-
-% ---------------------------------------------------------
-
-\begin{theorembox}{Theorem}
-\begin{theorem}[Chain Rule]
-\label{thm:chain-rule}
-Let $I, J \subseteq \mathbb{R}$ be intervals, let $f : I \to \mathbb{R}$ and $g : J \to \mathbb{R}$, and suppose that $f(I) \subseteq J$. Let $c \in I$. If $f$ is differentiable at $c$ and $g$ is differentiable at $f(c)$, then the composition $g \circ f$ is differentiable at $c$, and
-\[
-(g \circ f)'(c) = g'(f(c))\,f'(c).
-\]
-\hyperref[prf:chain-rule]{Go to proof.}
-\end{theorem}
-\end{theorembox}
-
-\begin{remark*}[Standard quantified statement]
-\begin{align*}
-&\operatorname{DifferentiableAt}(f,c) \;\land\; \operatorname{DifferentiableAt}(g,f(c))\\
-&\quad\Rightarrow\;
-\operatorname{DerivativeAt}(g\circ f,\,c,\,g'(f(c))\cdot f'(c)).
-\end{align*}
-\end{remark*}
-
-\begin{remark*}[Interpretation]
-The chain rule computes the derivative of a composition by multiplying the derivatives at the respective points: the outer function $g$ is differentiated at the intermediate value $f(c)$, and the inner function $f$ is differentiated at $c$. The Carath\'{e}odory proof is the cleanest: let $\phi_f$ and $\phi_g$ be the Carath\'{e}odory functions of $f$ at $c$ and $g$ at $f(c)$ respectively. Then
-\[
-g(f(x)) - g(f(c)) = \phi_g(f(x))\cdot(f(x)-f(c)) = \phi_g(f(x))\cdot\phi_f(x)\cdot(x-c).
-\]
-The function $x \mapsto \phi_g(f(x))\cdot\phi_f(x)$ is continuous at $c$ --- the product of two continuous functions --- and its value at $c$ is $g'(f(c))\cdot f'(c)$. By the characterization theorem, $g\circ f$ is differentiable with the stated derivative. The naive proof via difference quotients fails because $f(x) = f(c)$ for $x$ near $c$ is possible, causing division by zero; Carath\'{e}odory avoids this entirely.
-\end{remark*}
-
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[thm:caratheodory-characterization-of-differentiability]{Theorem: Carath\'{e}odory Characterization of Differentiability}
-  \item \hyperref[thm:differentiable-implies-continuous]{Theorem: Differentiable Implies Continuous}
-  \item \hyperref[thm:composition-of-limits]{Theorem: Composition of Limits}
-  \item \hyperref[thm:limit-product]{Theorem: Product Rule for Function Limits}
 \end{itemize}
 \end{dependencies}

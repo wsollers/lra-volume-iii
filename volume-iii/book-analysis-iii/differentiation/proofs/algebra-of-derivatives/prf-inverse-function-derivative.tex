@@ -1,0 +1,38 @@
+\newpage
+\phantomsection
+\label{prf:inverse-function-derivative}
+\LRAProofFor{cor:inverse-function-derivative}
+
+\begin{remark*}[Return]
+\hyperref[cor:inverse-function-derivative]{Return to Corollary}
+\end{remark*}
+
+\begin{corollary*}[Derivative of the Inverse Function]
+Under the hypotheses of the one-variable Inverse Function Theorem, the local inverse \(g\) satisfies \(g'=1/(f'\circ g)\).
+\end{corollary*}
+
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+This is conclusion of the one-variable Inverse Function Theorem: for every \(y\in V\),
+\[
+  g'(y)=\frac{1}{f'(g(y))}.
+\]
+If \(f:I\to J\) is globally \(C^1\), bijective, and satisfies \(f'\neq 0\) on \(I\), the same local formula holds at every \(y\in J\). These local identities agree on overlaps, so the global inverse is \(C^1\) and satisfies \((f^{-1})'(y)=1/f'(f^{-1}(y))\).
+\end{proof}
+
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+The theorem already constructs the inverse and proves the derivative formula. The corollary only changes the packaging: the formula is read as a named rule. In the global case, each point of \(I\) has a neighbourhood where the local theorem applies; the local inverses are restrictions of the same global inverse, so the derivative formula patches across all of \(J\).
+\end{proof}
+
+\begin{remark*}[Proof structure]
+Read the local formula from the inverse theorem, then patch the local formulas for the global statement.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:inverse-function-theorem-one-variable]{Theorem: Inverse Function Theorem, One Variable}
+\end{itemize}
+\end{dependencies}
+
+\clearpage

@@ -23,7 +23,7 @@ we have $f(x) \leq f(c) \leq f(y)$.
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Interpretation]
 $f$ is increasing at $c$ if $c$ lies between the values of $f$ on either side in some punctured neighbourhood: $f$ is smaller to the left and larger to the right (weakly). This is a strictly local notion --- it says nothing about $f$ outside the $\delta$-neighbourhood of $c$. A function can be increasing at $c$ without being increasing (globally or on any interval). The non-strict inequalities permit the function to be flat on one or both sides of $c$, distinguishing this from the notion of a strict local increase.
 \end{remark*}
 
@@ -53,6 +53,10 @@ we have $f(x) \geq f(c) \geq f(y)$.
 \exists \delta > 0\;\forall x \in A \cap (c-\delta,c)\;\forall y \in A \cap (c,c+\delta)
 \;\bigl(f(x) \geq f(c) \geq f(y)\bigr).
 \]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The function is decreasing at $c$ when nearby values to the left sit above $f(c)$ and nearby values to the right sit below it.
 \end{remark*}
 
 \begin{dependencies}
@@ -237,6 +241,10 @@ f'(x) \leq 0 \qquad \text{for all } x \in I.
 \]
 \end{remark*}
 
+\begin{remark*}[Interpretation]
+Nonpositive derivative everywhere is exactly the infinitesimal signature of a function that never increases.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:nondecreasing-iff-nonneg-derivative]{Theorem: Nondecreasing Iff Nonnegative Derivative}
@@ -338,6 +346,10 @@ f(x) < f(c) \quad \text{for all } x \in I \text{ with } c < x < c + \delta.
 \]
 \end{remark*}
 
+\begin{remark*}[Interpretation]
+If the derivative at $c$ is strictly negative, nearby values move downward as the input passes through $c$ from left to right.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[lem:positive-derivative-implies-locally-increasing]{Lemma: Positive Derivative Implies Locally Increasing}
@@ -372,7 +384,7 @@ then $f$ has a relative maximum at $c$.
 \end{remark*}
 
 \begin{remark*}[Interpretation]
-If the function is nondecreasing immediately to the left of $c$ and nonincreasing immediately to the right, then $c$ is a local maximum --- the function climbs to $c$ and then falls away. The proof integrates: by the nondecreasing characterisation applied on $(c-\delta,c)$, $f(x) \leq f(c)$ for $x < c$; by the nonincreasing characterisation on $(c,c+\delta)$, $f(x) \leq f(c)$ for $x > c$. The sign condition on $f'$ replaces the Interior Extremum Theorem's converse (which did not hold in general) --- here we are asserting a sufficient condition, not proving a necessary one. The test is applicable even when $f'(c) = 0$ or $f'(c)$ does not exist.
+If the function is nondecreasing immediately to the left of $c$ and nonincreasing immediately to the right, then $c$ is a local maximum --- the function climbs to $c$ and then falls away. The proof integrates: by the nondecreasing characterisation applied on $(c-\delta,c)$, $f(x) \leq f(c)$ for $x < c$; by the nonincreasing characterisation on $(c,c+\delta)$, $f(x) \leq f(c)$ for $x > c$. The sign condition on $f'$ replaces the Interior Extremum Theorem's converse, which does not hold in general; this is a sufficient condition, not a necessary one. The test is applicable even when $f'(c) = 0$ or $f'(c)$ does not exist.
 \end{remark*}
 
 \begin{dependencies}
@@ -410,57 +422,13 @@ then $f$ has a relative minimum at $c$.
 \end{align*}
 \end{remark*}
 
+\begin{remark*}[Interpretation]
+If the derivative changes from nonpositive to nonnegative at $c$, the graph falls into $c$ and then rises away from it, so $c$ is a local minimum.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:first-derivative-test-maximum]{Theorem: First Derivative Test: Relative Maximum}
   \item \hyperref[def:relative-minimum]{Definition: Relative Minimum}
-\end{itemize}
-\end{dependencies}
-
-% ---------------------------------------------------------
-
-\begin{theorembox}{Theorem (Darboux's Theorem)}
-\begin{theorem}[Darboux's Theorem]
-\label{thm:darboux}
-Let $I := [a,b] \subseteq \mathbb{R}$ and let $f : I \to \mathbb{R}$ be differentiable on $I$. If $k$ is a real number strictly between $f'(a)$ and $f'(b)$, then there exists $c \in (a,b)$ such that
-\[
-f'(c) = k.
-\]
-\hyperref[prf:darboux]{Go to proof.}
-\end{theorem}
-\end{theorembox}
-
-\begin{remark*}[Standard quantified statement]
-\[
-\forall k\;\bigl(\min(f'(a),f'(b)) < k < \max(f'(a),f'(b))
-\;\Rightarrow\; \exists c \in (a,b)\;(f'(c)=k)\bigr).
-\]
-\end{remark*}
-
-\begin{remark*}[Contrapositive quantified statement]
-\[
-\forall c \in (a,b)\;(f'(c) \neq k)
-\;\Rightarrow\;
-k \leq \min(f'(a),f'(b)) \;\lor\; k \geq \max(f'(a),f'(b)).
-\]
-If $f'$ skips the value $k$, then $k$ is not strictly between $f'(a)$ and $f'(b)$.
-\end{remark*}
-
-\begin{remark*}[Contrapositive predicate reading]
-\[
-\lnot\operatorname{IVP}(f',\,[a,b]) \;\Rightarrow\; f \text{ is not differentiable on } [a,b].
-\]
-A function whose derivative fails the intermediate value property cannot be a derivative.
-\end{remark*}
-
-\begin{remark*}[Interpretation]
-The Intermediate Value Theorem (IVT) says continuous functions have the intermediate value property (IVP). Darboux's theorem says derivatives also have the IVP --- even without being continuous. This is a striking rigidity result: the class of functions that can appear as derivatives is severely constrained. A derivative cannot have a jump discontinuity (it may be discontinuous, but only via oscillation). The proof does not use continuity of $f'$; it uses differentiability of $f$ to construct an auxiliary function $g(x) = f(x) - kx$ whose derivative changes sign, then applies the Extreme Value Theorem and Interior Extremum Theorem to force an interior extremum where $g'(c) = f'(c) - k = 0$.
-\end{remark*}
-
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[thm:extreme-value-theorem]{Theorem: Extreme Value Theorem}
-  \item \hyperref[thm:interior-extremum-theorem]{Theorem: Interior Extremum Theorem}
-  \item \hyperref[def:derivative-at-a-point]{Definition: Derivative at a Point}
 \end{itemize}
 \end{dependencies}
