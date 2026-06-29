@@ -1,0 +1,181 @@
+\subsection*{Geometric Intuition}
+
+Cauchy makes the simplest possible height choice: always sample the left edge
+of each slab. The result is a staircase of left-anchored rectangles. As the
+slabs thin out, the question is whether those staircase areas settle.
+
+\begin{remark*}[Engineering reading]
+Cauchy's construction is the seed. It answers the geometric problem for the
+case where the curve is tame enough that left-edge staircases forget their
+initial sampling bias as the mesh shrinks. The construction is deliberately
+primitive: it fixes a height rule first and asks for convergence second.
+\end{remark*}
+
+\begin{definitionbox}{Definition (Cauchy Sum)}
+\begin{definition}[Left-Endpoint Cauchy Sum]
+\label{def:cauchy-sum}
+For \(f:[a,b]\to\mathbb R\) and \(P=\{a=x_0<\cdots<x_n=b\}\), define
+\[
+  C(f,P)=\sum_{i=1}^{n} f(x_{i-1})\,\Delta x_i.
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{definitionbox}{Definition (Cauchy Integral)}
+\begin{definition}[Cauchy Integral]
+\label{def:cauchy-integral}
+The function \(f\) is \emph{Cauchy-integrable} with value \(L\) if
+\[
+  \forall\varepsilon>0\ \exists\delta>0\ \forall P\,
+  \bigl(\|P\|<\delta\Rightarrow |C(f,P)-L|<\varepsilon\bigr).
+\]
+The value \(L\) is denoted \(\int_a^b f(x)\,dx\).
+\end{definition}
+\end{definitionbox}
+
+\begin{propositionbox}{Proposition (Integral of a Constant)}
+\begin{proposition}[Cauchy Integral of a Constant]
+\label{prop:cauchy-integral-constant}
+If \(f(x)=c\) on \([a,b]\), then \(\int_a^b c\,dx=c(b-a)\).
+\end{proposition}
+\end{propositionbox}
+
+\begin{theorembox}{Theorem (Linearity)}
+\begin{theorem}[Linearity of the Cauchy Integral]
+\label{thm:cauchy-integral-linearity}
+If \(f\) and \(g\) are Cauchy-integrable on \([a,b]\), then
+\[
+  \int_a^b(\alpha f+\beta g)\,dx
+  =
+  \alpha\int_a^b f\,dx+\beta\int_a^b g\,dx.
+\]
+\end{theorem}
+\end{theorembox}
+
+\begin{theorembox}{Theorem (Monotonicity)}
+\begin{theorem}[Monotonicity of the Cauchy Integral]
+\label{thm:cauchy-integral-monotonicity}
+If \(f\) and \(g\) are Cauchy-integrable on \([a,b]\) and \(f(x)\le g(x)\)
+for every \(x\in[a,b]\), then
+\[
+  \int_a^b f\,dx\le \int_a^b g\,dx .
+\]
+\end{theorem}
+\end{theorembox}
+
+\begin{corollarybox}{Corollary (Bounds)}
+\begin{corollary}[Bounds for the Cauchy Integral]
+\label{cor:cauchy-integral-bounds}
+If \(f\) is continuous on \([a,b]\), \(m=\min_{[a,b]}f\), and
+\(M=\max_{[a,b]}f\), then
+\[
+  m(b-a)\le \int_a^b f\,dx\le M(b-a).
+\]
+\end{corollary}
+\end{corollarybox}
+
+\begin{theorembox}{Theorem (Triangle Inequality)}
+\begin{theorem}[Triangle Inequality for the Cauchy Integral]
+\label{thm:cauchy-integral-triangle-inequality}
+If \(f\) and \(|f|\) are Cauchy-integrable on \([a,b]\), then
+\[
+  \left|\int_a^b f\,dx\right|\le \int_a^b |f|\,dx .
+\]
+\end{theorem}
+\end{theorembox}
+
+\begin{theorembox}{Theorem (Interval Additivity)}
+\begin{theorem}[Interval Additivity for the Cauchy Integral]
+\label{thm:cauchy-integral-interval-additivity}
+If \(c\in[a,b]\) and \(f\) is Cauchy-integrable on the relevant intervals,
+then
+\[
+  \int_a^b f\,dx=\int_a^c f\,dx+\int_c^b f\,dx .
+\]
+\end{theorem}
+\end{theorembox}
+
+\begin{definitionbox}{Definition (Oscillation on an Interval)}
+\begin{definition}[Oscillation on an Interval]
+\label{def:interval-oscillation-integration}
+For bounded \(f\) on an interval \(I\), define
+\[
+  \omega_f(I)=\sup_I f-\inf_I f.
+\]
+Oscillation is the error controller: if \(\omega_f(I)\) is small, every sample
+height on \(I\) is close to every other sample height.
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Oscillation as the visible error]
+Figure~\ref{fig:quadrature-atlas} shows the same quantity geometrically:
+the Darboux gap \(U(f,P)-L(f,P)\) is the sum of local oscillations
+\(\omega_f(I_i)\) multiplied by the slab widths \(\Delta x_i\). The trapezoid
+and Simpson panels are numerical side branches; the load-bearing panel here
+is the oscillation identity.
+\end{remark*}
+
+\input{tex/figures/quadrature-atlas}
+
+\begin{theorembox}{Theorem (Continuous Implies Cauchy-Integrable)}
+\begin{theorem}[Continuous Functions Are Cauchy-Integrable]
+\label{thm:continuous-cauchy-integrable}
+Every continuous function \(f:[a,b]\to\mathbb R\) is Cauchy-integrable.
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Proof skeleton]
+Continuity on the compact interval gives uniform continuity. Hence short slabs
+have small oscillation. Given two fine partitions, pass to their common
+refinement and compare sums slab by slab; each re-sampling error is bounded by
+\(\omega_f(I)\) times the slab width. The sums form a Cauchy net, and
+completeness of \(\mathbb R\) supplies the limit.
+\end{remark*}
+
+\begin{remark*}[What continuity buys]
+Uniform continuity is the load-bearing ingredient. It converts pointwise
+control into one global scale: if the slabs are all shorter than that scale,
+then every slab has small oscillation. Without this global scale, Cauchy's
+left-endpoint definition has no mechanism for proving that unrelated
+partitions settle to the same number.
+\end{remark*}
+
+\begin{remark*}[A first discontinuous edge case]
+A single jump should still have an area. If
+\[
+  f(x)=
+  \begin{cases}
+    0,&x<c,\\
+    1,&x\ge c,
+  \end{cases}
+\]
+on \([a,b]\), the only dangerous slab is the one crossing \(c\). Its total
+possible error is bounded by its width, and that width tends to zero as the
+mesh tends to zero. This example is not hard; the point is that Cauchy's
+definition gives no internal test explaining why it is harmless. The proof
+above proves continuity is sufficient, not that controlled discontinuities are
+allowed.
+\end{remark*}
+
+\begin{theorembox}{Theorem (Tag Independence)}
+\begin{theorem}[Tag Independence for Continuous Functions]
+\label{thm:cauchy-tag-independence}
+If \(f\) is continuous on \([a,b]\), then every choice of tags gives the same
+limit as the left-endpoint sums as \(\|P\|\to 0\).
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Bug report]
+Cauchy has two defects. First, the left endpoint is privileged by convention;
+tag independence is a theorem only after continuity has already been assumed.
+Second, the existence proof gives no usable criterion for discontinuous
+functions. The patch request is to stop privileging the left endpoint and make
+tag independence part of the definition.
+\end{remark*}
+
+\begin{remark*}[Patch request]
+The next definition should not say ``sample on the left.'' It should say:
+sample anywhere, even adversarially, and require all fine enough choices to
+agree. Riemann is exactly Cauchy's tag-independence theorem promoted into the
+definition of integrability.
+\end{remark*}

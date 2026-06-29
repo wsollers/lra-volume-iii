@@ -1,0 +1,48 @@
+\newpage
+\phantomsection
+\label{prf:darboux-refinement-squeeze}
+\LRAProofFor{lem:darboux-refinement-squeeze}
+\begin{remark*}[Return]\hyperref[lem:darboux-refinement-squeeze]{Return to Lemma}\end{remark*}
+\begin{lemma*}[Darboux Sums Under Refinement]
+Refinement raises lower sums and lowers upper sums.
+\end{lemma*}
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+It suffices to add one point \(c\in(x_{k-1},x_k)\). Let
+\[
+  I=[x_{k-1},x_k],\qquad I_1=[x_{k-1},c],\qquad I_2=[c,x_k].
+\]
+Write \(m,m_1,m_2\) for the infima of \(f\) on \(I,I_1,I_2\), and
+\(M,M_1,M_2\) for the corresponding suprema. Since \(I_1,I_2\subset I\),
+\[
+  m\le m_1,\quad m\le m_2,\qquad M_1\le M,\quad M_2\le M.
+\]
+Therefore
+\[
+  m(c-x_{k-1})+m(x_k-c)
+  \le m_1(c-x_{k-1})+m_2(x_k-c),
+\]
+so the lower sum rises. Similarly,
+\[
+  M_1(c-x_{k-1})+M_2(x_k-c)
+  \le M(c-x_{k-1})+M(x_k-c),
+\]
+so the upper sum falls. Repeating for each added point proves the chain.
+\end{proof}
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+When a slab is split, the new lower rectangles may use larger infima because
+each smaller interval has fewer points where the function can dip. The new
+upper rectangles may use smaller suprema for the same reason. This is the
+monotone control Darboux extracts from refinement.
+\end{proof}
+\begin{remark*}[Proof structure]
+Check the effect of adding one partition point, then iterate.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:darboux-sums]{Lower and Upper Darboux Sums}.
+  \item \hyperref[def:partition-refinement]{Refinement of a Partition}.
+\end{itemize}
+\end{dependencies}
+\clearpage

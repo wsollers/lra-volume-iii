@@ -1,5 +1,5 @@
 subject: riemann-integration
-display_title: ''
+display_title: Integration
 volume: volume-iii
 status: in-progress
 dependencies:
@@ -7,5 +7,310 @@ dependencies:
   next: ''
 path: volume-iii/book-integration/riemann-integration
 book: book-integration
-environments: []
+environments:
+- label: def:integration-partition
+  type: def
+  file: notes\partitions\notes-partitions.tex
+  display_title: Partition of a Compact Interval
+  proof_file: null
+- label: def:subinterval-width-integration
+  type: def
+  file: notes\partitions\notes-partitions.tex
+  display_title: Subinterval Width
+  proof_file: null
+- label: def:partition-mesh
+  type: def
+  file: notes\partitions\notes-partitions.tex
+  display_title: Mesh of a Partition
+  proof_file: null
+- label: def:tagged-partition-integration
+  type: def
+  file: notes\partitions\notes-partitions.tex
+  display_title: Tagged Partition
+  proof_file: null
+- label: def:partition-refinement
+  type: def
+  file: notes\partitions\notes-partitions.tex
+  display_title: Refinement of a Partition
+  proof_file: null
+- label: lem:common-refinement-partitions
+  type: lem
+  file: notes\partitions\notes-partitions.tex
+  display_title: Common Refinement of Two Partitions
+  proof_file: proofs\partitions\prf-common-refinement-partitions.tex
+- label: def:cauchy-sum
+  type: def
+  file: notes\cauchy-integral\notes-cauchy-integral.tex
+  display_title: Left-Endpoint Cauchy Sum
+  proof_file: null
+- label: def:cauchy-integral
+  type: def
+  file: notes\cauchy-integral\notes-cauchy-integral.tex
+  display_title: Cauchy Integral
+  proof_file: null
+- label: prop:cauchy-integral-constant
+  type: prop
+  file: notes\cauchy-integral\notes-cauchy-integral.tex
+  display_title: Cauchy Integral of a Constant
+  proof_file: proofs\cauchy-integral\prf-cauchy-integral-constant.tex
+- label: thm:cauchy-integral-linearity
+  type: thm
+  file: notes\cauchy-integral\notes-cauchy-integral.tex
+  display_title: Linearity of the Cauchy Integral
+  proof_file: proofs\cauchy-integral\prf-cauchy-integral-linearity.tex
+- label: thm:cauchy-integral-monotonicity
+  type: thm
+  file: notes\cauchy-integral\notes-cauchy-integral.tex
+  display_title: Monotonicity of the Cauchy Integral
+  proof_file: proofs\cauchy-integral\prf-cauchy-integral-monotonicity.tex
+- label: cor:cauchy-integral-bounds
+  type: cor
+  file: notes\cauchy-integral\notes-cauchy-integral.tex
+  display_title: Bounds for the Cauchy Integral
+  proof_file: proofs\cauchy-integral\prf-cauchy-integral-bounds.tex
+- label: thm:cauchy-integral-triangle-inequality
+  type: thm
+  file: notes\cauchy-integral\notes-cauchy-integral.tex
+  display_title: Triangle Inequality for the Cauchy Integral
+  proof_file: proofs\cauchy-integral\prf-cauchy-integral-triangle-inequality.tex
+- label: thm:cauchy-integral-interval-additivity
+  type: thm
+  file: notes\cauchy-integral\notes-cauchy-integral.tex
+  display_title: Interval Additivity for the Cauchy Integral
+  proof_file: proofs\cauchy-integral\prf-cauchy-integral-interval-additivity.tex
+- label: def:interval-oscillation-integration
+  type: def
+  file: notes\cauchy-integral\notes-cauchy-integral.tex
+  display_title: Oscillation on an Interval
+  proof_file: null
+- label: thm:continuous-cauchy-integrable
+  type: thm
+  file: notes\cauchy-integral\notes-cauchy-integral.tex
+  display_title: Continuous Functions Are Cauchy-Integrable
+  proof_file: proofs\cauchy-integral\prf-continuous-cauchy-integrable.tex
+- label: thm:cauchy-tag-independence
+  type: thm
+  file: notes\cauchy-integral\notes-cauchy-integral.tex
+  display_title: Tag Independence for Continuous Functions
+  proof_file: proofs\cauchy-integral\prf-cauchy-tag-independence.tex
+- label: def:riemann-sum
+  type: def
+  file: notes\riemann-integral\notes-riemann-integral.tex
+  display_title: Riemann Sum
+  proof_file: null
+- label: def:riemann-integral
+  type: def
+  file: notes\riemann-integral\notes-riemann-integral.tex
+  display_title: Riemann Integral
+  proof_file: null
+- label: thm:continuous-riemann-integrable
+  type: thm
+  file: notes\riemann-integral\notes-riemann-integral.tex
+  display_title: Continuous Functions Are Riemann-Integrable
+  proof_file: proofs\riemann-integral\prf-continuous-riemann-integrable.tex
+- label: thm:riemann-integral-linearity
+  type: thm
+  file: notes\riemann-integral\notes-riemann-integral.tex
+  display_title: Linearity of the Riemann Integral
+  proof_file: proofs\riemann-integral\prf-riemann-integral-linearity.tex
+- label: thm:riemann-integral-monotonicity
+  type: thm
+  file: notes\riemann-integral\notes-riemann-integral.tex
+  display_title: Monotonicity of the Riemann Integral
+  proof_file: proofs\riemann-integral\prf-riemann-integral-monotonicity.tex
+- label: thm:riemann-integral-triangle-inequality
+  type: thm
+  file: notes\riemann-integral\notes-riemann-integral.tex
+  display_title: Triangle Inequality for the Riemann Integral
+  proof_file: proofs\riemann-integral\prf-riemann-integral-triangle-inequality.tex
+- label: thm:riemann-integral-interval-additivity
+  type: thm
+  file: notes\riemann-integral\notes-riemann-integral.tex
+  display_title: Interval Additivity for the Riemann Integral
+  proof_file: proofs\riemann-integral\prf-riemann-integral-interval-additivity.tex
+- label: thm:riemann-cauchy-criterion
+  type: thm
+  file: notes\riemann-integral\notes-riemann-integral.tex
+  display_title: Cauchy Criterion for Riemann Integrability
+  proof_file: proofs\riemann-integral\prf-riemann-cauchy-criterion.tex
+- label: def:darboux-sums
+  type: def
+  file: notes\darboux-integral\notes-darboux-integral.tex
+  display_title: Lower and Upper Darboux Sums
+  proof_file: null
+- label: lem:darboux-refinement-squeeze
+  type: lem
+  file: notes\darboux-integral\notes-darboux-integral.tex
+  display_title: Darboux Sums Under Refinement
+  proof_file: proofs\darboux-integral\prf-darboux-refinement-squeeze.tex
+- label: def:darboux-integrability
+  type: def
+  file: notes\darboux-integral\notes-darboux-integral.tex
+  display_title: Darboux Integrability
+  proof_file: null
+- label: thm:darboux-criterion
+  type: thm
+  file: notes\darboux-integral\notes-darboux-integral.tex
+  display_title: Darboux Criterion
+  proof_file: proofs\darboux-integral\prf-darboux-criterion.tex
+- label: thm:riemann-darboux-equivalence
+  type: thm
+  file: notes\darboux-integral\notes-darboux-integral.tex
+  display_title: Equivalence of Riemann and Darboux Integrability
+  proof_file: proofs\darboux-integral\prf-riemann-darboux-equivalence.tex
+- label: thm:continuous-darboux-integrable
+  type: thm
+  file: notes\darboux-integral\notes-darboux-integral.tex
+  display_title: Continuous Functions Are Darboux-Integrable
+  proof_file: proofs\darboux-integral\prf-continuous-darboux-integrable.tex
+- label: thm:monotone-darboux-integrable
+  type: thm
+  file: notes\darboux-integral\notes-darboux-integral.tex
+  display_title: Monotone Functions Are Darboux-Integrable
+  proof_file: proofs\darboux-integral\prf-monotone-darboux-integrable.tex
+- label: thm:finite-discontinuities-darboux-integrable
+  type: thm
+  file: notes\darboux-integral\notes-darboux-integral.tex
+  display_title: Bounded Functions with Finitely Many Discontinuities Are Darboux-Integrable
+  proof_file: proofs\darboux-integral\prf-finite-discontinuities-darboux-integrable.tex
+- label: thm:darboux-integrable-linear-combinations
+  type: thm
+  file: notes\darboux-integral\notes-darboux-integral.tex
+  display_title: Sums and Scalar Multiples of Darboux-Integrable Functions
+  proof_file: proofs\darboux-integral\prf-darboux-integrable-linear-combinations.tex
+- label: thm:darboux-integrable-products
+  type: thm
+  file: notes\darboux-integral\notes-darboux-integral.tex
+  display_title: Products of Darboux-Integrable Functions
+  proof_file: proofs\darboux-integral\prf-darboux-integrable-products.tex
+- label: thm:darboux-integrable-absolute-value
+  type: thm
+  file: notes\darboux-integral\notes-darboux-integral.tex
+  display_title: Absolute Values of Darboux-Integrable Functions
+  proof_file: proofs\darboux-integral\prf-darboux-integrable-absolute-value.tex
+- label: thm:darboux-integrable-continuous-composition
+  type: thm
+  file: notes\darboux-integral\notes-darboux-integral.tex
+  display_title: Continuous Images of Darboux-Integrable Functions
+  proof_file: proofs\darboux-integral\prf-darboux-integrable-continuous-composition.tex
+- label: def:total-variation
+  type: def
+  file: notes\riemann-stieltjes\notes-riemann-stieltjes.tex
+  display_title: Total Variation
+  proof_file: null
+- label: def:bounded-variation-integration
+  type: def
+  file: notes\riemann-stieltjes\notes-riemann-stieltjes.tex
+  display_title: Bounded Variation
+  proof_file: null
+- label: prop:monotone-bounded-variation
+  type: prop
+  file: notes\riemann-stieltjes\notes-riemann-stieltjes.tex
+  display_title: Monotone Functions Have Bounded Variation
+  proof_file: proofs\riemann-stieltjes\prf-monotone-bounded-variation.tex
+- label: def:riemann-stieltjes-integral
+  type: def
+  file: notes\riemann-stieltjes\notes-riemann-stieltjes.tex
+  display_title: Riemann--Stieltjes Integral
+  proof_file: null
+- label: thm:rs-continuous-bv-existence
+  type: thm
+  file: notes\riemann-stieltjes\notes-riemann-stieltjes.tex
+  display_title: Continuous Integrand and BV Integrator
+  proof_file: proofs\riemann-stieltjes\prf-rs-continuous-bv-existence.tex
+- label: thm:rs-bilinearity
+  type: thm
+  file: notes\riemann-stieltjes\notes-riemann-stieltjes.tex
+  display_title: Bilinearity of the Riemann--Stieltjes Integral
+  proof_file: proofs\riemann-stieltjes\prf-rs-bilinearity.tex
+- label: thm:rs-interval-additivity
+  type: thm
+  file: notes\riemann-stieltjes\notes-riemann-stieltjes.tex
+  display_title: Interval Additivity for the Riemann--Stieltjes Integral
+  proof_file: proofs\riemann-stieltjes\prf-rs-interval-additivity.tex
+- label: thm:rs-integration-by-parts
+  type: thm
+  file: notes\riemann-stieltjes\notes-riemann-stieltjes.tex
+  display_title: Riemann--Stieltjes Integration by Parts
+  proof_file: proofs\riemann-stieltjes\prf-rs-integration-by-parts.tex
+- label: thm:rs-c1-reduction
+  type: thm
+  file: notes\riemann-stieltjes\notes-riemann-stieltjes.tex
+  display_title: Reduction to Riemann Integration for a C1 Integrator
+  proof_file: proofs\riemann-stieltjes\prf-rs-c1-reduction.tex
+- label: thm:rs-step-integrator-finite-sum
+  type: thm
+  file: notes\riemann-stieltjes\notes-riemann-stieltjes.tex
+  display_title: Step Integrators Give Finite Sums
+  proof_file: proofs\riemann-stieltjes\prf-rs-step-integrator-finite-sum.tex
+- label: def:gauge-on-interval
+  type: def
+  file: notes\henstock-kurzweil\notes-henstock-kurzweil.tex
+  display_title: Gauge on an Interval
+  proof_file: null
+- label: def:delta-fine-tagged-partition
+  type: def
+  file: notes\henstock-kurzweil\notes-henstock-kurzweil.tex
+  display_title: Delta-Fine Tagged Partition
+  proof_file: null
+- label: def:henstock-kurzweil-integral
+  type: def
+  file: notes\henstock-kurzweil\notes-henstock-kurzweil.tex
+  display_title: Henstock--Kurzweil Integral
+  proof_file: null
+- label: lem:cousin
+  type: lem
+  file: notes\henstock-kurzweil\notes-henstock-kurzweil.tex
+  display_title: Cousin's Lemma
+  proof_file: proofs\henstock-kurzweil\prf-cousin.tex
+- label: thm:riemann-integrable-implies-hk-integrable
+  type: thm
+  file: notes\henstock-kurzweil\notes-henstock-kurzweil.tex
+  display_title: Riemann Integrable Implies Henstock--Kurzweil Integrable
+  proof_file: proofs\henstock-kurzweil\prf-riemann-integrable-implies-hk-integrable.tex
+- label: lem:hk-straddle
+  type: lem
+  file: notes\henstock-kurzweil\notes-henstock-kurzweil.tex
+  display_title: Straddle Lemma
+  proof_file: proofs\henstock-kurzweil\prf-hk-straddle.tex
+- label: thm:hk-fundamental-theorem
+  type: thm
+  file: notes\henstock-kurzweil\notes-henstock-kurzweil.tex
+  display_title: Fundamental Theorem for the Henstock--Kurzweil Integral
+  proof_file: proofs\henstock-kurzweil\prf-hk-fundamental-theorem.tex
+- label: thm:continuous-hk-integrable
+  type: thm
+  file: notes\henstock-kurzweil\notes-henstock-kurzweil.tex
+  display_title: Continuous Functions Are Henstock--Kurzweil Integrable
+  proof_file: proofs\henstock-kurzweil\prf-continuous-hk-integrable.tex
+- label: def:mcshane-fine-tagged-partition
+  type: def
+  file: notes\mcshane-integral\notes-mcshane-integral.tex
+  display_title: McShane-Fine Tagged Partition
+  proof_file: null
+- label: def:mcshane-integral
+  type: def
+  file: notes\mcshane-integral\notes-mcshane-integral.tex
+  display_title: McShane Integral
+  proof_file: null
+- label: thm:riemann-mcshane-hk-inclusions
+  type: thm
+  file: notes\mcshane-integral\notes-mcshane-integral.tex
+  display_title: Riemann Integrable Implies McShane Integrable Implies Henstock--Kurzweil Integrable
+  proof_file: proofs\mcshane-integral\prf-riemann-mcshane-hk-inclusions.tex
+- label: def:measure-zero
+  type: def
+  file: notes\measure-zero\notes-measure-zero.tex
+  display_title: Measure Zero
+  proof_file: null
+- label: def:point-oscillation-integration
+  type: def
+  file: notes\measure-zero\notes-measure-zero.tex
+  display_title: Point Oscillation
+  proof_file: null
+- label: thm:lebesgue-criterion-riemann-integrability
+  type: thm
+  file: notes\measure-zero\notes-measure-zero.tex
+  display_title: Lebesgue Criterion for Riemann Integrability
+  proof_file: proofs\measure-zero\prf-lebesgue-criterion-riemann-integrability.tex
 proof_files: []

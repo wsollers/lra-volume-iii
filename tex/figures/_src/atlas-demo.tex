@@ -1,0 +1,195 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{structural-atlas}
+\usepackage{array}
+
+% Each panel is a self-contained tikzpicture. Panels share one scale.
+\newcommand{\panelscale}{0.82}
+
+\begin{document}
+\setlength{\tabcolsep}{10pt}
+\begin{tikzpicture}[atlas]
+\node[inner sep=14pt]{%
+\begin{minipage}{20.5cm}
+\centering
+
+% ----- TITLE -----
+{\color{atlasink}\rule{\linewidth}{0.8pt}}\\[2pt]
+{\scshape\LARGE\color{atlasink} Structural Atlas: Geometric Probes in Analysis}\\[2pt]
+{\color{atlasink}\rule{\linewidth}{0.8pt}}\\[10pt]
+
+\begin{tabular}{@{}c@{\hspace{12pt}}c@{\hspace{12pt}}c@{}}
+
+% ============================================================ FIG 1: MVT
+\begin{tikzpicture}[scale=\panelscale]
+  \def\f{0.16*\x*\x+0.20*\x+0.55}
+  \glowcurve{color=atlasblue, domain=0.5:4.5, axis=0, top=4.6, expr={\f}}
+  \draw[atlas axes] (0,0)--(5.2,0);
+  \draw[atlas axes] (0,0)--(0,4.6);
+  \pgfmathsetmacro\fa{0.16*0.5*0.5+0.20*0.5+0.55}
+  \pgfmathsetmacro\fb{0.16*4.5*4.5+0.20*4.5+0.55}
+  \pgfmathsetmacro\msec{(\fb-\fa)/(4.5-0.5)}
+  \pgfmathsetmacro\cc{(\msec-0.20)/0.32}
+  \pgfmathsetmacro\fc{0.16*\cc*\cc+0.20*\cc+0.55}
+  \draw[atlas probe,atlasgreen] (0.5,\fa)--(4.5,\fb);
+  \draw[atlas probe,atlasred] ({\cc-1.7},{\fc-\msec*1.7})--({\cc+1.7},{\fc+\msec*1.7});
+  \draw[dropline] (0.5,\fa)--(0.5,0);
+  \draw[dropline] (\cc,\fc)--(\cc,0);
+  \draw[dropline] (4.5,\fb)--(4.5,0);
+  \node[atlas dot] at (0.5,\fa){};
+  \node[atlas dot] at (4.5,\fb){};
+  \node[atlas dot] at (\cc,\fc){};
+  \node[atlas label,left=1pt] at (0.5,\fa){\footnotesize$(a,f(a))$};
+  \node[atlas label,above right=-1pt] at (4.5,\fb){\footnotesize$(b,f(b))$};
+  \node[atlas label,above right] at (3.2,2.35){\footnotesize$y=f(x)$};
+  \node[atlas label,below right=1pt] at (\cc,\fc){\scriptsize$f'(c)=\dfrac{f(b)-f(a)}{b-a}$};
+  \node[atlas label,below] at (0.5,-0.05){\footnotesize$a$};
+  \node[atlas label,below] at (2.5,-0.05){\scriptsize$a<c<b$};
+  \node[atlas label,below] at (4.5,-0.05){\footnotesize$b$};
+\end{tikzpicture}
+&
+% ============================================================ FIG 2: IVT
+\begin{tikzpicture}[scale=\panelscale]
+  \def\g{1.1+0.52*\x+0.45*sin(132*\x)}
+  \glowcurve{color=atlasgreen, domain=0.4:4.6, axis=0, top=4.6, expr={\g}}
+  \draw[atlas axes] (0,0)--(5.2,0);
+  \draw[atlas axes] (0,0)--(0,4.6);
+  \pgfmathsetmacro\ga{1.1+0.52*0.4+0.45*sin(132*0.4)}
+  \pgfmathsetmacro\gb{1.1+0.52*4.6+0.45*sin(132*4.6)}
+  \pgfmathsetmacro\cN{2.5}
+  \pgfmathsetmacro\N{1.1+0.52*\cN+0.45*sin(132*\cN)}
+  \draw[atlas probe,atlasink] (0,\N)--(5.0,\N);
+  \draw[dropline] (\cN,\N)--(\cN,0);
+  \node[atlas dot] at (\cN,\N){};
+  \draw[dropline] (0.4,\ga)--(0,\ga);
+  \draw[dropline] (4.6,\gb)--(0,\gb);
+  \node[atlas label,left] at (0,\ga){\footnotesize$f(a)$};
+  \node[atlas label,left] at (0,\N){\footnotesize$N$};
+  \node[atlas label,left] at (0,\gb){\footnotesize$f(b)$};
+  \node[atlas label,above=1pt] at (\cN,\N){\footnotesize$c$};
+  \node[atlas label,above left] at (\cN-0.1,\N+0.3){\footnotesize$f(c)=N$};
+  \node[atlas label,above right] at (3.5,4.0){\footnotesize$y=f(x)$};
+  \node[atlas label,below] at (0.4,-0.05){\footnotesize$a$};
+  \node[atlas label,below] at (2.55,-0.05){\scriptsize$a<c<b$};
+  \node[atlas label,below] at (4.6,-0.05){\footnotesize$b$};
+\end{tikzpicture}
+&
+% ============================================================ FIG 3: ROLLE
+\begin{tikzpicture}[scale=\panelscale]
+  % f(a)=f(b)=0, one max then one min: scaled sine over [0, 2pi]-ish
+  \def\h{1.5*sin(72*\x)}    % \x in 0..5 -> degrees 0..360
+  \glowcurve{color=atlasred, domain=0:5, axis=-1.7, top=1.9, expr={\h}}
+  \draw[atlas axes] (0,0)--(5.4,0);
+  \draw[atlas axes] (0,-1.9)--(0,2.1);
+  % extrema at x=1.25 (max) and x=3.75 (min): 72*1.25=90deg, 72*3.75=270deg
+  \pgfmathsetmacro\xmax{1.25}\pgfmathsetmacro\xmin{3.75}
+  \draw[atlas probe,atlasred] (\xmax-0.9,1.5)--(\xmax+0.9,1.5);
+  \draw[atlas probe,atlasred] (\xmin-0.9,-1.5)--(\xmin+0.9,-1.5);
+  \node[atlas dot] at (\xmax,1.5){};
+  \node[atlas dot] at (\xmin,-1.5){};
+  \node[atlas dot] at (0,0){};
+  \node[atlas dot] at (5,0){};
+  \node[atlas label,above] at (\xmax,1.62){\footnotesize tangents};
+  \node[atlas label,below] at (\xmin,-1.62){\footnotesize tangents};
+  \node[atlas label] at (3.95,0.62){\footnotesize$y=f(x)$};
+  \node[atlas label,below left=-1pt] at (0,0){\footnotesize$a$};
+  \node[atlas label,below right=-1pt] at (5,0){\footnotesize$b$};
+  \node[atlas label,below] at (2.5,-1.95){\scriptsize$a<c<b$};
+  \node[atlas label] at (2.25,1.2){\scriptsize$f(a)=f(b)=0$};
+  \node[atlas label] at (2.55,0.55){\scriptsize$f'(c)=0$};
+\end{tikzpicture}
+\\[4pt]
+
+% captions row 1
+\atlascaption{1}{Mean Value Theorem (MVT)}{The Tangent Guard}
+&
+\atlascaption{2}{Intermediate Value Theorem (IVT)}{The Continuous Path}
+&
+\atlascaption{3}{Rolle's Theorem}{The Critical Slope Guard}
+\\[12pt]
+
+% ============================================================ FIG 4: CONCAVITY
+\begin{tikzpicture}[scale=\panelscale]
+  % left: convex (gold), tangents below
+  \def\cu{0.55*(\x-1.1)*(\x-1.1)+0.3}
+  \glowcurve{color=atlasgold, domain=0.0:2.2, axis=0, top=3.0, expr={\cu}}
+  \foreach \t in {0.5,1.7}{
+    \pgfmathsetmacro\yt{0.55*(\t-1.1)*(\t-1.1)+0.3}
+    \pgfmathsetmacro\mt{1.10*(\t-1.1)}
+    \draw[atlas probe,atlasgold!75!atlasink] (\t-0.7,{\yt-\mt*0.7})--(\t+0.7,{\yt+\mt*0.7});
+  }
+  \node[atlas label,above right] at (1.7,2.0){\scriptsize$y=f(x)$};
+  \node[atlas label] at (1.1,1.55){\scriptsize$f''(x)>0$};
+  \node[atlas label,below] at (1.1,0.05){\scriptsize tangents};
+  % right: genuine inflection via a cubic S-curve (magenta)
+  \begin{scope}[xshift=3.4cm]
+    \def\hp{1.45+0.55*(\x-1.1)-0.34*(\x-1.1)*(\x-1.1)*(\x-1.1)}
+    \glowcurve{color=atlasmagenta, domain=0.0:2.2, axis=0, top=3.0, expr={\hp}}
+    \foreach \t in {0.45,1.75}{
+      \pgfmathsetmacro\yt{1.45+0.55*(\t-1.1)-0.34*(\t-1.1)*(\t-1.1)*(\t-1.1)}
+      \pgfmathsetmacro\mt{0.55-1.02*(\t-1.1)*(\t-1.1)}
+      \draw[atlas probe,atlasmagenta!80!atlasink] (\t-0.55,{\yt-\mt*0.55})--(\t+0.55,{\yt+\mt*0.55});
+    }
+    \node[atlas dot] at (1.1,1.45){};
+    \node[atlas label,below] at (0.55,0.55){\scriptsize$f''>0$};
+    \node[atlas label,above] at (1.7,2.35){\scriptsize$f''<0$};
+    \node[atlas label,right,align=left] at (1.2,0.95)
+      {\scriptsize Point of\\[-1pt]inflection\\[-1pt]$f''(x)=0$};
+  \end{scope}
+\end{tikzpicture}
+&
+% ============================================================ FIG 5: 2ND DERIV
+\begin{tikzpicture}[scale=\panelscale]
+  % left teal: min
+  \def\mn{0.7*(\x-1.1)*(\x-1.1)+0.5}
+  \glowcurve{color=atlasteal, domain=0.1:2.1, axis=0, top=3.0, expr={\mn}}
+  \node[atlas dot] at (1.1,0.5){};
+  \draw[dropline] (1.1,0.5)--(1.1,0);
+  \node[atlas label,below] at (1.1,-0.05){\footnotesize$c$};
+  \node[atlas label,below,align=center] at (1.0,-0.40)
+    {\tiny$f'(c)=0$ \textsc{and}\\[-1pt]$f''(c)>0\Rightarrow$ Min};
+  % right orange: max
+  \begin{scope}[xshift=3.4cm]
+    \def\mx{2.6-0.7*(\x-1.1)*(\x-1.1)}
+    \glowcurve{color=atlasorange, domain=0.1:2.1, axis=0, top=3.0, expr={\mx}}
+    \node[atlas dot] at (1.1,2.6){};
+    \draw[dropline] (1.1,2.6)--(1.1,0);
+    \node[atlas label,below] at (1.1,-0.05){\footnotesize$c$};
+    \node[atlas label,below,align=center] at (1.2,-0.40)
+      {\tiny$f'(c)=0$ \textsc{and}\\[-1pt]$f''(c)<0\Rightarrow$ Max};
+  \end{scope}
+\end{tikzpicture}
+&
+% ============================================================ FIG 6: LIPSCHITZ (faithful)
+\begin{tikzpicture}[scale=\panelscale]
+  \def\lf{2.0+1.05*sin(80*\x)*0.9+0.16*\x}
+  \glowcurve{color=atlasblue, domain=0.0:4.2, axis=0, top=4.2, expr={\lf}}
+  \draw[atlas axes] (0,0)--(4.8,0);
+  \draw[atlas axes] (0,0)--(0,4.4);
+  \def\L{0.85}
+  % cone lines of slope +-L from the left and right anchor points
+  \draw[atlas probe,atlasconegreen] (0,3.6)--(4.2,{3.6-\L*4.2});
+  \draw[atlas probe,atlasconegreen] (0,0.5)--(4.2,{0.5+\L*4.2});
+  \draw[atlas probe,atlasconegreen] (0,1.0)--(4.2,{1.0+\L*4.2});
+  \draw[atlas probe,atlasconegreen] (0,3.1)--(4.2,{3.1-\L*4.2});
+  \node[atlas label,above] at (2.1,4.15){\scriptsize$|f'(x)-f'(y)|\le L|x-y|$};
+  \node[atlas label,left] at (0,3.9){\scriptsize$-L$};
+  \node[atlas label,left] at (0,0.5){\scriptsize$\pm L$};
+  \node[atlas label,right] at (4.2,4.0){\scriptsize$\pm L$};
+  \node[atlas label,right] at (4.2,0.6){\scriptsize$\pm L$};
+  \node[atlas label,right] at (3.4,3.1){\scriptsize$y=f(x)$};
+  \node[atlas label] at (2.5,1.0){\scriptsize$-L$};
+\end{tikzpicture}
+\\[4pt]
+
+% captions row 2
+\atlascaption{4}{Concavity \& Convexity}{Structural Curvature Probes}
+&
+\atlascaption{5}{Second Derivative Curve Tests}{Local Control}
+&
+\atlascaption{6}{Lipschitz Derivative}{The Rate of Change Guard}
+
+\end{tabular}
+\end{minipage}%
+};
+\end{tikzpicture}
+\end{document}

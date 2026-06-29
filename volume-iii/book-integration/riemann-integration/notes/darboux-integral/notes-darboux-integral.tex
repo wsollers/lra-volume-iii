@@ -1,0 +1,228 @@
+\subsection*{Geometric Intuition}
+
+Darboux stops chasing tags. On each slab, the adversary can do no better than
+the supremum and no worse than the infimum. So build the upper staircase from
+\(\sup f\), the lower staircase from \(\inf f\), and ask whether the gap can be
+squeezed to zero.
+
+\begin{remark*}[Engineering reading]
+Darboux is the usable face of Riemann integration. It does not change the
+integral; it changes the test. Instead of quantifying over every possible tag,
+it brackets all tags at once.
+\end{remark*}
+
+\begin{definitionbox}{Definition (Darboux Sums)}
+\begin{definition}[Lower and Upper Darboux Sums]
+\label{def:darboux-sums}
+For bounded \(f\) on \([a,b]\), set
+\[
+  m_i=\inf_{[x_{i-1},x_i]}f,\qquad
+  M_i=\sup_{[x_{i-1},x_i]}f,
+\]
+and define
+\[
+  L(f,P)=\sum_i m_i\Delta x_i,\qquad
+  U(f,P)=\sum_i M_i\Delta x_i.
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{lemmabox}{Lemma (Monotonicity Under Refinement)}
+\begin{lemma}[Darboux Sums Under Refinement]
+\label{lem:darboux-refinement-squeeze}
+If \(P'\) refines \(P\), then
+\[
+  L(f,P)\le L(f,P')\le U(f,P')\le U(f,P).
+\]
+\end{lemma}
+\end{lemmabox}
+
+\begin{remark*}[Geometric reading]
+Thinner slabs give lower rectangles room to rise and upper rectangles room to
+fall. This monotonicity is exactly what Riemann sums lack when tags move
+adversarially.
+\end{remark*}
+
+\begin{remark*}[One-point refinement proof idea]
+It is enough to add one cut-point \(c\) inside one slab and iterate. The
+infimum over the whole slab is less than or equal to the infimum over each
+piece, so the lower contribution rises. The supremum over the whole slab is
+greater than or equal to the supremum over each piece, so the upper
+contribution falls.
+\end{remark*}
+
+\begin{definitionbox}{Definition (Darboux Integrability)}
+\begin{definition}[Darboux Integrability]
+\label{def:darboux-integrability}
+The lower and upper integrals are
+\[
+  \underline I=\sup_P L(f,P),\qquad
+  \overline I=\inf_P U(f,P).
+\]
+The function \(f\) is \emph{Darboux-integrable} if \(\underline I=\overline I\).
+\end{definition}
+\end{definitionbox}
+
+\begin{theorembox}{Theorem (Darboux Criterion)}
+\begin{theorem}[Darboux Criterion]
+\label{thm:darboux-criterion}
+A bounded function \(f\) is Darboux-integrable if and only if for every
+\(\varepsilon>0\) there exists a partition \(P\) such that
+\[
+  U(f,P)-L(f,P)<\varepsilon.
+\]
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[The squeeze in one plate]
+Figure~\ref{fig:integration-atlas} places the Cauchy/Riemann tag choices,
+the lower--upper Darboux bracket, the refinement squeeze, and the gauge panel
+on the same page. The Darboux row is the chapter's hinge: replacing moving
+tags by \(\inf\) and \(\sup\) turns integrability into the checkable
+\(U-L\) squeeze.
+\end{remark*}
+
+\input{tex/figures/integration-atlas}
+
+\begin{theorembox}{Theorem (Riemann Equals Darboux)}
+\begin{theorem}[Equivalence of Riemann and Darboux Integrability]
+\label{thm:riemann-darboux-equivalence}
+For bounded functions on \([a,b]\), Riemann integrability and Darboux
+integrability are equivalent, and the integral values agree.
+\end{theorem}
+\end{theorembox}
+
+\begin{theorembox}{Theorem (Continuous Functions Are Integrable)}
+\begin{theorem}[Continuous Functions Are Darboux-Integrable]
+\label{thm:continuous-darboux-integrable}
+Every continuous function \(f:[a,b]\to\mathbb R\) is Darboux-integrable.
+\end{theorem}
+\end{theorembox}
+
+\begin{theorembox}{Theorem (Monotone Functions Are Integrable)}
+\begin{theorem}[Monotone Functions Are Darboux-Integrable]
+\label{thm:monotone-darboux-integrable}
+Every monotone function \(f:[a,b]\to\mathbb R\) is Darboux-integrable.
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Why this is a harvest theorem]
+Monotone functions may have infinitely many discontinuities. Darboux still
+handles them because their total vertical movement is finite. On each slab
+the oscillation is just the endpoint jump across that slab, and these jumps
+telescope over the partition. Equal-width partitions therefore force
+\(U(f,P)-L(f,P)\) to zero.
+\end{remark*}
+
+\begin{theorembox}{Theorem (Finitely Many Discontinuities)}
+\begin{theorem}[Bounded Functions with Finitely Many Discontinuities Are Darboux-Integrable]
+\label{thm:finite-discontinuities-darboux-integrable}
+If \(f:[a,b]\to\mathbb R\) is bounded and has only finitely many
+discontinuities, then \(f\) is Darboux-integrable.
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Why finite bad sets are harmless]
+The Darboux gap is
+\[
+  U(f,P)-L(f,P)=\sum_i \omega_f([x_{i-1},x_i])\Delta x_i.
+\]
+A finite set of discontinuities can be trapped in intervals of arbitrarily
+small total width. On the complement, \(f\) is continuous on compact pieces,
+so its oscillation is uniformly small on fine slabs. Thus the bad slabs are
+short and the good slabs are flat.
+\end{remark*}
+
+\begin{theorembox}{Theorem (Algebra of Darboux-Integrable Functions)}
+\begin{theorem}[Sums and Scalar Multiples of Darboux-Integrable Functions]
+\label{thm:darboux-integrable-linear-combinations}
+If \(f\) and \(g\) are Darboux-integrable on \([a,b]\), then
+\(\alpha f+\beta g\) is Darboux-integrable for all
+\(\alpha,\beta\in\mathbb R\).
+\end{theorem}
+\end{theorembox}
+
+\begin{theorembox}{Theorem (Products)}
+\begin{theorem}[Products of Darboux-Integrable Functions]
+\label{thm:darboux-integrable-products}
+If \(f\) and \(g\) are Darboux-integrable on \([a,b]\), then \(fg\) is
+Darboux-integrable on \([a,b]\).
+\end{theorem}
+\end{theorembox}
+
+\begin{theorembox}{Theorem (Absolute Values)}
+\begin{theorem}[Absolute Values of Darboux-Integrable Functions]
+\label{thm:darboux-integrable-absolute-value}
+If \(f\) is Darboux-integrable on \([a,b]\), then \(|f|\) is
+Darboux-integrable on \([a,b]\).
+\end{theorem}
+\end{theorembox}
+
+\begin{theorembox}{Theorem (Continuous Composition)}
+\begin{theorem}[Continuous Images of Darboux-Integrable Functions]
+\label{thm:darboux-integrable-continuous-composition}
+If \(f\) is Darboux-integrable on \([a,b]\), \(\varphi\) is continuous on an
+interval containing \(f([a,b])\), and \(f\) is bounded, then
+\(\varphi\circ f\) is Darboux-integrable on \([a,b]\).
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Why the harvest is cheap]
+The Darboux criterion reduces closure questions to controlling the upper-lower
+gap. Boundedness controls coefficients and products, while continuity of
+\(\varphi\) converts small oscillation of \(f\) into small oscillation of
+\(\varphi\circ f\). This is the point of switching from tags to a squeeze:
+theorems become estimates on \(U(f,P)-L(f,P)\).
+\end{remark*}
+
+\begin{remark*}[Bug report]
+Darboux is a better tool for the same class. It does not enlarge Riemann
+integrability. The remaining defects now fork. One can change the ruler
+\(\Delta x\) to \(\Delta\alpha\), which leads to Riemann--Stieltjes. Or one can
+diagnose the size of the discontinuity set, which leads to Lebesgue and also
+to the gauge-integral cure.
+\end{remark*}
+
+\begin{remark*}[Residual failures]
+The Dirichlet function \(\mathbf 1_{\mathbb Q}\) on \([0,1]\) has infimum
+\(0\) and supremum \(1\) on every slab, since rationals and irrationals are
+dense. Thus \(L(f,P)=0\) and \(U(f,P)=1\) for every partition, so the Darboux
+gap never closes. This is not a Darboux-specific failure; by equivalence, it
+is the failure of the whole Riemann family. The failure modes in
+Figure~\ref{fig:failures-atlas} separate the common pathologies: Dirichlet
+breaks the continuity-almost-everywhere condition, Thomae survives it,
+unbounded examples violate the boundedness hypothesis, and pointwise limits
+show why Riemann integration has weak limit behavior.
+\end{remark*}
+
+\input{tex/figures/failures-atlas}
+
+\begin{remark*}[What Darboux makes visible]
+For Thomae's function, Darboux sees the opposite picture. On every slab the
+infimum is \(0\), because every slab contains irrationals. The supremum can be
+large only near rationals with small denominator; above any fixed height
+threshold, there are only finitely many such rationals. A partition can isolate
+those finitely many tall rational spikes inside intervals of tiny total width,
+and the remaining upper rectangles are short. Thus the upper sum can be forced
+below any prescribed \(\varepsilon\), while every lower sum is \(0\).
+
+This is the practical gain: Riemann gives the correct definition, but Darboux
+gives the hand tool. Prove \(U-L\) can be squeezed, and the Riemann value
+follows from the equivalence theorem.
+\end{remark*}
+
+\begin{remark*}[The fork]
+Darboux exposes two separate defects:
+\[
+\begin{array}{c|c|c}
+\text{Residual defect} & \text{Successor} & \text{Change}\\
+\hline
+\text{only ordinary length} & \text{Riemann--Stieltjes} &
+\Delta x_i\mapsto \Delta\alpha_i\\
+\text{domain slabs see every bad set} & \text{Lebesgue / HK} &
+\text{measure bad sets or adapt fineness}
+\end{array}
+\]
+Stieltjes is therefore a sideways generalization, not the final repair of
+Riemann's domain-partition limitation.
+\end{remark*}

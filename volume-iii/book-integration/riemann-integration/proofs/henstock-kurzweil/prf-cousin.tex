@@ -1,0 +1,41 @@
+\newpage
+\phantomsection
+\label{prf:cousin}
+\LRAProofFor{lem:cousin}
+\begin{remark*}[Return]\hyperref[lem:cousin]{Return to Lemma}\end{remark*}
+\begin{lemma*}[Cousin's Lemma]
+For every gauge \(\delta\) on \([a,b]\), there exists a \(\delta\)-fine tagged
+partition of \([a,b]\).
+\end{lemma*}
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+Assume no \(\delta\)-fine tagged partition exists. Bisect \([a,b]\). At least
+one half must also admit no \(\delta\)-fine tagged partition, because
+partitions of both halves could be concatenated. Iterating gives nested closed
+intervals \([a_n,b_n]\) with lengths tending to \(0\), each admitting no
+\(\delta\)-fine tagged partition. By the nested interval property their
+intersection is a single point \(c\). Since \(\delta(c)>0\), some interval
+\([a_N,b_N]\) is contained in
+\((c-\delta(c),c+\delta(c))\). The one-slab partition of \([a_N,b_N]\), tagged
+at \(c\), is then \(\delta\)-fine, a contradiction.
+\end{proof}
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+The only possible way a gauge could fail is if every attempted chopping has a
+bad subinterval. Repeated bisection traps those bad subintervals around one
+point. But the gauge is positive at that point, so sufficiently small trapped
+intervals fit inside its gauge ball and are valid after all. This contradiction
+proves non-vacuity.
+\end{proof}
+\begin{remark*}[Proof structure]
+Assume failure, repeatedly bisect to produce nested bad intervals, then use
+compactness and positivity of the gauge at the limiting point to build the
+forbidden one-slab partition.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:gauge-on-interval]{Gauge on an Interval}.
+  \item \hyperref[def:delta-fine-tagged-partition]{Delta-Fine Tagged Partition}.
+\end{itemize}
+\end{dependencies}
+\clearpage

@@ -1,0 +1,64 @@
+\newpage
+\phantomsection
+\label{prf:finite-discontinuities-darboux-integrable}
+\LRAProofFor{thm:finite-discontinuities-darboux-integrable}
+\begin{remark*}[Return]\hyperref[thm:finite-discontinuities-darboux-integrable]{Return to Theorem}\end{remark*}
+\begin{theorem*}[Bounded Functions with Finitely Many Discontinuities Are Darboux-Integrable]
+If \(f:[a,b]\to\mathbb R\) is bounded and has only finitely many
+discontinuities, then \(f\) is Darboux-integrable.
+\end{theorem*}
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+Let \(|f|\le M\), and let the discontinuities be \(c_1,\ldots,c_N\). Fix
+\(\varepsilon>0\). Choose open intervals \(G_1,\ldots,G_N\), with
+\(c_j\in G_j\), whose total length is less than
+\[
+  \frac{\varepsilon}{4M+1}.
+\]
+Let \(G=\bigcup_jG_j\), and let
+\[
+  K=[a,b]\setminus G.
+\]
+The function \(f\) is continuous at every point of \(K\). Since \(K\) is
+compact, there is \(\delta>0\) such that every subinterval of length less than
+\(\delta\) that meets \(K\) has oscillation less than
+\[
+  \frac{\varepsilon}{2(b-a)}.
+\]
+Choose a partition \(P\) with mesh less than \(\delta\) and containing all
+endpoints of the intervals \(G_j\).
+
+Split the slabs of \(P\) into those contained in \(G\) and those meeting
+\(K\). On slabs contained in \(G\), the oscillation is at most \(2M\), and the
+total width is less than \(\varepsilon/(4M+1)\), so their contribution to
+\(U(f,P)-L(f,P)\) is less than \(\varepsilon/2\). On slabs meeting \(K\), the
+oscillation is less than \(\varepsilon/(2(b-a))\), and their total width is at
+most \(b-a\), so their contribution is less than \(\varepsilon/2\). Hence
+\[
+  U(f,P)-L(f,P)<\varepsilon.
+\]
+By the Darboux criterion, \(f\) is Darboux-integrable.
+\end{proof}
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+The proof separates the interval into bad neighborhoods and good regions. The
+bad neighborhoods contain the finitely many discontinuities, but they are
+chosen with tiny total length. Even if \(f\) oscillates as badly as possible
+there, boundedness keeps the total area error small. Outside those
+neighborhoods, every point is a continuity point, and compactness turns
+pointwise continuity into one uniform oscillation scale. A fine partition then
+makes all good slabs nearly flat.
+\end{proof}
+\begin{remark*}[Proof structure]
+Cover finitely many discontinuities by short intervals, use compactness for
+uniform oscillation control on the complement, then apply the Darboux
+criterion.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:interval-oscillation-integration]{Oscillation on an Interval}.
+  \item \hyperref[def:darboux-sums]{Lower and Upper Darboux Sums}.
+  \item \hyperref[thm:darboux-criterion]{Darboux Criterion}.
+\end{itemize}
+\end{dependencies}
+\clearpage

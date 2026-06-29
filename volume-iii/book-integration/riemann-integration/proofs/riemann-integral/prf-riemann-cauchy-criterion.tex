@@ -1,0 +1,40 @@
+\newpage
+\phantomsection
+\label{prf:riemann-cauchy-criterion}
+\LRAProofFor{thm:riemann-cauchy-criterion}
+\begin{remark*}[Return]\hyperref[thm:riemann-cauchy-criterion]{Return to Theorem}\end{remark*}
+\begin{theorem*}[Cauchy Criterion for Riemann Integrability]
+A bounded function is Riemann-integrable if and only if sufficiently fine
+tagged sums are mutually close.
+\end{theorem*}
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+Suppose \(f\) is Riemann-integrable with value \(L\). Given \(\varepsilon>0\),
+choose \(\delta>0\) so that every tagged partition of mesh less than
+\(\delta\) has sum within \(\varepsilon/2\) of \(L\). Then any two such sums
+differ by less than \(\varepsilon\) by the triangle inequality.
+
+Conversely, assume the mutual closeness condition. The tagged sums, directed
+by refinement and decreasing mesh, form a Cauchy net in \(\mathbb R\). Since
+\(\mathbb R\) is complete, this net converges to some \(L\). The Cauchy
+condition then says exactly that all sufficiently fine tagged sums are close
+to this \(L\), which is the Riemann integral.
+\end{proof}
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+If all fine sums are near \(L\), then any two are near each other because both
+sit in the same small interval around \(L\). The converse uses the same idea
+as the Cauchy criterion for sequences: a family whose sufficiently late values
+are mutually close has a limit in a complete space.
+\end{proof}
+\begin{remark*}[Proof structure]
+Use the triangle inequality for the easy direction and completeness for the
+converse.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:riemann-sum]{Riemann Sum}.
+  \item \hyperref[def:riemann-integral]{Riemann Integral}.
+\end{itemize}
+\end{dependencies}
+\clearpage

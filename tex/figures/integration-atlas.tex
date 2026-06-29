@@ -1,0 +1,199 @@
+\begin{figure}[H]
+\centering
+\begingroup
+\resizebox{\linewidth}{!}{%
+\begin{minipage}{20cm}
+
+\def\panelscale{0.92}
+
+% ---- shared integrand: a positive concave hump on [0,4], peak at node x=2 ----
+\def\Fexpr{2.2-0.3*(\x-2)*(\x-2)}
+\newcommand{\sumaxes}{%
+  \draw[atlas axes] (0,0)--(4.7,0);
+  \draw[atlas axes] (0,0)--(0,2.85);}
+
+% Riemann bars with a sample dot.  #1=color  #2=mode (1 L,2 R,3 mid,4 inf,5 sup)
+\newcommand{\riemannbars}[2]{%
+  \foreach \i in {0,...,5}{%
+    \pgfmathsetmacro\xa{\i*(4/6)}%
+    \pgfmathsetmacro\xb{\xa+4/6}%
+    \pgfmathsetmacro\xs{(#2==1)*\xa+(#2==2)*\xb+(#2==3)*((\xa+\xb)/2)%
+       +(#2==4)*((\xb<=2.0001)?\xa:\xb)+(#2==5)*((\xb<=2.0001)?\xb:\xa)}%
+    \pgfmathsetmacro\hh{2.2-0.3*(\xs-2)*(\xs-2)}%
+    \fill[#1!15] (\xa,0) rectangle (\xb,\hh);
+    \draw[#1!55,line width=0.5pt] (\xa,0) rectangle (\xb,\hh);
+    \node[atlas dot,fill=#1!80!atlasink,minimum size=3pt] at (\xs,\hh){};
+  }%
+}
+% Fill-only bars for overlays (no dot, no edge).  #1=color!alpha  #2=mode
+\newcommand{\riemannfill}[2]{%
+  \foreach \i in {0,...,5}{%
+    \pgfmathsetmacro\xa{\i*(4/6)}%
+    \pgfmathsetmacro\xb{\xa+4/6}%
+    \pgfmathsetmacro\xs{(#2==4)*((\xb<=2.0001)?\xa:\xb)+(#2==5)*((\xb<=2.0001)?\xb:\xa)}%
+    \pgfmathsetmacro\hh{2.2-0.3*(\xs-2)*(\xs-2)}%
+    \fill[#1] (\xa,0) rectangle (\xb,\hh);
+  }%
+}
+
+\setlength{\tabcolsep}{9pt}
+\begin{tikzpicture}[atlas]
+\node[inner sep=14pt]{%
+\begin{minipage}{18.6cm}
+\centering
+{\color{atlasink}\rule{\linewidth}{0.8pt}}\\[2pt]
+{\scshape\LARGE\color{atlasink} Probes of the Integral}\\[2pt]
+{\color{atlasink}\rule{\linewidth}{0.8pt}}\\[10pt]
+
+\begin{tabular}{@{}c@{\hspace{10pt}}c@{\hspace{10pt}}c@{}}
+
+% ===== 1 LEFT =====
+\begin{tikzpicture}[atlas,scale=\panelscale]
+  \riemannbars{atlasblue}{1}\sumaxes
+  \glowstroke{atlasink}{0:4}{\Fexpr}
+  \node[atlas label,right] at (3.1,2.45){\scriptsize$y=f(x)$};
+  \node[atlas label,below] at (0,-0.05){\scriptsize$a$};
+  \node[atlas label,below] at (4,-0.05){\scriptsize$b$};
+\end{tikzpicture}
+&
+% ===== 2 MIDPOINT =====
+\begin{tikzpicture}[atlas,scale=\panelscale]
+  \riemannbars{atlasteal}{3}\sumaxes
+  \glowstroke{atlasink}{0:4}{\Fexpr}
+  \node[atlas label,below] at (0.333,-0.05){\scriptsize$\tfrac{x_0+x_1}{2}$};
+\end{tikzpicture}
+&
+% ===== 3 RIGHT =====
+\begin{tikzpicture}[atlas,scale=\panelscale]
+  \riemannbars{atlasgold}{2}\sumaxes
+  \glowstroke{atlasink}{0:4}{\Fexpr}
+  \node[atlas label,below] at (0,-0.05){\scriptsize$x_0$};
+  \node[atlas label,below] at (0.667,-0.05){\scriptsize$x_1$};
+\end{tikzpicture}
+\\[3pt]
+\atlascaption{1}{Left Riemann Sum}{Tag at the Left Endpoint}
+&
+\atlascaption{2}{Midpoint Rule}{The Centered Tag}
+&
+\atlascaption{3}{Right Riemann Sum}{Tag at the Right Endpoint}
+\\[12pt]
+
+% ===== 4 LOWER (inf) =====
+\begin{tikzpicture}[atlas,scale=\panelscale]
+  \riemannbars{atlasred}{4}\sumaxes
+  \glowstroke{atlasink}{0:4}{\Fexpr}
+  \node[atlas label] at (2.0,2.6){\scriptsize$m_i=\inf_{[x_{i-1},x_i]} f$};
+\end{tikzpicture}
+&
+% ===== 5 UPPER (sup) =====
+\begin{tikzpicture}[atlas,scale=\panelscale]
+  \riemannbars{atlasgreen}{5}\sumaxes
+  \glowstroke{atlasink}{0:4}{\Fexpr}
+  \node[atlas label] at (2.0,2.6){\scriptsize$M_i=\sup_{[x_{i-1},x_i]} f$};
+\end{tikzpicture}
+&
+% ===== 6 SQUEEZE =====
+\begin{tikzpicture}[atlas,scale=\panelscale]
+  \riemannfill{atlasred!26}{5}   % upper extent (gap shown in red)
+  \riemannfill{atlasblue!16}{4}  % lower extent painted over -> red slivers = gap
+  \foreach \i in {0,...,5}{\pgfmathsetmacro\xa{\i*(4/6)}\draw[atlasgray!60,line width=0.3pt](\xa,0)--(\xa,2.3);}
+  \sumaxes
+  \glowstroke{atlasink}{0:4}{\Fexpr}
+  \node[atlas label] at (2.0,2.62){\scriptsize$L(P)\le\displaystyle\int_a^b f\le U(P)$};
+  \node[atlas label,atlasred!70!atlasink] at (3.35,1.05){\scriptsize$U-L$};
+\end{tikzpicture}
+\\[3pt]
+\atlascaption{4}{Lower Darboux Sum}{The Infimum Probe}
+&
+\atlascaption{5}{Upper Darboux Sum}{The Supremum Probe}
+&
+\atlascaption{6}{The Squeeze}{Integrability as a Closing Gap}
+\\[12pt]
+
+% ===== 7 REFINEMENT =====
+\begin{tikzpicture}[atlas,scale=\panelscale]
+  % coarse upper cell [0,2], sup = f(2)=2.2  (dashed outline)
+  \draw[atlasgray,line width=0.7pt,dash pattern=on 3pt off 2pt]
+     (0,2.2)--(2,2.2) (2,2.2)--(2,0);
+  % refined cells: [0,1] sup=f(1)=1.9 ; [1,2] sup=f(2)=2.2
+  \fill[atlasgreen!18] (0,0) rectangle (1,1.9);
+  \fill[atlasgreen!18] (1,0) rectangle (2,2.2);
+  \draw[atlasgreen!55,line width=0.5pt] (0,0) rectangle (1,1.9);
+  \draw[atlasgreen!55,line width=0.5pt] (1,0) rectangle (2,2.2);
+  % area removed from the upper sum by the split
+  \fill[atlasred!28] (0,1.9) rectangle (1,2.2);
+  \draw[atlas axes] (0,0)--(2.7,0);
+  \draw[atlas axes] (0,0)--(0,2.85);
+  \glowstroke{atlasink}{0:2.25}{\Fexpr}
+  \node[atlas dot] at (1,1.9){};\node[atlas dot] at (2,2.2){};
+  \node[atlas label] at (0.5,2.05){\tiny removed};
+  \node[atlas label,below] at (1,-0.05){\scriptsize new pt};
+  \node[atlas label] at (1.45,0.9){\scriptsize$U(P')\le U(P)$};
+\end{tikzpicture}
+&
+% ===== 8 TAGGED PARTITION =====
+\begin{tikzpicture}[atlas,scale=\panelscale]
+  \foreach \i/\fr in {0/0.18,1/0.72,2/0.45,3/0.88,4/0.28,5/0.6}{
+    \pgfmathsetmacro\xa{\i*(4/6)}\pgfmathsetmacro\xb{\xa+4/6}
+    \pgfmathsetmacro\xt{\xa+\fr*(4/6)}
+    \pgfmathsetmacro\hh{2.2-0.3*(\xt-2)*(\xt-2)}
+    \fill[atlasorange!15] (\xa,0) rectangle (\xb,\hh);
+    \draw[atlasorange!55,line width=0.5pt] (\xa,0) rectangle (\xb,\hh);
+    \node[atlas dot,fill=atlasorange!80!atlasink,minimum size=3pt] at (\xt,\hh){};
+    \draw[atlasorange!75,line width=0.9pt] (\xt,0)--(\xt,0.13);
+  }
+  \sumaxes
+  \glowstroke{atlasink}{0:4}{\Fexpr}
+  \node[atlas label,below] at (0.12,-0.05){\scriptsize$t_1$};
+  \node[atlas label,below] at (1.15,-0.05){\scriptsize$t_2$};
+  \node[atlas label] at (2.05,2.62){\scriptsize$t_i\in[x_{i-1},x_i]\ \text{arbitrary}$};
+\end{tikzpicture}
+&
+% ===== 9 GAUGE =====
+\begin{tikzpicture}[atlas,scale=\panelscale]
+  \draw[atlas axes] (-0.15,0)--(4.7,0);
+  % gauge as a positive function delta(x), tight near x=1
+  \draw[atlasconegreen,line width=1pt,opacity=0.55]
+     plot[domain=0:4,samples=90] (\x,{0.18+0.55*abs(\x-1)});
+  \node[atlasconegreen!55!atlasink,atlas label,right] at (4.0,1.85){\scriptsize$\delta(x)$};
+  % partition cells on the axis + node ticks + centered tags
+  \foreach \xa/\xb in {0/0.6,0.6/1.0,1.0/1.25,1.25/2.1,2.1/3.1,3.1/4.0}{
+     \draw[atlasblue,line width=1.7pt] (\xa,0)--(\xb,0);
+     \draw[atlasink,line width=0.7pt] (\xa,-0.09)--(\xa,0.09);
+     \pgfmathsetmacro\tt{(\xa+\xb)/2}
+     \node[atlas dot,minimum size=2.8pt] at (\tt,0){};
+  }
+  \draw[atlasink,line width=0.7pt] (4,-0.09)--(4,0.09);
+  % two highlighted gauge windows (tight near 1, loose far right)
+  \foreach \xa/\xb in {1.0/1.25, 2.1/3.1}{
+     \pgfmathsetmacro\tt{(\xa+\xb)/2}
+     \pgfmathsetmacro\dd{0.18+0.55*abs(\tt-1)}
+     \pgfmathsetmacro\wl{\tt-\dd}\pgfmathsetmacro\wr{\tt+\dd}
+     \draw[atlasconegreen,line width=1.1pt] (\wl,-0.5)--(\wr,-0.5);
+     \draw[atlasconegreen,line width=1.1pt] (\wl,-0.42)--(\wl,-0.58);
+     \draw[atlasconegreen,line width=1.1pt] (\wr,-0.42)--(\wr,-0.58);
+     \draw[atlasblue,line width=1.9pt] (\xa,-0.5)--(\xb,-0.5);
+     \draw[atlasgray,line width=0.4pt,dash pattern=on 1.5pt off 1.5pt] (\xa,0)--(\xa,-0.5);
+     \draw[atlasgray,line width=0.4pt,dash pattern=on 1.5pt off 1.5pt] (\xb,0)--(\xb,-0.5);
+     \node[atlas dot,fill=atlasconegreen!75!atlasink,minimum size=2.4pt] at (\tt,-0.5){};
+  }
+  \node[atlas label] at (2.1,1.55){\scriptsize$\delta:[a,b]\to(0,\infty)$};
+  \node[atlas label] at (2.0,-0.95){\scriptsize$[x_{i-1},x_i]\subset\big(t_i-\delta(t_i),\,t_i+\delta(t_i)\big)$};
+\end{tikzpicture}
+\\[3pt]
+\atlascaption{7}{Partition Refinement}{Adding Points Tightens the Sums}
+&
+\atlascaption{8}{Tagged Partition}{The General Riemann Sum}
+&
+\atlascaption{9}{The Gauge}{$\delta$-Fine Partitions (Henstock--Kurzweil)}
+
+\end{tabular}
+\end{minipage}%
+};
+\end{tikzpicture}
+\end{minipage}%
+}
+\endgroup
+\caption{Probes of the integral}
+\label{fig:integration-atlas}
+\end{figure}

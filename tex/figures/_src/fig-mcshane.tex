@@ -1,0 +1,89 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{structural-atlas}
+\usepackage{amssymb}
+
+\begin{document}
+\begin{tikzpicture}[atlas]
+\node[inner sep=16pt]{%
+\begin{minipage}{13.2cm}
+\centering
+{\color{atlasink}\rule{\linewidth}{0.8pt}}\\[2pt]
+{\scshape\LARGE\color{atlasink} The McShane Integral}\\[2pt]
+{\color{atlasink}\rule{\linewidth}{0.8pt}}\\[12pt]
+
+\begin{tikzpicture}[atlas,scale=1.35]
+  \def\Fexpr{1.6+0.6*sin(55*\x)}
+  % --- faint context cells (ordinary terms of the McShane sum), no tags shown ---
+  \foreach \xa in {0,1,3,4}{
+     \pgfmathsetmacro\xb{\xa+1}
+     \pgfmathsetmacro\xm{\xa+0.5}
+     \pgfmathsetmacro\hh{1.6+0.6*sin(55*\xm)}
+     \fill[atlasblue!9] (\xa,0) rectangle (\xb,\hh);
+     \draw[atlasblue!32,line width=0.4pt] (\xa,0) rectangle (\xb,\hh);
+  }
+  % --- the spotlight cell [2,3] with an EXTERNAL tag t* = 1.5 ---
+  \def\ts{1.5}
+  \pgfmathsetmacro\hstar{1.6+0.6*sin(55*\ts)}     % height = f(t*)
+  \fill[atlasorange!16] (2,0) rectangle (3,\hstar);
+  \draw[atlasorange!75,line width=0.8pt] (2,0) rectangle (3,\hstar);
+  % carry the height from the external tag over to the cell
+  \draw[atlasorange!75,line width=0.7pt,dash pattern=on 2pt off 1.5pt] (\ts,0)--(\ts,\hstar);
+  \draw[atlasorange,line width=0.8pt,-{Stealth}] (\ts,\hstar)--(2.98,\hstar);
+  \node[atlas dot,fill=atlasorange] at (\ts,\hstar){};
+  \draw[atlasorange,line width=1pt] (\ts,-0.07)--(\ts,0.07);
+  % --- the curve over everything ---
+  \glowstroke{atlasink}{0:5}{\Fexpr}
+  % --- axes + partition node ticks ---
+  \draw[atlas axes] (0,0)--(5.5,0);
+  \draw[atlas axes] (0,0)--(0,2.95);
+  \foreach \x in {0,1,2,3,4,5}{\draw[atlasink,line width=0.5pt] (\x,-0.06)--(\x,0.06);}
+  % --- function-tier labels ---
+  \node[atlas label,right] at (4.05,2.5){\scriptsize$y=f(x)$};
+  \node[atlas label,above left=-2pt] at (\ts,\hstar){\scriptsize$f(t_\star)$};
+  \node[atlas label,below] at (\ts,-0.07){\scriptsize$t_\star$};
+  \node[atlas label,below] at (2,-0.07){\scriptsize$x_{i-1}$};
+  \node[atlas label,below] at (3,-0.07){\scriptsize$x_i$};
+  \node[atlas label] at (2.5,0.42){\scriptsize$f(t_\star)\,\Delta x_i$};
+
+  % --- gauge tier (below the axis): the delta-fine containment ---
+  \def\dd{1.7}
+  \pgfmathsetmacro\wl{\ts-\dd}\pgfmathsetmacro\wr{\ts+\dd}
+  \draw[atlasconegreen,line width=1.1pt] (\wl,-0.75)--(\wr,-0.75);
+  \draw[atlasconegreen,line width=1.1pt] (\wl,-0.66)--(\wl,-0.84);
+  \draw[atlasconegreen,line width=1.1pt] (\wr,-0.66)--(\wr,-0.84);
+  \draw[atlasblue,line width=2.1pt] (2,-0.75)--(3,-0.75);       % the cell I_i
+  \node[atlas dot,fill=atlasorange,minimum size=2.8pt] at (\ts,-0.75){}; % tag OUTSIDE the cell
+  \draw[atlasgray,line width=0.4pt,dash pattern=on 1.5pt off 1.5pt] (2,0)--(2,-0.75);
+  \draw[atlasgray,line width=0.4pt,dash pattern=on 1.5pt off 1.5pt] (3,0)--(3,-0.75);
+  \draw[atlasgray,line width=0.4pt,dash pattern=on 1.5pt off 1.5pt] (\ts,0)--(\ts,-0.75);
+  \node[atlas label,left] at (\wl,-0.75){\scriptsize$t_\star-\delta(t_\star)$};
+  \node[atlas label,right] at (\wr,-0.75){\scriptsize$t_\star+\delta(t_\star)$};
+  \node[atlas label,below] at (\ts,-0.88){\scriptsize$t_\star\notin[x_{i-1},x_i]$};
+  \node[atlas label,fill=atlasconegreen!18,inner sep=2pt,rounded corners=1pt] at (3.6,-0.75)
+     {\scriptsize $I_i\subseteq\big(t_\star-\delta(t_\star),\,t_\star+\delta(t_\star)\big)$};
+\end{tikzpicture}
+
+\vspace{8pt}
+{\scshape\footnotesize\color{atlasink} Figure. The McShane Integral --- the untethered tag: a $\delta$-fine partition whose tags roam free.}\\[6pt]
+
+% --- formal strip + positioning ---
+\footnotesize\color{atlasink}
+\begin{minipage}{12.4cm}
+\setlength{\parskip}{3pt}
+\textbf{Rule (the only change from Henstock--Kurzweil).} A tagged partition is
+\emph{McShane $\delta$-fine} iff
+$\ \forall i\ \big(I_i\subseteq(t_i-\delta(t_i),\,t_i+\delta(t_i))\big)$,
+with tags $t_i\in[a,b]$ \emph{arbitrary} --- the clause $t_i\in I_i$ is dropped.
+The sum is still $S=\sum_i f(t_i)\,\Delta x_i$, and
+\[
+  \textstyle f\ \text{McShane integrable}\ \Longleftrightarrow\ f\in L^1[a,b],
+  \qquad\text{with equal values.}
+\]
+\textbf{Where it sits:}\quad
+$\mathcal R\ \subsetneq\ \mathcal L=\text{McShane}\ \subsetneq\ \mathcal{HK}$
+\ (Riemann $\subsetneq$ Lebesgue $=$ McShane $\subsetneq$ Henstock--Kurzweil).
+\end{minipage}
+\end{minipage}%
+};
+\end{tikzpicture}
+\end{document}

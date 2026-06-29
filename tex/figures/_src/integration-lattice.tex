@@ -1,0 +1,55 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{structural-atlas}
+\usepackage{amssymb}
+
+\begin{document}
+\begin{tikzpicture}[atlas]
+\node[inner sep=16pt]{%
+\begin{minipage}{14.6cm}
+\centering
+{\color{atlasink}\rule{\linewidth}{0.8pt}}\\[2pt]
+{\scshape\LARGE\color{atlasink} Structural Atlas \textnormal{\textsc{VI}}: The Integration Lattice}\\[2pt]
+{\color{atlasink}\rule{\linewidth}{0.8pt}}\\[12pt]
+
+\begin{tikzpicture}[atlas,scale=1.0]
+  % nested regions: HK (outer) > L=McShane (middle) > R (inner)
+  \fill[atlasorange!9]  (0,0) ellipse (5.5 and 3.55);
+  \draw[atlasorange!70,line width=1.1pt] (0,0) ellipse (5.5 and 3.55);
+  \fill[atlasgreen!12]  (0,-0.2) ellipse (3.8 and 2.45);
+  \draw[atlasgreen!70,line width=1.1pt] (0,-0.2) ellipse (3.8 and 2.45);
+  \fill[atlasblue!15]   (0,-0.35) ellipse (1.95 and 1.25);
+  \draw[atlasblue!75,line width=1.1pt] (0,-0.35) ellipse (1.95 and 1.25);
+
+  % region names (top of each band)
+  \node[atlas label] at (0,3.05){\scshape\small HK $=$ Denjoy--Perron};
+  \node[atlas label] at (0,1.75){\scshape\small $\mathcal L \,=\,$ McShane};
+  \node[atlas label] at (0,-0.05){\scshape\small $\mathcal R$};
+  \node[atlas label] at (0,-0.55){\scriptsize Riemann};
+
+  % witnesses (one per frontier), bottom of each band
+  \node[atlas label,atlasblue!60!atlasink] at (0,-1.0){\scriptsize $f$ continuous};
+  \node[atlas label,atlasgreen!55!atlasink] at (0,-1.95){\scriptsize Dirichlet $\mathbf 1_{\mathbb Q}$};
+  \node[atlas label,atlasorange!65!atlasink] at (0,-2.95)
+     {\scriptsize $\dfrac{d}{dx}\!\Big[x^2\sin\dfrac{\pi}{x^2}\Big]$};
+\end{tikzpicture}
+
+\vspace{6pt}
+{\scshape\footnotesize\color{atlasink} Figure. The Integration Lattice: each frontier is crossed by exactly one witness.}\\[6pt]
+
+\footnotesize\color{atlasink}
+\begin{minipage}{13.8cm}
+\setlength{\parskip}{2.5pt}
+$\mathcal R \subsetneq \mathcal L = \text{McShane} \subsetneq \mathcal{HK}$,\ \ with the strict gaps witnessed by:
+\begin{itemize}\setlength{\itemsep}{1pt}
+  \item[$\circ$] \textbf{$\mathcal L\setminus\mathcal R$:}\ \ $\mathbf 1_{\mathbb Q}$ --- Lebesgue (and McShane) integrable, $\int=0$; not Riemann.
+  \item[$\circ$] \textbf{$\mathcal{HK}\setminus\mathcal L$:}\ \ $F'$ for $F(x)=x^2\sin(\pi/x^2)$, $F(0)=0$ --- HK-integrable
+        ($\int_0^1 F'=F(1)-F(0)=0$) but $\int_0^1|F'|=\infty$, so not Lebesgue.
+\end{itemize}
+\textbf{Engine:}\ \ $\mathcal L=$ McShane uses \emph{free} tags (absolute integration);
+$\mathcal{HK}$ uses \emph{tethered} tags, which preserve cancellation --- the source of
+the outermost ring, and the reason \textsc{HK} integrates \emph{every} everywhere-derivative.
+\end{minipage}
+\end{minipage}%
+};
+\end{tikzpicture}
+\end{document}

@@ -48,6 +48,10 @@ jobs:
           LRA_GOVERNANCE_ROOT: ${{ github.workspace }}/lra-governance
         run: python ../lra-governance/scripts/build_volume.py --root . --validate-only
 
+      - name: Run figure fragment validator
+        working-directory: volume
+        run: python scripts/validate_figures.py
+
       - name: Compile digital PDF
         run: |
           python lra-governance/tools/governance/build_volume_docker.py \

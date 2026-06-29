@@ -1,0 +1,151 @@
+\subsection*{Geometric Intuition}
+
+Riemann promotes Cauchy's tag-independence theorem into a definition. A
+function is integrable when every sufficiently fine staircase, even with
+adversarial tags, is forced near the same number.
+
+\begin{remark*}[Engineering reading]
+The sampling convention is no longer chosen by the author of the definition.
+It is chosen by a universal quantifier. A Riemann-integrable function is one
+whose accumulated area survives every possible choice of sample heights once
+the slabs are fine enough.
+\end{remark*}
+
+\begin{definitionbox}{Definition (Riemann Sum)}
+\begin{definition}[Riemann Sum]
+\label{def:riemann-sum}
+For a tagged partition \((P,\xi)\), define
+\[
+  S(f,P,\xi)=\sum_{i=1}^{n}f(\xi_i)\Delta x_i.
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{definitionbox}{Definition (Riemann Integral)}
+\begin{definition}[Riemann Integral]
+\label{def:riemann-integral}
+A function \(f:[a,b]\to\mathbb R\) is \emph{Riemann-integrable} with value
+\(L\) if
+\[
+  \forall\varepsilon>0\ \exists\delta>0\ \forall(P,\xi)\,
+  \bigl(\|P\|<\delta\Rightarrow |S(f,P,\xi)-L|<\varepsilon\bigr).
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[The one symbol that changed everything]
+Cauchy quantifies over choppings. Riemann quantifies over choppings and every
+possible choice of heights:
+\[
+  \forall P\qquad\leadsto\qquad \forall(P,\xi).
+\]
+That extra quantifier removes the arbitrary left endpoint and turns tag
+independence into the price of admission.
+\end{remark*}
+
+\begin{remark*}[Payoff]
+The definition is no longer tied to continuity. It can admit bounded functions
+with discontinuities, because the question is not whether \(f\) is continuous
+but whether all fine tagged sums are forced into one narrow numerical corridor.
+The Cauchy criterion below makes that statement intrinsic: the value need not
+be known in advance.
+\end{remark*}
+
+\begin{remark*}[The ruler function example]
+Thomae's function, also called the ruler function, is
+\[
+  T(x)=
+  \begin{cases}
+    1/q,& x=p/q\text{ in lowest terms},\\
+    0,& x\notin\mathbb Q.
+  \end{cases}
+\]
+It is discontinuous at every rational and continuous at every irrational, so
+its discontinuities are dense. Nevertheless its Riemann integral on any compact
+interval is \(0\). The reason is that the rational points where \(T\) can be
+large form only a finite set above any fixed height threshold. Fine partitions
+can isolate those finitely many tall spikes, while all remaining slabs have
+uniformly small height. This is exactly the kind of function Cauchy's
+continuity proof could not diagnose, but Riemann's tag-independent definition
+can admit.
+\end{remark*}
+
+\begin{theorembox}{Theorem (Continuous Implies Riemann-Integrable)}
+\begin{theorem}[Continuous Functions Are Riemann-Integrable]
+\label{thm:continuous-riemann-integrable}
+Every continuous function \(f:[a,b]\to\mathbb R\) is Riemann-integrable.
+\end{theorem}
+\end{theorembox}
+
+\begin{theorembox}{Theorem (Linearity)}
+\begin{theorem}[Linearity of the Riemann Integral]
+\label{thm:riemann-integral-linearity}
+If \(f\) and \(g\) are Riemann-integrable on \([a,b]\), then
+\[
+  \int_a^b(\alpha f+\beta g)\,dx
+  =
+  \alpha\int_a^b f\,dx+\beta\int_a^b g\,dx .
+\]
+\end{theorem}
+\end{theorembox}
+
+\begin{theorembox}{Theorem (Monotonicity)}
+\begin{theorem}[Monotonicity of the Riemann Integral]
+\label{thm:riemann-integral-monotonicity}
+If \(f\) and \(g\) are Riemann-integrable on \([a,b]\) and \(f(x)\le g(x)\)
+for every \(x\in[a,b]\), then
+\[
+  \int_a^b f\,dx\le \int_a^b g\,dx .
+\]
+\end{theorem}
+\end{theorembox}
+
+\begin{theorembox}{Theorem (Triangle Inequality)}
+\begin{theorem}[Triangle Inequality for the Riemann Integral]
+\label{thm:riemann-integral-triangle-inequality}
+If \(f\) is Riemann-integrable on \([a,b]\), then \(|f|\) is
+Riemann-integrable and
+\[
+  \left|\int_a^b f\,dx\right|\le \int_a^b |f|\,dx .
+\]
+\end{theorem}
+\end{theorembox}
+
+\begin{theorembox}{Theorem (Interval Additivity)}
+\begin{theorem}[Interval Additivity for the Riemann Integral]
+\label{thm:riemann-integral-interval-additivity}
+If \(c\in[a,b]\), then \(f\) is Riemann-integrable on \([a,b]\) if and only if
+it is Riemann-integrable on \([a,c]\) and \([c,b]\), and in that case
+\[
+  \int_a^b f\,dx=\int_a^c f\,dx+\int_c^b f\,dx .
+\]
+\end{theorem}
+\end{theorembox}
+
+\begin{theorembox}{Theorem (Cauchy Criterion)}
+\begin{theorem}[Cauchy Criterion for Riemann Integrability]
+\label{thm:riemann-cauchy-criterion}
+A bounded function is Riemann-integrable if and only if for every
+\(\varepsilon>0\) there is \(\delta>0\) such that any two tagged partitions
+\((P,\xi)\) and \((Q,\eta)\) with \(\|P\|,\|Q\|<\delta\) have
+\[
+  |S(f,P,\xi)-S(f,Q,\eta)|<\varepsilon.
+\]
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Bug report]
+Riemann fixed the arbitrary tag, but the definition is operationally hostile.
+To verify integrability directly one must control all tagged partitions at
+once. The patch request is to remove tags from the verification problem:
+replace every possible sample height by the slab infimum and supremum, then
+squeeze.
+\end{remark*}
+
+\begin{remark*}[Why this is hard to use]
+Riemann is logically clean but not mechanically friendly. Refining a partition
+does not make an arbitrary Riemann sum move monotonically, because every
+refinement lets the tags move again. There is no single upper or lower
+quantity improving under refinement. Darboux supplies exactly that missing
+monotone control.
+\end{remark*}

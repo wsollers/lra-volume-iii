@@ -1,0 +1,85 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{structural-atlas}
+\usepackage{amssymb}
+\usepackage{array}
+
+% one comparison panel.  #1 = tag x-position, #2 = gauge radius delta, #3 = accent color
+\newcommand{\mcpanel}[3]{%
+  \def\Fexpr{1.6+0.6*sin(55*\x)}%
+  % faint context cells
+  \foreach \xa in {0,1,3,4}{%
+     \pgfmathsetmacro\xb{\xa+1}\pgfmathsetmacro\xm{\xa+0.5}%
+     \pgfmathsetmacro\hh{1.6+0.6*sin(55*\xm)}%
+     \fill[atlasblue!8] (\xa,0) rectangle (\xb,\hh);
+     \draw[atlasblue!28,line width=0.4pt] (\xa,0) rectangle (\xb,\hh);}%
+  % spotlight cell [2,3], height = f(tag)
+  \pgfmathsetmacro\hstar{1.6+0.6*sin(55*#1)}%
+  \fill[#3!16] (2,0) rectangle (3,\hstar);
+  \draw[#3!75,line width=0.8pt] (2,0) rectangle (3,\hstar);
+  \draw[#3!75,line width=0.7pt,dash pattern=on 2pt off 1.5pt] (#1,0)--(#1,\hstar);
+  \draw[#3,line width=0.8pt,-{Stealth}] (#1,\hstar)--(2.6,\hstar);
+  \node[atlas dot,fill=#3] at (#1,\hstar){};
+  \draw[#3,line width=1pt] (#1,-0.07)--(#1,0.07);
+  \glowstroke{atlasink}{0:5}{\Fexpr}%
+  \draw[atlas axes] (0,0)--(5.5,0);
+  \draw[atlas axes] (0,0)--(0,2.95);
+  \foreach \x in {0,1,2,3,4,5}{\draw[atlasink,line width=0.5pt] (\x,-0.06)--(\x,0.06);}%
+  \node[atlas label,below] at (#1,-0.07){\scriptsize$t_i$};
+  \node[atlas label,below] at (2,-0.07){\scriptsize$x_{i-1}$};
+  \node[atlas label,below] at (3,-0.07){\scriptsize$x_i$};
+  % gauge tier
+  \pgfmathsetmacro\wl{#1-#2}\pgfmathsetmacro\wr{#1+#2}%
+  \draw[atlasconegreen,line width=1.1pt] (\wl,-0.7)--(\wr,-0.7);
+  \draw[atlasconegreen,line width=1.1pt] (\wl,-0.62)--(\wl,-0.78);
+  \draw[atlasconegreen,line width=1.1pt] (\wr,-0.62)--(\wr,-0.78);
+  \draw[atlasblue,line width=2.1pt] (2,-0.7)--(3,-0.7);
+  \node[atlas dot,fill=#3,minimum size=2.8pt] at (#1,-0.7){};
+  \draw[atlasgray,line width=0.4pt,dash pattern=on 1.5pt off 1.5pt] (2,0)--(2,-0.7);
+  \draw[atlasgray,line width=0.4pt,dash pattern=on 1.5pt off 1.5pt] (3,0)--(3,-0.7);
+  \draw[atlasgray,line width=0.4pt,dash pattern=on 1.5pt off 1.5pt] (#1,0)--(#1,-0.7);
+}
+
+\begin{document}
+\begin{tikzpicture}[atlas]
+\node[inner sep=16pt]{%
+\begin{minipage}{15.4cm}
+\centering
+{\color{atlasink}\rule{\linewidth}{0.8pt}}\\[2pt]
+{\scshape\LARGE\color{atlasink} Structural Atlas \textnormal{\textsc{V}}: Two Ways to Tag}\\[2pt]
+{\color{atlasink}\rule{\linewidth}{0.8pt}}\\[10pt]
+
+\setlength{\tabcolsep}{16pt}
+\begin{tabular}{@{}c@{\hspace{20pt}}c@{}}
+
+% ----- HK: tag inside -----
+\begin{tikzpicture}[atlas,scale=1.18]
+  \mcpanel{2.55}{0.7}{atlasteal}
+  \node[atlas label] at (3.9,-0.95){\scriptsize$t_i\in[x_{i-1},x_i]$\ \textbf{required}};
+\end{tikzpicture}
+&
+% ----- McShane: tag free -----
+\begin{tikzpicture}[atlas,scale=1.18]
+  \mcpanel{1.5}{1.7}{atlasorange}
+  \node[atlas label] at (3.9,-0.95){\scriptsize$t_i\in[x_{i-1},x_i]$\ \textbf{dropped}};
+\end{tikzpicture}
+\\[6pt]
+\atlascaption{1}{Henstock--Kurzweil}{Tag Tethered to Its Cell}
+&
+\atlascaption{2}{McShane}{The Tag Roams Free}
+\\[10pt]
+\end{tabular}
+
+\footnotesize\color{atlasink}
+\begin{minipage}{14.6cm}
+\centering
+Same integrand, same gauge condition $I_i\subseteq(t_i-\delta(t_i),\,t_i+\delta(t_i))$.
+The \emph{only} difference is whether the tag must sit in its own cell.\\[3pt]
+\textsc{HK} keeps the tether $\Rightarrow$ conditional convergence survives $\Rightarrow$
+$\mathcal{HK}=$ Denjoy--Perron (nonabsolute).\quad
+\textsc{McShane} cuts it $\Rightarrow$ only absolute integrals remain $\Rightarrow$
+$\text{McShane}=\mathcal L^1$ (Lebesgue).
+\end{minipage}
+\end{minipage}%
+};
+\end{tikzpicture}
+\end{document}

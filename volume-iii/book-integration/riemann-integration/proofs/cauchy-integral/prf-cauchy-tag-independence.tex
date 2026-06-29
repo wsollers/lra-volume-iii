@@ -1,0 +1,40 @@
+\newpage
+\phantomsection
+\label{prf:cauchy-tag-independence}
+\LRAProofFor{thm:cauchy-tag-independence}
+\begin{remark*}[Return]\hyperref[thm:cauchy-tag-independence]{Return to Theorem}\end{remark*}
+\begin{theorem*}[Tag Independence for Continuous Functions]
+If \(f\) is continuous, all tagged sums have the same limit as the left sums.
+\end{theorem*}
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+Let \(\varepsilon>0\). By uniform continuity, choose \(\delta>0\) such that
+\(\omega_f(I)<\varepsilon/(b-a)\) for every subinterval \(I\) of length less
+than \(\delta\). If \(\|P\|<\delta\), then for any tagging \(\xi\),
+\[
+|S(f,P,\xi)-C(f,P)|
+\le \sum_i |f(\xi_i)-f(x_{i-1})|\Delta x_i
+\le \sum_i \omega_f([x_{i-1},x_i])\Delta x_i
+<\varepsilon.
+\]
+Thus every tagged sum has the same limit as the left-endpoint sums.
+\end{proof}
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+Inside a short slab, the tag value and the left-endpoint value are close
+because both points lie in the same small interval. Multiplying by the slab
+width converts this height error into an area error. Summing over the
+partition gives at most small oscillation times total length \(b-a\).
+\end{proof}
+\begin{remark*}[Proof structure]
+Bound the difference between a tagged sum and a left-endpoint sum by the total
+oscillation over the partition.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:tagged-partition-integration]{Tagged Partition}.
+  \item \hyperref[def:cauchy-sum]{Left-Endpoint Cauchy Sum}.
+  \item \hyperref[def:interval-oscillation-integration]{Oscillation on an Interval}.
+\end{itemize}
+\end{dependencies}
+\clearpage

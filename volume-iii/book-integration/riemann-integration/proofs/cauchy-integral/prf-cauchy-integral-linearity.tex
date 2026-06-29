@@ -1,0 +1,28 @@
+\newpage
+\phantomsection
+\label{prf:cauchy-integral-linearity}
+\LRAProofFor{thm:cauchy-integral-linearity}
+\begin{remark*}[Return]\hyperref[thm:cauchy-integral-linearity]{Return to Theorem}\end{remark*}
+\begin{theorem*}[Linearity of the Cauchy Integral]
+If \(f\) and \(g\) are Cauchy-integrable, then the integral is linear.
+\end{theorem*}
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+For each partition, \(C(\alpha f+\beta g,P)=\alpha C(f,P)+\beta C(g,P)\).
+Pass to the existing limits.
+\end{proof}
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+Linearity is already true for finite sums. The integral is the limit of those
+finite sums, so the same algebra survives the limiting process.
+\end{proof}
+\begin{remark*}[Proof structure]
+Prove linearity at the sum level, then pass to limits.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:cauchy-sum]{Left-Endpoint Cauchy Sum}.
+  \item \hyperref[def:cauchy-integral]{Cauchy Integral}.
+\end{itemize}
+\end{dependencies}
+\clearpage

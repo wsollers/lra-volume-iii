@@ -1,0 +1,45 @@
+\section*{Appendix: The Gauge Integrals}
+
+\begin{remark*}[Source placement]
+This appendix is the converted support note from \texttt{gauge-integrals.tex}.
+The standalone preamble, local theorem declarations, and duplicate figure
+includes have been removed; the shared figures are the pinned figures already
+included in Sections~1.6 and~1.7.
+\end{remark*}
+
+\begin{remark*}[The gauge framework]
+The gauge integrals replace Riemann's single global mesh tolerance by a local
+step-size controller \(\delta:[a,b]\to(0,\infty)\). Henstock--Kurzweil and
+McShane then differ by one geometric clause. HK requires the tag to sit inside
+the interval it controls. McShane drops that tether and allows the tag to
+range over \([a,b]\), provided the interval lies inside the tag's gauge ball.
+The contrast is visualized in Figures~\ref{fig:hk-vs-mcshane} and
+\ref{fig:mcshane}.
+\end{remark*}
+
+\begin{remark*}[Free tags and Lebesgue]
+McShane's free tags force absolute, Lebesgue-style behavior. Since a tag can
+authorize nearby intervals without lying inside them, the sums can test
+whether the mass assigned to height bands is genuinely controlled. On compact
+intervals this recovers the Lebesgue integral: \(\mathcal M[a,b]=\mathcal
+L[a,b]\), with equal values.
+\end{remark*}
+
+\begin{remark*}[Tethered tags and the FTC]
+HK keeps the tag tethered to its interval, which preserves local cancellation
+for derivatives. That is why the HK integral has the exact one-dimensional
+FTC: if \(F\) is differentiable everywhere, then \(F'\) is HK-integrable and
+\((\mathrm{HK})\int_a^b F'=F(b)-F(a)\), even when \(F'\) is not Lebesgue
+integrable.
+\end{remark*}
+
+\begin{remark*}[Lattice]
+The resulting compact-interval lattice is
+\[
+  \mathcal R[a,b]\subsetneq \mathcal L[a,b]=\mathcal M[a,b]
+  \subsetneq \mathcal{HK}[a,b],
+\]
+as recorded in Figure~\ref{fig:integration-lattice}. This appendix is kept
+after the main chapter because the book has not yet built the measure theory
+needed to prove the McShane--Lebesgue identification.
+\end{remark*}

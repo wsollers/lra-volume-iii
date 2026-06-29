@@ -1,0 +1,203 @@
+\subsection*{Geometric Intuition}
+
+Riemann and Darboux weigh each slab by ordinary length, \(\Delta x_i\).
+Riemann--Stieltjes changes the ruler. A slab is weighed by how much an
+integrator \(\alpha\) changes across it:
+\[
+  \Delta\alpha_i=\alpha(x_i)-\alpha(x_{i-1}).
+\]
+If \(\alpha(x)=x\), ordinary Riemann integration returns. If \(\alpha\) jumps,
+the integral sees a point mass.
+
+\begin{remark*}[Engineering reading]
+Stieltjes does not repair the discontinuity-set problem. It answers a
+different complaint: ordinary integration has only one ruler. By replacing
+\(\Delta x_i\) with \(\Delta\alpha_i\), the integral can count regions with
+nonuniform weight and can encode discrete masses as jumps of \(\alpha\).
+\end{remark*}
+
+\begin{definitionbox}{Definition (Total Variation)}
+\begin{definition}[Total Variation]
+\label{def:total-variation}
+The total variation of \(\alpha\) on \([a,b]\) is
+\[
+  V_a^b(\alpha)=\sup_P\sum_i |\alpha(x_i)-\alpha(x_{i-1})|.
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{definitionbox}{Definition (Bounded Variation)}
+\begin{definition}[Bounded Variation]
+\label{def:bounded-variation-integration}
+The function \(\alpha\) has \emph{bounded variation} on \([a,b]\) if
+\[
+  V_a^b(\alpha)<\infty.
+\]
+Geometrically, this says the ruler has finite total up-and-down travel.
+\end{definition}
+\end{definitionbox}
+
+\begin{propositionbox}{Proposition (Monotone Implies BV)}
+\begin{proposition}[Monotone Functions Have Bounded Variation]
+\label{prop:monotone-bounded-variation}
+If \(\alpha\) is monotone on \([a,b]\), then \(\alpha\) has bounded variation.
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Why bounded variation is the honest ruler condition]
+If \(\alpha\) is increasing, the increments telescope:
+\[
+  \sum_i\bigl(\alpha(x_i)-\alpha(x_{i-1})\bigr)=\alpha(b)-\alpha(a).
+\]
+Bounded variation is the signed analogue of that finite ruler budget. It is
+what prevents the weighted sums from accumulating uncontrolled oscillatory
+ruler error.
+\end{remark*}
+
+\begin{definitionbox}{Definition (Riemann--Stieltjes Integral)}
+\begin{definition}[Riemann--Stieltjes Integral]
+\label{def:riemann-stieltjes-integral}
+The Riemann--Stieltjes sum is
+\[
+  \sum_i f(\xi_i)\bigl(\alpha(x_i)-\alpha(x_{i-1})\bigr).
+\]
+When these sums have a tag-independent limit as \(\|P\|\to0\), the limit is
+denoted \(\int_a^b f\,d\alpha\).
+\end{definition}
+\end{definitionbox}
+
+\begin{theorembox}{Theorem (Continuous Integrand, BV Integrator)}
+\begin{theorem}[Continuous Integrand and BV Integrator]
+\label{thm:rs-continuous-bv-existence}
+If \(f\) is continuous on \([a,b]\) and \(\alpha\) has bounded variation, then
+\(\int_a^b f\,d\alpha\) exists.
+\end{theorem}
+\end{theorembox}
+
+\begin{theorembox}{Theorem (Bilinearity)}
+\begin{theorem}[Bilinearity of the Riemann--Stieltjes Integral]
+\label{thm:rs-bilinearity}
+Whenever the displayed integrals exist,
+\[
+  \int_a^b (\lambda f+\mu g)\,d\alpha
+  =
+  \lambda\int_a^b f\,d\alpha+\mu\int_a^b g\,d\alpha
+\]
+and
+\[
+  \int_a^b f\,d(\lambda\alpha+\mu\beta)
+  =
+  \lambda\int_a^b f\,d\alpha+\mu\int_a^b f\,d\beta .
+\]
+\end{theorem}
+\end{theorembox}
+
+\begin{theorembox}{Theorem (Interval Additivity)}
+\begin{theorem}[Interval Additivity for the Riemann--Stieltjes Integral]
+\label{thm:rs-interval-additivity}
+If \(c\in[a,b]\) and the relevant Riemann--Stieltjes integrals exist, then
+\[
+  \int_a^b f\,d\alpha
+  =
+  \int_a^c f\,d\alpha+\int_c^b f\,d\alpha .
+\]
+\end{theorem}
+\end{theorembox}
+
+\begin{theorembox}{Theorem (Integration by Parts)}
+\begin{theorem}[Riemann--Stieltjes Integration by Parts]
+\label{thm:rs-integration-by-parts}
+If \(f\) and \(\alpha\) are such that one of
+\(\int_a^b f\,d\alpha\) and \(\int_a^b \alpha\,df\) exists, then the other
+exists under the same Riemann--Stieltjes convention, and
+\[
+  \int_a^b f\,d\alpha+\int_a^b \alpha\,df
+  =
+  f(b)\alpha(b)-f(a)\alpha(a).
+\]
+\end{theorem}
+\end{theorembox}
+
+\begin{theorembox}{Theorem (Smooth Integrator Reduction)}
+\begin{theorem}[Reduction to Riemann Integration for a \(C^1\) Integrator]
+\label{thm:rs-c1-reduction}
+If \(\alpha\in C^1([a,b])\) and \(f\) is Riemann-integrable on \([a,b]\), then
+\[
+  \int_a^b f\,d\alpha=\int_a^b f(x)\alpha'(x)\,dx .
+\]
+\end{theorem}
+\end{theorembox}
+
+\begin{theorembox}{Theorem (Step Integrator)}
+\begin{theorem}[Step Integrators Give Finite Sums]
+\label{thm:rs-step-integrator-finite-sum}
+If \(\alpha\) is constant except for finitely many jumps at points \(c_k\) and
+\(f\) is continuous at each \(c_k\), then
+\[
+  \int_a^b f\,d\alpha=\sum_k f(c_k)\,\Delta\alpha(c_k).
+\]
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Proof idea]
+The Cauchy common-refinement argument runs again. Uniform continuity makes
+\(\omega_f(I)\) small on short slabs, and bounded variation controls
+\(\sum_i|\Delta\alpha_i|\). The error has the form
+\[
+  \sum_i \omega_f(I_i)\,|\Delta\alpha_i|,
+\]
+so small oscillation multiplied by finite total variation is small.
+\end{remark*}
+
+\begin{remark*}[Sums as integrals]
+If \(\alpha\) is a step function with jumps at points \(c_k\), then the
+Stieltjes integral collapses to a weighted sum of the values \(f(c_k)\) times
+the jumps. This is the conceptual doorway to probability: a cumulative
+distribution function is an integrator, and expectation is an integral against
+that integrator.
+\end{remark*}
+
+\begin{remark*}[Step integrator calculation]
+Suppose \(\alpha\) is constant except for finitely many jumps
+\(\Delta\alpha(c_k)=\alpha(c_k+)-\alpha(c_k-)\). Any sufficiently fine
+partition has one tiny slab around each \(c_k\) carrying that jump, while all
+other slabs have \(\Delta\alpha_i=0\). If \(f\) is continuous at each \(c_k\),
+then the tagged height on the \(k\)-th jump slab is forced toward \(f(c_k)\),
+so
+\[
+  \int_a^b f\,d\alpha=\sum_k f(c_k)\,\Delta\alpha(c_k).
+\]
+This is why a finite weighted sum is not a different species from an integral:
+it is a Stieltjes integral against a discrete ruler.
+\end{remark*}
+
+\begin{remark*}[Shared-jump failure]
+The new pathology is real. On \([0,1]\), let \(c=1/2\), let
+\[
+  \alpha(x)=\mathbf 1_{[c,1]}(x),
+  \qquad
+  f(x)=\mathbf 1_{[c,1]}(x).
+\]
+The only nonzero \(\Delta\alpha_i\) occurs on the slab containing \(c\). If the
+tag for that slab is chosen left of \(c\), its contribution is \(0\); if the
+tag is chosen at or right of \(c\), its contribution is \(1\). This discrepancy
+does not shrink with the slab width, because the ruler has a whole unit of
+mass concentrated at the jump. Tag independence fails, so the
+Riemann--Stieltjes integral does not exist in this convention.
+\end{remark*}
+
+\begin{remark*}[Bug report]
+Stieltjes is a sideways generalization, not the Lebesgue fix. Shared
+discontinuities of \(f\) and \(\alpha\) can destroy tag independence, and the
+standard existence theorem leans on the finite ruler budget
+\(V_a^b(\alpha)<\infty\). Brownian paths have infinite variation almost surely,
+so stochastic integration cannot be ordinary pathwise Riemann--Stieltjes
+integration.
+\end{remark*}
+
+\begin{remark*}[Patch request]
+The next stochastic patch is not ``make Stieltjes a little better.'' Brownian
+motion forces a different limiting mode: an \(L^2\) or probabilistic limit
+rather than a pathwise Riemann--Stieltjes limit. That is the structural reason
+Ito integration is not just Stieltjes integration with a rougher integrator.
+\end{remark*}
