@@ -34,12 +34,14 @@
 % ---------------------------------------------------------------------
 % 2. CORE STYLES
 % ---------------------------------------------------------------------
-% Paint a figure's paper background. Apply to the tikzpicture options:
+% Background is intentionally disabled for book integration. The source atlas
+% used a warm paper panel, but embedded figures should inherit the page.
+% Apply to the tikzpicture options:
 %   \begin{tikzpicture}[atlas]
 \tikzset{
   atlas/.style={
-    show background rectangle,
-    background rectangle/.style={fill=atlaspaper, rounded corners=2pt},
+    % show background rectangle,
+    % background rectangle/.style={fill=atlaspaper, rounded corners=2pt},
   },
   % Probe axes: muted, arrow-tipped, thin.
   atlas axes/.style={
