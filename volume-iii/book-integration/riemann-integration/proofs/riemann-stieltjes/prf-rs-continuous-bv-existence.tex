@@ -1,0 +1,57 @@
+\newpage
+\phantomsection
+\label{prf:rs-continuous-bv-existence}
+\LRAProofFor{thm:rs-continuous-bv-existence}
+\begin{remark*}[Return]\hyperref[thm:rs-continuous-bv-existence]{Return to Theorem}\end{remark*}
+\begin{theorem*}[Continuous Integrand and BV Integrator]
+If \(f\) is continuous and \(\alpha\) has bounded variation, then \(\int f\,d\alpha\) exists.
+\end{theorem*}
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+Let \(V=V_a^b(\alpha)<\infty\). Fix \(\varepsilon>0\). Since \(f\) is
+uniformly continuous on \([a,b]\), choose \(\delta>0\) such that every
+subinterval \(I\) of length less than \(\delta\) satisfies
+\[
+  \omega_f(I)<\frac{\varepsilon}{3V+1}.
+\]
+Let \((P,\xi)\) and \((P',\eta)\) be tagged partitions with mesh less than
+\(\delta\), and let \(Q=P\cup P'\) be a common refinement. First compare the
+Stieltjes sum on \(P\) to a compatible tagged sum on \(Q\). On a slab \(I\) of
+\(P\), refinement only replaces one tag value by tag values still lying in
+\(I\). The total change over the pieces inside \(I\) is bounded by
+\[
+  \omega_f(I)\sum_{J\subset I}|\Delta\alpha(J)|.
+\]
+Summing over all slabs of \(P\) gives
+\[
+  |S(f,\alpha,P,\xi)-S(f,\alpha,Q,\zeta)|
+  \le \frac{\varepsilon}{3V+1}\sum_J|\Delta\alpha(J)|
+  < \frac{\varepsilon}{3}.
+\]
+The same estimate compares the sum over \(P'\) to a compatible sum over
+\(Q\). Finally, two taggings of the same refined partition \(Q\) differ by at
+most the same oscillation-times-variation estimate, hence by less than
+\(\varepsilon/3\). The triangle inequality shows the original sums differ by
+less than \(\varepsilon\). The sums form a Cauchy net in \(\mathbb R\), so
+they converge.
+\end{proof}
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+The ordinary Cauchy proof says ``small oscillation times total width.'' The
+Stieltjes proof says ``small oscillation times total \(\alpha\)-variation.''
+Uniform continuity supplies the small oscillation, while bounded variation
+supplies the finite total budget for \(|\Delta\alpha|\). The common refinement
+is still the comparison device.
+\end{proof}
+\begin{remark*}[Proof structure]
+Repeat the Cauchy common-refinement argument with \(\alpha\)-increments
+controlled by total variation.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:riemann-stieltjes-integral]{Riemann--Stieltjes Integral}.
+  \item \hyperref[def:bounded-variation-integration]{Bounded Variation}.
+  \item \hyperref[lem:common-refinement-partitions]{Common Refinement of Two Partitions}.
+\end{itemize}
+\end{dependencies}
+\clearpage

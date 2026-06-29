@@ -1,0 +1,43 @@
+\documentclass[border=8pt]{standalone}
+\usepackage{structural-atlas}
+\begin{document}
+\begin{tikzpicture}[atlas,scale=1.25]
+  % A smooth curve with bounded second derivative.
+  % f(x) = 1.8 + 0.45 sin(70 x[deg]);  max|f''| ~ 0.671  => L = 0.7 bounds it.
+  \def\f{1.8+0.45*sin(70*\x)}
+  \glowcurve{color=atlasblue, domain=0.3:4.7, axis=0, top=3.4, expr={\f}}
+  \draw[atlas axes] (0,0)--(5.1,0);
+  \draw[atlas axes] (0,0)--(0,3.4);
+
+  % anchor point p and the local data
+  \def\p{2.0}
+  \pgfmathsetmacro\fp{1.8+0.45*sin(70*\p)}            % f(p)
+  \pgfmathsetmacro\mp{0.45*70*0.0174533*cos(70*\p)}   % f'(p)
+  \def\L{0.7}
+
+  % upper / lower bounding parabolas: f(p)+m(x-p) +- (L/2)(x-p)^2
+  \draw[atlas probe,atlasconegreen,dash pattern=on 3pt off 2pt]
+    plot[domain=0.45:3.55,samples=80,smooth]
+    (\x,{\fp+\mp*(\x-\p)+0.5*\L*(\x-\p)*(\x-\p)});
+  \draw[atlas probe,atlasconegreen,dash pattern=on 3pt off 2pt]
+    plot[domain=0.45:3.55,samples=80,smooth]
+    (\x,{\fp+\mp*(\x-\p)-0.5*\L*(\x-\p)*(\x-\p)});
+
+  % the shared tangent line at p
+  \draw[atlas probe,atlasred]
+    ({\p-1.4},{\fp-\mp*1.4})--({\p+1.4},{\fp+\mp*1.4});
+
+  \node[atlas dot] at (\p,\fp){};
+  \draw[dropline] (\p,\fp)--(\p,0);
+  \node[atlas label,below] at (\p,-0.05){\footnotesize$x$};
+
+  \node[atlas label,above] at (2.6,3.15){\scriptsize$|f'(x)-f'(y)|\le L\,|x-y|$};
+  \node[atlas label,atlasconegreen!60!atlasink,above left] at (1.0,2.55)
+    {\scriptsize$f(p)+f'(p)(x{-}p)+\tfrac{L}{2}(x{-}p)^2$};
+  \node[atlas label,atlasconegreen!60!atlasink,below right=2pt] at (3.0,0.55)
+    {\scriptsize$\;-\tfrac{L}{2}(x{-}p)^2$};
+  \node[atlas label,atlasred!70!atlasink,below left] at (\p-0.5,{\fp-\mp*0.5})
+    {\scriptsize tangent at $p$};
+  \node[atlas label,right] at (3.9,2.35){\footnotesize$y=f(x)$};
+\end{tikzpicture}
+\end{document}

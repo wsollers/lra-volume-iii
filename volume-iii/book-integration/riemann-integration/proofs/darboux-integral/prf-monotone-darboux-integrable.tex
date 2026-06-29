@@ -1,0 +1,61 @@
+\newpage
+\phantomsection
+\label{prf:monotone-darboux-integrable}
+\LRAProofFor{thm:monotone-darboux-integrable}
+\begin{remark*}[Return]\hyperref[thm:monotone-darboux-integrable]{Return to Theorem}\end{remark*}
+\begin{theorem*}[Monotone Functions Are Darboux-Integrable]
+Every monotone function \(f:[a,b]\to\mathbb R\) is Darboux-integrable.
+\end{theorem*}
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+Assume first that \(f\) is increasing. Let \(\varepsilon>0\). If
+\(f(b)=f(a)\), then \(f\) is constant and the result is immediate. Otherwise,
+choose a partition \(P=\{a=x_0<\cdots<x_n=b\}\) with mesh
+\[
+  \|P\|<\frac{\varepsilon}{f(b)-f(a)}.
+\]
+For an increasing function on \([x_{i-1},x_i]\),
+\[
+  m_i=f(x_{i-1}),\qquad M_i=f(x_i),
+\]
+so
+\[
+  U(f,P)-L(f,P)
+  =
+  \sum_{i=1}^n\bigl(f(x_i)-f(x_{i-1})\bigr)\Delta x_i.
+\]
+Since every \(\Delta x_i\le \|P\|\),
+\[
+  U(f,P)-L(f,P)
+  \le
+  \|P\|\sum_{i=1}^n\bigl(f(x_i)-f(x_{i-1})\bigr)
+  =
+  \|P\|\,(f(b)-f(a))
+  <\varepsilon.
+\]
+By the Darboux criterion, \(f\) is integrable.
+
+If \(f\) is decreasing, apply the increasing case to \(-f\). Since
+integrability is preserved by scalar multiplication, \(f\) is Darboux-integrable.
+\end{proof}
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+The key point is that a monotone function cannot oscillate back and forth.
+On each small interval the largest possible vertical error is the change from
+the left endpoint to the right endpoint. When those vertical changes are
+summed over the partition, all intermediate terms cancel: the total vertical
+movement is only \(f(b)-f(a)\). Multiplying by the largest slab width gives a
+bound for the whole Darboux gap. Refining the mesh makes that product as small
+as desired.
+\end{proof}
+\begin{remark*}[Proof structure]
+For increasing functions, bound the Darboux gap by mesh times total vertical
+variation. Reduce decreasing functions by negation.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:darboux-sums]{Lower and Upper Darboux Sums}.
+  \item \hyperref[thm:darboux-criterion]{Darboux Criterion}.
+\end{itemize}
+\end{dependencies}
+\clearpage

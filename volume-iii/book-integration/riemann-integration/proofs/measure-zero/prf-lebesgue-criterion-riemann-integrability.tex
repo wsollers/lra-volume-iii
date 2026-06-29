@@ -1,0 +1,77 @@
+\newpage
+\phantomsection
+\label{prf:lebesgue-criterion-riemann-integrability}
+\LRAProofFor{thm:lebesgue-criterion-riemann-integrability}
+\begin{remark*}[Return]\hyperref[thm:lebesgue-criterion-riemann-integrability]{Return to Theorem}\end{remark*}
+\begin{theorem*}[Lebesgue Criterion for Riemann Integrability]
+A bounded function \(f:[a,b]\to\mathbb R\) is Riemann-integrable if and only
+if its discontinuity set has measure zero.
+\end{theorem*}
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+Let
+\[
+  \Omega=\sup_{[a,b]}f-\inf_{[a,b]}f<\infty.
+\]
+
+First suppose the discontinuity set \(D\) has measure zero. Fix
+\(\varepsilon>0\). Choose \(\eta>0\) with \(\eta(b-a)<\varepsilon/2\). Let
+\[
+  D_\eta=\{x:\omega_f(x)\ge \eta\}.
+\]
+Then \(D_\eta\subseteq D\), so \(D_\eta\) has measure zero. Cover \(D_\eta\)
+by open intervals whose total length is less than \(\varepsilon/(2\Omega)\);
+by compactness of \(D_\eta\), take a finite subcover and call its union \(G\).
+On \(K=[a,b]\setminus G\), every point has oscillation \(<\eta\). Compactness
+of \(K\) gives a single scale \(\delta>0\) such that every interval of length
+less than \(\delta\) meeting \(K\) has oscillation \(<\eta\).
+
+Choose a partition \(P\) with mesh \(<\delta\) that includes the endpoints of
+the intervals making up \(G\). Slabs contained in \(G\) have total width less
+than \(\varepsilon/(2\Omega)\), so their contribution to \(U(f,P)-L(f,P)\) is
+less than \(\varepsilon/2\). Slabs meeting \(K\) have oscillation \(<\eta\), so
+their total contribution is less than \(\eta(b-a)<\varepsilon/2\). Hence
+\[
+  U(f,P)-L(f,P)<\varepsilon.
+\]
+By the Darboux criterion, \(f\) is Riemann-integrable.
+
+Conversely, suppose \(D\) does not have measure zero. Since
+\[
+  D=\bigcup_{k=1}^{\infty}D_{1/k},
+\]
+some \(D_{\eta_0}\) with \(\eta_0=1/k_0\) does not have measure zero. Thus
+there is \(c>0\) such that every interval cover of \(D_{\eta_0}\) has total
+length at least \(c\). For any partition \(P\), the slabs whose interiors meet
+\(D_{\eta_0}\), together with the finitely many partition points, cover
+\(D_{\eta_0}\); ignoring finitely many points does not affect the lower bound
+on total interval length. Hence those slabs have total width at least \(c\).
+Each such slab has oscillation at least \(\eta_0\), so
+\[
+  U(f,P)-L(f,P)
+  =\sum_i \omega_f([x_{i-1},x_i])\Delta x_i
+  \ge \eta_0 c>0.
+\]
+The Darboux gap cannot be made arbitrarily small, so \(f\) is not integrable.
+\end{proof}
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+The proof says that all Darboux error lives over points where the function
+oscillates. If those bad points fit inside intervals of arbitrarily small total
+length, their worst possible contribution is small, and the good complement
+has uniformly small oscillation. If the bad set has positive unavoidable
+length at some oscillation level, every partition pays a fixed positive
+Darboux gap.
+\end{proof}
+\begin{remark*}[Proof structure]
+Use the sets \(D_\eta=\{x:\omega_f(x)\ge\eta\}\) to separate large oscillation
+from small oscillation, then apply the Darboux criterion in both directions.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:measure-zero]{Measure Zero}.
+  \item \hyperref[def:point-oscillation-integration]{Point Oscillation}.
+  \item \hyperref[thm:darboux-criterion]{Darboux Criterion}.
+\end{itemize}
+\end{dependencies}
+\clearpage

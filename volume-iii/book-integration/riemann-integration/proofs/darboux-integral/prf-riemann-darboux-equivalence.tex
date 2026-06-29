@@ -1,0 +1,46 @@
+\newpage
+\phantomsection
+\label{prf:riemann-darboux-equivalence}
+\LRAProofFor{thm:riemann-darboux-equivalence}
+\begin{remark*}[Return]\hyperref[thm:riemann-darboux-equivalence]{Return to Theorem}\end{remark*}
+\begin{theorem*}[Equivalence of Riemann and Darboux Integrability]
+For bounded functions, Riemann and Darboux integrability are equivalent.
+\end{theorem*}
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+For every tagged partition,
+\[
+  L(f,P)\le S(f,P,\xi)\le U(f,P).
+\]
+If the Darboux criterion gives a partition \(P\) with
+\(U(f,P)-L(f,P)<\varepsilon\), then every tagged sum on \(P\) is trapped in an
+interval of length \(<\varepsilon\). Refinements preserve the squeeze, so the
+Riemann sums have a common limit equal to the Darboux value.
+
+Conversely, suppose \(f\) is Riemann-integrable with value \(L\). Choose a
+mesh tolerance so all fine tagged sums are within \(\varepsilon\) of \(L\).
+For a fine partition \(P\), choose tags whose values are within a small error
+of the suprema \(M_i\), and choose another set of tags whose values are within
+a small error of the infima \(m_i\). The resulting tagged sums approximate
+\(U(f,P)\) and \(L(f,P)\), yet both are close to \(L\). Hence \(U(f,P)-L(f,P)\)
+can be made arbitrarily small, so Darboux integrability follows.
+\end{proof}
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+Darboux brackets every Riemann choice at once. If the bracket is narrow, no
+tagged sum can escape it. If all tagged sums are forced near one value, then
+tags chosen near the top and bottom of each slab force the Darboux bracket
+itself to become narrow.
+\end{proof}
+\begin{remark*}[Proof structure]
+Trap every tagged sum between the lower and upper sums, then compare the
+collapse of these brackets with tag-independent convergence.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:riemann-integral]{Riemann Integral}.
+  \item \hyperref[def:darboux-integrability]{Darboux Integrability}.
+  \item \hyperref[thm:darboux-criterion]{Darboux Criterion}.
+\end{itemize}
+\end{dependencies}
+\clearpage

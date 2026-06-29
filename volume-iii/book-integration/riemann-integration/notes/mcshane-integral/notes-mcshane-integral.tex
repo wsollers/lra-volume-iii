@@ -1,0 +1,162 @@
+\subsection*{Where This Sits}
+
+McShane is the gauge integral that looks almost indistinguishable from
+Henstock--Kurzweil until one notices where the tags are allowed to live. HK
+keeps each tag inside its own slab. McShane lets a tag control a slab from
+outside it, as long as the slab lies inside the tag's gauge ball.
+
+\begin{remark*}[The tiny syntactic change]
+Henstock--Kurzweil says:
+\[
+  \xi_i\in[x_{i-1},x_i]
+  \quad\text{and}\quad
+  [x_{i-1},x_i]\subset
+  (\xi_i-\delta(\xi_i),\xi_i+\delta(\xi_i)).
+\]
+McShane drops only the first requirement. The interval still has to be locally
+small around its tag, but the tag need not lie in the interval it controls.
+That small freedom is decisive: it prevents the conditional cancellation that
+lets HK integrate every derivative.
+\end{remark*}
+
+\begin{remark*}[HK versus McShane at a glance]
+\[
+\begin{array}{c|c|c|c}
+\text{Integral} & \text{Gauge} & \text{Tag position} & \text{Class on }[a,b]\\
+\hline
+\text{Henstock--Kurzweil} & \delta(x) & \xi_i\in I_i &
+\mathcal{HK}\\
+\text{McShane} & \delta(x) & \xi_i\in[a,b]\text{ and }I_i\subset B(\xi_i,\delta(\xi_i)) &
+\mathcal L
+\end{array}
+\]
+Both use a variable gauge. The difference is not the step-size field; it is
+whether the tag must sit inside the interval whose height it supplies.
+Figure~\ref{fig:hk-vs-mcshane} shows this tethered-versus-free distinction
+directly.
+\end{remark*}
+
+\input{tex/figures/hk-vs-mcshane}
+
+\subsection*{Geometric Intuition}
+
+In HK, a tag is a sample point inside the slab. In McShane, a tag is more like
+a local address that authorizes nearby slabs. The gauge still says how far the
+tag's influence reaches, but the rectangle height may be chosen from a point
+near the slab rather than inside it. This makes the integral less forgiving
+about sign-changing singular behavior and much closer to Lebesgue's absolute
+notion of size.
+
+\begin{definitionbox}{Definition (McShane-Fine Tagged Partition)}
+\begin{definition}[McShane-Fine Tagged Partition]
+\label{def:mcshane-fine-tagged-partition}
+Let \(\delta:[a,b]\to(0,\infty)\) be a gauge. A finite tagged partition
+\(\{([u_i,v_i],\xi_i)\}_{i=1}^n\) is \emph{McShane \(\delta\)-fine} if the
+intervals \([u_i,v_i]\) are non-overlapping, cover \([a,b]\), each
+\(\xi_i\in[a,b]\), and
+\[
+  [u_i,v_i]\subset
+  \bigl(\xi_i-\delta(\xi_i),\,\xi_i+\delta(\xi_i)\bigr)
+  \qquad\text{for every }i.
+\]
+Unlike an HK tagged partition, the tag \(\xi_i\) is not required to lie in
+\([u_i,v_i]\).
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Untethered tag]
+Figure~\ref{fig:mcshane} isolates the McShane move: a tag may sit outside the
+cell whose height it supplies, provided the cell lies inside the tag's gauge
+ball. The ruler is still \(\Delta x_i\); the change is entirely in the
+admissible tag geometry.
+\end{remark*}
+
+\input{tex/figures/fig-mcshane}
+
+\begin{definitionbox}{Definition (McShane Integral)}
+\begin{definition}[McShane Integral]
+\label{def:mcshane-integral}
+A function \(f:[a,b]\to\mathbb R\) is \emph{McShane integrable} with value
+\(A\) if
+\[
+  \forall\varepsilon>0\ \exists\delta:[a,b]\to(0,\infty)\ \forall(P,\xi)\,
+  \bigl((P,\xi)\text{ is McShane }\delta\text{-fine}
+  \Rightarrow |S(f,P,\xi)-A|<\varepsilon\bigr),
+\]
+where
+\[
+  S(f,P,\xi)=\sum_i f(\xi_i)(v_i-u_i).
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Relation to HK]
+Every McShane-fine partition is not necessarily HK-fine, because its tags may
+float outside their intervals. But every HK-fine partition is McShane-fine.
+Therefore McShane integrability is a stronger demand: the sums must survive
+all the usual gauge-fine tests and also the extra free-tag tests.
+\end{remark*}
+
+\begin{theorembox}{Theorem (McShane Sits Between Riemann and HK)}
+\begin{theorem}[Riemann Integrable Implies McShane Integrable Implies Henstock--Kurzweil Integrable]
+\label{thm:riemann-mcshane-hk-inclusions}
+On a compact interval,
+\[
+  \mathcal R[a,b]\subseteq \mathcal M[a,b]\subseteq \mathcal{HK}[a,b],
+\]
+and the integral values agree whenever a function belongs to the smaller
+class.
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[The Lebesgue connection]
+For real-valued functions on a compact interval, the McShane integral recovers
+the Lebesgue integral. In practical terms,
+\[
+  \mathcal M[a,b]=\mathcal L[a,b]
+\]
+with equal values. Thus McShane is not a second route beyond Lebesgue in the
+way HK is. It is a gauge-sum presentation of Lebesgue integration.
+\end{remark*}
+
+\begin{remark*}[Forward dependency]
+The proof that every Riemann-integrable function is McShane-integrable uses
+the measure-zero diagnosis in the next section: Riemann integrability means
+the discontinuity set is null. The exposition places McShane first because it
+belongs syntactically with the gauge integrals; the proof ledger records that
+it imports the Lebesgue criterion.
+\end{remark*}
+
+\begin{remark*}[Why free tags force Lebesgue behavior]
+The HK derivative example
+\[
+  F'(x)=2x\sin(1/x^2)-\frac{2}{x}\cos(1/x^2)
+\]
+is conditionally integrable by HK because the tags remain inside the tiny
+slabs where the derivative is being locally linearized. McShane's free tags
+can sample nearby oscillatory peaks in a way that destroys this conditional
+balance. What survives that stronger test is exactly the Lebesgue-integrable,
+absolutely controlled part of the gauge world.
+\end{remark*}
+
+\begin{remark*}[What it buys]
+McShane gives a tagged-sum construction of the Lebesgue integral without
+starting from simple functions or sigma-algebras. Conceptually, that is its
+job in this chapter: it shows that adaptive Riemann-style sums can reach the
+Lebesgue class, while HK shows that keeping tags inside slabs reaches beyond
+Lebesgue to conditionally integrable derivatives.
+\end{remark*}
+
+\begin{remark*}[Bug report]
+McShane is elegant but not the terminal fix for this chapter's story. If one
+wants a tagged-sum definition of the Lebesgue integral, it is excellent. If
+one wants the perfect one-dimensional Fundamental Theorem of Calculus, HK is
+strictly stronger. And if one wants probability, stochastic processes, and
+abstract spaces, the next volume still needs measure theory explicitly.
+\end{remark*}
+
+\begin{remark*}[Handoff to measure zero]
+McShane reveals that gauge machinery and Lebesgue size are compatible. The
+next section names the exact size condition already controlling the older
+Riemann--Darboux family: the discontinuity set must have measure zero.
+\end{remark*}

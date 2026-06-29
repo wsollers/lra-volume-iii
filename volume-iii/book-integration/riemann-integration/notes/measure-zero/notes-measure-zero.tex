@@ -1,0 +1,88 @@
+\subsection*{Geometric Intuition}
+
+Darboux integrability fails where upper and lower staircases refuse to meet.
+That refusal is local oscillation. Thus the exact Riemann question becomes:
+how large is the set where \(f\) is discontinuous?
+
+\begin{remark*}[Engineering reading]
+This final section is not another integral. It is the diagnostic scan of the
+entire Riemann--Darboux family, placed after Henstock--Kurzweil and McShane so
+the chapter ends by naming the exact obstruction that opens the Lebesgue
+volume. Once Darboux has made the gap visible, the remaining question is
+whether the bad part of the domain is small enough to cover by slabs of
+negligible total length.
+\end{remark*}
+
+\begin{definitionbox}{Definition (Measure Zero)}
+\begin{definition}[Measure Zero]
+\label{def:measure-zero}
+A set \(E\subseteq\mathbb R\) has \emph{measure zero} if for every
+\(\varepsilon>0\) there are open intervals \(I_k\) such that
+\[
+  E\subseteq\bigcup_{k=1}^{\infty}I_k,
+  \qquad
+  \sum_{k=1}^{\infty}|I_k|<\varepsilon.
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{definitionbox}{Definition (Point Oscillation)}
+\begin{definition}[Point Oscillation]
+\label{def:point-oscillation-integration}
+For bounded \(f\) on \([a,b]\), define
+\[
+  \omega_f(x)=
+  \inf_{\delta>0}
+  \omega_f\bigl((x-\delta,x+\delta)\cap[a,b]\bigr).
+\]
+Then \(f\) is continuous at \(x\) exactly when \(\omega_f(x)=0\).
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Oscillation levels]
+The sets
+\[
+  D_\eta=\{x:\omega_f(x)\ge \eta\}
+\]
+separate the bad set by severity. The full discontinuity set is
+\[
+  D=\bigcup_{k=1}^{\infty}D_{1/k}.
+\]
+The proof of the criterion works by showing that positive-size high
+oscillation forces a permanent Darboux gap, while null high-oscillation sets
+can be covered by intervals of tiny total length.
+\end{remark*}
+
+\begin{theorembox}{Theorem (Lebesgue Criterion)}
+\begin{theorem}[Lebesgue Criterion for Riemann Integrability]
+\label{thm:lebesgue-criterion-riemann-integrability}
+A bounded function \(f:[a,b]\to\mathbb R\) is Riemann-integrable if and only
+if its discontinuity set
+\[
+  D=\{x\in[a,b]:\omega_f(x)>0\}
+\]
+has measure zero.
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Terminal diagnosis]
+Riemann integration works precisely when the set of bad points is invisible to
+length. The Dirichlet function \(\mathbf 1_{\mathbb Q}\) is discontinuous
+everywhere, so \(D=[0,1]\), not a null set. The Lebesgue patch is to stop
+partitioning the domain into slabs and instead measure the sets where the
+function takes given ranges of values. Henstock--Kurzweil keeps tagged sums,
+but replaces uniform fineness by local fineness; McShane shows that a slightly
+stricter gauge rule recovers the Lebesgue class itself. The pathology plate
+in Figure~\ref{fig:failures-atlas} is the visual companion to this diagnosis.
+\end{remark*}
+
+\begin{remark*}[Lebesgue handoff]
+The slogan is precise: Riemann partitions the domain, so every slab that meets
+a dense bad set still sees the bad behavior. Lebesgue partitions the range:
+it groups points by height and measures the set carrying each height. For
+\(\mathbf 1_{\mathbb Q}\), the height \(1\) lives on a null set and therefore
+contributes nothing.
+\end{remark*}
+
+\input{tex/exposition/integration-failures}
+\input{tex/exposition/gauge-integrals}

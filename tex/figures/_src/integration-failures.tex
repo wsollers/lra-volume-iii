@@ -1,0 +1,198 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{structural-atlas} % for the palette (atlasink, atlasred, ...)
+
+% --- light atlas-flavored theorem styling ---
+\newtheoremstyle{atlas}{10pt}{10pt}{}{}{\scshape\color{atlasink}}{.}{.5em}{}
+\theoremstyle{atlas}
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}{Definition}
+\newtheorem{proposition}{Proposition}
+\newtheorem{remark}{Remark}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Rint}{\mathcal{R}}
+\newcommand{\osc}{\omega_f}
+\setlength{\parskip}{4pt}
+
+\title{\scshape\color{atlasink} Where the Riemann Integral Fails --- and Why}
+\author{}\date{}
+
+\begin{document}
+\maketitle
+\vspace{-3.2em}
+{\color{atlasink}\rule{\linewidth}{0.8pt}}
+\vspace{1em}
+
+The point of this note is not to collect pathologies for their own sake. Every
+failure below is a \emph{measurement} of the boundary of the Riemann construction,
+and each one is explained by a single governing theorem. Knowing exactly where the
+wall is --- and which hypothesis you hit --- is what lets you build on top of it
+without falling through.
+
+\section*{\scshape The one theorem behind all of it}
+
+Recall the Darboux picture: for a bounded $f$ and a partition
+$P=\{a=x_0<\dots<x_n=b\}$, with $M_i=\sup_{[x_{i-1},x_i]}f$ and
+$m_i=\inf_{[x_{i-1},x_i]}f$,
+\[
+  L(P)=\sum_{i} m_i\,\Delta x_i \le \int \le U(P)=\sum_i M_i\,\Delta x_i,
+  \qquad
+  f\in\Rint[a,b] \ :\Longleftrightarrow\ \forall\varepsilon>0\ \exists P\ \big(U(P)-L(P)<\varepsilon\big).
+\]
+The quantity that must be driven to zero is the gap $U(P)-L(P)$, and the object
+that generates it is the \emph{oscillation}.
+
+\begin{definition}[Oscillation]
+For $S\subseteq[a,b]$, $\ \osc(S):=\sup_{S}f-\inf_{S}f$. The oscillation \emph{at a
+point} is the limit over shrinking neighborhoods,
+\[
+  \osc(x):=\inf_{\delta>0}\ \osc\big((x-\delta,x+\delta)\cap[a,b]\big).
+\]
+\end{definition}
+
+Two facts make the oscillation the right bookkeeping device:
+\[
+  U(P)-L(P)=\sum_i \osc\big([x_{i-1},x_i]\big)\,\Delta x_i,
+  \qquad
+  f \text{ is continuous at } x \ \Longleftrightarrow\ \osc(x)=0.
+\]
+So the discontinuity set is exactly $D_f=\{x\in[a,b]:\osc(x)>0\}$. The gap is small
+precisely when the cells of large oscillation can be confined to a set of small total
+length. That is the whole content of:
+
+\begin{theorem}[Lebesgue's criterion for Riemann integrability]
+A function $f:[a,b]\to\R$ is Riemann integrable if and only if
+\begin{enumerate}
+  \item[\textnormal{(i)}] $f$ is \emph{bounded}, and
+  \item[\textnormal{(ii)}] its set of discontinuities $D_f$ has \emph{Lebesgue
+        measure zero}:
+        \[
+          \forall\varepsilon>0\ \exists\{I_k\}_{k\in\N}\ \Big(D_f\subseteq\bigcup_k I_k
+          \ \wedge\ \sum_k |I_k|<\varepsilon\Big).
+        \]
+\end{enumerate}
+\end{theorem}
+
+Every counterexample below is a violation of (i) or (ii) --- and Thomae's function is
+the cautionary tale that shows (ii) is about \emph{measure}, not about cardinality or
+density. (See the oscillation panel of \textsc{Atlas III}, and the four panels of
+\textsc{Atlas IV}.)
+
+\begin{center}
+  \includegraphics[width=\linewidth]{failures-atlas.pdf}
+\end{center}
+
+\section*{\scshape 1. Dirichlet: the gap that never closes}
+
+Let $f=\mathbf 1_{\Q}$ on $[a,b]$: $f(x)=1$ if $x\in\Q$, else $0$. By density of both
+$\Q$ and $\Q^c$, \emph{every} subinterval $[x_{i-1},x_i]$ of \emph{every} partition
+contains a rational and an irrational. Hence
+\[
+  M_i=1,\quad m_i=0\quad\text{for all }i,\ \text{all }P
+  \ \Longrightarrow\
+  U(P)=b-a,\quad L(P)=0.
+\]
+Therefore $\inf_P U(P)=b-a\neq 0=\sup_P L(P)$: the upper and lower integrals disagree,
+so $f\notin\Rint[a,b]$. Through the criterion: $\osc(x)=1$ for every $x$, so
+$D_f=[a,b]$, of measure $b-a>0$. The gap is not large because the partition is coarse
+--- it is large because the oscillation is everywhere. No refinement helps.
+
+\section*{\scshape 2. Thomae: dense jumps, yet integrable}
+
+Let $t(x)=1/q$ if $x=p/q$ in lowest terms, and $t(x)=0$ if $x$ is irrational. This
+function is discontinuous at \emph{every} rational (a dense set) and continuous at
+every irrational. Cardinality-wise it looks as bad as Dirichlet --- yet it is
+integrable, with $\int_0^1 t=0$. Here is the mechanism.
+
+\begin{proposition}
+$t\in\Rint[0,1]$ and $\int_0^1 t=0$.
+\end{proposition}
+\begin{proof}
+Fix $\varepsilon>0$. The set of ``tall'' spikes
+$\{x:t(x)\ge \varepsilon/2\}=\{p/q:\ 1/q\ge\varepsilon/2\}$ requires $q\le 2/\varepsilon$,
+so it is \emph{finite}; call its points $r_1,\dots,r_N$. Enclose them in disjoint
+intervals of total length $<\varepsilon/2$, and choose a partition $P$ that includes
+these intervals as cells. On those cells $\sup t\le 1$; on every other cell
+$\sup t<\varepsilon/2$. Since $t\ge 0$, every cell has $\inf t=0$ (each contains an
+irrational), so $L(P)=0$ and
+\[
+  U(P)-L(P)=U(P)\le \underbrace{1\cdot\tfrac{\varepsilon}{2}}_{\text{tall cells}}
+  +\underbrace{\tfrac{\varepsilon}{2}\cdot(b-a)}_{\text{short cells}}
+  =\varepsilon\quad(\text{on }[0,1]).
+\]
+As $\varepsilon$ was arbitrary, $t\in\Rint$ and $\int_0^1 t=\inf_P U(P)=0$.
+\end{proof}
+
+The contrast with Dirichlet is the entire lesson: $D_t=\Q\cap[0,1]$ is countable, hence
+measure zero, so criterion (ii) holds. \textbf{Dense $\ne$ large.} A discontinuity set
+can be topologically enormous (dense) yet metrically negligible (measure zero), and the
+Riemann integral only sees the metric size.
+
+\section*{\scshape 3. Unbounded: boundedness is not optional}
+
+Boundedness is not a lemma here --- it is a standing hypothesis of the Darboux
+construction. If $f$ is unbounded above on some cell, then $M_i=+\infty$ there and
+$U(P)=+\infty$ for \emph{every} partition, so no finite upper Darboux integral exists.
+Concretely, $f(x)=x^{-1/2}$ on $(0,1]$ has $\sup_{[0,x_1]}f=+\infty$ for any first cell
+$[0,x_1]$.
+
+This failure is of a different \emph{kind} than the previous two: it does not say the
+``area'' is ill-defined, only that the \emph{proper} Riemann integral is not the right
+tool. The improper integral, a separate limiting construction, recovers a finite value:
+\[
+  \int_0^1 x^{-1/2}\,dx:=\lim_{\eta\to 0^+}\int_\eta^1 x^{-1/2}\,dx
+  =\lim_{\eta\to0^+}2\big(1-\sqrt{\eta}\big)=2.
+\]
+Keep the two notions distinct: ``$f\in\Rint$'' is a statement about Darboux sums of a
+\emph{bounded} $f$; the improper integral is a limit of such statements.
+
+\section*{\scshape 4. Pointwise limits: the defect that built Lebesgue}
+
+This is the failure that matters most for everything downstream. Enumerate
+$\Q\cap[0,1]=\{q_1,q_2,\dots\}$ and set $f_n=\mathbf 1_{\{q_1,\dots,q_n\}}$. Each $f_n$
+differs from $0$ at only finitely many points, so $f_n\in\Rint$ with $\int_0^1 f_n=0$.
+But $f_n\uparrow \mathbf 1_{\Q}$ pointwise, and $\mathbf 1_{\Q}\notin\Rint$. Hence
+\[
+  \lim_{n\to\infty}\int_0^1 f_n=0,
+  \qquad\text{while}\qquad
+  \int_0^1 \Big(\lim_{n\to\infty} f_n\Big)\ \text{does not exist.}
+\]
+So $\lim\int\neq\int\lim$ in the strongest possible way: the right-hand side is not even
+defined. The class $\Rint$ is \emph{not closed under pointwise limits}, even monotone
+bounded ones.
+
+\begin{remark}[Why this is the cue for Lebesgue]
+The Lebesgue integral is engineered precisely to make limit and integral commute under
+mild hypotheses --- the Monotone and Dominated Convergence Theorems. Under Lebesgue,
+$\mathbf 1_{\Q}$ \emph{is} integrable (it equals $0$ almost everywhere, so
+$\int \mathbf 1_{\Q}=0$), and the interchange above becomes legal. This is not an
+abstraction for its own sake: expectation $\mathbb E[X]=\int X\,d\mathbb P$ is a Lebesgue
+integral, and the convergence theorems are what make limits of random variables ---
+sample paths of Brownian motion, time-discretized pursuit dynamics --- behave. The
+defect on this page is the reason the measure-theoretic integral exists.
+\end{remark}
+
+\section*{\scshape The through-line}
+
+\begin{center}
+\begin{tabular}{@{}lll@{}}
+\textsc{Example} & \textsc{Hypothesis hit} & \textsc{Verdict}\\[2pt]
+\hline\\[-8pt]
+Dirichlet $\mathbf 1_\Q$ & (ii) $D_f=[a,b]$, measure $b-a$ & not integrable\\
+Thomae $t$ & neither --- $D_t=\Q$, measure $0$ & \emph{integrable}, $\int=0$\\
+$x^{-1/2}$ & (i) unbounded & proper integral undefined\\
+$f_n\to\mathbf 1_\Q$ & limit leaves $\Rint$ & motivates Lebesgue\\
+\end{tabular}
+\end{center}
+
+Read top to bottom, the message is compact: the Riemann integral asks for a
+\emph{bounded} function whose \emph{oscillation lives on a set of measure zero}, and it
+breaks the instant either clause is violated --- but not one moment sooner. Thomae is
+the proof that the criterion is sharp.
+
+\end{document}

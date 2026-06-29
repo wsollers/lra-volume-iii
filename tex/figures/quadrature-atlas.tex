@@ -1,0 +1,110 @@
+\begin{figure}[H]
+\centering
+\begingroup
+\resizebox{\linewidth}{!}{%
+\begin{minipage}{20cm}
+\def\panelscale{1.0}
+
+% a wavy integrand (NOT a low-degree polynomial) so chords & arcs differ visibly
+\def\Gexpr{1.7+0.5*sin(75*\x)}
+\newcommand{\quadaxes}{\draw[atlas axes](0,0)--(4.7,0);\draw[atlas axes](0,0)--(0,2.85);}
+
+% trapezoid cell on [#1,#2]
+\newcommand{\trapcell}[2]{%
+  \pgfmathsetmacro\fL{1.7+0.5*sin(75*#1)}\pgfmathsetmacro\fR{1.7+0.5*sin(75*#2)}%
+  \fill[atlasblue!14] (#1,0)--(#1,\fL)--(#2,\fR)--(#2,0)--cycle;
+  \draw[atlasblue!60,line width=0.5pt] (#1,0)--(#1,\fL)--(#2,\fR)--(#2,0)--cycle;
+  \node[atlas dot,minimum size=2.6pt] at (#1,\fL){};
+  \node[atlas dot,minimum size=2.6pt] at (#2,\fR){};
+}
+% Simpson parabola over a pair [#1,#3] with interior node #2 (exact interpolant via quad Bezier->cubic)
+\newcommand{\simpsonpair}[3]{%
+  \pgfmathsetmacro\fL{1.7+0.5*sin(75*#1)}%
+  \pgfmathsetmacro\fM{1.7+0.5*sin(75*#2)}%
+  \pgfmathsetmacro\fR{1.7+0.5*sin(75*#3)}%
+  \pgfmathsetmacro\Qy{2*\fM-(\fL+\fR)/2}%
+  \pgfmathsetmacro\CLx{(#1+2*#2)/3}\pgfmathsetmacro\CLy{(\fL+2*\Qy)/3}%
+  \pgfmathsetmacro\CRx{(#3+2*#2)/3}\pgfmathsetmacro\CRy{(\fR+2*\Qy)/3}%
+  \fill[atlasmagenta!13]
+    (#1,0)--(#1,\fL) .. controls (\CLx,\CLy) and (\CRx,\CRy) .. (#3,\fR) --(#3,0)--cycle;
+  \draw[atlasmagenta,line width=1.3pt]
+    (#1,\fL) .. controls (\CLx,\CLy) and (\CRx,\CRy) .. (#3,\fR);
+  \node[atlas dot,minimum size=2.6pt] at (#1,\fL){};
+  \node[atlas dot,minimum size=2.6pt] at (#2,\fM){};
+  \node[atlas dot,minimum size=2.6pt] at (#3,\fR){};
+}
+
+\setlength{\tabcolsep}{12pt}
+\begin{tikzpicture}[atlas]
+\node[inner sep=14pt]{%
+\begin{minipage}{17.2cm}
+\centering
+{\color{atlasink}\rule{\linewidth}{0.8pt}}\\[2pt]
+{\scshape\LARGE\color{atlasink} Structural Atlas \textnormal{\textsc{III}}: Quadrature \& Oscillation}\\[2pt]
+{\color{atlasink}\rule{\linewidth}{0.8pt}}\\[10pt]
+
+\begin{tabular}{@{}c@{\hspace{14pt}}c@{\hspace{14pt}}c@{}}
+
+% ===== TRAPEZOID =====
+\begin{tikzpicture}[atlas,scale=\panelscale]
+  \foreach \xa/\xb in {0/1,1/2,2/3,3/4}{\trapcell{\xa}{\xb}}
+  \quadaxes
+  \glowstroke{atlasink}{0:4}{\Gexpr}
+  \node[atlas label,right] at (2.7,2.55){\scriptsize$y=f(x)$};
+  \node[atlas label] at (2.0,0.55){\scriptsize$\tfrac{\Delta x}{2}\!\left(f_{i-1}+f_i\right)$};
+\end{tikzpicture}
+&
+% ===== SIMPSON =====
+\begin{tikzpicture}[atlas,scale=\panelscale]
+  \simpsonpair{0}{1}{2}\simpsonpair{2}{3}{4}
+  \quadaxes
+  \glowstroke{atlasink}{0:4}{\Gexpr}
+  \node[atlas label] at (2.0,0.55){\scriptsize$\tfrac{\Delta x}{3}\!\left(f_{i-1}+4f_i+f_{i+1}\right)$};
+\end{tikzpicture}
+&
+% ===== OSCILLATION =====
+\begin{tikzpicture}[atlas,scale=\panelscale]
+  % left: oscillation on a cell (continuous, rising)
+  \def\oc{1.05+0.55*(\x-0.2)-0.10*(\x-0.2)*(\x-0.2)}
+  \pgfmathsetmacro\mL{1.05}
+  \pgfmathsetmacro\mR{1.05+0.55*(1.3)-0.10*(1.3)*(1.3)}
+  \fill[atlasteal!12] (0.2,0) rectangle (1.5,\mR);
+  \glowstroke{atlasink}{0.2:1.5}{\oc}
+  \draw[dropline] (0.2,\mL)--(1.75,\mL);
+  \draw[dropline] (1.5,\mR)--(1.75,\mR);
+  \draw[atlasteal,line width=1pt,{Stealth}-{Stealth}] (1.7,\mL)--(1.7,\mR);
+  \node[atlas label,right] at (1.72,{(\mL+\mR)/2}){\scriptsize$\omega_f(I_i)$};
+  \node[atlas label,left] at (0.2,\mR){\scriptsize$M_i$};
+  \node[atlas label,left] at (0.2,\mL){\scriptsize$m_i$};
+  % right: oscillation at a jump
+  \begin{scope}[xshift=2.2cm]
+    \draw[atlasorange,atlas curve] (0.05,0.75)--(0.7,1.2);
+    \draw[atlasorange,atlas curve] (0.7,1.9)--(1.35,2.3);
+    \node[atlas dot,fill=atlasorange] at (0.7,1.2){};
+    \node[circle,draw=atlasorange,fill=atlaspaper,line width=1pt,inner sep=0pt,minimum size=4pt] at (0.7,1.9){};
+    \draw[dropline] (0.7,1.2)--(1.05,1.2);
+    \draw[dropline] (0.7,1.9)--(1.05,1.9);
+    \draw[atlasorange,line width=1pt,{Stealth}-{Stealth}] (1.0,1.2)--(1.0,1.9);
+    \node[atlas label,right] at (1.02,1.55){\scriptsize$\omega_f(x_0)$};
+    \node[atlas label,below] at (0.7,0.67){\scriptsize$x_0$};
+  \end{scope}
+  \draw[atlas axes] (0,0)--(4.3,0);
+  \node[atlas label] at (2.1,-0.55){\scriptsize$U(P)-L(P)=\textstyle\sum_i \omega_f(I_i)\,\Delta x_i$};
+\end{tikzpicture}
+\\[6pt]
+\atlascaption{1}{Trapezoid Rule}{Chords: Exact for Affine $f$}
+&
+\atlascaption{2}{Simpson's Rule}{Parabolas: Exact to Degree $3$}
+&
+\atlascaption{3}{Oscillation}{The Gap Generator $\omega_f$}
+
+\end{tabular}
+\end{minipage}%
+};
+\end{tikzpicture}
+\end{minipage}%
+}
+\endgroup
+\caption{Structural Atlas III: quadrature and oscillation}
+\label{fig:quadrature-atlas}
+\end{figure}

@@ -1,0 +1,204 @@
+\subsection*{Where This Sits}
+
+Darboux exposed the Riemann disease before measure theory names it precisely:
+one uniform fineness parameter must serve the whole interval. There are two
+ways forward. Lebesgue will change what is measured. The gauge integrals keep
+the tagged-sum picture and change exactly one symbol: the constant fineness
+\(\delta>0\) becomes a positive function \(\delta(x)\).
+
+\begin{remark*}[Sibling cure]
+Henstock--Kurzweil belongs here, before McShane and the final measure-zero
+diagnosis, because it is still visibly a Riemann-style tagged-sum integral.
+It patches the uniform-mesh defect without abandoning slabs, tags, or sums.
+McShane will modify the tag rule one more time, producing a gauge-sum version
+of Lebesgue integration.
+\end{remark*}
+
+\subsection*{Geometric Intuition}
+
+A gauge is adaptive mesh refinement written as analysis. It is tiny where the
+function needs tight local control and generous where the function is calm. A
+tagged slab is allowed only if it fits inside the local radius prescribed by
+its own tag.
+
+\begin{remark*}[The one-symbol upgrade]
+Riemann uses a positive number:
+\[
+  \exists\delta>0.
+\]
+Henstock--Kurzweil uses a positive function:
+\[
+  \exists\delta:[a,b]\to(0,\infty).
+\]
+The mesh condition \(\|P\|<\delta\) becomes the local condition that each slab
+is \(\delta\)-fine at its tag.
+\end{remark*}
+
+\begin{definitionbox}{Definition (Gauge)}
+\begin{definition}[Gauge on an Interval]
+\label{def:gauge-on-interval}
+A \emph{gauge} on \([a,b]\) is a function
+\[
+  \delta:[a,b]\to(0,\infty).
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{definitionbox}{Definition (Delta-Fine Tagged Partition)}
+\begin{definition}[\(\delta\)-Fine Tagged Partition]
+\label{def:delta-fine-tagged-partition}
+A tagged partition \((P,\xi)\) is \emph{\(\delta\)-fine} if
+\[
+  [x_{i-1},x_i]\subset
+  \bigl(\xi_i-\delta(\xi_i),\,\xi_i+\delta(\xi_i)\bigr)
+  \qquad\text{for every }i.
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{definitionbox}{Definition (Henstock--Kurzweil Integral)}
+\begin{definition}[Henstock--Kurzweil Integral]
+\label{def:henstock-kurzweil-integral}
+A function \(f:[a,b]\to\mathbb R\) is \emph{Henstock--Kurzweil integrable}
+with value \(A\) if
+\[
+  \forall\varepsilon>0\ \exists\delta:[a,b]\to(0,\infty)\ \forall(P,\xi)\,
+  \bigl((P,\xi)\text{ is }\delta\text{-fine}
+  \Rightarrow |S(f,P,\xi)-A|<\varepsilon\bigr).
+\]
+The value is denoted \((\mathrm{HK})\int_a^b f\).
+\end{definition}
+\end{definitionbox}
+
+\begin{lemmabox}{Lemma (Cousin)}
+\begin{lemma}[Cousin's Lemma]
+\label{lem:cousin}
+For every gauge \(\delta\) on \([a,b]\), there exists a \(\delta\)-fine tagged
+partition of \([a,b]\).
+\end{lemma}
+\end{lemmabox}
+
+\begin{remark*}[Non-vacuity]
+Cousin's Lemma prevents the definition from being empty. No matter how wildly
+the gauge varies, compactness of \([a,b]\) guarantees that at least one tagged
+partition respects all the local step-size demands.
+\end{remark*}
+
+\begin{theorembox}{Theorem (Riemann Sits Inside Henstock--Kurzweil)}
+\begin{theorem}[Riemann Integrable Implies Henstock--Kurzweil Integrable]
+\label{thm:riemann-integrable-implies-hk-integrable}
+If \(f\) is Riemann-integrable on \([a,b]\), then \(f\) is
+Henstock--Kurzweil integrable on \([a,b]\), and the two integrals have the
+same value.
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Constant gauges]
+Riemann is the special case where the gauge is constant. If a Riemann proof
+hands over one mesh tolerance \(\delta_0\), the gauge proof uses
+\(\delta(x)=\delta_0\) for every \(x\).
+\end{remark*}
+
+\begin{lemmabox}{Lemma (Straddle)}
+\begin{lemma}[Straddle Lemma]
+\label{lem:hk-straddle}
+If \(F\) is differentiable at \(\xi\) with \(F'(\xi)=f(\xi)\), then for every
+\(\varepsilon>0\) there is \(\delta(\xi)>0\) such that whenever
+\(u\le \xi\le v\), \(u,v\in(\xi-\delta(\xi),\xi+\delta(\xi))\),
+\[
+  |F(v)-F(u)-f(\xi)(v-u)|\le \varepsilon(v-u).
+\]
+\end{lemma}
+\end{lemmabox}
+
+\begin{theorembox}{Theorem (FTC for the Gauge Integral)}
+\begin{theorem}[Fundamental Theorem for the Henstock--Kurzweil Integral]
+\label{thm:hk-fundamental-theorem}
+If \(F:[a,b]\to\mathbb R\) is differentiable at every point and \(F'=f\), then
+\(f\) is Henstock--Kurzweil integrable and
+\[
+  (\mathrm{HK})\int_a^b f=F(b)-F(a).
+\]
+\end{theorem}
+\end{theorembox}
+
+\begin{theorembox}{Theorem (Continuous Functions Are Henstock--Kurzweil Integrable)}
+\begin{theorem}[Continuous Functions Are Henstock--Kurzweil Integrable]
+\label{thm:continuous-hk-integrable}
+Every continuous function \(f:[a,b]\to\mathbb R\) is Henstock--Kurzweil
+integrable.
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[What it buys]
+On a compact interval,
+\[
+  \mathcal R[a,b]\subsetneq \mathcal M[a,b]=\mathcal L[a,b]
+  \subsetneq \mathcal{HK}[a,b].
+\]
+Figure~\ref{fig:integration-lattice} records this inclusion lattice and the
+standard witness at each frontier.
+The first strict inclusion is witnessed by functions like
+\(\mathbf 1_{\mathbb Q}\), which are Lebesgue-integrable but not Riemann
+integrable. The second is witnessed by derivatives such as that of
+\(F(x)=x^2\sin(1/x^2)\) with \(F(0)=0\): the derivative is HK-integrable by the
+gauge FTC even when its absolute value is not Lebesgue-integrable.
+
+This inclusion statement anticipates the next volume's Lebesgue theory. The
+present chapter has not built Lebesgue integration yet; it has only isolated
+the Riemann-side machinery, the gauge machinery, and the reason a
+measure-theoretic successor is needed.
+\end{remark*}
+
+\input{tex/figures/integration-lattice}
+
+\begin{remark*}[Killer example]
+Let \(F(x)=x^2\sin(1/x^2)\) for \(x\ne0\), and set \(F(0)=0\). Then \(F\) is
+differentiable at \(0\), with \(F'(0)=0\), while for \(x\ne0\),
+\[
+  F'(x)=2x\sin(1/x^2)-\frac{2}{x}\cos(1/x^2).
+\]
+The oscillatory term has nonintegrable absolute size near \(0\), so this
+derivative is the standard witness that HK reaches beyond Lebesgue while the
+FTC remains exact.
+\end{remark*}
+
+\begin{remark*}[HK's own bug report]
+Henstock--Kurzweil is not simply ``the best integral.'' Lebesgue has stronger
+limit theorems, a complete \(L^1\) normed-space home, and a clean abstract
+measure-space setting. HK is the jewel for the one-dimensional FTC and
+conditional accumulation; Lebesgue and Ito remain the engines for probability
+and stochastic integration.
+\end{remark*}
+
+\begin{remark*}[Computational bridge]
+A gauge \(\delta(x)\) is a spatially varying step-size field. Lipschitz
+control is the case where a constant gauge is enough; singular or non-Lipschitz
+regions demand a genuinely varying gauge. Cousin's Lemma is the compactness
+guarantee that a valid adaptive partition exists.
+\end{remark*}
+
+\begin{remark*}[One-page summary]
+\[
+\begin{array}{c|c|c}
+\text{Integral} & \text{Patch} & \text{Remaining defect}\\
+\hline
+\text{Cauchy} & \text{left rectangles settle for continuous } f &
+\text{privileged tag}\\
+\text{Riemann} & \text{all tags must agree} &
+\text{hard to verify}\\
+\text{Darboux} & \text{sup/inf squeeze} &
+\text{same class as Riemann}\\
+\text{Stieltjes} & \text{change the ruler} &
+\text{needs BV; shared jumps}\\
+\text{Henstock--Kurzweil} & \text{local gauge fineness} &
+\text{weaker limit machinery}\\
+\text{McShane} & \text{free gauge tags} &
+\text{same class as Lebesgue}\\
+\text{Lebesgue} & \text{measure level sets} &
+\text{abstract machinery required}
+\end{array}
+\]
+The thread is the right-hand column: every integral is a direct response to a
+specific defect.
+\end{remark*}

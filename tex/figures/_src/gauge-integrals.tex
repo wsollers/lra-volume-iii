@@ -1,0 +1,169 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{structural-atlas}
+
+\newtheoremstyle{atlas}{10pt}{10pt}{}{}{\scshape\color{atlasink}}{.}{.5em}{}
+\theoremstyle{atlas}
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}{Definition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{remark}{Remark}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Lint}{\mathcal{L}}
+\newcommand{\HK}{\mathcal{HK}}
+\newcommand{\Rint}{\mathcal{R}}
+\setlength{\parskip}{4pt}
+
+\title{\scshape\color{atlasink} The Gauge Integrals: McShane, Henstock--Kurzweil,
+and the Lebesgue Frontier}
+\author{}\date{}
+
+\begin{document}
+\maketitle
+\vspace{-3.2em}
+{\color{atlasink}\rule{\linewidth}{0.8pt}}
+\vspace{1em}
+
+The Riemann integral was built by shrinking the \emph{mesh} of a partition. The gauge
+integrals replace that single global knob with a \emph{local} one: a positive function
+$\delta$ that may demand fine cells where the integrand is delicate and tolerate coarse
+ones where it is calm. Two integrals fall out of this idea, distinguished by a single
+clause about where a tag may sit --- and that clause is exactly the line between
+absolute and nonabsolute integration.
+
+\section*{\scshape The gauge framework}
+
+\begin{definition}[Gauge, tagged partition]
+A \emph{gauge} on $[a,b]$ is any function $\delta:[a,b]\to(0,\infty)$. A \emph{tagged
+partition} is a finite set $\{(I_i,t_i)\}_{i=1}^{n}$ where $I_i=[x_{i-1},x_i]$ partition
+$[a,b]$ and each $t_i\in[a,b]$ is a \emph{tag}. Its \emph{(Riemann) sum} is
+$S(f,P)=\sum_{i=1}^n f(t_i)\,\Delta x_i$ with $\Delta x_i=x_i-x_{i-1}$.
+\end{definition}
+
+\begin{definition}[The two flavors of $\delta$-fineness]
+Fix a gauge $\delta$. A tagged partition is
+\[
+  \textbf{Henstock--Kurzweil } \delta\text{-fine}:\quad
+    \forall i\ \big(\,t_i\in I_i \ \wedge\ I_i\subseteq(t_i-\delta(t_i),\,t_i+\delta(t_i))\,\big),
+\]
+\[
+  \textbf{McShane } \delta\text{-fine}:\quad
+    \forall i\ \big(\,I_i\subseteq(t_i-\delta(t_i),\,t_i+\delta(t_i))\,\big)
+    \qquad(\text{no clause } t_i\in I_i).
+\]
+\end{definition}
+
+The definitions of the integrals are then identical in form; only the admissible
+partitions differ.
+
+\begin{definition}[Gauge integrability]
+$f$ is \emph{HK-integrable} (resp.\ \emph{McShane-integrable}) with integral $A$ iff
+\[
+  \forall\varepsilon>0\ \exists\,\delta:[a,b]\to(0,\infty)\ \ \forall P\ \big(
+  P\ \delta\text{-fine}\ \Rightarrow\ |S(f,P)-A|<\varepsilon\big),
+\]
+where ``$\delta$-fine'' is read in the corresponding sense. Write the values
+$(\HK)\!\int_a^b f$ and $(M)\!\int_a^b f$.
+\end{definition}
+
+That these definitions are not vacuous is a compactness fact, and it is the same fact
+for both, since every HK $\delta$-fine partition is a fortiori McShane $\delta$-fine.
+
+\begin{lemma}[Cousin]
+For every gauge $\delta$ on $[a,b]$ there exists an HK $\delta$-fine tagged partition.
+\end{lemma}
+\noindent\emph{Idea.} If $[a,b]$ admitted no $\delta$-fine partition, bisect; one half
+also admits none. Nesting the bad halves gives a point $c$; but $(c-\delta(c),c+\delta(c))$
+contains a whole small interval around $c$, which \emph{is} $\delta$-fine with tag $c$ ---
+contradiction. (This is the Heine--Borel compactness of $[a,b]$ in tagged form.)
+
+\begin{center}
+  \includegraphics[width=\linewidth]{hk-vs-mcshane.pdf}
+\end{center}
+
+\section*{\scshape Free tags $=$ Lebesgue}
+
+\begin{theorem}[McShane]
+For $f:[a,b]\to\R$, $f$ is McShane-integrable if and only if $f$ is Lebesgue
+integrable, and then $(M)\!\int_a^b f=\int_{[a,b]} f\,d\lambda$.
+\end{theorem}
+
+\noindent\emph{Why the tag-freedom forces this.} The Lebesgue integral slices the
+\emph{range}: it groups together all $x$ at which $f(x)$ lies in a given band, regardless
+of where those $x$ sit. A McShane partition is permitted to do exactly that. Because a
+tag $t_i$ need not lie in its cell $I_i$, one may assign the \emph{same} tag value to many
+far-flung cells --- collecting cells by the value $f(t_i)$ rather than by location. The
+Saks--Henstock lemma turns McShane integrability into control of
+$\sum_i\big|f(t_i)\,\Delta x_i-\int_{I_i}f\big|$, and that bound, available only when tags
+roam free, yields integrability of $|f|$ as well. McShane integration is therefore
+\emph{absolute}: $f\in(M) \iff |f|\in(M)$.
+
+\begin{remark}
+The tethered tag of Henstock--Kurzweil blocks precisely this regrouping. Adjacent cells
+keep their tags pinned inside themselves, so cancellation between neighboring contributions
+can survive in the limit. That surviving cancellation is what lets $\HK$ assign finite
+values to \emph{conditionally} convergent integrands --- the ones Lebesgue rejects because
+$\int|f|=\infty$.
+\end{remark}
+
+\section*{\scshape Tethered tags $=$ the complete integral}
+
+The price Lebesgue pays for absoluteness is that it cannot integrate every derivative.
+Henstock--Kurzweil pays no such price.
+
+\begin{theorem}[Henstock; the unconditional FTC]
+If $F:[a,b]\to\R$ is differentiable at \emph{every} point, then $F'$ is HK-integrable and
+\[
+  (\HK)\!\int_a^b F' = F(b)-F(a).
+\]
+No integrability hypothesis on $F'$ is required.
+\end{theorem}
+
+This is the structural headline: $\HK$ is the integral for which the Fundamental Theorem
+holds in full generality. The gap it opens over Lebesgue is genuine.
+
+\begin{theorem}[A witness for $\HK\setminus\Lint$]
+Let $F(x)=x^2\sin(\pi/x^2)$ for $x\neq0$ and $F(0)=0$. Then $F$ is differentiable on
+$[0,1]$, so $F'\in\HK$ with $(\HK)\!\int_0^1 F'=F(1)-F(0)=0$; yet $\int_0^1|F'|=\infty$,
+so $F'\notin\Lint^1$.
+\end{theorem}
+\begin{proof}[Sketch]
+Differentiability away from $0$ is the chain rule; at $0$,
+$F'(0)=\lim_{h\to0} h\sin(\pi/h^2)=0$. For $x\neq0$,
+$F'(x)=2x\sin(\pi/x^2)-\tfrac{2\pi}{x}\cos(\pi/x^2)$. The first term is bounded; the second
+has amplitude $\sim 2\pi/x$, and across the zeros $x_k=1/\sqrt{k}$ the lobe areas behave
+like $\sum_k 1/k=\infty$. Hence $F$ has unbounded variation and $\int_0^1|F'|=\infty$,
+while the signed integral telescopes to $F(1)-F(0)$ by the previous theorem.
+\end{proof}
+
+\section*{\scshape The lattice}
+
+\begin{center}
+  \includegraphics[width=0.92\linewidth]{integration-lattice.pdf}
+\end{center}
+
+Collecting the strict inclusions:
+\[
+  \Rint \ \subsetneq\ \Lint=\text{McShane}\ \subsetneq\ \HK=\text{Denjoy--Perron},
+\]
+each frontier crossed by one witness: Dirichlet $\mathbf 1_{\Q}$ for
+$\Lint\setminus\Rint$, and the oscillatory derivative above for $\HK\setminus\Lint$.
+The engine of the whole picture is the tag: \emph{free} tags give the absolute integral
+(Lebesgue), \emph{tethered} tags give the complete one (Henstock--Kurzweil).
+
+\begin{remark}[The through-line to your program]
+The absolute integral $\Lint=$ McShane is the measure-theoretic backbone of probability:
+expectation $\mathbb E[X]=\int X\,d\mathbb P$ is a Lebesgue integral, and its convergence
+theorems are what let limits pass through expectations --- the move on which laws of
+Brownian motion and the convergence of time-discretized pursuit dynamics rest. The gauge
+viewpoint is not a detour: it characterizes that same integral by a condition on
+tags, and in its tethered form it is also the natural integral for the highly oscillatory
+derivative objects that absolute theories cannot see.
+\end{remark}
+
+\end{document}

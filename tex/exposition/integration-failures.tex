@@ -1,0 +1,36 @@
+\section*{Structural Atlas Appendix: Pathologies of the Riemann Integral}
+
+\begin{remark*}[Source placement]
+This appendix is the converted support note from
+\texttt{integration-failures.tex}. Its standalone theorem machinery and
+document preamble have been removed; the material is kept as commentary so it
+does not duplicate the formal Lebesgue criterion in
+Section~\ref{thm:lebesgue-criterion-riemann-integrability}.
+\end{remark*}
+
+\begin{remark*}[The one theorem behind the failures]
+The Riemann failures in Figure~\ref{fig:failures-atlas} are not a bag of
+examples. They are tests against the two hypotheses in the Lebesgue criterion:
+boundedness, and a discontinuity set of measure zero. Dirichlet fails because
+its discontinuity set is all of \([0,1]\). Unbounded examples fail before the
+criterion even begins. Pointwise limits expose a different weakness: the
+Riemann class is not stable under the limit operations that Lebesgue
+integration was built to support.
+\end{remark*}
+
+\begin{remark*}[Thomae as the diagnostic example]
+Thomae's function is the useful warning. Its discontinuities are dense, but
+they are countable and therefore null. Darboux can isolate the finitely many
+large spikes above any fixed threshold inside intervals of tiny total length;
+outside those intervals, the upper sums are uniformly small. Thus density of
+the bad set is not the obstruction. Size is.
+\end{remark*}
+
+\begin{remark*}[Through-line]
+The atlas failure note should be read as the bridge from Darboux to Measure
+Zero: \(U(f,P)-L(f,P)\) is local oscillation times length, so the only bad
+oscillation that matters is bad oscillation carried by a set of positive
+length. That observation closes the Riemann family and points directly to
+Lebesgue's range-partition construction.
+\end{remark*}
+

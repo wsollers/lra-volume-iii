@@ -1,0 +1,137 @@
+\begin{remark*}[Reframing note]
+This chapter is the narrative version of the reference list. The reference
+orders the definitions correctly, but the real subject is the sequence of
+defects and patches:
+\[
+\begin{aligned}
+  \text{geometric problem}&\to \text{Cauchy}\to \text{Riemann}\\
+  &\to \text{Darboux}\to \text{Stieltjes}\\
+  &\to \text{Henstock--Kurzweil and McShane}\\
+  &\to \text{Lebesgue}.
+\end{aligned}
+\]
+Each integral answers a concrete complaint about the one before it. The point
+is not to memorize several integrals, but to understand why each one had to be
+invented.
+\end{remark*}
+
+\subsection*{The Geometric Problem}
+
+Forget integrals for a moment. The physical question is always the same:
+
+\begin{quote}
+Given a pointwise rate \(f\), how much total quantity accumulates from
+\(a\) to \(b\)?
+\end{quote}
+
+A speedometer reads \(f(t)\); the accumulated quantity is distance. A wire has
+linear density \(f(x)\); the accumulated quantity is mass. A curve \(y=f(x)\)
+over \([a,b]\) asks for signed area. The only available strategy is:
+
+\begin{enumerate}
+  \item Chop \([a,b]\) into thin slabs.
+  \item Pretend \(f\) is constant on each slab.
+  \item Add the resulting rectangles.
+  \item Refine the chopping and ask whether the sums settle.
+\end{enumerate}
+
+Every construction below makes two choices: which height to use in a slab, and
+what it means for all these rectangle sums to settle to one number.
+
+\begin{remark*}[Construction comparison]
+The constructions differ by the height rule, the ruler, or the fineness rule:
+\[
+\begin{array}{c|c|c}
+\text{Construction} & \text{Height rule} & \text{Ruler / fineness}\\
+\hline
+\text{Cauchy} & f(x_{i-1}) & \Delta x_i\\
+\text{Riemann} & f(\xi_i) & \Delta x_i\\
+\text{Darboux} & \inf_I f,\ \sup_I f & \Delta x_i\\
+\text{Riemann--Stieltjes} & f(\xi_i) & \Delta\alpha_i\\
+\text{Henstock--Kurzweil} & f(\xi_i),\ \xi_i\in I_i &
+\Delta x_i,\ \delta(\xi_i)\text{-fine}\\
+\text{McShane} & f(\xi_i),\ \xi_i\text{ may float} &
+\Delta x_i,\ \delta(\xi_i)\text{-fine}
+\end{array}
+\]
+Henstock--Kurzweil does not change the sampled height or the ordinary ruler;
+it changes the admissible chopping by replacing a global mesh bound with a
+local gauge condition. McShane keeps the same gauge idea but frees the tag
+from the slab, which pulls the theory back toward Lebesgue's absolute notion
+of size.
+\end{remark*}
+
+\begin{definitionbox}{Definition (Partition)}
+\begin{definition}[Partition of a Compact Interval]
+\label{def:integration-partition}
+A \emph{partition} of \([a,b]\) is a finite increasing list
+\[
+  P=\{a=x_0<x_1<\cdots<x_n=b\}.
+\]
+Equivalently,
+\[
+\begin{aligned}
+\operatorname{Partition}(P,a,b)\Longleftrightarrow{}
+&\exists n\in\mathbb N\,\exists x_0,\ldots,x_n\in\mathbb R\\
+&\bigl(P=\{x_0,\ldots,x_n\}\wedge x_0=a\wedge x_n=b\bigr)\\
+&{}\wedge \forall i\,\bigl(1\le i\le n\Rightarrow x_{i-1}<x_i\bigr).
+\end{aligned}
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{definitionbox}{Definition (Subinterval Width)}
+\begin{definition}[Subinterval Width]
+\label{def:subinterval-width-integration}
+The \(i\)-th slab has width
+\[
+  \Delta x_i=x_i-x_{i-1}.
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{definitionbox}{Definition (Mesh)}
+\begin{definition}[Mesh of a Partition]
+\label{def:partition-mesh}
+The \emph{mesh} or \emph{norm} of \(P\) is the width of its fattest slab:
+\[
+  \|P\|=\max_{1\le i\le n}\Delta x_i.
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Geometric reading]
+The mesh is the resolution dial. The phrase ``as the partition is refined''
+will usually mean that \(\|P\|\to 0\): no slab is allowed to remain fat.
+\end{remark*}
+
+\begin{definitionbox}{Definition (Tagged Partition)}
+\begin{definition}[Tagged Partition]
+\label{def:tagged-partition-integration}
+A \emph{tagged partition} is a partition \(P=\{x_0,\ldots,x_n\}\) together
+with points \(\xi_i\in[x_{i-1},x_i]\). The tag is the point where the height
+\(f(\xi_i)\) is sampled.
+\end{definition}
+\end{definitionbox}
+
+\begin{definitionbox}{Definition (Refinement)}
+\begin{definition}[Refinement of a Partition]
+\label{def:partition-refinement}
+A partition \(P'\) \emph{refines} \(P\) when \(P\subseteq P'\). Refinement adds
+cut-points; it does not move or delete existing cut-points.
+\end{definition}
+\end{definitionbox}
+
+\begin{lemmabox}{Lemma (Common Refinement)}
+\begin{lemma}[Common Refinement of Two Partitions]
+\label{lem:common-refinement-partitions}
+Any two partitions \(P\) and \(P'\) of \([a,b]\) have a common refinement:
+order the finite set \(P\cup P'\) increasingly.
+\end{lemma}
+\end{lemmabox}
+
+\begin{remark*}[Why the lemma is load-bearing]
+This small fact is the reason independently chosen partitions can be compared.
+Whenever a proof says ``refine them together,'' it is using this lemma. It is
+the structural engine behind Cauchy's existence proof and Darboux's squeeze.
+\end{remark*}
