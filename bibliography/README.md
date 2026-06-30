@@ -7,8 +7,7 @@ Bibliography shards are book-owned and used directly by this volume repository. 
 Current shards:
 
 - `volume-iii-bounds-sequences-and-series.bib`
-- `volume-iii-continuity.bib`
-- `volume-iii-differentiation.bib`
+- `volume-iii-functions-continuity-and-differentiation.bib`
 - `volume-iii-integration.bib`
 
 Add entries only to the shard for the owning book root, then run:

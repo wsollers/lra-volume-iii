@@ -1,0 +1,83 @@
+\input{volume-iii/book-analysis-ii/differentiation/notes/derivative-geometry/figure-concavity-convexity}
+
+\begin{definitionbox}{Definition (Convex Function)}
+\begin{definition}[Convex Function]
+\label{def:convex-function}
+Let $I\subseteq\mathbb{R}$ be an interval and let $f:I\to\mathbb{R}$. The function $f$ is \emph{convex} on $I$ if for all $x,y\in I$ and all $\lambda\in[0,1]$,
+\[
+  f(\lambda x+(1-\lambda)y)
+  \leq
+  \lambda f(x)+(1-\lambda)f(y).
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall x,y\in I\ \forall\lambda\in[0,1]:\quad
+  f(\lambda x+(1-\lambda)y)
+  \leq
+  \lambda f(x)+(1-\lambda)f(y).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Convexity is defined by chords, not derivatives. The graph lies below the line segment joining any two of its points. Derivative tests are later tools for detecting this geometric condition, not the definition of the condition.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:closed-interval]{Closed Interval}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition (Concave Function)}
+\begin{definition}[Concave Function]
+\label{def:concave-function}
+Let $I\subseteq\mathbb{R}$ be an interval and let $f:I\to\mathbb{R}$. The function $f$ is \emph{concave} on $I$ if $-f$ is convex on $I$.
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \operatorname{ConcaveOn}(f,I)
+  \Longleftrightarrow
+  \operatorname{ConvexOn}(-f,I).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Concavity is the downward-bending counterpart of convexity. Equivalently, the graph of a concave function lies above each chord joining two of its points.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:convex-function]{Convex Function}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition (Inflection Point)}
+\begin{definition}[Inflection Point]
+\label{def:inflection-point}
+Let $I\subseteq\mathbb{R}$ be an interval, let $f:I\to\mathbb{R}$, and let $c\in I$ be an interior point. The point $c$ is an \emph{inflection point} of $f$ if $f$ changes convexity at $c$: there is a neighbourhood $(c-\delta,c+\delta)\subseteq I$ such that $f$ is convex on one side of $c$ and concave on the other side.
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \operatorname{InflectionPoint}(f,c)
+  \Longleftrightarrow
+  f \text{ changes convexity at } c.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+An inflection point is a change in the direction of bending. It is not merely a point where $f''(c)=0$; that equation is only a necessary condition under additional hypotheses.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:convex-function]{Convex Function}
+  \item \hyperref[def:concave-function]{Concave Function}
+\end{itemize}
+\end{dependencies}

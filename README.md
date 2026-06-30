@@ -18,7 +18,7 @@ Shared LaTeX infrastructure comes from sibling `../lra-common`; do not commit a 
 Use `volume-iii.tex` for the full volume, or one of the book roots:
 
 ```text
-volume-iii-bounds-sequences-and-series.tex, volume-iii-continuity.tex, volume-iii-differentiation.tex, volume-iii-integration.tex
+volume-iii-bounds-sequences-and-series.tex, volume-iii-functions-continuity-and-differentiation.tex, volume-iii-integration.tex
 ```
 
 For Overleaf, provide `common/` beside the TeX roots as local project staging only. Edit shared infrastructure in `lra-common`.

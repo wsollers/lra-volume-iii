@@ -3,8 +3,8 @@
 Proof-writing order is dependency-first among active TODO proof labels, with the generated knowledge graph order used as the stable tie-breaker.
 Use `✅` to record completion after the canonical proof file has both proof bodies populated and validated.
 
-Open proofs to do: 281
-Completed in this tracker: 7
+Open proofs to do: 280
+Completed in this tracker: 8
 
 1. () `thm:ineq-add-both-sides` — **Addition Preserves Strict Inequality**
    > **Statement.**
@@ -357,7 +357,7 @@ Completed in this tracker: 7
    > **Statement.**
    > Let $A\subseteq\mathbb{R}$ and let $s=\sup A$. Then $x\le s$ for every $x\in A$.
 
-55. () `thm:archimedean-property` — **Archimedean Property**
+55. (✅) `thm:archimedean-property` — **Archimedean Property**
    > **Statement.**
    > For every real number $x$, there exists a natural number $n$ such that $n>x$.
 

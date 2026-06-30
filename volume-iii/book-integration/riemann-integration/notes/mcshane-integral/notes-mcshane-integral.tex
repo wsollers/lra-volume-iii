@@ -109,6 +109,17 @@ class.
 \end{theorem}
 \end{theorembox}
 
+\begin{theorembox}{Theorem (McShane Equals Lebesgue)}
+\begin{theorem}[McShane Integrability Equals Lebesgue Integrability]
+\label{thm:mcshane-equals-lebesgue}
+For real-valued functions on a compact interval,
+\[
+  \mathcal{McShane}[a,b]=\mathcal L[a,b],
+\]
+and the McShane and Lebesgue integral values agree.
+\end{theorem}
+\end{theorembox}
+
 \begin{remark*}[The Lebesgue connection]
 For real-valued functions on a compact interval, the McShane integral recovers
 the Lebesgue integral. In practical terms,
@@ -117,6 +128,18 @@ the Lebesgue integral. In practical terms,
 \]
 with equal values. Thus McShane is not a second route beyond Lebesgue in the
 way HK is. It is a gauge-sum presentation of Lebesgue integration.
+\end{remark*}
+
+\begin{remark*}[Comparison chain]
+Combining the Riemann inclusion, the McShane--Lebesgue identification, and the
+HK derivative witness gives
+\[
+  \mathcal R[a,b]\subsetneq \mathcal{McShane}[a,b]
+  =\mathcal L[a,b]\subsetneq\mathcal{HK}[a,b].
+\]
+The first strict inclusion is the old Riemann failure at dense null
+discontinuities; the second is the HK recovery of derivatives whose absolute
+size is not Lebesgue integrable.
 \end{remark*}
 
 \begin{remark*}[Forward dependency]

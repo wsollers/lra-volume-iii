@@ -5,8 +5,9 @@ gauge-integration chapter, all sharing one house style. Everything here compiles
 `pdflatex` and depends only on **`structural-atlas.sty`** (kept in this folder).
 
 For each deliverable: `*.tex` is the editable source, `*.pdf` is the rendered output,
-`*-preview.png` is a quick raster for browsing. See **`STYLE-GUIDE.md`** for the palette,
-the `\glowcurve` / `\glowstroke` macros, captions, and layout conventions.
+`*-preview.png` is a quick raster for browsing. The canonical TikZ style guide lives in
+`../../../../lra-governance/docs/governance/tikz-style-guide.md`; this folder is figure
+source only, not a style-guide source of truth.
 
 ## The package
 - **`structural-atlas.sty`** — colors, axis/probe/dropline/dot styles, `\glowcurve`

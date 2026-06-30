@@ -1,0 +1,36 @@
+% =========================================================
+% volume-iii-functions-continuity-and-differentiation.tex --- Standalone book root
+% Volume III: Classical Analysis / Functions, Continuity, and Differentiation
+%
+% Build (local): latexmk -lualatex volume-iii-functions-continuity-and-differentiation.tex
+% Build (Overleaf): Menu $\to$ Main Document $\to$ volume-iii-functions-continuity-and-differentiation.tex
+% =========================================================
+\documentclass[12pt, a4paper]{report}
+\input{common/volume-preamble}
+
+\begin{document}
+\ExplSyntaxOff
+\renewcommand{\familydefault}{\rmdefault}
+
+\pagenumbering{roman}
+\input{volume-iii/frontmatter}
+\LRAFrontMatterPage{From Cantor to Ito}{Classical Analysis}{Functions, Continuity, and Differentiation}{Rudolf Lipschitz}{1832-1903}{images/lipschitz.png}
+\input{common/dedication}
+
+\tableofcontents
+\clearpage
+\pagenumbering{arabic}
+\LraEnableFooterBreadcrumb
+
+\input{volume-iii/book-analysis-ii/index}
+
+\clearpage
+\bibliographystyle{plainnat}
+\bibliography{%
+  bibliography/volume-iii-functions-continuity-and-differentiation%
+}
+
+\printindex[tech]
+\printindex[dep]
+
+\end{document}
