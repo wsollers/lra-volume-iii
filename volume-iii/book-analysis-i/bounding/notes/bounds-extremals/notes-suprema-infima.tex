@@ -1,0 +1,845 @@
+\subsection{Suprema and Infima}
+
+Suprema and infima are sharp bounds.  A supremum is the least upper
+bound; an infimum is the greatest lower bound.  The set remains required
+to be nonempty throughout this section.
+
+\begin{figure}[htbp]
+  \centering
+  \input{volume-iii/book-analysis-i/bounding/notes/bounds-extremals/figure-suprema-infima-combinations}
+  \caption{Suprema and infima are sharp bounds, whether or not they are elements of the set.}
+  \label{fig:suprema-infima-combinations}
+\end{figure}
+
+\begin{definitionbox}{Supremum}
+\begin{definition}[Supremum]
+\label{def:supremum}
+Let $(S,\leq)$ be an ordered set, let $A\subseteq S$ be nonempty, and let
+$s\in S$.  The element $s$ is the \emph{supremum} of $A$ if $s$ is an
+upper bound of $A$ and no smaller element of $S$ is an upper bound of
+$A$.
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  A\neq\varnothing
+  \quad\text{and}\quad
+  (\forall x\in A)(x\leq s)
+  \quad\text{and}\quad
+  (\forall u\in S)\bigl[(\forall x\in A)(x\leq u)\Rightarrow s\leq u\bigr].
+\]
+\end{remark*}
+
+\begin{remark*}[Definition predicate reading]
+\[
+  \operatorname{Sup}_{S,\leq}(s,A)
+  :=
+  \operatorname{UB}_{S,\leq}(s,A)
+  \land
+  (\forall u\in S)
+  \bigl(\operatorname{UB}_{S,\leq}(u,A)\Rightarrow s\leq u\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+  A=\varnothing
+  \quad\text{or}\quad
+  (\exists x\in A)(s<x)
+  \quad\text{or}\quad
+  (\exists u\in S)\bigl[(\forall x\in A)(x\leq u)\ \text{and}\ u<s\bigr].
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+  \neg\operatorname{Sup}_{S,\leq}(s,A)
+  \Longleftrightarrow
+  A=\varnothing
+  \lor
+  \neg\operatorname{UB}_{S,\leq}(s,A)
+  \lor
+  (\exists u\in S)
+  \bigl(\operatorname{UB}_{S,\leq}(u,A)\land u<s\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+The set may be empty; $s$ may fail to be an upper bound; or $s$ may be an
+upper bound that is not least among upper bounds.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+The first clause is a domain failure.  The second is a bound failure.  The
+third is a sharpness failure witnessed by a strictly smaller upper bound.
+\end{remark*}
+
+\begin{definitionbox}{Infimum}
+\begin{definition}[Infimum]
+\label{def:infimum}
+Let $(S,\leq)$ be an ordered set, let $A\subseteq S$ be nonempty, and let
+$i\in S$.  The element $i$ is the \emph{infimum} of $A$ if $i$ is a lower
+bound of $A$ and no larger element of $S$ is a lower bound of $A$.
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  A\neq\varnothing
+  \quad\text{and}\quad
+  (\forall x\in A)(i\leq x)
+  \quad\text{and}\quad
+  (\forall \ell\in S)\bigl[(\forall x\in A)(\ell\leq x)\Rightarrow \ell\leq i\bigr].
+\]
+\end{remark*}
+
+\begin{remark*}[Definition predicate reading]
+\[
+  \operatorname{Inf}_{S,\leq}(i,A)
+  :=
+  \operatorname{LB}_{S,\leq}(i,A)
+  \land
+  (\forall \ell\in S)
+  \bigl(\operatorname{LB}_{S,\leq}(\ell,A)\Rightarrow \ell\leq i\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+  A=\varnothing
+  \quad\text{or}\quad
+  (\exists x\in A)(x<i)
+  \quad\text{or}\quad
+  (\exists \ell\in S)\bigl[(\forall x\in A)(\ell\leq x)\ \text{and}\ i<\ell\bigr].
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+  \neg\operatorname{Inf}_{S,\leq}(i,A)
+  \Longleftrightarrow
+  A=\varnothing
+  \lor
+  \neg\operatorname{LB}_{S,\leq}(i,A)
+  \lor
+  (\exists \ell\in S)
+  \bigl(\operatorname{LB}_{S,\leq}(\ell,A)\land i<\ell\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+The set may be empty; $i$ may fail to be a lower bound; or $i$ may be a
+lower bound that is not greatest among lower bounds.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+The first clause is a domain failure.  The second is a bound failure.  The
+third is a sharpness failure witnessed by a strictly larger lower bound.
+\end{remark*}
+
+\begin{propositionbox}{Uniqueness of the Supremum}
+\begin{proposition}[Uniqueness of the Supremum]
+\label{prop:uniqueness-of-the-supremum}
+Let $(S,\leq)$ be an ordered set and let $A\subseteq S$ be nonempty.  If
+$s,t\in S$ are both suprema of $A$, then $s=t$.
+
+\hyperref[prf:uniqueness-of-the-supremum]{Go to proof.}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  A\neq\varnothing
+  \quad\text{and}\quad
+  \operatorname{Sup}_{S,\leq}(s,A)
+  \quad\text{and}\quad
+  \operatorname{Sup}_{S,\leq}(t,A)
+  \quad\Longrightarrow\quad
+  s=t.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{Sup}_{S,\leq}(s,A)\land\operatorname{Sup}_{S,\leq}(t,A)
+  \Longrightarrow s=t.
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+  A\neq\varnothing
+  \quad\text{and}\quad
+  \operatorname{Sup}_{S,\leq}(s,A)
+  \quad\text{and}\quad
+  \operatorname{Sup}_{S,\leq}(t,A)
+  \quad\text{and}\quad
+  s\neq t.
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+  \operatorname{Sup}_{S,\leq}(s,A)\land
+  \operatorname{Sup}_{S,\leq}(t,A)\land s\neq t.
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+Failure would require two distinct least upper bounds for the same
+nonempty set.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+Each candidate is an upper bound and each lies below every upper bound;
+applying these minimality clauses to the other candidate gives both
+$s\leq t$ and $t\leq s$.
+\end{remark*}
+
+\begin{propositionbox}{Uniqueness of the Infimum}
+\begin{proposition}[Uniqueness of the Infimum]
+\label{prop:uniqueness-of-the-infimum}
+Let $(S,\leq)$ be an ordered set and let $A\subseteq S$ be nonempty.  If
+$i,j\in S$ are both infima of $A$, then $i=j$.
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  A\neq\varnothing
+  \quad\text{and}\quad
+  \operatorname{Inf}_{S,\leq}(i,A)
+  \quad\text{and}\quad
+  \operatorname{Inf}_{S,\leq}(j,A)
+  \quad\Longrightarrow\quad
+  i=j.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{Inf}_{S,\leq}(i,A)\land\operatorname{Inf}_{S,\leq}(j,A)
+  \Longrightarrow i=j.
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+  A\neq\varnothing
+  \quad\text{and}\quad
+  \operatorname{Inf}_{S,\leq}(i,A)
+  \quad\text{and}\quad
+  \operatorname{Inf}_{S,\leq}(j,A)
+  \quad\text{and}\quad
+  i\neq j.
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+  \operatorname{Inf}_{S,\leq}(i,A)\land
+  \operatorname{Inf}_{S,\leq}(j,A)\land i\neq j.
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+Failure would require two distinct greatest lower bounds for the same
+nonempty set.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+Each candidate is a lower bound and each lies above every lower bound;
+applying these maximality clauses to the other candidate gives both
+$i\leq j$ and $j\leq i$.
+\end{remark*}
+
+\begin{propositionbox}{Upper Bound Property of the Supremum}
+\begin{proposition}[Upper Bound Property of the Supremum]
+\label{prop:upper-bound-property-of-supremum}
+Let $(S,\leq)$ be an ordered set, let $A\subseteq S$ be nonempty, and
+suppose that $s=\sup A$ exists in $S$.  Then every element of $A$ lies
+below $s$:
+\[
+  (\forall x\in A)(x\leq s).
+\]
+
+\hyperref[prf:upper-bound-property-of-supremum]{Go to proof.}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{Sup}_{S,\leq}(s,A)\Longrightarrow
+  \operatorname{UB}_{S,\leq}(s,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+  \operatorname{Sup}_{S,\leq}(s,A)
+  \quad\text{and}\quad
+  (\exists x\in A)(s<x).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+Failure would mean that a supremum is not an upper bound.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+This is exactly the first clause in the definition of supremum.
+\end{remark*}
+
+\begin{propositionbox}{Lower Bound Property of the Infimum}
+\begin{proposition}[Lower Bound Property of the Infimum]
+\label{prop:lower-bound-property-of-infimum}
+Let $(S,\leq)$ be an ordered set, let $A\subseteq S$ be nonempty, and
+suppose that $i=\inf A$ exists in $S$.  Then every element of $A$ lies
+above $i$:
+\[
+  (\forall x\in A)(i\leq x).
+\]
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{Inf}_{S,\leq}(i,A)\Longrightarrow
+  \operatorname{LB}_{S,\leq}(i,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+  \operatorname{Inf}_{S,\leq}(i,A)
+  \quad\text{and}\quad
+  (\exists x\in A)(x<i).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+Failure would mean that an infimum is not a lower bound.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+This is exactly the first clause in the definition of infimum.
+\end{remark*}
+
+\begin{lemmabox}{Subset Inclusion Preserves Upper Bounds}
+\begin{lemma}[Subset Inclusion Preserves Upper Bounds]
+\label{lem:subset-inclusion-preserves-upper-bounds}
+Let $A\subseteq B\subseteq S$ be nonempty subsets of an ordered set
+$(S,\leq)$.  If $u$ is an upper bound of $B$, then $u$ is an upper bound
+of $A$.
+
+\hyperref[prf:subset-inclusion-preserves-upper-bounds]{Go to proof.}
+\end{lemma}
+\end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  A\neq\varnothing,\quad A\subseteq B,\quad
+  (\forall y\in B)(y\leq u)
+  \quad\Longrightarrow\quad
+  (\forall x\in A)(x\leq u).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  A\subseteq B\land\operatorname{UB}_{S,\leq}(u,B)
+  \Longrightarrow \operatorname{UB}_{S,\leq}(u,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+  A\subseteq B,\quad \operatorname{UB}_{S,\leq}(u,B),
+  \quad\text{and}\quad
+  (\exists x\in A)(u<x).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+Failure would require a counterexample in the smaller set even though
+the larger set is already bounded by $u$.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+Any counterexample $x\in A$ is also an element of $B$, contradicting the
+upper-bound hypothesis for $B$.
+\end{remark*}
+
+\begin{lemmabox}{Subset Inclusion Preserves Lower Bounds}
+\begin{lemma}[Subset Inclusion Preserves Lower Bounds]
+\label{lem:subset-inclusion-preserves-lower-bounds}
+Let $A\subseteq B\subseteq S$ be nonempty subsets of an ordered set
+$(S,\leq)$.  If $\ell$ is a lower bound of $B$, then $\ell$ is a lower
+bound of $A$.
+\end{lemma}
+\end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  A\neq\varnothing,\quad A\subseteq B,\quad
+  (\forall y\in B)(\ell\leq y)
+  \quad\Longrightarrow\quad
+  (\forall x\in A)(\ell\leq x).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  A\subseteq B\land\operatorname{LB}_{S,\leq}(\ell,B)
+  \Longrightarrow \operatorname{LB}_{S,\leq}(\ell,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+  A\subseteq B,\quad \operatorname{LB}_{S,\leq}(\ell,B),
+  \quad\text{and}\quad
+  (\exists x\in A)(x<\ell).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+Failure would require a smaller-set counterexample to a lower bound that
+already works on the larger set.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+Any counterexample $x\in A$ lies in $B$, contradicting the lower-bound
+hypothesis for $B$.
+\end{remark*}
+
+\begin{theorembox}{Supremum Is Monotone Under Inclusion}
+\begin{theorem}[Supremum Is Monotone Under Inclusion]
+\label{thm:supremum-is-monotone-under-inclusion}
+Let $A,B\subseteq\mathbb{R}$ be nonempty and bounded above.  If
+$A\subseteq B$, then $\sup A\leq\sup B$.
+
+\hyperref[prf:supremum-is-monotone-under-inclusion]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  A\neq\varnothing,\quad B\neq\varnothing,\quad
+  A\subseteq B,\quad
+  \operatorname{Sup}_{\mathbb{R},\leq}(s_A,A),\quad
+  \operatorname{Sup}_{\mathbb{R},\leq}(s_B,B)
+  \quad\Longrightarrow\quad s_A\leq s_B.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  A\subseteq B\land\operatorname{Sup}(s_A,A)\land\operatorname{Sup}(s_B,B)
+  \Longrightarrow s_A\leq s_B.
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+  A\subseteq B,\quad \operatorname{Sup}(s_A,A),\quad
+  \operatorname{Sup}(s_B,B),\quad s_B<s_A.
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+Failure would mean enlarging a nonempty set lowers its least upper bound.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+The value $\sup B$ bounds $B$, hence bounds $A$; since $\sup A$ is least
+among upper bounds of $A$, $\sup A\leq\sup B$.
+\end{remark*}
+
+\begin{theorembox}{Infimum Is Monotone Under Inclusion}
+\begin{theorem}[Infimum Is Monotone Under Inclusion]
+\label{thm:infimum-is-monotone-under-inclusion}
+Let $A,B\subseteq\mathbb{R}$ be nonempty and bounded below.  If
+$A\subseteq B$, then $\inf B\leq\inf A$.
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  A\neq\varnothing,\quad B\neq\varnothing,\quad
+  A\subseteq B,\quad
+  \operatorname{Inf}_{\mathbb{R},\leq}(i_A,A),\quad
+  \operatorname{Inf}_{\mathbb{R},\leq}(i_B,B)
+  \quad\Longrightarrow\quad i_B\leq i_A.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  A\subseteq B\land\operatorname{Inf}(i_A,A)\land\operatorname{Inf}(i_B,B)
+  \Longrightarrow i_B\leq i_A.
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+  A\subseteq B,\quad \operatorname{Inf}(i_A,A),\quad
+  \operatorname{Inf}(i_B,B),\quad i_A<i_B.
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+Failure would mean enlarging a nonempty set raises its greatest lower
+bound.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+The value $\inf B$ bounds $B$ below, hence bounds $A$ below; since
+$\inf A$ is greatest among lower bounds of $A$, $\inf B\leq\inf A$.
+\end{remark*}
+
+\begin{propositionbox}{Upper Bound Comparison with the Supremum}
+\begin{proposition}[Upper Bound Comparison with the Supremum]
+\label{prop:upper-bound-comparison-with-the-supremum}
+Let $A\subseteq\mathbb{R}$ be nonempty and bounded above, and let
+$s=\sup A$.  For $u\in\mathbb{R}$, the number $u$ is an upper bound of
+$A$ if and only if $s\leq u$.
+
+\hyperref[prf:upper-bound-comparison-with-the-supremum]{Go to proof.}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  A\neq\varnothing,\quad \operatorname{Sup}(s,A)
+  \quad\Longrightarrow\quad
+  (\forall u\in\mathbb{R})
+  \bigl[\operatorname{UB}(u,A)\Longleftrightarrow s\leq u\bigr].
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{Sup}(s,A)\Longrightarrow
+  \forall u\,(\operatorname{UB}(u,A)\leftrightarrow s\leq u).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+  \operatorname{Sup}(s,A)
+  \quad\text{and}\quad
+  (\exists u)\bigl[(\operatorname{UB}(u,A)\land u<s)
+  \lor(s\leq u\land\neg\operatorname{UB}(u,A))\bigr].
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+Failure would mean an upper bound below the supremum, or a number above
+the supremum that fails to bound the set.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+Leastness gives the forward implication.  The fact that $s$ bounds $A$
+gives the reverse implication by transitivity.
+\end{remark*}
+
+\begin{propositionbox}{Lower Bound Comparison with the Infimum}
+\begin{proposition}[Lower Bound Comparison with the Infimum]
+\label{prop:lower-bound-comparison-with-the-infimum}
+Let $A\subseteq\mathbb{R}$ be nonempty and bounded below, and let
+$i=\inf A$.  For $\ell\in\mathbb{R}$, the number $\ell$ is a lower bound
+of $A$ if and only if $\ell\leq i$.
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  A\neq\varnothing,\quad \operatorname{Inf}(i,A)
+  \quad\Longrightarrow\quad
+  (\forall \ell\in\mathbb{R})
+  \bigl[\operatorname{LB}(\ell,A)\Longleftrightarrow \ell\leq i\bigr].
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{Inf}(i,A)\Longrightarrow
+  \forall \ell\,(\operatorname{LB}(\ell,A)\leftrightarrow \ell\leq i).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+  \operatorname{Inf}(i,A)
+  \quad\text{and}\quad
+  (\exists \ell)\bigl[(\operatorname{LB}(\ell,A)\land i<\ell)
+  \lor(\ell\leq i\land\neg\operatorname{LB}(\ell,A))\bigr].
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+Failure would mean a lower bound above the infimum, or a number below the
+infimum that fails to bound the set below.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+Greatestness gives the forward implication.  The fact that $i$ bounds
+$A$ below gives the reverse implication by transitivity.
+\end{remark*}
+
+\begin{propositionbox}{Every Element Lies Below the Supremum}
+\begin{proposition}[Every Element Lies Below the Supremum]
+\label{prop:every-element-lies-below-the-supremum}
+Let $A\subseteq\mathbb{R}$ be nonempty and bounded above, and let
+$s=\sup A$.  Then $x\leq s$ for every $x\in A$.
+
+\hyperref[prf:every-element-lies-below-the-supremum]{Go to proof.}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  A\neq\varnothing,\quad \operatorname{Sup}(s,A)
+  \quad\Longrightarrow\quad
+  (\forall x\in A)(x\leq s).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{Sup}(s,A)\Longrightarrow \operatorname{UB}(s,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+  \operatorname{Sup}(s,A)\quad\text{and}\quad(\exists x\in A)(s<x).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+Failure would mean the supremum is not an upper bound.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+This is the upper-bound clause in the definition of supremum.
+\end{remark*}
+
+\begin{propositionbox}{Every Element Lies Above the Infimum}
+\begin{proposition}[Every Element Lies Above the Infimum]
+\label{prop:every-element-lies-above-the-infimum}
+Let $A\subseteq\mathbb{R}$ be nonempty and bounded below, and let
+$i=\inf A$.  Then $i\leq x$ for every $x\in A$.
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  A\neq\varnothing,\quad \operatorname{Inf}(i,A)
+  \quad\Longrightarrow\quad
+  (\forall x\in A)(i\leq x).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{Inf}(i,A)\Longrightarrow \operatorname{LB}(i,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+  \operatorname{Inf}(i,A)\quad\text{and}\quad(\exists x\in A)(x<i).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+Failure would mean the infimum is not a lower bound.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+This is the lower-bound clause in the definition of infimum.
+\end{remark*}
+
+\begin{theorembox}{Infimum Is Less Than or Equal to the Supremum}
+\begin{theorem}[Infimum Is Less Than or Equal to the Supremum]
+\label{thm:infimum-less-than-supremum}
+Let $A\subseteq\mathbb{R}$ be nonempty, bounded below, and bounded above.
+Then $\inf A\leq\sup A$.
+
+\hyperref[prf:infimum-less-than-supremum]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  A\neq\varnothing,\quad
+  \operatorname{Inf}(i,A),\quad
+  \operatorname{Sup}(s,A)
+  \quad\Longrightarrow\quad
+  i\leq s.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{Inf}(i,A)\land\operatorname{Sup}(s,A)
+  \Longrightarrow i\leq s.
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+  \operatorname{Inf}(i,A),\quad \operatorname{Sup}(s,A),
+  \quad\text{and}\quad s<i.
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+Failure would put the greatest lower bound strictly above the least upper
+bound of the same nonempty set.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+Choose $a\in A$.  Then $i\leq a$ because $i$ is a lower bound, and
+$a\leq s$ because $s$ is an upper bound.
+\end{remark*}
+
+\begin{propositionbox}{Order Comparison of Suprema}
+\begin{proposition}[Order Comparison of Suprema]
+\label{prop:order-comparison-of-suprema}
+Let $A,B\subseteq\mathbb{R}$ be nonempty and bounded above.  If every
+$x\in A$ is below some $y\in B$, then $\sup A\leq\sup B$.
+
+\hyperref[prf:order-comparison-of-suprema]{Go to proof.}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  A\neq\varnothing,\quad B\neq\varnothing,\quad
+  (\forall x\in A)(\exists y\in B)(x\leq y)
+  \quad\Longrightarrow\quad
+  \sup A\leq\sup B.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  [\forall x\in A\,\exists y\in B\,(x\leq y)]
+  \land\operatorname{Sup}(s_A,A)\land\operatorname{Sup}(s_B,B)
+  \Longrightarrow s_A\leq s_B.
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+  [\forall x\in A\,\exists y\in B\,(x\leq y)]
+  \quad\text{and}\quad
+  \sup B<\sup A.
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+Failure would mean $A$ reaches higher in supremum than $B$ even though
+each element of $A$ is dominated by an element of $B$.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+Every element of $B$ lies below $\sup B$, so every element of $A$ also
+lies below $\sup B$.  Thus $\sup B$ is an upper bound for $A$.
+\end{remark*}
+
+\begin{theorembox}{Least Upper Bound Property Implies Existence of Suprema}
+\begin{theorem}[Least Upper Bound Property Implies Existence of Suprema]
+\label{thm:lub-property-implies-existence-of-suprema}
+Let $S\subseteq\mathbb{R}$ be nonempty and bounded above.  By the least
+upper bound property of the real numbers, there exists a real number
+$s$ such that $s=\sup S$.
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  S\neq\varnothing
+  \quad\text{and}\quad
+  (\exists u\in\mathbb{R})(\forall x\in S)(x\leq u)
+  \quad\Longrightarrow\quad
+  (\exists s\in\mathbb{R})\operatorname{Sup}_{\mathbb{R},\leq}(s,S).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  S\neq\varnothing\land\operatorname{BddAbove}_{\mathbb{R},\leq}(S)
+  \Longrightarrow
+  (\exists s\in\mathbb{R})\operatorname{Sup}_{\mathbb{R},\leq}(s,S).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+  S\neq\varnothing,\quad
+  \operatorname{BddAbove}_{\mathbb{R},\leq}(S),
+  \quad\text{and}\quad
+  (\forall s\in\mathbb{R})\neg\operatorname{Sup}_{\mathbb{R},\leq}(s,S).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+In $\mathbb{R}$ the theorem cannot fail once the set is nonempty and
+bounded above; outside complete ordered settings, the existence clause
+can fail.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+The hypotheses separate domain nonemptiness from one-sided boundedness.
+The conclusion asserts existence of the sharp upper bound.
+\end{remark*}
+
+\begin{theorembox}{Greatest Lower Bound Property Implies Existence of Infima}
+\begin{theorem}[Greatest Lower Bound Property Implies Existence of Infima]
+\label{thm:glb-property-implies-existence-of-infima}
+Let $S\subseteq\mathbb{R}$ be nonempty and bounded below.  Then there
+exists a real number $i$ such that $i=\inf S$.
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  S\neq\varnothing
+  \quad\text{and}\quad
+  (\exists \ell\in\mathbb{R})(\forall x\in S)(\ell\leq x)
+  \quad\Longrightarrow\quad
+  (\exists i\in\mathbb{R})\operatorname{Inf}_{\mathbb{R},\leq}(i,S).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  S\neq\varnothing\land\operatorname{BddBelow}_{\mathbb{R},\leq}(S)
+  \Longrightarrow
+  (\exists i\in\mathbb{R})\operatorname{Inf}_{\mathbb{R},\leq}(i,S).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+  S\neq\varnothing,\quad
+  \operatorname{BddBelow}_{\mathbb{R},\leq}(S),
+  \quad\text{and}\quad
+  (\forall i\in\mathbb{R})\neg\operatorname{Inf}_{\mathbb{R},\leq}(i,S).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+In $\mathbb{R}$ the theorem cannot fail once the set is nonempty and
+bounded below.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+Apply the least upper bound property to $-S$ or argue by the order-dual
+form of completeness.
+\end{remark*}

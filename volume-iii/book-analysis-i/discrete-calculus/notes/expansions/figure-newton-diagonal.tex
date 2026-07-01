@@ -1,0 +1,32 @@
+\begin{tikzpicture}[
+every node/.style={font=\small},
+x=2.2cm,
+y=1.2cm
+]
+\node (f0) at (0,0) {$f(0)$};
+\node (f1) at (1,0) {$f(1)$};
+\node (f2) at (2,0) {$f(2)$};
+\node (f3) at (3,0) {$f(3)$};
+
+\node (d0) at (0.5,-1) {$\Delta f(0)$};
+\node (d1) at (1.5,-1) {$\Delta f(1)$};
+\node (d2) at (2.5,-1) {$\Delta f(2)$};
+
+\node (d20) at (1,-2) {$\Delta^2 f(0)$};
+\node (d21) at (2,-2) {$\Delta^2 f(1)$};
+
+\node (d30) at (1.5,-3) {$\Delta^3 f(0)$};
+
+\draw[gray] (f0)--(d0); \draw[gray] (f1)--(d0);
+\draw[gray] (f1)--(d1); \draw[gray] (f2)--(d1);
+\draw[gray] (f2)--(d2); \draw[gray] (f3)--(d2);
+\draw[gray] (d0)--(d20); \draw[gray] (d1)--(d20);
+\draw[gray] (d1)--(d21); \draw[gray] (d2)--(d21);
+\draw[gray] (d20)--(d30); \draw[gray] (d21)--(d30);
+
+\draw[very thick,blue] (f0)--(d0)--(d20)--(d30);
+\node[blue,left=4pt] at (f0) {$f(0)$};
+\node[blue,left=4pt] at (d0) {$\Delta f(0)$};
+\node[blue,left=4pt] at (d20) {$\Delta^2 f(0)$};
+\node[blue,left=4pt] at (d30) {$\Delta^3 f(0)$};
+\end{tikzpicture}

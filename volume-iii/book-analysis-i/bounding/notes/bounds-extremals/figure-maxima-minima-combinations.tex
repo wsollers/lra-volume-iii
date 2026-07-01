@@ -1,0 +1,28 @@
+\begin{tikzpicture}[
+  x=1cm,
+  y=1cm,
+  >=Latex,
+  axis/.style={thick},
+  interval/.style={line width=2pt,teal!70!black},
+  closedpt/.style={circle, fill=teal!70!black, inner sep=2.4pt},
+  endpoint/.style={circle, fill=blue!60!black, inner sep=2pt},
+  lbl/.style={font=\small},
+  note/.style={font=\footnotesize,text=gray!70!black}
+]
+
+\draw[axis] (-3.2,0) -- (3.2,0);
+\draw[interval] (-1.5,0) -- (1.5,0);
+\node[closedpt] at (-1.5,0) {};
+\node[closedpt] at (1.5,0) {};
+
+\node[endpoint] at (-1.5,0) {};
+\node[endpoint] at (1.5,0) {};
+\draw[blue!60!black,thick] (-1.5,-0.28) -- (-1.5,0.28);
+\draw[blue!60!black,thick] (1.5,-0.28) -- (1.5,0.28);
+
+\node[lbl,blue!60!black,above] at (-1.5,0.28) {$\min A=\inf A$};
+\node[lbl,blue!60!black,above] at (1.5,0.28) {$\max A=\sup A$};
+\node[lbl,teal!70!black,below] at (0,-0.28) {$A$};
+\node[note] at (0,0.9) {attainment upgrades sharp bounds to extrema};
+
+\end{tikzpicture}

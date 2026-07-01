@@ -1,0 +1,336 @@
+\subsection{Upper and Lower Bounds}
+
+Bounds are the first level of extremal information.  They compare one
+candidate element with every element of a nonempty set, but they do not
+require the candidate to be sharp or to belong to the set.
+
+\begin{figure}[htbp]
+  \centering
+  \input{volume-iii/book-analysis-i/bounding/notes/bounds-extremals/figure-upper-lower-bound-combinations}
+  \caption{Upper and lower bound conditions on a nonempty set.}
+  \label{fig:upper-lower-bound-combinations}
+\end{figure}
+
+\begin{definitionbox}{Bound}
+\begin{definition}[Bound]
+\label{def:bound}
+Let $(S,\leq)$ be an ordered set, let $A\subseteq S$ be nonempty, and let
+$b\in S$.  A \emph{bound} of $A$ means a one-sided comparison between $b$
+and every element of $A$: either $x\leq b$ for all $x\in A$, or $b\leq x$
+for all $x\in A$.
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  A\neq\varnothing
+  \quad\text{and}\quad
+  \bigl[(\forall x\in A)(x\leq b)
+  \ \text{or}\ 
+  (\forall x\in A)(b\leq x)\bigr].
+\]
+\end{remark*}
+
+\begin{remark*}[Definition predicate reading]
+\[
+  \operatorname{Bound}_{S,\leq}(b,A)
+  :=
+  \operatorname{UB}_{S,\leq}(b,A)
+  \lor
+  \operatorname{LB}_{S,\leq}(b,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+  A=\varnothing
+  \quad\text{or}\quad
+  \bigl[(\exists x\in A)(b<x)
+  \ \text{and}\ 
+  (\exists y\in A)(y<b)\bigr].
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+  \neg\operatorname{Bound}_{S,\leq}(b,A)
+  \Longleftrightarrow
+  A=\varnothing
+  \lor
+  \bigl(\neg\operatorname{UB}_{S,\leq}(b,A)
+  \land
+  \neg\operatorname{LB}_{S,\leq}(b,A)\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+The statement fails if the set is empty, or if $b$ lies strictly between
+two elements of $A$.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+Failure of the upper-bound side means some element of $A$ is strictly
+larger than $b$.  Failure of the lower-bound side means some element of
+$A$ is strictly smaller than $b$.  Failure to be any bound requires both
+witnesses.
+\end{remark*}
+
+\begin{definitionbox}{Upper Bound}
+\begin{definition}[Upper Bound]
+\label{def:upper-bound}
+Let $(S,\leq)$ be an ordered set, let $A\subseteq S$ be nonempty, and let
+$u\in S$.  The element $u$ is an \emph{upper bound} of $A$ if every element
+of $A$ is less than or equal to $u$.
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  A\neq\varnothing
+  \quad\text{and}\quad
+  (\forall x\in A)(x\leq u).
+\]
+\end{remark*}
+
+\begin{remark*}[Definition predicate reading]
+\[
+  \operatorname{UB}_{S,\leq}(u,A)
+  :=
+  A\neq\varnothing\land(\forall x\in A)(x\leq u).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+  A=\varnothing
+  \quad\text{or}\quad
+  (\exists x\in A)(u<x).
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+  \neg\operatorname{UB}_{S,\leq}(u,A)
+  \Longleftrightarrow
+  A=\varnothing\lor(\exists x\in A)(u<x).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+The set may be empty, or a counterexample element of $A$ may sit strictly
+above the proposed bound.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+To disprove that $u$ is an upper bound, produce either the structural
+failure $A=\varnothing$ or a witness $x\in A$ with $u<x$.
+\end{remark*}
+
+\begin{definitionbox}{Lower Bound}
+\begin{definition}[Lower Bound]
+\label{def:lower-bound}
+Let $(S,\leq)$ be an ordered set, let $A\subseteq S$ be nonempty, and let
+$\ell\in S$.  The element $\ell$ is a \emph{lower bound} of $A$ if every
+element of $A$ is greater than or equal to $\ell$.
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  A\neq\varnothing
+  \quad\text{and}\quad
+  (\forall x\in A)(\ell\leq x).
+\]
+\end{remark*}
+
+\begin{remark*}[Definition predicate reading]
+\[
+  \operatorname{LB}_{S,\leq}(\ell,A)
+  :=
+  A\neq\varnothing\land(\forall x\in A)(\ell\leq x).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+  A=\varnothing
+  \quad\text{or}\quad
+  (\exists x\in A)(x<\ell).
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+  \neg\operatorname{LB}_{S,\leq}(\ell,A)
+  \Longleftrightarrow
+  A=\varnothing\lor(\exists x\in A)(x<\ell).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+The set may be empty, or a counterexample element of $A$ may sit strictly
+below the proposed bound.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+To disprove that $\ell$ is a lower bound, produce either the structural
+failure $A=\varnothing$ or a witness $x\in A$ with $x<\ell$.
+\end{remark*}
+
+\begin{definitionbox}{Bounded Above}
+\begin{definition}[Bounded Above]
+\label{def:bounded-above}
+Let $(S,\leq)$ be an ordered set and let $A\subseteq S$ be nonempty.  The
+set $A$ is \emph{bounded above} if it has at least one upper bound in $S$.
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  A\neq\varnothing
+  \quad\text{and}\quad
+  (\exists u\in S)(\forall x\in A)(x\leq u).
+\]
+\end{remark*}
+
+\begin{remark*}[Definition predicate reading]
+\[
+  \operatorname{BddAbove}_{S,\leq}(A)
+  :=
+  (\exists u\in S)\operatorname{UB}_{S,\leq}(u,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+  A=\varnothing
+  \quad\text{or}\quad
+  (\forall u\in S)(\exists x\in A)(u<x).
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+  \neg\operatorname{BddAbove}_{S,\leq}(A)
+  \Longleftrightarrow
+  A=\varnothing
+  \lor
+  (\forall u\in S)\neg\operatorname{UB}_{S,\leq}(u,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+The set may be empty, or every proposed upper bound may be defeated by
+some larger element of $A$.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+Unboundedness above is not one failed candidate; it is a uniform
+procedure that defeats every candidate $u\in S$.
+\end{remark*}
+
+\begin{definitionbox}{Bounded Below}
+\begin{definition}[Bounded Below]
+\label{def:bounded-below}
+Let $(S,\leq)$ be an ordered set and let $A\subseteq S$ be nonempty.  The
+set $A$ is \emph{bounded below} if it has at least one lower bound in $S$.
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  A\neq\varnothing
+  \quad\text{and}\quad
+  (\exists \ell\in S)(\forall x\in A)(\ell\leq x).
+\]
+\end{remark*}
+
+\begin{remark*}[Definition predicate reading]
+\[
+  \operatorname{BddBelow}_{S,\leq}(A)
+  :=
+  (\exists \ell\in S)\operatorname{LB}_{S,\leq}(\ell,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+  A=\varnothing
+  \quad\text{or}\quad
+  (\forall \ell\in S)(\exists x\in A)(x<\ell).
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+  \neg\operatorname{BddBelow}_{S,\leq}(A)
+  \Longleftrightarrow
+  A=\varnothing
+  \lor
+  (\forall \ell\in S)\neg\operatorname{LB}_{S,\leq}(\ell,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+The set may be empty, or every proposed lower bound may be defeated by
+some smaller element of $A$.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+Unboundedness below is a uniform defeat of all lower-bound candidates.
+\end{remark*}
+
+\begin{definitionbox}{Bounded Set}
+\begin{definition}[Bounded Set]
+\label{def:bounded}
+Let $(S,\leq)$ be an ordered set and let $A\subseteq S$ be nonempty.  The
+set $A$ is \emph{bounded} if it is bounded above and bounded below.
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  A\neq\varnothing
+  \quad\text{and}\quad
+  (\exists \ell,u\in S)(\forall x\in A)(\ell\leq x\leq u).
+\]
+\end{remark*}
+
+\begin{remark*}[Definition predicate reading]
+\[
+  \operatorname{Bdd}_{S,\leq}(A)
+  :=
+  \operatorname{BddBelow}_{S,\leq}(A)
+  \land
+  \operatorname{BddAbove}_{S,\leq}(A).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+  A=\varnothing
+  \quad\text{or}\quad
+  (\forall \ell,u\in S)(\exists x\in A)(x<\ell\ \text{or}\ u<x).
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+  \neg\operatorname{Bdd}_{S,\leq}(A)
+  \Longleftrightarrow
+  A=\varnothing
+  \lor
+  \neg\operatorname{BddBelow}_{S,\leq}(A)
+  \lor
+  \neg\operatorname{BddAbove}_{S,\leq}(A).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+The set may be empty, unbounded below, unbounded above, or both.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+Boundedness has two independent one-sided requirements.  A failure on
+either side is enough to destroy boundedness.
+\end{remark*}

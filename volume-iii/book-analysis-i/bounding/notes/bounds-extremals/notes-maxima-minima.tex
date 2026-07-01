@@ -1,0 +1,428 @@
+\subsection{Maxima and Minima}
+
+Maxima and minima are attained sharp bounds.  They are stronger than
+suprema and infima because the extremal element must belong to the
+nonempty set itself.
+
+\begin{figure}[htbp]
+  \centering
+  \input{volume-iii/book-analysis-i/bounding/notes/bounds-extremals/figure-maxima-minima-combinations}
+  \caption{Maxima and minima are suprema and infima that are attained by the set.}
+  \label{fig:maxima-minima-combinations}
+\end{figure}
+
+\begin{definitionbox}{Maximum}
+\begin{definition}[Maximum]
+\label{def:maximum}
+Let $(S,\leq)$ be an ordered set and let $A\subseteq S$ be nonempty.  An
+element $m\in S$ is the \emph{maximum} of $A$ if $m\in A$ and every
+element of $A$ is less than or equal to $m$.
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  A\neq\varnothing
+  \quad\text{and}\quad
+  m\in A
+  \quad\text{and}\quad
+  (\forall x\in A)(x\leq m).
+\]
+\end{remark*}
+
+\begin{remark*}[Definition predicate reading]
+\[
+  \operatorname{Max}_{S,\leq}(m,A)
+  :=
+  m\in A\land\operatorname{UB}_{S,\leq}(m,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+  A=\varnothing
+  \quad\text{or}\quad
+  m\notin A
+  \quad\text{or}\quad
+  (\exists x\in A)(m<x).
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+  \neg\operatorname{Max}_{S,\leq}(m,A)
+  \Longleftrightarrow
+  A=\varnothing
+  \lor
+  m\notin A
+  \lor
+  \neg\operatorname{UB}_{S,\leq}(m,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+The set may be empty; the candidate may not be a member of the set; or a
+larger element of the set may exist.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+Maximum combines membership and an upper-bound condition.  Failure of
+either component prevents attainment.
+\end{remark*}
+
+\begin{definitionbox}{Minimum}
+\begin{definition}[Minimum]
+\label{def:minimum}
+Let $(S,\leq)$ be an ordered set and let $A\subseteq S$ be nonempty.  An
+element $m\in S$ is the \emph{minimum} of $A$ if $m\in A$ and every
+element of $A$ is greater than or equal to $m$.
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  A\neq\varnothing
+  \quad\text{and}\quad
+  m\in A
+  \quad\text{and}\quad
+  (\forall x\in A)(m\leq x).
+\]
+\end{remark*}
+
+\begin{remark*}[Definition predicate reading]
+\[
+  \operatorname{Min}_{S,\leq}(m,A)
+  :=
+  m\in A\land\operatorname{LB}_{S,\leq}(m,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+  A=\varnothing
+  \quad\text{or}\quad
+  m\notin A
+  \quad\text{or}\quad
+  (\exists x\in A)(x<m).
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+  \neg\operatorname{Min}_{S,\leq}(m,A)
+  \Longleftrightarrow
+  A=\varnothing
+  \lor
+  m\notin A
+  \lor
+  \neg\operatorname{LB}_{S,\leq}(m,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+The set may be empty; the candidate may not be a member of the set; or a
+smaller element of the set may exist.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+Minimum combines membership and a lower-bound condition.  Failure of
+either component prevents attainment.
+\end{remark*}
+
+\begin{propositionbox}{Uniqueness of the Maximum}
+\begin{proposition}[Uniqueness of the Maximum]
+\label{prop:uniqueness-of-the-maximum}
+Let $(S,\leq)$ be an ordered set and let $A\subseteq S$ be nonempty.  If
+$m,n\in S$ are both maxima of $A$, then $m=n$.
+
+\hyperref[prf:uniqueness-of-the-maximum]{Go to proof.}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  A\neq\varnothing
+  \quad\text{and}\quad
+  \operatorname{Max}_{S,\leq}(m,A)
+  \quad\text{and}\quad
+  \operatorname{Max}_{S,\leq}(n,A)
+  \quad\Longrightarrow\quad
+  m=n.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{Max}_{S,\leq}(m,A)\land\operatorname{Max}_{S,\leq}(n,A)
+  \Longrightarrow m=n.
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+  A\neq\varnothing
+  \quad\text{and}\quad
+  \operatorname{Max}_{S,\leq}(m,A)
+  \quad\text{and}\quad
+  \operatorname{Max}_{S,\leq}(n,A)
+  \quad\text{and}\quad
+  m\neq n.
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+  \operatorname{Max}_{S,\leq}(m,A)\land
+  \operatorname{Max}_{S,\leq}(n,A)\land m\neq n.
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+Failure would require two distinct elements of $A$ each to dominate the
+entire set.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+Since $m$ is maximal over all elements and $n\in A$, we get $n\leq m$.
+Since $n$ is maximal over all elements and $m\in A$, we get $m\leq n$.
+\end{remark*}
+
+\begin{propositionbox}{Uniqueness of the Minimum}
+\begin{proposition}[Uniqueness of the Minimum]
+\label{prop:uniqueness-of-the-minimum}
+Let $(S,\leq)$ be an ordered set and let $A\subseteq S$ be nonempty.  If
+$m,n\in S$ are both minima of $A$, then $m=n$.
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  A\neq\varnothing
+  \quad\text{and}\quad
+  \operatorname{Min}_{S,\leq}(m,A)
+  \quad\text{and}\quad
+  \operatorname{Min}_{S,\leq}(n,A)
+  \quad\Longrightarrow\quad
+  m=n.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{Min}_{S,\leq}(m,A)\land\operatorname{Min}_{S,\leq}(n,A)
+  \Longrightarrow m=n.
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+  A\neq\varnothing
+  \quad\text{and}\quad
+  \operatorname{Min}_{S,\leq}(m,A)
+  \quad\text{and}\quad
+  \operatorname{Min}_{S,\leq}(n,A)
+  \quad\text{and}\quad
+  m\neq n.
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+  \operatorname{Min}_{S,\leq}(m,A)\land
+  \operatorname{Min}_{S,\leq}(n,A)\land m\neq n.
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+Failure would require two distinct elements of $A$ each to lie below the
+entire set.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+Since $m$ is minimal and $n\in A$, we get $m\leq n$.  Since $n$ is
+minimal and $m\in A$, we get $n\leq m$.
+\end{remark*}
+
+\begin{propositionbox}{Maximum Implies Supremum}
+\begin{proposition}[Maximum Implies Supremum]
+\label{prop:maximum-implies-supremum}
+Let $(S,\leq)$ be an ordered set and let $A\subseteq S$ be nonempty.  If
+$m=\max A$, then $m=\sup A$.
+
+\hyperref[prf:maximum-implies-supremum]{Go to proof.}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  A\neq\varnothing
+  \quad\text{and}\quad
+  \operatorname{Max}_{S,\leq}(m,A)
+  \quad\Longrightarrow\quad
+  \operatorname{Sup}_{S,\leq}(m,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{Max}_{S,\leq}(m,A)\Longrightarrow
+  \operatorname{Sup}_{S,\leq}(m,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+  \operatorname{Max}_{S,\leq}(m,A)
+  \quad\text{and}\quad
+  \neg\operatorname{Sup}_{S,\leq}(m,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+Failure would require an attained upper bound that is not least among
+upper bounds.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+Membership gives $m\in A$.  Any upper bound of $A$ must lie above every
+element of $A$, hence above $m$ itself.
+\end{remark*}
+
+\begin{propositionbox}{Minimum Implies Infimum}
+\begin{proposition}[Minimum Implies Infimum]
+\label{prop:minimum-implies-infimum}
+Let $(S,\leq)$ be an ordered set and let $A\subseteq S$ be nonempty.  If
+$m=\min A$, then $m=\inf A$.
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  A\neq\varnothing
+  \quad\text{and}\quad
+  \operatorname{Min}_{S,\leq}(m,A)
+  \quad\Longrightarrow\quad
+  \operatorname{Inf}_{S,\leq}(m,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{Min}_{S,\leq}(m,A)\Longrightarrow
+  \operatorname{Inf}_{S,\leq}(m,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+  \operatorname{Min}_{S,\leq}(m,A)
+  \quad\text{and}\quad
+  \neg\operatorname{Inf}_{S,\leq}(m,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+Failure would require an attained lower bound that is not greatest among
+lower bounds.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+Membership gives $m\in A$.  Any lower bound of $A$ must lie below every
+element of $A$, hence below $m$ itself.
+\end{remark*}
+
+\begin{propositionbox}{Supremum in the Set is the Maximum}
+\begin{proposition}[Supremum in the Set is the Maximum]
+\label{prop:supremum-in-the-set-is-the-maximum}
+Let $(S,\leq)$ be an ordered set and let $A\subseteq S$ be nonempty.  If
+$s=\sup A$ and $s\in A$, then $s=\max A$.
+
+\hyperref[prf:supremum-in-the-set-is-the-maximum]{Go to proof.}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  A\neq\varnothing
+  \quad\text{and}\quad
+  \operatorname{Sup}_{S,\leq}(s,A)
+  \quad\text{and}\quad
+  s\in A
+  \quad\Longrightarrow\quad
+  \operatorname{Max}_{S,\leq}(s,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{Sup}_{S,\leq}(s,A)\land s\in A
+  \Longrightarrow \operatorname{Max}_{S,\leq}(s,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+  \operatorname{Sup}_{S,\leq}(s,A)
+  \quad\text{and}\quad
+  s\in A
+  \quad\text{and}\quad
+  \neg\operatorname{Max}_{S,\leq}(s,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+Failure would require a supremum that belongs to the set but is not its
+maximum.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+The supremum condition supplies the upper-bound clause.  Membership
+supplies attainment.
+\end{remark*}
+
+\begin{propositionbox}{Infimum in the Set is the Minimum}
+\begin{proposition}[Infimum in the Set is the Minimum]
+\label{prop:infimum-in-the-set-is-the-minimum}
+Let $(S,\leq)$ be an ordered set and let $A\subseteq S$ be nonempty.  If
+$i=\inf A$ and $i\in A$, then $i=\min A$.
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  A\neq\varnothing
+  \quad\text{and}\quad
+  \operatorname{Inf}_{S,\leq}(i,A)
+  \quad\text{and}\quad
+  i\in A
+  \quad\Longrightarrow\quad
+  \operatorname{Min}_{S,\leq}(i,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{Inf}_{S,\leq}(i,A)\land i\in A
+  \Longrightarrow \operatorname{Min}_{S,\leq}(i,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+  \operatorname{Inf}_{S,\leq}(i,A)
+  \quad\text{and}\quad
+  i\in A
+  \quad\text{and}\quad
+  \neg\operatorname{Min}_{S,\leq}(i,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+Failure would require an infimum that belongs to the set but is not its
+minimum.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+The infimum condition supplies the lower-bound clause.  Membership
+supplies attainment.
+\end{remark*}

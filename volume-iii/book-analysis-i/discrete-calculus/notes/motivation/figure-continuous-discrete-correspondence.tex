@@ -1,0 +1,22 @@
+\begin{tikzpicture}[
+    node distance=2.8cm,
+    every node/.style={rectangle,draw,rounded corners,align=center,minimum width=4.2cm,minimum height=1cm},
+    arrow/.style={->,thick}
+]
+
+\node (deriv) {$\displaystyle \frac{d}{dx} f(x)$\\Derivative};
+\node (int) [below of=deriv] {$\displaystyle \int f(x)\,dx$\\Integral};
+\node (power) [below of=int] {$\displaystyle \frac{d}{dx} x^n = n x^{n-1}$\\Power Rule};
+\node (ftc) [below of=power] {Fundamental Theorem\\of Calculus};
+
+\node (diff) [right=5cm of deriv] {$\Delta f(n)=f(n+1)-f(n)$\\Forward Difference};
+\node (sum) [below of=diff] {$\displaystyle \sum f(n)$\\Summation};
+\node (falling) [below of=sum] {$\Delta n^{\underline{k}} = k\, n^{\underline{k-1}}$\\Falling Factorial Rule};
+\node (telescoping) [below of=falling] {Telescoping Sum\\Identity};
+
+\draw[arrow] (deriv) -- (diff);
+\draw[arrow] (int) -- (sum);
+\draw[arrow] (power) -- (falling);
+\draw[arrow] (ftc) -- (telescoping);
+
+\end{tikzpicture}

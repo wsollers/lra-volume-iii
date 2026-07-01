@@ -70,7 +70,7 @@ or theorem being applied. Computations should show each step explicitly.
   {DC-SIGMA-001}
   {Summation Notation}
   {tech:unpack-definition}
-  {def:summation}
+  {def:sigma-summation-notation}
   {Write out the sum \(\displaystyle\sum_{k=2}^{5}(2k-1)\) explicitly
   (listing all terms) and evaluate it. Then verify your answer using
   the linearity of summation and the formula \(\sum_{k=1}^{n} k = n(n+1)/2\).}
@@ -79,7 +79,7 @@ or theorem being applied. Computations should show each step explicitly.
   {DC-SIGMA-002}
   {Summation Notation}
   {tech:unpack-definition, tech:index-shift}
-  {def:summation}
+  {def:sigma-summation-notation}
   {Show that \(\displaystyle\sum_{k=0}^{n-1}(k+1) = \sum_{k=1}^{n} k\)
   by performing an index shift. Then evaluate both sides using the formula
   \(\sum_{k=1}^{n} k = n(n+1)/2\) and confirm they agree.}
@@ -88,7 +88,7 @@ or theorem being applied. Computations should show each step explicitly.
   {DC-SIGMA-003}
   {Summation Notation}
   {tech:sum-splitting, tech:linearity}
-  {def:summation}
+  {def:sigma-summation-notation}
   {Using the splitting rule, prove that
   \(\displaystyle\sum_{k=1}^{2n} f(k) = \sum_{k=1}^{n} f(k) + \sum_{k=n+1}^{2n} f(k)\)
   for any \(f : \mathbb{N} \to \mathbb{R}\). Then apply this with
@@ -98,7 +98,7 @@ or theorem being applied. Computations should show each step explicitly.
   {DC-SIGMA-004}
   {Summation Notation}
   {tech:linearity, tech:closed-form}
-  {def:summation}
+  {def:sigma-summation-notation}
   {Evaluate \(\displaystyle\sum_{k=1}^{n}(3k^2 - 2k + 1)\) in closed form
   by applying linearity of summation and the standard identities for
   \(\sum k\) and \(\sum k^2\). Simplify your answer fully.}
@@ -107,7 +107,7 @@ or theorem being applied. Computations should show each step explicitly.
   {DC-SIGMA-005}
   {Summation Notation}
   {tech:unpack-definition, tech:case-splitting}
-  {def:summation}
+  {def:sigma-summation-notation}
   {For \(n \ge 1\), prove that
   \(\displaystyle\sum_{k=1}^{n}(-1)^k =
   \begin{cases} 0 & n \text{ even,} \\ -1 & n \text{ odd.} \end{cases}\)
@@ -122,7 +122,7 @@ or theorem being applied. Computations should show each step explicitly.
   {DC-BINOM-001}
   {Binomial Theorem}
   {tech:unpack-definition}
-  {thm:binomial}
+  {thm:binomial-theorem}
   {Expand \((x+y)^4\) fully using the Binomial Theorem. Identify each
   binomial coefficient and verify Pascal's recursion
   \(\binom{n+1}{k} = \binom{n}{k} + \binom{n}{k-1}\) for the row \(n=3\).}
@@ -131,7 +131,7 @@ or theorem being applied. Computations should show each step explicitly.
   {DC-BINOM-002}
   {Binomial Theorem}
   {tech:substitution}
-  {thm:binomial}
+  {thm:binomial-theorem}
   {By substituting \(x = 1\), \(y = 1\) into the Binomial Theorem, prove
   that \(\displaystyle\sum_{k=0}^{n}\binom{n}{k} = 2^n\). Then substitute
   \(x = 1\), \(y = -1\) to prove that \(\displaystyle\sum_{k=0}^{n}(-1)^k\binom{n}{k} = 0\)
@@ -141,7 +141,7 @@ or theorem being applied. Computations should show each step explicitly.
   {DC-BINOM-003}
   {Binomial Theorem}
   {tech:unpack-definition, tech:algebraic-manipulation}
-  {thm:binomial, prop:higher-diff-formula}
+  {thm:binomial-theorem, prop:higher-diff-formula}
   {Use the higher difference formula
   \(\Delta^n f(x) = \displaystyle\sum_{k=0}^{n}(-1)^{n-k}\binom{n}{k}f(x+k)\)
   to compute \(\Delta^3(n^3)\) at \(n = 0\). Verify your answer against
@@ -152,7 +152,7 @@ or theorem being applied. Computations should show each step explicitly.
   {DC-BINOM-004}
   {Binomial Theorem}
   {tech:algebraic-manipulation}
-  {thm:binomial}
+  {thm:binomial-theorem}
   {Prove the identity \(\dbinom{n}{k} = \dfrac{n}{k}\dbinom{n-1}{k-1}\)
   directly from the definition \(\binom{n}{k} = \frac{n!}{k!(n-k)!}\).
   Then use it to evaluate \(\displaystyle\sum_{k=1}^{n} k\binom{n}{k}\)
@@ -163,7 +163,7 @@ or theorem being applied. Computations should show each step explicitly.
   {DC-BINOM-005}
   {Binomial Theorem}
   {tech:algebraic-manipulation, tech:substitution}
-  {thm:binomial}
+  {thm:binomial-theorem}
   {Prove by induction on \(n\) that \(\dbinom{n}{k} \in \mathbb{N}\)
   for all \(0 \le k \le n\). Use the Pascal recursion
   \(\binom{n+1}{k} = \binom{n}{k} + \binom{n}{k-1}\) as your
@@ -234,7 +234,7 @@ or theorem being applied. Computations should show each step explicitly.
   {DC-TELE-001}
   {Telescoping Sums}
   {tech:telescoping}
-  {thm:telescoping, def:telescoping-sum}
+  {thm:telescoping-identity, def:telescoping-sum}
   {Evaluate \(\displaystyle\sum_{k=1}^{n}\frac{1}{k(k+1)}\) by writing
   \(\frac{1}{k(k+1)} = \frac{1}{k} - \frac{1}{k+1}\) and applying the
   Telescoping Identity. Verify your answer for \(n = 3\) by direct
@@ -244,7 +244,7 @@ or theorem being applied. Computations should show each step explicitly.
   {DC-TELE-002}
   {Telescoping Sums}
   {tech:telescoping, tech:closed-form}
-  {thm:telescoping}
+  {thm:telescoping-identity}
   {Evaluate \(\displaystyle\sum_{k=0}^{n-1}(2^{k+1} - 2^k)\) using the
   Telescoping Identity. Then verify that your answer equals \(2^n - 1\),
   consistent with the geometric series formula.}
@@ -253,7 +253,7 @@ or theorem being applied. Computations should show each step explicitly.
   {DC-TELE-003}
   {Telescoping Sums}
   {tech:telescoping, tech:algebraic-manipulation}
-  {thm:telescoping, def:forward-difference}
+  {thm:telescoping-identity, def:forward-difference}
   {Express \(\displaystyle\sum_{k=1}^{n}k\) as a telescoping sum by
   finding a function \(F\) such that \(\Delta F(k) = k\). Use the
   Fundamental Theorem of Finite Calculus to evaluate the sum, and
@@ -263,7 +263,7 @@ or theorem being applied. Computations should show each step explicitly.
   {DC-TELE-004}
   {Telescoping Sums}
   {tech:telescoping}
-  {thm:telescoping}
+  {thm:telescoping-identity}
   {Prove that
   \(\displaystyle\sum_{k=1}^{n}\ln\!\left(\frac{k+1}{k}\right) = \ln(n+1)\)
   by identifying this as a telescoping sum. (\emph{Note:} here \(f(k) = \ln k\)
@@ -273,7 +273,7 @@ or theorem being applied. Computations should show each step explicitly.
   {DC-TELE-005}
   {Telescoping Sums}
   {tech:telescoping, tech:algebraic-manipulation}
-  {thm:telescoping}
+  {thm:telescoping-identity}
   {Evaluate \(\displaystyle\sum_{k=1}^{n}k\cdot k!\) by observing that
   \(k\cdot k! = (k+1)! - k!\) and applying the Telescoping Identity.
   Simplify the answer. (\emph{Hint:} verify the identity \(k\cdot k! = (k+1)! - k!\)
@@ -350,7 +350,7 @@ or theorem being applied. Computations should show each step explicitly.
   {DC-ANTI-002}
   {Discrete Antiderivatives}
   {tech:antidifferentiation}
-  {def:discrete-antiderivative, thm:ftfc}
+  {def:discrete-antiderivative, thm:fundamental-theorem-finite-calculus}
   {Use the Fundamental Theorem of Finite Calculus to evaluate
   \(\displaystyle\sum_{k=0}^{n-1} k(k-1)\).
   First identify \(f(k) = k(k-1) = k^{\underline{2}}\), then find the
@@ -369,7 +369,7 @@ or theorem being applied. Computations should show each step explicitly.
   {DC-ANTI-004}
   {Discrete Antiderivatives}
   {tech:antidifferentiation, tech:telescoping}
-  {thm:ftfc, thm:telescoping}
+  {thm:fundamental-theorem-finite-calculus, thm:telescoping-identity}
   {Prove that the Telescoping Identity
   \(\displaystyle\sum_{k=a}^{b-1}\Delta f(k) = f(b) - f(a)\)
   is a special case of the Fundamental Theorem of Finite Calculus by
@@ -379,7 +379,7 @@ or theorem being applied. Computations should show each step explicitly.
   {DC-ANTI-005}
   {Discrete Antiderivatives}
   {tech:antidifferentiation}
-  {thm:ftfc, prop:discrete-exponential-rule}
+  {thm:fundamental-theorem-finite-calculus, prop:discrete-exponential-rule}
   {Evaluate \(\displaystyle\sum_{k=0}^{n-1} 3^k\) using the Fundamental
   Theorem of Finite Calculus. Identify the correct antiderivative from
   the formula \(\Delta\!\left(\tfrac{(1+a)^n}{a}\right) = (1+a)^n\) with
@@ -412,7 +412,7 @@ or theorem being applied. Computations should show each step explicitly.
   {DC-FALL-003}
   {Falling Factorials}
   {tech:algebraic-manipulation, tech:closed-form}
-  {def:falling-factorial, thm:ftfc}
+  {def:falling-factorial, thm:fundamental-theorem-finite-calculus}
   {Using the antiderivative formula \(\Delta\!\left(\tfrac{x^{\underline{k+1}}}{k+1}\right) = x^{\underline{k}}\)
   and the Fundamental Theorem of Finite Calculus, evaluate
   \(\displaystyle\sum_{k=0}^{n-1} k(k-1)(k-2)\).
@@ -448,7 +448,7 @@ or theorem being applied. Computations should show each step explicitly.
   {DC-CALC-001}
   {Calculus Rules --- Product Rule}
   {tech:unpack-definition}
-  {thm:product-rule}
+  {thm:discrete-product-rule}
   {Verify the Discrete Product Rule for \(f(n) = n\) and \(g(n) = 2^n\)
   by computing both sides of
   \(\Delta(fg)(n) = f(n)\,\Delta g(n) + g(n+1)\,\Delta f(n)\)
@@ -458,7 +458,7 @@ or theorem being applied. Computations should show each step explicitly.
   {DC-CALC-002}
   {Calculus Rules --- Product Rule}
   {tech:algebraic-manipulation}
-  {thm:product-rule, prop:delta-linearity}
+  {thm:discrete-product-rule, prop:delta-linearity}
   {Use the Discrete Product Rule to compute \(\Delta(n \cdot 3^n)\).
   Then use the Fundamental Theorem of Finite Calculus to evaluate
   \(\displaystyle\sum_{k=0}^{n-1} k \cdot 3^k\).
@@ -468,7 +468,7 @@ or theorem being applied. Computations should show each step explicitly.
   {DC-CALC-003}
   {Calculus Rules --- Summation by Parts}
   {tech:summation-by-parts}
-  {thm:summation-by-parts, thm:ftfc}
+  {thm:summation-by-parts, thm:fundamental-theorem-finite-calculus}
   {Apply summation by parts to evaluate
   \(\displaystyle\sum_{k=1}^{n} k \cdot 2^k\).
   Let \(f(k) = k\) and \(\Delta g(k) = 2^k\), so \(g(k) = 2^k\).
@@ -487,7 +487,7 @@ or theorem being applied. Computations should show each step explicitly.
   {DC-CALC-005}
   {Calculus Rules}
   {tech:algebraic-manipulation, tech:unpack-definition}
-  {thm:product-rule, prop:delta-linearity}
+  {thm:discrete-product-rule, prop:delta-linearity}
   {Prove the \emph{quotient rule for differences}: if \(g(n) \ne 0\) and
   \(g(n+1) \ne 0\) for all \(n\), then
   \[
@@ -516,7 +516,7 @@ or theorem being applied. Computations should show each step explicitly.
   {DC-NEWT-002}
   {Newton Expansion}
   {tech:difference-table, tech:antidifferentiation}
-  {thm:newton-expansion, thm:ftfc}
+  {thm:newton-expansion, thm:fundamental-theorem-finite-calculus}
   {Use the Newton expansion of \(f(n) = n^4\) (from the previous exercise)
   to evaluate \(\displaystyle\sum_{k=0}^{n-1}k^4\) in closed form.
   Apply the antiderivative formula for each falling factorial term and
@@ -572,7 +572,7 @@ or theorem being applied. Computations should show each step explicitly.
   {DC-SPEC-002}
   {Discrete Exponential}
   {tech:antidifferentiation, tech:algebraic-manipulation}
-  {prop:discrete-exponential-rule, thm:ftfc}
+  {prop:discrete-exponential-rule, thm:fundamental-theorem-finite-calculus}
   {Use the antiderivative \(\Delta\!\left(\tfrac{(1+a)^n}{a}\right) = (1+a)^n\)
   to evaluate \(\displaystyle\sum_{k=0}^{n-1}(0.5)^k\). Simplify your
   answer, verify for \(n = 4\) numerically, and note what value this
@@ -582,7 +582,7 @@ or theorem being applied. Computations should show each step explicitly.
   {DC-SPEC-003}
   {Discrete Exponential}
   {tech:algebraic-manipulation}
-  {prop:discrete-exponential-rule, thm:product-rule}
+  {prop:discrete-exponential-rule, thm:discrete-product-rule}
   {Use the Discrete Product Rule to compute \(\Delta(n \cdot (1+a)^n)\).
   Then rearrange to obtain a formula for
   \(\displaystyle\sum_{k=0}^{n-1} k(1+a)^k\).
@@ -629,7 +629,7 @@ or theorem being applied. Computations should show each step explicitly.
   {DC-TWO-002}
   {The function $2^n$}
   {tech:telescoping, tech:antidifferentiation}
-  {prop:antideriv-two-n, thm:ftfc}
+  {prop:antideriv-two-n, thm:fundamental-theorem-finite-calculus}
   {Use the fact that \(\Delta(2^n) = 2^n\) to evaluate
   \(\displaystyle\sum_{k=0}^{n-1} 2^k\) via the Fundamental Theorem
   of Finite Calculus. Then verify this against the classical
@@ -649,7 +649,7 @@ or theorem being applied. Computations should show each step explicitly.
   {DC-TWO-004}
   {The function $2^n$ and combinatorics}
   {tech:substitution, tech:algebraic-manipulation}
-  {thm:binomial, thm:newton-expansion}
+  {thm:binomial-theorem, thm:newton-expansion}
   {Starting from the Binomial Theorem identity \((1+1)^n = \sum_{k=0}^{n}\binom{n}{k}\),
   explain why this is also the Newton expansion of \(2^n\) in the
   falling factorial basis. Identify the Newton coefficients

@@ -1,0 +1,304 @@
+\begin{remark*}[Orientation]
+In this section, \emph{lattice} refers to the max--min structure already
+present in the usual order on $\mathbb{R}$.  For two real numbers, their
+join is their maximum and their meet is their minimum:
+\[
+  x\vee y=\max\{x,y\},
+  \qquad
+  x\wedge y=\min\{x,y\}.
+\]
+Thus lattice operations are not a new order relation; they are the operations
+created by the order.  The set-level constructions below apply those pairwise
+operations to all pairs of points from two nonempty sets.
+\end{remark*}
+
+\begin{definitionbox}{Definition (Pointwise Maximum and Minimum Sets)}
+\begin{definition}[Pointwise Maximum and Minimum Sets]
+\label{def:pointwise-maximum-minimum-sets}
+Let $A,B\subseteq\mathbb{R}$ be nonempty.  Define
+\[
+  \max(A,B):=\{\max\{a,b\}:a\in A,\ b\in B\},
+\]
+and
+\[
+  \min(A,B):=\{\min\{a,b\}:a\in A,\ b\in B\}.
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+x\in\max(A,B)
+\Longleftrightarrow
+(\exists a\in A)(\exists b\in B)\bigl(x=\max\{a,b\}\bigr),
+\]
+and similarly for $\min(A,B)$ with $\min\{a,b\}$.
+\end{remark*}
+
+\begin{remark*}[Definition predicate reading]
+\[
+\operatorname{PointwiseMaxSet}(A,B)=\max(A,B),
+\qquad
+\operatorname{PointwiseMinSet}(A,B)=\min(A,B).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+x\notin\max(A,B)
+\Longleftrightarrow
+(\forall a\in A)(\forall b\in B)\bigl(x\neq\max\{a,b\}\bigr),
+\]
+and similarly for $\min(A,B)$.
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\neg\operatorname{PointwiseMaxSet}(A,B)=C
+\quad\text{means}\quad
+(\exists x)\bigl[x\in C\triangle\max(A,B)\bigr],
+\]
+and similarly for $\operatorname{PointwiseMinSet}$.
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+The definition fails only if the image set omits a pairwise maximum or minimum,
+or if it includes a value not produced by one of the pairwise rules.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+Every membership claim decomposes into two input witnesses and one order-based
+operation: either the larger input or the smaller input is selected.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[def:maximum]{Maximum};
+\hyperref[def:minimum]{Minimum}.
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Supremum of the Pointwise Maximum Set)}
+\begin{theorem}[Supremum of the Pointwise Maximum Set]
+\label{thm:supremum-pointwise-maximum-set}
+Let $A,B\subseteq\mathbb{R}$ be nonempty and bounded above.  Then
+\[
+  \sup\max(A,B)=\max\{\sup A,\sup B\}.
+\]
+\hyperref[prf:supremum-pointwise-maximum-set]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+A,B\neq\varnothing,\quad A,B\text{ bounded above}
+\quad\Longrightarrow\quad
+\sup\{\max\{a,b\}:a\in A,\ b\in B\}=\max\{\sup A,\sup B\}.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Supremum}(s_A,A)\land\operatorname{Supremum}(s_B,B)
+\Longrightarrow
+\operatorname{Supremum}(\max\{s_A,s_B\},\max(A,B)).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\sup\max(A,B)\neq\max\{\sup A,\sup B\}
+\]
+is impossible under the stated hypotheses.
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\operatorname{Supremum}(s_A,A)\land\operatorname{Supremum}(s_B,B)\land
+\neg\operatorname{Supremum}(\max\{s_A,s_B\},\max(A,B)).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+The formula could fail only if the maximum of the two suprema failed to bound
+all pairwise maxima, or if it were not the least such bound.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+Every pairwise maximum is bounded by $\max\{\sup A,\sup B\}$.  Sharpness comes
+from holding one input fixed in the nonempty other set and letting the relevant
+set approach its own supremum.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[def:supremum]{Supremum};
+\hyperref[def:pointwise-maximum-minimum-sets]{Pointwise Maximum and Minimum Sets}.
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Infimum of the Pointwise Maximum Set)}
+\begin{theorem}[Infimum of the Pointwise Maximum Set]
+\label{thm:infimum-pointwise-maximum-set}
+Let $A,B\subseteq\mathbb{R}$ be nonempty and bounded below.  Then
+\[
+  \inf\max(A,B)=\max\{\inf A,\inf B\}.
+\]
+\hyperref[prf:infimum-pointwise-maximum-set]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+A,B\neq\varnothing,\quad A,B\text{ bounded below}
+\quad\Longrightarrow\quad
+\inf\{\max\{a,b\}:a\in A,\ b\in B\}=\max\{\inf A,\inf B\}.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Infimum}(t_A,A)\land\operatorname{Infimum}(t_B,B)
+\Longrightarrow
+\operatorname{Infimum}(\max\{t_A,t_B\},\max(A,B)).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\inf\max(A,B)\neq\max\{\inf A,\inf B\}
+\]
+is impossible under the stated hypotheses.
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\operatorname{Infimum}(t_A,A)\land\operatorname{Infimum}(t_B,B)\land
+\neg\operatorname{Infimum}(\max\{t_A,t_B\},\max(A,B)).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+The formula could fail only if the larger of the two lower thresholds were not
+a lower bound for all pairwise maxima, or if pairwise maxima could not approach
+that threshold from above.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+Every pairwise maximum is at least both lower thresholds, hence at least their
+maximum.  Approximation of the two infima gives pairwise maxima arbitrarily
+close to the larger lower threshold.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[def:infimum]{Infimum};
+\hyperref[def:pointwise-maximum-minimum-sets]{Pointwise Maximum and Minimum Sets}.
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Supremum of the Pointwise Minimum Set)}
+\begin{theorem}[Supremum of the Pointwise Minimum Set]
+\label{thm:supremum-pointwise-minimum-set}
+Let $A,B\subseteq\mathbb{R}$ be nonempty and bounded above.  Then
+\[
+  \sup\min(A,B)=\min\{\sup A,\sup B\}.
+\]
+\hyperref[prf:supremum-pointwise-minimum-set]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+A,B\neq\varnothing,\quad A,B\text{ bounded above}
+\quad\Longrightarrow\quad
+\sup\{\min\{a,b\}:a\in A,\ b\in B\}=\min\{\sup A,\sup B\}.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Supremum}(s_A,A)\land\operatorname{Supremum}(s_B,B)
+\Longrightarrow
+\operatorname{Supremum}(\min\{s_A,s_B\},\min(A,B)).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\sup\min(A,B)\neq\min\{\sup A,\sup B\}
+\]
+is impossible under the stated hypotheses.
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\operatorname{Supremum}(s_A,A)\land\operatorname{Supremum}(s_B,B)\land
+\neg\operatorname{Supremum}(\min\{s_A,s_B\},\min(A,B)).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+The formula could fail only if the smaller supremum failed to bound all
+pairwise minima, or if that upper bound were not sharp.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+Every pairwise minimum is below both suprema, hence below their minimum.
+Sharpness comes from taking both inputs near their own suprema.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[def:supremum]{Supremum};
+\hyperref[def:pointwise-maximum-minimum-sets]{Pointwise Maximum and Minimum Sets}.
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Infimum of the Pointwise Minimum Set)}
+\begin{theorem}[Infimum of the Pointwise Minimum Set]
+\label{thm:infimum-pointwise-minimum-set}
+Let $A,B\subseteq\mathbb{R}$ be nonempty and bounded below.  Then
+\[
+  \inf\min(A,B)=\min\{\inf A,\inf B\}.
+\]
+\hyperref[prf:infimum-pointwise-minimum-set]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+A,B\neq\varnothing,\quad A,B\text{ bounded below}
+\quad\Longrightarrow\quad
+\inf\{\min\{a,b\}:a\in A,\ b\in B\}=\min\{\inf A,\inf B\}.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Infimum}(t_A,A)\land\operatorname{Infimum}(t_B,B)
+\Longrightarrow
+\operatorname{Infimum}(\min\{t_A,t_B\},\min(A,B)).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\inf\min(A,B)\neq\min\{\inf A,\inf B\}
+\]
+is impossible under the stated hypotheses.
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\operatorname{Infimum}(t_A,A)\land\operatorname{Infimum}(t_B,B)\land
+\neg\operatorname{Infimum}(\min\{t_A,t_B\},\min(A,B)).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+The formula could fail only if the smaller infimum failed to bound all pairwise
+minima from below, or if that lower bound were not sharp.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+Every pairwise minimum is at least the smaller of the two infima.  Sharpness
+comes from holding one set nonempty and approaching the smaller lower threshold.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[def:infimum]{Infimum};
+\hyperref[def:pointwise-maximum-minimum-sets]{Pointwise Maximum and Minimum Sets}.
+\end{dependencies}

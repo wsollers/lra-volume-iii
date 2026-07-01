@@ -1,0 +1,36 @@
+\begin{tikzpicture}[
+  x=1cm,
+  y=1cm,
+  >=Latex,
+  axis/.style={thick},
+  interval/.style={line width=2pt,teal!70!black},
+  openpt/.style={circle, draw=teal!70!black, fill=white, thick, inner sep=2.2pt},
+  bound/.style={circle, fill=blue!60!black, inner sep=2pt},
+  lbl/.style={font=\small},
+  note/.style={font=\footnotesize,text=gray!70!black}
+]
+
+\draw[axis] (-3.2,0) -- (3.2,0);
+\draw[interval] (-1.4,0) -- (1.4,0);
+\node[openpt] at (-1.4,0) {};
+\node[openpt] at (1.4,0) {};
+
+\node[bound] at (-1.4,0) {};
+\node[bound] at (1.4,0) {};
+\draw[blue!60!black,thick] (-1.4,-0.28) -- (-1.4,0.28);
+\draw[blue!60!black,thick] (1.4,-0.28) -- (1.4,0.28);
+
+\node[lbl,blue!60!black,above] at (-1.4,0.28) {$\inf A$};
+\node[lbl,blue!60!black,above] at (1.4,0.28) {$\sup A$};
+\node[lbl,teal!70!black,below] at (0,-0.28) {$A$};
+
+\draw[gray!60,thick] (-2.6,-0.16) -- (-2.6,0.16);
+\draw[gray!60,thick] (2.6,-0.16) -- (2.6,0.16);
+\node[note,below] at (-2.6,-0.16) {lower bound};
+\node[note,below] at (2.6,-0.16) {upper bound};
+
+\draw[->,gray!70] (-1.4,0.65) -- (-2.45,0.2);
+\draw[->,gray!70] (1.4,0.65) -- (2.45,0.2);
+\node[note] at (0,0.9) {sharp bounds need not be attained};
+
+\end{tikzpicture}

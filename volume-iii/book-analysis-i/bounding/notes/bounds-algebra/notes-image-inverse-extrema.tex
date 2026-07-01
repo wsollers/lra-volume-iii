@@ -1,0 +1,589 @@
+\begin{remark*}[Orientation]
+One cannot usually move a supremum or infimum through an arbitrary function:
+\[
+  \sup f(A)\neq f(\sup A)
+\]
+in general.  Equality is an order-and-continuity statement.  Monotone functions
+preserve or reverse the relevant inequalities, and continuity at the endpoint
+turns the endpoint bound into a sharp bound for the image.  The inverse
+function statements are the same principle applied to $f^{-1}$.
+\end{remark*}
+
+\begin{remark*}[Geometric meaning of the hypotheses]
+Think of a nonempty bounded set $A\subseteq\mathbb{R}$ as a cloud of points on
+the real line.  The number $\sup A$ is the right-hand wall of that cloud: it
+may or may not belong to $A$, but points of $A$ press arbitrarily close to it
+from the left.  Applying a function $f$ moves every point of the cloud and
+produces the image cloud
+\[
+  f(A)=\{f(a):a\in A\}.
+\]
+The question $\sup f(A)=f(\sup A)$ asks whether the function carries the
+right-hand wall of the original cloud to the right-hand wall of the image
+cloud.
+\end{remark*}
+
+\begin{example*}[Increasing images keep the right edge on the right]
+\begin{center}
+\input{volume-iii/book-analysis-i/bounding/notes/bounds-algebra/figure-image-extrema-increasing-cloud}
+\end{center}
+When $f$ is increasing, order is preserved.  A point that starts farther to the
+right cannot land to the left of a point that starts farther to the left.  Thus
+the right edge of the image cloud is controlled by the right edge of the
+original cloud, provided continuity prevents a jump at the endpoint.
+\end{example*}
+
+\begin{example*}[Decreasing images swap the endpoint roles]
+\begin{center}
+\input{volume-iii/book-analysis-i/bounding/notes/bounds-algebra/figure-image-extrema-decreasing-cloud}
+\end{center}
+When $f$ is decreasing, order is reversed.  The left edge of the original cloud
+becomes the right edge of the image cloud, and the right edge of the original
+cloud becomes the left edge of the image cloud.  This is why decreasing image
+theorems exchange suprema and infima.
+\end{example*}
+
+\begin{example*}[Nonmonotone images can cross]
+\begin{center}
+\input{volume-iii/book-analysis-i/bounding/notes/bounds-algebra/figure-image-extrema-crossed-cloud}
+\end{center}
+If $f$ is not monotone on the relevant domain, the arrows can cross.  Then the
+right edge of $f(A)$ need not come from $\sup A$ or from $\inf A$ alone in a
+uniform way.  The image edge may be produced by an interior point, by the left
+branch of a piecewise monotone function, or by the right branch.  In that
+situation the set must be split into pieces where $f$ is monotone, and the
+image pieces must be recombined using the algebra of suprema over unions.
+\end{example*}
+
+\begin{example*}[Why $x\mapsto x^2$ does not fit either global theorem]
+The function $f(x)=x^2$ is not increasing on all of $\mathbb{R}$.  Indeed,
+$-2\leq 1$, but
+\[
+  (-2)^2=4>1=1^2.
+\]
+It is also not decreasing on all of $\mathbb{R}$.  Indeed, $1\leq 2$, but
+\[
+  1^2=1<4=2^2.
+\]
+Thus neither the increasing image theorem nor the decreasing image theorem can
+be applied globally to $x\mapsto x^2$ on $\mathbb{R}$.
+
+Let
+\[
+  A=(-1,2).
+\]
+Then $\inf A=-1$ and $\sup A=2$.  The image under the square map is
+\[
+  f(A)=\{x^2:-1<x<2\}=[0,4),
+\]
+so
+\[
+  \sup f(A)=4.
+\]
+The increasing-theorem expression gives
+\[
+  f(\sup A)=f(2)=4,
+\]
+which happens to agree in this example.  But the agreement is not justified by
+global increasingness, because $x^2$ is not globally increasing.
+
+The decreasing-theorem expression gives
+\[
+  f(\inf A)=f(-1)=1,
+\]
+and this does not agree:
+\[
+  \sup f(A)=4\neq 1=f(\inf A).
+\]
+The failure occurs because the square map folds the real line at $0$.  It is
+decreasing on $(-\infty,0]$ and increasing on $[0,\infty)$, so a set that
+straddles $0$ must be analyzed branch by branch.  For a nonempty bounded set
+$A\subseteq\mathbb{R}$ with finite endpoints $\alpha=\inf A$ and
+$\beta=\sup A$, the largest square is controlled by whichever endpoint is
+farther from $0$:
+\[
+  \sup\{x^2:x\in A\}=\max\{\alpha^2,\beta^2\}.
+\]
+\end{example*}
+
+\begin{theorembox}{Theorem (Increasing Image Preserves Suprema)}
+\begin{theorem}[Increasing Image Preserves Suprema]
+\label{thm:increasing-image-preserves-suprema}
+Let $I\subseteq\mathbb{R}$, let $A\subseteq I$ be nonempty and bounded above,
+and let $f:I\to\mathbb{R}$ be increasing.  Suppose $s=\sup A$ belongs to $I$
+and $f$ is continuous at $s$.  Then
+\[
+  \sup f(A)=f(\sup A),
+  \qquad
+  f(A)=\{f(a):a\in A\}.
+\]
+\hyperref[prf:increasing-image-preserves-suprema]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+A\neq\varnothing,\quad s=\sup A\in I,\quad f\text{ increasing and continuous at }s
+\Longrightarrow
+\sup\{f(a):a\in A\}=f(s).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Supremum}(s,A)\land\operatorname{Increasing}(f,I)\land
+\operatorname{ContinuousAt}(f,s)
+\Longrightarrow
+\operatorname{Supremum}(f(s),f(A)).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\sup f(A)\neq f(\sup A)
+\]
+is impossible under the stated hypotheses.
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\operatorname{Supremum}(s,A)\land\operatorname{Increasing}(f,I)\land
+\operatorname{ContinuousAt}(f,s)\land
+\neg\operatorname{Supremum}(f(s),f(A)).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+The equality can fail if $f$ is not increasing, if $\sup A$ is not in the
+domain, or if the endpoint value of $f$ is not approached by values $f(a)$ with
+$a\in A$.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+Increasingness gives $f(a)\leq f(s)$ for every $a\in A$.  The defining
+approximation property of the supremum gives points of $A$ arbitrarily close
+to $s$ from below, and continuity at $s$ makes their images approach $f(s)$.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[def:supremum]{Supremum};
+\hyperref[def:function-increasing]{Increasing Function};
+\hyperref[def:continuous-at-point]{Continuity at a Point}.
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Increasing Image Preserves Infima)}
+\begin{theorem}[Increasing Image Preserves Infima]
+\label{thm:increasing-image-preserves-infima}
+Let $I\subseteq\mathbb{R}$, let $A\subseteq I$ be nonempty and bounded below,
+and let $f:I\to\mathbb{R}$ be increasing.  Suppose $t=\inf A$ belongs to $I$
+and $f$ is continuous at $t$.  Then
+\[
+  \inf f(A)=f(\inf A).
+\]
+\hyperref[prf:increasing-image-preserves-infima]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+A\neq\varnothing,\quad t=\inf A\in I,\quad f\text{ increasing and continuous at }t
+\Longrightarrow
+\inf\{f(a):a\in A\}=f(t).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Infimum}(t,A)\land\operatorname{Increasing}(f,I)\land
+\operatorname{ContinuousAt}(f,t)
+\Longrightarrow
+\operatorname{Infimum}(f(t),f(A)).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\inf f(A)\neq f(\inf A)
+\]
+is impossible under the stated hypotheses.
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\operatorname{Infimum}(t,A)\land\operatorname{Increasing}(f,I)\land
+\operatorname{ContinuousAt}(f,t)\land
+\neg\operatorname{Infimum}(f(t),f(A)).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+The equality can fail if $f$ is not increasing, if $\inf A$ is not in the
+domain, or if the endpoint value is not reached as a limit of image values.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+Increasingness gives $f(t)\leq f(a)$ for every $a\in A$.  Approximation of the
+infimum from above and continuity at $t$ make this lower bound sharp.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[def:infimum]{Infimum};
+\hyperref[def:function-increasing]{Increasing Function};
+\hyperref[def:continuous-at-point]{Continuity at a Point}.
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Decreasing Image Sends Infimum to Supremum)}
+\begin{theorem}[Decreasing Image Sends Infimum to Supremum]
+\label{thm:decreasing-image-infimum-to-supremum}
+Let $I\subseteq\mathbb{R}$, let $A\subseteq I$ be nonempty and bounded below,
+and let $f:I\to\mathbb{R}$ be decreasing.  Suppose $t=\inf A$ belongs to $I$
+and $f$ is continuous at $t$.  Then
+\[
+  \sup f(A)=f(\inf A).
+\]
+\hyperref[prf:decreasing-image-infimum-to-supremum]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+A\neq\varnothing,\quad t=\inf A\in I,\quad f\text{ decreasing and continuous at }t
+\Longrightarrow
+\sup\{f(a):a\in A\}=f(t).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Infimum}(t,A)\land\operatorname{Decreasing}(f,I)\land
+\operatorname{ContinuousAt}(f,t)
+\Longrightarrow
+\operatorname{Supremum}(f(t),f(A)).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\sup f(A)\neq f(\inf A)
+\]
+is impossible under the stated hypotheses.
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\operatorname{Infimum}(t,A)\land\operatorname{Decreasing}(f,I)\land
+\operatorname{ContinuousAt}(f,t)\land
+\neg\operatorname{Supremum}(f(t),f(A)).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+The equality can fail if $f$ is not decreasing, if $\inf A$ is outside the
+domain, or if $f$ is not continuous at the lower endpoint.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+Decreasingness gives $f(a)\leq f(t)$ for every $a\in A$.  Approximation of
+$t$ from above and continuity at $t$ make this upper bound sharp.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[def:infimum]{Infimum};
+\hyperref[def:supremum]{Supremum};
+\hyperref[def:function-decreasing]{Decreasing Function};
+\hyperref[def:continuous-at-point]{Continuity at a Point}.
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Decreasing Image Sends Supremum to Infimum)}
+\begin{theorem}[Decreasing Image Sends Supremum to Infimum]
+\label{thm:decreasing-image-supremum-to-infimum}
+Let $I\subseteq\mathbb{R}$, let $A\subseteq I$ be nonempty and bounded above,
+and let $f:I\to\mathbb{R}$ be decreasing.  Suppose $s=\sup A$ belongs to $I$
+and $f$ is continuous at $s$.  Then
+\[
+  \inf f(A)=f(\sup A).
+\]
+\hyperref[prf:decreasing-image-supremum-to-infimum]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+A\neq\varnothing,\quad s=\sup A\in I,\quad f\text{ decreasing and continuous at }s
+\Longrightarrow
+\inf\{f(a):a\in A\}=f(s).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Supremum}(s,A)\land\operatorname{Decreasing}(f,I)\land
+\operatorname{ContinuousAt}(f,s)
+\Longrightarrow
+\operatorname{Infimum}(f(s),f(A)).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\inf f(A)\neq f(\sup A)
+\]
+is impossible under the stated hypotheses.
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\operatorname{Supremum}(s,A)\land\operatorname{Decreasing}(f,I)\land
+\operatorname{ContinuousAt}(f,s)\land
+\neg\operatorname{Infimum}(f(s),f(A)).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+The equality can fail if $f$ is not decreasing, if $\sup A$ is outside the
+domain, or if $f$ is not continuous at the upper endpoint.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+Decreasingness gives $f(s)\leq f(a)$ for every $a\in A$.  Approximation of
+$s$ from below and continuity at $s$ make this lower bound sharp.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[def:supremum]{Supremum};
+\hyperref[def:infimum]{Infimum};
+\hyperref[def:function-decreasing]{Decreasing Function};
+\hyperref[def:continuous-at-point]{Continuity at a Point}.
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Increasing Inverse Preserves Suprema)}
+\begin{theorem}[Increasing Inverse Preserves Suprema]
+\label{thm:increasing-inverse-preserves-suprema}
+Let $I,J\subseteq\mathbb{R}$, and let $f:I\to J$ be bijective.  Suppose
+$f^{-1}:J\to I$ is increasing and continuous.  If $B\subseteq J$ is nonempty
+and bounded above, and if $\sup B\in J$, then
+\[
+  \sup f^{-1}(B)=f^{-1}(\sup B).
+\]
+\hyperref[prf:increasing-inverse-preserves-suprema]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+B\neq\varnothing,\quad \sup B\in J,\quad f^{-1}\text{ increasing and continuous at }\sup B
+\Longrightarrow
+\sup f^{-1}(B)=f^{-1}(\sup B).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Supremum}(u,B)\land\operatorname{Increasing}(f^{-1},J)\land
+\operatorname{ContinuousAt}(f^{-1},u)
+\Longrightarrow
+\operatorname{Supremum}(f^{-1}(u),f^{-1}(B)).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\sup f^{-1}(B)\neq f^{-1}(\sup B)
+\]
+is impossible under the stated hypotheses.
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\operatorname{Supremum}(u,B)\land\operatorname{Increasing}(f^{-1},J)\land
+\operatorname{ContinuousAt}(f^{-1},u)\land
+\neg\operatorname{Supremum}(f^{-1}(u),f^{-1}(B)).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+The formula can fail if the inverse is not increasing, if $\sup B$ is outside
+the codomain set $J$, or if the inverse is not continuous at $\sup B$.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+Apply the increasing image supremum theorem to $g=f^{-1}$ and the set $B$.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[thm:increasing-image-preserves-suprema]{Increasing Image Preserves Suprema}.
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Increasing Inverse Preserves Infima)}
+\begin{theorem}[Increasing Inverse Preserves Infima]
+\label{thm:increasing-inverse-preserves-infima}
+Let $I,J\subseteq\mathbb{R}$, and let $f:I\to J$ be bijective.  Suppose
+$f^{-1}:J\to I$ is increasing and continuous.  If $B\subseteq J$ is nonempty
+and bounded below, and if $\inf B\in J$, then
+\[
+  \inf f^{-1}(B)=f^{-1}(\inf B).
+\]
+\hyperref[prf:increasing-inverse-preserves-infima]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+B\neq\varnothing,\quad \inf B\in J,\quad f^{-1}\text{ increasing and continuous at }\inf B
+\Longrightarrow
+\inf f^{-1}(B)=f^{-1}(\inf B).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Infimum}(v,B)\land\operatorname{Increasing}(f^{-1},J)\land
+\operatorname{ContinuousAt}(f^{-1},v)
+\Longrightarrow
+\operatorname{Infimum}(f^{-1}(v),f^{-1}(B)).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\inf f^{-1}(B)\neq f^{-1}(\inf B)
+\]
+is impossible under the stated hypotheses.
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\operatorname{Infimum}(v,B)\land\operatorname{Increasing}(f^{-1},J)\land
+\operatorname{ContinuousAt}(f^{-1},v)\land
+\neg\operatorname{Infimum}(f^{-1}(v),f^{-1}(B)).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+The formula can fail if the inverse is not increasing, if $\inf B$ is outside
+the codomain set $J$, or if the inverse is not continuous at $\inf B$.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+Apply the increasing image infimum theorem to $g=f^{-1}$ and the set $B$.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[thm:increasing-image-preserves-infima]{Increasing Image Preserves Infima}.
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Decreasing Inverse Sends Infimum to Supremum)}
+\begin{theorem}[Decreasing Inverse Sends Infimum to Supremum]
+\label{thm:decreasing-inverse-infimum-to-supremum}
+Let $I,J\subseteq\mathbb{R}$, and let $f:I\to J$ be bijective.  Suppose
+$f^{-1}:J\to I$ is decreasing and continuous.  If $B\subseteq J$ is nonempty
+and bounded below, and if $\inf B\in J$, then
+\[
+  \sup f^{-1}(B)=f^{-1}(\inf B).
+\]
+\hyperref[prf:decreasing-inverse-infimum-to-supremum]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+B\neq\varnothing,\quad \inf B\in J,\quad f^{-1}\text{ decreasing and continuous at }\inf B
+\Longrightarrow
+\sup f^{-1}(B)=f^{-1}(\inf B).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Infimum}(v,B)\land\operatorname{Decreasing}(f^{-1},J)\land
+\operatorname{ContinuousAt}(f^{-1},v)
+\Longrightarrow
+\operatorname{Supremum}(f^{-1}(v),f^{-1}(B)).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\sup f^{-1}(B)\neq f^{-1}(\inf B)
+\]
+is impossible under the stated hypotheses.
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\operatorname{Infimum}(v,B)\land\operatorname{Decreasing}(f^{-1},J)\land
+\operatorname{ContinuousAt}(f^{-1},v)\land
+\neg\operatorname{Supremum}(f^{-1}(v),f^{-1}(B)).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+The formula can fail if the inverse is not decreasing, if $\inf B$ is outside
+$J$, or if the inverse is not continuous at $\inf B$.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+Apply the decreasing image infimum-to-supremum theorem to $g=f^{-1}$ and $B$.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[thm:decreasing-image-infimum-to-supremum]{Decreasing Image Sends Infimum to Supremum}.
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Decreasing Inverse Sends Supremum to Infimum)}
+\begin{theorem}[Decreasing Inverse Sends Supremum to Infimum]
+\label{thm:decreasing-inverse-supremum-to-infimum}
+Let $I,J\subseteq\mathbb{R}$, and let $f:I\to J$ be bijective.  Suppose
+$f^{-1}:J\to I$ is decreasing and continuous.  If $B\subseteq J$ is nonempty
+and bounded above, and if $\sup B\in J$, then
+\[
+  \inf f^{-1}(B)=f^{-1}(\sup B).
+\]
+\hyperref[prf:decreasing-inverse-supremum-to-infimum]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+B\neq\varnothing,\quad \sup B\in J,\quad f^{-1}\text{ decreasing and continuous at }\sup B
+\Longrightarrow
+\inf f^{-1}(B)=f^{-1}(\sup B).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Supremum}(u,B)\land\operatorname{Decreasing}(f^{-1},J)\land
+\operatorname{ContinuousAt}(f^{-1},u)
+\Longrightarrow
+\operatorname{Infimum}(f^{-1}(u),f^{-1}(B)).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\inf f^{-1}(B)\neq f^{-1}(\sup B)
+\]
+is impossible under the stated hypotheses.
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\operatorname{Supremum}(u,B)\land\operatorname{Decreasing}(f^{-1},J)\land
+\operatorname{ContinuousAt}(f^{-1},u)\land
+\neg\operatorname{Infimum}(f^{-1}(u),f^{-1}(B)).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+The formula can fail if the inverse is not decreasing, if $\sup B$ is outside
+$J$, or if the inverse is not continuous at $\sup B$.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+Apply the decreasing image supremum-to-infimum theorem to $g=f^{-1}$ and $B$.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[thm:decreasing-image-supremum-to-infimum]{Decreasing Image Sends Supremum to Infimum}.
+\end{dependencies}

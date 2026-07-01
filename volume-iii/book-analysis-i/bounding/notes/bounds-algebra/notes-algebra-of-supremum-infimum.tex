@@ -1,787 +1,128 @@
-% =========================================================
-% Algebra of completeness bounds
-% =========================================================
-\subsection*{Algebraic Properties of Supremum and Infimum}
+\subsubsection*{Current Algebraic Properties of Supremum and Infimum}
 
-% =========================================================
-% Uniqueness of the Maximum
-% =========================================================
-\begin{propositionbox}{Proposition (Uniqueness of the Maximum)}
-\begin{proposition}[Uniqueness of the Maximum]
-\label{prop:uniqueness-of-the-maximum}
-Let $A\subseteq\mathbb{R}$. If $m_1$ and $m_2$ are both maximum elements of $A$, then $m_1=m_2$.
+\begin{remark*}[Section boundary]
+Basic bound, supremum, infimum, maximum, and minimum facts now live in
+\hyperref[def:upper-bound]{Upper and Lower Bounds},
+\hyperref[def:supremum]{Suprema and Infima}, and
+\hyperref[def:maximum]{Maxima and Minima}.  This section begins with
+algebraic transformations of those extremal values.
+\end{remark*}
 
-\smallskip
-\noindent
-\hyperref[prf:uniqueness-of-the-maximum]{\textit{Go to proof.}}
-\end{proposition}
-\end{propositionbox}
+\begin{definitionbox}{Definition (Set Arithmetic Images)}
+\begin{definition}[Set Arithmetic Images]
+\label{def:set-arithmetic-images}
+Let $A,B\subseteq\mathbb{R}$.  Define
+\[
+  A+B:=\{a+b:a\in A,\ b\in B\},\qquad
+  A-B:=\{a-b:a\in A,\ b\in B\},
+\]
+\[
+  AB:=\{ab:a\in A,\ b\in B\},\qquad
+  A/B:=\{a/b:a\in A,\ b\in B,\ b\neq0\}.
+\]
+\end{definition}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
-\begin{aligned}
-&\text{Let }A\subseteq\mathbb{R}\text{ and }m_1,m_2\in A.\\
-&\bigl[m_1\text{ is a maximum of }A
-\;\land\;
-m_2\text{ is a maximum of }A\bigr]
-\Longrightarrow
-m_1=m_2.
-\end{aligned}
+x\in A+B\Longleftrightarrow(\exists a\in A)(\exists b\in B)(x=a+b),
 \]
+and similarly for difference, product, and quotient with the quotient condition
+$b\neq0$.
 \end{remark*}
 
-\begin{remark*}[Predicate reading]
+\begin{remark*}[Definition predicate reading]
 \[
-\operatorname{Maximum}(m_1,A)\land \operatorname{Maximum}(m_2,A)
-\Longrightarrow
-m_1=m_2.
+\operatorname{SetSum}(A,B)=A+B,\quad
+\operatorname{SetDifference}(A,B)=A-B,\quad
+\operatorname{SetProduct}(A,B)=AB,\quad
+\operatorname{SetQuotient}(A,B)=A/B.
 \]
 \end{remark*}
 
 \begin{remark*}[Negated quantified statement]
 \[
-\begin{aligned}
-&\text{Let }A\subseteq\mathbb{R}\text{ and }m_1,m_2\in A.\\
-&m_1\text{ and }m_2\text{ are both maximum elements of }A
-\text{ and }m_1\ne m_2
-\end{aligned}
+x\notin A+B\Longleftrightarrow(\forall a\in A)(\forall b\in B)(x\neq a+b),
 \]
-is impossible.
+with the analogous readings for the other arithmetic images.
 \end{remark*}
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{Maximum}(m_1,A)\land \operatorname{Maximum}(m_2,A)\land m_1\ne m_2
+\neg\operatorname{SetProduct}(A,B)=C
+\quad\text{means}\quad
+(\exists x)\bigl[x\in C\triangle AB\bigr],
 \]
-is a contradictory configuration.
+and similarly for sum, difference, and quotient.
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-The uniqueness claim could fail only if two distinct elements of $A$ each dominated all elements of $A$. In the real order this cannot occur because each maximum must be less than or equal to the other.
+An arithmetic-image definition fails only if it omits a value produced by the
+rule or includes a value not produced by the rule.
 \end{remark*}
 
 \begin{remark*}[Failure mode decomposition]
-\[
-\begin{aligned}
-&\operatorname{Maximum}(m_1,A)\land \operatorname{Maximum}(m_2,A)\\
-&\qquad\Longrightarrow
-\underbrace{m_1\le m_2}_{m_2\text{ dominates }A}
-\land
-\underbrace{m_2\le m_1}_{m_1\text{ dominates }A}
-\Longrightarrow
-m_1=m_2.
-\end{aligned}
-\]
-\end{remark*}
-
-\begin{remark*}[Interpretation]
-A maximum is not merely a high point of the set; it is the greatest point of the set. If two elements both claim that role, each must sit above the other, and antisymmetry of the real order forces them to be the same number.
+Every membership claim decomposes into witnesses from the input sets and the
+arithmetic operation that produced the image point.
 \end{remark*}
 
 \begin{dependencies}
-\hyperref[def:maximum]{Maximum}.
+\hyperref[def:subset]{Subset};
+\hyperref[def:addition-on-r]{Addition on $\mathbb{R}$};
+\hyperref[def:multiplication-on-r]{Multiplication on $\mathbb{R}$}.
 \end{dependencies}
 
-
-% =========================================================
-% Uniqueness of the Supremum
-% =========================================================
-\begin{propositionbox}{Proposition (Uniqueness of the Supremum)}
-\begin{proposition}[Uniqueness of the Supremum]
-\label{prop:uniqueness-of-the-supremum}
-Let $A\subseteq\mathbb{R}$. If $s_1$ and $s_2$ are both suprema of $A$, then $s_1=s_2$.
-
-\smallskip
-\noindent
-\hyperref[prf:uniqueness-of-the-supremum]{\textit{Go to proof.}}
-\end{proposition}
-\end{propositionbox}
+\begin{definitionbox}{Definition (Reciprocal Image)}
+\begin{definition}[Reciprocal Image]
+\label{def:reciprocal-image}
+Let $A\subseteq\mathbb{R}$ and suppose $0\notin A$.  The reciprocal image of
+$A$ is
+\[
+  A^{-1}:=\{1/a:a\in A\}.
+\]
+\end{definition}
+\end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
-\begin{aligned}
-&\text{Let }A\subseteq\mathbb{R}\text{ and }s_1,s_2\in\mathbb{R}.\\
-&\bigl[s_1=\sup A\;\land\;s_2=\sup A\bigr]
-\Longrightarrow
-s_1=s_2.
-\end{aligned}
+x\in A^{-1}\Longleftrightarrow(\exists a\in A)(x=1/a).
 \]
 \end{remark*}
 
-\begin{remark*}[Predicate reading]
+\begin{remark*}[Definition predicate reading]
 \[
-\operatorname{Supremum}(s_1,A)\land \operatorname{Supremum}(s_2,A)
-\Longrightarrow
-s_1=s_2.
+\operatorname{ReciprocalImage}(A)=A^{-1}.
 \]
 \end{remark*}
 
 \begin{remark*}[Negated quantified statement]
 \[
-\begin{aligned}
-&\text{Let }A\subseteq\mathbb{R}\text{ and }s_1,s_2\in\mathbb{R}.\\
-&s_1=\sup A,\quad s_2=\sup A,\quad\text{and}\quad s_1\ne s_2
-\end{aligned}
+x\notin A^{-1}\Longleftrightarrow(\forall a\in A)(x\neq1/a).
 \]
-is impossible.
 \end{remark*}
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{Supremum}(s_1,A)\land \operatorname{Supremum}(s_2,A)\land s_1\ne s_2
+\neg\operatorname{ReciprocalImage}(A)=B
+\quad\text{means}\quad
+(\exists x)\bigl[x\in B\triangle A^{-1}\bigr].
 \]
-is a contradictory configuration.
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-The uniqueness claim could fail only if two different real numbers were both least upper bounds of the same set. Since each supremum is less than or equal to every upper bound, each must be less than or equal to the other.
+The reciprocal image is undefined if zero is allowed as an input value.  Once
+zero is excluded, the only definition failures are omitted or spurious
+reciprocal values.
 \end{remark*}
 
 \begin{remark*}[Failure mode decomposition]
-\[
-\begin{aligned}
-&\operatorname{Supremum}(s_1,A)\land \operatorname{Supremum}(s_2,A)\\
-&\qquad\Longrightarrow
-\underbrace{s_1\le s_2}_{s_2\text{ is an upper bound and }s_1\text{ is least}}
-\land
-\underbrace{s_2\le s_1}_{s_1\text{ is an upper bound and }s_2\text{ is least}}
-\Longrightarrow
-s_1=s_2.
-\end{aligned}
-\]
-\end{remark*}
-
-\begin{remark*}[Interpretation]
-The supremum is the least possible ceiling over a set. Two ceilings can both be least only if neither one is actually above the other, so the order on $\mathbb{R}$ identifies them as the same number.
+Every element of $A^{-1}$ has the form $1/a$ for a nonzero $a\in A$.
 \end{remark*}
 
 \begin{dependencies}
-\hyperref[def:supremum]{Supremum}.
+\hyperref[def:subset]{Subset};
+\hyperref[def:multiplication-on-r]{Multiplication on $\mathbb{R}$}.
 \end{dependencies}
-
-
-% =========================================================
-% Maximum Implies Supremum
-% =========================================================
-\begin{propositionbox}{Proposition (Maximum Implies Supremum)}
-\begin{proposition}[Maximum Implies Supremum]
-\label{prop:maximum-implies-supremum}
-Let $A\subseteq\mathbb{R}$ and let $m\in A$. If $m$ is a maximum of $A$, then $m=\sup A$.
-
-\smallskip
-\noindent
-\hyperref[prf:maximum-implies-supremum]{\textit{Go to proof.}}
-\end{proposition}
-\end{propositionbox}
-
-\begin{remark*}[Standard quantified statement]
-\[
-\begin{aligned}
-&\text{Let }A\subseteq\mathbb{R}\text{ and }m\in A.\\
-&m\text{ is a maximum of }A
-\Longrightarrow
-m=\sup A.
-\end{aligned}
-\]
-\end{remark*}
-
-\begin{remark*}[Predicate reading]
-\[
-\operatorname{Maximum}(m,A)
-\Longrightarrow
-\operatorname{Supremum}(m,A).
-\]
-\end{remark*}
-
-\begin{remark*}[Negated quantified statement]
-\[
-\begin{aligned}
-&\text{Let }A\subseteq\mathbb{R}\text{ and }m\in A.\\
-&m\text{ is a maximum of }A
-\text{ and }m\ne\sup A
-\end{aligned}
-\]
-is impossible.
-\end{remark*}
-
-\begin{remark*}[Negation predicate reading]
-\[
-\operatorname{Maximum}(m,A)\land \neg\operatorname{Supremum}(m,A)
-\]
-is a contradictory configuration.
-\end{remark*}
-
-\begin{remark*}[Failure modes]
-The implication could fail only if the greatest element of $A$ were not the least upper bound of $A$. But a maximum already bounds the set from above, and every upper bound must lie at least as high as that maximum.
-\end{remark*}
-
-\begin{remark*}[Failure mode decomposition]
-\[
-\begin{aligned}
-\operatorname{Maximum}(m,A)
-&\Longrightarrow
-\underbrace{\forall x\in A\;(x\le m)}_{m\text{ is an upper bound}}\\
-&\qquad\land
-\underbrace{\forall u\in\mathbb{R}\,
-\bigl[(\forall x\in A\;(x\le u))\Longrightarrow m\le u\bigr]}_{m\text{ is least among upper bounds}}.
-\end{aligned}
-\]
-\end{remark*}
-
-\begin{remark*}[Interpretation]
-A maximum belongs to the set and sits above every element of the set. That makes it an upper bound, and no smaller upper bound can exist because it would have to sit below the maximum while still bounding the maximum itself.
-\end{remark*}
-
-\begin{dependencies}
-\hyperref[def:maximum]{Maximum};
-\hyperref[def:supremum]{Supremum}.
-\end{dependencies}
-
-
-% =========================================================
-% Supremum in the Set Is the Maximum
-% =========================================================
-\begin{propositionbox}{Proposition (Supremum in the Set Is the Maximum)}
-\begin{proposition}[Supremum in the Set Is the Maximum]
-\label{prop:supremum-in-the-set-is-the-maximum}
-Let $A\subseteq\mathbb{R}$ and let $s=\sup A$. If $s\in A$, then $s$ is a maximum of $A$.
-
-\smallskip
-\noindent
-\hyperref[prf:supremum-in-the-set-is-the-maximum]{\textit{Go to proof.}}
-\end{proposition}
-\end{propositionbox}
-
-\begin{remark*}[Standard quantified statement]
-\[
-\begin{aligned}
-&\text{Let }A\subseteq\mathbb{R}\text{ and }s\in\mathbb{R}.\\
-&\bigl[s=\sup A\;\land\;s\in A\bigr]
-\Longrightarrow
-s\text{ is a maximum of }A.
-\end{aligned}
-\]
-\end{remark*}
-
-\begin{remark*}[Predicate reading]
-\[
-\operatorname{Supremum}(s,A)\land s\in A
-\Longrightarrow
-\operatorname{Maximum}(s,A).
-\]
-\end{remark*}
-
-\begin{remark*}[Negated quantified statement]
-\[
-\begin{aligned}
-&\text{Let }A\subseteq\mathbb{R}\text{ and }s\in\mathbb{R}.\\
-&s=\sup A,\quad s\in A,\quad\text{and }s\text{ is not a maximum of }A
-\end{aligned}
-\]
-is impossible.
-\end{remark*}
-
-\begin{remark*}[Negation predicate reading]
-\[
-\operatorname{Supremum}(s,A)\land s\in A\land \neg\operatorname{Maximum}(s,A)
-\]
-is a contradictory configuration.
-\end{remark*}
-
-\begin{remark*}[Failure modes]
-The implication could fail only if the least upper bound belonged to the set but did not dominate every element of the set. That cannot happen because every supremum is already an upper bound.
-\end{remark*}
-
-\begin{remark*}[Failure mode decomposition]
-\[
-\begin{aligned}
-\operatorname{Supremum}(s,A)\land s\in A
-&\Longrightarrow
-\underbrace{\forall x\in A\;(x\le s)}_{s\text{ is an upper bound}}\\
-&\qquad\land
-\underbrace{s\in A}_{s\text{ belongs to the set}}
-\Longrightarrow
-\operatorname{Maximum}(s,A).
-\end{aligned}
-\]
-\end{remark*}
-
-\begin{remark*}[Interpretation]
-A supremum is usually only a least ceiling. When that ceiling is actually a member of the set, it becomes the greatest element of the set, so the extremal value is attained rather than merely approached.
-\end{remark*}
-
-\begin{dependencies}
-\hyperref[def:supremum]{Supremum};
-\hyperref[def:maximum]{Maximum}.
-\end{dependencies}
-
-
-
-
-\input{volume-iii/book-analysis-i/bounding/notes/bounds-algebra/figure-supremum-algebra}
-
-
-
-% =========================================================
-% Subset Inclusion Preserves Upper Bounds
-% =========================================================
-\begin{lemmabox}{Lemma (Subset Inclusion Preserves Upper Bounds)}
-\begin{lemma}[Subset Inclusion Preserves Upper Bounds]
-\label{lem:subset-inclusion-preserves-upper-bounds}
-Let $A\subseteq B\subseteq\mathbb{R}$. If $u$ is an upper bound of $B$, then $u$ is an upper bound of $A$.
-
-\smallskip
-\noindent
-\hyperref[prf:subset-inclusion-preserves-upper-bounds]{\textit{Go to proof.}}
-\end{lemma}
-\end{lemmabox}
-
-\begin{remark*}[Standard quantified statement]
-\[
-\begin{aligned}
-&\text{Let }A\subseteq B\subseteq\mathbb{R}\text{ and }u\in\mathbb{R}.\\
-&\bigl[\forall y\in B\;(y\le u)\bigr]
-\Longrightarrow
-\bigl[\forall x\in A\;(x\le u)\bigr].
-\end{aligned}
-\]
-\end{remark*}
-
-\begin{remark*}[Predicate reading]
-\[
-A\subseteq B\land \operatorname{UpperBound}(u,B)
-\Longrightarrow
-\operatorname{UpperBound}(u,A).
-\]
-\end{remark*}
-
-\begin{remark*}[Negated quantified statement]
-\[
-\begin{aligned}
-&A\subseteq B,\quad u\text{ is an upper bound of }B,\\
-&\text{and }u\text{ is not an upper bound of }A
-\end{aligned}
-\]
-is impossible.
-\end{remark*}
-
-\begin{remark*}[Negation predicate reading]
-\[
-A\subseteq B\land \operatorname{UpperBound}(u,B)\land \neg\operatorname{UpperBound}(u,A)
-\]
-is a contradictory configuration.
-\end{remark*}
-
-\begin{remark*}[Failure modes]
-The implication could fail only if some $x\in A$ exceeded $u$. Since $A\subseteq B$, that same $x$ would belong to $B$, contradicting that $u$ bounds $B$ from above.
-\end{remark*}
-
-\begin{remark*}[Failure mode decomposition]
-\[
-\begin{aligned}
-\neg\operatorname{UpperBound}(u,A)
-&\Longleftrightarrow
-\underbrace{\exists x\in A\;(u<x)}_{\text{witness in }A}\\
-&\Longrightarrow
-\underbrace{\exists x\in B\;(u<x)}_{A\subseteq B}
-\Longleftrightarrow
-\neg\operatorname{UpperBound}(u,B).
-\end{aligned}
-\]
-\end{remark*}
-
-\begin{remark*}[Interpretation]
-A bound for a larger set automatically bounds every smaller set inside it. Inclusion can only remove possible counterexamples, so it cannot destroy an existing upper bound.
-\end{remark*}
-
-\begin{dependencies}
-\hyperref[def:upper-bound]{Upper Bound}.
-\end{dependencies}
-
-
-% =========================================================
-% Supremum Is Monotone Under Inclusion
-% =========================================================
-\begin{theorembox}{Theorem (Supremum Is Monotone Under Inclusion)}
-\begin{theorem}[Supremum Is Monotone Under Inclusion]
-\label{thm:supremum-is-monotone-under-inclusion}
-Let $A,B\subseteq\mathbb{R}$ be nonempty sets that are bounded above. If $A\subseteq B$, then $\sup A\le \sup B$.
-
-\smallskip
-\noindent
-\hyperref[prf:supremum-is-monotone-under-inclusion]{\textit{Go to proof.}}
-\end{theorem}
-\end{theorembox}
-
-\begin{remark*}[Standard quantified statement]
-\[
-\begin{aligned}
-&\text{Let }A,B\subseteq\mathbb{R}\text{ be nonempty and bounded above.}\\
-&A\subseteq B
-\Longrightarrow
-\sup A\le \sup B.
-\end{aligned}
-\]
-\end{remark*}
-
-\begin{remark*}[Predicate reading]
-\[
-A\subseteq B\land \operatorname{Supremum}(s_A,A)\land \operatorname{Supremum}(s_B,B)
-\Longrightarrow
-s_A\le s_B.
-\]
-\end{remark*}
-
-\begin{remark*}[Negated quantified statement]
-\[
-A\subseteq B,\quad \sup B<\sup A
-\]
-is impossible when $A$ and $B$ are nonempty and bounded above.
-\end{remark*}
-
-\begin{remark*}[Negation predicate reading]
-\[
-A\subseteq B\land \operatorname{Supremum}(s_A,A)\land \operatorname{Supremum}(s_B,B)\land s_B<s_A
-\]
-is a contradictory configuration.
-\end{remark*}
-
-\begin{remark*}[Failure modes]
-The monotonicity statement could fail only if the larger set had a strictly smaller least upper bound. But every upper bound for $B$ is also an upper bound for $A$, so the least upper bound of $A$ cannot sit above $\sup B$.
-\end{remark*}
-
-\begin{remark*}[Failure mode decomposition]
-\[
-\begin{aligned}
-A\subseteq B
-&\Longrightarrow
-\underbrace{\operatorname{UpperBound}(\sup B,A)}_{\sup B\text{ bounds the smaller set}}\\
-&\Longrightarrow
-\underbrace{\sup A\le \sup B}_{\sup A\text{ is least among upper bounds of }A}.
-\end{aligned}
-\]
-\end{remark*}
-
-\begin{remark*}[Interpretation]
-Making a set larger can only push its least ceiling upward or leave it unchanged. It cannot lower the supremum, because the larger set contains all of the old points that already had to be bounded.
-\end{remark*}
-
-\begin{dependencies}
-\hyperref[def:upper-bound]{Upper Bound};
-\hyperref[def:supremum]{Supremum};
-\hyperref[lem:subset-inclusion-preserves-upper-bounds]{Subset Inclusion Preserves Upper Bounds}.
-\end{dependencies}
-
-
-% =========================================================
-% Upper Bound Comparison with the Supremum
-% =========================================================
-\begin{propositionbox}{Proposition (Upper Bound Comparison with the Supremum)}
-\begin{proposition}[Upper Bound Comparison with the Supremum]
-\label{prop:upper-bound-comparison-with-the-supremum}
-Let $A\subseteq\mathbb{R}$ be nonempty and bounded above, and let $s=\sup A$. For $u\in\mathbb{R}$, the number $u$ is an upper bound of $A$ if and only if $s\le u$.
-
-\smallskip
-\noindent
-\hyperref[prf:upper-bound-comparison-with-the-supremum]{\textit{Go to proof.}}
-\end{proposition}
-\end{propositionbox}
-
-\begin{remark*}[Standard quantified statement]
-\[
-\begin{aligned}
-&\text{Let }A\subseteq\mathbb{R}\text{ be nonempty and bounded above, and let }s=\sup A.\\
-&\forall u\in\mathbb{R}\;
-\bigl[u\text{ is an upper bound of }A
-\Longleftrightarrow
-s\le u\bigr].
-\end{aligned}
-\]
-\end{remark*}
-
-\begin{remark*}[Predicate reading]
-\[
-\operatorname{Supremum}(s,A)
-\Longrightarrow
-\forall u\in\mathbb{R}\;
-\bigl[\operatorname{UpperBound}(u,A)\Longleftrightarrow s\le u\bigr].
-\]
-\end{remark*}
-
-\begin{remark*}[Negated quantified statement]
-\[
-\exists u\in\mathbb{R}\;
-\bigl[
-(u\text{ is an upper bound of }A\text{ and }u<s)
-\;\lor\;
-(s\le u\text{ and }u\text{ is not an upper bound of }A)
-\bigr]
-\]
-is impossible when $s=\sup A$.
-\end{remark*}
-
-\begin{remark*}[Negation predicate reading]
-\[
-\operatorname{Supremum}(s,A)\land
-\exists u\in\mathbb{R}\;
-\bigl[
-(\operatorname{UpperBound}(u,A)\land u<s)
-\lor
-(s\le u\land \neg\operatorname{UpperBound}(u,A))
-\bigr]
-\]
-is a contradictory configuration.
-\end{remark*}
-
-\begin{remark*}[Failure modes]
-There are two apparent ways the equivalence could fail. Either an upper bound lies below the supremum, contradicting leastness, or a number above the supremum fails to bound the set, contradicting that the supremum already bounds the set.
-\end{remark*}
-
-\begin{remark*}[Failure mode decomposition]
-\[
-\begin{aligned}
-\operatorname{UpperBound}(u,A)&\Longrightarrow s\le u,\\
-s\le u&\Longrightarrow
-\underbrace{\forall x\in A\;(x\le s)}_{s\text{ bounds }A}
-\Longrightarrow
-\underbrace{\forall x\in A\;(x\le u)}_{u\text{ also bounds }A}.
-\end{aligned}
-\]
-\end{remark*}
-
-\begin{remark*}[Interpretation]
-Once the supremum is known, all upper bounds are exactly the real numbers at or above it. The supremum is therefore the threshold where upper bounds begin.
-\end{remark*}
-
-\begin{dependencies}
-\hyperref[def:upper-bound]{Upper Bound};
-\hyperref[def:supremum]{Supremum}.
-\end{dependencies}
-
-
-% =========================================================
-% Every Element Lies Below the Supremum
-% =========================================================
-\begin{propositionbox}{Proposition (Every Element Lies Below the Supremum)}
-\begin{proposition}[Every Element Lies Below the Supremum]
-\label{prop:every-element-lies-below-the-supremum}
-Let $A\subseteq\mathbb{R}$ be nonempty and bounded above, and let $s=\sup A$. Then $x\le s$ for every $x\in A$.
-
-\smallskip
-\noindent
-\hyperref[prf:every-element-lies-below-the-supremum]{\textit{Go to proof.}}
-\end{proposition}
-\end{propositionbox}
-
-\begin{remark*}[Standard quantified statement]
-\[
-\begin{aligned}
-&\text{Let }A\subseteq\mathbb{R}\text{ be nonempty and bounded above, and let }s=\sup A.\\
-&\forall x\in A\;(x\le s).
-\end{aligned}
-\]
-\end{remark*}
-
-\begin{remark*}[Predicate reading]
-\[
-\operatorname{Supremum}(s,A)
-\Longrightarrow
-\forall x\in A\;(x\le s).
-\]
-\end{remark*}
-
-\begin{remark*}[Negated quantified statement]
-\[
-s=\sup A\quad\text{and}\quad \exists x\in A\;(s<x)
-\]
-is impossible.
-\end{remark*}
-
-\begin{remark*}[Negation predicate reading]
-\[
-\operatorname{Supremum}(s,A)\land \exists x\in A\;(s<x)
-\]
-is a contradictory configuration.
-\end{remark*}
-
-\begin{remark*}[Failure modes]
-The statement could fail only if some element of $A$ sat strictly above $\sup A$. That would mean $\sup A$ is not even an upper bound of $A$.
-\end{remark*}
-
-\begin{remark*}[Failure mode decomposition]
-\[
-\neg\bigl[\forall x\in A\;(x\le s)\bigr]
-\Longleftrightarrow
-\underbrace{\exists x\in A\;(s<x)}_{\text{element above the alleged supremum}}
-\Longleftrightarrow
-\neg\operatorname{UpperBound}(s,A).
-\]
-\end{remark*}
-
-\begin{remark*}[Interpretation]
-The supremum is a ceiling for the set. It may or may not be a point of the set, but every actual element of the set must lie at or below it.
-\end{remark*}
-
-\begin{dependencies}
-\hyperref[def:upper-bound]{Upper Bound};
-\hyperref[def:supremum]{Supremum}.
-\end{dependencies}
-
-
-% =========================================================
-% Infimum Is Less Than or Equal to the Supremum
-% =========================================================
-\begin{theorembox}{Theorem (Infimum Is Less Than or Equal to the Supremum)}
-\begin{theorem}[Infimum Is Less Than or Equal to the Supremum]
-\label{thm:infimum-less-than-supremum}
-Let $A\subseteq\mathbb{R}$ be nonempty, bounded below, and bounded above. Then $\inf A\le \sup A$.
-
-\smallskip
-\noindent
-\hyperref[prf:infimum-less-than-supremum]{\textit{Go to proof.}}
-\end{theorem}
-\end{theorembox}
-
-\begin{remark*}[Standard quantified statement]
-\[
-\begin{aligned}
-&\text{Let }A\subseteq\mathbb{R}\text{ be nonempty, bounded below, and bounded above.}\\
-&\inf A\le \sup A.
-\end{aligned}
-\]
-\end{remark*}
-
-\begin{remark*}[Predicate reading]
-\[
-\operatorname{Infimum}(t,A)\land \operatorname{Supremum}(s,A)
-\Longrightarrow
-t\le s.
-\]
-\end{remark*}
-
-\begin{remark*}[Negated quantified statement]
-\[
-\inf A>\sup A
-\]
-is impossible for a nonempty set that has both bounds.
-\end{remark*}
-
-\begin{remark*}[Negation predicate reading]
-\[
-\operatorname{Infimum}(t,A)\land \operatorname{Supremum}(s,A)\land s<t
-\]
-is a contradictory configuration.
-\end{remark*}
-
-\begin{remark*}[Failure modes]
-The inequality could fail only if the greatest lower bound were strictly above the least upper bound. Any element of the nonempty set must lie between those two bounding values, which rules out this order.
-\end{remark*}
-
-\begin{remark*}[Failure mode decomposition]
-\[
-\begin{aligned}
-&\text{Choose }a\in A.\\
-&\underbrace{\inf A\le a}_{\inf A\text{ is a lower bound threshold}}
-\quad\text{and}\quad
-\underbrace{a\le \sup A}_{\sup A\text{ is an upper bound threshold}}
-\Longrightarrow
-\inf A\le \sup A.
-\end{aligned}
-\]
-\end{remark*}
-
-\begin{remark*}[Interpretation]
-A nonempty bounded set cannot have its floor above its ceiling. Any point of the set witnesses the bridge from the infimum up to the supremum.
-\end{remark*}
-
-\begin{dependencies}
-\hyperref[def:infimum]{Infimum};
-\hyperref[def:supremum]{Supremum}.
-\end{dependencies}
-
-
-% =========================================================
-% Order Comparison of Suprema
-% =========================================================
-\begin{propositionbox}{Proposition (Order Comparison of Suprema)}
-\begin{proposition}[Order Comparison of Suprema]
-\label{prop:order-comparison-of-suprema}
-Let $A,B\subseteq\mathbb{R}$ be nonempty and bounded above. If for every $x\in A$ there exists $y\in B$ such that $x\le y$, then $\sup A\le \sup B$.
-
-\smallskip
-\noindent
-\hyperref[prf:order-comparison-of-suprema]{\textit{Go to proof.}}
-\end{proposition}
-\end{propositionbox}
-
-\begin{remark*}[Standard quantified statement]
-\[
-\begin{aligned}
-&\text{Let }A,B\subseteq\mathbb{R}\text{ be nonempty and bounded above.}\\
-&\bigl[\forall x\in A\;\exists y\in B\;(x\le y)\bigr]
-\Longrightarrow
-\sup A\le \sup B.
-\end{aligned}
-\]
-\end{remark*}
-
-\begin{remark*}[Predicate reading]
-\[
-\bigl[\forall x\in A\;\exists y\in B\;(x\le y)\bigr]
-\land
-\operatorname{Supremum}(s_A,A)\land \operatorname{Supremum}(s_B,B)
-\Longrightarrow
-s_A\le s_B.
-\]
-\end{remark*}
-
-\begin{remark*}[Negated quantified statement]
-\[
-\bigl[\forall x\in A\;\exists y\in B\;(x\le y)\bigr]
-\quad\text{and}\quad
-\sup B<\sup A
-\]
-is impossible.
-\end{remark*}
-
-\begin{remark*}[Negation predicate reading]
-\[
-\bigl[\forall x\in A\;\exists y\in B\;(x\le y)\bigr]
-\land
-\operatorname{Supremum}(s_A,A)\land \operatorname{Supremum}(s_B,B)\land s_B<s_A
-\]
-is a contradictory configuration.
-\end{remark*}
-
-\begin{remark*}[Failure modes]
-The comparison could fail only if the supremum of $A$ rose above the supremum of $B$. But every element of $A$ is dominated by some element of $B$, and every element of $B$ lies below $\sup B$, so $\sup B$ is an upper bound for $A$.
-\end{remark*}
-
-\begin{remark*}[Failure mode decomposition]
-\[
-\begin{aligned}
-\forall x\in A\;\exists y\in B\;(x\le y)
-&\Longrightarrow
-\underbrace{\forall x\in A\;(x\le \sup B)}_{\sup B\text{ bounds }A}\\
-&\Longrightarrow
-\underbrace{\sup A\le \sup B}_{\sup A\text{ is least among upper bounds of }A}.
-\end{aligned}
-\]
-\end{remark*}
-
-\begin{remark*}[Interpretation]
-This criterion compares two sets without requiring inclusion. If every point of $A$ can be matched below some point of $B$, then $B$ reaches at least as high as $A$ in the supremum sense.
-\end{remark*}
-
-\begin{dependencies}
-\hyperref[def:supremum]{Supremum};
-\hyperref[prop:every-element-lies-below-the-supremum]{Every Element Lies Below the Supremum};
-\hyperref[prop:upper-bound-comparison-with-the-supremum]{Upper Bound Comparison with the Supremum}.
-\end{dependencies}
-
-
-
-
 
 % --- Algebra of Supremum Cluster ---
 
@@ -853,6 +194,71 @@ Translation shifts the entire set and all of its ceilings by the same amount. Th
 \begin{dependencies}
 \hyperref[def:upper-bound]{Upper Bound};
 \hyperref[def:supremum]{Supremum}.
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Translation Invariance of the Infimum)}
+\begin{theorem}[Translation Invariance of the Infimum]
+\label{thm:translation-invariance-infimum}
+Let $A\subseteq\mathbb{R}$ be nonempty and bounded below, and let
+$c\in\mathbb{R}$. Then
+\[
+  \inf(A+c)=\inf A+c.
+\]
+\hyperref[prf:translation-invariance-infimum]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+A\neq\varnothing,\quad A\text{ bounded below}
+\quad\Longrightarrow\quad
+\inf\{a+c:a\in A\}=\inf A+c.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Infimum}(t,A)
+\Longrightarrow
+\operatorname{Infimum}(t+c,A+c).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\inf(A+c)\neq\inf A+c
+\]
+is impossible under the stated hypotheses.
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\operatorname{Infimum}(t,A)\land\neg\operatorname{Infimum}(t+c,A+c).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+The formula could fail only if translation failed to preserve lower bounds or
+failed to preserve greatestness among lower bounds.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+\[
+(\forall a\in A)(t\leq a)
+\Longleftrightarrow
+(\forall a\in A)(t+c\leq a+c).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Translation shifts every floor by the same amount, so the greatest floor shifts
+by that amount.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[def:lower-bound]{Lower Bound};
+\hyperref[def:infimum]{Infimum};
+\hyperref[def:set-arithmetic-images]{Set Arithmetic Images}.
 \end{dependencies}
 
 
@@ -927,6 +333,72 @@ Positive scaling stretches the set without reversing order. The least ceiling st
 \hyperref[def:supremum]{Supremum}.
 \end{dependencies}
 
+\begin{theorembox}{Theorem (Positive Scalar Multiplication of the Infimum)}
+\begin{theorem}[Positive Scalar Multiplication of the Infimum]
+\label{thm:positive-scalar-mult-infimum}
+Let $A\subseteq\mathbb{R}$ be nonempty and bounded below, and let $k>0$.
+Then
+\[
+  \inf(kA)=k\inf A.
+\]
+\hyperref[prf:positive-scalar-mult-infimum]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+k>0,\quad A\neq\varnothing,\quad A\text{ bounded below}
+\quad\Longrightarrow\quad
+\inf\{ka:a\in A\}=k\inf A.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Infimum}(t,A)\land k>0
+\Longrightarrow
+\operatorname{Infimum}(kt,kA).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+k>0,\quad \inf(kA)\neq k\inf A
+\]
+is impossible under the stated hypotheses.
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\operatorname{Infimum}(t,A)\land k>0\land
+\neg\operatorname{Infimum}(kt,kA).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+The formula could fail only if positive multiplication failed to preserve lower
+bounds or greatestness among lower bounds.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+\[
+(\forall a\in A)(t\leq a)
+\Longleftrightarrow
+(\forall a\in A)(kt\leq ka)
+\qquad(k>0).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Positive scaling stretches the floor of the set by the same factor.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[def:lower-bound]{Lower Bound};
+\hyperref[def:infimum]{Infimum};
+\hyperref[def:displacement-dilation-reflection]{Displacement, Dilation, and Reflection}.
+\end{dependencies}
+
 
 \begin{theorembox}{Theorem (Scalar Multiplication by a Negative Scalar)}
 \begin{theorem}[Scalar Multiplication by a Negative Scalar]
@@ -999,6 +471,75 @@ Negative scaling reflects the set and changes floors into ceilings. The lowest p
 \hyperref[def:upper-bound]{Upper Bound};
 \hyperref[def:infimum]{Infimum};
 \hyperref[def:supremum]{Supremum}.
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Negative Scalar Multiplication of the Infimum)}
+\begin{theorem}[Negative Scalar Multiplication of the Infimum]
+\label{thm:negative-scalar-mult-infimum}
+Let $A\subseteq\mathbb{R}$ be nonempty and bounded above, and let $k<0$.
+Then
+\[
+  \inf(kA)=k\sup A.
+\]
+\hyperref[prf:negative-scalar-mult-infimum]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+k<0,\quad A\neq\varnothing,\quad A\text{ bounded above}
+\quad\Longrightarrow\quad
+\inf\{ka:a\in A\}=k\sup A.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Supremum}(s,A)\land k<0
+\Longrightarrow
+\operatorname{Infimum}(ks,kA).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+k<0,\quad \inf(kA)\neq k\sup A
+\]
+is impossible under the stated hypotheses.
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\operatorname{Supremum}(s,A)\land k<0\land
+\neg\operatorname{Infimum}(ks,kA).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+The formula could fail only if negative multiplication failed to reverse upper
+bounds into lower bounds or failed to preserve the extremal threshold after
+reversal.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+\[
+(\forall a\in A)(a\leq s)
+\Longleftrightarrow
+(\forall a\in A)(ks\leq ka)
+\qquad(k<0).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Negative scaling reflects the set, so the ceiling of $A$ becomes the floor of
+$kA$.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[def:upper-bound]{Upper Bound};
+\hyperref[def:lower-bound]{Lower Bound};
+\hyperref[def:supremum]{Supremum};
+\hyperref[def:infimum]{Infimum}.
 \end{dependencies}
 
 
@@ -1154,6 +695,71 @@ The highest limiting value of all pairwise sums is obtained by combining values 
 \hyperref[def:epsilon-characterization-of-supremum]{Epsilon Characterization of Supremum}.
 \end{dependencies}
 
+\begin{theorembox}{Theorem (Infimum of a Sum Set)}
+\begin{theorem}[Infimum of a Sum Set]
+\label{thm:infimum-sum-set}
+Let $A,B\subseteq\mathbb{R}$ be nonempty and bounded below. Then
+\[
+  \inf(A+B)=\inf A+\inf B.
+\]
+\hyperref[prf:infimum-sum-set]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+A,B\neq\varnothing,\quad A,B\text{ bounded below}
+\quad\Longrightarrow\quad
+\inf\{a+b:a\in A,\ b\in B\}=\inf A+\inf B.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Infimum}(t_A,A)\land\operatorname{Infimum}(t_B,B)
+\Longrightarrow
+\operatorname{Infimum}(t_A+t_B,A+B).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\inf(A+B)\neq\inf A+\inf B
+\]
+is impossible under the stated hypotheses.
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\operatorname{Infimum}(t_A,A)\land\operatorname{Infimum}(t_B,B)\land
+\neg\operatorname{Infimum}(t_A+t_B,A+B).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+The equality could fail only if the sum of the two infima failed to be a lower
+bound of the sum set or failed to be the greatest such lower bound.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+\[
+t_A\leq a,\quad t_B\leq b
+\Longrightarrow
+t_A+t_B\leq a+b,
+\]
+and sharpness follows by choosing elements near each infimum.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The lowest limiting value of pairwise sums is obtained by combining values
+near the separate floors of the two sets.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[def:infimum]{Infimum};
+\hyperref[def:set-arithmetic-images]{Set Arithmetic Images}.
+\end{dependencies}
+
 
 
 
@@ -1244,6 +850,73 @@ The largest possible difference comes from making the first term as large as pos
 \hyperref[def:infimum]{Infimum};
 \hyperref[thm:negation-exchange-sup-inf]{Negation Exchanges Supremum and Infimum};
 \hyperref[thm:supremum-sum-set]{Supremum of a Sum Set}.
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Infimum of a Difference Set)}
+\begin{theorem}[Infimum of a Difference Set]
+\label{thm:infimum-difference-set}
+Let $A,B\subseteq\mathbb{R}$ be nonempty, with $A$ bounded below and $B$
+bounded above. Then
+\[
+  \inf(A-B)=\inf A-\sup B.
+\]
+\hyperref[prf:infimum-difference-set]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+A,B\neq\varnothing,\quad A\text{ bounded below},\quad B\text{ bounded above}
+\quad\Longrightarrow\quad
+\inf\{a-b:a\in A,\ b\in B\}=\inf A-\sup B.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Infimum}(t,A)\land\operatorname{Supremum}(s,B)
+\Longrightarrow
+\operatorname{Infimum}(t-s,A-B).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\inf(A-B)\neq\inf A-\sup B
+\]
+is impossible under the stated hypotheses.
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\operatorname{Infimum}(t,A)\land\operatorname{Supremum}(s,B)\land
+\neg\operatorname{Infimum}(t-s,A-B).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+The formula could fail only if subtracting $B$ failed to convert its upper
+extremal behavior into a lower contribution.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+\[
+A-B=A+(-B),\qquad
+\inf(-B)=-\sup B,\qquad
+\inf(A+(-B))=\inf A+\inf(-B).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The smallest possible difference comes from making the first term as small as
+possible and the subtracted term as large as possible.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[def:infimum]{Infimum};
+\hyperref[def:supremum]{Supremum};
+\hyperref[thm:infimum-sum-set]{Infimum of a Sum Set};
+\hyperref[thm:negative-scalar-mult-infimum]{Negative Scalar Multiplication of the Infimum}.
 \end{dependencies}
 
 
@@ -1391,6 +1064,395 @@ The absolute-value image measures distance from the origin. For a bounded subset
 \end{dependencies}
 
 
+
+
+\begin{theorembox}{Theorem (Supremum of a Reciprocal Set)}
+\begin{theorem}[Supremum of a Reciprocal Set]
+\label{thm:supremum-reciprocal-set}
+Let $A\subseteq\mathbb{R}$ be nonempty and bounded, and suppose that
+$0<\inf A$ or $\sup A<0$.  Define
+\[
+  A^{-1}:=\{1/a:a\in A\}.
+\]
+Then
+\[
+  \sup(A^{-1})=\frac{1}{\inf A}.
+\]
+\hyperref[prf:supremum-reciprocal-set]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+A\neq\varnothing,\quad A\text{ bounded},\quad
+0\notin[\inf A,\sup A]
+\quad\Longrightarrow\quad
+\sup\{1/a:a\in A\}=(\inf A)^{-1}.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Infimum}(m,A)\land\operatorname{Supremum}(M,A)\land
+0\notin[m,M]
+\Longrightarrow
+\operatorname{Supremum}(m^{-1},A^{-1}).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+A\neq\varnothing,\quad A\text{ bounded},\quad 0\notin[\inf A,\sup A],
+\quad
+\sup(A^{-1})\neq(\inf A)^{-1}.
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\operatorname{Infimum}(m,A)\land 0\notin[m,\sup A]\land
+\neg\operatorname{Supremum}(m^{-1},A^{-1})
+\]
+is contradictory under the stated hypotheses.
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+The formula fails without a nonzero gap from zero: reciprocal images may be
+unbounded or undefined.  With the gap, reciprocal is order-reversing on the
+whole interval containing $A$, so the floor of $A$ becomes the ceiling of
+$A^{-1}$.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+Every $a\in A$ lies between $\inf A$ and $\sup A$, and the interval does not
+cross zero.  The reciprocal map reverses comparisons there, so
+$1/a\leq 1/\inf A$.  Leastness follows by applying the same reversal to values
+of $A$ approaching $\inf A$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Taking reciprocals turns small nonzero magnitudes into large magnitudes.  The
+least value threshold of the original set therefore controls the largest value
+threshold of the reciprocal set.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[def:bounded]{Bounded Set};
+\hyperref[def:infimum]{Infimum};
+\hyperref[def:supremum]{Supremum}.
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Infimum of a Reciprocal Set)}
+\begin{theorem}[Infimum of a Reciprocal Set]
+\label{thm:infimum-reciprocal-set}
+Let $A\subseteq\mathbb{R}$ be nonempty and bounded, and suppose that
+$0<\inf A$ or $\sup A<0$.  Define
+\[
+  A^{-1}:=\{1/a:a\in A\}.
+\]
+Then
+\[
+  \inf(A^{-1})=\frac{1}{\sup A}.
+\]
+\hyperref[prf:infimum-reciprocal-set]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+A\neq\varnothing,\quad A\text{ bounded},\quad
+0\notin[\inf A,\sup A]
+\quad\Longrightarrow\quad
+\inf\{1/a:a\in A\}=(\sup A)^{-1}.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Infimum}(m,A)\land\operatorname{Supremum}(M,A)\land
+0\notin[m,M]
+\Longrightarrow
+\operatorname{Infimum}(M^{-1},A^{-1}).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+A\neq\varnothing,\quad A\text{ bounded},\quad 0\notin[\inf A,\sup A],
+\quad
+\inf(A^{-1})\neq(\sup A)^{-1}.
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\operatorname{Supremum}(M,A)\land 0\notin[\inf A,M]\land
+\neg\operatorname{Infimum}(M^{-1},A^{-1})
+\]
+is contradictory under the stated hypotheses.
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+The formula fails without excluding zero from the closed extremal interval.
+Once zero is excluded, reciprocal reverses order and the ceiling of $A$ becomes
+the floor of $A^{-1}$.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+Every reciprocal $1/a$ lies above $1/\sup A$ because reciprocal reverses order
+on the nonzero interval containing $A$.  Greatestness of $\sup A$ gives
+elements of $A$ arbitrarily close to that ceiling, which makes the lower bound
+sharp.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+For nonzero bounded sets that stay on one side of zero, reciprocal swaps the
+two extremal thresholds.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[def:bounded]{Bounded Set};
+\hyperref[def:infimum]{Infimum};
+\hyperref[def:supremum]{Supremum};
+\hyperref[thm:supremum-reciprocal-set]{Supremum of a Reciprocal Set}.
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Supremum of a Product Set)}
+\begin{theorem}[Supremum of a Product Set]
+\label{thm:supremum-product-set}
+Let $A,B\subseteq\mathbb{R}$ be nonempty and bounded. Then
+\[
+  \sup(AB)=
+  \max\{(\inf A)(\inf B),(\inf A)(\sup B),(\sup A)(\inf B),(\sup A)(\sup B)\}.
+\]
+\hyperref[prf:supremum-product-set]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+A,B\neq\varnothing,\quad A,B\text{ bounded}
+\quad\Longrightarrow\quad
+\sup\{ab:a\in A,\ b\in B\}
+\]
+equals the maximum of the four endpoint products.
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Infimum}(\alpha,A)\land\operatorname{Supremum}(\beta,A)\land
+\operatorname{Infimum}(\gamma,B)\land\operatorname{Supremum}(\delta,B)
+\Longrightarrow
+\operatorname{Supremum}(\max\{\alpha\gamma,\alpha\delta,\beta\gamma,\beta\delta\},AB).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\sup(AB)\neq
+\max\{(\inf A)(\inf B),(\inf A)(\sup B),(\sup A)(\inf B),(\sup A)(\sup B)\}
+\]
+is impossible under the stated hypotheses.
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+The product endpoint maximum is not the supremum of $AB$.
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+A failure would require a product above all four endpoint products or would
+require the endpoint maximum not to be least.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+Every pair $(a,b)$ lies in the rectangle
+$[\inf A,\sup A]\times[\inf B,\sup B]$.  A bilinear product on a rectangle has
+its extreme values at corners, and elements can approximate the relevant
+corners from within the two sets.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[def:set-arithmetic-images]{Set Arithmetic Images};
+\hyperref[def:infimum]{Infimum};
+\hyperref[def:supremum]{Supremum};
+\hyperref[def:maximum]{Maximum}.
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Infimum of a Product Set)}
+\begin{theorem}[Infimum of a Product Set]
+\label{thm:infimum-product-set}
+Let $A,B\subseteq\mathbb{R}$ be nonempty and bounded. Then
+\[
+  \inf(AB)=
+  \min\{(\inf A)(\inf B),(\inf A)(\sup B),(\sup A)(\inf B),(\sup A)(\sup B)\}.
+\]
+\hyperref[prf:infimum-product-set]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+A,B\neq\varnothing,\quad A,B\text{ bounded}
+\quad\Longrightarrow\quad
+\inf\{ab:a\in A,\ b\in B\}
+\]
+equals the minimum of the four endpoint products.
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Infimum}(\alpha,A)\land\operatorname{Supremum}(\beta,A)\land
+\operatorname{Infimum}(\gamma,B)\land\operatorname{Supremum}(\delta,B)
+\Longrightarrow
+\operatorname{Infimum}(\min\{\alpha\gamma,\alpha\delta,\beta\gamma,\beta\delta\},AB).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\inf(AB)\neq
+\min\{(\inf A)(\inf B),(\inf A)(\sup B),(\sup A)(\inf B),(\sup A)(\sup B)\}
+\]
+is impossible under the stated hypotheses.
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+The product endpoint minimum is not the infimum of $AB$.
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+A failure would require a product below all four endpoint products or would
+require the endpoint minimum not to be greatest.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+Reduce to the same endpoint analysis as the supremum product formula, replacing
+the corner maximum by the corner minimum.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[def:set-arithmetic-images]{Set Arithmetic Images};
+\hyperref[def:infimum]{Infimum};
+\hyperref[def:supremum]{Supremum};
+\hyperref[def:minimum]{Minimum};
+\hyperref[thm:supremum-product-set]{Supremum of a Product Set}.
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Supremum of a Quotient Set)}
+\begin{theorem}[Supremum of a Quotient Set]
+\label{thm:supremum-quotient-set}
+Let $A,B\subseteq\mathbb{R}$ be nonempty and bounded, and suppose
+$0<\inf B$ or $\sup B<0$. Then
+\[
+  \sup(A/B)=
+  \max\left\{\frac{\inf A}{\inf B},\frac{\inf A}{\sup B},
+              \frac{\sup A}{\inf B},\frac{\sup A}{\sup B}\right\}.
+\]
+\hyperref[prf:supremum-quotient-set]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+A,B\neq\varnothing,\quad A,B\text{ bounded},\quad 0\notin[\inf B,\sup B]
+\]
+implies that the supremum of $\{a/b:a\in A,\ b\in B\}$ is the maximum of the
+four endpoint quotients.
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Supremum}\!\left(
+\max\left\{\frac{\inf A}{\inf B},\frac{\inf A}{\sup B},
+           \frac{\sup A}{\inf B},\frac{\sup A}{\sup B}\right\},A/B\right).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+The displayed endpoint maximum is not the supremum of $A/B$.
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\neg\operatorname{Supremum}(\text{endpoint quotient maximum},A/B).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+A failure would require the quotient set to see values not controlled by the
+reciprocal endpoint interval for $B$.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+Use $A/B=A B^{-1}$, the reciprocal endpoint formulas for $B^{-1}$, and the
+product endpoint formula.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[def:set-arithmetic-images]{Set Arithmetic Images};
+\hyperref[def:reciprocal-image]{Reciprocal Image};
+\hyperref[thm:supremum-reciprocal-set]{Supremum of a Reciprocal Set};
+\hyperref[thm:infimum-reciprocal-set]{Infimum of a Reciprocal Set};
+\hyperref[thm:supremum-product-set]{Supremum of a Product Set}.
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Infimum of a Quotient Set)}
+\begin{theorem}[Infimum of a Quotient Set]
+\label{thm:infimum-quotient-set}
+Let $A,B\subseteq\mathbb{R}$ be nonempty and bounded, and suppose
+$0<\inf B$ or $\sup B<0$. Then
+\[
+  \inf(A/B)=
+  \min\left\{\frac{\inf A}{\inf B},\frac{\inf A}{\sup B},
+              \frac{\sup A}{\inf B},\frac{\sup A}{\sup B}\right\}.
+\]
+\hyperref[prf:infimum-quotient-set]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+A,B\neq\varnothing,\quad A,B\text{ bounded},\quad 0\notin[\inf B,\sup B]
+\]
+implies that the infimum of $\{a/b:a\in A,\ b\in B\}$ is the minimum of the
+four endpoint quotients.
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Infimum}\!\left(
+\min\left\{\frac{\inf A}{\inf B},\frac{\inf A}{\sup B},
+           \frac{\sup A}{\inf B},\frac{\sup A}{\sup B}\right\},A/B\right).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+The displayed endpoint minimum is not the infimum of $A/B$.
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\neg\operatorname{Infimum}(\text{endpoint quotient minimum},A/B).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+A failure would require a quotient below all endpoint quotients or would
+require the endpoint minimum not to be greatest among lower bounds.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+Use $A/B=A B^{-1}$ and combine the reciprocal endpoint formulas with the
+product endpoint infimum formula.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[def:set-arithmetic-images]{Set Arithmetic Images};
+\hyperref[def:reciprocal-image]{Reciprocal Image};
+\hyperref[thm:supremum-reciprocal-set]{Supremum of a Reciprocal Set};
+\hyperref[thm:infimum-reciprocal-set]{Infimum of a Reciprocal Set};
+\hyperref[thm:infimum-product-set]{Infimum of a Product Set}.
+\end{dependencies}
 
 \begin{propositionbox}{Proposition (Bounds for Suprema and Infima Under Set Addition)}
 \begin{proposition}[Bounds for Suprema and Infima Under Set Addition]

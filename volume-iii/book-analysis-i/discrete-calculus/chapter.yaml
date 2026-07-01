@@ -7,5 +7,155 @@ dependencies:
   next: sequences
 path: volume-iii/book-analysis-i/discrete-calculus
 book: book-analysis-i
-environments: []
-proof_files: []
+environments:
+- label: def:discrete-function
+  type: def
+  file: notes\foundations\discrete-function.tex
+  display_title: Discrete Function
+  proof_file: null
+- label: def:sigma-summation-notation
+  type: def
+  file: notes\foundations\sigma-notation.tex
+  display_title: Summation Notation
+  proof_file: null
+- label: thm:binomial-theorem
+  type: thm
+  file: notes\foundations\binomial-theorem.tex
+  display_title: Binomial Theorem
+  proof_file: proofs\foundations\prf-binomial-theorem.tex
+- label: prop:higher-diff-formula
+  type: prop
+  file: notes\foundations\binomial-theorem.tex
+  display_title: Higher Difference Formula
+  proof_file: proofs\foundations\prf-higher-diff-formula.tex
+- label: def:forward-difference
+  type: def
+  file: notes\difference-operators\forward-difference.tex
+  display_title: Forward Difference Operator
+  proof_file: null
+- label: def:higher-differences
+  type: def
+  file: notes\difference-operators\higher-differences.tex
+  display_title: Higher Differences
+  proof_file: null
+- label: prop:delta-linearity
+  type: prop
+  file: notes\difference-operators\linearity.tex
+  display_title: Linearity of Delta
+  proof_file: proofs\difference-operators\prf-delta-linearity.tex
+- label: prop:delta-constant
+  type: prop
+  file: notes\difference-operators\linearity.tex
+  display_title: Constant Rule
+  proof_file: proofs\difference-operators\prf-delta-constant.tex
+- label: def:shift-operator
+  type: def
+  file: notes\difference-operators\linearity.tex
+  display_title: Shift Operator
+  proof_file: null
+- label: thm:delta-shift-minus-identity
+  type: thm
+  file: notes\difference-operators\linearity.tex
+  display_title: Delta Equals Shift Minus Identity
+  proof_file: proofs\difference-operators\prf-delta-shift-minus-identity.tex
+- label: def:difference-table
+  type: def
+  file: notes\difference-operators\linearity.tex
+  display_title: Difference Table
+  proof_file: null
+- label: thm:polynomial-detection
+  type: thm
+  file: notes\difference-operators\linearity.tex
+  display_title: Polynomial Detection
+  proof_file: proofs\difference-operators\prf-polynomial-detection.tex
+- label: def:telescoping-sum
+  type: def
+  file: notes\telescoping-sums\telescoping-sums.tex
+  display_title: Telescoping Sum
+  proof_file: null
+- label: thm:telescoping-identity
+  type: thm
+  file: notes\telescoping-sums\telescoping-identity.tex
+  display_title: Telescoping Identity
+  proof_file: null
+- label: def:discrete-antiderivative
+  type: def
+  file: notes\discrete-antiderivative\summation-operator.tex
+  display_title: Discrete Antiderivative
+  proof_file: null
+- label: prop:constant-of-integration
+  type: prop
+  file: notes\discrete-antiderivative\summation-operator.tex
+  display_title: Constant of Integration
+  proof_file: proofs\discrete-antiderivative\prf-constant-of-integration.tex
+- label: thm:fundamental-theorem-finite-calculus
+  type: thm
+  file: notes\discrete-antiderivative\fundamental-theorem.tex
+  display_title: Fundamental Theorem of Finite Calculus
+  proof_file: null
+- label: def:falling-factorial
+  type: def
+  file: notes\polynomial-basis\falling-factorial.tex
+  display_title: Falling Factorial
+  proof_file: null
+- label: thm:falling-factorial-rule
+  type: thm
+  file: notes\polynomial-basis\falling-factorial.tex
+  display_title: Falling Factorial Rule
+  proof_file: null
+- label: thm:discrete-product-rule
+  type: thm
+  file: notes\calculus-rules\product-rule.tex
+  display_title: Discrete Product Rule
+  proof_file: null
+- label: thm:summation-by-parts
+  type: thm
+  file: notes\calculus-rules\summation-by-parts.tex
+  display_title: Summation by Parts
+  proof_file: null
+- label: thm:newton-expansion
+  type: thm
+  file: notes\expansions\newtons-series.tex
+  display_title: Newton Forward Difference Expansion
+  proof_file: null
+- label: def:discrete-exponential
+  type: def
+  file: notes\special-functions\discrete-exponential.tex
+  display_title: Discrete Exponential
+  proof_file: null
+- label: prop:discrete-exponential-rule
+  type: prop
+  file: notes\special-functions\discrete-exponential.tex
+  display_title: Discrete Exponential Rule
+  proof_file: proofs\special-functions\prf-discrete-exponential-rule.tex
+- label: prop:delta-two-n
+  type: prop
+  file: notes\special-functions\two-to-the-n.tex
+  display_title: Delta of Two to the n
+  proof_file: null
+- label: prop:antideriv-two-n
+  type: prop
+  file: notes\special-functions\two-to-the-n.tex
+  display_title: Antiderivative of Two to the n
+  proof_file: null
+- label: prop:higher-diff-two-n
+  type: prop
+  file: notes\special-functions\two-to-the-n.tex
+  display_title: Higher Differences of Two to the n
+  proof_file: proofs\special-functions\prf-higher-diff-two-n.tex
+- label: prop:discrete-ivp
+  type: prop
+  file: notes\special-functions\two-to-the-n.tex
+  display_title: Discrete IVP
+  proof_file: proofs\special-functions\prf-discrete-ivp.tex
+proof_files:
+- proofs\difference-operators\prf-delta-linearity.tex
+- proofs\difference-operators\prf-delta-constant.tex
+- proofs\difference-operators\prf-delta-shift-minus-identity.tex
+- proofs\difference-operators\prf-polynomial-detection.tex
+- proofs\discrete-antiderivative\prf-constant-of-integration.tex
+- proofs\foundations\prf-binomial-theorem.tex
+- proofs\foundations\prf-higher-diff-formula.tex
+- proofs\special-functions\prf-discrete-exponential-rule.tex
+- proofs\special-functions\prf-higher-diff-two-n.tex
+- proofs\special-functions\prf-discrete-ivp.tex

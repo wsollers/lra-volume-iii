@@ -1,0 +1,39 @@
+\begin{tikzpicture}[
+  x=1cm,
+  y=1cm,
+  >=Latex,
+  pt/.style={circle,fill=black,inner sep=1.8pt},
+  img/.style={circle,fill=blue!65!black,inner sep=1.8pt},
+  map/.style={->,gray!70,thick},
+  badmap/.style={->,orange!80!black,very thick},
+  wall/.style={red!70!black,thick},
+  lbl/.style={font=\small},
+  note/.style={font=\footnotesize,text=gray!70!black}
+]
+\draw[thick] (-3.2,1.4) -- (3.2,1.4);
+\draw[thick] (-3.2,-1.4) -- (3.2,-1.4);
+\node[lbl,anchor=east] at (-3.35,1.4) {$A$};
+\node[lbl,anchor=east] at (-3.35,-1.4) {$f(A)$};
+\node[note] at (0,2.05) {nonmonotone: order crosses};
+
+\node[pt] at (-2.5,1.4) {};
+\node[pt] at (-1.1,1.4) {};
+\node[pt] at (0.4,1.4) {};
+\node[pt] at (1.35,1.4) {};
+
+\node[img] at (2.55,-1.4) {};
+\node[img] at (0.65,-1.4) {};
+\node[img] at (-0.2,-1.4) {};
+\node[img] at (1.15,-1.4) {};
+
+\draw[badmap] (-2.5,1.15) -- (2.55,-1.15);
+\draw[badmap] (-1.1,1.15) -- (0.65,-1.15);
+\draw[map] (0.4,1.15) -- (-0.2,-1.15);
+\draw[map] (1.35,1.15) -- (1.15,-1.15);
+
+\draw[wall] (1.75,1.1) -- (1.75,1.8);
+\draw[wall] (2.85,-1.75) -- (2.85,-1.05);
+\node[lbl,red!70!black,above] at (1.75,1.8) {$\sup A$};
+\node[lbl,red!70!black,below] at (2.85,-1.75) {new right edge};
+\node[note,orange!80!black] at (0,-2.15) {a far-left point can become the rightmost image};
+\end{tikzpicture}

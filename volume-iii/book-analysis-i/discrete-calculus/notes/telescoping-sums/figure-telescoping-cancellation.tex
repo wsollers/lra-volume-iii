@@ -1,0 +1,16 @@
+\begin{tikzpicture}[
+node distance=1.6cm,
+every node/.style={font=\small}
+]
+\node (t1) {$f(a+1)-f(a)$};
+\node (t2) [below of=t1] {$f(a+2)-f(a+1)$};
+\node (t3) [below of=t2] {$f(a+3)-f(a+2)$};
+\node (vdots) [below of=t3] {$\vdots$};
+\node (t4) [below of=vdots] {$f(b)-f(b-1)$};
+
+\node[right=3.2cm of t1] {$-f(a)$};
+\node[right=3.2cm of t2] {$\cancel{f(a+1)}-\cancel{f(a+1)}$};
+\node[right=3.2cm of t3] {$\cancel{f(a+2)}-\cancel{f(a+2)}$};
+\node[right=3.2cm of vdots] {$\vdots$};
+\node[right=3.2cm of t4] {$f(b)$};
+\end{tikzpicture}

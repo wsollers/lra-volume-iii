@@ -1,0 +1,535 @@
+\begin{remark*}[Orientation]
+Set operations change the collection of possible counterexamples to a proposed
+bound.  Each result below isolates one operation and one direction of bound
+transport.
+\end{remark*}
+
+\begin{lemmabox}{Lemma (Union Preserves Upper Bounds)}
+\begin{lemma}[Union Preserves Upper Bounds]
+\label{lem:union-preserves-upper-bounds}
+Let $A,B\subseteq\mathbb{R}$.  If $u_A$ is an upper bound of $A$ and
+$u_B$ is an upper bound of $B$, then $\max\{u_A,u_B\}$ is an upper bound
+of $A\cup B$.
+\hyperref[prf:union-preserves-upper-bounds]{Go to proof.}
+\end{lemma}
+\end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+(\forall a\in A)(a\leq u_A)\land(\forall b\in B)(b\leq u_B)
+\Longrightarrow
+(\forall x\in A\cup B)(x\leq \max\{u_A,u_B\}).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{UB}(u_A,A)\land\operatorname{UB}(u_B,B)
+\Longrightarrow \operatorname{UB}(\max\{u_A,u_B\},A\cup B).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+(\forall a\in A)(a\leq u_A),\quad
+(\forall b\in B)(b\leq u_B),\quad
+(\exists x\in A\cup B)(\max\{u_A,u_B\}<x).
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\operatorname{UB}(u_A,A)\land\operatorname{UB}(u_B,B)\land
+\neg\operatorname{UB}(\max\{u_A,u_B\},A\cup B).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+A failure would require a union element larger than both proposed upper
+bounds.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+Every $x\in A\cup B$ lies in $A$ or in $B$.  In the first case
+$x\leq u_A\leq\max\{u_A,u_B\}$; in the second case
+$x\leq u_B\leq\max\{u_A,u_B\}$.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[def:upper-bound]{Upper Bound}.
+\end{dependencies}
+
+\begin{lemmabox}{Lemma (Union Preserves Lower Bounds)}
+\begin{lemma}[Union Preserves Lower Bounds]
+\label{lem:union-preserves-lower-bounds}
+Let $A,B\subseteq\mathbb{R}$.  If $\ell_A$ is a lower bound of $A$ and
+$\ell_B$ is a lower bound of $B$, then $\min\{\ell_A,\ell_B\}$ is a lower
+bound of $A\cup B$.
+\hyperref[prf:union-preserves-lower-bounds]{Go to proof.}
+\end{lemma}
+\end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+(\forall a\in A)(\ell_A\leq a)\land(\forall b\in B)(\ell_B\leq b)
+\Longrightarrow
+(\forall x\in A\cup B)(\min\{\ell_A,\ell_B\}\leq x).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{LB}(\ell_A,A)\land\operatorname{LB}(\ell_B,B)
+\Longrightarrow \operatorname{LB}(\min\{\ell_A,\ell_B\},A\cup B).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+(\forall a\in A)(\ell_A\leq a),\quad
+(\forall b\in B)(\ell_B\leq b),\quad
+(\exists x\in A\cup B)(x<\min\{\ell_A,\ell_B\}).
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\operatorname{LB}(\ell_A,A)\land\operatorname{LB}(\ell_B,B)\land
+\neg\operatorname{LB}(\min\{\ell_A,\ell_B\},A\cup B).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+A failure would require a union element smaller than both proposed lower
+bounds.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+Every $x\in A\cup B$ lies in $A$ or in $B$.  In either case the appropriate
+lower bound lies below $x$, and $\min\{\ell_A,\ell_B\}$ lies below that lower
+bound.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[def:lower-bound]{Lower Bound}.
+\end{dependencies}
+
+\begin{propositionbox}{Proposition (Union Is Bounded Above Exactly When Both Pieces Are)}
+\begin{proposition}[Union Is Bounded Above Exactly When Both Pieces Are]
+\label{prop:union-bounded-above-iff-pieces-bounded-above}
+Let $A,B\subseteq\mathbb{R}$ be nonempty.  Then $A\cup B$ is bounded above
+if and only if $A$ is bounded above and $B$ is bounded above.
+\hyperref[prf:union-bounded-above-iff-pieces-bounded-above]{Go to proof.}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+A\neq\varnothing,\quad B\neq\varnothing
+\quad\Longrightarrow\quad
+\operatorname{BddAbove}(A\cup B)
+\Longleftrightarrow
+\operatorname{BddAbove}(A)\land\operatorname{BddAbove}(B).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{BddAbove}(A\cup B)
+\Longleftrightarrow
+\operatorname{BddAbove}(A)\land\operatorname{BddAbove}(B).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+The equivalence fails precisely if one side holds and the other does not.
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\operatorname{BddAbove}(A\cup B)\oplus
+\bigl(\operatorname{BddAbove}(A)\land\operatorname{BddAbove}(B)\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+The forward direction could fail only if a bound for the union did not bound a
+piece.  The reverse direction could fail only if bounds for both pieces did not
+combine into a bound for the union.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+Use subset inheritance for the forward direction and
+\hyperref[lem:union-preserves-upper-bounds]{Union Preserves Upper Bounds} for
+the reverse direction.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[def:bounded-above]{Bounded Above};
+\hyperref[lem:union-preserves-upper-bounds]{Union Preserves Upper Bounds};
+\hyperref[lem:subsets-preserve-upper-bounds]{Subsets Preserve Upper Bounds}.
+\end{dependencies}
+
+\begin{propositionbox}{Proposition (Union Is Bounded Below Exactly When Both Pieces Are)}
+\begin{proposition}[Union Is Bounded Below Exactly When Both Pieces Are]
+\label{prop:union-bounded-below-iff-pieces-bounded-below}
+Let $A,B\subseteq\mathbb{R}$ be nonempty.  Then $A\cup B$ is bounded below
+if and only if $A$ is bounded below and $B$ is bounded below.
+\hyperref[prf:union-bounded-below-iff-pieces-bounded-below]{Go to proof.}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+A\neq\varnothing,\quad B\neq\varnothing
+\quad\Longrightarrow\quad
+\operatorname{BddBelow}(A\cup B)
+\Longleftrightarrow
+\operatorname{BddBelow}(A)\land\operatorname{BddBelow}(B).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{BddBelow}(A\cup B)
+\Longleftrightarrow
+\operatorname{BddBelow}(A)\land\operatorname{BddBelow}(B).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+The equivalence fails precisely if one side holds and the other does not.
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\operatorname{BddBelow}(A\cup B)\oplus
+\bigl(\operatorname{BddBelow}(A)\land\operatorname{BddBelow}(B)\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+The forward direction could fail only if a lower bound for the union did not
+bound a piece.  The reverse direction could fail only if lower bounds for both
+pieces did not combine into a lower bound for the union.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+Use subset inheritance for the forward direction and
+\hyperref[lem:union-preserves-lower-bounds]{Union Preserves Lower Bounds} for
+the reverse direction.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[def:bounded-below]{Bounded Below};
+\hyperref[lem:union-preserves-lower-bounds]{Union Preserves Lower Bounds};
+\hyperref[lem:subsets-preserve-lower-bounds]{Subsets Preserve Lower Bounds}.
+\end{dependencies}
+
+\begin{corollarybox}{Corollary (Union Is Bounded Exactly When Both Pieces Are)}
+\begin{corollary}[Union Is Bounded Exactly When Both Pieces Are]
+\label{cor:union-bounded-iff-pieces-bounded}
+Let $A,B\subseteq\mathbb{R}$ be nonempty.  Then $A\cup B$ is bounded if and
+only if $A$ is bounded and $B$ is bounded.
+\hyperref[prf:union-bounded-iff-pieces-bounded]{Go to proof.}
+\end{corollary}
+\end{corollarybox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+A\neq\varnothing,\quad B\neq\varnothing
+\quad\Longrightarrow\quad
+\operatorname{Bdd}(A\cup B)
+\Longleftrightarrow
+\operatorname{Bdd}(A)\land\operatorname{Bdd}(B).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Bdd}(A\cup B)
+\Longleftrightarrow
+\operatorname{Bdd}(A)\land\operatorname{Bdd}(B).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+The two-sided boundedness equivalence fails if either the upper or lower
+one-sided equivalence fails.
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\operatorname{Bdd}(A\cup B)\oplus
+\bigl(\operatorname{Bdd}(A)\land\operatorname{Bdd}(B)\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+Two-sided boundedness fails exactly through an upper-bound failure or a
+lower-bound failure.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+Apply the bounded-above and bounded-below union equivalences separately.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[def:bounded]{Bounded Set};
+\hyperref[prop:union-bounded-above-iff-pieces-bounded-above]{Union Is Bounded Above Exactly When Both Pieces Are};
+\hyperref[prop:union-bounded-below-iff-pieces-bounded-below]{Union Is Bounded Below Exactly When Both Pieces Are}.
+\end{dependencies}
+
+\begin{lemmabox}{Lemma (Subsets Preserve Upper Bounds)}
+\begin{lemma}[Subsets Preserve Upper Bounds]
+\label{lem:subsets-preserve-upper-bounds}
+Let $C\subseteq A\subseteq\mathbb{R}$.  If $u$ is an upper bound of $A$,
+then $u$ is an upper bound of $C$.
+\hyperref[prf:subsets-preserve-upper-bounds]{Go to proof.}
+\end{lemma}
+\end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+C\subseteq A\land(\forall a\in A)(a\leq u)
+\Longrightarrow
+(\forall c\in C)(c\leq u).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+C\subseteq A\land\operatorname{UB}(u,A)
+\Longrightarrow \operatorname{UB}(u,C).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+C\subseteq A,\quad (\forall a\in A)(a\leq u),\quad
+(\exists c\in C)(u<c).
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+C\subseteq A\land\operatorname{UB}(u,A)\land\neg\operatorname{UB}(u,C).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+A failure would require a counterexample in $C$ that is not already a
+counterexample in $A$.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+Since $C\subseteq A$, every $c\in C$ is an element of $A$.  The upper-bound
+condition on $A$ therefore applies directly to $c$.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[def:upper-bound]{Upper Bound}.
+\end{dependencies}
+
+\begin{lemmabox}{Lemma (Subsets Preserve Lower Bounds)}
+\begin{lemma}[Subsets Preserve Lower Bounds]
+\label{lem:subsets-preserve-lower-bounds}
+Let $C\subseteq A\subseteq\mathbb{R}$.  If $\ell$ is a lower bound of $A$,
+then $\ell$ is a lower bound of $C$.
+\hyperref[prf:subsets-preserve-lower-bounds]{Go to proof.}
+\end{lemma}
+\end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+C\subseteq A\land(\forall a\in A)(\ell\leq a)
+\Longrightarrow
+(\forall c\in C)(\ell\leq c).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+C\subseteq A\land\operatorname{LB}(\ell,A)
+\Longrightarrow \operatorname{LB}(\ell,C).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+C\subseteq A,\quad (\forall a\in A)(\ell\leq a),\quad
+(\exists c\in C)(c<\ell).
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+C\subseteq A\land\operatorname{LB}(\ell,A)\land\neg\operatorname{LB}(\ell,C).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+A failure would require a point in $C$ below $\ell$, hence a point in $A$
+below $\ell$.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+Subset inheritance removes possible counterexamples; it cannot create a new
+one.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[def:lower-bound]{Lower Bound}.
+\end{dependencies}
+
+\begin{corollarybox}{Corollary (Intersections Inherit Bounds)}
+\begin{corollary}[Intersections Inherit Bounds]
+\label{cor:intersections-inherit-bounds}
+Let $A,B\subseteq\mathbb{R}$.  Every upper bound of $A$ is an upper bound
+of $A\cap B$, and every lower bound of $A$ is a lower bound of $A\cap B$.
+\hyperref[prf:intersections-inherit-bounds]{Go to proof.}
+\end{corollary}
+\end{corollarybox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+A\cap B\subseteq A.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{UB}(u,A)\Longrightarrow\operatorname{UB}(u,A\cap B),
+\]
+and similarly for lower bounds.
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+A failure would be a failure of subset inheritance for $A\cap B\subseteq A$.
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\operatorname{UB}(u,A)\land
+\neg\operatorname{UB}(u,A\cap B)
+\]
+is contradictory, and the same holds for lower bounds.
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+Intersection can lose elements, but it cannot introduce an element outside the
+parent set $A$.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+Apply subset inheritance to $C=A\cap B$.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[lem:subsets-preserve-upper-bounds]{Subsets Preserve Upper Bounds};
+\hyperref[lem:subsets-preserve-lower-bounds]{Subsets Preserve Lower Bounds}.
+\end{dependencies}
+
+\begin{corollarybox}{Corollary (Differences Inherit Bounds)}
+\begin{corollary}[Differences Inherit Bounds]
+\label{cor:differences-inherit-bounds}
+Let $A,B\subseteq\mathbb{R}$.  Every upper bound of $A$ is an upper bound
+of $A\setminus B$, and every lower bound of $A$ is a lower bound of
+$A\setminus B$.
+\hyperref[prf:differences-inherit-bounds]{Go to proof.}
+\end{corollary}
+\end{corollarybox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+A\setminus B\subseteq A.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{UB}(u,A)\Longrightarrow\operatorname{UB}(u,A\setminus B),
+\]
+and similarly for lower bounds.
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+A failure would be a failure of subset inheritance for
+$A\setminus B\subseteq A$.
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\operatorname{UB}(u,A)\land
+\neg\operatorname{UB}(u,A\setminus B)
+\]
+is contradictory, and the same holds for lower bounds.
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+Difference can remove elements from $A$, but it cannot create a new element
+outside $A$.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+Apply subset inheritance to $C=A\setminus B$.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[lem:subsets-preserve-upper-bounds]{Subsets Preserve Upper Bounds};
+\hyperref[lem:subsets-preserve-lower-bounds]{Subsets Preserve Lower Bounds}.
+\end{dependencies}
+
+\begin{corollarybox}{Corollary (Complements Inherit Ambient Bounds)}
+\begin{corollary}[Complements Inherit Ambient Bounds]
+\label{cor:complements-inherit-ambient-bounds}
+Let $A\subseteq E\subseteq\mathbb{R}$, and take complements relative to
+$E$.  Every upper bound of $E$ is an upper bound of $E\setminus A$, and
+every lower bound of $E$ is a lower bound of $E\setminus A$.
+\hyperref[prf:complements-inherit-ambient-bounds]{Go to proof.}
+\end{corollary}
+\end{corollarybox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+E\setminus A\subseteq E.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{UB}(u,E)\Longrightarrow\operatorname{UB}(u,E\setminus A),
+\qquad
+\operatorname{LB}(\ell,E)\Longrightarrow\operatorname{LB}(\ell,E\setminus A).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\operatorname{UB}(u,E)\land\neg\operatorname{UB}(u,E\setminus A)
+\]
+or
+\[
+\operatorname{LB}(\ell,E)\land\neg\operatorname{LB}(\ell,E\setminus A).
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+Both negated configurations contradict subset inheritance because
+$E\setminus A\subseteq E$.
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+The complement does not inherit bounds from $A$; it inherits them from the
+ambient set $E$.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+Every point of $E\setminus A$ is a point of $E$, so every ambient bound of
+$E$ applies to the complement.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[lem:subsets-preserve-upper-bounds]{Subsets Preserve Upper Bounds};
+\hyperref[lem:subsets-preserve-lower-bounds]{Subsets Preserve Lower Bounds}.
+\end{dependencies}

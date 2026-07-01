@@ -1,0 +1,443 @@
+\begin{remark*}[Orientation]
+Dilation and displacement are affine operations on sets.  Translation preserves
+the order of all comparisons, positive dilation preserves order, and negative
+dilation reverses order.
+\end{remark*}
+
+\begin{definitionbox}{Definition (Displacement, Dilation, and Reflection)}
+\begin{definition}[Displacement, Dilation, and Reflection]
+\label{def:displacement-dilation-reflection}
+Let $A\subseteq\mathbb{R}$ and let $c,\lambda\in\mathbb{R}$.  Define
+\[
+  A+c:=\{a+c:a\in A\},\qquad
+  A-c:=\{a-c:a\in A\},\qquad
+  \lambda A:=\{\lambda a:a\in A\}.
+\]
+The set $-A:=(-1)A$ is the \emph{reflection} of $A$ through the origin.
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+x\in A+c\Longleftrightarrow(\exists a\in A)(x=a+c),
+\qquad
+x\in\lambda A\Longleftrightarrow(\exists a\in A)(x=\lambda a).
+\]
+\end{remark*}
+
+\begin{remark*}[Definition predicate reading]
+\[
+\operatorname{Translate}(A,c)=A+c,
+\qquad
+\operatorname{Dilate}(A,\lambda)=\lambda A,
+\qquad
+\operatorname{Reflect}(A)=-A.
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+x\notin A+c\Longleftrightarrow(\forall a\in A)(x\neq a+c),
+\qquad
+x\notin\lambda A\Longleftrightarrow(\forall a\in A)(x\neq\lambda a).
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\neg\operatorname{Translate}(A,c)=B
+\quad\text{means}\quad
+(\exists x)\bigl[x\in B\triangle(A+c)\bigr],
+\]
+and similarly for dilation and reflection.
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+The definition fails only if the image set omits an actual transformed point
+or contains a point that is not produced by transforming an element of $A$.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+Every membership claim in a transformed set decomposes into an original element
+and the transformation rule that produced the new point.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Displacement slides the set, dilation stretches or collapses it, and reflection
+is the special dilation that reverses the real line.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[def:subset]{Subset};
+\hyperref[def:multiplication-on-r]{Multiplication on $\mathbb{R}$};
+\hyperref[def:addition-on-r]{Addition on $\mathbb{R}$}.
+\end{dependencies}
+
+\begin{propositionbox}{Proposition (Translation Preserves Upper Bounds)}
+\begin{proposition}[Translation Preserves Upper Bounds]
+\label{prop:translation-preserves-upper-bounds}
+Let $A\subseteq\mathbb{R}$ be nonempty.  If $u$ is an upper bound of $A$,
+then $u+c$ is an upper bound of $A+c$.
+\hyperref[prf:translation-preserves-upper-bounds]{Go to proof.}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+(\forall a\in A)(a\leq u)
+\Longrightarrow
+(\forall y\in A+c)(y\leq u+c).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{UB}(u,A)\Longrightarrow\operatorname{UB}(u+c,A+c).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+(\forall a\in A)(a\leq u),\qquad
+(\exists y\in A+c)(u+c<y).
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\operatorname{UB}(u,A)\land\neg\operatorname{UB}(u+c,A+c).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+A failure would require a translated point above the translated upper bound.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+Write $y=a+c$ with $a\in A$.  Then $a\leq u$ gives $a+c\leq u+c$.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[def:upper-bound]{Upper Bound};
+\hyperref[def:displacement-dilation-reflection]{Displacement, Dilation, and Reflection}.
+\end{dependencies}
+
+\begin{propositionbox}{Proposition (Translation Preserves Lower Bounds)}
+\begin{proposition}[Translation Preserves Lower Bounds]
+\label{prop:translation-preserves-lower-bounds}
+Let $A\subseteq\mathbb{R}$ be nonempty.  If $\ell$ is a lower bound of $A$,
+then $\ell+c$ is a lower bound of $A+c$.
+\hyperref[prf:translation-preserves-lower-bounds]{Go to proof.}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+(\forall a\in A)(\ell\leq a)
+\Longrightarrow
+(\forall y\in A+c)(\ell+c\leq y).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{LB}(\ell,A)\Longrightarrow\operatorname{LB}(\ell+c,A+c).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+(\forall a\in A)(\ell\leq a),\qquad
+(\exists y\in A+c)(y<\ell+c).
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\operatorname{LB}(\ell,A)\land\neg\operatorname{LB}(\ell+c,A+c).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+A failure would require a translated point below the translated lower bound.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+Write $y=a+c$ with $a\in A$.  Then $\ell\leq a$ gives $\ell+c\leq a+c$.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[def:lower-bound]{Lower Bound};
+\hyperref[def:displacement-dilation-reflection]{Displacement, Dilation, and Reflection}.
+\end{dependencies}
+
+\begin{propositionbox}{Proposition (Positive Dilation Preserves Upper Bounds)}
+\begin{proposition}[Positive Dilation Preserves Upper Bounds]
+\label{prop:positive-dilation-preserves-upper-bounds}
+Let $A\subseteq\mathbb{R}$ be nonempty and let $\lambda>0$.  If $u$ is an
+upper bound of $A$, then $\lambda u$ is an upper bound of $\lambda A$.
+\hyperref[prf:positive-dilation-preserves-upper-bounds]{Go to proof.}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\lambda>0\land(\forall a\in A)(a\leq u)
+\Longrightarrow
+(\forall y\in\lambda A)(y\leq\lambda u).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\lambda>0\land\operatorname{UB}(u,A)
+\Longrightarrow\operatorname{UB}(\lambda u,\lambda A).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\lambda>0,\qquad(\forall a\in A)(a\leq u),\qquad
+(\exists y\in\lambda A)(\lambda u<y).
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\lambda>0\land\operatorname{UB}(u,A)\land
+\neg\operatorname{UB}(\lambda u,\lambda A).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+A failure would require positive multiplication to reverse an inequality.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+Write $y=\lambda a$ with $a\in A$.  Since $a\leq u$ and $\lambda>0$,
+$\lambda a\leq\lambda u$.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[def:upper-bound]{Upper Bound};
+\hyperref[def:displacement-dilation-reflection]{Displacement, Dilation, and Reflection}.
+\end{dependencies}
+
+\begin{propositionbox}{Proposition (Positive Dilation Preserves Lower Bounds)}
+\begin{proposition}[Positive Dilation Preserves Lower Bounds]
+\label{prop:positive-dilation-preserves-lower-bounds}
+Let $A\subseteq\mathbb{R}$ be nonempty and let $\lambda>0$.  If $\ell$ is a
+lower bound of $A$, then $\lambda\ell$ is a lower bound of $\lambda A$.
+\hyperref[prf:positive-dilation-preserves-lower-bounds]{Go to proof.}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\lambda>0\land(\forall a\in A)(\ell\leq a)
+\Longrightarrow
+(\forall y\in\lambda A)(\lambda\ell\leq y).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\lambda>0\land\operatorname{LB}(\ell,A)
+\Longrightarrow\operatorname{LB}(\lambda\ell,\lambda A).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\lambda>0,\qquad(\forall a\in A)(\ell\leq a),\qquad
+(\exists y\in\lambda A)(y<\lambda\ell).
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\lambda>0\land\operatorname{LB}(\ell,A)\land
+\neg\operatorname{LB}(\lambda\ell,\lambda A).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+A failure would require a positively dilated point below the positively
+dilated lower bound.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+Write $y=\lambda a$ with $a\in A$.  Since $\ell\leq a$ and $\lambda>0$,
+$\lambda\ell\leq\lambda a$.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[def:lower-bound]{Lower Bound};
+\hyperref[def:displacement-dilation-reflection]{Displacement, Dilation, and Reflection}.
+\end{dependencies}
+
+\begin{propositionbox}{Proposition (Negative Dilation Sends Lower Bounds to Upper Bounds)}
+\begin{proposition}[Negative Dilation Sends Lower Bounds to Upper Bounds]
+\label{prop:negative-dilation-sends-lower-to-upper-bounds}
+Let $A\subseteq\mathbb{R}$ be nonempty and let $\lambda<0$.  If $\ell$ is a
+lower bound of $A$, then $\lambda\ell$ is an upper bound of $\lambda A$.
+\hyperref[prf:negative-dilation-sends-lower-to-upper-bounds]{Go to proof.}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\lambda<0\land(\forall a\in A)(\ell\leq a)
+\Longrightarrow
+(\forall y\in\lambda A)(y\leq\lambda\ell).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\lambda<0\land\operatorname{LB}(\ell,A)
+\Longrightarrow\operatorname{UB}(\lambda\ell,\lambda A).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\lambda<0,\qquad(\forall a\in A)(\ell\leq a),\qquad
+(\exists y\in\lambda A)(\lambda\ell<y).
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\lambda<0\land\operatorname{LB}(\ell,A)\land
+\neg\operatorname{UB}(\lambda\ell,\lambda A).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+A failure would require negative multiplication not to reverse the lower-bound
+inequality.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+Write $y=\lambda a$ with $a\in A$.  Since $\ell\leq a$ and $\lambda<0$,
+$\lambda a\leq\lambda\ell$.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[def:lower-bound]{Lower Bound};
+\hyperref[def:upper-bound]{Upper Bound};
+\hyperref[def:displacement-dilation-reflection]{Displacement, Dilation, and Reflection}.
+\end{dependencies}
+
+\begin{propositionbox}{Proposition (Negative Dilation Sends Upper Bounds to Lower Bounds)}
+\begin{proposition}[Negative Dilation Sends Upper Bounds to Lower Bounds]
+\label{prop:negative-dilation-sends-upper-to-lower-bounds}
+Let $A\subseteq\mathbb{R}$ be nonempty and let $\lambda<0$.  If $u$ is an
+upper bound of $A$, then $\lambda u$ is a lower bound of $\lambda A$.
+\hyperref[prf:negative-dilation-sends-upper-to-lower-bounds]{Go to proof.}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\lambda<0\land(\forall a\in A)(a\leq u)
+\Longrightarrow
+(\forall y\in\lambda A)(\lambda u\leq y).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\lambda<0\land\operatorname{UB}(u,A)
+\Longrightarrow\operatorname{LB}(\lambda u,\lambda A).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\lambda<0,\qquad(\forall a\in A)(a\leq u),\qquad
+(\exists y\in\lambda A)(y<\lambda u).
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\lambda<0\land\operatorname{UB}(u,A)\land
+\neg\operatorname{LB}(\lambda u,\lambda A).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+A failure would require negative multiplication not to reverse the upper-bound
+inequality.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+Write $y=\lambda a$ with $a\in A$.  Since $a\leq u$ and $\lambda<0$,
+$\lambda u\leq\lambda a$.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[def:upper-bound]{Upper Bound};
+\hyperref[def:lower-bound]{Lower Bound};
+\hyperref[def:displacement-dilation-reflection]{Displacement, Dilation, and Reflection}.
+\end{dependencies}
+
+\begin{corollarybox}{Corollary (Reflection Swaps Upper and Lower Bounds)}
+\begin{corollary}[Reflection Swaps Upper and Lower Bounds]
+\label{cor:reflection-swaps-upper-lower-bounds}
+Let $A\subseteq\mathbb{R}$ be nonempty.  If $\ell$ is a lower bound of $A$,
+then $-\ell$ is an upper bound of $-A$.  If $u$ is an upper bound of $A$,
+then $-u$ is a lower bound of $-A$.
+\hyperref[prf:reflection-swaps-upper-lower-bounds]{Go to proof.}
+\end{corollary}
+\end{corollarybox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+(\forall a\in A)(\ell\leq a)\Longrightarrow
+(\forall y\in -A)(y\leq-\ell),
+\]
+and
+\[
+(\forall a\in A)(a\leq u)\Longrightarrow
+(\forall y\in -A)(-u\leq y).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{LB}(\ell,A)\Longrightarrow\operatorname{UB}(-\ell,-A),
+\qquad
+\operatorname{UB}(u,A)\Longrightarrow\operatorname{LB}(-u,-A).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+A failure is a failure of negative dilation at the scalar $\lambda=-1$.
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\operatorname{LB}(\ell,A)\land\neg\operatorname{UB}(-\ell,-A)
+\]
+or
+\[
+\operatorname{UB}(u,A)\land\neg\operatorname{LB}(-u,-A).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+Reflection reverses the real line, so lower information becomes upper
+information and upper information becomes lower information.
+\end{remark*}
+
+\begin{remark*}[Failure mode decomposition]
+Apply negative dilation with $\lambda=-1$.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[prop:negative-dilation-sends-lower-to-upper-bounds]{Negative Dilation Sends Lower Bounds to Upper Bounds};
+\hyperref[prop:negative-dilation-sends-upper-to-lower-bounds]{Negative Dilation Sends Upper Bounds to Lower Bounds}.
+\end{dependencies}
