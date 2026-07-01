@@ -3,36 +3,29 @@
 \label{prf:riemann-integrable-implies-hk-integrable}
 \LRAProofFor{thm:riemann-integrable-implies-hk-integrable}
 \begin{remark*}[Return]\hyperref[thm:riemann-integrable-implies-hk-integrable]{Return to Theorem}\end{remark*}
+
 \begin{theorem*}[Riemann Integrable Implies Henstock--Kurzweil Integrable]
 If \(f\) is Riemann-integrable on \([a,b]\), then \(f\) is
 Henstock--Kurzweil integrable on \([a,b]\), with the same value.
 \end{theorem*}
+
 \begin{proof}[Professional Standard Proof]
 \LRAProofBodyStart
-Let \(L\) be the Riemann integral of \(f\). Given \(\varepsilon>0\), choose
-\(\eta>0\) so that every tagged partition with mesh less than \(\eta\) has
-Riemann sum within \(\varepsilon\) of \(L\). Use the constant gauge
-\(\delta(x)=\eta/2\). Every \(\delta\)-fine tagged partition then has mesh
-less than \(\eta\), so its tagged sum is within \(\varepsilon\) of \(L\).
+TODO: professional standard proof for riemann-integrable-implies-hk-integrable.
 \end{proof}
+
 \begin{proof}[Detailed Learning Proof]
 \LRAProofBodyStart
-The Henstock--Kurzweil definition allows more gauges than Riemann needs. To
-recover Riemann's situation, take a gauge that is constant at every point. A
-\(\delta\)-fine partition for that constant gauge has every subinterval shorter
-than the Riemann mesh tolerance, so the old Riemann estimate applies without
-change.
+TODO: detailed learning proof for riemann-integrable-implies-hk-integrable.
 \end{proof}
+
 \begin{remark*}[Proof structure]
-Embed the uniform mesh condition into the gauge condition by choosing a
-constant gauge.
 \end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:riemann-integral]{Riemann Integral}.
-  \item \hyperref[def:gauge-on-interval]{Gauge on an Interval}.
-  \item \hyperref[def:delta-fine-tagged-partition]{Delta-Fine Tagged Partition}.
-  \item \hyperref[def:henstock-kurzweil-integral]{Henstock--Kurzweil Integral}.
+  \item TODO: add dependencies for this proof.
 \end{itemize}
 \end{dependencies}
+
 \clearpage

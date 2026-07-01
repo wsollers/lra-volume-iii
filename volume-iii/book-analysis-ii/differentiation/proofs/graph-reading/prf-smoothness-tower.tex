@@ -18,35 +18,20 @@ hold, and each displayed inclusion is strict.
 
 \begin{proof}[Professional Standard Proof]
 \LRAProofBodyStart
-If \(f\in C^{k+1}(I)\), then \(f^{(k)}\) is differentiable on \(I\), hence continuous on \(I\). Therefore \(f\in C^k(I)\), so \(C^{k+1}(I)\subseteq C^k(I)\). The inclusion \(C^\infty(I)\subseteq C^k(I)\) is immediate from the definition of \(C^\infty\), and a locally convergent power series is differentiable term by term on a smaller neighbourhood, so \(C^\omega(I)\subseteq C^\infty(I)\).
-
-Strictness is supplied by standard witnesses. Choose an interior point \(a\in I\). For \(k\geq 0\), the function \(\varphi_k(x)=(x-a)^k|x-a|\) is \(C^k\) but not \(C^{k+1}\) at \(a\). For the final inclusion, the translated flat function
-\[
-  f(x)=
-  \begin{cases}
-    e^{-1/(x-a)^2}, & x\neq a,\\
-    0, & x=a,
-  \end{cases}
-\]
-is \(C^\infty\) and satisfies \(f^{(n)}(a)=0\) for every \(n\). Its Taylor series at \(a\) is therefore the zero series, but \(f(x)>0\) for \(x\neq a\), so \(f\) is not analytic at \(a\).
+TODO: professional standard proof for smoothness-tower.
 \end{proof}
 
 \begin{proof}[Detailed Learning Proof]
 \LRAProofBodyStart
-The inclusions express the meaning of the symbols. Having \(k+1\) continuous derivatives gives \(k\) continuous derivatives by forgetting the last derivative. Having derivatives of every order gives \(k\) derivatives for each fixed \(k\). Being analytic gives a local power-series representation, and power series may be differentiated term by term inside their interval of convergence, so analytic functions are smooth.
-
-The witnesses show that these containments do not collapse into equalities. After translating to an interior point of \(I\), the functions \(x^k|x|\) have exactly the first \(k\) derivatives continuous at the corner, while the next derivative encounters the corner inherited from \(|x|\). The flat function separates smooth from analytic: all derivative data at the flat point vanish, but the function is positive away from that point, so the Taylor series cannot recover the function near it.
+TODO: detailed learning proof for smoothness-tower.
 \end{proof}
 
 \begin{remark*}[Proof structure]
-Prove inclusions directly from definitions, then separate adjacent classes with explicit examples.
 \end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:class-ck]{Definition: Class \(C^k\)}
-  \item \hyperref[def:class-cinfty]{Definition: Smooth Function; Class \(C^\infty\)}
-  \item \hyperref[def:class-comega]{Definition: Real-Analytic Function; Class \(C^\omega\)}
+  \item TODO: add dependencies for this proof.
 \end{itemize}
 \end{dependencies}
 

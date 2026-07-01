@@ -13,45 +13,20 @@ Let \(I\subseteq\mathbb{R}\) be open, let \(f:I\to\mathbb{R}\) be \(C^1\), and s
 
 \begin{proof}[Professional Standard Proof]
 \LRAProofBodyStart
-Since \(f'\) is continuous and \(f'(c)\neq 0\), sign preservation gives an open interval \(U\ni c\) on which \(f'\) has constant nonzero sign. Replacing \(U\) by a smaller interval if needed, assume \(f'>0\) on \(U\); the case \(f'<0\) is identical with inequalities reversed. The monotonicity theorem implies that \(f\) is strictly increasing on \(U\), hence injective. Let \(V=f(U)\). Since \(f\) is continuous and strictly monotone on an interval, \(V\) is an open interval and \(f|_U:U\to V\) has a continuous inverse \(g:V\to U\).
-
-Fix \(y_0\in V\), and set \(x_0=g(y_0)\). By the Carath\'{e}odory characterization, there is a function \(\varphi\), continuous at \(x_0\), such that
-\[
-  f(x)-f(x_0)=(x-x_0)\varphi(x),
-  \qquad
-  \varphi(x_0)=f'(x_0)\neq 0.
-\]
-Substituting \(x=g(y)\) gives
-\[
-  y-y_0=(g(y)-g(y_0))\varphi(g(y)).
-\]
-Because \(g\) and \(\varphi\) are continuous and \(\varphi(g(y_0))\neq 0\), the reciprocal \(1/\varphi(g(y))\) is continuous near \(y_0\). Hence
-\[
-  g(y)-g(y_0)=\frac{1}{\varphi(g(y))}(y-y_0),
-\]
-which is a Carath\'{e}odory factorization for \(g\) at \(y_0\). Therefore \(g\) is differentiable at \(y_0\) and
-\[
-  g'(y_0)=\frac{1}{\varphi(g(y_0))}=\frac{1}{f'(g(y_0))}.
-\]
-Since \(y_0\) was arbitrary and \(1/(f'\circ g)\) is continuous on \(V\), \(g\in C^1(V)\).
+TODO: professional standard proof for inverse-function-theorem-one-variable.
 \end{proof}
 
 \begin{proof}[Detailed Learning Proof]
 \LRAProofBodyStart
-The proof has two stages. First, continuity of \(f'\) turns the pointwise condition \(f'(c)\neq 0\) into a neighbourhood condition: \(f'\) keeps one sign near \(c\). The sign of the derivative forces strict monotonicity on that neighbourhood, and strict monotonicity gives the local inverse.
-
-Second, the derivative of the inverse is computed without dividing by \(f(x)-f(x_0)\). Carath\'{e}odory writes the increment of \(f\) as \((x-x_0)\varphi(x)\). After substituting \(x=g(y)\), the same identity can be solved for the increment of \(g\), producing a continuous slope factor for \(g\). Its value at \(y_0\) is the reciprocal of \(f'(x_0)\).
+TODO: detailed learning proof for inverse-function-theorem-one-variable.
 \end{proof}
 
 \begin{remark*}[Proof structure]
-Use sign preservation to get monotonicity and local invertibility, then use Carath\'{e}odory factorization to prove differentiability of the inverse.
 \end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:class-c1]{Definition: Class \(C^1\)}
-  \item \hyperref[thm:caratheodory-characterization-of-differentiability]{Theorem: Carath\'{e}odory Characterization of Differentiability}
-  \item \hyperref[thm:nondecreasing-iff-nonneg-derivative]{Theorem: Monotonicity from Derivative Sign}
+  \item TODO: add dependencies for this proof.
 \end{itemize}
 \end{dependencies}
 

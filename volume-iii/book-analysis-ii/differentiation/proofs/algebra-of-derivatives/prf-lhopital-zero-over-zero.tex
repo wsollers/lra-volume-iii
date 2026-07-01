@@ -13,32 +13,20 @@ If \(f,g\) are differentiable near \(a^+\), \(g'\neq 0\), \(f(x)\to 0\), \(g(x)\
 
 \begin{proof}[Professional Standard Proof]
 \LRAProofBodyStart
-Assume first that \(L\in\mathbb{R}\). Extend \(f\) and \(g\) to \(a\) by defining \(f(a)=g(a)=0\). The hypotheses make these extensions continuous at \(a\). For \(x\in(a,b)\), the Cauchy Mean Value Theorem on \([a,x]\) gives a point \(\xi_x\in(a,x)\) such that
-\[
-  \frac{f(x)}{g(x)}
-  =
-  \frac{f(x)-f(a)}{g(x)-g(a)}
-  =
-  \frac{f'(\xi_x)}{g'(\xi_x)}.
-\]
-The denominator \(g(x)\) is nonzero for \(x\) sufficiently close to \(a\); otherwise Rolle's Theorem would force a zero of \(g'\) between \(a\) and \(x\). Since \(a<\xi_x<x\), the squeeze theorem gives \(\xi_x\to a^+\) as \(x\to a^+\). Therefore \(f'(\xi_x)/g'(\xi_x)\to L\), and hence \(f(x)/g(x)\to L\).
-
-For \(L=+\infty\) or \(L=-\infty\), the same argument replaces the \(\varepsilon\)-estimate by the corresponding eventual lower or upper bound.
+TODO: professional standard proof for lhopital-zero-over-zero.
 \end{proof}
 
 \begin{proof}[Detailed Learning Proof]
 \LRAProofBodyStart
-The \(0/0\) hypothesis allows the endpoint values to be filled in as \(f(a)=g(a)=0\). Cauchy's theorem then says that the quotient of endpoint changes equals a derivative quotient somewhere between the endpoints. As \(x\) moves toward \(a\), that intermediate point is trapped between \(a\) and \(x\), so it also moves toward \(a\). The assumed derivative-ratio limit transfers directly to the original quotient.
+TODO: detailed learning proof for lhopital-zero-over-zero.
 \end{proof}
 
 \begin{remark*}[Proof structure]
-Fill in the endpoint, apply Cauchy MVT on \([a,x]\), and squeeze the intermediate point toward \(a\).
 \end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[thm:cauchy-mean-value-theorem]{Theorem: Cauchy Mean Value Theorem}
-  \item \hyperref[thm:rolles-theorem]{Theorem: Rolle's Theorem}
+  \item TODO: add dependencies for this proof.
 \end{itemize}
 \end{dependencies}
 

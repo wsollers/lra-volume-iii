@@ -13,40 +13,20 @@ If \(g(x)\) diverges in magnitude near \(a^+\), \(g'\neq 0\), and \(f'(x)/g'(x)\
 
 \begin{proof}[Professional Standard Proof]
 \LRAProofBodyStart
-Assume first that \(L\in\mathbb{R}\). Fix \(\varepsilon>0\). Choose \(c\in(a,b)\) so that
-\[
-  \left|\frac{f'(t)}{g'(t)}-L\right|<\varepsilon
-  \qquad\text{for }a<t<c.
-\]
-For \(a<x<c\), the Cauchy Mean Value Theorem on \([x,c]\) gives \(\xi\in(x,c)\) such that
-\[
-  \frac{f(x)-f(c)}{g(x)-g(c)}
-  =
-  \frac{f'(\xi)}{g'(\xi)}.
-\]
-Thus this difference quotient is within \(\varepsilon\) of \(L\). Since \(|g(x)|\to\infty\), the fixed term \(g(c)\) is negligible compared with \(g(x)\). The Cauchy identity also shows that \(f(x)-f(c)\) is controlled by \(g(x)-g(c)\), so the fixed numerator term is negligible in the same quotient comparison. Consequently
-\[
-  \frac{f(x)}{g(x)}
-  -
-  \frac{f(x)-f(c)}{g(x)-g(c)}
-  \longrightarrow 0,
-\]
-and hence \(\limsup_{x\to a^+}|f(x)/g(x)-L|\leq\varepsilon\). Since \(\varepsilon\) is arbitrary, \(f(x)/g(x)\to L\). Infinite \(L\) is handled by replacing the bounded \(\varepsilon\)-estimate with eventual one-sided bounds.
+TODO: professional standard proof for lhopital-infinity-over-infinity.
 \end{proof}
 
 \begin{proof}[Detailed Learning Proof]
 \LRAProofBodyStart
-In the \(\infty/\infty\) form, endpoint values cannot be filled in at \(a\). Instead, fix a comparison point \(c\) and apply Cauchy's theorem on \([x,c]\). The theorem controls the quotient after subtracting the fixed values \(f(c)\) and \(g(c)\). Since \(g(x)\) becomes unbounded in magnitude, subtracting \(g(c)\) has no asymptotic effect, and the controlled quotient forces the same limit for \(f(x)/g(x)\).
+TODO: detailed learning proof for lhopital-infinity-over-infinity.
 \end{proof}
 
 \begin{remark*}[Proof structure]
-Apply Cauchy MVT between \(x\) and a fixed point \(c\), then use the divergence of \(g\) to remove fixed endpoint terms.
 \end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[thm:cauchy-mean-value-theorem]{Theorem: Cauchy Mean Value Theorem}
-  \item \hyperref[thm:squeeze-function-limits]{Theorem: Squeeze Theorem for Function Limits}
+  \item TODO: add dependencies for this proof.
 \end{itemize}
 \end{dependencies}
 

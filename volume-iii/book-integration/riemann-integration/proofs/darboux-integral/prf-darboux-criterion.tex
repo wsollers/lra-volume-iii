@@ -3,54 +3,29 @@
 \label{prf:darboux-criterion}
 \LRAProofFor{thm:darboux-criterion}
 \begin{remark*}[Return]\hyperref[thm:darboux-criterion]{Return to Theorem}\end{remark*}
+
 \begin{theorem*}[Darboux Criterion]
 Darboux integrability is equivalent to making \(U(f,P)-L(f,P)\) arbitrarily
 small.
 \end{theorem*}
+
 \begin{proof}[Professional Standard Proof]
 \LRAProofBodyStart
-Let
-\[
-  \underline I=\sup_P L(f,P),\qquad
-  \overline I=\inf_P U(f,P).
-\]
-If \(\underline I=\overline I=I\), choose partitions \(P_1,P_2\) such that
-\[
-  I-L(f,P_1)<\varepsilon/2,
-  \qquad
-  U(f,P_2)-I<\varepsilon/2.
-\]
-Let \(Q=P_1\cup P_2\). By refinement monotonicity,
-\[
-  L(f,Q)\ge L(f,P_1),\qquad U(f,Q)\le U(f,P_2),
-\]
-so
-\[
-  U(f,Q)-L(f,Q)<\varepsilon.
-\]
-Conversely, if for every \(\varepsilon>0\) some \(P\) satisfies
-\(U(f,P)-L(f,P)<\varepsilon\), then
-\[
-  0\le \overline I-\underline I
-  \le U(f,P)-L(f,P)<\varepsilon.
-\]
-Since this holds for every \(\varepsilon>0\), \(\overline I=\underline I\).
+TODO: professional standard proof for darboux-criterion.
 \end{proof}
+
 \begin{proof}[Detailed Learning Proof]
 \LRAProofBodyStart
-The common refinement is what lets the two approximations be used at the same
-time. One partition pushes the lower sum up near the lower integral; another
-pushes the upper sum down near the upper integral. Refining them together
-keeps both improvements.
+TODO: detailed learning proof for darboux-criterion.
 \end{proof}
+
 \begin{remark*}[Proof structure]
-Translate equality of upper and lower integrals into partitions with small
-upper-minus-lower gap, and conversely.
 \end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:darboux-sums]{Lower and Upper Darboux Sums}.
-  \item \hyperref[def:darboux-integrability]{Darboux Integrability}.
+  \item TODO: add dependencies for this proof.
 \end{itemize}
 \end{dependencies}
+
 \clearpage

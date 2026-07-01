@@ -3,47 +3,31 @@
 \label{prf:hk-fundamental-theorem}
 \LRAProofFor{thm:hk-fundamental-theorem}
 \begin{remark*}[Return]\hyperref[thm:hk-fundamental-theorem]{Return to Theorem}\end{remark*}
+
 \begin{theorem*}[Fundamental Theorem for the Henstock--Kurzweil Integral]
 If \(F\) is differentiable on \([a,b]\) and \(F'=f\), then
 \[
   (\mathrm{HK})\int_a^b f=F(b)-F(a).
 \]
 \end{theorem*}
+
 \begin{proof}[Professional Standard Proof]
 \LRAProofBodyStart
-Fix \(\varepsilon>0\) and set
-\(\varepsilon'=\varepsilon/(b-a)\). At each tag \(\xi\), apply the Straddle
-Lemma with tolerance \(\varepsilon'\), producing a gauge \(\delta(\xi)>0\).
-For any \(\delta\)-fine tagged partition,
-\[
-  |f(\xi_i)\Delta x_i-(F(x_i)-F(x_{i-1}))|
-  \le \varepsilon'\Delta x_i
-\]
-on every slab. Summing and using telescoping gives
-\[
-  \left|S(f,P,\xi)-(F(b)-F(a))\right|
-  \le \sum_i\varepsilon'\Delta x_i
-  =\varepsilon'(b-a)=\varepsilon.
-\]
-Thus every \(\delta\)-fine tagged sum is within \(\varepsilon\) of
-\(F(b)-F(a)\).
+TODO: professional standard proof for hk-fundamental-theorem.
 \end{proof}
+
 \begin{proof}[Detailed Learning Proof]
 \LRAProofBodyStart
-The gauge is built from the local differentiability estimate at each possible
-tag. Because each slab straddles its tag and lies inside the tag's gauge ball,
-the local linear approximation controls that slab. The \(F\)-increments
-telescope, so the whole Riemann sum is forced near \(F(b)-F(a)\).
+TODO: detailed learning proof for hk-fundamental-theorem.
 \end{proof}
+
 \begin{remark*}[Proof structure]
-Use differentiability to build a gauge, apply the Straddle Lemma on each
-gauge-fine slab, and telescope the resulting \(F\)-increments.
 \end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[lem:cousin]{Cousin's Lemma}.
-  \item \hyperref[lem:hk-straddle]{Straddle Lemma}.
-  \item \hyperref[def:henstock-kurzweil-integral]{Henstock--Kurzweil Integral}.
+  \item TODO: add dependencies for this proof.
 \end{itemize}
 \end{dependencies}
+
 \clearpage

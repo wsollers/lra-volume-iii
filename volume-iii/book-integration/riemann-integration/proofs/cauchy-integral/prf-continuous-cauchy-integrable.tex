@@ -3,51 +3,28 @@
 \label{prf:continuous-cauchy-integrable}
 \LRAProofFor{thm:continuous-cauchy-integrable}
 \begin{remark*}[Return]\hyperref[thm:continuous-cauchy-integrable]{Return to Theorem}\end{remark*}
+
 \begin{theorem*}[Continuous Functions Are Cauchy-Integrable]
 Every continuous function \(f:[a,b]\to\mathbb{R}\) is Cauchy-integrable.
 \end{theorem*}
+
 \begin{proof}[Professional Standard Proof]
 \LRAProofBodyStart
-Let \(\varepsilon>0\). By uniform continuity, choose \(\delta>0\) such that
-every interval \(I\subset[a,b]\) of length less than \(\delta\) satisfies
-\[
-  \omega_f(I)<\frac{\varepsilon}{2(b-a)}.
-\]
-If \(P\) and \(P'\) have mesh less than \(\delta\), let \(Q=P\cup P'\) be their
-common refinement. On each slab \(I=[x_{i-1},x_i]\) of \(P\), refinement only
-replaces the left-endpoint height \(f(x_{i-1})\) by left-endpoint heights
-inside the same slab. Hence the total change over that slab is bounded by
-\(\omega_f(I)\Delta x_i\). Summing gives
-\[
-  |C(f,P)-C(f,Q)|
-  \le \sum_i \omega_f([x_{i-1},x_i])\Delta x_i
-  < \frac{\varepsilon}{2}.
-\]
-The same estimate gives \(|C(f,P')-C(f,Q)|<\varepsilon/2\), so
-\[
-  |C(f,P)-C(f,P')|<\varepsilon.
-\]
-Thus the Cauchy sums form a Cauchy net in \(\mathbb R\), and completeness gives
-the limit.
+TODO: professional standard proof for continuous-cauchy-integrable.
 \end{proof}
+
 \begin{proof}[Detailed Learning Proof]
 \LRAProofBodyStart
-The refinement \(Q\) is the comparison device. Directly comparing \(P\) and
-\(P'\) is awkward because their slabs do not line up. But both old sums can be
-compared to the single refined sum over \(Q\). Uniform continuity makes every
-old slab nearly constant, so replacing one rectangle by several rectangles
-inside the same slab changes area by at most ``oscillation times width.'' The
-two errors meet at \(Q\), and the triangle inequality closes the estimate.
+TODO: detailed learning proof for continuous-cauchy-integrable.
 \end{proof}
+
 \begin{remark*}[Proof structure]
-Use uniform continuity for local oscillation control, compare through a common
-refinement, then invoke completeness of \(\mathbb{R}\).
 \end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[lem:common-refinement-partitions]{Common Refinement of Two Partitions}.
-  \item \hyperref[def:cauchy-sum]{Left-Endpoint Cauchy Sum}.
-  \item \hyperref[def:interval-oscillation-integration]{Oscillation on an Interval}.
+  \item TODO: add dependencies for this proof.
 \end{itemize}
 \end{dependencies}
+
 \clearpage

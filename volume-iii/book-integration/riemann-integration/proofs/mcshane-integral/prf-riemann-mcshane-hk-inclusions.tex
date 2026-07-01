@@ -3,6 +3,7 @@
 \label{prf:riemann-mcshane-hk-inclusions}
 \LRAProofFor{thm:riemann-mcshane-hk-inclusions}
 \begin{remark*}[Return]\hyperref[thm:riemann-mcshane-hk-inclusions]{Return to Theorem}\end{remark*}
+
 \begin{theorem*}[Riemann Integrable Implies McShane Integrable Implies Henstock--Kurzweil Integrable]
 On a compact interval,
 \[
@@ -10,64 +11,24 @@ On a compact interval,
 \]
 with agreement of integral values.
 \end{theorem*}
+
 \begin{proof}[Professional Standard Proof]
 \LRAProofBodyStart
-First suppose \(f\) is McShane integrable with value \(A\). Every
-Henstock--Kurzweil \(\delta\)-fine tagged partition is McShane
-\(\delta\)-fine, because HK adds the extra restriction that each tag lies in
-its own interval. Hence the McShane estimate applies to all HK partitions, so
-\(f\) is HK-integrable with the same value.
-
-Now suppose \(f\) is Riemann integrable with value \(L\). By the Lebesgue
-criterion, its discontinuity set has measure zero. Let \(M\) bound \(|f|\).
-Choose an open cover \(G\) of the discontinuity set with total length so small
-that \(2M|G|<\varepsilon/3\). Define the gauge at discontinuity points so that
-their gauge balls lie inside \(G\). At each continuity point \(x\), choose the
-gauge so small that \(|f(y)-f(x)|\) is small whenever \(y\) lies in the gauge
-ball.
-
-For any McShane-fine partition, split the intervals according to whether
-their tags are discontinuity points or continuity points. The first class has
-total length controlled by \(|G|\), hence contributes less than
-\(\varepsilon/3\). On the second class, the free tag may sit outside its
-interval, but the entire interval lies inside the tag's continuity ball, so
-the oscillation error is small. Comparing these sums with ordinary Darboux
-sums for \(f\) and using the Riemann value \(L\) gives
-\[
-  |S(f,P,\xi)-L|<\varepsilon.
-\]
-Thus \(f\) is McShane integrable and the value is \(L\).
+TODO: professional standard proof for riemann-mcshane-hk-inclusions.
 \end{proof}
+
 \begin{proof}[Detailed Learning Proof]
 \LRAProofBodyStart
-The inclusion \(\mathcal M\subseteq\mathcal{HK}\) is a quantifier argument:
-McShane tests more partitions. If a function survives every McShane-fine
-partition, it automatically survives the smaller family of HK-fine partitions.
-
-The inclusion \(\mathcal R\subseteq\mathcal M\) is the same philosophy as the
-Lebesgue criterion. Riemann integrability says the bad points are null. Around
-those points the gauge is made so small that all intervals tagged there occupy
-negligible total length. Away from those points the function is continuous, so
-a tag controls every nearby point in the interval it authorizes. Free tags do
-not break the argument because the McShane condition still forces the whole
-interval to lie inside the tag's gauge ball.
+TODO: detailed learning proof for riemann-mcshane-hk-inclusions.
 \end{proof}
+
 \begin{remark*}[Proof structure]
-Use the inclusion of partition classes for McShane \(\Rightarrow\) HK, and use
-the null discontinuity set plus local continuity gauges for
-Riemann \(\Rightarrow\) McShane.
 \end{remark*}
-\begin{remark*}[Forward dependency]
-This proof uses the Lebesgue criterion proved in the next proof topic. The
-chapter order presents McShane before measure zero for conceptual flow, but
-the dependency graph points forward to the criterion.
-\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:mcshane-fine-tagged-partition]{McShane-Fine Tagged Partition}.
-  \item \hyperref[def:mcshane-integral]{McShane Integral}.
-  \item \hyperref[def:henstock-kurzweil-integral]{Henstock--Kurzweil Integral}.
-  \item \hyperref[thm:lebesgue-criterion-riemann-integrability]{Lebesgue Criterion for Riemann Integrability}.
+  \item TODO: add dependencies for this proof.
 \end{itemize}
 \end{dependencies}
+
 \clearpage

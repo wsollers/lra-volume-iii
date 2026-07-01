@@ -13,80 +13,20 @@ For every $x \in \mathbb{R}$, there exists $n \in \mathbb{N}$ such that $n > x$.
 
 \begin{proof}[Professional Standard Proof]
 \LRAProofBodyStart
-Suppose, toward a contradiction, that the conclusion fails.  Then there is
-some $x\in\mathbb{R}$ such that $n\le x$ for every $n\in\mathbb{N}$; that
-is, $\mathbb{N}$ is bounded above in $\mathbb{R}$.  By completeness, let
-\[
-  s=\sup\mathbb{N}.
-\]
-Since $s-1<s$, the number $s-1$ cannot be an upper bound of $\mathbb{N}$;
-otherwise the leastness of $s$ would give $s\le s-1$, impossible.  Hence
-there exists $n\in\mathbb{N}$ such that
-\[
-  n>s-1.
-\]
-Adding $1$ gives $n+1>s$.  But $n+1\in\mathbb{N}$, and $s$ is an upper bound
-of $\mathbb{N}$, so $n+1\le s$.  This contradiction shows that
-$\mathbb{N}$ is not bounded above in $\mathbb{R}$.  Therefore for every
-$x\in\mathbb{R}$ there exists $n\in\mathbb{N}$ such that $n>x$.
+TODO: professional standard proof for archimedean-property.
 \end{proof}
 
 \begin{proof}[Detailed Learning Proof]
 \LRAProofBodyStart
-We prove the statement by contradiction.  The theorem says that no real number
-can dominate all natural numbers.  Suppose the theorem were false.  Then
-there would be some real number $x$ such that
-\[
-  n\le x
-  \qquad\text{for every }n\in\mathbb{N}.
-\]
-Thus $\mathbb{N}$ would be a nonempty subset of $\mathbb{R}$ that is bounded
-above.
-
-By the least upper bound property of $\mathbb{R}$, the set $\mathbb{N}$ would
-have a supremum.  Let
-\[
-  s=\sup\mathbb{N}.
-\]
-So $s$ is an upper bound for $\mathbb{N}$, and it is the least such upper
-bound.
-
-Now consider the smaller number $s-1$.  Because $s-1<s$, it cannot also be an
-upper bound of $\mathbb{N}$: if it were, then the leastness of $s$ would force
-$s\le s-1$, a contradiction.  Since $s-1$ is not an upper bound, some natural
-number lies above it.  Therefore there exists $n\in\mathbb{N}$ such that
-\[
-  n>s-1.
-\]
-Adding $1$ to both sides gives
-\[
-  n+1>s.
-\]
-
-But $n+1$ is again a natural number.  Since $s$ is an upper bound of
-$\mathbb{N}$, every natural number must be at most $s$, so in particular
-\[
-  n+1\le s.
-\]
-This contradicts $n+1>s$.
-
-The contradiction came from assuming that some real number bounds all natural
-numbers above.  Hence no such real number exists.  Equivalently, for every
-real number $x$, there is a natural number $n$ with $n>x$.
+TODO: detailed learning proof for archimedean-property.
 \end{proof}
 
 \begin{remark*}[Proof structure]
-Assume $\mathbb{N}$ is bounded above and take its supremum $s$.  Since
-$s-1$ is smaller than the least upper bound, it fails to be an upper bound,
-so some $n\in\mathbb{N}$ satisfies $n>s-1$.  Then $n+1>s$, contradicting
-that $s$ is an upper bound for $\mathbb{N}$.
 \end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[ax:completeness-of-reals]{Completeness of the real numbers}.
-  \item \hyperref[def:supremum]{Supremum}.
-  \item \hyperref[def:upper-bound]{Upper bound}.
+  \item TODO: add dependencies for this proof.
 \end{itemize}
 \end{dependencies}
 

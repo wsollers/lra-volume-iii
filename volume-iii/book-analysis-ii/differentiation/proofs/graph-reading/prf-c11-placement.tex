@@ -22,62 +22,20 @@ and the first inclusion is strict.
 
 \begin{proof}[Professional Standard Proof]
 \LRAProofBodyStart
-The inclusion \(C^{1,1}(I)\subseteq C^1(I)\) is part of the definition of
-\(C^{1,1}\). It is strict because \(f(x)=|x|^{4/3}\) is \(C^1\) on any
-interval containing \(0\), with
-\[
-  f'(x)=\frac{4}{3}|x|^{1/3}\operatorname{sign}(x),\qquad f'(0)=0,
-\]
-but
-\[
-  \frac{|f'(x)-f'(0)|}{|x|}
-  =
-  \frac{4}{3}|x|^{-2/3}\to\infty
-\]
-as \(x\to0\). Thus \(f'\) is not Lipschitz near \(0\).
-
-The function \(g(x)=x|x|\) has \(g'(x)=2|x|\), which is Lipschitz with
-constant \(2\), so \(g\in C^{1,1}\). But \(g''(0)\) does not exist, since
-the derivative of \(2|x|\) has one-sided values \(-2\) and \(2\). Hence
-\(C^{1,1}\) is not contained in \(C^2\).
-
-Finally, if \(K\) is compact and \(f\in C^2(K)\), then \(f''\) is continuous
-on \(K\), hence bounded by some \(M\). Applying the derivative-bound
-corollary to \(f'\) gives \(|f'(x)-f'(y)|\leq M|x-y|\) on \(K\), so
-\(f\in C^{1,1}(K)\). The same \(g(x)=x|x|\), restricted to any compact
-interval containing \(0\), shows the inclusion \(C^2(K)\subseteq C^{1,1}(K)\)
-is strict.
+TODO: professional standard proof for c11-placement.
 \end{proof}
 
 \begin{proof}[Detailed Learning Proof]
 \LRAProofBodyStart
-The definition of \(C^{1,1}\) has two requirements: \(f\in C^1\), and the
-first derivative is Lipschitz. Forgetting the second requirement immediately
-places every \(C^{1,1}\) function in \(C^1\).
-
-The two witness functions show why the new class is a real intermediate
-tier. The function \(|x|^{4/3}\) has a continuous first derivative, so it is
-\(C^1\), but that derivative becomes too steep near \(0\) to have a finite
-Lipschitz constant. The function \(x|x|\) goes the other way: its derivative
-is \(2|x|\), which changes at a bounded rate, but \(2|x|\) still has a
-corner at \(0\), so no classical second derivative exists there.
-
-On compact intervals, a \(C^2\) function has bounded \(f''\) by the extreme
-value theorem. A bounded derivative gives a Lipschitz estimate by the mean
-value theorem, so \(f'\) is Lipschitz and \(f\in C^{1,1}\).
+TODO: detailed learning proof for c11-placement.
 \end{proof}
 
 \begin{remark*}[Proof structure]
-Use the definition for the easy inclusion, explicit witnesses for strictness,
-and the boundedness of \(f''\) on compact intervals for the compact
-\(C^2\)-to-\(C^{1,1}\) inclusion.
 \end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:class-c11]{Definition: Lipschitz-Derivative Class \(C^{1,1}\)}
-  \item \hyperref[cor:derivative-bound-implies-lipschitz]{Corollary: Derivative Bound Implies Lipschitz}
-  \item \hyperref[thm:extreme-value-theorem]{Theorem: Extreme Value Theorem}
+  \item TODO: add dependencies for this proof.
 \end{itemize}
 \end{dependencies}
 

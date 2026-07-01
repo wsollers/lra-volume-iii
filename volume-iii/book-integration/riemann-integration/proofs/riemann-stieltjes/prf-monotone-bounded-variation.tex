@@ -3,44 +3,28 @@
 \label{prf:monotone-bounded-variation}
 \LRAProofFor{prop:monotone-bounded-variation}
 \begin{remark*}[Return]\hyperref[prop:monotone-bounded-variation]{Return to Proposition}\end{remark*}
+
 \begin{proposition*}[Monotone Functions Have Bounded Variation]
 Every monotone function on \([a,b]\) has bounded variation.
 \end{proposition*}
+
 \begin{proof}[Professional Standard Proof]
 \LRAProofBodyStart
-Assume first that \(\alpha\) is increasing. For every partition \(P\),
-\[
-  \sum_i |\alpha(x_i)-\alpha(x_{i-1})|
-  =
-  \sum_i \bigl(\alpha(x_i)-\alpha(x_{i-1})\bigr)
-  =
-  \alpha(b)-\alpha(a),
-\]
-because the middle sum telescopes. Hence
-\[
-  V_a^b(\alpha)=\alpha(b)-\alpha(a)<\infty.
-\]
-If \(\alpha\) is decreasing, then \(-\alpha\) is increasing, so
-\[
-  V_a^b(\alpha)=V_a^b(-\alpha)=(-\alpha)(b)-(-\alpha)(a)
-  =\alpha(a)-\alpha(b)<\infty.
-\]
+TODO: professional standard proof for monotone-bounded-variation.
 \end{proof}
+
 \begin{proof}[Detailed Learning Proof]
 \LRAProofBodyStart
-A monotone function never reverses direction. For an increasing function every
-increment is nonnegative, so the absolute values do nothing and all interior
-terms cancel. For a decreasing function, negating it turns it into an
-increasing function without changing the sizes of the jumps.
+TODO: detailed learning proof for monotone-bounded-variation.
 \end{proof}
+
 \begin{remark*}[Proof structure]
-Use telescoping for increasing functions and reduce decreasing functions to
-the increasing case by negation.
 \end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:total-variation]{Total Variation}.
-  \item \hyperref[def:bounded-variation-integration]{Bounded Variation}.
+  \item TODO: add dependencies for this proof.
 \end{itemize}
 \end{dependencies}
+
 \clearpage

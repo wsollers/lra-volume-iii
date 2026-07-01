@@ -3,6 +3,7 @@
 \label{prf:mcshane-equals-lebesgue}
 \LRAProofFor{thm:mcshane-equals-lebesgue}
 \begin{remark*}[Return]\hyperref[thm:mcshane-equals-lebesgue]{Return to Theorem}\end{remark*}
+
 \begin{theorem*}[McShane Integrability Equals Lebesgue Integrability]
 For real-valued functions on a compact interval,
 \[
@@ -10,38 +11,24 @@ For real-valued functions on a compact interval,
 \]
 with agreement of integral values.
 \end{theorem*}
+
 \begin{proof}[Professional Standard Proof]
 \LRAProofBodyStart
-Show first that a Lebesgue-integrable function admits gauges for which every
-McShane-fine sum is close to the Lebesgue integral. Approximate by simple
-functions, control the exceptional level-set boundaries by small total
-measure, and use free tags to force the same absolute-size bookkeeping as the
-Lebesgue construction.
-
-Conversely, show that McShane integrability implies Lebesgue integrability by
-testing the free-tag sums against positive and negative parts. The freedom to
-tag intervals from nearby points rules out the conditional cancellations that
-HK permits, so the resulting indefinite integral is absolutely continuous and
-has \(f\) as its derivative almost everywhere.
+TODO: professional standard proof for mcshane-equals-lebesgue.
 \end{proof}
+
 \begin{proof}[Detailed Learning Proof]
 \LRAProofBodyStart
-The proof has two conceptual halves. Lebesgue integrability gives enough
-measure control to make all free-tag gauge sums stable. McShane integrability
-is strong enough to recover that same measure control, because the tags are
-not tethered to the cells where cancellation would otherwise hide large
-positive and negative oscillations.
+TODO: detailed learning proof for mcshane-equals-lebesgue.
 \end{proof}
+
 \begin{remark*}[Proof structure]
-Reduce Lebesgue \(\Rightarrow\) McShane to simple-function approximation and
-small exceptional sets. Reduce McShane \(\Rightarrow\) Lebesgue to absolute
-continuity of the associated indefinite integral.
 \end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:mcshane-fine-tagged-partition]{McShane-Fine Tagged Partition}.
-  \item \hyperref[def:mcshane-integral]{McShane Integral}.
-  \item \hyperref[thm:lebesgue-criterion-riemann-integrability]{Lebesgue Criterion for Riemann Integrability}.
+  \item TODO: add dependencies for this proof.
 \end{itemize}
 \end{dependencies}
+
 \clearpage

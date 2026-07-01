@@ -13,93 +13,20 @@ Let $I_n = [a_n, b_n]$ be a sequence of non-empty closed bounded intervals such 
 
 \begin{proof}[Professional Standard Proof]
 \LRAProofBodyStart
-Write $I_n=[a_n,b_n]$.  Since the intervals are nonempty, $a_n\le b_n$ for
-every $n$.  The set
-\[
-  A=\{a_n:n\in\mathbb{N}\}
-\]
-is nonempty and bounded above by $b_1$, because each $a_n\in I_n\subseteq I_1$.
-By completeness, let $x=\sup A$.
-
-Fix $n\in\mathbb{N}$.  Since $a_n\in A$, we have $a_n\le x$.  It remains to
-show $x\le b_n$.  For every $m\in\mathbb{N}$, the nesting of the intervals
-implies $a_m\le b_n$: if $m\ge n$, then $I_m\subseteq I_n$, so
-$a_m\in I_n$ and hence $a_m\le b_n$; if $m<n$, then $a_m\le a_n\le b_n$.
-Thus $b_n$ is an upper bound of $A$.  Since $x=\sup A$, $x\le b_n$.
-
-Therefore $a_n\le x\le b_n$, so $x\in I_n$.  Since $n$ was arbitrary,
-$x\in\bigcap_{n=1}^{\infty}I_n$, and the intersection is nonempty.
+TODO: professional standard proof for nested-interval-theorem.
 \end{proof}
 
 \begin{proof}[Detailed Learning Proof]
 \LRAProofBodyStart
-Each closed interval can be written as
-\[
-  I_n=[a_n,b_n].
-\]
-The inclusion $I_{n+1}\subseteq I_n$ says that the intervals are nested:
-later intervals sit inside earlier ones.  In particular, every left endpoint
-$a_n$ lies inside the first interval $I_1=[a_1,b_1]$, so
-\[
-  a_n\le b_1
-  \qquad\text{for every }n.
-\]
-Thus the set of all left endpoints,
-\[
-  A=\{a_n:n\in\mathbb{N}\},
-\]
-is nonempty and bounded above.  By the least upper bound property of
-$\mathbb{R}$, this set has a supremum.  Call it
-\[
-  x=\sup A.
-\]
-
-We now prove that this single number $x$ belongs to every interval $I_n$.
-Fix an arbitrary $n$.  Since $a_n$ is one of the elements of $A$, and $x$ is
-an upper bound of $A$, we have
-\[
-  a_n\le x.
-\]
-So $x$ is not to the left of $I_n$.  It remains to prove that $x$ is not to
-the right of $I_n$, meaning $x\le b_n$.
-
-To show $x\le b_n$, it is enough to show that $b_n$ is an upper bound for
-the set $A$ of left endpoints.  Take any $a_m\in A$.  If $m\ge n$, then
-$I_m\subseteq I_n$, so $a_m\in I_n=[a_n,b_n]$, and therefore $a_m\le b_n$.
-If $m<n$, then $I_n\subseteq I_m$, so the left endpoint of the earlier
-interval lies no farther right than the left endpoint of the later interval:
-$a_m\le a_n$.  Since $a_n\le b_n$, this also gives $a_m\le b_n$.
-
-Thus every element of $A$ is at most $b_n$, so $b_n$ is an upper bound of
-$A$.  Because $x$ is the least upper bound of $A$, it follows that
-\[
-  x\le b_n.
-\]
-Combining the two inequalities gives
-\[
-  a_n\le x\le b_n,
-\]
-so $x\in I_n$.
-
-The index $n$ was arbitrary, so $x$ belongs to every interval in the nested
-sequence.  Hence
-\[
-  x\in\bigcap_{n=1}^{\infty}I_n,
-\]
-and the intersection is nonempty.
+TODO: detailed learning proof for nested-interval-theorem.
 \end{proof}
 
 \begin{remark*}[Proof structure]
-Use completeness on the set of left endpoints.  Nesting makes every right
-endpoint an upper bound for those left endpoints, so the supremum of the left
-endpoints lies inside every interval.
 \end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[ax:completeness-of-reals]{Completeness of the real numbers}.
-  \item \hyperref[def:supremum]{Supremum}.
-  \item \hyperref[def:upper-bound]{Upper bound}.
+  \item TODO: add dependencies for this proof.
 \end{itemize}
 \end{dependencies}
 

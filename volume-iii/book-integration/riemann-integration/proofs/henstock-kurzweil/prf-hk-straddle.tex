@@ -3,43 +3,30 @@
 \label{prf:hk-straddle}
 \LRAProofFor{lem:hk-straddle}
 \begin{remark*}[Return]\hyperref[lem:hk-straddle]{Return to Lemma}\end{remark*}
+
 \begin{lemma*}[Straddle Lemma]
 If \(F\) is differentiable at \(\xi\) with \(F'(\xi)=f(\xi)\), then the
 one-slab linearization error across any sufficiently small interval straddling
 \(\xi\) is bounded by \(\varepsilon\) times its length.
 \end{lemma*}
+
 \begin{proof}[Professional Standard Proof]
 \LRAProofBodyStart
-By differentiability, choose \(\delta(\xi)>0\) such that
-\[
-  |F(t)-F(\xi)-f(\xi)(t-\xi)|\le \varepsilon |t-\xi|
-\]
-whenever \(|t-\xi|<\delta(\xi)\). Apply this once at \(t=v\) and once at
-\(t=u\). Since
-\[
-  F(v)-F(u)=\bigl(F(v)-F(\xi)\bigr)-\bigl(F(u)-F(\xi)\bigr),
-\]
-the triangle inequality gives
-\[
-  |F(v)-F(u)-f(\xi)(v-u)|
-  \le \varepsilon(v-\xi)+\varepsilon(\xi-u)
-  =\varepsilon(v-u).
-\]
+TODO: professional standard proof for hk-straddle.
 \end{proof}
+
 \begin{proof}[Detailed Learning Proof]
 \LRAProofBodyStart
-Differentiability says that near \(\xi\), the increment from \(\xi\) to any
-nearby point is well approximated by the linear term \(f(\xi)(t-\xi)\). Apply
-that estimate to the right endpoint \(v\) and the left endpoint \(u\). The
-errors add, and the distances \((v-\xi)\) and \((\xi-u)\) add to \(v-u\).
+TODO: detailed learning proof for hk-straddle.
 \end{proof}
+
 \begin{remark*}[Proof structure]
-Apply the pointwise differentiability estimate at both ends of a tagged slab
-and subtract the two linear approximations.
 \end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:delta-fine-tagged-partition]{Delta-Fine Tagged Partition}.
+  \item TODO: add dependencies for this proof.
 \end{itemize}
 \end{dependencies}
+
 \clearpage
