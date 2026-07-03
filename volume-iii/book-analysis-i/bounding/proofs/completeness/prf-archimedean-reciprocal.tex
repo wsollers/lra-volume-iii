@@ -7,18 +7,47 @@
 \hyperref[cor:archimedean-reciprocal]{Return to Corollary}
 \end{remark*}
 
-\begin{corollary*}[Archimedean Corollary]
-For every $\varepsilon \in \mathbb{R}$ such that $\varepsilon > 0$, there exists $n \in \mathbb{N}$ such that $\frac{1}{n} < \varepsilon$.
+\ProofVaultURL{https://github.com/wsollers/lra-proof-vault/tree/master/volume-iii/book-analysis-i/bounding/cor-archimedean-reciprocal}
+
+\begin{corollary*}[Archimedean Reciprocal Corollary]
+For every $x>0$ and every $y\in\mathbb{R}$, there exists $n\in\mathbb{N}$ such that $nx>y$.
 \end{corollary*}
 
 \begin{proof}[Professional Standard Proof]
 \LRAProofBodyStart
-TODO: professional standard proof for archimedean-reciprocal.
+Let $x>0$ and let $y\in\mathbb{R}$. Since $x$ is positive, the quotient
+$y/x$ is a real number. By the Archimedean Property, there exists
+$n\in\mathbb{N}$ such that
+\[
+  n>\frac{y}{x}.
+\]
+Multiplying both sides by the positive number $x$ preserves the inequality, so
+\[
+  nx>\frac{y}{x}x=y.
+\]
+Thus there exists $n\in\mathbb{N}$ such that $nx>y$.
 \end{proof}
 
 \begin{proof}[Detailed Learning Proof]
 \LRAProofBodyStart
-TODO: detailed learning proof for archimedean-reciprocal.
+Fix a positive real number $x$ and an arbitrary real number $y$. We need to
+show that some natural-number multiple of the step size $x$ eventually exceeds
+$y$.
+
+Because $x>0$, division by $x$ is valid and produces the real number $y/x$.
+The Archimedean Property applies to every real number, so it applies to
+$y/x$. Hence there is a natural number $n$ with
+\[
+  n>\frac{y}{x}.
+\]
+
+The inequality direction is preserved when multiplying by $x$, because $x$ is
+positive. Therefore
+\[
+  nx>\left(\frac{y}{x}\right)x.
+\]
+Since $x\ne 0$, the right-hand side simplifies to $y$. Hence $nx>y$, which is
+exactly the required conclusion.
 \end{proof}
 
 \begin{remark*}[Strategy: The Choice of Leastness Method]
@@ -26,11 +55,15 @@ Because this corollary is a direct algebraic consequence of the Archimedean Prop
 \end{remark*}
 
 \begin{remark*}[Proof structure]
+Choose the real threshold $y/x$, use the Archimedean Property to find a
+natural number above that threshold, and then rescale by the positive number
+$x$.
 \end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
-  \item TODO: list mathematical dependencies.
+  \item \hyperref[thm:archimedean-property]{Theorem~\ref*{thm:archimedean-property}}.
+  \item Ordered-field facts: division by a nonzero real number is defined, and multiplication by a positive real number preserves strict inequalities.
 \end{itemize}
 \end{dependencies}
 

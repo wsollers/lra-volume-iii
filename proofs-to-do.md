@@ -3,8 +3,8 @@
 Proof-writing order is dependency-first among active proof labels. Dependency edges come from resolved statement and proof dependency blocks; original source order is the stable tie-breaker.
 Use `✅` to record completion after the canonical proof file has both proof bodies populated and validated.
 
-Open proofs to do: 394
-Completed in this tracker: 6
+Open proofs to do: 393
+Completed in this tracker: 7
 Unresolved dependency edges skipped for ordering: 4
 
 1. () `thm:decreasing-image-infimum-to-supremum` — **Decreasing Image Sends Infimum to Supremum**
@@ -393,9 +393,9 @@ Unresolved dependency edges skipped for ordering: 4
    > **Statement.**
    > For every $x \in \mathbb{R}$, there exists $n \in \mathbb{N}$ such that $n > x$.
 
-77. () `cor:archimedean-reciprocal` — **Archimedean Corollary**
+77. (✅) `cor:archimedean-reciprocal` — **Archimedean Corollary**
    > **Statement.**
-   > For every $\varepsilon \in \mathbb{R}$ such that $\varepsilon > 0$, there exists $n \in \mathbb{N}$ such that $\frac{1}{n} < \varepsilon$.
+   > For every $x>0$ and every $y\in\mathbb{R}$, there exists $n\in\mathbb{N}$ such that $nx>y$.
 
 78. () `thm:density-of-rationals-in-reals` — **Density of the Rational Numbers in $R$**
    > **Statement.**
