@@ -137,8 +137,8 @@ Order density is an interval-penetration property. It ignores metric distance an
   \item \hyperref[def:subset]{Subset}
 \end{itemize}
 \end{dependencies}
-\begin{theorembox}{Theorem (Density of the Rational Numbers in $\mathbb{R}$)}
-\begin{theorem}[Density of the Rational Numbers in $\mathbb{R}$]
+\begin{theorembox}{Theorem (Density of the Rationals)}
+\begin{theorem}[Density of the Rationals]
 \label{thm:density-of-rationals-in-reals}
 For every $a,b\in\mathbb{R}$ with $a<b$, there exists $q\in\mathbb{Q}$ such that $a<q<b$.
 \hyperref[prf:density-of-rationals-in-reals]{Go to proof.}
@@ -194,6 +194,206 @@ Rational numbers penetrate every real interval. The theorem does not say that ev
 \hyperref[thm:archimedean-property]{Theorem~\ref*{thm:archimedean-property}}.
 \end{dependencies}
 
+\begin{lemmabox}{Lemma (Rational Translation Preserves Rationality)}
+\begin{lemma}[Rational Translation Preserves Rationality]
+\label{lem:rational-translation-preserves-rationality}
+If $r,q\in\mathbb{Q}$, then
+\[
+r+q\in\mathbb{Q}.
+\]
+\end{lemma}
+\end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall r,q\in\mathbb{Q}\;(r+q\in\mathbb{Q}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The rational numbers are closed under addition, so translating a rational by a
+rational keeps it rational.
+\end{remark*}
+
+\NoLocalDependencies
+
+\begin{lemmabox}{Lemma (Rational Difference Preserves Rationality)}
+\begin{lemma}[Rational Difference Preserves Rationality]
+\label{lem:rational-difference-preserves-rationality}
+If $r,q\in\mathbb{Q}$, then
+\[
+r-q\in\mathbb{Q}.
+\]
+\end{lemma}
+\end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall r,q\in\mathbb{Q}\;(r-q\in\mathbb{Q}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Subtraction is addition of the additive inverse, and rational numbers are
+closed under both operations.
+\end{remark*}
+
+\NoLocalDependencies
+
+\begin{lemmabox}{Lemma (Nonzero Rational Product Preserves Irrationality)}
+\begin{lemma}[Nonzero Rational Product Preserves Irrationality]
+\label{lem:nonzero-rational-product-preserves-irrationality}
+If $q\in\mathbb{Q}\setminus\{0\}$ and
+$x\in\mathbb{R}\setminus\mathbb{Q}$, then
+\[
+qx\in\mathbb{R}\setminus\mathbb{Q}.
+\]
+\end{lemma}
+\end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall q\in\mathbb{Q}\setminus\{0\}\;\forall x\in\mathbb{R}\setminus\mathbb{Q}\;
+\bigl(qx\in\mathbb{R}\setminus\mathbb{Q}\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Multiplying an irrational by a nonzero rational cannot make it rational,
+because division by the same nonzero rational would recover the original
+irrational as a rational number.
+\end{remark*}
+
+\NoLocalDependencies
+
+\begin{lemmabox}{Lemma (Rational Translation Preserves Irrationality)}
+\begin{lemma}[Rational Translation Preserves Irrationality]
+\label{lem:rational-translation-preserves-irrationality}
+If $q\in\mathbb{Q}$ and $x\in\mathbb{R}\setminus\mathbb{Q}$, then
+\[
+q+x\in\mathbb{R}\setminus\mathbb{Q}.
+\]
+\end{lemma}
+\end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall q\in\mathbb{Q}\;\forall x\in\mathbb{R}\setminus\mathbb{Q}\;
+\bigl(q+x\in\mathbb{R}\setminus\mathbb{Q}\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A rational translate of an irrational remains irrational; otherwise
+subtracting the rational translation would make the original number rational.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[lem:rational-difference-preserves-rationality]{Rational Difference Preserves Rationality}.
+\end{dependencies}
+
+\begin{lemmabox}{Lemma (Irrational Minus Irrational Need Not Be Irrational)}
+\begin{lemma}[Irrational Minus Irrational Need Not Be Irrational]
+\label{lem:irrational-minus-irrational-need-not-be-irrational}
+There exist irrational numbers $x,y\in\mathbb{R}\setminus\mathbb{Q}$ such
+that
+\[
+x-y\in\mathbb{Q}.
+\]
+\end{lemma}
+\end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\exists x,y\in\mathbb{R}\setminus\mathbb{Q}\;(x-y\in\mathbb{Q}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Taking $x=y=\sqrt{2}$ gives $x-y=0$, so irrationality is not closed under
+difference.
+\end{remark*}
+
+\NoLocalDependencies
+
+\begin{lemmabox}{Lemma (Rational Minus Irrational Is Irrational)}
+\begin{lemma}[Rational Minus Irrational Is Irrational]
+\label{lem:rational-minus-irrational-is-irrational}
+If $q\in\mathbb{Q}$ and $x\in\mathbb{R}\setminus\mathbb{Q}$, then
+\[
+q-x\in\mathbb{R}\setminus\mathbb{Q}.
+\]
+\end{lemma}
+\end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall q\in\mathbb{Q}\;\forall x\in\mathbb{R}\setminus\mathbb{Q}\;
+\bigl(q-x\in\mathbb{R}\setminus\mathbb{Q}\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+If $q-x$ were rational, then $x=q-(q-x)$ would be rational, contradicting the
+hypothesis on $x$.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[lem:rational-difference-preserves-rationality]{Rational Difference Preserves Rationality}.
+\end{dependencies}
+
+\begin{lemmabox}{Lemma (Irrational Plus Rational Is Irrational)}
+\begin{lemma}[Irrational Plus Rational Is Irrational]
+\label{lem:irrational-plus-rational-is-irrational}
+If $x\in\mathbb{R}\setminus\mathbb{Q}$ and $q\in\mathbb{Q}$, then
+\[
+x+q\in\mathbb{R}\setminus\mathbb{Q}.
+\]
+\end{lemma}
+\end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x\in\mathbb{R}\setminus\mathbb{Q}\;\forall q\in\mathbb{Q}\;
+\bigl(x+q\in\mathbb{R}\setminus\mathbb{Q}\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This is the commuted form of rational translation preserving irrationality.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[lem:rational-translation-preserves-irrationality]{Rational Translation Preserves Irrationality}.
+\end{dependencies}
+
+\begin{lemmabox}{Lemma (Irrational Minus Rational Is Irrational)}
+\begin{lemma}[Irrational Minus Rational Is Irrational]
+\label{lem:irrational-minus-rational-is-irrational}
+If $x\in\mathbb{R}\setminus\mathbb{Q}$ and $q\in\mathbb{Q}$, then
+\[
+x-q\in\mathbb{R}\setminus\mathbb{Q}.
+\]
+\end{lemma}
+\end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x\in\mathbb{R}\setminus\mathbb{Q}\;\forall q\in\mathbb{Q}\;
+\bigl(x-q\in\mathbb{R}\setminus\mathbb{Q}\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Subtracting a rational is the same as adding its rational additive inverse, so
+an irrational remains irrational.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[lem:rational-translation-preserves-irrationality]{Rational Translation Preserves Irrationality}.
+\end{dependencies}
+
+\input{volume-iii/book-analysis-i/bounding/notes/completeness/figure-rational-irrational-translation}
 
 
 
@@ -201,8 +401,9 @@ Rational numbers penetrate every real interval. The theorem does not say that ev
 
 
 
-\begin{theorembox}{Theorem (Density of the Irrational Numbers in $\mathbb{R}$)}
-\begin{theorem}[Density of the Irrational Numbers in $\mathbb{R}$]
+
+\begin{theorembox}{Theorem (Density of the Irrationals)}
+\begin{theorem}[Density of the Irrationals]
 \label{thm:density-of-irrationals-in-reals}
 For every $a,b\in\mathbb{R}$ with $a<b$, there exists $s\in\mathbb{R}\setminus\mathbb{Q}$ such that $a<s<b$.
 \hyperref[prf:density-of-irrationals-in-reals]{Go to proof.}
@@ -260,6 +461,89 @@ Irrational numbers also penetrate every real interval. One way to see the result
 
 
 
+
+
+\begin{theorembox}{Theorem (An Irrational Between Any Two Rationals)}
+\begin{theorem}[An Irrational Between Any Two Rationals]
+\label{thm:irrational-between-any-two-rationals}
+If $r,s\in\mathbb{Q}$ and $r<s$, then there exists
+$x\in\mathbb{R}\setminus\mathbb{Q}$ such that
+\[
+r<x<s.
+\]
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall r,s\in\mathbb{Q}\;
+\bigl(r<s\rightarrow
+\exists x\in\mathbb{R}\setminus\mathbb{Q}\;(r<x<s)\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This is the density of the irrationals restricted to intervals whose endpoints
+are rational.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[thm:density-of-irrationals-in-reals]{Density of the Irrationals}.
+\end{dependencies}
+
+\begin{theorembox}{Theorem (A Rational Between Any Two Irrationals)}
+\begin{theorem}[A Rational Between Any Two Irrationals]
+\label{thm:rational-between-any-two-irrationals}
+If $x,y\in\mathbb{R}\setminus\mathbb{Q}$ and $x<y$, then there exists
+$q\in\mathbb{Q}$ such that
+\[
+x<q<y.
+\]
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y\in\mathbb{R}\setminus\mathbb{Q}\;
+\bigl(x<y\rightarrow \exists q\in\mathbb{Q}\;(x<q<y)\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This is the density of the rationals restricted to intervals whose endpoints
+are irrational.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[thm:density-of-rationals-in-reals]{Density of the Rationals}.
+\end{dependencies}
+
+\begin{lemmabox}{Lemma (Small Irrational Positive Number)}
+\begin{lemma}[Small Irrational Positive Number]
+\label{lem:small-irrational-positive-number}
+For every $\varepsilon>0$, there exists
+$\eta\in\mathbb{R}\setminus\mathbb{Q}$ such that
+\[
+0<\eta<\varepsilon.
+\]
+\end{lemma}
+\end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall \varepsilon>0\;\exists \eta\in\mathbb{R}\setminus\mathbb{Q}\;
+(0<\eta<\varepsilon).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The density of the irrationals applied to the interval $(0,\varepsilon)$ gives
+an irrational positive number as small as desired.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[thm:density-of-irrationals-in-reals]{Density of the Irrationals}.
+\end{dependencies}
 
 
 \begin{corollarybox}{Corollary (Rational and Irrational Points in Every Open Interval)}

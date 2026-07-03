@@ -1,0 +1,27 @@
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[atlas, x=1.05cm, y=1cm, >=Latex]
+  \draw[atlas axes] (-0.5,0) -- (6.4,0) node[right, atlas label] {$\mathbb{R}$};
+
+  \foreach \x/\lab in {0/$q$,2/$x$,4/$q+x$} {
+    \draw[atlasink, line width=0.7pt] (\x,0.12) -- (\x,-0.12)
+      node[below=4pt, atlas label] {\lab};
+  }
+
+  \node[atlas dot, fill=atlasblue] (q) at (0,0) {};
+  \node[atlas dot, fill=atlasred] (x) at (2,0) {};
+  \node[atlas dot, fill=atlasred] (qx) at (4,0) {};
+
+  \draw[atlas probe, atlasgold, -{Stealth[length=4pt,width=3pt]}]
+    (q) to[bend left=22] node[above, atlas label] {translate by irrational $x$} (qx);
+  \draw[dropline] (x) -- (2,0.7);
+  \node[atlas label, align=center] at (2,0.95)
+    {$x\notin\mathbb{Q}$};
+  \node[atlas label, align=center] at (4,0.95)
+    {$q+x\notin\mathbb{Q}$};
+  \node[atlas label, align=center] at (0,-0.72)
+    {$q\in\mathbb{Q}$};
+\end{tikzpicture}
+\caption{Rational translation preserves irrationality: shifting by a rational does not move an irrational point into $\mathbb{Q}$.}
+\label{fig:rational-irrational-translation}
+\end{figure}

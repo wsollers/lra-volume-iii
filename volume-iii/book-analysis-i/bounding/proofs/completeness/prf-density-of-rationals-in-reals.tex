@@ -7,27 +7,90 @@
 \hyperref[thm:density-of-rationals-in-reals]{Return to Theorem}
 \end{remark*}
 
-\begin{theorem*}[Density of the Rational Numbers in $R$]
+\begin{theorem*}[Density of the Rationals]
 For every $a,b\in\mathbb{R}$ with $a<b$, there exists $q\in\mathbb{Q}$ such that $a<q<b$.
 \end{theorem*}
 
 \begin{proof}[Professional Standard Proof]
 \LRAProofBodyStart
-TODO: professional standard proof for density-of-rationals-in-reals.
+Let $a,b\in\mathbb{R}$ with $a<b$. Then $b-a>0$.
+By the Archimedean reciprocal form, choose $N\in\mathbb{N}$ such that
+\[
+0<\frac{1}{N}<b-a.
+\]
+Equivalently,
+\[
+1<N(b-a)=Nb-Na.
+\]
+Hence the interval $(Na,Nb)$ has length greater than $1$. By the unit-length
+interval lemma, there exists $k\in\mathbb{Z}$ such that
+\[
+Na<k<Nb.
+\]
+Since $N>0$, division by $N$ preserves the inequalities, so
+\[
+a<\frac{k}{N}<b.
+\]
+Because $k\in\mathbb{Z}$ and $N\in\mathbb{N}$ with $N\ne 0$, the number
+$k/N$ is rational. Thus $q=k/N\in\mathbb{Q}$ satisfies $a<q<b$.
 \end{proof}
 
 \begin{proof}[Detailed Learning Proof]
 \LRAProofBodyStart
-TODO: detailed learning proof for density-of-rationals-in-reals.
+Let $a,b\in\mathbb{R}$ and suppose $a<b$. The goal is to construct a rational
+number strictly between them.
+
+Since $a<b$, the distance between the endpoints is positive:
+\[
+b-a>0.
+\]
+Apply the Archimedean reciprocal form to the positive number $b-a$. There is a
+natural number $N\in\mathbb{N}$ such that
+\[
+0<\frac{1}{N}<b-a.
+\]
+Multiplying the strict inequality $1/N<b-a$ by the positive number $N$ gives
+\[
+1<N(b-a).
+\]
+That is,
+\[
+Nb-Na>1.
+\]
+So the scaled interval
+\[
+(Na,Nb)
+\]
+has length greater than one.
+
+An open interval of length greater than one contains an integer. Therefore
+there exists $k\in\mathbb{Z}$ such that
+\[
+Na<k<Nb.
+\]
+Now scale back down by dividing through by the positive natural number $N$.
+Because $N>0$, the direction of the inequalities is unchanged:
+\[
+a<\frac{k}{N}<b.
+\]
+Finally, $k/N$ is rational because it is a quotient of an integer by a nonzero
+integer. Setting
+\[
+q=\frac{k}{N}
+\]
+gives $q\in\mathbb{Q}$ and $a<q<b$. Hence every nonempty open interval in
+$\mathbb{R}$ contains a rational number.
 \end{proof}
 
 \begin{remark*}[Proof structure]
+First choose a scale $N$ so fine that $1/N<b-a$. Then the scaled interval
+$(Na,Nb)$ has length greater than one, so it contains an integer $k$. Scaling
+that integer back down produces the rational number $k/N$ inside $(a,b)$.
 \end{remark*}
 
 \begin{dependencies}
-\begin{itemize}
-  \item TODO: list mathematical dependencies.
-\end{itemize}
+\hyperref[cor:archimedean-reciprocal-form]{Archimedean Reciprocal Form},
+\hyperref[lem:unit-length-interval-contains-integer]{Unit-Length Interval Contains an Integer}.
 \end{dependencies}
 
 \clearpage

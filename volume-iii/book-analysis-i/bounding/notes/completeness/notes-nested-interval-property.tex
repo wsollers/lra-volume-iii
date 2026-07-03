@@ -4,25 +4,293 @@
 
 \subsection*{Nested Interval Property}
 
-
-
-
-
-
-
-
-
-\begin{theorembox}{Theorem (Nested Interval Property)}
-\begin{theorem}[Nested Interval Property]
-\label{thm:nested-interval-theorem}
-Let $(I_n)$ be a sequence of nonempty closed intervals in $\mathbb{R}$. If $I_{n+1}\subseteq I_n$ for every $n\in\mathbb{N}$, then
+\begin{lemmabox}{Lemma (Nested Closed Intervals Have Ordered Endpoints)}
+\begin{lemma}[Nested Closed Intervals Have Ordered Endpoints]
+\label{lem:nested-closed-intervals-have-ordered-endpoints}
+Let $\{[a_n,b_n]\}_{n\in\mathbb N}$ be a sequence of closed intervals such that
 \[
-  \bigcap_{n=1}^{\infty} I_n\neq\varnothing.
+  [a_{n+1},b_{n+1}]\subseteq [a_n,b_n]
 \]
+for every $n\in\mathbb N$. Then
+\[
+  a_n\le a_{n+1}\le b_{n+1}\le b_n
+\]
+for every $n\in\mathbb N$.
+\hyperref[prf:nested-closed-intervals-have-ordered-endpoints]{Go to proof.}
+\end{lemma}
+\end{lemmabox}
 
-\smallskip
-\noindent
-\hyperref[prf:nested-interval-theorem]{\textit{Go to proof.}}
+\begin{remark*}[Standard quantified statement]
+\[
+\forall n\in\mathbb{N}\;
+\Bigl([a_{n+1},b_{n+1}]\subseteq [a_n,b_n]
+\rightarrow
+a_n\le a_{n+1}\le b_{n+1}\le b_n\Bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{NestedStep}([a_{n+1},b_{n+1}],[a_n,b_n])
+\Longrightarrow
+\operatorname{OrderedEndpoints}(a_n,a_{n+1},b_{n+1},b_n).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\exists n\in\mathbb{N}\;
+\Bigl([a_{n+1},b_{n+1}]\subseteq [a_n,b_n]\land
+(a_{n+1}<a_n\lor b_n<b_{n+1})\Bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+(a_{n+1}<a_n\lor b_n<b_{n+1})
+\Longrightarrow
+[a_{n+1},b_{n+1}]\not\subseteq [a_n,b_n].
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+One-step nesting of closed intervals moves the left endpoint to the right
+and the right endpoint to the left.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[def:closed-interval]{Closed Interval}.
+\end{dependencies}
+
+\begin{lemmabox}{Lemma (Left Endpoints of Nested Intervals Are Increasing)}
+\begin{lemma}[Left Endpoints of Nested Intervals Are Increasing]
+\label{lem:left-endpoints-nested-intervals-increasing}
+Let $\{[a_n,b_n]\}_{n\in\mathbb N}$ be a nested sequence of closed intervals.
+Then the sequence $(a_n)$ is monotone increasing.
+\hyperref[prf:left-endpoints-nested-intervals-increasing]{Go to proof.}
+\end{lemma}
+\end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall n\in\mathbb{N}\;(a_n\le a_{n+1}).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{NestedClosedIntervals}([a_n,b_n])
+\Longrightarrow
+\operatorname{MonotoneIncreasing}(a_n).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\exists n\in\mathbb{N}\;(a_{n+1}<a_n).
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\neg\operatorname{MonotoneIncreasing}(a_n)
+\Longrightarrow
+\neg\operatorname{NestedClosedIntervals}([a_n,b_n]).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+In a nested family, the left endpoints cannot move left as the intervals
+shrink.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[def:closed-interval]{Closed Interval}.
+\end{dependencies}
+
+\begin{lemmabox}{Lemma (Right Endpoints of Nested Intervals Are Decreasing)}
+\begin{lemma}[Right Endpoints of Nested Intervals Are Decreasing]
+\label{lem:right-endpoints-nested-intervals-decreasing}
+Let $\{[a_n,b_n]\}_{n\in\mathbb N}$ be a nested sequence of closed intervals.
+Then the sequence $(b_n)$ is monotone decreasing.
+\hyperref[prf:right-endpoints-nested-intervals-decreasing]{Go to proof.}
+\end{lemma}
+\end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall n\in\mathbb{N}\;(b_{n+1}\le b_n).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{NestedClosedIntervals}([a_n,b_n])
+\Longrightarrow
+\operatorname{MonotoneDecreasing}(b_n).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\exists n\in\mathbb{N}\;(b_n<b_{n+1}).
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\neg\operatorname{MonotoneDecreasing}(b_n)
+\Longrightarrow
+\neg\operatorname{NestedClosedIntervals}([a_n,b_n]).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+In a nested family, the right endpoints cannot move right as the intervals
+shrink.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[def:closed-interval]{Closed Interval}.
+\end{dependencies}
+
+\begin{lemmabox}{Lemma (Left Endpoints Are Bounded Above by Right Endpoints)}
+\begin{lemma}[Left Endpoints Are Bounded Above by Right Endpoints]
+\label{lem:left-endpoints-bounded-above-by-right-endpoints}
+Let $\{[a_n,b_n]\}_{n\in\mathbb N}$ be a nested sequence of closed intervals.
+Then for all $m,n\in\mathbb N$,
+\[
+  a_n\le b_m.
+\]
+\hyperref[prf:left-endpoints-bounded-above-by-right-endpoints]{Go to proof.}
+\end{lemma}
+\end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall m,n\in\mathbb{N}\;(a_n\le b_m).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{NestedClosedIntervals}([a_n,b_n])
+\Longrightarrow
+\forall m,n\in\mathbb{N}\;\operatorname{Below}(a_n,b_m).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\exists m,n\in\mathbb{N}\;(b_m<a_n).
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\exists m,n\in\mathbb{N}\;(b_m<a_n)
+\Longrightarrow
+\neg\operatorname{NestedClosedIntervals}([a_n,b_n]).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Every left endpoint lies below every right endpoint, even when the two
+endpoints come from different stages of the nested family.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[def:closed-interval]{Closed Interval}.
+\end{dependencies}
+
+\begin{lemmabox}{Lemma (Endpoint Supremum Infimum Inequality)}
+\begin{lemma}[Endpoint Supremum Infimum Inequality]
+\label{lem:endpoint-supremum-infimum-inequality}
+Let $\{[a_n,b_n]\}_{n\in\mathbb N}$ be a nested sequence of closed intervals. If
+\[
+  \alpha=\sup\{a_n:n\in\mathbb N\}
+  \quad\text{and}\quad
+  \beta=\inf\{b_n:n\in\mathbb N\},
+\]
+then
+\[
+  \alpha\le \beta.
+\]
+\hyperref[prf:endpoint-supremum-infimum-inequality]{Go to proof.}
+\end{lemma}
+\end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\alpha=\sup\{a_n:n\in\mathbb{N}\}\land
+\beta=\inf\{b_n:n\in\mathbb{N}\}
+\Longrightarrow
+\alpha\le \beta.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{NestedClosedIntervals}([a_n,b_n])
+\land
+\operatorname{Supremum}(\alpha,\{a_n:n\in\mathbb{N}\})
+\land
+\operatorname{Infimum}(\beta,\{b_n:n\in\mathbb{N}\})
+\Longrightarrow
+\alpha\le \beta.
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\operatorname{NestedClosedIntervals}([a_n,b_n])
+\land
+\alpha=\sup\{a_n:n\in\mathbb{N}\}
+\land
+\beta=\inf\{b_n:n\in\mathbb{N}\}
+\land
+\beta<\alpha.
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\beta<\alpha
+\Longrightarrow
+\neg\operatorname{NestedClosedIntervals}([a_n,b_n])
+\lor
+\neg\operatorname{Supremum}(\alpha,\{a_n:n\in\mathbb{N}\})
+\lor
+\neg\operatorname{Infimum}(\beta,\{b_n:n\in\mathbb{N}\}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The supremum of all left endpoints cannot pass the infimum of all right
+endpoints.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[def:supremum]{Supremum};
+\hyperref[def:infimum]{Infimum};
+\hyperref[def:closed-interval]{Closed Interval}.
+\end{dependencies}
+
+\input{volume-iii/book-analysis-i/bounding/notes/completeness/figure-nested-interval-endpoints}
+
+\begin{theorembox}{Theorem (Nested Interval Theorem)}
+\begin{theorem}[Nested Interval Theorem]
+\label{thm:nested-interval-theorem}
+Let $\{[a_n,b_n]\}_{n\in\mathbb N}$ be a sequence of nonempty closed bounded
+intervals in $\mathbb R$ such that
+\[
+  [a_{n+1},b_{n+1}]\subseteq [a_n,b_n]
+\]
+for every $n\in\mathbb N$. Then
+\[
+  \bigcap_{n=1}^{\infty}[a_n,b_n]\neq\varnothing.
+\]
+\hyperref[prf:nested-interval-theorem]{Go to proof.}
 \end{theorem}
 \end{theorembox}
 
@@ -44,7 +312,7 @@ Let $(I_n)$ be a sequence of nonempty closed intervals in $\mathbb{R}$. If $I_{n
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{NestedClosedIntervals}(I_n)\Longrightarrow
+\operatorname{NestedClosedBoundedIntervals}(I_n)\Longrightarrow
 \operatorname{NonemptyIntersection}\!\left(\bigcap_{n=1}^{\infty}I_n\right).
 \]
 \end{remark*}
@@ -57,8 +325,7 @@ Let $(I_n)$ be a sequence of nonempty closed intervals in $\mathbb{R}$. If $I_{n
 \bigl(\forall n\in\mathbb{N}\;(a_n\le b_n)\bigr)
 \land
 \bigl(\forall n\in\mathbb{N}\;([a_{n+1},b_{n+1}]\subseteq [a_n,b_n])\bigr)
-\\
-&\qquad\land
+\land
 \forall x\in\mathbb{R}\;\exists n\in\mathbb{N}\;(x\notin [a_n,b_n])
 \Bigr].
 \end{aligned}
@@ -67,32 +334,543 @@ Let $(I_n)$ be a sequence of nonempty closed intervals in $\mathbb{R}$. If $I_{n
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{NestedClosedIntervals}(I_n)
-\land
-\neg\operatorname{NonemptyIntersection}\!\left(\bigcap_{n=1}^{\infty}I_n\right).
-\]
-\end{remark*}
-
-\begin{remark*}[Failure modes]
-The theorem fails when a nested sequence of nonempty closed real intervals has no common real point.
-\end{remark*}
-
-\begin{remark*}[Failure mode decomposition]
-\[
-\underbrace{\operatorname{NestedClosedIntervals}(I_n)}_{\text{closed intervals remain nested}}
-\;\land\;
-\underbrace{\forall x\in\mathbb{R}\;\exists n\in\mathbb{N}\;(x\notin I_n)}_{\text{no real point lies in every interval}}.
+\bigcap_{n=1}^{\infty}[a_n,b_n]=\varnothing
+\Longrightarrow
+\neg\operatorname{NestedClosedBoundedIntervals}([a_n,b_n]).
 \]
 \end{remark*}
 
 \begin{remark*}[Interpretation]
-Nested closed intervals cannot keep shrinking or relocating in a way that loses every real point. Nesting keeps the intervals aligned, nonemptiness prevents trivial collapse at each stage, and completeness supplies a real point that survives all stages at once.
+Completeness prevents a nested closed bounded family from losing every point
+at the limiting stage.
 \end{remark*}
 
 \begin{dependencies}
-\hyperref[ax:completeness-of-reals]{Axiom~\ref*{ax:completeness-of-reals}}.
+\hyperref[ax:completeness-of-reals]{Axiom~\ref*{ax:completeness-of-reals}};
+\hyperref[def:supremum]{Supremum};
+\hyperref[def:closed-interval]{Closed Interval};
+\hyperref[def:bounded-subset-of-r]{Bounded Subset of the Real Line}.
 \end{dependencies}
 
+\begin{corollarybox}{Corollary (Nested Interval Intersection Contains the Endpoint Supremum)}
+\begin{corollary}[Nested Interval Intersection Contains the Endpoint Supremum]
+\label{cor:nested-interval-intersection-contains-endpoint-supremum}
+Let $\{[a_n,b_n]\}_{n\in\mathbb N}$ be a nested sequence of nonempty closed
+bounded intervals. If
+\[
+  \alpha=\sup\{a_n:n\in\mathbb N\},
+\]
+then
+\[
+  \alpha\in \bigcap_{n=1}^{\infty}[a_n,b_n].
+\]
+\hyperref[prf:nested-interval-intersection-contains-endpoint-supremum]{Go to proof.}
+\end{corollary}
+\end{corollarybox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\alpha=\sup\{a_n:n\in\mathbb{N}\}
+\Longrightarrow
+\forall n\in\mathbb{N}\;(\alpha\in [a_n,b_n]).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{NestedClosedBoundedIntervals}([a_n,b_n])
+\land
+\operatorname{Supremum}(\alpha,\{a_n:n\in\mathbb{N}\})
+\Longrightarrow
+\operatorname{IntersectionPoint}(\alpha,[a_n,b_n]).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\operatorname{NestedClosedBoundedIntervals}([a_n,b_n])
+\land
+\alpha=\sup\{a_n:n\in\mathbb{N}\}
+\land
+\exists n\in\mathbb{N}\;(\alpha\notin [a_n,b_n]).
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\alpha\notin \bigcap_{n=1}^{\infty}[a_n,b_n]
+\Longrightarrow
+\neg\operatorname{Supremum}(\alpha,\{a_n:n\in\mathbb{N}\})
+\lor
+\neg\operatorname{NestedClosedBoundedIntervals}([a_n,b_n]).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The least upper bound of the left endpoints is itself retained by every
+interval in the nested family.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[def:supremum]{Supremum};
+\hyperref[def:closed-interval]{Closed Interval};
+\hyperref[def:bounded-subset-of-r]{Bounded Subset of the Real Line}.
+\end{dependencies}
+
+\begin{corollarybox}{Corollary (Nested Interval Intersection Contains the Endpoint Infimum)}
+\begin{corollary}[Nested Interval Intersection Contains the Endpoint Infimum]
+\label{cor:nested-interval-intersection-contains-endpoint-infimum}
+Let $\{[a_n,b_n]\}_{n\in\mathbb N}$ be a nested sequence of nonempty closed
+bounded intervals. If
+\[
+  \beta=\inf\{b_n:n\in\mathbb N\},
+\]
+then
+\[
+  \beta\in \bigcap_{n=1}^{\infty}[a_n,b_n].
+\]
+\hyperref[prf:nested-interval-intersection-contains-endpoint-infimum]{Go to proof.}
+\end{corollary}
+\end{corollarybox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\beta=\inf\{b_n:n\in\mathbb{N}\}
+\Longrightarrow
+\forall n\in\mathbb{N}\;(\beta\in [a_n,b_n]).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{NestedClosedBoundedIntervals}([a_n,b_n])
+\land
+\operatorname{Infimum}(\beta,\{b_n:n\in\mathbb{N}\})
+\Longrightarrow
+\operatorname{IntersectionPoint}(\beta,[a_n,b_n]).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\operatorname{NestedClosedBoundedIntervals}([a_n,b_n])
+\land
+\beta=\inf\{b_n:n\in\mathbb{N}\}
+\land
+\exists n\in\mathbb{N}\;(\beta\notin [a_n,b_n]).
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\beta\notin \bigcap_{n=1}^{\infty}[a_n,b_n]
+\Longrightarrow
+\neg\operatorname{Infimum}(\beta,\{b_n:n\in\mathbb{N}\})
+\lor
+\neg\operatorname{NestedClosedBoundedIntervals}([a_n,b_n]).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The greatest lower bound of the right endpoints is itself retained by every
+interval in the nested family.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[def:infimum]{Infimum};
+\hyperref[def:closed-interval]{Closed Interval};
+\hyperref[def:bounded-subset-of-r]{Bounded Subset of the Real Line}.
+\end{dependencies}
+
+\begin{corollarybox}{Corollary (Nested Intervals with Vanishing Length Have Unique Point)}
+\begin{corollary}[Nested Intervals with Vanishing Length Have Unique Point]
+\label{cor:nested-intervals-vanishing-length-have-unique-point}
+Let $\{[a_n,b_n]\}_{n\in\mathbb N}$ be a nested sequence of nonempty closed
+bounded intervals. If
+\[
+  \lim_{n\to\infty}(b_n-a_n)=0,
+\]
+then there exists a unique $x\in\mathbb R$ such that
+\[
+  \bigcap_{n=1}^{\infty}[a_n,b_n]=\{x\}.
+\]
+\hyperref[prf:nested-intervals-vanishing-length-have-unique-point]{Go to proof.}
+\end{corollary}
+\end{corollarybox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\lim_{n\to\infty}(b_n-a_n)=0
+\Longrightarrow
+\exists x\in\mathbb{R}\;\forall y\in\mathbb{R}\;
+\left(y\in\bigcap_{n=1}^{\infty}[a_n,b_n]\leftrightarrow y=x\right).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{NestedClosedBoundedIntervals}([a_n,b_n])
+\land
+\operatorname{VanishingLength}(b_n-a_n)
+\Longrightarrow
+\operatorname{SingletonIntersection}([a_n,b_n]).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\operatorname{NestedClosedBoundedIntervals}([a_n,b_n])
+\land
+\lim_{n\to\infty}(b_n-a_n)=0
+\land
+\forall x\in\mathbb{R}\;\exists y\in\mathbb{R}\;
+\left(y\in\bigcap_{n=1}^{\infty}[a_n,b_n]\land y\ne x\right).
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\neg\operatorname{SingletonIntersection}([a_n,b_n])
+\Longrightarrow
+\neg\operatorname{NestedClosedBoundedIntervals}([a_n,b_n])
+\lor
+\neg\operatorname{VanishingLength}(b_n-a_n).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+When nested lengths tend to zero, the surviving intersection cannot contain
+two distinct points.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[def:closed-interval]{Closed Interval};
+\hyperref[def:bounded-subset-of-r]{Bounded Subset of the Real Line}.
+\end{dependencies}
+
+\begin{corollarybox}{Corollary (Nested Intervals with Vanishing Length Have Equal Endpoint Limits)}
+\begin{corollary}[Nested Intervals with Vanishing Length Have Equal Endpoint Limits]
+\label{cor:nested-intervals-vanishing-length-have-equal-endpoint-limits}
+Let $\{[a_n,b_n]\}_{n\in\mathbb N}$ be a nested sequence of nonempty closed
+bounded intervals. If
+\[
+  \lim_{n\to\infty}(b_n-a_n)=0,
+\]
+then $(a_n)$ and $(b_n)$ converge and
+\[
+  \lim_{n\to\infty}a_n=\lim_{n\to\infty}b_n.
+\]
+\hyperref[prf:nested-intervals-vanishing-length-have-equal-endpoint-limits]{Go to proof.}
+\end{corollary}
+\end{corollarybox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\lim_{n\to\infty}(b_n-a_n)=0
+\Longrightarrow
+\exists L\in\mathbb{R}\;
+\left(\lim_{n\to\infty}a_n=L\land \lim_{n\to\infty}b_n=L\right).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{NestedClosedBoundedIntervals}([a_n,b_n])
+\land
+\operatorname{VanishingLength}(b_n-a_n)
+\Longrightarrow
+\operatorname{CommonEndpointLimit}(a_n,b_n).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\operatorname{NestedClosedBoundedIntervals}([a_n,b_n])
+\land
+\lim_{n\to\infty}(b_n-a_n)=0
+\land
+\forall L\in\mathbb{R}\;
+\left(\lim_{n\to\infty}a_n\ne L\lor \lim_{n\to\infty}b_n\ne L\right).
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\neg\operatorname{CommonEndpointLimit}(a_n,b_n)
+\Longrightarrow
+\neg\operatorname{NestedClosedBoundedIntervals}([a_n,b_n])
+\lor
+\neg\operatorname{VanishingLength}(b_n-a_n).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Vanishing interval length forces the two endpoint sequences to approach the
+same real number.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[def:closed-interval]{Closed Interval};
+\hyperref[def:bounded-subset-of-r]{Bounded Subset of the Real Line}.
+\end{dependencies}
+
+\begin{corollarybox}{Corollary (Unique Point in Nested Intervals Is Endpoint Limit)}
+\begin{corollary}[Unique Point in Nested Intervals Is Endpoint Limit]
+\label{cor:unique-point-in-nested-intervals-is-endpoint-limit}
+Let $\{[a_n,b_n]\}_{n\in\mathbb N}$ be a nested sequence of nonempty closed
+bounded intervals. If
+\[
+  \lim_{n\to\infty}(b_n-a_n)=0
+\]
+and
+\[
+  \bigcap_{n=1}^{\infty}[a_n,b_n]=\{x\},
+\]
+then
+\[
+  \lim_{n\to\infty}a_n=x
+  \quad\text{and}\quad
+  \lim_{n\to\infty}b_n=x.
+\]
+\hyperref[prf:unique-point-in-nested-intervals-is-endpoint-limit]{Go to proof.}
+\end{corollary}
+\end{corollarybox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\left[
+\lim_{n\to\infty}(b_n-a_n)=0
+\land
+\bigcap_{n=1}^{\infty}[a_n,b_n]=\{x\}
+\right]
+\Longrightarrow
+\left(\lim_{n\to\infty}a_n=x\land \lim_{n\to\infty}b_n=x\right).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{SingletonIntersectionAt}(x,[a_n,b_n])
+\land
+\operatorname{VanishingLength}(b_n-a_n)
+\Longrightarrow
+\operatorname{EndpointLimit}(a_n,b_n,x).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\operatorname{SingletonIntersectionAt}(x,[a_n,b_n])
+\land
+\lim_{n\to\infty}(b_n-a_n)=0
+\land
+\left(\lim_{n\to\infty}a_n\ne x\lor \lim_{n\to\infty}b_n\ne x\right).
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\left(\lim_{n\to\infty}a_n\ne x\lor \lim_{n\to\infty}b_n\ne x\right)
+\Longrightarrow
+\neg\operatorname{SingletonIntersectionAt}(x,[a_n,b_n])
+\lor
+\neg\operatorname{VanishingLength}(b_n-a_n).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+If the intersection has a single survivor, both endpoint sequences converge
+to that survivor.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[def:closed-interval]{Closed Interval};
+\hyperref[def:bounded-subset-of-r]{Bounded Subset of the Real Line}.
+\end{dependencies}
+
+\input{volume-iii/book-analysis-i/bounding/notes/completeness/figure-nested-interval-failures}
+
+\begin{propositionbox}{Proposition (Open Nested Intervals Need Not Have Nonempty Intersection)}
+\begin{proposition}[Open Nested Intervals Need Not Have Nonempty Intersection]
+\label{prop:open-nested-intervals-need-not-have-nonempty-intersection}
+There exists a nested sequence of nonempty open bounded intervals $(a_n,b_n)$
+such that
+\[
+  (a_{n+1},b_{n+1})\subseteq (a_n,b_n)
+\]
+for every $n\in\mathbb N$, but
+\[
+  \bigcap_{n=1}^{\infty}(a_n,b_n)=\varnothing.
+\]
+\hyperref[prf:open-nested-intervals-need-not-have-nonempty-intersection]{Go to proof.}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\exists (a_n)\subseteq\mathbb{R}\;\exists (b_n)\subseteq\mathbb{R}\;
+\left[
+\begin{aligned}
+&\forall n\in\mathbb{N}\;(a_n<b_n)
+\land
+\forall n\in\mathbb{N}\;((a_{n+1},b_{n+1})\subseteq (a_n,b_n))\\
+&\land
+\forall x\in\mathbb{R}\;\exists n\in\mathbb{N}\;(x\notin(a_n,b_n))
+\end{aligned}
+\right].
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\exists I_n\;\bigl(
+\operatorname{NestedOpenBoundedIntervals}(I_n)
+\land
+\operatorname{EmptyIntersection}(I_n)
+\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\forall (a_n),(b_n)\;
+\left[
+\operatorname{NestedOpenBoundedIntervals}((a_n,b_n))
+\Longrightarrow
+\exists x\in\mathbb{R}\;\forall n\in\mathbb{N}\;(x\in(a_n,b_n))
+\right].
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Open intervals can lose the limiting endpoint that every closed truncation
+would retain.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[def:open-interval]{Open Interval};
+\hyperref[def:bounded-subset-of-r]{Bounded Subset of the Real Line}.
+\end{dependencies}
+
+\begin{propositionbox}{Proposition (Closedness Is Necessary in the Nested Interval Theorem)}
+\begin{proposition}[Closedness Is Necessary in the Nested Interval Theorem]
+\label{prop:closedness-is-necessary-in-nested-interval-theorem}
+The conclusion of the Nested Interval Theorem can fail if the intervals are
+not closed.
+\hyperref[prf:closedness-is-necessary-in-nested-interval-theorem]{Go to proof.}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\exists I_n\;
+\bigl(
+\operatorname{NestedNonemptyBoundedIntervals}(I_n)
+\land
+\neg\operatorname{ClosedIntervals}(I_n)
+\land
+\bigcap_{n=1}^{\infty}I_n=\varnothing
+\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\neg\operatorname{ClosedIntervals}(I_n)
+\quad\text{can make}\quad
+\operatorname{NestedIntervalConclusion}(I_n)
+\text{ fail.}
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\forall I_n\;
+\left[
+\operatorname{NestedNonemptyBoundedIntervals}(I_n)
+\Longrightarrow
+\bigcap_{n=1}^{\infty}I_n\ne\varnothing
+\right].
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\bigcap_{n=1}^{\infty}I_n=\varnothing
+\Longrightarrow
+\neg\operatorname{NestedClosedBoundedIntervals}(I_n).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Dropping closedness can remove the endpoint that would otherwise remain in
+the limiting intersection.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[def:open-interval]{Open Interval};
+\hyperref[def:bounded-subset-of-r]{Bounded Subset of the Real Line}.
+\end{dependencies}
+
+\begin{propositionbox}{Proposition (Boundedness Is Necessary in the Nested Interval Theorem)}
+\begin{proposition}[Boundedness Is Necessary in the Nested Interval Theorem]
+\label{prop:boundedness-is-necessary-in-nested-interval-theorem}
+The conclusion of the Nested Interval Theorem can fail for nested nonempty
+closed intervals that are not bounded.
+\hyperref[prf:boundedness-is-necessary-in-nested-interval-theorem]{Go to proof.}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\exists I_n\;
+\bigl(
+\operatorname{NestedNonemptyClosedIntervals}(I_n)
+\land
+\neg\operatorname{BoundedIntervals}(I_n)
+\land
+\bigcap_{n=1}^{\infty}I_n=\varnothing
+\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\neg\operatorname{BoundedIntervals}(I_n)
+\quad\text{can make}\quad
+\operatorname{NestedIntervalConclusion}(I_n)
+\text{ fail.}
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\forall I_n\;
+\left[
+\operatorname{NestedNonemptyClosedIntervals}(I_n)
+\Longrightarrow
+\bigcap_{n=1}^{\infty}I_n\ne\varnothing
+\right].
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\bigcap_{n=1}^{\infty}I_n=\varnothing
+\Longrightarrow
+\neg\operatorname{NestedClosedBoundedIntervals}(I_n).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Nested closed bounded intervals cannot keep shrinking or relocating in a way
+that loses every real point. The endpoint lemmas convert containment into
+monotone endpoint control, and completeness supplies a real point that survives
+all stages at once.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[def:closed-interval]{Closed Interval}.
+\end{dependencies}
 
 \input{volume-iii/book-analysis-i/bounding/notes/completeness/figure-nested-intervals}

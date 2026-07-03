@@ -1,0 +1,21 @@
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[x=1.15cm, y=0.8cm, >=Latex]
+  \draw[->] (-0.4,0) -- (7.2,0) node[right] {$\mathbb R$};
+  \foreach \x/\lab in {0.6/$a_1$,1.4/$a_2$,2.1/$a_3$,3.3/$\alpha$,4.7/$\beta$,5.6/$b_3$,6.3/$b_2$,6.9/$b_1$} {
+    \draw (\x,0.08) -- (\x,-0.08) node[below=3pt] {\lab};
+  }
+  \foreach \y/\l/\r/\name in {1.8/0.6/6.9/$I_1$,1.25/1.4/6.3/$I_2$,0.7/2.1/5.6/$I_3$} {
+    \draw[line width=1.1pt] (\l,\y) -- (\r,\y);
+    \fill (\l,\y) circle (1.4pt);
+    \fill (\r,\y) circle (1.4pt);
+    \node[left] at (\l,\y) {\name};
+  }
+  \draw[dashed] (3.3,-0.05) -- (3.3,2.1);
+  \draw[dashed] (4.7,-0.05) -- (4.7,2.1);
+  \draw[decorate,decoration={brace,amplitude=4pt}] (3.3,2.25) -- (4.7,2.25)
+    node[midway,above=5pt] {$\sup\{a_n\}\le \inf\{b_n\}$};
+\end{tikzpicture}
+\caption{Nested endpoints force every left endpoint below every right endpoint, so the supremum of the left endpoints lies no farther right than the infimum of the right endpoints.}
+\label{fig:nested-interval-endpoints}
+\end{figure}

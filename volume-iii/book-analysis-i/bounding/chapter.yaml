@@ -197,12 +197,42 @@ environments:
   type: thm
   file: notes\completeness\notes-archimedean-property.tex
   display_title: Archimedean Property
-  proof_file: null
+  proof_file: proofs\completeness\prf-archimedean-property.tex
+- label: cor:archimedean-reciprocal-form
+  type: cor
+  file: notes\completeness\notes-archimedean-property.tex
+  display_title: Archimedean Reciprocal Form
+  proof_file: proofs\completeness\prf-archimedean-reciprocal-form.tex
 - label: cor:archimedean-reciprocal
   type: cor
   file: notes\completeness\notes-archimedean-property.tex
-  display_title: Archimedean Reciprocal Corollary
-  proof_file: null
+  display_title: Archimedean Scaling Form
+  proof_file: proofs\completeness\prf-archimedean-reciprocal.tex
+- label: lem:integer-part-lemma
+  type: lem
+  file: notes\completeness\notes-archimedean-property.tex
+  display_title: Integer Part Lemma
+  proof_file: proofs\completeness\prf-integer-part-lemma.tex
+- label: lem:archimedean-integer-part-lemma
+  type: lem
+  file: notes\completeness\notes-archimedean-property.tex
+  display_title: Archimedean Integer Part Lemma
+  proof_file: proofs\completeness\prf-archimedean-integer-part-lemma.tex
+- label: lem:integer-ceiling-lemma
+  type: lem
+  file: notes\completeness\notes-archimedean-property.tex
+  display_title: Integer Ceiling Lemma
+  proof_file: proofs\completeness\prf-integer-ceiling-lemma.tex
+- label: lem:integer-above-lemma
+  type: lem
+  file: notes\completeness\notes-archimedean-property.tex
+  display_title: Integer Above Lemma
+  proof_file: proofs\completeness\prf-integer-above-lemma.tex
+- label: lem:unit-length-interval-contains-integer
+  type: lem
+  file: notes\completeness\notes-archimedean-property.tex
+  display_title: Unit-Length Interval Contains an Integer
+  proof_file: proofs\completeness\prf-unit-length-interval-contains-integer.tex
 - label: def:least-upper-bound-property
   type: def
   file: notes\completeness\notes-axiom-of-completess.tex
@@ -226,13 +256,68 @@ environments:
 - label: thm:density-of-rationals-in-reals
   type: thm
   file: notes\completeness\notes-density.tex
-  display_title: Density of the Rational Numbers in $\mathbb{R}$
-  proof_file: null
+  display_title: Density of the Rationals
+  proof_file: proofs\completeness\prf-density-of-rationals-in-reals.tex
+- label: lem:rational-translation-preserves-rationality
+  type: lem
+  file: notes\completeness\notes-density.tex
+  display_title: Rational Translation Preserves Rationality
+  proof_file: proofs\completeness\prf-rational-translation-preserves-rationality.tex
+- label: lem:rational-difference-preserves-rationality
+  type: lem
+  file: notes\completeness\notes-density.tex
+  display_title: Rational Difference Preserves Rationality
+  proof_file: proofs\completeness\prf-rational-difference-preserves-rationality.tex
+- label: lem:nonzero-rational-product-preserves-irrationality
+  type: lem
+  file: notes\completeness\notes-density.tex
+  display_title: Nonzero Rational Product Preserves Irrationality
+  proof_file: proofs\completeness\prf-nonzero-rational-product-preserves-irrationality.tex
+- label: lem:rational-translation-preserves-irrationality
+  type: lem
+  file: notes\completeness\notes-density.tex
+  display_title: Rational Translation Preserves Irrationality
+  proof_file: proofs\completeness\prf-rational-translation-preserves-irrationality.tex
+- label: lem:irrational-minus-irrational-need-not-be-irrational
+  type: lem
+  file: notes\completeness\notes-density.tex
+  display_title: Irrational Minus Irrational Need Not Be Irrational
+  proof_file: proofs\completeness\prf-irrational-minus-irrational-need-not-be-irrational.tex
+- label: lem:rational-minus-irrational-is-irrational
+  type: lem
+  file: notes\completeness\notes-density.tex
+  display_title: Rational Minus Irrational Is Irrational
+  proof_file: proofs\completeness\prf-rational-minus-irrational-is-irrational.tex
+- label: lem:irrational-plus-rational-is-irrational
+  type: lem
+  file: notes\completeness\notes-density.tex
+  display_title: Irrational Plus Rational Is Irrational
+  proof_file: proofs\completeness\prf-irrational-plus-rational-is-irrational.tex
+- label: lem:irrational-minus-rational-is-irrational
+  type: lem
+  file: notes\completeness\notes-density.tex
+  display_title: Irrational Minus Rational Is Irrational
+  proof_file: proofs\completeness\prf-irrational-minus-rational-is-irrational.tex
 - label: thm:density-of-irrationals-in-reals
   type: thm
   file: notes\completeness\notes-density.tex
-  display_title: Density of the Irrational Numbers in $\mathbb{R}$
-  proof_file: null
+  display_title: Density of the Irrationals
+  proof_file: proofs\completeness\prf-density-of-irrationals-in-reals.tex
+- label: thm:irrational-between-any-two-rationals
+  type: thm
+  file: notes\completeness\notes-density.tex
+  display_title: An Irrational Between Any Two Rationals
+  proof_file: proofs\completeness\prf-irrational-between-any-two-rationals.tex
+- label: thm:rational-between-any-two-irrationals
+  type: thm
+  file: notes\completeness\notes-density.tex
+  display_title: A Rational Between Any Two Irrationals
+  proof_file: proofs\completeness\prf-rational-between-any-two-irrationals.tex
+- label: lem:small-irrational-positive-number
+  type: lem
+  file: notes\completeness\notes-density.tex
+  display_title: Small Irrational Positive Number
+  proof_file: proofs\completeness\prf-small-irrational-positive-number.tex
 - label: cor:every-open-interval-contains-rational-and-irrational
   type: cor
   file: notes\completeness\notes-density.tex
