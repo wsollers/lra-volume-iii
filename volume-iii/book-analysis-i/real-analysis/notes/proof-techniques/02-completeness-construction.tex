@@ -73,6 +73,58 @@ For $t=\inf S$: for every $\varepsilon>0$ there exists $y\in S$ with
 $y<t+\varepsilon$. The proof is symmetric: any $M>t$ is not a lower bound.
 \end{remark}
 
+\begin{remark}[Choosing a supremum proof strategy]
+Most proofs that a candidate \(M\) is \(\sup S\) have two parts.  First prove
+that \(M\) is an upper bound:
+\[
+  \forall x\in S,\qquad x\le M.
+\]
+Then prove sharpness, meaning that no smaller number is still an upper bound.
+Several tools can prove this second part.
+
+Use the definitional method when an arbitrary upper bound can be transported
+cleanly through the construction.  Assume \(u\) is an upper bound for \(S\),
+then prove \(M\le u\).  This is often the shortest route for translations,
+positive dilations, and order-preserving changes of variables.  For example,
+if \(u\) bounds \(A+c\), then \(u-c\) bounds \(A\), so
+\(\sup A\le u-c\), and hence \(\sup A+c\le u\).
+
+Use the epsilon characterization when it is easier to build elements close to
+the proposed supremum.  Fix \(\varepsilon>0\), then find
+\(x_\varepsilon\in S\) such that
+\[
+  M-\varepsilon < x_\varepsilon \le M.
+\]
+This is useful when the construction combines independent choices.  For
+instance, to prove \(\sup(A+B)=\sup A+\sup B\), choose \(a\in A\) within
+\(\varepsilon/2\) of \(\sup A\) and \(b\in B\) within \(\varepsilon/2\) of
+\(\sup B\).  Then \(a+b\in A+B\) lies within \(\varepsilon\) of
+\(\sup A+\sup B\).  Exact maximizers need not exist; near-maximizers are
+enough.
+
+Use comparison when another set already has a known supremum.  To prove
+\(\sup S\le \sup T\), it is enough to show that \(\sup T\) is an upper bound
+for \(S\), or to show that every element of \(S\) lies below some element of
+\(T\).  Inclusion \(S\subseteq T\) is the basic example.
+
+Use attainment when \(M\in S\).  If \(M\) is an upper bound and \(M\in S\),
+then \(M=\max S=\sup S\), so no epsilon argument is needed.
+
+For sums of functions with a shared input, the epsilon method proves only the
+upper estimate in general:
+\[
+  \sup_x(f(x)+g(x))\le \sup_x f(x)+\sup_x g(x).
+\]
+Equality requires an additional reason that the two functions have compatible
+near-maximizers.  For independent variables, such as
+\(\sup_{x,y}(f(x)+g(y))\), the separate epsilon choices can usually be
+combined.
+
+The infimum versions reverse the inequalities: prove a lower bound first,
+then prove greatestness by arbitrary lower bounds, epsilon approximation from
+above, comparison, or attainment of a minimum.
+\end{remark}
+
 % -- \S{}2.2: Inductive selection --------------------------------
 \subsection*{Inductive Selection at Bounds}
 \label{subsec:inductive-selection}
