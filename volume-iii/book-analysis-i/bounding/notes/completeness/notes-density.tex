@@ -545,6 +545,72 @@ an irrational positive number as small as desired.
 \hyperref[thm:density-of-irrationals-in-reals]{Density of the Irrationals}.
 \end{dependencies}
 
+\begin{corollarybox}{Corollary (No Adjacent Real Numbers)}
+\begin{corollary}[No Adjacent Real Numbers]
+\label{cor:no-adjacent-real-numbers}
+If $a,b\in\mathbb{R}$ and $a<b$, then there exists $c\in\mathbb{R}$ such that
+\[
+a<c<b.
+\]
+\hyperref[prf:no-adjacent-real-numbers]{Go to proof.}
+\end{corollary}
+\end{corollarybox}
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a,b\in\mathbb{R}\;\bigl(a<b\Rightarrow
+\exists c\in\mathbb{R}\;(a<c<b)\bigr).
+\]
+\end{remark*}
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{OrderDense}(\mathbb{R}).
+\]
+\end{remark*}
+\begin{remark*}[Negated quantified statement]
+\[
+\exists a,b\in\mathbb{R}\;
+\bigl(a<b\land \forall c\in\mathbb{R}\;(c\le a\lor b\le c)\bigr).
+\]
+\end{remark*}
+\begin{remark*}[Negation predicate reading]
+\[
+\neg\operatorname{OrderDense}(\mathbb{R}).
+\]
+\end{remark*}
+\begin{remark*}[Interpretation]
+No two distinct real numbers are consecutive; every nonempty open real interval
+contains another real point.
+\end{remark*}
+\begin{dependencies}
+\hyperref[thm:density-of-rationals-in-reals]{Density of the Rationals}.
+\end{dependencies}
+
+\begin{theorembox}{Theorem (No Immediate Successors in $\mathbb{R}$)}
+\begin{theorem}[No Immediate Successors in $\mathbb{R}$]\label{thm:no-immediate-successors-in-r}
+For every $a\in\mathbb{R}$, there is no least real number greater than $a$.
+\hyperref[prf:no-immediate-successors-in-r]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[cor:no-adjacent-real-numbers]{No Adjacent Real Numbers}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem (No Immediate Predecessors in $\mathbb{R}$)}
+\begin{theorem}[No Immediate Predecessors in $\mathbb{R}$]\label{thm:no-immediate-predecessors-in-r}
+For every $a\in\mathbb{R}$, there is no greatest real number less than $a$.
+\hyperref[prf:no-immediate-predecessors-in-r]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[cor:no-adjacent-real-numbers]{No Adjacent Real Numbers}
+\end{itemize}
+\end{dependencies}
+
 
 \begin{corollarybox}{Corollary (Rational and Irrational Points in Every Open Interval)}
 \begin{corollary}[Rational and Irrational Points in Every Open Interval]

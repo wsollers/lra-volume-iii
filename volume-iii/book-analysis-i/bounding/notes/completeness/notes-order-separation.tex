@@ -1,0 +1,150 @@
+\begin{theorembox}{Theorem (Order Separation by Supremum)}
+\begin{theorem}[Order Separation by Supremum]
+\label{thm:order-separation-by-supremum}
+Let $A,B\subseteq\mathbb{R}$ be nonempty sets such that
+\[
+a\le b
+\]
+for every $a\in A$ and every $b\in B$.
+Then there exists $c\in\mathbb{R}$ such that
+\[
+a\le c\le b
+\]
+for every $a\in A$ and every $b\in B$.
+\hyperref[prf:order-separation-by-supremum]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+\begin{remark*}[Standard quantified statement]
+\[
+\forall A,B\subseteq\mathbb{R}\;
+\Bigl[
+(A\ne\varnothing\land B\ne\varnothing\land
+\forall a\in A\;\forall b\in B\;(a\le b))
+\Rightarrow
+\exists c\in\mathbb{R}\;\forall a\in A\;\forall b\in B\;(a\le c\le b)
+\Bigr].
+\]
+\end{remark*}
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{LeftOf}(A,B)\Rightarrow \operatorname{SeparatedByPoint}(A,B).
+\]
+\end{remark*}
+\begin{remark*}[Negated quantified statement]
+\[
+\exists A,B\subseteq\mathbb{R}\;
+\Bigl[
+A\ne\varnothing\land B\ne\varnothing\land
+\forall a\in A\;\forall b\in B\;(a\le b)
+\land
+\forall c\in\mathbb{R}\;\exists a\in A\;\exists b\in B\;(c<a\lor b<c)
+\Bigr].
+\]
+\end{remark*}
+\begin{remark*}[Negation predicate reading]
+\[
+\operatorname{LeftOf}(A,B)\land\neg\operatorname{SeparatedByPoint}(A,B).
+\]
+\end{remark*}
+\begin{remark*}[Interpretation]
+If one nonempty set lies entirely to the left of another, completeness supplies
+a real separator between them.
+\end{remark*}
+\begin{dependencies}
+\hyperref[ax:completeness-of-reals]{Completeness of $\mathbb{R}$};
+\hyperref[def:supremum]{Supremum};
+\hyperref[def:upper-bound]{Upper Bound}.
+\end{dependencies}
+\input{volume-iii/book-analysis-i/bounding/notes/completeness/figure-order-separation}
+
+\begin{theorembox}{Theorem (Dedekind Cut Property)}
+\begin{theorem}[Dedekind Cut Property]
+\label{thm:dedekind-cut-property}
+Let $A,B\subseteq\mathbb{R}$ be nonempty sets such that
+\[
+A\cup B=\mathbb{R},\qquad A\cap B=\varnothing,
+\]
+and
+\[
+a<b
+\]
+for every $a\in A$ and every $b\in B$.
+Then there exists $c\in\mathbb{R}$ such that
+\[
+a\le c\le b
+\]
+for every $a\in A$ and every $b\in B$.
+\hyperref[prf:dedekind-cut-property]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+\begin{remark*}[Standard quantified statement]
+\[
+\forall A,B\subseteq\mathbb{R}\;
+\Bigl[
+(A,B\ne\varnothing\land A\cup B=\mathbb{R}\land A\cap B=\varnothing
+\land \forall a\in A\;\forall b\in B\;(a<b))
+\Rightarrow
+\exists c\in\mathbb{R}\;\forall a\in A\;\forall b\in B\;(a\le c\le b)
+\Bigr].
+\]
+\end{remark*}
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{DedekindSeparation}(A,B)\Rightarrow
+\operatorname{SeparatedByPoint}(A,B).
+\]
+\end{remark*}
+\begin{remark*}[Negated quantified statement]
+\[
+\exists A,B\subseteq\mathbb{R}\;
+\bigl(\operatorname{DedekindSeparation}(A,B)\land
+\neg\operatorname{SeparatedByPoint}(A,B)\bigr).
+\]
+\end{remark*}
+\begin{remark*}[Negation predicate reading]
+\[
+\operatorname{DedekindGap}(A,B).
+\]
+\end{remark*}
+\begin{remark*}[Interpretation]
+The real line has no ordered partition into a left part and a right part with
+an unfilled gap between them.
+\end{remark*}
+\begin{dependencies}
+\hyperref[thm:order-separation-by-supremum]{Order Separation by Supremum}.
+\end{dependencies}
+
+\begin{corollarybox}{Corollary (No Gaps in $\mathbb{R}$)}
+\begin{corollary}[No Gaps in $\mathbb{R}$]
+\label{cor:no-gaps-in-r}
+The real line has no Dedekind gaps.
+\hyperref[prf:no-gaps-in-r]{Go to proof.}
+\end{corollary}
+\end{corollarybox}
+\begin{remark*}[Standard quantified statement]
+\[
+\neg\exists A,B\subseteq\mathbb{R}\;\operatorname{DedekindGap}(A,B).
+\]
+\end{remark*}
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{OrderComplete}(\mathbb{R}).
+\]
+\end{remark*}
+\begin{remark*}[Negated quantified statement]
+\[
+\exists A,B\subseteq\mathbb{R}\;\operatorname{DedekindGap}(A,B).
+\]
+\end{remark*}
+\begin{remark*}[Negation predicate reading]
+\[
+\neg\operatorname{OrderComplete}(\mathbb{R}).
+\]
+\end{remark*}
+\begin{remark*}[Interpretation]
+Every Dedekind separation of the real line is accounted for by a real boundary
+point.
+\end{remark*}
+\begin{dependencies}
+\hyperref[thm:dedekind-cut-property]{Dedekind Cut Property}.
+\end{dependencies}

@@ -11,6 +11,14 @@ to be nonempty throughout this section.
   \label{fig:suprema-infima-combinations}
 \end{figure}
 
+\begin{figure}[htbp]
+  \centering
+  \input{volume-iii/book-analysis-i/bounding/notes/bounds-extremals/figure-supremum-infimum-nonattainment}
+  \caption{For the open interval $(0,1)$, the supremum and infimum are
+  endpoint bounds that are not attained by the set.}
+  \label{fig:supremum-infimum-nonattainment}
+\end{figure}
+
 \begin{definitionbox}{Supremum}
 \begin{definition}[Supremum]
 \label{def:supremum}
@@ -706,6 +714,40 @@ bound of the same nonempty set.
 Choose $a\in A$.  Then $i\leq a$ because $i$ is a lower bound, and
 $a\leq s$ because $s$ is an upper bound.
 \end{remark*}
+
+\begin{propositionbox}{Proposition (Supremum Need Not Belong to the Set)}
+\begin{proposition}[Supremum Need Not Belong to the Set]\label{prop:supremum-need-not-belong-to-the-set}
+There exists a nonempty bounded above set $A\subseteq\mathbb{R}$ such that
+\[
+\sup A\notin A.
+\]
+\hyperref[prf:supremum-need-not-belong-to-the-set]{Go to proof.}
+\end{proposition}
+\end{propositionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:supremum]{Supremum}
+  \item \hyperref[thm:lub-property-implies-existence-of-suprema]{Least Upper Bound Property Implies Existence of Suprema}
+\end{itemize}
+\end{dependencies}
+
+\begin{propositionbox}{Proposition (Infimum Need Not Belong to the Set)}
+\begin{proposition}[Infimum Need Not Belong to the Set]\label{prop:infimum-need-not-belong-to-the-set}
+There exists a nonempty bounded below set $A\subseteq\mathbb{R}$ such that
+\[
+\inf A\notin A.
+\]
+\hyperref[prf:infimum-need-not-belong-to-the-set]{Go to proof.}
+\end{proposition}
+\end{propositionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:infimum]{Infimum}
+  \item \hyperref[thm:glb-property-implies-existence-of-infima]{Greatest Lower Bound Property Implies Existence of Infima}
+\end{itemize}
+\end{dependencies}
 
 \begin{propositionbox}{Order Comparison of Suprema}
 \begin{proposition}[Order Comparison of Suprema]

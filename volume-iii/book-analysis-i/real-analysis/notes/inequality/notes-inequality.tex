@@ -283,6 +283,142 @@ trivially.
 \hyperref[def:real-ordered-field]{ordered field}.
 \end{dependencies}
 
+\begin{lemmabox}{Lemma (Positive Product)}
+\begin{lemma}[Positive Product]\label{lem:positive-product}
+If $a,b\in\mathbb{R}$, $a>0$, and $b>0$, then
+\[
+ab>0.
+\]
+\hyperref[prf:positive-product]{Go to proof.}
+\end{lemma}
+\end{lemmabox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:r-is-an-ordered-field]{$\mathbb{R}$ Is an Ordered Field}
+  \item \hyperref[thm:ineq-multiply-positive]{Multiplication by a Positive Scalar Preserves Strict Inequality}
+\end{itemize}
+\end{dependencies}
+
+\begin{lemmabox}{Lemma (Negative Times Negative Is Positive)}
+\begin{lemma}[Negative Times Negative Is Positive]\label{lem:negative-times-negative-is-positive}
+If $a,b\in\mathbb{R}$, $a<0$, and $b<0$, then
+\[
+ab>0.
+\]
+\hyperref[prf:negative-times-negative-is-positive]{Go to proof.}
+\end{lemma}
+\end{lemmabox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:r-is-an-ordered-field]{$\mathbb{R}$ Is an Ordered Field}
+  \item \hyperref[thm:ineq-multiply-negative]{Multiplication by a Negative Scalar Reverses Strict Inequality}
+\end{itemize}
+\end{dependencies}
+
+\begin{lemmabox}{Lemma (Positive Times Negative Is Negative)}
+\begin{lemma}[Positive Times Negative Is Negative]\label{lem:positive-times-negative-is-negative}
+If $a,b\in\mathbb{R}$, $a>0$, and $b<0$, then
+\[
+ab<0.
+\]
+\hyperref[prf:positive-times-negative-is-negative]{Go to proof.}
+\end{lemma}
+\end{lemmabox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:r-is-an-ordered-field]{$\mathbb{R}$ Is an Ordered Field}
+  \item \hyperref[thm:ineq-multiply-positive]{Multiplication by a Positive Scalar Preserves Strict Inequality}
+\end{itemize}
+\end{dependencies}
+
+\begin{lemmabox}{Lemma (Negative Times Positive Is Negative)}
+\begin{lemma}[Negative Times Positive Is Negative]\label{lem:negative-times-positive-is-negative}
+If $a,b\in\mathbb{R}$, $a<0$, and $b>0$, then
+\[
+ab<0.
+\]
+\hyperref[prf:negative-times-positive-is-negative]{Go to proof.}
+\end{lemma}
+\end{lemmabox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:r-is-an-ordered-field]{$\mathbb{R}$ Is an Ordered Field}
+  \item \hyperref[thm:ineq-multiply-positive]{Multiplication by a Positive Scalar Preserves Strict Inequality}
+\end{itemize}
+\end{dependencies}
+
+\begin{lemmabox}{Lemma (Order and Subtraction)}
+\begin{lemma}[Order and Subtraction]\label{lem:order-and-subtraction}
+For $a,b\in\mathbb{R}$,
+\[
+a<b \;\Longleftrightarrow\; b-a>0.
+\]
+\hyperref[prf:order-and-subtraction]{Go to proof.}
+\end{lemma}
+\end{lemmabox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:ineq-add-both-sides]{Addition Preserves Strict Inequality}
+  \item \hyperref[thm:r-is-an-ordered-field]{$\mathbb{R}$ Is an Ordered Field}
+\end{itemize}
+\end{dependencies}
+
+\begin{lemmabox}{Lemma (Non-Strict Order and Subtraction)}
+\begin{lemma}[Non-Strict Order and Subtraction]\label{lem:non-strict-order-and-subtraction}
+For $a,b\in\mathbb{R}$,
+\[
+a\le b \;\Longleftrightarrow\; b-a\ge 0.
+\]
+\hyperref[prf:non-strict-order-and-subtraction]{Go to proof.}
+\end{lemma}
+\end{lemmabox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:ineq-nonstrict-add-both-sides]{Addition Preserves Nonstrict Inequality}
+  \item \hyperref[thm:r-is-an-ordered-field]{$\mathbb{R}$ Is an Ordered Field}
+\end{itemize}
+\end{dependencies}
+
+\begin{lemmabox}{Lemma (Division by Positive Preserves Order)}
+\begin{lemma}[Division by Positive Preserves Order]\label{lem:division-by-positive-preserves-order}
+If $a,b,c\in\mathbb{R}$, $a<b$, and $c>0$, then
+\[
+\frac ac<\frac bc.
+\]
+\hyperref[prf:division-by-positive-preserves-order]{Go to proof.}
+\end{lemma}
+\end{lemmabox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:ineq-multiply-positive]{Multiplication by a Positive Scalar Preserves Strict Inequality}
+  \item \hyperref[thm:r-is-an-ordered-field]{$\mathbb{R}$ Is an Ordered Field}
+\end{itemize}
+\end{dependencies}
+
+\begin{lemmabox}{Lemma (Division by Negative Reverses Order)}
+\begin{lemma}[Division by Negative Reverses Order]\label{lem:division-by-negative-reverses-order}
+If $a,b,c\in\mathbb{R}$, $a<b$, and $c<0$, then
+\[
+\frac bc<\frac ac.
+\]
+\hyperref[prf:division-by-negative-reverses-order]{Go to proof.}
+\end{lemma}
+\end{lemmabox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:ineq-multiply-negative]{Multiplication by a Negative Scalar Reverses Strict Inequality}
+  \item \hyperref[thm:r-is-an-ordered-field]{$\mathbb{R}$ Is an Ordered Field}
+\end{itemize}
+\end{dependencies}
+
 % ---------------------------------------------------------
 % thm:ineq-squeeze
 % ---------------------------------------------------------
@@ -450,6 +586,88 @@ For all $a, b \in \mathbb{R}$ with $a > 0$ and $b > 0$,
 % ---------------------------------------------------------
 % thm:ineq-square-monotone
 % ---------------------------------------------------------
+
+\begin{lemmabox}{Lemma (Positive Powers Are Positive)}
+\begin{lemma}[Positive Powers Are Positive]
+\label{lem:positive-powers-are-positive}
+If $x>0$ and $n\in\mathbb{N}$, then
+\[
+x^n>0.
+\]
+\hyperref[prf:positive-powers-are-positive]{Go to proof.}
+\end{lemma}
+\end{lemmabox}
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x\in\mathbb{R}\;\forall n\in\mathbb{N}\;
+\bigl(x>0\Rightarrow x^n>0\bigr).
+\]
+\end{remark*}
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Positive}(x)\Rightarrow \operatorname{PositivePower}(x,n).
+\]
+\end{remark*}
+\begin{remark*}[Negated quantified statement]
+\[
+\exists x\in\mathbb{R}\;\exists n\in\mathbb{N}\;
+\bigl(x>0\land x^n\le 0\bigr).
+\]
+\end{remark*}
+\begin{remark*}[Negation predicate reading]
+\[
+\operatorname{Positive}(x)\land\neg\operatorname{Positive}(x^n).
+\]
+\end{remark*}
+\begin{remark*}[Interpretation]
+Repeated multiplication of a positive real by itself remains positive.
+\end{remark*}
+\begin{dependencies}
+\hyperref[def:real-ordered-field]{Ordered Field};
+\hyperref[thm:ineq-multiply-positive]{Multiplication by a Positive Scalar Preserves Strict Inequality}.
+\end{dependencies}
+
+\begin{lemmabox}{Lemma (Powers Preserve Order for Positive Numbers)}
+\begin{lemma}[Powers Preserve Order for Positive Numbers]
+\label{lem:powers-preserve-order-for-positive-numbers}
+If $0<x<y$ and $n\in\mathbb{N}$, then
+\[
+x^n<y^n.
+\]
+\hyperref[prf:powers-preserve-order-for-positive-numbers]{Go to proof.}
+\end{lemma}
+\end{lemmabox}
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y\in\mathbb{R}\;\forall n\in\mathbb{N}\;
+\bigl(0<x<y\Rightarrow x^n<y^n\bigr).
+\]
+\end{remark*}
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{PositiveStrictOrder}(x,y)\Rightarrow
+\operatorname{StrictOrder}(x^n,y^n).
+\]
+\end{remark*}
+\begin{remark*}[Negated quantified statement]
+\[
+\exists x,y\in\mathbb{R}\;\exists n\in\mathbb{N}\;
+\bigl(0<x<y\land y^n\le x^n\bigr).
+\]
+\end{remark*}
+\begin{remark*}[Negation predicate reading]
+\[
+\operatorname{PositiveStrictOrder}(x,y)\land
+\neg\operatorname{StrictOrder}(x^n,y^n).
+\]
+\end{remark*}
+\begin{remark*}[Interpretation]
+Integer powers are strictly increasing on the positive real axis.
+\end{remark*}
+\begin{dependencies}
+\hyperref[lem:positive-powers-are-positive]{Positive Powers Are Positive};
+\hyperref[thm:ineq-multiply-positive]{Multiplication by a Positive Scalar Preserves Strict Inequality}.
+\end{dependencies}
 
 \begin{theorem}[Square Is Strictly Monotone on Nonneg Reals]
 \label{thm:ineq-square-monotone}

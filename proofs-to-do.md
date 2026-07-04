@@ -3,7 +3,7 @@
 Proof-writing order is dependency-first among active TODO proof labels, with the generated knowledge graph order used as the stable tie-breaker.
 Use `✅` to record completion after the canonical proof file has both proof bodies populated and validated.
 
-Open proofs to do: 452
+Open proofs to do: 465
 Completed in this tracker: 6
 
 1. () `prop:little-o-quotient-characterization` — **Little-o Quotient Characterisation**
@@ -3280,3 +3280,62 @@ Completed in this tracker: 6
    > \[
    >  \int_a^b f\,d\alpha=\sum_k f(c_k)\,\Delta\alpha(c_k).
    > \]
+
+459. () `lem:positive-product` — **Positive Product**
+   > **Statement.**
+   > If \(a,b\in\mathbb{R}\), \(a>0\), and \(b>0\), then \(ab>0\).
+
+460. () `lem:negative-times-negative-is-positive` — **Negative Times Negative Is Positive**
+   > **Statement.**
+   > If \(a,b\in\mathbb{R}\), \(a<0\), and \(b<0\), then \(ab>0\).
+
+461. () `lem:positive-times-negative-is-negative` — **Positive Times Negative Is Negative**
+   > **Statement.**
+   > If \(a,b\in\mathbb{R}\), \(a>0\), and \(b<0\), then \(ab<0\).
+
+462. () `lem:negative-times-positive-is-negative` — **Negative Times Positive Is Negative**
+   > **Statement.**
+   > If \(a,b\in\mathbb{R}\), \(a<0\), and \(b>0\), then \(ab<0\).
+
+463. () `lem:order-and-subtraction` — **Order and Subtraction**
+   > **Statement.**
+   > For \(a,b\in\mathbb{R}\), \(a<b \Longleftrightarrow b-a>0\).
+
+464. () `lem:non-strict-order-and-subtraction` — **Non-Strict Order and Subtraction**
+   > **Statement.**
+   > For \(a,b\in\mathbb{R}\), \(a\le b \Longleftrightarrow b-a\ge 0\).
+
+465. () `lem:division-by-positive-preserves-order` — **Division by Positive Preserves Order**
+   > **Statement.**
+   > If \(a,b,c\in\mathbb{R}\), \(a<b\), and \(c>0\), then \(\frac ac<\frac bc\).
+
+466. () `lem:division-by-negative-reverses-order` — **Division by Negative Reverses Order**
+   > **Statement.**
+   > If \(a,b,c\in\mathbb{R}\), \(a<b\), and \(c<0\), then \(\frac bc<\frac ac\).
+
+467. () `prop:supremum-need-not-belong-to-the-set` — **Supremum Need Not Belong to the Set**
+   > **Statement.**
+   > There exists a nonempty bounded above set \(A\subseteq\mathbb{R}\) such that
+   > \[
+   >  \sup A\notin A.
+   > \]
+
+468. () `prop:infimum-need-not-belong-to-the-set` — **Infimum Need Not Belong to the Set**
+   > **Statement.**
+   > There exists a nonempty bounded below set \(A\subseteq\mathbb{R}\) such that
+   > \[
+   >  \inf A\notin A.
+   > \]
+
+469. () `thm:no-immediate-successors-in-r` — **No Immediate Successors in \(\mathbb{R}\)**
+   > **Statement.**
+   > For every \(a\in\mathbb{R}\), there is no least real number greater than \(a\).
+
+470. () `thm:no-immediate-predecessors-in-r` — **No Immediate Predecessors in \(\mathbb{R}\)**
+   > **Statement.**
+   > For every \(a\in\mathbb{R}\), there is no greatest real number less than \(a\).
+
+471. () `thm:real-line-structural-order-facts` — **Real Line Structural Order Facts**
+   > **Statement.**
+   > The real numbers are linearly ordered, form an ordered field, and satisfy the
+   > least upper bound property.

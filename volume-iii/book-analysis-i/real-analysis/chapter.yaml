@@ -76,6 +76,16 @@ environments:
   file: notes\inequality\notes-inequality.tex
   display_title: Reciprocal Equivalence for Positives
   proof_file: null
+- label: lem:positive-powers-are-positive
+  type: lem
+  file: notes\inequality\notes-inequality.tex
+  display_title: Positive Powers Are Positive
+  proof_file: proofs\inequality\prf-positive-powers-are-positive.tex
+- label: lem:powers-preserve-order-for-positive-numbers
+  type: lem
+  file: notes\inequality\notes-inequality.tex
+  display_title: Powers Preserve Order for Positive Numbers
+  proof_file: proofs\inequality\prf-powers-preserve-order-for-positive-numbers.tex
 - label: thm:ineq-square-monotone
   type: thm
   file: notes\inequality\notes-inequality.tex
@@ -231,7 +241,9 @@ environments:
   file: notes\proof-techniques\05-residue-partition.tex
   display_title: Residue divergence criterion
   proof_file: null
-proof_files: []
+proof_files:
+- proofs\inequality\prf-positive-powers-are-positive.tex
+- proofs\inequality\prf-powers-preserve-order-for-positive-numbers.tex
 
 book: book-analysis-i
 path: volume-iii/book-analysis-i/real-analysis

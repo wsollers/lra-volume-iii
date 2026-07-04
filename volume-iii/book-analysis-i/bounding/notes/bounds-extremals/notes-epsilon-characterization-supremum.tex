@@ -179,3 +179,89 @@ This condition says that $t$ sits below the set while points of $A$ approach $t$
 \hyperref[def:lower-bound]{Definition~\ref*{def:lower-bound}}.
 \end{dependencies}
 
+\begin{lemmabox}{Lemma (Supremum Strict Upper Approximation)}
+\begin{lemma}[Supremum Strict Upper Approximation]
+\label{lem:supremum-strict-upper-approximation}
+Let $A\subseteq\mathbb{R}$ be nonempty and bounded above, and let
+$s=\sup A$. If $u<s$, then there exists $a\in A$ such that
+\[
+u<a\le s.
+\]
+\hyperref[prf:supremum-strict-upper-approximation]{Go to proof.}
+\end{lemma}
+\end{lemmabox}
+\begin{remark*}[Standard quantified statement]
+\[
+\forall A\subseteq\mathbb{R}\;\forall u,s\in\mathbb{R}\;
+\bigl((A\ne\varnothing\land s=\sup A\land u<s)\Rightarrow
+\exists a\in A\;(u<a\le s)\bigr).
+\]
+\end{remark*}
+\begin{remark*}[Predicate reading]
+\[
+u<\sup A\Rightarrow A\cap(u,\sup A]\ne\varnothing.
+\]
+\end{remark*}
+\begin{remark*}[Negated quantified statement]
+\[
+\exists A\subseteq\mathbb{R}\;\exists u,s\in\mathbb{R}\;
+\bigl(A\ne\varnothing\land s=\sup A\land u<s\land
+\forall a\in A\;(a\le u\lor s<a)\bigr).
+\]
+\end{remark*}
+\begin{remark*}[Negation predicate reading]
+\[
+u<\sup A\land A\cap(u,\sup A]=\varnothing.
+\]
+\end{remark*}
+\begin{remark*}[Interpretation]
+Every number strictly below a supremum is crossed by some element of the set.
+\end{remark*}
+\begin{dependencies}
+\hyperref[def:supremum]{Supremum};
+\hyperref[def:epsilon-characterization-of-supremum]{Epsilon Characterization of Supremum}.
+\end{dependencies}
+
+\begin{lemmabox}{Lemma (Infimum Strict Lower Approximation)}
+\begin{lemma}[Infimum Strict Lower Approximation]
+\label{lem:infimum-strict-lower-approximation}
+Let $A\subseteq\mathbb{R}$ be nonempty and bounded below, and let
+$t=\inf A$. If $t<v$, then there exists $a\in A$ such that
+\[
+t\le a<v.
+\]
+\hyperref[prf:infimum-strict-lower-approximation]{Go to proof.}
+\end{lemma}
+\end{lemmabox}
+\begin{remark*}[Standard quantified statement]
+\[
+\forall A\subseteq\mathbb{R}\;\forall t,v\in\mathbb{R}\;
+\bigl((A\ne\varnothing\land t=\inf A\land t<v)\Rightarrow
+\exists a\in A\;(t\le a<v)\bigr).
+\]
+\end{remark*}
+\begin{remark*}[Predicate reading]
+\[
+\inf A<v\Rightarrow A\cap[\inf A,v)\ne\varnothing.
+\]
+\end{remark*}
+\begin{remark*}[Negated quantified statement]
+\[
+\exists A\subseteq\mathbb{R}\;\exists t,v\in\mathbb{R}\;
+\bigl(A\ne\varnothing\land t=\inf A\land t<v\land
+\forall a\in A\;(a<t\lor v\le a)\bigr).
+\]
+\end{remark*}
+\begin{remark*}[Negation predicate reading]
+\[
+\inf A<v\land A\cap[\inf A,v)=\varnothing.
+\]
+\end{remark*}
+\begin{remark*}[Interpretation]
+Every number strictly above an infimum is reached from below by some element
+of the set.
+\end{remark*}
+\begin{dependencies}
+\hyperref[def:infimum]{Infimum};
+\hyperref[def:epsilon-characterization-of-infimum]{Epsilon Characterization of Infimum}.
+\end{dependencies}

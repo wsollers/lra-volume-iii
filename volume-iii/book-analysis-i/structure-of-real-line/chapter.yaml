@@ -151,7 +151,37 @@ environments:
   file: notes\unions-and-intersections\notes-unions-and-intersections.tex
   display_title: Closure Laws for Closed Sets
   proof_file: null
-proof_files: []
+- label: lem:minimum-of-positive-numbers-is-positive
+  type: lem
+  file: notes\order-distance-length\notes-epsilon-algebra.tex
+  display_title: Minimum of Positive Numbers Is Positive
+  proof_file: proofs\order-distance-length\prf-minimum-of-positive-numbers-is-positive.tex
+- label: lem:half-epsilon-is-positive
+  type: lem
+  file: notes\order-distance-length\notes-epsilon-algebra.tex
+  display_title: Half Epsilon Is Positive
+  proof_file: proofs\order-distance-length\prf-half-epsilon-is-positive.tex
+- label: lem:epsilon-splitting
+  type: lem
+  file: notes\order-distance-length\notes-epsilon-algebra.tex
+  display_title: Epsilon Splitting
+  proof_file: proofs\order-distance-length\prf-epsilon-splitting.tex
+- label: lem:positive-minimum-bound
+  type: lem
+  file: notes\order-distance-length\notes-epsilon-algebra.tex
+  display_title: Positive Minimum Bound
+  proof_file: proofs\order-distance-length\prf-positive-minimum-bound.tex
+- label: lem:choosing-a-smaller-positive-number
+  type: lem
+  file: notes\order-distance-length\notes-epsilon-algebra.tex
+  display_title: Choosing a Smaller Positive Number
+  proof_file: proofs\order-distance-length\prf-choosing-a-smaller-positive-number.tex
+proof_files:
+- proofs\order-distance-length\prf-minimum-of-positive-numbers-is-positive.tex
+- proofs\order-distance-length\prf-half-epsilon-is-positive.tex
+- proofs\order-distance-length\prf-epsilon-splitting.tex
+- proofs\order-distance-length\prf-positive-minimum-bound.tex
+- proofs\order-distance-length\prf-choosing-a-smaller-positive-number.tex
 
 book: book-analysis-i
 path: volume-iii/book-analysis-i/structure-of-real-line

@@ -133,6 +133,16 @@ environments:
   file: notes\bounds-extremals\notes-epsilon-characterization-supremum.tex
   display_title: Epsilon Characterization of Infimum
   proof_file: null
+- label: lem:supremum-strict-upper-approximation
+  type: lem
+  file: notes\bounds-extremals\notes-epsilon-characterization-supremum.tex
+  display_title: Supremum Strict Upper Approximation
+  proof_file: proofs\bounds-extremals\prf-supremum-strict-upper-approximation.tex
+- label: lem:infimum-strict-lower-approximation
+  type: lem
+  file: notes\bounds-extremals\notes-epsilon-characterization-supremum.tex
+  display_title: Infimum Strict Lower Approximation
+  proof_file: proofs\bounds-extremals\prf-infimum-strict-lower-approximation.tex
 - label: def:bound
   type: def
   file: notes\bounds-extremals\notes-supremum.tex
@@ -243,6 +253,21 @@ environments:
   file: notes\completeness\notes-axiom-of-completess.tex
   display_title: Completeness of $\mathbb{R}$
   proof_file: null
+- label: thm:order-separation-by-supremum
+  type: thm
+  file: notes\completeness\notes-order-separation.tex
+  display_title: Order Separation by Supremum
+  proof_file: proofs\completeness\prf-order-separation-by-supremum.tex
+- label: thm:dedekind-cut-property
+  type: thm
+  file: notes\completeness\notes-order-separation.tex
+  display_title: Dedekind Cut Property
+  proof_file: proofs\completeness\prf-dedekind-cut-property.tex
+- label: cor:no-gaps-in-r
+  type: cor
+  file: notes\completeness\notes-order-separation.tex
+  display_title: No Gaps in $\mathbb{R}$
+  proof_file: proofs\completeness\prf-no-gaps-in-r.tex
 - label: def:dense-subset
   type: def
   file: notes\completeness\notes-density.tex
@@ -318,6 +343,11 @@ environments:
   file: notes\completeness\notes-density.tex
   display_title: Small Irrational Positive Number
   proof_file: proofs\completeness\prf-small-irrational-positive-number.tex
+- label: cor:no-adjacent-real-numbers
+  type: cor
+  file: notes\completeness\notes-density.tex
+  display_title: No Adjacent Real Numbers
+  proof_file: proofs\completeness\prf-no-adjacent-real-numbers.tex
 - label: cor:every-open-interval-contains-rational-and-irrational
   type: cor
   file: notes\completeness\notes-density.tex
@@ -328,4 +358,10 @@ environments:
   file: notes\completeness\notes-nested-interval-property.tex
   display_title: Nested Interval Property
   proof_file: null
-proof_files: []
+proof_files:
+- proofs\bounds-extremals\prf-supremum-strict-upper-approximation.tex
+- proofs\bounds-extremals\prf-infimum-strict-lower-approximation.tex
+- proofs\completeness\prf-order-separation-by-supremum.tex
+- proofs\completeness\prf-dedekind-cut-property.tex
+- proofs\completeness\prf-no-gaps-in-r.tex
+- proofs\completeness\prf-no-adjacent-real-numbers.tex

@@ -1,0 +1,16 @@
+\begin{tikzpicture}[
+  >=Stealth,
+  x=4.0cm,
+  y=1.0cm,
+  every node/.style={font=\small}
+]
+  \draw[->, gray!70] (-0.2,0) -- (1.25,0) node[right] {$\mathbb{R}$};
+  \draw[line width=4pt, blue!35] (0,0) -- (1,0);
+  \draw[blue, thick] (0,0) circle (2.2pt);
+  \draw[blue, thick] (1,0) circle (2.2pt);
+  \node[below] at (0,0) {$0=\inf(0,1)$};
+  \node[below] at (1,0) {$1=\sup(0,1)$};
+  \node[above] at (0.5,0.12) {$A=(0,1)$};
+  \node[align=center] at (0.5,-0.9)
+    {The sharp bounds sit at the endpoints,\\but neither endpoint belongs to $A$.};
+\end{tikzpicture}

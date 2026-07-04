@@ -1,0 +1,218 @@
+\begin{topicbox}{Epsilon Algebra}
+\begin{exposition}
+Epsilon arguments repeatedly choose smaller positive quantities and split
+positive tolerances into convenient pieces. The lemmas in this section record
+those elementary moves explicitly.
+\end{exposition}
+\end{topicbox}
+
+\begin{lemmabox}{Lemma (Minimum of Positive Numbers Is Positive)}
+\begin{lemma}[Minimum of Positive Numbers Is Positive]
+\label{lem:minimum-of-positive-numbers-is-positive}
+If $a>0$ and $b>0$, then
+\[
+\min\{a,b\}>0.
+\]
+\hyperref[prf:minimum-of-positive-numbers-is-positive]{Go to proof.}
+\end{lemma}
+\end{lemmabox}
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a,b\in\mathbb{R}\;\bigl((a>0\land b>0)\Rightarrow \min\{a,b\}>0\bigr).
+\]
+\end{remark*}
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Positive}(a)\land\operatorname{Positive}(b)
+\Rightarrow \operatorname{Positive}(\min\{a,b\}).
+\]
+\end{remark*}
+\begin{remark*}[Negated quantified statement]
+\[
+\exists a,b\in\mathbb{R}\;\bigl(a>0\land b>0\land \min\{a,b\}\le 0\bigr).
+\]
+\end{remark*}
+\begin{remark*}[Negation predicate reading]
+\[
+\operatorname{Positive}(a)\land\operatorname{Positive}(b)\land
+\neg\operatorname{Positive}(\min\{a,b\}).
+\]
+\end{remark*}
+\begin{remark*}[Interpretation]
+Choosing the smaller of two positive bounds still leaves a positive bound.
+\end{remark*}
+\begin{dependencies}
+\hyperref[def:real-ordered-field]{Complete Ordered Field};
+\hyperref[thm:ineq-transitivity-strict]{Transitivity of Strict Inequality}.
+\end{dependencies}
+
+\begin{lemmabox}{Lemma (Half Epsilon Is Positive)}
+\begin{lemma}[Half Epsilon Is Positive]
+\label{lem:half-epsilon-is-positive}
+If $\varepsilon>0$, then
+\[
+\frac{\varepsilon}{2}>0.
+\]
+\hyperref[prf:half-epsilon-is-positive]{Go to proof.}
+\end{lemma}
+\end{lemmabox}
+\begin{remark*}[Standard quantified statement]
+\[
+\forall \varepsilon\in\mathbb{R}\;\bigl(\varepsilon>0\Rightarrow \varepsilon/2>0\bigr).
+\]
+\end{remark*}
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Positive}(\varepsilon)\Rightarrow
+\operatorname{Positive}(\varepsilon/2).
+\]
+\end{remark*}
+\begin{remark*}[Negated quantified statement]
+\[
+\exists\varepsilon\in\mathbb{R}\;\bigl(\varepsilon>0\land \varepsilon/2\le 0\bigr).
+\]
+\end{remark*}
+\begin{remark*}[Negation predicate reading]
+\[
+\operatorname{Positive}(\varepsilon)\land\neg\operatorname{Positive}(\varepsilon/2).
+\]
+\end{remark*}
+\begin{remark*}[Interpretation]
+Halving a positive tolerance produces a smaller positive tolerance.
+\end{remark*}
+\begin{dependencies}
+\hyperref[def:real-ordered-field]{Complete Ordered Field};
+\hyperref[thm:ineq-multiply-positive]{Multiplication by a Positive Scalar Preserves Strict Inequality}.
+\end{dependencies}
+
+\begin{lemmabox}{Lemma (Epsilon Splitting)}
+\begin{lemma}[Epsilon Splitting]
+\label{lem:epsilon-splitting}
+If $\varepsilon>0$, then
+\[
+\frac{\varepsilon}{2}+\frac{\varepsilon}{2}=\varepsilon.
+\]
+\hyperref[prf:epsilon-splitting]{Go to proof.}
+\end{lemma}
+\end{lemmabox}
+\begin{remark*}[Standard quantified statement]
+\[
+\forall \varepsilon\in\mathbb{R}\;\bigl(\varepsilon>0\Rightarrow
+\varepsilon/2+\varepsilon/2=\varepsilon\bigr).
+\]
+\end{remark*}
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Positive}(\varepsilon)\Rightarrow
+\operatorname{SplitsIntoHalves}(\varepsilon).
+\]
+\end{remark*}
+\begin{remark*}[Negated quantified statement]
+\[
+\exists\varepsilon\in\mathbb{R}\;\bigl(\varepsilon>0\land
+\varepsilon/2+\varepsilon/2\ne\varepsilon\bigr).
+\]
+\end{remark*}
+\begin{remark*}[Negation predicate reading]
+\[
+\operatorname{Positive}(\varepsilon)\land
+\neg\operatorname{SplitsIntoHalves}(\varepsilon).
+\]
+\end{remark*}
+\begin{remark*}[Interpretation]
+The standard two-error estimate assigns half the tolerance to each error term.
+\end{remark*}
+\begin{dependencies}
+\hyperref[def:real-ordered-field]{Complete Ordered Field}.
+\end{dependencies}
+\input{volume-iii/book-analysis-i/structure-of-real-line/notes/order-distance-length/figure-epsilon-splitting}
+
+\begin{lemmabox}{Lemma (Positive Minimum Bound)}
+\begin{lemma}[Positive Minimum Bound]
+\label{lem:positive-minimum-bound}
+If $0<\delta\le a$ and $0<\delta\le b$, then
+\[
+\delta\le \min\{a,b\}.
+\]
+\hyperref[prf:positive-minimum-bound]{Go to proof.}
+\end{lemma}
+\end{lemmabox}
+\begin{remark*}[Standard quantified statement]
+\[
+\forall \delta,a,b\in\mathbb{R}\;
+\bigl((0<\delta\le a\land 0<\delta\le b)\Rightarrow
+\delta\le \min\{a,b\}\bigr).
+\]
+\end{remark*}
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{CommonLowerPositiveBound}(\delta,a,b)
+\Rightarrow \delta\le\min\{a,b\}.
+\]
+\end{remark*}
+\begin{remark*}[Negated quantified statement]
+\[
+\exists \delta,a,b\in\mathbb{R}\;
+\bigl(0<\delta\le a\land 0<\delta\le b\land \min\{a,b\}<\delta\bigr).
+\]
+\end{remark*}
+\begin{remark*}[Negation predicate reading]
+\[
+\operatorname{CommonLowerPositiveBound}(\delta,a,b)\land
+\neg(\delta\le\min\{a,b\}).
+\]
+\end{remark*}
+\begin{remark*}[Interpretation]
+If a positive quantity is below each of two bounds, it is below their minimum.
+\end{remark*}
+\begin{dependencies}
+\hyperref[lem:minimum-of-positive-numbers-is-positive]{Minimum of Positive Numbers Is Positive};
+\hyperref[def:real-ordered-field]{Complete Ordered Field}.
+\end{dependencies}
+
+\begin{lemmabox}{Lemma (Choosing a Smaller Positive Number)}
+\begin{lemma}[Choosing a Smaller Positive Number]
+\label{lem:choosing-a-smaller-positive-number}
+If $\varepsilon>0$ and $c>0$, then there exists $\delta>0$ such that
+\[
+0<\delta<\varepsilon
+\quad\text{and}\quad
+0<\delta<c.
+\]
+\hyperref[prf:choosing-a-smaller-positive-number]{Go to proof.}
+\end{lemma}
+\end{lemmabox}
+\begin{remark*}[Standard quantified statement]
+\[
+\forall \varepsilon,c\in\mathbb{R}\;
+\bigl((\varepsilon>0\land c>0)\Rightarrow
+\exists\delta\in\mathbb{R}\;(0<\delta<\varepsilon\land 0<\delta<c)\bigr).
+\]
+\end{remark*}
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Positive}(\varepsilon)\land\operatorname{Positive}(c)
+\Rightarrow \operatorname{HasSmallerPositiveCommonChoice}(\varepsilon,c).
+\]
+\end{remark*}
+\begin{remark*}[Negated quantified statement]
+\[
+\exists \varepsilon,c\in\mathbb{R}\;
+\bigl(\varepsilon>0\land c>0\land
+\forall\delta\in\mathbb{R}\;(\delta\le 0\lor \delta\ge\varepsilon\lor \delta\ge c)\bigr).
+\]
+\end{remark*}
+\begin{remark*}[Negation predicate reading]
+\[
+\operatorname{Positive}(\varepsilon)\land\operatorname{Positive}(c)\land
+\neg\operatorname{HasSmallerPositiveCommonChoice}(\varepsilon,c).
+\]
+\end{remark*}
+\begin{remark*}[Interpretation]
+Given two positive constraints, one can choose a single positive tolerance
+strictly below both.
+\end{remark*}
+\begin{dependencies}
+\hyperref[lem:minimum-of-positive-numbers-is-positive]{Minimum of Positive Numbers Is Positive};
+\hyperref[lem:half-epsilon-is-positive]{Half Epsilon Is Positive}.
+\end{dependencies}
