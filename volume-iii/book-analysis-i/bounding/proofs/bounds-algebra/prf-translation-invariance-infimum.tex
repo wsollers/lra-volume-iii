@@ -8,25 +8,109 @@
 \end{remark*}
 
 \begin{theorem*}[Translation Invariance of the Infimum]
-For nonempty $A$ bounded below, $\inf(A+c)=\inf A+c$.
+Let $A\subseteq\mathbb{R}$ be nonempty and bounded below, and let
+$c\in\mathbb{R}$. Then
+\[
+  \inf(A+c)=\inf A+c,
+  \qquad
+  A+c=\{a+c:a\in A\}.
+\]
 \end{theorem*}
 
 \begin{proof}[Professional Standard Proof]
 \LRAProofBodyStart
-TODO: professional standard proof for translation-invariance-infimum.
+Let \(\ell=\inf A\). Since \(A\) is nonempty, \(A+c\) is nonempty. For every
+\(a\in A\), the lower-bound property of \(\ell\) gives \(\ell\le a\), and
+therefore
+\[
+  \ell+c\le a+c.
+\]
+Thus \(\ell+c\) is a lower bound of \(A+c\).
+
+Now let \(b\) be any lower bound of \(A+c\). Then for every \(a\in A\),
+\[
+  b\le a+c,
+\]
+so \(b-c\le a\). Hence \(b-c\) is a lower bound of \(A\). Since
+\(\ell=\inf A\), the greatest-lower-bound property gives \(b-c\le \ell\), and
+therefore
+\[
+  b\le \ell+c.
+\]
+So every lower bound of \(A+c\) lies below \(\ell+c\). Since \(\ell+c\) is
+itself a lower bound of \(A+c\), it is the infimum of \(A+c\). Hence
+\[
+  \inf(A+c)=\ell+c=\inf A+c.
+\]
 \end{proof}
 
 \begin{proof}[Detailed Learning Proof]
 \LRAProofBodyStart
-TODO: detailed learning proof for translation-invariance-infimum.
+Let
+\[
+  \ell=\inf A.
+\]
+We will prove that \(\ell+c\) is the infimum of the translated set
+\[
+  A+c=\{a+c:a\in A\}.
+\]
+To prove that a number is an infimum, we must prove two things: it is a lower
+bound, and it is the greatest among all lower bounds.
+
+First we prove the lower-bound part. Take any element of \(A+c\). By the
+definition of \(A+c\), it has the form \(a+c\) for some \(a\in A\). Since
+\(\ell=\inf A\), \(\ell\) is a lower bound of \(A\), so
+\[
+  \ell\le a.
+\]
+Adding \(c\) to both sides preserves the order, so
+\[
+  \ell+c\le a+c.
+\]
+Therefore \(\ell+c\) is less than or equal to every element of \(A+c\). Thus
+\(\ell+c\) is a lower bound of \(A+c\).
+
+Next we prove greatestness. Let \(b\) be any lower bound of \(A+c\). This
+means that \(b\) lies below every translated element: for every \(a\in A\),
+\[
+  b\le a+c.
+\]
+Subtracting \(c\) from both sides gives
+\[
+  b-c\le a
+\]
+for every \(a\in A\). Hence \(b-c\) is a lower bound of the original set
+\(A\). Because \(\ell=\inf A\), \(\ell\) is greater than or equal to every
+lower bound of \(A\). Applying this to the lower bound \(b-c\), we get
+\[
+  b-c\le \ell.
+\]
+Adding \(c\) to both sides gives
+\[
+  b\le \ell+c.
+\]
+
+We have shown that every lower bound \(b\) of \(A+c\) lies below \(\ell+c\).
+Together with the fact that \(\ell+c\) is itself a lower bound of \(A+c\),
+this proves that \(\ell+c\) is the greatest lower bound of \(A+c\). Therefore
+\[
+  \inf(A+c)=\ell+c=\inf A+c.
+\]
 \end{proof}
 
 \begin{remark*}[Proof structure]
+Translate both pieces of the infimum definition. The lower-bound part moves
+from \(\ell\le a\) to \(\ell+c\le a+c\). The greatestness part tests an
+arbitrary lower bound \(b\) of \(A+c\), translates it back to the lower bound
+\(b-c\) of \(A\), and then translates the comparison \(b-c\le\ell\) forward
+again.
 \end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
-  \item TODO: list mathematical dependencies.
+  \item \hyperref[def:set-arithmetic-images]{Set Arithmetic Images}
+  \item \hyperref[def:lower-bound]{Lower Bound}
+  \item \hyperref[def:infimum]{Infimum}
 \end{itemize}
 \end{dependencies}
 

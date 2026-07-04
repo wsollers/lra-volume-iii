@@ -8,25 +8,113 @@
 \end{remark*}
 
 \begin{theorem*}[Positive Scalar Multiplication of the Infimum]
-If $k>0$ and $A$ is nonempty and bounded below, then $\inf(kA)=k\inf A$.
+Let $A\subseteq\mathbb{R}$ be nonempty and bounded below, and let $k>0$.
+Then
+\[
+  \inf(kA)=k\inf A,
+  \qquad
+  kA=\{ka:a\in A\}.
+\]
 \end{theorem*}
 
 \begin{proof}[Professional Standard Proof]
 \LRAProofBodyStart
-TODO: professional standard proof for positive-scalar-mult-infimum.
+Let \(\ell=\inf A\). Since \(\ell\) is a lower bound of \(A\), we have
+\(\ell\le a\) for every \(a\in A\). Because \(k>0\), multiplication by \(k\)
+preserves order, so
+\[
+  k\ell\le ka
+\]
+for every \(a\in A\). Thus \(k\ell\) is a lower bound of \(kA\).
+
+Let \(b\) be any lower bound of \(kA\). Then for every \(a\in A\),
+\[
+  b\le ka.
+\]
+Dividing by \(k>0\) preserves order, so
+\[
+  \frac{b}{k}\le a
+\]
+for every \(a\in A\). Hence \(b/k\) is a lower bound of \(A\). Since
+\(\ell=\inf A\), the greatest-lower-bound property gives \(b/k\le \ell\).
+Multiplying by \(k>0\) yields \(b\le k\ell\).
+
+Therefore every lower bound of \(kA\) lies below \(k\ell\), and \(k\ell\) is
+itself a lower bound of \(kA\). Hence \(k\ell=\inf(kA)\), so
+\[
+  \inf(kA)=k\inf A.
+\]
 \end{proof}
 
 \begin{proof}[Detailed Learning Proof]
 \LRAProofBodyStart
-TODO: detailed learning proof for positive-scalar-mult-infimum.
+Let
+\[
+  \ell=\inf A.
+\]
+We will prove that \(k\ell\) is the infimum of
+\[
+  kA=\{ka:a\in A\}.
+\]
+To prove that a number is an infimum, we must prove two things: it is a lower
+bound, and it is the greatest among all lower bounds.
+
+First we prove the lower-bound part. Take any element of \(kA\). By the
+definition of \(kA\), it has the form \(ka\) for some \(a\in A\). Since
+\(\ell=\inf A\), \(\ell\) is a lower bound of \(A\), so
+\[
+  \ell\le a.
+\]
+Because \(k>0\), multiplying both sides by \(k\) preserves the inequality:
+\[
+  k\ell\le ka.
+\]
+Thus \(k\ell\) is less than or equal to every element of \(kA\), so \(k\ell\)
+is a lower bound of \(kA\).
+
+Next we prove greatestness. Let \(b\) be any lower bound of \(kA\). This means
+that \(b\) lies below every element \(ka\) with \(a\in A\):
+\[
+  b\le ka
+  \qquad(a\in A).
+\]
+Since \(k>0\), dividing by \(k\) preserves order, giving
+\[
+  \frac{b}{k}\le a
+  \qquad(a\in A).
+\]
+So \(b/k\) is a lower bound of \(A\). Because \(\ell=\inf A\), \(\ell\) is the
+greatest lower bound of \(A\), which means every lower bound of \(A\) is less
+than or equal to \(\ell\). Applying this to the lower bound \(b/k\), we obtain
+\[
+  \frac{b}{k}\le \ell.
+\]
+Multiplying again by the positive number \(k\), we get
+\[
+  b\le k\ell.
+\]
+
+We have shown that every lower bound \(b\) of \(kA\) lies below \(k\ell\).
+Together with the fact that \(k\ell\) is itself a lower bound of \(kA\), this
+proves that \(k\ell\) is the greatest lower bound of \(kA\). Therefore
+\[
+  \inf(kA)=k\ell=k\inf A.
+\]
 \end{proof}
 
 \begin{remark*}[Proof structure]
+Positive multiplication preserves the order direction. The lower-bound part
+moves \(\ell\le a\) to \(k\ell\le ka\). The greatestness part takes an
+arbitrary lower bound \(b\) of \(kA\), divides by \(k>0\) to obtain the lower
+bound \(b/k\) of \(A\), then scales the comparison \(b/k\le\ell\) back to
+\(b\le k\ell\).
 \end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
-  \item TODO: list mathematical dependencies.
+  \item \hyperref[def:displacement-dilation-reflection]{Displacement, Dilation, and Reflection}
+  \item \hyperref[def:lower-bound]{Lower Bound}
+  \item \hyperref[def:infimum]{Infimum}
 \end{itemize}
 \end{dependencies}
 

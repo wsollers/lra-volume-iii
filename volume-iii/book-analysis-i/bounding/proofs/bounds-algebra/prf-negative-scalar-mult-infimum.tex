@@ -8,25 +8,118 @@
 \end{remark*}
 
 \begin{theorem*}[Negative Scalar Multiplication of the Infimum]
-If $k<0$ and $A$ is nonempty and bounded above, then $\inf(kA)=k\sup A$.
+Let $A\subseteq\mathbb{R}$ be nonempty and bounded above, and let $k<0$.
+Then
+\[
+  \inf(kA)=k\sup A,
+  \qquad
+  kA=\{ka:a\in A\}.
+\]
 \end{theorem*}
 
 \begin{proof}[Professional Standard Proof]
 \LRAProofBodyStart
-TODO: professional standard proof for negative-scalar-mult-infimum.
+Let \(s=\sup A\). Since \(s\) is an upper bound of \(A\), we have \(a\le s\)
+for every \(a\in A\). Because \(k<0\), multiplication by \(k\) reverses order,
+so
+\[
+  ks\le ka
+\]
+for every \(a\in A\). Thus \(ks\) is a lower bound of \(kA\).
+
+Let \(b\) be any lower bound of \(kA\). Then for every \(a\in A\),
+\[
+  b\le ka.
+\]
+Dividing by \(k<0\) reverses order, so
+\[
+  \frac{b}{k}\ge a
+\]
+for every \(a\in A\). Hence \(b/k\) is an upper bound of \(A\). Since
+\(s=\sup A\), the least-upper-bound property gives \(s\le b/k\). Multiplying
+by \(k<0\) reverses order and yields \(ks\ge b\), equivalently \(b\le ks\).
+
+Therefore every lower bound of \(kA\) lies below \(ks\), and \(ks\) is itself
+a lower bound of \(kA\). Hence \(ks=\inf(kA)\), so
+\[
+  \inf(kA)=k\sup A.
+\]
 \end{proof}
 
 \begin{proof}[Detailed Learning Proof]
 \LRAProofBodyStart
-TODO: detailed learning proof for negative-scalar-mult-infimum.
+Let
+\[
+  s=\sup A.
+\]
+We will prove that \(ks\) is the infimum of
+\[
+  kA=\{ka:a\in A\}.
+\]
+Since \(k<0\), multiplying an inequality by \(k\) reverses its direction.
+
+First we prove that \(ks\) is a lower bound of \(kA\). Take any element of
+\(kA\). By the definition of \(kA\), it has the form \(ka\) for some
+\(a\in A\). Since \(s=\sup A\), \(s\) is an upper bound of \(A\), so
+\[
+  a\le s.
+\]
+Multiplying by the negative scalar \(k\) reverses the inequality:
+\[
+  ka\ge ks.
+\]
+Equivalently, \(ks\le ka\). Thus \(ks\) is less than or equal to every element
+of \(kA\), so \(ks\) is a lower bound of \(kA\).
+
+Next we prove that this lower bound is the greatest one. Let \(b\) be any
+lower bound of \(kA\). This means that \(b\) lies below every element \(ka\)
+with \(a\in A\):
+\[
+  b\le ka
+  \qquad(a\in A).
+\]
+Dividing by the negative number \(k\) reverses order, giving
+\[
+  \frac{b}{k}\ge a
+  \qquad(a\in A).
+\]
+So \(b/k\) is an upper bound of \(A\). Since \(s=\sup A\), \(s\) is less than
+or equal to every upper bound of \(A\). Applying this to the upper bound
+\(b/k\), we obtain
+\[
+  s\le \frac{b}{k}.
+\]
+Multiplying by \(k<0\) reverses the inequality once more:
+\[
+  ks\ge b.
+\]
+Equivalently,
+\[
+  b\le ks.
+\]
+
+We have shown that every lower bound \(b\) of \(kA\) lies below \(ks\).
+Together with the fact that \(ks\) is itself a lower bound of \(kA\), this
+proves that \(ks\) is the greatest lower bound of \(kA\). Therefore
+\[
+  \inf(kA)=ks=k\sup A.
+\]
 \end{proof}
 
 \begin{remark*}[Proof structure]
+Negative multiplication reverses order. The upper-bound fact \(a\le s\) for
+\(s=\sup A\) becomes the lower-bound fact \(ks\le ka\). To prove greatestness,
+translate an arbitrary lower bound \(b\) of \(kA\) back by dividing by
+\(k<0\); the reversed inequality makes \(b/k\) an upper bound of \(A\). The
+comparison \(s\le b/k\) then reverses back to \(b\le ks\).
 \end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
-  \item TODO: list mathematical dependencies.
+  \item \hyperref[def:displacement-dilation-reflection]{Displacement, Dilation, and Reflection}
+  \item \hyperref[def:lower-bound]{Lower Bound}
+  \item \hyperref[def:infimum]{Infimum}
+  \item \hyperref[def:supremum]{Supremum}
 \end{itemize}
 \end{dependencies}
 

@@ -18,20 +18,95 @@ Let $A\subseteq\mathbb{R}$ be nonempty and bounded above, and let $c\in\mathbb{R
 
 \begin{proof}[Professional Standard Proof]
 \LRAProofBodyStart
-TODO: professional standard proof for translation-invariance-supremum.
+Let \(s=\sup A\). Since \(A\) is nonempty, \(A+c\) is nonempty. For every
+\(a\in A\), the upper-bound property of \(s\) gives \(a\le s\), and therefore
+\[
+  a+c\le s+c.
+\]
+Thus \(s+c\) is an upper bound of \(A+c\).
+
+Now let \(v\) be any upper bound of \(A+c\). Then for every \(a\in A\),
+\[
+  a+c\le v,
+\]
+so \(a\le v-c\). Hence \(v-c\) is an upper bound of \(A\). Since \(s=\sup A\),
+the least-upper-bound property gives \(s\le v-c\), and therefore
+\[
+  s+c\le v.
+\]
+So \(s+c\) is less than or equal to every upper bound of \(A+c\). Since it is
+also an upper bound of \(A+c\), it is the supremum of \(A+c\). Hence
+\[
+  \sup(A+c)=s+c=\sup A+c.
+\]
 \end{proof}
 
 \begin{proof}[Detailed Learning Proof]
 \LRAProofBodyStart
-TODO: detailed learning proof for translation-invariance-supremum.
+Let
+\[
+  s=\sup A.
+\]
+We will prove that \(s+c\) is the supremum of the translated set
+\[
+  A+c=\{a+c:a\in A\}.
+\]
+To prove that a number is a supremum, we must prove two things: it is an upper
+bound, and it is the least among all upper bounds.
+
+First we prove the upper-bound part. Take any element of \(A+c\). By the
+definition of \(A+c\), it has the form \(a+c\) for some \(a\in A\). Since
+\(s=\sup A\), \(s\) is an upper bound of \(A\), so
+\[
+  a\le s.
+\]
+Adding \(c\) to both sides preserves the order, so
+\[
+  a+c\le s+c.
+\]
+Therefore every element of \(A+c\) is less than or equal to \(s+c\). Thus
+\(s+c\) is an upper bound of \(A+c\).
+
+Next we prove leastness. Let \(v\) be any upper bound of \(A+c\). This means
+that every translated element lies below \(v\): for every \(a\in A\),
+\[
+  a+c\le v.
+\]
+Subtracting \(c\) from both sides gives
+\[
+  a\le v-c
+\]
+for every \(a\in A\). Hence \(v-c\) is an upper bound of the original set
+\(A\). Because \(s=\sup A\), \(s\) is less than or equal to every upper bound
+of \(A\). Applying this to the upper bound \(v-c\), we get
+\[
+  s\le v-c.
+\]
+Adding \(c\) to both sides gives
+\[
+  s+c\le v.
+\]
+
+We have shown that every upper bound \(v\) of \(A+c\) lies above \(s+c\).
+Together with the fact that \(s+c\) is itself an upper bound of \(A+c\), this
+proves that \(s+c\) is the least upper bound of \(A+c\). Therefore
+\[
+  \sup(A+c)=s+c=\sup A+c.
+\]
 \end{proof}
 
 \begin{remark*}[Proof structure]
+Translate both pieces of the supremum definition. The upper-bound part moves
+from \(a\le s\) to \(a+c\le s+c\). The leastness part tests an arbitrary upper
+bound \(v\) of \(A+c\), translates it back to the upper bound \(v-c\) of
+\(A\), and then translates the comparison \(s\le v-c\) forward again.
 \end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
-  \item TODO: list mathematical dependencies.
+  \item \hyperref[def:set-arithmetic-images]{Set Arithmetic Images}
+  \item \hyperref[def:upper-bound]{Upper Bound}
+  \item \hyperref[def:supremum]{Supremum}
 \end{itemize}
 \end{dependencies}
 
