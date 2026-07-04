@@ -3,8 +3,8 @@
 Proof-writing order is dependency-first among active TODO proof labels, with the generated knowledge graph order used as the stable tie-breaker.
 Use `✅` to record completion after the canonical proof file has both proof bodies populated and validated.
 
-Open proofs to do: 465
-Completed in this tracker: 6
+Open proofs to do: 464
+Completed in this tracker: 7
 
 1. () `prop:little-o-quotient-characterization` — **Little-o Quotient Characterisation**
    > **Statement.**
@@ -407,7 +407,7 @@ Completed in this tracker: 6
    >  A-B=\{a-b:a\in A,\ b\in B\}.
    > \]
 
-61. () `thm:infimum-difference-set` — **Infimum of a Difference Set**
+61. (✅) `thm:infimum-difference-set` — **Infimum of a Difference Set**
    > **Statement.**
    > Let $A,B\subseteq\mathbb{R}$ be nonempty, with $A$ bounded below and $B$
    > bounded above. Then

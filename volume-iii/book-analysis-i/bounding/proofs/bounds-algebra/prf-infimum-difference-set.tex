@@ -8,27 +8,142 @@
 \end{remark*}
 
 \begin{theorem*}[Infimum of a Difference Set]
-For nonempty $A,B$, with $A$ bounded below and $B$ bounded above,
-$\inf(A-B)=\inf A-\sup B$.
+Let $A,B\subseteq\mathbb{R}$ be nonempty, with $A$ bounded below and $B$
+bounded above. Then
+\[
+  \inf(A-B)=\inf A-\sup B,
+  \qquad
+  A-B=\{a-b:a\in A,\ b\in B\}.
+\]
 \end{theorem*}
 
 \begin{proof}[Professional Standard Proof]
 \LRAProofBodyStart
-TODO: professional standard proof for infimum-difference-set.
+Let
+\[
+  i_A=\inf A
+  \qquad\text{and}\qquad
+  s_B=\sup B.
+\]
+For every $a\in A$ and $b\in B$, the definitions of infimum and supremum give
+\[
+  i_A\le a
+  \qquad\text{and}\qquad
+  b\le s_B.
+\]
+Hence $-s_B\le -b$, and therefore
+\[
+  i_A-s_B\le a-b.
+\]
+Thus $i_A-s_B$ is a lower bound for $A-B$.
+
+It remains to show that this lower bound is greatest. Let $\varepsilon>0$. By
+the epsilon characterization of the infimum, there exists $a_\varepsilon\in A$
+such that
+\[
+  a_\varepsilon<i_A+\frac{\varepsilon}{2}.
+\]
+By the epsilon characterization of the supremum, there exists
+$b_\varepsilon\in B$ such that
+\[
+  s_B-\frac{\varepsilon}{2}<b_\varepsilon.
+\]
+Subtracting the second estimate from the first gives
+\[
+  a_\varepsilon-b_\varepsilon
+  <
+  i_A-s_B+\varepsilon.
+\]
+Since $a_\varepsilon-b_\varepsilon\in A-B$, every positive epsilon produces an
+element of $A-B$ below $i_A-s_B+\varepsilon$. Together with the lower-bound
+property already proved, the epsilon characterization of the infimum gives
+\[
+  \inf(A-B)=i_A-s_B=\inf A-\sup B.
+\]
 \end{proof}
 
 \begin{proof}[Detailed Learning Proof]
 \LRAProofBodyStart
-TODO: detailed learning proof for infimum-difference-set.
+Set
+\[
+  i_A=\inf A
+  \qquad\text{and}\qquad
+  s_B=\sup B.
+\]
+We will prove that $i_A-s_B$ is the infimum of the difference set
+\[
+  A-B=\{a-b:a\in A,\ b\in B\}.
+\]
+That means we must prove two things: first, $i_A-s_B$ is a lower bound for
+$A-B$; second, elements of $A-B$ get arbitrarily close to that lower bound from
+above.
+
+For the lower-bound part, take any element of $A-B$. It has the form $a-b$,
+where $a\in A$ and $b\in B$. Since $i_A=\inf A$, every element of $A$ lies at
+or above $i_A$:
+\[
+  i_A\le a.
+\]
+Since $s_B=\sup B$, every element of $B$ lies at or below $s_B$:
+\[
+  b\le s_B.
+\]
+Multiplying the second inequality by $-1$ reverses it:
+\[
+  -s_B\le -b.
+\]
+Adding $i_A\le a$ and $-s_B\le -b$ gives
+\[
+  i_A-s_B\le a-b.
+\]
+So every element of $A-B$ is at least $i_A-s_B$, and $i_A-s_B$ is a lower
+bound for $A-B$.
+
+Now we prove that this lower bound is greatest. Let $\varepsilon>0$. Because
+$i_A$ is the infimum of $A$, there is some $a_\varepsilon\in A$ with
+\[
+  a_\varepsilon<i_A+\frac{\varepsilon}{2}.
+\]
+Because $s_B$ is the supremum of $B$, there is some $b_\varepsilon\in B$ with
+\[
+  s_B-\frac{\varepsilon}{2}<b_\varepsilon.
+\]
+The first choice puts $a_\varepsilon$ close to the bottom of $A$; the second
+puts $b_\varepsilon$ close to the top of $B$. Combining the two estimates gives
+\[
+  a_\varepsilon-b_\varepsilon
+  <
+  \left(i_A+\frac{\varepsilon}{2}\right)
+  -
+  \left(s_B-\frac{\varepsilon}{2}\right)
+  =
+  i_A-s_B+\varepsilon.
+\]
+Also $a_\varepsilon-b_\varepsilon\in A-B$ by definition of the difference set.
+Thus for every $\varepsilon>0$, the set $A-B$ contains an element less than
+$i_A-s_B+\varepsilon$, while $i_A-s_B$ remains a lower bound. This is exactly
+the epsilon characterization that $i_A-s_B$ is the infimum of $A-B$.
+Therefore
+\[
+  \inf(A-B)=\inf A-\sup B.
+\]
 \end{proof}
 
 \begin{remark*}[Proof structure]
+The lower-bound half combines $\inf A\le a$ with $-\sup B\le -b$. The
+greatestness half splits an arbitrary $\varepsilon$ into two halves, chooses
+$a_\varepsilon$ within $\varepsilon/2$ of $\inf A$ from above and
+$b_\varepsilon$ within $\varepsilon/2$ of $\sup B$ from below, and subtracts
+them to produce an element of $A-B$ within $\varepsilon$ of
+$\inf A-\sup B$.
 \end{remark*}
 
 \begin{dependencies}
-\begin{itemize}
-  \item TODO: list mathematical dependencies.
-\end{itemize}
+\hyperref[def:set-arithmetic-images]{Set Arithmetic Images};
+\hyperref[def:infimum]{Infimum};
+\hyperref[def:supremum]{Supremum};
+\hyperref[def:epsilon-characterization-of-infimum]{Epsilon Characterization of Infimum};
+\hyperref[def:epsilon-characterization-of-supremum]{Epsilon Characterization of Supremum}.
 \end{dependencies}
 
 \clearpage

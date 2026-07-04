@@ -18,21 +18,131 @@ Let $A,B\subseteq\mathbb{R}$ be nonempty, with $A$ bounded above and $B$ bounded
 
 \begin{proof}[Professional Standard Proof]
 \LRAProofBodyStart
-TODO: professional standard proof for supremum-difference-set.
+Let
+\[
+  s_A=\sup A
+  \qquad\text{and}\qquad
+  i_B=\inf B.
+\]
+For every $a\in A$ and $b\in B$, the definitions of supremum and infimum give
+\[
+  a\le s_A
+  \qquad\text{and}\qquad
+  i_B\le b.
+\]
+Hence $-b\le -i_B$, and therefore
+\[
+  a-b\le s_A-i_B.
+\]
+Thus $s_A-i_B$ is an upper bound for $A-B$.
+
+It remains to show that this upper bound is least. Let $\varepsilon>0$. By the
+epsilon characterization of the supremum, there exists $a_\varepsilon\in A$
+such that
+\[
+  s_A-\frac{\varepsilon}{2}<a_\varepsilon.
+\]
+By the epsilon characterization of the infimum, there exists
+$b_\varepsilon\in B$ such that
+\[
+  b_\varepsilon<i_B+\frac{\varepsilon}{2}.
+\]
+Subtracting the second estimate from the first gives
+\[
+  s_A-i_B-\varepsilon
+  <
+  a_\varepsilon-b_\varepsilon.
+\]
+Since $a_\varepsilon-b_\varepsilon\in A-B$, every positive epsilon produces an
+element of $A-B$ above $s_A-i_B-\varepsilon$. Together with the upper-bound
+property already proved, the epsilon characterization of the supremum gives
+\[
+  \sup(A-B)=s_A-i_B=\sup A-\inf B.
+\]
 \end{proof}
 
 \begin{proof}[Detailed Learning Proof]
 \LRAProofBodyStart
-TODO: detailed learning proof for supremum-difference-set.
+Set
+\[
+  s_A=\sup A
+  \qquad\text{and}\qquad
+  i_B=\inf B.
+\]
+We will prove that $s_A-i_B$ is the supremum of the difference set
+\[
+  A-B=\{a-b:a\in A,\ b\in B\}.
+\]
+That means we must prove two things: first, $s_A-i_B$ is an upper bound for
+$A-B$; second, elements of $A-B$ get arbitrarily close to that upper bound from
+below.
+
+For the upper-bound part, take any element of $A-B$. It has the form $a-b$,
+where $a\in A$ and $b\in B$. Since $s_A=\sup A$, every element of $A$ lies at
+or below $s_A$:
+\[
+  a\le s_A.
+\]
+Since $i_B=\inf B$, every element of $B$ lies at or above $i_B$:
+\[
+  i_B\le b.
+\]
+Multiplying the second inequality by $-1$ reverses it:
+\[
+  -b\le -i_B.
+\]
+Adding $a\le s_A$ and $-b\le -i_B$ gives
+\[
+  a-b\le s_A-i_B.
+\]
+So every element of $A-B$ is at most $s_A-i_B$, and $s_A-i_B$ is an upper bound
+for $A-B$.
+
+Now we prove that this upper bound is least. Let $\varepsilon>0$. Because
+$s_A$ is the supremum of $A$, there is some $a_\varepsilon\in A$ with
+\[
+  s_A-\frac{\varepsilon}{2}<a_\varepsilon.
+\]
+Because $i_B$ is the infimum of $B$, there is some $b_\varepsilon\in B$ with
+\[
+  b_\varepsilon<i_B+\frac{\varepsilon}{2}.
+\]
+The first choice puts $a_\varepsilon$ close to the top of $A$; the second puts
+$b_\varepsilon$ close to the bottom of $B$. Combining the two estimates gives
+\[
+  a_\varepsilon-b_\varepsilon
+  >
+  \left(s_A-\frac{\varepsilon}{2}\right)
+  -
+  \left(i_B+\frac{\varepsilon}{2}\right)
+  =
+  s_A-i_B-\varepsilon.
+\]
+Also $a_\varepsilon-b_\varepsilon\in A-B$ by definition of the difference set.
+Thus for every $\varepsilon>0$, the set $A-B$ contains an element greater than
+$s_A-i_B-\varepsilon$, while $s_A-i_B$ remains an upper bound. This is exactly
+the epsilon characterization that $s_A-i_B$ is the supremum of $A-B$.
+Therefore
+\[
+  \sup(A-B)=\sup A-\inf B.
+\]
 \end{proof}
 
 \begin{remark*}[Proof structure]
+The upper-bound half combines $a\le\sup A$ with $-b\le-\inf B$. The leastness
+half splits an arbitrary $\varepsilon$ into two halves, chooses
+$a_\varepsilon$ within $\varepsilon/2$ of $\sup A$ from below and
+$b_\varepsilon$ within $\varepsilon/2$ of $\inf B$ from above, and subtracts
+them to produce an element of $A-B$ within $\varepsilon$ of
+$\sup A-\inf B$.
 \end{remark*}
 
 \begin{dependencies}
-\begin{itemize}
-  \item TODO: list mathematical dependencies.
-\end{itemize}
+\hyperref[def:set-arithmetic-images]{Set Arithmetic Images};
+\hyperref[def:supremum]{Supremum};
+\hyperref[def:infimum]{Infimum};
+\hyperref[def:epsilon-characterization-of-supremum]{Epsilon Characterization of Supremum};
+\hyperref[def:epsilon-characterization-of-infimum]{Epsilon Characterization of Infimum}.
 \end{dependencies}
 
 \clearpage

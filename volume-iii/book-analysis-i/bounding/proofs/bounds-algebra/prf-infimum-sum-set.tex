@@ -13,15 +13,112 @@ For nonempty bounded-below sets $A,B$, $\inf(A+B)=\inf A+\inf B$.
 
 \begin{proof}[Professional Standard Proof]
 \LRAProofBodyStart
-TODO: professional standard proof for infimum-sum-set.
+Let
+\[
+t_A=\inf A
+\qquad\text{and}\qquad
+t_B=\inf B.
+\]
+For every $a\in A$ and $b\in B$, the lower-bound property gives
+\[
+t_A\le a
+\qquad\text{and}\qquad
+t_B\le b.
+\]
+Hence
+\[
+t_A+t_B\le a+b.
+\]
+Thus $t_A+t_B$ is a lower bound for $A+B$.
+
+It remains to show that this lower bound is sharp. Let $\varepsilon>0$. By
+the epsilon characterization of the infimum, there exist
+$a_\varepsilon\in A$ and $b_\varepsilon\in B$ such that
+\[
+t_A\le a_\varepsilon<t_A+\frac{\varepsilon}{2}
+\qquad\text{and}\qquad
+t_B\le b_\varepsilon<t_B+\frac{\varepsilon}{2}.
+\]
+Adding these inequalities gives
+\[
+t_A+t_B
+\le
+a_\varepsilon+b_\varepsilon
+<
+t_A+t_B+\varepsilon.
+\]
+Since $a_\varepsilon+b_\varepsilon\in A+B$, every positive epsilon places an
+element of $A+B$ below $t_A+t_B+\varepsilon$. Therefore, by the epsilon
+characterization of the infimum,
+\[
+\inf(A+B)=t_A+t_B=\inf A+\inf B.
+\]
 \end{proof}
 
 \begin{proof}[Detailed Learning Proof]
 \LRAProofBodyStart
-TODO: detailed learning proof for infimum-sum-set.
+Let
+\[
+t_A=\inf A
+\qquad\text{and}\qquad
+t_B=\inf B.
+\]
+We will prove that $t_A+t_B$ is the infimum of $A+B$. There are two parts:
+first prove that $t_A+t_B$ is a lower bound for the sum set, and then prove
+that it is the greatest lower bound.
+
+For the lower-bound part, take an arbitrary element of $A+B$. By definition
+of the sum set, it has the form $a+b$ with $a\in A$ and $b\in B$. Since
+$t_A=\inf A$, the number $t_A$ is a lower bound for $A$, so
+\[
+t_A\le a.
+\]
+Likewise, since $t_B=\inf B$, the number $t_B$ is a lower bound for $B$, so
+\[
+t_B\le b.
+\]
+Adding the two inequalities gives
+\[
+t_A+t_B\le a+b.
+\]
+Because this holds for every $a+b\in A+B$, the number $t_A+t_B$ is a lower
+bound for $A+B$.
+
+Now we prove that no larger lower bound is possible. Let $\varepsilon>0$.
+Since $t_A=\inf A$, the epsilon characterization of the infimum gives an
+element $a_\varepsilon\in A$ satisfying
+\[
+t_A\le a_\varepsilon<t_A+\frac{\varepsilon}{2}.
+\]
+Similarly, since $t_B=\inf B$, there is an element
+$b_\varepsilon\in B$ such that
+\[
+t_B\le b_\varepsilon<t_B+\frac{\varepsilon}{2}.
+\]
+Adding these two estimates yields
+\[
+t_A+t_B
+\le
+a_\varepsilon+b_\varepsilon
+<
+t_A+t_B+\varepsilon.
+\]
+The element $a_\varepsilon+b_\varepsilon$ belongs to $A+B$. Thus for every
+$\varepsilon>0$, the sum set contains an element less than
+$t_A+t_B+\varepsilon$ while $t_A+t_B$ remains a lower bound. This is exactly
+the epsilon characterization that $t_A+t_B$ is the infimum of $A+B$.
+Therefore
+\[
+\inf(A+B)=\inf A+\inf B.
+\]
 \end{proof}
 
 \begin{remark*}[Proof structure]
+The lower-bound half comes from adding $\inf A\le a$ and $\inf B\le b$. The
+greatestness half splits an arbitrary $\varepsilon$ into two halves, chooses
+$a_\varepsilon$ and $b_\varepsilon$ within those errors above the separate
+infima, and then adds them to produce an element of $A+B$ within
+$\varepsilon$ above $\inf A+\inf B$.
 \end{remark*}
 
 \begin{dependencies}
