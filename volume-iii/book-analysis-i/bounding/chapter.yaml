@@ -253,6 +253,31 @@ environments:
   file: notes\completeness\notes-axiom-of-completess.tex
   display_title: Completeness of $\mathbb{R}$
   proof_file: null
+- label: thm:lub-property-implies-monotone-convergence
+  type: thm
+  file: notes\completeness\notes-completeness-equivalences.tex
+  display_title: Least Upper Bound Property Implies Monotone Convergence
+  proof_file: proofs\completeness\prf-lub-property-implies-monotone-convergence.tex
+- label: thm:monotone-convergence-implies-lub-property
+  type: thm
+  file: notes\completeness\notes-completeness-equivalences.tex
+  display_title: Monotone Convergence Implies Least Upper Bound Property
+  proof_file: proofs\completeness\prf-monotone-convergence-implies-lub-property.tex
+- label: thm:lub-property-equivalent-monotone-convergence
+  type: thm
+  file: notes\completeness\notes-completeness-equivalences.tex
+  display_title: Least Upper Bound Property Equivalent to Monotone Convergence
+  proof_file: proofs\completeness\prf-lub-property-equivalent-monotone-convergence.tex
+- label: thm:lub-property-equivalent-nested-interval-property
+  type: thm
+  file: notes\completeness\notes-completeness-equivalences.tex
+  display_title: Least Upper Bound Property Equivalent to Nested Intervals
+  proof_file: proofs\completeness\prf-lub-property-equivalent-nested-interval-property.tex
+- label: thm:standard-completeness-equivalences
+  type: thm
+  file: notes\completeness\notes-completeness-equivalences.tex
+  display_title: Standard Completeness Equivalences
+  proof_file: proofs\completeness\prf-standard-completeness-equivalences.tex
 - label: thm:order-separation-by-supremum
   type: thm
   file: notes\completeness\notes-order-separation.tex

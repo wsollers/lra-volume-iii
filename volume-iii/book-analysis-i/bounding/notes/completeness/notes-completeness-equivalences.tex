@@ -1,0 +1,154 @@
+% =========================================================
+% Completeness Equivalences
+% =========================================================
+
+\begin{remark*}[The same gap-free principle]
+The least upper bound property is the order form of completeness. The
+Monotone Convergence Theorem, the Nested Interval Property, the
+Bolzano--Weierstrass theorem, and the Cauchy criterion are sequential and
+interval forms of the same gap-free principle.
+\end{remark*}
+
+\begin{theorembox}{Theorem (Least Upper Bound Property Implies Monotone Convergence)}
+\begin{theorem}[Least Upper Bound Property Implies Monotone Convergence]
+\label{thm:lub-property-implies-monotone-convergence}
+Assume the ordered field $\mathbb{R}$ has the least upper bound property. Then
+every bounded monotone real sequence converges.
+
+\smallskip
+\noindent
+\hyperref[prf:lub-property-implies-monotone-convergence]{\textit{Go to proof.}}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{LeastUpperBoundProperty}(\mathbb{R})
+\Longrightarrow
+\forall (x_n)\subseteq\mathbb{R}\;
+\bigl(
+  \operatorname{MonotoneSequence}(x_n)
+  \land
+  \operatorname{BoundedSequence}(x_n)
+  \rightarrow
+  \operatorname{ConvergentSequence}(x_n)
+\bigr).
+\]
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:least-upper-bound-property]{Least Upper Bound Property}
+  \item \hyperref[thm:monotone-convergence-theorem]{Monotone Convergence Theorem}
+  \item \hyperref[def:monotone-sequence]{Monotone Sequence}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Monotone Convergence Implies Least Upper Bound Property)}
+\begin{theorem}[Monotone Convergence Implies Least Upper Bound Property]
+\label{thm:monotone-convergence-implies-lub-property}
+Assume every bounded monotone real sequence converges. Then $\mathbb{R}$ has
+the least upper bound property.
+
+\smallskip
+\noindent
+\hyperref[prf:monotone-convergence-implies-lub-property]{\textit{Go to proof.}}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Proof idea]
+Starting from a nonempty set $A\subseteq\mathbb{R}$ bounded above, choose an
+element of $A$ and an upper bound. Bisect the bracket. Keep the upper endpoint
+when the midpoint is still an upper bound; otherwise keep the midpoint as a
+new lower endpoint. The two endpoint sequences are bounded and monotone, so
+monotone convergence produces a common limiting boundary, which is the
+supremum of $A$.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:least-upper-bound-property]{Least Upper Bound Property}
+  \item \hyperref[def:supremum]{Supremum}
+  \item \hyperref[thm:monotone-convergence-theorem]{Monotone Convergence Theorem}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Least Upper Bound Property Equivalent to Monotone Convergence)}
+\begin{theorem}[Least Upper Bound Property Equivalent to Monotone Convergence]
+\label{thm:lub-property-equivalent-monotone-convergence}
+Over the Archimedean ordered field axioms, the following are equivalent:
+\begin{enumerate}[label=(\roman*)]
+  \item $\mathbb{R}$ has the least upper bound property.
+  \item Every bounded monotone real sequence converges.
+\end{enumerate}
+
+\smallskip
+\noindent
+\hyperref[prf:lub-property-equivalent-monotone-convergence]{\textit{Go to proof.}}
+\end{theorem}
+\end{theorembox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:lub-property-implies-monotone-convergence]{Least Upper Bound Property Implies Monotone Convergence}
+  \item \hyperref[thm:monotone-convergence-implies-lub-property]{Monotone Convergence Implies Least Upper Bound Property}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Least Upper Bound Property Equivalent to Nested Intervals)}
+\begin{theorem}[Least Upper Bound Property Equivalent to Nested Intervals]
+\label{thm:lub-property-equivalent-nested-interval-property}
+Over the Archimedean ordered field axioms, the following are equivalent:
+\begin{enumerate}[label=(\roman*)]
+  \item $\mathbb{R}$ has the least upper bound property.
+  \item Every nested sequence of nonempty closed bounded intervals in
+        $\mathbb{R}$ has nonempty intersection.
+\end{enumerate}
+
+\smallskip
+\noindent
+\hyperref[prf:lub-property-equivalent-nested-interval-property]{\textit{Go to proof.}}
+\end{theorem}
+\end{theorembox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:least-upper-bound-property]{Least Upper Bound Property}
+  \item \hyperref[thm:nested-interval-theorem]{Nested Interval Theorem}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Standard Completeness Equivalences)}
+\begin{theorem}[Standard Completeness Equivalences]
+\label{thm:standard-completeness-equivalences}
+Over the Archimedean ordered field axioms, the following are equivalent:
+\begin{enumerate}[label=(\roman*)]
+  \item $\mathbb{R}$ has the least upper bound property.
+  \item Every bounded monotone real sequence converges.
+  \item Every nested sequence of nonempty closed bounded intervals in
+        $\mathbb{R}$ has nonempty intersection.
+  \item Every bounded real sequence has a convergent subsequence.
+  \item Every Cauchy sequence in $\mathbb{R}$ converges.
+\end{enumerate}
+
+\smallskip
+\noindent
+\hyperref[prf:standard-completeness-equivalences]{\textit{Go to proof.}}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[How to read the equivalence]
+The first statement is the order version. The second and fifth are sequence
+versions. The third is the interval version. The fourth is the compactness
+version for bounded sequences.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:least-upper-bound-property]{Least Upper Bound Property}
+  \item \hyperref[thm:monotone-convergence-theorem]{Monotone Convergence Theorem}
+  \item \hyperref[thm:nested-interval-theorem]{Nested Interval Theorem}
+  \item \hyperref[thm:bolzano-weierstrass-sequences]{Bolzano--Weierstrass Theorem for Sequences}
+  \item \hyperref[thm:cauchy-criterion-real-sequences]{Cauchy Criterion for Real Sequences}
+\end{itemize}
+\end{dependencies}
