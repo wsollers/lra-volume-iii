@@ -80,6 +80,12 @@ Equivalently,
 \end{definition}
 \end{definitionbox}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:interval-partition]{Interval Partition}
+\end{itemize}
+\end{dependencies}
+
 \begin{definitionbox}{Definition (Subinterval Width)}
 \begin{definition}[Subinterval Width]
 \label{def:subinterval-width-integration}
@@ -89,6 +95,12 @@ The \(i\)-th slab has width
 \]
 \end{definition}
 \end{definitionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:integration-partition]{Partition of a Compact Interval}
+\end{itemize}
+\end{dependencies}
 
 \begin{definitionbox}{Definition (Mesh)}
 \begin{definition}[Mesh of a Partition]
@@ -105,6 +117,14 @@ The mesh is the resolution dial. The phrase ``as the partition is refined''
 will usually mean that \(\|P\|\to 0\): no slab is allowed to remain fat.
 \end{remark*}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:integration-partition]{Partition of a Compact Interval}
+  \item \hyperref[def:subinterval-width-integration]{Subinterval Width}
+  \item \hyperref[def:maximum]{Maximum}
+\end{itemize}
+\end{dependencies}
+
 \begin{definitionbox}{Definition (Tagged Partition)}
 \begin{definition}[Tagged Partition]
 \label{def:tagged-partition-integration}
@@ -114,6 +134,12 @@ with points \(\xi_i\in[x_{i-1},x_i]\). The tag is the point where the height
 \end{definition}
 \end{definitionbox}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:integration-partition]{Partition of a Compact Interval}
+\end{itemize}
+\end{dependencies}
+
 \begin{definitionbox}{Definition (Refinement)}
 \begin{definition}[Refinement of a Partition]
 \label{def:partition-refinement}
@@ -122,11 +148,18 @@ cut-points; it does not move or delete existing cut-points.
 \end{definition}
 \end{definitionbox}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:integration-partition]{Partition of a Compact Interval}
+\end{itemize}
+\end{dependencies}
+
 \begin{lemmabox}{Lemma (Common Refinement)}
 \begin{lemma}[Common Refinement of Two Partitions]
 \label{lem:common-refinement-partitions}
 Any two partitions \(P\) and \(P'\) of \([a,b]\) have a common refinement:
 order the finite set \(P\cup P'\) increasingly.
+\hyperref[prf:common-refinement-partitions]{\textit{Go to proof.}}
 \end{lemma}
 \end{lemmabox}
 
@@ -135,3 +168,10 @@ This small fact is the reason independently chosen partitions can be compared.
 Whenever a proof says ``refine them together,'' it is using this lemma. It is
 the structural engine behind Cauchy's existence proof and Darboux's squeeze.
 \end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:integration-partition]{Partition of a Compact Interval}
+  \item \hyperref[def:partition-refinement]{Refinement of a Partition}
+\end{itemize}
+\end{dependencies}

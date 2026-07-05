@@ -83,6 +83,13 @@ The first clause is a domain failure.  The second is a bound failure.  The
 third is a sharpness failure witnessed by a strictly smaller upper bound.
 \end{remark*}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:upper-bound]{Upper Bound}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+\end{itemize}
+\end{dependencies}
+
 \begin{definitionbox}{Infimum}
 \begin{definition}[Infimum]
 \label{def:infimum}
@@ -146,6 +153,13 @@ The first clause is a domain failure.  The second is a bound failure.  The
 third is a sharpness failure witnessed by a strictly larger lower bound.
 \end{remark*}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:lower-bound]{Lower Bound}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+\end{itemize}
+\end{dependencies}
+
 \begin{propositionbox}{Uniqueness of the Supremum}
 \begin{proposition}[Uniqueness of the Supremum]
 \label{prop:uniqueness-of-the-supremum}
@@ -205,11 +219,19 @@ applying these minimality clauses to the other candidate gives both
 $s\leq t$ and $t\leq s$.
 \end{remark*}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:supremum]{Supremum}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+\end{itemize}
+\end{dependencies}
+
 \begin{propositionbox}{Uniqueness of the Infimum}
 \begin{proposition}[Uniqueness of the Infimum]
 \label{prop:uniqueness-of-the-infimum}
 Let $(S,\leq)$ be an ordered set and let $A\subseteq S$ be nonempty.  If
 $i,j\in S$ are both infima of $A$, then $i=j$.
+\hyperref[prf:uniqueness-of-the-infimum]{\textit{Go to proof.}}
 \end{proposition}
 \end{propositionbox}
 
@@ -262,6 +284,13 @@ applying these maximality clauses to the other candidate gives both
 $i\leq j$ and $j\leq i$.
 \end{remark*}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:infimum]{Infimum}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+\end{itemize}
+\end{dependencies}
+
 \begin{propositionbox}{Upper Bound Property of the Supremum}
 \begin{proposition}[Upper Bound Property of the Supremum]
 \label{prop:upper-bound-property-of-supremum}
@@ -299,6 +328,12 @@ Failure would mean that a supremum is not an upper bound.
 This is exactly the first clause in the definition of supremum.
 \end{remark*}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:supremum]{Supremum}
+\end{itemize}
+\end{dependencies}
+
 \begin{propositionbox}{Lower Bound Property of the Infimum}
 \begin{proposition}[Lower Bound Property of the Infimum]
 \label{prop:lower-bound-property-of-infimum}
@@ -308,6 +343,7 @@ above $i$:
 \[
   (\forall x\in A)(i\leq x).
 \]
+\hyperref[prf:lower-bound-property-of-infimum]{\textit{Go to proof.}}
 \end{proposition}
 \end{propositionbox}
 
@@ -333,6 +369,12 @@ Failure would mean that an infimum is not a lower bound.
 \begin{remark*}[Failure mode decomposition]
 This is exactly the first clause in the definition of infimum.
 \end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:infimum]{Infimum}
+\end{itemize}
+\end{dependencies}
 
 \begin{lemmabox}{Subset Inclusion Preserves Upper Bounds}
 \begin{lemma}[Subset Inclusion Preserves Upper Bounds]
@@ -379,12 +421,20 @@ Any counterexample $x\in A$ is also an element of $B$, contradicting the
 upper-bound hypothesis for $B$.
 \end{remark*}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:upper-bound]{Upper Bound}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+\end{itemize}
+\end{dependencies}
+
 \begin{lemmabox}{Subset Inclusion Preserves Lower Bounds}
 \begin{lemma}[Subset Inclusion Preserves Lower Bounds]
 \label{lem:subset-inclusion-preserves-lower-bounds}
 Let $A\subseteq B\subseteq S$ be nonempty subsets of an ordered set
 $(S,\leq)$.  If $\ell$ is a lower bound of $B$, then $\ell$ is a lower
 bound of $A$.
+\hyperref[prf:subset-inclusion-preserves-lower-bounds]{\textit{Go to proof.}}
 \end{lemma}
 \end{lemmabox}
 
@@ -421,6 +471,13 @@ already works on the larger set.
 Any counterexample $x\in A$ lies in $B$, contradicting the lower-bound
 hypothesis for $B$.
 \end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:lower-bound]{Lower Bound}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+\end{itemize}
+\end{dependencies}
 
 \begin{theorembox}{Supremum Is Monotone Under Inclusion}
 \begin{theorem}[Supremum Is Monotone Under Inclusion]
@@ -465,11 +522,19 @@ The value $\sup B$ bounds $B$, hence bounds $A$; since $\sup A$ is least
 among upper bounds of $A$, $\sup A\leq\sup B$.
 \end{remark*}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:supremum]{Supremum}
+  \item \hyperref[lem:subset-inclusion-preserves-upper-bounds]{Subset Inclusion Preserves Upper Bounds}
+\end{itemize}
+\end{dependencies}
+
 \begin{theorembox}{Infimum Is Monotone Under Inclusion}
 \begin{theorem}[Infimum Is Monotone Under Inclusion]
 \label{thm:infimum-is-monotone-under-inclusion}
 Let $A,B\subseteq\mathbb{R}$ be nonempty and bounded below.  If
 $A\subseteq B$, then $\inf B\leq\inf A$.
+\hyperref[prf:infimum-is-monotone-under-inclusion]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
 
@@ -506,6 +571,13 @@ bound.
 The value $\inf B$ bounds $B$ below, hence bounds $A$ below; since
 $\inf A$ is greatest among lower bounds of $A$, $\inf B\leq\inf A$.
 \end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:infimum]{Infimum}
+  \item \hyperref[lem:subset-inclusion-preserves-lower-bounds]{Subset Inclusion Preserves Lower Bounds}
+\end{itemize}
+\end{dependencies}
 
 \begin{propositionbox}{Upper Bound Comparison with the Supremum}
 \begin{proposition}[Upper Bound Comparison with the Supremum]
@@ -553,12 +625,20 @@ Leastness gives the forward implication.  The fact that $s$ bounds $A$
 gives the reverse implication by transitivity.
 \end{remark*}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:supremum]{Supremum}
+  \item \hyperref[def:upper-bound]{Upper Bound}
+\end{itemize}
+\end{dependencies}
+
 \begin{propositionbox}{Lower Bound Comparison with the Infimum}
 \begin{proposition}[Lower Bound Comparison with the Infimum]
 \label{prop:lower-bound-comparison-with-the-infimum}
 Let $A\subseteq\mathbb{R}$ be nonempty and bounded below, and let
 $i=\inf A$.  For $\ell\in\mathbb{R}$, the number $\ell$ is a lower bound
 of $A$ if and only if $\ell\leq i$.
+\hyperref[prf:lower-bound-comparison-with-the-infimum]{\textit{Go to proof.}}
 \end{proposition}
 \end{propositionbox}
 
@@ -596,6 +676,13 @@ infimum that fails to bound the set below.
 Greatestness gives the forward implication.  The fact that $i$ bounds
 $A$ below gives the reverse implication by transitivity.
 \end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:infimum]{Infimum}
+  \item \hyperref[def:lower-bound]{Lower Bound}
+\end{itemize}
+\end{dependencies}
 
 \begin{propositionbox}{Every Element Lies Below the Supremum}
 \begin{proposition}[Every Element Lies Below the Supremum]
@@ -635,11 +722,18 @@ Failure would mean the supremum is not an upper bound.
 This is the upper-bound clause in the definition of supremum.
 \end{remark*}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:supremum]{Supremum}
+\end{itemize}
+\end{dependencies}
+
 \begin{propositionbox}{Every Element Lies Above the Infimum}
 \begin{proposition}[Every Element Lies Above the Infimum]
 \label{prop:every-element-lies-above-the-infimum}
 Let $A\subseteq\mathbb{R}$ be nonempty and bounded below, and let
 $i=\inf A$.  Then $i\leq x$ for every $x\in A$.
+\hyperref[prf:every-element-lies-above-the-infimum]{\textit{Go to proof.}}
 \end{proposition}
 \end{propositionbox}
 
@@ -670,6 +764,12 @@ Failure would mean the infimum is not a lower bound.
 \begin{remark*}[Failure mode decomposition]
 This is the lower-bound clause in the definition of infimum.
 \end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:infimum]{Infimum}
+\end{itemize}
+\end{dependencies}
 
 \begin{theorembox}{Infimum Is Less Than or Equal to the Supremum}
 \begin{theorem}[Infimum Is Less Than or Equal to the Supremum]
@@ -714,6 +814,13 @@ bound of the same nonempty set.
 Choose $a\in A$.  Then $i\leq a$ because $i$ is a lower bound, and
 $a\leq s$ because $s$ is an upper bound.
 \end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:infimum]{Infimum}
+  \item \hyperref[def:supremum]{Supremum}
+\end{itemize}
+\end{dependencies}
 
 \begin{propositionbox}{Proposition (Supremum Need Not Belong to the Set)}
 \begin{proposition}[Supremum Need Not Belong to the Set]\label{prop:supremum-need-not-belong-to-the-set}
@@ -794,12 +901,20 @@ Every element of $B$ lies below $\sup B$, so every element of $A$ also
 lies below $\sup B$.  Thus $\sup B$ is an upper bound for $A$.
 \end{remark*}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:supremum]{Supremum}
+  \item \hyperref[prop:every-element-lies-below-the-supremum]{Every Element Lies Below the Supremum}
+\end{itemize}
+\end{dependencies}
+
 \begin{theorembox}{Least Upper Bound Property Implies Existence of Suprema}
 \begin{theorem}[Least Upper Bound Property Implies Existence of Suprema]
 \label{thm:lub-property-implies-existence-of-suprema}
 Let $S\subseteq\mathbb{R}$ be nonempty and bounded above.  By the least
 upper bound property of the real numbers, there exists a real number
 $s$ such that $s=\sup S$.
+\hyperref[prf:lub-property-implies-existence-of-suprema]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
 
@@ -841,11 +956,19 @@ The hypotheses separate domain nonemptiness from one-sided boundedness.
 The conclusion asserts existence of the sharp upper bound.
 \end{remark*}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:supremum]{Supremum}
+  \item \hyperref[def:upper-bound]{Upper Bound}
+\end{itemize}
+\end{dependencies}
+
 \begin{theorembox}{Greatest Lower Bound Property Implies Existence of Infima}
 \begin{theorem}[Greatest Lower Bound Property Implies Existence of Infima]
 \label{thm:glb-property-implies-existence-of-infima}
 Let $S\subseteq\mathbb{R}$ be nonempty and bounded below.  Then there
 exists a real number $i$ such that $i=\inf S$.
+\hyperref[prf:glb-property-implies-existence-of-infima]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
 
@@ -885,3 +1008,10 @@ bounded below.
 Apply the least upper bound property to $-S$ or argue by the order-dual
 form of completeness.
 \end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:infimum]{Infimum}
+  \item \hyperref[def:lower-bound]{Lower Bound}
+\end{itemize}
+\end{dependencies}

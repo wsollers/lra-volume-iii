@@ -1,0 +1,82 @@
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[atlas, x=1cm, y=1cm, >=Latex]
+  \begin{scope}
+    \node[atlas label, align=center] at (2.75,1.15)
+      {\textbf{Case 1:} $0<\inf A$};
+
+    \draw[atlas axes] (-0.25,0) -- (5.8,0) node[right, atlas label] {$a$};
+    \draw[atlas axes] (-0.25,-1.55) -- (5.8,-1.55)
+      node[right, atlas label] {$1/a$};
+
+    \draw[atlas curve, atlasblue, line width=2.4pt] (1.3,0) -- (4.6,0);
+    \node[atlas dot, fill=atlasred] (pi) at (1.3,0) {};
+    \node[atlas dot, fill=atlasgold] (pa) at (1.85,0) {};
+    \node[atlas dot, fill=atlasgray] (ps) at (4.6,0) {};
+    \node[atlas label, below=4pt] at (pi) {$i=\inf A$};
+    \node[atlas label, above=4pt] at (pa) {$a_\varepsilon$};
+    \node[atlas label, below=4pt] at (ps) {$s$};
+
+    \draw[dropline] (pi) -- (1.3,-1.55);
+    \draw[dropline] (pa) -- (4.05,-1.55);
+    \draw[atlas probe, atlasgold, -{Stealth[length=4pt,width=3pt]}]
+      (pa) -- (1.42,0);
+    \node[atlas label, above] at (2.9,0.42)
+      {\footnotesize $a_\varepsilon\downarrow i$};
+
+    \draw[atlas curve, atlasgreen, line width=2.4pt] (2.05,-1.55) -- (4.6,-1.55);
+    \node[atlas dot, fill=atlasgold] (pra) at (4.05,-1.55) {};
+    \node[atlas dot, fill=atlasred] (pri) at (4.6,-1.55) {};
+    \node[atlas label, below=4pt] at (pra) {$1/a_\varepsilon$};
+    \node[atlas label, below=4pt] at (pri) {$1/i$};
+
+    \draw[atlas probe, atlasred, <->] (4.05,-2.08) -- (4.6,-2.08);
+    \node[atlas label, below, align=center] at (4.325,-2.12)
+      {\footnotesize $1/i-\varepsilon<1/a_\varepsilon\le 1/i$};
+    \draw[atlas probe, atlasgold, -{Stealth[length=4pt,width=3pt]}]
+      (pra) -- (4.52,-1.55);
+  \end{scope}
+
+  \begin{scope}[yshift=-4.45cm]
+    \node[atlas label, align=center] at (2.75,1.15)
+      {\textbf{Case 2:} $\sup A<0$};
+
+    \draw[atlas axes] (-0.25,0) -- (5.8,0) node[right, atlas label] {$a$};
+    \draw[atlas axes] (-0.25,-1.55) -- (5.8,-1.55)
+      node[right, atlas label] {$1/a$};
+
+    \draw[atlas curve, atlasblue, line width=2.4pt] (1.0,0) -- (4.25,0);
+    \node[atlas dot, fill=atlasred] (ni) at (1.0,0) {};
+    \node[atlas dot, fill=atlasgold] (na) at (1.55,0) {};
+    \node[atlas dot, fill=atlasgray] (ns) at (4.25,0) {};
+    \node[atlas label, below=4pt] at (ni) {$i=\inf A$};
+    \node[atlas label, above=4pt] at (na) {$a_\varepsilon$};
+    \node[atlas label, below=4pt] at (ns) {$s=\sup A<0$};
+    \node[atlas label, below=4pt] at (5.0,0) {$0$};
+
+    \draw[dropline] (ni) -- (4.6,-1.55);
+    \draw[dropline] (na) -- (4.05,-1.55);
+    \draw[atlas probe, atlasgold, -{Stealth[length=4pt,width=3pt]}]
+      (na) -- (1.12,0);
+    \node[atlas label, above] at (2.85,0.42)
+      {\footnotesize $i<a_\varepsilon\le s<0,\quad a_\varepsilon\downarrow i$};
+
+    \draw[atlas curve, atlasgreen, line width=2.4pt] (2.05,-1.55) -- (4.6,-1.55);
+    \node[atlas dot, fill=atlasgold] (nra) at (4.05,-1.55) {};
+    \node[atlas dot, fill=atlasred] (nri) at (4.6,-1.55) {};
+    \node[atlas label, below=4pt] at (nra) {$1/a_\varepsilon$};
+    \node[atlas label, below=4pt] at (nri) {$1/i$};
+
+    \draw[atlas probe, atlasred, <->] (4.05,-2.08) -- (4.6,-2.08);
+    \node[atlas label, below, align=center] at (4.325,-2.12)
+      {\footnotesize $1/i-\varepsilon<1/a_\varepsilon\le 1/i$};
+    \draw[atlas probe, atlasgold, -{Stealth[length=4pt,width=3pt]}]
+      (nra) -- (4.52,-1.55);
+  \end{scope}
+\end{tikzpicture}
+\caption{Reciprocal supremum approximation. In both sign-separated cases,
+points of $A$ chosen arbitrarily close to $\inf A$ from above yield reciprocal
+points arbitrarily close to $1/\inf A$ from below, so $1/\inf A$ is the
+supremum of $A^{-1}$.}
+\label{fig:supremum-reciprocal-set}
+\end{figure}

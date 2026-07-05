@@ -75,6 +75,12 @@ $A$ is strictly smaller than $b$.  Failure to be any bound requires both
 witnesses.
 \end{remark*}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+\end{itemize}
+\end{dependencies}
+
 \begin{definitionbox}{Upper Bound}
 \begin{definition}[Upper Bound]
 \label{def:upper-bound}
@@ -126,6 +132,12 @@ To disprove that $u$ is an upper bound, produce either the structural
 failure $A=\varnothing$ or a witness $x\in A$ with $u<x$.
 \end{remark*}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:bound]{Bound}
+\end{itemize}
+\end{dependencies}
+
 \begin{definitionbox}{Lower Bound}
 \begin{definition}[Lower Bound]
 \label{def:lower-bound}
@@ -176,6 +188,12 @@ below the proposed bound.
 To disprove that $\ell$ is a lower bound, produce either the structural
 failure $A=\varnothing$ or a witness $x\in A$ with $x<\ell$.
 \end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:bound]{Bound}
+\end{itemize}
+\end{dependencies}
 
 \begin{definitionbox}{Bounded Above}
 \begin{definition}[Bounded Above]
@@ -229,6 +247,12 @@ Unboundedness above is not one failed candidate; it is a uniform
 procedure that defeats every candidate $u\in S$.
 \end{remark*}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:upper-bound]{Upper Bound}
+\end{itemize}
+\end{dependencies}
+
 \begin{definitionbox}{Bounded Below}
 \begin{definition}[Bounded Below]
 \label{def:bounded-below}
@@ -279,6 +303,12 @@ some smaller element of $A$.
 \begin{remark*}[Failure mode decomposition]
 Unboundedness below is a uniform defeat of all lower-bound candidates.
 \end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:lower-bound]{Lower Bound}
+\end{itemize}
+\end{dependencies}
 
 \begin{definitionbox}{Bounded Set}
 \begin{definition}[Bounded Set]
@@ -334,3 +364,10 @@ The set may be empty, unbounded below, unbounded above, or both.
 Boundedness has two independent one-sided requirements.  A failure on
 either side is enough to destroy boundedness.
 \end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:bounded-above]{Bounded Above}
+  \item \hyperref[def:bounded-below]{Bounded Below}
+\end{itemize}
+\end{dependencies}

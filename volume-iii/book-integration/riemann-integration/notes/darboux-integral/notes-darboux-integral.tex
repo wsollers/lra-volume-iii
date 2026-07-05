@@ -29,6 +29,14 @@ and define
 \end{definition}
 \end{definitionbox}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:supremum]{Supremum}
+  \item \hyperref[def:infimum]{Infimum}
+  \item \hyperref[def:integration-partition]{Integration Partition}
+\end{itemize}
+\end{dependencies}
+
 \begin{lemmabox}{Lemma (Monotonicity Under Refinement)}
 \begin{lemma}[Darboux Sums Under Refinement]
 \label{lem:darboux-refinement-squeeze}
@@ -36,6 +44,7 @@ If \(P'\) refines \(P\), then
 \[
   L(f,P)\le L(f,P')\le U(f,P')\le U(f,P).
 \]
+\hyperref[prf:darboux-refinement-squeeze]{\textit{Go to proof.}}
 \end{lemma}
 \end{lemmabox}
 
@@ -53,6 +62,13 @@ greater than or equal to the supremum over each piece, so the upper
 contribution falls.
 \end{remark*}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:darboux-sums]{Darboux Sums}
+  \item \hyperref[def:partition-refinement]{Partition Refinement}
+\end{itemize}
+\end{dependencies}
+
 \begin{definitionbox}{Definition (Darboux Integrability)}
 \begin{definition}[Darboux Integrability]
 \label{def:darboux-integrability}
@@ -65,7 +81,16 @@ The function \(f\) is \emph{Darboux-integrable} if \(\underline I=\overline I\).
 \end{definition}
 \end{definitionbox}
 
-\begin{theorembox}{Theorem (Darboux Criterion)}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:darboux-sums]{Darboux Sums}
+  \item \hyperref[def:supremum]{Supremum}
+  \item \hyperref[def:infimum]{Infimum}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theore
+m (Darboux Criterion)}
 \begin{theorem}[Darboux Criterion]
 \label{thm:darboux-criterion}
 A bounded function \(f\) is Darboux-integrable if and only if for every
@@ -73,6 +98,7 @@ A bounded function \(f\) is Darboux-integrable if and only if for every
 \[
   U(f,P)-L(f,P)<\varepsilon.
 \]
+\hyperref[prf:darboux-criterion]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
 
@@ -84,6 +110,13 @@ tags by \(\inf\) and \(\sup\) turns integrability into the checkable
 \(U-L\) squeeze.
 \end{remark*}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:darboux-integrability]{Darboux Integrability}
+  \item \hyperref[def:darboux-sums]{Darboux Sums}
+\end{itemize}
+\end{dependencies}
+
 \input{tex/figures/integration-atlas}
 
 \subsection*{Relation to Riemann Integration}
@@ -93,8 +126,16 @@ tags by \(\inf\) and \(\sup\) turns integrability into the checkable
 \label{thm:riemann-darboux-equivalence}
 For bounded functions on \([a,b]\), Riemann integrability and Darboux
 integrability are equivalent, and the integral values agree.
+\hyperref[prf:riemann-darboux-equivalence]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:riemann-integral]{Riemann Integral}
+  \item \hyperref[def:darboux-integrability]{Darboux Integrability}
+\end{itemize}
+\end{dependencies}
 
 \subsection*{Worked Positive Examples}
 
@@ -102,13 +143,21 @@ integrability are equivalent, and the integral values agree.
 \begin{theorem}[Continuous Functions Are Darboux-Integrable]
 \label{thm:continuous-darboux-integrable}
 Every continuous function \(f:[a,b]\to\mathbb R\) is Darboux-integrable.
+\hyperref[prf:continuous-darboux-integrable]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:darboux-integrability]{Darboux Integrability}
+\end{itemize}
+\end{dependencies}
 
 \begin{theorembox}{Theorem (Monotone Functions Are Integrable)}
 \begin{theorem}[Monotone Functions Are Darboux-Integrable]
 \label{thm:monotone-darboux-integrable}
 Every monotone function \(f:[a,b]\to\mathbb R\) is Darboux-integrable.
+\hyperref[prf:monotone-darboux-integrable]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
 
@@ -120,16 +169,25 @@ telescope over the partition. Equal-width partitions therefore force
 \(U(f,P)-L(f,P)\) to zero.
 \end{remark*}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:darboux-integrability]{Darboux Integrability}
+  \item \hyperref[thm:darboux-criterion]{Darboux Criterion}
+\end{itemize}
+\end{dependencies}
+
 \begin{theorembox}{Theorem (Finitely Many Discontinuities)}
 \begin{theorem}[Bounded Functions with Finitely Many Discontinuities Are Darboux-Integrable]
 \label{thm:finite-discontinuities-darboux-integrable}
 If \(f:[a,b]\to\mathbb R\) is bounded and has only finitely many
 discontinuities, then \(f\) is Darboux-integrable.
+\hyperref[prf:finite-discontinuities-darboux-integrable]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
 
 \begin{remark*}[Why finite bad sets are harmless]
-The Darboux gap is
+Th
+e Darboux gap is
 \[
   U(f,P)-L(f,P)=\sum_i \omega_f([x_{i-1},x_i])\Delta x_i.
 \]
@@ -139,6 +197,13 @@ so its oscillation is uniformly small on fine slabs. Thus the bad slabs are
 short and the good slabs are flat.
 \end{remark*}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:darboux-integrability]{Darboux Integrability}
+  \item \hyperref[thm:darboux-criterion]{Darboux Criterion}
+\end{itemize}
+\end{dependencies}
+
 \subsection*{Algebraic and Order Properties}
 
 \begin{theorembox}{Theorem (Algebra of Darboux-Integrable Functions)}
@@ -147,31 +212,57 @@ short and the good slabs are flat.
 If \(f\) and \(g\) are Darboux-integrable on \([a,b]\), then
 \(\alpha f+\beta g\) is Darboux-integrable for all
 \(\alpha,\beta\in\mathbb R\).
+\hyperref[prf:darboux-integrable-linear-combinations]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:darboux-integrability]{Darboux Integrability}
+  \item \hyperref[thm:darboux-criterion]{Darboux Criterion}
+\end{itemize}
+\end{dependencies}
 
 \begin{theorembox}{Theorem (Products)}
 \begin{theorem}[Products of Darboux-Integrable Functions]
 \label{thm:darboux-integrable-products}
 If \(f\) and \(g\) are Darboux-integrable on \([a,b]\), then \(fg\) is
 Darboux-integrable on \([a,b]\).
+\hyperref[prf:darboux-integrable-products]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:darboux-integrability]{Darboux Integrability}
+  \item \hyperref[thm:darboux-criterion]{Darboux Criterion}
+\end{itemize}
+\end{dependencies}
 
 \begin{theorembox}{Theorem (Absolute Values)}
 \begin{theorem}[Absolute Values of Darboux-Integrable Functions]
 \label{thm:darboux-integrable-absolute-value}
 If \(f\) is Darboux-integrable on \([a,b]\), then \(|f|\) is
 Darboux-integrable on \([a,b]\).
+\hyperref[prf:darboux-integrable-absolute-value]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:darboux-integrability]{Darboux Integrability}
+  \item \hyperref[thm:darboux-criterion]{Darboux Criterion}
+\end{itemize}
+\end{dependencies}
 
 \begin{theorembox}{Theorem (Continuous Composition)}
 \begin{theorem}[Continuous Images of Darboux-Integrable Functions]
 \label{thm:darboux-integrable-continuous-composition}
 If \(f\) is Darboux-integrable on \([a,b]\), \(\varphi\) is continuous on an
+
 interval containing \(f([a,b])\), and \(f\) is bounded, then
 \(\varphi\circ f\) is Darboux-integrable on \([a,b]\).
+\hyperref[prf:darboux-integrable-continuous-composition]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
 
@@ -190,6 +281,13 @@ integrability. The remaining defects now fork. One can change the ruler
 diagnose the size of the discontinuity set, which leads to Lebesgue and also
 to the gauge-integral cure.
 \end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:darboux-integrability]{Darboux Integrability}
+  \item \hyperref[thm:darboux-criterion]{Darboux Criterion}
+\end{itemize}
+\end{dependencies}
 
 \subsection*{Worked Failure Mode}
 

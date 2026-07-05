@@ -28,6 +28,12 @@ A set \(E\subseteq\mathbb R\) has \emph{measure zero} if for every
 \end{definition}
 \end{definitionbox}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:open-set]{Open Set}
+\end{itemize}
+\end{dependencies}
+
 \begin{definitionbox}{Definition (Point Oscillation)}
 \begin{definition}[Point Oscillation]
 \label{def:point-oscillation-integration}
@@ -55,6 +61,14 @@ oscillation forces a permanent Darboux gap, while null high-oscillation sets
 can be covered by intervals of tiny total length.
 \end{remark*}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:function-bounded]{Bounded Function}
+  \item \hyperref[def:interval-oscillation-integration]{Interval Oscillation}
+  \item \hyperref[def:oscillation-at-a-point]{Oscillation at a Point}
+\end{itemize}
+\end{dependencies}
+
 \subsection*{Existence and Applicability Criterion}
 
 \begin{theorembox}{Theorem (Lebesgue Criterion)}
@@ -66,8 +80,18 @@ if its discontinuity set
   D=\{x\in[a,b]:\omega_f(x)>0\}
 \]
 has measure zero.
+\hyperref[prf:lebesgue-criterion-riemann-integrability]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:function-bounded]{Bounded Function}
+  \item \hyperref[def:riemann-integral]{Riemann Integral}
+  \item \hyperref[def:measure-zero]{Measure Zero}
+  \item \hyperref[def:point-oscillation-integration]{Point Oscillation}
+\end{itemize}
+\end{dependencies}
 
 \subsection*{Worked Failure Mode and Handoff}
 

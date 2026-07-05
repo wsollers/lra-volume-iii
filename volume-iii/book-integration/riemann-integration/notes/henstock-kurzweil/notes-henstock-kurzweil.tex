@@ -46,6 +46,12 @@ A \emph{gauge} on \([a,b]\) is a function
 \end{definition}
 \end{definitionbox}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:interval-partition]{Interval Partition}
+\end{itemize}
+\end{dependencies}
+
 \begin{definitionbox}{Definition (Delta-Fine Tagged Partition)}
 \begin{definition}[\(\delta\)-Fine Tagged Partition]
 \label{def:delta-fine-tagged-partition}
@@ -57,6 +63,13 @@ A tagged partition \((P,\xi)\) is \emph{\(\delta\)-fine} if
 \]
 \end{definition}
 \end{definitionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:gauge-on-interval]{Gauge on an Interval}
+  \item \hyperref[def:tagged-partition-integration]{Tagged Partition}
+\end{itemize}
+\end{dependencies}
 
 \begin{definitionbox}{Definition (Henstock--Kurzweil Integral)}
 \begin{definition}[Henstock--Kurzweil Integral]
@@ -72,11 +85,19 @@ The value is denoted \((\mathrm{HK})\int_a^b f\).
 \end{definition}
 \end{definitionbox}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:gauge-on-interval]{Gauge on an Interval}
+  \item \hyperref[def:delta-fine-tagged-partition]{\(\delta\)-Fine Tagged Partition}
+\end{itemize}
+\end{dependencies}
+
 \begin{lemmabox}{Lemma (Cousin)}
 \begin{lemma}[Cousin's Lemma]
 \label{lem:cousin}
 For every gauge \(\delta\) on \([a,b]\), there exists a \(\delta\)-fine tagged
 partition of \([a,b]\).
+\hyperref[prf:cousin]{\textit{Go to proof.}}
 \end{lemma}
 \end{lemmabox}
 
@@ -86,6 +107,13 @@ the gauge varies, compactness of \([a,b]\) guarantees that at least one tagged
 partition respects all the local step-size demands.
 \end{remark*}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:gauge-on-interval]{Gauge on an Interval}
+  \item \hyperref[def:delta-fine-tagged-partition]{\(\delta\)-Fine Tagged Partition}
+\end{itemize}
+\end{dependencies}
+
 \subsection*{Existence and Applicability Criterion}
 
 \begin{theorembox}{Theorem (Riemann Sits Inside Henstock--Kurzweil)}
@@ -94,6 +122,7 @@ partition respects all the local step-size demands.
 If \(f\) is Riemann-integrable on \([a,b]\), then \(f\) is
 Henstock--Kurzweil integrable on \([a,b]\), and the two integrals have the
 same value.
+\hyperref[prf:riemann-integrable-implies-hk-integrable]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
 
@@ -102,6 +131,14 @@ Riemann is the special case where the gauge is constant. If a Riemann proof
 hands over one mesh tolerance \(\delta_0\), the gauge proof uses
 \(\delta(x)=\delta_0\) for every \(x\).
 \end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:riemann-integral]{Riemann Integral}
+  \item \hyperref[def:henstock-kurzweil-integral]{Henstock--Kurzweil Integral}
+  \item \hyperref[def:gauge-on-interval]{Gauge on an Interval}
+\end{itemize}
+\end{dependencies}
 
 \subsection*{Worked Positive Example}
 
@@ -114,8 +151,15 @@ If \(F\) is differentiable at \(\xi\) with \(F'(\xi)=f(\xi)\), then for every
 \[
   |F(v)-F(u)-f(\xi)(v-u)|\le \varepsilon(v-u).
 \]
+\hyperref[prf:hk-straddle]{\textit{Go to proof.}}
 \end{lemma}
 \end{lemmabox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:derivative-at-a-point]{Derivative at a Point}
+\end{itemize}
+\end{dependencies}
 
 \begin{theorembox}{Theorem (FTC for the Gauge Integral)}
 \begin{theorem}[Fundamental Theorem for the Henstock--Kurzweil Integral]
@@ -125,16 +169,33 @@ If \(F:[a,b]\to\mathbb R\) is differentiable at every point and \(F'=f\), then
 \[
   (\mathrm{HK})\int_a^b f=F(b)-F(a).
 \]
+\hyperref[prf:hk-fundamental-theorem]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:henstock-kurzweil-integral]{Henstock--Kurzweil Integral}
+  \item \hyperref[lem:hk-straddle]{Straddle Lemma}
+  \item \hyperref[def:derivative-at-a-point]{Derivative at a Point}
+\end{itemize}
+\end{dependencies}
 
 \begin{theorembox}{Theorem (Continuous Functions Are Henstock--Kurzweil Integrable)}
 \begin{theorem}[Continuous Functions Are Henstock--Kurzweil Integrable]
 \label{thm:continuous-hk-integrable}
 Every continuous function \(f:[a,b]\to\mathbb R\) is Henstock--Kurzweil
 integrable.
+\hyperref[prf:continuous-hk-integrable]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:continuous-riemann-integrable]{Continuous Functions Are Riemann Integrable}
+  \item \hyperref[thm:riemann-integrable-implies-hk-integrable]{Riemann Integrable Implies Henstock--Kurzweil Integrable}
+\end{itemize}
+\end{dependencies}
 
 \subsection*{Worked Failure Mode}
 
@@ -149,7 +210,8 @@ standard witness at each frontier.
 The first strict inclusion is witnessed by functions like
 \(\mathbf 1_{\mathbb Q}\), which are Lebesgue-integrable but not Riemann
 integrable. The second is witnessed by derivatives such as that of
-\(F(x)=x^2\sin(1/x^2)\) with \(F(0)=0\): the derivative is HK-integrable by the
+\(F(x)=x^2\sin(1/x
+^2)\) with \(F(0)=0\): the derivative is HK-integrable by the
 gauge FTC even when its absolute value is not Lebesgue-integrable.
 
 This inclusion statement anticipates the next volume's Lebesgue theory. The

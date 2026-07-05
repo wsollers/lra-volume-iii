@@ -23,6 +23,13 @@ For \(f:[a,b]\to\mathbb R\) and \(P=\{a=x_0<\cdots<x_n=b\}\), define
 \end{definition}
 \end{definitionbox}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:integration-partition]{Integration Partition}
+  \item \hyperref[def:subinterval-width-integration]{Subinterval Width}
+\end{itemize}
+\end{dependencies}
+
 \begin{definitionbox}{Definition (Cauchy Integral)}
 \begin{definition}[Cauchy Integral]
 \label{def:cauchy-integral}
@@ -35,14 +42,28 @@ The value \(L\) is denoted \(\int_a^b f(x)\,dx\).
 \end{definition}
 \end{definitionbox}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:cauchy-sum]{Cauchy Sum}
+  \item \hyperref[def:partition-mesh]{Partition Mesh}
+\end{itemize}
+\end{dependencies}
+
 \subsection*{Worked Positive Example}
 
 \begin{propositionbox}{Proposition (Integral of a Constant)}
 \begin{proposition}[Cauchy Integral of a Constant]
 \label{prop:cauchy-integral-constant}
 If \(f(x)=c\) on \([a,b]\), then \(\int_a^b c\,dx=c(b-a)\).
+\hyperref[prf:cauchy-integral-constant]{\textit{Go to proof.}}
 \end{proposition}
 \end{propositionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:cauchy-integral]{Cauchy Integral}
+\end{itemize}
+\end{dependencies}
 
 \subsection*{Algebraic and Order Properties}
 
@@ -55,8 +76,15 @@ If \(f\) and \(g\) are Cauchy-integrable on \([a,b]\), then
   =
   \alpha\int_a^b f\,dx+\beta\int_a^b g\,dx.
 \]
+\hyperref[prf:cauchy-integral-linearity]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:cauchy-integral]{Cauchy Integral}
+\end{itemize}
+\end{dependencies}
 
 \begin{theorembox}{Theorem (Monotonicity)}
 \begin{theorem}[Monotonicity of the Cauchy Integral]
@@ -66,8 +94,15 @@ for every \(x\in[a,b]\), then
 \[
   \int_a^b f\,dx\le \int_a^b g\,dx .
 \]
+\hyperref[prf:cauchy-integral-monotonicity]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:cauchy-integral]{Cauchy Integral}
+\end{itemize}
+\end{dependencies}
 
 \begin{corollarybox}{Corollary (Bounds)}
 \begin{corollary}[Bounds for the Cauchy Integral]
@@ -77,8 +112,16 @@ If \(f\) is continuous on \([a,b]\), \(m=\min_{[a,b]}f\), and
 \[
   m(b-a)\le \int_a^b f\,dx\le M(b-a).
 \]
+\hyperref[prf:cauchy-integral-bounds]{\textit{Go to proof.}}
 \end{corollary}
 \end{corollarybox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:cauchy-integral-monotonicity]{Monotonicity of the Cauchy Integral}
+  \item \hyperref[prop:cauchy-integral-constant]{Cauchy Integral of a Constant}
+\end{itemize}
+\end{dependencies}
 
 \begin{theorembox}{Theorem (Triangle Inequality)}
 \begin{theorem}[Triangle Inequality for the Cauchy Integral]
@@ -87,19 +130,36 @@ If \(f\) and \(|f|\) are Cauchy-integrable on \([a,b]\), then
 \[
   \left|\int_a^b f\,dx\right|\le \int_a^b |f|\,dx .
 \]
+\hyperref[prf:cauchy-integral-triangle-inequality]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:cauchy-integral]{Cauchy Integral}
+  \item \hyperref[thm:cauchy-integral-monotonicity]{Monotonicity of the Cauchy Integral}
+\end{itemize}
+\end{dependencies}
+
 \begin{theorembox}{Theorem (Interval Additivity)}
 \begin{theorem}[Interval Additivity for the Cauchy Integral]
-\label{thm:cauchy-integral-interval-additivity}
+\label{thm:cauchy-integral-int
+erval-additivity}
 If \(c\in[a,b]\) and \(f\) is Cauchy-integrable on the relevant intervals,
 then
 \[
   \int_a^b f\,dx=\int_a^c f\,dx+\int_c^b f\,dx .
 \]
+\hyperref[prf:cauchy-integral-int
+erval-additivity]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:cauchy-integral]{Cauchy Integral}
+\end{itemize}
+\end{dependencies}
 
 \begin{definitionbox}{Definition (Oscillation on an Interval)}
 \begin{definition}[Oscillation on an Interval]
@@ -113,12 +173,20 @@ height on \(I\) is close to every other sample height.
 \end{definition}
 \end{definitionbox}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:supremum]{Supremum}
+  \item \hyperref[def:infimum]{Infimum}
+\end{itemize}
+\end{dependencies}
+
 \subsection*{Existence and Applicability Criterion}
 
 \begin{theorembox}{Theorem (Continuous Implies Cauchy-Integrable)}
 \begin{theorem}[Continuous Functions Are Cauchy-Integrable]
 \label{thm:continuous-cauchy-integrable}
 Every continuous function \(f:[a,b]\to\mathbb R\) is Cauchy-integrable.
+\hyperref[prf:continuous-cauchy-integrable]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
 
@@ -127,7 +195,8 @@ Continuity on the compact interval gives uniform continuity. Hence short slabs
 have small oscillation. Given two fine partitions, pass to their common
 refinement and compare sums slab by slab; each re-sampling error is bounded by
 \(\omega_f(I)\) times the slab width. The sums form a Cauchy net, and
-completeness of \(\mathbb R\) supplies the limit.
+completene
+ss of \(\mathbb R\) supplies the limit.
 \end{remark*}
 
 \begin{remark*}[What continuity buys]
@@ -137,6 +206,13 @@ then every slab has small oscillation. Without this global scale, Cauchy's
 left-endpoint definition has no mechanism for proving that unrelated
 partitions settle to the same number.
 \end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:cauchy-integral]{Cauchy Integral}
+  \item \hyperref[def:interval-oscillation-integration]{Oscillation on an Interval}
+\end{itemize}
+\end{dependencies}
 
 \subsection*{Worked Failure Mode}
 
@@ -162,8 +238,10 @@ allowed.
 \begin{theorembox}{Theorem (Tag Independence)}
 \begin{theorem}[Tag Independence for Continuous Functions]
 \label{thm:cauchy-tag-independence}
+
 If \(f\) is continuous on \([a,b]\), then every choice of tags gives the same
 limit as the left-endpoint sums as \(\|P\|\to 0\).
+\hyperref[prf:cauchy-tag-independence]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
 
@@ -181,3 +259,10 @@ sample anywhere, even adversarially, and require all fine enough choices to
 agree. Riemann is exactly Cauchy's tag-independence theorem promoted into the
 definition of integrability.
 \end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:continuous-cauchy-integrable]{Continuous Functions Are Cauchy-Integrable}
+  \item \hyperref[def:cauchy-sum]{Cauchy Sum}
+\end{itemize}
+\end{dependencies}

@@ -70,6 +70,13 @@ Maximum combines membership and an upper-bound condition.  Failure of
 either component prevents attainment.
 \end{remark*}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:upper-bound]{Upper Bound}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+\end{itemize}
+\end{dependencies}
+
 \begin{definitionbox}{Minimum}
 \begin{definition}[Minimum]
 \label{def:minimum}
@@ -129,6 +136,13 @@ Minimum combines membership and a lower-bound condition.  Failure of
 either component prevents attainment.
 \end{remark*}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:lower-bound]{Lower Bound}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+\end{itemize}
+\end{dependencies}
+
 \begin{propositionbox}{Uniqueness of the Maximum}
 \begin{proposition}[Uniqueness of the Maximum]
 \label{prop:uniqueness-of-the-maximum}
@@ -187,11 +201,19 @@ Since $m$ is maximal over all elements and $n\in A$, we get $n\leq m$.
 Since $n$ is maximal over all elements and $m\in A$, we get $m\leq n$.
 \end{remark*}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:maximum]{Maximum}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+\end{itemize}
+\end{dependencies}
+
 \begin{propositionbox}{Uniqueness of the Minimum}
 \begin{proposition}[Uniqueness of the Minimum]
 \label{prop:uniqueness-of-the-minimum}
 Let $(S,\leq)$ be an ordered set and let $A\subseteq S$ be nonempty.  If
 $m,n\in S$ are both minima of $A$, then $m=n$.
+\hyperref[prf:uniqueness-of-the-minimum]{\textit{Go to proof.}}
 \end{proposition}
 \end{propositionbox}
 
@@ -243,6 +265,13 @@ Since $m$ is minimal and $n\in A$, we get $m\leq n$.  Since $n$ is
 minimal and $m\in A$, we get $n\leq m$.
 \end{remark*}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:minimum]{Minimum}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+\end{itemize}
+\end{dependencies}
+
 \begin{propositionbox}{Maximum Implies Supremum}
 \begin{proposition}[Maximum Implies Supremum]
 \label{prop:maximum-implies-supremum}
@@ -288,11 +317,20 @@ Membership gives $m\in A$.  Any upper bound of $A$ must lie above every
 element of $A$, hence above $m$ itself.
 \end{remark*}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:maximum]{Maximum}
+  \item \hyperref[def:supremum]{Supremum}
+  \item \hyperref[def:upper-bound]{Upper Bound}
+\end{itemize}
+\end{dependencies}
+
 \begin{propositionbox}{Minimum Implies Infimum}
 \begin{proposition}[Minimum Implies Infimum]
 \label{prop:minimum-implies-infimum}
 Let $(S,\leq)$ be an ordered set and let $A\subseteq S$ be nonempty.  If
 $m=\min A$, then $m=\inf A$.
+\hyperref[prf:minimum-implies-infimum]{\textit{Go to proof.}}
 \end{proposition}
 \end{propositionbox}
 
@@ -330,6 +368,14 @@ lower bounds.
 Membership gives $m\in A$.  Any lower bound of $A$ must lie below every
 element of $A$, hence below $m$ itself.
 \end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:minimum]{Minimum}
+  \item \hyperref[def:infimum]{Infimum}
+  \item \hyperref[def:lower-bound]{Lower Bound}
+\end{itemize}
+\end{dependencies}
 
 \begin{propositionbox}{Supremum in the Set is the Maximum}
 \begin{proposition}[Supremum in the Set is the Maximum]
@@ -380,11 +426,19 @@ The supremum condition supplies the upper-bound clause.  Membership
 supplies attainment.
 \end{remark*}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:supremum]{Supremum}
+  \item \hyperref[def:maximum]{Maximum}
+\end{itemize}
+\end{dependencies}
+
 \begin{propositionbox}{Infimum in the Set is the Minimum}
 \begin{proposition}[Infimum in the Set is the Minimum]
 \label{prop:infimum-in-the-set-is-the-minimum}
 Let $(S,\leq)$ be an ordered set and let $A\subseteq S$ be nonempty.  If
 $i=\inf A$ and $i\in A$, then $i=\min A$.
+\hyperref[prf:infimum-in-the-set-is-the-minimum]{\textit{Go to proof.}}
 \end{proposition}
 \end{propositionbox}
 
@@ -426,3 +480,10 @@ minimum.
 The infimum condition supplies the lower-bound clause.  Membership
 supplies attainment.
 \end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:infimum]{Infimum}
+  \item \hyperref[def:minimum]{Minimum}
+\end{itemize}
+\end{dependencies}

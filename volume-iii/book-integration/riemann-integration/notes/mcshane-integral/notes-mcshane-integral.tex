@@ -73,6 +73,13 @@ ball. The ruler is still \(\Delta x_i\); the change is entirely in the
 admissible tag geometry.
 \end{remark*}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:gauge-on-interval]{Gauge on an Interval}
+  \item \hyperref[def:tagged-partition-integration]{Tagged Partition}
+\end{itemize}
+\end{dependencies}
+
 \input{tex/figures/fig-mcshane}
 
 \begin{definitionbox}{Definition (McShane Integral)}
@@ -99,6 +106,13 @@ Therefore McShane integrability is a stronger demand: the sums must survive
 all the usual gauge-fine tests and also the extra free-tag tests.
 \end{remark*}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:mcshane-fine-tagged-partition]{McShane-Fine Tagged Partition}
+  \item \hyperref[def:gauge-on-interval]{Gauge on an Interval}
+\end{itemize}
+\end{dependencies}
+
 \subsection*{Existence and Applicability Criterion}
 
 \begin{theorembox}{Theorem (McShane Sits Between Riemann and HK)}
@@ -110,8 +124,17 @@ On a compact interval,
 \]
 and the integral values agree whenever a function belongs to the smaller
 class.
+\hyperref[prf:riemann-mcshane-hk-inclusions]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:riemann-integral]{Riemann Integral}
+  \item \hyperref[def:mcshane-integral]{McShane Integral}
+  \item \hyperref[def:henstock-kurzweil-integral]{Henstock--Kurzweil Integral}
+\end{itemize}
+\end{dependencies}
 
 \begin{theorembox}{Theorem (McShane Equals Lebesgue)}
 \begin{theorem}[McShane Integrability Equals Lebesgue Integrability]
@@ -121,6 +144,7 @@ For real-valued functions on a compact interval,
   \mathcal{McShane}[a,b]=\mathcal L[a,b],
 \]
 and the McShane and Lebesgue integral values agree.
+\hyperref[prf:mcshane-equals-lebesgue]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
 
@@ -153,6 +177,13 @@ discontinuity set is null. The proof ledger records that McShane imports the
 Lebesgue criterion even though its definition belongs syntactically with the
 gauge integrals.
 \end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:mcshane-integral]{McShane Integral}
+  \item \hyperref[thm:lebesgue-criterion-riemann-integrability]{Lebesgue Criterion for Riemann Integrability}
+\end{itemize}
+\end{dependencies}
 
 \subsection*{Worked Failure Mode}
 

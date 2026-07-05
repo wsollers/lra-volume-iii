@@ -3,8 +3,8 @@
 Proof-writing order is dependency-first among active TODO proof labels, with the generated knowledge graph order used as the stable tie-breaker.
 Use `✅` to record completion after the canonical proof file has both proof bodies populated and validated.
 
-Open proofs to do: 481
-Completed in this tracker: 16
+Open proofs to do: 480
+Completed in this tracker: 17
 
 1. () `prop:little-o-quotient-characterization` — **Little-o Quotient Characterisation**
    > **Statement.**
@@ -463,7 +463,7 @@ Completed in this tracker: 16
    > Let $A\subseteq\mathbb{R}$ be nonempty and bounded above, and let
    > $s=\sup A$. Then $x\leq s$ for every $x\in A$.
 
-65. () `thm:supremum-absolute-value-image` — **Supremum of the Absolute-Value Image**
+65. (✅) `thm:supremum-absolute-value-image` — **Supremum of the Absolute-Value Image**
    > **Statement.**
    > Let $A\subseteq\mathbb{R}$ be nonempty and bounded. Then
    > \[

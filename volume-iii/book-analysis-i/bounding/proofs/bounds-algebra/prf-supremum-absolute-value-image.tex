@@ -18,21 +18,149 @@ Let $A\subseteq\mathbb{R}$ be nonempty and bounded. Then
 
 \begin{proof}[Professional Standard Proof]
 \LRAProofBodyStart
-TODO: professional standard proof for supremum-absolute-value-image.
+Let
+\[
+  s=\sup A,\qquad i=\inf A,\qquad
+  M=\max\{|s|,|i|\}.
+\]
+We prove that $M=\sup |A|$.
+
+First let $a\in A$. Since $i\le a\le s$, if $a\ge 0$, then
+\[
+  |a|=a\le s\le |s|\le M,
+\]
+and if $a<0$, then
+\[
+  |a|=-a\le -i=|i|\le M.
+\]
+Thus $M$ is an upper bound for $|A|$.
+
+It remains to prove leastness. Since $i\le s$, the number $M$ is either $s$
+with $s\ge 0$, or $-i$ with $i\le 0$. Let $\varepsilon>0$.
+
+If $M=s$ and $s\ge 0$, the epsilon characterization of the supremum gives
+some $a_\varepsilon\in A$ such that
+\[
+  s-\varepsilon<a_\varepsilon.
+\]
+Then
+\[
+  M-\varepsilon=s-\varepsilon<a_\varepsilon\le |a_\varepsilon|,
+\]
+and $|a_\varepsilon|\in |A|$.
+
+If $M=-i$ and $i\le 0$, the epsilon characterization of the infimum gives
+some $b_\varepsilon\in A$ such that
+\[
+  b_\varepsilon<i+\varepsilon.
+\]
+Hence
+\[
+  M-\varepsilon=-i-\varepsilon<-b_\varepsilon\le |b_\varepsilon|,
+\]
+and $|b_\varepsilon|\in |A|$.
+
+In every case, for each $\varepsilon>0$ there is an element of $|A|$ greater
+than $M-\varepsilon$. Together with the upper-bound property above, the epsilon
+characterization of the supremum yields
+\[
+  \sup |A|=M=\max\{|\sup A|,|\inf A|\}.
+\]
 \end{proof}
 
 \begin{proof}[Detailed Learning Proof]
 \LRAProofBodyStart
-TODO: detailed learning proof for supremum-absolute-value-image.
+Set
+\[
+  s=\sup A
+  \qquad\text{and}\qquad
+  i=\inf A.
+\]
+Because $A$ is nonempty and bounded, both $s$ and $i$ exist, and
+\[
+  i\le a\le s
+  \qquad\text{for every }a\in A.
+\]
+We claim that
+\[
+  M=\max\{|s|,|i|\}
+\]
+is the supremum of the absolute-value image
+\[
+  |A|=\{|a|:a\in A\}.
+\]
+
+First we show that $M$ is an upper bound for $|A|$. Choose any element of
+$|A|$. It has the form $|a|$ for some $a\in A$. If $a$ is nonnegative, then
+$|a|=a$, and the inequality $a\le s$ gives
+\[
+  |a|=a\le s\le |s|\le M.
+\]
+If $a$ is negative, then $|a|=-a$. Since $i\le a$, multiplying by $-1$
+reverses the inequality and gives $-a\le -i$. In this case $i<0$, so
+$-i=|i|$, and therefore
+\[
+  |a|=-a\le -i=|i|\le M.
+\]
+Thus every element of $|A|$ is at most $M$.
+
+Now we prove that this upper bound is least. The largest absolute value at the
+endpoints must come from one of two endpoint directions: either the right
+endpoint contributes $M=s$ with $s\ge 0$, or the left endpoint contributes
+$M=-i$ with $i\le 0$. These two alternatives cover all possibilities because
+$i\le s$.
+
+Let $\varepsilon>0$. Suppose first that $M=s$ and $s\ge 0$. Since
+$s=\sup A$, the epsilon characterization of the supremum gives an element
+$a_\varepsilon\in A$ with
+\[
+  s-\varepsilon<a_\varepsilon.
+\]
+Taking absolute values can only make a real number larger than or equal to
+itself, so
+\[
+  M-\varepsilon=s-\varepsilon<a_\varepsilon\le |a_\varepsilon|.
+\]
+The number $|a_\varepsilon|$ belongs to $|A|$, so $|A|$ reaches above
+$M-\varepsilon$.
+
+Suppose instead that $M=-i$ and $i\le 0$. Since $i=\inf A$, the epsilon
+characterization of the infimum gives an element $b_\varepsilon\in A$ with
+\[
+  b_\varepsilon<i+\varepsilon.
+\]
+Multiplying by $-1$ reverses this inequality:
+\[
+  -i-\varepsilon<-b_\varepsilon.
+\]
+Since $-b_\varepsilon\le |b_\varepsilon|$, we get
+\[
+  M-\varepsilon=-i-\varepsilon<-b_\varepsilon\le |b_\varepsilon|.
+\]
+Again $|b_\varepsilon|\in |A|$, so $|A|$ reaches above $M-\varepsilon$.
+
+We have shown two things: $M$ is an upper bound for $|A|$, and for every
+$\varepsilon>0$ the set $|A|$ contains an element greater than
+$M-\varepsilon$. By the epsilon characterization of the supremum,
+\[
+  \sup |A|=M=\max\{|\sup A|,|\inf A|\}.
+\]
 \end{proof}
 
 \begin{remark*}[Proof structure]
+The upper-bound half uses $i\le a\le s$ and splits by the sign of $a$. The
+leastness half uses the epsilon characterization at whichever endpoint has
+larger absolute value: near $\sup A$ if the right endpoint controls the
+maximum, and near $\inf A$ if the left endpoint controls it.
 \end{remark*}
 
 \begin{dependencies}
-\begin{itemize}
-  \item TODO: list mathematical dependencies.
-\end{itemize}
+\hyperref[def:absolute-value]{Absolute Value};
+\hyperref[def:supremum]{Supremum};
+\hyperref[def:infimum]{Infimum};
+\hyperref[def:maximum]{Maximum};
+\hyperref[def:epsilon-characterization-of-supremum]{Epsilon Characterization of Supremum};
+\hyperref[def:epsilon-characterization-of-infimum]{Epsilon Characterization of Infimum}.
 \end{dependencies}
 
 \clearpage

@@ -23,6 +23,13 @@ For a tagged partition \((P,\xi)\), define
 \end{definition}
 \end{definitionbox}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:tagged-partition-integration]{Tagged Partition}
+  \item \hyperref[def:subinterval-width-integration]{Subinterval Width}
+\end{itemize}
+\end{dependencies}
+
 \begin{definitionbox}{Definition (Riemann Integral)}
 \begin{definition}[Riemann Integral]
 \label{def:riemann-integral}
@@ -53,6 +60,14 @@ The Cauchy criterion below makes that statement intrinsic: the value need not
 be known in advance.
 \end{remark*}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:riemann-sum]{Riemann Sum}
+  \item \hyperref[def:partition-mesh]{Mesh of a Partition}
+  \item \hyperref[def:tagged-partition-integration]{Tagged Partition}
+\end{itemize}
+\end{dependencies}
+
 \subsection*{Worked Positive Example}
 
 \begin{remark*}[The ruler function example]
@@ -78,8 +93,17 @@ can admit.
 \begin{theorem}[Continuous Functions Are Riemann-Integrable]
 \label{thm:continuous-riemann-integrable}
 Every continuous function \(f:[a,b]\to\mathbb R\) is Riemann-integrable.
+\hyperref[prf:continuous-riemann-integrable]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:continuous-at-point]{Continuity at a Point}
+  \item \hyperref[thm:heine-cantor]{Heine--Cantor Theorem}
+  \item \hyperref[def:riemann-integral]{Riemann Integral}
+\end{itemize}
+\end{dependencies}
 
 \subsection*{Algebraic and Order Properties}
 
@@ -92,8 +116,16 @@ If \(f\) and \(g\) are Riemann-integrable on \([a,b]\), then
   =
   \alpha\int_a^b f\,dx+\beta\int_a^b g\,dx .
 \]
+\hyperref[prf:riemann-integral-linearity]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:riemann-integral]{Riemann Integral}
+  \item \hyperref[def:riemann-sum]{Riemann Sum}
+\end{itemize}
+\end{dependencies}
 
 \begin{theorembox}{Theorem (Monotonicity)}
 \begin{theorem}[Monotonicity of the Riemann Integral]
@@ -103,8 +135,16 @@ for every \(x\in[a,b]\), then
 \[
   \int_a^b f\,dx\le \int_a^b g\,dx .
 \]
+\hyperref[prf:riemann-integral-monotonicity]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:riemann-integral]{Riemann Integral}
+  \item \hyperref[def:riemann-sum]{Riemann Sum}
+\end{itemize}
+\end{dependencies}
 
 \begin{theorembox}{Theorem (Triangle Inequality)}
 \begin{theorem}[Triangle Inequality for the Riemann Integral]
@@ -114,8 +154,16 @@ Riemann-integrable and
 \[
   \left|\int_a^b f\,dx\right|\le \int_a^b |f|\,dx .
 \]
+\hyperref[prf:riemann-integral-triangle-inequality]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:riemann-integral]{Riemann Integral}
+  \item \hyperref[thm:riemann-integral-monotonicity]{Monotonicity of the Riemann Integral}
+\end{itemize}
+\end{dependencies}
 
 \begin{theorembox}{Theorem (Interval Additivity)}
 \begin{theorem}[Interval Additivity for the Riemann Integral]
@@ -125,8 +173,17 @@ it is Riemann-integrable on \([a,c]\) and \([c,b]\), and in that case
 \[
   \int_a^b f\,dx=\int_a^c f\,dx+\int_c^b f\,dx .
 \]
+\hyperref[prf:riemann-integral-interval-additivity]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:riemann-integral]{Riemann Integral}
+  \item \hyperref[def:partition-refinement]{Refinement of a Partition}
+  \item \hyperref[lem:common-refinement-partitions]{Common Refinement of Two Partitions}
+\end{itemize}
+\end{dependencies}
 
 \subsection*{Existence and Applicability Criterion}
 
@@ -139,8 +196,18 @@ A bounded function is Riemann-integrable if and only if for every
 \[
   |S(f,P,\xi)-S(f,Q,\eta)|<\varepsilon.
 \]
+\hyperref[prf:riemann-cauchy-criterion]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:function-bounded]{Bounded Function}
+  \item \hyperref[def:riemann-integral]{Riemann Integral}
+  \item \hyperref[def:riemann-sum]{Riemann Sum}
+  \item \hyperref[def:partition-mesh]{Mesh of a Partition}
+\end{itemize}
+\end{dependencies}
 
 \subsection*{Worked Failure Mode and Next Repair}
 
@@ -159,3 +226,5 @@ refinement lets the tags move again. There is no single upper or lower
 quantity improving under refinement. Darboux supplies exactly that missing
 monotone control.
 \end{remark*}
+\hyp
+erref[prf:continuous-riemann-integrable]{\textit{Go to proof.}}

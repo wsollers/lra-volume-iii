@@ -28,6 +28,13 @@ The total variation of \(\alpha\) on \([a,b]\) is
 \end{definition}
 \end{definitionbox}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:integration-partition]{Partition of a Compact Interval}
+  \item \hyperref[def:supremum]{Supremum}
+\end{itemize}
+\end{dependencies}
+
 \begin{definitionbox}{Definition (Bounded Variation)}
 \begin{definition}[Bounded Variation]
 \label{def:bounded-variation-integration}
@@ -39,10 +46,17 @@ Geometrically, this says the ruler has finite total up-and-down travel.
 \end{definition}
 \end{definitionbox}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:total-variation]{Total Variation}
+\end{itemize}
+\end{dependencies}
+
 \begin{propositionbox}{Proposition (Monotone Implies BV)}
 \begin{proposition}[Monotone Functions Have Bounded Variation]
 \label{prop:monotone-bounded-variation}
 If \(\alpha\) is monotone on \([a,b]\), then \(\alpha\) has bounded variation.
+\hyperref[prf:monotone-bounded-variation]{\textit{Go to proof.}}
 \end{proposition}
 \end{propositionbox}
 
@@ -56,6 +70,14 @@ what prevents the weighted sums from accumulating uncontrolled oscillatory
 ruler error.
 \end{remark*}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:function-monotone]{Monotone Function}
+  \item \hyperref[def:bounded-variation-integration]{Bounded Variation}
+  \item \hyperref[def:total-variation]{Total Variation}
+\end{itemize}
+\end{dependencies}
+
 \begin{definitionbox}{Definition (Riemann--Stieltjes Integral)}
 \begin{definition}[Riemann--Stieltjes Integral]
 \label{def:riemann-stieltjes-integral}
@@ -68,6 +90,14 @@ denoted \(\int_a^b f\,d\alpha\).
 \end{definition}
 \end{definitionbox}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:tagged-partition-integration]{Tagged Partition}
+  \item \hyperref[def:partition-mesh]{Mesh of a Partition}
+  \item \hyperref[def:bounded-variation-integration]{Bounded Variation}
+\end{itemize}
+\end{dependencies}
+
 \subsection*{Existence and Applicability Criterion}
 
 \begin{theorembox}{Theorem (Continuous Integrand, BV Integrator)}
@@ -75,8 +105,17 @@ denoted \(\int_a^b f\,d\alpha\).
 \label{thm:rs-continuous-bv-existence}
 If \(f\) is continuous on \([a,b]\) and \(\alpha\) has bounded variation, then
 \(\int_a^b f\,d\alpha\) exists.
+\hyperref[prf:rs-continuous-bv-existence]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:continuous-at-point]{Continuity at a Point}
+  \item \hyperref[def:bounded-variation-integration]{Bounded Variation}
+  \item \hyperref[def:riemann-stieltjes-integral]{Riemann--Stieltjes Integral}
+\end{itemize}
+\end{dependencies}
 
 \subsection*{Algebraic and Order Properties}
 
@@ -89,14 +128,22 @@ Whenever the displayed integrals exist,
   =
   \lambda\int_a^b f\,d\alpha+\mu\int_a^b g\,d\alpha
 \]
-and
+an
+d
 \[
   \int_a^b f\,d(\lambda\alpha+\mu\beta)
   =
   \lambda\int_a^b f\,d\alpha+\mu\int_a^b f\,d\beta .
 \]
+\hyperref[prf:rs-bilinearity]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:riemann-stieltjes-integral]{Riemann--Stieltjes Integral}
+\end{itemize}
+\end{dependencies}
 
 \begin{theorembox}{Theorem (Interval Additivity)}
 \begin{theorem}[Interval Additivity for the Riemann--Stieltjes Integral]
@@ -107,8 +154,16 @@ If \(c\in[a,b]\) and the relevant Riemann--Stieltjes integrals exist, then
   =
   \int_a^c f\,d\alpha+\int_c^b f\,d\alpha .
 \]
+\hyperref[prf:rs-interval-additivity]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:riemann-stieltjes-integral]{Riemann--Stieltjes Integral}
+  \item \hyperref[def:partition-refinement]{Refinement of a Partition}
+\end{itemize}
+\end{dependencies}
 
 \begin{theorembox}{Theorem (Integration by Parts)}
 \begin{theorem}[Riemann--Stieltjes Integration by Parts]
@@ -121,8 +176,16 @@ exists under the same Riemann--Stieltjes convention, and
   =
   f(b)\alpha(b)-f(a)\alpha(a).
 \]
+\hyperref[prf:rs-integration-by-parts]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:riemann-stieltjes-integral]{Riemann--Stieltjes Integral}
+  \item \hyperref[def:bounded-variation-integration]{Bounded Variation}
+\end{itemize}
+\end{dependencies}
 
 \begin{theorembox}{Theorem (Smooth Integrator Reduction)}
 \begin{theorem}[Reduction to Riemann Integration for a \(C^1\) Integrator]
@@ -131,8 +194,17 @@ If \(\alpha\in C^1([a,b])\) and \(f\) is Riemann-integrable on \([a,b]\), then
 \[
   \int_a^b f\,d\alpha=\int_a^b f(x)\alpha'(x)\,dx .
 \]
+\hyperref[prf:rs-c1-reduction]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:riemann-stieltjes-integral]{Riemann--Stieltjes Integral}
+  \item \hyperref[def:riemann-integral]{Riemann Integral}
+  \item \hyperref[def:derivative-at-a-point]{Derivative at a Point}
+\end{itemize}
+\end{dependencies}
 
 \subsection*{Worked Positive Example}
 
@@ -144,6 +216,7 @@ If \(\alpha\) is constant except for finitely many jumps at points \(c_k\) and
 \[
   \int_a^b f\,d\alpha=\sum_k f(c_k)\,\Delta\alpha(c_k).
 \]
+\hyperref[prf:rs-step-integrator-finite-sum]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
 
@@ -160,7 +233,8 @@ so small oscillation multiplied by finite total variation is small.
 \begin{remark*}[Sums as integrals]
 If \(\alpha\) is a step function with jumps at points \(c_k\), then the
 Stieltjes integral collapses to a weighted sum of the values \(f(c_k)\) times
-the jumps. This is the conceptual doorway to probability: a cumulative
+the jumps. This is the conceptual doorway to probability: a cum
+ulative
 distribution function is an integrator, and expectation is an integral against
 that integrator.
 \end{remark*}
@@ -178,6 +252,14 @@ so
 This is why a finite weighted sum is not a different species from an integral:
 it is a Stieltjes integral against a discrete ruler.
 \end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:riemann-stieltjes-integral]{Riemann--Stieltjes Integral}
+  \item \hyperref[def:continuous-at-point]{Continuity at a Point}
+  \item \hyperref[def:bounded-variation-integration]{Bounded Variation}
+\end{itemize}
+\end{dependencies}
 
 \subsection*{Worked Failure Mode}
 
