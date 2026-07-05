@@ -358,85 +358,7 @@ Completed in this tracker: 16
    > $(a_{kn+r}) \to L$ and $(a_{kn+s}) \to M$ with $L \neq M$, then
    > $(a_n)$ diverges.
 
-52. () `prop:abs-value-is-distance-to-zero` — **Absolute Value Is Distance to the Origin**
-   > **Statement.**
-   > For every $a\in\mathbb{R}$, $\;|a|=d(a,0)$.
-
-53. () `thm:closed-iff-contains-limit-points` — **Closed Sets Contain Their Limit Points**
-   > **Statement.**
-   > A set $F\subseteq\mathbb{R}$ is closed if and only if it contains every one of its limit points.
-
-54. () `thm:compact-implies-closed-bounded` — **Compact Subsets of $\mathbb{R}$ Are Closed and Bounded**
-   > **Statement.**
-   > If $K\subseteq\mathbb{R}$ is compact, then $K$ is closed and bounded.
-
-55. () `thm:closed-bounded-interval-compact` — **Closed Bounded Intervals Are Compact**
-   > **Statement.**
-   > Every closed bounded interval $[a,b]\subseteq\mathbb{R}$ is compact.
-
-56. () `thm:heine-borel` — **Heine--Borel Theorem for $\mathbb{R}$**
-   > **Statement.**
-   > A set $K\subseteq\mathbb{R}$ is compact if and only if $K$ is closed and bounded.
-
-57. () `thm:open-interval-is-open` — **Open Intervals Are Open**
-   > **Statement.**
-   > Every open interval $(a,b)$, every open ray $(a,\infty)$ and $(-\infty,b)$, and $\mathbb{R}$ itself are open sets.
-
-58. () `thm:open-set-closure-operations` — **Unions and Finite Intersections of Open Sets**
-   > **Statement.**
-   > An arbitrary union of open subsets of $\mathbb{R}$ is open, and a finite intersection of open subsets of $\mathbb{R}$ is open.
-
-59. () `lem:minimum-of-positive-numbers-is-positive` — **Minimum of Positive Numbers Is Positive**
-   > **Statement.**
-   > If $a>0$ and $b>0$, then
-   > \[
-   > \min\{a,b\}>0.
-   > \]
-
-60. () `lem:half-epsilon-is-positive` — **Half Epsilon Is Positive**
-   > **Statement.**
-   > If $\varepsilon>0$, then
-   > \[
-   > \frac{\varepsilon}{2}>0.
-   > \]
-
-61. () `lem:epsilon-splitting` — **Epsilon Splitting**
-   > **Statement.**
-   > If $\varepsilon>0$, then
-   > \[
-   > \frac{\varepsilon}{2}+\frac{\varepsilon}{2}=\varepsilon.
-   > \]
-
-62. () `lem:positive-minimum-bound` — **Positive Minimum Bound**
-   > **Statement.**
-   > If $0<\delta\le a$ and $0<\delta\le b$, then
-   > \[
-   > \delta\le \min\{a,b\}.
-   > \]
-
-63. () `lem:choosing-a-smaller-positive-number` — **Choosing a Smaller Positive Number**
-   > **Statement.**
-   > If $\varepsilon>0$ and $c>0$, then there exists $\delta>0$ such that
-   > \[
-   > 0<\delta<\varepsilon
-   > \quad\text{and}\quad
-   > 0<\delta<c.
-   > \]
-
-64. () `thm:distance-is-a-metric` — **The Distance Function Is a Metric**
-   > **Statement.**
-   > The map $d(x,y)=|x-y|$ satisfies, for all $x,y,z\in\mathbb{R}$: (i) $d(x,y)\ge 0$ with $d(x,y)=0$ iff $x=y$; (ii) $d(x,y)=d(y,x)$; and (iii) $d(x,z)\le d(x,y)+d(y,z)$. Hence $(\mathbb{R},d)$ is a metric space.
-
-65. () `thm:real-line-structural-order-facts` — **Real Line Structural Order Facts**
-   > **Statement.**
-   > The real numbers are linearly ordered, form an ordered field, and satisfy the
-   > least upper bound property.
-
-66. () `thm:closed-set-closure-operations` — **Closure Laws for Closed Sets**
-   > **Statement.**
-   > An arbitrary intersection of closed subsets of $\mathbb{R}$ is closed, and a finite union of closed subsets of $\mathbb{R}$ is closed.
-
-67. (✅) `thm:translation-invariance-supremum` — **Translation Invariance of the Supremum**
+52. (✅) `thm:translation-invariance-supremum` — **Translation Invariance of the Supremum**
    > **Statement.**
    > Let $A\subseteq\mathbb{R}$ be nonempty and bounded above, and let $c\in\mathbb{R}$. Then
    > \[
@@ -445,7 +367,7 @@ Completed in this tracker: 16
    >  A+c=\{a+c:a\in A\}.
    > \]
 
-68. (✅) `thm:translation-invariance-infimum` — **Translation Invariance of the Infimum**
+53. (✅) `thm:translation-invariance-infimum` — **Translation Invariance of the Infimum**
    > **Statement.**
    > Let $A\subseteq\mathbb{R}$ be nonempty and bounded below, and let
    > $c\in\mathbb{R}$. Then
@@ -453,7 +375,7 @@ Completed in this tracker: 16
    >  \inf(A+c)=\inf A+c.
    > \]
 
-69. (✅) `thm:scalar-mult-positive` — **Scalar Multiplication by a Positive Scalar**
+54. (✅) `thm:scalar-mult-positive` — **Scalar Multiplication by a Positive Scalar**
    > **Statement.**
    > Let $A\subseteq\mathbb{R}$ be nonempty and bounded above, and let $k>0$. Then
    > \[
@@ -462,7 +384,7 @@ Completed in this tracker: 16
    >  kA=\{ka:a\in A\}.
    > \]
 
-70. (✅) `thm:positive-scalar-mult-infimum` — **Positive Scalar Multiplication of the Infimum**
+55. (✅) `thm:positive-scalar-mult-infimum` — **Positive Scalar Multiplication of the Infimum**
    > **Statement.**
    > Let $A\subseteq\mathbb{R}$ be nonempty and bounded below, and let $k>0$.
    > Then
@@ -470,7 +392,7 @@ Completed in this tracker: 16
    >  \inf(kA)=k\inf A.
    > \]
 
-71. (✅) `thm:scalar-mult-negative` — **Scalar Multiplication by a Negative Scalar**
+56. (✅) `thm:scalar-mult-negative` — **Scalar Multiplication by a Negative Scalar**
    > **Statement.**
    > Let $A\subseteq\mathbb{R}$ be nonempty and bounded below, and let $k<0$. Then
    > \[
@@ -479,7 +401,7 @@ Completed in this tracker: 16
    >  kA=\{ka:a\in A\}.
    > \]
 
-72. (✅) `thm:negative-scalar-mult-infimum` — **Negative Scalar Multiplication of the Infimum**
+57. (✅) `thm:negative-scalar-mult-infimum` — **Negative Scalar Multiplication of the Infimum**
    > **Statement.**
    > Let $A\subseteq\mathbb{R}$ be nonempty and bounded above, and let $k<0$.
    > Then
@@ -487,14 +409,14 @@ Completed in this tracker: 16
    >  \inf(kA)=k\sup A.
    > \]
 
-73. (✅) `thm:negation-exchange-sup-inf` — **Negation Exchanges Supremum and Infimum**
+58. (✅) `thm:negation-exchange-sup-inf` — **Negation Exchanges Supremum and Infimum**
    > **Statement.**
    > Let $A\subseteq\mathbb{R}$ be nonempty and bounded below. Then $-A=\{-a:a\in A\}$ is bounded above and
    > \[
    >  \sup(-A)=-\inf A.
    > \]
 
-74. (✅) `thm:supremum-sum-set` — **Supremum of a Sum Set**
+59. (✅) `thm:supremum-sum-set` — **Supremum of a Sum Set**
    > **Statement.**
    > Let $A,B\subseteq\mathbb{R}$ be nonempty and bounded above. Then
    > \[
@@ -503,14 +425,14 @@ Completed in this tracker: 16
    >  A+B=\{a+b:a\in A,\ b\in B\}.
    > \]
 
-75. (✅) `thm:infimum-sum-set` — **Infimum of a Sum Set**
+60. (✅) `thm:infimum-sum-set` — **Infimum of a Sum Set**
    > **Statement.**
    > Let $A,B\subseteq\mathbb{R}$ be nonempty and bounded below. Then
    > \[
    >  \inf(A+B)=\inf A+\inf B.
    > \]
 
-76. (✅) `thm:supremum-difference-set` — **Supremum of a Difference Set**
+61. (✅) `thm:supremum-difference-set` — **Supremum of a Difference Set**
    > **Statement.**
    > Let $A,B\subseteq\mathbb{R}$ be nonempty, with $A$ bounded above and $B$ bounded below. Then
    > \[
@@ -519,7 +441,7 @@ Completed in this tracker: 16
    >  A-B=\{a-b:a\in A,\ b\in B\}.
    > \]
 
-77. (✅) `thm:infimum-difference-set` — **Infimum of a Difference Set**
+62. (✅) `thm:infimum-difference-set` — **Infimum of a Difference Set**
    > **Statement.**
    > Let $A,B\subseteq\mathbb{R}$ be nonempty, with $A$ bounded below and $B$
    > bounded above. Then
@@ -527,7 +449,7 @@ Completed in this tracker: 16
    >  \inf(A-B)=\inf A-\sup B.
    > \]
 
-78. (✅) `thm:supremum-dilation` — **Supremum of a Dilation**
+63. (✅) `thm:supremum-dilation` — **Supremum of a Dilation**
    > **Statement.**
    > Let $A\subseteq\mathbb{R}$ be nonempty and bounded, and let $\lambda\in\mathbb{R}$. Then
    > \[
@@ -536,12 +458,12 @@ Completed in this tracker: 16
    >  \lambda A=\{\lambda a:a\in A\}.
    > \]
 
-79. (✅) `prop:every-element-lies-below-the-supremum` — **Every Element Lies Below the Supremum**
+64. (✅) `prop:every-element-lies-below-the-supremum` — **Every Element Lies Below the Supremum**
    > **Statement.**
    > Let $A\subseteq\mathbb{R}$ be nonempty and bounded above, and let
    > $s=\sup A$. Then $x\leq s$ for every $x\in A$.
 
-80. () `thm:supremum-absolute-value-image` — **Supremum of the Absolute-Value Image**
+65. () `thm:supremum-absolute-value-image` — **Supremum of the Absolute-Value Image**
    > **Statement.**
    > Let $A\subseteq\mathbb{R}$ be nonempty and bounded. Then
    > \[
@@ -550,7 +472,7 @@ Completed in this tracker: 16
    >  |A|=\{|a|:a\in A\}.
    > \]
 
-81. () `thm:supremum-reciprocal-set` — **Supremum of a Reciprocal Set**
+66. () `thm:supremum-reciprocal-set` — **Supremum of a Reciprocal Set**
    > **Statement.**
    > Let $A\subseteq\mathbb{R}$ be nonempty and bounded, and suppose that
    > $0<\inf A$ or $\sup A<0$. Define
@@ -562,7 +484,7 @@ Completed in this tracker: 16
    >  \sup(A^{-1})=\frac{1}{\inf A}.
    > \]
 
-82. () `thm:infimum-reciprocal-set` — **Infimum of a Reciprocal Set**
+67. () `thm:infimum-reciprocal-set` — **Infimum of a Reciprocal Set**
    > **Statement.**
    > Let $A\subseteq\mathbb{R}$ be nonempty and bounded, and suppose that
    > $0<\inf A$ or $\sup A<0$. Define
@@ -574,7 +496,7 @@ Completed in this tracker: 16
    >  \inf(A^{-1})=\frac{1}{\sup A}.
    > \]
 
-83. () `thm:supremum-product-set` — **Supremum of a Product Set**
+68. () `thm:supremum-product-set` — **Supremum of a Product Set**
    > **Statement.**
    > Let $A,B\subseteq\mathbb{R}$ be nonempty and bounded. Then
    > \[
@@ -582,7 +504,7 @@ Completed in this tracker: 16
    >  \max\{(\inf A)(\inf B),(\inf A)(\sup B),(\sup A)(\inf B),(\sup A)(\sup B)\}.
    > \]
 
-84. () `thm:infimum-product-set` — **Infimum of a Product Set**
+69. () `thm:infimum-product-set` — **Infimum of a Product Set**
    > **Statement.**
    > Let $A,B\subseteq\mathbb{R}$ be nonempty and bounded. Then
    > \[
@@ -590,7 +512,7 @@ Completed in this tracker: 16
    >  \min\{(\inf A)(\inf B),(\inf A)(\sup B),(\sup A)(\inf B),(\sup A)(\sup B)\}.
    > \]
 
-85. () `thm:supremum-quotient-set` — **Supremum of a Quotient Set**
+70. () `thm:supremum-quotient-set` — **Supremum of a Quotient Set**
    > **Statement.**
    > Let $A,B\subseteq\mathbb{R}$ be nonempty and bounded, and suppose
    > $0<\inf B$ or $\sup B<0$. Then
@@ -600,7 +522,7 @@ Completed in this tracker: 16
    >  \frac{\sup A}{\inf B},\frac{\sup A}{\sup B}\right\}.
    > \]
 
-86. () `thm:infimum-quotient-set` — **Infimum of a Quotient Set**
+71. () `thm:infimum-quotient-set` — **Infimum of a Quotient Set**
    > **Statement.**
    > Let $A,B\subseteq\mathbb{R}$ be nonempty and bounded, and suppose
    > $0<\inf B$ or $\sup B<0$. Then
@@ -610,7 +532,7 @@ Completed in this tracker: 16
    >  \frac{\sup A}{\inf B},\frac{\sup A}{\sup B}\right\}.
    > \]
 
-87. () `prop:bounds-sum-set` — **Bounds for Suprema and Infima Under Set Addition**
+72. () `prop:bounds-sum-set` — **Bounds for Suprema and Infima Under Set Addition**
    > **Statement.**
    > Let $A,B\subseteq\mathbb{R}$ be nonempty and bounded. Then
    > \[
@@ -619,19 +541,19 @@ Completed in this tracker: 16
    >  \sup(A+B)\le \sup A+\sup B.
    > \]
 
-88. () `prop:upper-bounds-ambient-order` — **Upper Bounds Depend on the Ambient Order**
+73. () `prop:upper-bounds-ambient-order` — **Upper Bounds Depend on the Ambient Order**
    > **Statement.**
    > Let $(S,\le_S)$ and $(T,\le_T)$ be ordered sets, and let $A\subseteq S\cap T$. Whether $u$ is an upper bound of $A$ must be interpreted relative to the chosen ambient order.
 
-89. () `prop:suprema-ambient-set` — **Suprema Depend on the Ambient Set**
+74. () `prop:suprema-ambient-set` — **Suprema Depend on the Ambient Set**
    > **Statement.**
    > Let $A\subseteq S\subseteq S'$ be subsets of an ordered set. The supremum of $A$ relative to $S$, if it exists, need not agree with the supremum of $A$ relative to $S'$.
 
-90. () `thm:ambient-existence-supremum` — **Ambient Existence of Supremum**
+75. () `thm:ambient-existence-supremum` — **Ambient Existence of Supremum**
    > **Statement.**
    > There are ordered sets $S\subseteq S'$ and a subset $A\subseteq S$ such that $A$ has a supremum relative to $S'$ but has no supremum relative to $S$.
 
-91. () `lem:rational-gap-suprema` — **Rational Gap Example for Suprema**
+76. () `lem:rational-gap-suprema` — **Rational Gap Example for Suprema**
    > **Statement.**
    > Let
    > \[
@@ -639,43 +561,43 @@ Completed in this tracker: 16
    > \]
    > Then $A$ is nonempty and bounded above in $\mathbb{Q}$, but $A$ has no supremum relative to $\mathbb{Q}$.
 
-92. () `prop:translation-preserves-upper-bounds` — **Translation Preserves Upper Bounds**
+77. () `prop:translation-preserves-upper-bounds` — **Translation Preserves Upper Bounds**
    > **Statement.**
    > Let $A\subseteq\mathbb{R}$ be nonempty. If $u$ is an upper bound of $A$,
    > then $u+c$ is an upper bound of $A+c$.
 
-93. () `prop:translation-preserves-lower-bounds` — **Translation Preserves Lower Bounds**
+78. () `prop:translation-preserves-lower-bounds` — **Translation Preserves Lower Bounds**
    > **Statement.**
    > Let $A\subseteq\mathbb{R}$ be nonempty. If $\ell$ is a lower bound of $A$,
    > then $\ell+c$ is a lower bound of $A+c$.
 
-94. () `prop:positive-dilation-preserves-upper-bounds` — **Positive Dilation Preserves Upper Bounds**
+79. () `prop:positive-dilation-preserves-upper-bounds` — **Positive Dilation Preserves Upper Bounds**
    > **Statement.**
    > Let $A\subseteq\mathbb{R}$ be nonempty and let $\lambda>0$. If $u$ is an
    > upper bound of $A$, then $\lambda u$ is an upper bound of $\lambda A$.
 
-95. () `prop:positive-dilation-preserves-lower-bounds` — **Positive Dilation Preserves Lower Bounds**
+80. () `prop:positive-dilation-preserves-lower-bounds` — **Positive Dilation Preserves Lower Bounds**
    > **Statement.**
    > Let $A\subseteq\mathbb{R}$ be nonempty and let $\lambda>0$. If $\ell$ is a
    > lower bound of $A$, then $\lambda\ell$ is a lower bound of $\lambda A$.
 
-96. () `prop:negative-dilation-sends-lower-to-upper-bounds` — **Negative Dilation Sends Lower Bounds to Upper Bounds**
+81. () `prop:negative-dilation-sends-lower-to-upper-bounds` — **Negative Dilation Sends Lower Bounds to Upper Bounds**
    > **Statement.**
    > Let $A\subseteq\mathbb{R}$ be nonempty and let $\lambda<0$. If $\ell$ is a
    > lower bound of $A$, then $\lambda\ell$ is an upper bound of $\lambda A$.
 
-97. () `prop:negative-dilation-sends-upper-to-lower-bounds` — **Negative Dilation Sends Upper Bounds to Lower Bounds**
+82. () `prop:negative-dilation-sends-upper-to-lower-bounds` — **Negative Dilation Sends Upper Bounds to Lower Bounds**
    > **Statement.**
    > Let $A\subseteq\mathbb{R}$ be nonempty and let $\lambda<0$. If $u$ is an
    > upper bound of $A$, then $\lambda u$ is a lower bound of $\lambda A$.
 
-98. () `cor:reflection-swaps-upper-lower-bounds` — **Reflection Swaps Upper and Lower Bounds**
+83. () `cor:reflection-swaps-upper-lower-bounds` — **Reflection Swaps Upper and Lower Bounds**
    > **Statement.**
    > Let $A\subseteq\mathbb{R}$ be nonempty. If $\ell$ is a lower bound of $A$,
    > then $-\ell$ is an upper bound of $-A$. If $u$ is an upper bound of $A$,
    > then $-u$ is a lower bound of $-A$.
 
-99. () `thm:increasing-image-preserves-suprema` — **Increasing Image Preserves Suprema**
+84. () `thm:increasing-image-preserves-suprema` — **Increasing Image Preserves Suprema**
    > **Statement.**
    > Let $I\subseteq\mathbb{R}$, let $A\subseteq I$ be nonempty and bounded above,
    > and let $f:I\to\mathbb{R}$ be increasing. Suppose $s=\sup A$ belongs to $I$
@@ -686,7 +608,7 @@ Completed in this tracker: 16
    >  f(A)=\{f(a):a\in A\}.
    > \]
 
-100. () `thm:increasing-image-preserves-infima` — **Increasing Image Preserves Infima**
+85. () `thm:increasing-image-preserves-infima` — **Increasing Image Preserves Infima**
    > **Statement.**
    > Let $I\subseteq\mathbb{R}$, let $A\subseteq I$ be nonempty and bounded below,
    > and let $f:I\to\mathbb{R}$ be increasing. Suppose $t=\inf A$ belongs to $I$
@@ -695,7 +617,7 @@ Completed in this tracker: 16
    >  \inf f(A)=f(\inf A).
    > \]
 
-101. () `thm:decreasing-image-infimum-to-supremum` — **Decreasing Image Sends Infimum to Supremum**
+86. () `thm:decreasing-image-infimum-to-supremum` — **Decreasing Image Sends Infimum to Supremum**
    > **Statement.**
    > Let $I\subseteq\mathbb{R}$, let $A\subseteq I$ be nonempty and bounded below,
    > and let $f:I\to\mathbb{R}$ be decreasing. Suppose $t=\inf A$ belongs to $I$
@@ -704,7 +626,7 @@ Completed in this tracker: 16
    >  \sup f(A)=f(\inf A).
    > \]
 
-102. () `thm:decreasing-image-supremum-to-infimum` — **Decreasing Image Sends Supremum to Infimum**
+87. () `thm:decreasing-image-supremum-to-infimum` — **Decreasing Image Sends Supremum to Infimum**
    > **Statement.**
    > Let $I\subseteq\mathbb{R}$, let $A\subseteq I$ be nonempty and bounded above,
    > and let $f:I\to\mathbb{R}$ be decreasing. Suppose $s=\sup A$ belongs to $I$
@@ -713,7 +635,7 @@ Completed in this tracker: 16
    >  \inf f(A)=f(\sup A).
    > \]
 
-103. () `thm:increasing-inverse-preserves-suprema` — **Increasing Inverse Preserves Suprema**
+88. () `thm:increasing-inverse-preserves-suprema` — **Increasing Inverse Preserves Suprema**
    > **Statement.**
    > Let $I,J\subseteq\mathbb{R}$, and let $f:I\to J$ be bijective. Suppose
    > $f^{-1}:J\to I$ is increasing and continuous. If $B\subseteq J$ is nonempty
@@ -722,7 +644,7 @@ Completed in this tracker: 16
    >  \sup f^{-1}(B)=f^{-1}(\sup B).
    > \]
 
-104. () `thm:increasing-inverse-preserves-infima` — **Increasing Inverse Preserves Infima**
+89. () `thm:increasing-inverse-preserves-infima` — **Increasing Inverse Preserves Infima**
    > **Statement.**
    > Let $I,J\subseteq\mathbb{R}$, and let $f:I\to J$ be bijective. Suppose
    > $f^{-1}:J\to I$ is increasing and continuous. If $B\subseteq J$ is nonempty
@@ -731,7 +653,7 @@ Completed in this tracker: 16
    >  \inf f^{-1}(B)=f^{-1}(\inf B).
    > \]
 
-105. () `thm:decreasing-inverse-infimum-to-supremum` — **Decreasing Inverse Sends Infimum to Supremum**
+90. () `thm:decreasing-inverse-infimum-to-supremum` — **Decreasing Inverse Sends Infimum to Supremum**
    > **Statement.**
    > Let $I,J\subseteq\mathbb{R}$, and let $f:I\to J$ be bijective. Suppose
    > $f^{-1}:J\to I$ is decreasing and continuous. If $B\subseteq J$ is nonempty
@@ -740,7 +662,7 @@ Completed in this tracker: 16
    >  \sup f^{-1}(B)=f^{-1}(\inf B).
    > \]
 
-106. () `thm:decreasing-inverse-supremum-to-infimum` — **Decreasing Inverse Sends Supremum to Infimum**
+91. () `thm:decreasing-inverse-supremum-to-infimum` — **Decreasing Inverse Sends Supremum to Infimum**
    > **Statement.**
    > Let $I,J\subseteq\mathbb{R}$, and let $f:I\to J$ be bijective. Suppose
    > $f^{-1}:J\to I$ is decreasing and continuous. If $B\subseteq J$ is nonempty
@@ -749,89 +671,89 @@ Completed in this tracker: 16
    >  \inf f^{-1}(B)=f^{-1}(\sup B).
    > \]
 
-107. () `thm:supremum-pointwise-maximum-set` — **Supremum of the Pointwise Maximum Set**
+92. () `thm:supremum-pointwise-maximum-set` — **Supremum of the Pointwise Maximum Set**
    > **Statement.**
    > Let $A,B\subseteq\mathbb{R}$ be nonempty and bounded above. Then
    > \[
    >  \sup\max(A,B)=\max\{\sup A,\sup B\}.
    > \]
 
-108. () `thm:infimum-pointwise-maximum-set` — **Infimum of the Pointwise Maximum Set**
+93. () `thm:infimum-pointwise-maximum-set` — **Infimum of the Pointwise Maximum Set**
    > **Statement.**
    > Let $A,B\subseteq\mathbb{R}$ be nonempty and bounded below. Then
    > \[
    >  \inf\max(A,B)=\max\{\inf A,\inf B\}.
    > \]
 
-109. () `thm:supremum-pointwise-minimum-set` — **Supremum of the Pointwise Minimum Set**
+94. () `thm:supremum-pointwise-minimum-set` — **Supremum of the Pointwise Minimum Set**
    > **Statement.**
    > Let $A,B\subseteq\mathbb{R}$ be nonempty and bounded above. Then
    > \[
    >  \sup\min(A,B)=\min\{\sup A,\sup B\}.
    > \]
 
-110. () `thm:infimum-pointwise-minimum-set` — **Infimum of the Pointwise Minimum Set**
+95. () `thm:infimum-pointwise-minimum-set` — **Infimum of the Pointwise Minimum Set**
    > **Statement.**
    > Let $A,B\subseteq\mathbb{R}$ be nonempty and bounded below. Then
    > \[
    >  \inf\min(A,B)=\min\{\inf A,\inf B\}.
    > \]
 
-111. () `lem:union-preserves-upper-bounds` — **Union Preserves Upper Bounds**
+96. () `lem:union-preserves-upper-bounds` — **Union Preserves Upper Bounds**
    > **Statement.**
    > Let $A,B\subseteq\mathbb{R}$. If $u_A$ is an upper bound of $A$ and
    > $u_B$ is an upper bound of $B$, then $\max\{u_A,u_B\}$ is an upper bound
    > of $A\cup B$.
 
-112. () `lem:union-preserves-lower-bounds` — **Union Preserves Lower Bounds**
+97. () `lem:union-preserves-lower-bounds` — **Union Preserves Lower Bounds**
    > **Statement.**
    > Let $A,B\subseteq\mathbb{R}$. If $\ell_A$ is a lower bound of $A$ and
    > $\ell_B$ is a lower bound of $B$, then $\min\{\ell_A,\ell_B\}$ is a lower
    > bound of $A\cup B$.
 
-113. () `lem:subsets-preserve-upper-bounds` — **Subsets Preserve Upper Bounds**
+98. () `lem:subsets-preserve-upper-bounds` — **Subsets Preserve Upper Bounds**
    > **Statement.**
    > Let $C\subseteq A\subseteq\mathbb{R}$. If $u$ is an upper bound of $A$,
    > then $u$ is an upper bound of $C$.
 
-114. () `prop:union-bounded-above-iff-pieces-bounded-above` — **Union Is Bounded Above Exactly When Both Pieces Are**
+99. () `prop:union-bounded-above-iff-pieces-bounded-above` — **Union Is Bounded Above Exactly When Both Pieces Are**
    > **Statement.**
    > Let $A,B\subseteq\mathbb{R}$ be nonempty. Then $A\cup B$ is bounded above
    > if and only if $A$ is bounded above and $B$ is bounded above.
 
-115. () `lem:subsets-preserve-lower-bounds` — **Subsets Preserve Lower Bounds**
+100. () `lem:subsets-preserve-lower-bounds` — **Subsets Preserve Lower Bounds**
    > **Statement.**
    > Let $C\subseteq A\subseteq\mathbb{R}$. If $\ell$ is a lower bound of $A$,
    > then $\ell$ is a lower bound of $C$.
 
-116. () `prop:union-bounded-below-iff-pieces-bounded-below` — **Union Is Bounded Below Exactly When Both Pieces Are**
+101. () `prop:union-bounded-below-iff-pieces-bounded-below` — **Union Is Bounded Below Exactly When Both Pieces Are**
    > **Statement.**
    > Let $A,B\subseteq\mathbb{R}$ be nonempty. Then $A\cup B$ is bounded below
    > if and only if $A$ is bounded below and $B$ is bounded below.
 
-117. () `cor:union-bounded-iff-pieces-bounded` — **Union Is Bounded Exactly When Both Pieces Are**
+102. () `cor:union-bounded-iff-pieces-bounded` — **Union Is Bounded Exactly When Both Pieces Are**
    > **Statement.**
    > Let $A,B\subseteq\mathbb{R}$ be nonempty. Then $A\cup B$ is bounded if and
    > only if $A$ is bounded and $B$ is bounded.
 
-118. () `cor:intersections-inherit-bounds` — **Intersections Inherit Bounds**
+103. () `cor:intersections-inherit-bounds` — **Intersections Inherit Bounds**
    > **Statement.**
    > Let $A,B\subseteq\mathbb{R}$. Every upper bound of $A$ is an upper bound
    > of $A\cap B$, and every lower bound of $A$ is a lower bound of $A\cap B$.
 
-119. () `cor:differences-inherit-bounds` — **Differences Inherit Bounds**
+104. () `cor:differences-inherit-bounds` — **Differences Inherit Bounds**
    > **Statement.**
    > Let $A,B\subseteq\mathbb{R}$. Every upper bound of $A$ is an upper bound
    > of $A\setminus B$, and every lower bound of $A$ is a lower bound of
    > $A\setminus B$.
 
-120. () `cor:complements-inherit-ambient-bounds` — **Complements Inherit Ambient Bounds**
+105. () `cor:complements-inherit-ambient-bounds` — **Complements Inherit Ambient Bounds**
    > **Statement.**
    > Let $A\subseteq E\subseteq\mathbb{R}$, and take complements relative to
    > $E$. Every upper bound of $E$ is an upper bound of $E\setminus A$, and
    > every lower bound of $E$ is a lower bound of $E\setminus A$.
 
-121. () `lem:supremum-strict-upper-approximation` — **Supremum Strict Upper Approximation**
+106. () `lem:supremum-strict-upper-approximation` — **Supremum Strict Upper Approximation**
    > **Statement.**
    > Let $A\subseteq\mathbb{R}$ be nonempty and bounded above, and let
    > $s=\sup A$. If $u<s$, then there exists $a\in A$ such that
@@ -839,7 +761,7 @@ Completed in this tracker: 16
    > u<a\le s.
    > \]
 
-122. () `lem:infimum-strict-lower-approximation` — **Infimum Strict Lower Approximation**
+107. () `lem:infimum-strict-lower-approximation` — **Infimum Strict Lower Approximation**
    > **Statement.**
    > Let $A\subseteq\mathbb{R}$ be nonempty and bounded below, and let
    > $t=\inf A$. If $t<v$, then there exists $a\in A$ such that
@@ -847,47 +769,47 @@ Completed in this tracker: 16
    > t\le a<v.
    > \]
 
-123. () `prop:uniqueness-of-the-maximum` — **Uniqueness of the Maximum**
+108. () `prop:uniqueness-of-the-maximum` — **Uniqueness of the Maximum**
    > **Statement.**
    > Let $(S,\leq)$ be an ordered set and let $A\subseteq S$ be nonempty. If
    > $m,n\in S$ are both maxima of $A$, then $m=n$.
 
-124. () `prop:uniqueness-of-the-minimum` — **Uniqueness of the Minimum**
+109. () `prop:uniqueness-of-the-minimum` — **Uniqueness of the Minimum**
    > **Statement.**
    > Let $(S,\leq)$ be an ordered set and let $A\subseteq S$ be nonempty. If
    > $m,n\in S$ are both minima of $A$, then $m=n$.
 
-125. (✅) `prop:maximum-implies-supremum` — **Maximum Implies Supremum**
+110. (✅) `prop:maximum-implies-supremum` — **Maximum Implies Supremum**
    > **Statement.**
    > Let $(S,\leq)$ be an ordered set and let $A\subseteq S$ be nonempty. If
    > $m=\max A$, then $m=\sup A$.
 
-126. () `prop:minimum-implies-infimum` — **Minimum Implies Infimum**
+111. () `prop:minimum-implies-infimum` — **Minimum Implies Infimum**
    > **Statement.**
    > Let $(S,\leq)$ be an ordered set and let $A\subseteq S$ be nonempty. If
    > $m=\min A$, then $m=\inf A$.
 
-127. () `prop:supremum-in-the-set-is-the-maximum` — **Supremum in the Set is the Maximum**
+112. () `prop:supremum-in-the-set-is-the-maximum` — **Supremum in the Set is the Maximum**
    > **Statement.**
    > Let $(S,\leq)$ be an ordered set and let $A\subseteq S$ be nonempty. If
    > $s=\sup A$ and $s\in A$, then $s=\max A$.
 
-128. () `prop:infimum-in-the-set-is-the-minimum` — **Infimum in the Set is the Minimum**
+113. () `prop:infimum-in-the-set-is-the-minimum` — **Infimum in the Set is the Minimum**
    > **Statement.**
    > Let $(S,\leq)$ be an ordered set and let $A\subseteq S$ be nonempty. If
    > $i=\inf A$ and $i\in A$, then $i=\min A$.
 
-129. () `prop:uniqueness-of-the-supremum` — **Uniqueness of the Supremum**
+114. () `prop:uniqueness-of-the-supremum` — **Uniqueness of the Supremum**
    > **Statement.**
    > Let $(S,\leq)$ be an ordered set and let $A\subseteq S$ be nonempty. If
    > $s,t\in S$ are both suprema of $A$, then $s=t$.
 
-130. () `prop:uniqueness-of-the-infimum` — **Uniqueness of the Infimum**
+115. () `prop:uniqueness-of-the-infimum` — **Uniqueness of the Infimum**
    > **Statement.**
    > Let $(S,\leq)$ be an ordered set and let $A\subseteq S$ be nonempty. If
    > $i,j\in S$ are both infima of $A$, then $i=j$.
 
-131. () `prop:upper-bound-property-of-supremum` — **Upper Bound Property of the Supremum**
+116. () `prop:upper-bound-property-of-supremum` — **Upper Bound Property of the Supremum**
    > **Statement.**
    > Let $(S,\leq)$ be an ordered set, let $A\subseteq S$ be nonempty, and
    > suppose that $s=\sup A$ exists in $S$. Then every element of $A$ lies
@@ -896,7 +818,7 @@ Completed in this tracker: 16
    >  (\forall x\in A)(x\leq s).
    > \]
 
-132. () `prop:lower-bound-property-of-infimum` — **Lower Bound Property of the Infimum**
+117. () `prop:lower-bound-property-of-infimum` — **Lower Bound Property of the Infimum**
    > **Statement.**
    > Let $(S,\leq)$ be an ordered set, let $A\subseteq S$ be nonempty, and
    > suppose that $i=\inf A$ exists in $S$. Then every element of $A$ lies
@@ -905,85 +827,85 @@ Completed in this tracker: 16
    >  (\forall x\in A)(i\leq x).
    > \]
 
-133. () `lem:subset-inclusion-preserves-upper-bounds` — **Subset Inclusion Preserves Upper Bounds**
+118. () `lem:subset-inclusion-preserves-upper-bounds` — **Subset Inclusion Preserves Upper Bounds**
    > **Statement.**
    > Let $A\subseteq B\subseteq S$ be nonempty subsets of an ordered set
    > $(S,\leq)$. If $u$ is an upper bound of $B$, then $u$ is an upper bound
    > of $A$.
 
-134. () `lem:subset-inclusion-preserves-lower-bounds` — **Subset Inclusion Preserves Lower Bounds**
+119. () `lem:subset-inclusion-preserves-lower-bounds` — **Subset Inclusion Preserves Lower Bounds**
    > **Statement.**
    > Let $A\subseteq B\subseteq S$ be nonempty subsets of an ordered set
    > $(S,\leq)$. If $\ell$ is a lower bound of $B$, then $\ell$ is a lower
    > bound of $A$.
 
-135. () `thm:supremum-is-monotone-under-inclusion` — **Supremum Is Monotone Under Inclusion**
+120. () `thm:supremum-is-monotone-under-inclusion` — **Supremum Is Monotone Under Inclusion**
    > **Statement.**
    > Let $A,B\subseteq\mathbb{R}$ be nonempty and bounded above. If
    > $A\subseteq B$, then $\sup A\leq\sup B$.
 
-136. () `thm:infimum-is-monotone-under-inclusion` — **Infimum Is Monotone Under Inclusion**
+121. () `thm:infimum-is-monotone-under-inclusion` — **Infimum Is Monotone Under Inclusion**
    > **Statement.**
    > Let $A,B\subseteq\mathbb{R}$ be nonempty and bounded below. If
    > $A\subseteq B$, then $\inf B\leq\inf A$.
 
-137. () `prop:upper-bound-comparison-with-the-supremum` — **Upper Bound Comparison with the Supremum**
+122. () `prop:upper-bound-comparison-with-the-supremum` — **Upper Bound Comparison with the Supremum**
    > **Statement.**
    > Let $A\subseteq\mathbb{R}$ be nonempty and bounded above, and let
    > $s=\sup A$. For $u\in\mathbb{R}$, the number $u$ is an upper bound of
    > $A$ if and only if $s\leq u$.
 
-138. () `prop:lower-bound-comparison-with-the-infimum` — **Lower Bound Comparison with the Infimum**
+123. () `prop:lower-bound-comparison-with-the-infimum` — **Lower Bound Comparison with the Infimum**
    > **Statement.**
    > Let $A\subseteq\mathbb{R}$ be nonempty and bounded below, and let
    > $i=\inf A$. For $\ell\in\mathbb{R}$, the number $\ell$ is a lower bound
    > of $A$ if and only if $\ell\leq i$.
 
-139. () `prop:every-element-lies-above-the-infimum` — **Every Element Lies Above the Infimum**
+124. () `prop:every-element-lies-above-the-infimum` — **Every Element Lies Above the Infimum**
    > **Statement.**
    > Let $A\subseteq\mathbb{R}$ be nonempty and bounded below, and let
    > $i=\inf A$. Then $i\leq x$ for every $x\in A$.
 
-140. (✅) `thm:infimum-less-than-supremum` — **Infimum Is Less Than or Equal to the Supremum**
+125. (✅) `thm:infimum-less-than-supremum` — **Infimum Is Less Than or Equal to the Supremum**
    > **Statement.**
    > Let $A\subseteq\mathbb{R}$ be nonempty, bounded below, and bounded above.
    > Then $\inf A\leq\sup A$.
 
-141. () `thm:lub-property-implies-existence-of-suprema` — **Least Upper Bound Property Implies Existence of Suprema**
+126. () `thm:lub-property-implies-existence-of-suprema` — **Least Upper Bound Property Implies Existence of Suprema**
    > **Statement.**
    > Let $S\subseteq\mathbb{R}$ be nonempty and bounded above. By the least
    > upper bound property of the real numbers, there exists a real number
    > $s$ such that $s=\sup S$.
 
-142. () `prop:supremum-need-not-belong-to-the-set` — **Supremum Need Not Belong to the Set**
+127. () `prop:supremum-need-not-belong-to-the-set` — **Supremum Need Not Belong to the Set**
    > **Statement.**
    > There exists a nonempty bounded above set $A\subseteq\mathbb{R}$ such that
    > \[
    > \sup A\notin A.
    > \]
 
-143. () `thm:glb-property-implies-existence-of-infima` — **Greatest Lower Bound Property Implies Existence of Infima**
+128. () `thm:glb-property-implies-existence-of-infima` — **Greatest Lower Bound Property Implies Existence of Infima**
    > **Statement.**
    > Let $S\subseteq\mathbb{R}$ be nonempty and bounded below. Then there
    > exists a real number $i$ such that $i=\inf S$.
 
-144. () `prop:infimum-need-not-belong-to-the-set` — **Infimum Need Not Belong to the Set**
+129. () `prop:infimum-need-not-belong-to-the-set` — **Infimum Need Not Belong to the Set**
    > **Statement.**
    > There exists a nonempty bounded below set $A\subseteq\mathbb{R}$ such that
    > \[
    > \inf A\notin A.
    > \]
 
-145. () `prop:order-comparison-of-suprema` — **Order Comparison of Suprema**
+130. () `prop:order-comparison-of-suprema` — **Order Comparison of Suprema**
    > **Statement.**
    > Let $A,B\subseteq\mathbb{R}$ be nonempty and bounded above. If every
    > $x\in A$ is below some $y\in B$, then $\sup A\leq\sup B$.
 
-146. () `thm:archimedean-property` — **Archimedean Property**
+131. () `thm:archimedean-property` — **Archimedean Property**
    > **Statement.**
    > For every real number $x$, there exists a natural number $n$ such that $n>x$.
 
-147. () `cor:archimedean-reciprocal-form` — **Archimedean Reciprocal Form**
+132. () `cor:archimedean-reciprocal-form` — **Archimedean Reciprocal Form**
    > **Statement.**
    > For every real number $\varepsilon>0$, there exists a natural number
    > $n\in\mathbb{N}$ such that
@@ -991,11 +913,11 @@ Completed in this tracker: 16
    > 0<\frac{1}{n}<\varepsilon.
    > \]
 
-148. () `cor:archimedean-reciprocal` — **Archimedean Scaling Form**
+133. () `cor:archimedean-reciprocal` — **Archimedean Scaling Form**
    > **Statement.**
    > For every $x>0$ and every $y\in\mathbb{R}$, there exists $n\in\mathbb{N}$ such that $nx>y$.
 
-149. () `lem:integer-part-lemma` — **Integer Part Lemma**
+134. () `lem:integer-part-lemma` — **Integer Part Lemma**
    > **Statement.**
    > For every real number $x\in\mathbb{R}$, there exists an integer
    > $m\in\mathbb{Z}$ such that
@@ -1003,21 +925,21 @@ Completed in this tracker: 16
    > m\le x<m+1.
    > \]
 
-150. () `lem:archimedean-integer-part-lemma` — **Archimedean Integer Part Lemma**
+135. () `lem:archimedean-integer-part-lemma` — **Archimedean Integer Part Lemma**
    > **Statement.**
    > For every $x\in\mathbb{R}$, there exists $m\in\mathbb{Z}$ such that
    > \[
    > m-1\le x<m.
    > \]
 
-151. () `lem:integer-ceiling-lemma` — **Integer Ceiling Lemma**
+136. () `lem:integer-ceiling-lemma` — **Integer Ceiling Lemma**
    > **Statement.**
    > For every $x\in\mathbb{R}$, there exists $m\in\mathbb{Z}$ such that
    > \[
    > x<m\le x+1.
    > \]
 
-152. () `lem:integer-above-lemma` — **Integer Above Lemma**
+137. () `lem:integer-above-lemma` — **Integer Above Lemma**
    > **Statement.**
    > For every $x\in\mathbb{R}$, there exists an integer $m\in\mathbb{Z}$ such
    > that
@@ -1025,7 +947,7 @@ Completed in this tracker: 16
    > x<m.
    > \]
 
-153. () `lem:unit-length-interval-contains-integer` — **Unit-Length Interval Contains an Integer**
+138. () `lem:unit-length-interval-contains-integer` — **Unit-Length Interval Contains an Integer**
    > **Statement.**
    > If $\alpha,\beta\in\mathbb{R}$ and $\beta-\alpha>1$, then there exists
    > $m\in\mathbb{Z}$ such that
@@ -1033,25 +955,25 @@ Completed in this tracker: 16
    > \alpha<m<\beta.
    > \]
 
-154. (✅) `thm:density-of-rationals-in-reals` — **Density of the Rationals**
+139. (✅) `thm:density-of-rationals-in-reals` — **Density of the Rationals**
    > **Statement.**
    > For every $a,b\in\mathbb{R}$ with $a<b$, there exists $q\in\mathbb{Q}$ such that $a<q<b$.
 
-155. () `lem:rational-translation-preserves-rationality` — **Rational Translation Preserves Rationality**
+140. () `lem:rational-translation-preserves-rationality` — **Rational Translation Preserves Rationality**
    > **Statement.**
    > If $r,q\in\mathbb{Q}$, then
    > \[
    > r+q\in\mathbb{Q}.
    > \]
 
-156. () `lem:rational-difference-preserves-rationality` — **Rational Difference Preserves Rationality**
+141. () `lem:rational-difference-preserves-rationality` — **Rational Difference Preserves Rationality**
    > **Statement.**
    > If $r,q\in\mathbb{Q}$, then
    > \[
    > r-q\in\mathbb{Q}.
    > \]
 
-157. () `lem:nonzero-rational-product-preserves-irrationality` — **Nonzero Rational Product Preserves Irrationality**
+142. () `lem:nonzero-rational-product-preserves-irrationality` — **Nonzero Rational Product Preserves Irrationality**
    > **Statement.**
    > If $q\in\mathbb{Q}\setminus\{0\}$ and
    > $x\in\mathbb{R}\setminus\mathbb{Q}$, then
@@ -1059,14 +981,14 @@ Completed in this tracker: 16
    > qx\in\mathbb{R}\setminus\mathbb{Q}.
    > \]
 
-158. () `lem:rational-translation-preserves-irrationality` — **Rational Translation Preserves Irrationality**
+143. () `lem:rational-translation-preserves-irrationality` — **Rational Translation Preserves Irrationality**
    > **Statement.**
    > If $q\in\mathbb{Q}$ and $x\in\mathbb{R}\setminus\mathbb{Q}$, then
    > \[
    > q+x\in\mathbb{R}\setminus\mathbb{Q}.
    > \]
 
-159. () `lem:irrational-minus-irrational-need-not-be-irrational` — **Irrational Minus Irrational Need Not Be Irrational**
+144. () `lem:irrational-minus-irrational-need-not-be-irrational` — **Irrational Minus Irrational Need Not Be Irrational**
    > **Statement.**
    > There exist irrational numbers $x,y\in\mathbb{R}\setminus\mathbb{Q}$ such
    > that
@@ -1074,32 +996,32 @@ Completed in this tracker: 16
    > x-y\in\mathbb{Q}.
    > \]
 
-160. () `lem:rational-minus-irrational-is-irrational` — **Rational Minus Irrational Is Irrational**
+145. () `lem:rational-minus-irrational-is-irrational` — **Rational Minus Irrational Is Irrational**
    > **Statement.**
    > If $q\in\mathbb{Q}$ and $x\in\mathbb{R}\setminus\mathbb{Q}$, then
    > \[
    > q-x\in\mathbb{R}\setminus\mathbb{Q}.
    > \]
 
-161. () `lem:irrational-plus-rational-is-irrational` — **Irrational Plus Rational Is Irrational**
+146. () `lem:irrational-plus-rational-is-irrational` — **Irrational Plus Rational Is Irrational**
    > **Statement.**
    > If $x\in\mathbb{R}\setminus\mathbb{Q}$ and $q\in\mathbb{Q}$, then
    > \[
    > x+q\in\mathbb{R}\setminus\mathbb{Q}.
    > \]
 
-162. () `lem:irrational-minus-rational-is-irrational` — **Irrational Minus Rational Is Irrational**
+147. () `lem:irrational-minus-rational-is-irrational` — **Irrational Minus Rational Is Irrational**
    > **Statement.**
    > If $x\in\mathbb{R}\setminus\mathbb{Q}$ and $q\in\mathbb{Q}$, then
    > \[
    > x-q\in\mathbb{R}\setminus\mathbb{Q}.
    > \]
 
-163. () `thm:density-of-irrationals-in-reals` — **Density of the Irrationals**
+148. () `thm:density-of-irrationals-in-reals` — **Density of the Irrationals**
    > **Statement.**
    > For every $a,b\in\mathbb{R}$ with $a<b$, there exists $s\in\mathbb{R}\setminus\mathbb{Q}$ such that $a<s<b$.
 
-164. () `thm:irrational-between-any-two-rationals` — **An Irrational Between Any Two Rationals**
+149. () `thm:irrational-between-any-two-rationals` — **An Irrational Between Any Two Rationals**
    > **Statement.**
    > If $r,s\in\mathbb{Q}$ and $r<s$, then there exists
    > $x\in\mathbb{R}\setminus\mathbb{Q}$ such that
@@ -1107,7 +1029,7 @@ Completed in this tracker: 16
    > r<x<s.
    > \]
 
-165. () `thm:rational-between-any-two-irrationals` — **A Rational Between Any Two Irrationals**
+150. () `thm:rational-between-any-two-irrationals` — **A Rational Between Any Two Irrationals**
    > **Statement.**
    > If $x,y\in\mathbb{R}\setminus\mathbb{Q}$ and $x<y$, then there exists
    > $q\in\mathbb{Q}$ such that
@@ -1115,7 +1037,7 @@ Completed in this tracker: 16
    > x<q<y.
    > \]
 
-166. () `lem:small-irrational-positive-number` — **Small Irrational Positive Number**
+151. () `lem:small-irrational-positive-number` — **Small Irrational Positive Number**
    > **Statement.**
    > For every $\varepsilon>0$, there exists
    > $\eta\in\mathbb{R}\setminus\mathbb{Q}$ such that
@@ -1123,26 +1045,26 @@ Completed in this tracker: 16
    > 0<\eta<\varepsilon.
    > \]
 
-167. () `cor:no-adjacent-real-numbers` — **No Adjacent Real Numbers**
+152. () `cor:no-adjacent-real-numbers` — **No Adjacent Real Numbers**
    > **Statement.**
    > If $a,b\in\mathbb{R}$ and $a<b$, then there exists $c\in\mathbb{R}$ such that
    > \[
    > a<c<b.
    > \]
 
-168. () `thm:no-immediate-successors-in-r` — **No Immediate Successors in $\mathbb{R}$**
+153. () `thm:no-immediate-successors-in-r` — **No Immediate Successors in $\mathbb{R}$**
    > **Statement.**
    > For every $a\in\mathbb{R}$, there is no least real number greater than $a$.
 
-169. () `thm:no-immediate-predecessors-in-r` — **No Immediate Predecessors in $\mathbb{R}$**
+154. () `thm:no-immediate-predecessors-in-r` — **No Immediate Predecessors in $\mathbb{R}$**
    > **Statement.**
    > For every $a\in\mathbb{R}$, there is no greatest real number less than $a$.
 
-170. () `cor:every-open-interval-contains-rational-and-irrational` — **Rational and Irrational Points in Every Open Interval**
+155. () `cor:every-open-interval-contains-rational-and-irrational` — **Rational and Irrational Points in Every Open Interval**
    > **Statement.**
    > Every open interval in $\mathbb{R}$ contains both a rational number and an irrational number.
 
-171. () `lem:nested-closed-intervals-have-ordered-endpoints` — **Nested Closed Intervals Have Ordered Endpoints**
+156. () `lem:nested-closed-intervals-have-ordered-endpoints` — **Nested Closed Intervals Have Ordered Endpoints**
    > **Statement.**
    > Let $\{[a_n,b_n]\}_{n\in\mathbb N}$ be a sequence of closed intervals such that
    > \[
@@ -1154,17 +1076,17 @@ Completed in this tracker: 16
    > \]
    > for every $n\in\mathbb N$.
 
-172. () `lem:left-endpoints-nested-intervals-increasing` — **Left Endpoints of Nested Intervals Are Increasing**
+157. () `lem:left-endpoints-nested-intervals-increasing` — **Left Endpoints of Nested Intervals Are Increasing**
    > **Statement.**
    > Let $\{[a_n,b_n]\}_{n\in\mathbb N}$ be a nested sequence of closed intervals.
    > Then the sequence $(a_n)$ is monotone increasing.
 
-173. () `lem:right-endpoints-nested-intervals-decreasing` — **Right Endpoints of Nested Intervals Are Decreasing**
+158. () `lem:right-endpoints-nested-intervals-decreasing` — **Right Endpoints of Nested Intervals Are Decreasing**
    > **Statement.**
    > Let $\{[a_n,b_n]\}_{n\in\mathbb N}$ be a nested sequence of closed intervals.
    > Then the sequence $(b_n)$ is monotone decreasing.
 
-174. () `lem:left-endpoints-bounded-above-by-right-endpoints` — **Left Endpoints Are Bounded Above by Right Endpoints**
+159. () `lem:left-endpoints-bounded-above-by-right-endpoints` — **Left Endpoints Are Bounded Above by Right Endpoints**
    > **Statement.**
    > Let $\{[a_n,b_n]\}_{n\in\mathbb N}$ be a nested sequence of closed intervals.
    > Then for all $m,n\in\mathbb N$,
@@ -1172,7 +1094,7 @@ Completed in this tracker: 16
    >  a_n\le b_m.
    > \]
 
-175. () `lem:endpoint-supremum-infimum-inequality` — **Endpoint Supremum Infimum Inequality**
+160. () `lem:endpoint-supremum-infimum-inequality` — **Endpoint Supremum Infimum Inequality**
    > **Statement.**
    > Let $\{[a_n,b_n]\}_{n\in\mathbb N}$ be a nested sequence of closed intervals. If
    > \[
@@ -1185,7 +1107,7 @@ Completed in this tracker: 16
    >  \alpha\le \beta.
    > \]
 
-176. () `thm:nested-interval-theorem` — **Nested Interval Theorem**
+161. () `thm:nested-interval-theorem` — **Nested Interval Theorem**
    > **Statement.**
    > Let $\{[a_n,b_n]\}_{n\in\mathbb N}$ be a sequence of nonempty closed bounded
    > intervals in $\mathbb R$ such that
@@ -1197,7 +1119,7 @@ Completed in this tracker: 16
    >  \bigcap_{n=1}^{\infty}[a_n,b_n]\neq\varnothing.
    > \]
 
-177. () `cor:nested-interval-intersection-contains-endpoint-supremum` — **Nested Interval Intersection Contains the Endpoint Supremum**
+162. () `cor:nested-interval-intersection-contains-endpoint-supremum` — **Nested Interval Intersection Contains the Endpoint Supremum**
    > **Statement.**
    > Let $\{[a_n,b_n]\}_{n\in\mathbb N}$ be a nested sequence of nonempty closed
    > bounded intervals. If
@@ -1209,7 +1131,7 @@ Completed in this tracker: 16
    >  \alpha\in \bigcap_{n=1}^{\infty}[a_n,b_n].
    > \]
 
-178. () `cor:nested-interval-intersection-contains-endpoint-infimum` — **Nested Interval Intersection Contains the Endpoint Infimum**
+163. () `cor:nested-interval-intersection-contains-endpoint-infimum` — **Nested Interval Intersection Contains the Endpoint Infimum**
    > **Statement.**
    > Let $\{[a_n,b_n]\}_{n\in\mathbb N}$ be a nested sequence of nonempty closed
    > bounded intervals. If
@@ -1221,7 +1143,7 @@ Completed in this tracker: 16
    >  \beta\in \bigcap_{n=1}^{\infty}[a_n,b_n].
    > \]
 
-179. () `cor:nested-intervals-vanishing-length-have-unique-point` — **Nested Intervals with Vanishing Length Have Unique Point**
+164. () `cor:nested-intervals-vanishing-length-have-unique-point` — **Nested Intervals with Vanishing Length Have Unique Point**
    > **Statement.**
    > Let $\{[a_n,b_n]\}_{n\in\mathbb N}$ be a nested sequence of nonempty closed
    > bounded intervals. If
@@ -1233,7 +1155,7 @@ Completed in this tracker: 16
    >  \bigcap_{n=1}^{\infty}[a_n,b_n]=\{x\}.
    > \]
 
-180. () `cor:nested-intervals-vanishing-length-have-equal-endpoint-limits` — **Nested Intervals with Vanishing Length Have Equal Endpoint Limits**
+165. () `cor:nested-intervals-vanishing-length-have-equal-endpoint-limits` — **Nested Intervals with Vanishing Length Have Equal Endpoint Limits**
    > **Statement.**
    > Let $\{[a_n,b_n]\}_{n\in\mathbb N}$ be a nested sequence of nonempty closed
    > bounded intervals. If
@@ -1245,7 +1167,7 @@ Completed in this tracker: 16
    >  \lim_{n\to\infty}a_n=\lim_{n\to\infty}b_n.
    > \]
 
-181. () `cor:unique-point-in-nested-intervals-is-endpoint-limit` — **Unique Point in Nested Intervals Is Endpoint Limit**
+166. () `cor:unique-point-in-nested-intervals-is-endpoint-limit` — **Unique Point in Nested Intervals Is Endpoint Limit**
    > **Statement.**
    > Let $\{[a_n,b_n]\}_{n\in\mathbb N}$ be a nested sequence of nonempty closed
    > bounded intervals. If
@@ -1263,7 +1185,7 @@ Completed in this tracker: 16
    >  \lim_{n\to\infty}b_n=x.
    > \]
 
-182. () `prop:open-nested-intervals-need-not-have-nonempty-intersection` — **Open Nested Intervals Need Not Have Nonempty Intersection**
+167. () `prop:open-nested-intervals-need-not-have-nonempty-intersection` — **Open Nested Intervals Need Not Have Nonempty Intersection**
    > **Statement.**
    > There exists a nested sequence of nonempty open bounded intervals $(a_n,b_n)$
    > such that
@@ -1275,17 +1197,17 @@ Completed in this tracker: 16
    >  \bigcap_{n=1}^{\infty}(a_n,b_n)=\varnothing.
    > \]
 
-183. () `prop:closedness-is-necessary-in-nested-interval-theorem` — **Closedness Is Necessary in the Nested Interval Theorem**
+168. () `prop:closedness-is-necessary-in-nested-interval-theorem` — **Closedness Is Necessary in the Nested Interval Theorem**
    > **Statement.**
    > The conclusion of the Nested Interval Theorem can fail if the intervals are
    > not closed.
 
-184. () `prop:boundedness-is-necessary-in-nested-interval-theorem` — **Boundedness Is Necessary in the Nested Interval Theorem**
+169. () `prop:boundedness-is-necessary-in-nested-interval-theorem` — **Boundedness Is Necessary in the Nested Interval Theorem**
    > **Statement.**
    > The conclusion of the Nested Interval Theorem can fail for nested nonempty
    > closed intervals that are not bounded.
 
-185. () `thm:order-separation-by-supremum` — **Order Separation by Supremum**
+170. () `thm:order-separation-by-supremum` — **Order Separation by Supremum**
    > **Statement.**
    > Let $A,B\subseteq\mathbb{R}$ be nonempty sets such that
    > \[
@@ -1298,7 +1220,7 @@ Completed in this tracker: 16
    > \]
    > for every $a\in A$ and every $b\in B$.
 
-186. () `thm:dedekind-cut-property` — **Dedekind Cut Property**
+171. () `thm:dedekind-cut-property` — **Dedekind Cut Property**
    > **Statement.**
    > Let $A,B\subseteq\mathbb{R}$ be nonempty sets such that
    > \[
@@ -1315,9 +1237,87 @@ Completed in this tracker: 16
    > \]
    > for every $a\in A$ and every $b\in B$.
 
-187. () `cor:no-gaps-in-r` — **No Gaps in $\mathbb{R}$**
+172. () `cor:no-gaps-in-r` — **No Gaps in $\mathbb{R}$**
    > **Statement.**
    > The real line has no Dedekind gaps.
+
+173. () `prop:abs-value-is-distance-to-zero` — **Absolute Value Is Distance to the Origin**
+   > **Statement.**
+   > For every $a\in\mathbb{R}$, $\;|a|=d(a,0)$.
+
+174. () `thm:closed-iff-contains-limit-points` — **Closed Sets Contain Their Limit Points**
+   > **Statement.**
+   > A set $F\subseteq\mathbb{R}$ is closed if and only if it contains every one of its limit points.
+
+175. () `thm:compact-implies-closed-bounded` — **Compact Subsets of $\mathbb{R}$ Are Closed and Bounded**
+   > **Statement.**
+   > If $K\subseteq\mathbb{R}$ is compact, then $K$ is closed and bounded.
+
+176. () `thm:closed-bounded-interval-compact` — **Closed Bounded Intervals Are Compact**
+   > **Statement.**
+   > Every closed bounded interval $[a,b]\subseteq\mathbb{R}$ is compact.
+
+177. () `thm:heine-borel` — **Heine--Borel Theorem for $\mathbb{R}$**
+   > **Statement.**
+   > A set $K\subseteq\mathbb{R}$ is compact if and only if $K$ is closed and bounded.
+
+178. () `thm:open-interval-is-open` — **Open Intervals Are Open**
+   > **Statement.**
+   > Every open interval $(a,b)$, every open ray $(a,\infty)$ and $(-\infty,b)$, and $\mathbb{R}$ itself are open sets.
+
+179. () `thm:open-set-closure-operations` — **Unions and Finite Intersections of Open Sets**
+   > **Statement.**
+   > An arbitrary union of open subsets of $\mathbb{R}$ is open, and a finite intersection of open subsets of $\mathbb{R}$ is open.
+
+180. () `lem:minimum-of-positive-numbers-is-positive` — **Minimum of Positive Numbers Is Positive**
+   > **Statement.**
+   > If $a>0$ and $b>0$, then
+   > \[
+   > \min\{a,b\}>0.
+   > \]
+
+181. () `lem:half-epsilon-is-positive` — **Half Epsilon Is Positive**
+   > **Statement.**
+   > If $\varepsilon>0$, then
+   > \[
+   > \frac{\varepsilon}{2}>0.
+   > \]
+
+182. () `lem:epsilon-splitting` — **Epsilon Splitting**
+   > **Statement.**
+   > If $\varepsilon>0$, then
+   > \[
+   > \frac{\varepsilon}{2}+\frac{\varepsilon}{2}=\varepsilon.
+   > \]
+
+183. () `lem:positive-minimum-bound` — **Positive Minimum Bound**
+   > **Statement.**
+   > If $0<\delta\le a$ and $0<\delta\le b$, then
+   > \[
+   > \delta\le \min\{a,b\}.
+   > \]
+
+184. () `lem:choosing-a-smaller-positive-number` — **Choosing a Smaller Positive Number**
+   > **Statement.**
+   > If $\varepsilon>0$ and $c>0$, then there exists $\delta>0$ such that
+   > \[
+   > 0<\delta<\varepsilon
+   > \quad\text{and}\quad
+   > 0<\delta<c.
+   > \]
+
+185. () `thm:distance-is-a-metric` — **The Distance Function Is a Metric**
+   > **Statement.**
+   > The map $d(x,y)=|x-y|$ satisfies, for all $x,y,z\in\mathbb{R}$: (i) $d(x,y)\ge 0$ with $d(x,y)=0$ iff $x=y$; (ii) $d(x,y)=d(y,x)$; and (iii) $d(x,z)\le d(x,y)+d(y,z)$. Hence $(\mathbb{R},d)$ is a metric space.
+
+186. () `thm:real-line-structural-order-facts` — **Real Line Structural Order Facts**
+   > **Statement.**
+   > The real numbers are linearly ordered, form an ordered field, and satisfy the
+   > least upper bound property.
+
+187. () `thm:closed-set-closure-operations` — **Closure Laws for Closed Sets**
+   > **Statement.**
+   > An arbitrary intersection of closed subsets of $\mathbb{R}$ is closed, and a finite union of closed subsets of $\mathbb{R}$ is closed.
 
 188. () `prop:composition-injective` — **Composition of Injections Is Injective**
    > **Statement.**
