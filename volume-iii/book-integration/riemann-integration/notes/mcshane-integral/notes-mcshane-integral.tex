@@ -47,6 +47,8 @@ near the slab rather than inside it. This makes the integral less forgiving
 about sign-changing singular behavior and much closer to Lebesgue's absolute
 notion of size.
 
+\subsection*{Definition}
+
 \begin{definitionbox}{Definition (McShane-Fine Tagged Partition)}
 \begin{definition}[McShane-Fine Tagged Partition]
 \label{def:mcshane-fine-tagged-partition}
@@ -97,6 +99,8 @@ Therefore McShane integrability is a stronger demand: the sums must survive
 all the usual gauge-fine tests and also the extra free-tag tests.
 \end{remark*}
 
+\subsection*{Existence and Applicability Criterion}
+
 \begin{theorembox}{Theorem (McShane Sits Between Riemann and HK)}
 \begin{theorem}[Riemann Integrable Implies McShane Integrable Implies Henstock--Kurzweil Integrable]
 \label{thm:riemann-mcshane-hk-inclusions}
@@ -144,11 +148,13 @@ size is not Lebesgue integrable.
 
 \begin{remark*}[Forward dependency]
 The proof that every Riemann-integrable function is McShane-integrable uses
-the measure-zero diagnosis in the next section: Riemann integrability means
-the discontinuity set is null. The exposition places McShane first because it
-belongs syntactically with the gauge integrals; the proof ledger records that
-it imports the Lebesgue criterion.
+the earlier measure-zero diagnosis: Riemann integrability means the
+discontinuity set is null. The proof ledger records that McShane imports the
+Lebesgue criterion even though its definition belongs syntactically with the
+gauge integrals.
 \end{remark*}
+
+\subsection*{Worked Failure Mode}
 
 \begin{remark*}[Why free tags force Lebesgue behavior]
 The HK derivative example
@@ -170,6 +176,8 @@ Lebesgue class, while HK shows that keeping tags inside slabs reaches beyond
 Lebesgue to conditionally integrable derivatives.
 \end{remark*}
 
+\subsection*{What the Failure Motivates Next}
+
 \begin{remark*}[Bug report]
 McShane is elegant but not the terminal fix for this chapter's story. If one
 wants a tagged-sum definition of the Lebesgue integral, it is excellent. If
@@ -178,8 +186,8 @@ strictly stronger. And if one wants probability, stochastic processes, and
 abstract spaces, the next volume still needs measure theory explicitly.
 \end{remark*}
 
-\begin{remark*}[Handoff to measure zero]
+\begin{remark*}[Handoff to measure theory]
 McShane reveals that gauge machinery and Lebesgue size are compatible. The
-next section names the exact size condition already controlling the older
-Riemann--Darboux family: the discontinuity set must have measure zero.
+next volume builds the measure-theoretic machinery that this chapter has only
+anticipated through measure-zero diagnostics and gauge-sum comparisons.
 \end{remark*}

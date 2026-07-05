@@ -193,6 +193,21 @@ environments:
   file: notes\darboux-integral\notes-darboux-integral.tex
   display_title: Continuous Images of Darboux-Integrable Functions
   proof_file: proofs\darboux-integral\prf-darboux-integrable-continuous-composition.tex
+- label: def:measure-zero
+  type: def
+  file: notes\measure-zero\notes-measure-zero.tex
+  display_title: Measure Zero
+  proof_file: null
+- label: def:point-oscillation-integration
+  type: def
+  file: notes\measure-zero\notes-measure-zero.tex
+  display_title: Point Oscillation
+  proof_file: null
+- label: thm:lebesgue-criterion-riemann-integrability
+  type: thm
+  file: notes\measure-zero\notes-measure-zero.tex
+  display_title: Lebesgue Criterion for Riemann Integrability
+  proof_file: proofs\measure-zero\prf-lebesgue-criterion-riemann-integrability.tex
 - label: def:total-variation
   type: def
   file: notes\riemann-stieltjes\notes-riemann-stieltjes.tex
@@ -298,19 +313,4 @@ environments:
   file: notes\mcshane-integral\notes-mcshane-integral.tex
   display_title: Riemann Integrable Implies McShane Integrable Implies Henstock--Kurzweil Integrable
   proof_file: proofs\mcshane-integral\prf-riemann-mcshane-hk-inclusions.tex
-- label: def:measure-zero
-  type: def
-  file: notes\measure-zero\notes-measure-zero.tex
-  display_title: Measure Zero
-  proof_file: null
-- label: def:point-oscillation-integration
-  type: def
-  file: notes\measure-zero\notes-measure-zero.tex
-  display_title: Point Oscillation
-  proof_file: null
-- label: thm:lebesgue-criterion-riemann-integrability
-  type: thm
-  file: notes\measure-zero\notes-measure-zero.tex
-  display_title: Lebesgue Criterion for Riemann Integrability
-  proof_file: proofs\measure-zero\prf-lebesgue-criterion-riemann-integrability.tex
 proof_files: []

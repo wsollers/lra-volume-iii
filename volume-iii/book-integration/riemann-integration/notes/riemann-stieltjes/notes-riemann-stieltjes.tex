@@ -16,6 +16,8 @@ different complaint: ordinary integration has only one ruler. By replacing
 nonuniform weight and can encode discrete masses as jumps of \(\alpha\).
 \end{remark*}
 
+\subsection*{Definition}
+
 \begin{definitionbox}{Definition (Total Variation)}
 \begin{definition}[Total Variation]
 \label{def:total-variation}
@@ -66,6 +68,8 @@ denoted \(\int_a^b f\,d\alpha\).
 \end{definition}
 \end{definitionbox}
 
+\subsection*{Existence and Applicability Criterion}
+
 \begin{theorembox}{Theorem (Continuous Integrand, BV Integrator)}
 \begin{theorem}[Continuous Integrand and BV Integrator]
 \label{thm:rs-continuous-bv-existence}
@@ -73,6 +77,8 @@ If \(f\) is continuous on \([a,b]\) and \(\alpha\) has bounded variation, then
 \(\int_a^b f\,d\alpha\) exists.
 \end{theorem}
 \end{theorembox}
+
+\subsection*{Algebraic and Order Properties}
 
 \begin{theorembox}{Theorem (Bilinearity)}
 \begin{theorem}[Bilinearity of the Riemann--Stieltjes Integral]
@@ -128,6 +134,8 @@ If \(\alpha\in C^1([a,b])\) and \(f\) is Riemann-integrable on \([a,b]\), then
 \end{theorem}
 \end{theorembox}
 
+\subsection*{Worked Positive Example}
+
 \begin{theorembox}{Theorem (Step Integrator)}
 \begin{theorem}[Step Integrators Give Finite Sums]
 \label{thm:rs-step-integrator-finite-sum}
@@ -171,6 +179,8 @@ This is why a finite weighted sum is not a different species from an integral:
 it is a Stieltjes integral against a discrete ruler.
 \end{remark*}
 
+\subsection*{Worked Failure Mode}
+
 \begin{remark*}[Shared-jump failure]
 The new pathology is real. On \([0,1]\), let \(c=1/2\), let
 \[
@@ -185,6 +195,8 @@ does not shrink with the slab width, because the ruler has a whole unit of
 mass concentrated at the jump. Tag independence fails, so the
 Riemann--Stieltjes integral does not exist in this convention.
 \end{remark*}
+
+\subsection*{What the Failure Motivates Next}
 
 \begin{remark*}[Bug report]
 Stieltjes is a sideways generalization, not the Lebesgue fix. Shared

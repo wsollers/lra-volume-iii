@@ -11,6 +11,8 @@ integral; it changes the test. Instead of quantifying over every possible tag,
 it brackets all tags at once.
 \end{remark*}
 
+\subsection*{Definition}
+
 \begin{definitionbox}{Definition (Darboux Sums)}
 \begin{definition}[Lower and Upper Darboux Sums]
 \label{def:darboux-sums}
@@ -84,6 +86,8 @@ tags by \(\inf\) and \(\sup\) turns integrability into the checkable
 
 \input{tex/figures/integration-atlas}
 
+\subsection*{Relation to Riemann Integration}
+
 \begin{theorembox}{Theorem (Riemann Equals Darboux)}
 \begin{theorem}[Equivalence of Riemann and Darboux Integrability]
 \label{thm:riemann-darboux-equivalence}
@@ -91,6 +95,8 @@ For bounded functions on \([a,b]\), Riemann integrability and Darboux
 integrability are equivalent, and the integral values agree.
 \end{theorem}
 \end{theorembox}
+
+\subsection*{Worked Positive Examples}
 
 \begin{theorembox}{Theorem (Continuous Functions Are Integrable)}
 \begin{theorem}[Continuous Functions Are Darboux-Integrable]
@@ -132,6 +138,8 @@ small total width. On the complement, \(f\) is continuous on compact pieces,
 so its oscillation is uniformly small on fine slabs. Thus the bad slabs are
 short and the good slabs are flat.
 \end{remark*}
+
+\subsection*{Algebraic and Order Properties}
 
 \begin{theorembox}{Theorem (Algebra of Darboux-Integrable Functions)}
 \begin{theorem}[Sums and Scalar Multiples of Darboux-Integrable Functions]
@@ -183,6 +191,8 @@ diagnose the size of the discontinuity set, which leads to Lebesgue and also
 to the gauge-integral cure.
 \end{remark*}
 
+\subsection*{Worked Failure Mode}
+
 \begin{remark*}[Residual failures]
 The Dirichlet function \(\mathbf 1_{\mathbb Q}\) on \([0,1]\) has infimum
 \(0\) and supremum \(1\) on every slab, since rationals and irrationals are
@@ -210,6 +220,8 @@ This is the practical gain: Riemann gives the correct definition, but Darboux
 gives the hand tool. Prove \(U-L\) can be squeezed, and the Riemann value
 follows from the equivalence theorem.
 \end{remark*}
+
+\subsection*{What the Failure Motivates Next}
 
 \begin{remark*}[The fork]
 Darboux exposes two separate defects:

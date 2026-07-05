@@ -11,6 +11,8 @@ initial sampling bias as the mesh shrinks. The construction is deliberately
 primitive: it fixes a height rule first and asks for convergence second.
 \end{remark*}
 
+\subsection*{Definition}
+
 \begin{definitionbox}{Definition (Cauchy Sum)}
 \begin{definition}[Left-Endpoint Cauchy Sum]
 \label{def:cauchy-sum}
@@ -33,12 +35,16 @@ The value \(L\) is denoted \(\int_a^b f(x)\,dx\).
 \end{definition}
 \end{definitionbox}
 
+\subsection*{Worked Positive Example}
+
 \begin{propositionbox}{Proposition (Integral of a Constant)}
 \begin{proposition}[Cauchy Integral of a Constant]
 \label{prop:cauchy-integral-constant}
 If \(f(x)=c\) on \([a,b]\), then \(\int_a^b c\,dx=c(b-a)\).
 \end{proposition}
 \end{propositionbox}
+
+\subsection*{Algebraic and Order Properties}
 
 \begin{theorembox}{Theorem (Linearity)}
 \begin{theorem}[Linearity of the Cauchy Integral]
@@ -107,15 +113,7 @@ height on \(I\) is close to every other sample height.
 \end{definition}
 \end{definitionbox}
 
-\begin{remark*}[Oscillation as the visible error]
-Figure~\ref{fig:quadrature-atlas} shows the same quantity geometrically:
-the Darboux gap \(U(f,P)-L(f,P)\) is the sum of local oscillations
-\(\omega_f(I_i)\) multiplied by the slab widths \(\Delta x_i\). The trapezoid
-and Simpson panels are numerical side branches; the load-bearing panel here
-is the oscillation identity.
-\end{remark*}
-
-\input{tex/figures/quadrature-atlas}
+\subsection*{Existence and Applicability Criterion}
 
 \begin{theorembox}{Theorem (Continuous Implies Cauchy-Integrable)}
 \begin{theorem}[Continuous Functions Are Cauchy-Integrable]
@@ -140,6 +138,8 @@ left-endpoint definition has no mechanism for proving that unrelated
 partitions settle to the same number.
 \end{remark*}
 
+\subsection*{Worked Failure Mode}
+
 \begin{remark*}[A first discontinuous edge case]
 A single jump should still have an area. If
 \[
@@ -156,6 +156,8 @@ definition gives no internal test explaining why it is harmless. The proof
 above proves continuity is sufficient, not that controlled discontinuities are
 allowed.
 \end{remark*}
+
+\subsection*{What the Failure Motivates Next}
 
 \begin{theorembox}{Theorem (Tag Independence)}
 \begin{theorem}[Tag Independence for Continuous Functions]

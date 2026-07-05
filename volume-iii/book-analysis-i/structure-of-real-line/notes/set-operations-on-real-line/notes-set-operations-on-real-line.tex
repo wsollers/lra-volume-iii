@@ -1,0 +1,99 @@
+\label{sec:set-operations-on-real-line}
+
+\begin{topicbox}{Set Operations as Real-Line Bookkeeping}
+\begin{exposition}
+The set operations from Volume I are now used with subsets of \(\mathbb R\).
+This section does not introduce new set theory. It fixes the notation and the
+finite-versus-arbitrary distinction that later controls neighborhoods, open
+sets, closed sets, covers, and compactness.
+\end{exposition}
+\end{topicbox}
+
+\begin{remark*}[Notation]
+An indexed family
+\[
+  (E_i)_{i\in I}
+\]
+is read here as a family of real-line subsets when
+\[
+  \forall i\in I\;(E_i\subseteq\mathbb R).
+\]
+The ambient set is fixed to be \(\mathbb R\). Unions, intersections,
+complements, and differences are therefore read as operations on subsets of
+the real line, not as new arithmetic operations on real numbers.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:indexed-family]{Indexed Family of Sets}
+  \item \hyperref[def:subset]{Subset}
+\end{itemize}
+\end{dependencies}
+
+\begin{remark*}[Unions and intersections]
+For a family \((E_i)_{i\in I}\) of real-line subsets,
+\[
+  \bigcup_{i\in I}E_i
+  =
+  \{x\in\mathbb R:\exists i\in I\ (x\in E_i)\},
+\]
+and
+\[
+  \bigcap_{i\in I}E_i
+  =
+  \{x\in\mathbb R:\forall i\in I\ (x\in E_i)\}.
+\]
+Thus a union records membership in at least one set, while an intersection
+records simultaneous membership in every set.
+\end{remark*}
+
+\begin{figure}[htbp]
+\centering
+\input{volume-iii/book-analysis-i/structure-of-real-line/notes/set-operations-on-real-line/figure-set-operations-on-real-line}
+\caption{A family of real-line subsets, its union, and its common intersection.}
+\label{fig:set-operations-on-real-line}
+\end{figure}
+
+\begin{remark*}[Finite versus arbitrary operations]
+The distinction between finite and arbitrary operations is structural. Later,
+open sets will be stable under arbitrary unions but only finite intersections.
+Closed sets will satisfy the dual pattern: arbitrary intersections but only
+finite unions. The words finite and arbitrary therefore mark which operations
+survive the topological definitions.
+\end{remark*}
+
+\begin{remark*}[Complements and De Morgan laws]
+Complements are always taken inside \(\mathbb R\):
+\[
+  E^c=\mathbb R\setminus E.
+\]
+For a real-line family \((E_i)_{i\in I}\), the indexed De Morgan laws become
+\[
+  \left(\bigcup_{i\in I}E_i\right)^c
+  =
+  \bigcap_{i\in I}E_i^c,
+  \qquad
+  \left(\bigcap_{i\in I}E_i\right)^c
+  =
+  \bigcup_{i\in I}E_i^c.
+\]
+These are the set-theoretic identities that later convert open-set closure
+laws into closed-set closure laws.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:union]{Union}
+  \item \hyperref[def:intersection]{Intersection}
+  \item \hyperref[def:complement]{Complement}
+  \item \hyperref[def:indexed-union]{Indexed Union}
+  \item \hyperref[def:indexed-intersection]{Indexed Intersection}
+  \item \hyperref[thm:indexed-de-morgan]{De Morgan's Laws for Indexed Families}
+\end{itemize}
+\end{dependencies}
+
+\begin{remark*}[Forward use]
+Neighborhoods and open sets use unions to assemble local pieces into larger
+sets. Covers use families whose union contains the set being studied.
+Compactness asks whether an arbitrary covering family can be replaced by a
+finite subfamily. The same set operations recur throughout the rest of the
+chapter.
+\end{remark*}

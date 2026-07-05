@@ -1,0 +1,100 @@
+\subsection*{Historical Repair Chain}
+
+Each integral in this chapter changes one structural feature of the previous
+one. The point is not to collect competing definitions, but to make the
+failure of one definition produce the next repair.
+
+\[
+\begin{array}{c|c|c|c}
+\text{Stage} & \text{Definition move} & \text{Applicability test} &
+\text{Motivating failure}\\
+\hline
+\text{Cauchy} &
+\text{left-endpoint sums} &
+\text{continuity suffices} &
+\text{left endpoint is privileged}\\
+\text{Riemann} &
+\text{all tags must agree} &
+\text{Cauchy criterion for sums} &
+\text{all tags are hard to control}\\
+\text{Darboux} &
+\text{upper/lower sums} &
+U(f,P)-L(f,P)<\varepsilon &
+\text{same class as Riemann}\\
+\text{Measure zero} &
+\text{diagnose discontinuities} &
+\text{bad set has length zero} &
+\text{does not define a new integral here}\\
+\text{Stieltjes} &
+\Delta x_i\mapsto\Delta\alpha_i &
+\text{continuous }f\text{ and BV }\alpha &
+\text{shared jumps; rough rulers}\\
+\text{Henstock--Kurzweil} &
+\delta\mapsto\delta(x) &
+\text{gauge-fine tagged sums} &
+\text{weaker limit machinery}\\
+\text{McShane} &
+\text{free gauge tags} &
+\text{Lebesgue class} &
+\text{does not exceed HK}
+\end{array}
+\]
+
+\subsection*{Examples and Failure Modes}
+
+\[
+\begin{array}{c|c|c}
+\text{Theory} & \text{Positive model} & \text{Failure model}\\
+\hline
+\text{Cauchy} &
+\text{constant and continuous functions} &
+\text{discontinuous functions need a better test}\\
+\text{Riemann} &
+\text{Thomae's function integrates to }0 &
+\text{verification requires controlling all tags}\\
+\text{Darboux} &
+\text{monotone and finitely discontinuous functions} &
+\mathbf 1_{\mathbb Q}\text{ has permanent upper/lower gap}\\
+\text{Measure zero} &
+\text{null discontinuity set} &
+\text{non-null discontinuity set}\\
+\text{Stieltjes} &
+\text{step integrator gives a weighted finite sum} &
+\text{shared jumps destroy tag independence}\\
+\text{Henstock--Kurzweil} &
+\text{derivatives satisfy the gauge FTC} &
+\text{not the natural probability/}L^1\text{ engine}\\
+\text{McShane} &
+\text{gauge-sum presentation of Lebesgue integration} &
+\text{free tags reject HK-only cancellation}
+\end{array}
+\]
+
+\subsection*{Algebra and Order Properties}
+
+\[
+\begin{array}{c|c|c|c|c}
+\text{Theory} & \text{Linearity} & \text{Monotonicity} &
+\text{Interval additivity} & \text{Absolute value control}\\
+\hline
+\text{Cauchy} & \checkmark & \checkmark & \checkmark &
+\text{when }|f|\text{ is Cauchy-integrable}\\
+\text{Riemann} & \checkmark & \checkmark & \checkmark & \checkmark\\
+\text{Darboux} & \checkmark & \checkmark & \checkmark & \checkmark\\
+\text{Stieltjes} & \text{bilinear} & \text{under positive rulers} &
+\checkmark & \text{depends on }d\alpha\\
+\text{Henstock--Kurzweil} & \checkmark & \text{limited} &
+\checkmark & \text{not absolute by design}\\
+\text{McShane} & \checkmark & \checkmark & \checkmark &
+\text{Lebesgue-compatible}
+\end{array}
+\]
+
+\subsection*{Chapter Handoff}
+
+This chapter ends with two conclusions. First, Riemann and Darboux
+integrability are controlled exactly by the size of the discontinuity set.
+Second, gauge sums split into two successors: Henstock--Kurzweil preserves
+conditional one-dimensional cancellation, while McShane recovers the Lebesgue
+class. The next volume supplies the measure theory needed to make that
+Lebesgue class intrinsic rather than anticipated.

@@ -7,11 +7,11 @@ the tagged-sum picture and change exactly one symbol: the constant fineness
 \(\delta>0\) becomes a positive function \(\delta(x)\).
 
 \begin{remark*}[Sibling cure]
-Henstock--Kurzweil belongs here, before McShane and the final measure-zero
-diagnosis, because it is still visibly a Riemann-style tagged-sum integral.
-It patches the uniform-mesh defect without abandoning slabs, tags, or sums.
-McShane will modify the tag rule one more time, producing a gauge-sum version
-of Lebesgue integration.
+Henstock--Kurzweil belongs after the measure-zero diagnosis because it is a
+Riemann-style response to the same obstruction: keep slabs, tags, and sums,
+but replace one uniform mesh tolerance by local fineness. McShane will modify
+the tag rule one more time, producing a gauge-sum version of Lebesgue
+integration.
 \end{remark*}
 
 \subsection*{Geometric Intuition}
@@ -33,6 +33,8 @@ Henstock--Kurzweil uses a positive function:
 The mesh condition \(\|P\|<\delta\) becomes the local condition that each slab
 is \(\delta\)-fine at its tag.
 \end{remark*}
+
+\subsection*{Definition}
 
 \begin{definitionbox}{Definition (Gauge)}
 \begin{definition}[Gauge on an Interval]
@@ -84,6 +86,8 @@ the gauge varies, compactness of \([a,b]\) guarantees that at least one tagged
 partition respects all the local step-size demands.
 \end{remark*}
 
+\subsection*{Existence and Applicability Criterion}
+
 \begin{theorembox}{Theorem (Riemann Sits Inside Henstock--Kurzweil)}
 \begin{theorem}[Riemann Integrable Implies Henstock--Kurzweil Integrable]
 \label{thm:riemann-integrable-implies-hk-integrable}
@@ -98,6 +102,8 @@ Riemann is the special case where the gauge is constant. If a Riemann proof
 hands over one mesh tolerance \(\delta_0\), the gauge proof uses
 \(\delta(x)=\delta_0\) for every \(x\).
 \end{remark*}
+
+\subsection*{Worked Positive Example}
 
 \begin{lemmabox}{Lemma (Straddle)}
 \begin{lemma}[Straddle Lemma]
@@ -129,6 +135,8 @@ Every continuous function \(f:[a,b]\to\mathbb R\) is Henstock--Kurzweil
 integrable.
 \end{theorem}
 \end{theorembox}
+
+\subsection*{Worked Failure Mode}
 
 \begin{remark*}[What it buys]
 On a compact interval,
@@ -162,6 +170,8 @@ The oscillatory term has nonintegrable absolute size near \(0\), so this
 derivative is the standard witness that HK reaches beyond Lebesgue while the
 FTC remains exact.
 \end{remark*}
+
+\subsection*{What the Failure Motivates Next}
 
 \begin{remark*}[HK's own bug report]
 Henstock--Kurzweil is not simply ``the best integral.'' Lebesgue has stronger

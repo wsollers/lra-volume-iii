@@ -1,0 +1,21 @@
+\begin{tikzpicture}[atlas, x=1cm, y=1cm]
+  \draw[atlas axes] (-0.25,0) -- (7.1,0);
+  \draw[atlas axes] (-0.25,-1.35) -- (7.1,-1.35);
+  \draw[atlas axes] (-0.25,-2.7) -- (7.1,-2.7);
+
+  \draw[atlas curve, atlasblue, line width=2pt] (0.7,0) -- (2.7,0);
+  \draw[atlas curve, atlasgreen, line width=2pt] (1.9,0.16) -- (4.2,0.16);
+  \draw[atlas curve, atlasorange, line width=2pt] (3.7,-0.16) -- (6.1,-0.16);
+  \node[atlas label, left] at (-0.32,0) {$E_i$};
+
+  \draw[atlas curve, atlasblue, line width=2.4pt] (0.7,-1.35) -- (6.1,-1.35);
+  \node[atlas label, left] at (-0.32,-1.35) {$\bigcup_i E_i$};
+
+  \draw[atlas curve, atlasmagenta, line width=2.4pt] (3.7,-2.7) -- (4.2,-2.7);
+  \node[atlas label, left] at (-0.32,-2.7) {$\bigcap_i E_i$};
+
+  \node[atlas label, below] at (0.7,-0.18) {$a$};
+  \node[atlas label, below] at (6.1,-0.18) {$b$};
+  \node[atlas label, right] at (6.4,-1.35) {covered by at least one set};
+  \node[atlas label, right] at (4.45,-2.7) {common part};
+\end{tikzpicture}
