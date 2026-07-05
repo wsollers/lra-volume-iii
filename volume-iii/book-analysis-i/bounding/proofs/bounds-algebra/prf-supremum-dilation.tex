@@ -7,6 +7,8 @@
 \hyperref[thm:supremum-dilation]{Return to Theorem}
 \end{remark*}
 
+\ProofVaultURL{https://github.com/wsollers/lra-proof-vault/tree/master/volume-iii/book-analysis-i/bounding/thm-supremum-dilation}
+
 \begin{theorem*}[Supremum of a Dilation]
 Let $A\subseteq\mathbb{R}$ be nonempty and bounded, and let $\lambda\in\mathbb{R}$. Then
 \[
@@ -18,20 +20,122 @@ Let $A\subseteq\mathbb{R}$ be nonempty and bounded, and let $\lambda\in\mathbb{R
 
 \begin{proof}[Professional Standard Proof]
 \LRAProofBodyStart
-TODO: professional standard proof for supremum-dilation.
+Let $s=\sup A$ and $i=\inf A$.
+
+If $\lambda=0$, then $\lambda A=\{0\}$ because $A$ is nonempty. Hence
+\[
+  \sup(\lambda A)=0=\max\{0s,0i\}.
+\]
+
+If $\lambda>0$, the positive scalar multiplication theorem gives
+\[
+  \sup(\lambda A)=\lambda\sup A=\lambda s.
+\]
+Since $i\le s$ and $\lambda>0$, we have $\lambda i\le \lambda s$, so
+\[
+  \max\{\lambda s,\lambda i\}=\lambda s=\sup(\lambda A).
+\]
+
+If $\lambda<0$, the negative scalar multiplication theorem gives
+\[
+  \sup(\lambda A)=\lambda\inf A=\lambda i.
+\]
+Since $i\le s$ and multiplication by the negative scalar $\lambda$ reverses
+order, $\lambda s\le \lambda i$. Therefore
+\[
+  \max\{\lambda s,\lambda i\}=\lambda i=\sup(\lambda A).
+\]
+
+The three cases cover every real value of $\lambda$, so
+\[
+  \sup(\lambda A)=\max\{\lambda\sup A,\lambda\inf A\}.
+\]
 \end{proof}
 
 \begin{proof}[Detailed Learning Proof]
 \LRAProofBodyStart
-TODO: detailed learning proof for supremum-dilation.
+Write
+\[
+  s=\sup A
+  \qquad\text{and}\qquad
+  i=\inf A.
+\]
+Because $A$ is nonempty and bounded, both $s$ and $i$ exist, and
+$i\le s$.
+
+We split according to the sign of $\lambda$.
+
+First suppose $\lambda=0$. Then every element of $\lambda A$ has the form
+$0a=0$, and since $A$ is nonempty the image is exactly $\{0\}$. Thus
+\[
+  \sup(\lambda A)=\sup\{0\}=0.
+\]
+At the same time,
+\[
+  \max\{\lambda s,\lambda i\}=\max\{0,0\}=0,
+\]
+so the formula holds in the zero case.
+
+Now suppose $\lambda>0$. Positive scaling preserves order, and the already
+proved positive-scalar theorem says that the supremum scales by the same
+positive factor:
+\[
+  \sup(\lambda A)=\lambda s.
+\]
+Since $i\le s$, multiplying by the positive number $\lambda$ preserves the
+inequality:
+\[
+  \lambda i\le \lambda s.
+\]
+Therefore the larger of the two candidate endpoint values is $\lambda s$:
+\[
+  \max\{\lambda s,\lambda i\}=\lambda s.
+\]
+Combining this with $\sup(\lambda A)=\lambda s$ gives the desired equality
+when $\lambda>0$.
+
+Finally suppose $\lambda<0$. Negative scaling reverses order, and the already
+proved negative-scalar theorem says that the supremum of the reflected and
+scaled set comes from the infimum of the original set:
+\[
+  \sup(\lambda A)=\lambda i.
+\]
+Again $i\le s$, but now multiplying by the negative number $\lambda$ reverses
+the inequality:
+\[
+  \lambda s\le \lambda i.
+\]
+Thus the larger endpoint value is $\lambda i$:
+\[
+  \max\{\lambda s,\lambda i\}=\lambda i.
+\]
+Together with $\sup(\lambda A)=\lambda i$, this proves the formula when
+$\lambda<0$.
+
+The cases $\lambda=0$, $\lambda>0$, and $\lambda<0$ exhaust all real scalars.
+Hence
+\[
+  \sup(\lambda A)=\max\{\lambda\sup A,\lambda\inf A\}.
+\]
 \end{proof}
 
 \begin{remark*}[Proof structure]
+Separate the scalar into zero, positive, and negative cases. The zero case
+collapses the image to $\{0\}$; the positive case uses the positive-scalar
+supremum theorem; the negative case uses the negative-scalar supremum theorem.
+The maximum records which endpoint becomes the upper endpoint after the
+scaling.
 \end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
-  \item TODO: list mathematical dependencies.
+  \item \hyperref[def:bounded]{Bounded set}.
+  \item \hyperref[def:supremum]{Supremum}.
+  \item \hyperref[def:infimum]{Infimum}.
+  \item \hyperref[def:maximum]{Maximum}.
+  \item \hyperref[thm:infimum-less-than-supremum]{Infimum Is Less Than or Equal to the Supremum}.
+  \item \hyperref[thm:scalar-mult-positive]{Scalar Multiplication by a Positive Scalar}.
+  \item \hyperref[thm:scalar-mult-negative]{Scalar Multiplication by a Negative Scalar}.
 \end{itemize}
 \end{dependencies}
 

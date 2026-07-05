@@ -3,8 +3,8 @@
 Proof-writing order is dependency-first among active TODO proof labels, with the generated knowledge graph order used as the stable tie-breaker.
 Use `✅` to record completion after the canonical proof file has both proof bodies populated and validated.
 
-Open proofs to do: 482
-Completed in this tracker: 15
+Open proofs to do: 481
+Completed in this tracker: 16
 
 1. () `prop:little-o-quotient-characterization` — **Little-o Quotient Characterisation**
    > **Statement.**
@@ -527,7 +527,7 @@ Completed in this tracker: 15
    >  \inf(A-B)=\inf A-\sup B.
    > \]
 
-78. () `thm:supremum-dilation` — **Supremum of a Dilation**
+78. (✅) `thm:supremum-dilation` — **Supremum of a Dilation**
    > **Statement.**
    > Let $A\subseteq\mathbb{R}$ be nonempty and bounded, and let $\lambda\in\mathbb{R}$. Then
    > \[
