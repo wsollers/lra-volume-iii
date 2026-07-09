@@ -1,0 +1,264 @@
+\begin{exposition}
+Zorich's discussion of approximate numerical computation in
+\cite{ZorichMathematicalAnalysisI} is more than an applied aside. It is a
+finite version of the same error bookkeeping that later becomes sequence
+limits, Landau notation, and differentiability. An exact quantity is written
+as an approximation plus an error:
+\[
+  x=\widetilde{x}+\alpha.
+\]
+In limits the same pattern is written
+\[
+  x_n=A+\alpha_n,\qquad \alpha_n\to 0.
+\]
+In differential calculus it becomes
+\[
+  f(a+h)=f(a)+Lh+r(h),\qquad r(h)=o(h).
+\]
+The names change, but the mechanism is the same: isolate the main term,
+track the error, and prove that the remaining term is controlled at the
+required scale.
+\end{exposition}
+
+\begin{definitionbox}{Definition (Absolute Error of an Approximation)}
+\begin{definition}[Absolute Error of an Approximation]
+\label{def:absolute-error-approximation}
+Let $x\in\mathbb{R}$ be an exact value and let $\widetilde{x}\in\mathbb{R}$
+be an approximation to $x$. The \textbf{absolute error} of the approximation
+is
+\[
+  \Delta(\widetilde{x}) := |x-\widetilde{x}|.
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:absolute-value]{Absolute Value}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition (Relative Error of an Approximation)}
+\begin{definition}[Relative Error of an Approximation]
+\label{def:relative-error-approximation}
+Let $x\in\mathbb{R}$ be an exact value and let
+$\widetilde{x}\in\mathbb{R}\setminus\{0\}$ be an approximation to $x$. The
+\textbf{relative error} of the approximation is
+\[
+  \delta(\widetilde{x})
+  :=
+  \frac{\Delta(\widetilde{x})}{|\widetilde{x}|}.
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:absolute-error-approximation]{Absolute Error of an Approximation}
+  \item \hyperref[def:absolute-value]{Absolute Value}
+\end{itemize}
+\end{dependencies}
+
+\begin{remark*}[Error bounds]
+In practice the exact value $x$ is usually unknown, so the exact value of
+$\Delta(\widetilde{x})$ is unknown as well. What matters for analysis is an
+upper bound: for example, $\Delta(\widetilde{x})\leq E$. The whole section is
+about how such bounds behave under algebraic operations.
+\end{remark*}
+
+\begin{theorembox}{Theorem (Absolute Error of a Sum)}
+\begin{theorem}[Absolute Error of a Sum]
+\label{thm:absolute-error-sum}
+Let $x,y,\widetilde{x},\widetilde{y}\in\mathbb{R}$. Then
+\[
+  \Delta(\widetilde{x}+\widetilde{y})
+  \leq
+  \Delta(\widetilde{x})+\Delta(\widetilde{y}).
+\]
+
+\smallskip\noindent
+\hyperref[prf:absolute-error-sum]{\textit{Go to proof.}}
+\end{theorem}
+\end{theorembox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:absolute-error-approximation]{Absolute Error of an Approximation}
+  \item \hyperref[thm:absolute-value-sum-bound]{Generalised Triangle Inequality}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Absolute Error of a Product)}
+\begin{theorem}[Absolute Error of a Product]
+\label{thm:absolute-error-product}
+Let $x,y,\widetilde{x},\widetilde{y}\in\mathbb{R}$. Then
+\[
+  \Delta(\widetilde{x}\widetilde{y})
+  \leq
+  |\widetilde{x}|\Delta(\widetilde{y})
+  +
+  |\widetilde{y}|\Delta(\widetilde{x})
+  +
+  \Delta(\widetilde{x})\Delta(\widetilde{y}).
+\]
+
+\smallskip\noindent
+\hyperref[prf:absolute-error-product]{\textit{Go to proof.}}
+\end{theorem}
+\end{theorembox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:absolute-error-approximation]{Absolute Error of an Approximation}
+  \item \hyperref[thm:absolute-value-product]{Absolute Value of a Product}
+  \item \hyperref[thm:absolute-value-sum-bound]{Generalised Triangle Inequality}
+\end{itemize}
+\end{dependencies}
+
+\begin{remark*}[First-order and second-order pieces]
+The two terms
+$|\widetilde{x}|\Delta(\widetilde{y})$ and
+$|\widetilde{y}|\Delta(\widetilde{x})$ are first-order: each contains one
+error factor. The term
+$\Delta(\widetilde{x})\Delta(\widetilde{y})$ is second-order: it contains
+two error factors. This is the finite precursor of little-o bookkeeping.
+\end{remark*}
+
+\begin{theorembox}{Theorem (Absolute Error of a Quotient)}
+\begin{theorem}[Absolute Error of a Quotient]
+\label{thm:absolute-error-quotient}
+Let $x,y,\widetilde{x},\widetilde{y}\in\mathbb{R}$ with
+$y\neq 0$, $\widetilde{y}\neq 0$, and
+$\delta(\widetilde{y})<1$. Then
+\[
+  \Delta\!\left(\frac{\widetilde{x}}{\widetilde{y}}\right)
+  \leq
+  \frac{
+    |\widetilde{x}|\Delta(\widetilde{y})
+    +
+    |\widetilde{y}|\Delta(\widetilde{x})
+  }{\widetilde{y}^{2}}
+  \cdot
+  \frac{1}{1-\delta(\widetilde{y})}.
+\]
+
+\smallskip\noindent
+\hyperref[prf:absolute-error-quotient]{\textit{Go to proof.}}
+\end{theorem}
+\end{theorembox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:absolute-error-approximation]{Absolute Error of an Approximation}
+  \item \hyperref[def:relative-error-approximation]{Relative Error of an Approximation}
+  \item \hyperref[thm:absolute-value-quotient]{Absolute Value of a Quotient}
+  \item \hyperref[thm:absolute-value-sum-bound]{Generalised Triangle Inequality}
+\end{itemize}
+\end{dependencies}
+
+\begin{remark*}[Denominator instability]
+The factor $(1-\delta(\widetilde{y}))^{-1}$ records a real danger: division
+is unstable when the denominator is poorly known relative to its own size.
+This is why quotient estimates always require a hypothesis keeping the
+denominator away from zero.
+\end{remark*}
+
+\begin{propositionbox}{Proposition (Relative Error of a Product)}
+\begin{proposition}[Relative Error of a Product]
+\label{prop:relative-error-product}
+Let $\widetilde{x},\widetilde{y}\neq 0$. Then
+\[
+  \delta(\widetilde{x}\widetilde{y})
+  \leq
+  \delta(\widetilde{x})
+  +
+  \delta(\widetilde{y})
+  +
+  \delta(\widetilde{x})\delta(\widetilde{y}).
+\]
+
+\smallskip\noindent
+\hyperref[prf:relative-error-product]{\textit{Go to proof.}}
+\end{proposition}
+\end{propositionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:relative-error-approximation]{Relative Error of an Approximation}
+  \item \hyperref[thm:absolute-error-product]{Absolute Error of a Product}
+  \item \hyperref[thm:absolute-value-product]{Absolute Value of a Product}
+\end{itemize}
+\end{dependencies}
+
+\begin{propositionbox}{Proposition (Relative Error of a Quotient)}
+\begin{proposition}[Relative Error of a Quotient]
+\label{prop:relative-error-quotient}
+Let $\widetilde{x},\widetilde{y}\neq 0$ and suppose
+$\delta(\widetilde{y})<1$. Then
+\[
+  \delta\!\left(\frac{\widetilde{x}}{\widetilde{y}}\right)
+  \leq
+  \frac{\delta(\widetilde{x})+\delta(\widetilde{y})}
+       {1-\delta(\widetilde{y})}.
+\]
+
+\smallskip\noindent
+\hyperref[prf:relative-error-quotient]{\textit{Go to proof.}}
+\end{proposition}
+\end{propositionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:relative-error-approximation]{Relative Error of an Approximation}
+  \item \hyperref[thm:absolute-error-quotient]{Absolute Error of a Quotient}
+  \item \hyperref[thm:absolute-value-quotient]{Absolute Value of a Quotient}
+\end{itemize}
+\end{dependencies}
+
+\subsection*{Linearized Error Rules}
+
+When the errors are small, second-order products such as
+$\delta(\widetilde{x})\delta(\widetilde{y})$ are much smaller than the
+first-order terms. One then informally reads
+\[
+  \delta(\widetilde{x}\widetilde{y})
+  \approx
+  \delta(\widetilde{x})+\delta(\widetilde{y}),
+  \qquad
+  \delta\!\left(\frac{\widetilde{x}}{\widetilde{y}}\right)
+  \approx
+  \delta(\widetilde{x})+\delta(\widetilde{y}).
+\]
+These are not replacement theorems for the exact estimates. They are
+first-order approximations: useful for intuition, but justified only when
+the discarded terms have been shown to be negligible at the relevant scale.
+
+\begin{example*}[Catastrophic Cancellation]
+Suppose two measured lengths are
+\[
+  H_1=200\pm 0.5\quad\text{and}\quad H_2=199.8\pm 0.5
+\]
+in centimeters. Their difference is approximately $0.2$, but the absolute
+error bound is $0.5+0.5=1.0$. The relative error of the difference is large
+because the denominator has collapsed. Subtraction of nearly equal quantities
+can destroy relative precision even when each original measurement is quite
+reasonable.
+\end{example*}
+
+\begin{example*}[From Product Error to Product Limits]
+Let
+\[
+  x_n=2+\frac{1}{n},\qquad
+  y_n=3-\frac{1}{n^2}.
+\]
+Write $x_n=2+\alpha_n$ and $y_n=3+\beta_n$, where
+$\alpha_n=1/n$ and $\beta_n=-1/n^2$. Then
+\[
+  x_ny_n-6
+  =
+  2\beta_n+3\alpha_n+\alpha_n\beta_n.
+\]
+Each term on the right tends to zero. The product limit is therefore not a
+new mystery; it is the finite product-error formula with the errors promoted
+to null sequences.
+\end{example*}

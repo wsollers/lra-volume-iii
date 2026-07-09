@@ -1,0 +1,149 @@
+\begin{exposition}
+The difference quotient definition identifies the derivative as a limiting
+slope. Zorich's approximation viewpoint suggests an equivalent reading: near
+$a$, a differentiable function is a constant term plus a linear main term plus
+an error smaller than the increment. In symbols,
+\[
+  f(a+h)=f(a)+Lh+r(h),
+  \qquad r(h)=o(h)\quad (h\to 0).
+\]
+The derivative is the coefficient $L$ of the best first-order approximation.
+This puts differentiation in the same error-propagation lineage as numerical
+approximation and sequence-limit algebra.
+\end{exposition}
+
+\begin{definitionbox}{Definition (First-Order Approximation at a Point)}
+\begin{definition}[First-Order Approximation at a Point]
+\label{def:first-order-approximation-at-a-point}
+Let $f:A\to\mathbb{R}$, let $a\in A$, and suppose $a+h\in A$ for all
+sufficiently small $h$. A function of the form
+\[
+  h\longmapsto f(a)+Lh
+\]
+is called a \textbf{first-order approximation} to $f$ at $a$ with coefficient
+$L$.
+\end{definition}
+\end{definitionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:function]{Function}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition (Differentiability by Linear Approximation)}
+\begin{definition}[Differentiability by Linear Approximation]
+\label{def:differentiability-linear-approximation}
+Let $f:A\to\mathbb{R}$ and let $a\in A$ be an interior point of $A$. We say
+that $f$ is \textbf{differentiable at $a$ by linear approximation} with
+coefficient $L$ if there is a remainder function $r$ such that
+\[
+  f(a+h)=f(a)+Lh+r(h)
+\]
+for all sufficiently small $h$ with $a+h\in A$, and
+\[
+  r(h)=o(h)\qquad (h\to 0).
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:first-order-approximation-at-a-point]{First-Order Approximation at a Point}
+  \item \hyperref[def:increment-little-o]{Increment Little-o}
+\end{itemize}
+\end{dependencies}
+
+\begin{remark*}[Equivalent error statement]
+The condition $r(h)=o(h)$ is the quantified assertion
+\[
+  \forall\varepsilon>0\;\exists\delta>0\;\forall h\,
+  \bigl(0<|h|<\delta
+  \Rightarrow |r(h)|\leq \varepsilon |h|\bigr).
+\]
+Thus the error is not merely small; it is small relative to the input
+increment.
+\end{remark*}
+
+\begin{theorembox}{Theorem (Derivative and Linear Approximation)}
+\begin{theorem}[Derivative and Linear Approximation]
+\label{thm:derivative-linear-approximation-equivalence}
+Let $f:A\to\mathbb{R}$ and let $a\in A$ be an interior point of $A$. Then
+$f$ is differentiable at $a$ with derivative $L$ if and only if
+\[
+  f(a+h)=f(a)+Lh+o(h)
+  \qquad (h\to 0).
+\]
+
+\smallskip\noindent
+\hyperref[prf:derivative-linear-approximation-equivalence]{\textit{Go to proof.}}
+\end{theorem}
+\end{theorembox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:derivative-at-a-point]{Derivative at a Point}
+  \item \hyperref[prop:derivative-h-form-equivalence]{Derivative: $h$-Form Equivalence}
+  \item \hyperref[def:differentiability-linear-approximation]{Differentiability by Linear Approximation}
+  \item \hyperref[def:increment-little-o]{Increment Little-o}
+\end{itemize}
+\end{dependencies}
+
+\begin{remark*}[Proof mechanism]
+Subtract $f(a)+Lh$ and divide by $h$:
+\[
+  \frac{f(a+h)-f(a)-Lh}{h}
+  =
+  \frac{f(a+h)-f(a)}{h}-L.
+\]
+The right side tends to zero exactly when the difference quotient tends to
+$L$.
+\end{remark*}
+
+\begin{propositionbox}{Proposition (Uniqueness of the Linear Coefficient)}
+\begin{proposition}[Uniqueness of the Linear Coefficient]
+\label{prop:linear-approximation-unique}
+Let $f:A\to\mathbb{R}$ and let $a\in A$ be an interior point of $A$. If
+\[
+  f(a+h)=f(a)+Lh+o(h)
+  \qquad\text{and}\qquad
+  f(a+h)=f(a)+Mh+o(h),
+\]
+then $L=M$.
+
+\smallskip\noindent
+\hyperref[prf:linear-approximation-unique]{\textit{Go to proof.}}
+\end{proposition}
+\end{propositionbox}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:derivative-linear-approximation-equivalence]{Derivative and Linear Approximation}
+  \item \hyperref[thm:uniqueness-of-the-derivative]{Uniqueness of the Derivative}
+\end{itemize}
+\end{dependencies}
+
+\begin{example*}[Square Function]
+Let $f(x)=x^2$. At $a$,
+\[
+  f(a+h)
+  =
+  (a+h)^2
+  =
+  a^2+2ah+h^2.
+\]
+Since $h^2=o(h)$, the derivative is the coefficient of $h$:
+\[
+  f'(a)=2a.
+\]
+\end{example*}
+
+\begin{example*}[A First-Order Taylor Reading]
+The statement
+\[
+  f(a+h)=f(a)+f'(a)h+o(h)
+\]
+is the first Taylor formula with Peano remainder. Taylor expansion extends
+the same idea to higher powers of $h$: keep more main terms and demand a
+smaller remainder.
+\end{example*}

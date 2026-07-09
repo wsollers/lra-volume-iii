@@ -196,54 +196,94 @@ environments:
   file: notes\asymptotic-notation\notes-asymptotic-notation.tex
   display_title: Bounded Factor Rule for Little-o
   proof_file: proofs\asymptotic-notation\prf-little-o-bounded-factor-rule.tex
+- label: def:absolute-error-approximation
+  type: def
+  file: notes\error-propagation\notes-error-propagation.tex
+  display_title: Absolute Error of an Approximation
+  proof_file: null
+- label: def:relative-error-approximation
+  type: def
+  file: notes\error-propagation\notes-error-propagation.tex
+  display_title: Relative Error of an Approximation
+  proof_file: null
+- label: thm:absolute-error-sum
+  type: thm
+  file: notes\error-propagation\notes-error-propagation.tex
+  display_title: Absolute Error of a Sum
+  proof_file: proofs\error-propagation\prf-absolute-error-sum.tex
+- label: thm:absolute-error-product
+  type: thm
+  file: notes\error-propagation\notes-error-propagation.tex
+  display_title: Absolute Error of a Product
+  proof_file: proofs\error-propagation\prf-absolute-error-product.tex
+- label: thm:absolute-error-quotient
+  type: thm
+  file: notes\error-propagation\notes-error-propagation.tex
+  display_title: Absolute Error of a Quotient
+  proof_file: proofs\error-propagation\prf-absolute-error-quotient.tex
+- label: prop:relative-error-product
+  type: prop
+  file: notes\error-propagation\notes-error-propagation.tex
+  display_title: Relative Error of a Product
+  proof_file: proofs\error-propagation\prf-relative-error-product.tex
+- label: prop:relative-error-quotient
+  type: prop
+  file: notes\error-propagation\notes-error-propagation.tex
+  display_title: Relative Error of a Quotient
+  proof_file: proofs\error-propagation\prf-relative-error-quotient.tex
 - label: prop:order-arithmetic
   type: prop
-  file: notes\proof-techniques\01-inequalities-bounding.tex
+  file: notes\proof-techniques\inequalities-bounding.tex
   display_title: Order arithmetic
   proof_file: null
 - label: prop:convergent-bounded
   type: prop
-  file: notes\proof-techniques\01-inequalities-bounding.tex
+  file: notes\proof-techniques\inequalities-bounding.tex
   display_title: Convergent sequences are bounded
   proof_file: null
 - label: prop:eps-char-sup
   type: prop
-  file: notes\proof-techniques\02-completeness-construction.tex
+  file: notes\proof-techniques\completeness-construction.tex
   display_title: $\varepsilon$-characterisation of $\sup$
   proof_file: null
 - label: prop:monotone-approx-bounds
   type: prop
-  file: notes\proof-techniques\02-completeness-construction.tex
+  file: notes\proof-techniques\completeness-construction.tex
   display_title: Monotone Approximation of Bounds
   proof_file: null
 - label: prop:io-ev-dichotomy
   type: prop
-  file: notes\proof-techniques\03-predicate-walking.tex
+  file: notes\proof-techniques\predicate-walking.tex
   display_title: The dichotomy
   proof_file: null
 - label: prop:bw-bisection
   type: prop
-  file: notes\proof-techniques\03-predicate-walking.tex
+  file: notes\proof-techniques\predicate-walking.tex
   display_title: Bolzano--Weierstrass via bisection
   proof_file: null
 - label: prop:ivt-bisection
   type: prop
-  file: notes\proof-techniques\04-bisection-nested-intervals.tex
+  file: notes\proof-techniques\bisection-nested-intervals.tex
   display_title: Intermediate Value Theorem
   proof_file: null
 - label: prop:r-uncountable
   type: prop
-  file: notes\proof-techniques\04-bisection-nested-intervals.tex
+  file: notes\proof-techniques\bisection-nested-intervals.tex
   display_title: prop:r-uncountable
   proof_file: null
 - label: prop:residue-divergence
   type: prop
-  file: notes\proof-techniques\05-residue-partition.tex
+  file: notes\proof-techniques\residue-partition.tex
   display_title: Residue divergence criterion
   proof_file: null
 proof_files:
 - proofs\inequality\prf-positive-powers-are-positive.tex
 - proofs\inequality\prf-powers-preserve-order-for-positive-numbers.tex
+- proofs\error-propagation\prf-absolute-error-sum.tex
+- proofs\error-propagation\prf-absolute-error-product.tex
+- proofs\error-propagation\prf-absolute-error-quotient.tex
+- proofs\error-propagation\prf-relative-error-product.tex
+- proofs\error-propagation\prf-relative-error-quotient.tex
 
 book: book-analysis-i
 path: volume-iii/book-analysis-i/real-analysis

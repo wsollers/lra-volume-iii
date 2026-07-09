@@ -862,6 +862,63 @@ collapsing.
 \end{itemize}
 \end{dependencies}
 
+\subsection*{Error-Track Method for Limit Algebra}
+\label{subsec:error-track-method-limit-algebra}
+
+\begin{exposition}
+The algebra of limits can be read as error propagation with vanishing errors.
+If
+\[
+  x_n=A+\alpha_n,\qquad y_n=B+\beta_n,
+  \qquad \alpha_n\to 0,\quad \beta_n\to 0,
+\]
+then $\alpha_n$ and $\beta_n$ are the moving errors. Sum, product, and quotient
+limits follow by expanding the target expression into a main term plus an
+error expression that tends to zero.
+\end{exposition}
+
+\begin{example*}[Sum]
+If $x_n=A+\alpha_n$ and $y_n=B+\beta_n$, then
+\[
+  x_n+y_n
+  =
+  A+B+(\alpha_n+\beta_n).
+\]
+The new error is $\alpha_n+\beta_n$, which tends to zero by the sum rule for
+null sequences.
+\end{example*}
+
+\begin{example*}[Product]
+The same decomposition gives
+\[
+  x_ny_n
+  =
+  (A+\alpha_n)(B+\beta_n)
+  =
+  AB+A\beta_n+B\alpha_n+\alpha_n\beta_n.
+\]
+The first two error terms are linear in the original errors. The last term is
+second-order and vanishes because a product of null sequences is null.
+\end{example*}
+
+\begin{example*}[Quotient]
+If $B\neq 0$ and $y_n\neq 0$ eventually, then
+\[
+  \frac{x_n}{y_n}-\frac{A}{B}
+  =
+  \frac{B\alpha_n-A\beta_n}{B(B+\beta_n)}.
+\]
+The numerator tends to zero, while the denominator tends to $B^2\neq 0$.
+This is the quotient law in error coordinates.
+\end{example*}
+
+\begin{remark*}[Connection to finite approximation]
+The finite error formulas for approximate numbers have the same algebraic
+shape. The passage to limits replaces fixed error bounds by null sequences
+and replaces informal smallness by the assertion that a remainder tends to
+zero.
+\end{remark*}
+
 % ---------------------------------------------------------
 % Theorem --- Limit of a Square
 % ---------------------------------------------------------

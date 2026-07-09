@@ -163,6 +163,26 @@ environments:
   file: notes\derivative-definition\notes-derivative-definition.tex
   display_title: Derivative of the Identity
   proof_file: null
+- label: def:first-order-approximation-at-a-point
+  type: def
+  file: notes\linear-approximation\notes-linear-approximation.tex
+  display_title: First-Order Approximation at a Point
+  proof_file: null
+- label: def:differentiability-linear-approximation
+  type: def
+  file: notes\linear-approximation\notes-linear-approximation.tex
+  display_title: Differentiability by Linear Approximation
+  proof_file: null
+- label: thm:derivative-linear-approximation-equivalence
+  type: thm
+  file: notes\linear-approximation\notes-linear-approximation.tex
+  display_title: Derivative and Linear Approximation
+  proof_file: proofs\linear-approximation\prf-derivative-linear-approximation-equivalence.tex
+- label: prop:linear-approximation-unique
+  type: prop
+  file: notes\linear-approximation\notes-linear-approximation.tex
+  display_title: Uniqueness of the Linear Coefficient
+  proof_file: proofs\linear-approximation\prf-linear-approximation-unique.tex
 - label: def:relative-minimum
   type: def
   file: notes\derivative-geometry\notes-derivative-geometry.tex
@@ -353,4 +373,6 @@ environments:
   file: notes\taylor-expansion\notes-taylor-expansion.tex
   display_title: 'The Flat Function: Smooth but Not Analytic'
   proof_file: null
-proof_files: []
+proof_files:
+- proofs\linear-approximation\prf-derivative-linear-approximation-equivalence.tex
+- proofs\linear-approximation\prf-linear-approximation-unique.tex
