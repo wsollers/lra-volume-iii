@@ -33,7 +33,7 @@ Let $E \subseteq \mathbb{R}$ and $a \in E$. A set $U \subseteq \mathbb{R}$ is a 
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
 \operatorname{RelativeNeighborhood}(U,E,a)
 \coloneqq
@@ -66,7 +66,7 @@ Let $E \subseteq \mathbb{R}$ and $a \in E$. A set $U \subseteq \mathbb{R}$ is a 
 Failure occurs precisely when no radius $\delta$ makes $U$ coincide with the relative interval slice: for every $\delta > 0$ either $U$ contains a point outside $E \cap (a-\delta,a+\delta)$ or the slice contains a point missing from $U$.
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
 \[
 \forall \delta > 0\;
 \underbrace{\bigl(\exists x \in U:\ x \notin E \cap (a-\delta,a+\delta)\bigr)}_{\text{extraneous point}}
@@ -113,7 +113,7 @@ Let $A \subseteq \mathbb{R}$, let $f : A \to \mathbb{R}$, and let $c \in A$. The
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
 \operatorname{ContinuousAt}(f,A,c)
 \coloneqq
@@ -147,7 +147,7 @@ Let $A \subseteq \mathbb{R}$, let $f : A \to \mathbb{R}$, and let $c \in A$. The
 Continuity at $c$ fails precisely when there exists a persistent output gap $\varepsilon_0>0$ such that no matter how small the chosen neighborhood of $c$ is, a point of $A$ within that neighborhood keeps the function values at least $\varepsilon_0$ away from $f(c)$. The single failure branch records this inescapable oscillation near $c$.
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
 \[
 \underbrace{\exists \varepsilon_0>0}_{\text{persistent gap}}
 \ \underbrace{\forall \delta>0}_{\text{every neighborhood}}
@@ -191,7 +191,7 @@ f\bigl(A \cap (c-\delta, c+\delta)\bigr) \subseteq (f(c)-\varepsilon, f(c)+\vare
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
 \operatorname{ContinuousAt}(f,c) \coloneqq \forall \varepsilon > 0\; \exists \delta > 0:\; f\bigl(A \cap (c-\delta, c+\delta)\bigr) \subseteq (f(c)-\varepsilon, f(c)+\varepsilon).
 \]
@@ -217,7 +217,7 @@ f\bigl(A \cap (c-\delta, c+\delta)\bigr) \subseteq (f(c)-\varepsilon, f(c)+\vare
 Failure occurs precisely when some fixed output tolerance cannot be matched by any neighborhood about $c$. This manifests by finding points of $A$ arbitrarily close to $c$ whose images either exceed the upper endpoint $f(c)+\varepsilon_{0}$ or fall below the lower endpoint $f(c)-\varepsilon_{0}$.
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
 \[
 \exists \varepsilon_{0} > 0\; \forall \delta > 0\;
 \underbrace{\Bigl(
@@ -257,7 +257,7 @@ Let $A \subseteq \mathbb{R}$, let $c \in A$, and let $f \colon A \to \mathbb{R}$
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
 \operatorname{ContinuousAt}(f,c) \coloneqq
 \forall x_n\;
@@ -290,7 +290,7 @@ Let $A \subseteq \mathbb{R}$, let $c \in A$, and let $f \colon A \to \mathbb{R}$
 Continuity at $c$ fails sequentially when there exists a sequence $(x_n)_{n\in\mathbb{N}}$ in $A$ with $x_n \to c$ but $f(x_n)$ does not converge to $f(c)$. This manifests in two distinct ways: either $f(x_n)$ converges to some limit different from $f(c)$, or $f(x_n)$ fails to converge entirely (oscillating without settling or diverging to infinity).
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
 \[
 \neg(\text{$f$ continuous at $c$}) \Longleftrightarrow
 \exists (x_n)_{n\in\mathbb{N}} \subseteq A :\;

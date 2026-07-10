@@ -27,7 +27,7 @@ Let $A \subseteq \mathbb{R}$ and let $f:A \to \mathbb{R}$. The function $f$ is u
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
 \operatorname{UniformlyContinuous}(f,A) \coloneqq \forall \varepsilon > 0 \; \exists \delta > 0 \; \forall x,u \in A \; (|x-u| < \delta \Rightarrow |f(x)-f(u)| < \varepsilon).
 \]
@@ -52,7 +52,7 @@ Let $A \subseteq \mathbb{R}$ and let $f:A \to \mathbb{R}$. The function $f$ is u
 The definition fails exactly when a single positive tolerance $\varepsilon_{0}$ exposes pairs of inputs arbitrarily close together whose function values remain at least $\varepsilon_{0}$ apart, so no universal $\delta$ works for that $\varepsilon_{0}$.
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
 \[
 \neg \operatorname{UniformlyContinuous}(f,A)
 =
@@ -201,7 +201,7 @@ The quotient conclusion can also fail if the denominator is not bounded
 away from zero on $A$.
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
 \[
 \begin{aligned}
 &\underbrace{\neg\operatorname{BoundedSet}(A)}_{\text{unbounded domain}}
@@ -292,7 +292,7 @@ Let $A \subseteq \mathbb{R}$ and let $f:A \to \mathbb{R}$. Then $f$ is uniformly
 The equivalence can fail in exactly two ways: either $f$ is uniformly continuous while some pair of asymptotically coincident sequences in $A$ yields outputs that do not converge together, or every such pair of sequences does converge together while $f$ nonetheless fails to be uniformly continuous on $A$.
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
 \[
 \begin{aligned}
 &\underbrace{\operatorname{UniformlyContinuous}(f,A)}_{\text{uniform continuity holds}}
@@ -428,7 +428,7 @@ Let $A \subseteq \mathbb{R}$, let $f:A \to \mathbb{R}$, and let $K>0$. The funct
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
 \operatorname{Lipschitz}(f,A,K) \coloneqq (K>0) \land \forall x,u \in A\;\bigl(|f(x)-f(u)| \le K|x-u|\bigr).
 \]
@@ -458,7 +458,7 @@ points in $A$ whose images separate faster than $K$ times the separation
 of the points themselves.
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
 \[
 \underbrace{\neg(A\subseteq\mathbb{R})}_{\text{bad domain}}
 \lor
@@ -620,7 +620,7 @@ Any such pair $(\alpha,K)$ is called a bi-Lipschitz constant pair for $f$ on $A$
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
 \operatorname{BiLipschitz}(f,A,\alpha,K) \coloneqq \left(0<\alpha\le K\right) \land \forall x,u\in A\; \left(\alpha|x-u|\le |f(x)-f(u)|\le K|x-u|\right).
 \]
@@ -647,7 +647,7 @@ Any such pair $(\alpha,K)$ is called a bi-Lipschitz constant pair for $f$ on $A$
 The property fails either because $f$ collapses some pair of points faster than the allowed lower constant $\alpha$, or because it stretches some pair more than the upper constant $K$ permits. Both distortions prevent a uniform two-sided control of distances.
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
 \[
 \exists x,u\in A:\quad
 \underbrace{|f(x)-f(u)|<\alpha|x-u|}_{\text{lower-distortion failure}}

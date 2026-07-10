@@ -31,7 +31,7 @@ for all $x\in A$.
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
   \operatorname{Bound}_{S,\leq}(b,A)
   :=
@@ -68,7 +68,7 @@ The statement fails if the set is empty, or if $b$ lies strictly between
 two elements of $A$.
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
 Failure of the upper-bound side means some element of $A$ is strictly
 larger than $b$.  Failure of the lower-bound side means some element of
 $A$ is strictly smaller than $b$.  Failure to be any bound requires both
@@ -98,7 +98,7 @@ of $A$ is less than or equal to $u$.
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
   \operatorname{UB}_{S,\leq}(u,A)
   :=
@@ -127,7 +127,7 @@ The set may be empty, or a counterexample element of $A$ may sit strictly
 above the proposed bound.
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
 To disprove that $u$ is an upper bound, produce either the structural
 failure $A=\varnothing$ or a witness $x\in A$ with $u<x$.
 \end{remark*}
@@ -155,7 +155,7 @@ element of $A$ is greater than or equal to $\ell$.
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
   \operatorname{LB}_{S,\leq}(\ell,A)
   :=
@@ -184,7 +184,7 @@ The set may be empty, or a counterexample element of $A$ may sit strictly
 below the proposed bound.
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
 To disprove that $\ell$ is a lower bound, produce either the structural
 failure $A=\varnothing$ or a witness $x\in A$ with $x<\ell$.
 \end{remark*}
@@ -211,7 +211,7 @@ set $A$ is \emph{bounded above} if it has at least one upper bound in $S$.
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
   \operatorname{BddAbove}_{S,\leq}(A)
   :=
@@ -242,7 +242,7 @@ The set may be empty, or every proposed upper bound may be defeated by
 some larger element of $A$.
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
 Unboundedness above is not one failed candidate; it is a uniform
 procedure that defeats every candidate $u\in S$.
 \end{remark*}
@@ -269,7 +269,7 @@ set $A$ is \emph{bounded below} if it has at least one lower bound in $S$.
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
   \operatorname{BddBelow}_{S,\leq}(A)
   :=
@@ -300,7 +300,7 @@ The set may be empty, or every proposed lower bound may be defeated by
 some smaller element of $A$.
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
 Unboundedness below is a uniform defeat of all lower-bound candidates.
 \end{remark*}
 
@@ -326,7 +326,7 @@ set $A$ is \emph{bounded} if it is bounded above and bounded below.
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
   \operatorname{Bdd}_{S,\leq}(A)
   :=
@@ -360,7 +360,7 @@ set $A$ is \emph{bounded} if it is bounded above and bounded below.
 The set may be empty, unbounded below, unbounded above, or both.
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
 Boundedness has two independent one-sided requirements.  A failure on
 either side is enough to destroy boundedness.
 \end{remark*}

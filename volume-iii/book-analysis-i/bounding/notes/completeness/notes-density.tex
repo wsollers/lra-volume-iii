@@ -25,7 +25,7 @@ Let $D\subseteq S\subseteq\mathbb{R}$. The set $D$ is \emph{dense in} $S$ if and
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
 \operatorname{DenseSubset}(D,S)\coloneqq
 \forall x\in S\;\forall \varepsilon>0\;\exists d\in D\;\bigl(|x-d|<\varepsilon\bigr).
@@ -54,7 +54,7 @@ Let $D\subseteq S\subseteq\mathbb{R}$. The set $D$ is \emph{dense in} $S$ if and
 Density fails when some point of $S$ has a positive-radius neighborhood that contains no point of $D$.
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
 \[
 \neg\operatorname{DenseSubset}(D,S)
 =
@@ -88,7 +88,7 @@ Let $X$ be a linearly ordered set and let $A\subseteq X$. The subset $A$ is \emp
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
 \operatorname{OrderDenseSubset}(A,X)\coloneqq
 \forall a,b\in X\;\bigl(a<b\rightarrow \exists c\in A\;(a<c<b)\bigr).
@@ -117,7 +117,7 @@ Let $X$ be a linearly ordered set and let $A\subseteq X$. The subset $A$ is \emp
 Order density fails when there is a nonempty open interval of $X$ that contains no point of $A$.
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
 \[
 \neg\operatorname{OrderDenseSubset}(A,X)
 =
@@ -175,7 +175,7 @@ For every $a,b\in\mathbb{R}$ with $a<b$, there exists $q\in\mathbb{Q}$ such that
 The theorem would fail precisely if some nonempty real interval contained no rational number.
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
 \[
 \neg\operatorname{OrderDenseSubset}(\mathbb{Q},\mathbb{R})
 =
@@ -448,7 +448,7 @@ For every $a,b\in\mathbb{R}$ with $a<b$, there exists $s\in\mathbb{R}\setminus\m
 The theorem would fail precisely if some nonempty real interval contained no irrational number.
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
 \[
 \neg\operatorname{OrderDenseSubset}(\mathbb{R}\setminus\mathbb{Q},\mathbb{R})
 =
@@ -677,7 +677,7 @@ a<b\land
 The corollary fails if a nonempty real interval misses all rational points or misses all irrational points.
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
 \[
 \exists a,b\in\mathbb{R}\;(a<b)
 \;\land\;
