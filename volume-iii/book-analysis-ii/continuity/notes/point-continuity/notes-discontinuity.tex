@@ -27,7 +27,7 @@ Let $A \subseteq \mathbb{R}$, let $f \colon A \to \mathbb{R}$, and let $a \in A$
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
 \operatorname{DiscontinuousAt}(f,a) \coloneqq \neg \operatorname{ContinuousAt}(f,a).
 \]
@@ -60,7 +60,7 @@ Let $A \subseteq \mathbb{R}$, let $f \colon A \to \mathbb{R}$, and let $a \in A$
 Discontinuity arises either because the nearby values of $f$ do not approach any single real number as $x \to a$, or because a well-defined limit exists but disagrees with the actual value $f(a)$.
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
 \[
 \underbrace{\neg \exists L \in \mathbb{R}\; \operatorname{FunctionLimit}(f,A,a,L)}_{\text{no limit exists}}
 \;\lor\;
@@ -94,7 +94,7 @@ f \text{ is discontinuous at } c \Longleftrightarrow
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
 \operatorname{DiscontinuousAt}(f,c) \coloneqq \exists (x_n)\subseteq A:\; x_n\to c \;\land\; \neg\bigl(f(x_n)\to f(c)\bigr).
 \]
@@ -121,7 +121,7 @@ f \text{ is continuous at } c \Longleftrightarrow
 The characterization fails --- meaning $f$ is NOT sequentially discontinuous --- when every sequence $(x_n)$ in $A$ converging to $c$ has $f(x_n) \to f(c)$. No sequential witness exists.
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
 \[
 \neg \operatorname{DiscontinuousAt}(f,c)
 \Longleftrightarrow
@@ -160,7 +160,7 @@ f \text{ is discontinuous at } c
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
 \operatorname{DiscontinuousAt}(f,c) \coloneqq
 \exists V \text{ nbhd of } f(c)\;
@@ -195,7 +195,7 @@ f \text{ is continuous at } c
 The neighbourhood discontinuity characterization fails --- meaning $f$ is actually continuous --- when every output neighbourhood $V$ of $f(c)$ can be matched by some input neighbourhood $U$ such that $f$ maps all of $U \cap A$ into $V$. No perpetually-missed output neighbourhood exists.
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
 \[
 \neg \operatorname{DiscontinuousAt}(f,c)
 \Longleftrightarrow
@@ -301,7 +301,7 @@ Let $A \subseteq \mathbb{R}$, let $f:A \to \mathbb{R}$, and let $x_0 \in A$ with
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
 \begin{aligned}
 \operatorname{RemovableDiscontinuity}(f,x_0) &\coloneqq \exists L \in \mathbb{R}\; \bigl(\operatorname{FunctionLimit}(f,A,x_0,L) \land L \ne f(x_0)\bigr).\\
@@ -349,7 +349,7 @@ Let $A \subseteq \mathbb{R}$, let $f:A \to \mathbb{R}$, and let $x_0 \in A$ with
 \end{itemize}
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
 \[
 \begin{aligned}
 \neg \operatorname{RemovableDiscontinuity}(f,x_0) &\Longleftrightarrow

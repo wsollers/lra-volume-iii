@@ -28,7 +28,7 @@ Let $A \subseteq \mathbb{R}$ and $f \colon A \to \mathbb{R}$. The function $f$ i
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
 \operatorname{BoundedOn}(f,A) \coloneqq \exists M>0 \; \forall x \in A \; (|f(x)| \le M).
 \]
@@ -66,7 +66,7 @@ Let $A \subseteq \mathbb{R}$ and $f \colon A \to \mathbb{R}$. The function $f$ i
 Failure occurs precisely when every proposed positive bound $M$ is exceeded by some value of $|f(x)|$ with $x \in A$.
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
 \[
 \underbrace{\forall M>0}_{\text{no admissible bound}}
 \; \underbrace{\exists x \in A \; (|f(x)| > M)}_{\text{value exceeding } M}.
@@ -137,7 +137,7 @@ Let $a<b$ and let $f:[a,b]\to\mathbb{R}$ be continuous on $[a,b]$. Then there ex
 Each component hypothesis is indispensable: without closedness (for instance $f(x)=1/x$ on $(0,1]$) continuity does not prevent divergence near the missing endpoint; without bounded domain (for example $f(x)=x$ on $[0,\infty)$) linear growth forces unbounded values; without continuity (take $f(0)=0$ and $f(x)=1/x$ for $x\in(0,1]$) the discontinuity at $0$ again creates arbitrarily large magnitudes.
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
 \[
 \begin{aligned}
 \neg\bigl[\operatorname{ClosedInterval}(a,b) \land \operatorname{BoundedSet}([a,b]) \land \operatorname{ContinuousOn}(f,[a,b])\bigr]
@@ -186,7 +186,7 @@ Let $A \subseteq \mathbb{R}$ and let $f \colon A \to \mathbb{R}$. A point $x^{*}
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
 \begin{aligned}
 &(x^{*} \in A) \land \operatorname{Maximum}(f(x^{*}), f(A))
@@ -224,7 +224,7 @@ Let $A \subseteq \mathbb{R}$ and let $f \colon A \to \mathbb{R}$. A point $x^{*}
 An alleged absolute maximum can fail because the proposed point lies outside the domain $A$, or because some $x \in A$ produces a strictly larger function value. An alleged absolute minimum fails for the analogous reasons, either by leaving the domain or by admitting a point in $A$ with a strictly smaller value.
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
 \[
 \begin{aligned}
 &\neg\bigl[(x^{*} \in A) \land \operatorname{Maximum}(f(x^{*}), f(A))\bigr]
@@ -291,7 +291,7 @@ an extremal value may exist only as a limiting value, and without
 continuity the graph may jump over its supremum or infimum.
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
 \[
 \underbrace{\neg(a<b)}_{\text{invalid interval}}
 \;\lor\;
@@ -336,7 +336,7 @@ The root conclusion can fail if $f$ is not continuous on $[a,b]$, or if
 the endpoint values do not have opposite signs.
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
 \[
 \underbrace{\exists c\in[a,b]\;\exists \varepsilon>0\;\forall \delta>0\;\exists x\in[a,b]\;
 \bigl(|x-c|<\delta\land |f(x)-f(c)|\ge\varepsilon\bigr)}_{\text{loss of continuity}}
@@ -387,7 +387,7 @@ breaks down, or if the proposed level $k$ is not strictly between the two
 attained endpoint values.
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
 \[
 \begin{aligned}
 &\underbrace{\exists x,y\in I\;\exists z\in\mathbb{R}\;

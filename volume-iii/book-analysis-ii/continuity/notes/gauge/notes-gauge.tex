@@ -27,7 +27,7 @@ Let $a<b$ and set $I=[a,b]$. A finite ordered set $P=\{x_0,\ldots,x_n\}$ with $n
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
 \operatorname{PartitionOfInterval}(P,I) \coloneqq
 \exists n\in\mathbb{N}\;\Bigl(n\ge 1 \land P=\{x_0,\ldots,x_n\}\subseteq I
@@ -60,7 +60,7 @@ Let $a<b$ and set $I=[a,b]$. A finite ordered set $P=\{x_0,\ldots,x_n\}$ with $n
 The definition fails precisely in three ways: the left endpoint is omitted, the right endpoint is omitted, or the sequence of nodes ceases to be strictly increasing, leading to repeated or out-of-order points.
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
 \[
 \underbrace{x_0\ne a}_{\text{left endpoint missing}}
 \;\lor\;
@@ -102,7 +102,7 @@ Let $a,b \in \mathbb{R}$ with $a < b$. A list $\dot{\mathcal{P}}=\{([x_{i-1},x_i
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
 \operatorname{TaggedPartition}(\dot{\mathcal{P}},[a,b])
 \coloneqq
@@ -137,7 +137,7 @@ where $\operatorname{Partition}(P,[a,b])$ abbreviates $a=x_0<\cdots<x_n=b$ for $
 A list fails to be a tagged partition either because the subintervals do not form a valid partition (the mesh is disordered or has gaps) or because at least one chosen tag lies outside its designated subinterval.
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
 \[
 \underbrace{x_0\ne a}_{\text{left endpoint defect}}
 \;\lor\;
@@ -177,7 +177,7 @@ Let $a,b \in \mathbb{R}$ with $a<b$ and set $I=[a,b]$. A gauge on $I$ is a funct
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
 \operatorname{Gauge}(\delta,I)
 \coloneqq
@@ -212,7 +212,7 @@ A purported gauge fails either because it is not a function from $I$ to
 $I$.
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
 \[
 \underbrace{\neg\bigl(\delta:I\to\mathbb{R}\bigr)}_{\text{wrong function type}}
 \;\lor\;
@@ -251,7 +251,7 @@ Let $[a,b]$ be a closed interval, let $\delta:[a,b]\to(0,\infty)$ be a gauge, an
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
 \operatorname{DeltaFine}(\dot{\mathcal{P}},\delta) \coloneqq \forall i \in \{1,\dots,n\}\;\forall x \in [x_{i-1},x_i]\;( |x-t_i|<\delta(t_i)).
 \]
@@ -274,7 +274,7 @@ Let $[a,b]$ be a closed interval, let $\delta:[a,b]\to(0,\infty)$ be a gauge, an
 A tagged partition fails to be $\delta$-fine precisely when some subinterval contains a point whose distance from its tag reaches or exceeds the available radius $\delta(t_i)$, so the corresponding subinterval is not contained in the prescribed open neighborhood around its tag.
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
 \[
 \underbrace{\exists i \in \{1,\dots,n\}\;\exists x \in [x_{i-1},x_i]}_{\text{choose offending subinterval and point}}
 \;\underbrace{(|x-t_i|\ge \delta(t_i))}_{\text{distance not controlled by }\delta}.
@@ -394,7 +394,7 @@ partition: no matter how the interval is subdivided and tagged, at least
 one subinterval is not contained in the gauge neighborhood around its tag.
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
 \[
 \underbrace{\forall \dot{\mathcal{P}}\;
 \operatorname{TaggedPartition}(\dot{\mathcal{P}},[a,b])}_{\text{all tagged partitions}}

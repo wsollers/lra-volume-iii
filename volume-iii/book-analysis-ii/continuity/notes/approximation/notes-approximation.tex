@@ -65,7 +65,7 @@ Then there exists a step function $s_\varepsilon:[a,b]\to\mathbb{R}$ such that
 The statement fails precisely when a continuous $f$ and tolerance $\varepsilon$ are fixed but every step function leaves an error of at least $\varepsilon$ at some point in $[a,b]$.
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
 \[
 \underbrace{\forall s:[a,b]\to\mathbb{R} \text{ step function }}_{\text{all approximants}}
 \underbrace{\exists x\in[a,b]\;(|f(x)-s(x)|\ge\varepsilon)}_{\text{witnessed large deviation}}.
@@ -110,7 +110,7 @@ for every $k\in\{1,\ldots,m\}$.
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
 \operatorname{PiecewiseLinear}(g,[a,b]) \coloneqq
 \exists m \in \mathbb{N}\;\Bigl(m \ge 1 \land
@@ -153,7 +153,7 @@ partition of $[a,b]$ is available, or because for every such partition
 at least one subinterval has a restriction of $g$ that is not affine.
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
 \[
 \underbrace{\forall m\in\mathbb{N}\;(m\ge 1\Rightarrow
 \forall x_0,\ldots,x_m\in[a,b]\;(a=x_0<\cdots<x_m=b\Rightarrow\cdots))}_{\text{no valid finite affine subdivision}}
@@ -277,7 +277,7 @@ B_n(x)=\sum_{k=0}^n f(k/n)\binom{n}{k}x^k(1-x)^{n-k}
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
 \operatorname{BernsteinPolynomial}(B_n,f,n)\coloneqq
 \Bigl(B_n:[0,1]\to\mathbb{R}\Bigr)\land

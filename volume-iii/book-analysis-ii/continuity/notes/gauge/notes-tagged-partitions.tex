@@ -38,7 +38,7 @@ m=\max_{1\le i\le n}(x_i - x_{i-1}).
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
 \operatorname{NormOfPartition}(P,m) \coloneqq m=\max_{1\le i\le n}(x_i - x_{i-1}).
 \]
@@ -67,7 +67,7 @@ m=\max_{1\le i\le n}(x_i - x_{i-1}).
 Failure occurs either when $m$ underestimates the largest subinterval of $P$ or when $m$ overshoots that largest subinterval.
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
 \[
 \neg\operatorname{NormOfPartition}(P,m)
 =
@@ -103,7 +103,7 @@ Let $[a,b] \subseteq \mathbb{R}$ and let $P$ and $Q$ be partitions of $[a,b]$. T
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
 \operatorname{Refinement}(Q,P) \coloneqq P \subseteq Q.
 \]
@@ -125,7 +125,7 @@ Let $[a,b] \subseteq \mathbb{R}$ and let $P$ and $Q$ be partitions of $[a,b]$. T
 Failure occurs precisely when some point listed in P fails to appear in Q, meaning Q omits at least one of the partition points it was supposed to inherit from P.
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
 \[
 \underbrace{\exists x \in P\; (x \notin Q)}_{\text{point of }P\text{ omitted by }Q}.
 \]
@@ -163,7 +163,7 @@ R = P \cup Q.
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
 \operatorname{CommonRefinement}(R,P,Q) \coloneqq (R = P \cup Q).
 \]
@@ -193,7 +193,7 @@ R = P \cup Q.
 The claim that a partition $R$ is the common refinement of $P$ and $Q$ fails exactly when $R$ either contains a node not present in $P \cup Q$ or omits a node that $P \cup Q$ contributes. These are the only two structural ways in which $R$ can differ from $P \cup Q$.
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
 \[
 R \ne P \cup Q
 \Longleftrightarrow

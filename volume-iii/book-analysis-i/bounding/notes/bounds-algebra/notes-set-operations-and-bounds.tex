@@ -49,7 +49,7 @@ A failure would require a union element larger than both proposed upper
 bounds.
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
 Every $x\in A\cup B$ lies in $A$ or in $B$.  In the first case
 $x\leq u_A\leq\max\{u_A,u_B\}$; in the second case
 $x\leq u_B\leq\max\{u_A,u_B\}$.
@@ -104,7 +104,7 @@ A failure would require a union element smaller than both proposed lower
 bounds.
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
 Every $x\in A\cup B$ lies in $A$ or in $B$.  In either case the appropriate
 lower bound lies below $x$, and $\min\{\ell_A,\ell_B\}$ lies below that lower
 bound.
@@ -158,7 +158,7 @@ piece.  The reverse direction could fail only if bounds for both pieces did not
 combine into a bound for the union.
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
 Use subset inheritance for the forward direction and
 \hyperref[lem:union-preserves-upper-bounds]{Union Preserves Upper Bounds} for
 the reverse direction.
@@ -214,7 +214,7 @@ bound a piece.  The reverse direction could fail only if lower bounds for both
 pieces did not combine into a lower bound for the union.
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
 Use subset inheritance for the forward direction and
 \hyperref[lem:union-preserves-lower-bounds]{Union Preserves Lower Bounds} for
 the reverse direction.
@@ -270,7 +270,7 @@ Two-sided boundedness fails exactly through an upper-bound failure or a
 lower-bound failure.
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
 Apply the bounded-above and bounded-below union equivalences separately.
 \end{remark*}
 
@@ -322,7 +322,7 @@ A failure would require a counterexample in $C$ that is not already a
 counterexample in $A$.
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
 Since $C\subseteq A$, every $c\in C$ is an element of $A$.  The upper-bound
 condition on $A$ therefore applies directly to $c$.
 \end{remark*}
@@ -373,7 +373,7 @@ A failure would require a point in $C$ below $\ell$, hence a point in $A$
 below $\ell$.
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
 Subset inheritance removes possible counterexamples; it cannot create a new
 one.
 \end{remark*}
@@ -421,7 +421,7 @@ Intersection can lose elements, but it cannot introduce an element outside the
 parent set $A$.
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
 Apply subset inheritance to $C=A\cap B$.
 \end{remark*}
 
@@ -471,7 +471,7 @@ Difference can remove elements from $A$, but it cannot create a new element
 outside $A$.
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
 Apply subset inheritance to $C=A\setminus B$.
 \end{remark*}
 
@@ -524,7 +524,7 @@ The complement does not inherit bounds from $A$; it inherits them from the
 ambient set $E$.
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
 Every point of $E\setminus A$ is a point of $E$, so every ambient bound of
 $E$ applies to the complement.
 \end{remark*}

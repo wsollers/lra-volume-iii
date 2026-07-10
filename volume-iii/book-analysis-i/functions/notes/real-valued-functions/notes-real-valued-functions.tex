@@ -334,7 +334,7 @@ No proposed real ceiling works: whenever a candidate upper bound is chosen,
 some input has an output larger than that candidate.
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
 \[
   \forall M\in\mathbb{R}\;\exists x\in A\;\bigl(f(x)>M\bigr).
 \]
@@ -382,7 +382,7 @@ No proposed real floor works: whenever a candidate lower bound is chosen,
 some input has an output smaller than that candidate.
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
 \[
   \forall m\in\mathbb{R}\;\exists x\in A\;\bigl(f(x)<m\bigr).
 \]
@@ -419,7 +419,7 @@ $f$ is bounded on $A$ if there exists $B>0$ such that
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
   \operatorname{BoundedOn}(f,A)
   \;\coloneqq\;
@@ -446,7 +446,7 @@ Every symmetric interval around $0$ fails to contain all output values of
 $f$ on $A$.
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
 \[
   \forall B>0\;\exists x\in A\;
   \bigl(f(x)>B\;\vee\;f(x)<-B\bigr).
@@ -571,7 +571,7 @@ A proposed maximum point fails either by not belonging to the domain or by
 being beaten by another output value.
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
 \[
   x^*\notin A
   \;\vee\;
@@ -621,7 +621,7 @@ A proposed minimum point fails either by not belonging to the domain or by
 being undercut by another output value.
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
 \[
   x_*\notin A
   \;\vee\;
@@ -675,7 +675,7 @@ The function fails to be increasing if some later input has a smaller
 output than an earlier input.
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
 \[
   \exists x_1,x_2\in A\;\bigl(x_1<x_2\;\wedge\;f(x_1)>f(x_2)\bigr).
 \]
@@ -723,7 +723,7 @@ Strict increase fails if some later input has an output that is no larger
 than the earlier output.
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
 \[
   \exists x_1,x_2\in A\;\bigl(x_1<x_2\;\wedge\;f(x_1)\geq f(x_2)\bigr).
 \]
@@ -771,7 +771,7 @@ The function fails to be decreasing if some later input has a larger output
 than an earlier input.
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
 \[
   \exists x_1,x_2\in A\;\bigl(x_1<x_2\;\wedge\;f(x_1)<f(x_2)\bigr).
 \]
@@ -818,7 +818,7 @@ Strict decrease fails if some later input has an output that is no smaller
 than the earlier output.
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
 \[
   \exists x_1,x_2\in A\;\bigl(x_1<x_2\;\wedge\;f(x_1)\leq f(x_2)\bigr).
 \]
@@ -853,7 +853,7 @@ $f$ is monotone on $A$ if $f$ is increasing on $A$ or decreasing on $A$.
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
   \operatorname{MonotoneFunction}(f,A)
   \;\coloneqq\;
@@ -883,7 +883,7 @@ where the outputs go down as inputs increase, and another pair where the
 outputs go up as inputs increase.
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
 \[
   \begin{aligned}
   &\exists x_1,x_2\in A\;(x_1<x_2\wedge f(x_1)>f(x_2))\\
@@ -933,7 +933,7 @@ $f$ is constant on $A$ if
 Constancy fails as soon as two inputs in the domain have different outputs.
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
 \[
   \exists x_1,x_2\in A\;\bigl(f(x_1)\neq f(x_2)\bigr).
 \]
