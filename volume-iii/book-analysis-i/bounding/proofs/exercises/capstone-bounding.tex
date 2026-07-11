@@ -24,7 +24,7 @@ If \(X\) and \(Y\) are nonempty sets and
 \]
 \end{tcolorbox}
 
-\begin{remark*}[Abstract]
+\begin{remark*}[Interpretation]
 This capstone proves that a player who must commit first cannot guarantee
 more than the opposing player can force by committing second. No topology,
 continuity, compactness, or convexity is involved. The proof uses only the
@@ -32,7 +32,7 @@ order meaning of supremum and infimum, plus boundedness to ensure that all
 displayed extrema are real numbers.
 \end{remark*}
 
-\begin{remark*}[Notation]
+\begin{remark*}[Interpretation]
 For each \(x\in X\), call
 \[
   r(x):=\inf_{y\in Y}\Phi(x,y)
@@ -71,7 +71,7 @@ inequality is another place where the order and independence of indices
 matter.
 \end{remark*}
 
-\begin{remark*}[Lemma 1: existence of the displayed extrema]
+\begin{remark*}[Interpretation]
 The row floors \(r(x)\), column ceilings \(c(y)\), lower value
 \(\underline V\), and upper value \(\overline V\) all exist as real numbers.
 
@@ -85,7 +85,7 @@ family of column ceilings is also bounded by \(m\) and \(M\). Apply the
 chapter's existence machinery for suprema and infima.
 \end{remark*}
 
-\begin{remark*}[Lemma 2: the bridge]
+\begin{remark*}[Interpretation]
 For every \(x_0\in X\) and \(y_0\in Y\),
 \[
   r(x_0)
@@ -106,7 +106,7 @@ single point-height \(\Phi(x_0,y_0)\) is the bridge between the row floor
 and the column ceiling.
 \end{remark*}
 
-\begin{remark*}[Proposition 1: every column ceiling dominates the lower value]
+\begin{remark*}[Interpretation]
 For every fixed \(y_0\in Y\),
 \[
   \underline V \le c(y_0).
@@ -119,7 +119,7 @@ upper bound for the set of row floors \(\{r(x):x\in X\}\). Since
 property gives \(\underline V\le c(y_0)\).
 \end{remark*}
 
-\begin{remark*}[Proof of the theorem]
+\begin{remark*}[Interpretation]
 Proposition 1 holds for every \(y_0\in Y\). Hence \(\underline V\) is a
 lower bound for the set of column ceilings \(\{c(y):y\in Y\}\). Since
 \(\overline V\) is the infimum of that set,
@@ -139,7 +139,7 @@ Expanding the definitions of \(r\), \(c\), \(\underline V\), and
 \]
 \end{remark*}
 
-\begin{remark*}[Proposition 2: a saddle point forces equality]
+\begin{remark*}[Interpretation]
 Call \((x^\ast,y^\ast)\) a saddle point of \(\Phi\) if
 \[
   \Phi(x,y^\ast)
@@ -166,7 +166,7 @@ Combine this with the minimax inequality
 \(\underline V\le\overline V\).
 \end{remark*}
 
-\begin{remark*}[Application: one-step pursuit on the circle]
+\begin{remark*}[Interpretation]
 Let \(\mathbb{S}^1=\mathbb{R}/\mathbb{Z}\), with wrap-around metric
 \[
   d_{\mathbb{S}^1}(a,b)
@@ -192,13 +192,35 @@ As a final task, determine whether this circle model has a saddle point,
 and compare the result with the corresponding one-step model on the line.
 \end{remark*}
 
-\begin{remark*}[Limits of the theorem]
+\begin{remark*}[Interpretation]
 Equality need not hold without extra structure. In particular,
 \(\underline V=\overline V\) does not by itself imply that a saddle point
 exists. Existence of saddle points or equality of values usually requires
 additional hypotheses such as compactness, convexity in one variable, and
 concavity in the other. Those hypotheses belong to later minimax theorems,
 not to this bounds-only result.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+\begin{itemize}
+  \item \hyperref[def:supremum]{Supremum}
+  \item \hyperref[def:infimum]{Infimum}
+\end{itemize}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+\begin{itemize}
+  \item \hyperref[def:supremum]{Supremum}
+  \item \hyperref[def:infimum]{Infimum}
+  \item \hyperref[prop:upper-bound-comparison-with-the-supremum]{Upper-Bound Comparison with the Supremum}
+  \item \hyperref[thm:infimum-less-than-supremum]{Infimum Less Than Supremum}
+  \item \hyperref[thm:supremum-sum-set]{Supremum of a Sum Set}
+\end{itemize}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This capstone may use only the order, supremum, infimum, and boundedness
+results routed at or before the Bounds chapter.
 \end{remark*}
 
 \begin{remark*}[Dependencies to state]

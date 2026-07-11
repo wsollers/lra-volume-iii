@@ -33,11 +33,11 @@ where each inner supremum or infimum is taken in $\overline{\mathbb{R}}$ and the
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
 \begin{aligned}
-\operatorname{FunctionLimsup}(L,f,E,x_0) &\coloneqq L=\inf_{\delta>0}\sup U(\delta),\\
-\operatorname{FunctionLiminf}(l,f,E,x_0) &\coloneqq l=\sup_{\delta>0}\inf U(\delta),
+L=\limsup_{x\to x_0} f(x) &\coloneqq L=\inf_{\delta>0}\sup U(\delta),\\
+l=\liminf_{x\to x_0} f(x) &\coloneqq l=\sup_{\delta>0}\inf U(\delta),
 \end{aligned}
 \]
 where $U(\delta)=\{f(x):x\in E,\ 0<|x-x_0|<\delta\}$.
@@ -59,7 +59,7 @@ where $U(\delta)=\{f(x):x\in E,\ 0<|x-x_0|<\delta\}$.
 \begin{remark*}[Negation predicate reading]
 \[
 \begin{aligned}
-&\neg\bigl(\operatorname{FunctionLimsup}(L,f,E,x_0)\land \operatorname{FunctionLiminf}(l,f,E,x_0)\bigr)\\
+&\neg\bigl(L=\limsup_{x\to x_0} f(x)\land l=\liminf_{x\to x_0} f(x)\bigr)\\
 &\Longleftrightarrow
 L\ne\inf_{\delta>0}\sup U(\delta)
 \lor
@@ -70,10 +70,15 @@ where $U(\delta)=\{f(x):x\in E,\ 0<|x-x_0|<\delta\}$.
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 The definition can fail only in structurally distinct ways: punctured neighborhoods might be empty despite the accumulation-point hypothesis, or the upper envelopes may blow up while a finite limsup is asserted, or the lower envelopes may dive to negative infinity while a finite liminf is asserted.
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
 \underbrace{\exists \delta>0:\ U(\delta)=\varnothing}_{\text{missing punctured samples}}
 \ \lor\
@@ -81,6 +86,7 @@ The definition can fail only in structurally distinct ways: punctured neighborho
 \ \lor\
 \underbrace{\Bigl(\sup_{\delta>0}\inf U(\delta)=-\infty \land l>-\infty\Bigr)}_{\text{lower envelope collapse}}.
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -118,6 +124,10 @@ Let $A\subseteq \mathbb{R}$, let $x_0$ be a limit point of $A$, and let $f:A\to\
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+The displayed quantified statement is the predicate-level form of $label: its hypotheses name the input conditions, and its conclusion names the asserted structure or relation.
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 The limsup records the largest cluster value that $f$ attains near $x_0$, while the liminf records the smallest cluster value. Because every subsequential limit contributing to the liminf also contributes to the limsup, the supremum of all cluster values cannot lie below their infimum. The only way equality holds is when all cluster values coincide, i.e. when the ordinary limit exists.
 \end{remark*}
@@ -148,7 +158,7 @@ Let $A \subseteq \mathbb{R}$, let $f \colon A \to \mathbb{R}$, let $x_0$ be a li
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{FunctionLimit}(f, A, x_0, L)
+\operatorname{TendsTo}(f, A, x_0, L)
 \Longleftrightarrow
 \bigl(\limsup_{x \to x_0} f(x) = L = \liminf_{x \to x_0} f(x)\bigr).
 \]
@@ -168,19 +178,24 @@ Let $A \subseteq \mathbb{R}$, let $f \colon A \to \mathbb{R}$, let $x_0$ be a li
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{FunctionLimit}(f,A,x_0,L)
+\neg\operatorname{TendsTo}(f,A,x_0,L)
 \Longleftrightarrow
 \bigl(\limsup_{x\to x_0} f(x)\ne L \lor \liminf_{x\to x_0} f(x)\ne L\bigr).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 The criterion fails only when at least one side of the equivalence breaks:
 either the function fails to approach $L$ in the epsilon-delta sense, or
 one of the two extremal envelopes near $x_0$ does not equal $L$.
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
 \underbrace{\exists \varepsilon_0>0\;\forall \delta>0\;\exists x\in A\setminus\{x_0\}\;
 \bigl(0<|x-x_0|<\delta\land |f(x)-L|\ge\varepsilon_0\bigr)}_{\text{limit condition fails}}
@@ -189,6 +204,7 @@ one of the two extremal envelopes near $x_0$ does not equal $L$.
 \ \lor\
 \underbrace{\liminf_{x\to x_0} f(x)\ne L}_{\text{lower envelope mismatch}}.
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]

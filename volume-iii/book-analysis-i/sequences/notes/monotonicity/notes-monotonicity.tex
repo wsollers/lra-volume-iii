@@ -31,9 +31,9 @@ Let $(x_n)$ be a real sequence. The sequence $(x_n)$ is
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
-\operatorname{MonotoneIncreasingSequence}(x_n)
+\operatorname{OrderPreserving}(x_n)
 \coloneqq
 \forall n\in\mathbb{N}\;(x_n\le x_{n+1}).
 \]
@@ -49,7 +49,7 @@ Let $(x_n)$ be a real sequence. The sequence $(x_n)$ is
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{MonotoneIncreasingSequence}(x_n)
+\neg\operatorname{OrderPreserving}(x_n)
 \Longleftrightarrow
 \exists n\in\mathbb{N}\;(x_{n+1}<x_n).
 \]
@@ -92,9 +92,9 @@ Let $(x_n)$ be a real sequence. The sequence $(x_n)$ is
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
-\operatorname{MonotoneDecreasingSequence}(x_n)
+\operatorname{OrderReversing}(x_n)
 \coloneqq
 \forall n\in\mathbb{N}\;(x_{n+1}\le x_n).
 \]
@@ -110,7 +110,7 @@ Let $(x_n)$ be a real sequence. The sequence $(x_n)$ is
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{MonotoneDecreasingSequence}(x_n)
+\neg\operatorname{OrderReversing}(x_n)
 \Longleftrightarrow
 \exists n\in\mathbb{N}\;(x_n<x_{n+1}).
 \]
@@ -152,9 +152,9 @@ Let $(x_n)$ be a real sequence. The sequence $(x_n)$ is
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
-\operatorname{StrictlyIncreasingSequence}(x_n)
+\operatorname{StrictOrderPreserving}(x_n)
 \coloneqq
 \forall n\in\mathbb{N}\;(x_n<x_{n+1}).
 \]
@@ -170,7 +170,7 @@ Let $(x_n)$ be a real sequence. The sequence $(x_n)$ is
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{StrictlyIncreasingSequence}(x_n)
+\neg\operatorname{StrictOrderPreserving}(x_n)
 \Longleftrightarrow
 \exists n\in\mathbb{N}\;(x_{n+1}\le x_n).
 \]
@@ -213,9 +213,9 @@ Let $(x_n)$ be a real sequence. The sequence $(x_n)$ is
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
-\operatorname{StrictlyDecreasingSequence}(x_n)
+\operatorname{StrictOrderReversing}(x_n)
 \coloneqq
 \forall n\in\mathbb{N}\;(x_{n+1}<x_n).
 \]
@@ -231,7 +231,7 @@ Let $(x_n)$ be a real sequence. The sequence $(x_n)$ is
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{StrictlyDecreasingSequence}(x_n)
+\neg\operatorname{StrictOrderReversing}(x_n)
 \Longleftrightarrow
 \exists n\in\mathbb{N}\;(x_n\le x_{n+1}).
 \]
@@ -273,13 +273,17 @@ Let $(x_n)$ be a real sequence. The sequence $(x_n)$ is
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
-\operatorname{MonotoneSequence}(x_n)
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{N},\leq),\qquad
+Q=\mathsf{OrderedSet}(\mathbb{R},\leq),\\
+&\operatorname{Monotone}((x_n),Q)
 \coloneqq
-\operatorname{MonotoneIncreasingSequence}(x_n)
+\operatorname{OrderPreserving}((x_n),P,Q)
 \lor
-\operatorname{MonotoneDecreasingSequence}(x_n).
+\operatorname{OrderReversing}((x_n),P,Q).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -297,11 +301,15 @@ Let $(x_n)$ be a real sequence. The sequence $(x_n)$ is
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{MonotoneSequence}(x_n)
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{N},\leq),\qquad
+Q=\mathsf{OrderedSet}(\mathbb{R},\leq),\\
+&\neg\operatorname{Monotone}((x_n),Q)
 \Longleftrightarrow
-\neg\operatorname{MonotoneIncreasingSequence}(x_n)
+\neg\operatorname{OrderPreserving}((x_n),P,Q)
 \land
-\neg\operatorname{MonotoneDecreasingSequence}(x_n).
+\neg\operatorname{OrderReversing}((x_n),P,Q).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -342,11 +350,15 @@ Let $(x_n)$ be a real sequence. The sequence $(x_n)$ is
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
-\operatorname{EventuallyIncreasingSequence}(x_n)
-\coloneqq
-\exists N\in\mathbb{N}\;\forall n\ge N\;(x_n\le x_{n+1}).
+\begin{aligned}
+&P_N=\mathsf{OrderedSet}(\{n\in\mathbb{N}:n\ge N\},\leq),\qquad
+Q=\mathsf{OrderedSet}(\mathbb{R},\leq),\\
+&\varphi_{+}(N)\coloneqq
+\operatorname{OrderPreserving}((x_n)_{n\ge N},P_N,Q),\\
+&\operatorname{Eventually}(\varphi_{+},\mathbb{N}).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -360,9 +372,13 @@ Let $(x_n)$ be a real sequence. The sequence $(x_n)$ is
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{EventuallyIncreasingSequence}(x_n)
-\Longleftrightarrow
-\forall N\in\mathbb{N}\;\exists n\ge N\;(x_{n+1}<x_n).
+\begin{aligned}
+&P_N=\mathsf{OrderedSet}(\{n\in\mathbb{N}:n\ge N\},\leq),\qquad
+Q=\mathsf{OrderedSet}(\mathbb{R},\leq),\\
+&\varphi_{+}(N)\coloneqq
+\operatorname{OrderPreserving}((x_n)_{n\ge N},P_N,Q),\\
+&\neg\operatorname{Eventually}(\varphi_{+},\mathbb{N}).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -403,11 +419,15 @@ Let $(x_n)$ be a real sequence. The sequence $(x_n)$ is
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
-\operatorname{EventuallyDecreasingSequence}(x_n)
-\coloneqq
-\exists N\in\mathbb{N}\;\forall n\ge N\;(x_{n+1}\le x_n).
+\begin{aligned}
+&P_N=\mathsf{OrderedSet}(\{n\in\mathbb{N}:n\ge N\},\leq),\qquad
+Q=\mathsf{OrderedSet}(\mathbb{R},\leq),\\
+&\varphi_{-}(N)\coloneqq
+\operatorname{OrderReversing}((x_n)_{n\ge N},P_N,Q),\\
+&\operatorname{Eventually}(\varphi_{-},\mathbb{N}).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -421,9 +441,13 @@ Let $(x_n)$ be a real sequence. The sequence $(x_n)$ is
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{EventuallyDecreasingSequence}(x_n)
-\Longleftrightarrow
-\forall N\in\mathbb{N}\;\exists n\ge N\;(x_n<x_{n+1}).
+\begin{aligned}
+&P_N=\mathsf{OrderedSet}(\{n\in\mathbb{N}:n\ge N\},\leq),\qquad
+Q=\mathsf{OrderedSet}(\mathbb{R},\leq),\\
+&\varphi_{-}(N)\coloneqq
+\operatorname{OrderReversing}((x_n)_{n\ge N},P_N,Q),\\
+&\neg\operatorname{Eventually}(\varphi_{-},\mathbb{N}).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -464,13 +488,17 @@ decreasing.
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
-\operatorname{EventuallyMonotoneSequence}(x_n)
-\coloneqq
-\operatorname{EventuallyIncreasingSequence}(x_n)
+\begin{aligned}
+&P_N=\mathsf{OrderedSet}(\{n\in\mathbb{N}:n\ge N\},\leq),\qquad
+Q=\mathsf{OrderedSet}(\mathbb{R},\leq),\\
+&\varphi(N)\coloneqq
+\operatorname{OrderPreserving}((x_n)_{n\ge N},P_N,Q)
 \lor
-\operatorname{EventuallyDecreasingSequence}(x_n).
+\operatorname{OrderReversing}((x_n)_{n\ge N},P_N,Q),\\
+&\operatorname{Eventually}(\varphi,\mathbb{N}).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -488,11 +516,17 @@ decreasing.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{EventuallyMonotoneSequence}(x_n)
-\Longleftrightarrow
-\neg\operatorname{EventuallyIncreasingSequence}(x_n)
+\begin{aligned}
+&P_N=\mathsf{OrderedSet}(\{n\in\mathbb{N}:n\ge N\},\leq),\qquad
+Q=\mathsf{OrderedSet}(\mathbb{R},\leq),\\
+&\varphi_{+}(N)\coloneqq
+\operatorname{OrderPreserving}((x_n)_{n\ge N},P_N,Q),\\
+&\varphi_{-}(N)\coloneqq
+\operatorname{OrderReversing}((x_n)_{n\ge N},P_N,Q),\\
+&\neg\operatorname{Eventually}(\varphi_{+},\mathbb{N})
 \land
-\neg\operatorname{EventuallyDecreasingSequence}(x_n).
+\neg\operatorname{Eventually}(\varphi_{-},\mathbb{N}).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -567,19 +601,19 @@ Let $(x_n)$ be a real sequence.
 \]
 \end{remark*}
 
-\begin{remark*}[Theorem predicate reading]
+\begin{remark*}[Predicate reading]
 \[
 \begin{aligned}
-&\operatorname{MonotoneIncreasingSequence}(x_n)
+&\operatorname{OrderPreserving}(x_n)
 \land
-\operatorname{BoundedAboveSequence}(x_n)
+\operatorname{BoundedAbove}(x_n)
 \Longrightarrow
-\operatorname{ConvergentSequence}\bigl(x_n,\sup\{x_n:n\in\mathbb{N}\}\bigr),\\
-&\operatorname{MonotoneDecreasingSequence}(x_n)
+\operatorname{ConvergesTo}\bigl(x_n,\sup\{x_n:n\in\mathbb{N}\}\bigr),\\
+&\operatorname{OrderReversing}(x_n)
 \land
-\operatorname{BoundedBelowSequence}(x_n)
+\operatorname{BoundedBelow}(x_n)
 \Longrightarrow
-\operatorname{ConvergentSequence}\bigl(x_n,\inf\{x_n:n\in\mathbb{N}\}\bigr).
+\operatorname{ConvergesTo}\bigl(x_n,\inf\{x_n:n\in\mathbb{N}\}\bigr).
 \end{aligned}
 \]
 \end{remark*}
@@ -610,29 +644,34 @@ Let $(x_n)$ be a real sequence.
 \begin{remark*}[Negation predicate reading]
 \[
 \begin{aligned}
-&\operatorname{MonotoneIncreasingSequence}(x_n)
+&\operatorname{OrderPreserving}(x_n)
 \land
-\operatorname{BoundedAboveSequence}(x_n)
+\operatorname{BoundedAbove}(x_n)
 \land
-\neg\exists L\in\mathbb{R}\;\operatorname{ConvergentSequence}(x_n,L),\\
-&\operatorname{MonotoneDecreasingSequence}(x_n)
+\neg\exists L\in\mathbb{R}\;\operatorname{ConvergesTo}(x_n,L),\\
+&\operatorname{OrderReversing}(x_n)
 \land
-\operatorname{BoundedBelowSequence}(x_n)
+\operatorname{BoundedBelow}(x_n)
 \land
-\neg\exists L\in\mathbb{R}\;\operatorname{ConvergentSequence}(x_n,L).
+\neg\exists L\in\mathbb{R}\;\operatorname{ConvergesTo}(x_n,L).
 \end{aligned}
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 The theorem would fail only if a one-directional bounded sequence could avoid
 settling to a real limit. Completeness of $\mathbb{R}$ rules this out: an
 increasing bounded-above sequence is forced toward the least upper bound of
 its range, while a decreasing bounded-below sequence is forced toward the
 greatest lower bound of its range.
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
 \underbrace{\forall n\in\mathbb{N}\;(x_n\le x_{n+1})}_{\text{one direction}}
 \quad
@@ -642,6 +681,7 @@ greatest lower bound of its range.
 \]
 The decreasing case is dual: reverse the inequalities and replace the
 ceiling by a floor.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -699,15 +739,15 @@ Let $(x_n)$ be a real sequence.
 \]
 \end{remark*}
 
-\begin{remark*}[Theorem predicate reading]
+\begin{remark*}[Predicate reading]
 \[
 \begin{aligned}
-&\operatorname{StrictlyIncreasingSequence}(x_n)
+&\operatorname{StrictOrderPreserving}(x_n)
 \Longrightarrow
-\operatorname{MonotoneIncreasingSequence}(x_n),\\
-&\operatorname{StrictlyDecreasingSequence}(x_n)
+\operatorname{OrderPreserving}(x_n),\\
+&\operatorname{StrictOrderReversing}(x_n)
 \Longrightarrow
-\operatorname{MonotoneDecreasingSequence}(x_n).
+\operatorname{OrderReversing}(x_n).
 \end{aligned}
 \]
 \end{remark*}
@@ -773,22 +813,22 @@ Let $(x_n)$ be a real sequence.
 \]
 \end{remark*}
 
-\begin{remark*}[Theorem predicate reading]
+\begin{remark*}[Predicate reading]
 \[
 \begin{aligned}
-&\operatorname{MonotoneIncreasingSequence}(x_n)
+&\operatorname{OrderPreserving}(x_n)
 \Longrightarrow
 \Bigl(
-\exists L\in\mathbb{R}\;\operatorname{ConvergentSequence}(x_n,L)
+\exists L\in\mathbb{R}\;\operatorname{ConvergesTo}(x_n,L)
 \Longleftrightarrow
-\operatorname{BoundedAboveSequence}(x_n)
+\operatorname{BoundedAbove}(x_n)
 \Bigr),\\
-&\operatorname{MonotoneDecreasingSequence}(x_n)
+&\operatorname{OrderReversing}(x_n)
 \Longrightarrow
 \Bigl(
-\exists L\in\mathbb{R}\;\operatorname{ConvergentSequence}(x_n,L)
+\exists L\in\mathbb{R}\;\operatorname{ConvergesTo}(x_n,L)
 \Longleftrightarrow
-\operatorname{BoundedBelowSequence}(x_n)
+\operatorname{BoundedBelow}(x_n)
 \Bigr).
 \end{aligned}
 \]
@@ -851,19 +891,25 @@ Let $(x_n)$ be a real sequence.
 \]
 \end{remark*}
 
-\begin{remark*}[Theorem predicate reading]
+\begin{remark*}[Predicate reading]
 \[
 \begin{aligned}
-&\operatorname{EventuallyIncreasingSequence}(x_n)
+&P_N=\mathsf{OrderedSet}(\{n\in\mathbb{N}:n\ge N\},\leq),\qquad
+Q=\mathsf{OrderedSet}(\mathbb{R},\leq),\\
+&\varphi_{+}(N)\coloneqq
+\operatorname{OrderPreserving}((x_n)_{n\ge N},P_N,Q),\\
+&\varphi_{-}(N)\coloneqq
+\operatorname{OrderReversing}((x_n)_{n\ge N},P_N,Q),\\
+&\operatorname{Eventually}(\varphi_{+},\mathbb{N})
 \land
-\operatorname{BoundedAboveSequence}(x_n)
+\operatorname{BoundedAbove}(x_n)
 \Longrightarrow
-\exists L\in\mathbb{R}\;\operatorname{ConvergentSequence}(x_n,L),\\
-&\operatorname{EventuallyDecreasingSequence}(x_n)
+\exists L\in\mathbb{R}\;\operatorname{ConvergesTo}(x_n,L),\\
+&\operatorname{Eventually}(\varphi_{-},\mathbb{N})
 \land
-\operatorname{BoundedBelowSequence}(x_n)
+\operatorname{BoundedBelow}(x_n)
 \Longrightarrow
-\exists L\in\mathbb{R}\;\operatorname{ConvergentSequence}(x_n,L).
+\exists L\in\mathbb{R}\;\operatorname{ConvergesTo}(x_n,L).
 \end{aligned}
 \]
 \end{remark*}
@@ -928,17 +974,17 @@ Let $(x_n)$ be a real sequence.
 \]
 \end{remark*}
 
-\begin{remark*}[Theorem predicate reading]
+\begin{remark*}[Predicate reading]
 \[
 \begin{aligned}
-&\operatorname{MonotoneIncreasingSequence}(x_n)
+&\operatorname{OrderPreserving}(x_n)
 \land
-\neg\operatorname{BoundedAboveSequence}(x_n)
+\neg\operatorname{BoundedAbove}(x_n)
 \Longrightarrow
 \operatorname{DivergesToPositiveInfinity}(x_n),\\
-&\operatorname{MonotoneDecreasingSequence}(x_n)
+&\operatorname{OrderReversing}(x_n)
 \land
-\neg\operatorname{BoundedBelowSequence}(x_n)
+\neg\operatorname{BoundedBelow}(x_n)
 \Longrightarrow
 \operatorname{DivergesToNegativeInfinity}(x_n).
 \end{aligned}
@@ -1005,18 +1051,18 @@ Let $(x_n)$ be a real sequence and let $c,\alpha\in\mathbb{R}$.
 \]
 \end{remark*}
 
-\begin{remark*}[Theorem predicate reading]
+\begin{remark*}[Predicate reading]
 \[
 \begin{aligned}
-&\operatorname{MonotoneIncreasingSequence}(x_n)
+&\operatorname{OrderPreserving}(x_n)
 \Longrightarrow
-\operatorname{MonotoneIncreasingSequence}(x_n+c),\\
-&\operatorname{MonotoneIncreasingSequence}(x_n)\land\alpha>0
+\operatorname{OrderPreserving}(x_n+c),\\
+&\operatorname{OrderPreserving}(x_n)\land\alpha>0
 \Longrightarrow
-\operatorname{MonotoneIncreasingSequence}(\alpha x_n),\\
-&\operatorname{MonotoneIncreasingSequence}(x_n)\land\alpha<0
+\operatorname{OrderPreserving}(\alpha x_n),\\
+&\operatorname{OrderPreserving}(x_n)\land\alpha<0
 \Longrightarrow
-\operatorname{MonotoneDecreasingSequence}(\alpha x_n).
+\operatorname{OrderReversing}(\alpha x_n).
 \end{aligned}
 \]
 \end{remark*}

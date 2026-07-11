@@ -35,9 +35,9 @@ $E\subseteq A$. The oscillation of $f$ on $E$ is the extended real number
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
-\operatorname{OscillationOn}(f,E,\omega)
+\operatorname{Oscillation}(f,E,\omega)
 \coloneqq
 \omega=\sup\{\,|f(x_1)-f(x_2)|:x_1,x_2\in E\,\}.
 \]
@@ -57,24 +57,30 @@ $E\subseteq A$. The oscillation of $f$ on $E$ is the extended real number
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{OscillationOn}(f,E,\omega)
+\neg\operatorname{Oscillation}(f,E,\omega)
 \Longleftrightarrow
 \omega\ne\sup\{\,|f(x_1)-f(x_2)|:x_1,x_2\in E\,\}.
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 The proposed value $\omega$ fails either because it is not an upper
 bound for pairwise differences of function values on $E$, or because it
 is an upper bound but not the least such upper bound.
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
 \underbrace{\exists x_1,x_2\in E:\; |f(x_1)-f(x_2)|>\omega}_{\text{not an upper bound}}
 \;\lor\;
 \underbrace{\exists \eta<\omega\; \forall x_1,x_2\in E:\; |f(x_1)-f(x_2)|\le \eta}_{\text{not least}}.
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -120,9 +126,9 @@ with $\omega(f;A)$ denoting the oscillation of $f$ on the set $A$. Because the f
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
-\operatorname{OscillationAt}(f,x_0,\omega) \coloneqq
+\operatorname{Oscillation}(f,x_0,\omega) \coloneqq
 \lim_{\delta \to 0^+} \omega\bigl(f;\,U_\delta(x_0)\cap E\bigr) = \omega,
 \quad U_\delta(x_0)=\{x \in \mathbb{R}: |x-x_0|<\delta\}.
 \]
@@ -143,7 +149,7 @@ with $\omega(f;A)$ denoting the oscillation of $f$ on the set $A$. Because the f
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{OscillationAt}(f,x_0,\omega)
+\neg\operatorname{Oscillation}(f,x_0,\omega)
 \Longleftrightarrow
 \Bigl[\exists \delta_0>0:\, U_{\delta_0}(x_0)\cap E = \varnothing\Bigr]
 \lor
@@ -152,17 +158,23 @@ with $\omega(f;A)$ denoting the oscillation of $f$ on the set $A$. Because the f
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 The definition fails in two distinct ways: either the point $x_0$ has a punctured neighborhood missing $E$, so there are no arbitrarily small samples to measure, or the local oscillation values near $x_0$ refuse to stabilize, preventing the limit from existing.
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
-\neg\operatorname{OscillationAt}(f,x_0,\omega)
+\neg\operatorname{Oscillation}(f,x_0,\omega)
 =
 \underbrace{\exists \delta_0>0:\, U_{\delta_0}(x_0)\cap E = \varnothing}_{\text{no nearby sample points}}
 \;\lor\;
 \underbrace{\exists \varepsilon_0>0\; \forall \delta>0\; \exists r\;(0<r<\delta \land |\omega(f;U_r(x_0)\cap E)-\omega| \ge \varepsilon_0)}_{\text{oscillation limit does not exist}}.
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -198,7 +210,7 @@ Let $A \subseteq \mathbb{R}$, let $f \colon A \to \mathbb{R}$, and let $c \in A$
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{ContinuousAt}(f,c) \Longleftrightarrow \operatorname{OscillationAt}(f,c,0).
+\operatorname{IsContinuous}(f,c) \Longleftrightarrow \operatorname{Oscillation}(f,c,0).
 \]
 \end{remark*}
 
@@ -217,20 +229,26 @@ Let $A \subseteq \mathbb{R}$, let $f \colon A \to \mathbb{R}$, and let $c \in A$
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\bigl(\operatorname{ContinuousAt}(f,c) \Longleftrightarrow \operatorname{OscillationAt}(f,c,0)\bigr).
+\neg\bigl(\operatorname{IsContinuous}(f,c) \Longleftrightarrow \operatorname{Oscillation}(f,c,0)\bigr).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 The equivalence fails precisely in two mutually exclusive ways: either $f$ remains continuous at $c$ while the oscillation retains a positive lower bound, or $\omega(f;c)$ vanishes even though $f$ does not satisfy the $\varepsilon$-$\delta$ continuity condition at $c$.
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
-\underbrace{\operatorname{ContinuousAt}(f,c) \land \neg \operatorname{OscillationAt}(f,c,0)}_{\text{Positive oscillation despite continuity}}
+\underbrace{\operatorname{IsContinuous}(f,c) \land \neg \operatorname{Oscillation}(f,c,0)}_{\text{Positive oscillation despite continuity}}
 \;\lor\;
-\underbrace{\neg \operatorname{ContinuousAt}(f,c) \land \operatorname{OscillationAt}(f,c,0)}_{\text{Zero oscillation without continuity}}.
+\underbrace{\neg \operatorname{IsContinuous}(f,c) \land \operatorname{Oscillation}(f,c,0)}_{\text{Zero oscillation without continuity}}.
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -277,11 +295,11 @@ x\in D(f)
 \begin{aligned}
 &x\in D(f)
 \Longleftrightarrow
-\operatorname{DiscontinuousAt}(f,x)\\
+\operatorname{IsDiscontinuous}(f,x)\\
 &\Longleftrightarrow
-\exists \omega\;(\operatorname{OscillationAt}(f,x,\omega)\land \omega>0)\\
+\exists \omega\;(\operatorname{Oscillation}(f,x,\omega)\land \omega>0)\\
 &\Longleftrightarrow
-\exists n\in\mathbb{N}\;\exists \omega\;(\operatorname{OscillationAt}(f,x,\omega)\land \omega\ge \tfrac1n).
+\exists n\in\mathbb{N}\;\exists \omega\;(\operatorname{Oscillation}(f,x,\omega)\land \omega\ge \tfrac1n).
 \end{aligned}
 \]
 \end{remark*}
@@ -301,19 +319,24 @@ x\in D(f)
 \[
 \begin{aligned}
 \exists x\in E\;\Bigl(
-&\exists \omega\;(\operatorname{DiscontinuousAt}(f,x)\land \operatorname{OscillationAt}(f,x,\omega)\land \omega=0)\;\lor\\
-&\exists \omega\;(\neg\operatorname{DiscontinuousAt}(f,x)\land \operatorname{OscillationAt}(f,x,\omega)\land \omega>0)\;\lor\\
-&\exists \omega\;(\operatorname{OscillationAt}(f,x,\omega)\land \omega>0\land \forall n\in\mathbb{N}\; \omega<\tfrac1n)
+&\exists \omega\;(\operatorname{IsDiscontinuous}(f,x)\land \operatorname{Oscillation}(f,x,\omega)\land \omega=0)\;\lor\\
+&\exists \omega\;(\neg\operatorname{IsDiscontinuous}(f,x)\land \operatorname{Oscillation}(f,x,\omega)\land \omega>0)\;\lor\\
+&\exists \omega\;(\operatorname{Oscillation}(f,x,\omega)\land \omega>0\land \forall n\in\mathbb{N}\; \omega<\tfrac1n)
 \Bigr).
 \end{aligned}
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 The proposition fails precisely when some $x\in E$ is marked as discontinuous although its oscillation vanishes, or when $x$ is declared continuous despite a positive oscillation, or when a positive oscillation never exceeds any reciprocal integer, contradicting the Archimedean step that converts $\omega(f;x)>0$ into the countable union description.
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
 \exists x\in E\;
 \begin{cases}
@@ -322,6 +345,7 @@ x\notin D(f)\land \omega(f;x)>0 & \text{(Type II)},\\[4pt]
 \omega(f;x)>0\land \forall n\in\mathbb{N}\; \omega(f;x)<\tfrac1n & \text{(Type III)}.
 \end{cases}
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]

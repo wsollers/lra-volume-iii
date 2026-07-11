@@ -1,10 +1,12 @@
 \subsection*{Geometric Intuition}
 
+\begin{exposition}
 Riemann promotes Cauchy's tag-independence theorem into a definition. A
 function is integrable when every sufficiently fine staircase, even with
 adversarial tags, is forced near the same number.
+\end{exposition}
 
-\begin{remark*}[Engineering reading]
+\begin{remark*}[Interpretation]
 The sampling convention is no longer chosen by the author of the definition.
 It is chosen by a universal quantifier. A Riemann-integrable function is one
 whose accumulated area survives every possible choice of sample heights once
@@ -22,6 +24,18 @@ For a tagged partition \((P,\xi)\), define
 \]
 \end{definition}
 \end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+For every tagged partition \((P,\xi)\) of \([a,b]\),
+\[
+  S(f,P,\xi)=\sum_{i=1}^{n}f(\xi_i)(x_i-x_{i-1}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The Riemann sum records the signed rectangle approximation determined by the
+partition and its tags. The tag supplies the height on each slab.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -42,7 +56,15 @@ A function \(f:[a,b]\to\mathbb R\) is \emph{Riemann-integrable} with value
 \end{definition}
 \end{definitionbox}
 
-\begin{remark*}[The one symbol that changed everything]
+\begin{remark*}[Standard quantified statement]
+A function \(f:[a,b]\to\mathbb R\) is Riemann-integrable with value \(L\) if
+\[
+  \forall\varepsilon>0\ \exists\delta>0\ \forall(P,\xi)\,
+  \bigl(\|P\|<\delta\Rightarrow |S(f,P,\xi)-L|<\varepsilon\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
 Cauchy quantifies over choppings. Riemann quantifies over choppings and every
 possible choice of heights:
 \[
@@ -52,7 +74,7 @@ That extra quantifier removes the arbitrary left endpoint and turns tag
 independence into the price of admission.
 \end{remark*}
 
-\begin{remark*}[Payoff]
+\begin{remark*}[Interpretation]
 The definition is no longer tied to continuity. It can admit bounded functions
 with discontinuities, because the question is not whether \(f\) is continuous
 but whether all fine tagged sums are forced into one narrow numerical corridor.
@@ -70,7 +92,7 @@ be known in advance.
 
 \subsection*{Worked Positive Example}
 
-\begin{remark*}[The ruler function example]
+\begin{remark*}[Interpretation]
 Thomae's function, also called the ruler function, is
 \[
   T(x)=
@@ -97,6 +119,17 @@ Every continuous function \(f:[a,b]\to\mathbb R\) is Riemann-integrable.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+For every continuous function \(f:[a,b]\to\mathbb R\), there exists
+\(A\in\mathbb R\) such that \(f\) is Riemann-integrable on \([a,b]\) with
+integral \(A\).
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Continuity on a compact interval is strong enough to make all fine tagged
+sums settle to one value.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:continuous-at-point]{Continuity at a Point}
@@ -120,6 +153,22 @@ If \(f\) and \(g\) are Riemann-integrable on \([a,b]\), then
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+If \(f\) and \(g\) are Riemann-integrable on \([a,b]\), then for all
+\(\alpha,\beta\in\mathbb R\), the function \(\alpha f+\beta g\) is
+Riemann-integrable on \([a,b]\) and
+\[
+  \int_a^b(\alpha f+\beta g)\,dx
+  =
+  \alpha\int_a^b f\,dx+\beta\int_a^b g\,dx .
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Riemann integration respects finite linear combinations because tagged sums
+respect the same algebra before the limiting step.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:riemann-integral]{Riemann Integral}
@@ -138,6 +187,19 @@ for every \(x\in[a,b]\), then
 \hyperref[prf:riemann-integral-monotonicity]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+If \(f\) and \(g\) are Riemann-integrable on \([a,b]\) and
+\(\forall x\in[a,b]\, f(x)\le g(x)\), then
+\[
+  \int_a^b f\,dx\le \int_a^b g\,dx .
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Pointwise order passes through every tagged sum and therefore passes to the
+integral.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -158,6 +220,19 @@ Riemann-integrable and
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+If \(f\) is Riemann-integrable on \([a,b]\), then \(|f|\) is
+Riemann-integrable on \([a,b]\) and
+\[
+  \left|\int_a^b f\,dx\right|\le \int_a^b |f|\,dx .
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The absolute value bound says signed cancellation cannot make the magnitude of
+the integral exceed the integral of the magnitude.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:riemann-integral]{Riemann Integral}
@@ -176,6 +251,19 @@ it is Riemann-integrable on \([a,c]\) and \([c,b]\), and in that case
 \hyperref[prf:riemann-integral-interval-additivity]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+For \(c\in[a,b]\), the function \(f\) is Riemann-integrable on \([a,b]\) if
+and only if it is Riemann-integrable on \([a,c]\) and on \([c,b]\), and then
+\[
+  \int_a^b f\,dx=\int_a^c f\,dx+\int_c^b f\,dx .
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Splitting a compact interval at one point splits the accumulated area into the
+sum of the accumulated areas on the two pieces.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -200,6 +288,21 @@ A bounded function is Riemann-integrable if and only if for every
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+A bounded function \(f:[a,b]\to\mathbb R\) is Riemann-integrable if and only
+if for every \(\varepsilon>0\) there exists \(\delta>0\) such that whenever
+\((P,\xi)\) and \((Q,\eta)\) are tagged partitions with
+\(\|P\|<\delta\) and \(\|Q\|<\delta\),
+\[
+  |S(f,P,\xi)-S(f,Q,\eta)|<\varepsilon.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The Cauchy criterion tests whether all sufficiently fine tagged sums cluster
+near each other without naming the limiting integral first.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:function-bounded]{Bounded Function}
@@ -211,7 +314,7 @@ A bounded function is Riemann-integrable if and only if for every
 
 \subsection*{Worked Failure Mode and Next Repair}
 
-\begin{remark*}[Bug report]
+\begin{remark*}[Interpretation]
 Riemann fixed the arbitrary tag, but the definition is operationally hostile.
 To verify integrability directly one must control all tagged partitions at
 once. The patch request is to remove tags from the verification problem:
@@ -219,7 +322,7 @@ replace every possible sample height by the slab infimum and supremum, then
 squeeze.
 \end{remark*}
 
-\begin{remark*}[Why this is hard to use]
+\begin{remark*}[Interpretation]
 Riemann is logically clean but not mechanically friendly. Refining a partition
 does not make an arbitrary Riemann sum move monotonically, because every
 refinement lets the tags move again. There is no single upper or lower

@@ -3,7 +3,7 @@
 % ---------------------------------------------------------
 
 
-\begin{remark*}[Why completeness is needed]
+\begin{remark*}[Interpretation]
 The ordered field axioms alone do not prevent ``holes'' in the number line.
 The rationals $\mathbb{Q}$ satisfy all field and order axioms, yet fail
 completeness. Consider the set
@@ -39,20 +39,20 @@ Let $(S,\le)$ be an ordered set. The set $S$ has the \emph{Least Upper Bound Pro
 \Bigl[
 \bigl(A\neq\varnothing \land \exists u\in S\;\forall x\in A\;(x\le u)\bigr)
 \rightarrow
-\exists s\in S\;\operatorname{Supremum}(s,A)
+\exists s\in S\;\operatorname{LeastUpperBound}(s,A)
 \Bigr].
 \end{aligned}
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
-\operatorname{LeastUpperBoundProperty}(S)\coloneqq
+\operatorname{HasLeastUpperBoundProperty}(S)\coloneqq
 \forall A\subseteq S\;
 \Bigl[
 \bigl(A\neq\varnothing \land \exists u\in S\;\forall x\in A\;(x\le u)\bigr)
 \rightarrow
-\exists s\in S\;\operatorname{Supremum}(s,A)
+\exists s\in S\;\operatorname{LeastUpperBound}(s,A)
 \Bigr].
 \]
 \end{remark*}
@@ -69,7 +69,7 @@ A\neq\varnothing
 \land
 \exists u\in S\;\forall x\in A\;(x\le u)
 \land
-\forall s\in S\;\neg\operatorname{Supremum}(s,A)
+\forall s\in S\;\neg\operatorname{LeastUpperBound}(s,A)
 \Bigr].
 \end{aligned}
 \]
@@ -77,32 +77,38 @@ A\neq\varnothing
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{LeastUpperBoundProperty}(S)\Longleftrightarrow
+\neg\operatorname{HasLeastUpperBoundProperty}(S)\Longleftrightarrow
 \exists A\subseteq S\;
 \Bigl[
 A\neq\varnothing
 \land
 \exists u\in S\;\forall x\in A\;(x\le u)
 \land
-\forall s\in S\;\neg\operatorname{Supremum}(s,A)
+\forall s\in S\;\neg\operatorname{LeastUpperBound}(s,A)
 \Bigr].
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 The property fails when there is a nonempty subset of the ambient ordered set that has at least one upper bound but has no least upper bound inside that same ambient set.
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
-\neg\operatorname{LeastUpperBoundProperty}(S)
+\neg\operatorname{HasLeastUpperBoundProperty}(S)
 =
 \underbrace{\exists A\subseteq S\;(A\neq\varnothing)}_{\text{nonempty witness set}}
 \;\land\;
 \underbrace{\exists u\in S\;\forall x\in A\;(x\le u)}_{\text{bounded above in }S}
 \;\land\;
-\underbrace{\forall s\in S\;\neg\operatorname{Supremum}(s,A)}_{\text{no supremum in }S}.
+\underbrace{\forall s\in S\;\neg\operatorname{LeastUpperBound}(s,A)}_{\text{no supremum in }S}.
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -132,7 +138,7 @@ The ordered field $\mathbb{R}$ has the Least Upper Bound Property.
 
 \begin{remark*}[Standard quantified statement]
 \[
-\operatorname{LeastUpperBoundProperty}(\mathbb{R}).
+\operatorname{HasLeastUpperBoundProperty}(\mathbb{R}).
 \]
 Equivalently,
 \[
@@ -141,22 +147,22 @@ Equivalently,
 \Bigl[
 \bigl(A\neq\varnothing \land \exists u\in\mathbb{R}\;\forall x\in A\;(x\le u)\bigr)
 \rightarrow
-\exists s\in\mathbb{R}\;\operatorname{Supremum}(s,A)
+\exists s\in\mathbb{R}\;\operatorname{LeastUpperBound}(s,A)
 \Bigr].
 \end{aligned}
 \]
 \end{remark*}
 
-\begin{remark*}[Axiom predicate reading]
+\begin{remark*}[Predicate reading]
 \[
-\operatorname{LeastUpperBoundProperty}(\mathbb{R}).
+\operatorname{HasLeastUpperBoundProperty}(\mathbb{R}).
 \]
 \end{remark*}
 
 \begin{remark*}[Negated quantified statement]
 \[
 \begin{aligned}
-&\neg\operatorname{LeastUpperBoundProperty}(\mathbb{R})\\
+&\neg\operatorname{HasLeastUpperBoundProperty}(\mathbb{R})\\
 &\Longleftrightarrow
 \exists A\subseteq\mathbb{R}\;
 \Bigl[
@@ -164,7 +170,7 @@ A\neq\varnothing
 \land
 \exists u\in\mathbb{R}\;\forall x\in A\;(x\le u)
 \land
-\forall s\in\mathbb{R}\;\neg\operatorname{Supremum}(s,A)
+\forall s\in\mathbb{R}\;\neg\operatorname{LeastUpperBound}(s,A)
 \Bigr].
 \end{aligned}
 \]
@@ -172,32 +178,38 @@ A\neq\varnothing
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{LeastUpperBoundProperty}(\mathbb{R})\Longleftrightarrow
+\neg\operatorname{HasLeastUpperBoundProperty}(\mathbb{R})\Longleftrightarrow
 \exists A\subseteq\mathbb{R}\;
 \Bigl[
 A\neq\varnothing
 \land
 \exists u\in\mathbb{R}\;\forall x\in A\;(x\le u)
 \land
-\forall s\in\mathbb{R}\;\neg\operatorname{Supremum}(s,A)
+\forall s\in\mathbb{R}\;\neg\operatorname{LeastUpperBound}(s,A)
 \Bigr].
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 Completeness would fail if some nonempty subset of $\mathbb{R}$ were bounded above in $\mathbb{R}$ but had no supremum in $\mathbb{R}$.
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
-\neg\operatorname{LeastUpperBoundProperty}(\mathbb{R})
+\neg\operatorname{HasLeastUpperBoundProperty}(\mathbb{R})
 =
 \underbrace{\exists A\subseteq\mathbb{R}\;(A\neq\varnothing)}_{\text{nonempty witness set}}
 \;\land\;
 \underbrace{\exists u\in\mathbb{R}\;\forall x\in A\;(x\le u)}_{\text{bounded above in }\mathbb{R}}
 \;\land\;
-\underbrace{\forall s\in\mathbb{R}\;\neg\operatorname{Supremum}(s,A)}_{\text{missing real supremum}}.
+\underbrace{\forall s\in\mathbb{R}\;\neg\operatorname{LeastUpperBound}(s,A)}_{\text{missing real supremum}}.
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]

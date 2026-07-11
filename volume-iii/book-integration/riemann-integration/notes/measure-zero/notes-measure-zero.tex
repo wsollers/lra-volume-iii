@@ -1,10 +1,12 @@
 \subsection*{Geometric Intuition}
 
+\begin{exposition}
 Darboux integrability fails where upper and lower staircases refuse to meet.
 That refusal is local oscillation. Thus the exact Riemann question becomes:
 how large is the set where \(f\) is discontinuous?
+\end{exposition}
 
-\begin{remark*}[Engineering reading]
+\begin{remark*}[Interpretation]
 This final section is not another integral. It is the diagnostic scan of the
 entire Riemann--Darboux family, placed immediately after Darboux so the exact
 obstruction is named before the chapter turns to weighted and gauge variants.
@@ -28,6 +30,38 @@ A set \(E\subseteq\mathbb R\) has \emph{measure zero} if for every
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+A set \(E\subseteq\mathbb R\) has measure zero if
+\[
+  \forall\varepsilon>0\ \exists (I_k)_{k=1}^{\infty}\,
+  \left(
+    E\subseteq\bigcup_{k=1}^{\infty}I_k
+    \wedge
+    \sum_{k=1}^{\infty}|I_k|<\varepsilon
+  \right),
+\]
+where each \(I_k\) is an open interval.
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{IsMeasureZero}(E,\mathbb{R})
+  \;\colonequiv\;
+  \forall\varepsilon>0\ \exists (I_k)_{k=1}^{\infty}\,
+  \left(
+    \operatorname{Covers}\!\left(\bigcup_{k=1}^{\infty}I_k,E\right)
+    \wedge
+    \sum_{k=1}^{\infty}|I_k|<\varepsilon
+  \right),
+\]
+with each \(I_k\) an open interval.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Measure zero means the set can be covered by countably many open intervals
+whose total length is as small as requested.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:open-set]{Open Set}
@@ -47,7 +81,17 @@ Then \(f\) is continuous at \(x\) exactly when \(\omega_f(x)=0\).
 \end{definition}
 \end{definitionbox}
 
-\begin{remark*}[Oscillation levels]
+\begin{remark*}[Standard quantified statement]
+For bounded \(f\) on \([a,b]\), the point oscillation at \(x\in[a,b]\) is
+\[
+  \omega_f(x)=
+  \inf_{\delta>0}
+  \omega_f\bigl((x-\delta,x+\delta)\cap[a,b]\bigr),
+\]
+and \(f\) is continuous at \(x\) if and only if \(\omega_f(x)=0\).
+\end{remark*}
+
+\begin{remark*}[Interpretation]
 The sets
 \[
   D_\eta=\{x:\omega_f(x)\ge \eta\}
@@ -84,6 +128,20 @@ has measure zero.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+A bounded function \(f:[a,b]\to\mathbb R\) is Riemann-integrable if and only
+if the set
+\[
+  D=\{x\in[a,b]:\omega_f(x)>0\}
+\]
+has measure zero.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The criterion converts Riemann integrability into a size test for the
+discontinuity set.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:function-bounded]{Bounded Function}
@@ -95,7 +153,7 @@ has measure zero.
 
 \subsection*{Worked Failure Mode and Handoff}
 
-\begin{remark*}[Terminal diagnosis]
+\begin{remark*}[Interpretation]
 Riemann integration works precisely when the set of bad points is invisible to
 length. The Dirichlet function \(\mathbf 1_{\mathbb Q}\) is discontinuous
 everywhere, so \(D=[0,1]\), not a null set. The Lebesgue patch is to stop
@@ -106,7 +164,7 @@ stricter gauge rule recovers the Lebesgue class itself. The pathology plate
 in Figure~\ref{fig:failures-atlas} is the visual companion to this diagnosis.
 \end{remark*}
 
-\begin{remark*}[Lebesgue handoff]
+\begin{remark*}[Interpretation]
 The slogan is precise: Riemann partitions the domain, so every slab that meets
 a dense bad set still sees the bad behavior. Lebesgue partitions the range:
 it groups points by height and measures the set carrying each height. For

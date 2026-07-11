@@ -3,7 +3,7 @@
 % =========================================================
 % ---------------------------------------------------------
 
-\begin{remark*}[Section guide]
+\begin{remark*}[Interpretation]
 The derivative is the number the secant slopes approach, but the word
 ``limit'' has three useful faces. The epsilon--delta form is the contract;
 the topological form strips it to neighbourhoods; the sequential form is the
@@ -28,13 +28,13 @@ Let $f: D \to \mathbb{R}$ be a real-valued function and $c \in \operatorname{int
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
-\operatorname{DerivativeAt}(f,c,L)
+\operatorname{Derivative}(f,c,L)
 \;\Longleftrightarrow\;
-\operatorname{FunctionLimit}\!\left(\lambda x.\,\frac{f(x)-f(c)}{x-c},\,D,\,c,\,L\right).
+\operatorname{TendsTo}\!\left(\lambda x.\,\frac{f(x)-f(c)}{x-c},\,D,\,c,\,L\right).
 \]
-The predicate $\operatorname{DerivativeAt}(f,c,L)$ asserts that $L$ is the value of the
+The predicate $\operatorname{Derivative}(f,c,L)$ asserts that $L$ is the value of the
 limit of the difference quotient of $f$ at $c$.
 \end{remark*}
 
@@ -47,18 +47,21 @@ limit of the difference quotient of $f$ at $c$.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{DerivativeAt}(f,c,L)
+\neg\operatorname{Derivative}(f,c,L)
 \;\Longleftrightarrow\;
-\neg\operatorname{FunctionLimit}\!\left(\lambda x.\,\frac{f(x)-f(c)}{x-c},\,D,\,c,\,L\right).
+\neg\operatorname{TendsTo}\!\left(\lambda x.\,\frac{f(x)-f(c)}{x-c},\,D,\,c,\,L\right).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \begin{itemize}
   \item The difference quotient has no finite limit at $c$ (e.g.\ $|f(x)-f(c)|/|x-c| \to \infty$).
   \item The difference quotient oscillates without settling near any single value.
   \item The proposed value $L$ is the wrong candidate.
 \end{itemize}
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -71,7 +74,7 @@ The derivative is a limit of slopes of secant lines. The $\varepsilon$-$\delta$ 
 \end{itemize}
 \end{dependencies}
 
-\begin{example*}[Derivative of \(x^2\) from the Definition]
+\begin{exposition}
 \phantomsection\label{ex:x2-derivative}
 Let \(f(x)=x^2\) and fix \(c\in\mathbb{R}\). For \(x\neq c\),
 \[
@@ -85,7 +88,7 @@ The singularity has been removed by exact algebra, so the limit as
 \(x\to c\) is \(2c\). Hence \(f'(c)=2c\). Read through
 Carath\'{e}odory, this is the factor \(\varphi(x)=x+c\), continuous at
 \(c\) with \(\varphi(c)=2c\).
-\end{example*}
+\end{exposition}
 
 % ---------------------------------------------------------
 
@@ -107,9 +110,9 @@ Let $f: D \to \mathbb{R}$ and $c \in \operatorname{int}(D)$. $f$ is differentiab
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
-\operatorname{DerivativeAt}_{\mathrm{top}}(f,c,L)
+\operatorname{Derivative}_{\mathrm{top}}(f,c,L)
 \;\Longleftrightarrow\;
 \forall V \ni L\;\exists U \ni c\;\forall x \in (U\setminus\{c\})\cap D:\;
 \frac{f(x)-f(c)}{x-c}\in V.
@@ -126,7 +129,7 @@ Let $f: D \to \mathbb{R}$ and $c \in \operatorname{int}(D)$. $f$ is differentiab
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{DerivativeAt}_{\mathrm{top}}(f,c,L)
+\neg\operatorname{Derivative}_{\mathrm{top}}(f,c,L)
 \;\Longleftrightarrow\;
 \exists V \ni L\;\forall U \ni c\;\exists x \in (U\setminus\{c\})\cap D:\;
 \frac{f(x)-f(c)}{x-c}\notin V.
@@ -134,7 +137,10 @@ Let $f: D \to \mathbb{R}$ and $c \in \operatorname{int}(D)$. $f$ is differentiab
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 The topological derivative fails when a fixed output neighbourhood of $L$ cannot be entered by the difference quotient no matter how tightly the input is restricted around $c$. Geometric reading: no punctured neighbourhood around $c$ maps all secant slopes into any prescribed window around $L$.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -170,9 +176,9 @@ x_n \to c \;\Rightarrow\; \frac{f(x_n)-f(c)}{x_n-c} \to L.
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
-\operatorname{DerivativeAt}_{\mathrm{seq}}(f,c,L)
+\operatorname{Derivative}_{\mathrm{seq}}(f,c,L)
 \;\Longleftrightarrow\;
 \forall (x_n)\subseteq A\setminus\{c\}:\;
 x_n\to c \;\Rightarrow\; \frac{f(x_n)-f(c)}{x_n-c}\to L.
@@ -188,7 +194,7 @@ x_n \to c \;\land\; \frac{f(x_n)-f(c)}{x_n-c} \not\to L.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{DerivativeAt}_{\mathrm{seq}}(f,c,L)
+\neg\operatorname{Derivative}_{\mathrm{seq}}(f,c,L)
 \;\Longleftrightarrow\;
 \exists (x_n)\subseteq A\setminus\{c\}:\;
 x_n\to c \;\land\; \frac{f(x_n)-f(c)}{x_n-c}\not\to L.
@@ -196,14 +202,20 @@ x_n\to c \;\land\; \frac{f(x_n)-f(c)}{x_n-c}\not\to L.
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 Failure occurs when a single approach sequence $(x_n) \to c$ exists along which the difference quotients either: (i) diverge to infinity (vertical tangent); (ii) oscillate without settling; (iii) converge but to a value other than $L$ (wrong slope candidate). A single such sequence certifies non-differentiability.
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
 \underbrace{x_n \to c}_{\text{approach condition}} \;\land\; \underbrace{\frac{f(x_n)-f(c)}{x_n-c} \not\to L}_{\text{quotient failure}}.
 \]
 The two canonical witness types are: two subsequences with different limiting difference quotients (e.g., $f(x) = |x|$ at $c = 0$), or quotients growing without bound.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -244,11 +256,11 @@ Let $f : A \to \mathbb{R}$ and $c \in A$ be a limit point of $A$. The following 
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{DerivativeAt}(f,c,L)
+\operatorname{Derivative}(f,c,L)
 \;\Longleftrightarrow\;
-\operatorname{DerivativeAt}_{\mathrm{top}}(f,c,L)
+\operatorname{Derivative}_{\mathrm{top}}(f,c,L)
 \;\Longleftrightarrow\;
-\operatorname{DerivativeAt}_{\mathrm{seq}}(f,c,L).
+\operatorname{Derivative}_{\mathrm{seq}}(f,c,L).
 \]
 All three predicates name the same underlying condition on the difference quotient of $f$ at $c$.
 \end{remark*}
@@ -264,7 +276,10 @@ x_n \to c \;\land\; \frac{f(x_n)-f(c)}{x_n-c} \not\to L.
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 The equivalence cannot produce contradictory verdicts: if $c$ is a limit point of $A$, all three forms agree. Degenerate case: if $c$ is not a limit point of $A$, the punctured-ball and sequence conditions are vacuously satisfied by every candidate $L$ simultaneously, making the equivalence trivially true for all $L$ rather than characterizing a unique derivative.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -296,7 +311,7 @@ Let $f : A \to \mathbb{R}$ and $c \in \operatorname{int}(A)$. Then $f$ is differ
 
 \begin{remark*}[Standard quantified statement]
 \[
-\operatorname{DerivativeAt}(f,c,L)
+\operatorname{Derivative}(f,c,L)
 \;\Longleftrightarrow\;
 \lim_{h\to 0}\frac{f(c+h)-f(c)}{h} = L.
 \]
@@ -304,27 +319,24 @@ Let $f : A \to \mathbb{R}$ and $c \in \operatorname{int}(A)$. Then $f$ is differ
 
 \begin{remark*}[Negated quantified statement]
 \[
-\neg\operatorname{DerivativeAt}(f,c,L)
+\neg\operatorname{Derivative}(f,c,L)
 \;\Longleftrightarrow\;
 \lim_{h\to 0}\frac{f(c+h)-f(c)}{h} \neq L.
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 The $h$-form fails in two branches: (i) The incremental ratio $(f(c+h)-f(c))/h$ has no finite limit as $h \to 0$ (corner, cusp, or vertical tangent at $c$). (ii) The ratio converges to a finite value different from $L$ (proposed $L$ is the wrong slope).
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
 The $h$-form substitutes $x = c + h$ in the difference quotient. It is the standard notation in calculus and makes the incremental structure of the derivative explicit.
 \end{remark*}
 
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:derivative-at-a-point]{Derivative at a Point}
-\end{itemize}
-\end{dependencies}
-
-\begin{remark*}[Discrete and continuous change]
+\begin{remark*}[Interpretation]
 The forward difference operator
 \[
   \Delta f(n)=f(n+1)-f(n)
@@ -350,6 +362,12 @@ Passing to the limit is therefore not just a sharpening of a quotient. It
 restores symmetries that the discrete operator must carry as shifts.
 \end{remark*}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:derivative-at-a-point]{Derivative at a Point}
+\end{itemize}
+\end{dependencies}
+
 % ---------------------------------------------------------
 
 \subsection{First Consequences}
@@ -366,38 +384,44 @@ Let $f : A \to \mathbb{R}$ and $c \in A$. If $f$ is differentiable at $c$, then 
 
 \begin{remark*}[Standard quantified statement]
 \[
-\operatorname{DerivableAt}(f,c) \;\Rightarrow\; \operatorname{ContinuousAt}(f,c).
+\operatorname{IsDifferentiable}(f,c) \;\Rightarrow\; \operatorname{IsContinuous}(f,c).
 \]
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{DifferentiableAt}(f,c)
+\operatorname{IsDifferentiable}(f,c)
 \;\Longrightarrow\;
-\operatorname{ContinuousAt}(f,c).
+\operatorname{IsContinuous}(f,c).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 The implication can only fail in the reverse direction: continuity at $c$
 does not force differentiability at $c$.
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 The converse fails: $f(x) = |x|$ is continuous at $0$ but not differentiable there.
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Contrapositive quantified statement]
+\begin{remark*}[Interpretation]
 \[
 \neg \text{ContinuousAt}(f,c) \;\Rightarrow\; \neg \text{DifferentiableAt}(f,c).
 \]
 \end{remark*}
 
-\begin{remark*}[Contrapositive predicate reading]
+\begin{remark*}[Interpretation]
 \[
-\neg\operatorname{ContinuousAt}(f,c)
+\neg\operatorname{IsContinuous}(f,c)
 \;\Longrightarrow\;
-\neg\operatorname{DifferentiableAt}(f,c).
+\neg\operatorname{IsDifferentiable}(f,c).
 \]
 \end{remark*}
 
@@ -405,34 +429,27 @@ The converse fails: $f(x) = |x|$ is continuous at $0$ but not differentiable the
 Differentiability is strictly stronger than continuity: the existence of a well-defined tangent slope forces the function values to coalesce at $f(c)$ as $x \to c$.
 \end{remark*}
 
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:derivative-at-a-point]{Derivative at a Point}
-  \item \hyperref[def:continuous-at-point]{Continuity at a Point}
-\end{itemize}
-\end{dependencies}
-
-\begin{remark*}[Converse failure]
+\begin{remark*}[Interpretation]
 The theorem runs one way only. Differentiability forces continuity, but
 continuity does not force differentiability. The negation of the converse is
 \[
   \exists f\;\exists c:\;
-  \operatorname{ContinuousAt}(f,c)\land
-  \neg\operatorname{DifferentiableAt}(f,c).
+  \operatorname{IsContinuous}(f,c)\land
+  \neg\operatorname{IsDifferentiable}(f,c).
 \]
 The examples below escalate the failure: one corner, infinitely many isolated
 corners, and no differentiability anywhere.
 \end{remark*}
 
-\begin{example*}[One Corner: \(|x|\)]
+\begin{exposition}
 \phantomsection\label{ex:cont-not-diff-corner}
 The function \(f(x)=|x|\) is continuous on \(\mathbb{R}\), but it is not
 differentiable at \(0\). Its one-sided derivatives are \(-1\) and \(+1\), so
 the two one-sided slopes do not agree. Thus a single corner is enough to
 separate continuity from differentiability.
-\end{example*}
+\end{exposition}
 
-\begin{example*}[Finitely Many Corners: A Sawtooth]
+\begin{exposition}
 \phantomsection\label{ex:cont-not-diff-sawtooth}
 On a compact interval, a triangular sawtooth made from finitely many line
 segments can be continuous while failing to be differentiable at each corner.
@@ -447,9 +464,9 @@ For example,
 is continuous on \([0,2]\), but the left derivative at \(1\) is \(1\) and the
 right derivative is \(-1\). Adding more teeth gives any finite number of
 corner failures without breaking continuity.
-\end{example*}
+\end{exposition}
 
-\begin{example*}[The Weierstrass Function]
+\begin{exposition}
 \phantomsection\label{ex:weierstrass}
 For \(0<a<1\) and an odd integer \(b\) satisfying
 \(ab>1+\frac{3}{2}\pi\), the Weierstrass function
@@ -460,9 +477,9 @@ is continuous on \(\mathbb{R}\), because the series converges uniformly by
 the Weierstrass \(M\)-test. Classically, under the displayed condition, it is
 differentiable at no point. Thus continuity may hold everywhere while
 differentiability holds nowhere.
-\end{example*}
+\end{exposition}
 
-\begin{remark*}[Proof status]
+\begin{remark*}[Interpretation]
 The continuity of \(W\) follows from uniform convergence once the
 function-series machinery is available. The nowhere-differentiability proof
 is a classical result of Weierstrass and is deferred to the function-series
@@ -470,12 +487,19 @@ development; it is used here only as a counterexample to the converse of
 Differentiable Implies Continuous.
 \end{remark*}
 
-\begin{remark*}[Forward flag]
+\begin{remark*}[Interpretation]
 Brownian motion has sample paths that are almost surely continuous
 everywhere and differentiable nowhere. This is the stochastic analogue of the
 Weierstrass phenomenon and one reason ordinary calculus must be replaced by
 the It\^o integral in stochastic analysis.
 \end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:derivative-at-a-point]{Derivative at a Point}
+  \item \hyperref[def:continuous-at-point]{Continuity at a Point}
+\end{itemize}
+\end{dependencies}
 
 % ---------------------------------------------------------
 
@@ -492,38 +516,41 @@ Let $f : A \to \mathbb{R}$ and $c \in A$. If $f$ is differentiable at $c$, its d
 
 \begin{remark*}[Standard quantified statement]
 \[
-\operatorname{DerivativeAt}(f,c,L) \;\land\; \operatorname{DerivativeAt}(f,c,L')
+\operatorname{Derivative}(f,c,L) \;\land\; \operatorname{Derivative}(f,c,L')
 \;\Rightarrow\; L = L'.
 \]
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{DerivativeAt}(f,c,L)
+\operatorname{Derivative}(f,c,L)
 \;\land\;
-\operatorname{DerivativeAt}(f,c,L')
+\operatorname{Derivative}(f,c,L')
 \;\Longrightarrow\; L = L'.
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 The uniqueness proof assumes $L \neq L'$ and takes $\varepsilon = |L - L'|/2 > 0$. The definition supplies $\delta$ making the difference quotient within $\varepsilon$ of both $L$ and $L'$ simultaneously, forcing $|L - L'| < 2\varepsilon = |L - L'|$, a contradiction. The cluster-point hypothesis on $c$ is essential: without it, the punctured-ball condition is vacuous and the limit is trivially satisfied by every value.
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Contrapositive quantified statement]
+\begin{remark*}[Interpretation]
 \[
-L \neq L' \;\Rightarrow\; \neg\bigl(\operatorname{DerivativeAt}(f,c,L) \;\land\; \operatorname{DerivativeAt}(f,c,L')\bigr).
+L \neq L' \;\Rightarrow\; \neg\bigl(\operatorname{Derivative}(f,c,L) \;\land\; \operatorname{Derivative}(f,c,L')\bigr).
 \]
 Two distinct candidates cannot both be the derivative of $f$ at $c$.
 \end{remark*}
 
-\begin{remark*}[Contrapositive predicate reading]
+\begin{remark*}[Interpretation]
 \[
 L \neq L'
 \;\Longrightarrow\;
-\neg\operatorname{DerivativeAt}(f,c,L)
+\neg\operatorname{Derivative}(f,c,L)
 \;\lor\;
-\neg\operatorname{DerivativeAt}(f,c,L').
+\neg\operatorname{Derivative}(f,c,L').
 \]
 \end{remark*}
 
@@ -582,6 +609,14 @@ Let $k\in\mathbb{R}$ and let $f(x)=k$ for all $x\in\mathbb{R}$. Then $f'(c)=0$ f
 \[
   \forall k\in\mathbb{R}\,\forall c\in\mathbb{R}:\;
   \frac{d}{dx}[k]\big|_{x=c}=0.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{ConstantFunction}(f,k)
+\Longrightarrow
+\forall c\in\mathbb{R}\;\operatorname{Derivative}(f,c,0).
 \]
 \end{remark*}
 

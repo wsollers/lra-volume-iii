@@ -9,9 +9,9 @@ Let \(I\subseteq\mathbb{R}\) be an interval and let \(f:I\to\mathbb{R}\). The fu
 \[
   f\in C^1(I)
   \Longleftrightarrow
-  \bigl(\forall x\in I:\operatorname{DifferentiableAt}(f,x)\bigr)
+  \bigl(\forall x\in I:\operatorname{IsDifferentiable}(f,x)\bigr)
   \land
-  \operatorname{ContinuousOn}(f',I).
+  \operatorname{IsContinuous}(f',I).
 \]
 \end{remark*}
 
@@ -26,7 +26,7 @@ The condition \(f\in C^1(I)\) is strictly stronger than differentiability. A fun
 \end{itemize}
 \end{dependencies}
 
-\begin{example*}[Differentiable Everywhere, but Not \(C^1\)]
+\begin{exposition}
 \phantomsection\label{ex:x2sin}
 Let
 \[
@@ -50,7 +50,7 @@ The first term tends to \(0\), but \(\cos(1/x)\) oscillates, so \(f'\) is
 not continuous at \(0\). Thus \(f\) is differentiable on all of
 \(\mathbb{R}\), but \(f\notin C^1(\mathbb{R})\). The failure is oscillatory,
 not a jump, as Darboux's theorem requires.
-\end{example*}
+\end{exposition}
 
 \begin{definitionbox}{Definition (Class \(C^k\))}
 \begin{definition}[Class \(C^k\)]
@@ -65,13 +65,13 @@ Let \(I\subseteq\mathbb{R}\) be an interval, let \(k\in\mathbb{N}\), and let \(f
   \Longleftrightarrow
   \bigl(\forall j\in\{0,1,\ldots,k\}: f^{(j)}\text{ exists on }I\bigr)
   \land
-  \operatorname{ContinuousOn}\bigl(f^{(k)},I\bigr).
+  \operatorname{IsContinuous}\bigl(f^{(k)},I\bigr).
 \]
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
 \[
-  \operatorname{ClassC}(f,I,k).
+  \operatorname{IsClassC}(f,I,k).
 \]
 For a fixed interval \(I\), the classes are nested:
 \[
@@ -86,12 +86,12 @@ For a fixed interval \(I\), the classes are nested:
   \exists x\in I:\ \bigl[f^{(k)}\text{ fails to exist at }x\bigr]
   \vee
   \bigl[f^{(k)}\text{ exists on }I\land
-  \neg\operatorname{ContinuousAt}(f^{(k)},x)\bigr].
+  \neg\operatorname{IsContinuous}(f^{(k)},x)\bigr].
 \]
 \end{remark*}
 
 \begin{remark*}[Negation predicate reading]
-\(\neg\operatorname{ClassC}(f,I,k)\): somewhere the \(k\)-th derivative
+\(\neg\operatorname{IsClassC}(f,I,k)\): somewhere the \(k\)-th derivative
 either does not exist or exists but is not continuous. A single point where
 the top derivative is discontinuous certifies \(f\notin C^k(I)\).
 \end{remark*}
@@ -165,6 +165,10 @@ Let \(I\subseteq\mathbb{R}\) be an interval and let \(f:I\to\mathbb{R}\). The fu
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+The displayed quantified statement is the predicate-level form of $label: its hypotheses name the input conditions, and its conclusion names the asserted structure or relation.
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 Analytic regularity means that the Taylor series does more than approximate the function: near each point, the series equals the function. The infinite Taylor series and its convergence are developed in \hyperref[def:taylor-polynomial-at-a-point]{Taylor's construction and error analysis}, which supplies the series machinery behind this definition.
 \end{remark*}
@@ -198,6 +202,8 @@ hold, and each displayed inclusion is strict.
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 The inclusions do not fail; only their strictness needs witnesses.
 \begin{itemize}
   \item \(C^k\setminus C^{k+1}\): \(\varphi_k(x)=x^k|x|\), whose \(k\)-th
@@ -208,6 +214,7 @@ The inclusions do not fail; only their strictness needs witnesses.
         Maclaurin series is zero while the function is not.
 \end{itemize}
 These separators prove every displayed containment is a genuine drop.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -222,6 +229,15 @@ The inclusions are definitional; strictness is witnessed by examples. On any non
 separate \(C^\infty\) from \(C^\omega\): all derivatives at the flat point vanish, so the Taylor series is identically zero, while the function is positive on one side of that point.
 \end{remark*}
 
+\begin{remark*}[Interpretation]
+Between \(C^1\) and \(C^2\) there is a regularity floor worth naming. A
+\(C^1\) function has a continuous derivative; a \(C^2\) function has a
+derivative that is itself differentiable. Many functions used in analysis
+live in the gap: their first derivative is continuous and controlled, but a
+classical second derivative may fail to exist at a few points. The control is
+a Lipschitz bound on \(f'\), and the class is written \(C^{1,1}\).
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:class-ck]{Definition: Class \(C^k\)}
@@ -230,15 +246,6 @@ separate \(C^\infty\) from \(C^\omega\): all derivatives at the flat point vanis
   \item \hyperref[thm:darboux]{Theorem: Darboux's Theorem}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[Section guide]
-Between \(C^1\) and \(C^2\) there is a regularity floor worth naming. A
-\(C^1\) function has a continuous derivative; a \(C^2\) function has a
-derivative that is itself differentiable. Many functions used in analysis
-live in the gap: their first derivative is continuous and controlled, but a
-classical second derivative may fail to exist at a few points. The control is
-a Lipschitz bound on \(f'\), and the class is written \(C^{1,1}\).
-\end{remark*}
 
 \input{volume-iii/book-analysis-ii/differentiation/notes/graph-reading/figure-lipschitz-derivative}
 
@@ -265,12 +272,12 @@ there exists \(L\geq 0\) such that
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
-  \operatorname{ClassC11}(f,I)
+  f\in C^{1,1}(I)
   \Longleftrightarrow
-  \operatorname{ClassC}(f,I,1)\land
-  \exists L\geq0:\operatorname{Lipschitz}(f',I,L).
+  \operatorname{IsClassC}(f,I,1)\land
+  \exists L\geq0:\operatorname{IsLipschitz}(f',I,L).
 \]
 The smallest admissible \(L\) is the Lipschitz constant of \(f'\):
 \[
@@ -328,6 +335,8 @@ with the displayed containments strict.
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 The global inclusion \(C^2(I)\subseteq C^{1,1}(I)\) is false on arbitrary
 intervals: \(f(x)=x^3\) is \(C^2(\mathbb{R})\), but
 \(f'(x)=3x^2\) is not Lipschitz on \(\mathbb{R}\). Strictness is witnessed by
@@ -338,6 +347,7 @@ two elementary functions.
   \item \(C^1\setminus C^{1,1}\): \(f(x)=|x|^{4/3}\) has continuous first
         derivative, but \(f'\) has unbounded difference quotients at \(0\).
 \end{itemize}
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -371,7 +381,7 @@ is Lipschitz with constant \(M\).
 \[
   \bigl(f\in C^2(I)\land \forall x\in I:\ |f''(x)|\leq M\bigr)
   \Rightarrow
-  f\in C^{1,1}(I)\land \operatorname{Lipschitz}(f',I,M).
+  f\in C^{1,1}(I)\land \operatorname{IsLipschitz}(f',I,M).
 \]
 \end{remark*}
 
@@ -381,6 +391,14 @@ Implies Lipschitz} applied one level up, to \(f'\) in place of \(f\). The
 converse requires almost-everywhere language and is therefore deferred.
 \end{remark*}
 
+\begin{remark*}[Interpretation]
+A Lipschitz derivative is differentiable at most points, but making that
+sentence precise requires measure zero. In one variable this passes through
+bounded variation; in several variables it becomes Rademacher's theorem.
+Those results belong to the integration and measure-theoretic development,
+not to this chapter.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[cor:derivative-bound-implies-lipschitz]{Corollary: Derivative Bound Implies Lipschitz}
@@ -388,11 +406,3 @@ converse requires almost-everywhere language and is therefore deferred.
   \item \hyperref[def:class-c11]{Definition: Lipschitz-Derivative Class \(C^{1,1}\)}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[Forward flag]
-A Lipschitz derivative is differentiable at most points, but making that
-sentence precise requires measure zero. In one variable this passes through
-bounded variation; in several variables it becomes Rademacher's theorem.
-Those results belong to the integration and measure-theoretic development,
-not to this chapter.
-\end{remark*}

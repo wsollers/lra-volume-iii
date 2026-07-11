@@ -33,12 +33,16 @@ A sequence that converges to some $L \in \mathbb{R}$ is called
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
-\operatorname{ConvergentSequence}(x_n, L)
+\operatorname{ConvergesTo}(x_n, L)
 \;:=\;
 \forall \varepsilon > 0 \;\exists N \in \mathbb{N} \;\forall n \ge N
-\;\operatorname{OutputTolerance}(x_n, L, \varepsilon).
+\;\bigl(
+  \operatorname{Ball}(B_\varepsilon(L),L,\varepsilon,\mathbb R)
+  \wedge
+  \operatorname{Within}(x_n,B_\varepsilon(L),\mathbb R)
+\bigr).
 \]
 \end{remark*}
 
@@ -55,7 +59,7 @@ x_n \not\to L
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{NotConvergentTo}(x_n,L)
+\neg\operatorname{ConvergesTo}(x_n,L)
 \;:=\;
 \exists \varepsilon > 0 \;\forall N \in \mathbb{N} \;\exists n \ge N
 \;\bigl(|x_n - L| \ge \varepsilon\bigr).
@@ -63,13 +67,18 @@ x_n \not\to L
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 Failure of convergence to a fixed $L$ means that some positive tolerance
 cannot be controlled on any tail. The escaped terms may oscillate, drift
 monotonically away, or grow without bound, but all such behavior is
 captured by the same persistent-tolerance obstruction.
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 The negation decomposes into a single structural obstruction:
 \[
 \underbrace{\exists \varepsilon > 0}_{\text{a fixed tolerance}}
@@ -80,6 +89,7 @@ The negation decomposes into a single structural obstruction:
 The sequence fails to converge to $L$ not by drifting away once, but
 by returning outside the $\varepsilon$-interval infinitely often regardless
 of how far along the tail one looks.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -137,9 +147,9 @@ contains all but finitely many terms of $(x_n)$; that is,
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
-\operatorname{ConvergentSequence}(x_n, L)
+\operatorname{ConvergesTo}(x_n, L)
 \;:=\;
 \forall \varepsilon > 0 \;\exists N \in \mathbb{N} \;\forall n \ge N
 \;\bigl(x_n \in V_\varepsilon(L)\bigr).
@@ -159,7 +169,7 @@ x_n \not\to L
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{NotConvergentTo}(x_n,L)
+\neg\operatorname{ConvergesTo}(x_n,L)
 \;:=\;
 \exists \varepsilon > 0 \;\forall N \in \mathbb{N} \;\exists n \ge N
 \;\bigl(x_n \notin V_\varepsilon(L)\bigr).
@@ -167,14 +177,19 @@ x_n \not\to L
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 Failure of the neighborhood formulation is exactly failure to trap a
 tail in every neighborhood of $L$. Different examples may escape by
 oscillation, by monotone drift, or by unbounded growth, but the formal
 failure is always the existence of one neighborhood that every tail
 misses at least once.
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
 \underbrace{\exists \varepsilon > 0}_{\text{a fixed neighborhood}}
 \;\underbrace{\forall N \in \mathbb{N}}_{\text{no tail suffices}}
@@ -184,6 +199,7 @@ misses at least once.
 The sequence fails to converge to $L$ precisely when some neighborhood
 of $L$ contains only finitely many terms: infinitely many terms lie
 permanently outside it.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -255,13 +271,12 @@ statements are equivalent.
 \]
 \end{remark*}
 
-\begin{remark*}[Theorem predicate reading]
+\begin{remark*}[Predicate reading]
 \[
-\operatorname{EquivalentConvergenceForms}(x_n,L)
-\;:=\;
-\operatorname{ConvergentSequence}(x_n,L)
+\operatorname{ConvergesTo}(x_n,L,\mathbb{R})
 \Longleftrightarrow
-\operatorname{NeighborhoodConvergentSequence}(x_n,L).
+\forall \varepsilon > 0 \;\exists K \in \mathbb{N} \;\forall n \ge K
+\;\bigl(x_n \in V_\varepsilon(L)\bigr).
 \]
 \end{remark*}
 
@@ -289,9 +304,6 @@ the sense of \hyperref[def:m-tail]{Definition~\ref*{def:m-tail}}.
   \item \hyperref[def:convergent-sequence-neighborhood]{Convergence --- Neighborhood Formulation}
 \end{itemize}
 \end{dependencies}
-
-
-
 
 
 

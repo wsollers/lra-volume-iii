@@ -35,9 +35,9 @@ Let $(x_n)$ be a real sequence. The sequence $(x_n)$ is a
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
-\operatorname{CauchySequence}(x_n)
+\operatorname{IsCauchy}(x_n)
 \coloneqq
 \forall \varepsilon>0 \;\exists N\in\mathbb{N}\;\forall m,n\ge N
 \;\bigl(|x_m-x_n|<\varepsilon\bigr).
@@ -57,7 +57,7 @@ Let $(x_n)$ be a real sequence. The sequence $(x_n)$ is a
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{CauchySequence}(x_n)
+\neg\operatorname{IsCauchy}(x_n)
 \Longleftrightarrow
 \exists \varepsilon>0 \;\forall N\in\mathbb{N}\;\exists m,n\ge N
 \;\bigl(|x_m-x_n|\ge\varepsilon\bigr).
@@ -108,13 +108,13 @@ Cauchy.
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
 \forall (x_n)\subseteq\mathbb{R}\;
 \Bigl(
-  \exists L\in\mathbb{R}\;\operatorname{ConvergentSequence}(x_n,L)
+  \exists L\in\mathbb{R}\;\operatorname{ConvergesTo}(x_n,L)
   \Longrightarrow
-  \operatorname{CauchySequence}(x_n)
+  \operatorname{IsCauchy}(x_n)
 \Bigr).
 \]
 \end{remark*}
@@ -162,13 +162,13 @@ Every Cauchy real sequence is bounded.
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
 \forall (x_n)\subseteq\mathbb{R}\;
 \bigl(
-  \operatorname{CauchySequence}(x_n)
+  \operatorname{IsCauchy}(x_n)
   \Longrightarrow
-  \operatorname{BoundedSequence}(x_n)
+  \operatorname{Bounded}(x_n)
 \bigr).
 \]
 \end{remark*}
@@ -229,17 +229,17 @@ converges to $L\in\mathbb{R}$, then $(x_n)$ converges to $L$.
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
 \begin{aligned}
 &\forall (x_n)\subseteq\mathbb{R}\;\forall L\in\mathbb{R}\\
 &\quad
 \Bigl(
-  \operatorname{CauchySequence}(x_n)
+  \operatorname{IsCauchy}(x_n)
   \land
-  \operatorname{SubsequentialLimit}(x_n,L)
+  \operatorname{IsClusterValue}(x_n,L)
   \Longrightarrow
-  \operatorname{ConvergentSequence}(x_n,L)
+  \operatorname{ConvergesTo}(x_n,L)
 \Bigr).
 \end{aligned}
 \]
@@ -292,13 +292,13 @@ $(x_n)$ is Cauchy.
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
 \forall (x_n)\subseteq\mathbb{R}\;
 \Bigl(
-  \exists L\in\mathbb{R}\;\operatorname{ConvergentSequence}(x_n,L)
+  \exists L\in\mathbb{R}\;\operatorname{ConvergesTo}(x_n,L)
   \Longleftrightarrow
-  \operatorname{CauchySequence}(x_n)
+  \operatorname{IsCauchy}(x_n)
 \Bigr).
 \]
 \end{remark*}
@@ -346,9 +346,9 @@ $N$-tail has pairwise term distances less than $\varepsilon$.
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
-\operatorname{CauchySequence}(x_n)
+\operatorname{IsCauchy}(x_n)
 \Longleftrightarrow
 \forall \varepsilon>0\;\exists N\in\mathbb{N}\;\forall p,q\in\mathbb{N}
 \;\bigl(|x_{N+p}-x_{N+q}|<\varepsilon\bigr).
@@ -396,9 +396,9 @@ every sufficiently late tail has arbitrarily small pairwise diameter.
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
-\operatorname{CauchySequence}(x_n)
+\operatorname{IsCauchy}(x_n)
 \Longleftrightarrow
 \forall \varepsilon>0\;\exists N_0\in\mathbb{N}\;\forall N\ge N_0\;\forall m,n\ge N
 \;\bigl(|x_m-x_n|<\varepsilon\bigr).
@@ -452,11 +452,11 @@ If $(x_n)$ is a Cauchy real sequence, then
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
-\operatorname{CauchySequence}(x_n)
+\operatorname{IsCauchy}(x_n)
 \Longrightarrow
-\operatorname{NullSequence}\bigl(|x_{n+1}-x_n|\bigr).
+\operatorname{IsNull}\bigl(|x_{n+1}-x_n|\bigr).
 \]
 \end{remark*}
 
@@ -503,11 +503,11 @@ Then $(\alpha x_n)$ is Cauchy.
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
-\operatorname{CauchySequence}(x_n)
+\operatorname{IsCauchy}(x_n)
 \Longrightarrow
-\operatorname{CauchySequence}(\alpha x_n).
+\operatorname{IsCauchy}(\alpha x_n).
 \]
 \end{remark*}
 
@@ -555,13 +555,13 @@ Cauchy.
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
-\operatorname{CauchySequence}(x_n)
+\operatorname{IsCauchy}(x_n)
 \land
-\operatorname{CauchySequence}(y_n)
+\operatorname{IsCauchy}(y_n)
 \Longrightarrow
-\operatorname{CauchySequence}(x_n+y_n).
+\operatorname{IsCauchy}(x_n+y_n).
 \]
 \end{remark*}
 
@@ -609,13 +609,13 @@ Cauchy.
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
-\operatorname{CauchySequence}(x_n)
+\operatorname{IsCauchy}(x_n)
 \land
-\operatorname{CauchySequence}(y_n)
+\operatorname{IsCauchy}(y_n)
 \Longrightarrow
-\operatorname{CauchySequence}(x_n-y_n).
+\operatorname{IsCauchy}(x_n-y_n).
 \]
 \end{remark*}
 
@@ -665,13 +665,13 @@ $\alpha,\beta\in\mathbb{R}$. Then $(\alpha x_n+\beta y_n)$ is Cauchy.
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
-\operatorname{CauchySequence}(x_n)
+\operatorname{IsCauchy}(x_n)
 \land
-\operatorname{CauchySequence}(y_n)
+\operatorname{IsCauchy}(y_n)
 \Longrightarrow
-\operatorname{CauchySequence}(\alpha x_n+\beta y_n).
+\operatorname{IsCauchy}(\alpha x_n+\beta y_n).
 \]
 \end{remark*}
 
@@ -720,13 +720,13 @@ Cauchy.
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
-\operatorname{CauchySequence}(x_n)
+\operatorname{IsCauchy}(x_n)
 \land
-\operatorname{CauchySequence}(y_n)
+\operatorname{IsCauchy}(y_n)
 \Longrightarrow
-\operatorname{CauchySequence}(x_ny_n).
+\operatorname{IsCauchy}(x_ny_n).
 \]
 \end{remark*}
 
@@ -775,13 +775,13 @@ $(1/x_n)$ is Cauchy.
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
-\operatorname{CauchySequence}(x_n)
+\operatorname{IsCauchy}(x_n)
 \land
 \exists c>0\;\exists N_0\in\mathbb{N}\;\forall n\ge N_0\;( |x_n|\ge c )
 \Longrightarrow
-\operatorname{CauchySequence}(1/x_n).
+\operatorname{IsCauchy}(1/x_n).
 \]
 \end{remark*}
 
@@ -835,15 +835,15 @@ then $(x_n/y_n)$ is Cauchy.
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
-\operatorname{CauchySequence}(x_n)
+\operatorname{IsCauchy}(x_n)
 \land
-\operatorname{CauchySequence}(y_n)
+\operatorname{IsCauchy}(y_n)
 \land
 \exists c>0\;\exists N_0\in\mathbb{N}\;\forall n\ge N_0\;( |y_n|\ge c )
 \Longrightarrow
-\operatorname{CauchySequence}(x_n/y_n).
+\operatorname{IsCauchy}(x_n/y_n).
 \]
 \end{remark*}
 
@@ -886,11 +886,11 @@ Let $(x_n)$ be a Cauchy real sequence. Then $(|x_n|)$ is Cauchy.
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
-\operatorname{CauchySequence}(x_n)
+\operatorname{IsCauchy}(x_n)
 \Longrightarrow
-\operatorname{CauchySequence}(|x_n|).
+\operatorname{IsCauchy}(|x_n|).
 \]
 \end{remark*}
 

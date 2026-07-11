@@ -9,7 +9,7 @@ turns the endpoint bound into a sharp bound for the image.  The inverse
 function statements are the same principle applied to $f^{-1}$.
 \end{remark*}
 
-\begin{remark*}[Geometric meaning of the hypotheses]
+\begin{remark*}[Interpretation]
 Think of a nonempty bounded set $A\subseteq\mathbb{R}$ as a cloud of points on
 the real line.  The number $\sup A$ is the right-hand wall of that cloud: it
 may or may not belong to $A$, but points of $A$ press arbitrarily close to it
@@ -131,10 +131,10 @@ A\neq\varnothing,\quad s=\sup A\in I,\quad f\text{ increasing and continuous at 
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{Supremum}(s,A)\land\operatorname{Increasing}(f,I)\land
-\operatorname{ContinuousAt}(f,s)
+\operatorname{LeastUpperBound}(s,A)\land\operatorname{OrderPreserving}(f,I)\land
+\operatorname{IsContinuous}(f,s)
 \Longrightarrow
-\operatorname{Supremum}(f(s),f(A)).
+\operatorname{LeastUpperBound}(f(s),f(A)).
 \]
 \end{remark*}
 
@@ -147,22 +147,33 @@ is impossible under the stated hypotheses.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{Supremum}(s,A)\land\operatorname{Increasing}(f,I)\land
-\operatorname{ContinuousAt}(f,s)\land
-\neg\operatorname{Supremum}(f(s),f(A)).
+\operatorname{LeastUpperBound}(s,A)\land\operatorname{OrderPreserving}(f,I)\land
+\operatorname{IsContinuous}(f,s)\land
+\neg\operatorname{LeastUpperBound}(f(s),f(A)).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
 The equality can fail if $f$ is not increasing, if $\sup A$ is not in the
 domain, or if the endpoint value of $f$ is not approached by values $f(a)$ with
 $a\in A$.
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
 Increasingness gives $f(a)\leq f(s)$ for every $a\in A$.  The defining
 approximation property of the supremum gives points of $A$ arbitrarily close
 to $s$ from below, and continuity at $s$ makes their images approach $f(s)$.
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+An increasing continuous function carries the right endpoint of a bounded set
+to the right endpoint of its image, provided that endpoint lies in the domain.
 \end{remark*}
 
 \begin{dependencies}
@@ -194,10 +205,10 @@ A\neq\varnothing,\quad t=\inf A\in I,\quad f\text{ increasing and continuous at 
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{Infimum}(t,A)\land\operatorname{Increasing}(f,I)\land
-\operatorname{ContinuousAt}(f,t)
+\operatorname{GreatestLowerBound}(t,A)\land\operatorname{OrderPreserving}(f,I)\land
+\operatorname{IsContinuous}(f,t)
 \Longrightarrow
-\operatorname{Infimum}(f(t),f(A)).
+\operatorname{GreatestLowerBound}(f(t),f(A)).
 \]
 \end{remark*}
 
@@ -210,20 +221,31 @@ is impossible under the stated hypotheses.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{Infimum}(t,A)\land\operatorname{Increasing}(f,I)\land
-\operatorname{ContinuousAt}(f,t)\land
-\neg\operatorname{Infimum}(f(t),f(A)).
+\operatorname{GreatestLowerBound}(t,A)\land\operatorname{OrderPreserving}(f,I)\land
+\operatorname{IsContinuous}(f,t)\land
+\neg\operatorname{GreatestLowerBound}(f(t),f(A)).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
 The equality can fail if $f$ is not increasing, if $\inf A$ is not in the
 domain, or if the endpoint value is not reached as a limit of image values.
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
 Increasingness gives $f(t)\leq f(a)$ for every $a\in A$.  Approximation of the
 infimum from above and continuity at $t$ make this lower bound sharp.
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+An increasing continuous function carries the left endpoint of a bounded set
+to the left endpoint of its image when the endpoint belongs to the domain.
 \end{remark*}
 
 \begin{dependencies}
@@ -255,10 +277,10 @@ A\neq\varnothing,\quad t=\inf A\in I,\quad f\text{ decreasing and continuous at 
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{Infimum}(t,A)\land\operatorname{Decreasing}(f,I)\land
-\operatorname{ContinuousAt}(f,t)
+\operatorname{GreatestLowerBound}(t,A)\land\operatorname{OrderReversing}(f,I)\land
+\operatorname{IsContinuous}(f,t)
 \Longrightarrow
-\operatorname{Supremum}(f(t),f(A)).
+\operatorname{LeastUpperBound}(f(t),f(A)).
 \]
 \end{remark*}
 
@@ -271,20 +293,31 @@ is impossible under the stated hypotheses.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{Infimum}(t,A)\land\operatorname{Decreasing}(f,I)\land
-\operatorname{ContinuousAt}(f,t)\land
-\neg\operatorname{Supremum}(f(t),f(A)).
+\operatorname{GreatestLowerBound}(t,A)\land\operatorname{OrderReversing}(f,I)\land
+\operatorname{IsContinuous}(f,t)\land
+\neg\operatorname{LeastUpperBound}(f(t),f(A)).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
 The equality can fail if $f$ is not decreasing, if $\inf A$ is outside the
 domain, or if $f$ is not continuous at the lower endpoint.
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
 Decreasingness gives $f(a)\leq f(t)$ for every $a\in A$.  Approximation of
 $t$ from above and continuity at $t$ make this upper bound sharp.
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A decreasing continuous function reverses endpoint roles: the lower endpoint
+of the original set becomes the upper endpoint of the image.
 \end{remark*}
 
 \begin{dependencies}
@@ -317,10 +350,10 @@ A\neq\varnothing,\quad s=\sup A\in I,\quad f\text{ decreasing and continuous at 
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{Supremum}(s,A)\land\operatorname{Decreasing}(f,I)\land
-\operatorname{ContinuousAt}(f,s)
+\operatorname{LeastUpperBound}(s,A)\land\operatorname{OrderReversing}(f,I)\land
+\operatorname{IsContinuous}(f,s)
 \Longrightarrow
-\operatorname{Infimum}(f(s),f(A)).
+\operatorname{GreatestLowerBound}(f(s),f(A)).
 \]
 \end{remark*}
 
@@ -333,20 +366,31 @@ is impossible under the stated hypotheses.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{Supremum}(s,A)\land\operatorname{Decreasing}(f,I)\land
-\operatorname{ContinuousAt}(f,s)\land
-\neg\operatorname{Infimum}(f(s),f(A)).
+\operatorname{LeastUpperBound}(s,A)\land\operatorname{OrderReversing}(f,I)\land
+\operatorname{IsContinuous}(f,s)\land
+\neg\operatorname{GreatestLowerBound}(f(s),f(A)).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
 The equality can fail if $f$ is not decreasing, if $\sup A$ is outside the
 domain, or if $f$ is not continuous at the upper endpoint.
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
 Decreasingness gives $f(s)\leq f(a)$ for every $a\in A$.  Approximation of
 $s$ from below and continuity at $s$ make this lower bound sharp.
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A decreasing continuous function sends the upper endpoint of the original set
+to the lower endpoint of the image.
 \end{remark*}
 
 \begin{dependencies}
@@ -379,10 +423,10 @@ B\neq\varnothing,\quad \sup B\in J,\quad f^{-1}\text{ increasing and continuous 
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{Supremum}(u,B)\land\operatorname{Increasing}(f^{-1},J)\land
-\operatorname{ContinuousAt}(f^{-1},u)
+\operatorname{LeastUpperBound}(u,B)\land\operatorname{OrderPreserving}(f^{-1},J)\land
+\operatorname{IsContinuous}(f^{-1},u)
 \Longrightarrow
-\operatorname{Supremum}(f^{-1}(u),f^{-1}(B)).
+\operatorname{LeastUpperBound}(f^{-1}(u),f^{-1}(B)).
 \]
 \end{remark*}
 
@@ -395,19 +439,30 @@ is impossible under the stated hypotheses.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{Supremum}(u,B)\land\operatorname{Increasing}(f^{-1},J)\land
-\operatorname{ContinuousAt}(f^{-1},u)\land
-\neg\operatorname{Supremum}(f^{-1}(u),f^{-1}(B)).
+\operatorname{LeastUpperBound}(u,B)\land\operatorname{OrderPreserving}(f^{-1},J)\land
+\operatorname{IsContinuous}(f^{-1},u)\land
+\neg\operatorname{LeastUpperBound}(f^{-1}(u),f^{-1}(B)).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
 The formula can fail if the inverse is not increasing, if $\sup B$ is outside
 the codomain set $J$, or if the inverse is not continuous at $\sup B$.
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
 Apply the increasing image supremum theorem to $g=f^{-1}$ and the set $B$.
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The inverse statement is the increasing-image supremum theorem applied to the
+inverse map on the codomain side.
 \end{remark*}
 
 \begin{dependencies}
@@ -437,10 +492,10 @@ B\neq\varnothing,\quad \inf B\in J,\quad f^{-1}\text{ increasing and continuous 
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{Infimum}(v,B)\land\operatorname{Increasing}(f^{-1},J)\land
-\operatorname{ContinuousAt}(f^{-1},v)
+\operatorname{GreatestLowerBound}(v,B)\land\operatorname{OrderPreserving}(f^{-1},J)\land
+\operatorname{IsContinuous}(f^{-1},v)
 \Longrightarrow
-\operatorname{Infimum}(f^{-1}(v),f^{-1}(B)).
+\operatorname{GreatestLowerBound}(f^{-1}(v),f^{-1}(B)).
 \]
 \end{remark*}
 
@@ -453,19 +508,30 @@ is impossible under the stated hypotheses.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{Infimum}(v,B)\land\operatorname{Increasing}(f^{-1},J)\land
-\operatorname{ContinuousAt}(f^{-1},v)\land
-\neg\operatorname{Infimum}(f^{-1}(v),f^{-1}(B)).
+\operatorname{GreatestLowerBound}(v,B)\land\operatorname{OrderPreserving}(f^{-1},J)\land
+\operatorname{IsContinuous}(f^{-1},v)\land
+\neg\operatorname{GreatestLowerBound}(f^{-1}(v),f^{-1}(B)).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
 The formula can fail if the inverse is not increasing, if $\inf B$ is outside
 the codomain set $J$, or if the inverse is not continuous at $\inf B$.
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
 Apply the increasing image infimum theorem to $g=f^{-1}$ and the set $B$.
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The inverse preserves lower endpoints under the same increasing and continuity
+hypotheses required for the direct image theorem.
 \end{remark*}
 
 \begin{dependencies}
@@ -495,10 +561,10 @@ B\neq\varnothing,\quad \inf B\in J,\quad f^{-1}\text{ decreasing and continuous 
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{Infimum}(v,B)\land\operatorname{Decreasing}(f^{-1},J)\land
-\operatorname{ContinuousAt}(f^{-1},v)
+\operatorname{GreatestLowerBound}(v,B)\land\operatorname{OrderReversing}(f^{-1},J)\land
+\operatorname{IsContinuous}(f^{-1},v)
 \Longrightarrow
-\operatorname{Supremum}(f^{-1}(v),f^{-1}(B)).
+\operatorname{LeastUpperBound}(f^{-1}(v),f^{-1}(B)).
 \]
 \end{remark*}
 
@@ -511,19 +577,30 @@ is impossible under the stated hypotheses.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{Infimum}(v,B)\land\operatorname{Decreasing}(f^{-1},J)\land
-\operatorname{ContinuousAt}(f^{-1},v)\land
-\neg\operatorname{Supremum}(f^{-1}(v),f^{-1}(B)).
+\operatorname{GreatestLowerBound}(v,B)\land\operatorname{OrderReversing}(f^{-1},J)\land
+\operatorname{IsContinuous}(f^{-1},v)\land
+\neg\operatorname{LeastUpperBound}(f^{-1}(v),f^{-1}(B)).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
 The formula can fail if the inverse is not decreasing, if $\inf B$ is outside
 $J$, or if the inverse is not continuous at $\inf B$.
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
 Apply the decreasing image infimum-to-supremum theorem to $g=f^{-1}$ and $B$.
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A decreasing inverse reverses endpoint roles for subsets of the codomain, so a
+codomain infimum becomes a supremum after applying the inverse.
 \end{remark*}
 
 \begin{dependencies}
@@ -553,10 +630,10 @@ B\neq\varnothing,\quad \sup B\in J,\quad f^{-1}\text{ decreasing and continuous 
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{Supremum}(u,B)\land\operatorname{Decreasing}(f^{-1},J)\land
-\operatorname{ContinuousAt}(f^{-1},u)
+\operatorname{LeastUpperBound}(u,B)\land\operatorname{OrderReversing}(f^{-1},J)\land
+\operatorname{IsContinuous}(f^{-1},u)
 \Longrightarrow
-\operatorname{Infimum}(f^{-1}(u),f^{-1}(B)).
+\operatorname{GreatestLowerBound}(f^{-1}(u),f^{-1}(B)).
 \]
 \end{remark*}
 
@@ -569,19 +646,30 @@ is impossible under the stated hypotheses.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{Supremum}(u,B)\land\operatorname{Decreasing}(f^{-1},J)\land
-\operatorname{ContinuousAt}(f^{-1},u)\land
-\neg\operatorname{Infimum}(f^{-1}(u),f^{-1}(B)).
+\operatorname{LeastUpperBound}(u,B)\land\operatorname{OrderReversing}(f^{-1},J)\land
+\operatorname{IsContinuous}(f^{-1},u)\land
+\neg\operatorname{GreatestLowerBound}(f^{-1}(u),f^{-1}(B)).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
 The formula can fail if the inverse is not decreasing, if $\sup B$ is outside
 $J$, or if the inverse is not continuous at $\sup B$.
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
 Apply the decreasing image supremum-to-infimum theorem to $g=f^{-1}$ and $B$.
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A decreasing inverse sends codomain suprema to infima of inverse images under
+the same endpoint and continuity hypotheses.
 \end{remark*}
 
 \begin{dependencies}

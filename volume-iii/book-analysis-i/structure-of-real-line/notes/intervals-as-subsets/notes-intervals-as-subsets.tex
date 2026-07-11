@@ -17,6 +17,13 @@ A set $E\subseteq\mathbb{R}$ is \emph{bounded} exactly when there exists $M\ge 0
 E \text{ is bounded} \Longleftrightarrow \exists M\ge 0\;\forall x\in E\;(|x|\le M).
 \]
 \end{remark*}
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Bounded}(E)
+\Longleftrightarrow
+\exists M\ge 0\;\forall x\in E\;(|x|\le M).
+\]
+\end{remark*}
 \begin{remark*}[Negated quantified statement]
 \[
 E \text{ is unbounded} \Longleftrightarrow \forall M\ge 0\;\exists x\in E\;(|x|>M).
@@ -55,6 +62,18 @@ I\cup J=\{x\in\mathbb{R}:x\in I\text{ or }x\in J\}.
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+I\cup J=\{x\in\mathbb{R}:x\in I\lor x\in J\}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The union collects every point that belongs to at least one of the two
+intervals. It may be one interval, or it may split if the original intervals
+leave a gap.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:open-interval]{Open Interval}
@@ -72,6 +91,17 @@ I\cap J=\{x\in\mathbb{R}:x\in I\text{ and }x\in J\}.
 \]
 \end{definition}
 \end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+I\cap J=\{x\in\mathbb{R}:x\in I\land x\in J\}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The intersection keeps exactly the points common to both intervals. On the
+real line this common part is either empty or another interval.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -93,6 +123,18 @@ I^{c}=\mathbb{R}\setminus I
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+I^c=\{x\in\mathbb{R}:x\notin I\}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The complement records every real point excluded by the interval. Endpoint
+membership reverses: an endpoint included in $I$ is excluded from $I^c$, and an
+endpoint excluded from $I$ is included in $I^c$.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:open-interval]{Open Interval}
@@ -113,7 +155,13 @@ I\setminus J=\{x\in\mathbb{R}:x\in I\text{ and }x\notin J\}
 \end{definition}
 \end{definitionbox}
 
-\begin{remark*}[Predicate readings]
+\begin{remark*}[Standard quantified statement]
+\[
+I\setminus J=\{x\in\mathbb{R}:x\in I\land x\notin J\}=I\cap J^c.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
 For any $x\in\mathbb{R}$,
 \[
 x\in I\cup J \Longleftrightarrow (x\in I)\lor(x\in J),
@@ -130,19 +178,7 @@ These are set-theoretic operations; no arithmetic operation is being performed
 on the endpoints.
 \end{remark*}
 
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:open-interval]{Open Interval}
-  \item \hyperref[def:closed-interval]{Closed Interval}
-  \item \hyperref[def:left-half-open-interval]{Left-Half-Open Interval}
-  \item \hyperref[def:right-half-open-interval]{Right-Half-Open Interval}
-  \item \hyperref[def:union-of-intervals]{Union of Intervals}
-  \item \hyperref[def:intersection-of-intervals]{Intersection of Intervals}
-  \item \hyperref[def:complement-of-interval]{Complement of an Interval}
-\end{itemize}
-\end{dependencies}
-
-\begin{remark*}[Intersections of intervals]
+\begin{remark*}[Interpretation]
 The intersection of two intervals is either empty or another interval. For
 example, if $a\leq b$ and $c\leq d$, then
 \[
@@ -156,7 +192,7 @@ example, if $a\leq b$ and $c\leq d$, then
 Endpoint inclusion follows the endpoint rules of the original intervals.
 \end{remark*}
 
-\begin{remark*}[Unions of intervals]
+\begin{remark*}[Interpretation]
 The union of two intervals need not be an interval:
 \[
 (0,1)\cup(2,3)
@@ -170,7 +206,7 @@ The missing or included endpoints determine whether the joined set is truly
 one interval.
 \end{remark*}
 
-\begin{remark*}[Complements of intervals]
+\begin{remark*}[Interpretation]
 The complement of a bounded interval usually splits into two rays:
 \[
 (a,b)^c=(-\infty,a]\cup[b,\infty),
@@ -182,7 +218,7 @@ is included in the complement, and an endpoint included in the interval is
 excluded from the complement.
 \end{remark*}
 
-\begin{remark*}[Differences of intervals]
+\begin{remark*}[Interpretation]
 A difference is an intersection with a complement, so it can also split:
 \[
 (0,5)\setminus[2,3]=(0,2)\cup(3,5).
@@ -195,9 +231,21 @@ interval:
 The bracket at $3$ appears because $3\notin(3,\infty)$, so it is not removed.
 \end{remark*}
 
-\begin{remark*}[Topological motivation]
+\begin{remark*}[Interpretation]
 Open sets in $\mathbb{R}$ are built from unions of open intervals. Closed sets
 are understood through complements of open sets. Boundaries arise when a point
 is not cleanly inside a set or its complement. Thus interval set operations are
 the grammar behind the metric topology of the real line.
 \end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:open-interval]{Open Interval}
+  \item \hyperref[def:closed-interval]{Closed Interval}
+  \item \hyperref[def:left-half-open-interval]{Left-Half-Open Interval}
+  \item \hyperref[def:right-half-open-interval]{Right-Half-Open Interval}
+  \item \hyperref[def:union-of-intervals]{Union of Intervals}
+  \item \hyperref[def:intersection-of-intervals]{Intersection of Intervals}
+  \item \hyperref[def:complement-of-interval]{Complement of an Interval}
+\end{itemize}
+\end{dependencies}

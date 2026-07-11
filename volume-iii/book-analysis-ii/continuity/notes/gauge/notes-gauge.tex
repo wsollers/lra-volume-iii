@@ -27,9 +27,9 @@ Let $a<b$ and set $I=[a,b]$. A finite ordered set $P=\{x_0,\ldots,x_n\}$ with $n
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
-\operatorname{PartitionOfInterval}(P,I) \coloneqq
+\operatorname{Partition}(P,I) \coloneqq
 \exists n\in\mathbb{N}\;\Bigl(n\ge 1 \land P=\{x_0,\ldots,x_n\}\subseteq I
 \land x_0=\min I \land x_n=\max I
 \land \forall i\in\{1,\ldots,n\}\;(x_{i-1}<x_i)\Bigr).
@@ -48,7 +48,7 @@ Let $a<b$ and set $I=[a,b]$. A finite ordered set $P=\{x_0,\ldots,x_n\}$ with $n
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{PartitionOfInterval}(P,I) \Longleftrightarrow
+\neg\operatorname{Partition}(P,I) \Longleftrightarrow
 \forall n\in\mathbb{N}\;\Bigl(n\ge 1 \Rightarrow
 \bigl(P\ne\{x_0,\ldots,x_n\}\lor P\nsubseteq I
 \lor x_0\ne\min I \lor x_n\ne\max I
@@ -57,10 +57,15 @@ Let $a<b$ and set $I=[a,b]$. A finite ordered set $P=\{x_0,\ldots,x_n\}$ with $n
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 The definition fails precisely in three ways: the left endpoint is omitted, the right endpoint is omitted, or the sequence of nodes ceases to be strictly increasing, leading to repeated or out-of-order points.
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
 \underbrace{x_0\ne a}_{\text{left endpoint missing}}
 \;\lor\;
@@ -68,6 +73,7 @@ The definition fails precisely in three ways: the left endpoint is omitted, the 
 \;\lor\;
 \underbrace{\exists i\in\{1,\ldots,n\}\;(x_{i-1}\ge x_i)}_{\text{nodes not strictly increasing}}.
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -102,9 +108,9 @@ Let $a,b \in \mathbb{R}$ with $a < b$. A list $\dot{\mathcal{P}}=\{([x_{i-1},x_i
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
-\operatorname{TaggedPartition}(\dot{\mathcal{P}},[a,b])
+\operatorname{TaggedPartition}(\dot{\mathcal{P}},P,[a,b])
 \coloneqq
 \Bigl(\operatorname{Partition}(P,[a,b]) \land \dot{\mathcal{P}}=\{([x_{i-1},x_i],t_i)\}_{i=1}^n \land \forall i\;(t_i \in [x_{i-1},x_i])\Bigr),
 \]
@@ -126,7 +132,7 @@ where $\operatorname{Partition}(P,[a,b])$ abbreviates $a=x_0<\cdots<x_n=b$ for $
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{TaggedPartition}(\dot{\mathcal{P}},[a,b])
+\neg\operatorname{TaggedPartition}(\dot{\mathcal{P}},P,[a,b])
 \Longleftrightarrow
 (x_0\ne a)\lor(x_n\ne b)\lor
 \Bigl(\exists j\;(x_{j-1} \ge x_j)\Bigr) \lor \Bigl(\exists i\;(t_i \notin [x_{i-1},x_i])\Bigr).
@@ -134,10 +140,15 @@ where $\operatorname{Partition}(P,[a,b])$ abbreviates $a=x_0<\cdots<x_n=b$ for $
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 A list fails to be a tagged partition either because the subintervals do not form a valid partition (the mesh is disordered or has gaps) or because at least one chosen tag lies outside its designated subinterval.
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
 \underbrace{x_0\ne a}_{\text{left endpoint defect}}
 \;\lor\;
@@ -147,6 +158,7 @@ A list fails to be a tagged partition either because the subintervals do not for
 \;\lor\;
 \underbrace{\exists i\;(t_i \notin [x_{i-1},x_i])}_{\text{tag misplaced}}.
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -177,7 +189,7 @@ Let $a,b \in \mathbb{R}$ with $a<b$ and set $I=[a,b]$. A gauge on $I$ is a funct
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
 \operatorname{Gauge}(\delta,I)
 \coloneqq
@@ -207,17 +219,23 @@ Let $a,b \in \mathbb{R}$ with $a<b$ and set $I=[a,b]$. A gauge on $I$ is a funct
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 A purported gauge fails either because it is not a function from $I$ to
 \(\mathbb{R}\), or because it takes on a nonpositive value somewhere in
 $I$.
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
 \underbrace{\neg\bigl(\delta:I\to\mathbb{R}\bigr)}_{\text{wrong function type}}
 \;\lor\;
 \underbrace{\exists x\in I\;(\delta(x)\le 0)}_{\text{nonpositive gauge value}}
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -251,9 +269,9 @@ Let $[a,b]$ be a closed interval, let $\delta:[a,b]\to(0,\infty)$ be a gauge, an
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
-\operatorname{DeltaFine}(\dot{\mathcal{P}},\delta) \coloneqq \forall i \in \{1,\dots,n\}\;\forall x \in [x_{i-1},x_i]\;( |x-t_i|<\delta(t_i)).
+\operatorname{IsDeltaFine}(\dot{\mathcal{P}},\delta) \coloneqq \forall i \in \{1,\dots,n\}\;\forall x \in [x_{i-1},x_i]\;( |x-t_i|<\delta(t_i)).
 \]
 \end{remark*}
 
@@ -266,19 +284,25 @@ Let $[a,b]$ be a closed interval, let $\delta:[a,b]\to(0,\infty)$ be a gauge, an
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg \operatorname{DeltaFine}(\dot{\mathcal{P}},\delta) \Longleftrightarrow \exists i \in \{1,\dots,n\}\;\exists x \in [x_{i-1},x_i]\;( |x-t_i|\ge \delta(t_i)).
+\neg \operatorname{IsDeltaFine}(\dot{\mathcal{P}},\delta) \Longleftrightarrow \exists i \in \{1,\dots,n\}\;\exists x \in [x_{i-1},x_i]\;( |x-t_i|\ge \delta(t_i)).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 A tagged partition fails to be $\delta$-fine precisely when some subinterval contains a point whose distance from its tag reaches or exceeds the available radius $\delta(t_i)$, so the corresponding subinterval is not contained in the prescribed open neighborhood around its tag.
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
 \underbrace{\exists i \in \{1,\dots,n\}\;\exists x \in [x_{i-1},x_i]}_{\text{choose offending subinterval and point}}
 \;\underbrace{(|x-t_i|\ge \delta(t_i))}_{\text{distance not controlled by }\delta}.
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -308,6 +332,10 @@ Let $\dot{\mathcal{P}}=\{([x_{i-1},x_i],t_i)\}_{i=1}^n$ be a tagged partition of
 &\forall x\in[a,b]\;\exists i\in\{1,\ldots,n\}\;(|x-t_i|<\delta(t_i)).
 \end{aligned}
 \]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+The displayed quantified statement is the predicate-level form of $label: its hypotheses name the input conditions, and its conclusion names the asserted structure or relation.
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -351,9 +379,9 @@ admits a $\delta$-fine tagged partition of $[a,b]$.
 \begin{aligned}
 \forall \delta:[a,b]\to(0,\infty)\quad
 \exists \dot{\mathcal{P}}\;\Bigl(
-&\operatorname{TaggedPartition}(\dot{\mathcal{P}},[a,b])\\
+&\operatorname{TaggedPartition}(\dot{\mathcal{P}},P,[a,b])\\
 &\land
-\operatorname{DeltaFine}(\dot{\mathcal{P}},\delta)
+\operatorname{IsDeltaFine}(\dot{\mathcal{P}},\delta)
 \Bigr).
 \end{aligned}
 \]
@@ -381,26 +409,32 @@ admits a $\delta$-fine tagged partition of $[a,b]$.
 \[
 \exists \delta:[a,b]\to(0,\infty)\;
 \forall \dot{\mathcal{P}}\;\Bigl(
-\operatorname{TaggedPartition}(\dot{\mathcal{P}},[a,b])
+\operatorname{TaggedPartition}(\dot{\mathcal{P}},P,[a,b])
 \Rightarrow
-\neg\operatorname{DeltaFine}(\dot{\mathcal{P}},\delta)
+\neg\operatorname{IsDeltaFine}(\dot{\mathcal{P}},\delta)
 \Bigr).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 Failure would mean that a positive gauge $\delta$ defeats every tagged
 partition: no matter how the interval is subdivided and tagged, at least
 one subinterval is not contained in the gauge neighborhood around its tag.
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
 \underbrace{\forall \dot{\mathcal{P}}\;
-\operatorname{TaggedPartition}(\dot{\mathcal{P}},[a,b])}_{\text{all tagged partitions}}
+\operatorname{TaggedPartition}(\dot{\mathcal{P}},P,[a,b])}_{\text{all tagged partitions}}
 \quad\Rightarrow\quad
-\underbrace{\neg\operatorname{DeltaFine}(\dot{\mathcal{P}},\delta)}_{\text{some interval escapes its gauge ball}}.
+\underbrace{\neg\operatorname{IsDeltaFine}(\dot{\mathcal{P}},\delta)}_{\text{some interval escapes its gauge ball}}.
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -412,17 +446,11 @@ the Nested Interval Property to rule out a gauge that defeats all finite
 tagged partitions.
 \end{remark*}
 
-\begin{dependencies}
-\hyperref[def:gauge]{Definition~\ref*{def:gauge}},
-\hyperref[def:tagged-partition]{Definition~\ref*{def:tagged-partition}},
-\hyperref[def:delta-fine-partition]{Definition~\ref*{def:delta-fine-partition}}.
-\end{dependencies}
-
 % ---------------------------------------------------------
 % Remark --- Gauge Proofs of Classical Theorems
 % ---------------------------------------------------------
 
-\begin{remark*}[Gauge proofs of the four classical theorems]
+\begin{remark*}[Interpretation]
 Each proof follows the same pattern: define a gauge $\delta$ from
 the continuity hypothesis, invoke Cousin's theorem for a $\delta$-fine
 partition, apply the Covering Lemma to reduce to finitely many tags,
@@ -456,3 +484,9 @@ yields $\delta_\varepsilon=\min_i\delta(t_i)>0$. For $|x-u|<\delta_\varepsilon$:
 find $t_i$ covering $x$; then $|u-t_i|\leq|u-x|+|x-t_i|<2\delta(t_i)$;
 so $|f(x)-f(u)|\leq\varepsilon$.
 \end{remark*}
+
+\begin{dependencies}
+\hyperref[def:gauge]{Definition~\ref*{def:gauge}},
+\hyperref[def:tagged-partition]{Definition~\ref*{def:tagged-partition}},
+\hyperref[def:delta-fine-partition]{Definition~\ref*{def:delta-fine-partition}}.
+\end{dependencies}

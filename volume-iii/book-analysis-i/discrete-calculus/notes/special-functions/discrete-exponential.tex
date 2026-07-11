@@ -6,13 +6,16 @@
 \subsection{Special Functions in Discrete Calculus}
 \label{sec:special-functions}
 
+\begin{exposition}
 Just as continuous calculus has its distinguished special functions ---
 the exponential \(e^{ax}\), the trigonometric functions, and the logarithm
 --- discrete calculus has analogous functions that behave simply under the
 difference operator.
+\end{exposition}
 
 \subsection*{The Discrete Exponential}
 
+\begin{exposition}
 In continuous calculus, the exponential function \(e^{ax}\) is its own
 derivative (up to a constant):
 \[
@@ -21,6 +24,7 @@ derivative (up to a constant):
 
 The analogous function in discrete calculus is the \emph{discrete
 exponential} \((1+a)^n\).
+\end{exposition}
 
 \begin{definition}[Discrete Exponential]
 \label{def:discrete-exponential}
@@ -33,9 +37,13 @@ E_a(n) = (1+a)^n.
 
 \DefinitionalRoot
 
-\begin{remark*}[Fully quantified form]
+\begin{remark*}[Standard quantified statement]
 \(\forall a \in \mathbb{R}\setminus\{-1\},\; \forall n \in \mathbb{Z}:\;
 E_a(n) := (1+a)^n\).
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+The displayed quantified statement is the predicate-level form of $label: its hypotheses name the input conditions, and its conclusion names the asserted structure or relation.
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -51,9 +59,13 @@ successive inputs is \(1+a\).
 \hyperref[prf:discrete-exponential-rule]{\textit{Go to proof.}}
 \end{proposition}
 
-\begin{remark*}[Fully quantified form]
+\begin{remark*}[Standard quantified statement]
 \(\forall a \in \mathbb{R}\setminus\{-1\},\; \forall n \in \mathbb{Z}:\;
 (1+a)^{n+1} - (1+a)^n = a(1+a)^n\).
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+The displayed quantified statement is the predicate-level form of $label: its hypotheses name the input conditions, and its conclusion names the asserted structure or relation.
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -68,7 +80,7 @@ same discrete exponential.
 \]
 \end{proof}
 
-\begin{remark*}[Analogy]
+\begin{remark*}[Interpretation]
 The continuous exponential satisfies \(\tfrac{d}{dx}e^{ax} = ae^{ax}\).
 The discrete exponential satisfies \(\Delta(1+a)^n = a(1+a)^n\). The
 base \(e\) in continuous calculus is replaced by \((1+a)\) in discrete
@@ -76,7 +88,7 @@ calculus. When \(a\) is small, \((1+a) \approx e^a\), recovering the
 continuous limit.
 \end{remark*}
 
-\begin{remark*}[Antiderivative]
+\begin{remark*}[Interpretation]
 From the proposition, a discrete antiderivative of \(a(1+a)^n\) is
 \((1+a)^n\) itself. Equivalently, a discrete antiderivative of \((1+a)^n\)
 is \(\tfrac{(1+a)^n}{a}\). Combined with the Fundamental Theorem of Finite

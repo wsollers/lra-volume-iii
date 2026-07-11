@@ -27,9 +27,9 @@ Let $A \subseteq \mathbb{R}$ and let $f:A \to \mathbb{R}$. The function $f$ is u
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
-\operatorname{UniformlyContinuous}(f,A) \coloneqq \forall \varepsilon > 0 \; \exists \delta > 0 \; \forall x,u \in A \; (|x-u| < \delta \Rightarrow |f(x)-f(u)| < \varepsilon).
+\operatorname{IsUniformlyContinuous}(f,A) \coloneqq \forall \varepsilon > 0 \; \exists \delta > 0 \; \forall x,u \in A \; (|x-u| < \delta \Rightarrow |f(x)-f(u)| < \varepsilon).
 \]
 \end{remark*}
 
@@ -44,17 +44,22 @@ Let $A \subseteq \mathbb{R}$ and let $f:A \to \mathbb{R}$. The function $f$ is u
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg \operatorname{UniformlyContinuous}(f,A) \Longleftrightarrow \exists \varepsilon > 0 \; \forall \delta > 0 \; \exists x,u \in A \; (|x-u| < \delta \land |f(x)-f(u)| \ge \varepsilon).
+\neg \operatorname{IsUniformlyContinuous}(f,A) \Longleftrightarrow \exists \varepsilon > 0 \; \forall \delta > 0 \; \exists x,u \in A \; (|x-u| < \delta \land |f(x)-f(u)| \ge \varepsilon).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 The definition fails exactly when a single positive tolerance $\varepsilon_{0}$ exposes pairs of inputs arbitrarily close together whose function values remain at least $\varepsilon_{0}$ apart, so no universal $\delta$ works for that $\varepsilon_{0}$.
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
-\neg \operatorname{UniformlyContinuous}(f,A)
+\neg \operatorname{IsUniformlyContinuous}(f,A)
 =
 \underbrace{\exists \varepsilon_{0} > 0}_{\text{frozen tolerance}}
 \land
@@ -62,6 +67,7 @@ The definition fails exactly when a single positive tolerance $\varepsilon_{0}$ 
 \land
 \underbrace{\exists x,u \in A \; (|x-u| < \delta \land |f(x)-f(u)| \ge \varepsilon_{0})}_{\text{bad witness pair}}.
 \]
+\end{description}
 \end{remark*}
 
 
@@ -132,8 +138,8 @@ Uniform continuity demands that a single proximity scale $\delta$ answers any pr
 \[
 \begin{aligned}
 &\forall A \subseteq \mathbb{R}\; \forall f,g : A \to \mathbb{R}\; \forall c \in \mathbb{R}:\\
-&\qquad\bigl(\operatorname{UniformlyContinuous}(f,A) \land \operatorname{UniformlyContinuous}(g,A)\bigr) \Longrightarrow \bigl(\operatorname{UniformlyContinuous}(f+g,A) \land \operatorname{UniformlyContinuous}(f-g,A) \land \operatorname{UniformlyContinuous}(cf,A)\bigr),\\
-&\exists A \subseteq \mathbb{R}\; \exists f,g : A \to \mathbb{R}:\quad \operatorname{UniformlyContinuous}(f,A) \land \operatorname{UniformlyContinuous}(g,A) \land \neg \operatorname{UniformlyContinuous}(fg,A).
+&\qquad\bigl(\operatorname{IsUniformlyContinuous}(f,A) \land \operatorname{IsUniformlyContinuous}(g,A)\bigr) \Longrightarrow \bigl(\operatorname{IsUniformlyContinuous}(f+g,A) \land \operatorname{IsUniformlyContinuous}(f-g,A) \land \operatorname{IsUniformlyContinuous}(cf,A)\bigr),\\
+&\exists A \subseteq \mathbb{R}\; \exists f,g : A \to \mathbb{R}:\quad \operatorname{IsUniformlyContinuous}(f,A) \land \operatorname{IsUniformlyContinuous}(g,A) \land \neg \operatorname{IsUniformlyContinuous}(fg,A).
 \end{aligned}
 \]
 \end{remark*}
@@ -185,34 +191,40 @@ Let $A \subseteq \mathbb{R}$ be bounded, and let $f,g:A \to \mathbb{R}$ be unifo
 \[
 \begin{aligned}
 &\text{Assume } A \subseteq \mathbb{R} \text{ is bounded and } f,g:A \to \mathbb{R}.\\
-&\operatorname{UniformlyContinuous}(f,A) \land \operatorname{UniformlyContinuous}(g,A)\\
-&\qquad\Longrightarrow \operatorname{UniformlyContinuous}(fg,A),\\
-&\operatorname{UniformlyContinuous}(f,A) \land \operatorname{UniformlyContinuous}(g,A) \land \exists k>0\;\forall x \in A\;(|g(x)| \ge k)\\
-&\qquad\Longrightarrow \operatorname{UniformlyContinuous}(f/g,A).
+&\operatorname{IsUniformlyContinuous}(f,A) \land \operatorname{IsUniformlyContinuous}(g,A)\\
+&\qquad\Longrightarrow \operatorname{IsUniformlyContinuous}(fg,A),\\
+&\operatorname{IsUniformlyContinuous}(f,A) \land \operatorname{IsUniformlyContinuous}(g,A) \land \exists k>0\;\forall x \in A\;(|g(x)| \ge k)\\
+&\qquad\Longrightarrow \operatorname{IsUniformlyContinuous}(f/g,A).
 \end{aligned}
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 The product conclusion can fail only when one of the hypotheses used to
 control the product is missing: the domain is not bounded, $f$ is not
 uniformly continuous on $A$, or $g$ is not uniformly continuous on $A$.
 The quotient conclusion can also fail if the denominator is not bounded
 away from zero on $A$.
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
 \begin{aligned}
-&\underbrace{\neg\operatorname{BoundedSet}(A)}_{\text{unbounded domain}}
+&\underbrace{\neg\operatorname{Bounded}(A)}_{\text{unbounded domain}}
 \lor
-\underbrace{\neg\operatorname{UniformlyContinuous}(f,A)}_{\text{first factor not uniformly continuous}}
+\underbrace{\neg\operatorname{IsUniformlyContinuous}(f,A)}_{\text{first factor not uniformly continuous}}
 \lor
-\underbrace{\neg\operatorname{UniformlyContinuous}(g,A)}_{\text{second factor not uniformly continuous}}\\
+\underbrace{\neg\operatorname{IsUniformlyContinuous}(g,A)}_{\text{second factor not uniformly continuous}}\\
 &\qquad\lor
 \underbrace{\neg\exists k>0\;\forall x\in A:\; |g(x)|\ge k}_{\text{denominator not bounded away from zero}}.
 \end{aligned}
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -250,7 +262,7 @@ Let $A \subseteq \mathbb{R}$ and let $f:A \to \mathbb{R}$. Then $f$ is uniformly
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{UniformlyContinuous}(f,A)
+\operatorname{IsUniformlyContinuous}(f,A)
 \Longleftrightarrow
 \forall x_n,y_n:\mathbb{N} \to A\;
 \bigl(|x_n - y_n| \to 0 \Rightarrow |f(x_n) - f(y_n)| \to 0\bigr).
@@ -279,9 +291,9 @@ Let $A \subseteq \mathbb{R}$ and let $f:A \to \mathbb{R}$. Then $f$ is uniformly
 \[
 \begin{aligned}
 &\exists A \subseteq \mathbb{R}\;\exists f:A \to \mathbb{R}:\\
-&\quad \Bigl(\operatorname{UniformlyContinuous}(f,A) \land \exists x_n,y_n:\mathbb{N}\to A\;
+&\quad \Bigl(\operatorname{IsUniformlyContinuous}(f,A) \land \exists x_n,y_n:\mathbb{N}\to A\;
 \bigl(|x_n - y_n| \to 0 \land \neg(|f(x_n) - f(y_n)| \to 0)\bigr)\Bigr)\\
-&\quad \lor \Bigl(\neg \operatorname{UniformlyContinuous}(f,A) \land
+&\quad \lor \Bigl(\neg \operatorname{IsUniformlyContinuous}(f,A) \land
 \forall x_n,y_n:\mathbb{N}\to A\;
 \bigl(|x_n - y_n| \to 0 \Rightarrow |f(x_n) - f(y_n)| \to 0\bigr)\Bigr).
 \end{aligned}
@@ -289,23 +301,29 @@ Let $A \subseteq \mathbb{R}$ and let $f:A \to \mathbb{R}$. Then $f$ is uniformly
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 The equivalence can fail in exactly two ways: either $f$ is uniformly continuous while some pair of asymptotically coincident sequences in $A$ yields outputs that do not converge together, or every such pair of sequences does converge together while $f$ nonetheless fails to be uniformly continuous on $A$.
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
 \begin{aligned}
-&\underbrace{\operatorname{UniformlyContinuous}(f,A)}_{\text{uniform continuity holds}}
+&\underbrace{\operatorname{IsUniformlyContinuous}(f,A)}_{\text{uniform continuity holds}}
 \land
 \underbrace{\exists x_n,y_n:\mathbb{N}\to A\;
 \bigl(|x_n - y_n| \to 0 \land \neg(|f(x_n) - f(y_n)| \to 0)\bigr)}_{\text{sequential test fails}}\\
 &\lor\;
-\underbrace{\neg \operatorname{UniformlyContinuous}(f,A)}_{\text{uniform continuity fails}}
+\underbrace{\neg \operatorname{IsUniformlyContinuous}(f,A)}_{\text{uniform continuity fails}}
 \land
 \underbrace{\forall x_n,y_n:\mathbb{N}\to A\;
 \bigl(|x_n - y_n| \to 0 \Rightarrow |f(x_n) - f(y_n)| \to 0\bigr)}_{\text{sequential test holds}}.
 \end{aligned}
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -340,7 +358,7 @@ Let $a,b \in \mathbb{R}$ with $a<b$ and let $f:[a,b]\to\mathbb{R}$ be continuous
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{ContinuousOn}(f,[a,b]) \Rightarrow \operatorname{UniformlyContinuous}(f,[a,b]).
+\operatorname{IsContinuous}(f,[a,b]) \Rightarrow \operatorname{IsUniformlyContinuous}(f,[a,b]).
 \]
 \end{remark*}
 
@@ -356,7 +374,7 @@ Let $a,b \in \mathbb{R}$ with $a<b$ and let $f:[a,b]\to\mathbb{R}$ be continuous
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{ContinuousOn}(f,[a,b]) \land \neg \operatorname{UniformlyContinuous}(f,[a,b]).
+\operatorname{IsContinuous}(f,[a,b]) \land \neg \operatorname{IsUniformlyContinuous}(f,[a,b]).
 \]
 \end{remark*}
 
@@ -394,7 +412,7 @@ Let $S \subseteq \mathbb{R}$, let $f:S \to \mathbb{R}$, and let $(x_n)$ be a seq
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{UniformlyContinuous}(f,S) \land \operatorname{CauchySequence}(x_n) \;\Rightarrow\; \operatorname{CauchySequence}(f(x_n)).
+\operatorname{IsUniformlyContinuous}(f,S) \land \operatorname{IsCauchy}(x_n) \;\Rightarrow\; \operatorname{IsCauchy}(f(x_n)).
 \]
 \end{remark*}
 
@@ -428,9 +446,9 @@ Let $A \subseteq \mathbb{R}$, let $f:A \to \mathbb{R}$, and let $K>0$. The funct
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
-\operatorname{Lipschitz}(f,A,K) \coloneqq (K>0) \land \forall x,u \in A\;\bigl(|f(x)-f(u)| \le K|x-u|\bigr).
+\operatorname{IsLipschitz}(f,A,K) \coloneqq (K>0) \land \forall x,u \in A\;\bigl(|f(x)-f(u)| \le K|x-u|\bigr).
 \]
 \end{remark*}
 
@@ -445,20 +463,25 @@ Let $A \subseteq \mathbb{R}$, let $f:A \to \mathbb{R}$, and let $K>0$. The funct
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg \operatorname{Lipschitz}(f,A,K) \Longleftrightarrow
+\neg \operatorname{IsLipschitz}(f,A,K) \Longleftrightarrow
 \neg(A\subseteq\mathbb{R})\lor\neg(f:A\to\mathbb{R})\lor(K\le 0)\lor
 \exists x,u \in A\;\bigl(|f(x)-f(u)| > K|x-u|\bigr).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 The Lipschitz condition fails when the ambient data are malformed, when
 the proposed constant is not positive, or when there exists a pair of
 points in $A$ whose images separate faster than $K$ times the separation
 of the points themselves.
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
 \underbrace{\neg(A\subseteq\mathbb{R})}_{\text{bad domain}}
 \lor
@@ -468,6 +491,7 @@ of the points themselves.
 \lor
 \underbrace{\exists x,u \in A:\; |f(x)-f(u)| > K|x-u|}_{\text{excessive separation of outputs}}.
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -502,11 +526,11 @@ Let $A \subseteq \mathbb{R}$ and $f:A \to \mathbb{R}$. If there exists $K \ge 0$
 
 \begin{remark*}[Predicate reading]
 \[
-\bigl[\exists K \ge 0\; \operatorname{Lipschitz}(f,A,K)\bigr] \Rightarrow \operatorname{UniformlyContinuous}(f,A).
+\bigl[\exists K \ge 0\; \operatorname{IsLipschitz}(f,A,K)\bigr] \Rightarrow \operatorname{IsUniformlyContinuous}(f,A).
 \]
 \end{remark*}
 
-\begin{remark*}[Contrapositive quantified statement]
+\begin{remark*}[Interpretation]
 If $f$ fails to be uniformly continuous on $A$, then $f$ is not Lipschitz on $A$ with any constant.
 \[
 \begin{aligned}
@@ -517,11 +541,11 @@ If $f$ fails to be uniformly continuous on $A$, then $f$ is not Lipschitz on $A$
 \]
 \end{remark*}
 
-\begin{remark*}[Contrapositive predicate reading]
+\begin{remark*}[Interpretation]
 \[
-\neg\operatorname{UniformlyContinuous}(f,A)
+\neg\operatorname{IsUniformlyContinuous}(f,A)
 \;\Longrightarrow\;
-\neg\exists K\ge 0:\;\operatorname{Lipschitz}(f,A,K).
+\neg\exists K\ge 0:\;\operatorname{IsLipschitz}(f,A,K).
 \]
 \end{remark*}
 
@@ -529,7 +553,7 @@ If $f$ fails to be uniformly continuous on $A$, then $f$ is not Lipschitz on $A$
 A Lipschitz bound controls the variation of $f$ by the distance between inputs with a single constant $K$, so the same $K$ yields a usable $\delta = \varepsilon/K$ for every pair of points at once, proving uniform continuity. When $K=0$ the function is constant and trivially uniform. Failure of uniform continuity would force two points arbitrarily close together whose images stay a fixed distance apart, contradicting the Lipschitz inequality.
 \end{remark*}
 
-\begin{remark*}[Strict implication note]
+\begin{remark*}[Interpretation]
 The implication Lipschitz $\Rightarrow$ uniform continuity is strict. The canonical counterexample is $f(x)=\sqrt{x}$ on $[0,1]$, which is uniformly continuous by the Heine--Cantor theorem but satisfies $|f(x)-f(0)|/|x-0| = 1/\sqrt{x} \to \infty$ as $x \to 0^+$, so no Lipschitz constant exists at the origin. This distinction is relevant to GPU Lipschitz-constant estimation: uniform continuity of a simulation function does not supply a computable $K$ for the Lipschitz condition; only an explicit Lipschitz bound does.
 \end{remark*}
 
@@ -576,12 +600,12 @@ Let $A\subseteq \mathbb{R}$ and let $f,g:A\to\mathbb{R}$ be Lipschitz with const
 \begin{remark*}[Predicate reading]
 \[
 \begin{aligned}
-&\operatorname{Lipschitz}(f,A,K_f)\land \operatorname{Lipschitz}(g,A,K_g) \\
-&\Longrightarrow \Bigl[\forall c\in\mathbb{R}:\operatorname{Lipschitz}(cf,A,|c|K_f)\Bigr]\\
-&\qquad\land \operatorname{Lipschitz}(f+g,A,K_f+K_g)\land \operatorname{Lipschitz}(f-g,A,K_f+K_g)\\
-&\qquad\land \Bigl(\operatorname{Lipschitz}(h,B,K_h)\land f(A)\subseteq B\Rightarrow \operatorname{Lipschitz}(h\circ f,A,K_hK_f)\Bigr)\\
-&\qquad\land \Bigl[(|f|\le M_f)\land(|g|\le M_g)\Rightarrow \operatorname{Lipschitz}(fg,A,M_gK_f+M_fK_g)\Bigr]\\
-&\qquad\land \Bigl[(|f|\le M_f)\land(|g|\ge k>0)\Rightarrow \operatorname{Lipschitz}\!\left(\frac{f}{g},A,\frac{K_f}{k}+\frac{M_fK_g}{k^2}\right)\Bigr].
+&\operatorname{IsLipschitz}(f,A,K_f)\land \operatorname{IsLipschitz}(g,A,K_g) \\
+&\Longrightarrow \Bigl[\forall c\in\mathbb{R}:\operatorname{IsLipschitz}(cf,A,|c|K_f)\Bigr]\\
+&\qquad\land \operatorname{IsLipschitz}(f+g,A,K_f+K_g)\land \operatorname{IsLipschitz}(f-g,A,K_f+K_g)\\
+&\qquad\land \Bigl(\operatorname{IsLipschitz}(h,B,K_h)\land f(A)\subseteq B\Rightarrow \operatorname{IsLipschitz}(h\circ f,A,K_hK_f)\Bigr)\\
+&\qquad\land \Bigl[(|f|\le M_f)\land(|g|\le M_g)\Rightarrow \operatorname{IsLipschitz}(fg,A,M_gK_f+M_fK_g)\Bigr]\\
+&\qquad\land \Bigl[(|f|\le M_f)\land(|g|\ge k>0)\Rightarrow \operatorname{IsLipschitz}\!\left(\frac{f}{g},A,\frac{K_f}{k}+\frac{M_fK_g}{k^2}\right)\Bigr].
 \end{aligned}
 \]
 \end{remark*}
@@ -620,9 +644,9 @@ Any such pair $(\alpha,K)$ is called a bi-Lipschitz constant pair for $f$ on $A$
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
-\operatorname{BiLipschitz}(f,A,\alpha,K) \coloneqq \left(0<\alpha\le K\right) \land \forall x,u\in A\; \left(\alpha|x-u|\le |f(x)-f(u)|\le K|x-u|\right).
+\operatorname{IsBiLipschitz}(f,A,\alpha,K) \coloneqq \left(0<\alpha\le K\right) \land \forall x,u\in A\; \left(\alpha|x-u|\le |f(x)-f(u)|\le K|x-u|\right).
 \]
 \end{remark*}
 
@@ -639,21 +663,27 @@ Any such pair $(\alpha,K)$ is called a bi-Lipschitz constant pair for $f$ on $A$
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{BiLipschitz}(f,A,\alpha,K) \Longleftrightarrow \neg(0<\alpha\le K) \lor \exists x,u\in A\; \left(|f(x)-f(u)|<\alpha|x-u| \lor |f(x)-f(u)|>K|x-u|\right).
+\neg\operatorname{IsBiLipschitz}(f,A,\alpha,K) \Longleftrightarrow \neg(0<\alpha\le K) \lor \exists x,u\in A\; \left(|f(x)-f(u)|<\alpha|x-u| \lor |f(x)-f(u)|>K|x-u|\right).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 The property fails either because $f$ collapses some pair of points faster than the allowed lower constant $\alpha$, or because it stretches some pair more than the upper constant $K$ permits. Both distortions prevent a uniform two-sided control of distances.
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
 \exists x,u\in A:\quad
 \underbrace{|f(x)-f(u)|<\alpha|x-u|}_{\text{lower-distortion failure}}
 \quad\text{or}\quad
 \underbrace{|f(x)-f(u)|>K|x-u|}_{\text{upper-distortion failure}}.
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -697,9 +727,9 @@ $\alpha |x-y| \le |f(x)-f(y)| \le K |x-y|$ for all $x,y \in A$. Then $f$ is inje
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{BiLipschitz}(f,A,\alpha,K)
+\operatorname{IsBiLipschitz}(f,A,\alpha,K)
 \Rightarrow
-\bigl(\operatorname{Injective}(f) \land \operatorname{BiLipschitz}(f^{-1},f(A),1/K,1/\alpha)\bigr).
+\bigl(\operatorname{Injective}(f) \land \operatorname{IsBiLipschitz}(f^{-1},f(A),1/K,1/\alpha)\bigr).
 \]
 \end{remark*}
 

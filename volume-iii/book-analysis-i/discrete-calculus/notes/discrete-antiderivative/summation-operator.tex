@@ -6,6 +6,7 @@
 \subsection{Discrete Antiderivatives}
 \label{sec:discrete-antiderivative}
 
+\begin{exposition}
 The telescoping identity established in the previous section,
 \[
 \sum_{k=a}^{b-1} \Delta f(k) = f(b) - f(a),
@@ -13,6 +14,7 @@ The telescoping identity established in the previous section,
 reveals that summation acts as an inverse operation to the difference
 operator, much like integration acts as an inverse to differentiation
 in ordinary calculus. This motivates the following definition.
+\end{exposition}
 
 \begin{definition}[Discrete Antiderivative]
 \label{def:discrete-antiderivative}
@@ -32,12 +34,20 @@ F \text{ is a discrete antiderivative of } f
 \forall n \in \mathbb{Z},\; F(n+1) - F(n) = f(n)\).
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{IsAntidifferenceOf}(F,f,\mathbb Z)
+  \;\colonequiv\;
+  \forall n\in\mathbb Z,\; F(n+1)-F(n)=f(n).
+\]
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 A discrete antiderivative is a function whose one-step increments reproduce
 the given summand.
 \end{remark*}
 
-\begin{remark*}[Analogy]
+\begin{remark*}[Interpretation]
 A discrete antiderivative plays the same role in discrete calculus that an
 antiderivative plays in ordinary calculus: it reverses the fundamental
 differentiation-like operator of the theory. Instead of reversing
@@ -52,6 +62,7 @@ differentiation, it reverses the forward difference \(\Delta\).
 
 \subsection*{Examples}
 
+\begin{example*}
 \textbf{Example 1.} Let \(f(n) = 1\). Take \(F(n) = n\). Then
 \[
 \Delta F(n) = (n+1) - n = 1 = f(n). \checkmark
@@ -64,8 +75,9 @@ differentiation, it reverses the forward difference \(\Delta\).
 = \frac{n(n+1-n+1)}{2}
 = n = f(n). \checkmark
 \]
+\end{example*}
 
-\begin{remark*}[Connection to falling factorials]
+\begin{remark*}[Interpretation]
 Both examples above are instances of a general pattern: the discrete
 antiderivative of the falling factorial \(n^{\underline{k}}\) is
 \(\tfrac{1}{k+1}n^{\underline{k+1}}\), exactly mirroring the antiderivative
@@ -74,7 +86,9 @@ rule for ordinary powers. This is developed in the Polynomial Basis section.
 
 \subsection*{Constant of Integration}
 
+\begin{exposition}
 Discrete antiderivatives are not unique.
+\end{exposition}
 
 \begin{proposition}[Constant of integration]
 \label{prop:constant-of-integration}
@@ -83,7 +97,7 @@ for any constant \(C \in \mathbb{R}\).
 \hyperref[prf:constant-of-integration]{\textit{Go to proof.}}
 \end{proposition}
 
-\begin{remark*}[Fully quantified form]
+\begin{remark*}[Standard quantified statement]
 \(\forall C \in \mathbb{R}:\;
 \Delta F = f \Rightarrow \Delta(F+C) = f\).
 \end{remark*}

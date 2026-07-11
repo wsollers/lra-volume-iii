@@ -7,7 +7,7 @@
 
 \subsection*{Algebra of Functions}
 \label{sec:algebra-of-functions}
-\begin{remark*}[Intervals on $\mathbb{R}$]
+\begin{remark*}[Interpretation]
 Every open interval $(a,b)$ consists entirely of cluster points;
 $[a,b]$ is closed and bounded. Natural domains for functions are
 typically intervals or unions of intervals.
@@ -40,7 +40,7 @@ injective, then $g\circ f:A\to C$ is injective.
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
   \operatorname{Injective}(f)\wedge\operatorname{Injective}(g)
   \;\Longrightarrow\;
@@ -61,14 +61,20 @@ injective, then $g\circ f:A\to C$ is injective.
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 The composite fails to be injective exactly when two distinct inputs of
 $A$ are sent to the same output in $C$ after applying both functions.
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
   \exists a_1,a_2\in A\;\bigl(a_1\neq a_2\;\wedge\;g(f(a_1))=g(f(a_2))\bigr).
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -105,12 +111,17 @@ $\operatorname{Surjective}(f)\wedge\operatorname{Surjective}(g)
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
   \operatorname{Surjective}(g\circ f, C)
   \;\colonequiv\;
   \forall c\in C,\;\exists a\in A: (g\circ f)(a)=c.
 \]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Surjectivity survives composition because every target value first has a
+preimage under $g$, and that preimage in turn has a preimage under $f$.
 \end{remark*}
 
 \begin{dependencies}
@@ -158,7 +169,7 @@ bijective, then $g\circ f:A\to C$ is bijective.
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
   \operatorname{Bijective}(f)\wedge\operatorname{Bijective}(g)
   \;\Longrightarrow\;
@@ -183,11 +194,16 @@ bijective, then $g\circ f:A\to C$ is bijective.
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 A composite bijection can fail only by losing injectivity or by missing
 some target value in $C$.
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
 \begin{aligned}
 \neg\,\operatorname{Bijective}(g\circ f)
@@ -197,6 +213,7 @@ some target value in $C$.
 \neg\,\operatorname{Surjective}(g\circ f).
 \end{aligned}
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -234,12 +251,18 @@ $\operatorname{Bijective}(f)\Rightarrow\operatorname{Bijective}(f^{-1})$.
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
   \operatorname{InverseFunction}(f, f^{-1})
   \;\colonequiv\;
   f^{-1}\circ f = \mathrm{id}_A \;\wedge\; f\circ f^{-1}=\mathrm{id}_B.
 \]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A bijection has an inverse function because each output is hit by exactly one
+input. The inverse reverses the original correspondence and composes back to
+the identity on both sides.
 \end{remark*}
 
 \begin{dependencies}

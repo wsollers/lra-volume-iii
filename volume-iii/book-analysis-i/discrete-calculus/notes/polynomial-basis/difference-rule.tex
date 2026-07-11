@@ -5,11 +5,14 @@
 
 \subsection*{Consequences of the Difference Rule}
 
+\begin{exposition}
 The difference rule \(\Delta\,x^{\underline{k}} = k\,x^{\underline{k-1}}\)
 (Theorem~\ref{thm:falling-factorial-rule}) has several important consequences.
+\end{exposition}
 
 \subsection*{Higher Differences of Falling Factorials}
 
+\begin{exposition}
 Applying the rule repeatedly gives:
 \[
 \Delta^m\, x^{\underline{k}}
@@ -28,8 +31,9 @@ k! & \text{if } m = k, \\
 0 & \text{if } m \ne k.
 \end{cases}
 \]
+\end{exposition}
 
-\begin{remark*}[Basis orthogonality]
+\begin{remark*}[Interpretation]
 This vanishing property means the falling factorials behave like a
 ``triangular'' basis: \(\Delta^m\) kills all \(x^{\underline{k}}\) with
 \(k < m\), and returns a scalar multiple for \(k = m\). This is what
@@ -38,6 +42,7 @@ makes the coefficient extraction in Newton's expansion work cleanly.
 
 \subsection*{Connection to Binomial Coefficients}
 
+\begin{exposition}
 The higher difference formula from the Binomial Theorem section
 (Proposition~\ref{prop:higher-diff-formula}),
 \[
@@ -48,8 +53,9 @@ coefficients of the falling factorial expansion:
 \[
 c_k = \frac{\Delta^k f(0)}{k!}.
 \]
+\end{exposition}
 
-\begin{remark*}[Pascal's triangle revisited]
+\begin{remark*}[Interpretation]
 The coefficients appearing in higher finite differences follow exactly
 the pattern of Pascal's triangle --- a direct consequence of the
 algebraic identity \(\Delta = E - I\) and the binomial theorem.
@@ -57,6 +63,7 @@ algebraic identity \(\Delta = E - I\) and the binomial theorem.
 
 \subsection*{\texorpdfstring{Worked Example: Expanding \(n^2\)}{Worked Example: Expanding n squared}}
 
+\begin{example*}
 We find the falling factorial expansion of \(f(n) = n^2\).
 
 Computing the difference table at \(n = 0\):
@@ -79,8 +86,9 @@ n^2 = 0 + n^{\underline{1}} + n^{\underline{2}}
 = n^2 - n + n
 = n^2. \checkmark
 \]
+\end{example*}
 
-\begin{remark*}[Practical value]
+\begin{remark*}[Interpretation]
 Once a function is expressed in the falling factorial basis, both
 differencing and antidifferencing become purely mechanical, following the
 rule \(\Delta\,x^{\underline{k}} = k\,x^{\underline{k-1}}\) and its

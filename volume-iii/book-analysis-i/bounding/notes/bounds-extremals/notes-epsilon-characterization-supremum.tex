@@ -32,9 +32,12 @@ Let $A\subseteq\mathbb{R}$ and let $s\in\mathbb{R}$. The element $s$ satisfies t
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
-\operatorname{EpsilonSupremum}(s,A)\coloneqq
+\operatorname{EpsilonCharacterizationOfSupremum}(s,A,\mathbb{R})
+\Longleftrightarrow
+\operatorname{LeastUpperBound}(s,A,\mathbb{R})
+\Longleftrightarrow
 \operatorname{UpperBound}(s,A)
 \land
 \forall \varepsilon>0\;\exists a\in A\;(s-\varepsilon<a).
@@ -56,7 +59,7 @@ Let $A\subseteq\mathbb{R}$ and let $s\in\mathbb{R}$. The element $s$ satisfies t
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{EpsilonSupremum}(s,A)\Longleftrightarrow
+\neg\operatorname{EpsilonCharacterizationOfSupremum}(s,A,\mathbb{R})\Longleftrightarrow
 \Bigl[\exists x\in A\;(s<x)\Bigr]
 \lor
 \Bigl[\exists \varepsilon_0>0\;\forall a\in A\;(a\le s-\varepsilon_0)\Bigr].
@@ -64,17 +67,23 @@ Let $A\subseteq\mathbb{R}$ and let $s\in\mathbb{R}$. The element $s$ satisfies t
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 The characterization fails either because $s$ is not an upper bound of $A$, or because $A$ remains at least some positive distance below $s$.
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
-\neg\operatorname{EpsilonSupremum}(s,A)
+\neg\operatorname{EpsilonCharacterizationOfSupremum}(s,A,\mathbb{R})
 =
 \underbrace{\exists x\in A\;(s<x)}_{\text{upper-bound failure}}
 \;\lor\;
 \underbrace{\exists \varepsilon_0>0\;\forall a\in A\;(a\le s-\varepsilon_0)}_{\text{positive gap below }s}.
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -126,9 +135,12 @@ Let $A\subseteq\mathbb{R}$ and let $t\in\mathbb{R}$. The element $t$ satisfies t
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
-\operatorname{EpsilonInfimum}(t,A)\coloneqq
+\operatorname{EpsilonCharacterizationOfInfimum}(t,A,\mathbb{R})
+\Longleftrightarrow
+\operatorname{GreatestLowerBound}(t,A,\mathbb{R})
+\Longleftrightarrow
 \operatorname{LowerBound}(t,A)
 \land
 \forall \varepsilon>0\;\exists a\in A\;(a<t+\varepsilon).
@@ -150,7 +162,7 @@ Let $A\subseteq\mathbb{R}$ and let $t\in\mathbb{R}$. The element $t$ satisfies t
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{EpsilonInfimum}(t,A)\Longleftrightarrow
+\neg\operatorname{EpsilonCharacterizationOfInfimum}(t,A,\mathbb{R})\Longleftrightarrow
 \Bigl[\exists x\in A\;(x<t)\Bigr]
 \lor
 \Bigl[\exists \varepsilon_0>0\;\forall a\in A\;(t+\varepsilon_0\le a)\Bigr].
@@ -158,24 +170,30 @@ Let $A\subseteq\mathbb{R}$ and let $t\in\mathbb{R}$. The element $t$ satisfies t
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 The characterization fails either because $t$ is not a lower bound of $A$, or because $A$ remains at least some positive distance above $t$.
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
-\neg\operatorname{EpsilonInfimum}(t,A)
+\neg\operatorname{EpsilonCharacterizationOfInfimum}(t,A,\mathbb{R})
 =
 \underbrace{\exists x\in A\;(x<t)}_{\text{lower-bound failure}}
 \;\lor\;
 \underbrace{\exists \varepsilon_0>0\;\forall a\in A\;(t+\varepsilon_0\le a)}_{\text{positive gap above }t}.
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
 This condition says that $t$ sits below the set while points of $A$ approach $t$ from above at every positive scale. The lower-bound clause prevents $A$ from crossing below $t$, and the epsilon clause prevents $t$ from sitting strictly below the set with a positive gap. Geometrically, $t$ is a floor that the set presses against arbitrarily closely from above.
 \end{remark*}
 
-\begin{remark*}[Proof technique]
+\begin{remark*}[Interpretation]
 The epsilon characterizations are one way to prove the sharpness part of a
 supremum or infimum claim.  After proving the candidate is an upper or lower
 bound, one can either compare it with arbitrary bounds directly or build

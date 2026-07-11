@@ -28,15 +28,15 @@ Let $A \subseteq \mathbb{R}$ and $f \colon A \to \mathbb{R}$. The function $f$ i
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
-\operatorname{BoundedOn}(f,A) \coloneqq \exists M>0 \; \forall x \in A \; (|f(x)| \le M).
+\operatorname{Bounded}(f,A) \coloneqq \exists M>0 \; \forall x \in A \; (|f(x)| \le M).
 \]
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{ContinuousOn}(f,[a,b])
+\operatorname{IsContinuous}(f,[a,b])
 \land \forall x\in[a,b]\;(f(x)\neq c)
 \Longrightarrow
 \Bigl[\bigl(\forall x\in[a,b]\; f(x)>c\bigr)
@@ -58,19 +58,25 @@ Let $A \subseteq \mathbb{R}$ and $f \colon A \to \mathbb{R}$. The function $f$ i
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg \operatorname{BoundedOn}(f,A) \Longleftrightarrow \forall M>0 \; \exists x \in A \; (|f(x)| > M).
+\neg \operatorname{Bounded}(f,A) \Longleftrightarrow \forall M>0 \; \exists x \in A \; (|f(x)| > M).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 Failure occurs precisely when every proposed positive bound $M$ is exceeded by some value of $|f(x)|$ with $x \in A$.
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
 \underbrace{\forall M>0}_{\text{no admissible bound}}
 \; \underbrace{\exists x \in A \; (|f(x)| > M)}_{\text{value exceeding } M}.
 \]
+\end{description}
 \end{remark*}
 
 
@@ -113,7 +119,7 @@ Let $a<b$ and let $f:[a,b]\to\mathbb{R}$ be continuous on $[a,b]$. Then there ex
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{ContinuousOn}(f,[a,b]) \Longrightarrow \operatorname{BoundedOn}(f,[a,b]).
+\operatorname{IsContinuous}(f,[a,b]) \Longrightarrow \operatorname{Bounded}(f,[a,b]).
 \]
 \end{remark*}
 
@@ -129,26 +135,32 @@ Let $a<b$ and let $f:[a,b]\to\mathbb{R}$ be continuous on $[a,b]$. Then there ex
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{ContinuousOn}(f,[a,b]) \land \neg\operatorname{BoundedOn}(f,[a,b]).
+\operatorname{IsContinuous}(f,[a,b]) \land \neg\operatorname{Bounded}(f,[a,b]).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 Each component hypothesis is indispensable: without closedness (for instance $f(x)=1/x$ on $(0,1]$) continuity does not prevent divergence near the missing endpoint; without bounded domain (for example $f(x)=x$ on $[0,\infty)$) linear growth forces unbounded values; without continuity (take $f(0)=0$ and $f(x)=1/x$ for $x\in(0,1]$) the discontinuity at $0$ again creates arbitrarily large magnitudes.
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
 \begin{aligned}
-\neg\bigl[\operatorname{ClosedInterval}(a,b) \land \operatorname{BoundedSet}([a,b]) \land \operatorname{ContinuousOn}(f,[a,b])\bigr]
+\neg\bigl[\operatorname{IsClosedInterval}(a,b) \land \operatorname{Bounded}([a,b]) \land \operatorname{IsContinuous}(f,[a,b])\bigr]
 &=
-\underbrace{\neg\operatorname{ClosedInterval}(a,b)}_{\text{missing endpoint}}
+\underbrace{\neg\operatorname{IsClosedInterval}(a,b)}_{\text{missing endpoint}}
 \lor
-\underbrace{\neg\operatorname{BoundedSet}([a,b])}_{\text{unbounded domain}}
+\underbrace{\neg\operatorname{Bounded}([a,b])}_{\text{unbounded domain}}
 \lor
-\underbrace{\neg\operatorname{ContinuousOn}(f,[a,b])}_{\text{discontinuity}}.
+\underbrace{\neg\operatorname{IsContinuous}(f,[a,b])}_{\text{discontinuity}}.
 \end{aligned}
 \]
+\end{description}
 \end{remark*}
 
 
@@ -186,12 +198,12 @@ Let $A \subseteq \mathbb{R}$ and let $f \colon A \to \mathbb{R}$. A point $x^{*}
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
 \begin{aligned}
-&(x^{*} \in A) \land \operatorname{Maximum}(f(x^{*}), f(A))
+&(x^{*} \in A) \land \operatorname{GreatestElement}(f(x^{*}), f(A))
 \Longleftrightarrow (x^{*} \in A) \land \forall x \in A\; (f(x) \le f(x^{*})),\\
-&(x_{*} \in A) \land \operatorname{Minimum}(f(x_{*}), f(A))
+&(x_{*} \in A) \land \operatorname{LeastElement}(f(x_{*}), f(A))
 \Longleftrightarrow (x_{*} \in A) \land \forall x \in A\; (f(x_{*}) \le f(x)).
 \end{aligned}
 \]
@@ -212,31 +224,37 @@ Let $A \subseteq \mathbb{R}$ and let $f \colon A \to \mathbb{R}$. A point $x^{*}
 \begin{remark*}[Negation predicate reading]
 \[
 \begin{aligned}
-&\neg\bigl[(x^{*} \in A) \land \operatorname{Maximum}(f(x^{*}), f(A))\bigr]
+&\neg\bigl[(x^{*} \in A) \land \operatorname{GreatestElement}(f(x^{*}), f(A))\bigr]
 \Longleftrightarrow (x^{*} \notin A) \lor \bigl(\exists x \in A\; (f(x) > f(x^{*}))\bigr),\\
-&\neg\bigl[(x_{*} \in A) \land \operatorname{Minimum}(f(x_{*}), f(A))\bigr]
+&\neg\bigl[(x_{*} \in A) \land \operatorname{LeastElement}(f(x_{*}), f(A))\bigr]
 \Longleftrightarrow (x_{*} \notin A) \lor \bigl(\exists x \in A\; (f(x_{*}) > f(x))\bigr).
 \end{aligned}
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 An alleged absolute maximum can fail because the proposed point lies outside the domain $A$, or because some $x \in A$ produces a strictly larger function value. An alleged absolute minimum fails for the analogous reasons, either by leaving the domain or by admitting a point in $A$ with a strictly smaller value.
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
 \begin{aligned}
-&\neg\bigl[(x^{*} \in A) \land \operatorname{Maximum}(f(x^{*}), f(A))\bigr]
+&\neg\bigl[(x^{*} \in A) \land \operatorname{GreatestElement}(f(x^{*}), f(A))\bigr]
 = \underbrace{(x^{*} \notin A)}_{\text{external point}}
 \lor
 \underbrace{\bigl(\exists x \in A\; (f(x) > f(x^{*}))\bigr)}_{\text{better value}},\\
-&\neg\bigl[(x_{*} \in A) \land \operatorname{Minimum}(f(x_{*}), f(A))\bigr]
+&\neg\bigl[(x_{*} \in A) \land \operatorname{LeastElement}(f(x_{*}), f(A))\bigr]
 = \underbrace{(x_{*} \notin A)}_{\text{external point}}
 \lor
 \underbrace{\bigl(\exists x \in A\; (f(x_{*}) > f(x))\bigr)}_{\text{better value}}.
 \end{aligned}
 \]
+\end{description}
 \end{remark*}
 
 
@@ -279,19 +297,24 @@ Let $a,b \in \mathbb{R}$ with $a<b$, and let $f:[a,b] \to \mathbb{R}$ be continu
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{ContinuousOn}(f,[a,b]) \Longrightarrow \exists x_m,x_M\in [a,b]\;
-\bigl(\operatorname{Maximum}(f(x_M),f([a,b])) \land \operatorname{Minimum}(f(x_m),f([a,b]))\bigr).
+\operatorname{IsContinuous}(f,[a,b]) \Longrightarrow \exists x_m,x_M\in [a,b]\;
+\bigl(\operatorname{GreatestElement}(f(x_M),f([a,b])) \land \operatorname{LeastElement}(f(x_m),f([a,b]))\bigr).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 The theorem can fail if the compact interval hypothesis is lost, or if
 the function is not continuous on the whole interval. Without compactness
 an extremal value may exist only as a limiting value, and without
 continuity the graph may jump over its supremum or infimum.
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
 \underbrace{\neg(a<b)}_{\text{invalid interval}}
 \;\lor\;
@@ -300,6 +323,7 @@ continuity the graph may jump over its supremum or infimum.
 \underbrace{\exists c\in[a,b]\;\exists \varepsilon>0\;\forall \delta>0\;\exists x\in[a,b]\;
 \bigl(|x-c|<\delta\land |f(x)-f(c)|\ge\varepsilon\bigr)}_{\text{loss of continuity}}.
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -332,17 +356,23 @@ Let $a,b \in \mathbb{R}$ with $a<b$ and let $f:[a,b]\to\mathbb{R}$ be continuous
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 The root conclusion can fail if $f$ is not continuous on $[a,b]$, or if
 the endpoint values do not have opposite signs.
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
 \underbrace{\exists c\in[a,b]\;\exists \varepsilon>0\;\forall \delta>0\;\exists x\in[a,b]\;
 \bigl(|x-c|<\delta\land |f(x)-f(c)|\ge\varepsilon\bigr)}_{\text{loss of continuity}}
 \;\lor\;
 \underbrace{\bigl(f(a)f(b)\ge 0\bigr)}_{\text{no sign change}}.
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -381,13 +411,22 @@ Let $I \subseteq \mathbb{R}$ be an interval, let $f \colon I \to \mathbb{R}$ be 
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+The displayed quantified statement is the predicate-level form of $label: its hypotheses name the input conditions, and its conclusion names the asserted structure or relation.
+\end{remark*}
+
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 The conclusion can fail only if the continuity-on-an-interval hypothesis
 breaks down, or if the proposed level $k$ is not strictly between the two
 attained endpoint values.
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
 \begin{aligned}
 &\underbrace{\exists x,y\in I\;\exists z\in\mathbb{R}\;
@@ -399,6 +438,7 @@ attained endpoint values.
 \underbrace{\neg\bigl(f(a)<k<f(b)\bigr)}_{\text{level not between endpoint values}}.
 \end{aligned}
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -443,7 +483,7 @@ f([a,b])=[\min_{[a,b]} f,\max_{[a,b]} f].
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{ContinuousOn}(f,[a,b]) \Longrightarrow f([a,b])=[\min_{[a,b]} f,\max_{[a,b]} f].
+\operatorname{IsContinuous}(f,[a,b]) \Longrightarrow f([a,b])=[\min_{[a,b]} f,\max_{[a,b]} f].
 \]
 \end{remark*}
 
@@ -488,9 +528,9 @@ Let $I \subseteq \mathbb{R}$ be an interval and let $f:I \to \mathbb{R}$ be cont
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{ContinuousOn}(f,I)
+\operatorname{IsContinuous}(f,I)
 \Longrightarrow
-\operatorname{Interval}(f(I)).
+\mathsf{Interval}(f(I)).
 \]
 \end{remark*}
 
@@ -514,8 +554,8 @@ y\notin f(I).
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{Interval}(I)\land\operatorname{ContinuousOn}(f,I)
-\land\neg\operatorname{Interval}(f(I)).
+\mathsf{Interval}(I)\land\operatorname{IsContinuous}(f,I)
+\land\neg\mathsf{Interval}(f(I)).
 \]
 \end{remark*}
 
@@ -550,6 +590,10 @@ Let $a,b\in\mathbb{R}$ satisfy $a<b$, let $f:[a,b]\to\mathbb{R}$ be continuous, 
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+The displayed quantified statement is the predicate-level form of $label: its hypotheses name the input conditions, and its conclusion names the asserted structure or relation.
+\end{remark*}
+
 \begin{remark*}[Negated quantified statement]
 \[
 \begin{aligned}
@@ -565,7 +609,7 @@ Let $a,b\in\mathbb{R}$ satisfy $a<b$, let $f:[a,b]\to\mathbb{R}$ be continuous, 
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{ContinuousOn}(f,[a,b])
+\operatorname{IsContinuous}(f,[a,b])
 \land
 \Bigl(\forall x\in[a,b]\; f(x)\neq c\Bigr)
 \land
@@ -577,7 +621,7 @@ Let $a,b\in\mathbb{R}$ satisfy $a<b$, let $f:[a,b]\to\mathbb{R}$ be continuous, 
 \]
 \end{remark*}
 
-\begin{remark*}[Contrapositive quantified statement]
+\begin{remark*}[Interpretation]
 \[
 \begin{aligned}
 &\text{Let } a<b,\; f:[a,b]\to\mathbb{R} \text{ be continuous, and } c\in\mathbb{R}.\\
@@ -590,11 +634,13 @@ Let $a,b\in\mathbb{R}$ satisfy $a<b$, let $f:[a,b]\to\mathbb{R}$ be continuous, 
 \]
 \end{remark*}
 
-\begin{remark*}[Contrapositive predicate reading]
+\begin{remark*}[Interpretation]
 \[
-\operatorname{ContinuousOn}(f,[a,b])
+\operatorname{IsContinuous}(f,[a,b])
 \land
-\operatorname{MeetsBothSides}(f,[a,b],c)
+\Bigl(\exists x\in[a,b]\; f(x)\le c\Bigr)
+\land
+\Bigl(\exists y\in[a,b]\; f(y)\ge c\Bigr)
 \Longrightarrow
 \exists z\in[a,b]\;(f(z)=c).
 \]

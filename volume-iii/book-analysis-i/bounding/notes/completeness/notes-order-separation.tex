@@ -27,8 +27,13 @@ for every $a\in A$ and every $b\in B$.
 \end{remark*}
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{LeftOf}(A,B)\Rightarrow \operatorname{SeparatedByPoint}(A,B).
+\bigl(A\ne\varnothing\land B\ne\varnothing\land
+\forall a\in A\;\forall b\in B\;(a\le b)\bigr)
+\Rightarrow
+\operatorname{HasDedekindSeparator}(A,B,\mathbb{R}).
 \]
+Equivalently, there exists $c\in\mathbb{R}$ such that
+\(\operatorname{IsDedekindSeparator}(c,A,B,\mathbb{R})\).
 \end{remark*}
 \begin{remark*}[Negated quantified statement]
 \[
@@ -43,7 +48,9 @@ A\ne\varnothing\land B\ne\varnothing\land
 \end{remark*}
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{LeftOf}(A,B)\land\neg\operatorname{SeparatedByPoint}(A,B).
+\bigl(A\ne\varnothing\land B\ne\varnothing\land
+\forall a\in A\;\forall b\in B\;(a\le b)\bigr)
+\land\neg\operatorname{HasDedekindSeparator}(A,B,\mathbb{R}).
 \]
 \end{remark*}
 \begin{remark*}[Interpretation]
@@ -90,20 +97,22 @@ for every $a\in A$ and every $b\in B$.
 \end{remark*}
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{DedekindSeparation}(A,B)\Rightarrow
-\operatorname{SeparatedByPoint}(A,B).
+\operatorname{IsDedekindSeparation}(A,B,\mathbb{R})\Rightarrow
+\operatorname{HasDedekindSeparator}(A,B,\mathbb{R}).
 \]
+Equivalently, the conclusion supplies some $c\in\mathbb{R}$ with
+\(\operatorname{IsDedekindSeparator}(c,A,B,\mathbb{R})\).
 \end{remark*}
 \begin{remark*}[Negated quantified statement]
 \[
 \exists A,B\subseteq\mathbb{R}\;
-\bigl(\operatorname{DedekindSeparation}(A,B)\land
-\neg\operatorname{SeparatedByPoint}(A,B)\bigr).
+\bigl(\operatorname{IsDedekindSeparation}(A,B,\mathbb{R})\land
+\neg\operatorname{HasDedekindSeparator}(A,B,\mathbb{R})\bigr).
 \]
 \end{remark*}
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{DedekindGap}(A,B).
+\operatorname{IsDedekindGap}(A,B,\mathbb{R}).
 \]
 \end{remark*}
 \begin{remark*}[Interpretation]
@@ -123,22 +132,22 @@ The real line has no Dedekind gaps.
 \end{corollarybox}
 \begin{remark*}[Standard quantified statement]
 \[
-\neg\exists A,B\subseteq\mathbb{R}\;\operatorname{DedekindGap}(A,B).
+\neg\exists A,B\subseteq\mathbb{R}\;\operatorname{IsDedekindGap}(A,B,\mathbb{R}).
 \]
 \end{remark*}
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{OrderComplete}(\mathbb{R}).
+\operatorname{IsOrderComplete}(\mathbb{R}).
 \]
 \end{remark*}
 \begin{remark*}[Negated quantified statement]
 \[
-\exists A,B\subseteq\mathbb{R}\;\operatorname{DedekindGap}(A,B).
+\exists A,B\subseteq\mathbb{R}\;\operatorname{IsDedekindGap}(A,B,\mathbb{R}).
 \]
 \end{remark*}
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{OrderComplete}(\mathbb{R}).
+\neg\operatorname{IsOrderComplete}(\mathbb{R}).
 \]
 \end{remark*}
 \begin{remark*}[Interpretation]

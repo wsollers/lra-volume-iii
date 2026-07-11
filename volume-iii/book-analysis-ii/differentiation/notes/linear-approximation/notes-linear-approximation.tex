@@ -25,6 +25,20 @@ $L$.
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{HasLinearApproximation}(f,a,L)
+\quad\text{with approximating map}\quad
+h\mapsto f(a)+Lh.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A first-order approximation keeps the value $f(a)$ and adds a linear response
+$Lh$ to a small increment $h$. The coefficient $L$ is the candidate derivative
+read as the best linear part of the local change in $f$.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:function]{Function}
@@ -47,14 +61,22 @@ for all sufficiently small $h$ with $a+h\in A$, and
 \end{definition}
 \end{definitionbox}
 
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:first-order-approximation-at-a-point]{First-Order Approximation at a Point}
-  \item \hyperref[def:increment-little-o]{Increment Little-o}
-\end{itemize}
-\end{dependencies}
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{IsDifferentiable}(f,a)
+\Longleftrightarrow
+\exists L\in\mathbb{R}\;\exists r\;
+\bigl(f(a+h)=f(a)+Lh+r(h)\ \text{and}\ r(h)=o(h)\bigr).
+\]
+\end{remark*}
 
-\begin{remark*}[Equivalent error statement]
+\begin{remark*}[Predicate reading]
+The predicate $\operatorname{IsDifferentiable}(f,a)$ can be read as the
+existence of a linear coefficient $L$ and a remainder $r$ whose size is
+negligible compared with the increment $h$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
 The condition $r(h)=o(h)$ is the quantified assertion
 \[
   \forall\varepsilon>0\;\exists\delta>0\;\forall h\,
@@ -64,6 +86,13 @@ The condition $r(h)=o(h)$ is the quantified assertion
 Thus the error is not merely small; it is small relative to the input
 increment.
 \end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:first-order-approximation-at-a-point]{First-Order Approximation at a Point}
+  \item \hyperref[def:increment-little-o]{Increment Little-o}
+\end{itemize}
+\end{dependencies}
 
 \begin{theorembox}{Theorem (Derivative and Linear Approximation)}
 \begin{theorem}[Derivative and Linear Approximation]
@@ -80,16 +109,15 @@ $f$ is differentiable at $a$ with derivative $L$ if and only if
 \end{theorem}
 \end{theorembox}
 
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:derivative-at-a-point]{Derivative at a Point}
-  \item \hyperref[prop:derivative-h-form-equivalence]{Derivative: $h$-Form Equivalence}
-  \item \hyperref[def:differentiability-linear-approximation]{Differentiability by Linear Approximation}
-  \item \hyperref[def:increment-little-o]{Increment Little-o}
-\end{itemize}
-\end{dependencies}
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{Derivative}(f,a,L)
+\Longleftrightarrow
+f(a+h)=f(a)+Lh+o(h)\quad(h\to 0).
+\]
+\end{remark*}
 
-\begin{remark*}[Proof mechanism]
+\begin{remark*}[Interpretation]
 Subtract $f(a)+Lh$ and divide by $h$:
 \[
   \frac{f(a+h)-f(a)-Lh}{h}
@@ -99,6 +127,15 @@ Subtract $f(a)+Lh$ and divide by $h$:
 The right side tends to zero exactly when the difference quotient tends to
 $L$.
 \end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:derivative-at-a-point]{Derivative at a Point}
+  \item \hyperref[prop:derivative-h-form-equivalence]{Derivative: $h$-Form Equivalence}
+  \item \hyperref[def:differentiability-linear-approximation]{Differentiability by Linear Approximation}
+  \item \hyperref[def:increment-little-o]{Increment Little-o}
+\end{itemize}
+\end{dependencies}
 
 \begin{propositionbox}{Proposition (Uniqueness of the Linear Coefficient)}
 \begin{proposition}[Uniqueness of the Linear Coefficient]
@@ -116,6 +153,20 @@ then $L=M$.
 \end{proposition}
 \end{propositionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\bigl(f(a+h)=f(a)+Lh+o(h)\ \land\
+f(a+h)=f(a)+Mh+o(h)\bigr)
+\Longrightarrow L=M.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The linear coefficient in a first-order approximation is unique. Two different
+linear coefficients would leave a nonzero linear term after subtraction, and a
+nonzero linear term cannot be absorbed into an $o(h)$ error.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:derivative-linear-approximation-equivalence]{Derivative and Linear Approximation}
@@ -123,7 +174,7 @@ then $L=M$.
 \end{itemize}
 \end{dependencies}
 
-\begin{example*}[Square Function]
+\begin{exposition}
 Let $f(x)=x^2$. At $a$,
 \[
   f(a+h)
@@ -136,9 +187,9 @@ Since $h^2=o(h)$, the derivative is the coefficient of $h$:
 \[
   f'(a)=2a.
 \]
-\end{example*}
+\end{exposition}
 
-\begin{example*}[A First-Order Taylor Reading]
+\begin{exposition}
 The statement
 \[
   f(a+h)=f(a)+f'(a)h+o(h)
@@ -146,4 +197,4 @@ The statement
 is the first Taylor formula with Peano remainder. Taylor expansion extends
 the same idea to higher powers of $h$: keep more main terms and demand a
 smaller remainder.
-\end{example*}
+\end{exposition}

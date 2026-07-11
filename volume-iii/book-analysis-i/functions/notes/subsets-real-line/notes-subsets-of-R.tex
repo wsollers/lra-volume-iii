@@ -7,7 +7,7 @@
 
 \subsection*{\texorpdfstring{Subsets of $\mathbb{R}$}{Subsets of R}}
 \label{sec:subsets-of-R}
-\begin{remark*}[Terminological note]
+\begin{remark*}[Interpretation]
 Cluster point = limit point = accumulation point. Bartle and Lebl use
 \emph{cluster point}; Rudin uses \emph{limit point}; Tao uses both.
 Adherent point (Tao) is the weaker notion that includes isolated points.
@@ -102,7 +102,7 @@ is a \textbf{cluster point} of $X$ if
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
   x\text{ is a cluster point of }X
   \;\colonequiv\;
@@ -135,7 +135,7 @@ A cluster point is approached by $X$ via distinct witnesses
 arbitrarily close. A cluster point need not belong to $X$: $0$ is
 a cluster point of $(0,1)$ but $0 \notin (0,1)$. The condition
 $\lim_{x\to c}f(x)=L$ requires
-$\operatorname{ClusterPoint}(c, \operatorname{dom}(f))$; without
+$\operatorname{IsCluster}(c, \operatorname{dom}(f))$; without
 it the punctured ball condition is vacuous.
 \end{remark*}
 
@@ -203,9 +203,9 @@ an \textbf{adherent point} of $X$ if
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
-  \operatorname{AdherentPoint}(x,X)
+  \operatorname{IsAdherent}(x,X)
   \;\coloneqq\;
   \forall\varepsilon>0\;\exists y\in X\;(|y-x|<\varepsilon).
 \]
@@ -245,9 +245,9 @@ Let $X\subseteq\mathbb{R}$ and let $x\in X$. The point $x$ is an
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
-  \operatorname{IsolatedPoint}(x,X)
+  \operatorname{IsIsolated}(x,X)
   \;\coloneqq\;
   x\in X\wedge\exists\varepsilon>0\;\bigl(V_\varepsilon(x)\cap X=\{x\}\bigr).
 \]
@@ -292,9 +292,9 @@ an \textbf{interior point} of $X$ if
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
-  \operatorname{InteriorPoint}(x,X)\;\coloneqq\;\exists\varepsilon>0\;\bigl(V_\varepsilon(x)\subseteq X\bigr).
+  \operatorname{IsInterior}(x,X)\;\coloneqq\;\exists\varepsilon>0\;\bigl(V_\varepsilon(x)\subseteq X\bigr).
 \]
 \end{remark*}
 
@@ -327,9 +327,9 @@ a \textbf{boundary point} of $X$ if
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
-  \operatorname{BoundaryPoint}(x,X)\;\coloneqq\;
+  \operatorname{IsOnBoundary}(x,X)\;\coloneqq\;
   \forall\varepsilon>0\;\bigl(V_\varepsilon(x)\cap X\neq\emptyset\bigr)
   \wedge\bigl(V_\varepsilon(x)\cap X^c\neq\emptyset\bigr).
 \]
@@ -430,7 +430,7 @@ The closure adds all adherent points of $X$, so it fills in the limiting
 points that can be reached by points of $X$.
 \end{remark*}
 
-\begin{remark*}[Canonical examples]
+\begin{remark*}[Interpretation]
 $\overline{(a,b)} = [a,b]$;\quad $\overline{\mathbb{Q}} = \mathbb{R}$;\quad
 $\overline{\mathbb{Z}} = \mathbb{Z}$;\quad
 $\overline{\{1/n\}} = \{1/n\}\cup\{0\}$.
@@ -466,7 +466,7 @@ Let $X, Y \subseteq \mathbb{R}$. Then: (i) $X \subseteq \overline{X}$;
 \]
 \end{remark*}
 
-\begin{remark*}[Failure of equality in (iii)]
+\begin{remark*}[Interpretation]
 Take $X = (0,1)$, $Y = (1,2)$: $\overline{X\cap Y} = \emptyset$ but
 $\overline{X}\cap\overline{Y} = \{1\}$.
 \end{remark*}
@@ -502,7 +502,7 @@ $E\text{ is closed} \iff \overline{E} = E$.
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
   E\text{ is closed}
   \;\colonequiv\;
@@ -597,10 +597,14 @@ If $I$ is an interval, then every $x\in I$ is a cluster point of $I$.
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+The displayed quantified statement is the predicate-level form of $label: its hypotheses name the input conditions, and its conclusion names the asserted structure or relation.
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 This justifies intervals as natural domains for function limits.
 $\lim_{x\to c}f(x)=L$ requires
-$\operatorname{ClusterPoint}(c, \operatorname{dom}(f))$; on any
+$\operatorname{IsCluster}(c, \operatorname{dom}(f))$; on any
 interval this is free.
 \end{remark*}
 
@@ -626,6 +630,10 @@ $X\text{ is bounded} \iff \exists M>0,\;\forall x\in X:
 \[
   \exists M>0\;\forall x\in X\;(|x|\leq M).
 \]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+The displayed quantified statement is the predicate-level form of $label: its hypotheses name the input conditions, and its conclusion names the asserted structure or relation.
 \end{remark*}
 
 \begin{remark*}[Negated quantified statement]
@@ -672,9 +680,9 @@ a limit in $X$.
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
-  \operatorname{SequentiallyCompact}(X)
+  \operatorname{IsSequentiallyCompact}(X)
   \;\colonequiv\;
   X\text{ is closed} \wedge X\text{ is bounded}.
 \]
@@ -690,13 +698,19 @@ a limit in $X$.
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 The compactness conclusion fails when either closedness or boundedness fails.
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 Either $X\text{ is bounded}$ fails --- a sequence escapes to
 $\pm\infty$ --- or $X\text{ is closed}$ fails --- a convergent
 subsequence exists but its limit lies outside $X$.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]

@@ -1,11 +1,13 @@
 \subsection*{Where This Sits}
 
+\begin{exposition}
 McShane is the gauge integral that looks almost indistinguishable from
 Henstock--Kurzweil until one notices where the tags are allowed to live. HK
 keeps each tag inside its own slab. McShane lets a tag control a slab from
 outside it, as long as the slab lies inside the tag's gauge ball.
+\end{exposition}
 
-\begin{remark*}[The tiny syntactic change]
+\begin{remark*}[Interpretation]
 Henstock--Kurzweil says:
 \[
   \xi_i\in[x_{i-1},x_i]
@@ -19,7 +21,7 @@ That small freedom is decisive: it prevents the conditional cancellation that
 lets HK integrate every derivative.
 \end{remark*}
 
-\begin{remark*}[HK versus McShane at a glance]
+\begin{remark*}[Interpretation]
 \[
 \begin{array}{c|c|c|c}
 \text{Integral} & \text{Gauge} & \text{Tag position} & \text{Class on }[a,b]\\
@@ -40,12 +42,14 @@ directly.
 
 \subsection*{Geometric Intuition}
 
+\begin{exposition}
 In HK, a tag is a sample point inside the slab. In McShane, a tag is more like
 a local address that authorizes nearby slabs. The gauge still says how far the
 tag's influence reaches, but the rectangle height may be chosen from a point
 near the slab rather than inside it. This makes the integral less forgiving
 about sign-changing singular behavior and much closer to Lebesgue's absolute
 notion of size.
+\end{exposition}
 
 \subsection*{Definition}
 
@@ -66,7 +70,30 @@ Unlike an HK tagged partition, the tag \(\xi_i\) is not required to lie in
 \end{definition}
 \end{definitionbox}
 
-\begin{remark*}[Untethered tag]
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{IsDeltaFine}((P,\xi),\delta,[a,b])
+\Longleftrightarrow
+\forall i\;
+\bigl(\xi_i\in[a,b]\land [u_i,v_i]\subset
+(\xi_i-\delta(\xi_i),\,\xi_i+\delta(\xi_i))\bigr),
+\]
+with the intervals non-overlapping and covering \([a,b]\).
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{IsDeltaFine}((P,\xi),\delta,[a,b])
+\Longleftrightarrow
+\operatorname{TaggedPartition}((P,\xi),P,[a,b])
+\land
+\forall i\;
+\bigl(\xi_i\in[a,b]\land [u_i,v_i]\subset
+(\xi_i-\delta(\xi_i),\,\xi_i+\delta(\xi_i))\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
 Figure~\ref{fig:mcshane} isolates the McShane move: a tag may sit outside the
 cell whose height it supplies, provided the cell lies inside the tag's gauge
 ball. The ruler is still \(\Delta x_i\); the change is entirely in the
@@ -99,7 +126,27 @@ where
 \end{definition}
 \end{definitionbox}
 
-\begin{remark*}[Relation to HK]
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{HasDefiniteIntegral}(f,[a,b],\operatorname{McShaneCriterion},A)
+\Longleftrightarrow
+\forall\varepsilon>0\ \exists\delta:[a,b]\to(0,\infty)\ \forall(P,\xi)\,
+\bigl(\operatorname{IsDeltaFine}((P,\xi),\delta,[a,b])
+\Rightarrow |S(f,P,\xi)-A|<\varepsilon\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{HasDefiniteIntegral}(f,[a,b],\operatorname{McShaneCriterion},A)
+\Longleftrightarrow
+\forall\varepsilon>0\ \exists\delta:[a,b]\to(0,\infty)\ \forall(P,\xi)\,
+\bigl(\operatorname{IsDeltaFine}((P,\xi),\delta,[a,b])
+\Rightarrow |S(f,P,\xi)-A|<\varepsilon\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
 Every McShane-fine partition is not necessarily HK-fine, because its tags may
 float outside their intervals. But every HK-fine partition is McShane-fine.
 Therefore McShane integrability is a stronger demand: the sums must survive
@@ -128,6 +175,18 @@ class.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\mathcal R[a,b]\subseteq \mathcal M[a,b]\subseteq \mathcal{HK}[a,b],
+\]
+with agreeing integral values on the smaller integrability space.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+McShane integrability is stronger than HK integrability but includes the
+Riemann-integrable functions on compact intervals.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:riemann-integral]{Riemann Integral}
@@ -148,7 +207,14 @@ and the McShane and Lebesgue integral values agree.
 \end{theorem}
 \end{theorembox}
 
-\begin{remark*}[The Lebesgue connection]
+\begin{remark*}[Standard quantified statement]
+\[
+\mathcal{McShane}[a,b]=\mathcal L[a,b],
+\]
+and the corresponding integral values agree.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
 For real-valued functions on a compact interval, the McShane integral recovers
 the Lebesgue integral. In practical terms,
 \[
@@ -158,7 +224,7 @@ with equal values. Thus McShane is not a second route beyond Lebesgue in the
 way HK is. It is a gauge-sum presentation of Lebesgue integration.
 \end{remark*}
 
-\begin{remark*}[Comparison chain]
+\begin{remark*}[Interpretation]
 Combining the Riemann inclusion, the McShane--Lebesgue identification, and the
 HK derivative witness gives
 \[
@@ -170,7 +236,7 @@ discontinuities; the second is the HK recovery of derivatives whose absolute
 size is not Lebesgue integrable.
 \end{remark*}
 
-\begin{remark*}[Forward dependency]
+\begin{remark*}[Interpretation]
 The proof that every Riemann-integrable function is McShane-integrable uses
 the earlier measure-zero diagnosis: Riemann integrability means the
 discontinuity set is null. The proof ledger records that McShane imports the
@@ -187,7 +253,7 @@ gauge integrals.
 
 \subsection*{Worked Failure Mode}
 
-\begin{remark*}[Why free tags force Lebesgue behavior]
+\begin{remark*}[Interpretation]
 The HK derivative example
 \[
   F'(x)=2x\sin(1/x^2)-\frac{2}{x}\cos(1/x^2)
@@ -199,7 +265,7 @@ balance. What survives that stronger test is exactly the Lebesgue-integrable,
 absolutely controlled part of the gauge world.
 \end{remark*}
 
-\begin{remark*}[What it buys]
+\begin{remark*}[Interpretation]
 McShane gives a tagged-sum construction of the Lebesgue integral without
 starting from simple functions or sigma-algebras. Conceptually, that is its
 job in this chapter: it shows that adaptive Riemann-style sums can reach the
@@ -209,7 +275,7 @@ Lebesgue to conditionally integrable derivatives.
 
 \subsection*{What the Failure Motivates Next}
 
-\begin{remark*}[Bug report]
+\begin{remark*}[Interpretation]
 McShane is elegant but not the terminal fix for this chapter's story. If one
 wants a tagged-sum definition of the Lebesgue integral, it is excellent. If
 one wants the perfect one-dimensional Fundamental Theorem of Calculus, HK is
@@ -217,7 +283,7 @@ strictly stronger. And if one wants probability, stochastic processes, and
 abstract spaces, the next volume still needs measure theory explicitly.
 \end{remark*}
 
-\begin{remark*}[Handoff to measure theory]
+\begin{remark*}[Interpretation]
 McShane reveals that gauge machinery and Lebesgue size are compatible. The
 next volume builds the measure-theoretic machinery that this chapter has only
 anticipated through measure-zero diagnostics and gauge-sum comparisons.

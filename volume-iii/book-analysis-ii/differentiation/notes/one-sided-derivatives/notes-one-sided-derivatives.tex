@@ -3,7 +3,7 @@
 % =========================================================
 % ---------------------------------------------------------
 
-\begin{remark*}[Section guide]
+\begin{remark*}[Interpretation]
 A corner is a place where a curve has a left answer and a right answer and
 refuses to choose. One-sided derivatives interrogate each side alone, and
 their agreement criterion is the fastest way to certify many failures of
@@ -32,9 +32,9 @@ f'_-(c) := \lim_{x \to c^-} \frac{f(x) - f(c)}{x - c}.
 In this case $f'_-(c) = L$.
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
-\operatorname{LeftDerivativeAt}(f, c, L)
+\operatorname{LeftDerivative}(f, c, L)
 \;\Longleftrightarrow\;
 \operatorname{LeftLimit}\!\left(\lambda x.\,\frac{f(x)-f(c)}{x-c},\, c,\, L\right).
 \]
@@ -49,7 +49,7 @@ In this case $f'_-(c) = L$.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\forall L \in \mathbb{R}\;\lnot\operatorname{LeftDerivativeAt}(f, c, L).
+\forall L \in \mathbb{R}\;\lnot\operatorname{LeftDerivative}(f, c, L).
 \]
 No finite $L$ is the left-hand limit of the difference quotient.
 \end{remark*}
@@ -88,9 +88,9 @@ f'_+(c) := \lim_{x \to c^+} \frac{f(x) - f(c)}{x - c}.
 In this case $f'_+(c) = L$.
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
-\operatorname{RightDerivativeAt}(f, c, L)
+\operatorname{RightDerivative}(f, c, L)
 \;\Longleftrightarrow\;
 \operatorname{RightLimit}\!\left(\lambda x.\,\frac{f(x)-f(c)}{x-c},\, c,\, L\right).
 \]
@@ -105,7 +105,7 @@ In this case $f'_+(c) = L$.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\forall L \in \mathbb{R}\;\lnot\operatorname{RightDerivativeAt}(f, c, L).
+\forall L \in \mathbb{R}\;\lnot\operatorname{RightDerivative}(f, c, L).
 \]
 \end{remark*}
 
@@ -138,18 +138,18 @@ f'(c) = f'_-(c) = f'_+(c).
 
 \begin{remark*}[Standard quantified statement]
 \[
-\operatorname{DifferentiableAt}(f, c)
+\operatorname{IsDifferentiable}(f, c)
 \;\iff\;
-\Bigl(\operatorname{LeftDerivativeAt}(f,c,L) \;\land\; \operatorname{RightDerivativeAt}(f,c,L)\Bigr)
+\Bigl(\operatorname{LeftDerivative}(f,c,L) \;\land\; \operatorname{RightDerivative}(f,c,L)\Bigr)
 \;\text{for some } L \in \mathbb{R}.
 \]
 \end{remark*}
 
 \begin{remark*}[Negated quantified statement]
 \[
-\lnot\operatorname{DifferentiableAt}(f,c)
+\lnot\operatorname{IsDifferentiable}(f,c)
 \;\iff\;
-\lnot\Bigl(\operatorname{LeftDerivativeAt}(f,c,L) \;\land\; \operatorname{RightDerivativeAt}(f,c,L)\Bigr)
+\lnot\Bigl(\operatorname{LeftDerivative}(f,c,L) \;\land\; \operatorname{RightDerivative}(f,c,L)\Bigr)
 \;\text{for all } L \in \mathbb{R}.
 \]
 That is: either a one-sided derivative fails to exist, or both exist but are unequal.
@@ -167,7 +167,7 @@ This theorem decomposes differentiability at an interior point into two one-side
 \end{itemize}
 \end{dependencies}
 
-\begin{example*}[\(|x|\) Has No Derivative at \(0\)]
+\begin{exposition}
 \phantomsection\label{ex:abs-corner}
 For \(f(x)=|x|\) at \(c=0\), the one-sided difference quotients are
 \[
@@ -183,4 +183,4 @@ For \(f(x)=|x|\) at \(c=0\), the one-sided difference quotients are
 Thus \(f'_-(0)=-1\) and \(f'_+(0)=1\). The two values disagree, so the
 two-sided derivative does not exist at \(0\), even though \(f\) is continuous
 there.
-\end{example*}
+\end{exposition}

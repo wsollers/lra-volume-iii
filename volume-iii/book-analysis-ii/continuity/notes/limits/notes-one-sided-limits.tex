@@ -31,7 +31,7 @@ $L$ is the \textbf{right-hand limit} of $f$ at $c$ if
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
   \operatorname{RightLimit}(f,c,L)
   \;\coloneqq\;
@@ -54,15 +54,21 @@ $L$ is the \textbf{right-hand limit} of $f$ at $c$ if
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 A proposed right-hand limit fails when some positive output tolerance is
 violated arbitrarily close to $c$ from the right.
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
   \exists\varepsilon_0>0\;\forall\delta>0\;\exists x\in A\;
   0<x-c<\delta\;\wedge\; |f(x)-L|\geq\varepsilon_0.
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -97,7 +103,7 @@ $L$ is the \textbf{left-hand limit} of $f$ at $c$ if
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
   \operatorname{LeftLimit}(f,c,L)
   \;\coloneqq\;
@@ -120,15 +126,21 @@ $L$ is the \textbf{left-hand limit} of $f$ at $c$ if
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 A proposed left-hand limit fails when some positive output tolerance is
 violated arbitrarily close to $c$ from the left.
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
   \exists\varepsilon_0>0\;\forall\delta>0\;\exists x\in A\;
   0<c-x<\delta\;\wedge\; |f(x)-L|\geq\varepsilon_0.
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -172,7 +184,7 @@ $x_n\to c$, one has $f(x_n)\to L$.
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
   \operatorname{RightLimit}(f,c,L)
   \;\Longleftrightarrow\;
@@ -223,7 +235,7 @@ $x_n\to c$, one has $f(x_n)\to L$.
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
   \operatorname{LeftLimit}(f,c,L)
   \;\Longleftrightarrow\;
@@ -277,9 +289,9 @@ $\lim_{x\to c^-}f(x)=L$.
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
-  \operatorname{FunctionLimit}(f,c,L)
+  \operatorname{TendsTo}(f,c,L)
   \;\Longleftrightarrow\;
   \operatorname{RightLimit}(f,c,L)\wedge\operatorname{LeftLimit}(f,c,L).
 \]
@@ -302,24 +314,30 @@ $\lim_{x\to c^-}f(x)=L$.
 
 \begin{remark*}[Negation predicate reading]
 \[
-  \neg\,\operatorname{FunctionLimit}(f,c,L)
+  \neg\,\operatorname{TendsTo}(f,c,L)
   \;\Longleftrightarrow\;
   \neg\,\operatorname{RightLimit}(f,c,L)\vee\neg\,\operatorname{LeftLimit}(f,c,L).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 A two-sided limit fails precisely when the right-hand limit fails, the
 left-hand limit fails, or the two one-sided behaviours do not meet at the
 same value.
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
-  \neg\,\operatorname{FunctionLimit}(f,c,L)
+  \neg\,\operatorname{TendsTo}(f,c,L)
   \;\Longleftrightarrow\;
   \neg\,\operatorname{RightLimit}(f,c,L)\vee\neg\,\operatorname{LeftLimit}(f,c,L).
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]

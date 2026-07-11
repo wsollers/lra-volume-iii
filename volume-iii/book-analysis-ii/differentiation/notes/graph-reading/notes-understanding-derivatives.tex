@@ -3,7 +3,7 @@
 % =========================================================
 % ---------------------------------------------------------
 
-\begin{remark*}[Section guide]
+\begin{remark*}[Interpretation]
 The Mean Value Theorem is now available, so the harvest can begin. Vanishing
 derivatives force constancy, derivative signs force monotonicity, and second
 derivatives detect bending when enough regularity is present. Darboux and the
@@ -28,6 +28,13 @@ we have $f(x) \leq f(c) \leq f(y)$.
 \[
 \exists \delta > 0\;\forall x \in A \cap (c-\delta,c)\;\forall y \in A \cap (c,c+\delta)
 \;\bigl(f(x) \leq f(c) \leq f(y)\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\exists \delta>0\;\forall x<c<y\;
+\bigl(x,y\in A\cap(c-\delta,c+\delta)\Rightarrow f(x)\le f(c)\le f(y)\bigr).
 \]
 \end{remark*}
 
@@ -63,6 +70,13 @@ we have $f(x) \geq f(c) \geq f(y)$.
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+\exists \delta>0\;\forall x<c<y\;
+\bigl(x,y\in A\cap(c-\delta,c+\delta)\Rightarrow f(x)\ge f(c)\ge f(y)\bigr).
+\]
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 The function is decreasing at $c$ when nearby values to the left sit above $f(c)$ and nearby values to the right sit below it.
 \end{remark*}
@@ -89,22 +103,27 @@ then $f$ is constant on $I$.
 
 \begin{remark*}[Standard quantified statement]
 \[
-\forall x \in (a,b)\;\operatorname{DerivativeAt}(f,x,0)
+\forall x \in (a,b)\;\operatorname{Derivative}(f,x,0)
 \;\Rightarrow\;
 \exists C \in \mathbb{R}\;\forall x \in I\;(f(x) = C).
 \]
 \end{remark*}
 
-\begin{remark*}[Contrapositive quantified statement]
+\begin{remark*}[Predicate reading]
+If the derivative of $f$ is zero at every interior point of the interval,
+then $f$ is constant on the whole closed interval.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
 \[
 \lnot\bigl(\exists C \in \mathbb{R}\;\forall x \in I\;(f(x)=C)\bigr)
 \;\Rightarrow\;
-\exists x \in (a,b)\;\lnot\operatorname{DerivativeAt}(f,x,0).
+\exists x \in (a,b)\;\lnot\operatorname{Derivative}(f,x,0).
 \]
 If $f$ is not constant on $I$, then $f'$ is not identically zero on $(a,b)$.
 \end{remark*}
 
-\begin{remark*}[Contrapositive predicate reading]
+\begin{remark*}[Interpretation]
 \[
 \lnot\operatorname{ConstantOn}(f,I) \;\Rightarrow\; \exists x \in (a,b)\;(f'(x) \neq 0).
 \]
@@ -142,7 +161,12 @@ then there exists $C \in \mathbb{R}$ such that $f(x) = g(x) + C$ for all $x \in 
 \]
 \end{remark*}
 
-\begin{remark*}[Contrapositive quantified statement]
+\begin{remark*}[Predicate reading]
+If two differentiable functions have equal derivatives at every interior
+point of the interval, then their difference is constant on the interval.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
 \[
 \forall C \in \mathbb{R}\;\exists x \in I\;(f(x) \neq g(x)+C)
 \;\Rightarrow\;
@@ -151,7 +175,7 @@ then there exists $C \in \mathbb{R}$ such that $f(x) = g(x) + C$ for all $x \in 
 If $f - g$ is not a constant function, then $f'$ and $g'$ disagree somewhere.
 \end{remark*}
 
-\begin{remark*}[Contrapositive predicate reading]
+\begin{remark*}[Interpretation]
 \[
 \lnot\operatorname{ConstantOn}(f-g,\,I) \;\Rightarrow\; \exists x\in(a,b)\;(f'(x)\neq g'(x)).
 \]
@@ -182,24 +206,24 @@ f'(x) \geq 0 \qquad \text{for all } x \in I.
 
 \begin{remark*}[Standard quantified statement]
 \[
-\operatorname{NondecreasingOn}(f,I)
+\operatorname{OrderPreserving}(f,I)
 \;\iff\;
 \forall x \in I\;(f'(x) \geq 0).
 \]
 \end{remark*}
 
-\begin{remark*}[Contrapositive quantified statement]
+\begin{remark*}[Interpretation]
 \[
 \exists x \in I\;(f'(x) < 0)
 \;\Rightarrow\;
-\lnot\operatorname{NondecreasingOn}(f,I).
+\lnot\operatorname{OrderPreserving}(f,I).
 \]
 If the derivative is negative at some point, the function is not nondecreasing.
 \end{remark*}
 
-\begin{remark*}[Contrapositive predicate reading]
+\begin{remark*}[Interpretation]
 \[
-\exists x \in I\;(f'(x) < 0) \;\Rightarrow\; \lnot\operatorname{NondecreasingOn}(f,I).
+\exists x \in I\;(f'(x) < 0) \;\Rightarrow\; \lnot\operatorname{OrderPreserving}(f,I).
 \]
 \end{remark*}
 
@@ -231,21 +255,21 @@ f'(x) \leq 0 \qquad \text{for all } x \in I.
 
 \begin{remark*}[Standard quantified statement]
 \[
-\operatorname{NonincreasingOn}(f,I)
+\operatorname{OrderReversing}(f,I)
 \;\iff\;
 \forall x \in I\;(f'(x) \leq 0).
 \]
 \end{remark*}
 
-\begin{remark*}[Contrapositive quantified statement]
+\begin{remark*}[Interpretation]
 \[
-\exists x \in I\;(f'(x) > 0) \;\Rightarrow\; \lnot\operatorname{NonincreasingOn}(f,I).
+\exists x \in I\;(f'(x) > 0) \;\Rightarrow\; \lnot\operatorname{OrderReversing}(f,I).
 \]
 \end{remark*}
 
-\begin{remark*}[Contrapositive predicate reading]
+\begin{remark*}[Interpretation]
 \[
-\exists x \in I\;(f'(x) > 0) \;\Rightarrow\; \lnot\operatorname{NonincreasingOn}(f,I).
+\exists x \in I\;(f'(x) > 0) \;\Rightarrow\; \lnot\operatorname{OrderReversing}(f,I).
 \]
 \end{remark*}
 
@@ -278,7 +302,7 @@ f(x) > f(c) \quad \text{for all } x \in I \text{ with } c < x < c + \delta.
 
 \begin{remark*}[Standard quantified statement]
 \[
-\operatorname{DerivativeAt}(f,c,L) \;\land\; L > 0
+\operatorname{Derivative}(f,c,L) \;\land\; L > 0
 \;\Rightarrow\;
 \exists \delta > 0\;\forall x \in I\;
 \bigl(c-\delta < x < c \Rightarrow f(x) < f(c)\bigr)
@@ -287,7 +311,7 @@ f(x) > f(c) \quad \text{for all } x \in I \text{ with } c < x < c + \delta.
 \]
 \end{remark*}
 
-\begin{remark*}[Contrapositive quantified statement]
+\begin{remark*}[Interpretation]
 \[
 \forall \delta > 0\;\exists x \in I\;
 \bigl((c-\delta < x < c \;\land\; f(x) \geq f(c))
@@ -298,9 +322,14 @@ f'(c) \leq 0.
 \]
 \end{remark*}
 
-\begin{remark*}[Contrapositive predicate reading]
+\begin{remark*}[Interpretation]
 \[
-\lnot\operatorname{LocallyIncreasingAt}(f,c) \;\Rightarrow\; f'(c) \leq 0.
+\forall \delta > 0\;\exists x \in I\;
+\bigl((c-\delta < x < c \;\land\; f(x) \geq f(c))
+\;\lor\;
+(c < x < c+\delta \;\land\; f(x) \leq f(c))\bigr)
+\;\Rightarrow\;
+f'(c) \leq 0.
 \]
 \end{remark*}
 
@@ -333,7 +362,7 @@ f(x) < f(c) \quad \text{for all } x \in I \text{ with } c < x < c + \delta.
 
 \begin{remark*}[Standard quantified statement]
 \[
-\operatorname{DerivativeAt}(f,c,L) \;\land\; L < 0
+\operatorname{Derivative}(f,c,L) \;\land\; L < 0
 \;\Rightarrow\;
 \exists \delta > 0\;\forall x \in I\;
 \bigl(c-\delta < x < c \Rightarrow f(x) > f(c)\bigr)
@@ -342,15 +371,25 @@ f(x) < f(c) \quad \text{for all } x \in I \text{ with } c < x < c + \delta.
 \]
 \end{remark*}
 
-\begin{remark*}[Contrapositive quantified statement]
+\begin{remark*}[Interpretation]
 \[
-\lnot\operatorname{LocallyDecreasingAt}(f,c) \;\Rightarrow\; f'(c) \geq 0.
+\forall \delta > 0\;\exists x \in I\;
+\bigl((c-\delta < x < c \;\land\; f(x) \leq f(c))
+\;\lor\;
+(c < x < c+\delta \;\land\; f(x) \geq f(c))\bigr)
+\;\Rightarrow\;
+f'(c) \geq 0.
 \]
 \end{remark*}
 
-\begin{remark*}[Contrapositive predicate reading]
+\begin{remark*}[Interpretation]
 \[
-\lnot\operatorname{LocallyDecreasingAt}(f,c) \;\Rightarrow\; f'(c) \geq 0.
+\neg\exists \delta > 0\;\forall x \in I\;
+\bigl(c-\delta < x < c \Rightarrow f(x) > f(c)\bigr)
+\;\land\;
+\bigl(c < x < c+\delta \Rightarrow f(x) < f(c)\bigr)
+\;\Rightarrow\;
+f'(c) \geq 0.
 \]
 \end{remark*}
 
@@ -387,8 +426,13 @@ then $f$ has a relative maximum at $c$.
 \forall x\in(c-\delta,c)\;(f'(x)\geq 0)
 \;\land\;
 \forall x\in(c,c+\delta)\;(f'(x)\leq 0)\bigr]\\
-&\quad\Rightarrow\; \operatorname{LocalMaximum}(f,c).
+&\quad\Rightarrow\; \operatorname{IsLocalMaximum}(f,c).
 \end{align*}
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+If $f'$ is nonnegative just to the left of $c$ and nonpositive just to the
+right of $c$, then $c$ is a local maximum of $f$.
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -426,8 +470,13 @@ then $f$ has a relative minimum at $c$.
 \forall x\in(c-\delta,c)\;(f'(x)\leq 0)
 \;\land\;
 \forall x\in(c,c+\delta)\;(f'(x)\geq 0)\bigr]\\
-&\quad\Rightarrow\; \operatorname{LocalMinimum}(f,c).
+&\quad\Rightarrow\; \operatorname{IsLocalMinimum}(f,c).
 \end{align*}
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+If $f'$ is nonpositive just to the left of $c$ and nonnegative just to the
+right of $c$, then $c$ is a local minimum of $f$.
 \end{remark*}
 
 \begin{remark*}[Interpretation]

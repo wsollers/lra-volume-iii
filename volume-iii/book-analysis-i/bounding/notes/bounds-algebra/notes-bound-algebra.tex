@@ -25,13 +25,13 @@ x\in\lambda A\Longleftrightarrow(\exists a\in A)(x=\lambda a).
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
-\operatorname{Translate}(A,c)=A+c,
+\operatorname{ReplacementImage}(A+c,A,a\mapsto a+c),
 \qquad
-\operatorname{Dilate}(A,\lambda)=\lambda A,
+\operatorname{ReplacementImage}(\lambda A,A,a\mapsto \lambda a),
 \qquad
-\operatorname{Reflect}(A)=-A.
+\operatorname{ReplacementImage}(-A,A,a\mapsto -a).
 \]
 \end{remark*}
 
@@ -45,7 +45,7 @@ x\notin\lambda A\Longleftrightarrow(\forall a\in A)(x\neq\lambda a).
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{Translate}(A,c)=B
+\neg\operatorname{ReplacementImage}(B,A,a\mapsto a+c)
 \quad\text{means}\quad
 (\exists x)\bigl[x\in B\triangle(A+c)\bigr],
 \]
@@ -53,13 +53,19 @@ and similarly for dilation and reflection.
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
 The definition fails only if the image set omits an actual transformed point
 or contains a point that is not produced by transforming an element of $A$.
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
 Every membership claim in a transformed set decomposes into an original element
 and the transformation rule that produced the new point.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -92,7 +98,7 @@ then $u+c$ is an upper bound of $A+c$.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{UB}(u,A)\Longrightarrow\operatorname{UB}(u+c,A+c).
+\operatorname{UpperBound}(u,A)\Longrightarrow\operatorname{UpperBound}(u+c,A+c).
 \]
 \end{remark*}
 
@@ -105,16 +111,27 @@ then $u+c$ is an upper bound of $A+c$.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{UB}(u,A)\land\neg\operatorname{UB}(u+c,A+c).
+\operatorname{UpperBound}(u,A)\land\neg\operatorname{UpperBound}(u+c,A+c).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
 A failure would require a translated point above the translated upper bound.
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
 Write $y=a+c$ with $a\in A$.  Then $a\leq u$ gives $a+c\leq u+c$.
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Translation shifts the set and its upper bound by the same amount, so the
+relative order between points and the bound is unchanged.
 \end{remark*}
 
 \begin{dependencies}
@@ -141,7 +158,7 @@ then $\ell+c$ is a lower bound of $A+c$.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{LB}(\ell,A)\Longrightarrow\operatorname{LB}(\ell+c,A+c).
+\operatorname{LowerBound}(\ell,A)\Longrightarrow\operatorname{LowerBound}(\ell+c,A+c).
 \]
 \end{remark*}
 
@@ -154,16 +171,27 @@ then $\ell+c$ is a lower bound of $A+c$.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{LB}(\ell,A)\land\neg\operatorname{LB}(\ell+c,A+c).
+\operatorname{LowerBound}(\ell,A)\land\neg\operatorname{LowerBound}(\ell+c,A+c).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
 A failure would require a translated point below the translated lower bound.
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
 Write $y=a+c$ with $a\in A$.  Then $\ell\leq a$ gives $\ell+c\leq a+c$.
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Translation preserves lower-bound information because adding the same constant
+to both sides preserves the order relation.
 \end{remark*}
 
 \begin{dependencies}
@@ -190,8 +218,8 @@ upper bound of $A$, then $\lambda u$ is an upper bound of $\lambda A$.
 
 \begin{remark*}[Predicate reading]
 \[
-\lambda>0\land\operatorname{UB}(u,A)
-\Longrightarrow\operatorname{UB}(\lambda u,\lambda A).
+\lambda>0\land\operatorname{UpperBound}(u,A)
+\Longrightarrow\operatorname{UpperBound}(\lambda u,\lambda A).
 \]
 \end{remark*}
 
@@ -204,18 +232,29 @@ upper bound of $A$, then $\lambda u$ is an upper bound of $\lambda A$.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\lambda>0\land\operatorname{UB}(u,A)\land
-\neg\operatorname{UB}(\lambda u,\lambda A).
+\lambda>0\land\operatorname{UpperBound}(u,A)\land
+\neg\operatorname{UpperBound}(\lambda u,\lambda A).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
 A failure would require positive multiplication to reverse an inequality.
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
 Write $y=\lambda a$ with $a\in A$.  Since $a\leq u$ and $\lambda>0$,
 $\lambda a\leq\lambda u$.
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Positive dilation stretches or contracts the set without reversing order, so
+upper bounds dilate to upper bounds.
 \end{remark*}
 
 \begin{dependencies}
@@ -242,8 +281,8 @@ lower bound of $A$, then $\lambda\ell$ is a lower bound of $\lambda A$.
 
 \begin{remark*}[Predicate reading]
 \[
-\lambda>0\land\operatorname{LB}(\ell,A)
-\Longrightarrow\operatorname{LB}(\lambda\ell,\lambda A).
+\lambda>0\land\operatorname{LowerBound}(\ell,A)
+\Longrightarrow\operatorname{LowerBound}(\lambda\ell,\lambda A).
 \]
 \end{remark*}
 
@@ -256,19 +295,30 @@ lower bound of $A$, then $\lambda\ell$ is a lower bound of $\lambda A$.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\lambda>0\land\operatorname{LB}(\ell,A)\land
-\neg\operatorname{LB}(\lambda\ell,\lambda A).
+\lambda>0\land\operatorname{LowerBound}(\ell,A)\land
+\neg\operatorname{LowerBound}(\lambda\ell,\lambda A).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
 A failure would require a positively dilated point below the positively
 dilated lower bound.
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
 Write $y=\lambda a$ with $a\in A$.  Since $\ell\leq a$ and $\lambda>0$,
 $\lambda\ell\leq\lambda a$.
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Positive dilation preserves lower-bound information for the same reason it
+preserves upper-bound information: order is not reversed.
 \end{remark*}
 
 \begin{dependencies}
@@ -295,8 +345,8 @@ lower bound of $A$, then $\lambda\ell$ is an upper bound of $\lambda A$.
 
 \begin{remark*}[Predicate reading]
 \[
-\lambda<0\land\operatorname{LB}(\ell,A)
-\Longrightarrow\operatorname{UB}(\lambda\ell,\lambda A).
+\lambda<0\land\operatorname{LowerBound}(\ell,A)
+\Longrightarrow\operatorname{UpperBound}(\lambda\ell,\lambda A).
 \]
 \end{remark*}
 
@@ -309,19 +359,30 @@ lower bound of $A$, then $\lambda\ell$ is an upper bound of $\lambda A$.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\lambda<0\land\operatorname{LB}(\ell,A)\land
-\neg\operatorname{UB}(\lambda\ell,\lambda A).
+\lambda<0\land\operatorname{LowerBound}(\ell,A)\land
+\neg\operatorname{UpperBound}(\lambda\ell,\lambda A).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
 A failure would require negative multiplication not to reverse the lower-bound
 inequality.
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
 Write $y=\lambda a$ with $a\in A$.  Since $\ell\leq a$ and $\lambda<0$,
 $\lambda a\leq\lambda\ell$.
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Negative dilation reverses the order on the real line, so lower bounds become
+upper bounds after dilation.
 \end{remark*}
 
 \begin{dependencies}
@@ -349,8 +410,8 @@ upper bound of $A$, then $\lambda u$ is a lower bound of $\lambda A$.
 
 \begin{remark*}[Predicate reading]
 \[
-\lambda<0\land\operatorname{UB}(u,A)
-\Longrightarrow\operatorname{LB}(\lambda u,\lambda A).
+\lambda<0\land\operatorname{UpperBound}(u,A)
+\Longrightarrow\operatorname{LowerBound}(\lambda u,\lambda A).
 \]
 \end{remark*}
 
@@ -363,19 +424,30 @@ upper bound of $A$, then $\lambda u$ is a lower bound of $\lambda A$.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\lambda<0\land\operatorname{UB}(u,A)\land
-\neg\operatorname{LB}(\lambda u,\lambda A).
+\lambda<0\land\operatorname{UpperBound}(u,A)\land
+\neg\operatorname{LowerBound}(\lambda u,\lambda A).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
 A failure would require negative multiplication not to reverse the upper-bound
 inequality.
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
 Write $y=\lambda a$ with $a\in A$.  Since $a\leq u$ and $\lambda<0$,
 $\lambda u\leq\lambda a$.
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Negative dilation sends upper-bound information to lower-bound information
+because multiplying by a negative scalar reverses inequalities.
 \end{remark*}
 
 \begin{dependencies}
@@ -408,9 +480,9 @@ and
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{LB}(\ell,A)\Longrightarrow\operatorname{UB}(-\ell,-A),
+\operatorname{LowerBound}(\ell,A)\Longrightarrow\operatorname{UpperBound}(-\ell,-A),
 \qquad
-\operatorname{UB}(u,A)\Longrightarrow\operatorname{LB}(-u,-A).
+\operatorname{UpperBound}(u,A)\Longrightarrow\operatorname{LowerBound}(-u,-A).
 \]
 \end{remark*}
 
@@ -420,21 +492,32 @@ A failure is a failure of negative dilation at the scalar $\lambda=-1$.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{LB}(\ell,A)\land\neg\operatorname{UB}(-\ell,-A)
+\operatorname{LowerBound}(\ell,A)\land\neg\operatorname{UpperBound}(-\ell,-A)
 \]
 or
 \[
-\operatorname{UB}(u,A)\land\neg\operatorname{LB}(-u,-A).
+\operatorname{UpperBound}(u,A)\land\neg\operatorname{LowerBound}(-u,-A).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
 Reflection reverses the real line, so lower information becomes upper
 information and upper information becomes lower information.
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
+\begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
 Apply negative dilation with $\lambda=-1$.
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Reflection is negative dilation by $-1$, so it exchanges the roles of upper
+and lower bounds.
 \end{remark*}
 
 \begin{dependencies}

@@ -1,8 +1,10 @@
 \subsection{Upper and Lower Bounds}
 
+\begin{remark*}[Exposition]
 Bounds are the first level of extremal information.  They compare one
 candidate element with every element of a nonempty set, but they do not
 require the candidate to be sharp or to belong to the set.
+\end{remark*}
 
 \begin{figure}[htbp]
   \centering
@@ -31,13 +33,12 @@ for all $x\in A$.
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
-  \operatorname{Bound}_{S,\leq}(b,A)
-  :=
-  \operatorname{UB}_{S,\leq}(b,A)
+  P=\mathsf{OrderedSet}(S,\leq),\qquad
+  \operatorname{UpperBound}(b,A,P)
   \lor
-  \operatorname{LB}_{S,\leq}(b,A).
+  \operatorname{LowerBound}(b,A,P).
 \]
 \end{remark*}
 
@@ -53,26 +54,45 @@ for all $x\in A$.
 
 \begin{remark*}[Negation predicate reading]
 \[
-  \neg\operatorname{Bound}_{S,\leq}(b,A)
-  \Longleftrightarrow
-  A=\varnothing
-  \lor
-  \bigl(\neg\operatorname{UB}_{S,\leq}(b,A)
+  P=\mathsf{OrderedSet}(S,\leq),\qquad
+  \neg\operatorname{UpperBound}(b,A,P)
   \land
-  \neg\operatorname{LB}_{S,\leq}(b,A)\bigr).
+  \neg\operatorname{LowerBound}(b,A,P).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-The statement fails if the set is empty, or if $b$ lies strictly between
-two elements of $A$.
+\begin{description}
+  \item[Exposition.]
+  A candidate bound can fail because the set is empty or because the
+  candidate does not control the set from either side.
+
+  \item[Empty-set failure.]
+  The bounded-comparison statement is stated for nonempty sets.
+  \[
+    A=\varnothing.
+  \]
+  \[
+    \operatorname{EmptySet}(A).
+  \]
+
+  \item[Two-sided defeat.]
+  The candidate lies strictly between two elements of $A$.
+  \[
+    (\exists x,y\in A)(b<x\ \text{and}\ y<b).
+  \]
+  \[
+    P=\mathsf{OrderedSet}(S,\leq),\qquad
+    \neg\operatorname{UpperBound}(b,A,P)
+    \land
+    \neg\operatorname{LowerBound}(b,A,P).
+  \]
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
-Failure of the upper-bound side means some element of $A$ is strictly
-larger than $b$.  Failure of the lower-bound side means some element of
-$A$ is strictly smaller than $b$.  Failure to be any bound requires both
-witnesses.
+\begin{remark*}[Interpretation]
+A bound is a one-sided comparison witness.  It need not be sharp and it
+need not belong to the set being bounded.
 \end{remark*}
 
 \begin{dependencies}
@@ -98,11 +118,10 @@ of $A$ is less than or equal to $u$.
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
-  \operatorname{UB}_{S,\leq}(u,A)
-  :=
-  A\neq\varnothing\land(\forall x\in A)(x\leq u).
+  P=\mathsf{OrderedSet}(S,\leq),\qquad
+  \operatorname{UpperBound}(u,A,P).
 \]
 \end{remark*}
 
@@ -116,20 +135,41 @@ of $A$ is less than or equal to $u$.
 
 \begin{remark*}[Negation predicate reading]
 \[
-  \neg\operatorname{UB}_{S,\leq}(u,A)
-  \Longleftrightarrow
-  A=\varnothing\lor(\exists x\in A)(u<x).
+  P=\mathsf{OrderedSet}(S,\leq),\qquad
+  \neg\operatorname{UpperBound}(u,A,P).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-The set may be empty, or a counterexample element of $A$ may sit strictly
-above the proposed bound.
+\begin{description}
+  \item[Exposition.]
+  Upper-bound failure means the candidate does not sit above the whole
+  set in the ambient order.
+
+  \item[Empty-set failure.]
+  The definition is stated for nonempty subsets.
+  \[
+    A=\varnothing.
+  \]
+  \[
+    \operatorname{EmptySet}(A).
+  \]
+
+  \item[Counterexample element.]
+  Some element of $A$ lies strictly above the proposed upper bound.
+  \[
+    (\exists x\in A)(u<x).
+  \]
+  \[
+    P=\mathsf{OrderedSet}(S,\leq),\qquad
+    \neg\operatorname{UpperBound}(u,A,P).
+  \]
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
-To disprove that $u$ is an upper bound, produce either the structural
-failure $A=\varnothing$ or a witness $x\in A$ with $u<x$.
+\begin{remark*}[Interpretation]
+An upper bound controls every element of the set from above, but it may
+lie outside the set and need not be the least such control.
 \end{remark*}
 
 \begin{dependencies}
@@ -155,11 +195,10 @@ element of $A$ is greater than or equal to $\ell$.
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
-  \operatorname{LB}_{S,\leq}(\ell,A)
-  :=
-  A\neq\varnothing\land(\forall x\in A)(\ell\leq x).
+  P=\mathsf{OrderedSet}(S,\leq),\qquad
+  \operatorname{LowerBound}(\ell,A,P).
 \]
 \end{remark*}
 
@@ -173,20 +212,41 @@ element of $A$ is greater than or equal to $\ell$.
 
 \begin{remark*}[Negation predicate reading]
 \[
-  \neg\operatorname{LB}_{S,\leq}(\ell,A)
-  \Longleftrightarrow
-  A=\varnothing\lor(\exists x\in A)(x<\ell).
+  P=\mathsf{OrderedSet}(S,\leq),\qquad
+  \neg\operatorname{LowerBound}(\ell,A,P).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-The set may be empty, or a counterexample element of $A$ may sit strictly
-below the proposed bound.
+\begin{description}
+  \item[Exposition.]
+  Lower-bound failure means the candidate does not sit below the whole
+  set in the ambient order.
+
+  \item[Empty-set failure.]
+  The definition is stated for nonempty subsets.
+  \[
+    A=\varnothing.
+  \]
+  \[
+    \operatorname{EmptySet}(A).
+  \]
+
+  \item[Counterexample element.]
+  Some element of $A$ lies strictly below the proposed lower bound.
+  \[
+    (\exists x\in A)(x<\ell).
+  \]
+  \[
+    P=\mathsf{OrderedSet}(S,\leq),\qquad
+    \neg\operatorname{LowerBound}(\ell,A,P).
+  \]
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
-To disprove that $\ell$ is a lower bound, produce either the structural
-failure $A=\varnothing$ or a witness $x\in A$ with $x<\ell$.
+\begin{remark*}[Interpretation]
+A lower bound controls every element of the set from below, but it may
+lie outside the set and need not be the greatest such control.
 \end{remark*}
 
 \begin{dependencies}
@@ -211,11 +271,10 @@ set $A$ is \emph{bounded above} if it has at least one upper bound in $S$.
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
-  \operatorname{BddAbove}_{S,\leq}(A)
-  :=
-  (\exists u\in S)\operatorname{UB}_{S,\leq}(u,A).
+  P=\mathsf{OrderedSet}(S,\leq),\qquad
+  \operatorname{BoundedAbove}(A,P).
 \]
 \end{remark*}
 
@@ -229,22 +288,41 @@ set $A$ is \emph{bounded above} if it has at least one upper bound in $S$.
 
 \begin{remark*}[Negation predicate reading]
 \[
-  \neg\operatorname{BddAbove}_{S,\leq}(A)
-  \Longleftrightarrow
-  A=\varnothing
-  \lor
-  (\forall u\in S)\neg\operatorname{UB}_{S,\leq}(u,A).
+  P=\mathsf{OrderedSet}(S,\leq),\qquad
+  \neg\operatorname{BoundedAbove}(A,P).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-The set may be empty, or every proposed upper bound may be defeated by
-some larger element of $A$.
+\begin{description}
+  \item[Exposition.]
+  Bounded-above failure means there is no single element of the ambient
+  ordered set that lies above all elements of $A$.
+
+  \item[Empty-set failure.]
+  The definition is stated for nonempty subsets.
+  \[
+    A=\varnothing.
+  \]
+  \[
+    \operatorname{EmptySet}(A).
+  \]
+
+  \item[Unbounded-above failure.]
+  Every proposed upper-bound candidate is defeated by a larger element of $A$.
+  \[
+    (\forall u\in S)(\exists x\in A)(u<x).
+  \]
+  \[
+    P=\mathsf{OrderedSet}(S,\leq),\qquad
+    \neg\operatorname{BoundedAbove}(A,P).
+  \]
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
-Unboundedness above is not one failed candidate; it is a uniform
-procedure that defeats every candidate $u\in S$.
+\begin{remark*}[Interpretation]
+A set is bounded above when at least one ambient element controls the set
+from above.  No least upper bound is asserted here.
 \end{remark*}
 
 \begin{dependencies}
@@ -269,11 +347,10 @@ set $A$ is \emph{bounded below} if it has at least one lower bound in $S$.
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
-  \operatorname{BddBelow}_{S,\leq}(A)
-  :=
-  (\exists \ell\in S)\operatorname{LB}_{S,\leq}(\ell,A).
+  P=\mathsf{OrderedSet}(S,\leq),\qquad
+  \operatorname{BoundedBelow}(A,P).
 \]
 \end{remark*}
 
@@ -287,21 +364,41 @@ set $A$ is \emph{bounded below} if it has at least one lower bound in $S$.
 
 \begin{remark*}[Negation predicate reading]
 \[
-  \neg\operatorname{BddBelow}_{S,\leq}(A)
-  \Longleftrightarrow
-  A=\varnothing
-  \lor
-  (\forall \ell\in S)\neg\operatorname{LB}_{S,\leq}(\ell,A).
+  P=\mathsf{OrderedSet}(S,\leq),\qquad
+  \neg\operatorname{BoundedBelow}(A,P).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-The set may be empty, or every proposed lower bound may be defeated by
-some smaller element of $A$.
+\begin{description}
+  \item[Exposition.]
+  Bounded-below failure means there is no single element of the ambient
+  ordered set that lies below all elements of $A$.
+
+  \item[Empty-set failure.]
+  The definition is stated for nonempty subsets.
+  \[
+    A=\varnothing.
+  \]
+  \[
+    \operatorname{EmptySet}(A).
+  \]
+
+  \item[Unbounded-below failure.]
+  Every proposed lower-bound candidate is defeated by a smaller element of $A$.
+  \[
+    (\forall \ell\in S)(\exists x\in A)(x<\ell).
+  \]
+  \[
+    P=\mathsf{OrderedSet}(S,\leq),\qquad
+    \neg\operatorname{BoundedBelow}(A,P).
+  \]
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
-Unboundedness below is a uniform defeat of all lower-bound candidates.
+\begin{remark*}[Interpretation]
+A set is bounded below when at least one ambient element controls the set
+from below.  No greatest lower bound is asserted here.
 \end{remark*}
 
 \begin{dependencies}
@@ -326,13 +423,10 @@ set $A$ is \emph{bounded} if it is bounded above and bounded below.
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
-  \operatorname{Bdd}_{S,\leq}(A)
-  :=
-  \operatorname{BddBelow}_{S,\leq}(A)
-  \land
-  \operatorname{BddAbove}_{S,\leq}(A).
+  P=\mathsf{OrderedSet}(S,\leq),\qquad
+  \operatorname{Bounded}(A,P).
 \]
 \end{remark*}
 
@@ -346,23 +440,42 @@ set $A$ is \emph{bounded} if it is bounded above and bounded below.
 
 \begin{remark*}[Negation predicate reading]
 \[
-  \neg\operatorname{Bdd}_{S,\leq}(A)
-  \Longleftrightarrow
-  A=\varnothing
-  \lor
-  \neg\operatorname{BddBelow}_{S,\leq}(A)
-  \lor
-  \neg\operatorname{BddAbove}_{S,\leq}(A).
+  P=\mathsf{OrderedSet}(S,\leq),\qquad
+  \neg\operatorname{Bounded}(A,P).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-The set may be empty, unbounded below, unbounded above, or both.
+\begin{description}
+  \item[Exposition.]
+  Boundedness fails when the set is outside the nonempty scope or when at
+  least one of the two one-sided bounding requirements fails.
+
+  \item[Empty-set failure.]
+  The definition is stated for nonempty subsets.
+  \[
+    A=\varnothing.
+  \]
+  \[
+    \operatorname{EmptySet}(A).
+  \]
+
+  \item[One-sided failure.]
+  The set is unbounded above or unbounded below.
+  \[
+    \neg(\exists \ell,u\in S)(\forall x\in A)(\ell\leq x\leq u).
+  \]
+  \[
+    P=\mathsf{OrderedSet}(S,\leq),\qquad
+    \neg\operatorname{Bounded}(A,P).
+  \]
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure mode decomposition]
-Boundedness has two independent one-sided requirements.  A failure on
-either side is enough to destroy boundedness.
+\begin{remark*}[Interpretation]
+Boundedness is the conjunction of boundedness below and boundedness above.
+It records two-sided containment in the ambient order, not the existence of
+best bounds.
 \end{remark*}
 
 \begin{dependencies}

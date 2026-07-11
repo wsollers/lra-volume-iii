@@ -172,6 +172,10 @@ $x\in(a,b)$, there exists $c$ strictly between $a$ and $x$ such that
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+The displayed quantified statement is the predicate-level form of $label: its hypotheses name the input conditions, and its conclusion names the asserted structure or relation.
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 Taylor's theorem says that the error after truncating at degree $n$ has the
 same shape as the next Taylor term, but with the next derivative evaluated at
@@ -259,7 +263,7 @@ Let $f$ be differentiable at $c$. Then, as $h\to 0$,
 
 \begin{remark*}[Standard quantified statement]
 \[
-\operatorname{DifferentiableAt}(f,c)
+\operatorname{IsDifferentiable}(f,c)
 \;\Rightarrow\;
 \lim_{h\to 0}
 \frac{f(c+h)-f(c)-f'(c)h}{h}
@@ -277,7 +281,7 @@ The first-order Peano formula is the derivative rewritten as an approximation th
 \end{itemize}
 \end{dependencies}
 
-\begin{example*}[\((\sin x-x)/x^3\) Two Ways]
+\begin{exposition}
 \phantomsection\label{ex:sinx-limit}
 Taylor expansion gives
 \[
@@ -304,7 +308,7 @@ L'H\^{o}pital's rule reaches the same value by three differentiations:
   -\frac16.
 \]
 Taylor exposes the reason for the answer: the limit is the cubic coefficient.
-\end{example*}
+\end{exposition}
 
 % ---------------------------------------------------------
 
@@ -342,6 +346,10 @@ In particular, \(C^\infty(\mathbb{R})\setminus C^\omega(\mathbb{R})\neq\varnothi
   \Longrightarrow
   f\in C^\infty\setminus C^\omega.
 \]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+The displayed quantified statement is the predicate-level form of $label: its hypotheses name the input conditions, and its conclusion names the asserted structure or relation.
 \end{remark*}
 
 \begin{remark*}[Interpretation]

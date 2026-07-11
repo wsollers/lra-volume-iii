@@ -31,9 +31,9 @@ L\text{ is a cluster value of }(x_n)
 \]
 \end{remark*}
 
-\begin{remark*}[Definition predicate reading]
+\begin{remark*}[Predicate reading]
 \[
-\operatorname{SequenceClusterValue}(x_n,L)
+\operatorname{IsClusterValue}(x_n,L)
 \coloneqq
 \forall \varepsilon>0\;\forall N\in\mathbb{N}\;\exists n\ge N
 \;\bigl(|x_n-L|<\varepsilon\bigr).
@@ -88,11 +88,11 @@ L\text{ is a subsequential limit of }(x_n)
 \]
 \end{remark*}
 
-\begin{remark*}[Theorem predicate reading]
+\begin{remark*}[Predicate reading]
 \[
-\operatorname{SequenceClusterValue}(x_n,L)
+\operatorname{IsClusterValue}(x_n,L)
 \Longleftrightarrow
-\operatorname{SubsequentialLimit}(x_n,L).
+\operatorname{IsClusterValue}(x_n,L).
 \]
 \end{remark*}
 
@@ -137,11 +137,11 @@ Every bounded real sequence has at least one cluster value.
 \]
 \end{remark*}
 
-\begin{remark*}[Theorem predicate reading]
+\begin{remark*}[Predicate reading]
 \[
-\operatorname{BoundedSequence}(x_n)
+\operatorname{Bounded}(x_n)
 \Longrightarrow
-\exists L\in\mathbb{R}\;\operatorname{SequenceClusterValue}(x_n,L).
+\exists L\in\mathbb{R}\;\operatorname{IsClusterValue}(x_n,L).
 \]
 \end{remark*}
 
@@ -205,26 +205,26 @@ $\liminf_{n\to\infty}x_n$ is the smallest cluster value of $(x_n)$.
 \]
 \end{remark*}
 
-\begin{remark*}[Theorem predicate reading]
+\begin{remark*}[Predicate reading]
 \[
 \begin{aligned}
-&\operatorname{BoundedSequence}(x_n)
+&\operatorname{Bounded}(x_n)
 \Longrightarrow\\
 &\quad
-\operatorname{SequenceClusterValue}
+\operatorname{IsClusterValue}
 \bigl(x_n,\limsup_{n\to\infty}x_n\bigr)
 \land
 \forall L\in\mathbb{R}\;
-\bigl(\operatorname{SequenceClusterValue}(x_n,L)
+\bigl(\operatorname{IsClusterValue}(x_n,L)
 \Longrightarrow L\le \limsup_{n\to\infty}x_n\bigr),\\
-&\operatorname{BoundedSequence}(x_n)
+&\operatorname{Bounded}(x_n)
 \Longrightarrow\\
 &\quad
-\operatorname{SequenceClusterValue}
+\operatorname{IsClusterValue}
 \bigl(x_n,\liminf_{n\to\infty}x_n\bigr)
 \land
 \forall L\in\mathbb{R}\;
-\bigl(\operatorname{SequenceClusterValue}(x_n,L)
+\bigl(\operatorname{IsClusterValue}(x_n,L)
 \Longrightarrow \liminf_{n\to\infty}x_n\le L\bigr).
 \end{aligned}
 \]
