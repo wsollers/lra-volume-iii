@@ -33,9 +33,7 @@ Then there exists a step function $s_\varepsilon:[a,b]\to\mathbb{R}$ such that
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{StepApproximation}(f,s_\varepsilon,[a,b],\varepsilon)
-\coloneqq
-\operatorname{StepFunction}(s_\varepsilon,[a,b])
+\operatorname{IsStepFunction}(s_\varepsilon,[a,b])
 \land
 \forall x\in[a,b]\;(|f(x)-s_\varepsilon(x)|<\varepsilon).
 \]
@@ -52,24 +50,27 @@ Then there exists a step function $s_\varepsilon:[a,b]\to\mathbb{R}$ such that
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\exists s_\varepsilon\;
-\operatorname{StepApproximation}(f,s_\varepsilon,[a,b],\varepsilon)
-\Longleftrightarrow
 \forall s:[a,b]\to\mathbb{R}\;
-\Bigl(\operatorname{StepFunction}(s,[a,b]) \Rightarrow
+\Bigl(\operatorname{IsStepFunction}(s,[a,b]) \Rightarrow
 \exists x\in[a,b]\;(|f(x)-s(x)|\ge\varepsilon)\Bigr).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 The statement fails precisely when a continuous $f$ and tolerance $\varepsilon$ are fixed but every step function leaves an error of at least $\varepsilon$ at some point in $[a,b]$.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
 \underbrace{\forall s:[a,b]\to\mathbb{R} \text{ step function }}_{\text{all approximants}}
 \underbrace{\exists x\in[a,b]\;(|f(x)-s(x)|\ge\varepsilon)}_{\text{witnessed large deviation}}.
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -112,7 +113,7 @@ for every $k\in\{1,\ldots,m\}$.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{PiecewiseLinear}(g,[a,b]) \coloneqq
+\operatorname{IsPiecewiseLinear}(g,[a,b]) \coloneqq
 \exists m \in \mathbb{N}\;\Bigl(m \ge 1 \land
 \exists x_0,\ldots,x_m \in [a,b]\;
 \bigl[a=x_0 < \cdots < x_m = b \land
@@ -137,7 +138,7 @@ for every $k\in\{1,\ldots,m\}$.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{PiecewiseLinear}(g,[a,b])
+\neg\operatorname{IsPiecewiseLinear}(g,[a,b])
 \Longleftrightarrow
 \forall m \in \mathbb{N}\;\Bigl(m \ge 1 \Rightarrow
 \forall x_0,\ldots,x_m \in [a,b]\;
@@ -148,18 +149,24 @@ for every $k\in\{1,\ldots,m\}$.
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 A proposed piecewise-linear structure can fail because no finite ordered
 partition of $[a,b]$ is available, or because for every such partition
 at least one subinterval has a restriction of $g$ that is not affine.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
 \underbrace{\forall m\in\mathbb{N}\;(m\ge 1\Rightarrow
 \forall x_0,\ldots,x_m\in[a,b]\;(a=x_0<\cdots<x_m=b\Rightarrow\cdots))}_{\text{no valid finite affine subdivision}}
 \;\lor\;
 \underbrace{\exists k\in\{1,\ldots,m\}\; g|_{[x_{k-1},x_k]}\text{ is not affine}}_{\text{non-affine segment}}.
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -198,6 +205,10 @@ Let $f\colon[a,b]\to\mathbb{R}$ be continuous and let $\varepsilon>0$. Then ther
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+The displayed quantified statement is the predicate-level form of $label: its hypotheses name the input conditions, and its conclusion names the asserted structure or relation.
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 Every continuous function on a compact interval can be uniformly approximated by a polygonal curve matching finitely many sampled values of the original graph. The construction refines the interval into a sufficiently fine partition guaranteed by compactness, then connects the sampled values with straight segments, producing a uniformly small error over the entire domain. Failure would require a uniform oscillation exceeding $\varepsilon$ on some subinterval, which cannot occur once the partition is fine enough. Geometrically, the theorem states that continuous graphs admit arbitrarily close polyline shadows, providing a bridge from rough step approximations to smooth polynomial approximations.
 \end{remark*}
@@ -232,7 +243,7 @@ Let $f:[a,b]\to\mathbb{R}$ be continuous. For every $\varepsilon>0$ there exists
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{ContinuousOn}(f,[a,b])
+\operatorname{IsContinuous}(f,[a,b])
 \Longrightarrow
 \forall \varepsilon>0\;\exists p\in\mathbb{R}[x]\;
 \bigl(\|f-p\|_{\infty,[a,b]}<\varepsilon\bigr).
@@ -279,7 +290,6 @@ B_n(x)=\sum_{k=0}^n f(k/n)\binom{n}{k}x^k(1-x)^{n-k}
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{BernsteinPolynomial}(B_n,f,n)\coloneqq
 \Bigl(B_n:[0,1]\to\mathbb{R}\Bigr)\land
 \forall x\in[0,1]\;
 \Bigl(
@@ -318,6 +328,10 @@ Let $f:[0,1]\to\mathbb{R}$ be continuous, and for each $n\in\mathbb{N}$ let $B_n
 &\forall \varepsilon>0\;\exists n_\varepsilon\in\mathbb{N}\;\forall n\ge n_\varepsilon:\ \|f-B_n\|_\infty<\varepsilon.
 \end{aligned}
 \]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+The displayed quantified statement is the predicate-level form of $label: its hypotheses name the input conditions, and its conclusion names the asserted structure or relation.
 \end{remark*}
 
 \begin{remark*}[Interpretation]

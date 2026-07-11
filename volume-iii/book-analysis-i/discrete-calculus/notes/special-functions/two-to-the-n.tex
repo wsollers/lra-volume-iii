@@ -6,17 +6,21 @@
 \subsection{\texorpdfstring{The Function \(2^n\) in Discrete Calculus}{The Function 2 to the n in Discrete Calculus}}
 \label{subsec:two-to-the-n}
 
+\begin{exposition}
 Among all discrete exponentials, the case \(a = 1\) --- giving \((1+1)^n = 2^n\)
 --- is perhaps the most important. It appears in combinatorics as the count
 of subsets, in probability as the sample space of fair coin sequences, in
 computer science as the natural measure of binary information, and in discrete
 calculus as a canonical test function. This section develops its properties
 systematically.
+\end{exposition}
 
 \subsection*{\texorpdfstring{Differencing \(2^n\)}{Differencing 2 to the n}}
 
+\begin{exposition}
 Setting \(a = 1\) in the discrete exponential rule
 (Proposition~\ref{prop:discrete-exponential-rule}) gives immediately:
+\end{exposition}
 
 \begin{propositionbox}{Proposition (\(\Delta 2^n = 2^n\))}
 \[
@@ -35,7 +39,7 @@ Setting \(a = 1\) in the discrete exponential rule
 \]
 \end{proof}
 
-\begin{remark*}[Self-similarity]
+\begin{remark*}[Interpretation]
 This says that \(2^n\) is its own forward difference. In continuous calculus,
 the analogous property is \(\tfrac{d}{dx}e^x = e^x\): the exponential is its
 own derivative. The function \(2^n\) is the discrete analogue of \(e^x\)
@@ -46,8 +50,10 @@ and the relationship \(\Delta(2^n) = 2^n\) corresponds to the special case
 
 \subsection*{Antiderivative and Geometric Sum}
 
+\begin{exposition}
 Since \(\Delta(2^n) = 2^n\), a discrete antiderivative of \(2^n\) is \(2^n\)
 itself (up to a constant).
+\end{exposition}
 
 \begin{propositionbox}{Proposition (Antiderivative of \(2^n\))}
 A discrete antiderivative of \(2^n\) is \(2^n\) itself:
@@ -72,7 +78,7 @@ Applying the Fundamental Theorem of Finite Calculus
 \]
 \end{proof}
 
-\begin{remark*}[Verification by expansion]
+\begin{remark*}[Interpretation]
 Expanding: \(1 + 2 + 4 + 8 + \cdots + 2^{n-1}\). Multiply the partial sum
 \(S = \sum_{k=0}^{n-1}2^k\) by \(2\) to get \(2S = \sum_{k=1}^{n}2^k\).
 Subtracting: \(2S - S = 2^n - 1\), so \(S = 2^n - 1\). This is the
@@ -95,6 +101,12 @@ For all \(k \ge 0\),
 \(\forall k \in \mathbb{N},\; \forall n \in \mathbb{Z}:\; \Delta^k(2^n) = 2^n\).
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{HasHigherDifference}(2^n,\mathbb Z,k,2^n).
+\]
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 Every forward-difference row for \(2^n\) reproduces the same function.
 \end{remark*}
@@ -107,7 +119,7 @@ definition. For the inductive step, assume \(\Delta^k(2^n) = 2^n\). Then
 \]
 \end{proof}
 
-\begin{remark*}[Consequence for difference tables]
+\begin{remark*}[Interpretation]
 Since every finite difference of \(2^n\) is \(2^n\) again, the difference
 table of \(2^n\) consists entirely of the sequence \(2^n\) at every level.
 This is the discrete analogue of the fact that the Taylor series of \(e^x\)
@@ -127,6 +139,7 @@ function.
 
 \subsection*{\texorpdfstring{\(2^n\) in Combinatorics and the Newton Expansion}{2 to the n in Combinatorics and the Newton Expansion}}
 
+\begin{exposition}
 The Binomial Theorem (Theorem~\ref{thm:binomial-theorem}) gives a direct connection:
 setting \(x = y = 1\) yields
 \[
@@ -145,8 +158,9 @@ since \(\Delta^k(2^n)\big|_{n=0} = 2^0 = 1\) for every \(k\). This expresses
 \(2^n\) as the sum of all normalised falling factorials up to degree \(n\),
 and reveals why binomial coefficients count subsets: they are the coefficients
 of \(2^n\) in its own Newton expansion.
+\end{exposition}
 
-\begin{remark*}[Analogy with \(e^x\)]
+\begin{remark*}[Interpretation]
 In continuous calculus, \(e^x = \sum_{k=0}^{\infty} x^k/k!\). The Newton
 expansion gives \(2^n = \sum_{k=0}^{n} n^{\underline{k}}/k!\). Both express
 a canonical exponential as a sum of normalised basis functions, with all
@@ -158,6 +172,7 @@ factorial basis.
 
 \subsection*{Discrete Differential Equation}
 
+\begin{exposition}
 In continuous calculus, the equation \(f' = f\) (with \(f(0) = 1\)) has the
 unique solution \(f(x) = e^x\). In discrete calculus, the analogous
 \emph{difference equation} is:
@@ -167,6 +182,7 @@ unique solution \(f(x) = e^x\). In discrete calculus, the analogous
 That is, \(F(n+1) - F(n) = F(n)\), so \(F(n+1) = 2F(n)\). The unique solution
 to this initial value 
 problem is \(F(n) = 2^n\).
+\end{exposition}
 
 \begin{proposition}[Discrete IVP]
 \label{prop:discrete-ivp}
@@ -194,7 +210,7 @@ inductively \(G(n+1) = 2G(n) = 2F(n) = F(n+1)\), so \(G = F\).
 Existence: verify directly that \(2^{n+1} = 2\cdot 2^n\) and \(2^0 = 1\).
 \end{proof}
 
-\begin{remark*}[Significance]
+\begin{remark*}[Interpretation]
 This characterises \(2^n\) as the unique fixed point of ``multiply by 2''
 starting from \(1\). The analogous characterisation of \(e^x\) is: unique
 solution to \(f' = f\), \(f(0) = 1\). Both are initial-value problems in

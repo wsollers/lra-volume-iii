@@ -1,5 +1,6 @@
 \subsection*{Geometric Intuition}
 
+\begin{exposition}
 Riemann and Darboux weigh each slab by ordinary length, \(\Delta x_i\).
 Riemann--Stieltjes changes the ruler. A slab is weighed by how much an
 integrator \(\alpha\) changes across it:
@@ -8,8 +9,9 @@ integrator \(\alpha\) changes across it:
 \]
 If \(\alpha(x)=x\), ordinary Riemann integration returns. If \(\alpha\) jumps,
 the integral sees a point mass.
+\end{exposition}
 
-\begin{remark*}[Engineering reading]
+\begin{remark*}[Interpretation]
 Stieltjes does not repair the discontinuity-set problem. It answers a
 different complaint: ordinary integration has only one ruler. By replacing
 \(\Delta x_i\) with \(\Delta\alpha_i\), the integral can count regions with
@@ -27,6 +29,19 @@ The total variation of \(\alpha\) on \([a,b]\) is
 \]
 \end{definition}
 \end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+V_a^b(\alpha)=
+\sup_{P}\sum_i\left|\alpha(x_i)-\alpha(x_{i-1})\right|,
+\]
+where \(P\) ranges over partitions of \([a,b]\).
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Total variation measures the full amount of motion made by the integrator on
+the interval, counting both upward and downward changes.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -46,6 +61,19 @@ Geometrically, this says the ruler has finite total up-and-down travel.
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{HasBoundedVariation}(\alpha,[a,b])
+\Longleftrightarrow
+V_a^b(\alpha)<\infty.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Bounded variation means that the weighted ruler has finite total travel on the
+interval.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:total-variation]{Total Variation}
@@ -60,7 +88,15 @@ If \(\alpha\) is monotone on \([a,b]\), then \(\alpha\) has bounded variation.
 \end{proposition}
 \end{propositionbox}
 
-\begin{remark*}[Why bounded variation is the honest ruler condition]
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{Monotone}\bigl(\alpha,\mathsf{OrderedSet}([a,b],\leq)\bigr)
+\Longrightarrow
+\operatorname{HasBoundedVariation}(\alpha,[a,b]).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
 If \(\alpha\) is increasing, the increments telescope:
 \[
   \sum_i\bigl(\alpha(x_i)-\alpha(x_{i-1})\bigr)=\alpha(b)-\alpha(a).
@@ -90,6 +126,20 @@ denoted \(\int_a^b f\,d\alpha\).
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\int_a^b f\,d\alpha=L
+\Longleftrightarrow
+\text{all Riemann--Stieltjes sums converge to }L\text{ as }\|P\|\to0
+\text{ independently of tags}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The Riemann--Stieltjes integral is the tag-independent limit of sums whose
+widths are measured by increments of \(\alpha\) rather than by ordinary length.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:tagged-partition-integration]{Tagged Partition}
@@ -108,6 +158,20 @@ If \(f\) is continuous on \([a,b]\) and \(\alpha\) has bounded variation, then
 \hyperref[prf:rs-continuous-bv-existence]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{IsContinuous}(f,[a,b])\land
+\operatorname{HasBoundedVariation}(\alpha,[a,b])
+\Longrightarrow
+\operatorname{IsIntegrable}(f,[a,b],\operatorname{RiemannStieltjesCriterion}(\alpha)).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Continuity of the integrand controls oscillation, while bounded variation of
+the integrator controls the total weighted error.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -139,6 +203,26 @@ d
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\int_a^b (\lambda f+\mu g)\,d\alpha
+=
+\lambda\int_a^b f\,d\alpha+\mu\int_a^b g\,d\alpha,
+\]
+and
+\[
+\int_a^b f\,d(\lambda\alpha+\mu\beta)
+=
+\lambda\int_a^b f\,d\alpha+\mu\int_a^b f\,d\beta
+\]
+whenever all displayed integrals exist.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The Riemann--Stieltjes integral is linear in the integrand and linear in the
+integrator under the stated existence assumptions.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:riemann-stieltjes-integral]{Riemann--Stieltjes Integral}
@@ -157,6 +241,22 @@ If \(c\in[a,b]\) and the relevant Riemann--Stieltjes integrals exist, then
 \hyperref[prf:rs-interval-additivity]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+c\in[a,b]\land
+\operatorname{IsIntegrable}(f,[a,b],\operatorname{RiemannStieltjesCriterion}(\alpha))
+\Longrightarrow
+\int_a^b f\,d\alpha
+=
+\int_a^c f\,d\alpha+\int_c^b f\,d\alpha.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Splitting the interval at an interior point splits the Stieltjes integral into
+the sum of the two subinterval contributions.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -180,6 +280,20 @@ exists under the same Riemann--Stieltjes convention, and
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\int_a^b f\,d\alpha+\int_a^b \alpha\,df
+=
+f(b)\alpha(b)-f(a)\alpha(a)
+\]
+whenever one side exists under the stated Riemann--Stieltjes convention.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Integration by parts transfers the Stieltjes differential from one factor to
+the other, leaving only the endpoint product terms.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:riemann-stieltjes-integral]{Riemann--Stieltjes Integral}
@@ -197,6 +311,19 @@ If \(\alpha\in C^1([a,b])\) and \(f\) is Riemann-integrable on \([a,b]\), then
 \hyperref[prf:rs-c1-reduction]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\alpha\in C^1([a,b])\land\operatorname{IsIntegrable}(f,[a,b],\operatorname{RiemannCriterion})
+\Longrightarrow
+\int_a^b f\,d\alpha=\int_a^b f(x)\alpha'(x)\,dx.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+When the integrator is continuously differentiable, its Stieltjes increments
+are represented by the ordinary density \(\alpha'\).
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -220,7 +347,17 @@ If \(\alpha\) is constant except for finitely many jumps at points \(c_k\) and
 \end{theorem}
 \end{theorembox}
 
-\begin{remark*}[Proof idea]
+\begin{remark*}[Standard quantified statement]
+\[
+\alpha\text{ has finitely many jumps at }c_k
+\land
+f\text{ is continuous at each }c_k
+\Longrightarrow
+\int_a^b f\,d\alpha=\sum_k f(c_k)\,\Delta\alpha(c_k).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
 The Cauchy common-refinement argument runs again. Uniform continuity makes
 \(\omega_f(I)\) small on short slabs, and bounded variation controls
 \(\sum_i|\Delta\alpha_i|\). The error has the form
@@ -230,7 +367,7 @@ The Cauchy common-refinement argument runs again. Uniform continuity makes
 so small oscillation multiplied by finite total variation is small.
 \end{remark*}
 
-\begin{remark*}[Sums as integrals]
+\begin{remark*}[Interpretation]
 If \(\alpha\) is a step function with jumps at points \(c_k\), then the
 Stieltjes integral collapses to a weighted sum of the values \(f(c_k)\) times
 the jumps. This is the conceptual doorway to probability: a cum
@@ -239,7 +376,7 @@ distribution function is an integrator, and expectation is an integral against
 that integrator.
 \end{remark*}
 
-\begin{remark*}[Step integrator calculation]
+\begin{remark*}[Interpretation]
 Suppose \(\alpha\) is constant except for finitely many jumps
 \(\Delta\alpha(c_k)=\alpha(c_k+)-\alpha(c_k-)\). Any sufficiently fine
 partition has one tiny slab around each \(c_k\) carrying that jump, while all
@@ -263,7 +400,7 @@ it is a Stieltjes integral against a discrete ruler.
 
 \subsection*{Worked Failure Mode}
 
-\begin{remark*}[Shared-jump failure]
+\begin{remark*}[Interpretation]
 The new pathology is real. On \([0,1]\), let \(c=1/2\), let
 \[
   \alpha(x)=\mathbf 1_{[c,1]}(x),
@@ -280,7 +417,7 @@ Riemann--Stieltjes integral does not exist in this convention.
 
 \subsection*{What the Failure Motivates Next}
 
-\begin{remark*}[Bug report]
+\begin{remark*}[Interpretation]
 Stieltjes is a sideways generalization, not the Lebesgue fix. Shared
 discontinuities of \(f\) and \(\alpha\) can destroy tag independence, and the
 standard existence theorem leans on the finite ruler budget
@@ -289,7 +426,7 @@ so stochastic integration cannot be ordinary pathwise Riemann--Stieltjes
 integration.
 \end{remark*}
 
-\begin{remark*}[Patch request]
+\begin{remark*}[Interpretation]
 The next stochastic patch is not ``make Stieltjes a little better.'' Brownian
 motion forces a different limiting mode: an \(L^2\) or probabilistic limit
 rather than a pathwise Riemann--Stieltjes limit. That is the structural reason

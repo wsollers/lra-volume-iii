@@ -6,6 +6,7 @@
 \subsection{Polynomial Basis: Falling Factorials}
 \label{sec:falling-factorials}
 
+\begin{exposition}
 In ordinary calculus, polynomial functions are naturally expressed using
 the monomial powers \(1, x, x^2, x^3, \dots\) because the derivative
 acts simply on them: \(\tfrac{d}{dx} x^n = n x^{n-1}\).
@@ -20,6 +21,7 @@ constant term. For this reason it is more natural to work with a
 different family of polynomials --- the \emph{falling factorials} ---
 which interact with \(\Delta\) exactly as monomials interact with
 \(\tfrac{d}{dx}\).
+\end{exposition}
 
 \begin{definitionbox}{Definition (Falling Factorial)}
 For a nonnegative integer \(k\), the \emph{falling factorial} (or
@@ -32,18 +34,19 @@ By convention, \(x^{\underline{0}} = 1\).
 \end{definitionbox}
 \label{def:falling-factorial}
 
-\begin{remark*}[Fully quantified form]
+\begin{remark*}[Standard quantified statement]
 \(\forall k \in \mathbb{N},\; \forall x \in \mathbb{R}:\;
 x^{\underline{k}} := \displaystyle\prod_{j=0}^{k-1}(x-j)\),
 with \(x^{\underline{0}} := 1\).
 \end{remark*}
 
-\begin{remark*}[Relation to factorials]
+\begin{remark*}[Interpretation]
 When \(x = n \in \mathbb{N}\) and \(k \le n\), the falling factorial
 equals \(\tfrac{n!}{(n-k)!}\). In particular, \(n^{\underline{n}} = n!\).
 Thus falling factorials generalise factorials to arbitrary inputs.
 \end{remark*}
 
+\begin{example*}
 The first few falling factorials are:
 \[
 \begin{aligned}
@@ -53,6 +56,7 @@ x^{\underline{2}} &= x(x-1), \\
 x^{\underline{3}} &= x(x-1)(x-2).
 \end{aligned}
 \]
+\end{example*}
 
 \subsection*{The Difference Rule for Falling Factorials}
 
@@ -64,7 +68,7 @@ For \(k \ge 1\),
 \end{theorembox}
 \label{thm:falling-factorial-rule}
 
-\begin{remark*}[Fully quantified form]
+\begin{remark*}[Standard quantified statement]
 \(\forall k \in \mathbb{N},\; k \ge 1,\; \forall x \in \mathbb{R}:\;
 (x+1)^{\underline{k}} - x^{\underline{k}} = k\,x^{\underline{k-1}}\).
 \end{remark*}
@@ -91,14 +95,14 @@ The remaining product \(x(x-1)\cdots(x-k+2)\) is exactly
 \]
 \end{proof}
 
-\begin{remark*}[Mirror of the power rule]
+\begin{remark*}[Interpretation]
 This formula exactly mirrors the continuous power rule
 \(\tfrac{d}{dx}x^k = kx^{k-1}\). Because of this clean behaviour under
 \(\Delta\), falling factorials form the natural polynomial basis for
 discrete calculus.
 \end{remark*}
 
-\begin{remark*}[Antiderivative rule]
+\begin{remark*}[Interpretation]
 The theorem also yields the discrete antiderivative rule:
 \[
 \Delta\!\left(\frac{x^{\underline{k+1}}}{k+1}\right) = x^{\underline{k}}.
@@ -110,6 +114,7 @@ of \(x^{\underline{k}}\), mirroring the continuous rule
 
 \subsection*{Summary Table}
 
+\begin{exposition}
 \begin{center}
 \renewcommand{\arraystretch}{1.4}
 \begin{tabular}{c|c}
@@ -121,9 +126,11 @@ of \(x^{\underline{k}}\), mirroring the continuous rule
 \(x^{\underline{4}} = x(x-1)(x-2)(x-3)\) & \(4x(x-1)(x-2)\)
 \end{tabular}
 \end{center}
+\end{exposition}
 
 \subsection*{Polynomial Representation in the Falling Factorial Basis}
 
+\begin{exposition}
 Every polynomial can be written as a linear combination of falling
 factorials:
 \[
@@ -136,8 +143,9 @@ c_0
 + \cdots
 + c_n\, x^{\underline{n}}.
 \]
+\end{exposition}
 
-\begin{remark*}[Role in Newton's expansion]
+\begin{remark*}[Interpretation]
 This representation plays the same role in discrete calculus that the
 Taylor expansion plays in continuous calculus. The coefficients \(c_k\)
 are determined by the successive finite differences of \(f\) evaluated

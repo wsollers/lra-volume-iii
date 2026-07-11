@@ -5,7 +5,7 @@
 
 % ---------------------------------------------------------
 
-\begin{remark*}[Section guide]
+\begin{remark*}[Interpretation]
 Carath\'{e}odory replaces division by factorisation:
 \(f(x)-f(c)=(x-c)\varphi(x)\), with \(\varphi\) continuous at \(c\).
 Differentiability becomes continuity of the slope factor, and continuity
@@ -27,14 +27,14 @@ In this case, $f$ is differentiable at $c$ and $f'(c) = \phi(c)$.
 \begin{remark*}[Standard quantified statement]
 \[
 \exists \phi : I \to \mathbb{R}\;
-\bigl(\operatorname{ContinuousAt}(\phi,c)
+\bigl(\operatorname{IsContinuous}(\phi,c)
 \;\land\;
 \forall x \in I\;[f(x) = f(c)+(x-c)\phi(x)]\bigr).
 \]
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-The existence of a Carath\'{e}odory factorization at $c$ is equivalent to $\operatorname{DifferentiableAt}(f,c)$ by the characterization theorem below. The factorizing function is explicit:
+The existence of a Carath\'{e}odory factorization at $c$ is equivalent to $\operatorname{IsDifferentiable}(f,c)$ by the characterization theorem below. The factorizing function is explicit:
 \[
 \phi(x) =
 \begin{cases}
@@ -80,10 +80,10 @@ In this case, $\phi(c) = f'(c)$.
 
 \begin{remark*}[Standard quantified statement]
 \begin{align*}
-\operatorname{DifferentiableAt}(f,c)
+\operatorname{IsDifferentiable}(f,c)
 \;&\iff\;
 \exists\phi:I\to\mathbb{R}\;
-\bigl(\operatorname{ContinuousAt}(\phi,c)\\
+\bigl(\operatorname{IsContinuous}(\phi,c)\\
 &\quad\land\;\forall x \in I\;[f(x)=f(c)+(x-c)\phi(x)]\bigr).
 \end{align*}
 In this case $\phi(c) = f'(c)$.

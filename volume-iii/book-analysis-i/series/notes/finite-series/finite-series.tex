@@ -21,6 +21,15 @@ integer \(i\) satisfying \(m \le i \le n\). We denote such a sequence by
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+  m,n\in\mathbb Z\wedge m\le n
+  \Longrightarrow
+  (a_i)_{i=m}^{n}\text{ assigns a real number }a_i
+  \text{ to each }i\in\mathbb Z\text{ with }m\le i\le n.
+\]
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 The indices form the integer interval \(\{m,m+1,\ldots,n\}\). The notation
 \((a_i)_{i=m}^{n}\) records both the terms and the finite range of indices
@@ -49,6 +58,12 @@ Let \(m,n \in \mathbb{Z}\). If \(n < m\), the finite sum from \(m\) to
 \]
 \end{definition}
 \end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  n<m\Longrightarrow \sum_{i=m}^{n}a_i=0.
+\]
+\end{remark*}
 
 \begin{remark*}[Interpretation]
 When the upper index lies below the lower index, there are no terms to
@@ -132,13 +147,23 @@ defined recursively from the empty finite sum by the rule
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+  n\ge m-1
+  \Longrightarrow
+  \sum_{i=m}^{n+1}a_i
+  =
+  \left(\sum_{i=m}^{n}a_i\right)+a_{n+1}.
+\]
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 The recursive rule says that extending the upper endpoint by one index
 extends the sum by adding exactly the new last term. Together with the
 empty-sum convention, this determines every finite sum.
 \end{remark*}
 
-\begin{remark*}[Examples]
+\begin{remark*}[Interpretation]
 For a sequence indexed from \(m\), the first few cases are
 \[
   \sum_{i=m}^{m-2} a_i = 0,\qquad
@@ -184,6 +209,16 @@ assigned to each integer \(i\) satisfying \(m \le i \le p\). Then
 \hyperref[prf:finite-sum-splitting]{\textit{Go to proof.}}
 \end{lemma}
 \end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  m\le n<p
+  \Longrightarrow
+  \sum_{i=m}^{n}a_i+\sum_{i=n+1}^{p}a_i
+  =
+  \sum_{i=m}^{p}a_i.
+\]
+\end{remark*}
 
 \begin{remark*}[Interpretation]
 A finite sum over one integer interval may be split into two adjacent
@@ -271,6 +306,15 @@ be bijections. Then
 \end{proposition}
 \end{propositionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+  \sum_{i=1}^{n}f(g(i))
+  =
+  \sum_{i=1}^{n}f(h(i))
+\]
+whenever \(g,h:\{i\in\mathbb N:1\le i\le n\}\to X\) are bijections.
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 The value of a finite summation over a finite set does not depend on which
 bijection is used to list the elements of that set. Tao notes that the
@@ -303,6 +347,12 @@ If \(X\) is empty, and \(f:X\to\mathbb{R}\) is a function, then
 \end{proposition}
 \end{propositionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+  X=\emptyset\Longrightarrow \sum_{x\in X}f(x)=0.
+\]
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 The finite summation over the empty set has value \(0\).
 \end{remark*}
@@ -333,6 +383,12 @@ If \(X\) consists of a single element, \(X=\{x_0\}\), and
 \hyperref[prf:singleton-finite-set-summation]{\textit{Go to proof.}}
 \end{proposition}
 \end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  X=\{x_0\}\Longrightarrow \sum_{x\in X}f(x)=f(x_0).
+\]
+\end{remark*}
 
 \begin{remark*}[Interpretation]
 Summing a function over a one-element set gives the value of the function
@@ -367,6 +423,14 @@ If \(X\) is a finite set, \(f:X\to\mathbb{R}\) is a function, and
 \hyperref[prf:substitution-finite-set-summation]{\textit{Go to proof.}}
 \end{proposition}
 \end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  g:Y\to X\text{ is a bijection}
+  \Longrightarrow
+  \sum_{x\in X}f(x)=\sum_{y\in Y}f(g(y)).
+\]
+\end{remark*}
 
 \begin{remark*}[Interpretation]
 A finite summation over \(X\) may be computed by summing over any set
@@ -406,6 +470,14 @@ If \(a_i\) is a real number assigned to each integer \(i\in X\), then
 \end{proposition}
 \end{propositionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+  X=\{i\in\mathbb Z:n\le i\le m\}
+  \Longrightarrow
+  \sum_{i=n}^{m}a_i=\sum_{i\in X}a_i.
+\]
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 Summing over a consecutive integer interval agrees with summing over that
 same interval regarded as a finite set.
@@ -443,6 +515,16 @@ and let \(f:X\cup Y\to\mathbb{R}\) be a function. Then
 \end{proposition}
 \end{propositionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+  X\cap Y=\emptyset
+  \Longrightarrow
+  \sum_{z\in X\cup Y}f(z)
+  =
+  \sum_{x\in X}f(x)+\sum_{y\in Y}f(y).
+\]
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 A sum over a disjoint union splits into the sum over each component set.
 \end{remark*}
@@ -478,6 +560,14 @@ Let \(X\) be a finite set, and let \(f:X\to\mathbb{R}\) and
 \end{proposition}
 \end{propositionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+  \sum_{x\in X}(f(x)+g(x))
+  =
+  \sum_{x\in X}f(x)+\sum_{x\in X}g(x).
+\]
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 Finite set summation distributes over pointwise addition.
 \end{remark*}
@@ -510,6 +600,12 @@ let \(c\) be a real number. Then
 \hyperref[prf:scalar-multiplication-rule-finite-set-summation]{\textit{Go to proof.}}
 \end{proposition}
 \end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \sum_{x\in X}c f(x)=c\sum_{x\in X}f(x).
+\]
+\end{remark*}
 
 \begin{remark*}[Interpretation]
 A constant scalar may be pulled outside a finite set summation.
@@ -589,6 +685,14 @@ Then
 \end{proposition}
 \end{propositionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+  \left\lvert \sum_{x\in X}f(x)\right\rvert
+  \le
+  \sum_{x\in X}|f(x)|.
+\]
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 The absolute value of a finite set summation is bounded by the
 corresponding finite set summation of absolute values.
@@ -625,6 +729,14 @@ Let \(X\) and \(Y\) be finite sets, and let
 \hyperref[prf:iterated-summation-over-product]{\textit{Go to proof.}}
 \end{lemma}
 \end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \sum_{x\in X}\left(\sum_{y\in Y}f(x,y)\right)
+  =
+  \sum_{(x,y)\in X\times Y}f(x,y).
+\]
+\end{remark*}
 
 \begin{remark*}[Interpretation]
 Summing first over \(Y\) for each \(x\in X\), and then summing those
@@ -715,6 +827,14 @@ be a real number assigned to each integer \(i\) satisfying \(m \le i
 \end{lemma}
 \end{lemmabox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+  \sum_{i=m}^{n}a_i
+  =
+  \sum_{j=m+k}^{n+k}a_{j-k}.
+\]
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 Shifting every index by the same integer changes the labels of the
 summation but not the ordered list of terms being summed.
@@ -752,6 +872,14 @@ Then
 \end{lemma}
 \end{lemmabox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+  \sum_{i=m}^{n}(a_i+b_i)
+  =
+  \sum_{i=m}^{n}a_i+\sum_{i=m}^{n}b_i.
+\]
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 Finite summation distributes over termwise addition.
 \end{remark*}
@@ -785,6 +913,14 @@ each integer \(i\) satisfying \(m \le i \le n\), and let
 \hyperref[prf:finite-sum-scalar-multiple]{\textit{Go to proof.}}
 \end{lemma}
 \end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \sum_{i=m}^{n}(c a_i)
+  =
+  c\sum_{i=m}^{n}a_i.
+\]
+\end{remark*}
 
 \begin{remark*}[Interpretation]
 A common scalar factor may be pulled outside a finite sum.
@@ -827,6 +963,16 @@ to each integer \(i\) satisfying \(m \le i \le n\). Then
   \left\lvert \sum_{i=m}^{n} a_i \right\rvert
   \le
   \sum_{i=m}^{n} \lvert a_i\rvert.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  m\le n
+  \Longrightarrow
+  \left|\sum_{i=m}^{n}a_i\right|
+  \le
+  \sum_{i=m}^{n}|a_i|.
 \]
 \end{remark*}
 
@@ -873,6 +1019,16 @@ Then
   \sum_{i=m}^{n} a_i
   \le
   \sum_{i=m}^{n} b_i.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \left(\forall i,\ m\le i\le n\Rightarrow a_i\le b_i\right)
+  \Longrightarrow
+  \sum_{i=m}^{n}a_i
+  \le
+  \sum_{i=m}^{n}b_i.
 \]
 \end{remark*}
 

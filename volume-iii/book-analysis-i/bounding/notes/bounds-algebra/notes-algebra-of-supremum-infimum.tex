@@ -33,10 +33,15 @@ $b\neq0$.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{SetSum}(A,B)=A+B,\quad
-\operatorname{SetDifference}(A,B)=A-B,\quad
-\operatorname{SetProduct}(A,B)=AB,\quad
-\operatorname{SetQuotient}(A,B)=A/B.
+\operatorname{ReplacementImage}(A+B,A\times B,(a,b)\mapsto a+b),
+\]
+\[
+\operatorname{ReplacementImage}(A-B,A\times B,(a,b)\mapsto a-b),
+\quad
+\operatorname{ReplacementImage}(AB,A\times B,(a,b)\mapsto ab),
+\]
+\[
+\operatorname{ReplacementImage}(A/B,\{(a,b)\in A\times B:b\ne0\},(a,b)\mapsto a/b).
 \]
 \end{remark*}
 
@@ -49,7 +54,7 @@ with the analogous readings for the other arithmetic images.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{SetProduct}(A,B)=C
+C\ne AB
 \quad\text{means}\quad
 (\exists x)\bigl[x\in C\triangle AB\bigr],
 \]
@@ -57,13 +62,25 @@ and similarly for sum, difference, and quotient.
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 An arithmetic-image definition fails only if it omits a value produced by the
 rule or includes a value not produced by the rule.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 Every membership claim decomposes into witnesses from the input sets and the
 arithmetic operation that produced the image point.
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Set arithmetic turns pointwise arithmetic into images of sets. Membership in
+one of these images is always witnessed by input elements from the original
+sets and the corresponding arithmetic operation.
 \end{remark*}
 
 \begin{dependencies}
@@ -91,7 +108,7 @@ x\in A^{-1}\Longleftrightarrow(\exists a\in A)(x=1/a).
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{ReciprocalImage}(A)=A^{-1}.
+\operatorname{Reciprocal}(A)=A^{-1}.
 \]
 \end{remark*}
 
@@ -103,20 +120,31 @@ x\notin A^{-1}\Longleftrightarrow(\forall a\in A)(x\neq1/a).
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{ReciprocalImage}(A)=B
+\neg\operatorname{Reciprocal}(A)=B
 \quad\text{means}\quad
 (\exists x)\bigl[x\in B\triangle A^{-1}\bigr].
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 The reciprocal image is undefined if zero is allowed as an input value.  Once
 zero is excluded, the only definition failures are omitted or spurious
 reciprocal values.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 Every element of $A^{-1}$ has the form $1/a$ for a nonzero $a\in A$.
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The reciprocal image applies inversion to every element of $A$. The exclusion
+of zero is structural, since reciprocal values are undefined at zero.
 \end{remark*}
 
 \begin{dependencies}
@@ -150,9 +178,9 @@ Let $A\subseteq\mathbb{R}$ be nonempty and bounded above, and let $c\in\mathbb{R
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{Supremum}(s,A)
+\operatorname{LeastUpperBound}(s,A)
 \Longrightarrow
-\operatorname{Supremum}(s+c,A+c).
+\operatorname{LeastUpperBound}(s+c,A+c).
 \]
 \end{remark*}
 
@@ -165,16 +193,21 @@ is impossible under the stated hypotheses.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{Supremum}(s,A)\land \neg\operatorname{Supremum}(s+c,A+c)
+\operatorname{LeastUpperBound}(s,A)\land \neg\operatorname{LeastUpperBound}(s+c,A+c)
 \]
 is a contradictory configuration.
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 The formula could fail only if translation either failed to preserve upper bounds or failed to preserve leastness. Adding the same real number to every comparison preserves the order, so neither failure mode can occur.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
 \begin{aligned}
 \forall a\in A\;(a\le s)
@@ -185,6 +218,7 @@ The formula could fail only if translation either failed to preserve upper bound
 \forall v\,[\operatorname{UpperBound}(v,A+c)\Longrightarrow s+c\le v].
 \end{aligned}
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -218,9 +252,9 @@ A\neq\varnothing,\quad A\text{ bounded below}
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{Infimum}(t,A)
+\operatorname{GreatestLowerBound}(t,A)
 \Longrightarrow
-\operatorname{Infimum}(t+c,A+c).
+\operatorname{GreatestLowerBound}(t+c,A+c).
 \]
 \end{remark*}
 
@@ -233,21 +267,27 @@ is impossible under the stated hypotheses.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{Infimum}(t,A)\land\neg\operatorname{Infimum}(t+c,A+c).
+\operatorname{GreatestLowerBound}(t,A)\land\neg\operatorname{GreatestLowerBound}(t+c,A+c).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 The formula could fail only if translation failed to preserve lower bounds or
 failed to preserve greatestness among lower bounds.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
 (\forall a\in A)(t\leq a)
 \Longleftrightarrow
 (\forall a\in A)(t+c\leq a+c).
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -287,9 +327,9 @@ Let $A\subseteq\mathbb{R}$ be nonempty and bounded above, and let $k>0$. Then
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{Supremum}(s,A)\land k>0
+\operatorname{LeastUpperBound}(s,A)\land k>0
 \Longrightarrow
-\operatorname{Supremum}(ks,kA).
+\operatorname{LeastUpperBound}(ks,kA).
 \]
 \end{remark*}
 
@@ -302,16 +342,21 @@ is impossible under the stated hypotheses.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{Supremum}(s,A)\land k>0\land \neg\operatorname{Supremum}(ks,kA)
+\operatorname{LeastUpperBound}(s,A)\land k>0\land \neg\operatorname{LeastUpperBound}(ks,kA)
 \]
 is a contradictory configuration.
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 The formula could fail only if multiplying by a positive scalar failed to preserve upper bounds or failed to preserve leastness. Positive multiplication preserves the order, so both properties scale exactly.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
 \begin{aligned}
 \forall a\in A\;(a\le s)
@@ -322,6 +367,7 @@ The formula could fail only if multiplying by a positive scalar failed to preser
 \operatorname{UpperBound}(ku,kA).
 \end{aligned}
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -355,9 +401,9 @@ k>0,\quad A\neq\varnothing,\quad A\text{ bounded below}
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{Infimum}(t,A)\land k>0
+\operatorname{GreatestLowerBound}(t,A)\land k>0
 \Longrightarrow
-\operatorname{Infimum}(kt,kA).
+\operatorname{GreatestLowerBound}(kt,kA).
 \]
 \end{remark*}
 
@@ -370,23 +416,29 @@ is impossible under the stated hypotheses.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{Infimum}(t,A)\land k>0\land
-\neg\operatorname{Infimum}(kt,kA).
+\operatorname{GreatestLowerBound}(t,A)\land k>0\land
+\neg\operatorname{GreatestLowerBound}(kt,kA).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 The formula could fail only if positive multiplication failed to preserve lower
 bounds or greatestness among lower bounds.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
 (\forall a\in A)(t\leq a)
 \Longleftrightarrow
 (\forall a\in A)(kt\leq ka)
 \qquad(k>0).
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -424,9 +476,9 @@ Let $A\subseteq\mathbb{R}$ be nonempty and bounded below, and let $k<0$. Then
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{Infimum}(t,A)\land k<0
+\operatorname{GreatestLowerBound}(t,A)\land k<0
 \Longrightarrow
-\operatorname{Supremum}(kt,kA).
+\operatorname{LeastUpperBound}(kt,kA).
 \]
 \end{remark*}
 
@@ -439,16 +491,21 @@ is impossible under the stated hypotheses.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{Infimum}(t,A)\land k<0\land \neg\operatorname{Supremum}(kt,kA)
+\operatorname{GreatestLowerBound}(t,A)\land k<0\land \neg\operatorname{LeastUpperBound}(kt,kA)
 \]
 is a contradictory configuration.
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 The formula could fail only if negative multiplication did not reverse lower bounds into upper bounds, or if the extremal value lost its leastness after reversal. Multiplication by a negative scalar reverses order exactly, so the infimum of $A$ becomes the supremum of $kA$.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
 \begin{aligned}
 \forall a\in A\;(t\le a)
@@ -460,6 +517,7 @@ The formula could fail only if negative multiplication did not reverse lower bou
 \qquad(k<0).
 \end{aligned}
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -495,9 +553,9 @@ k<0,\quad A\neq\varnothing,\quad A\text{ bounded above}
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{Supremum}(s,A)\land k<0
+\operatorname{LeastUpperBound}(s,A)\land k<0
 \Longrightarrow
-\operatorname{Infimum}(ks,kA).
+\operatorname{GreatestLowerBound}(ks,kA).
 \]
 \end{remark*}
 
@@ -510,24 +568,30 @@ is impossible under the stated hypotheses.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{Supremum}(s,A)\land k<0\land
-\neg\operatorname{Infimum}(ks,kA).
+\operatorname{LeastUpperBound}(s,A)\land k<0\land
+\neg\operatorname{GreatestLowerBound}(ks,kA).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 The formula could fail only if negative multiplication failed to reverse upper
 bounds into lower bounds or failed to preserve the extremal threshold after
 reversal.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
 (\forall a\in A)(a\leq s)
 \Longleftrightarrow
 (\forall a\in A)(ks\leq ka)
 \qquad(k<0).
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -568,9 +632,9 @@ Let $A\subseteq\mathbb{R}$ be nonempty and bounded below. Then $-A=\{-a:a\in A\}
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{Infimum}(t,A)
+\operatorname{GreatestLowerBound}(t,A)
 \Longrightarrow
-\operatorname{Supremum}(-t,-A).
+\operatorname{LeastUpperBound}(-t,-A).
 \]
 \end{remark*}
 
@@ -583,16 +647,21 @@ is impossible under the stated hypotheses.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{Infimum}(t,A)\land \neg\operatorname{Supremum}(-t,-A)
+\operatorname{GreatestLowerBound}(t,A)\land \neg\operatorname{LeastUpperBound}(-t,-A)
 \]
 is a contradictory configuration.
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 The theorem could fail only if negation did not convert lower bounds into upper bounds or did not preserve the extremal threshold after reversing order. The map $x\mapsto -x$ reverses all inequalities, so the exchange is exact.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
 \begin{aligned}
 \forall a\in A\;(t\le a)
@@ -603,6 +672,7 @@ The theorem could fail only if negation did not convert lower bounds into upper 
 \operatorname{UpperBound}(-v,-A).
 \end{aligned}
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -647,9 +717,9 @@ Let $A,B\subseteq\mathbb{R}$ be nonempty and bounded above. Then
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{Supremum}(s_A,A)\land \operatorname{Supremum}(s_B,B)
+\operatorname{LeastUpperBound}(s_A,A)\land \operatorname{LeastUpperBound}(s_B,B)
 \Longrightarrow
-\operatorname{Supremum}(s_A+s_B,A+B).
+\operatorname{LeastUpperBound}(s_A+s_B,A+B).
 \]
 \end{remark*}
 
@@ -662,18 +732,23 @@ is impossible under the stated hypotheses.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{Supremum}(s_A,A)\land \operatorname{Supremum}(s_B,B)
+\operatorname{LeastUpperBound}(s_A,A)\land \operatorname{LeastUpperBound}(s_B,B)
 \land
-\neg\operatorname{Supremum}(s_A+s_B,A+B)
+\neg\operatorname{LeastUpperBound}(s_A+s_B,A+B)
 \]
 is a contradictory configuration.
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 The equality could fail only if the sum of the two suprema did not bound the sum set, or if it were not the least such bound. The first part follows from adding the two upper-bound inequalities; the second follows by approximating each supremum from within its set.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
 \begin{aligned}
 a\le \sup A,\quad b\le \sup B
@@ -684,6 +759,7 @@ a\le \sup A,\quad b\le \sup B
 \sup A+\sup B-\varepsilon<a+b.
 \end{aligned}
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -716,9 +792,9 @@ A,B\neq\varnothing,\quad A,B\text{ bounded below}
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{Infimum}(t_A,A)\land\operatorname{Infimum}(t_B,B)
+\operatorname{GreatestLowerBound}(t_A,A)\land\operatorname{GreatestLowerBound}(t_B,B)
 \Longrightarrow
-\operatorname{Infimum}(t_A+t_B,A+B).
+\operatorname{GreatestLowerBound}(t_A+t_B,A+B).
 \]
 \end{remark*}
 
@@ -731,23 +807,29 @@ is impossible under the stated hypotheses.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{Infimum}(t_A,A)\land\operatorname{Infimum}(t_B,B)\land
-\neg\operatorname{Infimum}(t_A+t_B,A+B).
+\operatorname{GreatestLowerBound}(t_A,A)\land\operatorname{GreatestLowerBound}(t_B,B)\land
+\neg\operatorname{GreatestLowerBound}(t_A+t_B,A+B).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 The equality could fail only if the sum of the two infima failed to be a lower
 bound of the sum set or failed to be the greatest such lower bound.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
 t_A\leq a,\quad t_B\leq b
 \Longrightarrow
 t_A+t_B\leq a+b,
 \]
 and sharpness follows by choosing elements near each infimum.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -805,9 +887,9 @@ Let $A,B\subseteq\mathbb{R}$ be nonempty, with $A$ bounded above and $B$ bounded
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{Supremum}(s,A)\land \operatorname{Infimum}(t,B)
+\operatorname{LeastUpperBound}(s,A)\land \operatorname{GreatestLowerBound}(t,B)
 \Longrightarrow
-\operatorname{Supremum}(s-t,A-B).
+\operatorname{LeastUpperBound}(s-t,A-B).
 \]
 \end{remark*}
 
@@ -820,18 +902,23 @@ is impossible under the stated hypotheses.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{Supremum}(s,A)\land \operatorname{Infimum}(t,B)
+\operatorname{LeastUpperBound}(s,A)\land \operatorname{GreatestLowerBound}(t,B)
 \land
-\neg\operatorname{Supremum}(s-t,A-B)
+\neg\operatorname{LeastUpperBound}(s-t,A-B)
 \]
 is a contradictory configuration.
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 The formula could fail only if subtracting elements of $B$ did not convert the lower extremal behavior of $B$ into an upper contribution. Since $a-b=a+(-b)$, this is the sum theorem combined with the negation exchange.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
 A-B=A+(-B),
 \qquad
@@ -839,6 +926,7 @@ A-B=A+(-B),
 \qquad
 \sup(A+(-B))=\sup A+\sup(-B).
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -874,9 +962,9 @@ A,B\neq\varnothing,\quad A\text{ bounded below},\quad B\text{ bounded above}
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{Infimum}(t,A)\land\operatorname{Supremum}(s,B)
+\operatorname{GreatestLowerBound}(t,A)\land\operatorname{LeastUpperBound}(s,B)
 \Longrightarrow
-\operatorname{Infimum}(t-s,A-B).
+\operatorname{GreatestLowerBound}(t-s,A-B).
 \]
 \end{remark*}
 
@@ -889,22 +977,28 @@ is impossible under the stated hypotheses.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{Infimum}(t,A)\land\operatorname{Supremum}(s,B)\land
-\neg\operatorname{Infimum}(t-s,A-B).
+\operatorname{GreatestLowerBound}(t,A)\land\operatorname{LeastUpperBound}(s,B)\land
+\neg\operatorname{GreatestLowerBound}(t-s,A-B).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 The formula could fail only if subtracting $B$ failed to convert its upper
 extremal behavior into a lower contribution.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
 A-B=A+(-B),\qquad
 \inf(-B)=-\sup B,\qquad
 \inf(A+(-B))=\inf A+\inf(-B).
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -944,9 +1038,9 @@ Let $A\subseteq\mathbb{R}$ be nonempty and bounded, and let $\lambda\in\mathbb{R
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{Supremum}(s,A)\land \operatorname{Infimum}(t,A)
+\operatorname{LeastUpperBound}(s,A)\land \operatorname{GreatestLowerBound}(t,A)
 \Longrightarrow
-\operatorname{Supremum}(\max\{\lambda s,\lambda t\},\lambda A).
+\operatorname{LeastUpperBound}(\max\{\lambda s,\lambda t\},\lambda A).
 \]
 \end{remark*}
 
@@ -959,18 +1053,23 @@ is impossible under the stated hypotheses.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{Supremum}(s,A)\land \operatorname{Infimum}(t,A)
+\operatorname{LeastUpperBound}(s,A)\land \operatorname{GreatestLowerBound}(t,A)
 \land
-\neg\operatorname{Supremum}(\max\{\lambda s,\lambda t\},\lambda A)
+\neg\operatorname{LeastUpperBound}(\max\{\lambda s,\lambda t\},\lambda A)
 \]
 is a contradictory configuration.
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 The formula separates into the cases $\lambda>0$, $\lambda=0$, and $\lambda<0$. Positive dilation scales the supremum, zero dilation collapses the set to $\{0\}$, and negative dilation turns the infimum into the supremum.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
 \sup(\lambda A)=
 \begin{cases}
@@ -979,6 +1078,7 @@ The formula separates into the cases $\lambda>0$, $\lambda=0$, and $\lambda<0$. 
 \lambda\inf A, & \lambda<0.
 \end{cases}
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -1018,9 +1118,9 @@ Let $A\subseteq\mathbb{R}$ be nonempty and bounded. Then
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{Supremum}(s,A)\land \operatorname{Infimum}(t,A)
+\operatorname{LeastUpperBound}(s,A)\land \operatorname{GreatestLowerBound}(t,A)
 \Longrightarrow
-\operatorname{Supremum}(\max\{|s|,|t|\},|A|).
+\operatorname{LeastUpperBound}(\max\{|s|,|t|\},|A|).
 \]
 \end{remark*}
 
@@ -1033,23 +1133,29 @@ is impossible under the stated hypotheses.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{Supremum}(s,A)\land \operatorname{Infimum}(t,A)
+\operatorname{LeastUpperBound}(s,A)\land \operatorname{GreatestLowerBound}(t,A)
 \land
-\neg\operatorname{Supremum}(\max\{|s|,|t|\},|A|)
+\neg\operatorname{LeastUpperBound}(\max\{|s|,|t|\},|A|)
 \]
 is a contradictory configuration.
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 The formula could fail only if the farthest absolute-value size were not achieved at one of the two extremal thresholds. Since every $a\in A$ lies between $\inf A$ and $\sup A$, its distance from zero is bounded by the larger endpoint magnitude.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
 \inf A\le a\le \sup A
 \Longrightarrow
 |a|\le \max\{|\sup A|,|\inf A|\}.
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -1093,10 +1199,10 @@ A\neq\varnothing,\quad A\text{ bounded},\quad
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{Infimum}(m,A)\land\operatorname{Supremum}(M,A)\land
+\operatorname{GreatestLowerBound}(m,A)\land\operatorname{LeastUpperBound}(M,A)\land
 0\notin[m,M]
 \Longrightarrow
-\operatorname{Supremum}(m^{-1},A^{-1}).
+\operatorname{LeastUpperBound}(m^{-1},A^{-1}).
 \]
 \end{remark*}
 
@@ -1110,24 +1216,30 @@ A\neq\varnothing,\quad A\text{ bounded},\quad 0\notin[\inf A,\sup A],
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{Infimum}(m,A)\land 0\notin[m,\sup A]\land
-\neg\operatorname{Supremum}(m^{-1},A^{-1})
+\operatorname{GreatestLowerBound}(m,A)\land 0\notin[m,\sup A]\land
+\neg\operatorname{LeastUpperBound}(m^{-1},A^{-1})
 \]
 is contradictory under the stated hypotheses.
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 The formula fails without a nonzero gap from zero: reciprocal images may be
 unbounded or undefined.  With the gap, reciprocal is order-reversing on the
 whole interval containing $A$, so the floor of $A$ becomes the ceiling of
 $A^{-1}$.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 Every $a\in A$ lies between $\inf A$ and $\sup A$, and the interval does not
 cross zero.  The reciprocal map reverses comparisons there, so
 $1/a\leq 1/\inf A$.  Leastness follows by applying the same reversal to values
 of $A$ approaching $\inf A$.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -1172,10 +1284,10 @@ A\neq\varnothing,\quad A\text{ bounded},\quad
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{Infimum}(m,A)\land\operatorname{Supremum}(M,A)\land
+\operatorname{GreatestLowerBound}(m,A)\land\operatorname{LeastUpperBound}(M,A)\land
 0\notin[m,M]
 \Longrightarrow
-\operatorname{Infimum}(M^{-1},A^{-1}).
+\operatorname{GreatestLowerBound}(M^{-1},A^{-1}).
 \]
 \end{remark*}
 
@@ -1189,23 +1301,29 @@ A\neq\varnothing,\quad A\text{ bounded},\quad 0\notin[\inf A,\sup A],
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{Supremum}(M,A)\land 0\notin[\inf A,M]\land
-\neg\operatorname{Infimum}(M^{-1},A^{-1})
+\operatorname{LeastUpperBound}(M,A)\land 0\notin[\inf A,M]\land
+\neg\operatorname{GreatestLowerBound}(M^{-1},A^{-1})
 \]
 is contradictory under the stated hypotheses.
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 The formula fails without excluding zero from the closed extremal interval.
 Once zero is excluded, reciprocal reverses order and the ceiling of $A$ becomes
 the floor of $A^{-1}$.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 Every reciprocal $1/a$ lies above $1/\sup A$ because reciprocal reverses order
 on the nonzero interval containing $A$.  Greatestness of $\sup A$ gives
 elements of $A$ arbitrarily close to that ceiling, which makes the lower bound
 sharp.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -1244,10 +1362,10 @@ equals the maximum of the four endpoint products.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{Infimum}(\alpha,A)\land\operatorname{Supremum}(\beta,A)\land
-\operatorname{Infimum}(\gamma,B)\land\operatorname{Supremum}(\delta,B)
+\operatorname{GreatestLowerBound}(\alpha,A)\land\operatorname{LeastUpperBound}(\beta,A)\land
+\operatorname{GreatestLowerBound}(\gamma,B)\land\operatorname{LeastUpperBound}(\delta,B)
 \Longrightarrow
-\operatorname{Supremum}(\max\{\alpha\gamma,\alpha\delta,\beta\gamma,\beta\delta\},AB).
+\operatorname{LeastUpperBound}(\max\{\alpha\gamma,\alpha\delta,\beta\gamma,\beta\delta\},AB).
 \]
 \end{remark*}
 
@@ -1264,15 +1382,26 @@ The product endpoint maximum is not the supremum of $AB$.
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 A failure would require a product above all four endpoint products or would
 require the endpoint maximum not to be least.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 Every pair $(a,b)$ lies in the rectangle
 $[\inf A,\sup A]\times[\inf B,\sup B]$.  A bilinear product on a rectangle has
 its extreme values at corners, and elements can approximate the relevant
 corners from within the two sets.
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The supremum of a bounded product set is controlled by the four corner
+products of the endpoint interval rectangle containing $A\times B$.
 \end{remark*}
 
 \begin{dependencies}
@@ -1305,10 +1434,10 @@ equals the minimum of the four endpoint products.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{Infimum}(\alpha,A)\land\operatorname{Supremum}(\beta,A)\land
-\operatorname{Infimum}(\gamma,B)\land\operatorname{Supremum}(\delta,B)
+\operatorname{GreatestLowerBound}(\alpha,A)\land\operatorname{LeastUpperBound}(\beta,A)\land
+\operatorname{GreatestLowerBound}(\gamma,B)\land\operatorname{LeastUpperBound}(\delta,B)
 \Longrightarrow
-\operatorname{Infimum}(\min\{\alpha\gamma,\alpha\delta,\beta\gamma,\beta\delta\},AB).
+\operatorname{GreatestLowerBound}(\min\{\alpha\gamma,\alpha\delta,\beta\gamma,\beta\delta\},AB).
 \]
 \end{remark*}
 
@@ -1325,13 +1454,24 @@ The product endpoint minimum is not the infimum of $AB$.
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 A failure would require a product below all four endpoint products or would
 require the endpoint minimum not to be greatest.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 Reduce to the same endpoint analysis as the supremum product formula, replacing
 the corner maximum by the corner minimum.
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The infimum of a bounded product set is the smallest of the same four endpoint
+products that control the enclosing rectangle.
 \end{remark*}
 
 \begin{dependencies}
@@ -1366,7 +1506,7 @@ four endpoint quotients.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{Supremum}\!\left(
+\operatorname{LeastUpperBound}\!\left(
 \max\left\{\frac{\inf A}{\inf B},\frac{\inf A}{\sup B},
            \frac{\sup A}{\inf B},\frac{\sup A}{\sup B}\right\},A/B\right).
 \]
@@ -1378,18 +1518,30 @@ The displayed endpoint maximum is not the supremum of $A/B$.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{Supremum}(\text{endpoint quotient maximum},A/B).
+\neg\operatorname{LeastUpperBound}(\text{endpoint quotient maximum},A/B).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 A failure would require the quotient set to see values not controlled by the
 reciprocal endpoint interval for $B$.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 Use $A/B=A B^{-1}$, the reciprocal endpoint formulas for $B^{-1}$, and the
 product endpoint formula.
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A quotient set is a product set with the reciprocal image of the denominator.
+Once zero is excluded from the denominator interval, the quotient supremum is
+again determined by endpoint combinations.
 \end{remark*}
 
 \begin{dependencies}
@@ -1424,7 +1576,7 @@ four endpoint quotients.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{Infimum}\!\left(
+\operatorname{GreatestLowerBound}\!\left(
 \min\left\{\frac{\inf A}{\inf B},\frac{\inf A}{\sup B},
            \frac{\sup A}{\inf B},\frac{\sup A}{\sup B}\right\},A/B\right).
 \]
@@ -1436,18 +1588,30 @@ The displayed endpoint minimum is not the infimum of $A/B$.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{Infimum}(\text{endpoint quotient minimum},A/B).
+\neg\operatorname{GreatestLowerBound}(\text{endpoint quotient minimum},A/B).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 A failure would require a quotient below all endpoint quotients or would
 require the endpoint minimum not to be greatest among lower bounds.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 Use $A/B=A B^{-1}$ and combine the reciprocal endpoint formulas with the
 product endpoint infimum formula.
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The infimum of a quotient set is obtained by converting the quotient into
+product with the reciprocal denominator set and taking the least endpoint
+combination.
 \end{remark*}
 
 \begin{dependencies}
@@ -1484,9 +1648,9 @@ Let $A,B\subseteq\mathbb{R}$ be nonempty and bounded. Then
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{Infimum}(t_A,A)\land \operatorname{Infimum}(t_B,B)
+\operatorname{GreatestLowerBound}(t_A,A)\land \operatorname{GreatestLowerBound}(t_B,B)
 \land
-\operatorname{Supremum}(s_A,A)\land \operatorname{Supremum}(s_B,B)
+\operatorname{LeastUpperBound}(s_A,A)\land \operatorname{LeastUpperBound}(s_B,B)
 \Longrightarrow
 t_A+t_B\le \inf(A+B)\le \sup(A+B)\le s_A+s_B.
 \]
@@ -1503,23 +1667,29 @@ is impossible under the stated hypotheses.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\bigl[\operatorname{Infimum}(t_A,A)\land \operatorname{Infimum}(t_B,B)\land \inf(A+B)<t_A+t_B\bigr]
+\bigl[\operatorname{GreatestLowerBound}(t_A,A)\land \operatorname{GreatestLowerBound}(t_B,B)\land \inf(A+B)<t_A+t_B\bigr]
 \lor
-\bigl[\operatorname{Supremum}(s_A,A)\land \operatorname{Supremum}(s_B,B)\land s_A+s_B<\sup(A+B)\bigr]
+\bigl[\operatorname{LeastUpperBound}(s_A,A)\land \operatorname{LeastUpperBound}(s_B,B)\land s_A+s_B<\sup(A+B)\bigr]
 \]
 is a contradictory configuration.
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 The lower inequality could fail only if a sum fell below the sum of the two lower thresholds. The upper inequality could fail only if a sum rose above the sum of the two upper thresholds.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
 \inf A\le a\le \sup A,\quad \inf B\le b\le \sup B
 \Longrightarrow
 \inf A+\inf B\le a+b\le \sup A+\sup B.
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -1575,22 +1745,28 @@ is not well-determined until the ambient ordered set and its order relation are 
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{WellDetermined}(\operatorname{UpperBound}(u,A))
+\neg\operatorname{WellDefined}(\operatorname{UpperBound}(u,A))
 \]
 when the ambient order is omitted.
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 Ambiguity occurs when the same set $A$ is considered inside different ordered ambient sets or under different order relations. The candidate bound may belong to one ambient set and not another, or the relevant comparison relation may change.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
 \operatorname{UpperBound}_S(u,A)
 \text{ and }
 \operatorname{UpperBound}_T(u,A)
 \]
 are separate assertions unless $S=T$ and $\le_S=\le_T$ on the elements being compared.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -1619,9 +1795,9 @@ are ambient-relative objects and may differ in existence or value.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{Supremum}_S(s,A)
+\operatorname{LeastUpperBound}_S(s,A)
 \quad\text{and}\quad
-\operatorname{Supremum}_{S'}(s,A)
+\operatorname{LeastUpperBound}_{S'}(s,A)
 \]
 are different assertions unless the ambient upper-bound sets agree.
 \end{remark*}
@@ -1635,21 +1811,27 @@ is not guaranteed by $A\subseteq S\subseteq S'$ alone.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{Supremum}_{S'}(s,A)\land \neg\operatorname{Supremum}_S(s,A)
+\operatorname{LeastUpperBound}_{S'}(s,A)\land \neg\operatorname{LeastUpperBound}_S(s,A)
 \]
 is possible when the larger ambient set contains the least upper bound but the smaller one does not.
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 The ambient-relative supremum can fail to transfer because the candidate least upper bound may not belong to the smaller ambient set, or because the smaller ambient set may have a different collection of upper bounds.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
 s=\sup_{S'} A,\quad s\notin S
 \Longrightarrow
 s\text{ cannot be the supremum of }A\text{ relative to }S.
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -1683,9 +1865,9 @@ There are ordered sets $S\subseteq S'$ and a subset $A\subseteq S$ such that $A$
 \begin{remark*}[Predicate reading]
 \[
 \exists S\subseteq S'\;\exists A\subseteq S\;\exists s\in S':
-\operatorname{Supremum}_{S'}(s,A)
+\operatorname{LeastUpperBound}_{S'}(s,A)
 \land
-\neg\exists t\in S\;\operatorname{Supremum}_S(t,A).
+\neg\exists t\in S\;\operatorname{LeastUpperBound}_S(t,A).
 \]
 \end{remark*}
 
@@ -1699,22 +1881,28 @@ This assertion is false.
 \begin{remark*}[Negation predicate reading]
 \[
 \forall S\subseteq S'\;\forall A\subseteq S:
-\bigl[\exists s\in S'\,\operatorname{Supremum}_{S'}(s,A)
+\bigl[\exists s\in S'\,\operatorname{LeastUpperBound}_{S'}(s,A)
 \Longrightarrow
-\exists t\in S\,\operatorname{Supremum}_S(t,A)\bigr]
+\exists t\in S\,\operatorname{LeastUpperBound}_S(t,A)\bigr]
 \]
 is false.
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 The transfer from $S'$ to $S$ fails when the least upper bound exists in the larger ambient set but is missing from the smaller one. The smaller ambient set may contain upper bounds without containing a least upper bound.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
 s=\sup_{S'} A,\quad s\notin S,\quad
 \text{and no }t\in S\text{ is least among the upper bounds of }A\text{ in }S.
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -1751,7 +1939,7 @@ A=\{q\in\mathbb{Q}:q^2<2\}
 
 \begin{remark*}[Predicate reading]
 \[
-\neg\exists s\in\mathbb{Q}\;\operatorname{Supremum}_{\mathbb{Q}}(s,A),
+\neg\exists s\in\mathbb{Q}\;\operatorname{LeastUpperBound}_{\mathbb{Q}}(s,A),
 \qquad
 A=\{q\in\mathbb{Q}:q^2<2\}.
 \]
@@ -1766,16 +1954,21 @@ is false for this set.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\exists s\in\mathbb{Q}\;\operatorname{Supremum}_{\mathbb{Q}}(s,A)
+\exists s\in\mathbb{Q}\;\operatorname{LeastUpperBound}_{\mathbb{Q}}(s,A)
 \]
 is false.
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 A rational candidate below $\sqrt{2}$ fails to be an upper bound. A rational candidate above $\sqrt{2}$ is an upper bound but is not least, because another rational upper bound lies between it and $\sqrt{2}$.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
 \begin{cases}
 s^2<2 &\Longrightarrow s\text{ is not an upper bound of }A,\\
@@ -1783,6 +1976,7 @@ s^2>2 &\Longrightarrow s\text{ is not the least upper bound of }A.
 \end{cases}
 \qquad(s\in\mathbb{Q})
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -1800,10 +1994,6 @@ The set wants $\sqrt{2}$ as its least ceiling, but that number is not rational. 
 
 
 \input{volume-iii/book-analysis-i/bounding/notes/bounds-algebra/figure-bounds-algebra}
-
-
-
-
 
 
 

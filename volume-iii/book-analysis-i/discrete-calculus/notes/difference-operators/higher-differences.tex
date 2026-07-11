@@ -19,10 +19,14 @@ More generally, the \(k\)-th difference \(\Delta^k f(n)\) denotes the
 \]
 \end{definition}
 
-\begin{remark*}[Fully quantified form]
+\begin{remark*}[Standard quantified statement]
 \(\forall k \in \mathbb{N},\; \forall f : \mathbb{Z}\to\mathbb{R},\;
 \forall n \in \mathbb{Z}:\;
 \Delta^k f(n) := (\underbrace{\Delta \circ \cdots \circ \Delta}_{k})\,f(n)\).
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+The displayed quantified statement is the predicate-level form of $label: its hypotheses name the input conditions, and its conclusion names the asserted structure or relation.
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -38,6 +42,7 @@ derivatives measure repeated infinitesimal change.
 
 \subsection*{Example}
 
+\begin{example*}
 Let \(f(n) = n^2\). Then
 \[
 \begin{aligned}
@@ -46,8 +51,9 @@ Let \(f(n) = n^2\). Then
 \Delta^3 f(n) &= \Delta(2) = 0.
 \end{aligned}
 \]
+\end{example*}
 
-\begin{remark*}[Analogy with higher derivatives]
+\begin{remark*}[Interpretation]
 Higher differences behave analogously to higher derivatives.
 For polynomial functions of degree \(d\), the \(d\)-th difference is
 constant and all higher differences are zero --- just as the \(d\)-th

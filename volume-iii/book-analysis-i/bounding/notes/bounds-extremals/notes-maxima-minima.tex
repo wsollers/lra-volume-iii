@@ -1,8 +1,10 @@
 \subsection{Maxima and Minima}
 
+\begin{remark*}[Exposition]
 Maxima and minima are attained sharp bounds.  They are stronger than
 suprema and infima because the extremal element must belong to the
 nonempty set itself.
+\end{remark*}
 
 \begin{figure}[htbp]
   \centering
@@ -32,9 +34,8 @@ element of $A$ is less than or equal to $m$.
 
 \begin{remark*}[Predicate reading]
 \[
-  \operatorname{Max}_{S,\leq}(m,A)
-  :=
-  m\in A\land\operatorname{UB}_{S,\leq}(m,A).
+  P=\mathsf{OrderedSet}(S,\leq),\qquad
+  \operatorname{GreatestElement}(m,A,P).
 \]
 \end{remark*}
 
@@ -50,24 +51,51 @@ element of $A$ is less than or equal to $m$.
 
 \begin{remark*}[Negation predicate reading]
 \[
-  \neg\operatorname{Max}_{S,\leq}(m,A)
-  \Longleftrightarrow
-  A=\varnothing
-  \lor
-  m\notin A
-  \lor
-  \neg\operatorname{UB}_{S,\leq}(m,A).
+  P=\mathsf{OrderedSet}(S,\leq),\qquad
+  \neg\operatorname{GreatestElement}(m,A,P).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-The set may be empty; the candidate may not be a member of the set; or a
-larger element of the set may exist.
+\begin{description}
+  \item[Exposition.]
+  Maximum failure means the candidate is not an attained upper bound of
+  the set.
+
+  \item[Empty-set failure.]
+  The definition is stated for nonempty subsets.
+  \[
+    A=\varnothing.
+  \]
+  \[
+    \operatorname{EmptySet}(A).
+  \]
+
+  \item[Attainment failure.]
+  The candidate is not an element of the set.
+  \[
+    m\notin A.
+  \]
+  \[
+    P=\mathsf{OrderedSet}(S,\leq),\qquad
+    \neg\operatorname{GreatestElement}(m,A,P).
+  \]
+
+  \item[Upper-bound failure.]
+  Some element of the set lies strictly above the candidate.
+  \[
+    (\exists x\in A)(m<x).
+  \]
+  \[
+    P=\mathsf{OrderedSet}(S,\leq),\qquad
+    \neg\operatorname{UpperBound}(m,A,P).
+  \]
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure modes]
-Maximum combines membership and an upper-bound condition.  Failure of
-either component prevents attainment.
+\begin{remark*}[Interpretation]
+A maximum is an upper bound that is attained by the set itself.  The
+attainment condition separates maximum from supremum.
 \end{remark*}
 
 \begin{dependencies}
@@ -98,9 +126,8 @@ element of $A$ is greater than or equal to $m$.
 
 \begin{remark*}[Predicate reading]
 \[
-  \operatorname{Min}_{S,\leq}(m,A)
-  :=
-  m\in A\land\operatorname{LB}_{S,\leq}(m,A).
+  P=\mathsf{OrderedSet}(S,\leq),\qquad
+  \operatorname{LeastElement}(m,A,P).
 \]
 \end{remark*}
 
@@ -116,24 +143,51 @@ element of $A$ is greater than or equal to $m$.
 
 \begin{remark*}[Negation predicate reading]
 \[
-  \neg\operatorname{Min}_{S,\leq}(m,A)
-  \Longleftrightarrow
-  A=\varnothing
-  \lor
-  m\notin A
-  \lor
-  \neg\operatorname{LB}_{S,\leq}(m,A).
+  P=\mathsf{OrderedSet}(S,\leq),\qquad
+  \neg\operatorname{LeastElement}(m,A,P).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-The set may be empty; the candidate may not be a member of the set; or a
-smaller element of the set may exist.
+\begin{description}
+  \item[Exposition.]
+  Minimum failure means the candidate is not an attained lower bound of
+  the set.
+
+  \item[Empty-set failure.]
+  The definition is stated for nonempty subsets.
+  \[
+    A=\varnothing.
+  \]
+  \[
+    \operatorname{EmptySet}(A).
+  \]
+
+  \item[Attainment failure.]
+  The candidate is not an element of the set.
+  \[
+    m\notin A.
+  \]
+  \[
+    P=\mathsf{OrderedSet}(S,\leq),\qquad
+    \neg\operatorname{LeastElement}(m,A,P).
+  \]
+
+  \item[Lower-bound failure.]
+  Some element of the set lies strictly below the candidate.
+  \[
+    (\exists x\in A)(x<m).
+  \]
+  \[
+    P=\mathsf{OrderedSet}(S,\leq),\qquad
+    \neg\operatorname{LowerBound}(m,A,P).
+  \]
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure modes]
-Minimum combines membership and a lower-bound condition.  Failure of
-either component prevents attainment.
+\begin{remark*}[Interpretation]
+A minimum is a lower bound that is attained by the set itself.  The
+attainment condition separates minimum from infimum.
 \end{remark*}
 
 \begin{dependencies}
@@ -157,9 +211,9 @@ $m,n\in S$ are both maxima of $A$, then $m=n$.
 \[
   A\neq\varnothing
   \quad\text{and}\quad
-  \operatorname{Max}_{S,\leq}(m,A)
+  \operatorname{GreatestElement}(m,A,P)
   \quad\text{and}\quad
-  \operatorname{Max}_{S,\leq}(n,A)
+  \operatorname{GreatestElement}(n,A,P)
   \quad\Longrightarrow\quad
   m=n.
 \]
@@ -167,7 +221,8 @@ $m,n\in S$ are both maxima of $A$, then $m=n$.
 
 \begin{remark*}[Predicate reading]
 \[
-  \operatorname{Max}_{S,\leq}(m,A)\land\operatorname{Max}_{S,\leq}(n,A)
+  P=\mathsf{OrderedSet}(S,\leq),\qquad
+  \operatorname{GreatestElement}(m,A,P)\land\operatorname{GreatestElement}(n,A,P)
   \Longrightarrow m=n.
 \]
 \end{remark*}
@@ -176,9 +231,9 @@ $m,n\in S$ are both maxima of $A$, then $m=n$.
 \[
   A\neq\varnothing
   \quad\text{and}\quad
-  \operatorname{Max}_{S,\leq}(m,A)
+  \operatorname{GreatestElement}(m,A,P)
   \quad\text{and}\quad
-  \operatorname{Max}_{S,\leq}(n,A)
+  \operatorname{GreatestElement}(n,A,P)
   \quad\text{and}\quad
   m\neq n.
 \]
@@ -186,19 +241,35 @@ $m,n\in S$ are both maxima of $A$, then $m=n$.
 
 \begin{remark*}[Negation predicate reading]
 \[
-  \operatorname{Max}_{S,\leq}(m,A)\land
-  \operatorname{Max}_{S,\leq}(n,A)\land m\neq n.
+  P=\mathsf{OrderedSet}(S,\leq),\qquad
+  \operatorname{GreatestElement}(m,A,P)\land
+  \operatorname{GreatestElement}(n,A,P)\land m\neq n.
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-Failure would require two distinct elements of $A$ each to dominate the
-entire set.
+\begin{description}
+  \item[Exposition.]
+  Failure would require two distinct elements of $A$ each to dominate the
+  entire set.
+
+  \item[Distinct-maxima failure.]
+  Two different candidates both satisfy the maximum predicate.
+  \[
+    \operatorname{GreatestElement}(m,A,P)\land
+    \operatorname{GreatestElement}(n,A,P)\land m\neq n.
+  \]
+  \[
+    P=\mathsf{OrderedSet}(S,\leq),\qquad
+    \operatorname{GreatestElement}(m,A,P)\land
+    \operatorname{GreatestElement}(n,A,P)\land m\neq n.
+  \]
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure modes]
-Since $m$ is maximal over all elements and $n\in A$, we get $n\leq m$.
-Since $n$ is maximal over all elements and $m\in A$, we get $m\leq n$.
+\begin{remark*}[Interpretation]
+Uniqueness says that attainment at the top of a set cannot occur at two
+distinct ordered-set elements.
 \end{remark*}
 
 \begin{dependencies}
@@ -221,9 +292,9 @@ $m,n\in S$ are both minima of $A$, then $m=n$.
 \[
   A\neq\varnothing
   \quad\text{and}\quad
-  \operatorname{Min}_{S,\leq}(m,A)
+  \operatorname{LeastElement}(m,A,P)
   \quad\text{and}\quad
-  \operatorname{Min}_{S,\leq}(n,A)
+  \operatorname{LeastElement}(n,A,P)
   \quad\Longrightarrow\quad
   m=n.
 \]
@@ -231,7 +302,8 @@ $m,n\in S$ are both minima of $A$, then $m=n$.
 
 \begin{remark*}[Predicate reading]
 \[
-  \operatorname{Min}_{S,\leq}(m,A)\land\operatorname{Min}_{S,\leq}(n,A)
+  P=\mathsf{OrderedSet}(S,\leq),\qquad
+  \operatorname{LeastElement}(m,A,P)\land\operatorname{LeastElement}(n,A,P)
   \Longrightarrow m=n.
 \]
 \end{remark*}
@@ -240,9 +312,9 @@ $m,n\in S$ are both minima of $A$, then $m=n$.
 \[
   A\neq\varnothing
   \quad\text{and}\quad
-  \operatorname{Min}_{S,\leq}(m,A)
+  \operatorname{LeastElement}(m,A,P)
   \quad\text{and}\quad
-  \operatorname{Min}_{S,\leq}(n,A)
+  \operatorname{LeastElement}(n,A,P)
   \quad\text{and}\quad
   m\neq n.
 \]
@@ -250,19 +322,35 @@ $m,n\in S$ are both minima of $A$, then $m=n$.
 
 \begin{remark*}[Negation predicate reading]
 \[
-  \operatorname{Min}_{S,\leq}(m,A)\land
-  \operatorname{Min}_{S,\leq}(n,A)\land m\neq n.
+  P=\mathsf{OrderedSet}(S,\leq),\qquad
+  \operatorname{LeastElement}(m,A,P)\land
+  \operatorname{LeastElement}(n,A,P)\land m\neq n.
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-Failure would require two distinct elements of $A$ each to lie below the
-entire set.
+\begin{description}
+  \item[Exposition.]
+  Failure would require two distinct elements of $A$ each to lie below the
+  entire set.
+
+  \item[Distinct-minima failure.]
+  Two different candidates both satisfy the minimum predicate.
+  \[
+    \operatorname{LeastElement}(m,A,P)\land
+    \operatorname{LeastElement}(n,A,P)\land m\neq n.
+  \]
+  \[
+    P=\mathsf{OrderedSet}(S,\leq),\qquad
+    \operatorname{LeastElement}(m,A,P)\land
+    \operatorname{LeastElement}(n,A,P)\land m\neq n.
+  \]
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure modes]
-Since $m$ is minimal and $n\in A$, we get $m\leq n$.  Since $n$ is
-minimal and $m\in A$, we get $n\leq m$.
+\begin{remark*}[Interpretation]
+Uniqueness says that attainment at the bottom of a set cannot occur at two
+distinct ordered-set elements.
 \end{remark*}
 
 \begin{dependencies}
@@ -286,35 +374,51 @@ $m=\max A$, then $m=\sup A$.
 \[
   A\neq\varnothing
   \quad\text{and}\quad
-  \operatorname{Max}_{S,\leq}(m,A)
+  \operatorname{GreatestElement}(m,A,P)
   \quad\Longrightarrow\quad
-  \operatorname{Sup}_{S,\leq}(m,A).
+  \operatorname{LeastUpperBound}(m,A,P).
 \]
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
 \[
-  \operatorname{Max}_{S,\leq}(m,A)\Longrightarrow
-  \operatorname{Sup}_{S,\leq}(m,A).
+  P=\mathsf{OrderedSet}(S,\leq),\qquad
+  \operatorname{GreatestElement}(m,A,P)\Longrightarrow
+  \operatorname{LeastUpperBound}(m,A,P).
 \]
 \end{remark*}
 
 \begin{remark*}[Negated quantified statement]
 \[
-  \operatorname{Max}_{S,\leq}(m,A)
+  \operatorname{GreatestElement}(m,A,P)
   \quad\text{and}\quad
-  \neg\operatorname{Sup}_{S,\leq}(m,A).
+  \neg\operatorname{LeastUpperBound}(m,A,P).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-Failure would require an attained upper bound that is not least among
-upper bounds.
+\begin{description}
+  \item[Exposition.]
+  Failure would require an attained upper bound that is not least among
+  upper bounds.
+
+  \item[Leastness failure.]
+  The candidate is a maximum but not the least upper bound.
+  \[
+    \operatorname{GreatestElement}(m,A,P)\land
+    \neg\operatorname{LeastUpperBound}(m,A,P).
+  \]
+  \[
+    P=\mathsf{OrderedSet}(S,\leq),\qquad
+    \operatorname{GreatestElement}(m,A,P)\land
+    \neg\operatorname{LeastUpperBound}(m,A,P).
+  \]
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure modes]
-Membership gives $m\in A$.  Any upper bound of $A$ must lie above every
-element of $A$, hence above $m$ itself.
+\begin{remark*}[Interpretation]
+An attained upper bound is automatically least among upper bounds because
+any upper bound must lie above the attained element.
 \end{remark*}
 
 \begin{dependencies}
@@ -338,35 +442,51 @@ $m=\min A$, then $m=\inf A$.
 \[
   A\neq\varnothing
   \quad\text{and}\quad
-  \operatorname{Min}_{S,\leq}(m,A)
+  \operatorname{LeastElement}(m,A,P)
   \quad\Longrightarrow\quad
-  \operatorname{Inf}_{S,\leq}(m,A).
+  \operatorname{GreatestLowerBound}(m,A,P).
 \]
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
 \[
-  \operatorname{Min}_{S,\leq}(m,A)\Longrightarrow
-  \operatorname{Inf}_{S,\leq}(m,A).
+  P=\mathsf{OrderedSet}(S,\leq),\qquad
+  \operatorname{LeastElement}(m,A,P)\Longrightarrow
+  \operatorname{GreatestLowerBound}(m,A,P).
 \]
 \end{remark*}
 
 \begin{remark*}[Negated quantified statement]
 \[
-  \operatorname{Min}_{S,\leq}(m,A)
+  \operatorname{LeastElement}(m,A,P)
   \quad\text{and}\quad
-  \neg\operatorname{Inf}_{S,\leq}(m,A).
+  \neg\operatorname{GreatestLowerBound}(m,A,P).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-Failure would require an attained lower bound that is not greatest among
-lower bounds.
+\begin{description}
+  \item[Exposition.]
+  Failure would require an attained lower bound that is not greatest among
+  lower bounds.
+
+  \item[Greatestness failure.]
+  The candidate is a minimum but not the greatest lower bound.
+  \[
+    \operatorname{LeastElement}(m,A,P)\land
+    \neg\operatorname{GreatestLowerBound}(m,A,P).
+  \]
+  \[
+    P=\mathsf{OrderedSet}(S,\leq),\qquad
+    \operatorname{LeastElement}(m,A,P)\land
+    \neg\operatorname{GreatestLowerBound}(m,A,P).
+  \]
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure modes]
-Membership gives $m\in A$.  Any lower bound of $A$ must lie below every
-element of $A$, hence below $m$ itself.
+\begin{remark*}[Interpretation]
+An attained lower bound is automatically greatest among lower bounds because
+any lower bound must lie below the attained element.
 \end{remark*}
 
 \begin{dependencies}
@@ -391,39 +511,56 @@ $s=\sup A$ and $s\in A$, then $s=\max A$.
 \[
   A\neq\varnothing
   \quad\text{and}\quad
-  \operatorname{Sup}_{S,\leq}(s,A)
+  \operatorname{LeastUpperBound}(s,A,P)
   \quad\text{and}\quad
   s\in A
   \quad\Longrightarrow\quad
-  \operatorname{Max}_{S,\leq}(s,A).
+  \operatorname{GreatestElement}(s,A,P).
 \]
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
 \[
-  \operatorname{Sup}_{S,\leq}(s,A)\land s\in A
-  \Longrightarrow \operatorname{Max}_{S,\leq}(s,A).
+  P=\mathsf{OrderedSet}(S,\leq),\qquad
+  \operatorname{LeastUpperBound}(s,A,P)\land s\in A
+  \Longrightarrow \operatorname{GreatestElement}(s,A,P).
 \]
 \end{remark*}
 
 \begin{remark*}[Negated quantified statement]
 \[
-  \operatorname{Sup}_{S,\leq}(s,A)
+  \operatorname{LeastUpperBound}(s,A,P)
   \quad\text{and}\quad
   s\in A
   \quad\text{and}\quad
-  \neg\operatorname{Max}_{S,\leq}(s,A).
+  \neg\operatorname{GreatestElement}(s,A,P).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-Failure would require a supremum that belongs to the set but is not its
-maximum.
+\begin{description}
+  \item[Exposition.]
+  Failure would require a supremum that belongs to the set but is not its
+  maximum.
+
+  \item[Attained-supremum failure.]
+  The candidate is a least upper bound, belongs to the set, and yet is not
+  the greatest element.
+  \[
+    \operatorname{LeastUpperBound}(s,A,P)\land s\in A\land
+    \neg\operatorname{GreatestElement}(s,A,P).
+  \]
+  \[
+    P=\mathsf{OrderedSet}(S,\leq),\qquad
+    \operatorname{LeastUpperBound}(s,A,P)\land s\in A\land
+    \neg\operatorname{GreatestElement}(s,A,P).
+  \]
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure modes]
-The supremum condition supplies the upper-bound clause.  Membership
-supplies attainment.
+\begin{remark*}[Interpretation]
+A supremum that belongs to the set is an attained upper bound, so it is the
+maximum.
 \end{remark*}
 
 \begin{dependencies}
@@ -446,39 +583,56 @@ $i=\inf A$ and $i\in A$, then $i=\min A$.
 \[
   A\neq\varnothing
   \quad\text{and}\quad
-  \operatorname{Inf}_{S,\leq}(i,A)
+  \operatorname{GreatestLowerBound}(i,A,P)
   \quad\text{and}\quad
   i\in A
   \quad\Longrightarrow\quad
-  \operatorname{Min}_{S,\leq}(i,A).
+  \operatorname{LeastElement}(i,A,P).
 \]
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
 \[
-  \operatorname{Inf}_{S,\leq}(i,A)\land i\in A
-  \Longrightarrow \operatorname{Min}_{S,\leq}(i,A).
+  P=\mathsf{OrderedSet}(S,\leq),\qquad
+  \operatorname{GreatestLowerBound}(i,A,P)\land i\in A
+  \Longrightarrow \operatorname{LeastElement}(i,A,P).
 \]
 \end{remark*}
 
 \begin{remark*}[Negated quantified statement]
 \[
-  \operatorname{Inf}_{S,\leq}(i,A)
+  \operatorname{GreatestLowerBound}(i,A,P)
   \quad\text{and}\quad
   i\in A
   \quad\text{and}\quad
-  \neg\operatorname{Min}_{S,\leq}(i,A).
+  \neg\operatorname{LeastElement}(i,A,P).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-Failure would require an infimum that belongs to the set but is not its
-minimum.
+\begin{description}
+  \item[Exposition.]
+  Failure would require an infimum that belongs to the set but is not its
+  minimum.
+
+  \item[Attained-infimum failure.]
+  The candidate is a greatest lower bound, belongs to the set, and yet is not
+  the least element.
+  \[
+    \operatorname{GreatestLowerBound}(i,A,P)\land i\in A\land
+    \neg\operatorname{LeastElement}(i,A,P).
+  \]
+  \[
+    P=\mathsf{OrderedSet}(S,\leq),\qquad
+    \operatorname{GreatestLowerBound}(i,A,P)\land i\in A\land
+    \neg\operatorname{LeastElement}(i,A,P).
+  \]
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure modes]
-The infimum condition supplies the lower-bound clause.  Membership
-supplies attainment.
+\begin{remark*}[Interpretation]
+An infimum that belongs to the set is an attained lower bound, so it is the
+minimum.
 \end{remark*}
 
 \begin{dependencies}

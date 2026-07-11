@@ -2,7 +2,7 @@
 % Completeness Equivalences
 % =========================================================
 
-\begin{remark*}[The same gap-free principle]
+\begin{remark*}[Interpretation]
 The least upper bound property is the order form of completeness. The
 Monotone Convergence Theorem, the Nested Interval Property, the
 Bolzano--Weierstrass theorem, and the Cauchy criterion are sequential and
@@ -23,17 +23,23 @@ every bounded monotone real sequence converges.
 
 \begin{remark*}[Standard quantified statement]
 \[
-\operatorname{LeastUpperBoundProperty}(\mathbb{R})
+\operatorname{HasLeastUpperBoundProperty}(\mathbb{R})
 \Longrightarrow
 \forall (x_n)\subseteq\mathbb{R}\;
 \bigl(
-  \operatorname{MonotoneSequence}(x_n)
+  \operatorname{Monotone}((x_n),\mathsf{OrderedSet}(\mathbb{R},\leq))
   \land
-  \operatorname{BoundedSequence}(x_n)
+  \operatorname{Bounded}(x_n)
   \rightarrow
-  \operatorname{ConvergentSequence}(x_n)
+  \operatorname{ConvergesTo}(x_n)
 \bigr).
 \]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The least upper bound property supplies the missing limit for a bounded
+monotone sequence: the supremum or infimum of its range becomes the sequence
+limit.
 \end{remark*}
 
 \begin{dependencies}
@@ -56,7 +62,17 @@ the least upper bound property.
 \end{theorem}
 \end{theorembox}
 
-\begin{remark*}[Proof idea]
+\begin{remark*}[Standard quantified statement]
+\[
+\bigl[\forall (x_n)\subseteq\mathbb{R}\;
+(\operatorname{Monotone}((x_n),\mathsf{OrderedSet}(\mathbb{R},\leq))\land\operatorname{Bounded}(x_n)
+\Rightarrow \operatorname{ConvergesTo}(x_n))\bigr]
+\Longrightarrow
+\operatorname{HasLeastUpperBoundProperty}(\mathbb{R}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
 Starting from a nonempty set $A\subseteq\mathbb{R}$ bounded above, choose an
 element of $A$ and an upper bound. Bisect the bracket. Keep the upper endpoint
 when the midpoint is still an upper bound; otherwise keep the midpoint as a
@@ -88,6 +104,21 @@ Over the Archimedean ordered field axioms, the following are equivalent:
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{HasLeastUpperBoundProperty}(\mathbb{R})
+\Longleftrightarrow
+\forall (x_n)\subseteq\mathbb{R}\;
+\bigl(\operatorname{Monotone}((x_n),\mathsf{OrderedSet}(\mathbb{R},\leq))\land\operatorname{Bounded}(x_n)
+\Rightarrow \operatorname{ConvergesTo}(x_n)\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The equivalence identifies order completeness and monotone sequential
+completeness as the same principle expressed in different languages.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:lub-property-implies-monotone-convergence]{Least Upper Bound Property Implies Monotone Convergence}
@@ -110,6 +141,20 @@ Over the Archimedean ordered field axioms, the following are equivalent:
 \hyperref[prf:lub-property-equivalent-nested-interval-property]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{HasLeastUpperBoundProperty}(\mathbb{R})
+\Longleftrightarrow
+\text{every nested sequence of nonempty closed bounded intervals has nonempty intersection}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Nested intervals express completeness geometrically: repeatedly shrinking
+closed bounded intervals cannot shrink around a missing point in the real
+line.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -137,7 +182,21 @@ Over the Archimedean ordered field axioms, the following are equivalent:
 \end{theorem}
 \end{theorembox}
 
-\begin{remark*}[How to read the equivalence]
+\begin{remark*}[Standard quantified statement]
+\[
+\text{LUB property}
+\Longleftrightarrow
+\text{monotone convergence}
+\Longleftrightarrow
+\text{nested intervals}
+\Longleftrightarrow
+\text{Bolzano--Weierstrass}
+\Longleftrightarrow
+\text{Cauchy completeness}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
 The first statement is the order version. The second and fifth are sequence
 versions. The third is the interval version. The fourth is the compactness
 version for bounded sequences.

@@ -40,13 +40,13 @@ Let $(x_n)$ be an increasing real sequence that is bounded above. Then
 \]
 \end{remark*}
 
-\begin{remark*}[Theorem predicate reading]
+\begin{remark*}[Predicate reading]
 \[
-\operatorname{MonotoneIncreasingSequence}(x_n)
+\operatorname{OrderPreserving}(x_n)
 \land
-\operatorname{BoundedAboveSequence}(x_n)
+\operatorname{BoundedAbove}(x_n)
 \Longrightarrow
-\operatorname{ConvergentSequence}\bigl(x_n,\sup\{x_n:n\in\mathbb{N}\}\bigr).
+\operatorname{ConvergesTo}\bigl(x_n,\sup\{x_n:n\in\mathbb{N}\}\bigr).
 \]
 \end{remark*}
 
@@ -98,13 +98,13 @@ Let $(x_n)$ be a decreasing real sequence that is bounded below. Then
 \]
 \end{remark*}
 
-\begin{remark*}[Theorem predicate reading]
+\begin{remark*}[Predicate reading]
 \[
-\operatorname{MonotoneDecreasingSequence}(x_n)
+\operatorname{OrderReversing}(x_n)
 \land
-\operatorname{BoundedBelowSequence}(x_n)
+\operatorname{BoundedBelow}(x_n)
 \Longrightarrow
-\operatorname{ConvergentSequence}\bigl(x_n,\inf\{x_n:n\in\mathbb{N}\}\bigr).
+\operatorname{ConvergesTo}\bigl(x_n,\inf\{x_n:n\in\mathbb{N}\}\bigr).
 \]
 \end{remark*}
 
@@ -162,15 +162,15 @@ Then $(s_n)$ and $(i_n)$ converge.
 \]
 \end{remark*}
 
-\begin{remark*}[Theorem predicate reading]
+\begin{remark*}[Predicate reading]
 \[
-\operatorname{BoundedSequence}(x_n)
+\operatorname{Bounded}(x_n)
 \Longrightarrow
 \exists S,I\in\mathbb{R}\;
 \bigl(
-  \operatorname{ConvergentSequence}(\sup\{x_k:k\ge n\},S)
+  \operatorname{ConvergesTo}(\sup\{x_k:k\ge n\},S)
   \land
-  \operatorname{ConvergentSequence}(\inf\{x_k:k\ge n\},I)
+  \operatorname{ConvergesTo}(\inf\{x_k:k\ge n\},I)
 \bigr).
 \]
 \end{remark*}
@@ -219,15 +219,15 @@ Every bounded real sequence has a limit superior and a limit inferior.
 \]
 \end{remark*}
 
-\begin{remark*}[Theorem predicate reading]
+\begin{remark*}[Predicate reading]
 \[
-\operatorname{BoundedSequence}(x_n)
+\operatorname{Bounded}(x_n)
 \Longrightarrow
 \exists S,I\in\mathbb{R}\;
 \bigl(
-  \operatorname{LimsupSequence}(x_n,S)
+  \operatorname{Limsup}(x_n,S)
   \land
-  \operatorname{LiminfSequence}(x_n,I)
+  \operatorname{Liminf}(x_n,I)
 \bigr).
 \]
 \end{remark*}

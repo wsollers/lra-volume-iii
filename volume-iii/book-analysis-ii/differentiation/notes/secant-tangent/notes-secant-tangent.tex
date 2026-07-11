@@ -3,7 +3,7 @@
 % =========================================================
 % ---------------------------------------------------------
 
-\begin{remark*}[Section guide]
+\begin{remark*}[Interpretation]
 Before the derivative is a formula it is a question: what straight line best
 matches a curve at a single point? The route in is indirect: choose a second
 point, draw the computable secant line, and let that point slide toward the
@@ -28,6 +28,10 @@ m_{\mathrm{sec}}(x_1, x_2) := \frac{f(x_2) - f(x_1)}{x_2 - x_1}.
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+The displayed quantified statement is the predicate-level form of $label: its hypotheses name the input conditions, and its conclusion names the asserted structure or relation.
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 With increments $\Delta x := x_2 - x_1$ and $\Delta y := f(x_2) - f(x_1)$, the secant slope is $\Delta y / \Delta x$ --- the average rate of change of $f$ over the interval $[x_1, x_2]$. This is an exact algebraic identity; no limit is involved. As $x_2 \to x_1$, if the secant slope converges, its limit is the derivative $f'(x_1)$ --- the instantaneous rate of change. Geometrically, the secant line rotates about the fixed point $(x_1, f(x_1))$ as $x_2$ approaches $x_1$, and the limit position is the tangent line.
 \end{remark*}
@@ -47,6 +51,13 @@ Let $f:A\to\mathbb{R}$, let $c\in A$, and let $x\in A$ with $x\neq c$. The \emph
 \]
 \end{definition}
 \end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+m_{\sec}(c,x)=\frac{f(x)-f(c)}{x-c},
+\qquad x\in A,\ x\neq c.
+\]
+\end{remark*}
 
 \begin{remark*}[Interpretation]
 The difference quotient is the slope of the secant line through $(c,f(c))$ and $(x,f(x))$. It is the quantity whose limiting value, when it exists as $x\to c$, becomes the derivative.
@@ -72,8 +83,8 @@ y = f(c) + f'(c)(x - c).
 
 \begin{remark*}[Standard quantified statement]
 \[
-\operatorname{DifferentiableAt}(f, c) \;\Rightarrow\;
-\operatorname{LinearApproximationAt}(f, c) = f(c) + f'(c)(x - c).
+\operatorname{IsDifferentiable}(f, c) \;\Rightarrow\;
+\operatorname{HasLinearApproximation}(f, c) = f(c) + f'(c)(x - c).
 \]
 \end{remark*}
 

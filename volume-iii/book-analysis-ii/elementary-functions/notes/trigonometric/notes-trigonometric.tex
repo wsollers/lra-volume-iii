@@ -30,7 +30,9 @@ $x \in \mathbb{R}$ by the absolutely convergent power series
   \;=\; 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \cdots
 \]
 \end{definition}
-\end{definitionbox}\begin{remark*}[Standard quantified statement]
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
 \[
   \forall x \in \mathbb{R} :\;
   \sin x = \sum_{n=0}^\infty \frac{(-1)^n x^{2n+1}}{(2n+1)!},
@@ -42,17 +44,17 @@ both absolutely convergent by the ratio test.
 
 \begin{remark*}[Predicate reading]
 \[
-  \operatorname{Sine}(x,y)
+  y=\sin x
   \;\colonequiv\;
-  y = \sum_{n=0}^\infty \frac{(-1)^n x^{2n+1}}{(2n+1)!}.
+  y = \sum_{n=0}^\infty \frac{(-1)^n x^{2n+1}}{(2n+1)!},
   \qquad
-  \operatorname{Cosine}(x,y)
+  y=\cos x
   \;\colonequiv\;
   y = \sum_{n=0}^\infty \frac{(-1)^n x^{2n}}{(2n)!}.
 \]
 \end{remark*}
 
-\begin{remark*}[Key properties]
+\begin{remark*}[Interpretation]
 \begin{enumerate}[label=(\roman*)]
   \item $\sin 0 = 0$;\; $\cos 0 = 1$.
   \item $\sin(-x) = -\sin x$ (odd);\; $\cos(-x) = \cos x$ (even).
@@ -63,7 +65,7 @@ both absolutely convergent by the ratio test.
 \end{enumerate}
 \end{remark*}
 
-\begin{remark*}[Relationship to $e^{ix}$]
+\begin{remark*}[Interpretation]
 Euler's formula: $e^{ix} = \cos x + i\sin x$, where $e^{ix}$ is
 defined by the complex exponential series. This gives $\cos x =
 \operatorname{Re}(e^{ix})$ and $\sin x = \operatorname{Im}(e^{ix})$.
@@ -104,10 +106,7 @@ For all $x \in \mathbb{R}$:
 
 \begin{remark*}[Predicate reading]
 \[
-  \operatorname{PythagoreanIdentity}(x)
-  \;\colonequiv\;
-  \operatorname{Sine}(x,s) \;\wedge\; \operatorname{Cosine}(x,c)
-  \;\wedge\; s^2 + c^2 = 1.
+  \sin^2 x+\cos^2 x=1.
 \]
 \end{remark*}
 
@@ -120,7 +119,7 @@ For all $x \in \mathbb{R}$:
 The negation has no witness --- the identity holds universally.
 \end{remark*}
 
-\begin{remark*}[Proof strategy]
+\begin{remark*}[Interpretation]
 Define $f(x) := \sin^2 x + \cos^2 x$. Then $f'(x) = 2\sin x \cos x
 + 2\cos x(-\sin x) = 0$, so $f$ is constant. Since $f(0) = 0 + 1 =
 1$, the identity follows.
@@ -167,8 +166,6 @@ For all $x, y \in \mathbb{R}$:
 
 \begin{remark*}[Predicate reading]
 \[
-  \operatorname{TrigAddition}(x,y)
-  \;\colonequiv\;
   \sin(x+y) = \sin x\cos y + \cos x\sin y
   \;\wedge\;
   \cos(x+y) = \cos x\cos y - \sin x\sin y.
@@ -185,12 +182,12 @@ For all $x, y \in \mathbb{R}$:
 The negation has no witness.
 \end{remark*}
 
-\begin{remark*}[Proof strategy]
+\begin{remark*}[Interpretation]
 From the Cauchy product: $e^{i(x+y)} = e^{ix}e^{iy}$. Taking real
 and imaginary parts yields both addition formulas simultaneously.
 \end{remark*}
 
-\begin{remark*}[Derived identities]
+\begin{remark*}[Interpretation]
 \begin{align*}
   \sin(2x) &= 2\sin x \cos x \\
   \cos(2x) &= \cos^2 x - \sin^2 x = 1 - 2\sin^2 x = 2\cos^2 x - 1 \\
@@ -234,13 +231,12 @@ i.e., $x \neq \pi/2 + k\pi$ for $k \in \mathbb{Z}$.
 
 \begin{remark*}[Predicate reading]
 \[
-  \operatorname{Tangent}(x,y)
-  \;\colonequiv\;
-  \cos x \neq 0 \;\wedge\; y = \frac{\sin x}{\cos x}.
+  \tan x=\frac{\sin x}{\cos x}
+  \qquad(\cos x\neq0).
 \]
 \end{remark*}
 
-\begin{remark*}[Pythagorean identities for $\tan$]
+\begin{remark*}[Interpretation]
 Dividing $\sin^2 x + \cos^2 x = 1$ by $\cos^2 x$:
 $1 + \tan^2 x = \sec^2 x$.
 Dividing by $\sin^2 x$: $\cot^2 x + 1 = \csc^2 x$.
@@ -282,7 +278,7 @@ Dividing by $\sin^2 x$: $\cot^2 x + 1 = \csc^2 x$.
 
 \begin{remark*}[Predicate reading]
 \[
-  \operatorname{Arctan}(y,x)
+  x=\arctan y
   \;\colonequiv\;
   x\in(-\pi/2,\pi/2) \;\wedge\; \tan x = y.
 \]
@@ -290,24 +286,32 @@ Dividing by $\sin^2 x$: $\cot^2 x + 1 = \csc^2 x$.
 
 \begin{remark*}[Predicate reading]
 \[
-  \operatorname{FunctionLimit}\!\left(\frac{\sin x}{x},\,0,\,1\right)
+  \operatorname{TendsTo}\!\left(\frac{\sin x}{x},\,0,\,1\right)
   \;\colonequiv\;
   \forall\varepsilon>0,\;\exists\delta>0,\;\forall x:\;
-  \operatorname{InputTolerance}(x,0,\delta)
+  \bigl(
+    \operatorname{PuncturedNeighborhood}(U^\times_\delta,U_\delta,0,\delta,\mathbb R)
+    \wedge
+    \operatorname{Within}(x,U^\times_\delta,\mathbb R)
+  \bigr)
   \Rightarrow
-  \operatorname{OutputTolerance}\!\left(\frac{\sin x}{x},1,\varepsilon\right).
+  \bigl(
+    \operatorname{Ball}(B_\varepsilon(1),1,\varepsilon,\mathbb R)
+    \wedge
+    \operatorname{Within}\!\left(\frac{\sin x}{x},B_\varepsilon(1),\mathbb R\right)
+  \bigr).
 \]
 \end{remark*}
 
 \begin{remark*}[Negated quantified statement]
 \[
-  \neg\,\operatorname{Arctan}(y,x)
+  x\neq\arctan y
   \;\iff\;
   x\notin(-\pi/2,\pi/2) \;\vee\; \tan x \neq y.
 \]
 \end{remark*}
 
-\begin{remark*}[Key limits of $\arctan$]
+\begin{remark*}[Interpretation]
 \[
   \lim_{x \to +\infty} \arctan x = \frac{\pi}{2},
   \qquad
@@ -362,19 +366,19 @@ supremum and infimum of its range.
 \]
 \end{remark*}
 
-\begin{remark*}[Proof strategy --- series]
+\begin{remark*}[Interpretation]
 From the series: $\sin x / x = 1 - x^2/3! + x^4/5! - \cdots \to 1$
 as $x \to 0$ by continuity of power series at their center.
 \end{remark*}
 
-\begin{remark*}[Proof strategy --- geometric squeeze]
+\begin{remark*}[Interpretation]
 For $0 < x < \pi/2$, area comparison of two triangles and a circular
 sector gives $\cos x \leq \sin x / x \leq 1$. Since $\cos x \to 1$
 as $x \to 0^+$, the Squeeze Theorem gives $\sin x / x \to 1$.
 Even symmetry extends this to $x \to 0^-$.
 \end{remark*}
 
-\begin{remark*}[Significance]
+\begin{remark*}[Interpretation]
 This is the statement $(\sin x)'\big|_{x=0} = 1$, which implies
 $(\sin x)' = \cos x$ everywhere. It underlies all trigonometric
 differentiation.
@@ -417,12 +421,20 @@ differentiation.
 
 \begin{remark*}[Predicate reading]
 \[
-  \operatorname{FunctionLimit}\!\left(\frac{1-\cos x}{x^2},\,0,\,\tfrac{1}{2}\right)
+  \operatorname{TendsTo}\!\left(\frac{1-\cos x}{x^2},\,0,\,\tfrac{1}{2}\right)
   \;\colonequiv\;
   \forall\varepsilon>0,\;\exists\delta>0,\;\forall x:\;
-  \operatorname{InputTolerance}(x,0,\delta)
+  \bigl(
+    \operatorname{PuncturedNeighborhood}(U^\times_\delta,U_\delta,0,\delta,\mathbb R)
+    \wedge
+    \operatorname{Within}(x,U^\times_\delta,\mathbb R)
+  \bigr)
   \Rightarrow
-  \operatorname{OutputTolerance}\!\left(\frac{1-\cos x}{x^2},\tfrac{1}{2},\varepsilon\right).
+  \bigl(
+    \operatorname{Ball}(B_\varepsilon(\tfrac{1}{2}),\tfrac{1}{2},\varepsilon,\mathbb R)
+    \wedge
+    \operatorname{Within}\!\left(\frac{1-\cos x}{x^2},B_\varepsilon(\tfrac{1}{2}),\mathbb R\right)
+  \bigr).
 \]
 \end{remark*}
 
@@ -436,7 +448,7 @@ differentiation.
 \]
 \end{remark*}
 
-\begin{remark*}[Proof strategy]
+\begin{remark*}[Interpretation]
 Use the half-angle identity $1 - \cos x = 2\sin^2(x/2)$:
 \[
   \frac{1 - \cos x}{x^2}

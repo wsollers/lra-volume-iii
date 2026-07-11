@@ -27,7 +27,7 @@ $x_n = c$ for every $n \in \mathbb{N}$.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{ConstantSequence}(x_n,c)
+\operatorname{IsConstant}(x_n,c)
 \coloneqq
 \forall n \in \mathbb{N}\;(x_n = c).
 \]
@@ -48,20 +48,26 @@ $x_n = c$ for every $n \in \mathbb{N}$.
 \begin{remark*}[Negation predicate reading]
 \[
 \neg\exists c \in \mathbb{R}\;
-\operatorname{ConstantSequence}(x_n,c).
+\operatorname{IsConstant}(x_n,c).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 Every proposed constant value fails at some index.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
 \forall c \in \mathbb{R}\;
 \underbrace{\exists n \in \mathbb{N}\;(x_n \neq c)}
 _{\text{a term differs from the proposed constant value}}.
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -103,7 +109,7 @@ $N \in \mathbb{N}$ such that $|x_n| < \varepsilon$ for every $n \ge N$.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{NullSequence}(x_n)
+\operatorname{IsNull}(x_n)
 \coloneqq
 \forall \varepsilon > 0\;
 \exists N \in \mathbb{N}\;
@@ -126,21 +132,27 @@ $N \in \mathbb{N}$ such that $|x_n| < \varepsilon$ for every $n \ge N$.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{NullSequence}(x_n).
+\neg\operatorname{IsNull}(x_n).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 Some positive tolerance is missed infinitely far out in the sequence.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
 \exists \varepsilon > 0\;
 \forall N \in \mathbb{N}\;
 \underbrace{\exists n \ge N\;(|x_n| \ge \varepsilon)}
 _{\text{the tail is not trapped inside the } \varepsilon\text{-band}}.
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -186,9 +198,9 @@ for every $n \in \mathbb{N}$, then $(x_n)$ converges to $c$.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{ConstantSequence}(x_n,c)
+\operatorname{IsConstant}(x_n,c)
 \Longrightarrow
-\operatorname{ConvergentSequence}(x_n,c).
+\operatorname{ConvergesTo}(x_n,c).
 \]
 \end{remark*}
 
@@ -235,9 +247,9 @@ then $(x_n)$ is a null sequence.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{ConstantSequence}(x_n,0)
+\operatorname{IsConstant}(x_n,0)
 \Longrightarrow
-\operatorname{NullSequence}(x_n).
+\operatorname{IsNull}(x_n).
 \]
 \end{remark*}
 
@@ -290,9 +302,9 @@ $c = 0$.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{ConstantSequence}(x_n,c)
+\operatorname{IsConstant}(x_n,c)
 \Longrightarrow
-\bigl(\operatorname{NullSequence}(x_n) \Longleftrightarrow c = 0\bigr).
+\bigl(\operatorname{IsNull}(x_n) \Longleftrightarrow c = 0\bigr).
 \]
 \end{remark*}
 
@@ -336,7 +348,7 @@ $c \in \mathbb{R}$ such that $x_n = c$ for every $n \ge N$.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{UltimatelyConstantSequence}(x_n,c)
+\operatorname{IsUltimatelyConstant}(x_n,c)
 \coloneqq
 \exists N \in \mathbb{N}\;
 \forall n \ge N\;(x_n = c).
@@ -359,21 +371,27 @@ $c \in \mathbb{R}$ such that $x_n = c$ for every $n \ge N$.
 \begin{remark*}[Negation predicate reading]
 \[
 \neg\exists c \in \mathbb{R}\;
-\operatorname{UltimatelyConstantSequence}(x_n,c).
+\operatorname{IsUltimatelyConstant}(x_n,c).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 No tail of the sequence becomes permanently equal to a single real value.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
 \forall N \in \mathbb{N}\;
 \forall c \in \mathbb{R}\;
 \underbrace{\exists n \ge N\;(x_n \neq c)}
 _{\text{the proposed tail value fails later in the sequence}}.
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -426,9 +444,9 @@ sequence.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{ConvergentSequence}(x_n,L)
+\operatorname{ConvergesTo}(x_n,L)
 \Longleftrightarrow
-\operatorname{NullSequence}(x_n - L).
+\operatorname{IsNull}(x_n - L).
 \]
 \end{remark*}
 
@@ -487,9 +505,9 @@ $(x_n)$ converges to $c$.
 \begin{remark*}[Predicate reading]
 \[
 \begin{aligned}
-\operatorname{UltimatelyConstantSequence}(x_n,c)
+\operatorname{IsUltimatelyConstant}(x_n,c)
 \Longrightarrow
-\operatorname{ConvergentSequence}(x_n,c).
+\operatorname{ConvergesTo}(x_n,c).
 \end{aligned}
 \]
 \end{remark*}
@@ -541,9 +559,9 @@ Every constant real sequence is ultimately constant.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{ConstantSequence}(x_n,c)
+\operatorname{IsConstant}(x_n,c)
 \Longrightarrow
-\operatorname{UltimatelyConstantSequence}(x_n,c).
+\operatorname{IsUltimatelyConstant}(x_n,c).
 \]
 \end{remark*}
 
@@ -593,9 +611,9 @@ that $x_n = 0$ for every $n \ge N_0$, then $(x_n)$ is a null sequence.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{UltimatelyConstantSequence}(x_n,0)
+\operatorname{IsUltimatelyConstant}(x_n,0)
 \Longrightarrow
-\operatorname{NullSequence}(x_n).
+\operatorname{IsNull}(x_n).
 \]
 \end{remark*}
 
@@ -654,9 +672,9 @@ $(x_n)$ is a null sequence if and only if $c = 0$.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{UltimatelyConstantSequence}(x_n,c)
+\operatorname{IsUltimatelyConstant}(x_n,c)
 \Longrightarrow
-\bigl(\operatorname{NullSequence}(x_n) \Longleftrightarrow c = 0\bigr).
+\bigl(\operatorname{IsNull}(x_n) \Longleftrightarrow c = 0\bigr).
 \]
 \end{remark*}
 
@@ -723,9 +741,9 @@ $(y_n)$ converges to $L$.
 \Longrightarrow
 \forall L \in \mathbb{R}\;
 \bigl(
-\operatorname{ConvergentSequence}(x_n,L)
+\operatorname{ConvergesTo}(x_n,L)
 \Longleftrightarrow
-\operatorname{ConvergentSequence}(y_n,L)
+\operatorname{ConvergesTo}(y_n,L)
 \bigr).
 \]
 \end{remark*}
@@ -768,7 +786,7 @@ that $x_n \le M$ for every $n \in \mathbb{N}$.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{BoundedAboveSequence}(x_n)
+\operatorname{BoundedAbove}(x_n)
 \coloneqq
 \exists M \in \mathbb{R}\;
 \forall n \in \mathbb{N}\;(x_n \le M).
@@ -789,20 +807,26 @@ that $x_n \le M$ for every $n \in \mathbb{N}$.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{BoundedAboveSequence}(x_n).
+\neg\operatorname{BoundedAbove}(x_n).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 Every proposed upper bound is exceeded by some term of the sequence.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
 \forall M \in \mathbb{R}\;
 \underbrace{\exists n \in \mathbb{N}\;(M < x_n)}
 _{\text{a term rises above the proposed ceiling}}.
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -843,7 +867,7 @@ that $m \le x_n$ for every $n \in \mathbb{N}$.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{BoundedBelowSequence}(x_n)
+\operatorname{BoundedBelow}(x_n)
 \coloneqq
 \exists m \in \mathbb{R}\;
 \forall n \in \mathbb{N}\;(m \le x_n).
@@ -864,20 +888,26 @@ that $m \le x_n$ for every $n \in \mathbb{N}$.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{BoundedBelowSequence}(x_n).
+\neg\operatorname{BoundedBelow}(x_n).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 Every proposed lower bound is undercut by some term of the sequence.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
 \forall m \in \mathbb{R}\;
 \underbrace{\exists n \in \mathbb{N}\;(x_n < m)}
 _{\text{a term falls below the proposed floor}}.
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -918,7 +948,7 @@ $|x_n| \le M$ for every $n \in \mathbb{N}$.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{BoundedSequence}(x_n)
+\operatorname{Bounded}(x_n)
 \coloneqq
 \exists M > 0\;
 \forall n \in \mathbb{N}\;(|x_n| \le M).
@@ -939,20 +969,26 @@ $|x_n| \le M$ for every $n \in \mathbb{N}$.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{BoundedSequence}(x_n).
+\neg\operatorname{Bounded}(x_n).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 Every symmetric bound around zero is escaped by some term of the sequence.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
 \forall M > 0\;
 \underbrace{\exists n \in \mathbb{N}\;(|x_n| > M)}
 _{\text{a term escapes the symmetric band of radius } M}.
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -1003,7 +1039,7 @@ $x_n \le M$ for every $n \ge N_0$.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{BoundedAboveSequence}(x_n)
+\operatorname{BoundedAbove}(x_n)
 \Longleftrightarrow
 \exists M \in \mathbb{R}\;
 \operatorname{Eventually}\bigl(x_n,\; x_n \le M\bigr).
@@ -1059,7 +1095,7 @@ $m \le x_n$ for every $n \ge N_0$.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{BoundedBelowSequence}(x_n)
+\operatorname{BoundedBelow}(x_n)
 \Longleftrightarrow
 \exists m \in \mathbb{R}\;
 \operatorname{Eventually}\bigl(x_n,\; m \le x_n\bigr).
@@ -1115,7 +1151,7 @@ every $n \ge N_0$.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{BoundedSequence}(x_n)
+\operatorname{Bounded}(x_n)
 \Longleftrightarrow
 \exists M > 0\;
 \operatorname{Eventually}\bigl(x_n,\; |x_n| \le M\bigr).
@@ -1169,12 +1205,12 @@ if it is both bounded above and bounded below.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{BoundedSequence}(x_n)
+\operatorname{Bounded}(x_n)
 \Longleftrightarrow
 \bigl(
-\operatorname{BoundedBelowSequence}(x_n)
+\operatorname{BoundedBelow}(x_n)
 \land
-\operatorname{BoundedAboveSequence}(x_n)
+\operatorname{BoundedAbove}(x_n)
 \bigr).
 \]
 \end{remark*}
@@ -1224,6 +1260,10 @@ $n \in \mathbb{N}$.
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+The displayed quantified statement is the predicate-level form of $label: its hypotheses name the input conditions, and its conclusion names the asserted structure or relation.
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 An absolute-value inequality simultaneously controls the positive and negative
 directions. The upper barrier is $K$, and the lower barrier is $-K$.
@@ -1270,6 +1310,10 @@ $K > 0$ such that $|x_n| \le K$ for every $n \in \mathbb{N}$.
 \bigr].
 \end{aligned}
 \]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+The displayed quantified statement is the predicate-level form of $label: its hypotheses name the input conditions, and its conclusion names the asserted structure or relation.
 \end{remark*}
 
 \begin{remark*}[Interpretation]

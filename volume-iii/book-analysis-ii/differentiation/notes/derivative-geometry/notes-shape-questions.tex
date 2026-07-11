@@ -21,6 +21,10 @@ Let $I\subseteq\mathbb{R}$ be an interval and let $f:I\to\mathbb{R}$. The functi
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+The displayed quantified statement is the predicate-level form of $label: its hypotheses name the input conditions, and its conclusion names the asserted structure or relation.
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 Convexity is defined by chords, not derivatives. The graph lies below the line segment joining any two of its points. Derivative tests are later tools for detecting this geometric condition, not the definition of the condition.
 \end{remark*}
@@ -40,9 +44,9 @@ Let $I\subseteq\mathbb{R}$ be an interval and let $f:I\to\mathbb{R}$. The functi
 
 \begin{remark*}[Standard quantified statement]
 \[
-  \operatorname{ConcaveOn}(f,I)
+  \operatorname{IsConcave}(f,I)
   \Longleftrightarrow
-  \operatorname{ConvexOn}(-f,I).
+  \operatorname{IsConvex}(-f,I).
 \]
 \end{remark*}
 
@@ -65,7 +69,7 @@ Let $I\subseteq\mathbb{R}$ be an interval, let $f:I\to\mathbb{R}$, and let $c\in
 
 \begin{remark*}[Standard quantified statement]
 \[
-  \operatorname{InflectionPoint}(f,c)
+  \operatorname{IsInflection}(f,c)
   \Longleftrightarrow
   f \text{ changes convexity at } c.
 \]

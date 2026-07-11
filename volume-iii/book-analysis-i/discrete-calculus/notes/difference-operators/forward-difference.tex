@@ -6,13 +6,16 @@
 \subsection{Difference Operators}
 \label{sec:difference-operators}
 
+\begin{exposition}
 Discrete calculus studies functions defined on the integers and the way
 their values change from one integer to the next. The central tool for
 measuring this change is the \emph{difference operator}, which plays a role
 analogous to the derivative in continuous calculus.
+\end{exposition}
 
 \subsection*{Motivation}
 
+\begin{exposition}
 In ordinary calculus the derivative measures the rate of change of a function:
 \[
 f'(x) = \lim_{h\to 0} \frac{f(x+h)-f(x)}{h}.
@@ -20,6 +23,7 @@ f'(x) = \lim_{h\to 0} \frac{f(x+h)-f(x)}{h}.
 In the discrete setting the independent variable changes in steps of size
 \(1\). Instead of taking a limit, we measure the difference between
 successive values of the function directly.
+\end{exposition}
 
 \subsection*{Forward Difference}
 
@@ -36,16 +40,24 @@ increases by one unit.
 
 \DefinitionalRoot
 
-\begin{remark*}[Fully quantified form]
+\begin{remark*}[Standard quantified statement]
 \(\forall f : \mathbb{Z}\to\mathbb{R},\; \forall n \in \mathbb{Z}:\;
 \Delta f(n) := f(n+1) - f(n)\).
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{HasForwardDifference}(f,\mathbb Z,\Delta f)
+  \;\colonequiv\;
+  \forall n\in\mathbb Z,\; \Delta f(n)=f(n+1)-f(n).
+\]
 \end{remark*}
 
 \begin{remark*}[Interpretation]
 The forward difference records the one-step change of a discrete function.
 \end{remark*}
 
-\begin{remark*}[Analogy with differentiation]
+\begin{remark*}[Interpretation]
 The operator \(\Delta\) is the discrete analogue of the derivative.
 While the derivative measures infinitesimal change through a limit,
 the forward difference measures change between successive integer inputs
@@ -54,6 +66,7 @@ exactly, with no limit required.
 
 \subsection*{Example}
 
+\begin{example*}
 Consider the function \(f(n) = n^2\). Applying the difference operator gives
 \[
 \begin{aligned}
@@ -65,8 +78,9 @@ Consider the function \(f(n) = n^2\). Applying the difference operator gives
 \]
 Thus the forward difference of the quadratic function \(n^2\) is the linear
 function \(2n+1\).
+\end{example*}
 
-\begin{remark*}[Degree reduction]
+\begin{remark*}[Interpretation]
 This mirrors a familiar fact from ordinary calculus: \(\tfrac{d}{dx} x^2 = 2x\).
 Just as derivatives reduce the degree of a polynomial by one,
 finite differences also lower the degree of polynomial sequences.

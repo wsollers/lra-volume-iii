@@ -19,13 +19,20 @@ A set $K\subseteq\mathbb{R}$ is \emph{compact} exactly when every open cover of 
 K \text{ compact} \Longleftrightarrow \forall \{U_i\}_{i\in I}\Bigl(\bigl(\forall i\in I\;U_i \text{ open}\bigr)\land K\subseteq\textstyle\bigcup_{i\in I}U_i \Rightarrow \exists \text{finite } J\subseteq I\;K\subseteq\textstyle\bigcup_{i\in J}U_i\Bigr).
 \]
 \end{remark*}
+
+\begin{remark*}[Predicate reading]
+The displayed quantified statement is the predicate-level form of $label: its hypotheses name the input conditions, and its conclusion names the asserted structure or relation.
+\end{remark*}
 \begin{remark*}[Negated quantified statement]
 \[
 K \text{ not compact} \Longleftrightarrow \exists \{U_i\}_{i\in I}\Bigl(\bigl(\forall i\in I\;U_i \text{ open}\bigr)\land K\subseteq\textstyle\bigcup_{i\in I}U_i \land \forall \text{finite } J\subseteq I\;K\not\subseteq\textstyle\bigcup_{i\in J}U_i\Bigr).
 \]
 \end{remark*}
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 Compactness fails exactly when some open cover has no finite subcover. Two standard witnesses: $(0,1]$ fails via the cover $\{(1/n,2)\}_{n}$ (not closed), and $[0,\infty)$ fails via $\{(-1,n)\}_{n}$ (not bounded).
+\end{description}
 \end{remark*}
 \begin{remark*}[Interpretation]
 Compactness is a finiteness property phrased entirely in open sets: no matter how a set is covered by open pieces, finitely many already do the job. This is what later guarantees, on a compact domain, that continuous functions attain extrema and are uniformly continuous --- the facts Analysis~I relies on. Crucially, this definition does not mention order or boundedness, so it transfers unchanged to the torus.

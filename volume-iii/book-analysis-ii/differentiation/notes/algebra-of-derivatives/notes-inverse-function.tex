@@ -34,26 +34,46 @@ Let \(I\subseteq\mathbb{R}\) be an open interval, let \(f:I\to\mathbb{R}\) be of
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-\(\operatorname{LocallyInvertible}(f,c)\) holds with a \(C^1\) local inverse. The condition \(f'(c)\neq 0\) upgrades local set-theoretic invertibility to local analytic invertibility: the inverse exists as a differentiable function and has controlled derivative.
+\[
+\exists U\ni c\;\exists V\ni f(c)\;
+\bigl(
+\operatorname{Bijective}(f|_U,U,V)
+\land
+\operatorname{Invertible}(f|_U)
+\land
+(f|_U)^{-1}\in C^1(V)
+\bigr).
+\]
+The condition \(f'(c)\neq 0\) upgrades local set-theoretic invertibility to local analytic invertibility: the inverse exists as a differentiable function and has controlled derivative.
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 The hypotheses fail in different ways.
 \begin{itemize}
   \item If \(f'(c)=0\), the inverse may exist without being differentiable. The map \(f(x)=x^3\) is globally bijective, but its inverse \(x\mapsto x^{1/3}\) is not differentiable at \(0\).
   \item If \(f'\) is not continuous at \(c\), the sign of \(f'\) need not persist near \(c\). Mere differentiability with \(f'(c)\neq 0\) is therefore not enough to force local monotonicity or local invertibility.
 \end{itemize}
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Contrapositive quantified statement]
+\begin{remark*}[Interpretation]
 \[
-  \neg\operatorname{LocallyInvertible}_{C^1}(f,c)
+  \neg\exists U\ni c\;\exists V\ni f(c)\;
+  \bigl(
+  \operatorname{Bijective}(f|_U,U,V)
+  \land
+  \operatorname{Invertible}(f|_U)
+  \land
+  (f|_U)^{-1}\in C^1(V)
+  \bigr)
   \Longrightarrow
   f\notin C^1(\text{near }c)\ \vee\ f'(c)=0.
 \]
 \end{remark*}
 
-\begin{remark*}[Contrapositive predicate reading]
+\begin{remark*}[Interpretation]
 If \(f\) has no \(C^1\) local inverse at \(c\), then either \(f\) fails to be
 continuously differentiable near \(c\), or its derivative vanishes there.
 The witnesses \(x\mapsto x^3\) and \(x\mapsto x+2x^2\sin(1/x)\) isolate the

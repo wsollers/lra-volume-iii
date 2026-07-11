@@ -1,8 +1,10 @@
 \subsection{Suprema and Infima}
 
+\begin{remark*}[Exposition]
 Suprema and infima are sharp bounds.  A supremum is the least upper
 bound; an infimum is the greatest lower bound.  The set remains required
 to be nonempty throughout this section.
+\end{remark*}
 
 \begin{figure}[htbp]
   \centering
@@ -41,12 +43,13 @@ $A$.
 
 \begin{remark*}[Predicate reading]
 \[
-  \operatorname{Sup}_{S,\leq}(s,A)
+  P=\mathsf{OrderedSet}(S,\leq),\qquad
+  \operatorname{LeastUpperBound}(s,A,P)
   :=
-  \operatorname{UB}_{S,\leq}(s,A)
+  \operatorname{UpperBound}(s,A,P)
   \land
   (\forall u\in S)
-  \bigl(\operatorname{UB}_{S,\leq}(u,A)\Rightarrow s\leq u\bigr).
+  \bigl(\operatorname{UpperBound}(u,A,P)\Rightarrow s\leq u\bigr).
 \]
 \end{remark*}
 
@@ -62,25 +65,48 @@ $A$.
 
 \begin{remark*}[Negation predicate reading]
 \[
-  \neg\operatorname{Sup}_{S,\leq}(s,A)
+  \neg\operatorname{LeastUpperBound}(s,A,P)
   \Longleftrightarrow
   A=\varnothing
   \lor
-  \neg\operatorname{UB}_{S,\leq}(s,A)
+  \neg\operatorname{UpperBound}(s,A,P)
   \lor
   (\exists u\in S)
-  \bigl(\operatorname{UB}_{S,\leq}(u,A)\land u<s\bigr).
+  \bigl(\operatorname{UpperBound}(u,A,P)\land u<s\bigr).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-The set may be empty; $s$ may fail to be an upper bound; or $s$ may be an
-upper bound that is not least among upper bounds.
+\begin{description}
+  \item[Exposition.]
+  The set may be empty; $s$ may fail to be an upper bound; or $s$ may be an
+  upper bound that is not least among upper bounds.
+
+  \item[Mechanism.]
+  The first clause is a domain failure.  The second is a bound failure.  The
+  third is a sharpness failure witnessed by a strictly smaller upper bound.
+  \[
+    A=\varnothing
+    \quad\text{or}\quad
+    (\exists x\in A)(s<x)
+    \quad\text{or}\quad
+    (\exists u\in S)\bigl[(\forall x\in A)(x\leq u)\ \text{and}\ u<s\bigr].
+  \]
+  \[
+    \neg\operatorname{LeastUpperBound}(s,A,P)
+    \Longleftrightarrow
+    A=\varnothing
+    \lor
+    \neg\operatorname{UpperBound}(s,A,P)
+    \lor
+    (\exists u\in S)
+    \bigl(\operatorname{UpperBound}(u,A,P)\land u<s\bigr).
+  \]
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure modes]
-The first clause is a domain failure.  The second is a bound failure.  The
-third is a sharpness failure witnessed by a strictly smaller upper bound.
+\begin{remark*}[Interpretation]
+A supremum is the least upper bound: it combines upper-bound control with leastness among all upper bounds.
 \end{remark*}
 
 \begin{dependencies}
@@ -111,12 +137,13 @@ bound of $A$ and no larger element of $S$ is a lower bound of $A$.
 
 \begin{remark*}[Predicate reading]
 \[
-  \operatorname{Inf}_{S,\leq}(i,A)
+  P=\mathsf{OrderedSet}(S,\leq),\qquad
+  \operatorname{GreatestLowerBound}(i,A,P)
   :=
-  \operatorname{LB}_{S,\leq}(i,A)
+  \operatorname{LowerBound}(i,A,P)
   \land
   (\forall \ell\in S)
-  \bigl(\operatorname{LB}_{S,\leq}(\ell,A)\Rightarrow \ell\leq i\bigr).
+  \bigl(\operatorname{LowerBound}(\ell,A,P)\Rightarrow \ell\leq i\bigr).
 \]
 \end{remark*}
 
@@ -132,25 +159,48 @@ bound of $A$ and no larger element of $S$ is a lower bound of $A$.
 
 \begin{remark*}[Negation predicate reading]
 \[
-  \neg\operatorname{Inf}_{S,\leq}(i,A)
+  \neg\operatorname{GreatestLowerBound}(i,A,P)
   \Longleftrightarrow
   A=\varnothing
   \lor
-  \neg\operatorname{LB}_{S,\leq}(i,A)
+  \neg\operatorname{LowerBound}(i,A,P)
   \lor
   (\exists \ell\in S)
-  \bigl(\operatorname{LB}_{S,\leq}(\ell,A)\land i<\ell\bigr).
+  \bigl(\operatorname{LowerBound}(\ell,A,P)\land i<\ell\bigr).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-The set may be empty; $i$ may fail to be a lower bound; or $i$ may be a
-lower bound that is not greatest among lower bounds.
+\begin{description}
+  \item[Exposition.]
+  The set may be empty; $i$ may fail to be a lower bound; or $i$ may be a
+  lower bound that is not greatest among lower bounds.
+
+  \item[Mechanism.]
+  The first clause is a domain failure.  The second is a bound failure.  The
+  third is a sharpness failure witnessed by a strictly larger lower bound.
+  \[
+    A=\varnothing
+    \quad\text{or}\quad
+    (\exists x\in A)(x<i)
+    \quad\text{or}\quad
+    (\exists \ell\in S)\bigl[(\forall x\in A)(\ell\leq x)\ \text{and}\ i<\ell\bigr].
+  \]
+  \[
+    \neg\operatorname{GreatestLowerBound}(i,A,P)
+    \Longleftrightarrow
+    A=\varnothing
+    \lor
+    \neg\operatorname{LowerBound}(i,A,P)
+    \lor
+    (\exists \ell\in S)
+    \bigl(\operatorname{LowerBound}(\ell,A,P)\land i<\ell\bigr).
+  \]
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure modes]
-The first clause is a domain failure.  The second is a bound failure.  The
-third is a sharpness failure witnessed by a strictly larger lower bound.
+\begin{remark*}[Interpretation]
+An infimum is the greatest lower bound: it combines lower-bound control with greatestness among all lower bounds.
 \end{remark*}
 
 \begin{dependencies}
@@ -174,9 +224,9 @@ $s,t\in S$ are both suprema of $A$, then $s=t$.
 \[
   A\neq\varnothing
   \quad\text{and}\quad
-  \operatorname{Sup}_{S,\leq}(s,A)
+  \operatorname{LeastUpperBound}(s,A,P)
   \quad\text{and}\quad
-  \operatorname{Sup}_{S,\leq}(t,A)
+  \operatorname{LeastUpperBound}(t,A,P)
   \quad\Longrightarrow\quad
   s=t.
 \]
@@ -184,7 +234,8 @@ $s,t\in S$ are both suprema of $A$, then $s=t$.
 
 \begin{remark*}[Predicate reading]
 \[
-  \operatorname{Sup}_{S,\leq}(s,A)\land\operatorname{Sup}_{S,\leq}(t,A)
+  P=\mathsf{OrderedSet}(S,\leq),\qquad
+  \operatorname{LeastUpperBound}(s,A,P)\land\operatorname{LeastUpperBound}(t,A,P)
   \Longrightarrow s=t.
 \]
 \end{remark*}
@@ -193,9 +244,9 @@ $s,t\in S$ are both suprema of $A$, then $s=t$.
 \[
   A\neq\varnothing
   \quad\text{and}\quad
-  \operatorname{Sup}_{S,\leq}(s,A)
+  \operatorname{LeastUpperBound}(s,A,P)
   \quad\text{and}\quad
-  \operatorname{Sup}_{S,\leq}(t,A)
+  \operatorname{LeastUpperBound}(t,A,P)
   \quad\text{and}\quad
   s\neq t.
 \]
@@ -203,20 +254,41 @@ $s,t\in S$ are both suprema of $A$, then $s=t$.
 
 \begin{remark*}[Negation predicate reading]
 \[
-  \operatorname{Sup}_{S,\leq}(s,A)\land
-  \operatorname{Sup}_{S,\leq}(t,A)\land s\neq t.
+  P=\mathsf{OrderedSet}(S,\leq),\qquad
+  \operatorname{LeastUpperBound}(s,A,P)\land
+  \operatorname{LeastUpperBound}(t,A,P)\land s\neq t.
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-Failure would require two distinct least upper bounds for the same
-nonempty set.
+\begin{description}
+  \item[Exposition.]
+  Failure would require two distinct least upper bounds for the same
+  nonempty set.
+
+  \item[Mechanism.]
+  Each candidate is an upper bound and each lies below every upper bound;
+  applying these minimality clauses to the other candidate gives both
+  $s\leq t$ and $t\leq s$.
+  \[
+    A\neq\varnothing
+    \quad\text{and}\quad
+    \operatorname{LeastUpperBound}(s,A,P)
+    \quad\text{and}\quad
+    \operatorname{LeastUpperBound}(t,A,P)
+    \quad\text{and}\quad
+    s\neq t.
+  \]
+  \[
+    P=\mathsf{OrderedSet}(S,\leq),\qquad
+    \operatorname{LeastUpperBound}(s,A,P)\land
+    \operatorname{LeastUpperBound}(t,A,P)\land s\neq t.
+  \]
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure modes]
-Each candidate is an upper bound and each lies below every upper bound;
-applying these minimality clauses to the other candidate gives both
-$s\leq t$ and $t\leq s$.
+\begin{remark*}[Interpretation]
+The statement records how the supremum predicate controls uniqueness or upper-bound behavior in the ambient order.
 \end{remark*}
 
 \begin{dependencies}
@@ -239,9 +311,9 @@ $i,j\in S$ are both infima of $A$, then $i=j$.
 \[
   A\neq\varnothing
   \quad\text{and}\quad
-  \operatorname{Inf}_{S,\leq}(i,A)
+  \operatorname{GreatestLowerBound}(i,A,P)
   \quad\text{and}\quad
-  \operatorname{Inf}_{S,\leq}(j,A)
+  \operatorname{GreatestLowerBound}(j,A,P)
   \quad\Longrightarrow\quad
   i=j.
 \]
@@ -249,7 +321,8 @@ $i,j\in S$ are both infima of $A$, then $i=j$.
 
 \begin{remark*}[Predicate reading]
 \[
-  \operatorname{Inf}_{S,\leq}(i,A)\land\operatorname{Inf}_{S,\leq}(j,A)
+  P=\mathsf{OrderedSet}(S,\leq),\qquad
+  \operatorname{GreatestLowerBound}(i,A,P)\land\operatorname{GreatestLowerBound}(j,A,P)
   \Longrightarrow i=j.
 \]
 \end{remark*}
@@ -258,9 +331,9 @@ $i,j\in S$ are both infima of $A$, then $i=j$.
 \[
   A\neq\varnothing
   \quad\text{and}\quad
-  \operatorname{Inf}_{S,\leq}(i,A)
+  \operatorname{GreatestLowerBound}(i,A,P)
   \quad\text{and}\quad
-  \operatorname{Inf}_{S,\leq}(j,A)
+  \operatorname{GreatestLowerBound}(j,A,P)
   \quad\text{and}\quad
   i\neq j.
 \]
@@ -268,20 +341,41 @@ $i,j\in S$ are both infima of $A$, then $i=j$.
 
 \begin{remark*}[Negation predicate reading]
 \[
-  \operatorname{Inf}_{S,\leq}(i,A)\land
-  \operatorname{Inf}_{S,\leq}(j,A)\land i\neq j.
+  P=\mathsf{OrderedSet}(S,\leq),\qquad
+  \operatorname{GreatestLowerBound}(i,A,P)\land
+  \operatorname{GreatestLowerBound}(j,A,P)\land i\neq j.
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-Failure would require two distinct greatest lower bounds for the same
-nonempty set.
+\begin{description}
+  \item[Exposition.]
+  Failure would require two distinct greatest lower bounds for the same
+  nonempty set.
+
+  \item[Mechanism.]
+  Each candidate is a lower bound and each lies above every lower bound;
+  applying these maximality clauses to the other candidate gives both
+  $i\leq j$ and $j\leq i$.
+  \[
+    A\neq\varnothing
+    \quad\text{and}\quad
+    \operatorname{GreatestLowerBound}(i,A,P)
+    \quad\text{and}\quad
+    \operatorname{GreatestLowerBound}(j,A,P)
+    \quad\text{and}\quad
+    i\neq j.
+  \]
+  \[
+    P=\mathsf{OrderedSet}(S,\leq),\qquad
+    \operatorname{GreatestLowerBound}(i,A,P)\land
+    \operatorname{GreatestLowerBound}(j,A,P)\land i\neq j.
+  \]
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure modes]
-Each candidate is a lower bound and each lies above every lower bound;
-applying these maximality clauses to the other candidate gives both
-$i\leq j$ and $j\leq i$.
+\begin{remark*}[Interpretation]
+The statement records how the infimum predicate controls uniqueness or lower-bound behavior in the ambient order.
 \end{remark*}
 
 \begin{dependencies}
@@ -305,27 +399,55 @@ below $s$:
 \end{proposition}
 \end{propositionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+  A\neq\varnothing,
+  \quad (\forall x\in A)(x\leq s),
+  \quad\text{and}\quad
+  (\forall u\in S)\bigl[(\forall x\in A)(x\leq u)\Rightarrow s\leq u\bigr]
+  \quad\Longrightarrow\quad
+  (\forall x\in A)(x\leq s).
+\]
+\end{remark*}
+
 \begin{remark*}[Predicate reading]
 \[
-  \operatorname{Sup}_{S,\leq}(s,A)\Longrightarrow
-  \operatorname{UB}_{S,\leq}(s,A).
+  P=\mathsf{OrderedSet}(S,\leq),\qquad
+  \operatorname{LeastUpperBound}(s,A,P)\Longrightarrow
+  \operatorname{UpperBound}(s,A,P).
 \]
 \end{remark*}
 
 \begin{remark*}[Negated quantified statement]
 \[
-  \operatorname{Sup}_{S,\leq}(s,A)
+  \operatorname{LeastUpperBound}(s,A,P)
   \quad\text{and}\quad
   (\exists x\in A)(s<x).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-Failure would mean that a supremum is not an upper bound.
+\begin{description}
+  \item[Exposition.]
+  Failure would mean that a supremum is not an upper bound.
+
+  \item[Mechanism.]
+  This is exactly the first clause in the definition of supremum.
+  \[
+    \operatorname{LeastUpperBound}(s,A,P)
+    \quad\text{and}\quad
+    (\exists x\in A)(s<x).
+  \]
+  \[
+    P=\mathsf{OrderedSet}(S,\leq),\qquad
+    \operatorname{GreatestLowerBound}(i,A,P)\land
+    \operatorname{GreatestLowerBound}(j,A,P)\land i\neq j.
+  \]
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure modes]
-This is exactly the first clause in the definition of supremum.
+\begin{remark*}[Interpretation]
+The statement records how the supremum predicate controls uniqueness or upper-bound behavior in the ambient order.
 \end{remark*}
 
 \begin{dependencies}
@@ -347,27 +469,55 @@ above $i$:
 \end{proposition}
 \end{propositionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+  A\neq\varnothing,
+  \quad (\forall x\in A)(i\leq x),
+  \quad\text{and}\quad
+  (\forall \ell\in S)\bigl[(\forall x\in A)(\ell\leq x)\Rightarrow \ell\leq i\bigr]
+  \quad\Longrightarrow\quad
+  (\forall x\in A)(i\leq x).
+\]
+\end{remark*}
+
 \begin{remark*}[Predicate reading]
 \[
-  \operatorname{Inf}_{S,\leq}(i,A)\Longrightarrow
-  \operatorname{LB}_{S,\leq}(i,A).
+  P=\mathsf{OrderedSet}(S,\leq),\qquad
+  \operatorname{GreatestLowerBound}(i,A,P)\Longrightarrow
+  \operatorname{LowerBound}(i,A,P).
 \]
 \end{remark*}
 
 \begin{remark*}[Negated quantified statement]
 \[
-  \operatorname{Inf}_{S,\leq}(i,A)
+  \operatorname{GreatestLowerBound}(i,A,P)
   \quad\text{and}\quad
   (\exists x\in A)(x<i).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-Failure would mean that an infimum is not a lower bound.
+\begin{description}
+  \item[Exposition.]
+  Failure would mean that an infimum is not a lower bound.
+
+  \item[Mechanism.]
+  This is exactly the first clause in the definition of infimum.
+  \[
+    \operatorname{GreatestLowerBound}(i,A,P)
+    \quad\text{and}\quad
+    (\exists x\in A)(x<i).
+  \]
+  \[
+    P=\mathsf{OrderedSet}(S,\leq),\qquad
+    \operatorname{GreatestLowerBound}(i,A,P)\land
+    \operatorname{GreatestLowerBound}(j,A,P)\land i\neq j.
+  \]
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure modes]
-This is exactly the first clause in the definition of infimum.
+\begin{remark*}[Interpretation]
+The statement records how the infimum predicate controls uniqueness or lower-bound behavior in the ambient order.
 \end{remark*}
 
 \begin{dependencies}
@@ -398,27 +548,43 @@ of $A$.
 
 \begin{remark*}[Predicate reading]
 \[
-  A\subseteq B\land\operatorname{UB}_{S,\leq}(u,B)
-  \Longrightarrow \operatorname{UB}_{S,\leq}(u,A).
+  A\subseteq B\land\operatorname{UpperBound}(u,B,P)
+  \Longrightarrow \operatorname{UpperBound}(u,A,P).
 \]
 \end{remark*}
 
 \begin{remark*}[Negated quantified statement]
 \[
-  A\subseteq B,\quad \operatorname{UB}_{S,\leq}(u,B),
+  A\subseteq B,\quad \operatorname{UpperBound}(u,B,P),
   \quad\text{and}\quad
   (\exists x\in A)(u<x).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-Failure would require a counterexample in the smaller set even though
-the larger set is already bounded by $u$.
+\begin{description}
+  \item[Exposition.]
+  Failure would require a counterexample in the smaller set even though
+  the larger set is already bounded by $u$.
+
+  \item[Mechanism.]
+  Any counterexample $x\in A$ is also an element of $B$, contradicting the
+  upper-bound hypothesis for $B$.
+  \[
+    A\subseteq B,\quad \operatorname{UpperBound}(u,B,P),
+    \quad\text{and}\quad
+    (\exists x\in A)(u<x).
+  \]
+  \[
+    P=\mathsf{OrderedSet}(S,\leq),\qquad
+    \operatorname{GreatestLowerBound}(i,A,P)\land
+    \operatorname{GreatestLowerBound}(j,A,P)\land i\neq j.
+  \]
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure modes]
-Any counterexample $x\in A$ is also an element of $B$, contradicting the
-upper-bound hypothesis for $B$.
+\begin{remark*}[Interpretation]
+A supremum is the least upper bound: it combines upper-bound control with leastness among all upper bounds.
 \end{remark*}
 
 \begin{dependencies}
@@ -449,27 +615,43 @@ bound of $A$.
 
 \begin{remark*}[Predicate reading]
 \[
-  A\subseteq B\land\operatorname{LB}_{S,\leq}(\ell,B)
-  \Longrightarrow \operatorname{LB}_{S,\leq}(\ell,A).
+  A\subseteq B\land\operatorname{LowerBound}(\ell,B,P)
+  \Longrightarrow \operatorname{LowerBound}(\ell,A,P).
 \]
 \end{remark*}
 
 \begin{remark*}[Negated quantified statement]
 \[
-  A\subseteq B,\quad \operatorname{LB}_{S,\leq}(\ell,B),
+  A\subseteq B,\quad \operatorname{LowerBound}(\ell,B,P),
   \quad\text{and}\quad
   (\exists x\in A)(x<\ell).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-Failure would require a smaller-set counterexample to a lower bound that
-already works on the larger set.
+\begin{description}
+  \item[Exposition.]
+  Failure would require a smaller-set counterexample to a lower bound that
+  already works on the larger set.
+
+  \item[Mechanism.]
+  Any counterexample $x\in A$ lies in $B$, contradicting the lower-bound
+  hypothesis for $B$.
+  \[
+    A\subseteq B,\quad \operatorname{LowerBound}(\ell,B,P),
+    \quad\text{and}\quad
+    (\exists x\in A)(x<\ell).
+  \]
+  \[
+    P=\mathsf{OrderedSet}(S,\leq),\qquad
+    \operatorname{GreatestLowerBound}(i,A,P)\land
+    \operatorname{GreatestLowerBound}(j,A,P)\land i\neq j.
+  \]
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure modes]
-Any counterexample $x\in A$ lies in $B$, contradicting the lower-bound
-hypothesis for $B$.
+\begin{remark*}[Interpretation]
+An infimum is the greatest lower bound: it combines lower-bound control with greatestness among all lower bounds.
 \end{remark*}
 
 \begin{dependencies}
@@ -493,33 +675,49 @@ $A\subseteq B$, then $\sup A\leq\sup B$.
 \[
   A\neq\varnothing,\quad B\neq\varnothing,\quad
   A\subseteq B,\quad
-  \operatorname{Sup}_{\mathbb{R},\leq}(s_A,A),\quad
-  \operatorname{Sup}_{\mathbb{R},\leq}(s_B,B)
+  \operatorname{LeastUpperBound}(s_A,A,P),\quad
+  \operatorname{LeastUpperBound}(s_B,B,P)
   \quad\Longrightarrow\quad s_A\leq s_B.
 \]
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
 \[
-  A\subseteq B\land\operatorname{Sup}(s_A,A)\land\operatorname{Sup}(s_B,B)
+  P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+  A\subseteq B\land\operatorname{LeastUpperBound}(s_A,A,P)\land\operatorname{LeastUpperBound}(s_B,B,P)
   \Longrightarrow s_A\leq s_B.
 \]
 \end{remark*}
 
 \begin{remark*}[Negated quantified statement]
 \[
-  A\subseteq B,\quad \operatorname{Sup}(s_A,A),\quad
-  \operatorname{Sup}(s_B,B),\quad s_B<s_A.
+  A\subseteq B,\quad \operatorname{LeastUpperBound}(s_A,A,P),\quad
+  \operatorname{LeastUpperBound}(s_B,B,P),\quad s_B<s_A.
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-Failure would mean enlarging a nonempty set lowers its least upper bound.
+\begin{description}
+  \item[Exposition.]
+  Failure would mean enlarging a nonempty set lowers its least upper bound.
+
+  \item[Mechanism.]
+  The value $\sup B$ bounds $B$, hence bounds $A$; since $\sup A$ is least
+  among upper bounds of $A$, $\sup A\leq\sup B$.
+  \[
+    A\subseteq B,\quad \operatorname{LeastUpperBound}(s_A,A,P),\quad
+    \operatorname{LeastUpperBound}(s_B,B,P),\quad s_B<s_A.
+  \]
+  \[
+    P=\mathsf{OrderedSet}(S,\leq),\qquad
+    \operatorname{GreatestLowerBound}(i,A,P)\land
+    \operatorname{GreatestLowerBound}(j,A,P)\land i\neq j.
+  \]
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure modes]
-The value $\sup B$ bounds $B$, hence bounds $A$; since $\sup A$ is least
-among upper bounds of $A$, $\sup A\leq\sup B$.
+\begin{remark*}[Interpretation]
+The statement records how the supremum predicate controls uniqueness or upper-bound behavior in the ambient order.
 \end{remark*}
 
 \begin{dependencies}
@@ -542,34 +740,50 @@ $A\subseteq B$, then $\inf B\leq\inf A$.
 \[
   A\neq\varnothing,\quad B\neq\varnothing,\quad
   A\subseteq B,\quad
-  \operatorname{Inf}_{\mathbb{R},\leq}(i_A,A),\quad
-  \operatorname{Inf}_{\mathbb{R},\leq}(i_B,B)
+  \operatorname{GreatestLowerBound}(i_A,A,P),\quad
+  \operatorname{GreatestLowerBound}(i_B,B,P)
   \quad\Longrightarrow\quad i_B\leq i_A.
 \]
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
 \[
-  A\subseteq B\land\operatorname{Inf}(i_A,A)\land\operatorname{Inf}(i_B,B)
+  P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+  A\subseteq B\land\operatorname{GreatestLowerBound}(i_A,A,P)\land\operatorname{GreatestLowerBound}(i_B,B,P)
   \Longrightarrow i_B\leq i_A.
 \]
 \end{remark*}
 
 \begin{remark*}[Negated quantified statement]
 \[
-  A\subseteq B,\quad \operatorname{Inf}(i_A,A),\quad
-  \operatorname{Inf}(i_B,B),\quad i_A<i_B.
+  A\subseteq B,\quad \operatorname{GreatestLowerBound}(i_A,A,P),\quad
+  \operatorname{GreatestLowerBound}(i_B,B,P),\quad i_A<i_B.
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-Failure would mean enlarging a nonempty set raises its greatest lower
-bound.
+\begin{description}
+  \item[Exposition.]
+  Failure would mean enlarging a nonempty set raises its greatest lower
+  bound.
+
+  \item[Mechanism.]
+  The value $\inf B$ bounds $B$ below, hence bounds $A$ below; since
+  $\inf A$ is greatest among lower bounds of $A$, $\inf B\leq\inf A$.
+  \[
+    A\subseteq B,\quad \operatorname{GreatestLowerBound}(i_A,A,P),\quad
+    \operatorname{GreatestLowerBound}(i_B,B,P),\quad i_A<i_B.
+  \]
+  \[
+    P=\mathsf{OrderedSet}(S,\leq),\qquad
+    \operatorname{GreatestLowerBound}(i,A,P)\land
+    \operatorname{GreatestLowerBound}(j,A,P)\land i\neq j.
+  \]
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure modes]
-The value $\inf B$ bounds $B$ below, hence bounds $A$ below; since
-$\inf A$ is greatest among lower bounds of $A$, $\inf B\leq\inf A$.
+\begin{remark*}[Interpretation]
+The statement records how the infimum predicate controls uniqueness or lower-bound behavior in the ambient order.
 \end{remark*}
 
 \begin{dependencies}
@@ -592,37 +806,55 @@ $A$ if and only if $s\leq u$.
 
 \begin{remark*}[Standard quantified statement]
 \[
-  A\neq\varnothing,\quad \operatorname{Sup}(s,A)
+  A\neq\varnothing,\quad \operatorname{LeastUpperBound}(s,A,P)
   \quad\Longrightarrow\quad
   (\forall u\in\mathbb{R})
-  \bigl[\operatorname{UB}(u,A)\Longleftrightarrow s\leq u\bigr].
+  \bigl[\operatorname{UpperBound}(u,A,P)\Longleftrightarrow s\leq u\bigr].
 \]
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
 \[
-  \operatorname{Sup}(s,A)\Longrightarrow
-  \forall u\,(\operatorname{UB}(u,A)\leftrightarrow s\leq u).
+  P=\mathsf{OrderedSet}(S,\leq),\qquad
+  \operatorname{LeastUpperBound}(s,A,P)\Longrightarrow
+  \forall u\,(\operatorname{UpperBound}(u,A,P)\leftrightarrow s\leq u).
 \]
 \end{remark*}
 
 \begin{remark*}[Negated quantified statement]
 \[
-  \operatorname{Sup}(s,A)
+  \operatorname{LeastUpperBound}(s,A,P)
   \quad\text{and}\quad
-  (\exists u)\bigl[(\operatorname{UB}(u,A)\land u<s)
-  \lor(s\leq u\land\neg\operatorname{UB}(u,A))\bigr].
+  (\exists u)\bigl[(\operatorname{UpperBound}(u,A,P)\land u<s)
+  \lor(s\leq u\land\neg\operatorname{UpperBound}(u,A,P))\bigr].
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-Failure would mean an upper bound below the supremum, or a number above
-the supremum that fails to bound the set.
+\begin{description}
+  \item[Exposition.]
+  Failure would mean an upper bound below the supremum, or a number above
+  the supremum that fails to bound the set.
+
+  \item[Mechanism.]
+  Leastness gives the forward implication.  The fact that $s$ bounds $A$
+  gives the reverse implication by transitivity.
+  \[
+    \operatorname{LeastUpperBound}(s,A,P)
+    \quad\text{and}\quad
+    (\exists u)\bigl[(\operatorname{UpperBound}(u,A,P)\land u<s)
+    \lor(s\leq u\land\neg\operatorname{UpperBound}(u,A,P))\bigr].
+  \]
+  \[
+    P=\mathsf{OrderedSet}(S,\leq),\qquad
+    \operatorname{GreatestLowerBound}(i,A,P)\land
+    \operatorname{GreatestLowerBound}(j,A,P)\land i\neq j.
+  \]
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure modes]
-Leastness gives the forward implication.  The fact that $s$ bounds $A$
-gives the reverse implication by transitivity.
+\begin{remark*}[Interpretation]
+A supremum is the least upper bound: it combines upper-bound control with leastness among all upper bounds.
 \end{remark*}
 
 \begin{dependencies}
@@ -644,37 +876,55 @@ of $A$ if and only if $\ell\leq i$.
 
 \begin{remark*}[Standard quantified statement]
 \[
-  A\neq\varnothing,\quad \operatorname{Inf}(i,A)
+  A\neq\varnothing,\quad \operatorname{GreatestLowerBound}(i,A,P)
   \quad\Longrightarrow\quad
   (\forall \ell\in\mathbb{R})
-  \bigl[\operatorname{LB}(\ell,A)\Longleftrightarrow \ell\leq i\bigr].
+  \bigl[\operatorname{LowerBound}(\ell,A,P)\Longleftrightarrow \ell\leq i\bigr].
 \]
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
 \[
-  \operatorname{Inf}(i,A)\Longrightarrow
-  \forall \ell\,(\operatorname{LB}(\ell,A)\leftrightarrow \ell\leq i).
+  P=\mathsf{OrderedSet}(S,\leq),\qquad
+  \operatorname{GreatestLowerBound}(i,A,P)\Longrightarrow
+  \forall \ell\,(\operatorname{LowerBound}(\ell,A,P)\leftrightarrow \ell\leq i).
 \]
 \end{remark*}
 
 \begin{remark*}[Negated quantified statement]
 \[
-  \operatorname{Inf}(i,A)
+  \operatorname{GreatestLowerBound}(i,A,P)
   \quad\text{and}\quad
-  (\exists \ell)\bigl[(\operatorname{LB}(\ell,A)\land i<\ell)
-  \lor(\ell\leq i\land\neg\operatorname{LB}(\ell,A))\bigr].
+  (\exists \ell)\bigl[(\operatorname{LowerBound}(\ell,A,P)\land i<\ell)
+  \lor(\ell\leq i\land\neg\operatorname{LowerBound}(\ell,A,P))\bigr].
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-Failure would mean a lower bound above the infimum, or a number below the
-infimum that fails to bound the set below.
+\begin{description}
+  \item[Exposition.]
+  Failure would mean a lower bound above the infimum, or a number below the
+  infimum that fails to bound the set below.
+
+  \item[Mechanism.]
+  Greatestness gives the forward implication.  The fact that $i$ bounds
+  $A$ below gives the reverse implication by transitivity.
+  \[
+    \operatorname{GreatestLowerBound}(i,A,P)
+    \quad\text{and}\quad
+    (\exists \ell)\bigl[(\operatorname{LowerBound}(\ell,A,P)\land i<\ell)
+    \lor(\ell\leq i\land\neg\operatorname{LowerBound}(\ell,A,P))\bigr].
+  \]
+  \[
+    P=\mathsf{OrderedSet}(S,\leq),\qquad
+    \operatorname{GreatestLowerBound}(i,A,P)\land
+    \operatorname{GreatestLowerBound}(j,A,P)\land i\neq j.
+  \]
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure modes]
-Greatestness gives the forward implication.  The fact that $i$ bounds
-$A$ below gives the reverse implication by transitivity.
+\begin{remark*}[Interpretation]
+An infimum is the greatest lower bound: it combines lower-bound control with greatestness among all lower bounds.
 \end{remark*}
 
 \begin{dependencies}
@@ -696,7 +946,7 @@ $s=\sup A$.  Then $x\leq s$ for every $x\in A$.
 
 \begin{remark*}[Standard quantified statement]
 \[
-  A\neq\varnothing,\quad \operatorname{Sup}(s,A)
+  A\neq\varnothing,\quad \operatorname{LeastUpperBound}(s,A,P)
   \quad\Longrightarrow\quad
   (\forall x\in A)(x\leq s).
 \]
@@ -704,22 +954,37 @@ $s=\sup A$.  Then $x\leq s$ for every $x\in A$.
 
 \begin{remark*}[Predicate reading]
 \[
-  \operatorname{Sup}(s,A)\Longrightarrow \operatorname{UB}(s,A).
+  P=\mathsf{OrderedSet}(S,\leq),\qquad
+  \operatorname{LeastUpperBound}(s,A,P)\Longrightarrow \operatorname{UpperBound}(s,A,P).
 \]
 \end{remark*}
 
 \begin{remark*}[Negated quantified statement]
 \[
-  \operatorname{Sup}(s,A)\quad\text{and}\quad(\exists x\in A)(s<x).
+  \operatorname{LeastUpperBound}(s,A,P)\quad\text{and}\quad(\exists x\in A)(s<x).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-Failure would mean the supremum is not an upper bound.
+\begin{description}
+  \item[Exposition.]
+  Failure would mean the supremum is not an upper bound.
+
+  \item[Mechanism.]
+  This is the upper-bound clause in the definition of supremum.
+  \[
+    \operatorname{LeastUpperBound}(s,A,P)\quad\text{and}\quad(\exists x\in A)(s<x).
+  \]
+  \[
+    P=\mathsf{OrderedSet}(S,\leq),\qquad
+    \operatorname{GreatestLowerBound}(i,A,P)\land
+    \operatorname{GreatestLowerBound}(j,A,P)\land i\neq j.
+  \]
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure modes]
-This is the upper-bound clause in the definition of supremum.
+\begin{remark*}[Interpretation]
+The statement records how the supremum predicate controls uniqueness or upper-bound behavior in the ambient order.
 \end{remark*}
 
 \begin{dependencies}
@@ -739,7 +1004,7 @@ $i=\inf A$.  Then $i\leq x$ for every $x\in A$.
 
 \begin{remark*}[Standard quantified statement]
 \[
-  A\neq\varnothing,\quad \operatorname{Inf}(i,A)
+  A\neq\varnothing,\quad \operatorname{GreatestLowerBound}(i,A,P)
   \quad\Longrightarrow\quad
   (\forall x\in A)(i\leq x).
 \]
@@ -747,22 +1012,37 @@ $i=\inf A$.  Then $i\leq x$ for every $x\in A$.
 
 \begin{remark*}[Predicate reading]
 \[
-  \operatorname{Inf}(i,A)\Longrightarrow \operatorname{LB}(i,A).
+  P=\mathsf{OrderedSet}(S,\leq),\qquad
+  \operatorname{GreatestLowerBound}(i,A,P)\Longrightarrow \operatorname{LowerBound}(i,A,P).
 \]
 \end{remark*}
 
 \begin{remark*}[Negated quantified statement]
 \[
-  \operatorname{Inf}(i,A)\quad\text{and}\quad(\exists x\in A)(x<i).
+  \operatorname{GreatestLowerBound}(i,A,P)\quad\text{and}\quad(\exists x\in A)(x<i).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-Failure would mean the infimum is not a lower bound.
+\begin{description}
+  \item[Exposition.]
+  Failure would mean the infimum is not a lower bound.
+
+  \item[Mechanism.]
+  This is the lower-bound clause in the definition of infimum.
+  \[
+    \operatorname{GreatestLowerBound}(i,A,P)\quad\text{and}\quad(\exists x\in A)(x<i).
+  \]
+  \[
+    P=\mathsf{OrderedSet}(S,\leq),\qquad
+    \operatorname{GreatestLowerBound}(i,A,P)\land
+    \operatorname{GreatestLowerBound}(j,A,P)\land i\neq j.
+  \]
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure modes]
-This is the lower-bound clause in the definition of infimum.
+\begin{remark*}[Interpretation]
+The statement records how the infimum predicate controls uniqueness or lower-bound behavior in the ambient order.
 \end{remark*}
 
 \begin{dependencies}
@@ -784,8 +1064,8 @@ Then $\inf A\leq\sup A$.
 \begin{remark*}[Standard quantified statement]
 \[
   A\neq\varnothing,\quad
-  \operatorname{Inf}(i,A),\quad
-  \operatorname{Sup}(s,A)
+  \operatorname{GreatestLowerBound}(i,A,P),\quad
+  \operatorname{LeastUpperBound}(s,A,P)
   \quad\Longrightarrow\quad
   i\leq s.
 \]
@@ -793,26 +1073,42 @@ Then $\inf A\leq\sup A$.
 
 \begin{remark*}[Predicate reading]
 \[
-  \operatorname{Inf}(i,A)\land\operatorname{Sup}(s,A)
+  P=\mathsf{OrderedSet}(S,\leq),\qquad
+  \operatorname{GreatestLowerBound}(i,A,P)\land\operatorname{LeastUpperBound}(s,A,P)
   \Longrightarrow i\leq s.
 \]
 \end{remark*}
 
 \begin{remark*}[Negated quantified statement]
 \[
-  \operatorname{Inf}(i,A),\quad \operatorname{Sup}(s,A),
+  \operatorname{GreatestLowerBound}(i,A,P),\quad \operatorname{LeastUpperBound}(s,A,P),
   \quad\text{and}\quad s<i.
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-Failure would put the greatest lower bound strictly above the least upper
-bound of the same nonempty set.
+\begin{description}
+  \item[Exposition.]
+  Failure would put the greatest lower bound strictly above the least upper
+  bound of the same nonempty set.
+
+  \item[Mechanism.]
+  Choose $a\in A$.  Then $i\leq a$ because $i$ is a lower bound, and
+  $a\leq s$ because $s$ is an upper bound.
+  \[
+    \operatorname{GreatestLowerBound}(i,A,P),\quad \operatorname{LeastUpperBound}(s,A,P),
+    \quad\text{and}\quad s<i.
+  \]
+  \[
+    P=\mathsf{OrderedSet}(S,\leq),\qquad
+    \operatorname{GreatestLowerBound}(i,A,P)\land
+    \operatorname{GreatestLowerBound}(j,A,P)\land i\neq j.
+  \]
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure modes]
-Choose $a\in A$.  Then $i\leq a$ because $i$ is a lower bound, and
-$a\leq s$ because $s$ is an upper bound.
+\begin{remark*}[Interpretation]
+The statement records how the supremum predicate controls uniqueness or upper-bound behavior in the ambient order.
 \end{remark*}
 
 \begin{dependencies}
@@ -832,6 +1128,25 @@ There exists a nonempty bounded above set $A\subseteq\mathbb{R}$ such that
 \end{proposition}
 \end{propositionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+  (\exists A\subseteq\mathbb{R})(\exists s\in\mathbb{R})
+  \bigl[A\neq\varnothing\land \operatorname{LeastUpperBound}(s,A,P)\land s\notin A\bigr].
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+  (\exists A)(\exists s)\bigl(\operatorname{LeastUpperBound}(s,A,P)\land s\notin A\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A supremum is a sharp upper bound, but sharpness does not require the bound
+to be attained by the set.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:supremum]{Supremum}
@@ -848,6 +1163,25 @@ There exists a nonempty bounded below set $A\subseteq\mathbb{R}$ such that
 \hyperref[prf:infimum-need-not-belong-to-the-set]{Go to proof.}
 \end{proposition}
 \end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  (\exists A\subseteq\mathbb{R})(\exists i\in\mathbb{R})
+  \bigl[A\neq\varnothing\land \operatorname{GreatestLowerBound}(i,A,P)\land i\notin A\bigr].
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+  (\exists A)(\exists i)\bigl(\operatorname{GreatestLowerBound}(i,A,P)\land i\notin A\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+An infimum is a sharp lower bound, but sharpness does not require the bound
+to be attained by the set.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -877,8 +1211,9 @@ $x\in A$ is below some $y\in B$, then $\sup A\leq\sup B$.
 
 \begin{remark*}[Predicate reading]
 \[
+  P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
   [\forall x\in A\,\exists y\in B\,(x\leq y)]
-  \land\operatorname{Sup}(s_A,A)\land\operatorname{Sup}(s_B,B)
+  \land\operatorname{LeastUpperBound}(s_A,A,P)\land\operatorname{LeastUpperBound}(s_B,B,P)
   \Longrightarrow s_A\leq s_B.
 \]
 \end{remark*}
@@ -892,13 +1227,29 @@ $x\in A$ is below some $y\in B$, then $\sup A\leq\sup B$.
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-Failure would mean $A$ reaches higher in supremum than $B$ even though
-each element of $A$ is dominated by an element of $B$.
+\begin{description}
+  \item[Exposition.]
+  Failure would mean $A$ reaches higher in supremum than $B$ even though
+  each element of $A$ is dominated by an element of $B$.
+
+  \item[Mechanism.]
+  Every element of $B$ lies below $\sup B$, so every element of $A$ also
+  lies below $\sup B$.  Thus $\sup B$ is an upper bound for $A$.
+  \[
+    [\forall x\in A\,\exists y\in B\,(x\leq y)]
+    \quad\text{and}\quad
+    \sup B<\sup A.
+  \]
+  \[
+    P=\mathsf{OrderedSet}(S,\leq),\qquad
+    \operatorname{GreatestLowerBound}(i,A,P)\land
+    \operatorname{GreatestLowerBound}(j,A,P)\land i\neq j.
+  \]
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure modes]
-Every element of $B$ lies below $\sup B$, so every element of $A$ also
-lies below $\sup B$.  Thus $\sup B$ is an upper bound for $A$.
+\begin{remark*}[Interpretation]
+The statement records how the supremum predicate controls uniqueness or upper-bound behavior in the ambient order.
 \end{remark*}
 
 \begin{dependencies}
@@ -924,36 +1275,53 @@ $s$ such that $s=\sup S$.
   \quad\text{and}\quad
   (\exists u\in\mathbb{R})(\forall x\in S)(x\leq u)
   \quad\Longrightarrow\quad
-  (\exists s\in\mathbb{R})\operatorname{Sup}_{\mathbb{R},\leq}(s,S).
+  (\exists s\in\mathbb{R})\operatorname{LeastUpperBound}(s,S,P).
 \]
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
 \[
-  S\neq\varnothing\land\operatorname{BddAbove}_{\mathbb{R},\leq}(S)
+  S\neq\varnothing\land\operatorname{BoundedAbove}(S,P)
   \Longrightarrow
-  (\exists s\in\mathbb{R})\operatorname{Sup}_{\mathbb{R},\leq}(s,S).
+  (\exists s\in\mathbb{R})\operatorname{LeastUpperBound}(s,S,P).
 \]
 \end{remark*}
 
 \begin{remark*}[Negated quantified statement]
 \[
   S\neq\varnothing,\quad
-  \operatorname{BddAbove}_{\mathbb{R},\leq}(S),
+  \operatorname{BoundedAbove}(S,P),
   \quad\text{and}\quad
-  (\forall s\in\mathbb{R})\neg\operatorname{Sup}_{\mathbb{R},\leq}(s,S).
+  (\forall s\in\mathbb{R})\neg\operatorname{LeastUpperBound}(s,S,P).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-In $\mathbb{R}$ the theorem cannot fail once the set is nonempty and
-bounded above; outside complete ordered settings, the existence clause
-can fail.
+\begin{description}
+  \item[Exposition.]
+  In $\mathbb{R}$ the theorem cannot fail once the set is nonempty and
+  bounded above; outside complete ordered settings, the existence clause
+  can fail.
+
+  \item[Mechanism.]
+  The hypotheses separate domain nonemptiness from one-sided boundedness.
+  The conclusion asserts existence of the sharp upper bound.
+  \[
+    S\neq\varnothing,\quad
+    \operatorname{BoundedAbove}(S,P),
+    \quad\text{and}\quad
+    (\forall s\in\mathbb{R})\neg\operatorname{LeastUpperBound}(s,S,P).
+  \]
+  \[
+    P=\mathsf{OrderedSet}(S,\leq),\qquad
+    \operatorname{GreatestLowerBound}(i,A,P)\land
+    \operatorname{GreatestLowerBound}(j,A,P)\land i\neq j.
+  \]
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure modes]
-The hypotheses separate domain nonemptiness from one-sided boundedness.
-The conclusion asserts existence of the sharp upper bound.
+\begin{remark*}[Interpretation]
+A supremum is the least upper bound: it combines upper-bound control with leastness among all upper bounds.
 \end{remark*}
 
 \begin{dependencies}
@@ -978,35 +1346,52 @@ exists a real number $i$ such that $i=\inf S$.
   \quad\text{and}\quad
   (\exists \ell\in\mathbb{R})(\forall x\in S)(\ell\leq x)
   \quad\Longrightarrow\quad
-  (\exists i\in\mathbb{R})\operatorname{Inf}_{\mathbb{R},\leq}(i,S).
+  (\exists i\in\mathbb{R})\operatorname{GreatestLowerBound}(i,S,P).
 \]
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
 \[
-  S\neq\varnothing\land\operatorname{BddBelow}_{\mathbb{R},\leq}(S)
+  S\neq\varnothing\land\operatorname{BoundedBelow}(S,P)
   \Longrightarrow
-  (\exists i\in\mathbb{R})\operatorname{Inf}_{\mathbb{R},\leq}(i,S).
+  (\exists i\in\mathbb{R})\operatorname{GreatestLowerBound}(i,S,P).
 \]
 \end{remark*}
 
 \begin{remark*}[Negated quantified statement]
 \[
   S\neq\varnothing,\quad
-  \operatorname{BddBelow}_{\mathbb{R},\leq}(S),
+  \operatorname{BoundedBelow}(S,P),
   \quad\text{and}\quad
-  (\forall i\in\mathbb{R})\neg\operatorname{Inf}_{\mathbb{R},\leq}(i,S).
+  (\forall i\in\mathbb{R})\neg\operatorname{GreatestLowerBound}(i,S,P).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-In $\mathbb{R}$ the theorem cannot fail once the set is nonempty and
-bounded below.
+\begin{description}
+  \item[Exposition.]
+  In $\mathbb{R}$ the theorem cannot fail once the set is nonempty and
+  bounded below.
+
+  \item[Mechanism.]
+  Apply the least upper bound property to $-S$ or argue by the order-dual
+  form of completeness.
+  \[
+    S\neq\varnothing,\quad
+    \operatorname{BoundedBelow}(S,P),
+    \quad\text{and}\quad
+    (\forall i\in\mathbb{R})\neg\operatorname{GreatestLowerBound}(i,S,P).
+  \]
+  \[
+    P=\mathsf{OrderedSet}(S,\leq),\qquad
+    \operatorname{GreatestLowerBound}(i,A,P)\land
+    \operatorname{GreatestLowerBound}(j,A,P)\land i\neq j.
+  \]
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure modes]
-Apply the least upper bound property to $-S$ or argue by the order-dual
-form of completeness.
+\begin{remark*}[Interpretation]
+An infimum is the greatest lower bound: it combines lower-bound control with greatestness among all lower bounds.
 \end{remark*}
 
 \begin{dependencies}

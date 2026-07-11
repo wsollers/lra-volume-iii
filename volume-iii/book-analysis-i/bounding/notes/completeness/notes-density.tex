@@ -27,7 +27,7 @@ Let $D\subseteq S\subseteq\mathbb{R}$. The set $D$ is \emph{dense in} $S$ if and
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{DenseSubset}(D,S)\coloneqq
+\operatorname{IsDense}(D,S)\coloneqq
 \forall x\in S\;\forall \varepsilon>0\;\exists d\in D\;\bigl(|x-d|<\varepsilon\bigr).
 \]
 \end{remark*}
@@ -45,23 +45,29 @@ Let $D\subseteq S\subseteq\mathbb{R}$. The set $D$ is \emph{dense in} $S$ if and
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{DenseSubset}(D,S)\Longleftrightarrow
+\neg\operatorname{IsDense}(D,S)\Longleftrightarrow
 \exists x\in S\;\exists \varepsilon_0>0\;\forall d\in D\;\bigl(|x-d|\ge \varepsilon_0\bigr).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
 Density fails when some point of $S$ has a positive-radius neighborhood that contains no point of $D$.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
 \[
-\neg\operatorname{DenseSubset}(D,S)
+\neg\operatorname{IsDense}(D,S)
 =
 \underbrace{\exists x\in S}_{\text{point not approximated}}
 \;\underbrace{\exists \varepsilon_0>0}_{\text{positive exclusion radius}}
 \;\underbrace{\forall d\in D\;\bigl(|x-d|\ge \varepsilon_0\bigr)}_{\text{no point of }D\text{ enters the neighborhood}}.
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -90,7 +96,7 @@ Let $X$ be a linearly ordered set and let $A\subseteq X$. The subset $A$ is \emp
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{OrderDenseSubset}(A,X)\coloneqq
+\operatorname{IsOrderDenseSubset}(A,X)\coloneqq
 \forall a,b\in X\;\bigl(a<b\rightarrow \exists c\in A\;(a<c<b)\bigr).
 \]
 \end{remark*}
@@ -108,23 +114,29 @@ Let $X$ be a linearly ordered set and let $A\subseteq X$. The subset $A$ is \emp
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{OrderDenseSubset}(A,X)\Longleftrightarrow
+\neg\operatorname{IsOrderDenseSubset}(A,X)\Longleftrightarrow
 \exists a,b\in X\;\bigl(a<b\land \forall c\in A\;(c\le a\lor b\le c)\bigr).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
 Order density fails when there is a nonempty open interval of $X$ that contains no point of $A$.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
 \[
-\neg\operatorname{OrderDenseSubset}(A,X)
+\neg\operatorname{IsOrderDenseSubset}(A,X)
 =
 \underbrace{\exists a,b\in X\;(a<b)}_{\text{nonempty interval}}
 \;\land\;
 \underbrace{\forall c\in A\;(c\le a\lor b\le c)}_{\text{no point of }A\text{ lies between }a\text{ and }b}.
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -153,7 +165,7 @@ For every $a,b\in\mathbb{R}$ with $a<b$, there exists $q\in\mathbb{Q}$ such that
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{OrderDenseSubset}(\mathbb{Q},\mathbb{R})\Longleftrightarrow
+\operatorname{IsOrderDenseSubset}(\mathbb{Q},\mathbb{R})\Longleftrightarrow
 \forall a,b\in\mathbb{R}\;\bigl(a<b\rightarrow \exists q\in\mathbb{Q}\;(a<q<b)\bigr).
 \]
 \end{remark*}
@@ -166,23 +178,29 @@ For every $a,b\in\mathbb{R}$ with $a<b$, there exists $q\in\mathbb{Q}$ such that
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{OrderDenseSubset}(\mathbb{Q},\mathbb{R})\Longleftrightarrow
+\neg\operatorname{IsOrderDenseSubset}(\mathbb{Q},\mathbb{R})\Longleftrightarrow
 \exists a,b\in\mathbb{R}\;\bigl(a<b\land \forall q\in\mathbb{Q}\;(q\le a\lor b\le q)\bigr).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
 The theorem would fail precisely if some nonempty real interval contained no rational number.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
 \[
-\neg\operatorname{OrderDenseSubset}(\mathbb{Q},\mathbb{R})
+\neg\operatorname{IsOrderDenseSubset}(\mathbb{Q},\mathbb{R})
 =
 \underbrace{\exists a,b\in\mathbb{R}\;(a<b)}_{\text{nonempty real interval}}
 \;\land\;
 \underbrace{\forall q\in\mathbb{Q}\;(q\le a\lor b\le q)}_{\text{no rational lies inside}}.
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -211,6 +229,12 @@ r+q\in\mathbb{Q}.
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+r\in\mathbb{Q}\land q\in\mathbb{Q}\Longrightarrow r+q\in\mathbb{Q}.
+\]
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 The rational numbers are closed under addition, so translating a rational by a
 rational keeps it rational.
@@ -232,6 +256,12 @@ r-q\in\mathbb{Q}.
 \begin{remark*}[Standard quantified statement]
 \[
 \forall r,q\in\mathbb{Q}\;(r-q\in\mathbb{Q}).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+r\in\mathbb{Q}\land q\in\mathbb{Q}\Longrightarrow r-q\in\mathbb{Q}.
 \]
 \end{remark*}
 
@@ -261,6 +291,13 @@ qx\in\mathbb{R}\setminus\mathbb{Q}.
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+q\in\mathbb{Q}\setminus\{0\}\land x\in\mathbb{R}\setminus\mathbb{Q}
+\Longrightarrow qx\in\mathbb{R}\setminus\mathbb{Q}.
+\]
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 Multiplying an irrational by a nonzero rational cannot make it rational,
 because division by the same nonzero rational would recover the original
@@ -284,6 +321,13 @@ q+x\in\mathbb{R}\setminus\mathbb{Q}.
 \[
 \forall q\in\mathbb{Q}\;\forall x\in\mathbb{R}\setminus\mathbb{Q}\;
 \bigl(q+x\in\mathbb{R}\setminus\mathbb{Q}\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+q\in\mathbb{Q}\land x\in\mathbb{R}\setminus\mathbb{Q}
+\Longrightarrow q+x\in\mathbb{R}\setminus\mathbb{Q}.
 \]
 \end{remark*}
 
@@ -314,6 +358,12 @@ x-y\in\mathbb{Q}.
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+\exists x,y\in\mathbb{R}\setminus\mathbb{Q}\;(x-y\in\mathbb{Q}).
+\]
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 Taking $x=y=\sqrt{2}$ gives $x-y=0$, so irrationality is not closed under
 difference.
@@ -336,6 +386,13 @@ q-x\in\mathbb{R}\setminus\mathbb{Q}.
 \[
 \forall q\in\mathbb{Q}\;\forall x\in\mathbb{R}\setminus\mathbb{Q}\;
 \bigl(q-x\in\mathbb{R}\setminus\mathbb{Q}\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+q\in\mathbb{Q}\land x\in\mathbb{R}\setminus\mathbb{Q}
+\Longrightarrow q-x\in\mathbb{R}\setminus\mathbb{Q}.
 \]
 \end{remark*}
 
@@ -366,6 +423,13 @@ x+q\in\mathbb{R}\setminus\mathbb{Q}.
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+x\in\mathbb{R}\setminus\mathbb{Q}\land q\in\mathbb{Q}
+\Longrightarrow x+q\in\mathbb{R}\setminus\mathbb{Q}.
+\]
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 This is the commuted form of rational translation preserving irrationality.
 \end{remark*}
@@ -389,6 +453,13 @@ x-q\in\mathbb{R}\setminus\mathbb{Q}.
 \[
 \forall x\in\mathbb{R}\setminus\mathbb{Q}\;\forall q\in\mathbb{Q}\;
 \bigl(x-q\in\mathbb{R}\setminus\mathbb{Q}\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+x\in\mathbb{R}\setminus\mathbb{Q}\land q\in\mathbb{Q}
+\Longrightarrow x-q\in\mathbb{R}\setminus\mathbb{Q}.
 \]
 \end{remark*}
 
@@ -426,7 +497,7 @@ For every $a,b\in\mathbb{R}$ with $a<b$, there exists $s\in\mathbb{R}\setminus\m
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{OrderDenseSubset}(\mathbb{R}\setminus\mathbb{Q},\mathbb{R})\Longleftrightarrow
+\operatorname{IsOrderDenseSubset}(\mathbb{R}\setminus\mathbb{Q},\mathbb{R})\Longleftrightarrow
 \forall a,b\in\mathbb{R}\;\bigl(a<b\rightarrow \exists s\in\mathbb{R}\setminus\mathbb{Q}\;(a<s<b)\bigr).
 \]
 \end{remark*}
@@ -439,23 +510,29 @@ For every $a,b\in\mathbb{R}$ with $a<b$, there exists $s\in\mathbb{R}\setminus\m
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{OrderDenseSubset}(\mathbb{R}\setminus\mathbb{Q},\mathbb{R})\Longleftrightarrow
+\neg\operatorname{IsOrderDenseSubset}(\mathbb{R}\setminus\mathbb{Q},\mathbb{R})\Longleftrightarrow
 \exists a,b\in\mathbb{R}\;\bigl(a<b\land \forall s\in\mathbb{R}\setminus\mathbb{Q}\;(s\le a\lor b\le s)\bigr).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
 The theorem would fail precisely if some nonempty real interval contained no irrational number.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
 \[
-\neg\operatorname{OrderDenseSubset}(\mathbb{R}\setminus\mathbb{Q},\mathbb{R})
+\neg\operatorname{IsOrderDenseSubset}(\mathbb{R}\setminus\mathbb{Q},\mathbb{R})
 =
 \underbrace{\exists a,b\in\mathbb{R}\;(a<b)}_{\text{nonempty real interval}}
 \;\land\;
 \underbrace{\forall s\in\mathbb{R}\setminus\mathbb{Q}\;(s\le a\lor b\le s)}_{\text{no irrational lies inside}}.
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -491,6 +568,13 @@ r<x<s.
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+r,s\in\mathbb{Q}\land r<s
+\Longrightarrow \exists x\in\mathbb{R}\setminus\mathbb{Q}\;(r<x<s).
+\]
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 This is the density of the irrationals restricted to intervals whose endpoints
 are rational.
@@ -516,6 +600,13 @@ x<q<y.
 \[
 \forall x,y\in\mathbb{R}\setminus\mathbb{Q}\;
 \bigl(x<y\rightarrow \exists q\in\mathbb{Q}\;(x<q<y)\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+x,y\in\mathbb{R}\setminus\mathbb{Q}\land x<y
+\Longrightarrow \exists q\in\mathbb{Q}\;(x<q<y).
 \]
 \end{remark*}
 
@@ -574,7 +665,7 @@ a<c<b.
 \end{remark*}
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{OrderDense}(\mathbb{R}).
+\operatorname{HasDenseOrder}(\mathbb{R}).
 \]
 \end{remark*}
 \begin{remark*}[Negated quantified statement]
@@ -585,7 +676,7 @@ a<c<b.
 \end{remark*}
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{OrderDense}(\mathbb{R}).
+\neg\operatorname{HasDenseOrder}(\mathbb{R}).
 \]
 \end{remark*}
 \begin{remark*}[Interpretation]
@@ -603,6 +694,23 @@ For every $a\in\mathbb{R}$, there is no least real number greater than $a$.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a\in\mathbb{R}\;
+\neg\exists m\in\mathbb{R}\;
+\bigl(a<m\land \forall x\in\mathbb{R}\;(a<x\rightarrow m\le x)\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+The displayed quantified statement is the predicate-level form of $label: its hypotheses name the input conditions, and its conclusion names the asserted structure or relation.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Every real number with a point to its right has another real point still closer
+on that side; the order on $\mathbb{R}$ has no next element.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[cor:no-adjacent-real-numbers]{No Adjacent Real Numbers}
@@ -615,6 +723,23 @@ For every $a\in\mathbb{R}$, there is no greatest real number less than $a$.
 \hyperref[prf:no-immediate-predecessors-in-r]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a\in\mathbb{R}\;
+\neg\exists m\in\mathbb{R}\;
+\bigl(m<a\land \forall x\in\mathbb{R}\;(x<a\rightarrow x\le m)\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+The displayed quantified statement is the predicate-level form of $label: its hypotheses name the input conditions, and its conclusion names the asserted structure or relation.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Every real number with a point to its left has another real point still closer
+on that side; the order on $\mathbb{R}$ has no previous element.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -643,9 +768,9 @@ a<b\rightarrow
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{OrderDenseSubset}(\mathbb{Q},\mathbb{R})
+\operatorname{IsOrderDenseSubset}(\mathbb{Q},\mathbb{R})
 \land
-\operatorname{OrderDenseSubset}(\mathbb{R}\setminus\mathbb{Q},\mathbb{R}).
+\operatorname{IsOrderDenseSubset}(\mathbb{R}\setminus\mathbb{Q},\mathbb{R}).
 \]
 \end{remark*}
 
@@ -666,18 +791,23 @@ a<b\land
 \begin{remark*}[Negation predicate reading]
 \[
 \neg\Bigl[
-\operatorname{OrderDenseSubset}(\mathbb{Q},\mathbb{R})
+\operatorname{IsOrderDenseSubset}(\mathbb{Q},\mathbb{R})
 \land
-\operatorname{OrderDenseSubset}(\mathbb{R}\setminus\mathbb{Q},\mathbb{R})
+\operatorname{IsOrderDenseSubset}(\mathbb{R}\setminus\mathbb{Q},\mathbb{R})
 \Bigr].
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
 The corollary fails if a nonempty real interval misses all rational points or misses all irrational points.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
 \[
 \exists a,b\in\mathbb{R}\;(a<b)
 \;\land\;
@@ -687,6 +817,7 @@ The corollary fails if a nonempty real interval misses all rational points or mi
 \underbrace{\forall s\in\mathbb{R}\setminus\mathbb{Q}\;(s\le a\lor b\le s)}_{\text{no irrational point}}
 \Bigr].
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -705,7 +836,7 @@ The corollary combines the two density theorems. Every real interval, no matter 
 \input{volume-iii/book-analysis-i/bounding/notes/completeness/figure-zoom-invariance}
 
 
-\begin{remark*}[Zoom invariance and structural consequences]~\\
+\begin{exposition}
 Density in $\mathbb{R}$ has a scale-invariant consequence: no matter how small a nonempty
 open interval becomes, it still contains both rational and irrational points. The interleaving
 of $\mathbb{Q}$ and $\mathbb{R}\setminus\mathbb{Q}$ is therefore not a large-scale phenomenon.
@@ -740,6 +871,6 @@ interval penetration persists at every scale, whereas finite computational model
 encounter a smallest representable separation. The transition from continuum behavior to
 discrete behavior occurs exactly where nonempty intervals in the numerical model cease to
 contain further \\representable points.
-\end{remark*}
+\end{exposition}
 
 \input{volume-iii/book-analysis-i/bounding/notes/completeness/figure-density-chain}

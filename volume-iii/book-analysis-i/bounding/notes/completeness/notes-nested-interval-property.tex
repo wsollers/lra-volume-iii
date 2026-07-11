@@ -31,9 +31,9 @@ a_n\le a_{n+1}\le b_{n+1}\le b_n\Bigr).
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{NestedStep}([a_{n+1},b_{n+1}],[a_n,b_n])
+[a_{n+1},b_{n+1}]\subseteq [a_n,b_n]
 \Longrightarrow
-\operatorname{OrderedEndpoints}(a_n,a_{n+1},b_{n+1},b_n).
+a_n\le a_{n+1}\le b_{n+1}\le b_n.
 \]
 \end{remark*}
 
@@ -81,7 +81,7 @@ Then the sequence $(a_n)$ is monotone increasing.
 \[
 \operatorname{NestedClosedIntervals}([a_n,b_n])
 \Longrightarrow
-\operatorname{MonotoneIncreasing}(a_n).
+\operatorname{OrderPreserving}(a_n).
 \]
 \end{remark*}
 
@@ -93,7 +93,7 @@ Then the sequence $(a_n)$ is monotone increasing.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{MonotoneIncreasing}(a_n)
+\neg\operatorname{OrderPreserving}(a_n)
 \Longrightarrow
 \neg\operatorname{NestedClosedIntervals}([a_n,b_n]).
 \]
@@ -127,7 +127,7 @@ Then the sequence $(b_n)$ is monotone decreasing.
 \[
 \operatorname{NestedClosedIntervals}([a_n,b_n])
 \Longrightarrow
-\operatorname{MonotoneDecreasing}(b_n).
+\operatorname{OrderReversing}(b_n).
 \]
 \end{remark*}
 
@@ -139,7 +139,7 @@ Then the sequence $(b_n)$ is monotone decreasing.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{MonotoneDecreasing}(b_n)
+\neg\operatorname{OrderReversing}(b_n)
 \Longrightarrow
 \neg\operatorname{NestedClosedIntervals}([a_n,b_n]).
 \]
@@ -176,7 +176,7 @@ Then for all $m,n\in\mathbb N$,
 \[
 \operatorname{NestedClosedIntervals}([a_n,b_n])
 \Longrightarrow
-\forall m,n\in\mathbb{N}\;\operatorname{Below}(a_n,b_m).
+\forall m,n\in\mathbb{N}\;(a_n\le b_m).
 \]
 \end{remark*}
 
@@ -233,9 +233,9 @@ then
 \[
 \operatorname{NestedClosedIntervals}([a_n,b_n])
 \land
-\operatorname{Supremum}(\alpha,\{a_n:n\in\mathbb{N}\})
+\operatorname{LeastUpperBound}(\alpha,\{a_n:n\in\mathbb{N}\})
 \land
-\operatorname{Infimum}(\beta,\{b_n:n\in\mathbb{N}\})
+\operatorname{GreatestLowerBound}(\beta,\{b_n:n\in\mathbb{N}\})
 \Longrightarrow
 \alpha\le \beta.
 \]
@@ -259,9 +259,9 @@ then
 \Longrightarrow
 \neg\operatorname{NestedClosedIntervals}([a_n,b_n])
 \lor
-\neg\operatorname{Supremum}(\alpha,\{a_n:n\in\mathbb{N}\})
+\neg\operatorname{LeastUpperBound}(\alpha,\{a_n:n\in\mathbb{N}\})
 \lor
-\neg\operatorname{Infimum}(\beta,\{b_n:n\in\mathbb{N}\}).
+\neg\operatorname{GreatestLowerBound}(\beta,\{b_n:n\in\mathbb{N}\}).
 \]
 \end{remark*}
 
@@ -313,7 +313,7 @@ for every $n\in\mathbb N$. Then
 \begin{remark*}[Predicate reading]
 \[
 \operatorname{NestedClosedBoundedIntervals}(I_n)\Longrightarrow
-\operatorname{NonemptyIntersection}\!\left(\bigcap_{n=1}^{\infty}I_n\right).
+\operatorname{IsNonempty}\!\left(\bigcap_{n=1}^{\infty}I_n\right).
 \]
 \end{remark*}
 
@@ -380,9 +380,9 @@ then
 \[
 \operatorname{NestedClosedBoundedIntervals}([a_n,b_n])
 \land
-\operatorname{Supremum}(\alpha,\{a_n:n\in\mathbb{N}\})
+\operatorname{LeastUpperBound}(\alpha,\{a_n:n\in\mathbb{N}\})
 \Longrightarrow
-\operatorname{IntersectionPoint}(\alpha,[a_n,b_n]).
+\alpha\in\bigcap_{n=1}^{\infty}[a_n,b_n].
 \]
 \end{remark*}
 
@@ -400,7 +400,7 @@ then
 \[
 \alpha\notin \bigcap_{n=1}^{\infty}[a_n,b_n]
 \Longrightarrow
-\neg\operatorname{Supremum}(\alpha,\{a_n:n\in\mathbb{N}\})
+\neg\operatorname{LeastUpperBound}(\alpha,\{a_n:n\in\mathbb{N}\})
 \lor
 \neg\operatorname{NestedClosedBoundedIntervals}([a_n,b_n]).
 \]
@@ -445,9 +445,9 @@ then
 \[
 \operatorname{NestedClosedBoundedIntervals}([a_n,b_n])
 \land
-\operatorname{Infimum}(\beta,\{b_n:n\in\mathbb{N}\})
+\operatorname{GreatestLowerBound}(\beta,\{b_n:n\in\mathbb{N}\})
 \Longrightarrow
-\operatorname{IntersectionPoint}(\beta,[a_n,b_n]).
+\beta\in\bigcap_{n=1}^{\infty}[a_n,b_n].
 \]
 \end{remark*}
 
@@ -465,7 +465,7 @@ then
 \[
 \beta\notin \bigcap_{n=1}^{\infty}[a_n,b_n]
 \Longrightarrow
-\neg\operatorname{Infimum}(\beta,\{b_n:n\in\mathbb{N}\})
+\neg\operatorname{GreatestLowerBound}(\beta,\{b_n:n\in\mathbb{N}\})
 \lor
 \neg\operatorname{NestedClosedBoundedIntervals}([a_n,b_n]).
 \]
@@ -511,9 +511,10 @@ then there exists a unique $x\in\mathbb R$ such that
 \[
 \operatorname{NestedClosedBoundedIntervals}([a_n,b_n])
 \land
-\operatorname{VanishingLength}(b_n-a_n)
+\operatorname{ConvergesTo}((b_n-a_n),0,\mathbb{R})
 \Longrightarrow
-\operatorname{SingletonIntersection}([a_n,b_n]).
+\exists x\in\mathbb{R}\;
+\left(\bigcap_{n=1}^{\infty}[a_n,b_n]=\{x\}\right).
 \]
 \end{remark*}
 
@@ -530,11 +531,12 @@ then there exists a unique $x\in\mathbb R$ such that
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{SingletonIntersection}([a_n,b_n])
+\neg\exists x\in\mathbb{R}\;
+\left(\bigcap_{n=1}^{\infty}[a_n,b_n]=\{x\}\right)
 \Longrightarrow
 \neg\operatorname{NestedClosedBoundedIntervals}([a_n,b_n])
 \lor
-\neg\operatorname{VanishingLength}(b_n-a_n).
+\neg\operatorname{ConvergesTo}((b_n-a_n),0,\mathbb{R}).
 \]
 \end{remark*}
 
@@ -577,9 +579,14 @@ then $(a_n)$ and $(b_n)$ converge and
 \[
 \operatorname{NestedClosedBoundedIntervals}([a_n,b_n])
 \land
-\operatorname{VanishingLength}(b_n-a_n)
+\operatorname{ConvergesTo}((b_n-a_n),0,\mathbb{R})
 \Longrightarrow
-\operatorname{CommonEndpointLimit}(a_n,b_n).
+\exists L\in\mathbb{R}\;
+\left(
+\operatorname{ConvergesTo}(a_n,L,\mathbb{R})
+\land
+\operatorname{ConvergesTo}(b_n,L,\mathbb{R})
+\right).
 \]
 \end{remark*}
 
@@ -596,11 +603,16 @@ then $(a_n)$ and $(b_n)$ converge and
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{CommonEndpointLimit}(a_n,b_n)
+\neg\exists L\in\mathbb{R}\;
+\left(
+\operatorname{ConvergesTo}(a_n,L,\mathbb{R})
+\land
+\operatorname{ConvergesTo}(b_n,L,\mathbb{R})
+\right)
 \Longrightarrow
 \neg\operatorname{NestedClosedBoundedIntervals}([a_n,b_n])
 \lor
-\neg\operatorname{VanishingLength}(b_n-a_n).
+\neg\operatorname{ConvergesTo}((b_n-a_n),0,\mathbb{R}).
 \]
 \end{remark*}
 
@@ -650,17 +662,19 @@ then
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{SingletonIntersectionAt}(x,[a_n,b_n])
+\bigcap_{n=1}^{\infty}[a_n,b_n]=\{x\}
 \land
-\operatorname{VanishingLength}(b_n-a_n)
+\operatorname{ConvergesTo}((b_n-a_n),0,\mathbb{R})
 \Longrightarrow
-\operatorname{EndpointLimit}(a_n,b_n,x).
+\operatorname{ConvergesTo}(a_n,x,\mathbb{R})
+\land
+\operatorname{ConvergesTo}(b_n,x,\mathbb{R}).
 \]
 \end{remark*}
 
 \begin{remark*}[Negated quantified statement]
 \[
-\operatorname{SingletonIntersectionAt}(x,[a_n,b_n])
+\bigcap_{n=1}^{\infty}[a_n,b_n]=\{x\}
 \land
 \lim_{n\to\infty}(b_n-a_n)=0
 \land
@@ -672,9 +686,9 @@ then
 \[
 \left(\lim_{n\to\infty}a_n\ne x\lor \lim_{n\to\infty}b_n\ne x\right)
 \Longrightarrow
-\neg\operatorname{SingletonIntersectionAt}(x,[a_n,b_n])
+\bigcap_{n=1}^{\infty}[a_n,b_n]\ne\{x\}
 \lor
-\neg\operatorname{VanishingLength}(b_n-a_n).
+\neg\operatorname{ConvergesTo}((b_n-a_n),0,\mathbb{R}).
 \]
 \end{remark*}
 
@@ -723,19 +737,27 @@ for every $n\in\mathbb N$, but
 
 \begin{remark*}[Predicate reading]
 \[
-\exists I_n\;\bigl(
-\operatorname{NestedOpenBoundedIntervals}(I_n)
+\exists I_n\;\exists\mathcal{I}\;\bigl(
+\mathcal{I}=\mathsf{IndexedFamily}(I_n,\mathbb{N},\mathbb{R})
 \land
-\operatorname{EmptyIntersection}(I_n)
+\operatorname{MembersSatisfy}(\mathcal{I},\mathsf{OpenBoundedInterval},\mathbb{R})
+\land
+\operatorname{Nested}(\mathcal{I},\subseteq)
+\land
+\operatorname{IsEmpty}\!\left(\bigcap_{n=1}^{\infty}I_n\right)
 \bigr).
 \]
 \end{remark*}
 
 \begin{remark*}[Negated quantified statement]
 \[
-\forall (a_n),(b_n)\;
+\forall (a_n),(b_n)\;\forall\mathcal{I}\;
 \left[
-\operatorname{NestedOpenBoundedIntervals}((a_n,b_n))
+\mathcal{I}=\mathsf{IndexedFamily}((a_n,b_n),\mathbb{N},\mathbb{R})
+\land
+\operatorname{MembersSatisfy}(\mathcal{I},\mathsf{OpenBoundedInterval},\mathbb{R})
+\land
+\operatorname{Nested}(\mathcal{I},\subseteq)
 \Longrightarrow
 \exists x\in\mathbb{R}\;\forall n\in\mathbb{N}\;(x\in(a_n,b_n))
 \right].
@@ -763,11 +785,15 @@ not closed.
 
 \begin{remark*}[Standard quantified statement]
 \[
-\exists I_n\;
+\exists I_n\;\exists\mathcal{I}\;
 \bigl(
-\operatorname{NestedNonemptyBoundedIntervals}(I_n)
+\mathcal{I}=\mathsf{IndexedFamily}(I_n,\mathbb{N},\mathbb{R})
 \land
-\neg\operatorname{ClosedIntervals}(I_n)
+\operatorname{MembersSatisfy}(\mathcal{I},\mathsf{NonemptyBoundedInterval},\mathbb{R})
+\land
+\operatorname{Nested}(\mathcal{I},\subseteq)
+\land
+\neg\operatorname{IsClosedInterval}(I_n)
 \land
 \bigcap_{n=1}^{\infty}I_n=\varnothing
 \bigr).
@@ -776,18 +802,22 @@ not closed.
 
 \begin{remark*}[Predicate reading]
 \[
-\neg\operatorname{ClosedIntervals}(I_n)
+\neg\operatorname{IsClosedInterval}(I_n)
 \quad\text{can make}\quad
-\operatorname{NestedIntervalConclusion}(I_n)
+\operatorname{IsNonempty}\!\left(\bigcap_{n=1}^{\infty}I_n\right)
 \text{ fail.}
 \]
 \end{remark*}
 
 \begin{remark*}[Negated quantified statement]
 \[
-\forall I_n\;
+\forall I_n\;\forall\mathcal{I}\;
 \left[
-\operatorname{NestedNonemptyBoundedIntervals}(I_n)
+\mathcal{I}=\mathsf{IndexedFamily}(I_n,\mathbb{N},\mathbb{R})
+\land
+\operatorname{MembersSatisfy}(\mathcal{I},\mathsf{NonemptyBoundedInterval},\mathbb{R})
+\land
+\operatorname{Nested}(\mathcal{I},\subseteq)
 \Longrightarrow
 \bigcap_{n=1}^{\infty}I_n\ne\varnothing
 \right].
@@ -825,9 +855,9 @@ closed intervals that are not bounded.
 \[
 \exists I_n\;
 \bigl(
-\operatorname{NestedNonemptyClosedIntervals}(I_n)
+\operatorname{NestedClosedIntervals}(I_n)
 \land
-\neg\operatorname{BoundedIntervals}(I_n)
+\neg\operatorname{IsBoundedInterval}(I_n)
 \land
 \bigcap_{n=1}^{\infty}I_n=\varnothing
 \bigr).
@@ -836,9 +866,9 @@ closed intervals that are not bounded.
 
 \begin{remark*}[Predicate reading]
 \[
-\neg\operatorname{BoundedIntervals}(I_n)
+\neg\operatorname{IsBoundedInterval}(I_n)
 \quad\text{can make}\quad
-\operatorname{NestedIntervalConclusion}(I_n)
+\operatorname{IsNonempty}\!\left(\bigcap_{n=1}^{\infty}I_n\right)
 \text{ fail.}
 \]
 \end{remark*}
@@ -847,7 +877,7 @@ closed intervals that are not bounded.
 \[
 \forall I_n\;
 \left[
-\operatorname{NestedNonemptyClosedIntervals}(I_n)
+\operatorname{NestedClosedIntervals}(I_n)
 \Longrightarrow
 \bigcap_{n=1}^{\infty}I_n\ne\varnothing
 \right].

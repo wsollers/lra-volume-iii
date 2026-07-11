@@ -47,10 +47,14 @@ Let $f$ be defined on a neighbourhood of $c\in\mathbb{R}$. Then $f$ is different
 
 \begin{remark*}[Standard quantified statement]
 \[
-  \operatorname{DifferentiableAt}(f,c)
+  \operatorname{IsDifferentiable}(f,c)
   \Longleftrightarrow
   \exists df_c\text{ with }df_c(h)=f'(c)h.
 \]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+The displayed quantified statement is the predicate-level form of $label: its hypotheses name the input conditions, and its conclusion names the asserted structure or relation.
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -103,9 +107,9 @@ If $f$ is differentiable at $c$ in the differential sense, then $f$ is continuou
 
 \begin{remark*}[Standard quantified statement]
 \[
-  \operatorname{DifferentiableByDifferentialAt}(f,c)
+  \operatorname{IsDifferentiable}(f,c)
   \Longrightarrow
-  \operatorname{ContinuousAt}(f,c).
+  \operatorname{IsContinuous}(f,c).
 \]
 \end{remark*}
 

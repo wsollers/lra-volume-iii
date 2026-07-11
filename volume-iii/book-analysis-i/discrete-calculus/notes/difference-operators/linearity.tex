@@ -6,8 +6,10 @@
 \subsection{Properties of the Difference Operator}
 \label{subsec:difference-operator-properties}
 
+\begin{exposition}
 The forward difference operator satisfies algebraic properties that
 closely mirror the familiar rules of differentiation.
+\end{exposition}
 
 \subsection*{Linearity}
 
@@ -22,11 +24,20 @@ a\,\Delta f + b\,\Delta g.
 \hyperref[prf:delta-linearity]{\textit{Go to proof.}}
 \end{proposition}
 
-\begin{remark*}[Fully quantified form]
+\begin{remark*}[Standard quantified statement]
 \(\forall f,g : \mathbb{Z}\to\mathbb{R},\;
 \forall a,b \in \mathbb{R},\;
 \forall n \in \mathbb{Z}:\;
 \Delta(af+bg)(n) = a\,\Delta f(n) + b\,\Delta g(n)\).
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{LinearOperator}(\Delta)
+  \;\colonequiv\;
+  \forall f,g\,\forall a,b\,\forall n,\;
+  \Delta(af+bg)(n)=a\,\Delta f(n)+b\,\Delta g(n).
+\]
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -60,8 +71,16 @@ If \(c\) is a constant function, then \(\Delta c = 0\).
 \hyperref[prf:delta-constant]{\textit{Go to proof.}}
 \end{proposition}
 
-\begin{remark*}[Fully quantified form]
+\begin{remark*}[Standard quantified statement]
 \(\forall c \in \mathbb{R},\; \forall n \in \mathbb{Z}:\; \Delta c(n) = 0\).
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{ConstantRule}(\Delta)
+  \;\colonequiv\;
+  \forall c\in\mathbb R\,\forall n\in\mathbb Z,\; \Delta c(n)=0.
+\]
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -78,9 +97,9 @@ A constant discrete function has no one-step change.
 \(\Delta c(n) = c - c = 0\).
 \end{proof}
 
-\begin{remark*}[Analogy]
+\begin{exposition}
 This mirrors \(\tfrac{d}{dx} c = 0\) in continuous calculus.
-\end{remark*}
+\end{exposition}
 
 \subsection*{The Shift Operator and Operator Algebra}
 
@@ -95,9 +114,18 @@ Ef(n) = f(n+1), \qquad If(n) = f(n).
 
 \DefinitionalRoot
 
-\begin{remark*}[Fully quantified form]
+\begin{remark*}[Standard quantified statement]
 \(\forall f : \mathbb{Z}\to\mathbb{R},\; \forall n \in \mathbb{Z}:\;
 Ef(n) = f(n+1)\) and \(If(n) = f(n)\).
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{ShiftOperator}(E)
+  \;\colonequiv\;
+  \forall f:\mathbb Z\to\mathbb R\,\forall n\in\mathbb Z,\;
+  Ef(n)=f(n+1).
+\]
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -113,9 +141,17 @@ operator leaves the input unchanged.
 \hyperref[prf:delta-shift-minus-identity]{\textit{Go to proof.}}
 \end{theorem}
 
-\begin{remark*}[Fully quantified form]
+\begin{remark*}[Standard quantified statement]
 \(\forall f : \mathbb{Z}\to\mathbb{R},\; \forall n \in \mathbb{Z}:\;
 \Delta f(n) = (E-I)f(n) = f(n+1) - f(n)\).
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{OperatorIdentity}(\Delta,E-I)
+  \;\colonequiv\;
+  \forall f\,\forall n,\; \Delta f(n)=(E-I)f(n).
+\]
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -137,7 +173,7 @@ Applying the operator \(E-I\) to a function \(f\) gives
 \]
 \end{proof}
 
-\begin{remark*}[Higher differences via the binomial theorem]
+\begin{exposition}
 Expressing \(\Delta = E - I\) reveals that higher differences can be
 computed using ordinary algebra. Applying the binomial theorem to
 \(\Delta^n = (E-I)^n\) gives
@@ -161,15 +197,17 @@ f(n+k).
 This explains why binomial coefficients and Pascal's triangle appear
 naturally throughout discrete calculus: they are a direct consequence
 of the algebraic identity \(\Delta = E - I\).
-\end{remark*}
+\end{exposition}
 
 \subsection{Difference Tables and Polynomial Detection}
 \label{subsec:difference-tables}
 
+\begin{exposition}
 One of the most useful tools in discrete calculus is the \emph{difference
 table}. By repeatedly applying the difference operator to a sequence,
 one can detect whether the sequence arises from a polynomial function and
 determine its degree.
+\end{exposition}
 
 \begin{definition}[Difference Table]
 \label{def:difference-table}
@@ -178,6 +216,13 @@ is constructed by listing the successive values of the function and then
 computing their forward differences \(\Delta f(n) = f(n+1)-f(n)\),
 then \(\Delta^2 f\), \(\Delta^3 f\), and so on.
 \end{definition}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\Delta^0 f=f,\qquad
+\Delta^{k+1}f=\Delta(\Delta^k f)\quad(k\ge 0).
+\]
+\end{remark*}
 
 \begin{remark*}[Interpretation]
 A difference table organizes repeated forward differences into rows so that
@@ -193,6 +238,7 @@ eventual constant or zero rows become visible.
 
 \subsection*{Example}
 
+\begin{example*}
 For \(f(n) = n^2\):
 
 \[
@@ -210,6 +256,7 @@ n & f(n) & \Delta f(n) & \Delta^2 f(n) \\
 
 The second differences are constant (all equal to \(2\)), and the third
 differences are zero.
+\end{example*}
 
 \begin{center}
 \input{volume-iii/book-analysis-i/discrete-calculus/notes/difference-operators/figure-difference-table-quadratic}
@@ -243,10 +290,24 @@ By induction, applying \(\Delta\) a further \(d-1\) times yields the
 constant \(\Delta^d f(n) = d!\,a_d\), and one further application gives \(0\).
 \end{proof}
 
-\begin{remark*}[Fully quantified form]
+\begin{remark*}[Standard quantified statement]
 \(\forall d \in \mathbb{N},\; \forall f : \mathbb{Z}\to\mathbb{R}\) polynomial of degree \(d\):\\
 \(\exists c \in \mathbb{R}: \forall n \in \mathbb{Z},\; \Delta^d f(n) = c\),
 and \(\forall n \in \mathbb{Z},\; \Delta^{d+1}f(n) = 0\).
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{PolynomialDetection}(f,d)
+  \;\colonequiv\;
+  \operatorname{PolynomialDegree}(f,d)
+  \Rightarrow
+  \left(
+    \exists c\,\forall n,\; \Delta^d f(n)=c
+  \right)
+  \wedge
+  \forall n,\; \Delta^{d+1}f(n)=0.
+\]
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -254,7 +315,7 @@ Repeated differences reveal polynomial degree: a degree \(d\) polynomial has
 constant \(d\)-th differences and vanishing next differences.
 \end{remark*}
 
-\begin{remark*}[Consequence]
+\begin{remark*}[Interpretation]
 Difference tables provide a practical method for identifying polynomial
 sequences and determining their degree. This observation leads naturally to
 the \emph{falling factorial basis}: a family of polynomials that interact

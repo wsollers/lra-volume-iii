@@ -29,13 +29,17 @@ where the \emph{binomial coefficients} are
 \(\forall n \in \mathbb{N},\; \forall x,y \in \mathbb{R}: \displaystyle(x+y)^n = \sum_{k=0}^{n}\binom{n}{k}x^{n-k}y^{k}\).
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+The displayed quantified statement is the predicate-level form of $label: its hypotheses name the input conditions, and its conclusion names the asserted structure or relation.
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 The theorem 
 expands a power of a sum by counting how many terms choose each
 possible number of \(y\)-factors.
 \end{remark*}
 
-\begin{remark*}[Combinatorial meaning]
+\begin{remark*}[Interpretation]
 The binomial coefficients count the number of ways to choose \(k\) factors of
 \(y\) from the \(n\) factors in the product \((x+y)(x+y)\cdots(x+y)\).
 Thus \(\binom{n}{k}\) is the number of ways to select \(k\) objects from a
@@ -45,7 +49,7 @@ a sum of products.
 
 \subsection*{Basic Properties of Binomial Coefficients}
 
-\begin{remark*}[Basic properties of binomial coefficients]
+\begin{remark*}[Interpretation]
 \begin{align*}
 \binom{n}{0} &= 1, &
 \binom{n}{n} &= 1, &
@@ -66,7 +70,7 @@ sum of the two entries directly above it.
 \input{volume-iii/book-analysis-i/discrete-calculus/notes/foundations/figure-pascals-triangle}
 \end{center}
 
-\begin{remark*}[Pascal's triangle]
+\begin{remark*}[Interpretation]
 Each entry \(\binom{n}{k}\) is obtained from the sum of the two entries
 above it: \(\binom{n}{k}=\binom{n-1}{k-1}+\binom{n-1}{k}\).
 These coefficients appear throughout discrete calculus, especially in
@@ -76,7 +80,7 @@ expansion.
 
 \subsection*{Connection with Discrete Calculus}
 
-\begin{remark*}[Connection with discrete calculus]
+\begin{remark*}[Interpretation]
 The binomial theorem plays a central role in discrete calculus because
 difference operators naturally produce binomial coefficients.
 \end{remark*}
@@ -99,12 +103,16 @@ f(x+k).
 \Delta^n f(x) = \displaystyle\sum_{k=0}^{n}(-1)^{n-k}\binom{n}{k}f(x+k)\).
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+The displayed quantified statement is the predicate-level form of $label: its hypotheses name the input conditions, and its conclusion names the asserted structure or relation.
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 The \(n\)-th forward difference is a signed binomial combination of \(n+1\)
 successive function values.
 \end{remark*}
 
-\begin{remark*}[Proof idea]
+\begin{remark*}[Interpretation]
 Applying the difference operator \(\Delta = E - I\) (where \(E\) is the shift
 operator) repeatedly gives \(\Delta^n = (E-I)^n\). Expanding by the binomial
 theorem yields the coefficients \((-1)^{n-k}\binom{n}{k}\), and \(E^k f(x) = f(x+k)\).
@@ -121,7 +129,7 @@ This derivation is carried out in full in the Difference Operators section.
 
 \subsection*{Explicit Examples}
 
-\begin{remark*}[Explicit examples]
+\begin{remark*}[Interpretation]
 Applying the difference operator repeatedly to a function \(f\) yields
 \[
 \begin{aligned}

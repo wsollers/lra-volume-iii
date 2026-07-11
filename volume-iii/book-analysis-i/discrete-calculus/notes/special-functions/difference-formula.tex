@@ -5,10 +5,12 @@
 
 \subsection*{Difference Formulas for Special Functions}
 
+\begin{exposition}
 The table below collects the difference formulas for the principal
 special functions of discrete calculus.
+\end{exposition}
 
-\begin{remark*}[Difference formulas]
+\begin{remark*}[Interpretation]
 \renewcommand{\arraystretch}{1.7}
 \begin{tabular}{@{}l l@{}}
 \textbf{Function} & \textbf{Forward Difference} \\
@@ -22,7 +24,7 @@ $n^{\underline{2}} = n(n-1)$ & $2n$ \\
 \end{tabular}
 \end{remark*}
 
-\begin{remark*}[Binomial coefficient as a special case]
+\begin{remark*}[Interpretation]
 The formula \(\Delta\binom{x}{k} = \binom{x}{k-1}\) follows immediately
 from the falling factorial rule \(\Delta\,x^{\underline{k}} = k\,x^{\underline{k-1}}\)
 by dividing through by \(k!\). It says that the binomial coefficient
@@ -32,10 +34,12 @@ to the monomial \(x^k/k!\) in the Taylor expansion.
 
 \subsection*{Antiderivative Table}
 
+\begin{exposition}
 By reversing the difference formulas, we obtain the corresponding
 discrete antiderivatives:
+\end{exposition}
 
-\begin{remark*}[Discrete antiderivatives]
+\begin{remark*}[Interpretation]
 \renewcommand{\arraystretch}{1.7}
 \begin{tabular}{@{}l l@{}}
 \textbf{Function \(f(n)\)} & \textbf{Antiderivative \(F(n)\) with \(\Delta F = f\)} \\
@@ -47,7 +51,7 @@ $c$ (constant) & $cn$ \\
 \end{tabular}
 \end{remark*}
 
-\begin{remark*}[Using the Fundamental Theorem]
+\begin{remark*}[Interpretation]
 Each antiderivative in the table, combined with the Fundamental Theorem
 of Finite Calculus (Theorem~\ref{thm:fundamental-theorem-finite-calculus}), yields an immediate
 summation formula. For instance, from \(\Delta\bigl(\tfrac{x^{\underline{k+1}}}{k+1}\bigr) = x^{\underline{k}}\):

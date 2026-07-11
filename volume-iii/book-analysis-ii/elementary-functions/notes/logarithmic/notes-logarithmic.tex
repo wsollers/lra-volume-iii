@@ -28,7 +28,9 @@ Equivalently, $\ln x$ is defined by the integral
   \ln x \;:=\; \int_1^x \frac{1}{t}\, dt.
 \]
 \end{definition}
-\end{definitionbox}\begin{remark*}[Standard quantified statement]
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
 \[
   \forall x > 0 :\; e^{\ln x} = x.
   \qquad
@@ -38,7 +40,7 @@ Equivalently, $\ln x$ is defined by the integral
 
 \begin{remark*}[Predicate reading]
 \[
-  \operatorname{NaturalLog}(x, y)
+  y=\ln x
   \;\colonequiv\;
   x > 0 \;\wedge\; e^y = x
   \;\colonequiv\;
@@ -48,31 +50,39 @@ Equivalently, $\ln x$ is defined by the integral
 
 \begin{remark*}[Predicate reading]
 \[
-  \operatorname{FunctionLimit}\!\left(\frac{\ln(1+x)}{x},\,0,\,1\right)
+  \operatorname{TendsTo}\!\left(\frac{\ln(1+x)}{x},\,0,\,1\right)
   \;\colonequiv\;
   \forall\varepsilon>0,\;\exists\delta>0,\;\forall x:\;
-  \operatorname{InputTolerance}(x,0,\delta)
+  \bigl(
+    \operatorname{PuncturedNeighborhood}(U^\times_\delta,U_\delta,0,\delta,\mathbb R)
+    \wedge
+    \operatorname{Within}(x,U^\times_\delta,\mathbb R)
+  \bigr)
   \Rightarrow
-  \operatorname{OutputTolerance}\!\left(\frac{\ln(1+x)}{x},1,\varepsilon\right).
+  \bigl(
+    \operatorname{Ball}(B_\varepsilon(1),1,\varepsilon,\mathbb R)
+    \wedge
+    \operatorname{Within}\!\left(\frac{\ln(1+x)}{x},B_\varepsilon(1),\mathbb R\right)
+  \bigr).
 \]
 \end{remark*}
 
 \begin{remark*}[Negated quantified statement]
 \[
-  \neg\,\operatorname{NaturalLog}(x,y)
+  \neg(y=\ln x)
   \;\iff\;
-  x \leq 0 \;\vee\; e^y \neq x.
+  x \leq 0 \;\vee\; (x>0 \wedge y\neq\ln x).
 \]
 \end{remark*}
 
-\begin{remark*}[Two definitions, same function]
+\begin{remark*}[Interpretation]
 The inverse-of-exponential definition requires $e^x$ to be
 established first. The integral definition is self-contained and
 is preferred when building analysis from scratch. Both yield the
 same function.
 \end{remark*}
 
-\begin{remark*}[Key properties]
+\begin{remark*}[Interpretation]
 \begin{enumerate}[label=(\roman*)]
   \item $\ln 1 = 0$;\; $\ln e = 1$.
   \item \textbf{Functional equation:} $\ln(xy) = \ln x + \ln y$
@@ -86,7 +96,7 @@ same function.
 \end{enumerate}
 \end{remark*}
 
-\begin{remark*}[General logarithm]
+\begin{remark*}[Interpretation]
 For $a > 0$, $a \neq 1$, the \textbf{logarithm base $a$} is
 $\log_a x := \ln x / \ln a$. The common logarithm is $\log_{10}$;
 the binary logarithm is $\log_2$.
@@ -136,7 +146,7 @@ the binary logarithm is $\log_2$.
 \]
 \end{remark*}
 
-\begin{remark*}[Equivalence with exponential limit]
+\begin{remark*}[Interpretation]
 The fundamental exponential limit $\lim(e^x-1)/x = 1$ and the
 fundamental logarithmic limit $\lim\ln(1+x)/x = 1$ are equivalent:
 each follows from the other via the substitution $x \leftrightarrow
@@ -144,7 +154,7 @@ e^x - 1$. Both express the first-order Taylor approximation of the
 respective function at $0$.
 \end{remark*}
 
-\begin{remark*}[Proof strategy]
+\begin{remark*}[Interpretation]
 From the series: $\ln(1+x) = x - x^2/2 + x^3/3 - \cdots$ (valid
 for $|x| < 1$). Dividing by $x$ gives $1 - x/2 + x^2/3 - \cdots
 \to 1$ as $x \to 0$ by continuity of power series.
@@ -193,7 +203,12 @@ For every $r > 0$:
   \operatorname{LimitAtInfinity}(x^{-r}\ln x,\,+\infty,\,0)
   \;\colonequiv\;
   \forall\varepsilon>0,\;\exists M\in\mathbb{R},\;\forall x:\;
-  x>M \Rightarrow \operatorname{OutputTolerance}(x^{-r}\ln x,0,\varepsilon).
+  x>M \Rightarrow
+  \bigl(
+    \operatorname{Ball}(B_\varepsilon(0),0,\varepsilon,\mathbb R)
+    \wedge
+    \operatorname{Within}(x^{-r}\ln x,B_\varepsilon(0),\mathbb R)
+  \bigr).
 \]
 \end{remark*}
 
@@ -206,13 +221,13 @@ For every $r > 0$:
 \]
 \end{remark*}
 
-\begin{remark*}[Proof strategy]
+\begin{remark*}[Interpretation]
 For the first: substitute $x = e^t$ to get $t/e^{rt} \to 0$ by
 exponential dominance. For the second: substitute $x = 1/t$ and
 reduce to the first: $x^r \ln x = (-\ln t)/t^r \to 0$.
 \end{remark*}
 
-\begin{remark*}[Significance]
+\begin{remark*}[Interpretation]
 These limits establish the position of $\ln x$ in the growth
 hierarchy: $\ln x$ is dominated by every positive power. Combined
 with the exponential dominance result, the full ordering is

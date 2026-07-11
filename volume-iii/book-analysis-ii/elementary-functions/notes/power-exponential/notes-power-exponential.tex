@@ -25,7 +25,9 @@ and $x > 0$, the \textbf{real power} is defined by
   x^r \;:=\; e^{r \ln x}.
 \]
 \end{definition}
-\end{definitionbox}\begin{remark*}[Standard quantified statement]
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
 \[
   \forall r \in \mathbb{R},\; \forall x > 0 :\; x^r = e^{r\ln x}.
 \]
@@ -35,13 +37,12 @@ $x \cdot x \cdots x$.
 
 \begin{remark*}[Predicate reading]
 \[
-  \operatorname{RealPower}(x, r, y)
-  \;\colonequiv\;
-  x > 0 \;\wedge\; y = e^{r \ln x}.
+  x^r=e^{r\ln x}
+  \qquad (x>0,\ r\in\mathbb{R}).
 \]
 \end{remark*}
 
-\begin{remark*}[Laws of exponents]
+\begin{remark*}[Interpretation]
 For $x, y > 0$ and $r, s \in \mathbb{R}$:
 \[
   x^r \cdot x^s = x^{r+s}, \quad
@@ -128,7 +129,9 @@ is defined by the absolutely convergent power series
   \qquad x \in \mathbb{R}.
 \]
 \end{definition}
-\end{definitionbox}\begin{remark*}[Standard quantified statement]
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
 \[
   \forall x \in \mathbb{R} :\;
   e^x = \sum_{n=0}^\infty \frac{x^n}{n!},
@@ -139,13 +142,11 @@ is defined by the absolutely convergent power series
 
 \begin{remark*}[Predicate reading]
 \[
-  \operatorname{Exponential}(x, y)
-  \;\colonequiv\;
-  y = \sum_{n=0}^\infty \frac{x^n}{n!}.
+  e^x=\exp(x)=\sum_{n=0}^\infty \frac{x^n}{n!}.
 \]
 \end{remark*}
 
-\begin{remark*}[Key properties]
+\begin{remark*}[Interpretation]
 \begin{enumerate}[label=(\roman*)]
   \item $e^0 = 1$;\; $e^1 = e$.
   \item \textbf{Functional equation:} $e^{x+y} = e^x \cdot e^y$
@@ -157,7 +158,7 @@ is defined by the absolutely convergent power series
 \end{enumerate}
 \end{remark*}
 
-\begin{remark*}[General exponential]
+\begin{remark*}[Interpretation]
 For $a > 0$, $a \neq 1$: $a^x := e^{x\ln a}$. Strictly increasing
 if $a > 1$, strictly decreasing if $0 < a < 1$. $(a^x)' = a^x \ln a$.
 Only $e^x$ is its own derivative.
@@ -199,12 +200,20 @@ Only $e^x$ is its own derivative.
 
 \begin{remark*}[Predicate reading]
 \[
-  \operatorname{FunctionLimit}\!\left(\frac{e^x-1}{x},\,0,\,1\right)
+  \operatorname{TendsTo}\!\left(\frac{e^x-1}{x},\,0,\,1\right)
   \;\colonequiv\;
   \forall\varepsilon>0,\;\exists\delta>0,\;\forall x:\;
-  \operatorname{InputTolerance}(x,0,\delta)
+  \bigl(
+    \operatorname{PuncturedNeighborhood}(U^\times_\delta,U_\delta,0,\delta,\mathbb R)
+    \wedge
+    \operatorname{Within}(x,U^\times_\delta,\mathbb R)
+  \bigr)
   \Rightarrow
-  \operatorname{OutputTolerance}\!\left(\frac{e^x-1}{x},1,\varepsilon\right).
+  \bigl(
+    \operatorname{Ball}(B_\varepsilon(1),1,\varepsilon,\mathbb R)
+    \wedge
+    \operatorname{Within}\!\left(\frac{e^x-1}{x},B_\varepsilon(1),\mathbb R\right)
+  \bigr).
 \]
 \end{remark*}
 
@@ -264,7 +273,12 @@ functional equation, this implies $(e^x)' = e^x$ everywhere.
   \operatorname{LimitAtInfinity}\!\left(\left(1+\tfrac{1}{x}\right)^x,\,+\infty,\,e\right)
   \;\colonequiv\;
   \forall\varepsilon>0,\;\exists M\in\mathbb{R},\;\forall x:\;
-  x>M \Rightarrow \operatorname{OutputTolerance}\!\left(\left(1+\tfrac{1}{x}\right)^x,e,\varepsilon\right).
+  x>M \Rightarrow
+  \bigl(
+    \operatorname{Ball}(B_\varepsilon(e),e,\varepsilon,\mathbb R)
+    \wedge
+    \operatorname{Within}\!\left(\left(1+\tfrac{1}{x}\right)^x,B_\varepsilon(e),\mathbb R\right)
+  \bigr).
 \]
 \end{remark*}
 
@@ -277,7 +291,7 @@ functional equation, this implies $(e^x)' = e^x$ everywhere.
 \]
 \end{remark*}
 
-\begin{remark*}[Proof strategy]
+\begin{remark*}[Interpretation]
 Write $(1+1/x)^x = e^{x\ln(1+1/x)}$. Set $t = 1/x \to 0^+$ and use
 the fundamental logarithmic limit $\ln(1+t)/t \to 1$. Then
 $x\ln(1+1/x) = \ln(1+t)/t \to 1$, so $(1+1/x)^x = e^{x\ln(1+1/x)}
@@ -322,7 +336,12 @@ For every $r > 0$:
   \operatorname{LimitAtInfinity}(x^r e^{-x},\,+\infty,\,0)
   \;\colonequiv\;
   \forall\varepsilon>0,\;\exists M\in\mathbb{R},\;\forall x:\;
-  x>M \Rightarrow \operatorname{OutputTolerance}(x^r e^{-x},0,\varepsilon).
+  x>M \Rightarrow
+  \bigl(
+    \operatorname{Ball}(B_\varepsilon(0),0,\varepsilon,\mathbb R)
+    \wedge
+    \operatorname{Within}(x^r e^{-x},B_\varepsilon(0),\mathbb R)
+  \bigr).
 \]
 \end{remark*}
 
@@ -335,12 +354,12 @@ For every $r > 0$:
 \]
 \end{remark*}
 
-\begin{remark*}[Proof strategy]
+\begin{remark*}[Interpretation]
 Pick integer $n > r$. The series bound $e^x \geq x^n/n!$ gives
 $x^r/e^x \leq n!\, x^{r-n} \to 0$ since $r - n < 0$.
 \end{remark*}
 
-\begin{remark*}[Growth hierarchy]
+\begin{remark*}[Interpretation]
 For any $r > 0$:
 \[
   \ln x \;\ll\; x^r \;\ll\; e^x

@@ -37,9 +37,10 @@ and similarly for $\min(A,B)$ with $\min\{a,b\}$.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{PointwiseMaxSet}(A,B)=\max(A,B),
-\qquad
-\operatorname{PointwiseMinSet}(A,B)=\min(A,B).
+\operatorname{ReplacementImage}(\max(A,B),A\times B,(a,b)\mapsto\max\{a,b\}),
+\]
+\[
+\operatorname{ReplacementImage}(\min(A,B),A\times B,(a,b)\mapsto\min\{a,b\}).
 \]
 \end{remark*}
 
@@ -54,21 +55,32 @@ and similarly for $\min(A,B)$.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{PointwiseMaxSet}(A,B)=C
+C\ne\max(A,B)
 \quad\text{means}\quad
 (\exists x)\bigl[x\in C\triangle\max(A,B)\bigr],
 \]
-and similarly for $\operatorname{PointwiseMinSet}$.
+and similarly for $\min(A,B)$.
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
 The definition fails only if the image set omits a pairwise maximum or minimum,
 or if it includes a value not produced by one of the pairwise rules.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
 Every membership claim decomposes into two input witnesses and one order-based
 operation: either the larger input or the smaller input is selected.
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Pointwise maximum and minimum sets collect the order-selected output from
+every pair of inputs, one from each source set.
 \end{remark*}
 
 \begin{dependencies}
@@ -97,9 +109,9 @@ A,B\neq\varnothing,\quad A,B\text{ bounded above}
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{Supremum}(s_A,A)\land\operatorname{Supremum}(s_B,B)
+\operatorname{LeastUpperBound}(s_A,A)\land\operatorname{LeastUpperBound}(s_B,B)
 \Longrightarrow
-\operatorname{Supremum}(\max\{s_A,s_B\},\max(A,B)).
+\operatorname{LeastUpperBound}(\max\{s_A,s_B\},\max(A,B)).
 \]
 \end{remark*}
 
@@ -112,20 +124,31 @@ is impossible under the stated hypotheses.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{Supremum}(s_A,A)\land\operatorname{Supremum}(s_B,B)\land
-\neg\operatorname{Supremum}(\max\{s_A,s_B\},\max(A,B)).
+\operatorname{LeastUpperBound}(s_A,A)\land\operatorname{LeastUpperBound}(s_B,B)\land
+\neg\operatorname{LeastUpperBound}(\max\{s_A,s_B\},\max(A,B)).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
 The formula could fail only if the maximum of the two suprema failed to bound
 all pairwise maxima, or if it were not the least such bound.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
 Every pairwise maximum is bounded by $\max\{\sup A,\sup B\}$.  Sharpness comes
 from holding one input fixed in the nonempty other set and letting the relevant
 set approach its own supremum.
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The largest possible pairwise maximum is controlled by the larger of the two
+individual upper endpoints.
 \end{remark*}
 
 \begin{dependencies}
@@ -154,9 +177,9 @@ A,B\neq\varnothing,\quad A,B\text{ bounded below}
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{Infimum}(t_A,A)\land\operatorname{Infimum}(t_B,B)
+\operatorname{GreatestLowerBound}(t_A,A)\land\operatorname{GreatestLowerBound}(t_B,B)
 \Longrightarrow
-\operatorname{Infimum}(\max\{t_A,t_B\},\max(A,B)).
+\operatorname{GreatestLowerBound}(\max\{t_A,t_B\},\max(A,B)).
 \]
 \end{remark*}
 
@@ -169,21 +192,32 @@ is impossible under the stated hypotheses.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{Infimum}(t_A,A)\land\operatorname{Infimum}(t_B,B)\land
-\neg\operatorname{Infimum}(\max\{t_A,t_B\},\max(A,B)).
+\operatorname{GreatestLowerBound}(t_A,A)\land\operatorname{GreatestLowerBound}(t_B,B)\land
+\neg\operatorname{GreatestLowerBound}(\max\{t_A,t_B\},\max(A,B)).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
 The formula could fail only if the larger of the two lower thresholds were not
 a lower bound for all pairwise maxima, or if pairwise maxima could not approach
 that threshold from above.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
 Every pairwise maximum is at least both lower thresholds, hence at least their
 maximum.  Approximation of the two infima gives pairwise maxima arbitrarily
 close to the larger lower threshold.
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+For pairwise maxima, the lower edge is forced up to the larger of the two
+individual lower edges.
 \end{remark*}
 
 \begin{dependencies}
@@ -212,9 +246,9 @@ A,B\neq\varnothing,\quad A,B\text{ bounded above}
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{Supremum}(s_A,A)\land\operatorname{Supremum}(s_B,B)
+\operatorname{LeastUpperBound}(s_A,A)\land\operatorname{LeastUpperBound}(s_B,B)
 \Longrightarrow
-\operatorname{Supremum}(\min\{s_A,s_B\},\min(A,B)).
+\operatorname{LeastUpperBound}(\min\{s_A,s_B\},\min(A,B)).
 \]
 \end{remark*}
 
@@ -227,19 +261,30 @@ is impossible under the stated hypotheses.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{Supremum}(s_A,A)\land\operatorname{Supremum}(s_B,B)\land
-\neg\operatorname{Supremum}(\min\{s_A,s_B\},\min(A,B)).
+\operatorname{LeastUpperBound}(s_A,A)\land\operatorname{LeastUpperBound}(s_B,B)\land
+\neg\operatorname{LeastUpperBound}(\min\{s_A,s_B\},\min(A,B)).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
 The formula could fail only if the smaller supremum failed to bound all
 pairwise minima, or if that upper bound were not sharp.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
 Every pairwise minimum is below both suprema, hence below their minimum.
 Sharpness comes from taking both inputs near their own suprema.
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+For pairwise minima, the upper edge is limited by the smaller of the two
+individual upper edges.
 \end{remark*}
 
 \begin{dependencies}
@@ -268,9 +313,9 @@ A,B\neq\varnothing,\quad A,B\text{ bounded below}
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{Infimum}(t_A,A)\land\operatorname{Infimum}(t_B,B)
+\operatorname{GreatestLowerBound}(t_A,A)\land\operatorname{GreatestLowerBound}(t_B,B)
 \Longrightarrow
-\operatorname{Infimum}(\min\{t_A,t_B\},\min(A,B)).
+\operatorname{GreatestLowerBound}(\min\{t_A,t_B\},\min(A,B)).
 \]
 \end{remark*}
 
@@ -283,19 +328,30 @@ is impossible under the stated hypotheses.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{Infimum}(t_A,A)\land\operatorname{Infimum}(t_B,B)\land
-\neg\operatorname{Infimum}(\min\{t_A,t_B\},\min(A,B)).
+\operatorname{GreatestLowerBound}(t_A,A)\land\operatorname{GreatestLowerBound}(t_B,B)\land
+\neg\operatorname{GreatestLowerBound}(\min\{t_A,t_B\},\min(A,B)).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
 The formula could fail only if the smaller infimum failed to bound all pairwise
 minima from below, or if that lower bound were not sharp.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
 Every pairwise minimum is at least the smaller of the two infima.  Sharpness
 comes from holding one set nonempty and approaching the smaller lower threshold.
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The lower edge of the pairwise minimum set is the smaller of the two individual
+lower edges.
 \end{remark*}
 
 \begin{dependencies}

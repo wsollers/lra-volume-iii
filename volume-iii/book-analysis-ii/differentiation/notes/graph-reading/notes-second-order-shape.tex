@@ -12,7 +12,7 @@ Let $f$ be differentiable on a neighbourhood of $c$. If $f'$ is differentiable a
 
 \begin{remark*}[Standard quantified statement]
 \[
-  \operatorname{DifferentiableAt}(f',c,f''(c))
+  \operatorname{IsDifferentiable}(f',c,f''(c))
   \quad\Longleftrightarrow\quad
   f''(c)=(f')'(c).
 \]
@@ -74,7 +74,7 @@ then $f$ is convex on $I$.
 \[
   \bigl(\forall x\in I,\ f''(x)\geq 0\bigr)
   \Longrightarrow
-  \operatorname{ConvexOn}(f,I).
+  \operatorname{IsConvex}(f,I).
 \]
 \end{remark*}
 
@@ -105,7 +105,7 @@ then $f$ is concave on $I$.
 \[
   \bigl(\forall x\in I,\ f''(x)\leq 0\bigr)
   \Longrightarrow
-  \operatorname{ConcaveOn}(f,I).
+  \operatorname{IsConcave}(f,I).
 \]
 \end{remark*}
 
@@ -140,11 +140,11 @@ Let $f$ be twice differentiable in a neighbourhood of $c$, and suppose $f'(c)=0$
 
 \begin{remark*}[Standard quantified statement]
 \[
-  f'(c)=0\land f''(c)>0 \Rightarrow \operatorname{StrictRelativeMinimum}(f,c),
+  f'(c)=0\land f''(c)>0 \Rightarrow \operatorname{IsStrictRelativeMinimum}(f,c),
 \]
 and
 \[
-  f'(c)=0\land f''(c)<0 \Rightarrow \operatorname{StrictRelativeMaximum}(f,c).
+  f'(c)=0\land f''(c)<0 \Rightarrow \operatorname{IsStrictRelativeMaximum}(f,c).
 \]
 \end{remark*}
 
@@ -173,7 +173,7 @@ Let $f$ have an inflection point at $c$. If $f''$ exists on a neighbourhood of $
 
 \begin{remark*}[Standard quantified statement]
 \[
-  \operatorname{InflectionPoint}(f,c)\land \operatorname{ContinuousAt}(f'',c)
+  \operatorname{IsInflection}(f,c)\land \operatorname{IsContinuous}(f'',c)
   \Longrightarrow
   f''(c)=0.
 \]

@@ -338,12 +338,12 @@ Extremality proves that an optimal value is actually realized by the object
 being studied. A maximum is not merely an upper bound; it is an upper bound
 that belongs to the set. A minimum is the corresponding realized lower bound.
 \[
-  \operatorname{Maximum}(m,A)
+  \operatorname{GreatestElement}(m,A)
   \Longleftrightarrow
   (m\in A)\land \operatorname{UpperBound}(m,A),
 \]
 \[
-  \operatorname{Minimum}(m,A)
+  \operatorname{LeastElement}(m,A)
   \Longleftrightarrow
   (m\in A)\land \operatorname{LowerBound}(m,A).
 \]
@@ -364,7 +364,7 @@ Least and greatest character proves optimality among competitors. For a
 supremum, the candidate must first be an upper bound, and then it must be no
 larger than every other upper bound. Infimum proofs reverse the direction.
 \[
-  \operatorname{Supremum}(s,A)
+  \operatorname{LeastUpperBound}(s,A)
   \Longleftrightarrow
   \operatorname{UpperBound}(s,A)
   \land
@@ -372,7 +372,7 @@ larger than every other upper bound. Infimum proofs reverse the direction.
   \bigl(\operatorname{UpperBound}(u,A)\Rightarrow s\leq u\bigr),
 \]
 \[
-  \operatorname{Infimum}(i,A)
+  \operatorname{GreatestLowerBound}(i,A)
   \Longleftrightarrow
   \operatorname{LowerBound}(i,A)
   \land

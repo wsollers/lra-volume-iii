@@ -27,7 +27,7 @@ then $f$ has a \emph{strict relative minimum} at $c$.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{LocalMinimum}(f, c)
+\operatorname{IsLocalMinimum}(f, c)
 \;\Longleftrightarrow\;
 \exists \delta > 0\;\forall x \in A\;
 \bigl(\operatorname{Within}(x, c, \delta) \implies f(c) \leq f(x)\bigr).
@@ -72,7 +72,7 @@ then $f$ has a \emph{strict relative maximum} at $c$.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{LocalMaximum}(f, c)
+\operatorname{IsLocalMaximum}(f, c)
 \;\Longleftrightarrow\;
 \exists \delta > 0\;\forall x \in A\;
 \bigl(\operatorname{Within}(x, c, \delta) \implies f(x) \leq f(c)\bigr).
@@ -100,17 +100,17 @@ Let $A \subseteq \mathbb{R}$, let $f : A \to \mathbb{R}$, and let $c \in A$. We 
 
 \begin{remark*}[Standard quantified statement]
 \[
-\operatorname{LocalExtremum}(f, c)
+\operatorname{IsLocalExtremum}(f, c)
 \;\Longleftrightarrow\;
-\operatorname{LocalMinimum}(f, c) \;\lor\; \operatorname{LocalMaximum}(f, c).
+\operatorname{IsLocalMinimum}(f, c) \;\lor\; \operatorname{IsLocalMaximum}(f, c).
 \]
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{LocalExtremum}(f, c)
+\operatorname{IsLocalExtremum}(f, c)
 \;\Longleftrightarrow\;
-\operatorname{LocalMinimum}(f, c) \;\lor\; \operatorname{LocalMaximum}(f, c).
+\operatorname{IsLocalMinimum}(f, c) \;\lor\; \operatorname{IsLocalMaximum}(f, c).
 \]
 \end{remark*}
 
@@ -141,24 +141,24 @@ f'(c) = 0.
 
 \begin{remark*}[Standard quantified statement]
 \[
-\operatorname{LocalExtremum}(f, c) \;\land\; \operatorname{DifferentiableAt}(f, c)
-\;\Rightarrow\; \operatorname{DerivativeAt}(f, c, 0).
+\operatorname{IsLocalExtremum}(f, c) \;\land\; \operatorname{IsDifferentiable}(f, c)
+\;\Rightarrow\; \operatorname{Derivative}(f, c, 0).
 \]
 \end{remark*}
 
-\begin{remark*}[Contrapositive quantified statement]
+\begin{remark*}[Interpretation]
 \[
-\operatorname{DerivativeAt}(f, c, L) \;\land\; L \neq 0
-\;\Rightarrow\; \lnot\operatorname{LocalExtremum}(f, c).
+\operatorname{Derivative}(f, c, L) \;\land\; L \neq 0
+\;\Rightarrow\; \lnot\operatorname{IsLocalExtremum}(f, c).
 \]
 If $f'(c)$ exists and is nonzero, then $c$ is not a relative extremum.
 \end{remark*}
 
-\begin{remark*}[Contrapositive predicate reading]
+\begin{remark*}[Interpretation]
 \[
-\operatorname{DerivativeAt}(f, c, L) \;\land\; L \neq 0
+\operatorname{Derivative}(f, c, L) \;\land\; L \neq 0
 \;\Rightarrow\;
-\lnot\operatorname{LocalMinimum}(f, c) \;\land\; \lnot\operatorname{LocalMaximum}(f, c).
+\lnot\operatorname{IsLocalMinimum}(f, c) \;\land\; \lnot\operatorname{IsLocalMaximum}(f, c).
 \]
 \end{remark*}
 
@@ -191,9 +191,9 @@ f'(c) = 0.
 
 \begin{remark*}[Standard quantified statement]
 \[
-\operatorname{LocalExtremum}(f,c)
+\operatorname{IsLocalExtremum}(f,c)
 \;\Rightarrow\;
-\lnot\operatorname{DifferentiableAt}(f,c) \;\lor\; \operatorname{DerivativeAt}(f,c,0).
+\lnot\operatorname{IsDifferentiable}(f,c) \;\lor\; \operatorname{Derivative}(f,c,0).
 \]
 \end{remark*}
 
@@ -222,9 +222,9 @@ f'(c) = 0 \quad \text{or} \quad f'(c) \text{ does not exist.}
 
 \begin{remark*}[Standard quantified statement]
 \[
-\operatorname{LocalExtremum}(f,c)
+\operatorname{IsLocalExtremum}(f,c)
 \;\Rightarrow\;
-\operatorname{DerivativeAt}(f,c,0) \;\lor\; \lnot\operatorname{DifferentiableAt}(f,c).
+\operatorname{Derivative}(f,c,0) \;\lor\; \lnot\operatorname{IsDifferentiable}(f,c).
 \]
 \end{remark*}
 

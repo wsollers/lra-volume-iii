@@ -4,7 +4,7 @@
 
 \subsection*{Archimedean Property}
 
-\begin{remark*}[Why this requires proof]
+\begin{remark*}[Interpretation]
 The Archimedean Property states that the natural numbers are unbounded in
 $\mathbb{R}$. That conclusion is not a formal consequence of the ordered-field
 axioms alone. There exist ordered fields satisfying all ordered-field axioms in
@@ -45,7 +45,7 @@ For every real number $x$, there exists a natural number $n$ such that $n>x$.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{ArchimedeanProperty}(\mathbb{R})\Longleftrightarrow
+\operatorname{HasArchimedeanProperty}(\mathbb{R})\Longleftrightarrow
 \forall x\in\mathbb{R}\;\exists n\in\mathbb{N}\;(n>x).
 \]
 \end{remark*}
@@ -58,22 +58,28 @@ For every real number $x$, there exists a natural number $n$ such that $n>x$.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{ArchimedeanProperty}(\mathbb{R})\Longleftrightarrow
+\neg\operatorname{HasArchimedeanProperty}(\mathbb{R})\Longleftrightarrow
 \exists x\in\mathbb{R}\;\forall n\in\mathbb{N}\;(n\le x).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 The theorem fails exactly when the natural numbers are bounded above by some real number.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
-\neg\operatorname{ArchimedeanProperty}(\mathbb{R})
+\neg\operatorname{HasArchimedeanProperty}(\mathbb{R})
 =
 \underbrace{\exists x\in\mathbb{R}}_{\text{real upper bound}}
 \;\underbrace{\forall n\in\mathbb{N}\;(n\le x)}_{\text{all natural numbers remain below it}}.
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -125,7 +131,8 @@ $n\in\mathbb{N}$ such that
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{ArchimedeanReciprocalForm}(\mathbb{R})\Longleftrightarrow
+\operatorname{HasArchimedeanProperty}(\mathbb{R})
+\Longrightarrow
 \forall \varepsilon>0\;\exists n\in\mathbb{N}\;(0<1/n<\varepsilon).
 \]
 \end{remark*}
@@ -138,23 +145,27 @@ $n\in\mathbb{N}$ such that
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{ArchimedeanReciprocalForm}(\mathbb{R})
-\Longleftrightarrow
 \exists \varepsilon>0\;\forall n\in\mathbb{N}\;(1/n\ge \varepsilon).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 The corollary fails only if some positive scale remains below every reciprocal
 natural number.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
 \underbrace{\varepsilon>0}_{\text{positive scale}}
 \qquad\text{and}\qquad
 \underbrace{\forall n\in\mathbb{N}\;(1/n\ge\varepsilon)}_{\text{reciprocals never pass below it}}.
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -187,7 +198,8 @@ For every $x>0$ and every $y\in\mathbb{R}$, there exists $n\in\mathbb{N}$ such t
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{ArchimedeanScalingForm}(\mathbb{R})\Longleftrightarrow
+\operatorname{HasArchimedeanProperty}(\mathbb{R})
+\Longrightarrow
 \forall x,y\in\mathbb{R}\;\bigl(x>0\rightarrow \exists n\in\mathbb{N}\;(nx>y)\bigr).
 \]
 \end{remark*}
@@ -200,23 +212,26 @@ For every $x>0$ and every $y\in\mathbb{R}$, there exists $n\in\mathbb{N}$ such t
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{ArchimedeanScalingForm}(\mathbb{R})\Longleftrightarrow
 \exists x,y\in\mathbb{R}\;\bigl(x>0\land \forall n\in\mathbb{N}\;(nx\le y)\bigr).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 The corollary fails when a positive real step size has all of its natural multiples bounded above by some real threshold.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
-\neg\operatorname{ArchimedeanScalingForm}(\mathbb{R})
-=
 \underbrace{\exists x\in\mathbb{R}\;(x>0)}_{\text{positive step size}}
 \;\land\;
 \underbrace{\exists y\in\mathbb{R}\;\forall n\in\mathbb{N}\;(nx\le y)}_{\text{all natural multiples stay bounded}}.
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -256,7 +271,7 @@ m\le x<m+1.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{IntegerPart}(m,x)\Longleftrightarrow
+m=\lfloor x\rfloor\Longleftrightarrow
 m\in\mathbb{Z}\land m\le x<m+1.
 \]
 \end{remark*}
@@ -269,23 +284,29 @@ m\in\mathbb{Z}\land m\le x<m+1.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\exists m\in\mathbb{Z}\;\operatorname{IntegerPart}(m,x)
+\neg\exists m\in\mathbb{Z}\;(m=\lfloor x\rfloor)
 \Longleftrightarrow
 \forall m\in\mathbb{Z}\;(x<m\lor m+1\le x).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 The lemma fails only if some real number lies in no half-open unit interval
 $[m,m+1)$ with integer left endpoint.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
 \underbrace{x<m}_{\text{integer starts too high}}
 \qquad\text{or}\qquad
 \underbrace{m+1\le x}_{\text{integer interval ends too low}}.
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -321,7 +342,8 @@ m-1\le x<m.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{IntegerCeilingAbove}(m,x)\Longleftrightarrow
+m=\lfloor x\rfloor+1
+\Longleftrightarrow
 m\in\mathbb{Z}\land m-1\le x<m.
 \]
 \end{remark*}
@@ -334,23 +356,29 @@ m\in\mathbb{Z}\land m-1\le x<m.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\exists m\in\mathbb{Z}\;\operatorname{IntegerCeilingAbove}(m,x)
+\neg\exists m\in\mathbb{Z}\;(m=\lfloor x\rfloor+1)
 \Longleftrightarrow
 \forall m\in\mathbb{Z}\;(x<m-1\lor m\le x).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 The lemma fails only if some real number lies in no half-open unit interval
 $[m-1,m)$ with integer right endpoint.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
 \underbrace{x<m-1}_{\text{right endpoint too high}}
 \qquad\text{or}\qquad
 \underbrace{m\le x}_{\text{right endpoint not above }x}.
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -387,7 +415,8 @@ x<m\le x+1.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{StrictIntegerCeiling}(m,x)\Longleftrightarrow
+m=\lfloor x\rfloor+1
+\Longleftrightarrow
 m\in\mathbb{Z}\land x<m\le x+1.
 \]
 \end{remark*}
@@ -400,23 +429,29 @@ m\in\mathbb{Z}\land x<m\le x+1.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\exists m\in\mathbb{Z}\;\operatorname{StrictIntegerCeiling}(m,x)
+\neg\exists m\in\mathbb{Z}\;(m=\lfloor x\rfloor+1)
 \Longleftrightarrow
 \forall m\in\mathbb{Z}\;(m\le x\lor x+1<m).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 The lemma fails only if every integer is either at or below $x$, or lies
 strictly above the next unit endpoint $x+1$.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
 \underbrace{m\le x}_{\text{not strictly above }x}
 \qquad\text{or}\qquad
 \underbrace{x+1<m}_{\text{overshoots one unit}}.
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -453,7 +488,6 @@ x<m.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{IntegerAbove}(m,x)\Longleftrightarrow
 m\in\mathbb{Z}\land x<m.
 \]
 \end{remark*}
@@ -466,21 +500,27 @@ m\in\mathbb{Z}\land x<m.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\exists m\in\mathbb{Z}\;\operatorname{IntegerAbove}(m,x)
+\neg\exists m\in\mathbb{Z}\;(x<m)
 \Longleftrightarrow
 \forall m\in\mathbb{Z}\;(m\le x).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 The lemma fails only if some real number is an upper bound for all integers.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
 \underbrace{\exists x\in\mathbb{R}}_{\text{candidate upper bound}}
 \;\underbrace{\forall m\in\mathbb{Z}\;(m\le x)}_{\text{no integer lies above it}}.
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -519,7 +559,7 @@ $m\in\mathbb{Z}$ such that
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{IntegerInOpenInterval}(m,\alpha,\beta)
+m\in\mathbb{Z}\cap(\alpha,\beta)
 \Longleftrightarrow
 m\in\mathbb{Z}\land \alpha<m<\beta.
 \]
@@ -535,23 +575,29 @@ m\in\mathbb{Z}\land \alpha<m<\beta.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\exists m\in\mathbb{Z}\;\operatorname{IntegerInOpenInterval}(m,\alpha,\beta)
+\neg\exists m\;(m\in\mathbb{Z}\cap(\alpha,\beta))
 \Longleftrightarrow
 \forall m\in\mathbb{Z}\;(m\le \alpha\lor \beta\le m).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 The lemma fails only if an open interval of length greater than one still
 misses every integer.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
 \underbrace{m\le \alpha}_{\text{integer at or left of the interval}}
 \qquad\text{or}\qquad
 \underbrace{\beta\le m}_{\text{integer at or right of the interval}}.
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]

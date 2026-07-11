@@ -35,7 +35,7 @@ this fixed point is unique, every starting point converges to it, and
 \]
 \end{tcolorbox}
 
-\begin{remark*}[Abstract]
+\begin{remark*}[Interpretation]
 This capstone is the chapter's completeness payoff. The hypothesis is only a
 distance-shrinking inequality; no continuity theorem is used. The orbit first
 proves itself Cauchy by geometric decay of its successive steps. Completeness
@@ -56,7 +56,7 @@ together internally, invokes the Cauchy criterion, and then checks what the
 limit must be.
 \end{remark*}
 
-\begin{remark*}[Step 1: one step is controlled by the previous step]
+\begin{remark*}[Interpretation]
 For every \(n\ge 1\),
 \[
   |x_{n+1}-x_n|
@@ -69,7 +69,7 @@ This is the contraction hypothesis applied to the pair
 \((x_n,x_{n-1})\).
 \end{remark*}
 
-\begin{remark*}[Step 2: every step is controlled by the first step]
+\begin{remark*}[Interpretation]
 For every \(n\ge 0\),
 \[
   |x_{n+1}-x_n|\le L^n|x_1-x_0|.
@@ -88,7 +88,7 @@ gives
 Induction proves the estimate.
 \end{remark*}
 
-\begin{remark*}[Step 3: the orbit is Cauchy]
+\begin{remark*}[Interpretation]
 Let \(m>n\). Telescoping and applying the triangle inequality gives
 \[
   |x_m-x_n|
@@ -118,7 +118,7 @@ Because \(L^n\to0\), the right-hand side tends to \(0\). Thus for every
 \(|x_m-x_n|<\varepsilon\). The orbit is Cauchy.
 \end{remark*}
 
-\begin{remark*}[Step 4: completeness produces the limit]
+\begin{remark*}[Interpretation]
 By the Cauchy criterion for real sequences, every Cauchy sequence of real
 numbers converges. Therefore there is \(x^\ast\in\mathbb{R}\) such that
 \[
@@ -128,7 +128,7 @@ This is the only step in which a limit not given by a formula is brought into
 existence.
 \end{remark*}
 
-\begin{remark*}[Step 5: the limit is a fixed point]
+\begin{remark*}[Interpretation]
 For every \(n\),
 \[
 \begin{aligned}
@@ -144,7 +144,7 @@ The shifted sequence \(x_{n+1}\) also converges to \(x^\ast\), and
 sequence, it is \(0\). Hence \(f(x^\ast)=x^\ast\).
 \end{remark*}
 
-\begin{remark*}[Step 6: uniqueness and convergence from every start]
+\begin{remark*}[Interpretation]
 If \(p\) and \(q\) are fixed points, then
 \[
   |p-q|
@@ -162,7 +162,7 @@ started from an arbitrary \(x_0\), and uniqueness forces every such orbit to
 converge to the same fixed point.
 \end{remark*}
 
-\begin{remark*}[Step 7: rates]
+\begin{remark*}[Interpretation]
 Once \(x^\ast\) is known to be fixed,
 \[
   |x_n-x^\ast|
@@ -184,7 +184,7 @@ Using \(x_m\to x^\ast\) and preservation of eventual order under limits gives
 \]
 \end{remark*}
 
-\begin{remark*}[Limits of the theorem]
+\begin{remark*}[Interpretation]
 The strict inequality \(L<1\) is essential. At \(L=1\), a map may preserve
 distances without having any fixed point; for example \(f(x)=x+1\). The
 general theorem replaces \(\mathbb{R}\) by any complete metric space and
@@ -192,12 +192,37 @@ general theorem replaces \(\mathbb{R}\) by any complete metric space and
 theorem and belongs to the metric-spaces layer.
 \end{remark*}
 
-\begin{remark*}[Forward connection]
+\begin{remark*}[Interpretation]
 Later, the continuity chapter names the hypothesis as a Lipschitz condition
 with constant \(L<1\). Here the name is deliberately avoided: the proof uses
 only the inequality, geometric decay, and Cauchy completeness. The same
 iteration idea becomes Picard iteration when differential equations are
 recast as fixed-point problems for integral operators.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+\begin{itemize}
+  \item \hyperref[def:sequence]{Sequence}
+  \item \hyperref[def:convergent-sequence]{Convergence of a Sequence}
+  \item \hyperref[def:cauchy-sequence]{Cauchy Sequence}
+\end{itemize}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+\begin{itemize}
+  \item \hyperref[thm:cauchy-criterion-real-sequences]{Cauchy Criterion for Real Sequences}
+  \item \hyperref[thm:ratio-limit-less-than-one-implies-null]{Ratio Limit Less Than One Implies Null}
+  \item \hyperref[thm:subsequences-preserve-limits]{Subsequences Preserve Limits}
+  \item \hyperref[thm:constant-comparison-for-sequence-limits]{Constant Comparison for Sequence Limits}
+  \item \hyperref[thm:limit-preserves-eventual-order]{Limit Preserves Eventual Order}
+\end{itemize}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This capstone may use only real-number arithmetic, absolute value and the
+triangle inequality, finite geometric sums, and sequence results routed at or
+before the Sequences chapter. It must not use continuity, Lipschitz maps as a
+named concept, metric-space completeness, or the Banach fixed-point theorem.
 \end{remark*}
 
 \begin{remark*}[Dependencies to state]

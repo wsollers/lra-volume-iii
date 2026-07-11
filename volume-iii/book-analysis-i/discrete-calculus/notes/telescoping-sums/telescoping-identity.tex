@@ -13,7 +13,7 @@ For any function \(f : \mathbb{Z} \to \mathbb{R}\) and integers \(a \le b\),
 \end{theorembox}
 \label{thm:telescoping-identity}
 
-\begin{remark*}[Fully quantified form]
+\begin{remark*}[Standard quantified statement]
 \(\forall f : \mathbb{Z}\to\mathbb{R},\; \forall a,b \in \mathbb{Z},\; a \le b:\;
 \displaystyle\sum_{k=a}^{b-1}(f(k+1)-f(k)) = f(b)-f(a)\).
 \end{remark*}
@@ -33,12 +33,14 @@ The remaining terms are \(f(b)\) and \(-f(a)\), giving \(f(b)-f(a)\).
 
 \subsection*{Cancellation Pattern}
 
+\begin{exposition}
 The cancellation can be seen explicitly:
 \begin{center}
 \input{volume-iii/book-analysis-i/discrete-calculus/notes/telescoping-sums/figure-telescoping-cancellation}
 \end{center}
+\end{exposition}
 
-\begin{remark*}[Intuition]
+\begin{remark*}[Interpretation]
 Each intermediate term appears twice in the expanded sum: once with a
 positive sign and once with a negative sign. These pairs cancel, leaving
 only the first and last terms.
@@ -46,13 +48,15 @@ only the first and last terms.
 
 \subsection*{Operator Form}
 
+\begin{exposition}
 Using the forward difference operator \(\Delta f(n) = f(n+1) - f(n)\),
 the telescoping identity takes the compact form
 \[
 \sum_{k=a}^{b-1} \Delta f(k) = f(b) - f(a).
 \]
+\end{exposition}
 
-\begin{remark*}[Discrete Fundamental Theorem of Calculus]
+\begin{remark*}[Interpretation]
 This identity is the discrete analogue of the Fundamental Theorem of
 Calculus:
 \[

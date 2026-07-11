@@ -29,7 +29,9 @@ Additional: $\operatorname{sech} x := 1/\cosh x$,\;
 $\operatorname{csch} x := 1/\sinh x$,\;
 $\coth x := \cosh x / \sinh x$.
 \end{definition}
-\end{definitionbox}\begin{remark*}[Standard quantified statement]
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
 \[
   \forall x \in \mathbb{R} :\;
   \cosh x = \frac{e^x + e^{-x}}{2} \geq 1,\;
@@ -40,16 +42,16 @@ $\coth x := \cosh x / \sinh x$.
 
 \begin{remark*}[Predicate reading]
 \[
-  \operatorname{HyperbolicCosh}(x,y)
+  y=\cosh x
   \;\colonequiv\;
-  y = \frac{e^x + e^{-x}}{2}.
+  y = \frac{e^x + e^{-x}}{2},
   \qquad
-  \operatorname{HyperbolicSinh}(x,y)
+  y=\sinh x
   \;\colonequiv\;
   y = \frac{e^x - e^{-x}}{2}.
 \]
 \[
-  \operatorname{HyperbolicTanh}(x,y)
+  y=\tanh x
   \;\colonequiv\;
   \cosh x \neq 0 \;\wedge\; y = \frac{\sinh x}{\cosh x}.
 \]
@@ -57,25 +59,21 @@ $\coth x := \cosh x / \sinh x$.
 
 \begin{remark*}[Predicate reading]
 \[
-  \operatorname{HyperbolicPythagorean}(x)
-  \;\colonequiv\;
-  \operatorname{HyperbolicCosh}(x,c)
-  \;\wedge\; \operatorname{HyperbolicSinh}(x,s)
-  \;\wedge\; c^2 - s^2 = 1.
+  \cosh^2 x-\sinh^2 x=1.
 \]
 \end{remark*}
 
 \begin{remark*}[Negated quantified statement]
 \[
-  \neg\,\operatorname{HyperbolicTanh}(x,y)
+  y\neq\tanh x
   \;\iff\;
   y \neq \frac{\sinh x}{\cosh x}.
 \]
-Note $\cosh x > 0$ for all $x$, so $\operatorname{HyperbolicTanh}$
-is defined on all of $\mathbb{R}$.
+Note $\cosh x > 0$ for all $x$, so $\tanh$ is defined on all of
+$\mathbb{R}$.
 \end{remark*}
 
-\begin{remark*}[Contrast with trigonometric functions]
+\begin{remark*}[Interpretation]
 \begin{center}
 \begin{tabular}{@{}ll@{}}
 \textbf{Trigonometric} & \textbf{Hyperbolic} \\
@@ -130,7 +128,7 @@ For all $x \in \mathbb{R}$:
 The negation has no witness --- the identity holds universally.
 \end{remark*}
 
-\begin{remark*}[Proof]
+\begin{remark*}[Interpretation]
 Direct computation:
 \[
   \cosh^2 x - \sinh^2 x
@@ -178,8 +176,6 @@ For all $x, y \in \mathbb{R}$:
 
 \begin{remark*}[Predicate reading]
 \[
-  \operatorname{HyperbolicAddition}(x,y)
-  \;\colonequiv\;
   \sinh(x+y) = \sinh x\cosh y + \cosh x\sinh y
   \;\wedge\;
   \cosh(x+y) = \cosh x\cosh y + \sinh x\sinh y.
@@ -196,12 +192,12 @@ For all $x, y \in \mathbb{R}$:
 The negation has no witness.
 \end{remark*}
 
-\begin{remark*}[Proof strategy]
+\begin{remark*}[Interpretation]
 Substitute the definitions and expand, or note the formulas follow
 from $e^{x+y} = e^x e^y$ by taking even and odd parts.
 \end{remark*}
 
-\begin{remark*}[Comparison with trigonometric addition formulas]
+\begin{remark*}[Interpretation]
 The $\sinh$ formula matches $\sin(x+y)$ exactly. The $\cosh$ formula
 differs from $\cos(x+y)$ only in the sign of the last term:
 $+\sinh x\sinh y$ versus $-\sin x\sin y$. The sign difference is a
@@ -250,7 +246,12 @@ $\cos^2 + \sin^2 = 1$.
   \operatorname{LimitAtInfinity}(\tanh x,\,+\infty,\,1)
   \;\colonequiv\;
   \forall\varepsilon>0,\;\exists M\in\mathbb{R},\;\forall x:\;
-  x>M \Rightarrow \operatorname{OutputTolerance}(\tanh x,1,\varepsilon).
+  x>M \Rightarrow
+  \bigl(
+    \operatorname{Ball}(B_\varepsilon(1),1,\varepsilon,\mathbb R)
+    \wedge
+    \operatorname{Within}(\tanh x,B_\varepsilon(1),\mathbb R)
+  \bigr).
 \]
 \end{remark*}
 
@@ -263,7 +264,7 @@ $\cos^2 + \sin^2 = 1$.
 \]
 \end{remark*}
 
-\begin{remark*}[Proof strategy]
+\begin{remark*}[Interpretation]
 Write $\tanh x = (1 - e^{-2x})/(1 + e^{-2x})$. As $x \to +\infty$,
 $e^{-2x} \to 0$, giving $\tanh x \to 1$. The limit at $-\infty$
 follows by oddness: $\tanh(-x) = -\tanh(x)$.
@@ -326,14 +327,14 @@ Explicit logarithmic formulas:
 
 \begin{remark*}[Predicate reading]
 \[
-  \operatorname{Arcsinh}(y,x)
+  x=\operatorname{arcsinh} y
   \;\colonequiv\;
   x\in\mathbb{R} \;\wedge\; \sinh x = y
   \;\colonequiv\;
   x = \ln\!\left(y+\sqrt{y^2+1}\right).
 \]
 \[
-  \operatorname{Arctanh}(y,x)
+  x=\operatorname{arctanh} y
   \;\colonequiv\;
   |y|<1 \;\wedge\; \tanh x = y
   \;\colonequiv\;
@@ -343,19 +344,19 @@ Explicit logarithmic formulas:
 
 \begin{remark*}[Negated quantified statement]
 \[
-  \neg\,\operatorname{Arctanh}(y,x)
+  \neg(x=\operatorname{arctanh} y)
   \;\iff\;
-  |y|\geq 1 \;\vee\; \tanh x \neq y.
+  |y|\geq 1 \;\vee\; (|y|<1 \wedge x\neq\operatorname{arctanh} y).
 \]
 \end{remark*}
 
-\begin{remark*}[Derivation of $\operatorname{arcsinh}$]
+\begin{remark*}[Interpretation]
 Set $y = \sinh x = (e^x - e^{-x})/2$ and let $u = e^x > 0$. Then
 $y = (u - 1/u)/2$, so $u^2 - 2yu - 1 = 0$. The positive root is
 $u = y + \sqrt{y^2+1}$, giving $x = \ln(y+\sqrt{y^2+1})$.
 \end{remark*}
 
-\begin{remark*}[Derivatives]
+\begin{remark*}[Interpretation]
 $(\operatorname{arcsinh} x)' = 1/\sqrt{x^2+1}$;\;
 $(\operatorname{arccosh} x)' = 1/\sqrt{x^2-1}$ for $x > 1$;\;
 $(\operatorname{arctanh} x)' = 1/(1-x^2)$ for $|x| < 1$.

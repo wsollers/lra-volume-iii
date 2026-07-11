@@ -87,7 +87,7 @@ Let $I \subseteq \mathbb{R}$ be an interval, let $f:I \to \mathbb{R}$ be monoton
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{ContinuousAt}(f,c)
+\operatorname{IsContinuous}(f,c)
 \Longleftrightarrow
 \bigl(\operatorname{LeftLimit}(f,c,f(c)) \land \operatorname{RightLimit}(f,c,f(c))\bigr).
 \]
@@ -108,7 +108,7 @@ Let $I \subseteq \mathbb{R}$ be an interval, let $f:I \to \mathbb{R}$ be monoton
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{ContinuousAt}(f,c)
+\neg\operatorname{IsContinuous}(f,c)
 \Longleftrightarrow
 \left(\exists L^{-}\,[\operatorname{LeftLimit}(f,c,L^{-}) \land L^{-} < f(c)]\right)
 \lor
@@ -117,17 +117,23 @@ Let $I \subseteq \mathbb{R}$ be an interval, let $f:I \to \mathbb{R}$ be monoton
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 Continuity can fail only through a jump: either the graph arrives at $c$ from the left strictly below $f(c)$, or it departs to the right strictly above $f(c)$. Both jumps reflect the inability of the one-sided limits to match the function value at the interior point.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
-\neg\operatorname{ContinuousAt}(f,c)
+\neg\operatorname{IsContinuous}(f,c)
 =
 \underbrace{\left(\exists L^{-}\,[\operatorname{LeftLimit}(f,c,L^{-}) \land L^{-} < f(c)]\right)}_{\text{left jump at } c}
 \lor
 \underbrace{\left(\exists L^{+}\,[\operatorname{RightLimit}(f,c,L^{+}) \land f(c) < L^{+}]\right)}_{\text{right jump at } c}.
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -169,11 +175,9 @@ j_f(c)\coloneqq f(c^+)-f(c^-).
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{JumpOfFunction}(f,I,c,j)
-\coloneqq
-\operatorname{Interval}(I)
-\land \operatorname{MonotoneIncreasing}(f,I)
-\land \operatorname{InteriorPoint}(c,I)
+\operatorname{IsInterval}(I,\mathbb{R})
+\land \operatorname{OrderPreserving}(f,I)
+\land \operatorname{IsInterior}(c,I)
 \land \exists L_-,L_+\in\mathbb{R}\;
 \bigl(\operatorname{LeftLimit}(f,c,L_-)
 \land \operatorname{RightLimit}(f,c,L_+)
@@ -202,11 +206,9 @@ j_f(c)\coloneqq f(c^+)-f(c^-).
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{JumpOfFunction}(f,I,c,j)
-\Longleftrightarrow
-\neg\operatorname{Interval}(I)
-\lor \neg\operatorname{MonotoneIncreasing}(f,I)
-\lor \neg\operatorname{InteriorPoint}(c,I)
+\neg\operatorname{IsInterval}(I,\mathbb{R})
+\lor \neg\operatorname{OrderPreserving}(f,I)
+\lor \neg\operatorname{IsInterior}(c,I)
 \lor
 \forall L_-,L_+\in\mathbb{R}\;
 \bigl(\neg\operatorname{LeftLimit}(f,c,L_-)
@@ -216,12 +218,17 @@ j_f(c)\coloneqq f(c^+)-f(c^-).
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 A proposed jump value fails when a required one-sided limit does not
 exist, or when both one-sided limits exist but the proposed value is not
 their difference.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
 \underbrace{\neg\bigl(f(c^-)\text{ exists}\bigr)}_{\text{missing left limit}}
 \lor
@@ -229,6 +236,7 @@ their difference.
 \lor
 \underbrace{j\ne f(c^+)-f(c^-)}_{\text{incorrect jump magnitude}}.
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -267,7 +275,7 @@ Let $I \subseteq \mathbb{R}$ be an interval, let $f:I \to \mathbb{R}$ be monoton
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{MonotoneFunction}(f,I) \land \operatorname{DiscontinuousAt}(f,a) \Longrightarrow \exists L^{-},L^{+} \in \mathbb{R} \; \bigl(\operatorname{LeftLimit}(f,a,L^{-}) \land \operatorname{RightLimit}(f,a,L^{+})\bigr).
+\operatorname{Monotone}\bigl(f,\mathsf{OrderedSet}(I,\leq)\bigr) \land \operatorname{IsDiscontinuous}(f,a) \Longrightarrow \exists L^{-},L^{+} \in \mathbb{R} \; \bigl(\operatorname{LeftLimit}(f,a,L^{-}) \land \operatorname{RightLimit}(f,a,L^{+})\bigr).
 \]
 \end{remark*}
 
@@ -304,12 +312,12 @@ a\ne b\land
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{MonotoneFunction}(f,I)\land
+\operatorname{Monotone}\bigl(f,\mathsf{OrderedSet}(I,\leq)\bigr)\land
 \begin{cases}
 a,b\in I,\\
 a\neq b,\\
-\operatorname{DiscontinuousAt}(f,a),\\
-\operatorname{DiscontinuousAt}(f,b)
+\operatorname{IsDiscontinuous}(f,a),\\
+\operatorname{IsDiscontinuous}(f,b)
 \end{cases}
 \Longrightarrow
 (f(a^-),f(a^+))\cap(f(b^-),f(b^+))=\varnothing.
@@ -342,7 +350,7 @@ Let $I \subseteq \mathbb{R}$ be an interval and let $f:I\to\mathbb{R}$ be monoto
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{MonotoneFunction}(f,I) \Longrightarrow \#\{c \in I : \operatorname{DiscontinuousAt}(f,c)\} \le \aleph_0.
+\operatorname{Monotone}\bigl(f,\mathsf{OrderedSet}(I,\leq)\bigr) \Longrightarrow \#\{c \in I : \operatorname{IsDiscontinuous}(f,c)\} \le \aleph_0.
 \]
 \end{remark*}
 
@@ -373,9 +381,9 @@ Let $f:[a,b]\to\mathbb{R}$ be monotone. Then the set $\{x\in[a,b]:f \text{ is co
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{MonotoneFunction}(f,[a,b])
+\operatorname{Monotone}\bigl(f,\mathsf{OrderedSet}([a,b],\leq)\bigr)
 \Longrightarrow
-\operatorname{DenseSubset}\bigl(\{x\in[a,b]:\operatorname{ContinuousAt}(f,x)\},[a,b]\bigr).
+\operatorname{IsDense}\bigl(\{x\in[a,b]:\operatorname{IsContinuous}(f,x)\},[a,b]\bigr).
 \]
 \end{remark*}
 
@@ -392,7 +400,7 @@ Let $f:[a,b]\to\mathbb{R}$ be monotone. Then the set $\{x\in[a,b]:f \text{ is co
 \[
 \exists u,v\in[a,b]\;
 \Bigl(u<v \land
-\forall c\in(u,v)\;\neg\operatorname{ContinuousAt}(f,c)\Bigr).
+\forall c\in(u,v)\;\neg\operatorname{IsContinuous}(f,c)\Bigr).
 \]
 \end{remark*}
 
@@ -426,7 +434,7 @@ Let $f:[a,b]\to\mathbb{R}$ be continuous on $[a,b]$. Then $f$ is injective if an
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{ContinuousOn}(f,[a,b]) \Longrightarrow
+\operatorname{IsContinuous}(f,[a,b]) \Longrightarrow
 \bigl(\operatorname{Injective}(f) \Longleftrightarrow
 \operatorname{StrictlyMonotone}(f,[a,b])\bigr).
 \]
@@ -457,6 +465,10 @@ Let $I\subseteq\mathbb{R}$ be an interval and let $f:I\to\mathbb{R}$ be strictly
 &\qquad\land (\forall u,v\in f(I))(u<v \Rightarrow g(u)<g(v)) \land \forall y\in f(I)\;\forall \varepsilon>0\;\exists \eta>0\;\forall u\in f(I)\bigl(|u-y|<\eta \Rightarrow |g(u)-g(y)|<\varepsilon\bigr)\Bigr].
 \end{aligned}
 \]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+The displayed quantified statement is the predicate-level form of $label: its hypotheses name the input conditions, and its conclusion names the asserted structure or relation.
 \end{remark*}
 
 \begin{remark*}[Interpretation]

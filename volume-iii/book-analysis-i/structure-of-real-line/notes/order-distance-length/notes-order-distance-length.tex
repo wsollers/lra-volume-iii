@@ -19,6 +19,13 @@ d(x,y)=|x-y|.
 \forall x,y\in\mathbb{R}\;(d(x,y)=|x-y|).
 \]
 \end{remark*}
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Distance}(d,\mathbb{R})
+\Longleftrightarrow
+\forall x,y\in\mathbb{R}\;(d(x,y)=|x-y|).
+\]
+\end{remark*}
 \begin{remark*}[Interpretation]
 The distance between two points is the length of the segment joining them. It is the metric that makes ``close'' precise and is the basis for balls, neighborhoods, and open sets.
 \end{remark*}
@@ -41,6 +48,13 @@ Let $a,b\in\mathbb{R}$ with $a\le b$. The \emph{length} of any bounded interval 
 \forall a,b\in\mathbb{R}\;\bigl(a\le b \Longrightarrow \ell([a,b])=b-a=d(a,b)\bigr).
 \]
 \end{remark*}
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Length}([a,b],\,b-a)
+\Longleftrightarrow
+a\le b.
+\]
+\end{remark*}
 \begin{remark*}[Interpretation]
 Length depends only on the endpoints, not on whether they are included. It is the distance $d(a,b)$ and measures the size of the basic pieces of the line.
 \end{remark*}
@@ -61,6 +75,13 @@ The map $d(x,y)=|x-y|$ satisfies, for all $x,y,z\in\mathbb{R}$: (i) $d(x,y)\ge 0
 \forall x,y,z\in\mathbb{R}\;\bigl(d(x,y)\ge 0\ \land\ (d(x,y)=0\Leftrightarrow x=y)\ \land\ d(x,y)=d(y,x)\ \land\ d(x,z)\le d(x,y)+d(y,z)\bigr).
 \]
 \end{remark*}
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{MetricSpace}(\mathbb{R},d)
+\Longleftrightarrow
+\text{$d$ satisfies nonnegativity, identity of indiscernibles, symmetry, and the triangle inequality.}
+\]
+\end{remark*}
 \begin{remark*}[Interpretation]
 The three metric axioms are exactly the properties of $|\cdot|$: nonnegativity with the zero-distance characterization, symmetry, and the triangle inequality. This is the precise sense in which $\mathbb{R}$ is a one-dimensional metric space.
 \end{remark*}
@@ -78,6 +99,22 @@ least upper bound property.
 \hyperref[prf:real-line-structural-order-facts]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{TotallyOrderedSet}(\mathbb{R},\leq)
+\land
+\operatorname{OrderedField}(\mathbb{R})
+\land
+\operatorname{HasLeastUpperBoundProperty}(\mathbb{R}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The real line combines order, algebra, and completeness. These three
+structures are the ambient facts used by distance, interval, and convergence
+arguments throughout the volume.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}

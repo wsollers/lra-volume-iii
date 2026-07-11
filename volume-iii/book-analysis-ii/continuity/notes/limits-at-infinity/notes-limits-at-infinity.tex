@@ -32,10 +32,10 @@ $M\in\mathbb{R}$ there exists $x\in X$ such that $x<M$.
 \begin{remark*}[Predicate reading]
 \[
 \begin{aligned}
-\operatorname{PlusInfAdherent}(X)
+\left(+\infty\in\operatorname{Closure}_{\overline{\mathbb{R}}}(X)\right)
 &\coloneqq
 \forall M\in\mathbb{R}\;\exists x\in X\;(x>M),\\
-\operatorname{MinusInfAdherent}(X)
+\left(-\infty\in\operatorname{Closure}_{\overline{\mathbb{R}}}(X)\right)
 &\coloneqq
 \forall M\in\mathbb{R}\;\exists x\in X\;(x<M).
 \end{aligned}
@@ -58,27 +58,33 @@ $M\in\mathbb{R}$ there exists $x\in X$ such that $x<M$.
 \begin{remark*}[Negation predicate reading]
 \[
 \begin{aligned}
-\neg\operatorname{PlusInfAdherent}(X)
+\neg\left(+\infty\in\operatorname{Closure}_{\overline{\mathbb{R}}}(X)\right)
 &\Longleftrightarrow
-\exists M\in\mathbb{R}\;\forall x\in X\;(x\le M),\\
-\neg\operatorname{MinusInfAdherent}(X)
+\operatorname{BoundedAbove}(X,\mathbb{R},\le),\\
+\neg\left(-\infty\in\operatorname{Closure}_{\overline{\mathbb{R}}}(X)\right)
 &\Longleftrightarrow
-\exists M\in\mathbb{R}\;\forall x\in X\;(x\ge M).
+\operatorname{BoundedBelow}(X,\mathbb{R},\le).
 \end{aligned}
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 Infinite adherence fails at $+\infty$ exactly when $X$ is bounded above,
 and fails at $-\infty$ exactly when $X$ is bounded below.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
 \underbrace{\exists M\in\mathbb{R}\;\forall x\in X\;(x\le M)}_{\text{finite upper bound}}
 \qquad
 \underbrace{\exists M\in\mathbb{R}\;\forall x\in X\;(x\ge M)}_{\text{finite lower bound}}.
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -129,15 +135,21 @@ for every $\varepsilon > 0$ there exists $M \in \mathbb{R}$ such that for every 
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 The definition fails only when there is a fixed tolerance $\varepsilon_0$ that the function cannot satisfy on any tail of $X$, meaning every attempt to choose $M$ leaves some point $x > M$ with $|f(x) - L| \ge \varepsilon_0$.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
 \underbrace{\exists \varepsilon_0 > 0}_{\text{fixed tolerance}}
 \underbrace{\forall M \in \mathbb{R}}_{\text{no tail succeeds}}
 \underbrace{\exists x \in X\ (x > M \land |f(x) - L| \ge \varepsilon_0)}_{\text{far-point violation}}.
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]

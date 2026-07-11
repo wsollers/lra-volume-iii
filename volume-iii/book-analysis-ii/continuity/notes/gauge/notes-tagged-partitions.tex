@@ -40,7 +40,7 @@ m=\max_{1\le i\le n}(x_i - x_{i-1}).
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{NormOfPartition}(P,m) \coloneqq m=\max_{1\le i\le n}(x_i - x_{i-1}).
+m=\|P\| \coloneqq m=\max_{1\le i\le n}(x_i - x_{i-1}).
 \]
 \end{remark*}
 
@@ -57,24 +57,30 @@ m=\max_{1\le i\le n}(x_i - x_{i-1}).
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{NormOfPartition}(P,m)
+m\neq\|P\|
 \Longleftrightarrow
 \bigl(m<\max_{1\le i\le n}(x_i - x_{i-1})\bigr)\lor\bigl(m>\max_{1\le i\le n}(x_i - x_{i-1})\bigr).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 Failure occurs either when $m$ underestimates the largest subinterval of $P$ or when $m$ overshoots that largest subinterval.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
-\neg\operatorname{NormOfPartition}(P,m)
+m\neq\|P\|
 =
 \underbrace{\bigl(m<\max_{1\le i\le n}(x_i - x_{i-1})\bigr)}_{\text{Underestimate}}
 \;\lor\;
 \underbrace{\bigl(m>\max_{1\le i\le n}(x_i - x_{i-1})\bigr)}_{\text{Overestimate}}.
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -105,7 +111,7 @@ Let $[a,b] \subseteq \mathbb{R}$ and let $P$ and $Q$ be partitions of $[a,b]$. T
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{Refinement}(Q,P) \coloneqq P \subseteq Q.
+\operatorname{IsRefinement}(Q,P) \coloneqq P \subseteq Q.
 \]
 \end{remark*}
 
@@ -117,18 +123,24 @@ Let $[a,b] \subseteq \mathbb{R}$ and let $P$ and $Q$ be partitions of $[a,b]$. T
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg \operatorname{Refinement}(Q,P) \Longleftrightarrow \exists x \in P\; (x \notin Q).
+\neg \operatorname{IsRefinement}(Q,P) \Longleftrightarrow \exists x \in P\; (x \notin Q).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 Failure occurs precisely when some point listed in P fails to appear in Q, meaning Q omits at least one of the partition points it was supposed to inherit from P.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
 \underbrace{\exists x \in P\; (x \notin Q)}_{\text{point of }P\text{ omitted by }Q}.
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -165,7 +177,7 @@ R = P \cup Q.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{CommonRefinement}(R,P,Q) \coloneqq (R = P \cup Q).
+\operatorname{IsCommonRefinement}(R,P,Q) \coloneqq (R = P \cup Q).
 \]
 \end{remark*}
 
@@ -185,15 +197,20 @@ R = P \cup Q.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg \operatorname{CommonRefinement}(R,P,Q) \Longleftrightarrow R \ne P \cup Q.
+\neg \operatorname{IsCommonRefinement}(R,P,Q) \Longleftrightarrow R \ne P \cup Q.
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 The claim that a partition $R$ is the common refinement of $P$ and $Q$ fails exactly when $R$ either contains a node not present in $P \cup Q$ or omits a node that $P \cup Q$ contributes. These are the only two structural ways in which $R$ can differ from $P \cup Q$.
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
 \[
 R \ne P \cup Q
 \Longleftrightarrow
@@ -201,6 +218,7 @@ R \ne P \cup Q
 \;\lor\;
 \underbrace{\exists x \in (P \cup Q) \setminus R}_{\text{missing node}}.
 \]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]

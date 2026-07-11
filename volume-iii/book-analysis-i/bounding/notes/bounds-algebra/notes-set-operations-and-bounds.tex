@@ -24,8 +24,8 @@ of $A\cup B$.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{UB}(u_A,A)\land\operatorname{UB}(u_B,B)
-\Longrightarrow \operatorname{UB}(\max\{u_A,u_B\},A\cup B).
+\operatorname{UpperBound}(u_A,A)\land\operatorname{UpperBound}(u_B,B)
+\Longrightarrow \operatorname{UpperBound}(\max\{u_A,u_B\},A\cup B).
 \]
 \end{remark*}
 
@@ -39,17 +39,20 @@ of $A\cup B$.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{UB}(u_A,A)\land\operatorname{UB}(u_B,B)\land
-\neg\operatorname{UB}(\max\{u_A,u_B\},A\cup B).
+\operatorname{UpperBound}(u_A,A)\land\operatorname{UpperBound}(u_B,B)\land
+\neg\operatorname{UpperBound}(\max\{u_A,u_B\},A\cup B).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
 A failure would require a union element larger than both proposed upper
 bounds.
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure modes]
+\begin{remark*}[Interpretation]
 Every $x\in A\cup B$ lies in $A$ or in $B$.  In the first case
 $x\leq u_A\leq\max\{u_A,u_B\}$; in the second case
 $x\leq u_B\leq\max\{u_A,u_B\}$.
@@ -79,8 +82,8 @@ bound of $A\cup B$.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{LB}(\ell_A,A)\land\operatorname{LB}(\ell_B,B)
-\Longrightarrow \operatorname{LB}(\min\{\ell_A,\ell_B\},A\cup B).
+\operatorname{LowerBound}(\ell_A,A)\land\operatorname{LowerBound}(\ell_B,B)
+\Longrightarrow \operatorname{LowerBound}(\min\{\ell_A,\ell_B\},A\cup B).
 \]
 \end{remark*}
 
@@ -94,17 +97,20 @@ bound of $A\cup B$.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{LB}(\ell_A,A)\land\operatorname{LB}(\ell_B,B)\land
-\neg\operatorname{LB}(\min\{\ell_A,\ell_B\},A\cup B).
+\operatorname{LowerBound}(\ell_A,A)\land\operatorname{LowerBound}(\ell_B,B)\land
+\neg\operatorname{LowerBound}(\min\{\ell_A,\ell_B\},A\cup B).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
 A failure would require a union element smaller than both proposed lower
 bounds.
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure modes]
+\begin{remark*}[Interpretation]
 Every $x\in A\cup B$ lies in $A$ or in $B$.  In either case the appropriate
 lower bound lies below $x$, and $\min\{\ell_A,\ell_B\}$ lies below that lower
 bound.
@@ -127,17 +133,17 @@ if and only if $A$ is bounded above and $B$ is bounded above.
 \[
 A\neq\varnothing,\quad B\neq\varnothing
 \quad\Longrightarrow\quad
-\operatorname{BddAbove}(A\cup B)
+\operatorname{BoundedAbove}(A\cup B)
 \Longleftrightarrow
-\operatorname{BddAbove}(A)\land\operatorname{BddAbove}(B).
+\operatorname{BoundedAbove}(A)\land\operatorname{BoundedAbove}(B).
 \]
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{BddAbove}(A\cup B)
+\operatorname{BoundedAbove}(A\cup B)
 \Longleftrightarrow
-\operatorname{BddAbove}(A)\land\operatorname{BddAbove}(B).
+\operatorname{BoundedAbove}(A)\land\operatorname{BoundedAbove}(B).
 \]
 \end{remark*}
 
@@ -147,18 +153,21 @@ The equivalence fails precisely if one side holds and the other does not.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{BddAbove}(A\cup B)\oplus
-\bigl(\operatorname{BddAbove}(A)\land\operatorname{BddAbove}(B)\bigr).
+\operatorname{BoundedAbove}(A\cup B)\oplus
+\bigl(\operatorname{BoundedAbove}(A)\land\operatorname{BoundedAbove}(B)\bigr).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
 The forward direction could fail only if a bound for the union did not bound a
 piece.  The reverse direction could fail only if bounds for both pieces did not
 combine into a bound for the union.
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure modes]
+\begin{remark*}[Interpretation]
 Use subset inheritance for the forward direction and
 \hyperref[lem:union-preserves-upper-bounds]{Union Preserves Upper Bounds} for
 the reverse direction.
@@ -183,17 +192,17 @@ if and only if $A$ is bounded below and $B$ is bounded below.
 \[
 A\neq\varnothing,\quad B\neq\varnothing
 \quad\Longrightarrow\quad
-\operatorname{BddBelow}(A\cup B)
+\operatorname{BoundedBelow}(A\cup B)
 \Longleftrightarrow
-\operatorname{BddBelow}(A)\land\operatorname{BddBelow}(B).
+\operatorname{BoundedBelow}(A)\land\operatorname{BoundedBelow}(B).
 \]
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{BddBelow}(A\cup B)
+\operatorname{BoundedBelow}(A\cup B)
 \Longleftrightarrow
-\operatorname{BddBelow}(A)\land\operatorname{BddBelow}(B).
+\operatorname{BoundedBelow}(A)\land\operatorname{BoundedBelow}(B).
 \]
 \end{remark*}
 
@@ -203,18 +212,21 @@ The equivalence fails precisely if one side holds and the other does not.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{BddBelow}(A\cup B)\oplus
-\bigl(\operatorname{BddBelow}(A)\land\operatorname{BddBelow}(B)\bigr).
+\operatorname{BoundedBelow}(A\cup B)\oplus
+\bigl(\operatorname{BoundedBelow}(A)\land\operatorname{BoundedBelow}(B)\bigr).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
 The forward direction could fail only if a lower bound for the union did not
 bound a piece.  The reverse direction could fail only if lower bounds for both
 pieces did not combine into a lower bound for the union.
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure modes]
+\begin{remark*}[Interpretation]
 Use subset inheritance for the forward direction and
 \hyperref[lem:union-preserves-lower-bounds]{Union Preserves Lower Bounds} for
 the reverse direction.
@@ -239,17 +251,17 @@ only if $A$ is bounded and $B$ is bounded.
 \[
 A\neq\varnothing,\quad B\neq\varnothing
 \quad\Longrightarrow\quad
-\operatorname{Bdd}(A\cup B)
+\operatorname{Bounded}(A\cup B)
 \Longleftrightarrow
-\operatorname{Bdd}(A)\land\operatorname{Bdd}(B).
+\operatorname{Bounded}(A)\land\operatorname{Bounded}(B).
 \]
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{Bdd}(A\cup B)
+\operatorname{Bounded}(A\cup B)
 \Longleftrightarrow
-\operatorname{Bdd}(A)\land\operatorname{Bdd}(B).
+\operatorname{Bounded}(A)\land\operatorname{Bounded}(B).
 \]
 \end{remark*}
 
@@ -260,17 +272,20 @@ one-sided equivalence fails.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{Bdd}(A\cup B)\oplus
-\bigl(\operatorname{Bdd}(A)\land\operatorname{Bdd}(B)\bigr).
+\operatorname{Bounded}(A\cup B)\oplus
+\bigl(\operatorname{Bounded}(A)\land\operatorname{Bounded}(B)\bigr).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
 Two-sided boundedness fails exactly through an upper-bound failure or a
 lower-bound failure.
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure modes]
+\begin{remark*}[Interpretation]
 Apply the bounded-above and bounded-below union equivalences separately.
 \end{remark*}
 
@@ -299,8 +314,8 @@ C\subseteq A\land(\forall a\in A)(a\leq u)
 
 \begin{remark*}[Predicate reading]
 \[
-C\subseteq A\land\operatorname{UB}(u,A)
-\Longrightarrow \operatorname{UB}(u,C).
+C\subseteq A\land\operatorname{UpperBound}(u,A)
+\Longrightarrow \operatorname{UpperBound}(u,C).
 \]
 \end{remark*}
 
@@ -313,16 +328,19 @@ C\subseteq A,\quad (\forall a\in A)(a\leq u),\quad
 
 \begin{remark*}[Negation predicate reading]
 \[
-C\subseteq A\land\operatorname{UB}(u,A)\land\neg\operatorname{UB}(u,C).
+C\subseteq A\land\operatorname{UpperBound}(u,A)\land\neg\operatorname{UpperBound}(u,C).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
 A failure would require a counterexample in $C$ that is not already a
 counterexample in $A$.
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure modes]
+\begin{remark*}[Interpretation]
 Since $C\subseteq A$, every $c\in C$ is an element of $A$.  The upper-bound
 condition on $A$ therefore applies directly to $c$.
 \end{remark*}
@@ -350,8 +368,8 @@ C\subseteq A\land(\forall a\in A)(\ell\leq a)
 
 \begin{remark*}[Predicate reading]
 \[
-C\subseteq A\land\operatorname{LB}(\ell,A)
-\Longrightarrow \operatorname{LB}(\ell,C).
+C\subseteq A\land\operatorname{LowerBound}(\ell,A)
+\Longrightarrow \operatorname{LowerBound}(\ell,C).
 \]
 \end{remark*}
 
@@ -364,16 +382,19 @@ C\subseteq A,\quad (\forall a\in A)(\ell\leq a),\quad
 
 \begin{remark*}[Negation predicate reading]
 \[
-C\subseteq A\land\operatorname{LB}(\ell,A)\land\neg\operatorname{LB}(\ell,C).
+C\subseteq A\land\operatorname{LowerBound}(\ell,A)\land\neg\operatorname{LowerBound}(\ell,C).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
 A failure would require a point in $C$ below $\ell$, hence a point in $A$
 below $\ell$.
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure modes]
+\begin{remark*}[Interpretation]
 Subset inheritance removes possible counterexamples; it cannot create a new
 one.
 \end{remark*}
@@ -399,7 +420,7 @@ A\cap B\subseteq A.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{UB}(u,A)\Longrightarrow\operatorname{UB}(u,A\cap B),
+\operatorname{UpperBound}(u,A)\Longrightarrow\operatorname{UpperBound}(u,A\cap B),
 \]
 and similarly for lower bounds.
 \end{remark*}
@@ -410,18 +431,21 @@ A failure would be a failure of subset inheritance for $A\cap B\subseteq A$.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{UB}(u,A)\land
-\neg\operatorname{UB}(u,A\cap B)
+\operatorname{UpperBound}(u,A)\land
+\neg\operatorname{UpperBound}(u,A\cap B)
 \]
 is contradictory, and the same holds for lower bounds.
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
 Intersection can lose elements, but it cannot introduce an element outside the
 parent set $A$.
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure modes]
+\begin{remark*}[Interpretation]
 Apply subset inheritance to $C=A\cap B$.
 \end{remark*}
 
@@ -448,7 +472,7 @@ A\setminus B\subseteq A.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{UB}(u,A)\Longrightarrow\operatorname{UB}(u,A\setminus B),
+\operatorname{UpperBound}(u,A)\Longrightarrow\operatorname{UpperBound}(u,A\setminus B),
 \]
 and similarly for lower bounds.
 \end{remark*}
@@ -460,18 +484,21 @@ $A\setminus B\subseteq A$.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{UB}(u,A)\land
-\neg\operatorname{UB}(u,A\setminus B)
+\operatorname{UpperBound}(u,A)\land
+\neg\operatorname{UpperBound}(u,A\setminus B)
 \]
 is contradictory, and the same holds for lower bounds.
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
 Difference can remove elements from $A$, but it cannot create a new element
 outside $A$.
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure modes]
+\begin{remark*}[Interpretation]
 Apply subset inheritance to $C=A\setminus B$.
 \end{remark*}
 
@@ -498,19 +525,19 @@ E\setminus A\subseteq E.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{UB}(u,E)\Longrightarrow\operatorname{UB}(u,E\setminus A),
+\operatorname{UpperBound}(u,E)\Longrightarrow\operatorname{UpperBound}(u,E\setminus A),
 \qquad
-\operatorname{LB}(\ell,E)\Longrightarrow\operatorname{LB}(\ell,E\setminus A).
+\operatorname{LowerBound}(\ell,E)\Longrightarrow\operatorname{LowerBound}(\ell,E\setminus A).
 \]
 \end{remark*}
 
 \begin{remark*}[Negated quantified statement]
 \[
-\operatorname{UB}(u,E)\land\neg\operatorname{UB}(u,E\setminus A)
+\operatorname{UpperBound}(u,E)\land\neg\operatorname{UpperBound}(u,E\setminus A)
 \]
 or
 \[
-\operatorname{LB}(\ell,E)\land\neg\operatorname{LB}(\ell,E\setminus A).
+\operatorname{LowerBound}(\ell,E)\land\neg\operatorname{LowerBound}(\ell,E\setminus A).
 \]
 \end{remark*}
 
@@ -520,11 +547,14 @@ $E\setminus A\subseteq E$.
 \end{remark*}
 
 \begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
 The complement does not inherit bounds from $A$; it inherits them from the
 ambient set $E$.
+\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure modes]
+\begin{remark*}[Interpretation]
 Every point of $E\setminus A$ is a point of $E$, so every ambient bound of
 $E$ applies to the complement.
 \end{remark*}

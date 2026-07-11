@@ -6,6 +6,7 @@
 \subsection{Newton's Forward Difference Expansion}
 \label{sec:newtons-expansion}
 
+\begin{exposition}
 In continuous calculus, smooth functions can be expanded as power series
 called Taylor series:
 \[
@@ -21,6 +22,7 @@ and the basis functions are ordinary powers \(x^k\).
 Discrete calculus has a precise analogue: the \emph{Newton forward difference
 expansion}, in which derivatives are replaced by finite differences and
 ordinary powers are replaced by falling factorials.
+\end{exposition}
 
 \begin{theorembox}{Theorem (Newton Forward Difference Expansion)}
 Let \(f : \mathbb{Z} \to \mathbb{R}\). Then \(f\) can be expressed as
@@ -45,7 +47,7 @@ terminates at \(k = n\)).
 \end{theorembox}
 \label{thm:newton-expansion}
 
-\begin{remark*}[Fully quantified form]
+\begin{remark*}[Standard quantified statement]
 \(\forall f : \mathbb{Z}\to\mathbb{R}\) polynomial of degree \(\le n,\;
 \forall x \in \mathbb{Z}:\;
 f(x) = \displaystyle\sum_{k=0}^{n}\binom{x}{k}\Delta^k f(0)\),
@@ -54,6 +56,7 @@ where \(\binom{x}{k} := x^{\underline{k}}/k!\).
 
 \subsection*{Structural Parallel with the Taylor Series}
 
+\begin{exposition}
 The Newton expansion mirrors the Taylor series at every point. The
 correspondence is exact:
 
@@ -70,8 +73,9 @@ Convergence required in general & Exact for polynomials \\
 \hline
 \end{tabular}
 \end{center}
+\end{exposition}
 
-\begin{remark*}[Why falling factorials play the role of powers]
+\begin{remark*}[Interpretation]
 In the Taylor series, powers \(x^k\) are the natural basis because
 the derivative satisfies \(\tfrac{d}{dx}x^k = kx^{k-1}\) and
 \(\tfrac{d^m}{dx^m}x^k\big|_{x=0} = k!\) when \(m=k\), and \(0\) otherwise.
@@ -84,6 +88,7 @@ This ``triangular'' property is exactly what allows the coefficients
 
 \subsection*{Proof Sketch}
 
+\begin{exposition}
 We construct the expansion term by term, matching the values of \(f\) at
 successive integers.
 
@@ -100,9 +105,11 @@ At each stage, \(x^{\underline{k}}\) vanishes at \(x = 0, 1, \dots, k-1\),
 so the \(k\)-th term corrects only the value at \(x = k\). The coefficient
 \(\Delta^k f(0)/k!\) achieves this correction by the triangular property
 noted above.
+\end{exposition}
 
 \subsection*{Reading Coefficients from the Difference Table}
 
+\begin{exposition}
 The coefficients in the Newton expansion are read from the \emph{left
 edge} of the difference table --- the ``Newton diagonal'':
 \[
@@ -118,9 +125,11 @@ f(0),\quad
 
 Each level of the difference table contributes exactly one term to the
 falling-factorial expansion.
+\end{exposition}
 
 \subsection*{\texorpdfstring{Worked Example: Expanding \(f(n) = n^3\)}{Worked Example: Expanding f(n) = n cubed}}
 
+\begin{example*}
 We compute the difference table at \(n = 0\):
 \[
 \begin{array}{c|c|c|c|c}
@@ -146,9 +155,11 @@ n^3
 \]
 
 Verification: \(n + 3n^2 - 3n + n^3 - 3n^2 + 2n = n^3.\) \(\checkmark\)
+\end{example*}
 
 \subsection*{\texorpdfstring{Application: Computing \(\sum_{k=0}^{n-1} k^2\)}{Application: Computing sum k=0 to n-1 k squared}}
 
+\begin{example*}
 Using the expansion \(k^2 = k^{\underline{1}} + k^{\underline{2}}\) and the
 Fundamental Theorem of Finite Calculus (Theorem~\ref{thm:fundamental-theorem-finite-calculus}),
 
@@ -178,8 +189,9 @@ Adding:
 = \frac{n(n-1)}{6}\bigl[3 + 2(n-2)\bigr]
 = \frac{n(n-1)(2n-1)}{6}.
 \]
+\end{example*}
 
-\begin{remark*}[Check against the standard formula]
+\begin{remark*}[Interpretation]
 The standard formula is \(\displaystyle\sum_{k=1}^{n} k^2 = \tfrac{n(n+1)(2n+1)}{6}\).
 The computed result \(\displaystyle\sum_{k=0}^{n-1} k^2 = \tfrac{(n-1)n(2n-1)}{6}\) matches:
 substitute \(n \mapsto n-1\) in the standard formula to get

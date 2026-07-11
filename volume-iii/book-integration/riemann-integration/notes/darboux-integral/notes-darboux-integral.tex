@@ -1,11 +1,13 @@
 \subsection*{Geometric Intuition}
 
+\begin{exposition}
 Darboux stops chasing tags. On each slab, the adversary can do no better than
 the supremum and no worse than the infimum. So build the upper staircase from
 \(\sup f\), the lower staircase from \(\inf f\), and ask whether the gap can be
 squeezed to zero.
+\end{exposition}
 
-\begin{remark*}[Engineering reading]
+\begin{remark*}[Interpretation]
 Darboux is the usable face of Riemann integration. It does not change the
 integral; it changes the test. Instead of quantifying over every possible tag,
 it brackets all tags at once.
@@ -29,6 +31,19 @@ and define
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+L(f,P)=\sum_i\Bigl(\inf_{[x_{i-1},x_i]}f\Bigr)\Delta x_i,
+\qquad
+U(f,P)=\sum_i\Bigl(\sup_{[x_{i-1},x_i]}f\Bigr)\Delta x_i.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Darboux sums bound all tagged rectangle sums from below and above by using the
+infimum and supremum on each subinterval.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:supremum]{Supremum}
@@ -48,13 +63,21 @@ If \(P'\) refines \(P\), then
 \end{lemma}
 \end{lemmabox}
 
-\begin{remark*}[Geometric reading]
+\begin{remark*}[Standard quantified statement]
+\[
+P'\text{ refines }P
+\Longrightarrow
+L(f,P)\le L(f,P')\le U(f,P')\le U(f,P).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
 Thinner slabs give lower rectangles room to rise and upper rectangles room to
 fall. This monotonicity is exactly what Riemann sums lack when tags move
 adversarially.
 \end{remark*}
 
-\begin{remark*}[One-point refinement proof idea]
+\begin{remark*}[Interpretation]
 It is enough to add one cut-point \(c\) inside one slab and iterate. The
 infimum over the whole slab is less than or equal to the infimum over each
 piece, so the lower contribution rises. The supremum over the whole slab is
@@ -81,6 +104,19 @@ The function \(f\) is \emph{Darboux-integrable} if \(\underline I=\overline I\).
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{IsIntegrable}(f,[a,b],\operatorname{DarbouxCriterion})
+\Longleftrightarrow
+\sup_P L(f,P)=\inf_P U(f,P).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Darboux integrability means that the best lower staircase and the best upper
+staircase meet at the same value.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:darboux-sums]{Darboux Sums}
@@ -89,8 +125,7 @@ The function \(f\) is \emph{Darboux-integrable} if \(\underline I=\overline I\).
 \end{itemize}
 \end{dependencies}
 
-\begin{theorembox}{Theore
-m (Darboux Criterion)}
+\begin{theorembox}{Theorem (Darboux Criterion)}
 \begin{theorem}[Darboux Criterion]
 \label{thm:darboux-criterion}
 A bounded function \(f\) is Darboux-integrable if and only if for every
@@ -102,7 +137,25 @@ A bounded function \(f\) is Darboux-integrable if and only if for every
 \end{theorem}
 \end{theorembox}
 
-\begin{remark*}[The squeeze in one plate]
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{IsIntegrable}(f,[a,b],\operatorname{DarbouxCriterion})
+\Longleftrightarrow
+\forall\varepsilon>0\ \exists P\,
+\bigl(U(f,P)-L(f,P)<\varepsilon\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{IsIntegrable}(f,[a,b],\operatorname{DarbouxCriterion})
+\Longleftrightarrow
+\forall\varepsilon>0\ \exists P\,
+\bigl(U(f,P)-L(f,P)<\varepsilon\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
 Figure~\ref{fig:integration-atlas} places the Cauchy/Riemann tag choices,
 the lower--upper Darboux bracket, the refinement squeeze, and the gauge panel
 on the same page. The Darboux row is the chapter's hinge: replacing moving
@@ -130,6 +183,20 @@ integrability are equivalent, and the integral values agree.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{IsIntegrable}(f,[a,b],\operatorname{RiemannCriterion})
+\Longleftrightarrow
+\operatorname{IsIntegrable}(f,[a,b],\operatorname{DarbouxCriterion}),
+\]
+and the two integral values agree.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Darboux and Riemann integrability define the same class of bounded functions,
+but Darboux gives a lower-upper criterion for proving integrability.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:riemann-integral]{Riemann Integral}
@@ -147,6 +214,19 @@ Every continuous function \(f:[a,b]\to\mathbb R\) is Darboux-integrable.
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{IsContinuous}(f,[a,b])
+\Longrightarrow
+\operatorname{IsIntegrable}(f,[a,b],\operatorname{DarbouxCriterion}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Uniform continuity on a compact interval makes the oscillation on sufficiently
+short subintervals uniformly small, so the Darboux gap can be squeezed.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:darboux-integrability]{Darboux Integrability}
@@ -161,7 +241,15 @@ Every monotone function \(f:[a,b]\to\mathbb R\) is Darboux-integrable.
 \end{theorem}
 \end{theorembox}
 
-\begin{remark*}[Why this is a harvest theorem]
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{Monotone}\bigl(f,\mathsf{OrderedSet}([a,b],\leq)\bigr)
+\Longrightarrow
+\operatorname{IsIntegrable}(f,[a,b],\operatorname{DarbouxCriterion}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
 Monotone functions may have infinitely many discontinuities. Darboux still
 handles them because their total vertical movement is finite. On each slab
 the oscillation is just the endpoint jump across that slab, and these jumps
@@ -185,9 +273,17 @@ discontinuities, then \(f\) is Darboux-integrable.
 \end{theorem}
 \end{theorembox}
 
-\begin{remark*}[Why finite bad sets are harmless]
-Th
-e Darboux gap is
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{Bounded}(f([a,b]))\land
+\operatorname{Finite}\bigl(\{x\in[a,b]:\operatorname{IsDiscontinuous}(f,x)\}\bigr)
+\Longrightarrow
+\operatorname{IsIntegrable}(f,[a,b],\operatorname{DarbouxCriterion}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The Darboux gap is
 \[
   U(f,P)-L(f,P)=\sum_i \omega_f([x_{i-1},x_i])\Delta x_i.
 \]
@@ -216,6 +312,19 @@ If \(f\) and \(g\) are Darboux-integrable on \([a,b]\), then
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{IsIntegrable}(f,[a,b],\operatorname{DarbouxCriterion})\land
+\operatorname{IsIntegrable}(g,[a,b],\operatorname{DarbouxCriterion})
+\Longrightarrow
+\operatorname{IsIntegrable}(\alpha f+\beta g,[a,b],\operatorname{DarbouxCriterion}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Darboux-integrable functions are closed under finite linear combinations.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:darboux-integrability]{Darboux Integrability}
@@ -232,6 +341,20 @@ Darboux-integrable on \([a,b]\).
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{IsIntegrable}(f,[a,b],\operatorname{DarbouxCriterion})\land
+\operatorname{IsIntegrable}(g,[a,b],\operatorname{DarbouxCriterion})
+\Longrightarrow
+\operatorname{IsIntegrable}(fg,[a,b],\operatorname{DarbouxCriterion}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Products remain Darboux-integrable because boundedness and small oscillation
+control the product oscillation.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:darboux-integrability]{Darboux Integrability}
@@ -247,6 +370,19 @@ Darboux-integrable on \([a,b]\).
 \hyperref[prf:darboux-integrable-absolute-value]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{IsIntegrable}(f,[a,b],\operatorname{DarbouxCriterion})
+\Longrightarrow
+\operatorname{IsIntegrable}(|f|,[a,b],\operatorname{DarbouxCriterion}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Taking absolute values cannot create more oscillation than the original
+function has at the scale relevant to the Darboux criterion.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -266,7 +402,16 @@ interval containing \(f([a,b])\), and \(f\) is bounded, then
 \end{theorem}
 \end{theorembox}
 
-\begin{remark*}[Why the harvest is cheap]
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{IsIntegrable}(f,[a,b],\operatorname{DarbouxCriterion})\land
+\operatorname{IsContinuous}(\varphi,J)\land f([a,b])\subseteq J
+\Longrightarrow
+\operatorname{IsIntegrable}(\varphi\circ f,[a,b],\operatorname{DarbouxCriterion}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
 The Darboux criterion reduces closure questions to controlling the upper-lower
 gap. Boundedness controls coefficients and products, while continuity of
 \(\varphi\) converts small oscillation of \(f\) into small oscillation of
@@ -274,7 +419,7 @@ gap. Boundedness controls coefficients and products, while continuity of
 theorems become estimates on \(U(f,P)-L(f,P)\).
 \end{remark*}
 
-\begin{remark*}[Bug report]
+\begin{remark*}[Interpretation]
 Darboux is a better tool for the same class. It does not enlarge Riemann
 integrability. The remaining defects now fork. One can change the ruler
 \(\Delta x\) to \(\Delta\alpha\), which leads to Riemann--Stieltjes. Or one can
@@ -291,7 +436,7 @@ to the gauge-integral cure.
 
 \subsection*{Worked Failure Mode}
 
-\begin{remark*}[Residual failures]
+\begin{remark*}[Interpretation]
 The Dirichlet function \(\mathbf 1_{\mathbb Q}\) on \([0,1]\) has infimum
 \(0\) and supremum \(1\) on every slab, since rationals and irrationals are
 dense. Thus \(L(f,P)=0\) and \(U(f,P)=1\) for every partition, so the Darboux
@@ -305,7 +450,7 @@ show why Riemann integration has weak limit behavior.
 
 \input{tex/figures/failures-atlas}
 
-\begin{remark*}[What Darboux makes visible]
+\begin{remark*}[Interpretation]
 For Thomae's function, Darboux sees the opposite picture. On every slab the
 infimum is \(0\), because every slab contains irrationals. The supremum can be
 large only near rationals with small denominator; above any fixed height
@@ -321,7 +466,7 @@ follows from the equivalence theorem.
 
 \subsection*{What the Failure Motivates Next}
 
-\begin{remark*}[The fork]
+\begin{remark*}[Interpretation]
 Darboux exposes two separate defects:
 \[
 \begin{array}{c|c|c}

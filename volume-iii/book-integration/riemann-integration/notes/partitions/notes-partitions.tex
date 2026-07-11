@@ -1,4 +1,4 @@
-\begin{remark*}[Reframing note]
+\begin{remark*}[Interpretation]
 This chapter is the narrative version of the reference list. The reference
 orders the definitions correctly, but the real subject is the sequence of
 defects and patches:
@@ -17,6 +17,7 @@ invented.
 
 \subsection*{The Geometric Problem}
 
+\begin{exposition}
 Forget integrals for a moment. The physical question is always the same:
 
 \begin{quote}
@@ -37,8 +38,9 @@ over \([a,b]\) asks for signed area. The only available strategy is:
 
 Every construction below makes two choices: which height to use in a slab, and
 what it means for all these rectangle sums to settle to one number.
+\end{exposition}
 
-\begin{remark*}[Construction comparison]
+\begin{remark*}[Interpretation]
 The constructions differ by the height rule, the ruler, or the fineness rule:
 \[
 \begin{array}{c|c|c}
@@ -71,7 +73,7 @@ A \emph{partition} of \([a,b]\) is a finite increasing list
 Equivalently,
 \[
 \begin{aligned}
-\operatorname{Partition}(P,a,b)\Longleftrightarrow{}
+\operatorname{Partition}(P,[a,b])\Longleftrightarrow{}
 &\exists n\in\mathbb N\,\exists x_0,\ldots,x_n\in\mathbb R\\
 &\bigl(P=\{x_0,\ldots,x_n\}\wedge x_0=a\wedge x_n=b\bigr)\\
 &{}\wedge \forall i\,\bigl(1\le i\le n\Rightarrow x_{i-1}<x_i\bigr).
@@ -79,6 +81,18 @@ Equivalently,
 \]
 \end{definition}
 \end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+A partition \(P\) of \([a,b]\) is a finite increasing list
+\[
+  P=\{a=x_0<x_1<\cdots<x_n=b\}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A partition records the cut-points that decompose the interval into finitely
+many adjacent slabs.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -96,6 +110,17 @@ The \(i\)-th slab has width
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+For a partition \(P=\{x_0,\ldots,x_n\}\), the \(i\)-th subinterval width is
+\[
+  \Delta x_i=x_i-x_{i-1}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The width measures the length of a single slab in the partition.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:integration-partition]{Partition of a Compact Interval}
@@ -112,7 +137,14 @@ The \emph{mesh} or \emph{norm} of \(P\) is the width of its fattest slab:
 \end{definition}
 \end{definitionbox}
 
-\begin{remark*}[Geometric reading]
+\begin{remark*}[Standard quantified statement]
+For a partition \(P=\{x_0,\ldots,x_n\}\),
+\[
+  \|P\|=\max_{1\le i\le n}(x_i-x_{i-1}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
 The mesh is the resolution dial. The phrase ``as the partition is refined''
 will usually mean that \(\|P\|\to 0\): no slab is allowed to remain fat.
 \end{remark*}
@@ -134,6 +166,19 @@ with points \(\xi_i\in[x_{i-1},x_i]\). The tag is the point where the height
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+A tagged partition of \([a,b]\) is a partition
+\(P=\{x_0,\ldots,x_n\}\) together with points
+\[
+  \xi_i\in[x_{i-1},x_i]\qquad(1\le i\le n).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The partition chooses the slabs, while the tags choose where each slab samples
+the function height.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:integration-partition]{Partition of a Compact Interval}
@@ -147,6 +192,18 @@ A partition \(P'\) \emph{refines} \(P\) when \(P\subseteq P'\). Refinement adds
 cut-points; it does not move or delete existing cut-points.
 \end{definition}
 \end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+A partition \(P'\) refines a partition \(P\) if
+\[
+  P\subseteq P'.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Refinement only adds cut-points. It makes the slab decomposition finer while
+preserving the old cuts.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -163,7 +220,17 @@ order the finite set \(P\cup P'\) increasingly.
 \end{lemma}
 \end{lemmabox}
 
-\begin{remark*}[Why the lemma is load-bearing]
+\begin{remark*}[Standard quantified statement]
+For any two partitions \(P\) and \(P'\) of \([a,b]\), there exists a
+partition \(R\) of \([a,b]\) such that
+\[
+  P\subseteq R
+  \qquad\text{and}\qquad
+  P'\subseteq R.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
 This small fact is the reason independently chosen partitions can be compared.
 Whenever a proof says ``refine them together,'' it is using this lemma. It is
 the structural engine behind Cauchy's existence proof and Darboux's squeeze.
