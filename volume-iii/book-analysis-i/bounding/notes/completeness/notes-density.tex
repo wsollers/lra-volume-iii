@@ -74,7 +74,13 @@ Density fails when some point of $S$ has a positive-radius neighborhood that con
 Density is an approximation property inside $S$. It does not say that every point of $S$ already belongs to $D$; it says that points of $D$ occur arbitrarily close to every point of $S$. Thus $D$ can be a proper subset of $S$ while still leaving no positive-width gap inside $S$.
 \end{remark*}
 
-\NoLocalDependencies
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:reals]{Real Numbers}
+  \item \hyperref[def:real-chapter-absolute-value-on-r]{Absolute Value on $\mathbb{R}$}
+\end{itemize}
+\end{dependencies}
 \input{volume-iii/book-analysis-i/bounding/notes/completeness/figure-dense-subset}
 \begin{definitionbox}{Definition (Order Dense Subset)}
 \begin{definition}[Order Dense Subset]
@@ -240,7 +246,9 @@ The rational numbers are closed under addition, so translating a rational by a
 rational keeps it rational.
 \end{remark*}
 
-\NoLocalDependencies
+\begin{dependencies}
+\hyperref[thm:q-is-a-field]{Theorem~\ref*{thm:q-is-a-field}}.
+\end{dependencies}
 
 \begin{lemmabox}{Lemma (Rational Difference Preserves Rationality)}
 \begin{lemma}[Rational Difference Preserves Rationality]
@@ -270,7 +278,10 @@ Subtraction is addition of the additive inverse, and rational numbers are
 closed under both operations.
 \end{remark*}
 
-\NoLocalDependencies
+\begin{dependencies}
+\hyperref[def:subtraction-on-q]{Definition~\ref*{def:subtraction-on-q}},
+\hyperref[thm:q-is-a-field]{Theorem~\ref*{thm:q-is-a-field}}.
+\end{dependencies}
 
 \begin{lemmabox}{Lemma (Nonzero Rational Product Preserves Irrationality)}
 \begin{lemma}[Nonzero Rational Product Preserves Irrationality]
@@ -304,7 +315,11 @@ because division by the same nonzero rational would recover the original
 irrational as a rational number.
 \end{remark*}
 
-\NoLocalDependencies
+\begin{dependencies}
+\hyperref[thm:q-is-a-field]{Theorem~\ref*{thm:q-is-a-field}},
+\hyperref[thm:reciprocal-on-q-well-defined]{Theorem~\ref*{thm:reciprocal-on-q-well-defined}},
+\hyperref[thm:q-embeds-into-r]{Theorem~\ref*{thm:q-embeds-into-r}}.
+\end{dependencies}
 
 \begin{lemmabox}{Lemma (Rational Translation Preserves Irrationality)}
 \begin{lemma}[Rational Translation Preserves Irrationality]
@@ -369,7 +384,11 @@ Taking $x=y=\sqrt{2}$ gives $x-y=0$, so irrationality is not closed under
 difference.
 \end{remark*}
 
-\NoLocalDependencies
+\begin{dependencies}
+\hyperref[thm:square-root-of-two-is-irrational]{Theorem~\ref*{thm:square-root-of-two-is-irrational}},
+\hyperref[thm:zero-is-a-rational]{Theorem~\ref*{thm:zero-is-a-rational}},
+\hyperref[cor:field-laws-on-r]{Corollary~\ref*{cor:field-laws-on-r}}.
+\end{dependencies}
 
 \begin{lemmabox}{Lemma (Rational Minus Irrational Is Irrational)}
 \begin{lemma}[Rational Minus Irrational Is Irrational]

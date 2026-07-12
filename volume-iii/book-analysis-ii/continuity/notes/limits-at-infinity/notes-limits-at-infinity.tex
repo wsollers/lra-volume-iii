@@ -93,7 +93,14 @@ $\overline{\mathbb{R}}$: finite adherence uses balls; infinite
 adherence uses rays.
 \end{remark*}
 
-\NoLocalDependencies
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:reals]{Real Numbers}
+  \item \hyperref[def:extended-real-numbers]{Extended Real Numbers}
+  \item \hyperref[def:ray]{Ray}
+\end{itemize}
+\end{dependencies}
 \begin{definitionbox}{Definition (Limit at Infinity)}
 \begin{definition}[Limit at Infinity]
 \label{def:limit-at-infinity}
@@ -153,7 +160,7 @@ The definition fails only when there is a fixed tolerance $\varepsilon_0$ that t
 \end{remark*}
 
 \begin{remark*}[Interpretation]
-The limit at $+\infty$ demands that eventually the function values stay within any prescribed accuracy of $L$. Intuitively, once $x$ is large enough, the graph of $f$ must lie in the horizontal band of height $\varepsilon$ around $L$. Failure occurs when some positive tolerance is violated infinitely often by points escaping to $+\infty$. This definition allows us to treat unbounded domains using the same epsilon control that governs finite limits, capturing the long-range behavior of $f$ with respect to the ideal point at infinity.
+The limit at $+\infty$ demands that eventually the function values stay within any prescribed accuracy of $L$. Intuitively, once $x$ is large enough, the graph of $f$ must lie in the horizontal band of height $\varepsilon$ around $L$. Failure occurs when some positive tolerance is violated infinitely often by points escaping to $+\infty$. This definition treats unbounded domains using the same epsilon control that governs finite limits, capturing the long-range behavior of $f$ with respect to the ideal point at infinity.
 \end{remark*}
 
 \begin{dependencies}

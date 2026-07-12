@@ -334,9 +334,8 @@ The $h$-form fails in two branches: (i) The incremental ratio $(f(c+h)-f(c))/h$ 
 
 \begin{remark*}[Interpretation]
 The $h$-form substitutes $x = c + h$ in the difference quotient. It is the standard notation in calculus and makes the incremental structure of the derivative explicit.
-\end{remark*}
 
-\begin{remark*}[Interpretation]
+
 The forward difference operator
 \[
   \Delta f(n)=f(n+1)-f(n)
@@ -415,21 +414,18 @@ The converse fails: $f(x) = |x|$ is continuous at $0$ but not differentiable the
 \[
 \neg \text{ContinuousAt}(f,c) \;\Rightarrow\; \neg \text{DifferentiableAt}(f,c).
 \]
-\end{remark*}
 
-\begin{remark*}[Interpretation]
+
 \[
 \neg\operatorname{IsContinuous}(f,c)
 \;\Longrightarrow\;
 \neg\operatorname{IsDifferentiable}(f,c).
 \]
-\end{remark*}
 
-\begin{remark*}[Interpretation]
+
 Differentiability is strictly stronger than continuity: the existence of a well-defined tangent slope forces the function values to coalesce at $f(c)$ as $x \to c$.
-\end{remark*}
 
-\begin{remark*}[Interpretation]
+
 The theorem runs one way only. Differentiability forces continuity, but
 continuity does not force differentiability. The negation of the converse is
 \[
@@ -439,6 +435,19 @@ continuity does not force differentiability. The negation of the converse is
 \]
 The examples below escalate the failure: one corner, infinitely many isolated
 corners, and no differentiability anywhere.
+
+
+The continuity of \(W\) follows from uniform convergence once the
+function-series machinery is available. The nowhere-differentiability proof
+is a classical result of Weierstrass and is deferred to the function-series
+development; it is used here only as a counterexample to the converse of
+Differentiable Implies Continuous.
+
+
+Brownian motion has sample paths that are almost surely continuous
+everywhere and differentiable nowhere. This is the stochastic analogue of the
+Weierstrass phenomenon and one reason ordinary calculus must be replaced by
+the It\^o integral in stochastic analysis.
 \end{remark*}
 
 \begin{exposition}
@@ -478,21 +487,6 @@ the Weierstrass \(M\)-test. Classically, under the displayed condition, it is
 differentiable at no point. Thus continuity may hold everywhere while
 differentiability holds nowhere.
 \end{exposition}
-
-\begin{remark*}[Interpretation]
-The continuity of \(W\) follows from uniform convergence once the
-function-series machinery is available. The nowhere-differentiability proof
-is a classical result of Weierstrass and is deferred to the function-series
-development; it is used here only as a counterexample to the converse of
-Differentiable Implies Continuous.
-\end{remark*}
-
-\begin{remark*}[Interpretation]
-Brownian motion has sample paths that are almost surely continuous
-everywhere and differentiable nowhere. This is the stochastic analogue of the
-Weierstrass phenomenon and one reason ordinary calculus must be replaced by
-the It\^o integral in stochastic analysis.
-\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -542,9 +536,8 @@ The uniqueness proof assumes $L \neq L'$ and takes $\varepsilon = |L - L'|/2 > 0
 L \neq L' \;\Rightarrow\; \neg\bigl(\operatorname{Derivative}(f,c,L) \;\land\; \operatorname{Derivative}(f,c,L')\bigr).
 \]
 Two distinct candidates cannot both be the derivative of $f$ at $c$.
-\end{remark*}
 
-\begin{remark*}[Interpretation]
+
 \[
 L \neq L'
 \;\Longrightarrow\;
@@ -552,9 +545,8 @@ L \neq L'
 \;\lor\;
 \neg\operatorname{Derivative}(f,c,L').
 \]
-\end{remark*}
 
-\begin{remark*}[Interpretation]
+
 Uniqueness licenses writing $f'(c)$ as a definite value rather than a set of candidates.
 \end{remark*}
 

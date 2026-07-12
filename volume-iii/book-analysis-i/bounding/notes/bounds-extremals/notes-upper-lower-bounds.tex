@@ -101,11 +101,11 @@ need not belong to the set being bounded.
 \end{itemize}
 \end{dependencies}
 
-\begin{definitionbox}{Upper Bound}
-\begin{definition}[Upper Bound]
-\label{def:upper-bound}
-Let $(S,\leq)$ be an ordered set, let $A\subseteq S$ be nonempty, and let
-$u\in S$.  The element $u$ is an \emph{upper bound} of $A$ if every element
+\begin{definitionbox}{Upper Bound in the Real Line}
+\begin{definition}[Upper Bound in the Real Line]
+\label{def:real-upper-bound}
+Let $A\subseteq\mathbb{R}$ be nonempty and let $u\in\mathbb{R}$.  The
+element $u$ is an \emph{upper bound} of $A$ in the real line if every element
 of $A$ is less than or equal to $u$.
 \end{definition}
 \end{definitionbox}
@@ -174,15 +174,16 @@ lie outside the set and need not be the least such control.
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:bound]{Bound}
+  \item \hyperref[def:upper-bound]{Upper Bound}
+  \item \hyperref[def:reals]{Real Numbers}
 \end{itemize}
 \end{dependencies}
 
-\begin{definitionbox}{Lower Bound}
-\begin{definition}[Lower Bound]
-\label{def:lower-bound}
-Let $(S,\leq)$ be an ordered set, let $A\subseteq S$ be nonempty, and let
-$\ell\in S$.  The element $\ell$ is a \emph{lower bound} of $A$ if every
+\begin{definitionbox}{Lower Bound in the Real Line}
+\begin{definition}[Lower Bound in the Real Line]
+\label{def:real-lower-bound}
+Let $A\subseteq\mathbb{R}$ be nonempty and let $\ell\in\mathbb{R}$.  The
+element $\ell$ is a \emph{lower bound} of $A$ in the real line if every
 element of $A$ is greater than or equal to $\ell$.
 \end{definition}
 \end{definitionbox}
@@ -251,7 +252,8 @@ lie outside the set and need not be the greatest such control.
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:bound]{Bound}
+  \item \hyperref[def:lower-bound]{Lower Bound}
+  \item \hyperref[def:reals]{Real Numbers}
 \end{itemize}
 \end{dependencies}
 
@@ -327,7 +329,7 @@ from above.  No least upper bound is asserted here.
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:upper-bound]{Upper Bound}
+  \item \hyperref[def:real-upper-bound]{Upper Bound}
 \end{itemize}
 \end{dependencies}
 
@@ -403,7 +405,7 @@ from below.  No greatest lower bound is asserted here.
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:lower-bound]{Lower Bound}
+  \item \hyperref[def:real-lower-bound]{Lower Bound}
 \end{itemize}
 \end{dependencies}
 

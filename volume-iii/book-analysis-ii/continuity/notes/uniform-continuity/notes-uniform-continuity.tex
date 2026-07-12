@@ -539,21 +539,18 @@ If $f$ fails to be uniformly continuous on $A$, then $f$ is not Lipschitz on $A$
 &\Longrightarrow \forall K\ge 0\;\exists x,y \in A\;(|f(x)-f(y)|>K|x-y|).
 \end{aligned}
 \]
-\end{remark*}
 
-\begin{remark*}[Interpretation]
+
 \[
 \neg\operatorname{IsUniformlyContinuous}(f,A)
 \;\Longrightarrow\;
 \neg\exists K\ge 0:\;\operatorname{IsLipschitz}(f,A,K).
 \]
-\end{remark*}
 
-\begin{remark*}[Interpretation]
+
 A Lipschitz bound controls the variation of $f$ by the distance between inputs with a single constant $K$, so the same $K$ yields a usable $\delta = \varepsilon/K$ for every pair of points at once, proving uniform continuity. When $K=0$ the function is constant and trivially uniform. Failure of uniform continuity would force two points arbitrarily close together whose images stay a fixed distance apart, contradicting the Lipschitz inequality.
-\end{remark*}
 
-\begin{remark*}[Interpretation]
+
 The implication Lipschitz $\Rightarrow$ uniform continuity is strict. The canonical counterexample is $f(x)=\sqrt{x}$ on $[0,1]$, which is uniformly continuous by the Heine--Cantor theorem but satisfies $|f(x)-f(0)|/|x-0| = 1/\sqrt{x} \to \infty$ as $x \to 0^+$, so no Lipschitz constant exists at the origin. This distinction is relevant to GPU Lipschitz-constant estimation: uniform continuity of a simulation function does not supply a computable $K$ for the Lipschitz condition; only an explicit Lipschitz bound does.
 \end{remark*}
 

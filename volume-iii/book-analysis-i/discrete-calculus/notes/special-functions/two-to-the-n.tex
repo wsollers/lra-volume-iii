@@ -109,17 +109,8 @@ For all \(k \ge 0\),
 
 \begin{remark*}[Interpretation]
 Every forward-difference row for \(2^n\) reproduces the same function.
-\end{remark*}
 
-\begin{proof}
-By induction. The base case \(k = 0\) is \(\Delta^0(2^n) = 2^n\) by
-definition. For the inductive step, assume \(\Delta^k(2^n) = 2^n\). Then
-\[
-\Delta^{k+1}(2^n) = \Delta(\Delta^k(2^n)) = \Delta(2^n) = 2^n. \qedhere
-\]
-\end{proof}
 
-\begin{remark*}[Interpretation]
 Since every finite difference of \(2^n\) is \(2^n\) again, the difference
 table of \(2^n\) consists entirely of the sequence \(2^n\) at every level.
 This is the discrete analogue of the fact that the Taylor series of \(e^x\)
@@ -129,6 +120,14 @@ reach \(0\) at the \((d+1)\)-th difference row. The non-termination of
 the difference table is the signature of a genuinely transcendental discrete
 function.
 \end{remark*}
+
+\begin{proof}
+By induction. The base case \(k = 0\) is \(\Delta^0(2^n) = 2^n\) by
+definition. For the inductive step, assume \(\Delta^k(2^n) = 2^n\). Then
+\[
+\Delta^{k+1}(2^n) = \Delta(\Delta^k(2^n)) = \Delta(2^n) = 2^n. \qedhere
+\]
+\end{proof}
 
 \begin{dependencies}
 \begin{itemize}
@@ -202,6 +201,13 @@ is \(F(n) = 2^n\).
 \begin{remark*}[Interpretation]
 The recurrence \(F(n+1)=2F(n)\) with initial value \(1\) determines the
 discrete exponential \(2^n\) uniquely.
+
+
+This characterises \(2^n\) as the unique fixed point of ``multiply by 2''
+starting from \(1\). The analogous characterisation of \(e^x\) is: unique
+solution to \(f' = f\), \(f(0) = 1\). Both are initial-value problems in
+their respective calculi, and both have closed-form solutions that serve as
+the canonical exponential of that calculus.
 \end{remark*}
 
 \begin{proof}
@@ -209,14 +215,6 @@ Uniqueness: if \(G\) is another solution, then \(G(0) = 1 = F(0)\), and
 inductively \(G(n+1) = 2G(n) = 2F(n) = F(n+1)\), so \(G = F\).
 Existence: verify directly that \(2^{n+1} = 2\cdot 2^n\) and \(2^0 = 1\).
 \end{proof}
-
-\begin{remark*}[Interpretation]
-This characterises \(2^n\) as the unique fixed point of ``multiply by 2''
-starting from \(1\). The analogous characterisation of \(e^x\) is: unique
-solution to \(f' = f\), \(f(0) = 1\). Both are initial-value problems in
-their respective calculi, and both have closed-form solutions that serve as
-the canonical exponential of that calculus.
-\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}

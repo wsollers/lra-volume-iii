@@ -121,15 +121,13 @@ then $f$ is constant on the whole closed interval.
 \exists x \in (a,b)\;\lnot\operatorname{Derivative}(f,x,0).
 \]
 If $f$ is not constant on $I$, then $f'$ is not identically zero on $(a,b)$.
-\end{remark*}
 
-\begin{remark*}[Interpretation]
+
 \[
 \lnot\operatorname{ConstantOn}(f,I) \;\Rightarrow\; \exists x \in (a,b)\;(f'(x) \neq 0).
 \]
-\end{remark*}
 
-\begin{remark*}[Interpretation]
+
 The MVT is the engine here: if $f'(x) = 0$ everywhere on $(a,b)$, then for any two points $x_1 < x_2$ in $I$, the MVT supplies a $c$ with $f(x_2)-f(x_1) = f'(c)(x_2-x_1) = 0$, so $f(x_1) = f(x_2)$. Since this holds for all pairs, $f$ is constant. The theorem is the foundation of antiderivative uniqueness: two antiderivatives of the same function differ by a constant. The contrapositive is used in ODE uniqueness arguments --- if a solution is not identically the zero solution, its derivative is not identically zero somewhere.
 \end{remark*}
 
@@ -173,15 +171,13 @@ point of the interval, then their difference is constant on the interval.
 \exists x \in (a,b)\;(f'(x) \neq g'(x)).
 \]
 If $f - g$ is not a constant function, then $f'$ and $g'$ disagree somewhere.
-\end{remark*}
 
-\begin{remark*}[Interpretation]
+
 \[
 \lnot\operatorname{ConstantOn}(f-g,\,I) \;\Rightarrow\; \exists x\in(a,b)\;(f'(x)\neq g'(x)).
 \]
-\end{remark*}
 
-\begin{remark*}[Interpretation]
+
 This is the corollary that makes antiderivatives well-defined up to a constant: any two antiderivatives of the same function on an interval differ by a constant. The proof is one line --- apply the previous theorem to $h = f - g$, whose derivative is $(f-g)' = f'-g' = 0$.
 \end{remark*}
 
@@ -219,15 +215,13 @@ f'(x) \geq 0 \qquad \text{for all } x \in I.
 \lnot\operatorname{OrderPreserving}(f,I).
 \]
 If the derivative is negative at some point, the function is not nondecreasing.
-\end{remark*}
 
-\begin{remark*}[Interpretation]
+
 \[
 \exists x \in I\;(f'(x) < 0) \;\Rightarrow\; \lnot\operatorname{OrderPreserving}(f,I).
 \]
-\end{remark*}
 
-\begin{remark*}[Interpretation]
+
 The derivative is the instantaneous rate of change; requiring it to be nonnegative everywhere exactly characterises functions that never decrease. The forward direction ($f$ nondecreasing $\Rightarrow$ $f' \geq 0$) follows from the definition: the difference quotient is nonnegative when $f$ is nondecreasing, so the limit is nonnegative. The reverse direction ($f' \geq 0 \Rightarrow$ nondecreasing) is a consequence of the MVT: for $x < y$, the MVT gives $f(y)-f(x) = f'(c)(y-x) \geq 0$.
 
 Note carefully: $f' \geq 0$ characterises \emph{nondecreasing} (weak), not \emph{strictly increasing} (strict). Strict monotonicity requires $f' > 0$ at all but isolated points. The function $f(x) = x^3$ satisfies $f'(0) = 0$ but is strictly increasing; $f' \geq 0$ with equality only at isolated points is sufficient for strict increase, but $f' > 0$ everywhere is not necessary.
@@ -265,15 +259,13 @@ f'(x) \leq 0 \qquad \text{for all } x \in I.
 \[
 \exists x \in I\;(f'(x) > 0) \;\Rightarrow\; \lnot\operatorname{OrderReversing}(f,I).
 \]
-\end{remark*}
 
-\begin{remark*}[Interpretation]
+
 \[
 \exists x \in I\;(f'(x) > 0) \;\Rightarrow\; \lnot\operatorname{OrderReversing}(f,I).
 \]
-\end{remark*}
 
-\begin{remark*}[Interpretation]
+
 Nonpositive derivative everywhere is exactly the infinitesimal signature of a function that never increases.
 \end{remark*}
 
@@ -320,9 +312,8 @@ f(x) > f(c) \quad \text{for all } x \in I \text{ with } c < x < c + \delta.
 \;\Rightarrow\;
 f'(c) \leq 0.
 \]
-\end{remark*}
 
-\begin{remark*}[Interpretation]
+
 \[
 \forall \delta > 0\;\exists x \in I\;
 \bigl((c-\delta < x < c \;\land\; f(x) \geq f(c))
@@ -331,9 +322,8 @@ f'(c) \leq 0.
 \;\Rightarrow\;
 f'(c) \leq 0.
 \]
-\end{remark*}
 
-\begin{remark*}[Interpretation]
+
 If the instantaneous rate of change is strictly positive at $c$, the function is genuinely climbing through $c$: it is strictly below $f(c)$ immediately to the left and strictly above immediately to the right. The proof is a direct $\varepsilon$-$\delta$ argument: take $\varepsilon = f'(c)/2 > 0$; the definition of the derivative supplies $\delta$ such that the difference quotient is within $\varepsilon$ of $f'(c)$, forcing it to be positive, which then forces the correct sign on $f(x) - f(c)$. This lemma is the key ingredient in the proof of the First Derivative Test.
 \end{remark*}
 
@@ -380,9 +370,8 @@ f(x) < f(c) \quad \text{for all } x \in I \text{ with } c < x < c + \delta.
 \;\Rightarrow\;
 f'(c) \geq 0.
 \]
-\end{remark*}
 
-\begin{remark*}[Interpretation]
+
 \[
 \neg\exists \delta > 0\;\forall x \in I\;
 \bigl(c-\delta < x < c \Rightarrow f(x) > f(c)\bigr)
@@ -391,9 +380,8 @@ f'(c) \geq 0.
 \;\Rightarrow\;
 f'(c) \geq 0.
 \]
-\end{remark*}
 
-\begin{remark*}[Interpretation]
+
 If the derivative at $c$ is strictly negative, nearby values move downward as the input passes through $c$ from left to right.
 \end{remark*}
 

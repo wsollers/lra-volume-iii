@@ -40,7 +40,14 @@ toward the limit definition, which localises the same output
 condition to a punctured neighbourhood of $c$.
 \end{remark*}
 
-\NoLocalDependencies
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:function]{Function}
+  \item \hyperref[def:reals]{Real Numbers}
+  \item \hyperref[def:real-chapter-absolute-value-on-r]{Absolute Value on $\mathbb{R}$}
+\end{itemize}
+\end{dependencies}
 
 \begin{definitionbox}{Definition (Local $\delta$-Closeness Near a Point)}
 \begin{definition}[Local $\delta$-Closeness Near a Point]
@@ -607,9 +614,8 @@ that $|f(x)-L|<1$ holds for all $x$
 satisfying $0<|x-c|<\delta$. The triangle
 inequality then gives $|f(x)| \leq |f(x)-L| + |L| < 1 + |L|$.
 Set $M = 1 + |L|$.
-\end{remark*}
 
-\begin{remark*}[Interpretation]
+
 A finite limit does more than control the output near $L$: it
 prevents the function from growing without bound near $c$. Local
 boundedness is a coarser statement than limit existence, but it is
@@ -802,9 +808,8 @@ $\bigl||f(x)| - |L|\bigr| \leq |f(x) - L|$
 feeds the $\varepsilon$-$\delta$ definition directly: the same
 $\delta$ that delivers $|f(x)-L|<\varepsilon$
 also delivers $\bigl||f(x)|-|L|\bigr|<\varepsilon$.
-\end{remark*}
 
-\begin{remark*}[Interpretation]
+
 Taking absolute values can collapse sign information, so convergence of
 $f$ forces convergence of $|f|$, but convergence of $|f|$ alone does not
 recover the original limiting sign.

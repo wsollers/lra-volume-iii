@@ -148,20 +148,20 @@ environments:
   file: notes\bounds-extremals\notes-supremum.tex
   display_title: Bound
   proof_file: null
-- label: def:upper-bound
+- label: def:real-upper-bound
   type: def
   file: notes\bounds-extremals\notes-supremum.tex
-  display_title: Upper Bound
+  display_title: Upper Bound in the Real Line
   proof_file: null
 - label: def:bounded-above
   type: def
   file: notes\bounds-extremals\notes-supremum.tex
   display_title: Bounded Above
   proof_file: null
-- label: def:lower-bound
+- label: def:real-lower-bound
   type: def
   file: notes\bounds-extremals\notes-supremum.tex
-  display_title: Lower Bound
+  display_title: Lower Bound in the Real Line
   proof_file: null
 - label: def:bounded-below
   type: def

@@ -71,24 +71,15 @@ The displayed quantified statement is the predicate-level form of $label: its hy
 \begin{remark*}[Interpretation]
 The forward difference of a discrete exponential is a scalar multiple of the
 same discrete exponential.
-\end{remark*}
 
-\begin{proof}
-\[
-\Delta\,(1+a)^n = (1+a)^{n+1} - (1+a)^n = (1+a)^n\bigl[(1+a)-1\bigr] = a(1+a)^n.
-\qedhere
-\]
-\end{proof}
 
-\begin{remark*}[Interpretation]
 The continuous exponential satisfies \(\tfrac{d}{dx}e^{ax} = ae^{ax}\).
 The discrete exponential satisfies \(\Delta(1+a)^n = a(1+a)^n\). The
 base \(e\) in continuous calculus is replaced by \((1+a)\) in discrete
 calculus. When \(a\) is small, \((1+a) \approx e^a\), recovering the
 continuous limit.
-\end{remark*}
 
-\begin{remark*}[Interpretation]
+
 From the proposition, a discrete antiderivative of \(a(1+a)^n\) is
 \((1+a)^n\) itself. Equivalently, a discrete antiderivative of \((1+a)^n\)
 is \(\tfrac{(1+a)^n}{a}\). Combined with the Fundamental Theorem of Finite
@@ -99,6 +90,13 @@ Calculus, this gives the geometric series formula:
 \qquad (a \ne 0).
 \]
 \end{remark*}
+
+\begin{proof}
+\[
+\Delta\,(1+a)^n = (1+a)^{n+1} - (1+a)^n = (1+a)^n\bigl[(1+a)-1\bigr] = a(1+a)^n.
+\qedhere
+\]
+\end{proof}
 
 \begin{dependencies}
 \begin{itemize}
