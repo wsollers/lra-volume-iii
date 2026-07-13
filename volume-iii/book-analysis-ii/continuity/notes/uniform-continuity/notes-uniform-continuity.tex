@@ -29,7 +29,17 @@ Let $A \subseteq \mathbb{R}$ and let $f:A \to \mathbb{R}$. The function $f$ is u
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{IsUniformlyContinuous}(f,A) \coloneqq \forall \varepsilon > 0 \; \exists \delta > 0 \; \forall x,u \in A \; (|x-u| < \delta \Rightarrow |f(x)-f(u)| < \varepsilon).
+\begin{aligned}
+\operatorname{IsUniformlyContinuous}(f,A,\mathbb R,\mathbb R)
+&\Longleftrightarrow
+\forall \varepsilon > 0 \; \exists \delta > 0 \; \forall x,u \in A\\
+&\qquad
+\Bigl(
+  \operatorname{Within}(x,I_\delta(u),\mathbb R)
+  \Rightarrow
+  \operatorname{Within}(f(x),I_\varepsilon(f(u)),\mathbb R)
+\Bigr).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -44,7 +54,10 @@ Let $A \subseteq \mathbb{R}$ and let $f:A \to \mathbb{R}$. The function $f$ is u
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg \operatorname{IsUniformlyContinuous}(f,A) \Longleftrightarrow \exists \varepsilon > 0 \; \forall \delta > 0 \; \exists x,u \in A \; (|x-u| < \delta \land |f(x)-f(u)| \ge \varepsilon).
+\neg \operatorname{IsUniformlyContinuous}(f,A,\mathbb R,\mathbb R)
+\Longleftrightarrow
+\exists \varepsilon > 0 \; \forall \delta > 0 \; \exists x,u \in A \;
+(|x-u| < \delta \land |f(x)-f(u)| \ge \varepsilon).
 \]
 \end{remark*}
 
@@ -59,7 +72,7 @@ The definition fails exactly when a single positive tolerance $\varepsilon_{0}$ 
 \begin{description}
   \item[Exposition.]
 \[
-\neg \operatorname{IsUniformlyContinuous}(f,A)
+\neg \operatorname{IsUniformlyContinuous}(f,A,\mathbb R,\mathbb R)
 =
 \underbrace{\exists \varepsilon_{0} > 0}_{\text{frozen tolerance}}
 \land
@@ -138,8 +151,8 @@ Uniform continuity demands that a single proximity scale $\delta$ answers any pr
 \[
 \begin{aligned}
 &\forall A \subseteq \mathbb{R}\; \forall f,g : A \to \mathbb{R}\; \forall c \in \mathbb{R}:\\
-&\qquad\bigl(\operatorname{IsUniformlyContinuous}(f,A) \land \operatorname{IsUniformlyContinuous}(g,A)\bigr) \Longrightarrow \bigl(\operatorname{IsUniformlyContinuous}(f+g,A) \land \operatorname{IsUniformlyContinuous}(f-g,A) \land \operatorname{IsUniformlyContinuous}(cf,A)\bigr),\\
-&\exists A \subseteq \mathbb{R}\; \exists f,g : A \to \mathbb{R}:\quad \operatorname{IsUniformlyContinuous}(f,A) \land \operatorname{IsUniformlyContinuous}(g,A) \land \neg \operatorname{IsUniformlyContinuous}(fg,A).
+&\qquad\bigl(\operatorname{IsUniformlyContinuous}(f,A,\mathbb R,\mathbb R) \land \operatorname{IsUniformlyContinuous}(g,A,\mathbb R,\mathbb R)\bigr) \Longrightarrow \bigl(\operatorname{IsUniformlyContinuous}(f+g,A,\mathbb R,\mathbb R) \land \operatorname{IsUniformlyContinuous}(f-g,A,\mathbb R,\mathbb R) \land \operatorname{IsUniformlyContinuous}(cf,A,\mathbb R,\mathbb R)\bigr),\\
+&\exists A \subseteq \mathbb{R}\; \exists f,g : A \to \mathbb{R}:\quad \operatorname{IsUniformlyContinuous}(f,A,\mathbb R,\mathbb R) \land \operatorname{IsUniformlyContinuous}(g,A,\mathbb R,\mathbb R) \land \neg \operatorname{IsUniformlyContinuous}(fg,A,\mathbb R,\mathbb R).
 \end{aligned}
 \]
 \end{remark*}
@@ -191,10 +204,10 @@ Let $A \subseteq \mathbb{R}$ be bounded, and let $f,g:A \to \mathbb{R}$ be unifo
 \[
 \begin{aligned}
 &\text{Assume } A \subseteq \mathbb{R} \text{ is bounded and } f,g:A \to \mathbb{R}.\\
-&\operatorname{IsUniformlyContinuous}(f,A) \land \operatorname{IsUniformlyContinuous}(g,A)\\
-&\qquad\Longrightarrow \operatorname{IsUniformlyContinuous}(fg,A),\\
-&\operatorname{IsUniformlyContinuous}(f,A) \land \operatorname{IsUniformlyContinuous}(g,A) \land \exists k>0\;\forall x \in A\;(|g(x)| \ge k)\\
-&\qquad\Longrightarrow \operatorname{IsUniformlyContinuous}(f/g,A).
+&\operatorname{IsUniformlyContinuous}(f,A,\mathbb R,\mathbb R) \land \operatorname{IsUniformlyContinuous}(g,A,\mathbb R,\mathbb R)\\
+&\qquad\Longrightarrow \operatorname{IsUniformlyContinuous}(fg,A,\mathbb R,\mathbb R),\\
+&\operatorname{IsUniformlyContinuous}(f,A,\mathbb R,\mathbb R) \land \operatorname{IsUniformlyContinuous}(g,A,\mathbb R,\mathbb R) \land \exists k>0\;\forall x \in A\;(|g(x)| \ge k)\\
+&\qquad\Longrightarrow \operatorname{IsUniformlyContinuous}(f/g,A,\mathbb R,\mathbb R).
 \end{aligned}
 \]
 \end{remark*}
@@ -217,9 +230,9 @@ away from zero on $A$.
 \begin{aligned}
 &\underbrace{\neg\operatorname{Bounded}(A)}_{\text{unbounded domain}}
 \lor
-\underbrace{\neg\operatorname{IsUniformlyContinuous}(f,A)}_{\text{first factor not uniformly continuous}}
+\underbrace{\neg\operatorname{IsUniformlyContinuous}(f,A,\mathbb R,\mathbb R)}_{\text{first factor not uniformly continuous}}
 \lor
-\underbrace{\neg\operatorname{IsUniformlyContinuous}(g,A)}_{\text{second factor not uniformly continuous}}\\
+\underbrace{\neg\operatorname{IsUniformlyContinuous}(g,A,\mathbb R,\mathbb R)}_{\text{second factor not uniformly continuous}}\\
 &\qquad\lor
 \underbrace{\neg\exists k>0\;\forall x\in A:\; |g(x)|\ge k}_{\text{denominator not bounded away from zero}}.
 \end{aligned}
@@ -262,7 +275,7 @@ Let $A \subseteq \mathbb{R}$ and let $f:A \to \mathbb{R}$. Then $f$ is uniformly
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{IsUniformlyContinuous}(f,A)
+\operatorname{IsUniformlyContinuous}(f,A,\mathbb R,\mathbb R)
 \Longleftrightarrow
 \forall x_n,y_n:\mathbb{N} \to A\;
 \bigl(|x_n - y_n| \to 0 \Rightarrow |f(x_n) - f(y_n)| \to 0\bigr).
@@ -291,9 +304,9 @@ Let $A \subseteq \mathbb{R}$ and let $f:A \to \mathbb{R}$. Then $f$ is uniformly
 \[
 \begin{aligned}
 &\exists A \subseteq \mathbb{R}\;\exists f:A \to \mathbb{R}:\\
-&\quad \Bigl(\operatorname{IsUniformlyContinuous}(f,A) \land \exists x_n,y_n:\mathbb{N}\to A\;
+&\quad \Bigl(\operatorname{IsUniformlyContinuous}(f,A,\mathbb R,\mathbb R) \land \exists x_n,y_n:\mathbb{N}\to A\;
 \bigl(|x_n - y_n| \to 0 \land \neg(|f(x_n) - f(y_n)| \to 0)\bigr)\Bigr)\\
-&\quad \lor \Bigl(\neg \operatorname{IsUniformlyContinuous}(f,A) \land
+&\quad \lor \Bigl(\neg \operatorname{IsUniformlyContinuous}(f,A,\mathbb R,\mathbb R) \land
 \forall x_n,y_n:\mathbb{N}\to A\;
 \bigl(|x_n - y_n| \to 0 \Rightarrow |f(x_n) - f(y_n)| \to 0\bigr)\Bigr).
 \end{aligned}
@@ -312,12 +325,12 @@ The equivalence can fail in exactly two ways: either $f$ is uniformly continuous
   \item[Exposition.]
 \[
 \begin{aligned}
-&\underbrace{\operatorname{IsUniformlyContinuous}(f,A)}_{\text{uniform continuity holds}}
+&\underbrace{\operatorname{IsUniformlyContinuous}(f,A,\mathbb R,\mathbb R)}_{\text{uniform continuity holds}}
 \land
 \underbrace{\exists x_n,y_n:\mathbb{N}\to A\;
 \bigl(|x_n - y_n| \to 0 \land \neg(|f(x_n) - f(y_n)| \to 0)\bigr)}_{\text{sequential test fails}}\\
 &\lor\;
-\underbrace{\neg \operatorname{IsUniformlyContinuous}(f,A)}_{\text{uniform continuity fails}}
+\underbrace{\neg \operatorname{IsUniformlyContinuous}(f,A,\mathbb R,\mathbb R)}_{\text{uniform continuity fails}}
 \land
 \underbrace{\forall x_n,y_n:\mathbb{N}\to A\;
 \bigl(|x_n - y_n| \to 0 \Rightarrow |f(x_n) - f(y_n)| \to 0\bigr)}_{\text{sequential test holds}}.
@@ -358,7 +371,7 @@ Let $a,b \in \mathbb{R}$ with $a<b$ and let $f:[a,b]\to\mathbb{R}$ be continuous
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{IsContinuous}(f,[a,b]) \Rightarrow \operatorname{IsUniformlyContinuous}(f,[a,b]).
+\operatorname{IsContinuous}(f,[a,b],\mathbb R,\mathbb R) \Rightarrow \operatorname{IsUniformlyContinuous}(f,[a,b],\mathbb R,\mathbb R).
 \]
 \end{remark*}
 
@@ -374,7 +387,7 @@ Let $a,b \in \mathbb{R}$ with $a<b$ and let $f:[a,b]\to\mathbb{R}$ be continuous
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{IsContinuous}(f,[a,b]) \land \neg \operatorname{IsUniformlyContinuous}(f,[a,b]).
+\operatorname{IsContinuous}(f,[a,b],\mathbb R,\mathbb R) \land \neg \operatorname{IsUniformlyContinuous}(f,[a,b],\mathbb R,\mathbb R).
 \]
 \end{remark*}
 
@@ -412,7 +425,7 @@ Let $S \subseteq \mathbb{R}$, let $f:S \to \mathbb{R}$, and let $(x_n)$ be a seq
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{IsUniformlyContinuous}(f,S) \land \operatorname{IsCauchy}(x_n) \;\Rightarrow\; \operatorname{IsCauchy}(f(x_n)).
+\operatorname{IsUniformlyContinuous}(f,S,\mathbb R,\mathbb R) \land \operatorname{IsCauchy}(x_n) \;\Rightarrow\; \operatorname{IsCauchy}(f(x_n)).
 \]
 \end{remark*}
 
@@ -526,7 +539,7 @@ Let $A \subseteq \mathbb{R}$ and $f:A \to \mathbb{R}$. If there exists $K \ge 0$
 
 \begin{remark*}[Predicate reading]
 \[
-\bigl[\exists K \ge 0\; \operatorname{IsLipschitz}(f,A,K)\bigr] \Rightarrow \operatorname{IsUniformlyContinuous}(f,A).
+\bigl[\exists K \ge 0\; \operatorname{IsLipschitz}(f,A,K)\bigr] \Rightarrow \operatorname{IsUniformlyContinuous}(f,A,\mathbb R,\mathbb R).
 \]
 \end{remark*}
 
@@ -542,7 +555,7 @@ If $f$ fails to be uniformly continuous on $A$, then $f$ is not Lipschitz on $A$
 
 
 \[
-\neg\operatorname{IsUniformlyContinuous}(f,A)
+\neg\operatorname{IsUniformlyContinuous}(f,A,\mathbb R,\mathbb R)
 \;\Longrightarrow\;
 \neg\exists K\ge 0:\;\operatorname{IsLipschitz}(f,A,K).
 \]
