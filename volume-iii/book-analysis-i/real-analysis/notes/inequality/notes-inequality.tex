@@ -4,6 +4,42 @@
 
 \subsection*{Inequality}
 \label{sec:inequality}
+
+% ---------------------------------------------------------
+% thm:real-order-trichotomy
+% ---------------------------------------------------------
+
+\begin{theorem}[Trichotomy for Real Order]
+\label{thm:real-order-trichotomy}
+For all $a,b\in\mathbb{R}$, exactly one of the following relations holds:
+\[
+a<b,\qquad a=b,\qquad a>b.
+\]
+\hyperref[prf:real-order-trichotomy]{\textit{Go to proof.}}
+\end{theorem}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a,b\in\mathbb{R}\;
+\bigl((a<b)\oplus(a=b)\oplus(a>b)\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+a\text{ and }b\text{ are comparable by exactly one real-order relation.}
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Any two real numbers can be compared, and the three possible comparison
+outcomes are mutually exclusive.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[thm:trichotomy-on-r]{Trichotomy on $\mathbb{R}$}.
+\end{dependencies}
+
 % ---------------------------------------------------------
 % thm:ineq-add-both-sides
 % ---------------------------------------------------------
@@ -150,6 +186,75 @@ Nonstrict inequalities add componentwise without creating more separation than t
 
 \begin{dependencies}
 \hyperref[thm:ineq-nonstrict-add-both-sides]{addition preserves nonstrict inequality}.
+\end{dependencies}
+
+\begin{lemmabox}{Lemma (Positive Sum)}
+\begin{lemma}[Positive Sum]
+\label{lem:positive-sum}
+If $a,b\in\mathbb{R}$, $a>0$, and $b>0$, then
+\[
+a+b>0.
+\]
+\hyperref[prf:positive-sum]{Go to proof.}
+\end{lemma}
+\end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a,b\in\mathbb{R}\;\bigl((a>0\land b>0)\Rightarrow a+b>0\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+a>0\land b>0\Rightarrow a+b>0.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The positive half-line is closed under addition.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[thm:r-is-an-ordered-field]{$\mathbb{R}$ Is an Ordered Field};
+\hyperref[thm:ineq-add-inequalities]{Addition of Strict Inequalities}.
+\end{dependencies}
+
+\begin{propositionbox}{Proposition (Subtraction of Inequalities Is Not Valid in General)}
+\begin{proposition}[Subtraction of Inequalities Is Not Valid in General]
+\label{prop:subtraction-of-inequalities-not-valid}
+There exist real numbers $a,b,c,d$ such that $a>b$ and $c>d$, but neither
+\[
+a-c>b-d
+\quad\text{nor}\quad
+c-a>d-b
+\]
+holds.
+\hyperref[prf:subtraction-of-inequalities-not-valid]{Go to proof.}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\exists a,b,c,d\in\mathbb{R}\;
+\bigl(a>b\land c>d\land \neg(a-c>b-d)\land\neg(c-a>d-b)\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+a>b\land c>d\nRightarrow a-c>b-d.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Inequalities may be added componentwise, but subtracting one inequality from
+another has no general order rule.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[thm:ineq-add-inequalities]{Addition of Strict Inequalities};
+\hyperref[thm:ineq-multiply-negative]{Multiplication by a Negative Scalar Reverses Strict Inequality}.
 \end{dependencies}
 
 % ---------------------------------------------------------
@@ -606,6 +711,81 @@ Division by a negative number is multiplication by a negative reciprocal, so it 
 \end{itemize}
 \end{dependencies}
 
+\begin{lemmabox}{Lemma (Positive Multiplication Cancellation)}
+\begin{lemma}[Positive Multiplication Cancellation]
+\label{lem:positive-multiplication-cancellation}
+If $a,b,c\in\mathbb{R}$, $c>0$, and
+\[
+ac<bc,
+\]
+then $a<b$.
+\hyperref[prf:positive-multiplication-cancellation]{Go to proof.}
+\end{lemma}
+\end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a,b,c\in\mathbb{R}\;
+\bigl((c>0\land ac<bc)\Rightarrow a<b\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+c>0\land ac<bc\Rightarrow a<b.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A positive common factor can be cancelled from a strict inequality without
+changing the order direction.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[lem:division-by-positive-preserves-order]{Division by Positive Preserves Order};
+\hyperref[thm:r-is-an-ordered-field]{$\mathbb{R}$ Is an Ordered Field}.
+\end{dependencies}
+
+\begin{propositionbox}{Proposition (Division of Inequalities Is Not Valid in General)}
+\begin{proposition}[Division of Inequalities Is Not Valid in General]
+\label{prop:division-of-inequalities-not-valid}
+There exist nonzero real numbers $a,b,c,d$ such that $a>b$ and $c>d$, but
+neither
+\[
+\frac{a}{c}>\frac{b}{d}
+\quad\text{nor}\quad
+\frac{c}{a}>\frac{d}{b}
+\]
+holds.
+\hyperref[prf:division-of-inequalities-not-valid]{Go to proof.}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\exists a,b,c,d\in\mathbb{R}\;
+\biggl(a,b,c,d\ne0\land a>b\land c>d
+\land \neg\left(\frac ac>\frac bd\right)
+\land \neg\left(\frac ca>\frac db\right)\biggr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+a>b\land c>d\nRightarrow a/c>b/d.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Dividing one inequality by another is not a valid order operation; division is
+controlled by the sign of the divisor, not by a second comparison.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[lem:division-by-positive-preserves-order]{Division by Positive Preserves Order};
+\hyperref[lem:division-by-negative-reverses-order]{Division by Negative Reverses Order}.
+\end{dependencies}
+
 % ---------------------------------------------------------
 % thm:ineq-squeeze
 % ---------------------------------------------------------
@@ -802,9 +982,296 @@ On positive inputs, reciprocation reverses order because the larger denominator 
 \hyperref[thm:reciprocal-involutive-on-r]{reciprocal is involutive on $\mathbb{R}$}.
 \end{dependencies}
 
+\begin{theorembox}{Theorem (Squares Are Nonnegative)}
+\begin{theorem}[Squares Are Nonnegative]
+\label{thm:square-nonnegative}
+For every $a\in\mathbb{R}$,
+\[
+a^2\ge0.
+\]
+\hyperref[prf:square-nonnegative]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a\in\mathbb{R}\;(a^2\ge0).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+a^2\ge0.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Squaring sends every real number into the nonnegative half-line.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[lem:positive-product]{Positive Product};
+\hyperref[lem:negative-times-negative-is-positive]{Negative Times Negative Is Positive};
+\hyperref[thm:real-order-trichotomy]{Trichotomy for Real Order}.
+\end{dependencies}
+
 % ---------------------------------------------------------
 % thm:ineq-square-monotone
 % ---------------------------------------------------------
+
+\begin{definitionbox}{Definition (Square-Root Function)}
+\begin{definition}[Square-Root Function on Nonnegative Reals]
+\label{def:real-square-root-function}
+The \emph{square-root function} is the function
+\[
+\sqrt{\cdot}:[0,\infty)\to[0,\infty)
+\]
+defined by sending each $a\ge0$ to the unique nonnegative real number
+$\sqrt a$ such that
+\[
+(\sqrt a)^2=a.
+\]
+\end{definition}
+\end{definitionbox}
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a\in\mathbb{R}\;
+\bigl(a\ge0\Rightarrow
+(\sqrt a\ge0\land(\sqrt a)^2=a)\bigr).
+\]
+\end{remark*}
+\begin{remark*}[Predicate reading]
+\[
+\sqrt{\cdot}:[0,\infty)\to[0,\infty)
+\quad\text{and}\quad
+(\sqrt a)^2=a.
+\]
+\end{remark*}
+\begin{remark*}[Interpretation]
+Analysis uses the square root as a function on the nonnegative real half-line;
+its construction and uniqueness come from the real-number development.
+\end{remark*}
+\begin{dependencies}
+\hyperref[def:square-root]{Square Root};
+\hyperref[thm:existence-of-square-roots]{Existence of Square Roots};
+\hyperref[thm:uniqueness-of-nonnegative-square-roots]{Uniqueness of Nonnegative Square Roots}.
+\end{dependencies}
+
+\begin{theorem}[Square Root Is Nonnegative]
+\label{thm:sqrt-nonnegative}
+For every $a\in\mathbb{R}$ with $a\ge0$,
+\[
+\sqrt a\ge0.
+\]
+\hyperref[prf:sqrt-nonnegative]{\textit{Go to proof.}}
+\end{theorem}
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a\in\mathbb{R}\;(a\ge0\Rightarrow \sqrt a\ge0).
+\]
+\end{remark*}
+\begin{remark*}[Predicate reading]
+\[
+a\ge0\Rightarrow \sqrt a\ge0.
+\]
+\end{remark*}
+\begin{remark*}[Interpretation]
+Square root always returns the nonnegative root.
+\end{remark*}
+\begin{dependencies}
+\hyperref[def:real-square-root-function]{Square-Root Function on Nonnegative Reals}.
+\end{dependencies}
+
+\begin{theorem}[Square Root Squares Back]
+\label{thm:sqrt-square}
+For every $a\in\mathbb{R}$ with $a\ge0$,
+\[
+(\sqrt a)^2=a.
+\]
+\hyperref[prf:sqrt-square]{\textit{Go to proof.}}
+\end{theorem}
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a\in\mathbb{R}\;(a\ge0\Rightarrow(\sqrt a)^2=a).
+\]
+\end{remark*}
+\begin{remark*}[Predicate reading]
+\[
+a\ge0\Rightarrow(\sqrt a)^2=a.
+\]
+\end{remark*}
+\begin{remark*}[Interpretation]
+Squaring the chosen square root recovers the original nonnegative input.
+\end{remark*}
+\begin{dependencies}
+\hyperref[def:real-square-root-function]{Square-Root Function on Nonnegative Reals}.
+\end{dependencies}
+
+\begin{theorem}[Square Roots of Zero and One]
+\label{thm:sqrt-zero-one}
+\[
+\sqrt{0}=0
+\quad\text{and}\quad
+\sqrt{1}=1.
+\]
+\hyperref[prf:sqrt-zero-one]{\textit{Go to proof.}}
+\end{theorem}
+\begin{remark*}[Standard quantified statement]
+\[
+\sqrt{0}=0\land\sqrt{1}=1.
+\]
+\end{remark*}
+\begin{remark*}[Predicate reading]
+\[
+\sqrt{0}=0,\qquad \sqrt{1}=1.
+\]
+\end{remark*}
+\begin{remark*}[Interpretation]
+The square-root function fixes the two basic nonnegative idempotent squares.
+\end{remark*}
+\begin{dependencies}
+\hyperref[def:real-square-root-function]{Square-Root Function on Nonnegative Reals};
+\hyperref[thm:uniqueness-of-nonnegative-square-roots]{Uniqueness of Nonnegative Square Roots}.
+\end{dependencies}
+
+\begin{theorem}[Square Root Is Positive on Positive Reals]
+\label{thm:sqrt-positive}
+For every $a\in\mathbb{R}$ with $a>0$,
+\[
+\sqrt a>0.
+\]
+\hyperref[prf:sqrt-positive]{\textit{Go to proof.}}
+\end{theorem}
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a\in\mathbb{R}\;(a>0\Rightarrow\sqrt a>0).
+\]
+\end{remark*}
+\begin{remark*}[Predicate reading]
+\[
+a>0\Rightarrow\sqrt a>0.
+\]
+\end{remark*}
+\begin{remark*}[Interpretation]
+A positive input cannot have square root zero, because zero squares to zero.
+\end{remark*}
+\begin{dependencies}
+\hyperref[thm:sqrt-nonnegative]{Square Root Is Nonnegative};
+\hyperref[thm:sqrt-square]{Square Root Squares Back};
+\hyperref[thm:sqrt-zero-one]{Square Roots of Zero and One}.
+\end{dependencies}
+
+\begin{theorem}[Square Root of a Square]
+\label{thm:sqrt-of-square-absolute-value}
+For every $a\in\mathbb{R}$,
+\[
+\sqrt{a^2}=|a|.
+\]
+\hyperref[prf:sqrt-of-square-absolute-value]{\textit{Go to proof.}}
+\end{theorem}
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a\in\mathbb{R}\;\sqrt{a^2}=|a|.
+\]
+\end{remark*}
+\begin{remark*}[Predicate reading]
+\[
+\sqrt{a^2}=|a|.
+\]
+\end{remark*}
+\begin{remark*}[Interpretation]
+Square root reverses squaring only up to magnitude, because squaring loses
+sign.
+\end{remark*}
+\begin{dependencies}
+\hyperref[def:real-square-root-function]{Square-Root Function on Nonnegative Reals};
+\hyperref[def:absolute-value]{Absolute Value};
+\hyperref[thm:uniqueness-of-nonnegative-square-roots]{Uniqueness of Nonnegative Square Roots}.
+\end{dependencies}
+
+\begin{theorem}[Square Root of a Product]
+\label{thm:sqrt-product}
+For all $a,b\in\mathbb{R}$ with $a\ge0$ and $b\ge0$,
+\[
+\sqrt{ab}=\sqrt a\,\sqrt b.
+\]
+\hyperref[prf:sqrt-product]{\textit{Go to proof.}}
+\end{theorem}
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a,b\in\mathbb{R}\;
+\bigl(a\ge0\land b\ge0\Rightarrow \sqrt{ab}=\sqrt a\,\sqrt b\bigr).
+\]
+\end{remark*}
+\begin{remark*}[Predicate reading]
+\[
+a,b\ge0\Rightarrow \sqrt{ab}=\sqrt a\,\sqrt b.
+\]
+\end{remark*}
+\begin{remark*}[Interpretation]
+On nonnegative real inputs, square root converts products into products.
+\end{remark*}
+\begin{dependencies}
+\hyperref[thm:sqrt-nonnegative]{Square Root Is Nonnegative};
+\hyperref[thm:sqrt-square]{Square Root Squares Back};
+\hyperref[thm:uniqueness-of-nonnegative-square-roots]{Uniqueness of Nonnegative Square Roots}.
+\end{dependencies}
+
+\begin{theorem}[Square Root of a Quotient]
+\label{thm:sqrt-quotient}
+For all $a,b\in\mathbb{R}$ with $a\ge0$ and $b>0$,
+\[
+\sqrt{\frac{a}{b}}=\frac{\sqrt a}{\sqrt b}.
+\]
+\hyperref[prf:sqrt-quotient]{\textit{Go to proof.}}
+\end{theorem}
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a,b\in\mathbb{R}\;
+\left(a\ge0\land b>0\Rightarrow
+\sqrt{\frac{a}{b}}=\frac{\sqrt a}{\sqrt b}\right).
+\]
+\end{remark*}
+\begin{remark*}[Predicate reading]
+\[
+a\ge0\land b>0\Rightarrow \sqrt{a/b}=\sqrt a/\sqrt b.
+\]
+\end{remark*}
+\begin{remark*}[Interpretation]
+The quotient law follows from the product law and the positive denominator
+keeps $\sqrt b$ nonzero.
+\end{remark*}
+\begin{dependencies}
+\hyperref[thm:sqrt-positive]{Square Root Is Positive on Positive Reals};
+\hyperref[thm:sqrt-product]{Square Root of a Product};
+\hyperref[thm:sqrt-square]{Square Root Squares Back}.
+\end{dependencies}
+
+\begin{theorem}[Square Root Is Strictly Monotone on Nonnegative Reals]
+\label{thm:ineq-square-root-strict-monotone}
+For all $a,b\in\mathbb{R}$,
+\[
+0\le a<b\Rightarrow \sqrt a<\sqrt b.
+\]
+\hyperref[prf:ineq-square-root-strict-monotone]{\textit{Go to proof.}}
+\end{theorem}
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a,b\in\mathbb{R}\;(0\le a<b\Rightarrow \sqrt a<\sqrt b).
+\]
+\end{remark*}
+\begin{remark*}[Predicate reading]
+\[
+0\le a<b\Rightarrow \sqrt a<\sqrt b.
+\]
+\end{remark*}
+\begin{remark*}[Interpretation]
+Square root preserves strict order on the nonnegative half-line.
+\end{remark*}
+\begin{dependencies}
+\hyperref[thm:ineq-square-monotone]{Square Is Strictly Monotone on Nonneg Reals};
+\hyperref[thm:sqrt-square]{Square Root Squares Back}.
+\end{dependencies}
 
 \begin{lemmabox}{Lemma (Positive Powers Are Positive)}
 \begin{lemma}[Positive Powers Are Positive]
@@ -950,14 +1417,88 @@ For all $a, b \in \mathbb{R}$,
 \end{remark*}
 
 \begin{remark*}[Interpretation]
-This theorem depends on \texttt{def:square-root}, which does not yet
-appear in the repository label inventory.  That definition must be
-created and registered before this result can be fully formalised.
+Square root is order preserving on the nonnegative half-line, including
+equality cases.
 \end{remark*}
 
 \begin{dependencies}
-\texttt{def:square-root} (not yet registered --- see audit note above),
-\hyperref[thm:ineq-square-monotone]{square is strictly monotone on nonneg reals}.
+\hyperref[def:real-square-root-function]{Square-Root Function on Nonnegative Reals};
+\hyperref[thm:ineq-square-root-strict-monotone]{Square Root Is Strictly Monotone on Nonnegative Reals}.
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Positive Square Comparison)}
+\begin{theorem}[Positive Square Comparison]
+\label{thm:positive-square-comparison}
+If $a,b\in\mathbb{R}$, $a>0$, $b>0$, and
+\[
+a^2<b^2,
+\]
+then $a<b$.
+\hyperref[prf:positive-square-comparison]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a,b\in\mathbb{R}\;
+\bigl((a>0\land b>0\land a^2<b^2)\Rightarrow a<b\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+a,b>0\land a^2<b^2\Rightarrow a<b.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Among positive real numbers, comparing squares gives the same order as
+comparing the numbers themselves.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[thm:ineq-square-root-monotone]{Square Root Is Monotone on Nonneg Reals};
+\hyperref[thm:sqrt-of-square-absolute-value]{Square Root of a Square}.
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Unit-Interval Square Bounds)}
+\begin{theorem}[Unit-Interval Square Bounds]
+\label{thm:unit-interval-square-bounds}
+For every $a\in\mathbb{R}$,
+\[
+0<a<1\Rightarrow a^2<a,
+\]
+and
+\[
+a>1\Rightarrow a^2>a.
+\]
+\hyperref[prf:unit-interval-square-bounds]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a\in\mathbb{R}\;
+\bigl((0<a<1\Rightarrow a^2<a)\land(a>1\Rightarrow a^2>a)\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+0<a<1\Rightarrow a^2<a,
+\qquad
+a>1\Rightarrow a^2>a.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Multiplying by a positive number below one shrinks it, while multiplying a
+positive number above one enlarges it.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[thm:ineq-multiply-positive]{Multiplication by a Positive Scalar Preserves Strict Inequality};
+\hyperref[lem:positive-multiplication-cancellation]{Positive Multiplication Cancellation}.
 \end{dependencies}
 
 % ---------------------------------------------------------
@@ -999,10 +1540,356 @@ to $(\sqrt{a} - \sqrt{b})^2 \ge 0$, which follows from
 \end{remark*}
 
 \begin{dependencies}
-\hyperref[prop:product-of-positives-is-positive-q]{squares are nonnegative},
+\hyperref[lem:positive-product]{positive products are positive},
 \hyperref[thm:ineq-square-monotone]{square is strictly monotone on nonneg reals},
-\texttt{def:square-root} (not yet registered --- see audit note in
-\hyperref[thm:ineq-square-root-monotone]{square root monotonicity}).
+\hyperref[thm:sqrt-product]{Square Root of a Product}.
+\end{dependencies}
+
+% ---------------------------------------------------------
+% Named inequalities
+% ---------------------------------------------------------
+
+\begin{definitionbox}{Definition (Classical Means)}
+\begin{definition}[Arithmetic, Geometric, and Harmonic Means]
+\label{def:classical-means}
+Let $a_1,\dots,a_n$ be positive real numbers. Their \emph{arithmetic mean},
+\emph{geometric mean}, and \emph{harmonic mean} are
+\[
+A(a_1,\dots,a_n)=\frac{a_1+\cdots+a_n}{n},
+\]
+\[
+G(a_1,\dots,a_n)=(a_1\cdots a_n)^{1/n},
+\]
+and
+\[
+H(a_1,\dots,a_n)=
+\frac{n}{\frac1{a_1}+\cdots+\frac1{a_n}}.
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+a_1,\dots,a_n>0
+\Rightarrow
+A=\frac{\sum_{j=1}^{n}a_j}{n},\quad
+G=\left(\prod_{j=1}^{n}a_j\right)^{1/n},\quad
+H=\frac{n}{\sum_{j=1}^{n}1/a_j}.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+A,\;G,\;H
+\]
+are the additive, multiplicative, and reciprocal-average summaries of a
+positive finite list.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The three classical means package the same positive data through addition,
+multiplication, and reciprocals.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[def:real-square-root-function]{Square-Root Function on Nonnegative Reals};
+\hyperref[thm:sqrt-product]{Square Root of a Product}.
+\end{dependencies}
+
+\begin{theorembox}{Theorem (AM-GM Inequality)}
+\begin{theorem}[AM-GM Inequality]
+\label{thm:ineq-am-gm}
+For all positive real numbers $a_1,\dots,a_n$,
+\[
+\frac{a_1+\cdots+a_n}{n}
+\ge
+(a_1\cdots a_n)^{1/n}.
+\]
+Equality holds if and only if $a_1=\cdots=a_n$.
+\hyperref[prf:ineq-am-gm]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a_1,\dots,a_n>0\;
+\left(
+\frac{\sum_{j=1}^{n}a_j}{n}
+\ge
+\left(\prod_{j=1}^{n}a_j\right)^{1/n}
+\right).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+A(a_1,\dots,a_n)\ge G(a_1,\dots,a_n).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+For positive data, the additive average dominates the multiplicative average.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[def:classical-means]{Arithmetic, Geometric, and Harmonic Means};
+\hyperref[thm:ineq-am-gm-two]{AM-GM Inequality for Two Terms};
+\hyperref[thm:square-nonnegative]{Squares Are Nonnegative}.
+\end{dependencies}
+
+\begin{theorembox}{Theorem (AM-GM-HM Inequality)}
+\begin{theorem}[AM-GM-HM Inequality]
+\label{thm:ineq-am-gm-hm}
+For all positive real numbers $a_1,\dots,a_n$,
+\[
+A(a_1,\dots,a_n)\ge G(a_1,\dots,a_n)\ge H(a_1,\dots,a_n).
+\]
+Equality holds throughout if and only if $a_1=\cdots=a_n$.
+\hyperref[prf:ineq-am-gm-hm]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a_1,\dots,a_n>0\;
+\bigl(A(a_1,\dots,a_n)\ge G(a_1,\dots,a_n)\ge H(a_1,\dots,a_n)\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+A\ge G\ge H.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Arithmetic averaging gives the largest of the three classical means, and
+harmonic averaging gives the smallest.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[def:classical-means]{Arithmetic, Geometric, and Harmonic Means};
+\hyperref[thm:ineq-am-gm]{AM-GM Inequality};
+\hyperref[thm:ineq-reciprocal-positive]{Reciprocal order}.
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Cauchy-Schwarz Inequality)}
+\begin{theorem}[Cauchy-Schwarz Inequality]
+\label{thm:ineq-cauchy-schwarz}
+For all real numbers $a_1,\dots,a_n$ and $b_1,\dots,b_n$,
+\[
+\left|\sum_{j=1}^{n}a_jb_j\right|
+\le
+\left(\sum_{j=1}^{n}a_j^2\right)^{1/2}
+\left(\sum_{j=1}^{n}b_j^2\right)^{1/2}.
+\]
+Equality holds if and only if one vector is a scalar multiple of the other.
+\hyperref[prf:ineq-cauchy-schwarz]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a_1,\dots,a_n,b_1,\dots,b_n\in\mathbb{R}\;
+\left|\sum_{j=1}^{n}a_jb_j\right|
+\le
+\left(\sum_{j=1}^{n}a_j^2\right)^{1/2}
+\left(\sum_{j=1}^{n}b_j^2\right)^{1/2}.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+|\langle a,b\rangle|\le \|a\|_2\|b\|_2.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The dot product of two finite real lists is controlled by the product of
+their Euclidean lengths.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[thm:square-nonnegative]{Squares Are Nonnegative};
+\hyperref[thm:sqrt-product]{Square Root of a Product};
+\hyperref[thm:triangle-inequality]{Triangle Inequality}.
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Chebyshev's Inequality)}
+\begin{theorem}[Chebyshev's Sum Inequality]
+\label{thm:ineq-chebyshev-sum}
+Let $a_1\le\cdots\le a_n$ and $b_1\le\cdots\le b_n$ be real sequences.
+Then
+\[
+\left(\frac{a_1+\cdots+a_n}{n}\right)
+\left(\frac{b_1+\cdots+b_n}{n}\right)
+\le
+\frac{a_1b_1+\cdots+a_nb_n}{n}.
+\]
+The same conclusion holds when both sequences are nonincreasing.
+\hyperref[prf:ineq-chebyshev-sum]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\bigl(a_1\le\cdots\le a_n\land b_1\le\cdots\le b_n\bigr)
+\Rightarrow
+\left(\frac{\sum a_j}{n}\right)\left(\frac{\sum b_j}{n}\right)
+\le
+\frac{\sum a_jb_j}{n}.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\left(\frac{\sum a_j}{n}\right)\left(\frac{\sum b_j}{n}\right)
+\le
+\frac{\sum a_jb_j}{n}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+When two lists move in the same order, pairing corresponding terms raises the
+average product.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[thm:ineq-add-inequalities]{Addition of Strict Inequalities};
+\hyperref[thm:ineq-nonstrict-multiply-nonneg]{Multiplication by a Nonneg Scalar Preserves Nonstrict Inequality}.
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Rearrangement Inequality)}
+\begin{theorem}[Rearrangement Inequality]
+\label{thm:ineq-rearrangement}
+Let
+\[
+a_1\le\cdots\le a_n
+\quad\text{and}\quad
+b_1\le\cdots\le b_n.
+\]
+For every permutation $(b'_1,\dots,b'_n)$ of $(b_1,\dots,b_n)$,
+\[
+\sum_{j=1}^{n}a_jb_{n+1-j}
+\le
+\sum_{j=1}^{n}a_jb'_j
+\le
+\sum_{j=1}^{n}a_jb_j.
+\]
+\hyperref[prf:ineq-rearrangement]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall \sigma\in S_n\;
+\sum_{j=1}^{n}a_jb_{n+1-j}
+\le
+\sum_{j=1}^{n}a_jb_{\sigma(j)}
+\le
+\sum_{j=1}^{n}a_jb_j.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\text{same-order pairing maximizes the sum of products; opposite-order pairing minimizes it.}
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Sorted lists produce the largest dot product when paired in the same order
+and the smallest when paired in opposite order.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[thm:ineq-chebyshev-sum]{Chebyshev's Sum Inequality};
+\hyperref[thm:ineq-add-inequalities]{Addition of Strict Inequalities}.
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Holder's Inequality)}
+\begin{theorem}[Holder's Inequality]
+\label{thm:ineq-holder}
+Let $p,q>1$ satisfy
+\[
+\frac1p+\frac1q=1.
+\]
+For real numbers $a_1,\dots,a_n$ and $b_1,\dots,b_n$,
+\[
+\sum_{j=1}^{n}|a_jb_j|
+\le
+\left(\sum_{j=1}^{n}|a_j|^p\right)^{1/p}
+\left(\sum_{j=1}^{n}|b_j|^q\right)^{1/q}.
+\]
+\hyperref[prf:ineq-holder]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+p,q>1\land p^{-1}+q^{-1}=1
+\Rightarrow
+\sum_{j=1}^{n}|a_jb_j|
+\le
+\left(\sum_{j=1}^{n}|a_j|^p\right)^{1/p}
+\left(\sum_{j=1}^{n}|b_j|^q\right)^{1/q}.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\|ab\|_1\le \|a\|_p\|b\|_q.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Holder's inequality is the conjugate-exponent generalization of
+Cauchy-Schwarz.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[thm:ineq-am-gm]{AM-GM Inequality};
+\hyperref[thm:ineq-cauchy-schwarz]{Cauchy-Schwarz Inequality};
+\hyperref[def:absolute-value]{Absolute Value}.
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Minkowski's Inequality)}
+\begin{theorem}[Minkowski's Inequality]
+\label{thm:ineq-minkowski}
+Let $p\ge1$. For real numbers $a_1,\dots,a_n$ and $b_1,\dots,b_n$,
+\[
+\left(\sum_{j=1}^{n}|a_j+b_j|^p\right)^{1/p}
+\le
+\left(\sum_{j=1}^{n}|a_j|^p\right)^{1/p}
++
+\left(\sum_{j=1}^{n}|b_j|^p\right)^{1/p}.
+\]
+\hyperref[prf:ineq-minkowski]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+p\ge1
+\Rightarrow
+\|a+b\|_p\le \|a\|_p+\|b\|_p.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\text{finite } \ell^p\text{ length satisfies the triangle inequality.}
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Minkowski's inequality is the triangle inequality for finite $\ell^p$ norms.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[thm:ineq-holder]{Holder's Inequality};
+\hyperref[thm:triangle-inequality]{Triangle Inequality};
+\hyperref[def:absolute-value]{Absolute Value}.
 \end{dependencies}
 
 % ---------------------------------------------------------
