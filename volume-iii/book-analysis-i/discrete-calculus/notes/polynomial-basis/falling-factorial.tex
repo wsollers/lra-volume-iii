@@ -24,6 +24,8 @@ which interact with \(\Delta\) exactly as monomials interact with
 \end{exposition}
 
 \begin{definitionbox}{Definition (Falling Factorial)}
+\begin{definition}[Falling Factorial]
+\label{def:falling-factorial}
 For a nonnegative integer \(k\), the \emph{falling factorial} (or
 \emph{falling power}) is defined by
 \[
@@ -31,13 +33,19 @@ x^{\underline{k}} = x(x-1)(x-2)\cdots(x-k+1)
 \qquad (k \text{ factors}).
 \]
 By convention, \(x^{\underline{0}} = 1\).
+\end{definition}
 \end{definitionbox}
-\label{def:falling-factorial}
 
 \begin{remark*}[Standard quantified statement]
 \(\forall k \in \mathbb{N},\; \forall x \in \mathbb{R}:\;
 x^{\underline{k}} := \displaystyle\prod_{j=0}^{k-1}(x-j)\),
 with \(x^{\underline{0}} := 1\).
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+The expression \(x^{\underline{k}}\) denotes the product of the \(k\)
+successive descending factors beginning at \(x\), with the zero-factor case
+defined to be \(1\).
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -46,7 +54,9 @@ equals \(\tfrac{n!}{(n-k)!}\). In particular, \(n^{\underline{n}} = n!\).
 Thus falling factorials generalise factorials to arbitrary inputs.
 \end{remark*}
 
-\begin{example*}
+\DefinitionalRoot
+
+\begin{example*}[Examples]
 The first few falling factorials are:
 \[
 \begin{aligned}
@@ -60,12 +70,13 @@ x^{\underline{3}} &= x(x-1)(x-2).
 
 \subsection*{The Difference Rule for Falling Factorials}
 
-\begin{theorembox}{Theorem (Difference Rule for Falling Factorials)}
+\begin{remark*}[Exposition]
+\textbf{Theorem (Difference Rule for Falling Factorials).}
 For \(k \ge 1\),
 \[
 \Delta\, x^{\underline{k}} = k\,x^{\underline{k-1}}.
 \]
-\end{theorembox}
+\end{remark*}
 \label{thm:falling-factorial-rule}
 
 \begin{remark*}[Standard quantified statement]

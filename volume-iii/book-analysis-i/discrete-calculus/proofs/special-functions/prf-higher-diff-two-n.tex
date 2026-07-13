@@ -13,12 +13,20 @@ All higher forward differences of \(2^n\) are again \(2^n\).
 
 \begin{proof}[Professional Standard Proof]
 \LRAProofBodyStart
-TODO: professional standard proof for higher-diff-two-n.
+By induction. The base case \(k = 0\) is \(\Delta^0(2^n) = 2^n\) by
+definition. For the inductive step, assume \(\Delta^k(2^n) = 2^n\). Then
+\[
+\Delta^{k+1}(2^n) = \Delta(\Delta^k(2^n)) = \Delta(2^n) = 2^n. \qedhere
+\]
 \end{proof}
 
 \begin{proof}[Detailed Learning Proof]
 \LRAProofBodyStart
-TODO: detailed learning proof for higher-diff-two-n.
+By induction. The base case \(k = 0\) is \(\Delta^0(2^n) = 2^n\) by
+definition. For the inductive step, assume \(\Delta^k(2^n) = 2^n\). Then
+\[
+\Delta^{k+1}(2^n) = \Delta(\Delta^k(2^n)) = \Delta(2^n) = 2^n. \qedhere
+\]
 \end{proof}
 
 \begin{remark*}[Proof structure]

@@ -13,12 +13,30 @@ The forward difference operator is linear.
 
 \begin{proof}[Professional Standard Proof]
 \LRAProofBodyStart
-TODO: professional standard proof for delta-linearity.
+By definition of the difference operator,
+\[
+\begin{aligned}
+\Delta (a f + b g)(n)
+&= (a f + b g)(n+1) - (a f + b g)(n) \\
+&= a f(n+1) + b g(n+1) - a f(n) - b g(n) \\
+&= a(f(n+1)-f(n)) + b(g(n+1)-g(n)) \\
+&= a\,\Delta f(n) + b\,\Delta g(n). \qedhere
+\end{aligned}
+\]
 \end{proof}
 
 \begin{proof}[Detailed Learning Proof]
 \LRAProofBodyStart
-TODO: detailed learning proof for delta-linearity.
+By definition of the difference operator,
+\[
+\begin{aligned}
+\Delta (a f + b g)(n)
+&= (a f + b g)(n+1) - (a f + b g)(n) \\
+&= a f(n+1) + b g(n+1) - a f(n) - b g(n) \\
+&= a(f(n+1)-f(n)) + b(g(n+1)-g(n)) \\
+&= a\,\Delta f(n) + b\,\Delta g(n). \qedhere
+\end{aligned}
+\]
 \end{proof}
 
 \begin{remark*}[Proof structure]

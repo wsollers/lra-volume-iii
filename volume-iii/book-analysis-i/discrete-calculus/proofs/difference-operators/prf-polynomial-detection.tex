@@ -13,12 +13,46 @@ Finite differences detect polynomial degree.
 
 \begin{proof}[Professional Standard Proof]
 \LRAProofBodyStart
-TODO: professional standard proof for polynomial-detection.
+Write \(f(n) = a_d n^d + a_{d-1}n^{d-1} + \cdots + a_0\) with \(a_d \ne 0\).
+We show by induction on \(d\) that \(\Delta f\) is a polynomial of degree
+\(d-1\) with leading coefficient \(d\,a_d\).
+
+\emph{Base case} (\(d = 0\)): a constant polynomial has \(\Delta f = 0\). \(\checkmark\)
+
+\emph{Inductive step}: Assume the result holds for all polynomials of degree
+less than \(d\). Then
+\[
+\Delta f(n) = f(n+1)-f(n)
+= a_d\bigl((n+1)^d - n^d\bigr) + \text{(lower-degree terms)}.
+\]
+Expanding \((n+1)^d - n^d = d\,n^{d-1} + \binom{d}{2}n^{d-2} + \cdots\),
+the leading term is \(d\,a_d\,n^{d-1}\). Thus \(\Delta f\) is a polynomial
+of degree \(d-1\) with leading coefficient \(d\,a_d \ne 0\).
+
+By induction, applying \(\Delta\) a further \(d-1\) times yields the
+constant \(\Delta^d f(n) = d!\,a_d\), and one further application gives \(0\).
 \end{proof}
 
 \begin{proof}[Detailed Learning Proof]
 \LRAProofBodyStart
-TODO: detailed learning proof for polynomial-detection.
+Write \(f(n) = a_d n^d + a_{d-1}n^{d-1} + \cdots + a_0\) with \(a_d \ne 0\).
+We show by induction on \(d\) that \(\Delta f\) is a polynomial of degree
+\(d-1\) with leading coefficient \(d\,a_d\).
+
+\emph{Base case} (\(d = 0\)): a constant polynomial has \(\Delta f = 0\). \(\checkmark\)
+
+\emph{Inductive step}: Assume the result holds for all polynomials of degree
+less than \(d\). Then
+\[
+\Delta f(n) = f(n+1)-f(n)
+= a_d\bigl((n+1)^d - n^d\bigr) + \text{(lower-degree terms)}.
+\]
+Expanding \((n+1)^d - n^d = d\,n^{d-1} + \binom{d}{2}n^{d-2} + \cdots\),
+the leading term is \(d\,a_d\,n^{d-1}\). Thus \(\Delta f\) is a polynomial
+of degree \(d-1\) with leading coefficient \(d\,a_d \ne 0\).
+
+By induction, applying \(\Delta\) a further \(d-1\) times yields the
+constant \(\Delta^d f(n) = d!\,a_d\), and one further application gives \(0\).
 \end{proof}
 
 \begin{remark*}[Proof structure]

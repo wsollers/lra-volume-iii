@@ -5,11 +5,13 @@
 \subsection*{Little-o Notation}
 \label{subsec:little-o-notation}
 
+\begin{remark*}[Orientation]
 Asymptotic notation separates the main term of an expression from the part
 that becomes negligible in a limiting process. The notation $f=o(g)$ means
 that $f$ is smaller than every fixed multiple of $g$ near the limiting point.
 It does not say that $f$ is zero. It says that $f$ is negligible relative to
 the chosen scale $g$.
+\end{remark*}
 
 \begin{definition}[Little-o at a Point]
 \label{def:little-o-at-a-point}
@@ -39,13 +41,29 @@ f(x)=o(g(x))\ (x\to a)
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+Let \(\ell p\) denote the limit-point datum determined by the basepoint \(a\)
+and the domain \(D\). Then
+\[
+f=o(g)\ (x\to a)
+\Longleftrightarrow
+\operatorname{NegligibleAt}(f,g,\ell p).
+\]
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 The scale $g$ is the unit of comparison. The assertion $f=o(g)$ says that no
 matter how small a tolerance multiple $\varepsilon g$ is chosen, $f$ eventually
 fits inside that multiple.
 \end{remark*}
 
-\NoLocalDependencies
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:absolute-value]{Absolute Value}
+  \item \hyperref[def:deleted-epsilon-neighbourhood]{Deleted \(\varepsilon\)-Neighbourhood}
+  \item \hyperref[def:limit-point]{Limit Point}
+\end{itemize}
+\end{dependencies}
 
 \begin{definition}[Little-o at Infinity]
 \label{def:little-o-at-infinity}

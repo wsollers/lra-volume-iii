@@ -22,11 +22,12 @@ Setting \(a = 1\) in the discrete exponential rule
 (Proposition~\ref{prop:discrete-exponential-rule}) gives immediately:
 \end{exposition}
 
-\begin{propositionbox}{Proposition (\(\Delta 2^n = 2^n\))}
+\begin{remark*}[Exposition]
+\textbf{Proposition (\(\Delta 2^n = 2^n\)).}
 \[
 \Delta\, 2^n = 2^n.
 \]
-\end{propositionbox}
+\end{remark*}
 \label{prop:delta-two-n}
 
 \begin{remark*}[Standard quantified statement]
@@ -55,14 +56,15 @@ Since \(\Delta(2^n) = 2^n\), a discrete antiderivative of \(2^n\) is \(2^n\)
 itself (up to a constant).
 \end{exposition}
 
-\begin{propositionbox}{Proposition (Antiderivative of \(2^n\))}
+\begin{remark*}[Exposition]
+\textbf{Proposition (Antiderivative of \(2^n\)).}
 A discrete antiderivative of \(2^n\) is \(2^n\) itself:
 \[
 \Delta(2^n) = 2^n
 \qquad \text{so} \qquad
 \sum_{k=0}^{n-1} 2^k = 2^n - 1.
 \]
-\end{propositionbox}
+\end{remark*}
 \label{prop:antideriv-two-n}
 
 \begin{remark*}[Standard quantified statement]
@@ -121,13 +123,6 @@ the difference table is the signature of a genuinely transcendental discrete
 function.
 \end{remark*}
 
-\begin{proof}
-By induction. The base case \(k = 0\) is \(\Delta^0(2^n) = 2^n\) by
-definition. For the inductive step, assume \(\Delta^k(2^n) = 2^n\). Then
-\[
-\Delta^{k+1}(2^n) = \Delta(\Delta^k(2^n)) = \Delta(2^n) = 2^n. \qedhere
-\]
-\end{proof}
 
 \begin{dependencies}
 \begin{itemize}
@@ -210,11 +205,6 @@ their respective calculi, and both have closed-form solutions that serve as
 the canonical exponential of that calculus.
 \end{remark*}
 
-\begin{proof}
-Uniqueness: if \(G\) is another solution, then \(G(0) = 1 = F(0)\), and
-inductively \(G(n+1) = 2G(n) = 2F(n) = F(n+1)\), so \(G = F\).
-Existence: verify directly that \(2^{n+1} = 2\cdot 2^n\) and \(2^0 = 1\).
-\end{proof}
 
 \begin{dependencies}
 \begin{itemize}
