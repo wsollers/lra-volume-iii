@@ -22,23 +22,19 @@ Setting \(a = 1\) in the discrete exponential rule
 (Proposition~\ref{prop:discrete-exponential-rule}) gives immediately:
 \end{exposition}
 
-\begin{remark*}[Exposition]
-\textbf{Proposition (\(\Delta 2^n = 2^n\)).}
+\begin{propositionbox}{Proposition (\(\Delta 2^n = 2^n\))}
+\begin{proposition}[\(\Delta 2^n = 2^n\)]
+\label{prop:delta-two-n}
 \[
 \Delta\, 2^n = 2^n.
 \]
-\end{remark*}
-\label{prop:delta-two-n}
+\hyperref[prf:delta-two-n]{\textit{Go to proof.}}
+\end{proposition}
+\end{propositionbox}
 
 \begin{remark*}[Standard quantified statement]
 \(\forall n \in \mathbb{Z}:\; 2^{n+1} - 2^n = 2^n\).
 \end{remark*}
-
-\begin{proof}
-\[
-\Delta\, 2^n = 2^{n+1} - 2^n = 2\cdot 2^n - 2^n = (2-1)\cdot 2^n = 2^n. \qedhere
-\]
-\end{proof}
 
 \begin{remark*}[Interpretation]
 This says that \(2^n\) is its own forward difference. In continuous calculus,
@@ -49,6 +45,12 @@ and the relationship \(\Delta(2^n) = 2^n\) corresponds to the special case
 \(a = 1\) of \(\Delta(1+a)^n = a(1+a)^n\).
 \end{remark*}
 
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[prop:discrete-exponential-rule]{Discrete Exponential Rule}
+\end{itemize}
+\end{dependencies}
+
 \subsection*{Antiderivative and Geometric Sum}
 
 \begin{exposition}
@@ -56,29 +58,29 @@ Since \(\Delta(2^n) = 2^n\), a discrete antiderivative of \(2^n\) is \(2^n\)
 itself (up to a constant).
 \end{exposition}
 
-\begin{remark*}[Exposition]
-\textbf{Proposition (Antiderivative of \(2^n\)).}
+\begin{propositionbox}{Proposition (Antiderivative of \(2^n\))}
+\begin{proposition}[Antiderivative of \(2^n\)]
+\label{prop:antideriv-two-n}
 A discrete antiderivative of \(2^n\) is \(2^n\) itself:
 \[
 \Delta(2^n) = 2^n
 \qquad \text{so} \qquad
 \sum_{k=0}^{n-1} 2^k = 2^n - 1.
 \]
-\end{remark*}
-\label{prop:antideriv-two-n}
+\hyperref[prf:antideriv-two-n]{\textit{Go to proof.}}
+\end{proposition}
+\end{propositionbox}
 
 \begin{remark*}[Standard quantified statement]
 \(\forall n \in \mathbb{N}:\;
 \displaystyle\sum_{k=0}^{n-1} 2^k = 2^n - 1\).
 \end{remark*}
 
-\begin{proof}
-Applying the Fundamental Theorem of Finite Calculus
-(Theorem~\ref{thm:fundamental-theorem-finite-calculus}) with \(F(k) = 2^k\) and \(f(k) = \Delta F(k) = 2^k\):
+\begin{remark*}[Predicate reading]
 \[
-\sum_{k=0}^{n-1} 2^k = F(n) - F(0) = 2^n - 2^0 = 2^n - 1. \qedhere
+\Delta(2^n)=2^n\Longrightarrow \sum_{k=0}^{n-1}2^k=2^n-1.
 \]
-\end{proof}
+\end{remark*}
 
 \begin{remark*}[Interpretation]
 Expanding: \(1 + 2 + 4 + 8 + \cdots + 2^{n-1}\). Multiply the partial sum
@@ -87,6 +89,13 @@ Subtracting: \(2S - S = 2^n - 1\), so \(S = 2^n - 1\). This is the
 classical derivation of the geometric series formula; the discrete calculus
 approach via antidifferentiation gives the same result mechanically.
 \end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[prop:delta-two-n]{Delta of Two to the n}
+  \item \hyperref[thm:fundamental-theorem-finite-calculus]{Fundamental Theorem of Finite Calculus}
+\end{itemize}
+\end{dependencies}
 
 \subsection*{\texorpdfstring{Higher Differences of \(2^n\)}{Higher Differences of 2 to the n}}
 

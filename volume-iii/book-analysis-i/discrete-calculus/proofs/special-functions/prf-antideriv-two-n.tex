@@ -1,0 +1,45 @@
+\newpage
+\phantomsection
+\label{prf:antideriv-two-n}
+\LRAProofFor{prop:antideriv-two-n}
+
+\begin{remark*}[Return]
+\hyperref[prop:antideriv-two-n]{Return to Proposition}
+\end{remark*}
+
+\begin{proposition*}[Antiderivative of \(2^n\)]
+\[
+\sum_{k=0}^{n-1} 2^k = 2^n - 1.
+\]
+\end{proposition*}
+
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+Applying the Fundamental Theorem of Finite Calculus with \(F(k) = 2^k\)
+and \(f(k) = \Delta F(k) = 2^k\),
+\[
+\sum_{k=0}^{n-1} 2^k = F(n) - F(0) = 2^n - 2^0 = 2^n - 1. \qedhere
+\]
+\end{proof}
+
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+Applying the Fundamental Theorem of Finite Calculus with \(F(k) = 2^k\)
+and \(f(k) = \Delta F(k) = 2^k\),
+\[
+\sum_{k=0}^{n-1} 2^k = F(n) - F(0) = 2^n - 2^0 = 2^n - 1. \qedhere
+\]
+\end{proof}
+
+\begin{remark*}[Proof structure]
+Use \(\Delta 2^k=2^k\), then evaluate the resulting finite-calculus
+antiderivative at the endpoints.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[prop:delta-two-n]{Delta of Two to the n}
+  \item \hyperref[thm:fundamental-theorem-finite-calculus]{Fundamental Theorem of Finite Calculus}
+\end{itemize}
+\end{dependencies}
+\clearpage

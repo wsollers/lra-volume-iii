@@ -1,0 +1,82 @@
+\newpage
+\phantomsection
+\label{prf:summation-by-parts}
+\LRAProofFor{thm:summation-by-parts}
+
+\begin{remark*}[Return]
+\hyperref[thm:summation-by-parts]{Return to Theorem}
+\end{remark*}
+
+\begin{theorem*}[Summation by Parts]
+For functions \(f, g : \mathbb{Z} \to \mathbb{R}\) and integers \(a \le b\),
+\[
+\sum_{k=a}^{b-1} f(k)\,\Delta g(k)
+=
+f(b)g(b)-f(a)g(a)
+-
+\sum_{k=a}^{b-1} g(k+1)\,\Delta f(k).
+\]
+\end{theorem*}
+
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+By the Discrete Product Rule,
+\[
+\Delta(fg)(k) = f(k)\,\Delta g(k) + g(k+1)\,\Delta f(k).
+\]
+Rearranging,
+\[
+f(k)\,\Delta g(k) = \Delta(fg)(k) - g(k+1)\,\Delta f(k).
+\]
+Sum both sides from \(k = a\) to \(k = b-1\):
+\[
+\sum_{k=a}^{b-1} f(k)\,\Delta g(k)
+=
+\sum_{k=a}^{b-1} \Delta(fg)(k)
+-
+\sum_{k=a}^{b-1} g(k+1)\,\Delta f(k).
+\]
+Applying the Fundamental Theorem of Finite Calculus to the first sum gives
+\[
+\sum_{k=a}^{b-1} \Delta(fg)(k) = f(b)g(b) - f(a)g(a),
+\]
+which completes the proof.
+\end{proof}
+
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+By the Discrete Product Rule,
+\[
+\Delta(fg)(k) = f(k)\,\Delta g(k) + g(k+1)\,\Delta f(k).
+\]
+Rearranging,
+\[
+f(k)\,\Delta g(k) = \Delta(fg)(k) - g(k+1)\,\Delta f(k).
+\]
+Sum both sides from \(k = a\) to \(k = b-1\):
+\[
+\sum_{k=a}^{b-1} f(k)\,\Delta g(k)
+=
+\sum_{k=a}^{b-1} \Delta(fg)(k)
+-
+\sum_{k=a}^{b-1} g(k+1)\,\Delta f(k).
+\]
+Applying the Fundamental Theorem of Finite Calculus to the first sum gives
+\[
+\sum_{k=a}^{b-1} \Delta(fg)(k) = f(b)g(b) - f(a)g(a),
+\]
+which completes the proof.
+\end{proof}
+
+\begin{remark*}[Proof structure]
+Solve the product rule for \(f(k)\Delta g(k)\), sum the identity, and
+evaluate the telescoping product-difference term.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:discrete-product-rule]{Discrete Product Rule}
+  \item \hyperref[thm:fundamental-theorem-finite-calculus]{Fundamental Theorem of Finite Calculus}
+\end{itemize}
+\end{dependencies}
+\clearpage

@@ -1,0 +1,66 @@
+\newpage
+\phantomsection
+\label{prf:falling-factorial-rule}
+\LRAProofFor{thm:falling-factorial-rule}
+
+\begin{remark*}[Return]
+\hyperref[thm:falling-factorial-rule]{Return to Theorem}
+\end{remark*}
+
+\begin{theorem*}[Difference Rule for Falling Factorials]
+For \(k \ge 1\),
+\[
+\Delta\, x^{\underline{k}} = k\,x^{\underline{k-1}}.
+\]
+\end{theorem*}
+
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+Observe that
+\[
+(x+1)^{\underline{k}} = (x+1)\,x\,(x-1)\cdots(x-k+2).
+\]
+Therefore
+\[
+\Delta\, x^{\underline{k}}
+= (x+1)^{\underline{k}} - x^{\underline{k}}
+= x(x-1)\cdots(x-k+2)\bigl[(x+1)-(x-k+1)\bigr].
+\]
+The bracket simplifies to \(k\), and the remaining product is
+\(x^{\underline{k-1}}\). Thus
+\[
+\Delta\, x^{\underline{k}} = k\,x^{\underline{k-1}}. \qedhere
+\]
+\end{proof}
+
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+Observe that
+\[
+(x+1)^{\underline{k}} = (x+1)\,x\,(x-1)\cdots(x-k+2).
+\]
+Therefore
+\[
+\Delta\, x^{\underline{k}}
+= (x+1)^{\underline{k}} - x^{\underline{k}}
+= x(x-1)\cdots(x-k+2)\bigl[(x+1)-(x-k+1)\bigr].
+\]
+The bracket simplifies to \(k\), and the remaining product is
+\(x^{\underline{k-1}}\). Thus
+\[
+\Delta\, x^{\underline{k}} = k\,x^{\underline{k-1}}. \qedhere
+\]
+\end{proof}
+
+\begin{remark*}[Proof structure]
+Factor the two falling factorials by their shared descending product and
+simplify the remaining linear difference.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:falling-factorial]{Falling Factorial}
+  \item \hyperref[def:forward-difference]{Forward Difference Operator}
+\end{itemize}
+\end{dependencies}
+\clearpage

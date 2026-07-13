@@ -1,0 +1,56 @@
+\newpage
+\phantomsection
+\label{prf:fundamental-theorem-finite-calculus}
+\LRAProofFor{thm:fundamental-theorem-finite-calculus}
+
+\begin{remark*}[Return]
+\hyperref[thm:fundamental-theorem-finite-calculus]{Return to Theorem}
+\end{remark*}
+
+\begin{theorem*}[Fundamental Theorem of Finite Calculus]
+Let \(F\) be a discrete antiderivative of \(f\), so that
+\(\Delta F(n) = f(n)\) for all \(n\). Then
+\[
+\sum_{k=a}^{b-1} f(k) = F(b) - F(a).
+\]
+\end{theorem*}
+
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+Since \(f(k) = \Delta F(k)\) for all \(k\), substituting gives
+\[
+\sum_{k=a}^{b-1} f(k)
+=
+\sum_{k=a}^{b-1} \Delta F(k).
+\]
+By the Telescoping Identity,
+\[
+\sum_{k=a}^{b-1} \Delta F(k) = F(b) - F(a). \qedhere
+\]
+\end{proof}
+
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+Since \(f(k) = \Delta F(k)\) for all \(k\), substituting gives
+\[
+\sum_{k=a}^{b-1} f(k)
+=
+\sum_{k=a}^{b-1} \Delta F(k).
+\]
+By the Telescoping Identity,
+\[
+\sum_{k=a}^{b-1} \Delta F(k) = F(b) - F(a). \qedhere
+\]
+\end{proof}
+
+\begin{remark*}[Proof structure]
+Replace the summand by a forward difference and then telescope.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:discrete-antiderivative]{Discrete Antiderivative}
+  \item \hyperref[thm:telescoping-identity]{Telescoping Identity}
+\end{itemize}
+\end{dependencies}
+\clearpage

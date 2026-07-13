@@ -91,13 +91,27 @@ f(x)=o(g(x))\ (x\to\infty)
 \]
 \end{remark*}
 
+\begin{remark*}[Predicate reading]
+\[
+\text{TailNegligible}(f,g)
+\Longleftrightarrow
+\forall\varepsilon>0\;\exists R>0\;\forall x\,
+\bigl(x>R\Rightarrow |f(x)|\leq \varepsilon |g(x)|\bigr).
+\]
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 The point version and the infinity version have the same logical shape. Only
 the neighbourhood changes: small punctured intervals around $a$ are replaced
 by tails $(R,\infty)$.
 \end{remark*}
 
-\NoLocalDependencies
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:absolute-value]{Absolute Value}
+  \item \hyperref[def:real-ordered-field]{Ordered Field Structure on \(\mathbb{R}\)}
+\end{itemize}
+\end{dependencies}
 
 \begin{definition}[Increment Little-o]
 \label{def:increment-little-o}
@@ -216,6 +230,15 @@ If $f(x)=o(g(x))$ as $x\to a$ and $m$ is bounded near $a$, then
 f=o(g)\land \exists M>0\;\exists\eta>0\;\forall x\,
 \bigl(0<|x-a|<\eta\Rightarrow |m(x)|\leq M\bigr)
 \Longrightarrow mf=o(g).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\bigl(f=o(g)\text{ at }a\bigr)\land
+\bigl(m\text{ is bounded near }a\bigr)
+\Longrightarrow
+mf=o(g)\text{ at }a.
 \]
 \end{remark*}
 

@@ -5,32 +5,33 @@
 
 \subsection*{The Telescoping Identity}
 
-\begin{remark*}[Exposition]
-\textbf{Theorem (Telescoping Identity).}
+\begin{theorembox}{Theorem (Telescoping Identity)}
+\begin{theorem}[Telescoping Identity]
+\label{thm:telescoping-identity}
 For any function \(f : \mathbb{Z} \to \mathbb{R}\) and integers \(a \le b\),
 \[
 \sum_{k=a}^{b-1} (f(k+1) - f(k)) = f(b) - f(a).
 \]
-\end{remark*}
-\label{thm:telescoping-identity}
+\hyperref[prf:telescoping-identity]{\textit{Go to proof.}}
+\end{theorem}
+\end{theorembox}
 
 \begin{remark*}[Standard quantified statement]
 \(\forall f : \mathbb{Z}\to\mathbb{R},\; \forall a,b \in \mathbb{Z},\; a \le b:\;
 \displaystyle\sum_{k=a}^{b-1}(f(k+1)-f(k)) = f(b)-f(a)\).
 \end{remark*}
 
-\begin{proof}
-Expanding the sum gives
+\begin{remark*}[Predicate reading]
 \[
-\begin{aligned}
-(f(a+1)-f(a)) &+ (f(a+2)-f(a+1)) \\
-              &+ \cdots + (f(b)-f(b-1)).
-\end{aligned}
+\sum_{k=a}^{b-1}\Delta f(k)=f(b)-f(a).
 \]
-Every intermediate term \(f(a+1), f(a+2), \dots, f(b-1)\) appears once
-with a positive sign and once with a negative sign, so they all cancel.
-The remaining terms are \(f(b)\) and \(-f(a)\), giving \(f(b)-f(a)\).
-\end{proof}
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:sigma-summation-notation]{Summation Notation}
+\end{itemize}
+\end{dependencies}
 
 \subsection*{Cancellation Pattern}
 

@@ -32,6 +32,23 @@ is
 \end{definition}
 \end{definitionbox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,\widetilde{x}\in\mathbb{R},\quad
+\Delta(\widetilde{x})=|x-\widetilde{x}|.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\Delta(\widetilde{x})=|x-\widetilde{x}|.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Absolute error measures the raw distance between an exact quantity and the value used in its place.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:absolute-value]{Absolute Value}
@@ -52,12 +69,18 @@ $\widetilde{x}\in\mathbb{R}\setminus\{0\}$ be an approximation to $x$. The
 \end{definition}
 \end{definitionbox}
 
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:absolute-error-approximation]{Absolute Error of an Approximation}
-  \item \hyperref[def:absolute-value]{Absolute Value}
-\end{itemize}
-\end{dependencies}
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x\in\mathbb{R}\;\forall \widetilde{x}\in\mathbb{R}\setminus\{0\},\quad
+\delta(\widetilde{x})=\frac{\Delta(\widetilde{x})}{|\widetilde{x}|}.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\delta(\widetilde{x})=\Delta(\widetilde{x})/|\widetilde{x}|.
+\]
+\end{remark*}
 
 \begin{remark*}[Interpretation]
 In practice the exact value $x$ is usually unknown, so the exact value of
@@ -65,6 +88,13 @@ $\Delta(\widetilde{x})$ is unknown as well. What matters for analysis is an
 upper bound: for example, $\Delta(\widetilde{x})\leq E$. The whole section is
 about how such bounds behave under algebraic operations.
 \end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:absolute-error-approximation]{Absolute Error of an Approximation}
+  \item \hyperref[def:absolute-value]{Absolute Value}
+\end{itemize}
+\end{dependencies}
 
 \begin{theorembox}{Theorem (Absolute Error of a Sum)}
 \begin{theorem}[Absolute Error of a Sum]
@@ -80,6 +110,24 @@ Let $x,y,\widetilde{x},\widetilde{y}\in\mathbb{R}$. Then
 \hyperref[prf:absolute-error-sum]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y,\widetilde{x},\widetilde{y}\in\mathbb{R},\quad
+\Delta(\widetilde{x}+\widetilde{y})
+\leq \Delta(\widetilde{x})+\Delta(\widetilde{y}).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\Delta(\widetilde{x}+\widetilde{y})\leq \Delta(\widetilde{x})+\Delta(\widetilde{y}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Absolute error is subadditive under addition: the worst-case error in a sum is bounded by the sum of the component errors.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -107,13 +155,21 @@ Let $x,y,\widetilde{x},\widetilde{y}\in\mathbb{R}$. Then
 \end{theorem}
 \end{theorembox}
 
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:absolute-error-approximation]{Absolute Error of an Approximation}
-  \item \hyperref[thm:absolute-value-product]{Absolute Value of a Product}
-  \item \hyperref[thm:absolute-value-sum-bound]{Generalised Triangle Inequality}
-\end{itemize}
-\end{dependencies}
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y,\widetilde{x},\widetilde{y}\in\mathbb{R},\quad
+\Delta(\widetilde{x}\widetilde{y})
+\leq |\widetilde{x}|\Delta(\widetilde{y})
++|\widetilde{y}|\Delta(\widetilde{x})
++\Delta(\widetilde{x})\Delta(\widetilde{y}).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\Delta(\widetilde{x}\widetilde{y})\leq |\widetilde{x}|\Delta(\widetilde{y})+|\widetilde{y}|\Delta(\widetilde{x})+\Delta(\widetilde{x})\Delta(\widetilde{y}).
+\]
+\end{remark*}
 
 \begin{remark*}[Interpretation]
 The two terms
@@ -123,6 +179,14 @@ error factor. The term
 $\Delta(\widetilde{x})\Delta(\widetilde{y})$ is second-order: it contains
 two error factors. This is the finite precursor of little-o bookkeeping.
 \end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:absolute-error-approximation]{Absolute Error of an Approximation}
+  \item \hyperref[thm:absolute-value-product]{Absolute Value of a Product}
+  \item \hyperref[thm:absolute-value-sum-bound]{Generalised Triangle Inequality}
+\end{itemize}
+\end{dependencies}
 
 \begin{theorembox}{Theorem (Absolute Error of a Quotient)}
 \begin{theorem}[Absolute Error of a Quotient]
@@ -147,6 +211,31 @@ $\delta(\widetilde{y})<1$. Then
 \end{theorem}
 \end{theorembox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y,\widetilde{x},\widetilde{y}\in\mathbb{R},\quad
+\bigl(y\ne0\land \widetilde{y}\ne0\land \delta(\widetilde{y})<1\bigr)
+\Rightarrow
+\Delta\!\left(\frac{\widetilde{x}}{\widetilde{y}}\right)
+\leq
+\frac{|\widetilde{x}|\Delta(\widetilde{y})+|\widetilde{y}|\Delta(\widetilde{x})}{\widetilde{y}^{2}}
+\cdot\frac{1}{1-\delta(\widetilde{y})}.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\delta(\widetilde{y})<1\Rightarrow \Delta(\widetilde{x}/\widetilde{y})\leq \frac{|\widetilde{x}|\Delta(\widetilde{y})+|\widetilde{y}|\Delta(\widetilde{x})}{\widetilde{y}^{2}(1-\delta(\widetilde{y}))}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The factor $(1-\delta(\widetilde{y}))^{-1}$ records a real danger: division
+is unstable when the denominator is poorly known relative to its own size.
+This is why quotient estimates always require a hypothesis keeping the
+denominator away from zero.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:absolute-error-approximation]{Absolute Error of an Approximation}
@@ -155,13 +244,6 @@ $\delta(\widetilde{y})<1$. Then
   \item \hyperref[thm:absolute-value-sum-bound]{Generalised Triangle Inequality}
 \end{itemize}
 \end{dependencies}
-
-\begin{remark*}[Interpretation]
-The factor $(1-\delta(\widetilde{y}))^{-1}$ records a real danger: division
-is unstable when the denominator is poorly known relative to its own size.
-This is why quotient estimates always require a hypothesis keeping the
-denominator away from zero.
-\end{remark*}
 
 \begin{propositionbox}{Proposition (Relative Error of a Product)}
 \begin{proposition}[Relative Error of a Product]
@@ -181,6 +263,25 @@ Let $\widetilde{x},\widetilde{y}\neq 0$. Then
 \hyperref[prf:relative-error-product]{\textit{Go to proof.}}
 \end{proposition}
 \end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall \widetilde{x},\widetilde{y}\in\mathbb{R}\setminus\{0\},\quad
+\delta(\widetilde{x}\widetilde{y})
+\leq \delta(\widetilde{x})+\delta(\widetilde{y})
++\delta(\widetilde{x})\delta(\widetilde{y}).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\delta(\widetilde{x}\widetilde{y})\leq \delta(\widetilde{x})+\delta(\widetilde{y})+\delta(\widetilde{x})\delta(\widetilde{y}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Relative product error is approximately additive, with a second-order correction measuring simultaneous error in both factors.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -206,6 +307,27 @@ $\delta(\widetilde{y})<1$. Then
 \hyperref[prf:relative-error-quotient]{\textit{Go to proof.}}
 \end{proposition}
 \end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall \widetilde{x},\widetilde{y}\in\mathbb{R}\setminus\{0\},\quad
+\delta(\widetilde{y})<1
+\Rightarrow
+\delta\!\left(\frac{\widetilde{x}}{\widetilde{y}}\right)
+\leq
+\frac{\delta(\widetilde{x})+\delta(\widetilde{y})}{1-\delta(\widetilde{y})}.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\delta(\widetilde{y})<1\Rightarrow \delta(\widetilde{x}/\widetilde{y})\leq \frac{\delta(\widetilde{x})+\delta(\widetilde{y})}{1-\delta(\widetilde{y})}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Relative quotient error is product-like error amplified by uncertainty in the denominator.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}

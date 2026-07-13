@@ -65,14 +65,14 @@ For all $a \in \mathbb{R}$,
 
 
 
-\begin{remark*}[Interpretation]
-\hyperref[prf:absolute-value-nonneg]{Go to proof.}
-\end{remark*}
-
 \begin{remark*}[Standard quantified statement]
 \[
   \forall a \in \mathbb{R},\quad \lvert a \rvert \ge 0.
 \]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Magnitude is never negative; absolute value lands in the nonnegative part of the real line.
 \end{remark*}
 
 \begin{dependencies}
@@ -96,15 +96,15 @@ For all $a \in \mathbb{R}$,
 
 
 
-\begin{remark*}[Interpretation]
-\hyperref[prf:absolute-value-zero-iff-zero]{Go to proof.}
-\end{remark*}
-
 \begin{remark*}[Standard quantified statement]
 \[
   \forall a \in \mathbb{R},\quad
   \lvert a \rvert = 0 \iff a = 0.
 \]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The only real number with zero magnitude is the origin itself.
 \end{remark*}
 
 \begin{dependencies}
@@ -126,15 +126,15 @@ $\lvert a \rvert = -a$.
 
 
 
-\begin{remark*}[Interpretation]
-\hyperref[prf:absolute-value-self-or-neg]{Go to proof.}
-\end{remark*}
-
 \begin{remark*}[Standard quantified statement]
 \[
   \forall a \in \mathbb{R},\quad
   \lvert a \rvert = a \;\lor\; \lvert a \rvert = -a.
 \]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Absolute value chooses the representative of a number's sign pair that lies on the nonnegative side.
 \end{remark*}
 
 \begin{dependencies}
@@ -156,14 +156,14 @@ For all $a \in \mathbb{R}$,
 
 
 
-\begin{remark*}[Interpretation]
-\hyperref[prf:absolute-value-symmetric]{Go to proof.}
-\end{remark*}
-
 \begin{remark*}[Standard quantified statement]
 \[
   \forall a \in \mathbb{R},\quad \lvert -a \rvert = \lvert a \rvert.
 \]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Changing sign does not change distance from zero.
 \end{remark*}
 
 \begin{dependencies}
@@ -186,15 +186,21 @@ For all $a, b \in \mathbb{R}$,
 
 
 
-\begin{remark*}[Interpretation]
-\hyperref[prf:absolute-value-product]{Go to proof.}
-\end{remark*}
-
 \begin{remark*}[Standard quantified statement]
 \[
   \forall a, b \in \mathbb{R},\quad
   \lvert ab \rvert = \lvert a \rvert\,\lvert b \rvert.
 \]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+|ab|=|a|\,|b|.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Magnitude is multiplicative: the size of a product is the product of the sizes.
 \end{remark*}
 
 \begin{dependencies}
@@ -220,10 +226,6 @@ For all $a \in \mathbb{R}$ and $b \in \mathbb{R}$ with $b \ne 0$,
 
 
 
-\begin{remark*}[Interpretation]
-\hyperref[prf:absolute-value-quotient]{Go to proof.}
-\end{remark*}
-
 \begin{remark*}[Standard quantified statement]
 \[
   \forall a \in \mathbb{R},\;
@@ -231,6 +233,16 @@ For all $a \in \mathbb{R}$ and $b \in \mathbb{R}$ with $b \ne 0$,
   \left\lvert \frac{a}{b} \right\rvert
   = \frac{\lvert a \rvert}{\lvert b \rvert}.
 \]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+b\ne0\Rightarrow \left|\frac ab\right|=\frac{|a|}{|b|}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Taking magnitudes commutes with division when the denominator is nonzero.
 \end{remark*}
 
 \begin{dependencies}
@@ -256,15 +268,15 @@ For all $a \in \mathbb{R}$,
 
 
 
-\begin{remark*}[Interpretation]
-\hyperref[prf:absolute-value-bounds]{Go to proof.}
-\end{remark*}
-
 \begin{remark*}[Standard quantified statement]
 \[
   \forall a \in \mathbb{R},\quad
   -\lvert a \rvert \le a \le \lvert a \rvert.
 \]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Every real number sits between its negative magnitude and its positive magnitude.
 \end{remark*}
 
 \begin{dependencies}
@@ -290,16 +302,18 @@ For all $a \in \mathbb{R}$ and $r \ge 0$,
 
 
 
-\begin{remark*}[Interpretation]
-\hyperref[prf:absolute-value-le-iff]{Go to proof.}
-\end{remark*}
-
 \begin{remark*}[Standard quantified statement]
 \[
   \forall a \in \mathbb{R},\;
   \forall r \in \mathbb{R},\;
   r \ge 0 \;\Rightarrow\;
   \bigl(\lvert a \rvert \le r \iff -r \le a \le r\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+r\ge0\Rightarrow \bigl(|a|\le r\Longleftrightarrow -r\le a\le r\bigr).
 \]
 \end{remark*}
 
@@ -332,10 +346,6 @@ For all $a \in \mathbb{R}$ and $r > 0$,
 
 
 
-\begin{remark*}[Interpretation]
-\hyperref[prf:absolute-value-lt-iff]{Go to proof.}
-\end{remark*}
-
 \begin{remark*}[Standard quantified statement]
 \[
   \forall a \in \mathbb{R},\;
@@ -343,6 +353,18 @@ For all $a \in \mathbb{R}$ and $r > 0$,
   r > 0 \;\Rightarrow\;
   \bigl(\lvert a \rvert < r \iff -r < a < r\bigr).
 \]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+r>0\Rightarrow \bigl(|a|<r\Longleftrightarrow -r<a<r\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Strict modulus inequalities are exactly strict two-sided bounds. This is the
+form used when a punctured or ordinary neighbourhood is unpacked into
+ordinary order inequalities.
 \end{remark*}
 
 \begin{dependencies}
@@ -360,24 +382,13 @@ For all $a, b \in \mathbb{R}$,
 \[
   \lvert a + b \rvert \le \lvert a \rvert + \lvert b \rvert.
 \]
-\end{restatementbox}
 
-
-
-\begin{remark*}[Standard quantified statement]
-\[
-  \forall a, b \in \mathbb{R},\quad
-  \lvert a + b \rvert \le \lvert a \rvert + \lvert b \rvert.
-\]
-\end{remark*}
-
-\begin{remark*}[Interpretation]
 The triangle inequality is the foundational estimate of analysis.  Every
 convergence argument, continuity proof, and metric-space result that
 requires bounding a sum reduces, at some step, to this inequality.  The
 name reflects its geometric meaning: the length of one side of a triangle
 does not exceed the sum of the other two.
-\end{remark*}
+\end{restatementbox}
 
 % ---------------------------------------------------------
 % thm:reverse-triangle-inequality
@@ -395,15 +406,17 @@ For all $a, b \in \mathbb{R}$,
 
 
 
-\begin{remark*}[Interpretation]
-\hyperref[prf:reverse-triangle-inequality]{Go to proof.}
-\end{remark*}
-
 \begin{remark*}[Standard quantified statement]
 \[
   \forall a, b \in \mathbb{R},\quad
   \lvert\, \lvert a \rvert - \lvert b \rvert \,\rvert
   \le \lvert a - b \rvert.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\bigl||a|-|b|\bigr|\le |a-b|.
 \]
 \end{remark*}
 
@@ -436,10 +449,6 @@ For all $n \in \mathbb{N}$ and $a_1, \ldots, a_n \in \mathbb{R}$,
 
 
 
-\begin{remark*}[Interpretation]
-\hyperref[prf:absolute-value-sum-bound]{Go to proof.}
-\end{remark*}
-
 \begin{remark*}[Standard quantified statement]
 \[
   \forall n \in \mathbb{N},\;
@@ -447,6 +456,16 @@ For all $n \in \mathbb{N}$ and $a_1, \ldots, a_n \in \mathbb{R}$,
   \left\lvert \sum_{k=1}^{n} a_k \right\rvert
   \le \sum_{k=1}^{n} \lvert a_k \rvert.
 \]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\left|\sum_{k=1}^n a_k\right|\le \sum_{k=1}^n |a_k|.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The magnitude of a finite sum is controlled by summing the magnitudes of its terms.
 \end{remark*}
 
 \begin{dependencies}

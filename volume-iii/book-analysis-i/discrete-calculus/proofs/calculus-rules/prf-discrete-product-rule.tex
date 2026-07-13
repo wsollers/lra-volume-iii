@@ -1,0 +1,63 @@
+\newpage
+\phantomsection
+\label{prf:discrete-product-rule}
+\LRAProofFor{thm:discrete-product-rule}
+
+\begin{remark*}[Return]
+\hyperref[thm:discrete-product-rule]{Return to Theorem}
+\end{remark*}
+
+\begin{theorem*}[Discrete Product Rule]
+For functions \(f, g : \mathbb{Z} \to \mathbb{R}\),
+\[
+\Delta(fg)(n)
+=
+f(n)\,\Delta g(n) + g(n+1)\,\Delta f(n).
+\]
+\end{theorem*}
+
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+By definition of \(\Delta\),
+\[
+\Delta(fg)(n) = f(n+1)g(n+1) - f(n)g(n).
+\]
+Add and subtract \(f(n)g(n+1)\):
+\[
+= f(n+1)g(n+1) - f(n)g(n+1) + f(n)g(n+1) - f(n)g(n).
+\]
+Grouping the first two and last two terms gives
+\[
+= g(n+1)\bigl(f(n+1)-f(n)\bigr) + f(n)\bigl(g(n+1)-g(n)\bigr)
+= g(n+1)\,\Delta f(n) + f(n)\,\Delta g(n). \qedhere
+\]
+\end{proof}
+
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+By definition of \(\Delta\),
+\[
+\Delta(fg)(n) = f(n+1)g(n+1) - f(n)g(n).
+\]
+Add and subtract \(f(n)g(n+1)\):
+\[
+= f(n+1)g(n+1) - f(n)g(n+1) + f(n)g(n+1) - f(n)g(n).
+\]
+Grouping the first two and last two terms gives
+\[
+= g(n+1)\bigl(f(n+1)-f(n)\bigr) + f(n)\bigl(g(n+1)-g(n)\bigr)
+= g(n+1)\,\Delta f(n) + f(n)\,\Delta g(n). \qedhere
+\]
+\end{proof}
+
+\begin{remark*}[Proof structure]
+Expand the forward difference of the product, insert a cancelling middle
+term, and regroup the two resulting differences.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:forward-difference]{Forward Difference Operator}
+\end{itemize}
+\end{dependencies}
+\clearpage

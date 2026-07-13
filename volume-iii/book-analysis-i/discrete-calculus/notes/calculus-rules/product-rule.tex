@@ -17,16 +17,18 @@ the \emph{product rule} --- the discrete counterpart of the Leibniz rule
 
 \subsection*{Product Rule}
 
-\begin{remark*}[Exposition]
-\textbf{Theorem (Discrete Product Rule).}
+\begin{theorembox}{Theorem (Discrete Product Rule)}
+\begin{theorem}[Discrete Product Rule]
+\label{thm:discrete-product-rule}
 For functions \(f, g : \mathbb{Z} \to \mathbb{R}\),
 \[
 \Delta(fg)(n)
 =
 f(n)\,\Delta g(n) + g(n+1)\,\Delta f(n).
 \]
-\end{remark*}
-\label{thm:discrete-product-rule}
+\hyperref[prf:discrete-product-rule]{\textit{Go to proof.}}
+\end{theorem}
+\end{theorembox}
 
 \begin{remark*}[Standard quantified statement]
 \(\forall f,g : \mathbb{Z}\to\mathbb{R},\; \forall n \in \mathbb{Z}:\;
@@ -34,32 +36,25 @@ f(n)\,\Delta g(n) + g(n+1)\,\Delta f(n).
 = f(n)(g(n+1)-g(n)) + g(n+1)(f(n+1)-f(n))\).
 \end{remark*}
 
-\begin{proof}
-By definition of \(\Delta\),
+\begin{remark*}[Predicate reading]
 \[
-\Delta(fg)(n) = f(n+1)g(n+1) - f(n)g(n).
+\Delta(fg)(n)=f(n)\Delta g(n)+g(n+1)\Delta f(n).
 \]
-Add and subtract \(f(n)g(n+1)\):
-\[
-= f(n+1)g(n+1) - f(n)g(n+1) + f(n)g(n+1) - f(n)g(n).
-\]
-Grouping the first two and last two terms:
-\[
-= g(n+1)\bigl(f(n+1)-f(n)\bigr) + f(n)\bigl(g(n+1)-g(n)\bigr)
-= g(n+1)\,\Delta f(n) + f(n)\,\Delta g(n). \qedhere
-\]
-\end{proof}
+\end{remark*}
 
 \begin{remark*}[Interpretation]
 In continuous calculus, \((fg)' = f'g + fg'\) is symmetric in \(f\)
 and \(g\). In discrete calculus the rule is slightly asymmetric: one
 factor is evaluated at \(n\) and the other at \(n+1\). This asymmetry
 is unavoidable and is a characteristic feature of the discrete setting.
-\end{remark*}
-
-\begin{remark*}[Interpretation]
 The product rule leads directly to the summation by parts formula:
 summing both sides of \(\Delta(fg) = f\,\Delta g + g(E)\,\Delta f\)
 over \(k = a\) to \(b-1\) and applying the Fundamental Theorem gives
 the formula in the next section.
 \end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:forward-difference]{Forward Difference Operator}
+\end{itemize}
+\end{dependencies}

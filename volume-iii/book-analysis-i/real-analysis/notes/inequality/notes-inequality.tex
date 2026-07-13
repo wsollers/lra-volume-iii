@@ -19,15 +19,21 @@ For all $a, b, c \in \mathbb{R}$,
 
 
 
-\begin{remark*}[Interpretation]
-\hyperref[prf:ineq-add-both-sides]{Go to proof.}
-\end{remark*}
-
 \begin{remark*}[Standard quantified statement]
 \[
   \forall a, b, c \in \mathbb{R},\quad
   a < b \;\Rightarrow\; a + c < b + c.
 \]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+a<b\Rightarrow a+c<b+c.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Adding the same real number translates both sides by the same amount, so strict order is preserved.
 \end{remark*}
 
 \begin{dependencies}
@@ -51,15 +57,21 @@ For all $a, b, c \in \mathbb{R}$,
 
 
 
-\begin{remark*}[Interpretation]
-\hyperref[prf:ineq-nonstrict-add-both-sides]{Go to proof.}
-\end{remark*}
-
 \begin{remark*}[Standard quantified statement]
 \[
   \forall a, b, c \in \mathbb{R},\quad
   a \le b \;\Rightarrow\; a + c \le b + c.
 \]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+a\le b\Rightarrow a+c\le b+c.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Nonstrict order is also stable under translation by a common real number.
 \end{remark*}
 
 \begin{dependencies}
@@ -82,15 +94,21 @@ For all $a, b, c, d \in \mathbb{R}$,
 
 
 
-\begin{remark*}[Interpretation]
-\hyperref[prf:ineq-add-inequalities]{Go to proof.}
-\end{remark*}
-
 \begin{remark*}[Standard quantified statement]
 \[
   \forall a, b, c, d \in \mathbb{R},\quad
   a < b \;\land\; c < d \;\Rightarrow\; a + c < b + d.
 \]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+(a<b\land c<d)\Rightarrow a+c<b+d.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Strict inequalities can be added componentwise because each comparison contributes positive slack.
 \end{remark*}
 
 \begin{dependencies}
@@ -113,15 +131,21 @@ For all $a, b, c, d \in \mathbb{R}$,
 
 
 
-\begin{remark*}[Interpretation]
-\hyperref[prf:ineq-nonstrict-add-inequalities]{Go to proof.}
-\end{remark*}
-
 \begin{remark*}[Standard quantified statement]
 \[
   \forall a, b, c, d \in \mathbb{R},\quad
   a \le b \;\land\; c \le d \;\Rightarrow\; a + c \le b + d.
 \]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+(a\le b\land c\le d)\Rightarrow a+c\le b+d.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Nonstrict inequalities add componentwise without creating more separation than the hypotheses provide.
 \end{remark*}
 
 \begin{dependencies}
@@ -143,15 +167,21 @@ For all $a, b, c, d \in \mathbb{R}$,
 
 
 
-\begin{remark*}[Interpretation]
-\hyperref[prf:ineq-mixed-add]{Go to proof.}
-\end{remark*}
-
 \begin{remark*}[Standard quantified statement]
 \[
   \forall a, b, c, d \in \mathbb{R},\quad
   a \le b \;\land\; c < d \;\Rightarrow\; a + c < b + d.
 \]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+(a<b\land c\le d)\Rightarrow a+c<b+d.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+One strict comparison and one nonstrict comparison still yield a strict comparison after addition.
 \end{remark*}
 
 \begin{dependencies}
@@ -175,15 +205,21 @@ For all $a, b, c \in \mathbb{R}$,
 
 
 
-\begin{remark*}[Interpretation]
-\hyperref[prf:ineq-multiply-positive]{Go to proof.}
-\end{remark*}
-
 \begin{remark*}[Standard quantified statement]
 \[
   \forall a, b, c \in \mathbb{R},\quad
   a < b \;\land\; 0 < c \;\Rightarrow\; ac < bc.
 \]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+(a<b\land c>0)\Rightarrow ac<bc.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Multiplication by a positive scalar rescales distances without reversing orientation.
 \end{remark*}
 
 \begin{dependencies}
@@ -207,15 +243,21 @@ For all $a, b, c \in \mathbb{R}$,
 
 
 
-\begin{remark*}[Interpretation]
-\hyperref[prf:ineq-multiply-negative]{Go to proof.}
-\end{remark*}
-
 \begin{remark*}[Standard quantified statement]
 \[
   \forall a, b, c \in \mathbb{R},\quad
   a < b \;\land\; c < 0 \;\Rightarrow\; ac > bc.
 \]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+(a<b\land c<0)\Rightarrow bc<ac.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Multiplication by a negative scalar reverses the orientation of the real line.
 \end{remark*}
 
 \begin{dependencies}
@@ -239,15 +281,21 @@ For all $a, b, c \in \mathbb{R}$,
 
 
 
-\begin{remark*}[Interpretation]
-\hyperref[prf:ineq-nonstrict-multiply-positive]{Go to proof.}
-\end{remark*}
-
 \begin{remark*}[Standard quantified statement]
 \[
   \forall a, b, c \in \mathbb{R},\quad
   a \le b \;\land\; 0 < c \;\Rightarrow\; ac \le bc.
 \]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+(a\le b\land c>0)\Rightarrow ac\le bc.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Positive scalar multiplication preserves nonstrict order, including equality cases.
 \end{remark*}
 
 \begin{dependencies}
@@ -269,14 +317,16 @@ For all $a, b, c \in \mathbb{R}$,
 
 
 
-\begin{remark*}[Interpretation]
-\hyperref[prf:ineq-nonstrict-multiply-nonneg]{Go to proof.}
-\end{remark*}
-
 \begin{remark*}[Standard quantified statement]
 \[
   \forall a, b, c \in \mathbb{R},\quad
   a \le b \;\land\; 0 \le c \;\Rightarrow\; ac \le bc.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+(a\le b\land 0\le c)\Rightarrow ac\le bc.
 \]
 \end{remark*}
 
@@ -302,6 +352,22 @@ ab>0.
 \end{lemma}
 \end{lemmabox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a,b\in\mathbb{R},\quad (a>0\land b>0)\Rightarrow ab>0.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+(a>0\land b>0)\Rightarrow ab>0.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The positive cone is closed under multiplication.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:r-is-an-ordered-field]{$\mathbb{R}$ Is an Ordered Field}
@@ -318,6 +384,22 @@ ab>0.
 \hyperref[prf:negative-times-negative-is-positive]{Go to proof.}
 \end{lemma}
 \end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a,b\in\mathbb{R},\quad (a<0\land b<0)\Rightarrow ab>0.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+(a<0\land b<0)\Rightarrow ab>0.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Multiplying two negative factors reverses sign twice, producing a positive product.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -336,6 +418,22 @@ ab<0.
 \end{lemma}
 \end{lemmabox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a,b\in\mathbb{R},\quad (a>0\land b<0)\Rightarrow ab<0.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+(a>0\land b<0)\Rightarrow ab<0.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A positive factor preserves the negative sign of the other factor.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:r-is-an-ordered-field]{$\mathbb{R}$ Is an Ordered Field}
@@ -352,6 +450,22 @@ ab<0.
 \hyperref[prf:negative-times-positive-is-negative]{Go to proof.}
 \end{lemma}
 \end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a,b\in\mathbb{R},\quad (a<0\land b>0)\Rightarrow ab<0.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+(a<0\land b>0)\Rightarrow ab<0.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Multiplication by a positive factor preserves strict negativity.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -370,6 +484,22 @@ a<b \;\Longleftrightarrow\; b-a>0.
 \end{lemma}
 \end{lemmabox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a,b\in\mathbb{R},\quad a<b\Longleftrightarrow b-a>0.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+a<b\Longleftrightarrow b-a>0.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Strict order can be tested by moving both terms to one side and checking positivity.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:ineq-add-both-sides]{Addition Preserves Strict Inequality}
@@ -386,6 +516,22 @@ a\le b \;\Longleftrightarrow\; b-a\ge 0.
 \hyperref[prf:non-strict-order-and-subtraction]{Go to proof.}
 \end{lemma}
 \end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a,b\in\mathbb{R},\quad a\le b\Longleftrightarrow b-a\ge0.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+a\le b\Longleftrightarrow b-a\ge0.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Nonstrict order is equivalent to nonnegativity of the difference.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -404,6 +550,22 @@ If $a,b,c\in\mathbb{R}$, $a<b$, and $c>0$, then
 \end{lemma}
 \end{lemmabox}
 
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a,b,c\in\mathbb{R},\quad (a<b\land c>0)\Rightarrow \frac ac<\frac bc.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+(a<b\land c>0)\Rightarrow a/c<b/c.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Division by a positive number is multiplication by a positive reciprocal, so it preserves order.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:ineq-multiply-positive]{Multiplication by a Positive Scalar Preserves Strict Inequality}
@@ -420,6 +582,22 @@ If $a,b,c\in\mathbb{R}$, $a<b$, and $c<0$, then
 \hyperref[prf:division-by-negative-reverses-order]{Go to proof.}
 \end{lemma}
 \end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a,b,c\in\mathbb{R},\quad (a<b\land c<0)\Rightarrow \frac bc<\frac ac.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+(a<b\land c<0)\Rightarrow b/c<a/c.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Division by a negative number is multiplication by a negative reciprocal, so it reverses order.
+\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
@@ -445,14 +623,16 @@ For all $a, b, c \in \mathbb{R}$,
 
 
 
-\begin{remark*}[Interpretation]
-\hyperref[prf:ineq-squeeze]{Go to proof.}
-\end{remark*}
-
 \begin{remark*}[Standard quantified statement]
 \[
   \forall a, b, c \in \mathbb{R},\quad
   a \le b \le c \;\land\; a = c \;\Rightarrow\; b = a.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+(a\le b\le c\land a=c)\Rightarrow b=a.
 \]
 \end{remark*}
 
@@ -484,15 +664,21 @@ For all $a, b, c \in \mathbb{R}$,
 
 
 
-\begin{remark*}[Interpretation]
-\hyperref[prf:ineq-transitivity-strict]{Go to proof.}
-\end{remark*}
-
 \begin{remark*}[Standard quantified statement]
 \[
   \forall a, b, c \in \mathbb{R},\quad
   a < b \;\land\; b < c \;\Rightarrow\; a < c.
 \]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+(a<b\land b<c)\Rightarrow a<c.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Strict order comparisons chain: an intermediate point can be removed without losing the outer comparison.
 \end{remark*}
 
 \begin{dependencies}
@@ -515,15 +701,21 @@ For all $a, b, c \in \mathbb{R}$,
 
 
 
-\begin{remark*}[Interpretation]
-\hyperref[prf:ineq-transitivity-mixed]{Go to proof.}
-\end{remark*}
-
 \begin{remark*}[Standard quantified statement]
 \[
   \forall a, b, c \in \mathbb{R},\quad
   a \le b \;\land\; b < c \;\Rightarrow\; a < c.
 \]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+(a<b\land b\le c)\Rightarrow a<c.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A strict step followed by a nonstrict step remains strict across the endpoints.
 \end{remark*}
 
 \begin{dependencies}
@@ -546,16 +738,22 @@ For all $a, b \in \mathbb{R}$,
 
 
 
-\begin{remark*}[Interpretation]
-\hyperref[prf:ineq-reciprocal-positive]{Go to proof.}
-\end{remark*}
-
 \begin{remark*}[Standard quantified statement]
 \[
   \forall a, b \in \mathbb{R},\quad
   0 < a < b \;\Rightarrow\;
   0 < \tfrac{1}{b} < \tfrac{1}{a}.
 \]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+a>0\Rightarrow a^{-1}>0.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The reciprocal of a positive real stays on the positive side of the ordered field.
 \end{remark*}
 
 \begin{dependencies}
@@ -580,16 +778,22 @@ For all $a, b \in \mathbb{R}$ with $a > 0$ and $b > 0$,
 
 
 
-\begin{remark*}[Interpretation]
-\hyperref[prf:ineq-reciprocal-flip]{Go to proof.}
-\end{remark*}
-
 \begin{remark*}[Standard quantified statement]
 \[
   \forall a, b \in \mathbb{R},\;
   a > 0 \;\land\; b > 0 \;\Rightarrow\;
   \bigl(a < b \iff \tfrac{1}{b} < \tfrac{1}{a}\bigr).
 \]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+(0<a<b)\Rightarrow b^{-1}<a^{-1}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+On positive inputs, reciprocation reverses order because the larger denominator gives the smaller reciprocal.
 \end{remark*}
 
 \begin{dependencies}
@@ -693,15 +897,21 @@ For all $a, b \in \mathbb{R}$,
 
 
 
-\begin{remark*}[Interpretation]
-\hyperref[prf:ineq-square-monotone]{Go to proof.}
-\end{remark*}
-
 \begin{remark*}[Standard quantified statement]
 \[
   \forall a, b \in \mathbb{R},\quad
   0 \le a < b \;\Rightarrow\; a^2 < b^2.
 \]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+(0\le a<b)\Rightarrow a^2<b^2.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Squaring is strictly increasing once inputs are restricted to the nonnegative half-line.
 \end{remark*}
 
 \begin{dependencies}
@@ -726,14 +936,16 @@ For all $a, b \in \mathbb{R}$,
 
 
 
-\begin{remark*}[Interpretation]
-\hyperref[prf:ineq-square-root-monotone]{Go to proof.}
-\end{remark*}
-
 \begin{remark*}[Standard quantified statement]
 \[
   \forall a, b \in \mathbb{R},\quad
   0 \le a \le b \;\Rightarrow\; \sqrt{a} \le \sqrt{b}.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+(0\le a<b)\Rightarrow \sqrt{a}<\sqrt{b}.
 \]
 \end{remark*}
 
@@ -763,15 +975,17 @@ For all $a, b \ge 0$,
 
 
 
-\begin{remark*}[Interpretation]
-\hyperref[prf:ineq-am-gm-two]{Go to proof.}
-\end{remark*}
-
 \begin{remark*}[Standard quantified statement]
 \[
   \forall a, b \in \mathbb{R},\;
   a \ge 0 \;\land\; b \ge 0 \;\Rightarrow\;
   \sqrt{ab} \le \frac{a + b}{2}.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+(a\ge0\land b\ge0)\Rightarrow \sqrt{ab}\le \frac{a+b}{2}.
 \]
 \end{remark*}
 
@@ -808,16 +1022,18 @@ For all $x \in \mathbb{R}$ with $x \ge -1$ and all $n \in \mathbb{N}$,
 
 
 
-\begin{remark*}[Interpretation]
-\hyperref[prf:ineq-bernoulli]{Go to proof.}
-\end{remark*}
-
 \begin{remark*}[Standard quantified statement]
 \[
   \forall x \in \mathbb{R},\;
   \forall n \in \mathbb{N},\;
   x \ge -1 \;\Rightarrow\;
   (1 + x)^n \ge 1 + nx.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+(x\ge -1\land n\in\mathbb{N})\Rightarrow (1+x)^n\ge 1+nx.
 \]
 \end{remark*}
 

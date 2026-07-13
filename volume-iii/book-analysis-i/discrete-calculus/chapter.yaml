@@ -77,7 +77,7 @@ environments:
   type: thm
   file: notes\telescoping-sums\telescoping-identity.tex
   display_title: Telescoping Identity
-  proof_file: null
+  proof_file: proofs\telescoping-sums\prf-telescoping-identity.tex
 - label: def:discrete-antiderivative
   type: def
   file: notes\discrete-antiderivative\summation-operator.tex
@@ -92,7 +92,7 @@ environments:
   type: thm
   file: notes\discrete-antiderivative\fundamental-theorem.tex
   display_title: Fundamental Theorem of Finite Calculus
-  proof_file: null
+  proof_file: proofs\discrete-antiderivative\prf-fundamental-theorem-finite-calculus.tex
 - label: def:falling-factorial
   type: def
   file: notes\polynomial-basis\falling-factorial.tex
@@ -102,17 +102,17 @@ environments:
   type: thm
   file: notes\polynomial-basis\falling-factorial.tex
   display_title: Falling Factorial Rule
-  proof_file: null
+  proof_file: proofs\polynomial-basis\prf-falling-factorial-rule.tex
 - label: thm:discrete-product-rule
   type: thm
   file: notes\calculus-rules\product-rule.tex
   display_title: Discrete Product Rule
-  proof_file: null
+  proof_file: proofs\calculus-rules\prf-discrete-product-rule.tex
 - label: thm:summation-by-parts
   type: thm
   file: notes\calculus-rules\summation-by-parts.tex
   display_title: Summation by Parts
-  proof_file: null
+  proof_file: proofs\calculus-rules\prf-summation-by-parts.tex
 - label: thm:newton-expansion
   type: thm
   file: notes\expansions\newtons-series.tex
@@ -132,12 +132,12 @@ environments:
   type: prop
   file: notes\special-functions\two-to-the-n.tex
   display_title: Delta of Two to the n
-  proof_file: null
+  proof_file: proofs\special-functions\prf-delta-two-n.tex
 - label: prop:antideriv-two-n
   type: prop
   file: notes\special-functions\two-to-the-n.tex
   display_title: Antiderivative of Two to the n
-  proof_file: null
+  proof_file: proofs\special-functions\prf-antideriv-two-n.tex
 - label: prop:higher-diff-two-n
   type: prop
   file: notes\special-functions\two-to-the-n.tex
@@ -154,8 +154,15 @@ proof_files:
 - proofs\difference-operators\prf-delta-shift-minus-identity.tex
 - proofs\difference-operators\prf-polynomial-detection.tex
 - proofs\discrete-antiderivative\prf-constant-of-integration.tex
+- proofs\discrete-antiderivative\prf-fundamental-theorem-finite-calculus.tex
 - proofs\foundations\prf-binomial-theorem.tex
 - proofs\foundations\prf-higher-diff-formula.tex
+- proofs\polynomial-basis\prf-falling-factorial-rule.tex
+- proofs\telescoping-sums\prf-telescoping-identity.tex
+- proofs\calculus-rules\prf-discrete-product-rule.tex
+- proofs\calculus-rules\prf-summation-by-parts.tex
 - proofs\special-functions\prf-discrete-exponential-rule.tex
+- proofs\special-functions\prf-delta-two-n.tex
+- proofs\special-functions\prf-antideriv-two-n.tex
 - proofs\special-functions\prf-higher-diff-two-n.tex
 - proofs\special-functions\prf-discrete-ivp.tex

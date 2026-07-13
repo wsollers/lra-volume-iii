@@ -1,0 +1,54 @@
+\newpage
+\phantomsection
+\label{prf:telescoping-identity}
+\LRAProofFor{thm:telescoping-identity}
+
+\begin{remark*}[Return]
+\hyperref[thm:telescoping-identity]{Return to Theorem}
+\end{remark*}
+
+\begin{theorem*}[Telescoping Identity]
+For any function \(f : \mathbb{Z} \to \mathbb{R}\) and integers \(a \le b\),
+\[
+\sum_{k=a}^{b-1} (f(k+1) - f(k)) = f(b) - f(a).
+\]
+\end{theorem*}
+
+\begin{proof}[Professional Standard Proof]
+\LRAProofBodyStart
+Expanding the sum gives
+\[
+\begin{aligned}
+(f(a+1)-f(a)) &+ (f(a+2)-f(a+1)) \\
+              &+ \cdots + (f(b)-f(b-1)).
+\end{aligned}
+\]
+Every intermediate term \(f(a+1), f(a+2), \dots, f(b-1)\) appears once
+with a positive sign and once with a negative sign, so they all cancel.
+The remaining terms are \(f(b)\) and \(-f(a)\), giving \(f(b)-f(a)\).
+\end{proof}
+
+\begin{proof}[Detailed Learning Proof]
+\LRAProofBodyStart
+Expanding the sum gives
+\[
+\begin{aligned}
+(f(a+1)-f(a)) &+ (f(a+2)-f(a+1)) \\
+              &+ \cdots + (f(b)-f(b-1)).
+\end{aligned}
+\]
+Every intermediate term \(f(a+1), f(a+2), \dots, f(b-1)\) appears once
+with a positive sign and once with a negative sign, so they all cancel.
+The remaining terms are \(f(b)\) and \(-f(a)\), giving \(f(b)-f(a)\).
+\end{proof}
+
+\begin{remark*}[Proof structure]
+Expand the finite sum and cancel adjacent endpoint terms.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:sigma-summation-notation]{Summation Notation}
+\end{itemize}
+\end{dependencies}
+\clearpage

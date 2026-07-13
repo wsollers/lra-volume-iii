@@ -70,50 +70,33 @@ x^{\underline{3}} &= x(x-1)(x-2).
 
 \subsection*{The Difference Rule for Falling Factorials}
 
-\begin{remark*}[Exposition]
-\textbf{Theorem (Difference Rule for Falling Factorials).}
+\begin{theorembox}{Theorem (Difference Rule for Falling Factorials)}
+\begin{theorem}[Difference Rule for Falling Factorials]
+\label{thm:falling-factorial-rule}
 For \(k \ge 1\),
 \[
 \Delta\, x^{\underline{k}} = k\,x^{\underline{k-1}}.
 \]
-\end{remark*}
-\label{thm:falling-factorial-rule}
+\hyperref[prf:falling-factorial-rule]{\textit{Go to proof.}}
+\end{theorem}
+\end{theorembox}
 
 \begin{remark*}[Standard quantified statement]
 \(\forall k \in \mathbb{N},\; k \ge 1,\; \forall x \in \mathbb{R}:\;
 (x+1)^{\underline{k}} - x^{\underline{k}} = k\,x^{\underline{k-1}}\).
 \end{remark*}
 
-\begin{proof}
-Observe that
+\begin{remark*}[Predicate reading]
 \[
-(x+1)^{\underline{k}} = (x+1)\,x\,(x-1)\cdots(x-k+2).
+\Delta x^{\underline{k}}=k x^{\underline{k-1}}.
 \]
-Therefore
-\[
-\Delta\, x^{\underline{k}}
-= (x+1)^{\underline{k}} - x^{\underline{k}}
-= x(x-1)\cdots(x-k+2)\bigl[(x+1)-(x-k+1)\bigr].
-\]
-The bracket simplifies:
-\[
-(x+1)-(x-k+1) = k.
-\]
-The remaining product \(x(x-1)\cdots(x-k+2)\) is exactly
-\(x^{\underline{k-1}}\). Thus
-\[
-\Delta\, x^{\underline{k}} = k\,x^{\underline{k-1}}. \qedhere
-\]
-\end{proof}
+\end{remark*}
 
 \begin{remark*}[Interpretation]
 This formula exactly mirrors the continuous power rule
 \(\tfrac{d}{dx}x^k = kx^{k-1}\). Because of this clean behaviour under
 \(\Delta\), falling factorials form the natural polynomial basis for
 discrete calculus.
-\end{remark*}
-
-\begin{remark*}[Interpretation]
 The theorem also yields the discrete antiderivative rule:
 \[
 \Delta\!\left(\frac{x^{\underline{k+1}}}{k+1}\right) = x^{\underline{k}}.
@@ -122,6 +105,13 @@ Thus \(\tfrac{x^{\underline{k+1}}}{k+1}\) is a discrete antiderivative
 of \(x^{\underline{k}}\), mirroring the continuous rule
 \(\int x^k\,dx = \tfrac{x^{k+1}}{k+1}\).
 \end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:falling-factorial]{Falling Factorial}
+  \item \hyperref[def:forward-difference]{Forward Difference Operator}
+\end{itemize}
+\end{dependencies}
 
 \subsection*{Summary Table}
 

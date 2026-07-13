@@ -5,15 +5,17 @@
 
 \subsection*{Fundamental Theorem of Finite Calculus}
 
-\begin{remark*}[Exposition]
-\textbf{Theorem (Fundamental Theorem of Finite Calculus).}
+\begin{theorembox}{Theorem (Fundamental Theorem of Finite Calculus)}
+\begin{theorem}[Fundamental Theorem of Finite Calculus]
+\label{thm:fundamental-theorem-finite-calculus}
 Let \(F\) be a discrete antiderivative of \(f\), so that
 \(\Delta F(n) = f(n)\) for all \(n\). Then
 \[
 \sum_{k=a}^{b-1} f(k) = F(b) - F(a).
 \]
-\end{remark*}
-\label{thm:fundamental-theorem-finite-calculus}
+\hyperref[prf:fundamental-theorem-finite-calculus]{\textit{Go to proof.}}
+\end{theorem}
+\end{theorembox}
 
 \begin{remark*}[Standard quantified statement]
 \(\forall f,F : \mathbb{Z}\to\mathbb{R},\;
@@ -23,18 +25,11 @@ Let \(F\) be a discrete antiderivative of \(f\), so that
 \displaystyle\sum_{k=a}^{b-1} f(k) = F(b) - F(a)\).
 \end{remark*}
 
-\begin{proof}
-Since \(f(k) = \Delta F(k)\) for all \(k\), substituting gives
+\begin{remark*}[Predicate reading]
 \[
-\sum_{k=a}^{b-1} f(k)
-=
-\sum_{k=a}^{b-1} \Delta F(k).
+\Delta F=f\Longrightarrow \sum_{k=a}^{b-1}f(k)=F(b)-F(a).
 \]
-By the Telescoping Identity (Theorem~\ref{thm:telescoping-identity}),
-\[
-\sum_{k=a}^{b-1} \Delta F(k) = F(b) - F(a). \qedhere
-\]
-\end{proof}
+\end{remark*}
 
 \begin{remark*}[Interpretation]
 This theorem is the discrete analogue of the Fundamental Theorem of
@@ -47,12 +42,16 @@ operations. In discrete calculus, the analogous inverse pair is the
 difference operator \(\Delta\) and summation. Any sum can be evaluated
 by finding a discrete antiderivative of the summand --- just as any
 definite integral can be evaluated by finding an antiderivative.
-\end{remark*}
-
-\begin{remark*}[Interpretation]
 The theorem reduces the problem of computing \(\sum_{k=a}^{b-1} f(k)\)
 to the algebraic problem of finding \(F\) with \(\Delta F = f\). Combined
 with the falling factorial rules developed in the next section, this
 gives a systematic method for evaluating a wide family of sums in
 closed form.
 \end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:discrete-antiderivative]{Discrete Antiderivative}
+  \item \hyperref[thm:telescoping-identity]{Telescoping Identity}
+\end{itemize}
+\end{dependencies}
