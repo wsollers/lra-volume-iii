@@ -14,30 +14,32 @@ Adherent point (Tao) is the weaker notion that includes isolated points.
 \end{remark*}
 
 % ---------------------------------------------------------
-% Definition --- epsilon-Neighbourhood
+% Definition --- Centered Open Interval
 % ---------------------------------------------------------
 
-\begin{definitionbox}{Definition ($\varepsilon$-Neighbourhood)}
-\begin{definition}[$\varepsilon$-Neighbourhood]
+\begin{definitionbox}{Definition (Centered Open Interval)}
+\begin{definition}[Centered Open Interval]
 \label{def:epsilon-neighbourhood}
 Let $x\in\mathbb{R}$ and let $\varepsilon>0$. The
-\textbf{$\varepsilon$-neighbourhood} of $x$ is
+\textbf{centered open interval of radius $\varepsilon$ about $x$} is
 \[
-  V_\varepsilon(x):=(x-\varepsilon,x+\varepsilon)
+  I_\varepsilon(x):=(x-\varepsilon,x+\varepsilon)
   =\{y\in\mathbb{R}: |y-x|<\varepsilon\}.
 \]
+Older sources often call this the $\varepsilon$-neighbourhood of $x$ and write
+$V_\varepsilon(x)$.
 \end{definition}
 \end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
-  y\in V_\varepsilon(x)\;\Longleftrightarrow\; |y-x|<\varepsilon.
+  y\in I_\varepsilon(x)\;\Longleftrightarrow\; |y-x|<\varepsilon.
 \]
 \end{remark*}
 
 \begin{remark*}[Interpretation]
-The $\varepsilon$-neighbourhood is the open interval of radius
-$\varepsilon$ centered at $x$.
+The centered open interval is the concrete real-line local region used before
+the later topological language of neighbourhoods.
 \end{remark*}
 
 \begin{dependencies}
@@ -46,32 +48,34 @@ $\varepsilon$ centered at $x$.
 \end{itemize}
 \end{dependencies}
 
-\begin{definitionbox}{Definition (Deleted $\varepsilon$-Neighbourhood)}
-\begin{definition}[Deleted $\varepsilon$-Neighbourhood]
+\begin{definitionbox}{Definition (Punctured Centered Open Interval)}
+\begin{definition}[Punctured Centered Open Interval]
 \label{def:deleted-epsilon-neighbourhood}
 Let $x\in\mathbb{R}$ and let $\varepsilon>0$. The
-\textbf{deleted $\varepsilon$-neighbourhood} of $x$ is
+\textbf{punctured centered open interval of radius $\varepsilon$ about $x$} is
 \[
-  V_\varepsilon^*(x):=V_\varepsilon(x)\setminus\{x\}
+  I_\varepsilon^\times(x):=I_\varepsilon(x)\setminus\{x\}
   =\{y\in\mathbb{R}:0<|y-x|<\varepsilon\}.
 \]
+Older sources often call this the deleted $\varepsilon$-neighbourhood of $x$
+and write $V_\varepsilon^*(x)$.
 \end{definition}
 \end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
-  y\in V_\varepsilon^*(x)\;\Longleftrightarrow\;0<|y-x|<\varepsilon.
+  y\in I_\varepsilon^\times(x)\;\Longleftrightarrow\;0<|y-x|<\varepsilon.
 \]
 \end{remark*}
 
 \begin{remark*}[Interpretation]
-The deleted neighbourhood removes the base point. It is the punctured
+The punctured centered open interval removes the base point. It is the concrete
 input region used in limit definitions.
 \end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:epsilon-neighbourhood]{$\varepsilon$-Neighbourhood}
+  \item \hyperref[def:epsilon-neighbourhood]{Centered Open Interval}
 \end{itemize}
 \end{dependencies}
 
@@ -107,7 +111,7 @@ is a \textbf{cluster point} of $X$ if
   x\text{ is a cluster point of }X
   \;\colonequiv\;
   \forall\varepsilon > 0,\;
-  V_\varepsilon^*(x) \cap X \neq \emptyset.
+  I_\varepsilon^\times(x) \cap X \neq \emptyset.
 \]
 \end{remark*}
 
@@ -126,7 +130,7 @@ is a \textbf{cluster point} of $X$ if
   \neg\,x\text{ is a cluster point of }X
   \;\colonequiv\;
   \exists\varepsilon > 0 :\;
-  V_\varepsilon^*(x) \cap X = \emptyset.
+  I_\varepsilon^\times(x) \cap X = \emptyset.
 \]
 \end{remark*}
 
@@ -141,7 +145,7 @@ it the punctured ball condition is vacuous.
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:deleted-epsilon-neighbourhood]{Deleted $\varepsilon$-Neighbourhood}
+  \item \hyperref[def:deleted-epsilon-neighbourhood]{Punctured Centered Open Interval}
 \end{itemize}
 \end{dependencies}
 
@@ -199,7 +203,7 @@ an \textbf{adherent point} of $X$ if
 
 \begin{remark*}[Standard quantified statement]
 \[
-  \forall\varepsilon>0\;\bigl(V_\varepsilon(x)\cap X\neq\emptyset\bigr).
+  \forall\varepsilon>0\;\bigl(I_\varepsilon(x)\cap X\neq\emptyset\bigr).
 \]
 \end{remark*}
 
@@ -224,7 +228,7 @@ $x$, including possibly $x$ itself.
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:epsilon-neighbourhood]{$\varepsilon$-Neighbourhood}
+  \item \hyperref[def:epsilon-neighbourhood]{Centered Open Interval}
 \end{itemize}
 \end{dependencies}
 
@@ -234,7 +238,7 @@ $x$, including possibly $x$ itself.
 Let $X\subseteq\mathbb{R}$ and let $x\in X$. The point $x$ is an
 \textbf{isolated point} of $X$ if
 \[
-  \exists\varepsilon>0\;\bigl(V_\varepsilon(x)\cap X=\{x\}\bigr).
+  \exists\varepsilon>0\;\bigl(I_\varepsilon(x)\cap X=\{x\}\bigr).
 \]
 \end{definition}
 \end{definitionbox}
@@ -249,7 +253,7 @@ Let $X\subseteq\mathbb{R}$ and let $x\in X$. The point $x$ is an
 \[
   \operatorname{IsIsolated}(x,X)
   \;\coloneqq\;
-  x\in X\wedge\exists\varepsilon>0\;\bigl(V_\varepsilon(x)\cap X=\{x\}\bigr).
+  x\in X\wedge\exists\varepsilon>0\;\bigl(I_\varepsilon(x)\cap X=\{x\}\bigr).
 \]
 \end{remark*}
 
@@ -260,7 +264,7 @@ Let $X\subseteq\mathbb{R}$ and let $x\in X$. The point $x$ is an
 \end{remark*}
 
 \begin{remark*}[Interpretation]
-An isolated point belongs to the set but has a neighbourhood containing
+An isolated point belongs to the set but has a centered open interval containing
 no other points of the set.
 \end{remark*}
 
@@ -281,7 +285,7 @@ no other points of the set.
 Let $X\subseteq\mathbb{R}$ and let $x\in\mathbb{R}$. The point $x$ is
 an \textbf{interior point} of $X$ if
 \[
-  \exists\varepsilon>0\;\bigl(V_\varepsilon(x)\subseteq X\bigr).
+  \exists\varepsilon>0\;\bigl(I_\varepsilon(x)\subseteq X\bigr).
 \]
 \end{definition}
 \end{definitionbox}
@@ -294,17 +298,17 @@ an \textbf{interior point} of $X$ if
 
 \begin{remark*}[Predicate reading]
 \[
-  \operatorname{IsInterior}(x,X)\;\coloneqq\;\exists\varepsilon>0\;\bigl(V_\varepsilon(x)\subseteq X\bigr).
+  \operatorname{IsInterior}(x,X)\;\coloneqq\;\exists\varepsilon>0\;\bigl(I_\varepsilon(x)\subseteq X\bigr).
 \]
 \end{remark*}
 
 \begin{remark*}[Interpretation]
-An interior point has a full open neighbourhood contained in the set.
+An interior point has a full centered open interval contained in the set.
 \end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:epsilon-neighbourhood]{$\varepsilon$-Neighbourhood}
+  \item \hyperref[def:epsilon-neighbourhood]{Centered Open Interval}
 \end{itemize}
 \end{dependencies}
 
@@ -314,35 +318,35 @@ An interior point has a full open neighbourhood contained in the set.
 Let $X\subseteq\mathbb{R}$ and let $x\in\mathbb{R}$. The point $x$ is
 a \textbf{boundary point} of $X$ if
 \[
-  \forall\varepsilon>0\;\bigl(V_\varepsilon(x)\cap X\neq\emptyset\bigr)
-  \wedge\bigl(V_\varepsilon(x)\cap X^c\neq\emptyset\bigr).
+  \forall\varepsilon>0\;\bigl(I_\varepsilon(x)\cap X\neq\emptyset\bigr)
+  \wedge\bigl(I_\varepsilon(x)\cap X^c\neq\emptyset\bigr).
 \]
 \end{definition}
 \end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
-  \forall\varepsilon>0\;\bigl(V_\varepsilon(x)\cap X\neq\emptyset\bigr)
-  \wedge\bigl(V_\varepsilon(x)\cap X^c\neq\emptyset\bigr).
+  \forall\varepsilon>0\;\bigl(I_\varepsilon(x)\cap X\neq\emptyset\bigr)
+  \wedge\bigl(I_\varepsilon(x)\cap X^c\neq\emptyset\bigr).
 \]
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
 \[
   \operatorname{IsOnBoundary}(x,X)\;\coloneqq\;
-  \forall\varepsilon>0\;\bigl(V_\varepsilon(x)\cap X\neq\emptyset\bigr)
-  \wedge\bigl(V_\varepsilon(x)\cap X^c\neq\emptyset\bigr).
+  \forall\varepsilon>0\;\bigl(I_\varepsilon(x)\cap X\neq\emptyset\bigr)
+  \wedge\bigl(I_\varepsilon(x)\cap X^c\neq\emptyset\bigr).
 \]
 \end{remark*}
 
 \begin{remark*}[Interpretation]
 A boundary point sees both the set and its complement in every
-neighbourhood.
+centered open interval.
 \end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:epsilon-neighbourhood]{$\varepsilon$-Neighbourhood}
+  \item \hyperref[def:epsilon-neighbourhood]{Centered Open Interval}
 \end{itemize}
 \end{dependencies}
 
@@ -351,20 +355,20 @@ neighbourhood.
 \label{def:interior-r}
 Let $X\subseteq\mathbb{R}$. The \textbf{interior} of $X$ is
 \[
-  X^\circ:=\{x\in\mathbb{R}:\exists\varepsilon>0\;V_\varepsilon(x)\subseteq X\}.
+  X^\circ:=\{x\in\mathbb{R}:\exists\varepsilon>0\;I_\varepsilon(x)\subseteq X\}.
 \]
 \end{definition}
 \end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
-  x\in X^\circ\;\Longleftrightarrow\;\exists\varepsilon>0\;V_\varepsilon(x)\subseteq X.
+  x\in X^\circ\;\Longleftrightarrow\;\exists\varepsilon>0\;I_\varepsilon(x)\subseteq X.
 \]
 \end{remark*}
 
 \begin{remark*}[Interpretation]
 The interior collects exactly the points around which the set contains a
-whole neighbourhood.
+whole centered open interval.
 \end{remark*}
 
 \begin{dependencies}
@@ -378,7 +382,7 @@ whole neighbourhood.
 \label{def:boundary-r}
 Let $X\subseteq\mathbb{R}$. The \textbf{boundary} of $X$ is
 \[
-  \partial X:=\{x\in\mathbb{R}:\forall\varepsilon>0\;(V_\varepsilon(x)\cap X\neq\emptyset\wedge V_\varepsilon(x)\cap X^c\neq\emptyset)\}.
+  \partial X:=\{x\in\mathbb{R}:\forall\varepsilon>0\;(I_\varepsilon(x)\cap X\neq\emptyset\wedge I_\varepsilon(x)\cap X^c\neq\emptyset)\}.
 \]
 \end{definition}
 \end{definitionbox}
@@ -386,12 +390,12 @@ Let $X\subseteq\mathbb{R}$. The \textbf{boundary} of $X$ is
 \begin{remark*}[Standard quantified statement]
 \[
   x\in\partial X\;\Longleftrightarrow\;
-  \forall\varepsilon>0\;(V_\varepsilon(x)\cap X\neq\emptyset\wedge V_\varepsilon(x)\cap X^c\neq\emptyset).
+  \forall\varepsilon>0\;(I_\varepsilon(x)\cap X\neq\emptyset\wedge I_\varepsilon(x)\cap X^c\neq\emptyset).
 \]
 \end{remark*}
 
 \begin{remark*}[Interpretation]
-The boundary records the points where every neighbourhood touches both
+The boundary records the points where every centered open interval touches both
 inside and outside of the set.
 \end{remark*}
 
@@ -410,7 +414,7 @@ inside and outside of the set.
 \[
 \overline{X}
 :=
-\{x\in\mathbb{R}:\forall\varepsilon>0\;V_\varepsilon(x)\cap X\neq\emptyset\}.
+\{x\in\mathbb{R}:\forall\varepsilon>0\;I_\varepsilon(x)\cap X\neq\emptyset\}.
 \]
 \end{definition}
 \end{definitionbox}
@@ -421,7 +425,7 @@ inside and outside of the set.
   \;\iff\;
   x\text{ is an adherent point of }X
   \;\iff\;
-  \forall\varepsilon>0 : V_\varepsilon(x)\cap X\neq\emptyset.
+  \forall\varepsilon>0 : I_\varepsilon(x)\cap X\neq\emptyset.
 \]
 \end{remark*}
 
@@ -522,7 +526,7 @@ $E\text{ is closed} \iff \overline{E} = E$.
   \neg\,E\text{ is closed}
   \;\colonequiv\;
   \exists x \notin E :\;
-  \forall\varepsilon>0 : V_\varepsilon(x)\cap E\neq\emptyset.
+  \forall\varepsilon>0 : I_\varepsilon(x)\cap E\neq\emptyset.
 \]
 \end{remark*}
 
@@ -755,6 +759,6 @@ $\varepsilon>0$, the property $|f(x)-L|<\varepsilon$ is true near $x_0$.
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:epsilon-neighbourhood]{$\varepsilon$-Neighbourhood}
+  \item \hyperref[def:epsilon-neighbourhood]{Centered Open Interval}
 \end{itemize}
 \end{dependencies}

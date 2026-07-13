@@ -49,19 +49,19 @@ Equivalently, $\ln x$ is defined by the integral
 
 
 \[
-  \operatorname{TendsTo}\!\left(\frac{\ln(1+x)}{x},\,0,\,1\right)
+  \operatorname{TendsTo}\!\left(\frac{\ln(1+x)}{x},\,0,\,1,\,\mathbb R,\,\mathbb R\right)
   \;\colonequiv\;
   \forall\varepsilon>0,\;\exists\delta>0,\;\forall x:\;
   \bigl(
-    \operatorname{PuncturedNeighborhood}(U^\times_\delta,U_\delta,0,\delta,\mathbb R)
+    \operatorname{IsPuncturedCenteredOpenInterval}(I^\times_\delta(0),I_\delta(0),0,\delta,\mathbb R)
     \wedge
-    \operatorname{Within}(x,U^\times_\delta,\mathbb R)
+    \operatorname{Within}(x,I^\times_\delta(0),\mathbb R)
   \bigr)
   \Rightarrow
   \bigl(
-    \operatorname{Ball}(B_\varepsilon(1),1,\varepsilon,\mathbb R)
+    \operatorname{IsCenteredOpenInterval}(I_\varepsilon(1),1,\varepsilon,\mathbb R)
     \wedge
-    \operatorname{Within}\!\left(\frac{\ln(1+x)}{x},B_\varepsilon(1),\mathbb R\right)
+    \operatorname{Within}\!\left(\frac{\ln(1+x)}{x},I_\varepsilon(1),\mathbb R\right)
   \bigr).
 \]
 \end{remark*}
@@ -201,9 +201,9 @@ For every $r > 0$:
   \forall\varepsilon>0,\;\exists M\in\mathbb{R},\;\forall x:\;
   x>M \Rightarrow
   \bigl(
-    \operatorname{Ball}(B_\varepsilon(0),0,\varepsilon,\mathbb R)
+    \operatorname{IsCenteredOpenInterval}(I_\varepsilon(0),0,\varepsilon,\mathbb R)
     \wedge
-    \operatorname{Within}(x^{-r}\ln x,B_\varepsilon(0),\mathbb R)
+    \operatorname{Within}(x^{-r}\ln x,I_\varepsilon(0),\mathbb R)
   \bigr).
 \]
 \end{remark*}

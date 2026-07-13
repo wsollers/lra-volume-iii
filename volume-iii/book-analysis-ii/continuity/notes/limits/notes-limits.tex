@@ -37,7 +37,7 @@ all $x\in X$.
 A global condition: every output lies within $\varepsilon$ of $L$,
 regardless of where in $X$ the input lies. This is Tao's scaffolding
 toward the limit definition, which localises the same output
-condition to a punctured neighbourhood of $c$.
+condition to a punctured centered interval about $c$.
 \end{remark*}
 
 \begin{dependencies}
@@ -69,10 +69,10 @@ is \textbf{$\varepsilon$-close to $L$ near $x_0$ within $\delta$} if
 \end{remark*}
 
 \begin{remark*}[Interpretation]
-A local condition: only outputs from the $\delta$-ball around $x_0$
+A local condition: only outputs from the centered $\delta$-interval around $x_0$
 need lie within $\varepsilon$ of $L$. The input condition here is
 $\operatorname{Within}$ --- unpunctured. The limit definition replaces
-this with a punctured-neighborhood condition and asserts
+this with a punctured centered interval condition and asserts
 that for every $\varepsilon$ such a $\delta$ exists.
 \end{remark*}
 
@@ -119,13 +119,15 @@ Define
   &\Longleftrightarrow \varepsilon\text{ is an output tolerance},\\
   \delta>0
   &\Longleftrightarrow \delta\text{ is an input tolerance},\\
-  \operatorname{PuncturedNeighborhood}(U^\times_\delta,U_\delta,c,\delta,\mathbb R)
+  \operatorname{IsPuncturedCenteredOpenInterval}
+  (I^\times_\delta(c),I_\delta(c),c,\delta,\mathbb R)
   &\quad\text{and}\quad
-  \operatorname{Within}(x,U^\times_\delta,\mathbb R)
+  \operatorname{Within}(x,I^\times_\delta(c),\mathbb R)
   &\Longleftrightarrow 0<|x-c|<\delta,\\
-  \operatorname{Ball}(B_\varepsilon(L),L,\varepsilon,\mathbb R)
+  \operatorname{IsCenteredOpenInterval}
+  (I_\varepsilon(L),L,\varepsilon,\mathbb R)
   &\quad\text{and}\quad
-  \operatorname{Within}(y,B_\varepsilon(L),\mathbb R)
+  \operatorname{Within}(y,I_\varepsilon(L),\mathbb R)
   &\Longleftrightarrow |y-L|<\varepsilon.
 \end{aligned}
 \]
@@ -144,9 +146,9 @@ Then
       \wedge
       \forall x\in A\,
       [
-        \operatorname{Within}(x,U^\times_\delta,\mathbb R)
+        \operatorname{Within}(x,I^\times_\delta(c),\mathbb R)
         \Rightarrow
-        \operatorname{Within}(f(x),B_\varepsilon(L),\mathbb R)
+        \operatorname{Within}(f(x),I_\varepsilon(L),\mathbb R)
       ]
     \bigr)
   \Bigr).
@@ -176,9 +178,9 @@ Then
       \Rightarrow
       \exists x\in A\,
       [
-        \operatorname{Within}(x,U^\times_\delta,\mathbb R)
+        \operatorname{Within}(x,I^\times_\delta(c),\mathbb R)
         \wedge
-        \neg\,\operatorname{Within}(f(x),B_{\varepsilon_0}(L),\mathbb R)
+        \neg\,\operatorname{Within}(f(x),I_{\varepsilon_0}(L),\mathbb R)
       ]
     \bigr)
   \Bigr)\\
@@ -234,8 +236,7 @@ The quantifier structure is asymmetric by design. The output
 tolerance $\varepsilon$ is a \emph{demand}: the caller specifies how
 precise the output must be. The input tolerance $\delta$ is a
 \emph{response}: the definition asserts one always exists. The input
-condition is punctured (a punctured-neighborhood condition, not
-$\operatorname{Within}$) because $f$ may not be defined at $c$, and
+condition is punctured because $f$ may not be defined at $c$, and
 because continuity --- not limits --- is the concept that includes $c$
 itself. This is the deepest structural difference between the two
 definitions. Four critical features: (i) $f$ need not be defined at
@@ -307,59 +308,59 @@ explicit $\delta$ functions.
 \end{dependencies}
 
 % ---------------------------------------------------------
-% Definition --- Neighbourhood Form of Limit
+% Definition --- Centered Interval Form of Limit
 % ---------------------------------------------------------
 
-\begin{definitionbox}{Definition (Neighbourhood Form of Limit)}
-\begin{definition}[Neighbourhood Form of Limit]
+\begin{definitionbox}{Definition (Centered Interval Form of Limit)}
+\begin{definition}[Centered Interval Form of Limit]
 \label{def:limit-function-neighbourhood}
 Let $f : A \to \mathbb{R}$ and let $c$ be a cluster point of $A$.
-The limit $\lim_{x\to c}f(x)=L$ in the \textbf{neighbourhood
-sense} holds if for every $\varepsilon$-neighbourhood
-$V_\varepsilon(L)$ there exists a deleted $\delta$-neighbourhood
-$V_\delta^*(c)$ such that
+The limit $\lim_{x\to c}f(x)=L$ in the \textbf{centered interval
+sense} holds if for every centered open interval
+$I_\varepsilon(L)$ there exists a punctured centered open interval
+$I_\delta^\times(c)$ such that
 \[
-  x\in V_\delta^*(c)\cap A
+  x\in I_\delta^\times(c)\cap A
   \quad\Longrightarrow\quad
-  f(x)\in V_\varepsilon(L).
+  f(x)\in I_\varepsilon(L).
 \]
 \end{definition}
 \end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
-  \forall\varepsilon>0\;\exists\delta>0\;\forall x\in V_\delta^*(c)\cap A\;
-  f(x)\in V_\varepsilon(L).
+  \forall\varepsilon>0\;\exists\delta>0\;\forall x\in I_\delta^\times(c)\cap A\;
+  f(x)\in I_\varepsilon(L).
 \]
 \end{remark*}
 
 \begin{remark*}[Interpretation]
-The neighbourhood form packages the same local limit condition in
+The centered interval form packages the same local limit condition in
 terms of sets around the input point and output value. The domain is
-still restricted to $A$, and the neighbourhood of $c$ is deleted so
+still restricted to $A$, and the input interval about $c$ is punctured so
 the value of $f$ at $c$ itself is irrelevant.
 \end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:limit-function]{Limit of a Function}
-  \item \hyperref[def:epsilon-neighbourhood]{$\varepsilon$-Neighbourhood}
-  \item \hyperref[def:deleted-epsilon-neighbourhood]{Deleted $\varepsilon$-Neighbourhood}
+  \item \hyperref[def:epsilon-neighbourhood]{Centered Open Interval}
+  \item \hyperref[def:deleted-epsilon-neighbourhood]{Punctured Centered Open Interval}
 \end{itemize}
 \end{dependencies}
 
 % ---------------------------------------------------------
-% Proposition --- Neighbourhood Form
+% Proposition --- Centered Interval Form
 % ---------------------------------------------------------
 
 \begin{propositionbox}{Proposition}
-\begin{proposition}[Neighbourhood Form of the Limit]
+\begin{proposition}[Centered Interval Form of the Limit]
 \label{prop:limit-neighbourhood-equiv}
 Let $f : A \to \mathbb{R}$ and let $c$ be a cluster point of $A$.
 Then $\lim_{x\to c}f(x)=L$ if and only if for every
-$\varepsilon$-neighbourhood $V_\varepsilon(L)$ there exists a
-$\delta$-neighbourhood $V_\delta(c)$ such that
-$x\in V_\delta^*(c)\cap A$ implies $f(x)\in V_\varepsilon(L)$.
+centered open interval $I_\varepsilon(L)$ there exists a centered
+open interval $I_\delta(c)$ such that
+$x\in I_\delta^\times(c)\cap A$ implies $f(x)\in I_\varepsilon(L)$.
 
 \smallskip\noindent
 \hyperref[prf:limit-neighbourhood-equiv]{\textit{Go to proof.}}
@@ -372,8 +373,8 @@ $x\in V_\delta^*(c)\cap A$ implies $f(x)\in V_\varepsilon(L)$.
 &\Bigl[\forall\varepsilon>0\;\exists\delta>0\;\forall x\in A\;
   0<|x-c|<\delta\Rightarrow |f(x)-L|<\varepsilon\Bigr] \\
 &\quad\Longleftrightarrow
-\Bigl[\forall\varepsilon>0\;\exists\delta>0\;\forall x\in V_\delta^*(c)\cap A\;
-  f(x)\in V_\varepsilon(L)\Bigr].
+\Bigl[\forall\varepsilon>0\;\exists\delta>0\;\forall x\in I_\delta^\times(c)\cap A\;
+  f(x)\in I_\varepsilon(L)\Bigr].
 \end{aligned}
 \]
 \end{remark*}
@@ -383,22 +384,22 @@ The displayed quantified statement is the predicate-level form of $label: its hy
 \end{remark*}
 
 \begin{remark*}[Interpretation]
-The equivalence is purely notational: $V_\delta^*(c) \cap A$ is
+The equivalence is purely notational: $I_\delta^\times(c) \cap A$ is
 exactly the set of $x \in A$ satisfying
 $0<|x-c|<\delta$, and $f(x) \in
-V_\varepsilon(L)$ is exactly $\operatorname{Within}(f(x),B_\varepsilon(L),
-\mathbb R)$. The neighbourhood form makes the geometric content
-explicit: the image of every punctured $\delta$-slice of $A$ must
-fit inside the $\varepsilon$-ball around $L$. This is the form of
-continuity used in metric space topology.
+I_\varepsilon(L)$ is exactly
+$\operatorname{Within}(f(x),I_\varepsilon(L),\mathbb R)$. The centered
+interval form makes the geometric content explicit: the image of every
+punctured $\delta$-slice of $A$ must fit inside the $\varepsilon$-interval
+around $L$. This is the real-line precursor of the metric-space ball form.
 \end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:limit-function]{Limit of a Function}
-  \item \hyperref[def:limit-function-neighbourhood]{Neighbourhood Form of Limit}
-  \item \hyperref[def:epsilon-neighbourhood]{$\varepsilon$-Neighbourhood}
-  \item \hyperref[def:deleted-epsilon-neighbourhood]{Deleted $\varepsilon$-Neighbourhood}
+  \item \hyperref[def:limit-function-neighbourhood]{Centered Interval Form of Limit}
+  \item \hyperref[def:epsilon-neighbourhood]{Centered Open Interval}
+  \item \hyperref[def:deleted-epsilon-neighbourhood]{Punctured Centered Open Interval}
 \end{itemize}
 \end{dependencies}
 
@@ -533,7 +534,7 @@ $f(x_n) \not\to L$.
 \label{cor:limit-three-equiv}
 Let $f : A \to \mathbb{R}$ and let $c$ be a cluster point of $A$.
 The $\varepsilon$-$\delta$ form of $\lim_{x\to c}f(x)=L$, the
-neighbourhood form, and the sequential form are equivalent descriptions
+centered interval form, and the sequential form are equivalent descriptions
 of the same limit condition.
 
 \smallskip\noindent
@@ -547,8 +548,8 @@ of the same limit condition.
 &\Bigl[\forall\varepsilon>0\;\exists\delta>0\;\forall x\in A\;
   0<|x-c|<\delta\Rightarrow |f(x)-L|<\varepsilon\Bigr] \\
 &\quad\Longleftrightarrow
-\Bigl[\forall\varepsilon>0\;\exists\delta>0\;\forall x\in V_\delta^*(c)\cap A\;
-  f(x)\in V_\varepsilon(L)\Bigr] \\
+\Bigl[\forall\varepsilon>0\;\exists\delta>0\;\forall x\in I_\delta^\times(c)\cap A\;
+  f(x)\in I_\varepsilon(L)\Bigr] \\
 &\quad\Longleftrightarrow
 \Bigl[\forall (x_n)\subseteq A\setminus\{c\}\;
   x_n\to c\Rightarrow f(x_n)\to L\Bigr].
@@ -563,17 +564,17 @@ The displayed quantified statement is the predicate-level form of $label: its hy
 \begin{remark*}[Interpretation]
 All three encodings capture the same mathematical condition. The
 $\varepsilon$-$\delta$ form is best for proving explicit bounds. The
-neighbourhood form is best for geometric reasoning and metric space
-generalisation. The sequential form is best for importing sequence
+centered interval form is best for geometric real-line reasoning and prepares
+the later metric-space ball form. The sequential form is best for importing sequence
 results and constructing counterexamples.
 \end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:limit-function]{Limit of a Function}
-  \item \hyperref[def:limit-function-neighbourhood]{Neighbourhood Form of Limit}
+  \item \hyperref[def:limit-function-neighbourhood]{Centered Interval Form of Limit}
   \item \hyperref[def:limit-function-sequential]{Sequential Definition of Limit}
-  \item \hyperref[prop:limit-neighbourhood-equiv]{Neighbourhood Form of the Limit}
+  \item \hyperref[prop:limit-neighbourhood-equiv]{Centered Interval Form of the Limit}
   \item \hyperref[prop:sequential-criterion-limits]{Sequential Criterion for Function Limits}
 \end{itemize}
 \end{dependencies}
@@ -750,9 +751,9 @@ Then
 
 \begin{remark*}[Interpretation]
 The existence and value of $\operatorname{TendsTo}(f, x_0, L)$
-depend only on the behavior of $f$ within any fixed neighbourhood of
-$x_0$. Points outside that neighbourhood are irrelevant. This
-justifies focusing all limit arguments on small balls around $c$
+depend only on the behavior of $f$ within any fixed centered open interval
+about $x_0$. Points outside that interval are irrelevant. This
+justifies focusing all limit arguments on small local intervals around $c$
 without any loss of generality.
 \end{remark*}
 

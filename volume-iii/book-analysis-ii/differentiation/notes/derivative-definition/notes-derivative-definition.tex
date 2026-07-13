@@ -6,8 +6,8 @@
 \begin{remark*}[Interpretation]
 The derivative is the number the secant slopes approach, but the word
 ``limit'' has three useful faces. The epsilon--delta form is the contract;
-the topological form strips it to neighbourhoods; the sequential form is the
-disproving tool, since one bad approach sequence is enough.
+the centered-interval form packages the same punctured local condition; the
+sequential form is the disproving tool, since one bad approach sequence is enough.
 \end{remark*}
 
 \begin{definitionbox}{Definition (Derivative at a Point)}
@@ -30,12 +30,14 @@ Let $f: D \to \mathbb{R}$ be a real-valued function and $c \in \operatorname{int
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{Derivative}(f,c,L)
+\operatorname{Derivative}(L,f,\mathsf{Point}(c,D),\mathbb R,\mathbb R)
 \;\Longleftrightarrow\;
-\operatorname{TendsTo}\!\left(\lambda x.\,\frac{f(x)-f(c)}{x-c},\,D,\,c,\,L\right).
+\operatorname{TendsTo}\!\left(\lambda x.\,\frac{f(x)-f(c)}{x-c},\,c,\,L,\,\mathbb R,\,\mathbb R\right).
 \]
-The predicate $\operatorname{Derivative}(f,c,L)$ asserts that $L$ is the value of the
-limit of the difference quotient of $f$ at $c$.
+The predicate
+$\operatorname{Derivative}(L,f,\mathsf{Point}(c,D),\mathbb R,\mathbb R)$
+asserts that $L$ is the value of the limit of the difference quotient of $f$
+at $c$.
 \end{remark*}
 
 \begin{remark*}[Negated quantified statement]
@@ -47,9 +49,9 @@ limit of the difference quotient of $f$ at $c$.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{Derivative}(f,c,L)
+\neg\operatorname{Derivative}(L,f,\mathsf{Point}(c,D),\mathbb R,\mathbb R)
 \;\Longleftrightarrow\;
-\neg\operatorname{TendsTo}\!\left(\lambda x.\,\frac{f(x)-f(c)}{x-c},\,D,\,c,\,L\right).
+\neg\operatorname{TendsTo}\!\left(\lambda x.\,\frac{f(x)-f(c)}{x-c},\,c,\,L,\,\mathbb R,\,\mathbb R\right).
 \]
 \end{remark*}
 
@@ -144,7 +146,7 @@ The topological derivative fails when a fixed output neighbourhood of $L$ cannot
 \end{remark*}
 
 \begin{remark*}[Interpretation]
-The topological form replaces $\varepsilon$-balls with abstract neighbourhoods, making the definition coordinate-free and suited for generalisation to metric spaces and manifolds.
+The topological form replaces centered $\varepsilon$-intervals with abstract neighbourhoods, making the definition coordinate-free and suited for generalisation to metric spaces and manifolds.
 \end{remark*}
 
 \begin{dependencies}
@@ -256,7 +258,7 @@ Let $f : A \to \mathbb{R}$ and $c \in A$ be a limit point of $A$. The following 
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{Derivative}(f,c,L)
+\operatorname{Derivative}(L,f,\mathsf{Point}(c,A),\mathbb R,\mathbb R)
 \;\Longleftrightarrow\;
 \operatorname{Derivative}_{\mathrm{top}}(f,c,L)
 \;\Longleftrightarrow\;
@@ -278,7 +280,7 @@ x_n \to c \;\land\; \frac{f(x_n)-f(c)}{x_n-c} \not\to L.
 \begin{remark*}[Failure modes]
 \begin{description}
   \item[Exposition.]
-The equivalence cannot produce contradictory verdicts: if $c$ is a limit point of $A$, all three forms agree. Degenerate case: if $c$ is not a limit point of $A$, the punctured-ball and sequence conditions are vacuously satisfied by every candidate $L$ simultaneously, making the equivalence trivially true for all $L$ rather than characterizing a unique derivative.
+The equivalence cannot produce contradictory verdicts: if $c$ is a limit point of $A$, all three forms agree. Degenerate case: if $c$ is not a limit point of $A$, the punctured-interval and sequence conditions are vacuously satisfied by every candidate $L$ simultaneously, making the equivalence trivially true for all $L$ rather than characterizing a unique derivative.
 \end{description}
 \end{remark*}
 
@@ -311,7 +313,7 @@ Let $f : A \to \mathbb{R}$ and $c \in \operatorname{int}(A)$. Then $f$ is differ
 
 \begin{remark*}[Standard quantified statement]
 \[
-\operatorname{Derivative}(f,c,L)
+\operatorname{Derivative}(L,f,\mathsf{Point}(c,A),\mathbb R,\mathbb R)
 \;\Longleftrightarrow\;
 \lim_{h\to 0}\frac{f(c+h)-f(c)}{h} = L.
 \]
@@ -319,7 +321,7 @@ Let $f : A \to \mathbb{R}$ and $c \in \operatorname{int}(A)$. Then $f$ is differ
 
 \begin{remark*}[Negated quantified statement]
 \[
-\neg\operatorname{Derivative}(f,c,L)
+\neg\operatorname{Derivative}(L,f,\mathsf{Point}(c,A),\mathbb R,\mathbb R)
 \;\Longleftrightarrow\;
 \lim_{h\to 0}\frac{f(c+h)-f(c)}{h} \neq L.
 \]
@@ -383,15 +385,17 @@ Let $f : A \to \mathbb{R}$ and $c \in A$. If $f$ is differentiable at $c$, then 
 
 \begin{remark*}[Standard quantified statement]
 \[
-\operatorname{IsDifferentiable}(f,c) \;\Rightarrow\; \operatorname{IsContinuous}(f,c).
+\operatorname{IsDifferentiable}(f,\mathsf{Point}(c,A),\mathbb R,\mathbb R)
+\;\Rightarrow\;
+\operatorname{IsContinuous}(f,\mathsf{Point}(c,A),\mathbb R,\mathbb R).
 \]
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{IsDifferentiable}(f,c)
+\operatorname{IsDifferentiable}(f,\mathsf{Point}(c,A),\mathbb R,\mathbb R)
 \;\Longrightarrow\;
-\operatorname{IsContinuous}(f,c).
+\operatorname{IsContinuous}(f,\mathsf{Point}(c,A),\mathbb R,\mathbb R).
 \]
 \end{remark*}
 
@@ -417,9 +421,9 @@ The converse fails: $f(x) = |x|$ is continuous at $0$ but not differentiable the
 
 
 \[
-\neg\operatorname{IsContinuous}(f,c)
+\neg\operatorname{IsContinuous}(f,\mathsf{Point}(c,A),\mathbb R,\mathbb R)
 \;\Longrightarrow\;
-\neg\operatorname{IsDifferentiable}(f,c).
+\neg\operatorname{IsDifferentiable}(f,\mathsf{Point}(c,A),\mathbb R,\mathbb R).
 \]
 
 
@@ -430,8 +434,8 @@ The theorem runs one way only. Differentiability forces continuity, but
 continuity does not force differentiability. The negation of the converse is
 \[
   \exists f\;\exists c:\;
-  \operatorname{IsContinuous}(f,c)\land
-  \neg\operatorname{IsDifferentiable}(f,c).
+  \operatorname{IsContinuous}(f,\mathsf{Point}(c,A),\mathbb R,\mathbb R)\land
+  \neg\operatorname{IsDifferentiable}(f,\mathsf{Point}(c,A),\mathbb R,\mathbb R).
 \]
 The examples below escalate the failure: one corner, infinitely many isolated
 corners, and no differentiability anywhere.
@@ -510,16 +514,18 @@ Let $f : A \to \mathbb{R}$ and $c \in A$. If $f$ is differentiable at $c$, its d
 
 \begin{remark*}[Standard quantified statement]
 \[
-\operatorname{Derivative}(f,c,L) \;\land\; \operatorname{Derivative}(f,c,L')
+\operatorname{Derivative}(L,f,\mathsf{Point}(c,A),\mathbb R,\mathbb R)
+\;\land\;
+\operatorname{Derivative}(L',f,\mathsf{Point}(c,A),\mathbb R,\mathbb R)
 \;\Rightarrow\; L = L'.
 \]
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{Derivative}(f,c,L)
+\operatorname{Derivative}(L,f,\mathsf{Point}(c,A),\mathbb R,\mathbb R)
 \;\land\;
-\operatorname{Derivative}(f,c,L')
+\operatorname{Derivative}(L',f,\mathsf{Point}(c,A),\mathbb R,\mathbb R)
 \;\Longrightarrow\; L = L'.
 \]
 \end{remark*}
@@ -527,13 +533,18 @@ Let $f : A \to \mathbb{R}$ and $c \in A$. If $f$ is differentiable at $c$, its d
 \begin{remark*}[Failure modes]
 \begin{description}
   \item[Exposition.]
-The uniqueness proof assumes $L \neq L'$ and takes $\varepsilon = |L - L'|/2 > 0$. The definition supplies $\delta$ making the difference quotient within $\varepsilon$ of both $L$ and $L'$ simultaneously, forcing $|L - L'| < 2\varepsilon = |L - L'|$, a contradiction. The cluster-point hypothesis on $c$ is essential: without it, the punctured-ball condition is vacuous and the limit is trivially satisfied by every value.
+The uniqueness proof assumes $L \neq L'$ and takes $\varepsilon = |L - L'|/2 > 0$. The definition supplies $\delta$ making the difference quotient within $\varepsilon$ of both $L$ and $L'$ simultaneously, forcing $|L - L'| < 2\varepsilon = |L - L'|$, a contradiction. The cluster-point hypothesis on $c$ is essential: without it, the punctured-interval condition is vacuous and the limit is trivially satisfied by every value.
 \end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
 \[
-L \neq L' \;\Rightarrow\; \neg\bigl(\operatorname{Derivative}(f,c,L) \;\land\; \operatorname{Derivative}(f,c,L')\bigr).
+L \neq L' \;\Rightarrow\;
+\neg\bigl(
+  \operatorname{Derivative}(L,f,\mathsf{Point}(c,A),\mathbb R,\mathbb R)
+  \;\land\;
+  \operatorname{Derivative}(L',f,\mathsf{Point}(c,A),\mathbb R,\mathbb R)
+\bigr).
 \]
 Two distinct candidates cannot both be the derivative of $f$ at $c$.
 
@@ -541,9 +552,9 @@ Two distinct candidates cannot both be the derivative of $f$ at $c$.
 \[
 L \neq L'
 \;\Longrightarrow\;
-\neg\operatorname{Derivative}(f,c,L)
+\neg\operatorname{Derivative}(L,f,\mathsf{Point}(c,A),\mathbb R,\mathbb R)
 \;\lor\;
-\neg\operatorname{Derivative}(f,c,L').
+\neg\operatorname{Derivative}(L',f,\mathsf{Point}(c,A),\mathbb R,\mathbb R).
 \]
 
 
@@ -608,7 +619,8 @@ Let $k\in\mathbb{R}$ and let $f(x)=k$ for all $x\in\mathbb{R}$. Then $f'(c)=0$ f
 \[
 \operatorname{ConstantFunction}(f,k)
 \Longrightarrow
-\forall c\in\mathbb{R}\;\operatorname{Derivative}(f,c,0).
+\forall c\in\mathbb{R}\;
+\operatorname{Derivative}(0,f,\mathsf{Point}(c,\mathbb R),\mathbb R,\mathbb R).
 \]
 \end{remark*}
 

@@ -283,19 +283,19 @@ Dividing by $\sin^2 x$: $\cot^2 x + 1 = \csc^2 x$.
 
 
 \[
-  \operatorname{TendsTo}\!\left(\frac{\sin x}{x},\,0,\,1\right)
+  \operatorname{TendsTo}\!\left(\frac{\sin x}{x},\,0,\,1,\,\mathbb R,\,\mathbb R\right)
   \;\colonequiv\;
   \forall\varepsilon>0,\;\exists\delta>0,\;\forall x:\;
   \bigl(
-    \operatorname{PuncturedNeighborhood}(U^\times_\delta,U_\delta,0,\delta,\mathbb R)
+    \operatorname{IsPuncturedCenteredOpenInterval}(I^\times_\delta(0),I_\delta(0),0,\delta,\mathbb R)
     \wedge
-    \operatorname{Within}(x,U^\times_\delta,\mathbb R)
+    \operatorname{Within}(x,I^\times_\delta(0),\mathbb R)
   \bigr)
   \Rightarrow
   \bigl(
-    \operatorname{Ball}(B_\varepsilon(1),1,\varepsilon,\mathbb R)
+    \operatorname{IsCenteredOpenInterval}(I_\varepsilon(1),1,\varepsilon,\mathbb R)
     \wedge
-    \operatorname{Within}\!\left(\frac{\sin x}{x},B_\varepsilon(1),\mathbb R\right)
+    \operatorname{Within}\!\left(\frac{\sin x}{x},I_\varepsilon(1),\mathbb R\right)
   \bigr).
 \]
 \end{remark*}
@@ -416,19 +416,19 @@ differentiation.
 
 \begin{remark*}[Predicate reading]
 \[
-  \operatorname{TendsTo}\!\left(\frac{1-\cos x}{x^2},\,0,\,\tfrac{1}{2}\right)
+  \operatorname{TendsTo}\!\left(\frac{1-\cos x}{x^2},\,0,\,\tfrac{1}{2},\,\mathbb R,\,\mathbb R\right)
   \;\colonequiv\;
   \forall\varepsilon>0,\;\exists\delta>0,\;\forall x:\;
   \bigl(
-    \operatorname{PuncturedNeighborhood}(U^\times_\delta,U_\delta,0,\delta,\mathbb R)
+    \operatorname{IsPuncturedCenteredOpenInterval}(I^\times_\delta(0),I_\delta(0),0,\delta,\mathbb R)
     \wedge
-    \operatorname{Within}(x,U^\times_\delta,\mathbb R)
+    \operatorname{Within}(x,I^\times_\delta(0),\mathbb R)
   \bigr)
   \Rightarrow
   \bigl(
-    \operatorname{Ball}(B_\varepsilon(\tfrac{1}{2}),\tfrac{1}{2},\varepsilon,\mathbb R)
+    \operatorname{IsCenteredOpenInterval}(I_\varepsilon(\tfrac{1}{2}),\tfrac{1}{2},\varepsilon,\mathbb R)
     \wedge
-    \operatorname{Within}\!\left(\frac{1-\cos x}{x^2},B_\varepsilon(\tfrac{1}{2}),\mathbb R\right)
+    \operatorname{Within}\!\left(\frac{1-\cos x}{x^2},I_\varepsilon(\tfrac{1}{2}),\mathbb R\right)
   \bigr).
 \]
 \end{remark*}

@@ -88,7 +88,7 @@ Relative neighborhoods capture the local behavior of $E$ around $a$ by intersect
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:subset]{Subset}
-  \item \hyperref[def:epsilon-neighbourhood]{Epsilon Neighbourhood}
+  \item \hyperref[def:epsilon-neighbourhood]{Centered Open Interval}
   \item \hyperref[def:order-on-r]{Order on $\mathbb{R}$}
 \end{itemize}
 \end{dependencies}
@@ -121,10 +121,16 @@ Let $A \subseteq \mathbb{R}$, let $f : A \to \mathbb{R}$, and let $c \in A$. The
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{IsContinuous}(f,A,c)
-\coloneqq
+\begin{aligned}
+\operatorname{IsContinuous}(f,\mathsf{Point}(c,A),\mathbb R,\mathbb R)
+&\Longleftrightarrow
 \forall \varepsilon>0\;\exists \delta>0\;\forall x\in A\;
-\bigl(|x-c|<\delta \Rightarrow |f(x)-f(c)|<\varepsilon\bigr).
+\Bigl[
+  \operatorname{Within}(x,I_\delta(c),\mathbb R)
+  \Rightarrow
+  \operatorname{Within}(f(x),I_\varepsilon(f(c)),\mathbb R)
+\Bigr].
+\end{aligned}
 \]
 \end{remark*}
 
@@ -142,7 +148,7 @@ Let $A \subseteq \mathbb{R}$, let $f : A \to \mathbb{R}$, and let $c \in A$. The
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{IsContinuous}(f,A,c)
+\neg\operatorname{IsContinuous}(f,\mathsf{Point}(c,A),\mathbb R,\mathbb R)
 \Longleftrightarrow
 \exists \varepsilon_0>0\;\forall \delta>0\;\exists x\in A\;
 \bigl(|x-c|<\delta \land |f(x)-f(c)| \ge \varepsilon_0\bigr).
@@ -152,7 +158,7 @@ Let $A \subseteq \mathbb{R}$, let $f : A \to \mathbb{R}$, and let $c \in A$. The
 \begin{remark*}[Failure modes]
 \begin{description}
   \item[Exposition.]
-Continuity at $c$ fails precisely when there exists a persistent output gap $\varepsilon_0>0$ such that no matter how small the chosen neighborhood of $c$ is, a point of $A$ within that neighborhood keeps the function values at least $\varepsilon_0$ away from $f(c)$. The single failure branch records this inescapable oscillation near $c$.
+Continuity at $c$ fails precisely when there exists a persistent output gap $\varepsilon_0>0$ such that no matter how small the chosen centered interval about $c$ is, a point of $A$ within that interval keeps the function values at least $\varepsilon_0$ away from $f(c)$. The single failure branch records this inescapable oscillation near $c$.
 \end{description}
 \end{remark*}
 
@@ -161,7 +167,7 @@ Continuity at $c$ fails precisely when there exists a persistent output gap $\va
   \item[Exposition.]
 \[
 \underbrace{\exists \varepsilon_0>0}_{\text{persistent gap}}
-\ \underbrace{\forall \delta>0}_{\text{every neighborhood}}
+\ \underbrace{\forall \delta>0}_{\text{every centered interval}}
 \ \underbrace{\exists x\in A}_{\text{nearby witness}}
 :\
 |x-c|<\delta \land |f(x)-f(c)| \ge \varepsilon_0.
@@ -180,15 +186,15 @@ Continuity at $c$ means that the output $f(x)$ can be kept arbitrarily close to 
 \end{dependencies}
 
 % ---------------------------------------------------------
-% Definition --- Continuity (Neighbourhood)
+% Definition --- Continuity (Centered Interval Form)
 % ---------------------------------------------------------
 
-\begin{definitionbox}{Definition (Continuity at a Point --- Neighbourhood Form)}
-\begin{definition}[Continuity at a Point --- Neighbourhood Form]
+\begin{definitionbox}{Definition (Continuity at a Point --- Centered Interval Form)}
+\begin{definition}[Continuity at a Point --- Centered Interval Form]
 \label{def:continuous-at-point-nbhd}
 Let $A \subseteq \mathbb{R}$, let $f : A \to \mathbb{R}$, and let $c \in A$. The function $f$ is continuous at $c$ if and only if for every $\varepsilon > 0$ there exists $\delta > 0$ such that
 \[
-f\bigl(A \cap (c-\delta, c+\delta)\bigr) \subseteq (f(c)-\varepsilon, f(c)+\varepsilon).
+f\bigl(A \cap I_\delta(c)\bigr) \subseteq I_\varepsilon(f(c)).
 \]
 \end{definition}
 \end{definitionbox}
@@ -198,14 +204,17 @@ f\bigl(A \cap (c-\delta, c+\delta)\bigr) \subseteq (f(c)-\varepsilon, f(c)+\vare
 \begin{aligned}
 &\text{Let } A \subseteq \mathbb{R},\; f:A \to \mathbb{R},\; c \in A.\\
 &f \text{ is continuous at } c \Longleftrightarrow \forall \varepsilon > 0\; \exists \delta > 0:\\
-&\qquad f\bigl(A \cap (c-\delta, c+\delta)\bigr) \subseteq (f(c)-\varepsilon, f(c)+\varepsilon).
+&\qquad f\bigl(A \cap I_\delta(c)\bigr) \subseteq I_\varepsilon(f(c)).
 \end{aligned}
 \]
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{IsContinuous}(f,c) \coloneqq \forall \varepsilon > 0\; \exists \delta > 0:\; f\bigl(A \cap (c-\delta, c+\delta)\bigr) \subseteq (f(c)-\varepsilon, f(c)+\varepsilon).
+\operatorname{IsContinuous}(f,\mathsf{Point}(c,A),\mathbb R,\mathbb R)
+\Longleftrightarrow
+\forall \varepsilon > 0\; \exists \delta > 0:\;
+f\bigl(A \cap I_\delta(c)\bigr) \subseteq I_\varepsilon(f(c)).
 \]
 \end{remark*}
 
@@ -214,21 +223,24 @@ f\bigl(A \cap (c-\delta, c+\delta)\bigr) \subseteq (f(c)-\varepsilon, f(c)+\vare
 \begin{aligned}
 &\text{Let } A \subseteq \mathbb{R},\; f:A \to \mathbb{R},\; c \in A.\\
 &\neg\bigl(f \text{ is continuous at } c\bigr) \Longleftrightarrow \exists \varepsilon_{0} > 0\; \forall \delta > 0:\\
-&\qquad f\bigl(A \cap (c-\delta, c+\delta)\bigr) \nsubseteq (f(c)-\varepsilon_{0}, f(c)+\varepsilon_{0}).
+&\qquad f\bigl(A \cap I_\delta(c)\bigr) \nsubseteq I_{\varepsilon_0}(f(c)).
 \end{aligned}
 \]
 \end{remark*}
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{IsDiscontinuous}(f,c) \Longleftrightarrow \exists \varepsilon_{0} > 0\; \forall \delta > 0:\; f\bigl(A \cap (c-\delta, c+\delta)\bigr) \nsubseteq (f(c)-\varepsilon_{0}, f(c)+\varepsilon_{0}).
+\operatorname{IsDiscontinuous}(f,\mathsf{Point}(c,A),\mathbb R,\mathbb R)
+\Longleftrightarrow
+\exists \varepsilon_{0} > 0\; \forall \delta > 0:\;
+f\bigl(A \cap I_\delta(c)\bigr) \nsubseteq I_{\varepsilon_0}(f(c)).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
 \begin{description}
   \item[Exposition.]
-Failure occurs precisely when some fixed output tolerance cannot be matched by any neighborhood about $c$. This manifests by finding points of $A$ arbitrarily close to $c$ whose images either exceed the upper endpoint $f(c)+\varepsilon_{0}$ or fall below the lower endpoint $f(c)-\varepsilon_{0}$.
+Failure occurs precisely when some fixed output tolerance cannot be matched by any centered interval about $c$. This manifests by finding points of $A$ arbitrarily close to $c$ whose images either exceed the upper endpoint $f(c)+\varepsilon_{0}$ or fall below the lower endpoint $f(c)-\varepsilon_{0}$.
 \end{description}
 \end{remark*}
 
@@ -249,7 +261,7 @@ Failure occurs precisely when some fixed output tolerance cannot be matched by a
 \end{remark*}
 
 \begin{remark*}[Interpretation]
-Continuity at $c$ demands that every output tolerance around $f(c)$ has a matching neighborhood around $c$ whose image remains confined to the tolerance band. The negation says that one tolerance band resists every neighborhood choice, so some sequence of points from $A$ approaches $c$ while their images either spike above or dip below $f(c)$ by at least a fixed amount. Geometrically, arbitrarily tight vertical strips around the graph above $c$ must be achievable by shrinking the horizontal window; failure means the graph keeps escaping that strip no matter how closely the input variable hugs $c$.
+Continuity at $c$ demands that every output tolerance around $f(c)$ has a matching centered interval around $c$ whose image remains confined to the tolerance band. The negation says that one tolerance band resists every centered-interval choice, so some sequence of points from $A$ approaches $c$ while their images either spike above or dip below $f(c)$ by at least a fixed amount. Geometrically, arbitrarily tight vertical strips around the graph above $c$ must be achievable by shrinking the horizontal window; failure means the graph keeps escaping that strip no matter how closely the input variable hugs $c$.
 \end{remark*}
 
 \begin{dependencies}
@@ -284,10 +296,12 @@ Let $A \subseteq \mathbb{R}$, let $c \in A$, and let $f \colon A \to \mathbb{R}$
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{IsContinuous}(f,c) \coloneqq
+\operatorname{IsContinuous}(f,\mathsf{Point}(c,A),\mathbb R,\mathbb R)
+\Longleftrightarrow
 \forall x_n\;
-\Bigl(\mathsf{Sequence}(x_n, A) \land \operatorname{ConvergesTo}(x_n, c)
-\Rightarrow \operatorname{ConvergesTo}(f(x_n), f(c))\Bigr).
+\Bigl(\mathsf{Sequence}(x_n, A)
+\land \operatorname{ConvergesTo}(x_n,c,\mathbb R)
+\Rightarrow \operatorname{ConvergesTo}(f(x_n),f(c),\mathbb R)\Bigr).
 \]
 \end{remark*}
 
@@ -304,10 +318,12 @@ Let $A \subseteq \mathbb{R}$, let $c \in A$, and let $f \colon A \to \mathbb{R}$
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{IsContinuous}(f,c) \Longleftrightarrow
+\neg\operatorname{IsContinuous}(f,\mathsf{Point}(c,A),\mathbb R,\mathbb R)
+\Longleftrightarrow
 \exists x_n\;
-\Bigl(\mathsf{Sequence}(x_n, A) \land \operatorname{ConvergesTo}(x_n, c)
-\land \neg\operatorname{ConvergesTo}(f(x_n), f(c))\Bigr).
+\Bigl(\mathsf{Sequence}(x_n, A)
+\land \operatorname{ConvergesTo}(x_n,c,\mathbb R)
+\land \neg\operatorname{ConvergesTo}(f(x_n),f(c),\mathbb R)\Bigr).
 \]
 \end{remark*}
 
