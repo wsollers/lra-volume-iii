@@ -27,6 +27,7 @@ Let $D\subseteq S\subseteq\mathbb{R}$. The set $D$ is \emph{dense in} $S$ if and
 
 \begin{remark*}[Predicate reading]
 \[
+D\subseteq S\subseteq\mathbb{R},\qquad
 \operatorname{IsDense}(D,S)\coloneqq
 \forall x\in S\;\forall \varepsilon>0\;\exists d\in D\;\bigl(|x-d|<\varepsilon\bigr).
 \]
@@ -45,6 +46,7 @@ Let $D\subseteq S\subseteq\mathbb{R}$. The set $D$ is \emph{dense in} $S$ if and
 
 \begin{remark*}[Negation predicate reading]
 \[
+D\subseteq S\subseteq\mathbb{R},\qquad
 \neg\operatorname{IsDense}(D,S)\Longleftrightarrow
 \exists x\in S\;\exists \varepsilon_0>0\;\forall d\in D\;\bigl(|x-d|\ge \varepsilon_0\bigr).
 \]
@@ -76,9 +78,9 @@ Density is an approximation property inside $S$. It does not say that every poin
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:subset]{Subset}
   \item \hyperref[def:reals]{Real Numbers}
   \item \hyperref[def:real-chapter-absolute-value-on-r]{Absolute Value on $\mathbb{R}$}
+  \item \hyperref[def:subset]{Subset}
 \end{itemize}
 \end{dependencies}
 \input{volume-iii/book-analysis-i/bounding/notes/completeness/figure-dense-subset}
@@ -102,7 +104,9 @@ Let $X$ be a linearly ordered set and let $A\subseteq X$. The subset $A$ is \emp
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{IsOrderDenseSubset}(A,X)\coloneqq
+X\in\mathbf{Set},\qquad A\subseteq X,\qquad P_X=\mathsf{OrderedSet}(X,\leq),\qquad
+D_A=\mathsf{OrderDenseSet}(A,P_X),\qquad
+\operatorname{IsOrderDenseSubset}(A,P_X)\coloneqq
 \forall a,b\in X\;\bigl(a<b\rightarrow \exists c\in A\;(a<c<b)\bigr).
 \]
 \end{remark*}
@@ -120,7 +124,9 @@ Let $X$ be a linearly ordered set and let $A\subseteq X$. The subset $A$ is \emp
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{IsOrderDenseSubset}(A,X)\Longleftrightarrow
+X\in\mathbf{Set},\qquad A\subseteq X,\qquad P_X=\mathsf{OrderedSet}(X,\leq),\qquad
+D_A=\mathsf{OrderDenseSet}(A,P_X),\qquad
+\neg\operatorname{IsOrderDenseSubset}(A,P_X)\Longleftrightarrow
 \exists a,b\in X\;\bigl(a<b\land \forall c\in A\;(c\le a\lor b\le c)\bigr).
 \]
 \end{remark*}
@@ -151,8 +157,8 @@ Order density is an interval-penetration property. It ignores metric distance an
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:total-order]{Total Order}
   \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:totally-ordered-set]{Total Order}
 \end{itemize}
 \end{dependencies}
 \begin{theorembox}{Theorem (Density of the Rationals)}
@@ -171,7 +177,9 @@ For every $a,b\in\mathbb{R}$ with $a<b$, there exists $q\in\mathbb{Q}$ such that
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{IsOrderDenseSubset}(\mathbb{Q},\mathbb{R})\Longleftrightarrow
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad \mathbb{Q}\subseteq\mathbb{R},\qquad
+D_{\mathbb{Q}}=\mathsf{OrderDenseSet}(\mathbb{Q},P_{\mathbb{R}}),\qquad
+\operatorname{IsOrderDenseSubset}(\mathbb{Q},P_{\mathbb{R}})\Longleftrightarrow
 \forall a,b\in\mathbb{R}\;\bigl(a<b\rightarrow \exists q\in\mathbb{Q}\;(a<q<b)\bigr).
 \]
 \end{remark*}
@@ -184,7 +192,9 @@ For every $a,b\in\mathbb{R}$ with $a<b$, there exists $q\in\mathbb{Q}$ such that
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{IsOrderDenseSubset}(\mathbb{Q},\mathbb{R})\Longleftrightarrow
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad \mathbb{Q}\subseteq\mathbb{R},\qquad
+D_{\mathbb{Q}}=\mathsf{OrderDenseSet}(\mathbb{Q},P_{\mathbb{R}}),\qquad
+\neg\operatorname{IsOrderDenseSubset}(\mathbb{Q},P_{\mathbb{R}})\Longleftrightarrow
 \exists a,b\in\mathbb{R}\;\bigl(a<b\land \forall q\in\mathbb{Q}\;(q\le a\lor b\le q)\bigr).
 \]
 \end{remark*}
@@ -214,8 +224,14 @@ Rational numbers penetrate every real interval. The theorem does not say that ev
 \end{remark*}
 
 \begin{dependencies}
-\hyperref[def:order-dense-subset]{Definition~\ref*{def:order-dense-subset}},
-\hyperref[thm:archimedean-property]{Theorem~\ref*{thm:archimedean-property}}.
+\begin{itemize}
+\item \hyperref[def:reals]{Real Numbers}.
+\item \hyperref[def:rationals]{Rational Numbers}.
+\item \hyperref[def:ordered-set]{Ordered Set}.
+\item \hyperref[def:subset]{Subset}.
+\item \hyperref[def:order-dense-subset]{Order Dense Subset}.
+\item \hyperref[thm:archimedean-property]{Archimedean Property}.
+\end{itemize}
 \end{dependencies}
 
 \begin{lemmabox}{Lemma (Rational Translation Preserves Rationality)}
@@ -516,7 +532,9 @@ For every $a,b\in\mathbb{R}$ with $a<b$, there exists $s\in\mathbb{R}\setminus\m
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{IsOrderDenseSubset}(\mathbb{R}\setminus\mathbb{Q},\mathbb{R})\Longleftrightarrow
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad I=\mathbb{R}\setminus\mathbb{Q},\qquad
+D_I=\mathsf{OrderDenseSet}(I,P_{\mathbb{R}}),\qquad
+\operatorname{IsOrderDenseSubset}(I,P_{\mathbb{R}})\Longleftrightarrow
 \forall a,b\in\mathbb{R}\;\bigl(a<b\rightarrow \exists s\in\mathbb{R}\setminus\mathbb{Q}\;(a<s<b)\bigr).
 \]
 \end{remark*}
@@ -529,7 +547,9 @@ For every $a,b\in\mathbb{R}$ with $a<b$, there exists $s\in\mathbb{R}\setminus\m
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{IsOrderDenseSubset}(\mathbb{R}\setminus\mathbb{Q},\mathbb{R})\Longleftrightarrow
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad I=\mathbb{R}\setminus\mathbb{Q},\qquad
+D_I=\mathsf{OrderDenseSet}(I,P_{\mathbb{R}}),\qquad
+\neg\operatorname{IsOrderDenseSubset}(I,P_{\mathbb{R}})\Longleftrightarrow
 \exists a,b\in\mathbb{R}\;\bigl(a<b\land \forall s\in\mathbb{R}\setminus\mathbb{Q}\;(s\le a\lor b\le s)\bigr).
 \]
 \end{remark*}
@@ -559,8 +579,14 @@ Irrational numbers also penetrate every real interval. One way to see the result
 \end{remark*}
 
 \begin{dependencies}
-\hyperref[def:order-dense-subset]{Definition~\ref*{def:order-dense-subset}},
-\hyperref[thm:density-of-rationals-in-reals]{Theorem~\ref*{thm:density-of-rationals-in-reals}}.
+\begin{itemize}
+\item \hyperref[def:reals]{Real Numbers}.
+\item \hyperref[def:rationals]{Rational Numbers}.
+\item \hyperref[def:ordered-set]{Ordered Set}.
+\item \hyperref[def:set-difference]{Set Difference}.
+\item \hyperref[def:order-dense-subset]{Order Dense Subset}.
+\item \hyperref[thm:density-of-rationals-in-reals]{Density of the Rationals}.
+\end{itemize}
 \end{dependencies}
 
 
@@ -684,7 +710,9 @@ a<c<b.
 \end{remark*}
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{HasDenseOrder}(\mathbb{R}).
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+D_{\mathbb{R}}=\mathsf{OrderDenseSet}(\mathbb{R},P_{\mathbb{R}}),\qquad
+\operatorname{HasDenseOrder}(P_{\mathbb{R}}).
 \]
 \end{remark*}
 \begin{remark*}[Negated quantified statement]
@@ -695,7 +723,9 @@ a<c<b.
 \end{remark*}
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{HasDenseOrder}(\mathbb{R}).
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+D_{\mathbb{R}}=\mathsf{OrderDenseSet}(\mathbb{R},P_{\mathbb{R}}),\qquad
+\neg\operatorname{HasDenseOrder}(P_{\mathbb{R}}).
 \]
 \end{remark*}
 \begin{remark*}[Interpretation]
@@ -703,7 +733,11 @@ No two distinct real numbers are consecutive; every nonempty open real interval
 contains another real point.
 \end{remark*}
 \begin{dependencies}
-\hyperref[thm:density-of-rationals-in-reals]{Density of the Rationals}.
+\begin{itemize}
+\item \hyperref[def:reals]{Real Numbers}.
+\item \hyperref[def:ordered-set]{Ordered Set}.
+\item \hyperref[thm:density-of-rationals-in-reals]{Density of the Rationals}.
+\end{itemize}
 \end{dependencies}
 
 \begin{theorembox}{Theorem (No Immediate Successors in $\mathbb{R}$)}
@@ -722,7 +756,15 @@ For every $a\in\mathbb{R}$, there is no least real number greater than $a$.
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-The displayed quantified statement is the predicate-level form of $label: its hypotheses name the input conditions, and its conclusion names the asserted structure or relation.
+\[
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+D_{\mathbb{R}}=\mathsf{OrderDenseSet}(\mathbb{R},P_{\mathbb{R}}),\qquad
+\operatorname{HasDenseOrder}(P_{\mathbb{R}})
+\Longrightarrow
+\forall a\in\mathbb{R}\;
+\neg\exists m\in\mathbb{R}\;
+\bigl(a<m\land \forall x\in\mathbb{R}\;(a<x\rightarrow m\le x)\bigr).
+\]
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -752,7 +794,15 @@ For every $a\in\mathbb{R}$, there is no greatest real number less than $a$.
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-The displayed quantified statement is the predicate-level form of $label: its hypotheses name the input conditions, and its conclusion names the asserted structure or relation.
+\[
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+D_{\mathbb{R}}=\mathsf{OrderDenseSet}(\mathbb{R},P_{\mathbb{R}}),\qquad
+\operatorname{HasDenseOrder}(P_{\mathbb{R}})
+\Longrightarrow
+\forall a\in\mathbb{R}\;
+\neg\exists m\in\mathbb{R}\;
+\bigl(m<a\land \forall x\in\mathbb{R}\;(x<a\rightarrow x\le m)\bigr).
+\]
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -787,9 +837,12 @@ a<b\rightarrow
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{IsOrderDenseSubset}(\mathbb{Q},\mathbb{R})
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad I=\mathbb{R}\setminus\mathbb{Q},\qquad
+D_{\mathbb{Q}}=\mathsf{OrderDenseSet}(\mathbb{Q},P_{\mathbb{R}}),\qquad
+D_I=\mathsf{OrderDenseSet}(I,P_{\mathbb{R}}),\qquad
+\operatorname{IsOrderDenseSubset}(\mathbb{Q},P_{\mathbb{R}})
 \land
-\operatorname{IsOrderDenseSubset}(\mathbb{R}\setminus\mathbb{Q},\mathbb{R}).
+\operatorname{IsOrderDenseSubset}(I,P_{\mathbb{R}}).
 \]
 \end{remark*}
 
@@ -809,10 +862,13 @@ a<b\land
 
 \begin{remark*}[Negation predicate reading]
 \[
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad I=\mathbb{R}\setminus\mathbb{Q},\qquad
+D_{\mathbb{Q}}=\mathsf{OrderDenseSet}(\mathbb{Q},P_{\mathbb{R}}),\qquad
+D_I=\mathsf{OrderDenseSet}(I,P_{\mathbb{R}}),\qquad
 \neg\Bigl[
-\operatorname{IsOrderDenseSubset}(\mathbb{Q},\mathbb{R})
+\operatorname{IsOrderDenseSubset}(\mathbb{Q},P_{\mathbb{R}})
 \land
-\operatorname{IsOrderDenseSubset}(\mathbb{R}\setminus\mathbb{Q},\mathbb{R})
+\operatorname{IsOrderDenseSubset}(I,P_{\mathbb{R}})
 \Bigr].
 \]
 \end{remark*}
@@ -844,8 +900,15 @@ The corollary combines the two density theorems. Every real interval, no matter 
 \end{remark*}
 
 \begin{dependencies}
-\hyperref[thm:density-of-rationals-in-reals]{Theorem~\ref*{thm:density-of-rationals-in-reals}},
-\hyperref[thm:density-of-irrationals-in-reals]{Theorem~\ref*{thm:density-of-irrationals-in-reals}}.
+\begin{itemize}
+\item \hyperref[def:reals]{Real Numbers}.
+\item \hyperref[def:rationals]{Rational Numbers}.
+\item \hyperref[def:ordered-set]{Ordered Set}.
+\item \hyperref[def:set-difference]{Set Difference}.
+\item \hyperref[def:open-interval]{Open Interval}.
+\item \hyperref[thm:density-of-rationals-in-reals]{Density of the Rationals}.
+\item \hyperref[thm:density-of-irrationals-in-reals]{Density of the Irrationals}.
+\end{itemize}
 \end{dependencies}
 
 

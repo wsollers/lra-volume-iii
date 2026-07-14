@@ -24,8 +24,12 @@ of $A\cup B$.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{UpperBound}(u_A,A)\land\operatorname{UpperBound}(u_B,B)
-\Longrightarrow \operatorname{UpperBound}(\max\{u_A,u_B\},A\cup B).
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\\
+&U=A\cup B,\qquad m=\max\{u_A,u_B\},\\
+&\operatorname{UpperBound}(u_A,A,P)\land\operatorname{UpperBound}(u_B,B,P)
+\Longrightarrow \operatorname{UpperBound}(m,U,P).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -39,8 +43,12 @@ of $A\cup B$.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{UpperBound}(u_A,A)\land\operatorname{UpperBound}(u_B,B)\land
-\neg\operatorname{UpperBound}(\max\{u_A,u_B\},A\cup B).
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\\
+&U=A\cup B,\qquad m=\max\{u_A,u_B\},\\
+&\operatorname{UpperBound}(u_A,A,P)\land\operatorname{UpperBound}(u_B,B,P)\land
+\neg\operatorname{UpperBound}(m,U,P).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -59,7 +67,14 @@ $x\leq u_B\leq\max\{u_A,u_B\}$.
 \end{remark*}
 
 \begin{dependencies}
-\hyperref[def:real-upper-bound]{Upper Bound}.
+\begin{itemize}
+\item \hyperref[def:reals]{Real Numbers}.
+\item \hyperref[def:ordered-set]{Ordered Set}.
+\item \hyperref[def:subset]{Subset}.
+\item \hyperref[def:union]{Union}.
+\item \hyperref[def:maximum]{Maximum}.
+\item \hyperref[def:real-upper-bound]{Upper Bound}.
+\end{itemize}
 \end{dependencies}
 
 \begin{lemmabox}{Lemma (Union Preserves Lower Bounds)}
@@ -82,8 +97,12 @@ bound of $A\cup B$.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{LowerBound}(\ell_A,A)\land\operatorname{LowerBound}(\ell_B,B)
-\Longrightarrow \operatorname{LowerBound}(\min\{\ell_A,\ell_B\},A\cup B).
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\\
+&U=A\cup B,\qquad m=\min\{\ell_A,\ell_B\},\\
+&\operatorname{LowerBound}(\ell_A,A,P)\land\operatorname{LowerBound}(\ell_B,B,P)
+\Longrightarrow \operatorname{LowerBound}(m,U,P).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -97,8 +116,12 @@ bound of $A\cup B$.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{LowerBound}(\ell_A,A)\land\operatorname{LowerBound}(\ell_B,B)\land
-\neg\operatorname{LowerBound}(\min\{\ell_A,\ell_B\},A\cup B).
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\\
+&U=A\cup B,\qquad m=\min\{\ell_A,\ell_B\},\\
+&\operatorname{LowerBound}(\ell_A,A,P)\land\operatorname{LowerBound}(\ell_B,B,P)\land
+\neg\operatorname{LowerBound}(m,U,P).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -117,7 +140,14 @@ bound.
 \end{remark*}
 
 \begin{dependencies}
-\hyperref[def:real-lower-bound]{Lower Bound}.
+\begin{itemize}
+\item \hyperref[def:reals]{Real Numbers}.
+\item \hyperref[def:ordered-set]{Ordered Set}.
+\item \hyperref[def:subset]{Subset}.
+\item \hyperref[def:union]{Union}.
+\item \hyperref[def:minimum]{Minimum}.
+\item \hyperref[def:real-lower-bound]{Lower Bound}.
+\end{itemize}
 \end{dependencies}
 
 \begin{propositionbox}{Proposition (Union Is Bounded Above Exactly When Both Pieces Are)}
@@ -141,9 +171,12 @@ A\neq\varnothing,\quad B\neq\varnothing
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{BoundedAbove}(A\cup B)
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\qquad U=A\cup B,\\
+&\operatorname{BoundedAbove}(U,P)
 \Longleftrightarrow
-\operatorname{BoundedAbove}(A)\land\operatorname{BoundedAbove}(B).
+\operatorname{BoundedAbove}(A,P)\land\operatorname{BoundedAbove}(B,P).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -153,8 +186,11 @@ The equivalence fails precisely if one side holds and the other does not.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{BoundedAbove}(A\cup B)\oplus
-\bigl(\operatorname{BoundedAbove}(A)\land\operatorname{BoundedAbove}(B)\bigr).
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\qquad U=A\cup B,\\
+&\operatorname{BoundedAbove}(U,P)\oplus
+\bigl(\operatorname{BoundedAbove}(A,P)\land\operatorname{BoundedAbove}(B,P)\bigr).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -174,9 +210,15 @@ the reverse direction.
 \end{remark*}
 
 \begin{dependencies}
-\hyperref[def:bounded-above]{Bounded Above};
-\hyperref[lem:union-preserves-upper-bounds]{Union Preserves Upper Bounds};
-\hyperref[lem:subsets-preserve-upper-bounds]{Subsets Preserve Upper Bounds}.
+\begin{itemize}
+\item \hyperref[def:reals]{Real Numbers}.
+\item \hyperref[def:ordered-set]{Ordered Set}.
+\item \hyperref[def:subset]{Subset}.
+\item \hyperref[def:union]{Union}.
+\item \hyperref[def:bounded-above]{Bounded Above}.
+\item \hyperref[lem:union-preserves-upper-bounds]{Union Preserves Upper Bounds}.
+\item \hyperref[lem:subsets-preserve-upper-bounds]{Subsets Preserve Upper Bounds}.
+\end{itemize}
 \end{dependencies}
 
 \begin{propositionbox}{Proposition (Union Is Bounded Below Exactly When Both Pieces Are)}
@@ -200,9 +242,12 @@ A\neq\varnothing,\quad B\neq\varnothing
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{BoundedBelow}(A\cup B)
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\qquad U=A\cup B,\\
+&\operatorname{BoundedBelow}(U,P)
 \Longleftrightarrow
-\operatorname{BoundedBelow}(A)\land\operatorname{BoundedBelow}(B).
+\operatorname{BoundedBelow}(A,P)\land\operatorname{BoundedBelow}(B,P).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -212,8 +257,11 @@ The equivalence fails precisely if one side holds and the other does not.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{BoundedBelow}(A\cup B)\oplus
-\bigl(\operatorname{BoundedBelow}(A)\land\operatorname{BoundedBelow}(B)\bigr).
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\qquad U=A\cup B,\\
+&\operatorname{BoundedBelow}(U,P)\oplus
+\bigl(\operatorname{BoundedBelow}(A,P)\land\operatorname{BoundedBelow}(B,P)\bigr).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -233,9 +281,15 @@ the reverse direction.
 \end{remark*}
 
 \begin{dependencies}
-\hyperref[def:bounded-below]{Bounded Below};
-\hyperref[lem:union-preserves-lower-bounds]{Union Preserves Lower Bounds};
-\hyperref[lem:subsets-preserve-lower-bounds]{Subsets Preserve Lower Bounds}.
+\begin{itemize}
+\item \hyperref[def:reals]{Real Numbers}.
+\item \hyperref[def:ordered-set]{Ordered Set}.
+\item \hyperref[def:subset]{Subset}.
+\item \hyperref[def:union]{Union}.
+\item \hyperref[def:bounded-below]{Bounded Below}.
+\item \hyperref[lem:union-preserves-lower-bounds]{Union Preserves Lower Bounds}.
+\item \hyperref[lem:subsets-preserve-lower-bounds]{Subsets Preserve Lower Bounds}.
+\end{itemize}
 \end{dependencies}
 
 \begin{corollarybox}{Corollary (Union Is Bounded Exactly When Both Pieces Are)}
@@ -259,9 +313,12 @@ A\neq\varnothing,\quad B\neq\varnothing
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{Bounded}(A\cup B)
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\qquad U=A\cup B,\\
+&\operatorname{Bounded}(U,P)
 \Longleftrightarrow
-\operatorname{Bounded}(A)\land\operatorname{Bounded}(B).
+\operatorname{Bounded}(A,P)\land\operatorname{Bounded}(B,P).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -272,8 +329,11 @@ one-sided equivalence fails.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{Bounded}(A\cup B)\oplus
-\bigl(\operatorname{Bounded}(A)\land\operatorname{Bounded}(B)\bigr).
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\qquad U=A\cup B,\\
+&\operatorname{Bounded}(U,P)\oplus
+\bigl(\operatorname{Bounded}(A,P)\land\operatorname{Bounded}(B,P)\bigr).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -290,9 +350,15 @@ Apply the bounded-above and bounded-below union equivalences separately.
 \end{remark*}
 
 \begin{dependencies}
-\hyperref[def:bounded]{Bounded Set};
-\hyperref[prop:union-bounded-above-iff-pieces-bounded-above]{Union Is Bounded Above Exactly When Both Pieces Are};
-\hyperref[prop:union-bounded-below-iff-pieces-bounded-below]{Union Is Bounded Below Exactly When Both Pieces Are}.
+\begin{itemize}
+\item \hyperref[def:reals]{Real Numbers}.
+\item \hyperref[def:ordered-set]{Ordered Set}.
+\item \hyperref[def:subset]{Subset}.
+\item \hyperref[def:union]{Union}.
+\item \hyperref[def:bounded]{Bounded Set}.
+\item \hyperref[prop:union-bounded-above-iff-pieces-bounded-above]{Union Is Bounded Above Exactly When Both Pieces Are}.
+\item \hyperref[prop:union-bounded-below-iff-pieces-bounded-below]{Union Is Bounded Below Exactly When Both Pieces Are}.
+\end{itemize}
 \end{dependencies}
 
 \begin{lemmabox}{Lemma (Subsets Preserve Upper Bounds)}
@@ -314,8 +380,11 @@ C\subseteq A\land(\forall a\in A)(a\leq u)
 
 \begin{remark*}[Predicate reading]
 \[
-C\subseteq A\land\operatorname{UpperBound}(u,A)
-\Longrightarrow \operatorname{UpperBound}(u,C).
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad C\subseteq A\subseteq\mathbb{R},\\
+&\operatorname{UpperBound}(u,A,P)
+\Longrightarrow \operatorname{UpperBound}(u,C,P).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -328,7 +397,10 @@ C\subseteq A,\quad (\forall a\in A)(a\leq u),\quad
 
 \begin{remark*}[Negation predicate reading]
 \[
-C\subseteq A\land\operatorname{UpperBound}(u,A)\land\neg\operatorname{UpperBound}(u,C).
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad C\subseteq A\subseteq\mathbb{R},\\
+&\operatorname{UpperBound}(u,A,P)\land\neg\operatorname{UpperBound}(u,C,P).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -346,7 +418,12 @@ condition on $A$ therefore applies directly to $c$.
 \end{remark*}
 
 \begin{dependencies}
-\hyperref[def:real-upper-bound]{Upper Bound}.
+\begin{itemize}
+\item \hyperref[def:reals]{Real Numbers}.
+\item \hyperref[def:ordered-set]{Ordered Set}.
+\item \hyperref[def:subset]{Subset}.
+\item \hyperref[def:real-upper-bound]{Upper Bound}.
+\end{itemize}
 \end{dependencies}
 
 \begin{lemmabox}{Lemma (Subsets Preserve Lower Bounds)}
@@ -368,8 +445,11 @@ C\subseteq A\land(\forall a\in A)(\ell\leq a)
 
 \begin{remark*}[Predicate reading]
 \[
-C\subseteq A\land\operatorname{LowerBound}(\ell,A)
-\Longrightarrow \operatorname{LowerBound}(\ell,C).
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad C\subseteq A\subseteq\mathbb{R},\\
+&\operatorname{LowerBound}(\ell,A,P)
+\Longrightarrow \operatorname{LowerBound}(\ell,C,P).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -382,7 +462,10 @@ C\subseteq A,\quad (\forall a\in A)(\ell\leq a),\quad
 
 \begin{remark*}[Negation predicate reading]
 \[
-C\subseteq A\land\operatorname{LowerBound}(\ell,A)\land\neg\operatorname{LowerBound}(\ell,C).
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad C\subseteq A\subseteq\mathbb{R},\\
+&\operatorname{LowerBound}(\ell,A,P)\land\neg\operatorname{LowerBound}(\ell,C,P).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -400,7 +483,12 @@ one.
 \end{remark*}
 
 \begin{dependencies}
-\hyperref[def:real-lower-bound]{Lower Bound}.
+\begin{itemize}
+\item \hyperref[def:reals]{Real Numbers}.
+\item \hyperref[def:ordered-set]{Ordered Set}.
+\item \hyperref[def:subset]{Subset}.
+\item \hyperref[def:real-lower-bound]{Lower Bound}.
+\end{itemize}
 \end{dependencies}
 
 \begin{corollarybox}{Corollary (Intersections Inherit Bounds)}
@@ -420,9 +508,12 @@ A\cap B\subseteq A.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{UpperBound}(u,A)\Longrightarrow\operatorname{UpperBound}(u,A\cap B),
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\qquad C=A\cap B,\\
+&\operatorname{UpperBound}(u,A,P)\Longrightarrow\operatorname{UpperBound}(u,C,P),\\
+&\operatorname{LowerBound}(\ell,A,P)\Longrightarrow\operatorname{LowerBound}(\ell,C,P).
+\end{aligned}
 \]
-and similarly for lower bounds.
 \end{remark*}
 
 \begin{remark*}[Negated quantified statement]
@@ -431,8 +522,11 @@ A failure would be a failure of subset inheritance for $A\cap B\subseteq A$.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{UpperBound}(u,A)\land
-\neg\operatorname{UpperBound}(u,A\cap B)
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\qquad C=A\cap B,\\
+&\operatorname{UpperBound}(u,A,P)\land
+\neg\operatorname{UpperBound}(u,C,P)
+\end{aligned}
 \]
 is contradictory, and the same holds for lower bounds.
 \end{remark*}
@@ -450,8 +544,16 @@ Apply subset inheritance to $C=A\cap B$.
 \end{remark*}
 
 \begin{dependencies}
-\hyperref[lem:subsets-preserve-upper-bounds]{Subsets Preserve Upper Bounds};
-\hyperref[lem:subsets-preserve-lower-bounds]{Subsets Preserve Lower Bounds}.
+\begin{itemize}
+\item \hyperref[def:reals]{Real Numbers}.
+\item \hyperref[def:ordered-set]{Ordered Set}.
+\item \hyperref[def:subset]{Subset}.
+\item \hyperref[def:intersection]{Intersection}.
+\item \hyperref[def:real-upper-bound]{Upper Bound}.
+\item \hyperref[def:real-lower-bound]{Lower Bound}.
+\item \hyperref[lem:subsets-preserve-upper-bounds]{Subsets Preserve Upper Bounds}.
+\item \hyperref[lem:subsets-preserve-lower-bounds]{Subsets Preserve Lower Bounds}.
+\end{itemize}
 \end{dependencies}
 
 \begin{corollarybox}{Corollary (Differences Inherit Bounds)}
@@ -472,9 +574,12 @@ A\setminus B\subseteq A.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{UpperBound}(u,A)\Longrightarrow\operatorname{UpperBound}(u,A\setminus B),
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\qquad D=A\setminus B,\\
+&\operatorname{UpperBound}(u,A,P)\Longrightarrow\operatorname{UpperBound}(u,D,P),\\
+&\operatorname{LowerBound}(\ell,A,P)\Longrightarrow\operatorname{LowerBound}(\ell,D,P).
+\end{aligned}
 \]
-and similarly for lower bounds.
 \end{remark*}
 
 \begin{remark*}[Negated quantified statement]
@@ -484,8 +589,11 @@ $A\setminus B\subseteq A$.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{UpperBound}(u,A)\land
-\neg\operatorname{UpperBound}(u,A\setminus B)
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\qquad D=A\setminus B,\\
+&\operatorname{UpperBound}(u,A,P)\land
+\neg\operatorname{UpperBound}(u,D,P)
+\end{aligned}
 \]
 is contradictory, and the same holds for lower bounds.
 \end{remark*}
@@ -503,8 +611,16 @@ Apply subset inheritance to $C=A\setminus B$.
 \end{remark*}
 
 \begin{dependencies}
-\hyperref[lem:subsets-preserve-upper-bounds]{Subsets Preserve Upper Bounds};
-\hyperref[lem:subsets-preserve-lower-bounds]{Subsets Preserve Lower Bounds}.
+\begin{itemize}
+\item \hyperref[def:reals]{Real Numbers}.
+\item \hyperref[def:ordered-set]{Ordered Set}.
+\item \hyperref[def:subset]{Subset}.
+\item \hyperref[def:set-difference]{Set Difference}.
+\item \hyperref[def:real-upper-bound]{Upper Bound}.
+\item \hyperref[def:real-lower-bound]{Lower Bound}.
+\item \hyperref[lem:subsets-preserve-upper-bounds]{Subsets Preserve Upper Bounds}.
+\item \hyperref[lem:subsets-preserve-lower-bounds]{Subsets Preserve Lower Bounds}.
+\end{itemize}
 \end{dependencies}
 
 \begin{corollarybox}{Corollary (Complements Inherit Ambient Bounds)}
@@ -525,9 +641,11 @@ E\setminus A\subseteq E.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{UpperBound}(u,E)\Longrightarrow\operatorname{UpperBound}(u,E\setminus A),
-\qquad
-\operatorname{LowerBound}(\ell,E)\Longrightarrow\operatorname{LowerBound}(\ell,E\setminus A).
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq E\subseteq\mathbb{R},\qquad C=E\setminus A,\\
+&\operatorname{UpperBound}(u,E,P)\Longrightarrow\operatorname{UpperBound}(u,C,P),\\
+&\operatorname{LowerBound}(\ell,E,P)\Longrightarrow\operatorname{LowerBound}(\ell,C,P).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -542,8 +660,14 @@ or
 \end{remark*}
 
 \begin{remark*}[Negation predicate reading]
-Both negated configurations contradict subset inheritance because
-$E\setminus A\subseteq E$.
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq E\subseteq\mathbb{R},\qquad C=E\setminus A,\\
+&\bigl(\operatorname{UpperBound}(u,E,P)\land\neg\operatorname{UpperBound}(u,C,P)\bigr)\\
+&\qquad{}\lor
+\bigl(\operatorname{LowerBound}(\ell,E,P)\land\neg\operatorname{LowerBound}(\ell,C,P)\bigr).
+\end{aligned}
+\]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
@@ -560,6 +684,15 @@ $E$ applies to the complement.
 \end{remark*}
 
 \begin{dependencies}
-\hyperref[lem:subsets-preserve-upper-bounds]{Subsets Preserve Upper Bounds};
-\hyperref[lem:subsets-preserve-lower-bounds]{Subsets Preserve Lower Bounds}.
+\begin{itemize}
+\item \hyperref[def:reals]{Real Numbers}.
+\item \hyperref[def:ordered-set]{Ordered Set}.
+\item \hyperref[def:subset]{Subset}.
+\item \hyperref[def:complement]{Complement}.
+\item \hyperref[def:set-difference]{Set Difference}.
+\item \hyperref[def:real-upper-bound]{Upper Bound}.
+\item \hyperref[def:real-lower-bound]{Lower Bound}.
+\item \hyperref[lem:subsets-preserve-upper-bounds]{Subsets Preserve Upper Bounds}.
+\item \hyperref[lem:subsets-preserve-lower-bounds]{Subsets Preserve Lower Bounds}.
+\end{itemize}
 \end{dependencies}

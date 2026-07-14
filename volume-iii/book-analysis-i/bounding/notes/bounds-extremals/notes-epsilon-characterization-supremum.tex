@@ -34,13 +34,16 @@ Let $A\subseteq\mathbb{R}$ and let $s\in\mathbb{R}$. The element $s$ satisfies t
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{EpsilonCharacterizationOfSupremum}(s,A,\mathbb{R})
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\\
+&\operatorname{EpsilonCharacterizationOfSupremum}(s,A,P)
 \Longleftrightarrow
-\operatorname{LeastUpperBound}(s,A,\mathbb{R})
+\operatorname{LeastUpperBound}(s,A,P)
 \Longleftrightarrow
-\operatorname{UpperBound}(s,A)
+\operatorname{UpperBound}(s,A,P)
 \land
 \forall \varepsilon>0\;\exists a\in A\;(s-\varepsilon<a).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -59,10 +62,13 @@ Let $A\subseteq\mathbb{R}$ and let $s\in\mathbb{R}$. The element $s$ satisfies t
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{EpsilonCharacterizationOfSupremum}(s,A,\mathbb{R})\Longleftrightarrow
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\\
+&\neg\operatorname{EpsilonCharacterizationOfSupremum}(s,A,P)\Longleftrightarrow
 \Bigl[\exists x\in A\;(s<x)\Bigr]
 \lor
 \Bigl[\exists \varepsilon_0>0\;\forall a\in A\;(a\le s-\varepsilon_0)\Bigr].
+\end{aligned}
 \]
 \end{remark*}
 
@@ -91,7 +97,13 @@ This condition says that $s$ caps the set from above while points of $A$ approac
 \end{remark*}
 
 \begin{dependencies}
-\hyperref[def:real-upper-bound]{Definition~\ref*{def:real-upper-bound}}.
+\begin{itemize}
+\item \hyperref[def:reals]{Real Numbers}.
+\item \hyperref[def:ordered-set]{Ordered Set}.
+\item \hyperref[def:subset]{Subset}.
+\item \hyperref[def:real-upper-bound]{Upper Bound}.
+\item \hyperref[def:supremum]{Supremum}.
+\end{itemize}
 \end{dependencies}
 
 
@@ -137,13 +149,16 @@ Let $A\subseteq\mathbb{R}$ and let $t\in\mathbb{R}$. The element $t$ satisfies t
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{EpsilonCharacterizationOfInfimum}(t,A,\mathbb{R})
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\\
+&\operatorname{EpsilonCharacterizationOfInfimum}(t,A,P)
 \Longleftrightarrow
-\operatorname{GreatestLowerBound}(t,A,\mathbb{R})
+\operatorname{GreatestLowerBound}(t,A,P)
 \Longleftrightarrow
-\operatorname{LowerBound}(t,A)
+\operatorname{LowerBound}(t,A,P)
 \land
 \forall \varepsilon>0\;\exists a\in A\;(a<t+\varepsilon).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -162,10 +177,13 @@ Let $A\subseteq\mathbb{R}$ and let $t\in\mathbb{R}$. The element $t$ satisfies t
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{EpsilonCharacterizationOfInfimum}(t,A,\mathbb{R})\Longleftrightarrow
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\\
+&\neg\operatorname{EpsilonCharacterizationOfInfimum}(t,A,P)\Longleftrightarrow
 \Bigl[\exists x\in A\;(x<t)\Bigr]
 \lor
 \Bigl[\exists \varepsilon_0>0\;\forall a\in A\;(t+\varepsilon_0\le a)\Bigr].
+\end{aligned}
 \]
 \end{remark*}
 
@@ -203,7 +221,13 @@ Infima}.
 \end{remark*}
 
 \begin{dependencies}
-\hyperref[def:real-lower-bound]{Definition~\ref*{def:real-lower-bound}}.
+\begin{itemize}
+\item \hyperref[def:reals]{Real Numbers}.
+\item \hyperref[def:ordered-set]{Ordered Set}.
+\item \hyperref[def:subset]{Subset}.
+\item \hyperref[def:real-lower-bound]{Lower Bound}.
+\item \hyperref[def:infimum]{Infimum}.
+\end{itemize}
 \end{dependencies}
 
 \begin{lemmabox}{Lemma (Supremum Strict Upper Approximation)}
@@ -245,8 +269,14 @@ u<\sup A\land A\cap(u,\sup A]=\varnothing.
 Every number strictly below a supremum is crossed by some element of the set.
 \end{remark*}
 \begin{dependencies}
-\hyperref[def:supremum]{Supremum};
-\hyperref[def:epsilon-characterization-of-supremum]{Epsilon Characterization of Supremum}.
+\begin{itemize}
+\item \hyperref[def:reals]{Real Numbers}.
+\item \hyperref[def:subset]{Subset}.
+\item \hyperref[def:intersection]{Intersection}.
+\item \hyperref[def:interval]{Interval}.
+\item \hyperref[def:supremum]{Supremum}.
+\item \hyperref[def:epsilon-characterization-of-supremum]{Epsilon Characterization of Supremum}.
+\end{itemize}
 \end{dependencies}
 
 \begin{lemmabox}{Lemma (Infimum Strict Lower Approximation)}
@@ -289,6 +319,12 @@ Every number strictly above an infimum is reached from below by some element
 of the set.
 \end{remark*}
 \begin{dependencies}
-\hyperref[def:infimum]{Infimum};
-\hyperref[def:epsilon-characterization-of-infimum]{Epsilon Characterization of Infimum}.
+\begin{itemize}
+\item \hyperref[def:reals]{Real Numbers}.
+\item \hyperref[def:subset]{Subset}.
+\item \hyperref[def:intersection]{Intersection}.
+\item \hyperref[def:interval]{Interval}.
+\item \hyperref[def:infimum]{Infimum}.
+\item \hyperref[def:epsilon-characterization-of-infimum]{Epsilon Characterization of Infimum}.
+\end{itemize}
 \end{dependencies}

@@ -79,9 +79,17 @@ Then the sequence $(a_n)$ is monotone increasing.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{NestedClosedIntervals}([a_n,b_n])
+F=([a_n,b_n])_{n\in\mathbb{N}},\qquad
+a\colon\mathbb{N}\to\mathbb{R},\qquad a(n)=a_n,
+\]
+\[
+P_{\mathbb{N}}=\mathsf{OrderedSet}(\mathbb{N},\leq),\qquad
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),
+\]
+\[
+\operatorname{NestedClosedIntervals}(F,P_{\mathbb{R}})
 \Longrightarrow
-\operatorname{OrderPreserving}(a_n).
+\operatorname{OrderPreserving}(a,P_{\mathbb{N}},P_{\mathbb{R}}).
 \]
 \end{remark*}
 
@@ -93,9 +101,17 @@ Then the sequence $(a_n)$ is monotone increasing.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{OrderPreserving}(a_n)
+F=([a_n,b_n])_{n\in\mathbb{N}},\qquad
+a\colon\mathbb{N}\to\mathbb{R},\qquad a(n)=a_n,
+\]
+\[
+P_{\mathbb{N}}=\mathsf{OrderedSet}(\mathbb{N},\leq),\qquad
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),
+\]
+\[
+\neg\operatorname{OrderPreserving}(a,P_{\mathbb{N}},P_{\mathbb{R}})
 \Longrightarrow
-\neg\operatorname{NestedClosedIntervals}([a_n,b_n]).
+\neg\operatorname{NestedClosedIntervals}(F,P_{\mathbb{R}}).
 \]
 \end{remark*}
 
@@ -125,9 +141,17 @@ Then the sequence $(b_n)$ is monotone decreasing.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{NestedClosedIntervals}([a_n,b_n])
+F=([a_n,b_n])_{n\in\mathbb{N}},\qquad
+b\colon\mathbb{N}\to\mathbb{R},\qquad b(n)=b_n,
+\]
+\[
+P_{\mathbb{N}}=\mathsf{OrderedSet}(\mathbb{N},\leq),\qquad
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),
+\]
+\[
+\operatorname{NestedClosedIntervals}(F,P_{\mathbb{R}})
 \Longrightarrow
-\operatorname{OrderReversing}(b_n).
+\operatorname{OrderReversing}(b,P_{\mathbb{N}},P_{\mathbb{R}}).
 \]
 \end{remark*}
 
@@ -139,9 +163,17 @@ Then the sequence $(b_n)$ is monotone decreasing.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{OrderReversing}(b_n)
+F=([a_n,b_n])_{n\in\mathbb{N}},\qquad
+b\colon\mathbb{N}\to\mathbb{R},\qquad b(n)=b_n,
+\]
+\[
+P_{\mathbb{N}}=\mathsf{OrderedSet}(\mathbb{N},\leq),\qquad
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),
+\]
+\[
+\neg\operatorname{OrderReversing}(b,P_{\mathbb{N}},P_{\mathbb{R}})
 \Longrightarrow
-\neg\operatorname{NestedClosedIntervals}([a_n,b_n]).
+\neg\operatorname{NestedClosedIntervals}(F,P_{\mathbb{R}}).
 \]
 \end{remark*}
 
@@ -174,7 +206,10 @@ Then for all $m,n\in\mathbb N$,
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{NestedClosedIntervals}([a_n,b_n])
+F=([a_n,b_n])_{n\in\mathbb{N}},\qquad P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),
+\]
+\[
+\operatorname{NestedClosedIntervals}(F,P_{\mathbb{R}})
 \Longrightarrow
 \forall m,n\in\mathbb{N}\;(a_n\le b_m).
 \]
@@ -188,9 +223,12 @@ Then for all $m,n\in\mathbb N$,
 
 \begin{remark*}[Negation predicate reading]
 \[
+F=([a_n,b_n])_{n\in\mathbb{N}},\qquad P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),
+\]
+\[
 \exists m,n\in\mathbb{N}\;(b_m<a_n)
 \Longrightarrow
-\neg\operatorname{NestedClosedIntervals}([a_n,b_n]).
+\neg\operatorname{NestedClosedIntervals}(F,P_{\mathbb{R}}).
 \]
 \end{remark*}
 
@@ -231,11 +269,16 @@ then
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{NestedClosedIntervals}([a_n,b_n])
+F=([a_n,b_n])_{n\in\mathbb{N}},\qquad
+A=\{a_n:n\in\mathbb{N}\},\qquad B=\{b_n:n\in\mathbb{N}\},
+\]
+\[
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+\operatorname{NestedClosedIntervals}(F,P_{\mathbb{R}})
 \land
-\operatorname{LeastUpperBound}(\alpha,\{a_n:n\in\mathbb{N}\})
+\operatorname{LeastUpperBound}(\alpha,A,P_{\mathbb{R}})
 \land
-\operatorname{GreatestLowerBound}(\beta,\{b_n:n\in\mathbb{N}\})
+\operatorname{GreatestLowerBound}(\beta,B,P_{\mathbb{R}})
 \Longrightarrow
 \alpha\le \beta.
 \]
@@ -255,13 +298,18 @@ then
 
 \begin{remark*}[Negation predicate reading]
 \[
+F=([a_n,b_n])_{n\in\mathbb{N}},\qquad
+A=\{a_n:n\in\mathbb{N}\},\qquad B=\{b_n:n\in\mathbb{N}\},
+\]
+\[
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
 \beta<\alpha
 \Longrightarrow
-\neg\operatorname{NestedClosedIntervals}([a_n,b_n])
+\neg\operatorname{NestedClosedIntervals}(F,P_{\mathbb{R}})
 \lor
-\neg\operatorname{LeastUpperBound}(\alpha,\{a_n:n\in\mathbb{N}\})
+\neg\operatorname{LeastUpperBound}(\alpha,A,P_{\mathbb{R}})
 \lor
-\neg\operatorname{GreatestLowerBound}(\beta,\{b_n:n\in\mathbb{N}\}).
+\neg\operatorname{GreatestLowerBound}(\beta,B,P_{\mathbb{R}}).
 \]
 \end{remark*}
 
@@ -271,9 +319,9 @@ endpoints.
 \end{remark*}
 
 \begin{dependencies}
+\hyperref[def:closed-interval]{Closed Interval};
 \hyperref[def:supremum]{Supremum};
-\hyperref[def:infimum]{Infimum};
-\hyperref[def:closed-interval]{Closed Interval}.
+\hyperref[def:infimum]{Infimum}.
 \end{dependencies}
 
 \input{volume-iii/book-analysis-i/bounding/notes/completeness/figure-nested-interval-endpoints}
@@ -312,8 +360,12 @@ for every $n\in\mathbb N$. Then
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{NestedClosedBoundedIntervals}(I_n)\Longrightarrow
-\operatorname{IsNonempty}\!\left(\bigcap_{n=1}^{\infty}I_n\right).
+F=(I_n)_{n\in\mathbb{N}},\qquad C=\bigcap_{n=1}^{\infty}I_n,\qquad
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),
+\]
+\[
+\operatorname{NestedClosedBoundedIntervals}(F,P_{\mathbb{R}})\Longrightarrow
+\operatorname{IsNonempty}(C).
 \]
 \end{remark*}
 
@@ -334,9 +386,13 @@ for every $n\in\mathbb N$. Then
 
 \begin{remark*}[Negation predicate reading]
 \[
-\bigcap_{n=1}^{\infty}[a_n,b_n]=\varnothing
+F=([a_n,b_n])_{n\in\mathbb{N}},\qquad C=\bigcap_{n=1}^{\infty}[a_n,b_n],\qquad
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),
+\]
+\[
+C=\varnothing
 \Longrightarrow
-\neg\operatorname{NestedClosedBoundedIntervals}([a_n,b_n]).
+\neg\operatorname{NestedClosedBoundedIntervals}(F,P_{\mathbb{R}}).
 \]
 \end{remark*}
 
@@ -346,10 +402,10 @@ at the limiting stage.
 \end{remark*}
 
 \begin{dependencies}
-\hyperref[ax:completeness-of-reals]{Axiom~\ref*{ax:completeness-of-reals}};
-\hyperref[def:supremum]{Supremum};
 \hyperref[def:closed-interval]{Closed Interval};
-\hyperref[def:bounded-subset-of-r]{Bounded Subset of the Real Line}.
+\hyperref[def:bounded-subset-of-r]{Bounded Subset of the Real Line};
+\hyperref[def:supremum]{Supremum};
+\hyperref[ax:completeness-of-reals]{Axiom~\ref*{ax:completeness-of-reals}}.
 \end{dependencies}
 
 \begin{corollarybox}{Corollary (Nested Interval Intersection Contains the Endpoint Supremum)}
@@ -378,11 +434,16 @@ then
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{NestedClosedBoundedIntervals}([a_n,b_n])
+F=([a_n,b_n])_{n\in\mathbb{N}},\qquad A=\{a_n:n\in\mathbb{N}\},\qquad
+C=\bigcap_{n=1}^{\infty}[a_n,b_n],
+\]
+\[
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+\operatorname{NestedClosedBoundedIntervals}(F,P_{\mathbb{R}})
 \land
-\operatorname{LeastUpperBound}(\alpha,\{a_n:n\in\mathbb{N}\})
+\operatorname{LeastUpperBound}(\alpha,A,P_{\mathbb{R}})
 \Longrightarrow
-\alpha\in\bigcap_{n=1}^{\infty}[a_n,b_n].
+\alpha\in C.
 \]
 \end{remark*}
 
@@ -398,11 +459,16 @@ then
 
 \begin{remark*}[Negation predicate reading]
 \[
-\alpha\notin \bigcap_{n=1}^{\infty}[a_n,b_n]
+F=([a_n,b_n])_{n\in\mathbb{N}},\qquad A=\{a_n:n\in\mathbb{N}\},\qquad
+C=\bigcap_{n=1}^{\infty}[a_n,b_n],
+\]
+\[
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+\alpha\notin C
 \Longrightarrow
-\neg\operatorname{LeastUpperBound}(\alpha,\{a_n:n\in\mathbb{N}\})
+\neg\operatorname{LeastUpperBound}(\alpha,A,P_{\mathbb{R}})
 \lor
-\neg\operatorname{NestedClosedBoundedIntervals}([a_n,b_n]).
+\neg\operatorname{NestedClosedBoundedIntervals}(F,P_{\mathbb{R}}).
 \]
 \end{remark*}
 
@@ -412,9 +478,9 @@ interval in the nested family.
 \end{remark*}
 
 \begin{dependencies}
-\hyperref[def:supremum]{Supremum};
 \hyperref[def:closed-interval]{Closed Interval};
-\hyperref[def:bounded-subset-of-r]{Bounded Subset of the Real Line}.
+\hyperref[def:bounded-subset-of-r]{Bounded Subset of the Real Line};
+\hyperref[def:supremum]{Supremum}.
 \end{dependencies}
 
 \begin{corollarybox}{Corollary (Nested Interval Intersection Contains the Endpoint Infimum)}
@@ -443,11 +509,16 @@ then
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{NestedClosedBoundedIntervals}([a_n,b_n])
+F=([a_n,b_n])_{n\in\mathbb{N}},\qquad B=\{b_n:n\in\mathbb{N}\},\qquad
+C=\bigcap_{n=1}^{\infty}[a_n,b_n],
+\]
+\[
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+\operatorname{NestedClosedBoundedIntervals}(F,P_{\mathbb{R}})
 \land
-\operatorname{GreatestLowerBound}(\beta,\{b_n:n\in\mathbb{N}\})
+\operatorname{GreatestLowerBound}(\beta,B,P_{\mathbb{R}})
 \Longrightarrow
-\beta\in\bigcap_{n=1}^{\infty}[a_n,b_n].
+\beta\in C.
 \]
 \end{remark*}
 
@@ -463,11 +534,16 @@ then
 
 \begin{remark*}[Negation predicate reading]
 \[
-\beta\notin \bigcap_{n=1}^{\infty}[a_n,b_n]
+F=([a_n,b_n])_{n\in\mathbb{N}},\qquad B=\{b_n:n\in\mathbb{N}\},\qquad
+C=\bigcap_{n=1}^{\infty}[a_n,b_n],
+\]
+\[
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+\beta\notin C
 \Longrightarrow
-\neg\operatorname{GreatestLowerBound}(\beta,\{b_n:n\in\mathbb{N}\})
+\neg\operatorname{GreatestLowerBound}(\beta,B,P_{\mathbb{R}})
 \lor
-\neg\operatorname{NestedClosedBoundedIntervals}([a_n,b_n]).
+\neg\operatorname{NestedClosedBoundedIntervals}(F,P_{\mathbb{R}}).
 \]
 \end{remark*}
 
@@ -477,9 +553,9 @@ interval in the nested family.
 \end{remark*}
 
 \begin{dependencies}
-\hyperref[def:infimum]{Infimum};
 \hyperref[def:closed-interval]{Closed Interval};
-\hyperref[def:bounded-subset-of-r]{Bounded Subset of the Real Line}.
+\hyperref[def:bounded-subset-of-r]{Bounded Subset of the Real Line};
+\hyperref[def:infimum]{Infimum}.
 \end{dependencies}
 
 \begin{corollarybox}{Corollary (Nested Intervals with Vanishing Length Have Unique Point)}
@@ -509,9 +585,14 @@ then there exists a unique $x\in\mathbb R$ such that
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{NestedClosedBoundedIntervals}([a_n,b_n])
+F=([a_n,b_n])_{n\in\mathbb{N}},\qquad
+d\colon\mathbb{N}\to\mathbb{R},\qquad d_n=b_n-a_n,
+\]
+\[
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad X=\mathbb{R},\qquad
+\operatorname{NestedClosedBoundedIntervals}(F,P_{\mathbb{R}})
 \land
-\operatorname{ConvergesTo}((b_n-a_n),0,\mathbb{R})
+\operatorname{ConvergesTo}(d,0,X)
 \Longrightarrow
 \exists x\in\mathbb{R}\;
 \left(\bigcap_{n=1}^{\infty}[a_n,b_n]=\{x\}\right).
@@ -531,12 +612,17 @@ then there exists a unique $x\in\mathbb R$ such that
 
 \begin{remark*}[Negation predicate reading]
 \[
+F=([a_n,b_n])_{n\in\mathbb{N}},\qquad
+d\colon\mathbb{N}\to\mathbb{R},\qquad d_n=b_n-a_n,
+\]
+\[
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad X=\mathbb{R},\qquad
 \neg\exists x\in\mathbb{R}\;
 \left(\bigcap_{n=1}^{\infty}[a_n,b_n]=\{x\}\right)
 \Longrightarrow
-\neg\operatorname{NestedClosedBoundedIntervals}([a_n,b_n])
+\neg\operatorname{NestedClosedBoundedIntervals}(F,P_{\mathbb{R}})
 \lor
-\neg\operatorname{ConvergesTo}((b_n-a_n),0,\mathbb{R}).
+\neg\operatorname{ConvergesTo}(d,0,X).
 \]
 \end{remark*}
 
@@ -577,15 +663,23 @@ then $(a_n)$ and $(b_n)$ converge and
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{NestedClosedBoundedIntervals}([a_n,b_n])
+F=([a_n,b_n])_{n\in\mathbb{N}},\qquad
+a\colon\mathbb{N}\to\mathbb{R},\qquad b\colon\mathbb{N}\to\mathbb{R},\qquad d\colon\mathbb{N}\to\mathbb{R},
+\]
+\[
+a(n)=a_n,\qquad b(n)=b_n,\qquad d_n=b_n-a_n,
+\]
+\[
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad X=\mathbb{R},\qquad
+\operatorname{NestedClosedBoundedIntervals}(F,P_{\mathbb{R}})
 \land
-\operatorname{ConvergesTo}((b_n-a_n),0,\mathbb{R})
+\operatorname{ConvergesTo}(d,0,X)
 \Longrightarrow
 \exists L\in\mathbb{R}\;
 \left(
-\operatorname{ConvergesTo}(a_n,L,\mathbb{R})
+\operatorname{ConvergesTo}(a,L,X)
 \land
-\operatorname{ConvergesTo}(b_n,L,\mathbb{R})
+\operatorname{ConvergesTo}(b,L,X)
 \right).
 \]
 \end{remark*}
@@ -603,16 +697,22 @@ then $(a_n)$ and $(b_n)$ converge and
 
 \begin{remark*}[Negation predicate reading]
 \[
+a\colon\mathbb{N}\to\mathbb{R},\qquad b\colon\mathbb{N}\to\mathbb{R},\qquad
+d\colon\mathbb{N}\to\mathbb{R},\qquad d_n=b_n-a_n,
+\]
+\[
+F=([a_n,b_n])_{n\in\mathbb{N}},\qquad
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad X=\mathbb{R},\qquad
 \neg\exists L\in\mathbb{R}\;
 \left(
-\operatorname{ConvergesTo}(a_n,L,\mathbb{R})
+\operatorname{ConvergesTo}(a,L,X)
 \land
-\operatorname{ConvergesTo}(b_n,L,\mathbb{R})
+\operatorname{ConvergesTo}(b,L,X)
 \right)
 \Longrightarrow
-\neg\operatorname{NestedClosedBoundedIntervals}([a_n,b_n])
+\neg\operatorname{NestedClosedBoundedIntervals}(F,P_{\mathbb{R}})
 \lor
-\neg\operatorname{ConvergesTo}((b_n-a_n),0,\mathbb{R}).
+\neg\operatorname{ConvergesTo}(d,0,X).
 \]
 \end{remark*}
 
@@ -662,13 +762,17 @@ then
 
 \begin{remark*}[Predicate reading]
 \[
-\bigcap_{n=1}^{\infty}[a_n,b_n]=\{x\}
+a\colon\mathbb{N}\to\mathbb{R},\qquad b\colon\mathbb{N}\to\mathbb{R},\qquad d\colon\mathbb{N}\to\mathbb{R},\qquad d_n=b_n-a_n,
+\]
+\[
+C=\bigcap_{n=1}^{\infty}[a_n,b_n],\qquad X=\mathbb{R},\qquad
+C=\{x\}
 \land
-\operatorname{ConvergesTo}((b_n-a_n),0,\mathbb{R})
+\operatorname{ConvergesTo}(d,0,X)
 \Longrightarrow
-\operatorname{ConvergesTo}(a_n,x,\mathbb{R})
+\operatorname{ConvergesTo}(a,x,X)
 \land
-\operatorname{ConvergesTo}(b_n,x,\mathbb{R}).
+\operatorname{ConvergesTo}(b,x,X).
 \]
 \end{remark*}
 
@@ -684,11 +788,15 @@ then
 
 \begin{remark*}[Negation predicate reading]
 \[
+a\colon\mathbb{N}\to\mathbb{R},\qquad b\colon\mathbb{N}\to\mathbb{R},\qquad d\colon\mathbb{N}\to\mathbb{R},\qquad d_n=b_n-a_n,
+\]
+\[
+C=\bigcap_{n=1}^{\infty}[a_n,b_n],\qquad X=\mathbb{R},\qquad
 \left(\lim_{n\to\infty}a_n\ne x\lor \lim_{n\to\infty}b_n\ne x\right)
 \Longrightarrow
-\bigcap_{n=1}^{\infty}[a_n,b_n]\ne\{x\}
+C\ne\{x\}
 \lor
-\neg\operatorname{ConvergesTo}((b_n-a_n),0,\mathbb{R}).
+\neg\operatorname{ConvergesTo}(d,0,X).
 \]
 \end{remark*}
 
@@ -737,14 +845,16 @@ for every $n\in\mathbb N$, but
 
 \begin{remark*}[Predicate reading]
 \[
-\exists I_n\;\exists\mathcal{I}\;\bigl(
-\mathcal{I}=\mathsf{IndexedFamily}(I_n,\mathbb{N},\mathbb{R})
+\exists F\;\exists\mathcal{I}\;\exists C\;\bigl(
+\mathcal{I}=\mathsf{IndexedFamily}(F,\mathbb{N},\mathbb{R})
+\land C=\bigcap_{n=1}^{\infty}I_n
+\land \Phi=\mathsf{OpenBoundedInterval}
 \land
-\operatorname{MembersSatisfy}(\mathcal{I},\mathsf{OpenBoundedInterval},\mathbb{R})
+\operatorname{MembersSatisfy}(\mathcal{I},\Phi,\mathbb{R})
 \land
 \operatorname{Nested}(\mathcal{I},\subseteq)
 \land
-\operatorname{IsEmpty}\!\left(\bigcap_{n=1}^{\infty}I_n\right)
+\operatorname{IsEmpty}(C)
 \bigr).
 \]
 \end{remark*}
@@ -802,9 +912,10 @@ not closed.
 
 \begin{remark*}[Predicate reading]
 \[
-\neg\operatorname{IsClosedInterval}(I_n)
+\mathcal{I}=\mathsf{IndexedFamily}(I_n,\mathbb{N},\mathbb{R}),\qquad C=\bigcap_{n=1}^{\infty}I_n,\qquad
+\neg\operatorname{IsClosedInterval}(I_n,\mathbb{R})
 \quad\text{can make}\quad
-\operatorname{IsNonempty}\!\left(\bigcap_{n=1}^{\infty}I_n\right)
+\operatorname{IsNonempty}(C)
 \text{ fail.}
 \]
 \end{remark*}
@@ -826,9 +937,13 @@ not closed.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\bigcap_{n=1}^{\infty}I_n=\varnothing
+C=\bigcap_{n=1}^{\infty}I_n,\qquad F=(I_n)_{n\in\mathbb{N}},\qquad
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),
+\]
+\[
+C=\varnothing
 \Longrightarrow
-\neg\operatorname{NestedClosedBoundedIntervals}(I_n).
+\neg\operatorname{NestedClosedBoundedIntervals}(F,P_{\mathbb{R}}).
 \]
 \end{remark*}
 
@@ -866,9 +981,10 @@ closed intervals that are not bounded.
 
 \begin{remark*}[Predicate reading]
 \[
-\neg\operatorname{IsBoundedInterval}(I_n)
+F=(I_n)_{n\in\mathbb{N}},\qquad C=\bigcap_{n=1}^{\infty}I_n,\qquad
+\neg\operatorname{IsBoundedInterval}(I_n,\mathbb{R})
 \quad\text{can make}\quad
-\operatorname{IsNonempty}\!\left(\bigcap_{n=1}^{\infty}I_n\right)
+\operatorname{IsNonempty}(C)
 \text{ fail.}
 \]
 \end{remark*}
@@ -886,9 +1002,13 @@ closed intervals that are not bounded.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\bigcap_{n=1}^{\infty}I_n=\varnothing
+C=\bigcap_{n=1}^{\infty}I_n,\qquad F=(I_n)_{n\in\mathbb{N}},\qquad
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),
+\]
+\[
+C=\varnothing
 \Longrightarrow
-\neg\operatorname{NestedClosedBoundedIntervals}(I_n).
+\neg\operatorname{NestedClosedBoundedIntervals}(F,P_{\mathbb{R}}).
 \]
 \end{remark*}
 

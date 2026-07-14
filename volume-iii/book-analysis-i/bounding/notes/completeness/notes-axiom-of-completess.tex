@@ -47,12 +47,13 @@ Let $(S,\le)$ be an ordered set. The set $S$ has the \emph{Least Upper Bound Pro
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{HasLeastUpperBoundProperty}(S)\coloneqq
+S\in\mathbf{Set},\qquad P=\mathsf{OrderedSet}(S,\leq),\qquad
+\operatorname{HasLeastUpperBoundProperty}(P)\coloneqq
 \forall A\subseteq S\;
 \Bigl[
 \bigl(A\neq\varnothing \land \exists u\in S\;\forall x\in A\;(x\le u)\bigr)
 \rightarrow
-\exists s\in S\;\operatorname{LeastUpperBound}(s,A)
+\exists s\in S\;\operatorname{LeastUpperBound}(s,A,P)
 \Bigr].
 \]
 \end{remark*}
@@ -77,14 +78,15 @@ A\neq\varnothing
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{HasLeastUpperBoundProperty}(S)\Longleftrightarrow
+S\in\mathbf{Set},\qquad P=\mathsf{OrderedSet}(S,\leq),\qquad
+\neg\operatorname{HasLeastUpperBoundProperty}(P)\Longleftrightarrow
 \exists A\subseteq S\;
 \Bigl[
 A\neq\varnothing
 \land
 \exists u\in S\;\forall x\in A\;(x\le u)
 \land
-\forall s\in S\;\neg\operatorname{LeastUpperBound}(s,A)
+\forall s\in S\;\neg\operatorname{LeastUpperBound}(s,A,P)
 \Bigr].
 \]
 \end{remark*}
@@ -155,7 +157,8 @@ Equivalently,
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{HasLeastUpperBoundProperty}(\mathbb{R}).
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+\operatorname{HasLeastUpperBoundProperty}(P_{\mathbb{R}}).
 \]
 \end{remark*}
 
@@ -178,14 +181,15 @@ A\neq\varnothing
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{HasLeastUpperBoundProperty}(\mathbb{R})\Longleftrightarrow
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+\neg\operatorname{HasLeastUpperBoundProperty}(P_{\mathbb{R}})\Longleftrightarrow
 \exists A\subseteq\mathbb{R}\;
 \Bigl[
 A\neq\varnothing
 \land
 \exists u\in\mathbb{R}\;\forall x\in A\;(x\le u)
 \land
-\forall s\in\mathbb{R}\;\neg\operatorname{LeastUpperBound}(s,A)
+\forall s\in\mathbb{R}\;\neg\operatorname{LeastUpperBound}(s,A,P_{\mathbb{R}})
 \Bigr].
 \]
 \end{remark*}
@@ -220,6 +224,8 @@ The completeness axiom asserts that the real line has no order gaps of the least
 \begin{itemize}
   \item \hyperref[def:reals]{The Real Numbers}
   \item \hyperref[def:real-ordered-field]{Ordered Field}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
   \item \hyperref[def:least-upper-bound-property]{Least Upper Bound Property}
 \end{itemize}
 \end{dependencies}

@@ -34,7 +34,7 @@ element of $A$ is less than or equal to $m$.
 
 \begin{remark*}[Predicate reading]
 \[
-  P=\mathsf{OrderedSet}(S,\leq),\qquad
+  S\in\mathbf{Set},\qquad A\subseteq S,\qquad P=\mathsf{OrderedSet}(S,\leq),\qquad
   \operatorname{GreatestElement}(m,A,P).
 \]
 \end{remark*}
@@ -51,7 +51,7 @@ element of $A$ is less than or equal to $m$.
 
 \begin{remark*}[Negation predicate reading]
 \[
-  P=\mathsf{OrderedSet}(S,\leq),\qquad
+  S\in\mathbf{Set},\qquad A\subseteq S,\qquad P=\mathsf{OrderedSet}(S,\leq),\qquad
   \neg\operatorname{GreatestElement}(m,A,P).
 \]
 \end{remark*}
@@ -100,8 +100,9 @@ attainment condition separates maximum from supremum.
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:real-upper-bound]{Upper Bound}
   \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:real-upper-bound]{Upper Bound}
 \end{itemize}
 \end{dependencies}
 
@@ -126,7 +127,7 @@ element of $A$ is greater than or equal to $m$.
 
 \begin{remark*}[Predicate reading]
 \[
-  P=\mathsf{OrderedSet}(S,\leq),\qquad
+  S\in\mathbf{Set},\qquad A\subseteq S,\qquad P=\mathsf{OrderedSet}(S,\leq),\qquad
   \operatorname{LeastElement}(m,A,P).
 \]
 \end{remark*}
@@ -143,7 +144,7 @@ element of $A$ is greater than or equal to $m$.
 
 \begin{remark*}[Negation predicate reading]
 \[
-  P=\mathsf{OrderedSet}(S,\leq),\qquad
+  S\in\mathbf{Set},\qquad A\subseteq S,\qquad P=\mathsf{OrderedSet}(S,\leq),\qquad
   \neg\operatorname{LeastElement}(m,A,P).
 \]
 \end{remark*}
@@ -192,8 +193,9 @@ attainment condition separates minimum from infimum.
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:real-lower-bound]{Lower Bound}
   \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:real-lower-bound]{Lower Bound}
 \end{itemize}
 \end{dependencies}
 
@@ -221,7 +223,7 @@ $m,n\in S$ are both maxima of $A$, then $m=n$.
 
 \begin{remark*}[Predicate reading]
 \[
-  P=\mathsf{OrderedSet}(S,\leq),\qquad
+  S\in\mathbf{Set},\qquad A\subseteq S,\qquad P=\mathsf{OrderedSet}(S,\leq),\qquad
   \operatorname{GreatestElement}(m,A,P)\land\operatorname{GreatestElement}(n,A,P)
   \Longrightarrow m=n.
 \]
@@ -241,7 +243,7 @@ $m,n\in S$ are both maxima of $A$, then $m=n$.
 
 \begin{remark*}[Negation predicate reading]
 \[
-  P=\mathsf{OrderedSet}(S,\leq),\qquad
+  S\in\mathbf{Set},\qquad A\subseteq S,\qquad P=\mathsf{OrderedSet}(S,\leq),\qquad
   \operatorname{GreatestElement}(m,A,P)\land
   \operatorname{GreatestElement}(n,A,P)\land m\neq n.
 \]
@@ -274,8 +276,9 @@ distinct ordered-set elements.
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:maximum]{Maximum}
   \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:maximum]{Maximum}
 \end{itemize}
 \end{dependencies}
 
@@ -302,7 +305,7 @@ $m,n\in S$ are both minima of $A$, then $m=n$.
 
 \begin{remark*}[Predicate reading]
 \[
-  P=\mathsf{OrderedSet}(S,\leq),\qquad
+  S\in\mathbf{Set},\qquad A\subseteq S,\qquad P=\mathsf{OrderedSet}(S,\leq),\qquad
   \operatorname{LeastElement}(m,A,P)\land\operatorname{LeastElement}(n,A,P)
   \Longrightarrow m=n.
 \]
@@ -322,7 +325,7 @@ $m,n\in S$ are both minima of $A$, then $m=n$.
 
 \begin{remark*}[Negation predicate reading]
 \[
-  P=\mathsf{OrderedSet}(S,\leq),\qquad
+  S\in\mathbf{Set},\qquad A\subseteq S,\qquad P=\mathsf{OrderedSet}(S,\leq),\qquad
   \operatorname{LeastElement}(m,A,P)\land
   \operatorname{LeastElement}(n,A,P)\land m\neq n.
 \]
@@ -355,8 +358,9 @@ distinct ordered-set elements.
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:minimum]{Minimum}
   \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:minimum]{Minimum}
 \end{itemize}
 \end{dependencies}
 
@@ -382,7 +386,7 @@ $m=\max A$, then $m=\sup A$.
 
 \begin{remark*}[Predicate reading]
 \[
-  P=\mathsf{OrderedSet}(S,\leq),\qquad
+  S\in\mathbf{Set},\qquad A\subseteq S,\qquad P=\mathsf{OrderedSet}(S,\leq),\qquad
   \operatorname{GreatestElement}(m,A,P)\Longrightarrow
   \operatorname{LeastUpperBound}(m,A,P).
 \]
@@ -423,9 +427,11 @@ any upper bound must lie above the attained element.
 
 \begin{dependencies}
 \begin{itemize}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:real-upper-bound]{Upper Bound}
   \item \hyperref[def:maximum]{Maximum}
   \item \hyperref[def:supremum]{Supremum}
-  \item \hyperref[def:real-upper-bound]{Upper Bound}
 \end{itemize}
 \end{dependencies}
 
@@ -450,7 +456,7 @@ $m=\min A$, then $m=\inf A$.
 
 \begin{remark*}[Predicate reading]
 \[
-  P=\mathsf{OrderedSet}(S,\leq),\qquad
+  S\in\mathbf{Set},\qquad A\subseteq S,\qquad P=\mathsf{OrderedSet}(S,\leq),\qquad
   \operatorname{LeastElement}(m,A,P)\Longrightarrow
   \operatorname{GreatestLowerBound}(m,A,P).
 \]
@@ -491,9 +497,11 @@ any lower bound must lie below the attained element.
 
 \begin{dependencies}
 \begin{itemize}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:real-lower-bound]{Lower Bound}
   \item \hyperref[def:minimum]{Minimum}
   \item \hyperref[def:infimum]{Infimum}
-  \item \hyperref[def:real-lower-bound]{Lower Bound}
 \end{itemize}
 \end{dependencies}
 
@@ -521,7 +529,7 @@ $s=\sup A$ and $s\in A$, then $s=\max A$.
 
 \begin{remark*}[Predicate reading]
 \[
-  P=\mathsf{OrderedSet}(S,\leq),\qquad
+  S\in\mathbf{Set},\qquad A\subseteq S,\qquad P=\mathsf{OrderedSet}(S,\leq),\qquad
   \operatorname{LeastUpperBound}(s,A,P)\land s\in A
   \Longrightarrow \operatorname{GreatestElement}(s,A,P).
 \]
@@ -565,6 +573,8 @@ maximum.
 
 \begin{dependencies}
 \begin{itemize}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
   \item \hyperref[def:supremum]{Supremum}
   \item \hyperref[def:maximum]{Maximum}
 \end{itemize}
@@ -593,7 +603,7 @@ $i=\inf A$ and $i\in A$, then $i=\min A$.
 
 \begin{remark*}[Predicate reading]
 \[
-  P=\mathsf{OrderedSet}(S,\leq),\qquad
+  S\in\mathbf{Set},\qquad A\subseteq S,\qquad P=\mathsf{OrderedSet}(S,\leq),\qquad
   \operatorname{GreatestLowerBound}(i,A,P)\land i\in A
   \Longrightarrow \operatorname{LeastElement}(i,A,P).
 \]
@@ -637,6 +647,8 @@ minimum.
 
 \begin{dependencies}
 \begin{itemize}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
   \item \hyperref[def:infimum]{Infimum}
   \item \hyperref[def:minimum]{Minimum}
 \end{itemize}

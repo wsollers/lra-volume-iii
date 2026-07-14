@@ -35,7 +35,7 @@ for all $x\in A$.
 
 \begin{remark*}[Predicate reading]
 \[
-  P=\mathsf{OrderedSet}(S,\leq),\qquad
+  S\in\mathbf{Set},\qquad A\subseteq S,\qquad P=\mathsf{OrderedSet}(S,\leq),\qquad
   \operatorname{UpperBound}(b,A,P)
   \lor
   \operatorname{LowerBound}(b,A,P).
@@ -54,7 +54,7 @@ for all $x\in A$.
 
 \begin{remark*}[Negation predicate reading]
 \[
-  P=\mathsf{OrderedSet}(S,\leq),\qquad
+  S\in\mathbf{Set},\qquad A\subseteq S,\qquad P=\mathsf{OrderedSet}(S,\leq),\qquad
   \neg\operatorname{UpperBound}(b,A,P)
   \land
   \neg\operatorname{LowerBound}(b,A,P).
@@ -98,6 +98,9 @@ need not belong to the set being bounded.
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:upper-bound]{Upper Bound}
+  \item \hyperref[def:lower-bound]{Lower Bound}
 \end{itemize}
 \end{dependencies}
 
@@ -120,7 +123,7 @@ of $A$ is less than or equal to $u$.
 
 \begin{remark*}[Predicate reading]
 \[
-  P=\mathsf{OrderedSet}(S,\leq),\qquad
+  P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad
   \operatorname{UpperBound}(u,A,P).
 \]
 \end{remark*}
@@ -135,7 +138,7 @@ of $A$ is less than or equal to $u$.
 
 \begin{remark*}[Negation predicate reading]
 \[
-  P=\mathsf{OrderedSet}(S,\leq),\qquad
+  P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad
   \neg\operatorname{UpperBound}(u,A,P).
 \]
 \end{remark*}
@@ -174,8 +177,10 @@ lie outside the set and need not be the least such control.
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:upper-bound]{Upper Bound}
   \item \hyperref[def:reals]{Real Numbers}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:upper-bound]{Upper Bound}
 \end{itemize}
 \end{dependencies}
 
@@ -198,7 +203,7 @@ element of $A$ is greater than or equal to $\ell$.
 
 \begin{remark*}[Predicate reading]
 \[
-  P=\mathsf{OrderedSet}(S,\leq),\qquad
+  P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad
   \operatorname{LowerBound}(\ell,A,P).
 \]
 \end{remark*}
@@ -213,7 +218,7 @@ element of $A$ is greater than or equal to $\ell$.
 
 \begin{remark*}[Negation predicate reading]
 \[
-  P=\mathsf{OrderedSet}(S,\leq),\qquad
+  P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad
   \neg\operatorname{LowerBound}(\ell,A,P).
 \]
 \end{remark*}
@@ -252,8 +257,10 @@ lie outside the set and need not be the greatest such control.
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:lower-bound]{Lower Bound}
   \item \hyperref[def:reals]{Real Numbers}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:lower-bound]{Lower Bound}
 \end{itemize}
 \end{dependencies}
 
@@ -275,7 +282,7 @@ set $A$ is \emph{bounded above} if it has at least one upper bound in $S$.
 
 \begin{remark*}[Predicate reading]
 \[
-  P=\mathsf{OrderedSet}(S,\leq),\qquad
+  S\in\mathbf{Set},\qquad A\subseteq S,\qquad P=\mathsf{OrderedSet}(S,\leq),\qquad
   \operatorname{BoundedAbove}(A,P).
 \]
 \end{remark*}
@@ -290,7 +297,7 @@ set $A$ is \emph{bounded above} if it has at least one upper bound in $S$.
 
 \begin{remark*}[Negation predicate reading]
 \[
-  P=\mathsf{OrderedSet}(S,\leq),\qquad
+  S\in\mathbf{Set},\qquad A\subseteq S,\qquad P=\mathsf{OrderedSet}(S,\leq),\qquad
   \neg\operatorname{BoundedAbove}(A,P).
 \]
 \end{remark*}
@@ -329,6 +336,8 @@ from above.  No least upper bound is asserted here.
 
 \begin{dependencies}
 \begin{itemize}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
   \item \hyperref[def:real-upper-bound]{Upper Bound}
 \end{itemize}
 \end{dependencies}
@@ -351,7 +360,7 @@ set $A$ is \emph{bounded below} if it has at least one lower bound in $S$.
 
 \begin{remark*}[Predicate reading]
 \[
-  P=\mathsf{OrderedSet}(S,\leq),\qquad
+  S\in\mathbf{Set},\qquad A\subseteq S,\qquad P=\mathsf{OrderedSet}(S,\leq),\qquad
   \operatorname{BoundedBelow}(A,P).
 \]
 \end{remark*}
@@ -366,7 +375,7 @@ set $A$ is \emph{bounded below} if it has at least one lower bound in $S$.
 
 \begin{remark*}[Negation predicate reading]
 \[
-  P=\mathsf{OrderedSet}(S,\leq),\qquad
+  S\in\mathbf{Set},\qquad A\subseteq S,\qquad P=\mathsf{OrderedSet}(S,\leq),\qquad
   \neg\operatorname{BoundedBelow}(A,P).
 \]
 \end{remark*}
@@ -405,6 +414,8 @@ from below.  No greatest lower bound is asserted here.
 
 \begin{dependencies}
 \begin{itemize}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
   \item \hyperref[def:real-lower-bound]{Lower Bound}
 \end{itemize}
 \end{dependencies}
@@ -427,7 +438,7 @@ set $A$ is \emph{bounded} if it is bounded above and bounded below.
 
 \begin{remark*}[Predicate reading]
 \[
-  P=\mathsf{OrderedSet}(S,\leq),\qquad
+  S\in\mathbf{Set},\qquad A\subseteq S,\qquad P=\mathsf{OrderedSet}(S,\leq),\qquad
   \operatorname{Bounded}(A,P).
 \]
 \end{remark*}
@@ -442,7 +453,7 @@ set $A$ is \emph{bounded} if it is bounded above and bounded below.
 
 \begin{remark*}[Negation predicate reading]
 \[
-  P=\mathsf{OrderedSet}(S,\leq),\qquad
+  S\in\mathbf{Set},\qquad A\subseteq S,\qquad P=\mathsf{OrderedSet}(S,\leq),\qquad
   \neg\operatorname{Bounded}(A,P).
 \]
 \end{remark*}
@@ -482,6 +493,8 @@ best bounds.
 
 \begin{dependencies}
 \begin{itemize}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
   \item \hyperref[def:bounded-above]{Bounded Above}
   \item \hyperref[def:bounded-below]{Bounded Below}
 \end{itemize}

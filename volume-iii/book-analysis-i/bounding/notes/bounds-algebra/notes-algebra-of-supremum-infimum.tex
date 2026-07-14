@@ -32,16 +32,30 @@ $b\neq0$.
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
+Let
 \[
-\operatorname{ReplacementImage}(A+B,A\times B,(a,b)\mapsto a+b),
+D=A\times B,\qquad D_{\div}=\{(a,b)\in A\times B:b\ne0\},
+\]
+and define functional rules on these domains by
+\[
+\varphi_{+}\colon D\to\mathbb{R},\quad (a,b)\mapsto a+b,\qquad
+\varphi_{-}\colon D\to\mathbb{R},\quad (a,b)\mapsto a-b,
 \]
 \[
-\operatorname{ReplacementImage}(A-B,A\times B,(a,b)\mapsto a-b),
+\varphi_{\cdot}\colon D\to\mathbb{R},\quad (a,b)\mapsto ab,\qquad
+\varphi_{\div}\colon D_{\div}\to\mathbb{R},\quad (a,b)\mapsto a/b.
+\]
+Then
+\[
+\operatorname{ReplacementImage}(A+B,D,\varphi_{+}),
+\]
+\[
+\operatorname{ReplacementImage}(A-B,D,\varphi_{-}),
 \quad
-\operatorname{ReplacementImage}(AB,A\times B,(a,b)\mapsto ab),
+\operatorname{ReplacementImage}(AB,D,\varphi_{\cdot}),
 \]
 \[
-\operatorname{ReplacementImage}(A/B,\{(a,b)\in A\times B:b\ne0\},(a,b)\mapsto a/b).
+\operatorname{ReplacementImage}(A/B,D_{\div},\varphi_{\div}).
 \]
 \end{remark*}
 
@@ -84,9 +98,15 @@ sets and the corresponding arithmetic operation.
 \end{remark*}
 
 \begin{dependencies}
-\hyperref[def:subset]{Subset};
-\hyperref[def:addition-on-r]{Addition on $\mathbb{R}$};
-\hyperref[def:multiplication-on-r]{Multiplication on $\mathbb{R}$}.
+\begin{itemize}
+  \item \hyperref[def:reals]{Real Numbers}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:cartesian-product]{Cartesian Product}
+  \item \hyperref[def:addition-on-r]{Addition on $\mathbb{R}$}
+  \item \hyperref[def:subtraction-on-r]{Subtraction on $\mathbb{R}$}
+  \item \hyperref[def:multiplication-on-r]{Multiplication on $\mathbb{R}$}
+  \item \hyperref[def:division-on-r]{Division on $\mathbb{R}$}
+\end{itemize}
 \end{dependencies}
 
 \begin{definitionbox}{Definition (Reciprocal Image)}
@@ -108,7 +128,10 @@ x\in A^{-1}\Longleftrightarrow(\exists a\in A)(x=1/a).
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{Reciprocal}(A)=A^{-1}.
+\begin{aligned}
+&A\subseteq\mathbb{R},\qquad 0\notin A,\\
+&\mathsf{Reciprocal}(A)=A^{-1}.
+\end{aligned}
 \]
 \end{remark*}
 
@@ -120,9 +143,12 @@ x\notin A^{-1}\Longleftrightarrow(\forall a\in A)(x\neq1/a).
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{Reciprocal}(A)=B
+\begin{aligned}
+&A\subseteq\mathbb{R},\qquad 0\notin A,\qquad B\subseteq\mathbb{R},\\
+&B\ne\mathsf{Reciprocal}(A)
 \quad\text{means}\quad
 (\exists x)\bigl[x\in B\triangle A^{-1}\bigr].
+\end{aligned}
 \]
 \end{remark*}
 
@@ -148,8 +174,11 @@ of zero is structural, since reciprocal values are undefined at zero.
 \end{remark*}
 
 \begin{dependencies}
-\hyperref[def:subset]{Subset};
-\hyperref[def:multiplication-on-r]{Multiplication on $\mathbb{R}$}.
+\begin{itemize}
+  \item \hyperref[def:reals]{Real Numbers}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:division-on-r]{Division on $\mathbb{R}$}
+\end{itemize}
 \end{dependencies}
 
 % --- Algebra of Supremum Cluster ---
@@ -178,9 +207,12 @@ Let $A\subseteq\mathbb{R}$ be nonempty and bounded above, and let $c\in\mathbb{R
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{LeastUpperBound}(s,A)
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad A+c=\{a+c:a\in A\},\\
+&\operatorname{LeastUpperBound}(s,A,P)
 \Longrightarrow
-\operatorname{LeastUpperBound}(s+c,A+c).
+\operatorname{LeastUpperBound}(s+c,A+c,P).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -193,7 +225,11 @@ is impossible under the stated hypotheses.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{LeastUpperBound}(s,A)\land \neg\operatorname{LeastUpperBound}(s+c,A+c)
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad A+c=\{a+c:a\in A\},\\
+&\operatorname{LeastUpperBound}(s,A,P)\land
+\neg\operatorname{LeastUpperBound}(s+c,A+c,P)
+\end{aligned}
 \]
 is a contradictory configuration.
 \end{remark*}
@@ -226,8 +262,15 @@ Translation shifts the entire set and all of its ceilings by the same amount. Th
 \end{remark*}
 
 \begin{dependencies}
-\hyperref[def:real-upper-bound]{Upper Bound};
-\hyperref[def:supremum]{Supremum}.
+\begin{itemize}
+  \item \hyperref[def:reals]{Real Numbers}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:addition-on-r]{Addition on $\mathbb{R}$}
+  \item \hyperref[def:set-arithmetic-images]{Set Arithmetic Images}
+  \item \hyperref[def:real-upper-bound]{Upper Bound}
+  \item \hyperref[def:supremum]{Supremum}
+\end{itemize}
 \end{dependencies}
 
 \begin{theorembox}{Theorem (Translation Invariance of the Infimum)}
@@ -252,9 +295,12 @@ A\neq\varnothing,\quad A\text{ bounded below}
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{GreatestLowerBound}(t,A)
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad A+c=\{a+c:a\in A\},\\
+&\operatorname{GreatestLowerBound}(t,A,P)
 \Longrightarrow
-\operatorname{GreatestLowerBound}(t+c,A+c).
+\operatorname{GreatestLowerBound}(t+c,A+c,P).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -267,7 +313,11 @@ is impossible under the stated hypotheses.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{GreatestLowerBound}(t,A)\land\neg\operatorname{GreatestLowerBound}(t+c,A+c).
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad A+c=\{a+c:a\in A\},\\
+&\operatorname{GreatestLowerBound}(t,A,P)\land
+\neg\operatorname{GreatestLowerBound}(t+c,A+c,P).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -296,9 +346,15 @@ by that amount.
 \end{remark*}
 
 \begin{dependencies}
-\hyperref[def:real-lower-bound]{Lower Bound};
-\hyperref[def:infimum]{Infimum};
-\hyperref[def:set-arithmetic-images]{Set Arithmetic Images}.
+\begin{itemize}
+  \item \hyperref[def:reals]{Real Numbers}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:addition-on-r]{Addition on $\mathbb{R}$}
+  \item \hyperref[def:set-arithmetic-images]{Set Arithmetic Images}
+  \item \hyperref[def:real-lower-bound]{Lower Bound}
+  \item \hyperref[def:infimum]{Infimum}
+\end{itemize}
 \end{dependencies}
 
 
@@ -327,9 +383,12 @@ Let $A\subseteq\mathbb{R}$ be nonempty and bounded above, and let $k>0$. Then
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{LeastUpperBound}(s,A)\land k>0
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad kA=\{ka:a\in A\},\\
+&\operatorname{LeastUpperBound}(s,A,P)\land k>0
 \Longrightarrow
-\operatorname{LeastUpperBound}(ks,kA).
+\operatorname{LeastUpperBound}(ks,kA,P).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -342,7 +401,11 @@ is impossible under the stated hypotheses.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{LeastUpperBound}(s,A)\land k>0\land \neg\operatorname{LeastUpperBound}(ks,kA)
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad kA=\{ka:a\in A\},\\
+&\operatorname{LeastUpperBound}(s,A,P)\land k>0\land
+\neg\operatorname{LeastUpperBound}(ks,kA,P)
+\end{aligned}
 \]
 is a contradictory configuration.
 \end{remark*}
@@ -375,8 +438,17 @@ Positive scaling stretches the set without reversing order. The least ceiling st
 \end{remark*}
 
 \begin{dependencies}
-\hyperref[def:real-upper-bound]{Upper Bound};
-\hyperref[def:supremum]{Supremum}.
+\begin{itemize}
+  \item \hyperref[def:reals]{Real Numbers}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:multiplication-on-r]{Multiplication on $\mathbb{R}$}
+  \item \hyperref[def:set-arithmetic-images]{Set Arithmetic Images}
+  \item \hyperref[def:real-upper-bound]{Upper Bound}
+  \item \hyperref[def:supremum]{Supremum}
+  \item \hyperref[prop:upper-bound-comparison-with-the-supremum]{Upper Bound Comparison with the Supremum}
+  \item \hyperref[thm:ineq-nonstrict-multiply-positive]{Multiplication by a Positive Scalar Preserves Nonstrict Inequality}
+\end{itemize}
 \end{dependencies}
 
 \begin{theorembox}{Theorem (Positive Scalar Multiplication of the Infimum)}
@@ -401,9 +473,12 @@ k>0,\quad A\neq\varnothing,\quad A\text{ bounded below}
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{GreatestLowerBound}(t,A)\land k>0
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad kA=\{ka:a\in A\},\\
+&\operatorname{GreatestLowerBound}(t,A,P)\land k>0
 \Longrightarrow
-\operatorname{GreatestLowerBound}(kt,kA).
+\operatorname{GreatestLowerBound}(kt,kA,P).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -416,8 +491,11 @@ is impossible under the stated hypotheses.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{GreatestLowerBound}(t,A)\land k>0\land
-\neg\operatorname{GreatestLowerBound}(kt,kA).
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad kA=\{ka:a\in A\},\\
+&\operatorname{GreatestLowerBound}(t,A,P)\land k>0\land
+\neg\operatorname{GreatestLowerBound}(kt,kA,P).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -446,9 +524,18 @@ Positive scaling stretches the floor of the set by the same factor.
 \end{remark*}
 
 \begin{dependencies}
-\hyperref[def:real-lower-bound]{Lower Bound};
-\hyperref[def:infimum]{Infimum};
-\hyperref[def:displacement-dilation-reflection]{Displacement, Dilation, and Reflection}.
+\begin{itemize}
+  \item \hyperref[def:reals]{Real Numbers}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:multiplication-on-r]{Multiplication on $\mathbb{R}$}
+  \item \hyperref[def:displacement-dilation-reflection]{Displacement, Dilation, and Reflection}
+  \item \hyperref[def:real-lower-bound]{Lower Bound}
+  \item \hyperref[def:infimum]{Infimum}
+  \item \hyperref[prop:lower-bound-comparison-with-the-infimum]{Lower Bound Comparison with the Infimum}
+  \item \hyperref[prop:positive-dilation-preserves-lower-bounds]{Positive Dilation Preserves Lower Bounds}
+  \item \hyperref[thm:ineq-nonstrict-multiply-positive]{Multiplication by a Positive Scalar Preserves Nonstrict Inequality}
+\end{itemize}
 \end{dependencies}
 
 
@@ -476,9 +563,12 @@ Let $A\subseteq\mathbb{R}$ be nonempty and bounded below, and let $k<0$. Then
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{GreatestLowerBound}(t,A)\land k<0
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad kA=\{ka:a\in A\},\\
+&\operatorname{GreatestLowerBound}(t,A,P)\land k<0
 \Longrightarrow
-\operatorname{LeastUpperBound}(kt,kA).
+\operatorname{LeastUpperBound}(kt,kA,P).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -491,7 +581,11 @@ is impossible under the stated hypotheses.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{GreatestLowerBound}(t,A)\land k<0\land \neg\operatorname{LeastUpperBound}(kt,kA)
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad kA=\{ka:a\in A\},\\
+&\operatorname{GreatestLowerBound}(t,A,P)\land k<0\land
+\neg\operatorname{LeastUpperBound}(kt,kA,P)
+\end{aligned}
 \]
 is a contradictory configuration.
 \end{remark*}
@@ -525,10 +619,20 @@ Negative scaling reflects the set and changes floors into ceilings. The lowest p
 \end{remark*}
 
 \begin{dependencies}
-\hyperref[def:real-lower-bound]{Lower Bound};
-\hyperref[def:real-upper-bound]{Upper Bound};
-\hyperref[def:infimum]{Infimum};
-\hyperref[def:supremum]{Supremum}.
+\begin{itemize}
+  \item \hyperref[def:reals]{Real Numbers}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:multiplication-on-r]{Multiplication on $\mathbb{R}$}
+  \item \hyperref[def:displacement-dilation-reflection]{Displacement, Dilation, and Reflection}
+  \item \hyperref[def:real-lower-bound]{Lower Bound}
+  \item \hyperref[def:real-upper-bound]{Upper Bound}
+  \item \hyperref[def:infimum]{Infimum}
+  \item \hyperref[def:supremum]{Supremum}
+  \item \hyperref[prop:negative-dilation-sends-lower-to-upper-bounds]{Negative Dilation Sends Lower Bounds to Upper Bounds}
+  \item \hyperref[thm:scalar-mult-positive]{Scalar Multiplication by a Positive Scalar}
+  \item \hyperref[thm:negation-exchange-sup-inf]{Negation Exchanges Supremum and Infimum}
+\end{itemize}
 \end{dependencies}
 
 \begin{theorembox}{Theorem (Negative Scalar Multiplication of the Infimum)}
@@ -553,9 +657,12 @@ k<0,\quad A\neq\varnothing,\quad A\text{ bounded above}
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{LeastUpperBound}(s,A)\land k<0
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad kA=\{ka:a\in A\},\\
+&\operatorname{LeastUpperBound}(s,A,P)\land k<0
 \Longrightarrow
-\operatorname{GreatestLowerBound}(ks,kA).
+\operatorname{GreatestLowerBound}(ks,kA,P).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -568,8 +675,11 @@ is impossible under the stated hypotheses.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{LeastUpperBound}(s,A)\land k<0\land
-\neg\operatorname{GreatestLowerBound}(ks,kA).
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad kA=\{ka:a\in A\},\\
+&\operatorname{LeastUpperBound}(s,A,P)\land k<0\land
+\neg\operatorname{GreatestLowerBound}(ks,kA,P).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -600,10 +710,21 @@ $kA$.
 \end{remark*}
 
 \begin{dependencies}
-\hyperref[def:real-upper-bound]{Upper Bound};
-\hyperref[def:real-lower-bound]{Lower Bound};
-\hyperref[def:supremum]{Supremum};
-\hyperref[def:infimum]{Infimum}.
+\begin{itemize}
+  \item \hyperref[def:reals]{Real Numbers}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:multiplication-on-r]{Multiplication on $\mathbb{R}$}
+  \item \hyperref[def:division-on-r]{Division on $\mathbb{R}$}
+  \item \hyperref[def:displacement-dilation-reflection]{Displacement, Dilation, and Reflection}
+  \item \hyperref[def:real-upper-bound]{Upper Bound}
+  \item \hyperref[def:real-lower-bound]{Lower Bound}
+  \item \hyperref[def:supremum]{Supremum}
+  \item \hyperref[def:infimum]{Infimum}
+  \item \hyperref[prop:negative-dilation-sends-upper-to-lower-bounds]{Negative Dilation Sends Upper Bounds to Lower Bounds}
+  \item \hyperref[thm:ineq-multiply-negative]{Multiplication by a Negative Scalar Reverses Inequality}
+  \item \hyperref[lem:division-by-negative-reverses-order]{Division by Negative Reverses Order}
+\end{itemize}
 \end{dependencies}
 
 
@@ -632,9 +753,12 @@ Let $A\subseteq\mathbb{R}$ be nonempty and bounded below. Then $-A=\{-a:a\in A\}
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{GreatestLowerBound}(t,A)
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad -A=\{-a:a\in A\},\\
+&\operatorname{GreatestLowerBound}(t,A,P)
 \Longrightarrow
-\operatorname{LeastUpperBound}(-t,-A).
+\operatorname{LeastUpperBound}(-t,-A,P).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -647,7 +771,11 @@ is impossible under the stated hypotheses.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{GreatestLowerBound}(t,A)\land \neg\operatorname{LeastUpperBound}(-t,-A)
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad -A=\{-a:a\in A\},\\
+&\operatorname{GreatestLowerBound}(t,A,P)\land
+\neg\operatorname{LeastUpperBound}(-t,-A,P)
+\end{aligned}
 \]
 is a contradictory configuration.
 \end{remark*}
@@ -680,10 +808,19 @@ Negation reflects the real line through the origin. Floors become ceilings, so t
 \end{remark*}
 
 \begin{dependencies}
-\hyperref[def:real-lower-bound]{Lower Bound};
-\hyperref[def:real-upper-bound]{Upper Bound};
-\hyperref[def:infimum]{Infimum};
-\hyperref[def:supremum]{Supremum}.
+\begin{itemize}
+  \item \hyperref[def:reals]{Real Numbers}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:multiplication-on-r]{Multiplication on $\mathbb{R}$}
+  \item \hyperref[def:displacement-dilation-reflection]{Displacement, Dilation, and Reflection}
+  \item \hyperref[def:real-lower-bound]{Lower Bound}
+  \item \hyperref[def:real-upper-bound]{Upper Bound}
+  \item \hyperref[def:infimum]{Infimum}
+  \item \hyperref[def:supremum]{Supremum}
+  \item \hyperref[cor:reflection-swaps-upper-lower-bounds]{Reflection Swaps Upper and Lower Bounds}
+  \item \hyperref[thm:ineq-multiply-negative]{Multiplication by a Negative Scalar Reverses Inequality}
+\end{itemize}
 \end{dependencies}
 
 
@@ -717,9 +854,12 @@ Let $A,B\subseteq\mathbb{R}$ be nonempty and bounded above. Then
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{LeastUpperBound}(s_A,A)\land \operatorname{LeastUpperBound}(s_B,B)
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\qquad A+B=\{a+b:a\in A,\ b\in B\},\\
+&\operatorname{LeastUpperBound}(s_A,A,P)\land \operatorname{LeastUpperBound}(s_B,B,P)
 \Longrightarrow
-\operatorname{LeastUpperBound}(s_A+s_B,A+B).
+\operatorname{LeastUpperBound}(s_A+s_B,A+B,P).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -732,9 +872,12 @@ is impossible under the stated hypotheses.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{LeastUpperBound}(s_A,A)\land \operatorname{LeastUpperBound}(s_B,B)
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\qquad A+B=\{a+b:a\in A,\ b\in B\},\\
+&\operatorname{LeastUpperBound}(s_A,A,P)\land \operatorname{LeastUpperBound}(s_B,B,P)
 \land
-\neg\operatorname{LeastUpperBound}(s_A+s_B,A+B)
+\neg\operatorname{LeastUpperBound}(s_A+s_B,A+B,P)
+\end{aligned}
 \]
 is a contradictory configuration.
 \end{remark*}
@@ -767,8 +910,18 @@ The highest limiting value of all pairwise sums is obtained by combining values 
 \end{remark*}
 
 \begin{dependencies}
-\hyperref[def:supremum]{Supremum};
-\hyperref[def:epsilon-characterization-of-supremum]{Epsilon Characterization of Supremum}.
+\begin{itemize}
+  \item \hyperref[def:reals]{Real Numbers}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:addition-on-r]{Addition on $\mathbb{R}$}
+  \item \hyperref[def:set-arithmetic-images]{Set Arithmetic Images}
+  \item \hyperref[def:real-upper-bound]{Upper Bound}
+  \item \hyperref[def:supremum]{Supremum}
+  \item \hyperref[def:epsilon-characterization-of-supremum]{Epsilon Characterization of Supremum}
+  \item \hyperref[prop:upper-bound-property-of-supremum]{Upper Bound Property of Supremum}
+  \item \hyperref[prop:every-element-lies-below-the-supremum]{Every Element Lies Below the Supremum}
+\end{itemize}
 \end{dependencies}
 
 \begin{theorembox}{Theorem (Infimum of a Sum Set)}
@@ -792,9 +945,12 @@ A,B\neq\varnothing,\quad A,B\text{ bounded below}
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{GreatestLowerBound}(t_A,A)\land\operatorname{GreatestLowerBound}(t_B,B)
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\qquad A+B=\{a+b:a\in A,\ b\in B\},\\
+&\operatorname{GreatestLowerBound}(t_A,A,P)\land\operatorname{GreatestLowerBound}(t_B,B,P)
 \Longrightarrow
-\operatorname{GreatestLowerBound}(t_A+t_B,A+B).
+\operatorname{GreatestLowerBound}(t_A+t_B,A+B,P).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -807,8 +963,11 @@ is impossible under the stated hypotheses.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{GreatestLowerBound}(t_A,A)\land\operatorname{GreatestLowerBound}(t_B,B)\land
-\neg\operatorname{GreatestLowerBound}(t_A+t_B,A+B).
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\qquad A+B=\{a+b:a\in A,\ b\in B\},\\
+&\operatorname{GreatestLowerBound}(t_A,A,P)\land\operatorname{GreatestLowerBound}(t_B,B,P)\land
+\neg\operatorname{GreatestLowerBound}(t_A+t_B,A+B,P).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -838,8 +997,18 @@ near the separate floors of the two sets.
 \end{remark*}
 
 \begin{dependencies}
-\hyperref[def:infimum]{Infimum};
-\hyperref[def:set-arithmetic-images]{Set Arithmetic Images}.
+\begin{itemize}
+  \item \hyperref[def:reals]{Real Numbers}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:addition-on-r]{Addition on $\mathbb{R}$}
+  \item \hyperref[def:set-arithmetic-images]{Set Arithmetic Images}
+  \item \hyperref[def:real-lower-bound]{Lower Bound}
+  \item \hyperref[def:infimum]{Infimum}
+  \item \hyperref[def:epsilon-characterization-of-infimum]{Epsilon Characterization of Infimum}
+  \item \hyperref[prop:lower-bound-property-of-infimum]{Lower Bound Property of Infimum}
+  \item \hyperref[prop:every-element-lies-above-the-infimum]{Every Element Lies Above the Infimum}
+\end{itemize}
 \end{dependencies}
 
 
@@ -887,9 +1056,12 @@ Let $A,B\subseteq\mathbb{R}$ be nonempty, with $A$ bounded above and $B$ bounded
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{LeastUpperBound}(s,A)\land \operatorname{GreatestLowerBound}(t,B)
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\qquad A-B=\{a-b:a\in A,\ b\in B\},\\
+&\operatorname{LeastUpperBound}(s,A,P)\land \operatorname{GreatestLowerBound}(t,B,P)
 \Longrightarrow
-\operatorname{LeastUpperBound}(s-t,A-B).
+\operatorname{LeastUpperBound}(s-t,A-B,P).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -902,9 +1074,12 @@ is impossible under the stated hypotheses.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{LeastUpperBound}(s,A)\land \operatorname{GreatestLowerBound}(t,B)
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\qquad A-B=\{a-b:a\in A,\ b\in B\},\\
+&\operatorname{LeastUpperBound}(s,A,P)\land \operatorname{GreatestLowerBound}(t,B,P)
 \land
-\neg\operatorname{LeastUpperBound}(s-t,A-B)
+\neg\operatorname{LeastUpperBound}(s-t,A-B,P)
+\end{aligned}
 \]
 is a contradictory configuration.
 \end{remark*}
@@ -934,10 +1109,22 @@ The largest possible difference comes from making the first term as large as pos
 \end{remark*}
 
 \begin{dependencies}
-\hyperref[def:supremum]{Supremum};
-\hyperref[def:infimum]{Infimum};
-\hyperref[thm:negation-exchange-sup-inf]{Negation Exchanges Supremum and Infimum};
-\hyperref[thm:supremum-sum-set]{Supremum of a Sum Set}.
+\begin{itemize}
+  \item \hyperref[def:reals]{Real Numbers}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:addition-on-r]{Addition on $\mathbb{R}$}
+  \item \hyperref[def:subtraction-on-r]{Subtraction on $\mathbb{R}$}
+  \item \hyperref[def:set-arithmetic-images]{Set Arithmetic Images}
+  \item \hyperref[def:real-upper-bound]{Upper Bound}
+  \item \hyperref[def:real-lower-bound]{Lower Bound}
+  \item \hyperref[def:supremum]{Supremum}
+  \item \hyperref[def:infimum]{Infimum}
+  \item \hyperref[def:epsilon-characterization-of-supremum]{Epsilon Characterization of Supremum}
+  \item \hyperref[def:epsilon-characterization-of-infimum]{Epsilon Characterization of Infimum}
+  \item \hyperref[thm:negation-exchange-sup-inf]{Negation Exchanges Supremum and Infimum}
+  \item \hyperref[thm:supremum-sum-set]{Supremum of a Sum Set}
+\end{itemize}
 \end{dependencies}
 
 \begin{theorembox}{Theorem (Infimum of a Difference Set)}
@@ -962,9 +1149,12 @@ A,B\neq\varnothing,\quad A\text{ bounded below},\quad B\text{ bounded above}
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{GreatestLowerBound}(t,A)\land\operatorname{LeastUpperBound}(s,B)
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\qquad A-B=\{a-b:a\in A,\ b\in B\},\\
+&\operatorname{GreatestLowerBound}(t,A,P)\land\operatorname{LeastUpperBound}(s,B,P)
 \Longrightarrow
-\operatorname{GreatestLowerBound}(t-s,A-B).
+\operatorname{GreatestLowerBound}(t-s,A-B,P).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -977,8 +1167,11 @@ is impossible under the stated hypotheses.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{GreatestLowerBound}(t,A)\land\operatorname{LeastUpperBound}(s,B)\land
-\neg\operatorname{GreatestLowerBound}(t-s,A-B).
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\qquad A-B=\{a-b:a\in A,\ b\in B\},\\
+&\operatorname{GreatestLowerBound}(t,A,P)\land\operatorname{LeastUpperBound}(s,B,P)\land
+\neg\operatorname{GreatestLowerBound}(t-s,A-B,P).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -1007,10 +1200,22 @@ possible and the subtracted term as large as possible.
 \end{remark*}
 
 \begin{dependencies}
-\hyperref[def:infimum]{Infimum};
-\hyperref[def:supremum]{Supremum};
-\hyperref[thm:infimum-sum-set]{Infimum of a Sum Set};
-\hyperref[thm:negative-scalar-mult-infimum]{Negative Scalar Multiplication of the Infimum}.
+\begin{itemize}
+  \item \hyperref[def:reals]{Real Numbers}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:addition-on-r]{Addition on $\mathbb{R}$}
+  \item \hyperref[def:subtraction-on-r]{Subtraction on $\mathbb{R}$}
+  \item \hyperref[def:set-arithmetic-images]{Set Arithmetic Images}
+  \item \hyperref[def:real-lower-bound]{Lower Bound}
+  \item \hyperref[def:real-upper-bound]{Upper Bound}
+  \item \hyperref[def:infimum]{Infimum}
+  \item \hyperref[def:supremum]{Supremum}
+  \item \hyperref[def:epsilon-characterization-of-infimum]{Epsilon Characterization of Infimum}
+  \item \hyperref[def:epsilon-characterization-of-supremum]{Epsilon Characterization of Supremum}
+  \item \hyperref[thm:infimum-sum-set]{Infimum of a Sum Set}
+  \item \hyperref[thm:negative-scalar-mult-infimum]{Negative Scalar Multiplication of the Infimum}
+\end{itemize}
 \end{dependencies}
 
 
@@ -1038,9 +1243,13 @@ Let $A\subseteq\mathbb{R}$ be nonempty and bounded, and let $\lambda\in\mathbb{R
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{LeastUpperBound}(s,A)\land \operatorname{GreatestLowerBound}(t,A)
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad \lambda A=\{\lambda a:a\in A\},\\
+&M=\max\{\lambda s,\lambda t\},\\
+&\operatorname{LeastUpperBound}(s,A,P)\land \operatorname{GreatestLowerBound}(t,A,P)
 \Longrightarrow
-\operatorname{LeastUpperBound}(\max\{\lambda s,\lambda t\},\lambda A).
+\operatorname{LeastUpperBound}(M,\lambda A,P).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -1053,9 +1262,13 @@ is impossible under the stated hypotheses.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{LeastUpperBound}(s,A)\land \operatorname{GreatestLowerBound}(t,A)
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad \lambda A=\{\lambda a:a\in A\},\\
+&M=\max\{\lambda s,\lambda t\},\\
+&\operatorname{LeastUpperBound}(s,A,P)\land \operatorname{GreatestLowerBound}(t,A,P)
 \land
-\neg\operatorname{LeastUpperBound}(\max\{\lambda s,\lambda t\},\lambda A)
+\neg\operatorname{LeastUpperBound}(M,\lambda A,P)
+\end{aligned}
 \]
 is a contradictory configuration.
 \end{remark*}
@@ -1086,11 +1299,22 @@ A dilation either preserves the order, collapses all points to zero, or reverses
 \end{remark*}
 
 \begin{dependencies}
-\hyperref[def:supremum]{Supremum};
-\hyperref[def:infimum]{Infimum};
-\hyperref[def:maximum]{Maximum};
-\hyperref[thm:scalar-mult-positive]{Scalar Multiplication by a Positive Scalar};
-\hyperref[thm:scalar-mult-negative]{Scalar Multiplication by a Negative Scalar}.
+\begin{itemize}
+  \item \hyperref[def:reals]{Real Numbers}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:multiplication-on-r]{Multiplication on $\mathbb{R}$}
+  \item \hyperref[def:displacement-dilation-reflection]{Displacement, Dilation, and Reflection}
+  \item \hyperref[def:real-upper-bound]{Upper Bound}
+  \item \hyperref[def:real-lower-bound]{Lower Bound}
+  \item \hyperref[def:bounded]{Bounded Set}
+  \item \hyperref[def:supremum]{Supremum}
+  \item \hyperref[def:infimum]{Infimum}
+  \item \hyperref[def:maximum]{Maximum}
+  \item \hyperref[thm:infimum-less-than-supremum]{Infimum Is Less Than or Equal to the Supremum}
+  \item \hyperref[thm:scalar-mult-positive]{Scalar Multiplication by a Positive Scalar}
+  \item \hyperref[thm:scalar-mult-negative]{Scalar Multiplication by a Negative Scalar}
+\end{itemize}
 \end{dependencies}
 
 
@@ -1118,9 +1342,13 @@ Let $A\subseteq\mathbb{R}$ be nonempty and bounded. Then
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{LeastUpperBound}(s,A)\land \operatorname{GreatestLowerBound}(t,A)
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad C=\{|a|:a\in A\},\\
+&M=\max\{|s|,|t|\},\\
+&\operatorname{LeastUpperBound}(s,A,P)\land \operatorname{GreatestLowerBound}(t,A,P)
 \Longrightarrow
-\operatorname{LeastUpperBound}(\max\{|s|,|t|\},|A|).
+\operatorname{LeastUpperBound}(M,C,P).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -1133,9 +1361,13 @@ is impossible under the stated hypotheses.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{LeastUpperBound}(s,A)\land \operatorname{GreatestLowerBound}(t,A)
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad C=\{|a|:a\in A\},\\
+&M=\max\{|s|,|t|\},\\
+&\operatorname{LeastUpperBound}(s,A,P)\land \operatorname{GreatestLowerBound}(t,A,P)
 \land
-\neg\operatorname{LeastUpperBound}(\max\{|s|,|t|\},|A|)
+\neg\operatorname{LeastUpperBound}(M,C,P)
+\end{aligned}
 \]
 is a contradictory configuration.
 \end{remark*}
@@ -1163,10 +1395,23 @@ The absolute-value image measures distance from the origin. For a bounded subset
 \end{remark*}
 
 \begin{dependencies}
-\hyperref[def:supremum]{Supremum};
-\hyperref[def:infimum]{Infimum};
-\hyperref[def:maximum]{Maximum};
-\hyperref[prop:every-element-lies-below-the-supremum]{Every Element Lies Below the Supremum}.
+\begin{itemize}
+  \item \hyperref[def:reals]{Real Numbers}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:absolute-value]{Absolute Value}
+  \item \hyperref[def:real-upper-bound]{Upper Bound}
+  \item \hyperref[def:real-lower-bound]{Lower Bound}
+  \item \hyperref[def:bounded]{Bounded Set}
+  \item \hyperref[def:supremum]{Supremum}
+  \item \hyperref[def:infimum]{Infimum}
+  \item \hyperref[def:maximum]{Maximum}
+  \item \hyperref[def:epsilon-characterization-of-supremum]{Epsilon Characterization of Supremum}
+  \item \hyperref[def:epsilon-characterization-of-infimum]{Epsilon Characterization of Infimum}
+  \item \hyperref[prop:every-element-lies-below-the-supremum]{Every Element Lies Below the Supremum}
+  \item \hyperref[prop:every-element-lies-above-the-infimum]{Every Element Lies Above the Infimum}
+  \item \hyperref[thm:infimum-less-than-supremum]{Infimum Is Less Than or Equal to the Supremum}
+\end{itemize}
 \end{dependencies}
 
 
@@ -1199,10 +1444,14 @@ A\neq\varnothing,\quad A\text{ bounded},\quad
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{GreatestLowerBound}(m,A)\land\operatorname{LeastUpperBound}(M,A)\land
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad A^{-1}=\{1/a:a\in A\},\\
+&u=m^{-1},\\
+&\operatorname{GreatestLowerBound}(m,A,P)\land\operatorname{LeastUpperBound}(M,A,P)\land
 0\notin[m,M]
 \Longrightarrow
-\operatorname{LeastUpperBound}(m^{-1},A^{-1}).
+\operatorname{LeastUpperBound}(u,A^{-1},P).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -1216,8 +1465,12 @@ A\neq\varnothing,\quad A\text{ bounded},\quad 0\notin[\inf A,\sup A],
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{GreatestLowerBound}(m,A)\land 0\notin[m,\sup A]\land
-\neg\operatorname{LeastUpperBound}(m^{-1},A^{-1})
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad A^{-1}=\{1/a:a\in A\},\\
+&\operatorname{LeastUpperBound}(M,A,P),\qquad u=m^{-1},\\
+&\operatorname{GreatestLowerBound}(m,A,P)\land 0\notin[m,M]\land
+\neg\operatorname{LeastUpperBound}(u,A^{-1},P)
+\end{aligned}
 \]
 is contradictory under the stated hypotheses.
 \end{remark*}
@@ -1249,10 +1502,23 @@ threshold of the reciprocal set.
 \end{remark*}
 
 \begin{dependencies}
-\hyperref[def:bounded]{Bounded Set};
-\hyperref[def:infimum]{Infimum};
-\hyperref[def:supremum]{Supremum};
-\hyperref[thm:reciprocal-reverses-nonstrict-order-on-same-sign-r]{Reciprocal Reverses Non-Strict Order on Same-Sign Reals}.
+\begin{itemize}
+  \item \hyperref[def:reals]{Real Numbers}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:division-on-r]{Division on $\mathbb{R}$}
+  \item \hyperref[def:reciprocal-image]{Reciprocal Image}
+  \item \hyperref[def:real-lower-bound]{Lower Bound}
+  \item \hyperref[def:real-upper-bound]{Upper Bound}
+  \item \hyperref[def:bounded]{Bounded Set}
+  \item \hyperref[def:infimum]{Infimum}
+  \item \hyperref[def:supremum]{Supremum}
+  \item \hyperref[def:epsilon-characterization-of-supremum]{Epsilon Characterization of Supremum}
+  \item \hyperref[def:epsilon-characterization-of-infimum]{Epsilon Characterization of Infimum}
+  \item \hyperref[prop:every-element-lies-below-the-supremum]{Every Element Lies Below the Supremum}
+  \item \hyperref[prop:every-element-lies-above-the-infimum]{Every Element Lies Above the Infimum}
+  \item \hyperref[thm:reciprocal-reverses-nonstrict-order-on-same-sign-r]{Reciprocal Reverses Non-Strict Order on Same-Sign Reals}
+\end{itemize}
 \end{dependencies}
 
 \input{volume-iii/book-analysis-i/bounding/notes/bounds-algebra/figure-supremum-reciprocal-set}
@@ -1284,10 +1550,14 @@ A\neq\varnothing,\quad A\text{ bounded},\quad
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{GreatestLowerBound}(m,A)\land\operatorname{LeastUpperBound}(M,A)\land
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad A^{-1}=\{1/a:a\in A\},\\
+&\ell=M^{-1},\\
+&\operatorname{GreatestLowerBound}(m,A,P)\land\operatorname{LeastUpperBound}(M,A,P)\land
 0\notin[m,M]
 \Longrightarrow
-\operatorname{GreatestLowerBound}(M^{-1},A^{-1}).
+\operatorname{GreatestLowerBound}(\ell,A^{-1},P).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -1301,8 +1571,12 @@ A\neq\varnothing,\quad A\text{ bounded},\quad 0\notin[\inf A,\sup A],
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{LeastUpperBound}(M,A)\land 0\notin[\inf A,M]\land
-\neg\operatorname{GreatestLowerBound}(M^{-1},A^{-1})
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad A^{-1}=\{1/a:a\in A\},\\
+&\operatorname{GreatestLowerBound}(m,A,P),\qquad \ell=M^{-1},\\
+&\operatorname{LeastUpperBound}(M,A,P)\land 0\notin[m,M]\land
+\neg\operatorname{GreatestLowerBound}(\ell,A^{-1},P)
+\end{aligned}
 \]
 is contradictory under the stated hypotheses.
 \end{remark*}
@@ -1332,11 +1606,24 @@ two extremal thresholds.
 \end{remark*}
 
 \begin{dependencies}
-\hyperref[def:bounded]{Bounded Set};
-\hyperref[def:infimum]{Infimum};
-\hyperref[def:supremum]{Supremum};
-\hyperref[thm:reciprocal-reverses-nonstrict-order-on-same-sign-r]{Reciprocal Reverses Non-Strict Order on Same-Sign Reals};
-\hyperref[thm:supremum-reciprocal-set]{Supremum of a Reciprocal Set}.
+\begin{itemize}
+  \item \hyperref[def:reals]{Real Numbers}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:division-on-r]{Division on $\mathbb{R}$}
+  \item \hyperref[def:reciprocal-image]{Reciprocal Image}
+  \item \hyperref[def:real-lower-bound]{Lower Bound}
+  \item \hyperref[def:real-upper-bound]{Upper Bound}
+  \item \hyperref[def:bounded]{Bounded Set}
+  \item \hyperref[def:infimum]{Infimum}
+  \item \hyperref[def:supremum]{Supremum}
+  \item \hyperref[def:epsilon-characterization-of-infimum]{Epsilon Characterization of Infimum}
+  \item \hyperref[def:epsilon-characterization-of-supremum]{Epsilon Characterization of Supremum}
+  \item \hyperref[prop:every-element-lies-above-the-infimum]{Every Element Lies Above the Infimum}
+  \item \hyperref[prop:every-element-lies-below-the-supremum]{Every Element Lies Below the Supremum}
+  \item \hyperref[thm:reciprocal-reverses-nonstrict-order-on-same-sign-r]{Reciprocal Reverses Non-Strict Order on Same-Sign Reals}
+  \item \hyperref[thm:supremum-reciprocal-set]{Supremum of a Reciprocal Set}
+\end{itemize}
 \end{dependencies}
 
 \begin{theorembox}{Theorem (Supremum of a Product Set)}
@@ -1362,10 +1649,14 @@ equals the maximum of the four endpoint products.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{GreatestLowerBound}(\alpha,A)\land\operatorname{LeastUpperBound}(\beta,A)\land
-\operatorname{GreatestLowerBound}(\gamma,B)\land\operatorname{LeastUpperBound}(\delta,B)
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\qquad AB=\{ab:a\in A,\ b\in B\},\\
+&M=\max\{\alpha\gamma,\alpha\delta,\beta\gamma,\beta\delta\},\\
+&\operatorname{GreatestLowerBound}(\alpha,A,P)\land\operatorname{LeastUpperBound}(\beta,A,P)\land\\
+&\operatorname{GreatestLowerBound}(\gamma,B,P)\land\operatorname{LeastUpperBound}(\delta,B,P)
 \Longrightarrow
-\operatorname{LeastUpperBound}(\max\{\alpha\gamma,\alpha\delta,\beta\gamma,\beta\delta\},AB).
+\operatorname{LeastUpperBound}(M,AB,P).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -1378,7 +1669,16 @@ is impossible under the stated hypotheses.
 \end{remark*}
 
 \begin{remark*}[Negation predicate reading]
-The product endpoint maximum is not the supremum of $AB$.
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\qquad AB=\{ab:a\in A,\ b\in B\},\\
+&M=\max\{\alpha\gamma,\alpha\delta,\beta\gamma,\beta\delta\},\\
+&\operatorname{GreatestLowerBound}(\alpha,A,P)\land\operatorname{LeastUpperBound}(\beta,A,P)\land\\
+&\operatorname{GreatestLowerBound}(\gamma,B,P)\land\operatorname{LeastUpperBound}(\delta,B,P)\land
+\neg\operatorname{LeastUpperBound}(M,AB,P)
+\end{aligned}
+\]
+is a contradictory configuration.
 \end{remark*}
 
 \begin{remark*}[Failure modes]
@@ -1405,10 +1705,23 @@ products of the endpoint interval rectangle containing $A\times B$.
 \end{remark*}
 
 \begin{dependencies}
-\hyperref[def:set-arithmetic-images]{Set Arithmetic Images};
-\hyperref[def:infimum]{Infimum};
-\hyperref[def:supremum]{Supremum};
-\hyperref[def:maximum]{Maximum}.
+\begin{itemize}
+  \item \hyperref[def:reals]{Real Numbers}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:multiplication-on-r]{Multiplication on $\mathbb{R}$}
+  \item \hyperref[def:set-arithmetic-images]{Set Arithmetic Images}
+  \item \hyperref[def:real-lower-bound]{Lower Bound}
+  \item \hyperref[def:real-upper-bound]{Upper Bound}
+  \item \hyperref[def:bounded]{Bounded Set}
+  \item \hyperref[def:infimum]{Infimum}
+  \item \hyperref[def:supremum]{Supremum}
+  \item \hyperref[def:maximum]{Maximum}
+  \item \hyperref[def:epsilon-characterization-of-infimum]{Epsilon Characterization of Infimum}
+  \item \hyperref[def:epsilon-characterization-of-supremum]{Epsilon Characterization of Supremum}
+  \item \hyperref[prop:every-element-lies-above-the-infimum]{Every Element Lies Above the Infimum}
+  \item \hyperref[prop:every-element-lies-below-the-supremum]{Every Element Lies Below the Supremum}
+\end{itemize}
 \end{dependencies}
 
 \begin{theorembox}{Theorem (Infimum of a Product Set)}
@@ -1434,10 +1747,17 @@ equals the minimum of the four endpoint products.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{GreatestLowerBound}(\alpha,A)\land\operatorname{LeastUpperBound}(\beta,A)\land
-\operatorname{GreatestLowerBound}(\gamma,B)\land\operatorname{LeastUpperBound}(\delta,B)
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+A,B\subseteq\mathbb{R},\qquad AB=\{ab:a\in A,\ b\in B\},\\
+&L=\min\{\alpha\gamma,\alpha\delta,\beta\gamma,\beta\delta\},\\
+&\operatorname{GreatestLowerBound}(\alpha,A,P)\land
+\operatorname{LeastUpperBound}(\beta,A,P)\land\\
+&\operatorname{GreatestLowerBound}(\gamma,B,P)\land
+\operatorname{LeastUpperBound}(\delta,B,P)
 \Longrightarrow
-\operatorname{GreatestLowerBound}(\min\{\alpha\gamma,\alpha\delta,\beta\gamma,\beta\delta\},AB).
+\operatorname{GreatestLowerBound}(L,AB,P).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -1450,7 +1770,19 @@ is impossible under the stated hypotheses.
 \end{remark*}
 
 \begin{remark*}[Negation predicate reading]
-The product endpoint minimum is not the infimum of $AB$.
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+A,B\subseteq\mathbb{R},\qquad AB=\{ab:a\in A,\ b\in B\},\\
+&L=\min\{\alpha\gamma,\alpha\delta,\beta\gamma,\beta\delta\},\\
+&\operatorname{GreatestLowerBound}(\alpha,A,P)\land
+\operatorname{LeastUpperBound}(\beta,A,P)\land\\
+&\operatorname{GreatestLowerBound}(\gamma,B,P)\land
+\operatorname{LeastUpperBound}(\delta,B,P)\land
+\neg\operatorname{GreatestLowerBound}(L,AB,P)
+\end{aligned}
+\]
+is a contradictory configuration.
 \end{remark*}
 
 \begin{remark*}[Failure modes]
@@ -1475,11 +1807,24 @@ products that control the enclosing rectangle.
 \end{remark*}
 
 \begin{dependencies}
-\hyperref[def:set-arithmetic-images]{Set Arithmetic Images};
-\hyperref[def:infimum]{Infimum};
-\hyperref[def:supremum]{Supremum};
-\hyperref[def:minimum]{Minimum};
-\hyperref[thm:supremum-product-set]{Supremum of a Product Set}.
+\begin{itemize}
+  \item \hyperref[def:reals]{Real Numbers}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:multiplication-on-r]{Multiplication on $\mathbb{R}$}
+  \item \hyperref[def:set-arithmetic-images]{Set Arithmetic Images}
+  \item \hyperref[def:real-lower-bound]{Lower Bound}
+  \item \hyperref[def:real-upper-bound]{Upper Bound}
+  \item \hyperref[def:bounded]{Bounded Set}
+  \item \hyperref[def:infimum]{Infimum}
+  \item \hyperref[def:supremum]{Supremum}
+  \item \hyperref[def:minimum]{Minimum}
+  \item \hyperref[def:epsilon-characterization-of-infimum]{Epsilon Characterization of Infimum}
+  \item \hyperref[def:epsilon-characterization-of-supremum]{Epsilon Characterization of Supremum}
+  \item \hyperref[prop:every-element-lies-above-the-infimum]{Every Element Lies Above the Infimum}
+  \item \hyperref[prop:every-element-lies-below-the-supremum]{Every Element Lies Below the Supremum}
+  \item \hyperref[thm:supremum-product-set]{Supremum of a Product Set}
+\end{itemize}
 \end{dependencies}
 
 \begin{theorembox}{Theorem (Supremum of a Quotient Set)}
@@ -1506,9 +1851,17 @@ four endpoint quotients.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{LeastUpperBound}\!\left(
-\max\left\{\frac{\inf A}{\inf B},\frac{\inf A}{\sup B},
-           \frac{\sup A}{\inf B},\frac{\sup A}{\sup B}\right\},A/B\right).
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+A,B\subseteq\mathbb{R},\qquad Q=A/B=\{a/b:a\in A,\ b\in B\},\\
+&M=\max\{\alpha/\gamma,\alpha/\delta,\beta/\gamma,\beta/\delta\},\\
+&\operatorname{GreatestLowerBound}(\alpha,A,P)\land
+\operatorname{LeastUpperBound}(\beta,A,P)\land\\
+&\operatorname{GreatestLowerBound}(\gamma,B,P)\land
+\operatorname{LeastUpperBound}(\delta,B,P)\land
+(0<\gamma\lor\delta<0)\\
+&\Longrightarrow \operatorname{LeastUpperBound}(M,Q,P).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -1518,8 +1871,19 @@ The displayed endpoint maximum is not the supremum of $A/B$.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{LeastUpperBound}(\text{endpoint quotient maximum},A/B).
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+A,B\subseteq\mathbb{R},\qquad Q=A/B=\{a/b:a\in A,\ b\in B\},\\
+&M=\max\{\alpha/\gamma,\alpha/\delta,\beta/\gamma,\beta/\delta\},\\
+&\operatorname{GreatestLowerBound}(\alpha,A,P)\land
+\operatorname{LeastUpperBound}(\beta,A,P)\land\\
+&\operatorname{GreatestLowerBound}(\gamma,B,P)\land
+\operatorname{LeastUpperBound}(\delta,B,P)\land
+(0<\gamma\lor\delta<0)\land\\
+&\neg\operatorname{LeastUpperBound}(M,Q,P)
+\end{aligned}
 \]
+is a contradictory configuration.
 \end{remark*}
 
 \begin{remark*}[Failure modes]
@@ -1545,11 +1909,24 @@ again determined by endpoint combinations.
 \end{remark*}
 
 \begin{dependencies}
-\hyperref[def:set-arithmetic-images]{Set Arithmetic Images};
-\hyperref[def:reciprocal-image]{Reciprocal Image};
-\hyperref[thm:supremum-reciprocal-set]{Supremum of a Reciprocal Set};
-\hyperref[thm:infimum-reciprocal-set]{Infimum of a Reciprocal Set};
-\hyperref[thm:supremum-product-set]{Supremum of a Product Set}.
+\begin{itemize}
+  \item \hyperref[def:reals]{Real Numbers}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:multiplication-on-r]{Multiplication on $\mathbb{R}$}
+  \item \hyperref[def:division-on-r]{Division on $\mathbb{R}$}
+  \item \hyperref[def:set-arithmetic-images]{Set Arithmetic Images}
+  \item \hyperref[def:reciprocal-image]{Reciprocal Image}
+  \item \hyperref[def:real-lower-bound]{Lower Bound}
+  \item \hyperref[def:real-upper-bound]{Upper Bound}
+  \item \hyperref[def:bounded]{Bounded Set}
+  \item \hyperref[def:infimum]{Infimum}
+  \item \hyperref[def:supremum]{Supremum}
+  \item \hyperref[def:maximum]{Maximum}
+  \item \hyperref[thm:supremum-reciprocal-set]{Supremum of a Reciprocal Set}
+  \item \hyperref[thm:infimum-reciprocal-set]{Infimum of a Reciprocal Set}
+  \item \hyperref[thm:supremum-product-set]{Supremum of a Product Set}
+\end{itemize}
 \end{dependencies}
 
 \begin{theorembox}{Theorem (Infimum of a Quotient Set)}
@@ -1576,9 +1953,17 @@ four endpoint quotients.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{GreatestLowerBound}\!\left(
-\min\left\{\frac{\inf A}{\inf B},\frac{\inf A}{\sup B},
-           \frac{\sup A}{\inf B},\frac{\sup A}{\sup B}\right\},A/B\right).
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+A,B\subseteq\mathbb{R},\qquad Q=A/B=\{a/b:a\in A,\ b\in B\},\\
+&L=\min\{\alpha/\gamma,\alpha/\delta,\beta/\gamma,\beta/\delta\},\\
+&\operatorname{GreatestLowerBound}(\alpha,A,P)\land
+\operatorname{LeastUpperBound}(\beta,A,P)\land\\
+&\operatorname{GreatestLowerBound}(\gamma,B,P)\land
+\operatorname{LeastUpperBound}(\delta,B,P)\land
+(0<\gamma\lor\delta<0)\\
+&\Longrightarrow \operatorname{GreatestLowerBound}(L,Q,P).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -1588,8 +1973,19 @@ The displayed endpoint minimum is not the infimum of $A/B$.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{GreatestLowerBound}(\text{endpoint quotient minimum},A/B).
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+A,B\subseteq\mathbb{R},\qquad Q=A/B=\{a/b:a\in A,\ b\in B\},\\
+&L=\min\{\alpha/\gamma,\alpha/\delta,\beta/\gamma,\beta/\delta\},\\
+&\operatorname{GreatestLowerBound}(\alpha,A,P)\land
+\operatorname{LeastUpperBound}(\beta,A,P)\land\\
+&\operatorname{GreatestLowerBound}(\gamma,B,P)\land
+\operatorname{LeastUpperBound}(\delta,B,P)\land
+(0<\gamma\lor\delta<0)\land\\
+&\neg\operatorname{GreatestLowerBound}(L,Q,P)
+\end{aligned}
 \]
+is a contradictory configuration.
 \end{remark*}
 
 \begin{remark*}[Failure modes]
@@ -1615,11 +2011,24 @@ combination.
 \end{remark*}
 
 \begin{dependencies}
-\hyperref[def:set-arithmetic-images]{Set Arithmetic Images};
-\hyperref[def:reciprocal-image]{Reciprocal Image};
-\hyperref[thm:supremum-reciprocal-set]{Supremum of a Reciprocal Set};
-\hyperref[thm:infimum-reciprocal-set]{Infimum of a Reciprocal Set};
-\hyperref[thm:infimum-product-set]{Infimum of a Product Set}.
+\begin{itemize}
+  \item \hyperref[def:reals]{Real Numbers}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:multiplication-on-r]{Multiplication on $\mathbb{R}$}
+  \item \hyperref[def:division-on-r]{Division on $\mathbb{R}$}
+  \item \hyperref[def:set-arithmetic-images]{Set Arithmetic Images}
+  \item \hyperref[def:reciprocal-image]{Reciprocal Image}
+  \item \hyperref[def:real-lower-bound]{Lower Bound}
+  \item \hyperref[def:real-upper-bound]{Upper Bound}
+  \item \hyperref[def:bounded]{Bounded Set}
+  \item \hyperref[def:infimum]{Infimum}
+  \item \hyperref[def:supremum]{Supremum}
+  \item \hyperref[def:minimum]{Minimum}
+  \item \hyperref[thm:supremum-reciprocal-set]{Supremum of a Reciprocal Set}
+  \item \hyperref[thm:infimum-reciprocal-set]{Infimum of a Reciprocal Set}
+  \item \hyperref[thm:infimum-product-set]{Infimum of a Product Set}
+\end{itemize}
 \end{dependencies}
 
 \begin{propositionbox}{Proposition (Bounds for Suprema and Infima Under Set Addition)}
@@ -1648,11 +2057,16 @@ Let $A,B\subseteq\mathbb{R}$ be nonempty and bounded. Then
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{GreatestLowerBound}(t_A,A)\land \operatorname{GreatestLowerBound}(t_B,B)
-\land
-\operatorname{LeastUpperBound}(s_A,A)\land \operatorname{LeastUpperBound}(s_B,B)
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+A,B\subseteq\mathbb{R},\qquad C=A+B=\{a+b:a\in A,\ b\in B\},\\
+&\operatorname{GreatestLowerBound}(t_A,A,P)\land
+\operatorname{GreatestLowerBound}(t_B,B,P)\land\\
+&\operatorname{LeastUpperBound}(s_A,A,P)\land
+\operatorname{LeastUpperBound}(s_B,B,P)
 \Longrightarrow
-t_A+t_B\le \inf(A+B)\le \sup(A+B)\le s_A+s_B.
+t_A+t_B\le \inf C\le \sup C\le s_A+s_B.
+\end{aligned}
 \]
 \end{remark*}
 
@@ -1667,9 +2081,15 @@ is impossible under the stated hypotheses.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\bigl[\operatorname{GreatestLowerBound}(t_A,A)\land \operatorname{GreatestLowerBound}(t_B,B)\land \inf(A+B)<t_A+t_B\bigr]
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+A,B\subseteq\mathbb{R},\qquad C=A+B=\{a+b:a\in A,\ b\in B\},\\
+&\bigl[\operatorname{GreatestLowerBound}(t_A,A,P)\land
+\operatorname{GreatestLowerBound}(t_B,B,P)\land \inf C<t_A+t_B\bigr]\\
 \lor
-\bigl[\operatorname{LeastUpperBound}(s_A,A)\land \operatorname{LeastUpperBound}(s_B,B)\land s_A+s_B<\sup(A+B)\bigr]
+&\bigl[\operatorname{LeastUpperBound}(s_A,A,P)\land
+\operatorname{LeastUpperBound}(s_B,B,P)\land s_A+s_B<\sup C\bigr]
+\end{aligned}
 \]
 is a contradictory configuration.
 \end{remark*}
@@ -1697,9 +2117,20 @@ Every element of the sum set is built from one element of $A$ and one element of
 \end{remark*}
 
 \begin{dependencies}
-\hyperref[def:infimum]{Infimum};
-\hyperref[def:supremum]{Supremum};
-\hyperref[thm:supremum-sum-set]{Supremum of a Sum Set}.
+\begin{itemize}
+  \item \hyperref[def:reals]{Real Numbers}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:addition-on-r]{Addition on $\mathbb{R}$}
+  \item \hyperref[def:set-arithmetic-images]{Set Arithmetic Images}
+  \item \hyperref[def:real-lower-bound]{Lower Bound}
+  \item \hyperref[def:real-upper-bound]{Upper Bound}
+  \item \hyperref[def:bounded]{Bounded Set}
+  \item \hyperref[def:infimum]{Infimum}
+  \item \hyperref[def:supremum]{Supremum}
+  \item \hyperref[thm:infimum-sum-set]{Infimum of a Sum Set}
+  \item \hyperref[thm:supremum-sum-set]{Supremum of a Sum Set}
+\end{itemize}
 \end{dependencies}
 
 
@@ -1730,9 +2161,16 @@ u\in T\text{ and }\forall x\in A\;(x\le_T u).
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{UpperBound}_S(u,A)
+\begin{aligned}
+&P_S=\mathsf{OrderedSet}(S,\le_S),\qquad
+P_T=\mathsf{OrderedSet}(T,\le_T),\qquad A\subseteq S\cap T,\\
+&\operatorname{UpperBound}(u,A,P_S)
 \Longleftrightarrow
-u\in S\land \forall x\in A\;(x\le_S u).
+u\in S\land \forall x\in A\;(x\le_S u),\\
+&\operatorname{UpperBound}(u,A,P_T)
+\Longleftrightarrow
+u\in T\land \forall x\in A\;(x\le_T u).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -1745,7 +2183,12 @@ is not well-determined until the ambient ordered set and its order relation are 
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{WellDefined}(\operatorname{UpperBound}(u,A))
+\begin{aligned}
+&P_S=\mathsf{OrderedSet}(S,\le_S),\qquad
+P_T=\mathsf{OrderedSet}(T,\le_T),\\
+&X=\text{``$u$ is an upper bound of $A$''},\\
+&\neg\operatorname{WellDefined}(X,\text{ambient omitted})
+\end{aligned}
 \]
 when the ambient order is omitted.
 \end{remark*}
@@ -1774,7 +2217,11 @@ An upper bound is not only about the subset; it is also about where the subset l
 \end{remark*}
 
 \begin{dependencies}
-\hyperref[def:real-upper-bound]{Upper Bound}.
+\begin{itemize}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:real-upper-bound]{Upper Bound}
+\end{itemize}
 \end{dependencies}
 
 
@@ -1795,9 +2242,14 @@ are ambient-relative objects and may differ in existence or value.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{LeastUpperBound}_S(s,A)
+\begin{aligned}
+&T=S',\qquad A\subseteq S,\qquad S\subseteq T,\\
+&P_S=\mathsf{OrderedSet}(S,\leq),\qquad
+P_T=\mathsf{OrderedSet}(T,\leq),\\
+&\operatorname{LeastUpperBound}(s,A,P_S)
 \quad\text{and}\quad
-\operatorname{LeastUpperBound}_{S'}(s,A)
+\operatorname{LeastUpperBound}(s,A,P_T)
+\end{aligned}
 \]
 are different assertions unless the ambient upper-bound sets agree.
 \end{remark*}
@@ -1811,7 +2263,13 @@ is not guaranteed by $A\subseteq S\subseteq S'$ alone.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{LeastUpperBound}_{S'}(s,A)\land \neg\operatorname{LeastUpperBound}_S(s,A)
+\begin{aligned}
+&T=S',\qquad A\subseteq S,\qquad S\subseteq T,\\
+&P_S=\mathsf{OrderedSet}(S,\leq),\qquad
+P_T=\mathsf{OrderedSet}(T,\leq),\\
+&\operatorname{LeastUpperBound}(s,A,P_T)\land
+\neg\operatorname{LeastUpperBound}(s,A,P_S)
+\end{aligned}
 \]
 is possible when the larger ambient set contains the least upper bound but the smaller one does not.
 \end{remark*}
@@ -1839,8 +2297,13 @@ Suprema are least upper bounds inside a chosen universe. Enlarging or shrinking 
 \end{remark*}
 
 \begin{dependencies}
-\hyperref[def:real-upper-bound]{Upper Bound};
-\hyperref[def:supremum]{Supremum}.
+\begin{itemize}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:real-upper-bound]{Upper Bound}
+  \item \hyperref[def:supremum]{Supremum}
+  \item \hyperref[prop:upper-bounds-ambient-order]{Upper Bounds Depend on the Ambient Order}
+\end{itemize}
 \end{dependencies}
 
 
@@ -1864,10 +2327,14 @@ There are ordered sets $S\subseteq S'$ and a subset $A\subseteq S$ such that $A$
 
 \begin{remark*}[Predicate reading]
 \[
-\exists S\subseteq S'\;\exists A\subseteq S\;\exists s\in S':
-\operatorname{LeastUpperBound}_{S'}(s,A)
+\begin{aligned}
+&T=S',\qquad A\subseteq S,\qquad S\subseteq T,\\
+&P_S=\mathsf{OrderedSet}(S,\leq),\qquad
+P_T=\mathsf{OrderedSet}(T,\leq),\\
+&\exists s\in T:\operatorname{LeastUpperBound}(s,A,P_T)
 \land
-\neg\exists t\in S\;\operatorname{LeastUpperBound}_S(t,A).
+\neg\exists t\in S\;\operatorname{LeastUpperBound}(t,A,P_S).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -1880,10 +2347,14 @@ This assertion is false.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\forall S\subseteq S'\;\forall A\subseteq S:
-\bigl[\exists s\in S'\,\operatorname{LeastUpperBound}_{S'}(s,A)
+\begin{aligned}
+&T=S',\qquad A\subseteq S,\qquad S\subseteq T,\\
+&P_S=\mathsf{OrderedSet}(S,\leq),\qquad
+P_T=\mathsf{OrderedSet}(T,\leq),\\
+&\bigl[\exists s\in T\,\operatorname{LeastUpperBound}(s,A,P_T)
 \Longrightarrow
-\exists t\in S\,\operatorname{LeastUpperBound}_S(t,A)\bigr]
+\exists t\in S\,\operatorname{LeastUpperBound}(t,A,P_S)\bigr]
+\end{aligned}
 \]
 is false.
 \end{remark*}
@@ -1910,9 +2381,13 @@ Completeness is an ambient property. A larger ordered universe can fill a gap th
 \end{remark*}
 
 \begin{dependencies}
-\hyperref[def:real-upper-bound]{Upper Bound};
-\hyperref[def:supremum]{Supremum};
-\hyperref[prop:suprema-ambient-set]{Suprema Depend on the Ambient Set}.
+\begin{itemize}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:real-upper-bound]{Upper Bound}
+  \item \hyperref[def:supremum]{Supremum}
+  \item \hyperref[prop:suprema-ambient-set]{Suprema Depend on the Ambient Set}
+\end{itemize}
 \end{dependencies}
 
 
@@ -1939,9 +2414,11 @@ A=\{q\in\mathbb{Q}:q^2<2\}
 
 \begin{remark*}[Predicate reading]
 \[
-\neg\exists s\in\mathbb{Q}\;\operatorname{LeastUpperBound}_{\mathbb{Q}}(s,A),
-\qquad
-A=\{q\in\mathbb{Q}:q^2<2\}.
+\begin{aligned}
+&P_{\mathbb{Q}}=\mathsf{OrderedSet}(\mathbb{Q},\leq),\qquad
+A=\{q\in\mathbb{Q}:q^2<2\},\\
+&\neg\exists s\in\mathbb{Q}\;\operatorname{LeastUpperBound}(s,A,P_{\mathbb{Q}}).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -1954,7 +2431,11 @@ is false for this set.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\exists s\in\mathbb{Q}\;\operatorname{LeastUpperBound}_{\mathbb{Q}}(s,A)
+\begin{aligned}
+&P_{\mathbb{Q}}=\mathsf{OrderedSet}(\mathbb{Q},\leq),\qquad
+A=\{q\in\mathbb{Q}:q^2<2\},\\
+&\exists s\in\mathbb{Q}\;\operatorname{LeastUpperBound}(s,A,P_{\mathbb{Q}})
+\end{aligned}
 \]
 is false.
 \end{remark*}
@@ -1984,9 +2465,17 @@ The set wants $\sqrt{2}$ as its least ceiling, but that number is not rational. 
 \end{remark*}
 
 \begin{dependencies}
-\hyperref[def:real-upper-bound]{Upper Bound};
-\hyperref[def:supremum]{Supremum};
-\hyperref[thm:ambient-existence-supremum]{Ambient Existence of Supremum}.
+\begin{itemize}
+  \item \hyperref[def:rationals]{Rational Numbers}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:square-root]{Square Root}
+  \item \hyperref[def:real-upper-bound]{Upper Bound}
+  \item \hyperref[def:supremum]{Supremum}
+  \item \hyperref[thm:no-rational-square-root-of-two]{No Rational Square Root of Two}
+  \item \hyperref[thm:sqrt-two-squared-is-two]{Its Square Is Two}
+  \item \hyperref[thm:ambient-existence-supremum]{Ambient Existence of Supremum}
+\end{itemize}
 \end{dependencies}
 
 
@@ -1994,17 +2483,3 @@ The set wants $\sqrt{2}$ as its least ceiling, but that number is not rational. 
 
 
 \input{volume-iii/book-analysis-i/bounding/notes/bounds-algebra/figure-bounds-algebra}
-
-
-
-
-
-
-
-
-
-
-
-
-
-

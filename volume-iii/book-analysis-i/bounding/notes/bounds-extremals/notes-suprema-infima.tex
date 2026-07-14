@@ -43,7 +43,7 @@ $A$.
 
 \begin{remark*}[Predicate reading]
 \[
-  P=\mathsf{OrderedSet}(S,\leq),\qquad
+  S\in\mathbf{Set},\qquad A\subseteq S,\qquad P=\mathsf{OrderedSet}(S,\leq),\qquad
   \operatorname{LeastUpperBound}(s,A,P)
   :=
   \operatorname{UpperBound}(s,A,P)
@@ -65,6 +65,7 @@ $A$.
 
 \begin{remark*}[Negation predicate reading]
 \[
+  S\in\mathbf{Set},\qquad A\subseteq S,\qquad P=\mathsf{OrderedSet}(S,\leq),\qquad
   \neg\operatorname{LeastUpperBound}(s,A,P)
   \Longleftrightarrow
   A=\varnothing
@@ -111,8 +112,9 @@ A supremum is the least upper bound: it combines upper-bound control with leastn
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:real-upper-bound]{Upper Bound}
   \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:real-upper-bound]{Upper Bound}
 \end{itemize}
 \end{dependencies}
 
@@ -137,7 +139,7 @@ bound of $A$ and no larger element of $S$ is a lower bound of $A$.
 
 \begin{remark*}[Predicate reading]
 \[
-  P=\mathsf{OrderedSet}(S,\leq),\qquad
+  S\in\mathbf{Set},\qquad A\subseteq S,\qquad P=\mathsf{OrderedSet}(S,\leq),\qquad
   \operatorname{GreatestLowerBound}(i,A,P)
   :=
   \operatorname{LowerBound}(i,A,P)
@@ -159,6 +161,7 @@ bound of $A$ and no larger element of $S$ is a lower bound of $A$.
 
 \begin{remark*}[Negation predicate reading]
 \[
+  S\in\mathbf{Set},\qquad A\subseteq S,\qquad P=\mathsf{OrderedSet}(S,\leq),\qquad
   \neg\operatorname{GreatestLowerBound}(i,A,P)
   \Longleftrightarrow
   A=\varnothing
@@ -205,8 +208,9 @@ An infimum is the greatest lower bound: it combines lower-bound control with gre
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:real-lower-bound]{Lower Bound}
   \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:real-lower-bound]{Lower Bound}
 \end{itemize}
 \end{dependencies}
 
@@ -234,7 +238,7 @@ $s,t\in S$ are both suprema of $A$, then $s=t$.
 
 \begin{remark*}[Predicate reading]
 \[
-  P=\mathsf{OrderedSet}(S,\leq),\qquad
+  S\in\mathbf{Set},\qquad A\subseteq S,\qquad P=\mathsf{OrderedSet}(S,\leq),\qquad
   \operatorname{LeastUpperBound}(s,A,P)\land\operatorname{LeastUpperBound}(t,A,P)
   \Longrightarrow s=t.
 \]
@@ -254,7 +258,7 @@ $s,t\in S$ are both suprema of $A$, then $s=t$.
 
 \begin{remark*}[Negation predicate reading]
 \[
-  P=\mathsf{OrderedSet}(S,\leq),\qquad
+  S\in\mathbf{Set},\qquad A\subseteq S,\qquad P=\mathsf{OrderedSet}(S,\leq),\qquad
   \operatorname{LeastUpperBound}(s,A,P)\land
   \operatorname{LeastUpperBound}(t,A,P)\land s\neq t.
 \]
@@ -293,8 +297,9 @@ The statement records how the supremum predicate controls uniqueness or upper-bo
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:supremum]{Supremum}
   \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:supremum]{Supremum}
 \end{itemize}
 \end{dependencies}
 
@@ -321,7 +326,7 @@ $i,j\in S$ are both infima of $A$, then $i=j$.
 
 \begin{remark*}[Predicate reading]
 \[
-  P=\mathsf{OrderedSet}(S,\leq),\qquad
+  S\in\mathbf{Set},\qquad A\subseteq S,\qquad P=\mathsf{OrderedSet}(S,\leq),\qquad
   \operatorname{GreatestLowerBound}(i,A,P)\land\operatorname{GreatestLowerBound}(j,A,P)
   \Longrightarrow i=j.
 \]
@@ -341,7 +346,7 @@ $i,j\in S$ are both infima of $A$, then $i=j$.
 
 \begin{remark*}[Negation predicate reading]
 \[
-  P=\mathsf{OrderedSet}(S,\leq),\qquad
+  S\in\mathbf{Set},\qquad A\subseteq S,\qquad P=\mathsf{OrderedSet}(S,\leq),\qquad
   \operatorname{GreatestLowerBound}(i,A,P)\land
   \operatorname{GreatestLowerBound}(j,A,P)\land i\neq j.
 \]
@@ -380,8 +385,9 @@ The statement records how the infimum predicate controls uniqueness or lower-bou
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:infimum]{Infimum}
   \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:infimum]{Infimum}
 \end{itemize}
 \end{dependencies}
 
@@ -412,7 +418,7 @@ below $s$:
 
 \begin{remark*}[Predicate reading]
 \[
-  P=\mathsf{OrderedSet}(S,\leq),\qquad
+  S\in\mathbf{Set},\qquad A\subseteq S,\qquad P=\mathsf{OrderedSet}(S,\leq),\qquad
   \operatorname{LeastUpperBound}(s,A,P)\Longrightarrow
   \operatorname{UpperBound}(s,A,P).
 \]
@@ -452,6 +458,8 @@ The statement records how the supremum predicate controls uniqueness or upper-bo
 
 \begin{dependencies}
 \begin{itemize}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
   \item \hyperref[def:supremum]{Supremum}
 \end{itemize}
 \end{dependencies}
@@ -482,7 +490,7 @@ above $i$:
 
 \begin{remark*}[Predicate reading]
 \[
-  P=\mathsf{OrderedSet}(S,\leq),\qquad
+  S\in\mathbf{Set},\qquad A\subseteq S,\qquad P=\mathsf{OrderedSet}(S,\leq),\qquad
   \operatorname{GreatestLowerBound}(i,A,P)\Longrightarrow
   \operatorname{LowerBound}(i,A,P).
 \]
@@ -522,6 +530,8 @@ The statement records how the infimum predicate controls uniqueness or lower-bou
 
 \begin{dependencies}
 \begin{itemize}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
   \item \hyperref[def:infimum]{Infimum}
 \end{itemize}
 \end{dependencies}
@@ -548,7 +558,10 @@ of $A$.
 
 \begin{remark*}[Predicate reading]
 \[
-  A\subseteq B\land\operatorname{UpperBound}(u,B,P)
+  S\in\mathbf{Set},\qquad A\subseteq B\subseteq S,\qquad P=\mathsf{OrderedSet}(S,\leq),
+\]
+\[
+  \operatorname{UpperBound}(u,B,P)
   \Longrightarrow \operatorname{UpperBound}(u,A,P).
 \]
 \end{remark*}
@@ -589,8 +602,9 @@ A supremum is the least upper bound: it combines upper-bound control with leastn
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:real-upper-bound]{Upper Bound}
   \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:real-upper-bound]{Upper Bound}
 \end{itemize}
 \end{dependencies}
 
@@ -615,7 +629,10 @@ bound of $A$.
 
 \begin{remark*}[Predicate reading]
 \[
-  A\subseteq B\land\operatorname{LowerBound}(\ell,B,P)
+  S\in\mathbf{Set},\qquad A\subseteq B\subseteq S,\qquad P=\mathsf{OrderedSet}(S,\leq),
+\]
+\[
+  \operatorname{LowerBound}(\ell,B,P)
   \Longrightarrow \operatorname{LowerBound}(\ell,A,P).
 \]
 \end{remark*}
@@ -656,8 +673,9 @@ An infimum is the greatest lower bound: it combines lower-bound control with gre
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:real-lower-bound]{Lower Bound}
   \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:real-lower-bound]{Lower Bound}
 \end{itemize}
 \end{dependencies}
 
@@ -683,7 +701,7 @@ $A\subseteq B$, then $\sup A\leq\sup B$.
 
 \begin{remark*}[Predicate reading]
 \[
-  P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+  P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq B\subseteq\mathbb{R},\qquad
   A\subseteq B\land\operatorname{LeastUpperBound}(s_A,A,P)\land\operatorname{LeastUpperBound}(s_B,B,P)
   \Longrightarrow s_A\leq s_B.
 \]
@@ -722,6 +740,9 @@ The statement records how the supremum predicate controls uniqueness or upper-bo
 
 \begin{dependencies}
 \begin{itemize}
+  \item \hyperref[def:reals]{Real Numbers}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
   \item \hyperref[def:supremum]{Supremum}
   \item \hyperref[lem:subset-inclusion-preserves-upper-bounds]{Subset Inclusion Preserves Upper Bounds}
 \end{itemize}
@@ -748,7 +769,7 @@ $A\subseteq B$, then $\inf B\leq\inf A$.
 
 \begin{remark*}[Predicate reading]
 \[
-  P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+  P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq B\subseteq\mathbb{R},\qquad
   A\subseteq B\land\operatorname{GreatestLowerBound}(i_A,A,P)\land\operatorname{GreatestLowerBound}(i_B,B,P)
   \Longrightarrow i_B\leq i_A.
 \]
@@ -788,6 +809,9 @@ The statement records how the infimum predicate controls uniqueness or lower-bou
 
 \begin{dependencies}
 \begin{itemize}
+  \item \hyperref[def:reals]{Real Numbers}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
   \item \hyperref[def:infimum]{Infimum}
   \item \hyperref[lem:subset-inclusion-preserves-lower-bounds]{Subset Inclusion Preserves Lower Bounds}
 \end{itemize}
@@ -815,7 +839,7 @@ $A$ if and only if $s\leq u$.
 
 \begin{remark*}[Predicate reading]
 \[
-  P=\mathsf{OrderedSet}(S,\leq),\qquad
+  P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad
   \operatorname{LeastUpperBound}(s,A,P)\Longrightarrow
   \forall u\,(\operatorname{UpperBound}(u,A,P)\leftrightarrow s\leq u).
 \]
@@ -859,8 +883,11 @@ A supremum is the least upper bound: it combines upper-bound control with leastn
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:supremum]{Supremum}
+  \item \hyperref[def:reals]{Real Numbers}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
   \item \hyperref[def:real-upper-bound]{Upper Bound}
+  \item \hyperref[def:supremum]{Supremum}
 \end{itemize}
 \end{dependencies}
 
@@ -885,7 +912,7 @@ of $A$ if and only if $\ell\leq i$.
 
 \begin{remark*}[Predicate reading]
 \[
-  P=\mathsf{OrderedSet}(S,\leq),\qquad
+  P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad
   \operatorname{GreatestLowerBound}(i,A,P)\Longrightarrow
   \forall \ell\,(\operatorname{LowerBound}(\ell,A,P)\leftrightarrow \ell\leq i).
 \]
@@ -929,8 +956,11 @@ An infimum is the greatest lower bound: it combines lower-bound control with gre
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:infimum]{Infimum}
+  \item \hyperref[def:reals]{Real Numbers}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
   \item \hyperref[def:real-lower-bound]{Lower Bound}
+  \item \hyperref[def:infimum]{Infimum}
 \end{itemize}
 \end{dependencies}
 
@@ -954,7 +984,7 @@ $s=\sup A$.  Then $x\leq s$ for every $x\in A$.
 
 \begin{remark*}[Predicate reading]
 \[
-  P=\mathsf{OrderedSet}(S,\leq),\qquad
+  P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad
   \operatorname{LeastUpperBound}(s,A,P)\Longrightarrow \operatorname{UpperBound}(s,A,P).
 \]
 \end{remark*}
@@ -989,6 +1019,9 @@ The statement records how the supremum predicate controls uniqueness or upper-bo
 
 \begin{dependencies}
 \begin{itemize}
+  \item \hyperref[def:reals]{Real Numbers}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
   \item \hyperref[def:supremum]{Supremum}
 \end{itemize}
 \end{dependencies}
@@ -1012,7 +1045,7 @@ $i=\inf A$.  Then $i\leq x$ for every $x\in A$.
 
 \begin{remark*}[Predicate reading]
 \[
-  P=\mathsf{OrderedSet}(S,\leq),\qquad
+  P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad
   \operatorname{GreatestLowerBound}(i,A,P)\Longrightarrow \operatorname{LowerBound}(i,A,P).
 \]
 \end{remark*}
@@ -1047,6 +1080,9 @@ The statement records how the infimum predicate controls uniqueness or lower-bou
 
 \begin{dependencies}
 \begin{itemize}
+  \item \hyperref[def:reals]{Real Numbers}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
   \item \hyperref[def:infimum]{Infimum}
 \end{itemize}
 \end{dependencies}
@@ -1073,7 +1109,7 @@ Then $\inf A\leq\sup A$.
 
 \begin{remark*}[Predicate reading]
 \[
-  P=\mathsf{OrderedSet}(S,\leq),\qquad
+  P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad
   \operatorname{GreatestLowerBound}(i,A,P)\land\operatorname{LeastUpperBound}(s,A,P)
   \Longrightarrow i\leq s.
 \]
@@ -1113,6 +1149,9 @@ The statement records how the supremum predicate controls uniqueness or upper-bo
 
 \begin{dependencies}
 \begin{itemize}
+  \item \hyperref[def:reals]{Real Numbers}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
   \item \hyperref[def:infimum]{Infimum}
   \item \hyperref[def:supremum]{Supremum}
 \end{itemize}
@@ -1138,7 +1177,7 @@ There exists a nonempty bounded above set $A\subseteq\mathbb{R}$ such that
 \begin{remark*}[Predicate reading]
 \[
   P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
-  (\exists A)(\exists s)\bigl(\operatorname{LeastUpperBound}(s,A,P)\land s\notin A\bigr).
+  (\exists A\subseteq\mathbb{R})(\exists s)\bigl(\operatorname{LeastUpperBound}(s,A,P)\land s\notin A\bigr).
 \]
 \end{remark*}
 
@@ -1149,6 +1188,9 @@ to be attained by the set.
 
 \begin{dependencies}
 \begin{itemize}
+  \item \hyperref[def:reals]{Real Numbers}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
   \item \hyperref[def:supremum]{Supremum}
   \item \hyperref[thm:lub-property-implies-existence-of-suprema]{Least Upper Bound Property Implies Existence of Suprema}
 \end{itemize}
@@ -1174,7 +1216,7 @@ There exists a nonempty bounded below set $A\subseteq\mathbb{R}$ such that
 \begin{remark*}[Predicate reading]
 \[
   P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
-  (\exists A)(\exists i)\bigl(\operatorname{GreatestLowerBound}(i,A,P)\land i\notin A\bigr).
+  (\exists A\subseteq\mathbb{R})(\exists i)\bigl(\operatorname{GreatestLowerBound}(i,A,P)\land i\notin A\bigr).
 \]
 \end{remark*}
 
@@ -1185,6 +1227,9 @@ to be attained by the set.
 
 \begin{dependencies}
 \begin{itemize}
+  \item \hyperref[def:reals]{Real Numbers}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
   \item \hyperref[def:infimum]{Infimum}
   \item \hyperref[thm:glb-property-implies-existence-of-infima]{Greatest Lower Bound Property Implies Existence of Infima}
 \end{itemize}
@@ -1212,6 +1257,7 @@ $x\in A$ is below some $y\in B$, then $\sup A\leq\sup B$.
 \begin{remark*}[Predicate reading]
 \[
   P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+  A,B\subseteq\mathbb{R},\qquad
   [\forall x\in A\,\exists y\in B\,(x\leq y)]
   \land\operatorname{LeastUpperBound}(s_A,A,P)\land\operatorname{LeastUpperBound}(s_B,B,P)
   \Longrightarrow s_A\leq s_B.
@@ -1254,6 +1300,9 @@ The statement records how the supremum predicate controls uniqueness or upper-bo
 
 \begin{dependencies}
 \begin{itemize}
+  \item \hyperref[def:reals]{Real Numbers}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
   \item \hyperref[def:supremum]{Supremum}
   \item \hyperref[prop:every-element-lies-below-the-supremum]{Every Element Lies Below the Supremum}
 \end{itemize}
@@ -1281,6 +1330,7 @@ $s$ such that $s=\sup S$.
 
 \begin{remark*}[Predicate reading]
 \[
+  P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad S\subseteq\mathbb{R},\qquad
   S\neq\varnothing\land\operatorname{BoundedAbove}(S,P)
   \Longrightarrow
   (\exists s\in\mathbb{R})\operatorname{LeastUpperBound}(s,S,P).
@@ -1326,8 +1376,13 @@ A supremum is the least upper bound: it combines upper-bound control with leastn
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:supremum]{Supremum}
+  \item \hyperref[def:reals]{Real Numbers}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:least-upper-bound-property]{Least Upper Bound Property}
   \item \hyperref[def:real-upper-bound]{Upper Bound}
+  \item \hyperref[def:bounded-above]{Bounded Above}
+  \item \hyperref[def:supremum]{Supremum}
 \end{itemize}
 \end{dependencies}
 
@@ -1352,6 +1407,7 @@ exists a real number $i$ such that $i=\inf S$.
 
 \begin{remark*}[Predicate reading]
 \[
+  P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad S\subseteq\mathbb{R},\qquad
   S\neq\varnothing\land\operatorname{BoundedBelow}(S,P)
   \Longrightarrow
   (\exists i\in\mathbb{R})\operatorname{GreatestLowerBound}(i,S,P).
@@ -1396,7 +1452,12 @@ An infimum is the greatest lower bound: it combines lower-bound control with gre
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:infimum]{Infimum}
+  \item \hyperref[def:reals]{Real Numbers}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:least-upper-bound-property]{Least Upper Bound Property}
   \item \hyperref[def:real-lower-bound]{Lower Bound}
+  \item \hyperref[def:bounded-below]{Bounded Below}
+  \item \hyperref[def:infimum]{Infimum}
 \end{itemize}
 \end{dependencies}

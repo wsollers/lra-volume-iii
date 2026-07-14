@@ -45,7 +45,8 @@ For every real number $x$, there exists a natural number $n$ such that $n>x$.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{HasArchimedeanProperty}(\mathbb{R})\Longleftrightarrow
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+\operatorname{HasArchimedeanProperty}(P_{\mathbb{R}})\Longleftrightarrow
 \forall x\in\mathbb{R}\;\exists n\in\mathbb{N}\;(n>x).
 \]
 \end{remark*}
@@ -58,7 +59,8 @@ For every real number $x$, there exists a natural number $n$ such that $n>x$.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{HasArchimedeanProperty}(\mathbb{R})\Longleftrightarrow
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+\neg\operatorname{HasArchimedeanProperty}(P_{\mathbb{R}})\Longleftrightarrow
 \exists x\in\mathbb{R}\;\forall n\in\mathbb{N}\;(n\le x).
 \]
 \end{remark*}
@@ -87,8 +89,13 @@ The Archimedean Property says that the natural numbers do not stop below any rea
 \end{remark*}
 
 \begin{dependencies}
-\hyperref[ax:completeness-of-reals]{Axiom~\ref*{ax:completeness-of-reals}},
-\hyperref[def:supremum]{Definition~\ref*{def:supremum}}.
+\begin{itemize}
+\item \hyperref[def:reals]{Real Numbers}.
+\item \hyperref[def:natural-numbers]{Natural Numbers}.
+\item \hyperref[def:ordered-set]{Ordered Set}.
+\item \hyperref[def:supremum]{Supremum}.
+\item \hyperref[ax:completeness-of-reals]{Completeness of the Reals}.
+\end{itemize}
 \end{dependencies}
 
 
@@ -131,7 +138,8 @@ $n\in\mathbb{N}$ such that
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{HasArchimedeanProperty}(\mathbb{R})
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+\operatorname{HasArchimedeanProperty}(P_{\mathbb{R}})
 \Longrightarrow
 \forall \varepsilon>0\;\exists n\in\mathbb{N}\;(0<1/n<\varepsilon).
 \]
@@ -174,7 +182,12 @@ tolerance.
 \end{remark*}
 
 \begin{dependencies}
-\hyperref[thm:archimedean-property]{Theorem~\ref*{thm:archimedean-property}}.
+\begin{itemize}
+\item \hyperref[def:reals]{Real Numbers}.
+\item \hyperref[def:natural-numbers]{Natural Numbers}.
+\item \hyperref[def:ordered-set]{Ordered Set}.
+\item \hyperref[thm:archimedean-property]{Archimedean Property}.
+\end{itemize}
 \end{dependencies}
 
 
@@ -198,7 +211,8 @@ For every $x>0$ and every $y\in\mathbb{R}$, there exists $n\in\mathbb{N}$ such t
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{HasArchimedeanProperty}(\mathbb{R})
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+\operatorname{HasArchimedeanProperty}(P_{\mathbb{R}})
 \Longrightarrow
 \forall x,y\in\mathbb{R}\;\bigl(x>0\rightarrow \exists n\in\mathbb{N}\;(nx>y)\bigr).
 \]
@@ -239,7 +253,12 @@ Any fixed positive real step eventually passes any real threshold when repeated 
 \end{remark*}
 
 \begin{dependencies}
-\hyperref[thm:archimedean-property]{Theorem~\ref*{thm:archimedean-property}}.
+\begin{itemize}
+\item \hyperref[def:reals]{Real Numbers}.
+\item \hyperref[def:natural-numbers]{Natural Numbers}.
+\item \hyperref[def:ordered-set]{Ordered Set}.
+\item \hyperref[thm:archimedean-property]{Archimedean Property}.
+\end{itemize}
 \end{dependencies}
 
 \input{volume-iii/book-analysis-i/bounding/notes/completeness/figure-archimedean-integer-step}
@@ -315,7 +334,11 @@ unit intervals whose left endpoints are integers.
 \end{remark*}
 
 \begin{dependencies}
-\hyperref[thm:archimedean-property]{Theorem~\ref*{thm:archimedean-property}}.
+\begin{itemize}
+\item \hyperref[def:reals]{Real Numbers}.
+\item \hyperref[def:integers]{Integers}.
+\item \hyperref[thm:archimedean-property]{Archimedean Property}.
+\end{itemize}
 \end{dependencies}
 
 
@@ -388,7 +411,11 @@ integer endpoint on the right.
 \end{remark*}
 
 \begin{dependencies}
-\hyperref[lem:integer-part-lemma]{Lemma~\ref*{lem:integer-part-lemma}}.
+\begin{itemize}
+\item \hyperref[def:reals]{Real Numbers}.
+\item \hyperref[def:integers]{Integers}.
+\item \hyperref[lem:integer-part-lemma]{Integer Part Lemma}.
+\end{itemize}
 \end{dependencies}
 
 
@@ -460,7 +487,11 @@ farther than one unit above that number.
 \end{remark*}
 
 \begin{dependencies}
-\hyperref[lem:archimedean-integer-part-lemma]{Lemma~\ref*{lem:archimedean-integer-part-lemma}}.
+\begin{itemize}
+\item \hyperref[def:reals]{Real Numbers}.
+\item \hyperref[def:integers]{Integers}.
+\item \hyperref[lem:archimedean-integer-part-lemma]{Archimedean Integer Part Lemma}.
+\end{itemize}
 \end{dependencies}
 
 
@@ -529,7 +560,11 @@ the sharper version with $m$ no farther than one unit above $x$.
 \end{remark*}
 
 \begin{dependencies}
-\hyperref[lem:integer-ceiling-lemma]{Lemma~\ref*{lem:integer-ceiling-lemma}}.
+\begin{itemize}
+\item \hyperref[def:reals]{Real Numbers}.
+\item \hyperref[def:integers]{Integers}.
+\item \hyperref[lem:integer-ceiling-lemma]{Integer Ceiling Lemma}.
+\end{itemize}
 \end{dependencies}
 
 
@@ -606,5 +641,10 @@ At least one integer must lie strictly inside.
 \end{remark*}
 
 \begin{dependencies}
-\hyperref[lem:integer-ceiling-lemma]{Lemma~\ref*{lem:integer-ceiling-lemma}}.
+\begin{itemize}
+\item \hyperref[def:reals]{Real Numbers}.
+\item \hyperref[def:integers]{Integers}.
+\item \hyperref[def:open-interval]{Open Interval}.
+\item \hyperref[lem:integer-ceiling-lemma]{Integer Ceiling Lemma}.
+\end{itemize}
 \end{dependencies}

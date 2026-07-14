@@ -27,13 +27,16 @@ for every $a\in A$ and every $b\in B$.
 \end{remark*}
 \begin{remark*}[Predicate reading]
 \[
+A,B\subseteq\mathbb{R},\qquad P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),
+\]
+\[
 \bigl(A\ne\varnothing\land B\ne\varnothing\land
 \forall a\in A\;\forall b\in B\;(a\le b)\bigr)
 \Rightarrow
-\operatorname{HasDedekindSeparator}(A,B,\mathbb{R}).
+\operatorname{HasDedekindSeparator}(A,B,P_{\mathbb{R}}).
 \]
 Equivalently, there exists $c\in\mathbb{R}$ such that
-\(\operatorname{IsDedekindSeparator}(c,A,B,\mathbb{R})\).
+\(\operatorname{IsDedekindSeparator}(c,A,B,P_{\mathbb{R}})\).
 \end{remark*}
 \begin{remark*}[Negated quantified statement]
 \[
@@ -48,9 +51,12 @@ A\ne\varnothing\land B\ne\varnothing\land
 \end{remark*}
 \begin{remark*}[Negation predicate reading]
 \[
+A,B\subseteq\mathbb{R},\qquad P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),
+\]
+\[
 \bigl(A\ne\varnothing\land B\ne\varnothing\land
 \forall a\in A\;\forall b\in B\;(a\le b)\bigr)
-\land\neg\operatorname{HasDedekindSeparator}(A,B,\mathbb{R}).
+\land\neg\operatorname{HasDedekindSeparator}(A,B,P_{\mathbb{R}}).
 \]
 \end{remark*}
 \begin{remark*}[Interpretation]
@@ -58,9 +64,12 @@ If one nonempty set lies entirely to the left of another, completeness supplies
 a real separator between them.
 \end{remark*}
 \begin{dependencies}
-\hyperref[ax:completeness-of-reals]{Completeness of $\mathbb{R}$};
+\hyperref[def:reals]{Real Numbers};
+\hyperref[def:ordered-set]{Ordered Set};
+\hyperref[def:subset]{Subset};
+\hyperref[def:real-upper-bound]{Upper Bound};
 \hyperref[def:supremum]{Supremum};
-\hyperref[def:real-upper-bound]{Upper Bound}.
+\hyperref[ax:completeness-of-reals]{Completeness of $\mathbb{R}$}.
 \end{dependencies}
 \input{volume-iii/book-analysis-i/bounding/notes/completeness/figure-order-separation}
 
@@ -97,11 +106,14 @@ for every $a\in A$ and every $b\in B$.
 \end{remark*}
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{IsDedekindSeparation}(A,B,\mathbb{R})\Rightarrow
-\operatorname{HasDedekindSeparator}(A,B,\mathbb{R}).
+A,B\subseteq\mathbb{R},\qquad P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),
+\]
+\[
+\operatorname{IsDedekindSeparation}(A,B,P_{\mathbb{R}})\Rightarrow
+\operatorname{HasDedekindSeparator}(A,B,P_{\mathbb{R}}).
 \]
 Equivalently, the conclusion supplies some $c\in\mathbb{R}$ with
-\(\operatorname{IsDedekindSeparator}(c,A,B,\mathbb{R})\).
+\(\operatorname{IsDedekindSeparator}(c,A,B,P_{\mathbb{R}})\).
 \end{remark*}
 \begin{remark*}[Negated quantified statement]
 \[
@@ -112,7 +124,8 @@ Equivalently, the conclusion supplies some $c\in\mathbb{R}$ with
 \end{remark*}
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{IsDedekindGap}(A,B,\mathbb{R}).
+A,B\subseteq\mathbb{R},\qquad P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+\operatorname{IsDedekindGap}(A,B,P_{\mathbb{R}}).
 \]
 \end{remark*}
 \begin{remark*}[Interpretation]
@@ -120,6 +133,11 @@ The real line has no ordered partition into a left part and a right part with
 an unfilled gap between them.
 \end{remark*}
 \begin{dependencies}
+\hyperref[def:reals]{Real Numbers};
+\hyperref[def:ordered-set]{Ordered Set};
+\hyperref[def:subset]{Subset};
+\hyperref[def:union]{Union};
+\hyperref[def:intersection]{Intersection};
 \hyperref[thm:order-separation-by-supremum]{Order Separation by Supremum}.
 \end{dependencies}
 
@@ -137,7 +155,8 @@ The real line has no Dedekind gaps.
 \end{remark*}
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{IsOrderComplete}(\mathbb{R}).
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+\operatorname{IsOrderComplete}(P_{\mathbb{R}}).
 \]
 \end{remark*}
 \begin{remark*}[Negated quantified statement]
@@ -147,7 +166,8 @@ The real line has no Dedekind gaps.
 \end{remark*}
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{IsOrderComplete}(\mathbb{R}).
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+\neg\operatorname{IsOrderComplete}(P_{\mathbb{R}}).
 \]
 \end{remark*}
 \begin{remark*}[Interpretation]
@@ -155,5 +175,7 @@ Every Dedekind separation of the real line is accounted for by a real boundary
 point.
 \end{remark*}
 \begin{dependencies}
+\hyperref[def:reals]{Real Numbers};
+\hyperref[def:ordered-set]{Ordered Set};
 \hyperref[thm:dedekind-cut-property]{Dedekind Cut Property}.
 \end{dependencies}
