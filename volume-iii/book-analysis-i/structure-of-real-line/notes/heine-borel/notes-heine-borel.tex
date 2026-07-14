@@ -19,7 +19,13 @@ Every closed bounded interval $[a,b]\subseteq\mathbb{R}$ is compact.
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-The displayed quantified statement is the predicate-level form of $label: its hypotheses name the input conditions, and its conclusion names the asserted structure or relation.
+\[
+I=[a,b]\subseteq\mathbb{R},\qquad
+\operatorname{IsClosedInterval}(I,\mathbb{R})\land
+\operatorname{IsBoundedInterval}(I,\mathbb{R})
+\Longrightarrow
+\operatorname{IsCompact}(I,\mathbb{R}).
+\]
 \end{remark*}
 \begin{remark*}[Interpretation]
 This is the hard half. The standard proof uses completeness directly: let $S$ be the set of $x\in[a,b]$ such that $[a,x]$ has a finite subcover, and show $\sup S=b$ is attained. Bisection (the nested-interval method) gives the same result. Either route shows completeness is what makes the line compact in the large.

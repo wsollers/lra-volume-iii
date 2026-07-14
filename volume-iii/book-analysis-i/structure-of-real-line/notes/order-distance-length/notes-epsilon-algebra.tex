@@ -23,8 +23,9 @@ If $a>0$ and $b>0$, then
 \end{remark*}
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{Positive}(a)\land\operatorname{Positive}(b)
-\Rightarrow \operatorname{Positive}(\min\{a,b\}).
+m=\min\{a,b\},\qquad
+\operatorname{Positive}(a,\mathbb{R})\land\operatorname{Positive}(b,\mathbb{R})
+\Rightarrow \operatorname{Positive}(m,\mathbb{R}).
 \]
 \end{remark*}
 \begin{remark*}[Negated quantified statement]
@@ -34,8 +35,9 @@ If $a>0$ and $b>0$, then
 \end{remark*}
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{Positive}(a)\land\operatorname{Positive}(b)\land
-\neg\operatorname{Positive}(\min\{a,b\}).
+m=\min\{a,b\},\qquad
+\operatorname{Positive}(a,\mathbb{R})\land\operatorname{Positive}(b,\mathbb{R})\land
+\neg\operatorname{Positive}(m,\mathbb{R}).
 \]
 \end{remark*}
 \begin{remark*}[Interpretation]
@@ -63,8 +65,8 @@ If $\varepsilon>0$, then
 \end{remark*}
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{Positive}(\varepsilon)\Rightarrow
-\operatorname{Positive}(\varepsilon/2).
+\operatorname{Positive}(\varepsilon,\mathbb{R})\Rightarrow
+\operatorname{Positive}(\varepsilon/2,\mathbb{R}).
 \]
 \end{remark*}
 \begin{remark*}[Negated quantified statement]
@@ -74,7 +76,7 @@ If $\varepsilon>0$, then
 \end{remark*}
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{Positive}(\varepsilon)\land\neg\operatorname{Positive}(\varepsilon/2).
+\operatorname{Positive}(\varepsilon,\mathbb{R})\land\neg\operatorname{Positive}(\varepsilon/2,\mathbb{R}).
 \]
 \end{remark*}
 \begin{remark*}[Interpretation]
@@ -166,8 +168,8 @@ If $0<\delta\le a$ and $0<\delta\le b$, then
 If a positive quantity is below each of two bounds, it is below their minimum.
 \end{remark*}
 \begin{dependencies}
-\hyperref[lem:minimum-of-positive-numbers-is-positive]{Minimum of Positive Numbers Is Positive};
-\hyperref[def:real-ordered-field]{Complete Ordered Field}.
+\hyperref[def:real-ordered-field]{Complete Ordered Field};
+\hyperref[lem:minimum-of-positive-numbers-is-positive]{Minimum of Positive Numbers Is Positive}.
 \end{dependencies}
 
 \begin{lemmabox}{Lemma (Choosing a Smaller Positive Number)}
