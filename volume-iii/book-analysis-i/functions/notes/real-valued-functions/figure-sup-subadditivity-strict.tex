@@ -1,0 +1,19 @@
+\begin{tikzpicture}[atlas, scale=0.95]
+  \draw[atlas axes] (0,0)--(5.6,0);
+  \draw[atlas axes] (0,0)--(0,3.4);
+  \foreach \x/\fa/\ga/\sa in {1.4/2.4/0.8/3.2,4.0/0.8/2.4/3.2} {
+    \draw[dropline] (\x,0)--(\x,\sa);
+    \node[atlas dot, fill=atlasblue] at (\x,\fa){};
+    \node[atlas dot, fill=atlasgreen] at (\x,\ga){};
+    \node[atlas dot, fill=atlasred] at (\x,\sa){};
+  }
+  \draw[atlasblue, thick] (1.4,2.4)--(4.0,0.8);
+  \draw[atlasgreen, thick] (1.4,0.8)--(4.0,2.4);
+  \draw[atlasred, thick] (1.4,3.2)--(4.0,3.2);
+  \node[atlas label,below] at (1.4,0){$a$};
+  \node[atlas label,below] at (4.0,0){$b$};
+  \node[atlas label,right] at (4.05,0.8){$f$};
+  \node[atlas label,right] at (4.05,2.4){$g$};
+  \node[atlas label,right] at (4.05,3.2){$f+g$};
+  \node[atlas label] at (2.8,3.55){$\sup(f+g)<\sup f+\sup g$};
+\end{tikzpicture}

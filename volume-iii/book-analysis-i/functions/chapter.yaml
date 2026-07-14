@@ -6,6 +6,46 @@ dependencies:
   prior: ''
   next: ''
 environments:
+- label: def:at-point-operation
+  type: def
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: At-Point Operation
+  proof_file: null
+- label: def:pointwise-operation-on-set
+  type: def
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Pointwise Operation on a Set
+  proof_file: null
+- label: def:at-point-relation
+  type: def
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: At-Point Relation
+  proof_file: null
+- label: def:pointwise-relation-on-set
+  type: def
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Pointwise Relation on a Set
+  proof_file: null
+- label: def:pointwise-relation-near-point
+  type: def
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Pointwise Relation Near a Point
+  proof_file: null
+- label: prop:pointwise-operation-evaluation
+  type: prop
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Pointwise Operation Evaluation
+  proof_file: proofs\real-valued-functions\prf-pointwise-operation-evaluation.tex
+- label: prop:pointwise-relation-evaluation
+  type: prop
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Pointwise Relation Evaluation
+  proof_file: proofs\real-valued-functions\prf-pointwise-relation-evaluation.tex
+- label: prop:pointwise-relation-near-unpacking
+  type: prop
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Pointwise Relation Near a Point Unpacking
+  proof_file: proofs\real-valued-functions\prf-pointwise-relation-near-unpacking.tex
 - label: prop:composition-injective
   type: prop
   file: notes\algebra-of-functions\notes-algebra-of-functions.tex
@@ -61,11 +101,106 @@ environments:
   file: notes\real-valued-functions\notes-real-valued-functions.tex
   display_title: Pointwise Maximum of Two Functions
   proof_file: null
+- label: def:pointwise-minimum-of-two-functions
+  type: def
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Pointwise Minimum of Two Functions
+  proof_file: null
 - label: def:pointwise-quotient-of-functions
   type: def
   file: notes\real-valued-functions\notes-real-valued-functions.tex
   display_title: Pointwise Quotient of Functions
   proof_file: null
+- label: def:pointwise-reciprocal-of-a-function
+  type: def
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Pointwise Reciprocal of a Function
+  proof_file: null
+- label: thm:function-algebra-closure
+  type: thm
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Function Algebra Closure
+  proof_file: proofs\real-valued-functions\prf-function-algebra-closure.tex
+- label: thm:function-quotient-closure
+  type: thm
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Function Quotient Closure
+  proof_file: proofs\real-valued-functions\prf-function-quotient-closure.tex
+- label: prop:pointwise-max-min-absolute-value-formulas
+  type: prop
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Pointwise Max/Min Absolute Value Formulas
+  proof_file: proofs\real-valued-functions\prf-pointwise-max-min-absolute-value-formulas.tex
+- label: prop:pointwise-max-min-bounds
+  type: prop
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Pointwise Max/Min Bounds
+  proof_file: proofs\real-valued-functions\prf-pointwise-max-min-bounds.tex
+- label: prop:quotient-undefined-when-denominator-vanishes
+  type: prop
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Quotient Undefined When the Denominator Vanishes
+  proof_file: proofs\real-valued-functions\prf-quotient-undefined-when-denominator-vanishes.tex
+- label: def:pointwise-equality-on-set
+  type: def
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Pointwise Equality on a Set
+  proof_file: null
+- label: thm:pointwise-order-laws
+  type: thm
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Pointwise Order Laws
+  proof_file: proofs\real-valued-functions\prf-pointwise-order-laws.tex
+- label: prop:strict-pointwise-order-implies-weak
+  type: prop
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Strict Pointwise Order Implies Weak
+  proof_file: proofs\real-valued-functions\prf-strict-pointwise-order-implies-weak.tex
+- label: thm:pointwise-order-arithmetic
+  type: thm
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Pointwise Order Arithmetic
+  proof_file: proofs\real-valued-functions\prf-pointwise-order-arithmetic.tex
+- label: prop:pointwise-product-order-nonnegative
+  type: prop
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Pointwise Product Order, Nonnegative Case
+  proof_file: proofs\real-valued-functions\prf-pointwise-product-order-nonnegative.tex
+- label: prop:reciprocal-order-reversal
+  type: prop
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Reciprocal Order Reversal
+  proof_file: proofs\real-valued-functions\prf-reciprocal-order-reversal.tex
+- label: prop:quotient-order-sign-controlled
+  type: prop
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Quotient Order, Sign-Controlled Form
+  proof_file: proofs\real-valued-functions\prf-quotient-order-sign-controlled.tex
+- label: prop:no-unconditional-quotient-order-law
+  type: prop
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: No Unconditional Quotient Order Law
+  proof_file: proofs\real-valued-functions\prf-no-unconditional-quotient-order-law.tex
+- label: prop:linear-combination-closure
+  type: prop
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Linear Combination Closure
+  proof_file: proofs\real-valued-functions\prf-linear-combination-closure.tex
+- label: prop:bounded-linear-combination
+  type: prop
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Bounded Linear Combination
+  proof_file: proofs\real-valued-functions\prf-bounded-linear-combination.tex
+- label: prop:real-linear-rule-test
+  type: prop
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Real-Linearity Test
+  proof_file: proofs\real-valued-functions\prf-real-linear-rule-test.tex
+- label: cor:real-linear-rule-basic-values
+  type: cor
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Real-Linear Rule Basic Values
+  proof_file: proofs\real-valued-functions\prf-real-linear-rule-basic-values.tex
 - label: def:function-bounded-above
   type: def
   file: notes\real-valued-functions\notes-real-valued-functions.tex
@@ -81,6 +216,121 @@ environments:
   file: notes\real-valued-functions\notes-real-valued-functions.tex
   display_title: Bounded Function
   proof_file: null
+- label: def:function-bounded-near-point
+  type: def
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Function Bounded Near a Point
+  proof_file: null
+- label: def:function-bounded-away-from-zero
+  type: def
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Function Bounded Away from Zero
+  proof_file: null
+- label: def:function-bounded-away-from-zero-near
+  type: def
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Function Bounded Away from Zero Near a Point
+  proof_file: null
+- label: def:uniformly-bounded-family
+  type: def
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Uniformly Bounded Family
+  proof_file: null
+- label: thm:bounded-iff-absolute-value-bounded-above
+  type: thm
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Bounded Iff Absolute Value Bounded Above
+  proof_file: proofs\real-valued-functions\prf-bounded-iff-absolute-value-bounded-above.tex
+- label: prop:boundedness-restriction
+  type: prop
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Boundedness Restriction
+  proof_file: proofs\real-valued-functions\prf-boundedness-restriction.tex
+- label: prop:boundedness-not-preserved-under-extension
+  type: prop
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Boundedness Not Preserved Under Extension
+  proof_file: proofs\real-valued-functions\prf-boundedness-not-preserved-under-extension.tex
+- label: prop:bounded-away-from-zero-implies-nonzero
+  type: prop
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Bounded Away From Zero Implies Nonzero
+  proof_file: proofs\real-valued-functions\prf-bounded-away-from-zero-implies-nonzero.tex
+- label: prop:bounded-away-from-zero-near-implies-nonzero-near
+  type: prop
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Bounded Away From Zero Near Implies Nonzero Near
+  proof_file: proofs\real-valued-functions\prf-bounded-away-from-zero-near-implies-nonzero-near.tex
+- label: thm:bounded-away-from-zero-gives-bounded-reciprocal
+  type: thm
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Bounded Away From Zero Gives Bounded Reciprocal
+  proof_file: proofs\real-valued-functions\prf-bounded-away-from-zero-gives-bounded-reciprocal.tex
+- label: thm:local-bounded-away-from-zero-gives-local-bounded-reciprocal
+  type: thm
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Local Bounded Away From Zero Gives Local Bounded Reciprocal
+  proof_file: proofs\real-valued-functions\prf-local-bounded-away-from-zero-gives-local-bounded-reciprocal.tex
+- label: thm:uniform-boundedness-transfer-under-pointwise-limit
+  type: thm
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Uniform Boundedness Transfer Under Pointwise Limit
+  proof_file: proofs\real-valued-functions\prf-uniform-boundedness-transfer-under-pointwise-limit.tex
+- label: thm:bounded-function-algebra-closure
+  type: thm
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Bounded Function Algebra Closure
+  proof_file: proofs\real-valued-functions\prf-bounded-function-algebra-closure.tex
+- label: cor:bounded-sum
+  type: cor
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Bounded Sum
+  proof_file: proofs\real-valued-functions\prf-bounded-sum.tex
+- label: cor:bounded-difference
+  type: cor
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Bounded Difference
+  proof_file: proofs\real-valued-functions\prf-bounded-difference.tex
+- label: cor:bounded-product
+  type: cor
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Bounded Product
+  proof_file: proofs\real-valued-functions\prf-bounded-product.tex
+- label: cor:bounded-scalar-multiple
+  type: cor
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Bounded Scalar Multiple
+  proof_file: proofs\real-valued-functions\prf-bounded-scalar-multiple.tex
+- label: cor:bounded-absolute-value
+  type: cor
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Bounded Absolute Value
+  proof_file: proofs\real-valued-functions\prf-bounded-absolute-value.tex
+- label: cor:bounded-max-min
+  type: cor
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Bounded Max/Min
+  proof_file: proofs\real-valued-functions\prf-bounded-max-min.tex
+- label: thm:bounded-functions-form-commutative-ring
+  type: thm
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Bounded Functions Form a Commutative Ring
+  proof_file: proofs\real-valued-functions\prf-bounded-functions-form-commutative-ring.tex
+- label: thm:bounded-functions-form-real-vector-space
+  type: thm
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Bounded Functions Form a Real Vector Space
+  proof_file: proofs\real-valued-functions\prf-bounded-functions-form-real-vector-space.tex
+- label: thm:bounded-away-quotient
+  type: thm
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Bounded-Away Quotient
+  proof_file: proofs\real-valued-functions\prf-bounded-away-quotient.tex
+- label: cor:bounded-quotient-by-bounded-away-denominator
+  type: cor
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Bounded Quotient by Bounded-Away Denominator
+  proof_file: proofs\real-valued-functions\prf-bounded-quotient-by-bounded-away-denominator.tex
 - label: def:function-supremum-on-set
   type: def
   file: notes\real-valued-functions\notes-real-valued-functions.tex
@@ -91,16 +341,131 @@ environments:
   file: notes\real-valued-functions\notes-real-valued-functions.tex
   display_title: Infimum of a Function on a Set
   proof_file: null
+- label: def:pointwise-supremum-family
+  type: def
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Pointwise Supremum of a Family
+  proof_file: null
+- label: def:pointwise-infimum-family
+  type: def
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Pointwise Infimum of a Family
+  proof_file: null
+- label: thm:function-supremum-existence
+  type: thm
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Function Supremum Existence
+  proof_file: proofs\real-valued-functions\prf-function-supremum-existence.tex
+- label: thm:function-infimum-existence
+  type: thm
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Function Infimum Existence
+  proof_file: proofs\real-valued-functions\prf-function-infimum-existence.tex
+- label: thm:supremum-monotone-under-pointwise-order
+  type: thm
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Supremum Monotone Under Pointwise Order
+  proof_file: proofs\real-valued-functions\prf-supremum-monotone-under-pointwise-order.tex
+- label: thm:infimum-monotone-under-pointwise-order
+  type: thm
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Infimum Monotone Under Pointwise Order
+  proof_file: proofs\real-valued-functions\prf-infimum-monotone-under-pointwise-order.tex
+- label: prop:supremum-monotonicity-converse-fails
+  type: prop
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Supremum Monotonicity Converse Fails
+  proof_file: proofs\real-valued-functions\prf-supremum-monotonicity-converse-fails.tex
+- label: thm:pointwise-supremum-evaluation
+  type: thm
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Pointwise Supremum Evaluation
+  proof_file: proofs\real-valued-functions\prf-pointwise-supremum-evaluation.tex
+- label: thm:pointwise-infimum-evaluation
+  type: thm
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Pointwise Infimum Evaluation
+  proof_file: proofs\real-valued-functions\prf-pointwise-infimum-evaluation.tex
+- label: thm:supremum-subadditivity
+  type: thm
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Supremum Subadditivity
+  proof_file: proofs\real-valued-functions\prf-supremum-subadditivity.tex
+- label: thm:infimum-superadditivity
+  type: thm
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Infimum Superadditivity
+  proof_file: proofs\real-valued-functions\prf-infimum-superadditivity.tex
+- label: thm:supremum-negation
+  type: thm
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Supremum of Negation
+  proof_file: proofs\real-valued-functions\prf-supremum-negation.tex
+- label: thm:infimum-negation
+  type: thm
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Infimum of Negation
+  proof_file: proofs\real-valued-functions\prf-infimum-negation.tex
+- label: thm:supremum-scalar-multiple
+  type: thm
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Supremum Scalar Multiple
+  proof_file: proofs\real-valued-functions\prf-supremum-scalar-multiple.tex
+- label: thm:infimum-scalar-multiple
+  type: thm
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Infimum Scalar Multiple
+  proof_file: proofs\real-valued-functions\prf-infimum-scalar-multiple.tex
+- label: cor:finite-family-pointwise-supremum-is-maximum
+  type: cor
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Finite Family Pointwise Supremum Is Maximum
+  proof_file: proofs\real-valued-functions\prf-finite-family-pointwise-supremum-is-maximum.tex
+- label: cor:finite-family-pointwise-infimum-is-minimum
+  type: cor
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Finite Family Pointwise Infimum Is Minimum
+  proof_file: proofs\real-valued-functions\prf-finite-family-pointwise-infimum-is-minimum.tex
+- label: thm:common-maximum-gives-sum-maximum
+  type: thm
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Common Maximum Gives Sum Maximum
+  proof_file: proofs\real-valued-functions\prf-common-maximum-gives-sum-maximum.tex
+- label: thm:common-minimum-gives-sum-minimum
+  type: thm
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Common Minimum Gives Sum Minimum
+  proof_file: proofs\real-valued-functions\prf-common-minimum-gives-sum-minimum.tex
+- label: prop:common-extremum-converse-fails
+  type: prop
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Common Extremum Converse Fails
+  proof_file: proofs\real-valued-functions\prf-common-extremum-converse-fails.tex
 - label: def:function-maximum-point
   type: def
   file: notes\real-valued-functions\notes-real-valued-functions.tex
   display_title: Maximum Point of a Function
   proof_file: null
+- label: prop:maximum-point-characterized-by-supremum
+  type: prop
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Maximum Point Characterized by Supremum
+  proof_file: proofs\real-valued-functions\prf-maximum-point-characterized-by-supremum.tex
 - label: def:function-minimum-point
   type: def
   file: notes\real-valued-functions\notes-real-valued-functions.tex
   display_title: Minimum Point of a Function
   proof_file: null
+- label: prop:minimum-point-characterized-by-infimum
+  type: prop
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Minimum Point Characterized by Infimum
+  proof_file: proofs\real-valued-functions\prf-minimum-point-characterized-by-infimum.tex
+- label: cor:function-extremum-values-are-unique
+  type: cor
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Extremum Values Are Unique
+  proof_file: proofs\real-valued-functions\prf-function-extremum-values-are-unique.tex
 - label: def:function-increasing
   type: def
   file: notes\real-valued-functions\notes-real-valued-functions.tex
@@ -111,6 +476,11 @@ environments:
   file: notes\real-valued-functions\notes-real-valued-functions.tex
   display_title: Strictly Increasing Function
   proof_file: null
+- label: prop:strictly-increasing-implies-increasing
+  type: prop
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Strictly Increasing Implies Increasing
+  proof_file: proofs\real-valued-functions\prf-strictly-increasing-implies-increasing.tex
 - label: def:function-decreasing
   type: def
   file: notes\real-valued-functions\notes-real-valued-functions.tex
@@ -121,16 +491,51 @@ environments:
   file: notes\real-valued-functions\notes-real-valued-functions.tex
   display_title: Strictly Decreasing Function
   proof_file: null
+- label: prop:strictly-decreasing-implies-decreasing
+  type: prop
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Strictly Decreasing Implies Decreasing
+  proof_file: proofs\real-valued-functions\prf-strictly-decreasing-implies-decreasing.tex
 - label: def:function-monotone
   type: def
   file: notes\real-valued-functions\notes-real-valued-functions.tex
   display_title: Monotone Function
   proof_file: null
+- label: prop:negation-reverses-monotonicity
+  type: prop
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Negation Reverses Monotonicity
+  proof_file: proofs\real-valued-functions\prf-negation-reverses-monotonicity.tex
+- label: prop:positive-scalar-multiples-preserve-monotonicity
+  type: prop
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Positive Scalar Multiples Preserve Monotonicity
+  proof_file: proofs\real-valued-functions\prf-positive-scalar-multiples-preserve-monotonicity.tex
+- label: prop:monotone-need-not-be-strict
+  type: prop
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Monotone Need Not Be Strict
+  proof_file: proofs\real-valued-functions\prf-monotone-need-not-be-strict.tex
 - label: def:function-constant
   type: def
   file: notes\real-valued-functions\notes-real-valued-functions.tex
   display_title: Constant Function
   proof_file: null
+- label: prop:constant-function-characterization
+  type: prop
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Constant Function Characterization
+  proof_file: proofs\real-valued-functions\prf-constant-function-characterization.tex
+- label: cor:constant-functions-are-bounded
+  type: cor
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Constant Functions Are Bounded
+  proof_file: proofs\real-valued-functions\prf-constant-functions-are-bounded.tex
+- label: cor:constant-functions-are-monotone
+  type: cor
+  file: notes\real-valued-functions\notes-real-valued-functions.tex
+  display_title: Constant Functions Are Monotone
+  proof_file: proofs\real-valued-functions\prf-constant-functions-are-monotone.tex
 - label: def:epsilon-neighbourhood
   type: def
   file: notes\subsets-real-line\notes-subsets-of-R.tex
@@ -186,6 +591,36 @@ environments:
   file: notes\subsets-real-line\notes-subsets-of-R.tex
   display_title: Closure
   proof_file: null
+- label: prop:adherent-points-are-closure-points
+  type: prop
+  file: notes\subsets-real-line\notes-subsets-of-R.tex
+  display_title: Adherent Points Are Exactly Closure Points
+  proof_file: proofs\subsets-real-line\prf-adherent-points-are-closure-points.tex
+- label: prop:isolated-points-are-noncluster-adherent-points
+  type: prop
+  file: notes\subsets-real-line\notes-subsets-of-R.tex
+  display_title: Isolated Points Are Noncluster Adherent Points
+  proof_file: proofs\subsets-real-line\prf-isolated-points-are-noncluster-adherent-points.tex
+- label: prop:interior-membership-characterization
+  type: prop
+  file: notes\subsets-real-line\notes-subsets-of-R.tex
+  display_title: Interior Membership Characterization
+  proof_file: proofs\subsets-real-line\prf-interior-membership-characterization.tex
+- label: prop:interior-is-contained-in-set
+  type: prop
+  file: notes\subsets-real-line\notes-subsets-of-R.tex
+  display_title: Interior Is Contained in the Set
+  proof_file: proofs\subsets-real-line\prf-interior-is-contained-in-set.tex
+- label: prop:closure-is-smallest-closed-superset
+  type: prop
+  file: notes\subsets-real-line\notes-subsets-of-R.tex
+  display_title: Closure Is the Smallest Closed Superset
+  proof_file: proofs\subsets-real-line\prf-closure-is-smallest-closed-superset.tex
+- label: prop:boundary-as-closure-minus-interior
+  type: prop
+  file: notes\subsets-real-line\notes-subsets-of-R.tex
+  display_title: Boundary as Closure Minus Interior
+  proof_file: proofs\subsets-real-line\prf-boundary-as-closure-minus-interior.tex
 - label: lem:closure-elementary
   type: lem
   file: notes\subsets-real-line\notes-subsets-of-R.tex
@@ -221,6 +656,16 @@ environments:
   file: notes\subsets-real-line\notes-subsets-of-R.tex
   display_title: True Near a Point
   proof_file: null
+- label: prop:true-near-stable-under-shrinking
+  type: prop
+  file: notes\subsets-real-line\notes-subsets-of-R.tex
+  display_title: True Near Is Stable Under Shrinking
+  proof_file: proofs\subsets-real-line\prf-true-near-stable-under-shrinking.tex
+- label: prop:true-near-stable-under-conjunction
+  type: prop
+  file: notes\subsets-real-line\notes-subsets-of-R.tex
+  display_title: True Near Is Stable Under Conjunction
+  proof_file: proofs\subsets-real-line\prf-true-near-stable-under-conjunction.tex
 proof_files: []
 
 book: book-analysis-i

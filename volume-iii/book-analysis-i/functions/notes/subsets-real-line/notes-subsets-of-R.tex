@@ -445,6 +445,203 @@ $\overline{\{1/n\}} = \{1/n\}\cup\{0\}$.
 \end{itemize}
 \end{dependencies}
 
+\begin{propositionbox}{Proposition}
+\begin{proposition}[Adherent Points Are Exactly Closure Points]
+\label{prop:adherent-points-are-closure-points}
+Let \(X\subseteq\mathbb{R}\) and \(x\in\mathbb{R}\).  Then
+\[
+  x\in\overline{X}
+  \quad\Longleftrightarrow\quad
+  x\text{ is an adherent point of }X.
+\]
+
+\smallskip\noindent
+\hyperref[prf:adherent-points-are-closure-points]{\textit{Go to proof.}}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  x\in\overline{X}
+  \;\Longleftrightarrow\;
+  \operatorname{IsAdherent}(x,X).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Closure is the set-level packaging of the pointwise adherent-point predicate.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:adherent-point-r]{Adherent Point}
+  \item \hyperref[def:closure-r]{Closure}
+\end{itemize}
+\end{dependencies}
+
+\begin{propositionbox}{Proposition}
+\begin{proposition}[Isolated Points Are Noncluster Adherent Points]
+\label{prop:isolated-points-are-noncluster-adherent-points}
+Let \(X\subseteq\mathbb{R}\) and \(x\in X\).  Then \(x\) is isolated in
+\(X\) if and only if \(x\) is an adherent point of \(X\) and \(x\) is not
+a cluster point of \(X\).
+
+\smallskip\noindent
+\hyperref[prf:isolated-points-are-noncluster-adherent-points]{\textit{Go to proof.}}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  x\in X
+  \;\Longrightarrow\;
+  \bigl(\operatorname{IsIsolated}(x,X)
+  \Longleftrightarrow
+  \operatorname{IsAdherent}(x,X)\wedge\neg\operatorname{IsCluster}(x,X)\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The point itself witnesses adherence, while the absence of distinct nearby
+points prevents cluster behavior.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:isolated-point-r]{Isolated Point}
+  \item \hyperref[def:adherent-point-r]{Adherent Point}
+  \item \hyperref[def:cluster-point-r]{Cluster Point}
+\end{itemize}
+\end{dependencies}
+
+\begin{propositionbox}{Proposition}
+\begin{proposition}[Interior Membership Characterization]
+\label{prop:interior-membership-characterization}
+Let \(X\subseteq\mathbb{R}\) and \(x\in\mathbb{R}\).  Then
+\[
+  x\in X^\circ
+  \quad\Longleftrightarrow\quad
+  x\text{ is an interior point of }X.
+\]
+
+\smallskip\noindent
+\hyperref[prf:interior-membership-characterization]{\textit{Go to proof.}}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  x\in X^\circ
+  \;\Longleftrightarrow\;
+  x\text{ is an interior point of }X.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The interior set collects exactly the points satisfying the interior-point
+predicate.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:interior-r]{Interior}
+  \item \hyperref[def:interior-point-r]{Interior Point}
+\end{itemize}
+\end{dependencies}
+
+\begin{propositionbox}{Proposition}
+\begin{proposition}[Interior Is Contained in the Set]
+\label{prop:interior-is-contained-in-set}
+For every \(X\subseteq\mathbb{R}\), \(X^\circ\subseteq X\).
+
+\smallskip\noindent
+\hyperref[prf:interior-is-contained-in-set]{\textit{Go to proof.}}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  X^\circ\subseteq X.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Interior points have a whole neighborhood inside \(X\), so in particular the
+center point lies in \(X\).
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:interior-r]{Interior}
+  \item \hyperref[def:epsilon-neighbourhood]{Centered Open Interval}
+\end{itemize}
+\end{dependencies}
+
+\begin{propositionbox}{Proposition}
+\begin{proposition}[Closure Is the Smallest Closed Superset]
+\label{prop:closure-is-smallest-closed-superset}
+Let \(X\subseteq\mathbb{R}\).  Then \(X\subseteq\overline{X}\),
+\(\overline{X}\) is closed, and if \(C\subseteq\mathbb{R}\) is closed with
+\(X\subseteq C\), then \(\overline{X}\subseteq C\).
+
+\smallskip\noindent
+\hyperref[prf:closure-is-smallest-closed-superset]{\textit{Go to proof.}}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  X\subseteq\overline{X}
+  \quad\text{and}\quad
+  C\text{ closed},\,X\subseteq C\Rightarrow \overline{X}\subseteq C.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The closure is not just a closed superset; it is the minimal closed set that
+contains \(X\).
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:closure-r]{Closure}
+  \item \hyperref[def:closed-set-r]{Closed Subset of \(\mathbb{R}\)}
+  \item \hyperref[lem:closure-elementary]{Elementary Properties of Closures}
+\end{itemize}
+\end{dependencies}
+
+\begin{propositionbox}{Proposition}
+\begin{proposition}[Boundary as Closure Minus Interior]
+\label{prop:boundary-as-closure-minus-interior}
+For every \(X\subseteq\mathbb{R}\),
+\[
+  \partial X=\overline{X}\setminus X^\circ.
+\]
+
+\smallskip\noindent
+\hyperref[prf:boundary-as-closure-minus-interior]{\textit{Go to proof.}}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \partial X=\overline{X}\setminus X^\circ.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Boundary points are adherent to \(X\) but do not have a whole neighborhood
+lying inside \(X\).
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:boundary-r]{Boundary}
+  \item \hyperref[def:closure-r]{Closure}
+  \item \hyperref[def:interior-r]{Interior}
+\end{itemize}
+\end{dependencies}
+
 % ---------------------------------------------------------
 % Lemma --- Elementary Properties of Closures
 % ---------------------------------------------------------
@@ -760,5 +957,69 @@ $\varepsilon>0$, the property $|f(x)-L|<\varepsilon$ is true near $x_0$.
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:epsilon-neighbourhood]{Centered Open Interval}
+\end{itemize}
+\end{dependencies}
+
+\begin{propositionbox}{Proposition}
+\begin{proposition}[True Near Is Stable Under Shrinking]
+\label{prop:true-near-stable-under-shrinking}
+If a property \(P(f(x))\) is true near \(x_0\), then it remains true on
+every sufficiently smaller deleted neighborhood of \(x_0\).
+
+\smallskip\noindent
+\hyperref[prf:true-near-stable-under-shrinking]{\textit{Go to proof.}}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  P(f(x))\text{ true near }x_0
+  \;\Longrightarrow\;
+  \exists\eta>0\;\forall x\;(0<|x-x_0|<\eta\Rightarrow P(f(x))).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Once a local property holds on one punctured neighborhood, it also holds after
+the radius is decreased.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:true-near]{True Near a Point}
+  \item \hyperref[def:deleted-epsilon-neighbourhood]{Punctured Centered Open Interval}
+\end{itemize}
+\end{dependencies}
+
+\begin{propositionbox}{Proposition}
+\begin{proposition}[True Near Is Stable Under Conjunction]
+\label{prop:true-near-stable-under-conjunction}
+If \(P(f(x))\) is true near \(x_0\) and \(Q(f(x))\) is true near \(x_0\),
+then \(P(f(x))\wedge Q(f(x))\) is true near \(x_0\).
+
+\smallskip\noindent
+\hyperref[prf:true-near-stable-under-conjunction]{\textit{Go to proof.}}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  P(f(x))\text{ true near }x_0
+  \;\wedge\;
+  Q(f(x))\text{ true near }x_0
+  \;\Longrightarrow\;
+  P(f(x))\wedge Q(f(x))\text{ true near }x_0.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Two local facts can be made simultaneous by taking the smaller of their two
+radii.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:true-near]{True Near a Point}
+  \item \hyperref[lem:minimum-of-positive-numbers-is-positive]{Minimum of Positive Numbers Is Positive}
 \end{itemize}
 \end{dependencies}

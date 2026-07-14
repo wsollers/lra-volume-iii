@@ -1,0 +1,16 @@
+\begin{tikzpicture}[atlas, scale=0.95]
+  \draw[atlas axes] (0,0)--(6.6,0);
+  \draw[atlas axes] (0,0)--(0,3.6);
+  \glowcurve{color=atlasgreen, domain=0.35:6.1, axis=0, top=3.4,
+    expr={1.95+0.28*sin(1.45*\x r)+0.08*\x}}
+  \glowcurve{color=atlasblue, domain=0.35:6.1, axis=0, top=3.4,
+    expr={0.85+0.18*cos(1.2*\x r)+0.06*\x}}
+  \node[atlas label,right] at (6.15,2.65){$g$};
+  \node[atlas label,right] at (6.15,1.25){$f$};
+  \foreach \x in {1.0,2.2,3.4,4.6,5.8} {
+    \draw[dropline] (\x,0)--(\x,{1.95+0.28*sin(1.45*\x r)+0.08*\x});
+    \draw[atlas probe,->] (\x,{0.85+0.18*cos(1.2*\x r)+0.06*\x+0.08})
+      --(\x,{1.95+0.28*sin(1.45*\x r)+0.08*\x-0.08});
+  }
+  \node[atlas label] at (3.35,3.25){$f(x)\leq g(x)\ \text{for every }x\in A$};
+\end{tikzpicture}

@@ -1,0 +1,18 @@
+\begin{tikzpicture}[atlas, scale=0.95]
+  \draw[atlas axes] (0,0)--(6.4,0);
+  \draw[atlas axes] (0,0)--(0,3.6);
+  \glowcurve{color=atlasblue, domain=0.4:6.0, axis=0, top=3.4,
+    expr={2.1-0.12*(\x-3.2)^2}}
+  \glowcurve{color=atlasgreen, domain=0.4:6.0, axis=0, top=3.4,
+    expr={1.25-0.07*(\x-3.2)^2}}
+  \glowcurve{color=atlasred, domain=0.4:6.0, axis=0, top=3.4,
+    expr={3.35-0.19*(\x-3.2)^2}}
+  \draw[dropline] (3.2,0)--(3.2,3.35);
+  \node[atlas dot] at (3.2,2.1){};
+  \node[atlas dot] at (3.2,1.25){};
+  \node[atlas dot] at (3.2,3.35){};
+  \node[atlas label,below] at (3.2,0){$x_0$};
+  \node[atlas label,right] at (5.8,1.22){$g$};
+  \node[atlas label,right] at (5.8,2.02){$f$};
+  \node[atlas label,right] at (5.8,3.2){$f+g$};
+\end{tikzpicture}

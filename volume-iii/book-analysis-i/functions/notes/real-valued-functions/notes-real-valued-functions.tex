@@ -7,6 +7,337 @@
 
 \subsection*{Real-Valued Functions}
 \label{sec:real-valued-functions}
+
+\begin{remark*}[Background from Volume I]
+Volume I develops the set-theoretic theory of functions, including function
+equality, composition, inverse functions, and one-sided inverse behavior.  This
+section does not repeat that material.  Instead, it studies the extra algebraic
+and order structure available when the codomain is \(\mathbb{R}\).
+\end{remark*}
+
+% ---------------------------------------------------------
+% Definition --- Generic Pointwise Lifts
+% ---------------------------------------------------------
+
+\begin{figure}[htbp]
+\centering
+\input{volume-iii/book-analysis-i/functions/notes/real-valued-functions/figure-pointwise-operation-lift}
+\caption{A real operation is lifted to functions by evaluating first and then applying the operation to the output values.}
+\label{fig:pointwise-operation-lift}
+\end{figure}
+
+\begin{definitionbox}{Definition (At-Point Operation)}
+\begin{definition}[At-Point Operation]
+\label{def:at-point-operation}
+Let \(A\subseteq\mathbb{R}\), let \(x\in A\), let
+\(f_1,\ldots,f_n:A\to\mathbb{R}\), and let
+\(\Phi:\mathbb{R}^n\to\mathbb{R}\) be an \(n\)-variable real operation.
+The at-point application of \(\Phi\) to \(f_1,\ldots,f_n\) at \(x\) is the
+real number
+\[
+  \Phi\bigl(f_1(x),\ldots,f_n(x)\bigr).
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  x\in A
+  \quad\Longrightarrow\quad
+  \Phi\bigl(f_1(x),\ldots,f_n(x)\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{AtPointOperation}(\Phi,(f_1,\ldots,f_n),x).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+At a single input, no new function has been built yet.  The operation is just
+ordinary real arithmetic after the listed functions have been evaluated at the
+same point.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:function]{Function}
+  \item \hyperref[def:subset]{Subset}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition (Pointwise Operation on a Set)}
+\begin{definition}[Pointwise Operation on a Set]
+\label{def:pointwise-operation-on-set}
+Let \(A\subseteq\mathbb{R}\), let \(f_1,\ldots,f_n:A\to\mathbb{R}\),
+and let \(\Phi:\mathbb{R}^n\to\mathbb{R}\) be an \(n\)-variable real
+operation.  The pointwise operation determined by \(\Phi\) on \(A\) is the
+function \(F:A\to\mathbb{R}\) defined by
+\[
+  F(x)=\Phi\bigl(f_1(x),\ldots,f_n(x)\bigr)
+  \qquad (x\in A).
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall x\in A\;
+  \bigl(F(x)=\Phi(f_1(x),\ldots,f_n(x))\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{PointwiseOperation}(\Phi,(f_1,\ldots,f_n),A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A pointwise operation applies the same real operation at every input in the
+domain.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:at-point-operation]{At-Point Operation}
+  \item \hyperref[def:function]{Function}
+\end{itemize}
+\end{dependencies}
+
+\begin{figure}[htbp]
+\centering
+\input{volume-iii/book-analysis-i/functions/notes/real-valued-functions/figure-at-point-on-set-near-point}
+\caption{A relation between function values can be checked at one point, on a whole set, or near a base point.}
+\label{fig:at-point-on-set-near-point}
+\end{figure}
+
+\begin{definitionbox}{Definition (At-Point Relation)}
+\begin{definition}[At-Point Relation]
+\label{def:at-point-relation}
+Let \(A\subseteq\mathbb{R}\), let \(x\in A\), let
+\(f_1,\ldots,f_n:A\to\mathbb{R}\), and let \(R\) be an \(n\)-variable
+relation on \(\mathbb{R}\).  The relation \(R\) holds at \(x\) for
+\(f_1,\ldots,f_n\) if
+\[
+  R\bigl(f_1(x),\ldots,f_n(x)\bigr)
+\]
+holds.
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  R\text{ holds at }x
+  \;\Longleftrightarrow\;
+  R\bigl(f_1(x),\ldots,f_n(x)\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{AtPointRelation}(R,(f_1,\ldots,f_n),x).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+For example, \(f\leq g\) at \(x\) means exactly \(f(x)\leq g(x)\).
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:function]{Function}
+  \item \hyperref[def:order-on-r]{Order on \(\mathbb{R}\)}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition (Pointwise Relation on a Set)}
+\begin{definition}[Pointwise Relation on a Set]
+\label{def:pointwise-relation-on-set}
+Let \(A\subseteq\mathbb{R}\), let \(f_1,\ldots,f_n:A\to\mathbb{R}\),
+and let \(R\) be an \(n\)-variable relation on \(\mathbb{R}\).  The
+relation \(R\) holds pointwise on \(A\) for \(f_1,\ldots,f_n\) if
+\[
+  R\bigl(f_1(x),\ldots,f_n(x)\bigr)
+  \qquad (x\in A).
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall x\in A\;
+  R\bigl(f_1(x),\ldots,f_n(x)\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{PointwiseRelation}(R,(f_1,\ldots,f_n),A)
+  \;\Longleftrightarrow\;
+  \forall x\in A\;R(f_1(x),\ldots,f_n(x)).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Thus \(f\leq g\) on \(A\) means \(f(x)\leq g(x)\) for every \(x\in A\).
+This compares two functions at the same input, not one function at two ordered
+inputs.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:at-point-relation]{At-Point Relation}
+  \item \hyperref[def:order-on-r]{Order on \(\mathbb{R}\)}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition (Pointwise Relation Near a Point)}
+\begin{definition}[Pointwise Relation Near a Point]
+\label{def:pointwise-relation-near-point}
+Let \(A\subseteq\mathbb{R}\), let \(c\in\mathbb{R}\), let
+\(f_1,\ldots,f_n:A\to\mathbb{R}\), and let \(R\) be an \(n\)-variable
+relation on \(\mathbb{R}\).  The relation \(R\) holds pointwise near \(c\)
+in \(A\) for \(f_1,\ldots,f_n\) if there exists \(\delta>0\) such that
+\[
+  x\in A,\quad 0<|x-c|<\delta
+  \quad\Longrightarrow\quad
+  R\bigl(f_1(x),\ldots,f_n(x)\bigr).
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \exists\delta>0\;\forall x\in A\;
+  \bigl(0<|x-c|<\delta
+  \Rightarrow R(f_1(x),\ldots,f_n(x))\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{PointwiseRelationNear}(R,(f_1,\ldots,f_n),c,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This is the precise form of phrases such as \(f\leq g\) near \(c\).  The
+base point itself is omitted because limit statements are punctured.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:pointwise-relation-on-set]{Pointwise Relation on a Set}
+  \item \hyperref[def:deleted-epsilon-neighbourhood]{Deleted \(\varepsilon\)-Neighbourhood}
+\end{itemize}
+\end{dependencies}
+
+\begin{propositionbox}{Proposition (Pointwise Operation Evaluation)}
+\begin{proposition}[Pointwise Operation Evaluation]
+\label{prop:pointwise-operation-evaluation}
+Let \(A\subseteq\mathbb{R}\), let \(f_1,\ldots,f_n:A\to\mathbb{R}\),
+and let \(\Phi:\mathbb{R}^n\to\mathbb{R}\) be an \(n\)-variable real
+operation.  If \(F\) is the pointwise operation determined by
+\(\Phi\) and \(f_1,\ldots,f_n\) on \(A\), then for every \(x\in A\),
+\[
+  F(x)
+  =
+  \Phi\bigl(f_1(x),\ldots,f_n(x)\bigr).
+\]
+\hyperref[prf:pointwise-operation-evaluation]{Go to proof.}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall x\in A\;
+  \bigl(F(x)=\Phi(f_1(x),\ldots,f_n(x))\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Evaluating a pointwise operation at a point means first evaluating all input
+functions at that point and then applying the underlying real operation.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:at-point-operation]{At-Point Operation}
+  \item \hyperref[def:pointwise-operation-on-set]{Pointwise Operation on a Set}
+\end{itemize}
+\end{dependencies}
+
+\begin{propositionbox}{Proposition (Pointwise Relation Evaluation)}
+\begin{proposition}[Pointwise Relation Evaluation]
+\label{prop:pointwise-relation-evaluation}
+Let \(A\subseteq\mathbb{R}\), let \(f_1,\ldots,f_n:A\to\mathbb{R}\),
+and let \(R\) be an \(n\)-variable relation on \(\mathbb{R}\).  Then
+\(R\) holds pointwise on \(A\) for \(f_1,\ldots,f_n\) if and only if
+\(R\) holds at every \(x\in A\) for \(f_1,\ldots,f_n\).
+\hyperref[prf:pointwise-relation-evaluation]{Go to proof.}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \operatorname{PointwiseRelation}(R,(f_1,\ldots,f_n),A)
+  \;\Longleftrightarrow\;
+  \forall x\in A\;\operatorname{AtPointRelation}(R,(f_1,\ldots,f_n),x).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Pointwise relation on a set is exactly the collection of all its at-point
+relation statements.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:at-point-relation]{At-Point Relation}
+  \item \hyperref[def:pointwise-relation-on-set]{Pointwise Relation on a Set}
+\end{itemize}
+\end{dependencies}
+
+\begin{propositionbox}{Proposition (Pointwise Relation Near a Point Unpacking)}
+\begin{proposition}[Pointwise Relation Near a Point Unpacking]
+\label{prop:pointwise-relation-near-unpacking}
+Let \(A\subseteq\mathbb{R}\), let \(c\in\mathbb{R}\), let
+\(f_1,\ldots,f_n:A\to\mathbb{R}\), and let \(R\) be an \(n\)-variable
+relation on \(\mathbb{R}\).  Then \(R\) holds pointwise near \(c\) in
+\(A\) if and only if there exists \(\delta>0\) such that
+\[
+  \forall x\in A\;
+  \bigl(0<|x-c|<\delta
+  \Rightarrow R(f_1(x),\ldots,f_n(x))\bigr).
+\]
+\hyperref[prf:pointwise-relation-near-unpacking]{Go to proof.}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \operatorname{PointwiseRelationNear}(R,(f_1,\ldots,f_n),c,A)
+  \;\Longleftrightarrow\;
+  \exists\delta>0\;\forall x\in A\;
+  \bigl(0<|x-c|<\delta
+  \Rightarrow R(f_1(x),\ldots,f_n(x))\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The phrase ``near \(c\)'' is an existential radius statement over a deleted
+neighbourhood of \(c\) inside the domain.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:pointwise-relation-near-point]{Pointwise Relation Near a Point}
+  \item \hyperref[def:deleted-epsilon-neighbourhood]{Deleted \(\varepsilon\)-Neighbourhood}
+\end{itemize}
+\end{dependencies}
+
 % ---------------------------------------------------------
 % Definition --- Pointwise Operations
 % ---------------------------------------------------------
@@ -38,6 +369,7 @@ values at that same input.
 \begin{itemize}
   \item \hyperref[def:function]{Function}
   \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:pointwise-operation-on-set]{Pointwise Operation on a Set}
   \item \hyperref[def:addition-on-r]{Addition on $\mathbb{R}$}
 \end{itemize}
 \end{dependencies}
@@ -69,6 +401,7 @@ input separately.
 \begin{itemize}
   \item \hyperref[def:function]{Function}
   \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:pointwise-operation-on-set]{Pointwise Operation on a Set}
   \item \hyperref[def:subtraction-on-r]{Subtraction on $\mathbb{R}$}
 \end{itemize}
 \end{dependencies}
@@ -100,6 +433,7 @@ same input.
 \begin{itemize}
   \item \hyperref[def:function]{Function}
   \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:pointwise-operation-on-set]{Pointwise Operation on a Set}
   \item \hyperref[def:multiplication-on-r]{Multiplication on $\mathbb{R}$}
 \end{itemize}
 \end{dependencies}
@@ -108,10 +442,10 @@ same input.
 \begin{definition}[Pointwise Scalar Multiple of a Function]
 \label{def:pointwise-scalar-multiple-of-a-function}
 Let $X\subseteq\mathbb{R}$, let $f:X\to\mathbb{R}$, and let
-$c\in\mathbb{R}$.  The pointwise scalar multiple $cf:X\to\mathbb{R}$ is
-the function defined by
+\(\lambda\in\mathbb{R}\).  The pointwise scalar multiple
+\(\lambda f:X\to\mathbb{R}\) is the function defined by
 \[
-  (cf)(x)=c f(x)
+  (\lambda f)(x)=\lambda f(x)
   \qquad (x\in X).
 \]
 \end{definition}
@@ -119,7 +453,7 @@ the function defined by
 
 \begin{remark*}[Standard quantified statement]
 \[
-  \forall x\in X\;\bigl((cf)(x)=c f(x)\bigr).
+  \forall x\in X\;\bigl((\lambda f)(x)=\lambda f(x)\bigr).
 \]
 \end{remark*}
 
@@ -132,6 +466,7 @@ real scalar.
 \begin{itemize}
   \item \hyperref[def:function]{Function}
   \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:pointwise-operation-on-set]{Pointwise Operation on a Set}
   \item \hyperref[def:multiplication-on-r]{Multiplication on $\mathbb{R}$}
 \end{itemize}
 \end{dependencies}
@@ -163,6 +498,7 @@ each output.
 \begin{itemize}
   \item \hyperref[def:function]{Function}
   \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:pointwise-operation-on-set]{Pointwise Operation on a Set}
   \item \hyperref[def:real-chapter-absolute-value-on-r]{Absolute Value on $\mathbb{R}$}
 \end{itemize}
 \end{dependencies}
@@ -193,7 +529,39 @@ At each input, the new function keeps the larger of the two output values.
 \begin{itemize}
   \item \hyperref[def:function]{Function}
   \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:pointwise-operation-on-set]{Pointwise Operation on a Set}
   \item \hyperref[def:maximum]{Maximum}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition (Pointwise Minimum of Two Functions)}
+\begin{definition}[Pointwise Minimum of Two Functions]
+\label{def:pointwise-minimum-of-two-functions}
+Let \(X\subseteq\mathbb{R}\) and let \(f,g:X\to\mathbb{R}\).  The
+pointwise minimum \(\min(f,g):X\to\mathbb{R}\) is the function defined by
+\[
+  \min(f,g)(x)=\min\{f(x),g(x)\}
+  \qquad (x\in X).
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall x\in X\;\bigl(\min(f,g)(x)=\min\{f(x),g(x)\}\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+At each input, the new function keeps the smaller of the two output values.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:function]{Function}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:pointwise-operation-on-set]{Pointwise Operation on a Set}
+  \item \hyperref[def:minimum]{Minimum}
 \end{itemize}
 \end{dependencies}
 
@@ -235,7 +603,571 @@ vanishes on the domain.
 \begin{itemize}
   \item \hyperref[def:function]{Function}
   \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:pointwise-operation-on-set]{Pointwise Operation on a Set}
   \item \hyperref[def:division-on-r]{Division on $\mathbb{R}$}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition (Pointwise Reciprocal of a Function)}
+\begin{definition}[Pointwise Reciprocal of a Function]
+\label{def:pointwise-reciprocal-of-a-function}
+Let \(X\subseteq\mathbb{R}\) and let \(f:X\to\mathbb{R}\).  Suppose
+\(f(x)\neq0\) for every \(x\in X\).  The pointwise reciprocal
+\(1/f:X\to\mathbb{R}\) is the function defined by
+\[
+  (1/f)(x)=\frac{1}{f(x)}
+  \qquad (x\in X).
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \bigl(\forall x\in X\;(f(x)\neq0)\bigr)
+  \;\Longrightarrow\;
+  \forall x\in X\;\bigl((1/f)(x)=1/f(x)\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  1/f
+  =
+  \bigl(x\mapsto 1/f(x)\bigr)\big|_{X}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The reciprocal is the quotient of the constant function \(1\) by \(f\), and it
+is defined on the whole domain only when \(f\) is nowhere zero there.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:pointwise-quotient-of-functions]{Pointwise Quotient of Functions}
+  \item \hyperref[def:division-on-r]{Division on \(\mathbb{R}\)}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Function Algebra Closure)}
+\begin{theorem}[Function Algebra Closure]
+\label{thm:function-algebra-closure}
+Let \(A\subseteq\mathbb{R}\), let \(f,g:A\to\mathbb{R}\), and let
+\(\lambda\in\mathbb{R}\).  Then \(f+g\), \(f-g\), \(fg\), \(\lambda f\),
+\(|f|\), \(\max(f,g)\), and \(\min(f,g)\) are functions \(A\to\mathbb{R}\).
+\hyperref[prf:function-algebra-closure]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+Each listed function assigns to every \(x\in A\) a real number by applying the
+corresponding real operation to \(f(x)\) and \(g(x)\).
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Real-valued functions are closed under the basic pointwise algebra operations
+whose real output is always defined.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:pointwise-operation-on-set]{Pointwise Operation on a Set}
+  \item \hyperref[def:pointwise-sum-of-functions]{Pointwise Sum of Functions}
+  \item \hyperref[def:pointwise-minimum-of-two-functions]{Pointwise Minimum of Two Functions}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Function Quotient Closure)}
+\begin{theorem}[Function Quotient Closure]
+\label{thm:function-quotient-closure}
+Let \(A\subseteq\mathbb{R}\) and let \(f,g:A\to\mathbb{R}\).  If
+\(g(x)\neq0\) for every \(x\in A\), then \(f/g:A\to\mathbb{R}\) is a
+well-defined function.
+\hyperref[prf:function-quotient-closure]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \bigl(\forall x\in A\;(g(x)\neq0)\bigr)
+  \;\Longrightarrow\;
+  \forall x\in A\;\bigl((f/g)(x)\in\mathbb{R}\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  f/g
+  =
+  \bigl(x\mapsto f(x)/g(x)\bigr)\big|_{A}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The only extra closure condition for a quotient is that the denominator never
+vanishes on the domain.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:pointwise-quotient-of-functions]{Pointwise Quotient of Functions}
+  \item \hyperref[def:division-on-r]{Division on \(\mathbb{R}\)}
+\end{itemize}
+\end{dependencies}
+
+\begin{propositionbox}{Proposition (Pointwise Max/Min Absolute Value Formulas)}
+\begin{proposition}[Pointwise Max/Min Absolute Value Formulas]
+\label{prop:pointwise-max-min-absolute-value-formulas}
+Let \(A\subseteq\mathbb{R}\) and let \(f,g:A\to\mathbb{R}\).  For every
+\(x\in A\),
+\[
+  \max(f,g)(x)=\frac{f(x)+g(x)+|f(x)-g(x)|}{2},
+\]
+and
+\[
+  \min(f,g)(x)=\frac{f(x)+g(x)-|f(x)-g(x)|}{2}.
+\]
+\hyperref[prf:pointwise-max-min-absolute-value-formulas]{Go to proof.}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall x\in A\quad
+  \max\{f(x),g(x)\}
+  =
+  \frac{f(x)+g(x)+|f(x)-g(x)|}{2},
+\]
+and similarly for the minimum with the minus sign.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The ordinary real formulas for maximum and minimum transfer pointwise to
+real-valued functions.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:pointwise-maximum-of-two-functions]{Pointwise Maximum of Two Functions}
+  \item \hyperref[def:pointwise-minimum-of-two-functions]{Pointwise Minimum of Two Functions}
+  \item \hyperref[def:pointwise-absolute-value-of-a-function]{Pointwise Absolute Value of a Function}
+\end{itemize}
+\end{dependencies}
+
+\begin{propositionbox}{Proposition (Pointwise Max/Min Bounds)}
+\begin{proposition}[Pointwise Max/Min Bounds]
+\label{prop:pointwise-max-min-bounds}
+Let \(A\subseteq\mathbb{R}\) and let \(f,g:A\to\mathbb{R}\).  For every
+\(x\in A\),
+\[
+  \min(f,g)(x)\leq f(x)\leq \max(f,g)(x)
+  \quad\text{and}\quad
+  \min(f,g)(x)\leq g(x)\leq \max(f,g)(x).
+\]
+\hyperref[prf:pointwise-max-min-bounds]{Go to proof.}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall x\in A\;
+  \bigl(\min(f,g)(x)\leq f(x)\leq\max(f,g)(x)\bigr)
+\]
+and the same statement holds with \(g(x)\) in place of \(f(x)\).
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The pointwise minimum and maximum form lower and upper envelopes for the two
+functions.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:pointwise-maximum-of-two-functions]{Pointwise Maximum of Two Functions}
+  \item \hyperref[def:pointwise-minimum-of-two-functions]{Pointwise Minimum of Two Functions}
+  \item \hyperref[def:order-on-r]{Order on \(\mathbb{R}\)}
+\end{itemize}
+\end{dependencies}
+
+\begin{propositionbox}{Proposition (Quotient Undefined When the Denominator Vanishes)}
+\begin{proposition}[Quotient Undefined When the Denominator Vanishes]
+\label{prop:quotient-undefined-when-denominator-vanishes}
+Let \(A\subseteq\mathbb{R}\) and let \(f,g:A\to\mathbb{R}\).  If there is
+some \(x_0\in A\) such that \(g(x_0)=0\), then the pointwise quotient
+formula \((f/g)(x)=f(x)/g(x)\) does not define a function \(A\to\mathbb{R}\).
+\hyperref[prf:quotient-undefined-when-denominator-vanishes]{Go to proof.}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \exists x_0\in A\;(g(x_0)=0)
+  \quad\Longrightarrow\quad
+  f(x_0)/g(x_0)\text{ is not a real number.}
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A single zero of the denominator is enough to prevent the quotient from being
+a real-valued function on the whole domain.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:pointwise-quotient-of-functions]{Pointwise Quotient of Functions}
+  \item \hyperref[def:division-on-r]{Division on \(\mathbb{R}\)}
+\end{itemize}
+\end{dependencies}
+
+% ---------------------------------------------------------
+% Definition --- Pointwise Order
+% ---------------------------------------------------------
+
+\begin{figure}[htbp]
+\centering
+\input{volume-iii/book-analysis-i/functions/notes/real-valued-functions/figure-pointwise-order-envelope}
+\caption{The pointwise order \(f\leq g\) means every vertical comparison is ordered the same way.}
+\label{fig:pointwise-order-envelope}
+\end{figure}
+
+\begin{definitionbox}{Definition (Pointwise Equality on a Set)}
+\begin{definition}[Pointwise Equality on a Set]
+\label{def:pointwise-equality-on-set}
+Let \(A\subseteq\mathbb{R}\) and let \(f,g:A\to\mathbb{R}\).  The
+functions \(f\) and \(g\) are equal on \(A\) if
+\[
+  f(x)=g(x)
+  \qquad (x\in A).
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  f=g\text{ on }A
+  \;\Longleftrightarrow\;
+  \forall x\in A\;\bigl(f(x)=g(x)\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{PointwiseRelation}(=,(f,g),A).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+  \neg(f=g\text{ on }A)
+  \;\Longleftrightarrow\;
+  \exists x\in A\;\bigl(f(x)\neq g(x)\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This is the Volume III pointwise version of function equality from Volume I:
+two real-valued functions are equal exactly when every value agrees.  The
+generic predicate \(\operatorname{PointwiseRelation}(R,(f,g),A)\)
+specializes to \(f\leq g\), \(f<g\), \(f=g\), \(f\geq g\), and \(f>g\) on
+\(A\) by choosing \(R\) to be \(\leq\), \(<\), \(=\), \(\geq\), or \(>\),
+respectively.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:pointwise-relation-on-set]{Pointwise Relation on a Set}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Pointwise Order Laws)}
+\begin{theorem}[Pointwise Order Laws]
+\label{thm:pointwise-order-laws}
+Let \(A\subseteq\mathbb{R}\).  The relation \(\leq\) on real-valued
+functions \(A\to\mathbb{R}\), defined pointwise, is a partial order:
+\[
+  f\leq f,\qquad
+  (f\leq g\ \text{and}\ g\leq f)\Rightarrow f=g,\qquad
+  (f\leq g\ \text{and}\ g\leq h)\Rightarrow f\leq h.
+\]
+\hyperref[prf:pointwise-order-laws]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+Each order law is obtained by fixing \(x\in A\) and applying the
+corresponding order law in \(\mathbb{R}\) to the values at \(x\).
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{PointwiseRelation}(\leq,(f,g),A)
+  \;\Longleftrightarrow\;
+  \forall x\in A\;\bigl(f(x)\leq g(x)\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Pointwise order compares functions vertically at the same input.  It is only a
+partial order because many functions cross and are therefore incomparable.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:pointwise-relation-on-set]{Pointwise Relation on a Set}
+  \item \hyperref[def:order-on-r]{Order on \(\mathbb{R}\)}
+\end{itemize}
+\end{dependencies}
+
+\begin{propositionbox}{Proposition (Strict Pointwise Order Implies Weak)}
+\begin{proposition}[Strict Pointwise Order Implies Weak]
+\label{prop:strict-pointwise-order-implies-weak}
+Let \(A\subseteq\mathbb{R}\) and let \(f,g:A\to\mathbb{R}\).  If
+\(f<g\) on \(A\), then \(f\leq g\) on \(A\).
+\hyperref[prf:strict-pointwise-order-implies-weak]{Go to proof.}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \bigl(\forall x\in A\;(f(x)<g(x))\bigr)
+  \;\Longrightarrow\;
+  \forall x\in A\;(f(x)\leq g(x)).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{PointwiseRelation}(<,(f,g),A)
+  \;\Longrightarrow\;
+  \operatorname{PointwiseRelation}(\leq,(f,g),A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The strict real order implies the weak real order at every input.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:pointwise-relation-on-set]{Pointwise Relation on a Set}
+  \item \hyperref[def:order-on-r]{Order on \(\mathbb{R}\)}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Pointwise Order Arithmetic)}
+\begin{theorem}[Pointwise Order Arithmetic]
+\label{thm:pointwise-order-arithmetic}
+Let \(A\subseteq\mathbb{R}\) and let \(f,g,h:A\to\mathbb{R}\).  If
+\(f\leq g\) on \(A\), then \(f+h\leq g+h\) on \(A\),
+\(-g\leq -f\) on \(A\), \(\lambda f\leq\lambda g\) on \(A\) for
+\(\lambda\geq0\), and \(\lambda g\leq\lambda f\) on \(A\) for
+\(\lambda\leq0\).  If also \(f_1\leq g_1\) and \(f_2\leq g_2\) on \(A\),
+then \(f_1+f_2\leq g_1+g_2\) on \(A\).
+\hyperref[prf:pointwise-order-arithmetic]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall x\in A\;(f(x)\leq g(x))
+  \;\Longrightarrow\;
+  \forall x\in A\;(f(x)+h(x)\leq g(x)+h(x)).
+\]
+The scalar and negation laws are obtained by the corresponding real order laws
+at each \(x\in A\).
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{PointwiseRelation}(\leq,(f,g),A)
+  \;\Longrightarrow\;
+  \operatorname{PointwiseRelation}(\leq,(f+h,g+h),A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Every permitted manipulation is a real inequality manipulation performed at a
+fixed input and then requantified over \(A\).
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:pointwise-relation-on-set]{Pointwise Relation on a Set}
+  \item \hyperref[def:pointwise-sum-of-functions]{Pointwise Sum of Functions}
+  \item \hyperref[def:pointwise-scalar-multiple-of-a-function]{Pointwise Scalar Multiple of a Function}
+\end{itemize}
+\end{dependencies}
+
+\begin{propositionbox}{Proposition (Pointwise Product Order, Nonnegative Case)}
+\begin{proposition}[Pointwise Product Order, Nonnegative Case]
+\label{prop:pointwise-product-order-nonnegative}
+Let \(A\subseteq\mathbb{R}\).  If \(0\leq f_1\leq g_1\) and
+\(0\leq f_2\leq g_2\) on \(A\), then
+\[
+  f_1f_2\leq g_1g_2
+  \quad\text{on }A.
+\]
+\hyperref[prf:pointwise-product-order-nonnegative]{Go to proof.}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall x\in A\;
+  \bigl(0\leq f_1(x)\leq g_1(x)\ \text{and}\
+  0\leq f_2(x)\leq g_2(x)\bigr)
+  \Rightarrow f_1(x)f_2(x)\leq g_1(x)g_2(x).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Multiplication preserves order only under sign hypotheses; nonnegativity is
+the hypothesis used here.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:pointwise-product-of-functions]{Pointwise Product of Functions}
+  \item \hyperref[def:order-on-r]{Order on \(\mathbb{R}\)}
+\end{itemize}
+\end{dependencies}
+
+\begin{propositionbox}{Proposition (Reciprocal Order Reversal)}
+\begin{proposition}[Reciprocal Order Reversal]
+\label{prop:reciprocal-order-reversal}
+Let \(A\subseteq\mathbb{R}\) and let \(f,g:A\to\mathbb{R}\).  If
+\(0<f\leq g\) on \(A\), then
+\[
+  \frac{1}{g}\leq\frac{1}{f}
+  \quad\text{on }A.
+\]
+\hyperref[prf:reciprocal-order-reversal]{Go to proof.}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall x\in A\;\bigl(0<f(x)\leq g(x)\bigr)
+  \;\Longrightarrow\;
+  \forall x\in A\;\bigl(1/g(x)\leq 1/f(x)\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{PointwiseRelation}(\leq,(f,g),A)
+  \;\Longrightarrow\;
+  \operatorname{PointwiseRelation}(\leq,(1/g,1/f),A),
+\]
+under the pointwise positivity hypothesis \(0<f\) on \(A\).
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Taking reciprocals reverses inequalities on positive real values, so the
+pointwise reciprocal reverses the pointwise order.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:pointwise-reciprocal-of-a-function]{Pointwise Reciprocal of a Function}
+  \item \hyperref[def:order-on-r]{Order on \(\mathbb{R}\)}
+\end{itemize}
+\end{dependencies}
+
+\begin{propositionbox}{Proposition (Quotient Order, Sign-Controlled Form)}
+\begin{proposition}[Quotient Order, Sign-Controlled Form]
+\label{prop:quotient-order-sign-controlled}
+Let \(A\subseteq\mathbb{R}\).  If \(0\leq f_1\leq g_1\) and
+\(0<f_2\leq g_2\) on \(A\), then
+\[
+  \frac{f_1}{g_2}\leq \frac{g_1}{f_2}
+  \quad\text{on }A.
+\]
+\hyperref[prf:quotient-order-sign-controlled]{Go to proof.}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+For each \(x\in A\), the hypotheses give
+\(0\leq f_1(x)\leq g_1(x)\) and \(0<f_2(x)\leq g_2(x)\), so the real
+quotient comparison gives \(f_1(x)/g_2(x)\leq g_1(x)/f_2(x)\).
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The numerator is compared in the usual direction while the denominator is
+compared in the reciprocal direction.  This is why quotient inequalities must
+state sign hypotheses explicitly.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[prop:pointwise-product-order-nonnegative]{Pointwise Product Order, Nonnegative Case}
+  \item \hyperref[prop:reciprocal-order-reversal]{Reciprocal Order Reversal}
+\end{itemize}
+\end{dependencies}
+
+\begin{propositionbox}{Proposition (No Unconditional Quotient Order Law)}
+\begin{proposition}[No Unconditional Quotient Order Law]
+\label{prop:no-unconditional-quotient-order-law}
+There is no unconditional rule of the form
+\[
+  f_1\leq g_1,\quad f_2\leq g_2
+  \quad\Longrightarrow\quad
+  \frac{f_1}{f_2}\leq \frac{g_1}{g_2}
+\]
+for arbitrary real-valued functions with nonzero denominators.
+\hyperref[prf:no-unconditional-quotient-order-law]{Go to proof.}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \neg\forall f_1,g_1,f_2,g_2\;
+  \Bigl((f_1\leq g_1\ \text{and}\ f_2\leq g_2)
+  \Rightarrow f_1/f_2\leq g_1/g_2\Bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{PointwiseRelation}(\leq,(f_1,g_1),A)
+  \text{ and }
+  \operatorname{PointwiseRelation}(\leq,(f_2,g_2),A)
+  \;\not\Longrightarrow\;
+  \operatorname{PointwiseRelation}(\leq,(f_1/f_2,g_1/g_2),A).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+Changing a denominator changes a reciprocal in the opposite order on positive
+values, while negative denominators reverse comparisons again.  It is enough
+to use constant functions on a one-point domain and choose real numbers for
+which the corresponding real quotient inequality fails.
+\[
+  a\leq b,\quad c\leq d,\quad c,d\neq0
+  \;\not\Longrightarrow\;
+  a/c\leq b/d.
+\]
+\[
+  \operatorname{PointwiseRelation}(\leq,(f_1,g_1),A)
+  \text{ and }
+  \operatorname{PointwiseRelation}(\leq,(f_2,g_2),A)
+  \text{ do not determine a quotient comparison.}
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Quotient comparisons are not algebraic formalities.  They must be reduced to
+real inequalities with the correct sign information present.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:pointwise-quotient-of-functions]{Pointwise Quotient of Functions}
+  \item \hyperref[prop:reciprocal-order-reversal]{Reciprocal Order Reversal}
 \end{itemize}
 \end{dependencies}
 
@@ -275,6 +1207,69 @@ finite linear-combination rules for functions.
 \end{itemize}
 \end{dependencies}
 
+\begin{propositionbox}{Proposition}
+\begin{proposition}[Linear Combination Closure]
+\label{prop:linear-combination-closure}
+If \(f,g:X\to\mathbb{R}\) and \(\alpha,\beta\in\mathbb{R}\), then
+\(\alpha f+\beta g:X\to\mathbb{R}\) is a well-defined real-valued
+function.
+
+\smallskip\noindent
+\hyperref[prf:linear-combination-closure]{\textit{Go to proof.}}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  f,g:X\to\mathbb{R}\;\wedge\;\alpha,\beta\in\mathbb{R}
+  \;\Longrightarrow\;
+  \alpha f+\beta g:X\to\mathbb{R}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This is the closure statement that justifies treating linear combinations as
+ordinary real-valued functions on the same domain.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:linear-combination-of-real-valued-functions]{Linear Combination of Real-Valued Functions}
+  \item \hyperref[thm:function-algebra-closure]{Function Algebra Closure}
+\end{itemize}
+\end{dependencies}
+
+\begin{propositionbox}{Proposition}
+\begin{proposition}[Bounded Linear Combination]
+\label{prop:bounded-linear-combination}
+If \(f,g:X\to\mathbb{R}\) are bounded on \(X\), and
+\(\alpha,\beta\in\mathbb{R}\), then \(\alpha f+\beta g\) is bounded on
+\(X\).
+
+\smallskip\noindent
+\hyperref[prf:bounded-linear-combination]{\textit{Go to proof.}}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \operatorname{Bounded}(f,X)\wedge\operatorname{Bounded}(g,X)
+  \;\Longrightarrow\;
+  \operatorname{Bounded}(\alpha f+\beta g,X).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Bounded functions are stable under finite real linear combinations.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:linear-combination-of-real-valued-functions]{Linear Combination of Real-Valued Functions}
+  \item \hyperref[thm:bounded-functions-form-real-vector-space]{Bounded Functions Form a Real Vector Space}
+\end{itemize}
+\end{dependencies}
+
 \begin{definitionbox}{Definition (Real-Linear Rule)}
 \begin{definition}[Real-Linear Rule]
 \label{def:real-linear-rule}
@@ -306,6 +1301,73 @@ values, and order comparisons require their own dependency information.
 \begin{itemize}
   \item \hyperref[def:function]{Function}
   \item \hyperref[def:linear-combination-of-real-valued-functions]{Linear Combination of Real-Valued Functions}
+\end{itemize}
+\end{dependencies}
+
+\begin{propositionbox}{Proposition}
+\begin{proposition}[Real-Linearity Test]
+\label{prop:real-linear-rule-test}
+Let \(\mathcal{C}\) be closed under real linear combinations.  A rule
+\(T\) on \(\mathcal{C}\) is real-linear if and only if
+\[
+  T(f+g)=T(f)+T(g)
+  \quad\text{and}\quad
+  T(\alpha f)=\alpha T(f)
+\]
+whenever the displayed expressions are defined.
+
+\smallskip\noindent
+\hyperref[prf:real-linear-rule-test]{\textit{Go to proof.}}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  T\text{ is real-linear}
+  \;\Longleftrightarrow\;
+  T\text{ is additive and homogeneous over }\mathbb{R}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The two-rule form is often easier to verify; the linear-combination form is
+often easier to use.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:real-linear-rule]{Real-Linear Rule}
+  \item \hyperref[def:linear-combination-of-real-valued-functions]{Linear Combination of Real-Valued Functions}
+\end{itemize}
+\end{dependencies}
+
+\begin{corollarybox}{Corollary}
+\begin{corollary}[Real-Linear Rule Basic Values]
+\label{cor:real-linear-rule-basic-values}
+If \(T\) is real-linear, then \(T(0)=0\) and \(T(-f)=-T(f)\), whenever
+the displayed terms are defined.
+
+\smallskip\noindent
+\hyperref[prf:real-linear-rule-basic-values]{\textit{Go to proof.}}
+\end{corollary}
+\end{corollarybox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  T\text{ real-linear}
+  \;\Longrightarrow\;
+  T(0)=0\quad\text{and}\quad T(-f)=-T(f).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Zero preservation and sign reversal are consequences of linearity, not extra
+axioms.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[prop:real-linear-rule-test]{Real-Linearity Test}
 \end{itemize}
 \end{dependencies}
 
@@ -508,6 +1570,774 @@ $f(x)=-x$ on $\mathbb{R}$ is bounded above by $0$ but is not bounded.
 \end{itemize}
 \end{dependencies}
 
+\begin{figure}[htbp]
+\centering
+\input{volume-iii/book-analysis-i/functions/notes/real-valued-functions/figure-bounded-away-zero}
+\caption{Being bounded away from zero means the graph avoids a horizontal strip around the \(x\)-axis.}
+\label{fig:bounded-away-zero}
+\end{figure}
+
+\begin{definitionbox}{Definition (Function Bounded Near a Point)}
+\begin{definition}[Function Bounded Near a Point]
+\label{def:function-bounded-near-point}
+Let \(A\subseteq\mathbb{R}\), let \(c\in\mathbb{R}\), and let
+\(f:A\to\mathbb{R}\).  The function \(f\) is bounded near \(c\) in \(A\)
+if there exist \(\delta>0\) and \(B>0\) such that
+\[
+  x\in A,\quad 0<|x-c|<\delta
+  \quad\Longrightarrow\quad
+  |f(x)|\leq B.
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \exists\delta>0\;\exists B>0\;\forall x\in A\;
+  \bigl(0<|x-c|<\delta\Rightarrow |f(x)|\leq B\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{BoundedNear}(f,c,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Local boundedness ignores the value at \(c\) itself and controls \(f\) only on
+a deleted neighborhood inside \(A\).
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:function-bounded]{Bounded Function}
+  \item \hyperref[def:deleted-epsilon-neighbourhood]{Deleted \(\varepsilon\)-Neighbourhood}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition (Function Bounded Away from Zero)}
+\begin{definition}[Function Bounded Away from Zero]
+\label{def:function-bounded-away-from-zero}
+Let \(A\subseteq\mathbb{R}\) and let \(f:A\to\mathbb{R}\).  The function
+\(f\) is bounded away from zero on \(A\) if there exists \(\varepsilon>0\)
+such that
+\[
+  |f(x)|\geq\varepsilon
+  \qquad (x\in A).
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \exists\varepsilon>0\;\forall x\in A\;\bigl(|f(x)|\geq\varepsilon\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{BoundedAwayFromZero}(f,A)
+  \;\Longleftrightarrow\;
+  \exists\varepsilon>0\;\forall x\in A\;\bigl(|f(x)|\geq\varepsilon\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+  \neg\operatorname{BoundedAwayFromZero}(f,A)
+  \;\Longleftrightarrow\;
+  \forall\varepsilon>0\;\exists x\in A\;\bigl(|f(x)|<\varepsilon\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+Nowhere zero does not imply bounded away from zero.  The values may remain
+nonzero while approaching zero arbitrarily closely.
+\[
+  \forall x\in A\;(f(x)\neq0)
+  \;\not\Longrightarrow\;
+  \operatorname{BoundedAwayFromZero}(f,A).
+\]
+\[
+  \forall\varepsilon>0\;\exists x\in A\;\bigl(0<|f(x)|<\varepsilon\bigr).
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The graph must stay outside a fixed strip \(-\varepsilon<y<\varepsilon\).
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:pointwise-absolute-value-of-a-function]{Pointwise Absolute Value of a Function}
+  \item \hyperref[def:order-on-r]{Order on \(\mathbb{R}\)}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition (Function Bounded Away from Zero Near a Point)}
+\begin{definition}[Function Bounded Away from Zero Near a Point]
+\label{def:function-bounded-away-from-zero-near}
+Let \(A\subseteq\mathbb{R}\), let \(c\in\mathbb{R}\), and let
+\(f:A\to\mathbb{R}\).  The function \(f\) is bounded away from zero near
+\(c\) in \(A\) if there exist \(\delta>0\) and \(\varepsilon>0\) such that
+\[
+  x\in A,\quad 0<|x-c|<\delta
+  \quad\Longrightarrow\quad
+  |f(x)|\geq\varepsilon.
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \exists\delta>0\;\exists\varepsilon>0\;\forall x\in A\;
+  \bigl(0<|x-c|<\delta\Rightarrow |f(x)|\geq\varepsilon\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{BoundedAwayFromZeroNear}(f,c,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This is the local version of bounded away from zero on a punctured
+neighborhood of \(c\).
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:function-bounded-away-from-zero]{Function Bounded Away from Zero}
+  \item \hyperref[def:deleted-epsilon-neighbourhood]{Deleted \(\varepsilon\)-Neighbourhood}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition (Uniformly Bounded Family)}
+\begin{definition}[Uniformly Bounded Family]
+\label{def:uniformly-bounded-family}
+Let \(A\subseteq\mathbb{R}\) and let \((f_\alpha)_{\alpha\in I}\) be a
+family of functions \(f_\alpha:A\to\mathbb{R}\).  The family is uniformly
+bounded on \(A\) if there exists \(B>0\) such that
+\[
+  |f_\alpha(x)|\leq B
+  \qquad (\alpha\in I,\ x\in A).
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \exists B>0\;\forall\alpha\in I\;\forall x\in A\;
+  \bigl(|f_\alpha(x)|\leq B\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{UniformlyBoundedFamily}((f_\alpha)_{\alpha\in I},I,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+One bound works simultaneously for every function in the family and every
+input in \(A\).
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:function-bounded]{Bounded Function}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Bounded Iff Absolute Value Bounded Above)}
+\begin{theorem}[Bounded Iff Absolute Value Bounded Above]
+\label{thm:bounded-iff-absolute-value-bounded-above}
+Let \(A\subseteq\mathbb{R}\) and let \(f:A\to\mathbb{R}\).  Then \(f\) is
+bounded on \(A\) if and only if \(|f|\) is bounded above on \(A\).
+\hyperref[prf:bounded-iff-absolute-value-bounded-above]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \operatorname{Bounded}(f,A)
+  \;\Longleftrightarrow\;
+  \operatorname{BoundedAbove}(|f|,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The absolute value packages upper and lower bounds into a single upper bound.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:function-bounded]{Bounded Function}
+  \item \hyperref[def:pointwise-absolute-value-of-a-function]{Pointwise Absolute Value of a Function}
+\end{itemize}
+\end{dependencies}
+
+\begin{propositionbox}{Proposition (Boundedness Restriction)}
+\begin{proposition}[Boundedness Restriction]
+\label{prop:boundedness-restriction}
+Let \(S\subseteq A\subseteq\mathbb{R}\).  If \(f:A\to\mathbb{R}\) is
+bounded on \(A\), then \(f|_S\) is bounded on \(S\).
+\hyperref[prf:boundedness-restriction]{Go to proof.}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  S\subseteq A\ \text{and}\ \operatorname{Bounded}(f,A)
+  \;\Longrightarrow\;
+  \operatorname{Bounded}(f|_S,S).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Restricting the domain cannot create larger output values.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:function-bounded]{Bounded Function}
+  \item \hyperref[def:subset]{Subset}
+\end{itemize}
+\end{dependencies}
+
+\begin{propositionbox}{Proposition (Boundedness Not Preserved Under Extension)}
+\begin{proposition}[Boundedness Not Preserved Under Extension]
+\label{prop:boundedness-not-preserved-under-extension}
+There exist \(A\subseteq B\subseteq\mathbb{R}\), a bounded function
+\(f:A\to\mathbb{R}\), and an extension \(g:B\to\mathbb{R}\) of \(f\) such
+that \(g\) is unbounded on \(B\).
+\hyperref[prf:boundedness-not-preserved-under-extension]{Go to proof.}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \exists A\subseteq B\;\exists f\;\exists g\;
+  \bigl(\operatorname{Bounded}(f,A)\ \text{and}\ g|_A=f\ \text{and}\
+  \neg\operatorname{Bounded}(g,B)\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{Bounded}(f,A)
+  \text{ and } g|_A=f
+  \;\not\Longrightarrow\;
+  \operatorname{Bounded}(g,B).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+Adding new inputs can add uncontrolled new output values.
+\[
+  \operatorname{Bounded}(f,A)
+  \;\not\Longrightarrow\;
+  \operatorname{Bounded}(g,B)
+  \quad (A\subseteq B,\ g|_A=f).
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Boundedness is inherited by restrictions, not by arbitrary extensions.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:function-bounded]{Bounded Function}
+\end{itemize}
+\end{dependencies}
+
+\begin{propositionbox}{Proposition (Bounded Away From Zero Implies Nonzero)}
+\begin{proposition}[Bounded Away From Zero Implies Nonzero]
+\label{prop:bounded-away-from-zero-implies-nonzero}
+If \(f:A\to\mathbb{R}\) is bounded away from zero on \(A\), then
+\(f(x)\neq0\) for every \(x\in A\).
+\hyperref[prf:bounded-away-from-zero-implies-nonzero]{Go to proof.}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \operatorname{BoundedAwayFromZero}(f,A)
+  \;\Longrightarrow\;
+  \forall x\in A\;\bigl(f(x)\neq0\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A positive lower bound on \(|f|\) prevents any zero value.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:function-bounded-away-from-zero]{Function Bounded Away from Zero}
+\end{itemize}
+\end{dependencies}
+
+\begin{propositionbox}{Proposition (Bounded Away From Zero Near Implies Nonzero Near)}
+\begin{proposition}[Bounded Away From Zero Near Implies Nonzero Near]
+\label{prop:bounded-away-from-zero-near-implies-nonzero-near}
+If \(f:A\to\mathbb{R}\) is bounded away from zero near \(c\) in \(A\), then
+there exists \(\delta>0\) such that \(f(x)\neq0\) whenever \(x\in A\) and
+\(0<|x-c|<\delta\).
+\hyperref[prf:bounded-away-from-zero-near-implies-nonzero-near]{Go to proof.}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \operatorname{BoundedAwayFromZeroNear}(f,c,A)
+  \;\Longrightarrow\;
+  \exists\delta>0\;\forall x\in A\;
+  \bigl(0<|x-c|<\delta\Rightarrow f(x)\neq0\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The local lower bound on \(|f|\) gives a deleted neighborhood where division by
+\(f\) is meaningful.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:function-bounded-away-from-zero-near]{Function Bounded Away from Zero Near a Point}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Bounded Away From Zero Gives Bounded Reciprocal)}
+\begin{theorem}[Bounded Away From Zero Gives Bounded Reciprocal]
+\label{thm:bounded-away-from-zero-gives-bounded-reciprocal}
+If \(f:A\to\mathbb{R}\) is bounded away from zero on \(A\), then \(1/f\) is
+bounded on \(A\).
+\hyperref[prf:bounded-away-from-zero-gives-bounded-reciprocal]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \bigl(\exists\varepsilon>0\;\forall x\in A\;|f(x)|\geq\varepsilon\bigr)
+  \;\Longrightarrow\;
+  \forall x\in A\;\bigl(|1/f(x)|\leq 1/\varepsilon\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{BoundedAwayFromZero}(f,A)
+  \;\Longrightarrow\;
+  \operatorname{Bounded}(1/f,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The reciprocal bound is the reciprocal of the lower bound away from zero.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:function-bounded-away-from-zero]{Function Bounded Away from Zero}
+  \item \hyperref[def:pointwise-reciprocal-of-a-function]{Pointwise Reciprocal of a Function}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Local Bounded Away From Zero Gives Local Bounded Reciprocal)}
+\begin{theorem}[Local Bounded Away From Zero Gives Local Bounded Reciprocal]
+\label{thm:local-bounded-away-from-zero-gives-local-bounded-reciprocal}
+If \(f:A\to\mathbb{R}\) is bounded away from zero near \(c\) in \(A\), then
+\(1/f\) is bounded near \(c\) in \(A\).
+\hyperref[prf:local-bounded-away-from-zero-gives-local-bounded-reciprocal]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \operatorname{BoundedAwayFromZeroNear}(f,c,A)
+  \;\Longrightarrow\;
+  \operatorname{BoundedNear}(1/f,c,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The same deleted neighborhood used to keep \(|f|\) above \(\varepsilon\) keeps
+\(|1/f|\) below \(1/\varepsilon\).
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:function-bounded-away-from-zero-near]{Function Bounded Away from Zero Near a Point}
+  \item \hyperref[def:function-bounded-near-point]{Function Bounded Near a Point}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Uniform Boundedness Transfer Under Pointwise Limit)}
+\begin{theorem}[Uniform Boundedness Transfer Under Pointwise Limit]
+\label{thm:uniform-boundedness-transfer-under-pointwise-limit}
+Let \((f_n)\) be uniformly bounded on \(A\).  If \(f_n(x)\to f(x)\) for each
+\(x\in A\), then \(f\) is bounded on \(A\).
+\hyperref[prf:uniform-boundedness-transfer-under-pointwise-limit]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \bigl(\exists B>0\;\forall n\;\forall x\in A\;|f_n(x)|\leq B\bigr)
+  \text{ and }
+  \bigl(\forall x\in A\;f_n(x)\to f(x)\bigr)
+  \;\Longrightarrow\;
+  \forall x\in A\;|f(x)|\leq B.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{UniformlyBoundedFamily}((f_n)_{n\in\mathbb{N}},\mathbb{N},A)
+  \text{ and } f_n\to f\text{ pointwise on }A
+  \;\Longrightarrow\;
+  \operatorname{Bounded}(f,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Pointwise limits preserve a shared uniform bound, because each fixed real
+sequence remains inside the same closed bounded interval.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:uniformly-bounded-family]{Uniformly Bounded Family}
+  \item \hyperref[def:function-bounded]{Bounded Function}
+\end{itemize}
+\end{dependencies}
+
+% ---------------------------------------------------------
+% Theorems --- Bounded Function Algebra
+% ---------------------------------------------------------
+
+\begin{theorembox}{Theorem (Bounded Function Algebra Closure)}
+\begin{theorem}[Bounded Function Algebra Closure]
+\label{thm:bounded-function-algebra-closure}
+Let \(A\subseteq\mathbb{R}\), let \(f,g:A\to\mathbb{R}\) be bounded on
+\(A\), and let \(\lambda\in\mathbb{R}\).  Then \(f+g\), \(f-g\), \(fg\),
+\(\lambda f\), \(|f|\), \(\max(f,g)\), and \(\min(f,g)\) are bounded on
+\(A\).
+\hyperref[prf:bounded-function-algebra-closure]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \operatorname{Bounded}(f,A)\wedge\operatorname{Bounded}(g,A)
+  \;\Longrightarrow\;
+  \operatorname{Bounded}(f+g,A)\wedge\operatorname{Bounded}(fg,A).
+\]
+The remaining listed operations satisfy the same boundedness conclusion.
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{Bounded}(f,A),\operatorname{Bounded}(g,A)
+  \Rightarrow
+  \operatorname{Bounded}(\Phi(f,g),A)
+\]
+for each listed pointwise algebra operation \(\Phi\).
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The proof toolkit is to build global constants, use the triangle inequality,
+use a product bound, and compare max/min against \(|f|+|g|\).
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:function-algebra-closure]{Function Algebra Closure}
+  \item \hyperref[def:function-bounded]{Bounded Function}
+\end{itemize}
+\end{dependencies}
+
+\begin{corollarybox}{Corollary (Bounded Sum)}
+\begin{corollary}[Bounded Sum]
+\label{cor:bounded-sum}
+If \(f\) and \(g\) are bounded on \(A\), then \(f+g\) is bounded on \(A\).
+\hyperref[prf:bounded-sum]{Go to proof.}
+\end{corollary}
+\end{corollarybox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \operatorname{Bounded}(f,A)\wedge\operatorname{Bounded}(g,A)
+  \Rightarrow \operatorname{Bounded}(f+g,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Use \(|f(x)+g(x)|\leq |f(x)|+|g(x)|\).
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:bounded-function-algebra-closure]{Bounded Function Algebra Closure}
+\end{itemize}
+\end{dependencies}
+
+\begin{corollarybox}{Corollary (Bounded Difference)}
+\begin{corollary}[Bounded Difference]
+\label{cor:bounded-difference}
+If \(f\) and \(g\) are bounded on \(A\), then \(f-g\) is bounded on \(A\).
+\hyperref[prf:bounded-difference]{Go to proof.}
+\end{corollary}
+\end{corollarybox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \operatorname{Bounded}(f,A)\wedge\operatorname{Bounded}(g,A)
+  \Rightarrow \operatorname{Bounded}(f-g,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Difference is sum with the bounded function \(-g\).
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:bounded-function-algebra-closure]{Bounded Function Algebra Closure}
+\end{itemize}
+\end{dependencies}
+
+\begin{corollarybox}{Corollary (Bounded Product)}
+\begin{corollary}[Bounded Product]
+\label{cor:bounded-product}
+If \(f\) and \(g\) are bounded on \(A\), then \(fg\) is bounded on \(A\).
+\hyperref[prf:bounded-product]{Go to proof.}
+\end{corollary}
+\end{corollarybox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \operatorname{Bounded}(f,A)\wedge\operatorname{Bounded}(g,A)
+  \Rightarrow \operatorname{Bounded}(fg,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+If \(|f|\leq B_f\) and \(|g|\leq B_g\), then \(|fg|\leq B_fB_g\).
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:bounded-function-algebra-closure]{Bounded Function Algebra Closure}
+\end{itemize}
+\end{dependencies}
+
+\begin{corollarybox}{Corollary (Bounded Scalar Multiple)}
+\begin{corollary}[Bounded Scalar Multiple]
+\label{cor:bounded-scalar-multiple}
+If \(f\) is bounded on \(A\) and \(\lambda\in\mathbb{R}\), then
+\(\lambda f\) is bounded on \(A\).
+\hyperref[prf:bounded-scalar-multiple]{Go to proof.}
+\end{corollary}
+\end{corollarybox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \operatorname{Bounded}(f,A)\Rightarrow \operatorname{Bounded}(\lambda f,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Multiply a bound for \(|f|\) by \(|\lambda|\).
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:bounded-function-algebra-closure]{Bounded Function Algebra Closure}
+\end{itemize}
+\end{dependencies}
+
+\begin{corollarybox}{Corollary (Bounded Absolute Value)}
+\begin{corollary}[Bounded Absolute Value]
+\label{cor:bounded-absolute-value}
+If \(f\) is bounded on \(A\), then \(|f|\) is bounded on \(A\).
+\hyperref[prf:bounded-absolute-value]{Go to proof.}
+\end{corollary}
+\end{corollarybox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \operatorname{Bounded}(f,A)\Rightarrow \operatorname{Bounded}(|f|,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The absolute-value function has the same magnitude as \(f\).
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:bounded-function-algebra-closure]{Bounded Function Algebra Closure}
+\end{itemize}
+\end{dependencies}
+
+\begin{corollarybox}{Corollary (Bounded Max/Min)}
+\begin{corollary}[Bounded Max/Min]
+\label{cor:bounded-max-min}
+If \(f\) and \(g\) are bounded on \(A\), then \(\max(f,g)\) and
+\(\min(f,g)\) are bounded on \(A\).
+\hyperref[prf:bounded-max-min]{Go to proof.}
+\end{corollary}
+\end{corollarybox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \operatorname{Bounded}(f,A)\wedge\operatorname{Bounded}(g,A)
+  \Rightarrow
+  \operatorname{Bounded}(\max(f,g),A)\wedge\operatorname{Bounded}(\min(f,g),A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The max/min absolute-value formulas reduce the claim to sums, differences,
+and absolute values.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[prop:pointwise-max-min-absolute-value-formulas]{Pointwise Max/Min Absolute Value Formulas}
+  \item \hyperref[thm:bounded-function-algebra-closure]{Bounded Function Algebra Closure}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Bounded Functions Form a Commutative Ring)}
+\begin{theorem}[Bounded Functions Form a Commutative Ring]
+\label{thm:bounded-functions-form-commutative-ring}
+The set \(B(A,\mathbb{R})\) of bounded real-valued functions on \(A\), with
+pointwise addition and multiplication, is a commutative ring with unity.
+\hyperref[prf:bounded-functions-form-commutative-ring]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  f,g\in B(A,\mathbb{R})
+  \Rightarrow
+  f+g,\, -f,\, fg,\, 0,\, 1 \in B(A,\mathbb{R}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The ring laws are inherited pointwise from \(\mathbb{R}\), while closure comes
+from bounded-function algebra.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:bounded-function-algebra-closure]{Bounded Function Algebra Closure}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Bounded Functions Form a Real Vector Space)}
+\begin{theorem}[Bounded Functions Form a Real Vector Space]
+\label{thm:bounded-functions-form-real-vector-space}
+The set \(B(A,\mathbb{R})\) of bounded real-valued functions on \(A\), with
+pointwise addition and scalar multiplication, is a real vector space.
+\hyperref[prf:bounded-functions-form-real-vector-space]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  f,g\in B(A,\mathbb{R}),\ \lambda\in\mathbb{R}
+  \Rightarrow
+  f+g,\, -f,\, \lambda f,\, 0 \in B(A,\mathbb{R}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The vector-space laws are inherited pointwise from \(\mathbb{R}\), while
+closure is supplied by the bounded sum and scalar-multiple results.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:bounded-function-algebra-closure]{Bounded Function Algebra Closure}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Bounded-Away Quotient)}
+\begin{theorem}[Bounded-Away Quotient]
+\label{thm:bounded-away-quotient}
+If \(f:A\to\mathbb{R}\) is bounded on \(A\) and \(g:A\to\mathbb{R}\) is
+bounded away from zero on \(A\), then \(f/g\) is bounded on \(A\).
+\hyperref[prf:bounded-away-quotient]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \operatorname{Bounded}(f,A)\wedge\operatorname{BoundedAwayFromZero}(g,A)
+  \Rightarrow \operatorname{Bounded}(f/g,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  |f(x)|\leq B,\quad |g(x)|\geq\varepsilon
+  \Rightarrow
+  |f(x)/g(x)|\leq B/\varepsilon.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The quotient bound is the numerator bound divided by the denominator lower
+bound away from zero.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:bounded-away-from-zero-gives-bounded-reciprocal]{Bounded Away From Zero Gives Bounded Reciprocal}
+  \item \hyperref[cor:bounded-product]{Bounded Product}
+\end{itemize}
+\end{dependencies}
+
+\begin{corollarybox}{Corollary (Bounded Quotient by Bounded-Away Denominator)}
+\begin{corollary}[Bounded Quotient by Bounded-Away Denominator]
+\label{cor:bounded-quotient-by-bounded-away-denominator}
+If \(f\) is bounded on \(A\) and \(g\) is bounded away from zero on \(A\),
+then \(f/g\) is bounded on \(A\).
+\hyperref[prf:bounded-quotient-by-bounded-away-denominator]{Go to proof.}
+\end{corollary}
+\end{corollarybox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \operatorname{Bounded}(f,A)\wedge\operatorname{BoundedAwayFromZero}(g,A)
+  \Rightarrow \operatorname{Bounded}(f/g,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This is the quotient form of the preceding theorem.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:bounded-away-quotient]{Bounded-Away Quotient}
+\end{itemize}
+\end{dependencies}
+
 % ---------------------------------------------------------
 % Definition --- Supremum, Infimum, Maximum, Minimum
 % ---------------------------------------------------------
@@ -600,6 +2430,696 @@ not be an output value of $f$.
 \end{itemize}
 \end{dependencies}
 
+\begin{definitionbox}{Definition (Pointwise Supremum of a Family)}
+\begin{definition}[Pointwise Supremum of a Family]
+\label{def:pointwise-supremum-family}
+Let \(A\subseteq\mathbb{R}\) and let \((f_\alpha)_{\alpha\in I}\) be a
+family of functions \(f_\alpha:A\to\mathbb{R}\).  If
+\(\{f_\alpha(x):\alpha\in I\}\) is bounded above for every \(x\in A\), then
+the pointwise supremum \(\sup_{\alpha\in I} f_\alpha:A\to\mathbb{R}\) is
+defined by
+\[
+  \Bigl(\sup_{\alpha\in I} f_\alpha\Bigr)(x)
+  =
+  \sup_{\alpha\in I} f_\alpha(x).
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall x\in A\quad
+  \Bigl(\sup_{\alpha\in I} f_\alpha\Bigr)(x)
+  =
+  \sup\{f_\alpha(x):\alpha\in I\}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The scalar \(\sup_{x\in A}f(x)\) is a number, while
+\(\sup_{\alpha\in I}f_\alpha\) is a function evaluated pointwise.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:function-supremum-on-set]{Supremum of a Function on a Set}
+  \item \hyperref[def:supremum]{Supremum}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Definition (Pointwise Infimum of a Family)}
+\begin{definition}[Pointwise Infimum of a Family]
+\label{def:pointwise-infimum-family}
+Let \(A\subseteq\mathbb{R}\) and let \((f_\alpha)_{\alpha\in I}\) be a
+family of functions \(f_\alpha:A\to\mathbb{R}\).  If
+\(\{f_\alpha(x):\alpha\in I\}\) is bounded below for every \(x\in A\), then
+the pointwise infimum \(\inf_{\alpha\in I} f_\alpha:A\to\mathbb{R}\) is
+defined by
+\[
+  \Bigl(\inf_{\alpha\in I} f_\alpha\Bigr)(x)
+  =
+  \inf_{\alpha\in I} f_\alpha(x).
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall x\in A\quad
+  \Bigl(\inf_{\alpha\in I} f_\alpha\Bigr)(x)
+  =
+  \inf\{f_\alpha(x):\alpha\in I\}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Pointwise infimum is formed by fixing the input first and then taking the
+ordinary infimum of the resulting real numbers.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:function-infimum-on-set]{Infimum of a Function on a Set}
+  \item \hyperref[def:infimum]{Infimum}
+\end{itemize}
+\end{dependencies}
+
+\begin{figure}[htbp]
+\centering
+\input{volume-iii/book-analysis-i/functions/notes/real-valued-functions/figure-sup-subadditivity-strict}
+\caption{The supremum of a sum can be strictly smaller than the sum of the separate suprema.}
+\label{fig:sup-subadditivity-strict}
+\end{figure}
+
+\begin{theorembox}{Theorem (Function Supremum Existence)}
+\begin{theorem}[Function Supremum Existence]
+\label{thm:function-supremum-existence}
+Let \(A\subseteq\mathbb{R}\) be nonempty and let \(f:A\to\mathbb{R}\).
+Then \(\sup_{x\in A} f(x)\) exists in \(\mathbb{R}\) if and only if \(f\)
+is bounded above on \(A\).
+\hyperref[prf:function-supremum-existence]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \exists s\in\mathbb{R}\;(s=\sup_{x\in A}f(x))
+  \Longleftrightarrow
+  \operatorname{BoundedAbove}(f,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This is completeness of \(\mathbb{R}\) applied to the image set \(f(A)\).
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:function-supremum-on-set]{Supremum of a Function on a Set}
+  \item \hyperref[def:function-bounded-above]{Bounded Above Function}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Function Infimum Existence)}
+\begin{theorem}[Function Infimum Existence]
+\label{thm:function-infimum-existence}
+Let \(A\subseteq\mathbb{R}\) be nonempty and let \(f:A\to\mathbb{R}\).
+Then \(\inf_{x\in A} f(x)\) exists in \(\mathbb{R}\) if and only if \(f\)
+is bounded below on \(A\).
+\hyperref[prf:function-infimum-existence]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \exists t\in\mathbb{R}\;(t=\inf_{x\in A}f(x))
+  \Longleftrightarrow
+  \operatorname{BoundedBelow}(f,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Apply the supremum result to \(-f\), or use the greatest-lower-bound form of
+completeness.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:function-infimum-on-set]{Infimum of a Function on a Set}
+  \item \hyperref[def:function-bounded-below]{Bounded Below Function}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Supremum Monotone Under Pointwise Order)}
+\begin{theorem}[Supremum Monotone Under Pointwise Order]
+\label{thm:supremum-monotone-under-pointwise-order}
+If \(f\leq g\) on \(A\) and both suprema exist, then
+\[
+  \sup_{x\in A}f(x)\leq\sup_{x\in A}g(x).
+\]
+\hyperref[prf:supremum-monotone-under-pointwise-order]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \operatorname{PointwiseRelation}(\leq,(f,g),A)
+  \Rightarrow
+  \sup_A f\leq \sup_A g.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Every upper bound for \(g(A)\) is also an upper bound for \(f(A)\).
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:pointwise-relation-on-set]{Pointwise Relation on a Set}
+  \item \hyperref[def:function-supremum-on-set]{Supremum of a Function on a Set}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Infimum Monotone Under Pointwise Order)}
+\begin{theorem}[Infimum Monotone Under Pointwise Order]
+\label{thm:infimum-monotone-under-pointwise-order}
+If \(f\leq g\) on \(A\) and both infima exist, then
+\[
+  \inf_{x\in A}f(x)\leq\inf_{x\in A}g(x).
+\]
+\hyperref[prf:infimum-monotone-under-pointwise-order]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \operatorname{PointwiseRelation}(\leq,(f,g),A)
+  \Rightarrow
+  \inf_A f\leq \inf_A g.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Every lower bound for \(f(A)\) is also a lower bound for \(g(A)\).
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:pointwise-relation-on-set]{Pointwise Relation on a Set}
+  \item \hyperref[def:function-infimum-on-set]{Infimum of a Function on a Set}
+\end{itemize}
+\end{dependencies}
+
+\begin{propositionbox}{Proposition (Supremum Monotonicity Converse Fails)}
+\begin{proposition}[Supremum Monotonicity Converse Fails]
+\label{prop:supremum-monotonicity-converse-fails}
+There exist \(f,g:A\to\mathbb{R}\) such that \(\sup_A f\leq\sup_A g\) but
+\(f\leq g\) does not hold on \(A\).
+\hyperref[prf:supremum-monotonicity-converse-fails]{Go to proof.}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \sup_A f\leq\sup_A g
+  \;\not\Longrightarrow\;
+  \operatorname{PointwiseRelation}(\leq,(f,g),A).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+A scalar comparison of two least upper bounds loses pointwise information.
+\[
+  \sup_A f\leq\sup_A g
+  \quad\text{and}\quad
+  \exists x\in A\;\bigl(f(x)>g(x)\bigr)
+\]
+can hold simultaneously.
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Supremum monotonicity is one-directional.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:supremum-monotone-under-pointwise-order]{Supremum Monotone Under Pointwise Order}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Pointwise Supremum Evaluation)}
+\begin{theorem}[Pointwise Supremum Evaluation]
+\label{thm:pointwise-supremum-evaluation}
+If \((f_\alpha)_{\alpha\in I}\) is pointwise bounded above on \(A\), then
+for every \(x\in A\),
+\[
+  \Bigl(\sup_{\alpha\in I}f_\alpha\Bigr)(x)
+  =
+  \sup\{f_\alpha(x):\alpha\in I\}.
+\]
+\hyperref[prf:pointwise-supremum-evaluation]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall x\in A\quad
+  \Bigl(\sup_{\alpha\in I}f_\alpha\Bigr)(x)
+  =
+  \sup_{\alpha\in I}f_\alpha(x).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This theorem records the evaluation rule built into the definition.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:pointwise-supremum-family]{Pointwise Supremum of a Family}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Pointwise Infimum Evaluation)}
+\begin{theorem}[Pointwise Infimum Evaluation]
+\label{thm:pointwise-infimum-evaluation}
+If \((f_\alpha)_{\alpha\in I}\) is pointwise bounded below on \(A\), then
+for every \(x\in A\),
+\[
+  \Bigl(\inf_{\alpha\in I}f_\alpha\Bigr)(x)
+  =
+  \inf\{f_\alpha(x):\alpha\in I\}.
+\]
+\hyperref[prf:pointwise-infimum-evaluation]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \forall x\in A\quad
+  \Bigl(\inf_{\alpha\in I}f_\alpha\Bigr)(x)
+  =
+  \inf_{\alpha\in I}f_\alpha(x).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This is the infimum analogue of pointwise supremum evaluation.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:pointwise-infimum-family]{Pointwise Infimum of a Family}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Supremum Subadditivity)}
+\begin{theorem}[Supremum Subadditivity]
+\label{thm:supremum-subadditivity}
+If \(f\) and \(g\) are bounded above on \(A\), then
+\[
+  \sup_A(f+g)\leq \sup_A f+\sup_A g.
+\]
+\hyperref[prf:supremum-subadditivity]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \operatorname{BoundedAbove}(f,A)\wedge\operatorname{BoundedAbove}(g,A)
+  \Rightarrow
+  \sup_A(f+g)\leq \sup_A f+\sup_A g.
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+Equality need not hold because \(f\) and \(g\) may attain their largest values
+at different inputs.
+\[
+  \sup_A(f+g)<\sup_A f+\sup_A g
+\]
+can occur.
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The sum of separate ceilings is a ceiling for the pointwise sum.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:function-supremum-on-set]{Supremum of a Function on a Set}
+  \item \hyperref[def:pointwise-sum-of-functions]{Pointwise Sum of Functions}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Infimum Superadditivity)}
+\begin{theorem}[Infimum Superadditivity]
+\label{thm:infimum-superadditivity}
+If \(f\) and \(g\) are bounded below on \(A\), then
+\[
+  \inf_A f+\inf_A g\leq \inf_A(f+g).
+\]
+\hyperref[prf:infimum-superadditivity]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \operatorname{BoundedBelow}(f,A)\wedge\operatorname{BoundedBelow}(g,A)
+  \Rightarrow
+  \inf_A f+\inf_A g\leq \inf_A(f+g).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The sum of separate floors is a floor for the pointwise sum.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:function-infimum-on-set]{Infimum of a Function on a Set}
+  \item \hyperref[def:pointwise-sum-of-functions]{Pointwise Sum of Functions}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Supremum of Negation)}
+\begin{theorem}[Supremum of Negation]
+\label{thm:supremum-negation}
+If \(\inf_A f\) exists, then
+\[
+  \sup_A(-f)=-\inf_A f.
+\]
+\hyperref[prf:supremum-negation]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \sup_A(-f)=-\inf_A f.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Negation turns lower bounds for \(f\) into upper bounds for \(-f\).
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:function-infimum-on-set]{Infimum of a Function on a Set}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Infimum of Negation)}
+\begin{theorem}[Infimum of Negation]
+\label{thm:infimum-negation}
+If \(\sup_A f\) exists, then
+\[
+  \inf_A(-f)=-\sup_A f.
+\]
+\hyperref[prf:infimum-negation]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \inf_A(-f)=-\sup_A f.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Negation turns upper bounds for \(f\) into lower bounds for \(-f\).
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:function-supremum-on-set]{Supremum of a Function on a Set}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Supremum Scalar Multiple)}
+\begin{theorem}[Supremum Scalar Multiple]
+\label{thm:supremum-scalar-multiple}
+If \(f\) has the required supremum and infimum on \(A\), then
+\[
+  \sup_A(\lambda f)=
+  \begin{cases}
+    \lambda\sup_A f,& \lambda\geq0,\\
+    \lambda\inf_A f,& \lambda<0.
+  \end{cases}
+\]
+\hyperref[prf:supremum-scalar-multiple]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \lambda\geq0\Rightarrow \sup_A(\lambda f)=\lambda\sup_A f,
+  \qquad
+  \lambda<0\Rightarrow \sup_A(\lambda f)=\lambda\inf_A f.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Positive scalars preserve order; negative scalars reverse it.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:pointwise-scalar-multiple-of-a-function]{Pointwise Scalar Multiple of a Function}
+  \item \hyperref[thm:pointwise-order-arithmetic]{Pointwise Order Arithmetic}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Infimum Scalar Multiple)}
+\begin{theorem}[Infimum Scalar Multiple]
+\label{thm:infimum-scalar-multiple}
+If \(f\) has the required supremum and infimum on \(A\), then
+\[
+  \inf_A(\lambda f)=
+  \begin{cases}
+    \lambda\inf_A f,& \lambda\geq0,\\
+    \lambda\sup_A f,& \lambda<0.
+  \end{cases}
+\]
+\hyperref[prf:infimum-scalar-multiple]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \lambda\geq0\Rightarrow \inf_A(\lambda f)=\lambda\inf_A f,
+  \qquad
+  \lambda<0\Rightarrow \inf_A(\lambda f)=\lambda\sup_A f.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This is the lower-bound analogue of the supremum scalar rule.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:pointwise-scalar-multiple-of-a-function]{Pointwise Scalar Multiple of a Function}
+  \item \hyperref[thm:pointwise-order-arithmetic]{Pointwise Order Arithmetic}
+\end{itemize}
+\end{dependencies}
+
+\begin{corollarybox}{Corollary (Finite Family Pointwise Supremum Is Maximum)}
+\begin{corollary}[Finite Family Pointwise Supremum Is Maximum]
+\label{cor:finite-family-pointwise-supremum-is-maximum}
+If \(I\) is finite, then
+\[
+  \Bigl(\sup_{\alpha\in I}f_\alpha\Bigr)(x)=\max_{\alpha\in I} f_\alpha(x)
+  \qquad (x\in A).
+\]
+\hyperref[prf:finite-family-pointwise-supremum-is-maximum]{Go to proof.}
+\end{corollary}
+\end{corollarybox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  I\text{ finite}\Rightarrow
+  \forall x\in A\;\exists\alpha_x\in I\;
+  \Bigl(\sup_{\alpha\in I}f_\alpha\Bigr)(x)=f_{\alpha_x}(x).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  I\text{ finite}
+  \;\Longrightarrow\;
+  \Bigl(\sup_{\alpha\in I}f_\alpha\Bigr)(x)
+  =
+  \max_{\alpha\in I}f_\alpha(x).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A finite supremum of real numbers is a maximum.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:pointwise-supremum-family]{Pointwise Supremum of a Family}
+\end{itemize}
+\end{dependencies}
+
+\begin{corollarybox}{Corollary (Finite Family Pointwise Infimum Is Minimum)}
+\begin{corollary}[Finite Family Pointwise Infimum Is Minimum]
+\label{cor:finite-family-pointwise-infimum-is-minimum}
+If \(I\) is finite, then
+\[
+  \Bigl(\inf_{\alpha\in I}f_\alpha\Bigr)(x)=\min_{\alpha\in I} f_\alpha(x)
+  \qquad (x\in A).
+\]
+\hyperref[prf:finite-family-pointwise-infimum-is-minimum]{Go to proof.}
+\end{corollary}
+\end{corollarybox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  I\text{ finite}\Rightarrow
+  \forall x\in A\;\exists\alpha_x\in I\;
+  \Bigl(\inf_{\alpha\in I}f_\alpha\Bigr)(x)=f_{\alpha_x}(x).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  I\text{ finite}
+  \;\Longrightarrow\;
+  \Bigl(\inf_{\alpha\in I}f_\alpha\Bigr)(x)
+  =
+  \min_{\alpha\in I}f_\alpha(x).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A finite infimum of real numbers is a minimum.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:pointwise-infimum-family]{Pointwise Infimum of a Family}
+\end{itemize}
+\end{dependencies}
+
+\begin{figure}[htbp]
+\centering
+\input{volume-iii/book-analysis-i/functions/notes/real-valued-functions/figure-common-maximum-sum}
+\caption{If two functions share a maximum point, then their pointwise sum has a maximum there.}
+\label{fig:common-maximum-sum}
+\end{figure}
+
+\begin{theorembox}{Theorem (Common Maximum Gives Sum Maximum)}
+\begin{theorem}[Common Maximum Gives Sum Maximum]
+\label{thm:common-maximum-gives-sum-maximum}
+If \(f\) and \(g\) both attain their supremum on \(A\) at \(x_0\in A\),
+then \(f+g\) attains its supremum on \(A\) at \(x_0\), and
+\[
+  \sup_A(f+g)=f(x_0)+g(x_0).
+\]
+\hyperref[prf:common-maximum-gives-sum-maximum]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  f(x)\leq f(x_0),\ g(x)\leq g(x_0)\ (x\in A)
+  \Rightarrow
+  (f+g)(x)\leq (f+g)(x_0).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The two separate maximizing inequalities add at the same input.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:function-maximum-point]{Maximum Point of a Function}
+  \item \hyperref[def:pointwise-sum-of-functions]{Pointwise Sum of Functions}
+\end{itemize}
+\end{dependencies}
+
+\begin{theorembox}{Theorem (Common Minimum Gives Sum Minimum)}
+\begin{theorem}[Common Minimum Gives Sum Minimum]
+\label{thm:common-minimum-gives-sum-minimum}
+If \(f\) and \(g\) both attain their infimum on \(A\) at \(x_0\in A\), then
+\(f+g\) attains its infimum on \(A\) at \(x_0\), and
+\[
+  \inf_A(f+g)=f(x_0)+g(x_0).
+\]
+\hyperref[prf:common-minimum-gives-sum-minimum]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  f(x_0)\leq f(x),\ g(x_0)\leq g(x)\ (x\in A)
+  \Rightarrow
+  (f+g)(x_0)\leq (f+g)(x).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The common-minimum theorem is the lower-bound analogue of the common-maximum
+theorem.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:function-minimum-point]{Minimum Point of a Function}
+  \item \hyperref[def:pointwise-sum-of-functions]{Pointwise Sum of Functions}
+\end{itemize}
+\end{dependencies}
+
+\begin{propositionbox}{Proposition (Common Extremum Converse Fails)}
+\begin{proposition}[Common Extremum Converse Fails]
+\label{prop:common-extremum-converse-fails}
+The converse of the common maximum theorem is false: \(f+g\) may attain a
+maximum at a point where neither \(f\) nor \(g\) attains its maximum.
+\hyperref[prf:common-extremum-converse-fails]{Go to proof.}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  x_0\text{ maximizes }f+g
+  \;\not\Longrightarrow\;
+  x_0\text{ maximizes }f\text{ and }x_0\text{ maximizes }g.
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+The summands can trade off: one decreases while the other increases, so their
+sum is maximized at a balancing point.
+\[
+  x_0\in\operatorname*{arg\,max}_A(f+g)
+  \quad\text{but}\quad
+  x_0\notin\operatorname*{arg\,max}_A f.
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The common-extremum theorem is one-directional.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:common-maximum-gives-sum-maximum]{Common Maximum Gives Sum Maximum}
+\end{itemize}
+\end{dependencies}
+
 \begin{definitionbox}{Definition (Maximum Point of a Function)}
 \begin{definition}[Maximum Point of a Function]
 \label{def:function-maximum-point}
@@ -656,6 +3176,42 @@ A maximum point is an input where the largest output value is attained.
 \end{itemize}
 \end{dependencies}
 
+\begin{propositionbox}{Proposition}
+\begin{proposition}[Maximum Point Characterized by Supremum]
+\label{prop:maximum-point-characterized-by-supremum}
+Let \(A\neq\emptyset\), let \(f:A\to\mathbb{R}\), and let \(x^*\in A\).
+Then \(x^*\) is a maximum point of \(f\) on \(A\) if and only if
+\[
+  f(x^*)=\sup_{x\in A} f(x).
+\]
+
+\smallskip\noindent
+\hyperref[prf:maximum-point-characterized-by-supremum]{\textit{Go to proof.}}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  x^*\in A
+  \;\Longrightarrow\;
+  \Bigl(x^*\text{ is a maximum point of }f
+  \Longleftrightarrow f(x^*)=\sup_{x\in A}f(x)\Bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A function maximum point is exactly an input where the scalar supremum of the
+image is attained.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:function-maximum-point]{Maximum Point of a Function}
+  \item \hyperref[def:function-supremum-on-set]{Supremum of a Function on a Set}
+  \item \hyperref[prop:maximum-implies-supremum]{Maximum Implies Supremum}
+\end{itemize}
+\end{dependencies}
+
 \begin{definitionbox}{Definition (Minimum Point of a Function)}
 \begin{definition}[Minimum Point of a Function]
 \label{def:function-minimum-point}
@@ -709,6 +3265,73 @@ A minimum point is an input where the smallest output value is attained.
   \item \hyperref[def:subset]{Subset}
   \item \hyperref[def:order-on-r]{Order on $\mathbb{R}$}
   \item \hyperref[def:minimum]{Minimum}
+\end{itemize}
+\end{dependencies}
+
+\begin{propositionbox}{Proposition}
+\begin{proposition}[Minimum Point Characterized by Infimum]
+\label{prop:minimum-point-characterized-by-infimum}
+Let \(A\neq\emptyset\), let \(f:A\to\mathbb{R}\), and let \(x_*\in A\).
+Then \(x_*\) is a minimum point of \(f\) on \(A\) if and only if
+\[
+  f(x_*)=\inf_{x\in A} f(x).
+\]
+
+\smallskip\noindent
+\hyperref[prf:minimum-point-characterized-by-infimum]{\textit{Go to proof.}}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  x_*\in A
+  \;\Longrightarrow\;
+  \Bigl(x_*\text{ is a minimum point of }f
+  \Longleftrightarrow f(x_*)=\inf_{x\in A}f(x)\Bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A function minimum point is exactly an input where the scalar infimum of the
+image is attained.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:function-minimum-point]{Minimum Point of a Function}
+  \item \hyperref[def:function-infimum-on-set]{Infimum of a Function on a Set}
+  \item \hyperref[prop:minimum-implies-infimum]{Minimum Implies Infimum}
+\end{itemize}
+\end{dependencies}
+
+\begin{corollarybox}{Corollary}
+\begin{corollary}[Extremum Values Are Unique]
+\label{cor:function-extremum-values-are-unique}
+If \(x^*,y^*\in A\) are maximum points of \(f\) on \(A\), then
+\(f(x^*)=f(y^*)\).  If \(x_*,y_*\in A\) are minimum points of \(f\) on
+\(A\), then \(f(x_*)=f(y_*)\).
+
+\smallskip\noindent
+\hyperref[prf:function-extremum-values-are-unique]{\textit{Go to proof.}}
+\end{corollary}
+\end{corollarybox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  x^*,y^*\text{ maximum points}\Rightarrow f(x^*)=f(y^*),
+  \qquad
+  x_*,y_*\text{ minimum points}\Rightarrow f(x_*)=f(y_*).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Extremum points need not be unique, but the extremum value is unique.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[prop:maximum-point-characterized-by-supremum]{Maximum Point Characterized by Supremum}
+  \item \hyperref[prop:minimum-point-characterized-by-infimum]{Minimum Point Characterized by Infimum}
 \end{itemize}
 \end{dependencies}
 
@@ -840,6 +3463,36 @@ produce a genuine increase in output.
 \end{itemize}
 \end{dependencies}
 
+\begin{propositionbox}{Proposition}
+\begin{proposition}[Strictly Increasing Implies Increasing]
+\label{prop:strictly-increasing-implies-increasing}
+If \(f:A\to\mathbb{R}\) is strictly increasing on \(A\), then \(f\) is
+increasing on \(A\).
+
+\smallskip\noindent
+\hyperref[prf:strictly-increasing-implies-increasing]{\textit{Go to proof.}}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  f\text{ strictly increasing on }A
+  \;\Longrightarrow\;
+  f\text{ increasing on }A.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Strict order preservation is stronger than weak order preservation.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:function-strictly-increasing]{Strictly Increasing Function}
+  \item \hyperref[def:function-increasing]{Increasing Function}
+\end{itemize}
+\end{dependencies}
+
 \begin{definitionbox}{Definition (Decreasing Function)}
 \begin{definition}[Decreasing Function]
 \label{def:function-decreasing}
@@ -963,6 +3616,36 @@ produce a genuine decrease in output.
 \end{itemize}
 \end{dependencies}
 
+\begin{propositionbox}{Proposition}
+\begin{proposition}[Strictly Decreasing Implies Decreasing]
+\label{prop:strictly-decreasing-implies-decreasing}
+If \(f:A\to\mathbb{R}\) is strictly decreasing on \(A\), then \(f\) is
+decreasing on \(A\).
+
+\smallskip\noindent
+\hyperref[prf:strictly-decreasing-implies-decreasing]{\textit{Go to proof.}}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  f\text{ strictly decreasing on }A
+  \;\Longrightarrow\;
+  f\text{ decreasing on }A.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Strict order reversal is stronger than weak order reversal.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:function-strictly-decreasing]{Strictly Decreasing Function}
+  \item \hyperref[def:function-decreasing]{Decreasing Function}
+\end{itemize}
+\end{dependencies}
+
 \begin{definitionbox}{Definition (Monotone Function)}
 \begin{definition}[Monotone Function]
 \label{def:function-monotone}
@@ -1040,6 +3723,99 @@ nonincreasing.
 \end{itemize}
 \end{dependencies}
 
+\begin{propositionbox}{Proposition}
+\begin{proposition}[Negation Reverses Monotonicity]
+\label{prop:negation-reverses-monotonicity}
+If \(f:A\to\mathbb{R}\) is increasing on \(A\), then \(-f\) is decreasing
+on \(A\).  If \(f\) is decreasing on \(A\), then \(-f\) is increasing on
+\(A\).  The same implication holds with ``strictly'' inserted throughout.
+
+\smallskip\noindent
+\hyperref[prf:negation-reverses-monotonicity]{\textit{Go to proof.}}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  f\text{ increasing}\Rightarrow -f\text{ decreasing},
+  \qquad
+  f\text{ decreasing}\Rightarrow -f\text{ increasing}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Multiplication by \(-1\) reverses the order of outputs.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:function-increasing]{Increasing Function}
+  \item \hyperref[def:function-decreasing]{Decreasing Function}
+  \item \hyperref[thm:pointwise-order-arithmetic]{Pointwise Order Arithmetic}
+\end{itemize}
+\end{dependencies}
+
+\begin{propositionbox}{Proposition}
+\begin{proposition}[Positive Scalar Multiples Preserve Monotonicity]
+\label{prop:positive-scalar-multiples-preserve-monotonicity}
+Let \(c>0\).  If \(f:A\to\mathbb{R}\) is increasing, decreasing, strictly
+increasing, or strictly decreasing on \(A\), then \(cf\) has the same
+corresponding monotonicity on \(A\).
+
+\smallskip\noindent
+\hyperref[prf:positive-scalar-multiples-preserve-monotonicity]{\textit{Go to proof.}}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  c>0\;\wedge\;f\text{ has a monotonicity type on }A
+  \;\Longrightarrow\;
+  cf\text{ has the same type on }A.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Positive rescaling changes output size but not output order.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:pointwise-scalar-multiple-of-a-function]{Pointwise Scalar Multiple of a Function}
+  \item \hyperref[def:function-monotone]{Monotone Function}
+\end{itemize}
+\end{dependencies}
+
+\begin{propositionbox}{Proposition}
+\begin{proposition}[Monotone Need Not Be Strict]
+\label{prop:monotone-need-not-be-strict}
+There exists a monotone function that is neither strictly increasing nor
+strictly decreasing on its domain.
+
+\smallskip\noindent
+\hyperref[prf:monotone-need-not-be-strict]{\textit{Go to proof.}}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \exists f:A\to\mathbb{R}\;
+  \bigl(f\text{ monotone and }f\text{ is not strictly monotone}\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Weak monotonicity allows flat stretches.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:function-monotone]{Monotone Function}
+  \item \hyperref[def:function-strictly-increasing]{Strictly Increasing Function}
+  \item \hyperref[def:function-strictly-decreasing]{Strictly Decreasing Function}
+\end{itemize}
+\end{dependencies}
+
 \begin{definitionbox}{Definition (Constant Function)}
 \begin{definition}[Constant Function]
 \label{def:function-constant}
@@ -1096,5 +3872,106 @@ A constant function assigns the same real value to every input in its domain.
 \begin{itemize}
   \item \hyperref[def:function]{Function}
   \item \hyperref[def:subset]{Subset}
+\end{itemize}
+\end{dependencies}
+
+\begin{propositionbox}{Proposition}
+\begin{proposition}[Constant Function Characterization]
+\label{prop:constant-function-characterization}
+Let \(A\neq\emptyset\) and let \(f:A\to\mathbb{R}\).  The function \(f\)
+is constant on \(A\) if and only if there exists \(k\in\mathbb{R}\) such
+that \(f(x)=k\) for every \(x\in A\).
+
+\smallskip\noindent
+\hyperref[prf:constant-function-characterization]{\textit{Go to proof.}}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  f\text{ constant on }A
+  \;\Longleftrightarrow\;
+  \exists k\in\mathbb{R}\;\forall x\in A\;(f(x)=k).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  \operatorname{IsConstant}(f,A)
+  \;\Longleftrightarrow\;
+  \exists k\in\mathbb{R}\;\forall x\in A\;(f(x)=k).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Constancy can be expressed either by comparing all pairs of inputs or by
+naming one common output value.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:function-constant]{Constant Function}
+\end{itemize}
+\end{dependencies}
+
+\begin{corollarybox}{Corollary}
+\begin{corollary}[Constant Functions Are Bounded]
+\label{cor:constant-functions-are-bounded}
+If \(A\neq\emptyset\) and \(f:A\to\mathbb{R}\) is constant on \(A\), then
+\(f\) is bounded on \(A\).
+
+\smallskip\noindent
+\hyperref[prf:constant-functions-are-bounded]{\textit{Go to proof.}}
+\end{corollary}
+\end{corollarybox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  f\text{ constant on }A
+  \;\Longrightarrow\;
+  \operatorname{Bounded}(f,A).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A single output value is automatically trapped inside a symmetric bounded
+interval.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[prop:constant-function-characterization]{Constant Function Characterization}
+  \item \hyperref[def:function-bounded]{Bounded Function}
+\end{itemize}
+\end{dependencies}
+
+\begin{corollarybox}{Corollary}
+\begin{corollary}[Constant Functions Are Monotone]
+\label{cor:constant-functions-are-monotone}
+Every constant real-valued function is both increasing and decreasing on its
+domain.
+
+\smallskip\noindent
+\hyperref[prf:constant-functions-are-monotone]{\textit{Go to proof.}}
+\end{corollary}
+\end{corollarybox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  f\text{ constant on }A
+  \;\Longrightarrow\;
+  f\text{ is increasing on }A\text{ and decreasing on }A.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Flat functions satisfy both weak monotonicity directions.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:function-constant]{Constant Function}
+  \item \hyperref[def:function-increasing]{Increasing Function}
+  \item \hyperref[def:function-decreasing]{Decreasing Function}
 \end{itemize}
 \end{dependencies}

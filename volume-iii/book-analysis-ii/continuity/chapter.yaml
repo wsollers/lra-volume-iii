@@ -393,6 +393,11 @@ environments:
   file: notes\limits\notes-limits.tex
   display_title: Bounded Limits
   proof_file: null
+- label: thm:comparison-function-limits
+  type: thm
+  file: notes\limits\notes-limits.tex
+  display_title: Comparison Theorem for Function Limits
+  proof_file: proofs\limits\prf-comparison-function-limits.tex
 - label: thm:squeeze-function-limits
   type: thm
   file: notes\limits\notes-limits.tex

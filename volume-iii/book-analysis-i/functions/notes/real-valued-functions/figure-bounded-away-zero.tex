@@ -1,0 +1,15 @@
+\begin{tikzpicture}[atlas, scale=0.95]
+  \draw[atlas axes] (0,0)--(6.8,0);
+  \draw[atlas axes] (0,-2.1)--(0,2.1);
+  \fill[atlasblue!10] (0,-0.45) rectangle (6.5,0.45);
+  \draw[atlasblue!45, dashed] (0,0.45)--(6.5,0.45);
+  \draw[atlasblue!45, dashed] (0,-0.45)--(6.5,-0.45);
+  \draw[atlasgreen, very thick, domain=0.35:6.2, samples=120, smooth]
+    plot (\x,{1.05+0.22*sin(1.8*\x r)});
+  \draw[atlasred, very thick, domain=0.35:6.2, samples=120, smooth]
+    plot (\x,{-1.15+0.18*cos(1.6*\x r)});
+  \node[atlas label,left] at (0,0.45){$\varepsilon$};
+  \node[atlas label,left] at (0,-0.45){$-\varepsilon$};
+  \node[atlas label] at (4.8,1.55){$|f(x)|\geq\varepsilon$};
+  \node[atlas label] at (3.4,0){forbidden strip};
+\end{tikzpicture}
