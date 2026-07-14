@@ -42,9 +42,12 @@ injective, then $g\circ f:A\to C$ is injective.
 
 \begin{remark*}[Predicate reading]
 \[
-  \operatorname{Injective}(f)\wedge\operatorname{Injective}(g)
+  f\colon A\to B,\qquad
+  g\colon B\to C,\qquad
+  g\circ f\colon A\to C,\qquad
+  \operatorname{Injective}(f,A,B)\wedge\operatorname{Injective}(g,B,C)
   \;\Longrightarrow\;
-  \operatorname{Injective}(g\circ f).
+  \operatorname{Injective}(g\circ f,A,C).
 \]
 \end{remark*}
 
@@ -56,25 +59,8 @@ injective, then $g\circ f:A\to C$ is injective.
 
 \begin{remark*}[Negation predicate reading]
 \[
-  \neg\,\operatorname{Injective}(g\circ f).
+  \neg\,\operatorname{Injective}(g\circ f,A,C).
 \]
-\end{remark*}
-
-\begin{remark*}[Failure modes]
-\begin{description}
-  \item[Exposition.]
-The composite fails to be injective exactly when two distinct inputs of
-$A$ are sent to the same output in $C$ after applying both functions.
-\end{description}
-\end{remark*}
-
-\begin{remark*}[Failure modes]
-\begin{description}
-  \item[Exposition.]
-\[
-  \exists a_1,a_2\in A\;\bigl(a_1\neq a_2\;\wedge\;g(f(a_1))=g(f(a_2))\bigr).
-\]
-\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -113,7 +99,8 @@ is surjective, then \(g\circ f:A\to C\) is surjective.
 
 \begin{remark*}[Predicate reading]
 \[
-  \operatorname{Surjective}(g\circ f, C)
+  g\circ f\colon A\to C,\qquad
+  \operatorname{Surjective}(g\circ f, A, C)
   \;\colonequiv\;
   \forall c\in C,\;\exists a\in A: (g\circ f)(a)=c.
 \]
@@ -171,9 +158,12 @@ bijective, then $g\circ f:A\to C$ is bijective.
 
 \begin{remark*}[Predicate reading]
 \[
-  \operatorname{Bijective}(f)\wedge\operatorname{Bijective}(g)
+  f\colon A\to B,\qquad
+  g\colon B\to C,\qquad
+  g\circ f\colon A\to C,\qquad
+  \operatorname{Bijective}(f,A,B)\wedge\operatorname{Bijective}(g,B,C)
   \;\Longrightarrow\;
-  \operatorname{Bijective}(g\circ f).
+  \operatorname{Bijective}(g\circ f,A,C).
 \]
 \end{remark*}
 
@@ -189,31 +179,8 @@ bijective, then $g\circ f:A\to C$ is bijective.
 
 \begin{remark*}[Negation predicate reading]
 \[
-  \neg\,\operatorname{Bijective}(g\circ f).
+  \neg\,\operatorname{Bijective}(g\circ f,A,C).
 \]
-\end{remark*}
-
-\begin{remark*}[Failure modes]
-\begin{description}
-  \item[Exposition.]
-A composite bijection can fail only by losing injectivity or by missing
-some target value in $C$.
-\end{description}
-\end{remark*}
-
-\begin{remark*}[Failure modes]
-\begin{description}
-  \item[Exposition.]
-\[
-\begin{aligned}
-\neg\,\operatorname{Bijective}(g\circ f)
-&\;\Longleftrightarrow\;
-\neg\,\operatorname{Injective}(g\circ f)
-\;\vee\;
-\neg\,\operatorname{Surjective}(g\circ f).
-\end{aligned}
-\]
-\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -253,7 +220,9 @@ If \(f:A\to B\) is bijective, then \(f^{-1}:B\to A\) is bijective.
 
 \begin{remark*}[Predicate reading]
 \[
-  \operatorname{InverseFunction}(f, f^{-1})
+  f\colon A\to B,\qquad
+  f^{-1}\colon B\to A,\qquad
+  \operatorname{InverseFunction}(f^{-1}, f, A, B)
   \;\colonequiv\;
   f^{-1}\circ f = \mathrm{id}_A \;\wedge\; f\circ f^{-1}=\mathrm{id}_B.
 \]
