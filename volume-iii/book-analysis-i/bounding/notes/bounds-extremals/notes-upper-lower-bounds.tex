@@ -12,21 +12,20 @@ require the candidate to be sharp or to belong to the set.
   \caption{Upper and lower bound conditions on a nonempty set.}
   \label{fig:upper-lower-bound-combinations}
 \end{figure}
-
 \begin{definitionbox}{Bound}
 \begin{definition}[Bound]
 \label{def:bound}
 Let $(S,\leq)$ be an ordered set, let $A\subseteq S$ be nonempty, and let
-$b\in S$.  A \emph{bound} of $A$ means a one-sided comparison between $b$
-and every element of $A$: either $x\leq b$ for all $x\in A$, or $b\leq x$
-for all $x\in A$.
+$b\in S$.  The element $b$ is a \emph{bound} of $A$ if and only if it
+controls every element of $A$ from at least one side: either $x\leq b$
+for every $x\in A$, or $b\leq x$ for every $x\in A$.
 \end{definition}
 \end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
-  A\neq\varnothing
-  \quad\text{and}\quad
+  b\text{ is a bound of }A
+  \quad\Longleftrightarrow\quad
   \bigl[(\forall x\in A)(x\leq b)
   \ \text{or}\ 
   (\forall x\in A)(b\leq x)\bigr].
@@ -35,7 +34,7 @@ for all $x\in A$.
 
 \begin{remark*}[Predicate reading]
 \[
-  S\in\mathbf{Set},\qquad A\subseteq S,\qquad P=\mathsf{OrderedSet}(S,\leq),\qquad
+  P=\mathsf{OrderedSet}(S,\leq),\qquad
   \operatorname{UpperBound}(b,A,P)
   \lor
   \operatorname{LowerBound}(b,A,P).
@@ -44,17 +43,15 @@ for all $x\in A$.
 
 \begin{remark*}[Negated quantified statement]
 \[
-  A=\varnothing
-  \quad\text{or}\quad
-  \bigl[(\exists x\in A)(b<x)
-  \ \text{and}\ 
-  (\exists y\in A)(y<b)\bigr].
+  (\exists x\in A)(x\nleq b)
+  \quad\text{and}\quad
+  (\exists y\in A)(b\nleq y).
 \]
 \end{remark*}
 
 \begin{remark*}[Negation predicate reading]
 \[
-  S\in\mathbf{Set},\qquad A\subseteq S,\qquad P=\mathsf{OrderedSet}(S,\leq),\qquad
+  P=\mathsf{OrderedSet}(S,\leq),\qquad
   \neg\operatorname{UpperBound}(b,A,P)
   \land
   \neg\operatorname{LowerBound}(b,A,P).
@@ -64,22 +61,27 @@ for all $x\in A$.
 \begin{remark*}[Failure modes]
 \begin{description}
   \item[Exposition.]
-  A candidate bound can fail because the set is empty or because the
-  candidate does not control the set from either side.
+  Under the standing nonemptiness assumption, a candidate fails to be a
+  bound exactly when it fails both one-sided comparison conditions.  Empty-set
+  input is instead a failure of applicability.
 
-  \item[\operatorname{EmptySet}.]
-  The bounded-comparison statement is stated for nonempty sets.
+  \item[Applicability failure.]
+  The definition is stated only for nonempty subsets.
   \[
     A=\varnothing.
   \]
   \[
-    \operatorname{EmptySet}(A).
+    \operatorname{IsEmpty}(A).
   \]
 
-  \item[\operatorname{UpperBound} / \operatorname{LowerBound}.]
-  The candidate lies strictly between two elements of $A$.
+  \item[Failure of the bound condition.]
+  There is an element of $A$ that is not below $b$, and there is an element
+  of $A$ that is not above $b$.
   \[
-    (\exists x,y\in A)(b<x\ \text{and}\ y<b).
+    \begin{aligned}
+      &(\exists x\in A)(x\nleq b),\\
+      &(\exists y\in A)(b\nleq y).
+    \end{aligned}
   \]
   \[
     P=\mathsf{OrderedSet}(S,\leq),\qquad
@@ -87,22 +89,17 @@ for all $x\in A$.
     \land
     \neg\operatorname{LowerBound}(b,A,P).
   \]
+  The non-comparisons are not rewritten as strict inequalities without an
+  additional total-order law.
 \end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
-A bound is a one-sided comparison witness.  It need not be sharp and it
+A bound controls the set from at least one side.  It need not be sharp and it
 need not belong to the set being bounded.
 \end{remark*}
 
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:ordered-set]{Ordered Set}
-  \item \hyperref[def:subset]{Subset}
-  \item \hyperref[def:upper-bound]{Upper Bound}
-  \item \hyperref[def:lower-bound]{Lower Bound}
-\end{itemize}
-\end{dependencies}
+\NoLocalDependencies
 
 \begin{definitionbox}{Upper Bound in the Real Line}
 \begin{definition}[Upper Bound in the Real Line]
