@@ -1,0 +1,5 @@
+schema_version: lra.semantic-artifact-proof-vault-links/1.0
+artifact_label: def:bound
+resolved:
+  - status: skipped
+    message: Candidate volume-iii/book-analysis-i/bounding/def-bound at proof-vault commit 0fd83b95d948462a47d3be9914a3e809a489a864 was supplied, but no foreign key is asserted without verification against lra-proof-vault/metadata.yaml.
