@@ -1,0 +1,213 @@
+schema_version: lra-artifact-audit-validation/1.0
+artifact:
+  label: def:bound
+  kind: definition
+  source_file: volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-upper-lower-bounds.tex
+  review_directory: volume-iii/book-analysis-i/bounding/notes/bounds-extremals/def-bound
+review_package:
+  result: pass
+  review_commit: 89e4d7416738325ec37df569b3cfa2953e57bb03
+  semantic_artifact_command: python ..\lra-governance\tools\governance\invoke_external_gpt_reviewer.py
+    semantic --input build\semantic-audit\bounds-extremals\fresh-def-bound\semantic-input.json
+    --output volume-iii\book-analysis-i\bounding\notes\bounds-extremals\def-bound
+    --prompt ..\lra-governance\constitution\prompts\calibrate-semantic-artifact.md
+    --governance-root ..\lra-governance --repos-root .. --poll-timeout 1800
+  exit_code: 0
+  reviewer:
+    provider: openai_responses_api
+    role: semantic_reviewer
+    requested_model: gpt-5.6
+    resolved_model: gpt-5.6-sol
+    reasoning_effort: high
+    response_id: resp_036c0b90900dfdff006a57bb3342348192bd35392ccc46335d
+    request_id: req_485f3ae107d946e4808dc06e67af69e6
+    prompt: ../lra-governance/constitution/prompts/calibrate-semantic-artifact.md
+    executor: tools/governance/invoke_external_gpt_reviewer.py
+    input_sha256: sha256:bc26c7f0e10b3df0d988d0aebd40cb99137c4e9f09d16ceb2041d7f48cd01f23
+    output_sha256: sha256:facd73e74d7787c7da1d82969fbb65347b4e0e4e937b9679dc8e2bb2de0877ab
+    started_at: '2026-07-15T16:54:10.571597Z'
+    completed_at: '2026-07-15T16:56:06.519772Z'
+    self_review: false
+  findings:
+  - code: PROOF_VAULT_CANDIDATE_NOT_ASSERTED
+    severity: info
+    message: The supplied candidate is not asserted as a foreign key because no authoritative
+      metadata record was available in the controlling input.
+    field: verification.proof_vault_records
+temporary_application:
+  applied: true
+  commit: 2099af52f1b092b0a5391edf0ff331e2aca6759b
+  changed_files:
+  - path: volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-upper-lower-bounds.tex
+    pre_apply_blob_sha: 0bed4834f22a3570764f776714278025b1578826
+    tested_blob_sha: 4a0d1aff4b5e80d31c8514f79af6507ca071e1f1
+deterministic_validation:
+  result: fail
+  checks:
+  - id: semantic_artifact
+    command: python ..\lra-governance\tools\governance\validate_semantic_artifact.py
+      --artifact volume-iii\book-analysis-i\bounding\notes\bounds-extremals\def-bound\artifact.yaml
+      --package-dir volume-iii\book-analysis-i\bounding\notes\bounds-extremals\def-bound
+      --governance-root ..\lra-governance --repos-root .. --strict
+    result: pass
+    exit_code: 0
+    started_at: '2026-07-15T16:59:53.3764976Z'
+    completed_at: '2026-07-15T16:59:53.9510957Z'
+    log_path: build/semantic-audit/bounds-extremals/fresh-def-bound/validation-logs/semantic-strict.stdout.txt
+    findings: []
+  - id: external_reviewer
+    command: python ..\lra-governance\tools\governance\validate_external_reviewer_evidence.py
+      --package volume-iii\book-analysis-i\bounding\notes\bounds-extremals\def-bound\package.yaml
+      --verify-live
+    result: pass
+    exit_code: 0
+    started_at: '2026-07-15T16:59:53.9549021Z'
+    completed_at: '2026-07-15T16:59:54.3873058Z'
+    log_path: build/semantic-audit/bounds-extremals/fresh-def-bound/validation-logs/evidence-live-package.stdout.txt
+    findings: []
+  - id: volume
+    command: python ..\lra-governance\scripts\build_volume.py --root . --validate-only
+    result: fail
+    exit_code: 2
+    started_at: '2026-07-15T16:59:54.3879897Z'
+    completed_at: '2026-07-15T17:00:48.0207531Z'
+    log_path: build/semantic-audit/bounds-extremals/fresh-def-bound/validation-logs/volume-validate.stdout.txt
+    findings:
+    - code: VOLUME_VALIDATION_FAILED
+      severity: error
+      message: Full-volume validation exited nonzero. The log includes two unrelated
+        pre-existing inequality-note errors and review/warning findings for the temporary
+        def:bound application.
+      field: volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-upper-lower-bounds.tex
+  - id: build
+    command: python ..\lra-governance\tools\governance\build_volume_docker.py --root
+      . --common-root ..\lra-common --tex-root volume-iii-bounds-sequences-and-series.tex
+      --output-dir build\digital
+    result: fail
+    exit_code: 2
+    started_at: '2026-07-15T17:00:48.0211116Z'
+    completed_at: '2026-07-15T17:01:39.3502457Z'
+    log_path: build/semantic-audit/bounds-extremals/fresh-def-bound/validation-logs/book-docker-build.stdout.txt
+    findings:
+    - code: BOOK_BUILD_PRECHECK_FAILED
+      severity: error
+      message: The Docker book build stopped at the same validation gate before producing
+        a PDF.
+      field: volume-iii-bounds-sequences-and-series.tex
+  - id: proof_layout
+    command: 'not applicable: def:bound is a definition with no proof file'
+    result: not_run
+    exit_code: null
+    started_at: null
+    completed_at: null
+    log_path: null
+    findings: []
+logic_validation:
+  result: fail
+  reviewer:
+    provider: openai_responses_api
+    role: logic_validator
+    requested_model: gpt-5.6
+    resolved_model: gpt-5.6-sol
+    reasoning_effort: high
+    response_id: resp_0711a4a5fd063c19006a57bd707104819dbdc097e3969005bf
+    request_id: req_40461f709f74424980d6ad37c3da10cd
+    prompt: ../lra-governance/constitution/prompts/validate-semantic-artifact-logic.md
+    executor: tools/governance/invoke_external_gpt_reviewer.py
+    input_sha256: sha256:8edaf1b89fa6f07333c21e4dddf8929d03bf7a85c2353950f28435824b2d8d74
+    output_sha256: sha256:6104ea4bc04c1244289d8379623801916c0fa852630302c7d06fcc997fe5c938
+    started_at: '2026-07-15T17:03:43.564898Z'
+    completed_at: '2026-07-15T17:05:01.249884Z'
+    self_review: false
+  checks:
+    binder_scope:
+      result: pass
+      notes: All parameters and quantified variables are declared or bound; reused
+        printed symbols have distinct binder IDs.
+    language_level:
+      result: pass
+      notes: The order-theoretic definition is correctly classified as object-language
+        mathematics.
+    assumptions_and_conclusion:
+      result: pass
+      notes: Ordered-set context, subset and element typing, nonemptiness, and the
+        defining condition are appropriately separated.
+    statement_shape:
+      result: fail
+      notes: The canonical prose, canonical LaTeX, and applied TeX assert a definitional
+        biconditional, but statement.semantic_ast and logical_forms.standard_quantified.ast
+        encode only the disjunctive definiens and omit the biconditional.
+    quantifier_order:
+      result: pass
+      notes: Each universal or existential quantifier is correctly restricted to A,
+        with independent scope for the two branches.
+    witness_dependencies:
+      result: pass
+      notes: The failure witnesses depend only on A, b, and the ambient order relation.
+    negation:
+      result: pass
+      notes: The mechanical negation of the disjunctive bound condition and its approved
+        witness form are logically correct.
+    normalization_assumptions:
+      result: pass
+      notes: Classical quantifier duality is explicitly listed for conversion of negated
+        restricted universals to existential counterexamples.
+    contrapositive:
+      result: not_applicable
+      notes: This is a definition, and no contrapositive is supplied.
+    applicability_failure:
+      result: pass
+      notes: Empty-set input is correctly separated as an applicability failure; under
+        emptiness both universal clauses would be vacuously true.
+    order_strength:
+      result: pass
+      notes: Failed non-strict comparisons remain non-comparisons and are not strengthened
+        to strict inequalities without totality.
+    predicate_signatures:
+      result: pass
+      notes: UpperBound, LowerBound, IsEmpty, and OrderedSet use the canonical arities,
+        argument roles, and ambient structure.
+    failure_modes:
+      result: pass
+      notes: The applicability branch and the conjunction of both one-sided comparison
+        failures accurately cover the stated failure analysis.
+    yaml_tex_equivalence:
+      result: fail
+      notes: The applied TeX agrees with the YAML canonical prose and LaTeX, but not
+        with the YAML semantic ASTs, which omit the asserted definitional biconditional.
+  findings:
+  - code: DEFINITIONAL_BICONDITIONAL_OMITTED_FROM_AST
+    severity: error
+    message: The definition is asserted as “b is a bound of A iff …” in canonical
+      LaTeX and applied TeX, while statement.semantic_ast represents only the right-hand
+      disjunction.
+    field: statement.semantic_ast
+  - code: STANDARD_FORM_LATEX_AST_MISMATCH
+    severity: error
+    message: logical_forms.standard_quantified.latex contains a biconditional, but
+      its AST root is an or-node containing only the definiens; the formal representations
+      therefore do not preserve the same statement shape.
+    field: logical_forms.standard_quantified.ast
+reversion:
+  required: true
+  commit: 26c03ab86221ea05afed817f7cde4c377f39c205
+  source_restored: true
+  verified_files:
+  - path: volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-upper-lower-bounds.tex
+    expected_blob_sha: 0bed4834f22a3570764f776714278025b1578826
+    actual_blob_sha: 0bed4834f22a3570764f776714278025b1578826
+    matches: true
+overall:
+  result: fail
+  blocking_issues:
+  - 'DEFINITIONAL_BICONDITIONAL_OMITTED_FROM_AST: The definition is asserted as “b
+    is a bound of A iff …” in canonical LaTeX and applied TeX, while statement.semantic_ast
+    represents only the right-hand disjunction.'
+  - 'STANDARD_FORM_LATEX_AST_MISMATCH: logical_forms.standard_quantified.latex contains
+    a biconditional, but its AST root is an or-node containing only the definiens;
+    the formal representations therefore do not preserve the same statement shape.'
+  warnings:
+  - Full-volume validation and book build stopped at existing validation errors outside
+    def:bound; see captured logs.
+  - The first logic response is preserved in ignored build diagnostics but is not
+    used as final evidence because its input omitted original_governed_tex.
