@@ -1,0 +1,90 @@
+schema_version: lra-artifact-audit-validation/1.0
+artifact:
+  label: def:real-lower-bound
+  kind: definition
+  source_file: volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-upper-lower-bounds.tex
+  review_directory: volume-iii/book-analysis-i/bounding/notes/bounds-extremals/def-real-lower-bound
+review_package:
+  result: blocked
+  review_commit: null
+  semantic_artifact_command: null
+  exit_code: null
+  findings:
+  - code: REVIEW_PACKAGE_NOT_PRODUCED
+    severity: blocking
+    message: No semantic review package was produced for this queued artifact before
+      closeout.
+    field: review_package
+temporary_application:
+  applied: false
+  commit: null
+  changed_files: []
+deterministic_validation:
+  result: blocked
+  checks: []
+logic_validation:
+  result: blocked
+  reviewer:
+    provider: codex
+    model: gpt-5-codex
+    prompt: constitution/prompts/validate-semantic-artifact-logic.md
+    run_id: null
+  checks:
+    binder_scope:
+      result: blocked
+      notes: No semantic review package was produced before closeout.
+    language_level:
+      result: blocked
+      notes: No semantic review package was produced before closeout.
+    assumptions_and_conclusion:
+      result: blocked
+      notes: No semantic review package was produced before closeout.
+    statement_shape:
+      result: blocked
+      notes: No semantic review package was produced before closeout.
+    quantifier_order:
+      result: blocked
+      notes: No semantic review package was produced before closeout.
+    witness_dependencies:
+      result: blocked
+      notes: No semantic review package was produced before closeout.
+    negation:
+      result: blocked
+      notes: No semantic review package was produced before closeout.
+    normalization_assumptions:
+      result: blocked
+      notes: No semantic review package was produced before closeout.
+    contrapositive:
+      result: blocked
+      notes: No semantic review package was produced before closeout.
+    applicability_failure:
+      result: blocked
+      notes: No semantic review package was produced before closeout.
+    order_strength:
+      result: blocked
+      notes: No semantic review package was produced before closeout.
+    predicate_signatures:
+      result: blocked
+      notes: No semantic review package was produced before closeout.
+    failure_modes:
+      result: blocked
+      notes: No semantic review package was produced before closeout.
+    yaml_tex_equivalence:
+      result: blocked
+      notes: No semantic review package was produced before closeout.
+  findings:
+  - code: NO_ARTIFACT_TO_VALIDATE
+    severity: blocking
+    message: Logic validation was blocked because no reviewed semantic artifact package
+      exists.
+    field: logic_validation
+reversion:
+  required: false
+  commit: null
+  source_restored: true
+  verified_files: []
+overall:
+  result: blocked
+  blocking_issues:
+  - No semantic review package was produced for this artifact before closeout.
+  warnings: []
