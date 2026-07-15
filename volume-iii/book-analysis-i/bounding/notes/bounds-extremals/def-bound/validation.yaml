@@ -1,0 +1,10 @@
+schema_version: lra.semantic-artifact-validation/1.0
+artifact_label: def:bound
+result: pass
+checks:
+  package_completeness: pass
+  source_alignment: pass
+  registry_alignment: pass
+  renderer_round_trip: skipped
+  raw_latex_ast: pass
+diagnostics: []

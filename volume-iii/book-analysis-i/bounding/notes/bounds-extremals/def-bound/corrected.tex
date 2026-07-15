@@ -1,0 +1,90 @@
+\begin{definitionbox}{Bound}
+\begin{definition}[Bound]
+\label{def:bound}
+Let $(S,\leq)$ be an ordered set, let $A\subseteq S$ be nonempty, and let
+$b\in S$.  A \emph{bound} of $A$ means a one-sided comparison between
+$b$ and every element of $A$: either $x\leq b$ for all $x\in A$, or
+$b\leq x$ for all $x\in A$.
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  A\neq\varnothing
+  \quad\text{and}\quad
+  \bigl[(\forall x\in A)(x\leq b)
+  \ \text{or}\ 
+  (\forall x\in A)(b\leq x)\bigr].
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  S\in\mathbf{Set},\qquad A\subseteq S,\qquad P=\mathsf{OrderedSet}(S,\leq),\qquad
+  \operatorname{UpperBound}(b,A,P)
+  \lor
+  \operatorname{LowerBound}(b,A,P).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+  A=\varnothing
+  \quad\text{or}\quad
+  \bigl[(\exists x\in A)(b<x)
+  \ \text{and}\ 
+  (\exists y\in A)(y<b)\bigr].
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+  S\in\mathbf{Set},\qquad A\subseteq S,\qquad P=\mathsf{OrderedSet}(S,\leq),\qquad
+  \neg\operatorname{UpperBound}(b,A,P)
+  \land
+  \neg\operatorname{LowerBound}(b,A,P).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  A candidate bound can fail because the set is empty or because the
+  candidate does not control the set from either side.
+
+  \item[\operatorname{EmptySet}.]
+  The bounded-comparison statement is stated for nonempty sets.
+  \[
+    A=\varnothing.
+  \]
+  \[
+    \operatorname{EmptySet}(A).
+  \]
+
+  \item[\operatorname{UpperBound} / \operatorname{LowerBound}.]
+  The candidate lies strictly between two elements of $A$.
+  \[
+    (\exists x,y\in A)(b<x\ \text{and}\ y<b).
+  \]
+  \[
+    P=\mathsf{OrderedSet}(S,\leq),\qquad
+    \neg\operatorname{UpperBound}(b,A,P)
+    \land
+    \neg\operatorname{LowerBound}(b,A,P).
+  \]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A bound is a one-sided comparison witness.  It need not be sharp and it
+need not belong to the set being bounded.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:upper-bound]{Upper Bound}
+  \item \hyperref[def:lower-bound]{Lower Bound}
+\end{itemize}
+\end{dependencies}

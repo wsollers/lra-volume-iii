@@ -1,0 +1,12 @@
+diff --git a/volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-upper-lower-bounds.tex b/volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-upper-lower-bounds.tex
+--- a/volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-upper-lower-bounds.tex
++++ b/volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-upper-lower-bounds.tex
+@@
+-Let $(S,\leq)$ be an ordered set, let $A\subseteq S$ be nonempty, and let
+-$b\in S$.  A \emph{bound} of $A$ means a one-sided comparison between $b$
+-and every element of $A$: either $x\leq b$ for all $x\in A$, or $b\leq x$
+-for all $x\in A$.
++Let $(S,\leq)$ be an ordered set, let $A\subseteq S$ be nonempty, and let
++$b\in S$.  A \emph{bound} of $A$ means a one-sided comparison between
++$b$ and every element of $A$: either $x\leq b$ for all $x\in A$, or
++$b\leq x$ for all $x\in A$.
