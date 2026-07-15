@@ -1,0 +1,8 @@
+schema_version: lra.semantic-artifact-registry-needs/1.0
+artifact_label: def:bound
+missing_predicates: []
+missing_structures: []
+missing_relations: []
+missing_notation: []
+alias_candidates: []
+ambiguities: []

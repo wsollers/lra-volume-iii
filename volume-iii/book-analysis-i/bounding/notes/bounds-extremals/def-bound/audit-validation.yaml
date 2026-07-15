@@ -1,0 +1,139 @@
+schema_version: lra-artifact-audit-validation/1.0
+artifact:
+  label: def:bound
+  kind: definition
+  source_file: volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-upper-lower-bounds.tex
+  review_directory: volume-iii/book-analysis-i/bounding/notes/bounds-extremals/def-bound
+review_package:
+  result: pass
+  review_commit: da4fff3432b312c78f7f9a451fe0a7cf00cf5e41
+  semantic_artifact_command: python ..\lra-governance\tools\governance\validate_semantic_artifact.py
+    --artifact volume-iii\book-analysis-i\bounding\notes\bounds-extremals\def-bound\artifact.yaml
+    --package-dir volume-iii\book-analysis-i\bounding\notes\bounds-extremals\def-bound
+    --governance-root ..\lra-governance --repos-root F:\repos --strict --format text
+  exit_code: 0
+  findings: []
+temporary_application:
+  applied: true
+  commit: 2d672309b3436e9a6e4b8c3ba50d4be6f1f2b9a1
+  changed_files:
+  - path: volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-upper-lower-bounds.tex
+    pre_apply_blob_sha: 0bed4834f22a3570764f776714278025b1578826
+    tested_blob_sha: 997bf064fd3ea206b7d18cdca14afcbd2e4fc197
+deterministic_validation:
+  result: pass_with_warnings
+  checks:
+  - id: semantic_artifact
+    command: python ..\lra-governance\tools\governance\validate_semantic_artifact.py
+      --artifact volume-iii\book-analysis-i\bounding\notes\bounds-extremals\def-bound\artifact.yaml
+      --package-dir volume-iii\book-analysis-i\bounding\notes\bounds-extremals\def-bound
+      --governance-root ..\lra-governance --repos-root F:\repos --strict --format
+      text
+    result: pass
+    exit_code: 0
+    started_at: null
+    completed_at: null
+    log_path: null
+    findings: []
+  - id: volume
+    command: python ..\lra-governance\tools\governance\validate_volume.py . --fail-on-errors
+      --preprocess-dir tmp\semantic-def-bound-rerun-preprocess
+    result: pass_with_warnings
+    exit_code: 0
+    started_at: null
+    completed_at: null
+    log_path: null
+    findings:
+    - code: VALIDATOR_WARNINGS_REMAIN
+      severity: warning
+      message: Full-volume validation passed the error gate with 59 nonblocking warning/review
+        findings.
+      field: deterministic_validation.checks.volume
+  - id: build
+    command: python ..\lra-governance\scripts\build_volume.py --root . --validate-only
+    result: pass_with_warnings
+    exit_code: 0
+    started_at: null
+    completed_at: null
+    log_path: null
+    findings:
+    - code: VALIDATOR_WARNINGS_REMAIN
+      severity: warning
+      message: Validate-only wrapper passed the error gate with nonblocking warning/review
+        findings.
+      field: deterministic_validation.checks.build
+logic_validation:
+  result: pass
+  reviewer:
+    provider: codex
+    model: gpt-5-codex
+    prompt: constitution/prompts/validate-semantic-artifact-logic.md
+    run_id: null
+  checks:
+    binder_scope:
+      result: pass
+      notes: Parameters S, leq, A, b and quantified variables are represented with
+        stable binder ids.
+    language_level:
+      result: pass
+      notes: The artifact is mixed mathematical vernacular with order-theoretic predicate
+        readings.
+    assumptions_and_conclusion:
+      result: pass
+      notes: Nonemptiness is represented as a standing applicability assumption and
+        in the standard statement.
+    statement_shape:
+      result: pass
+      notes: The statement is the disjunction of upper-bound and lower-bound universal
+        comparisons.
+    quantifier_order:
+      result: pass
+      notes: Each bound side uses one universal quantifier over A.
+    witness_dependencies:
+      result: pass
+      notes: The candidate witness b is a parameter, not produced by an existential
+        binder.
+    negation:
+      result: pass
+      notes: The negation records emptiness or simultaneous failure of both one-sided
+        controls.
+    normalization_assumptions:
+      result: pass
+      notes: Strict-order conversion is recorded as depending on the ordered-set convention.
+    contrapositive:
+      result: not_applicable
+      notes: Definitions do not receive contrapositives.
+    applicability_failure:
+      result: pass
+      notes: Emptiness is separated as an applicability failure in failure_analysis.
+    order_strength:
+      result: pass
+      notes: The artifact uses the source ordered-set comparison conventions and does
+        not introduce total-order assumptions beyond the source.
+    predicate_signatures:
+      result: pass
+      notes: UpperBound and LowerBound are referenced with canonical three arguments
+        b, A, P.
+    failure_modes:
+      result: pass
+      notes: Empty set and neither-upper-nor-lower failure modes are represented.
+    yaml_tex_equivalence:
+      result: pass
+      notes: corrected.tex preserves the mathematical content of the source block;
+        the temporary source change is line wrapping only.
+  findings: []
+reversion:
+  required: true
+  commit: cc0d9df4dee6b9b38d8e5d4c4d5a4c616d2c381e
+  source_restored: true
+  verified_files:
+  - path: volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-upper-lower-bounds.tex
+    expected_blob_sha: 0bed4834f22a3570764f776714278025b1578826
+    actual_blob_sha: 0bed4834f22a3570764f776714278025b1578826
+    matches: true
+overall:
+  result: pass_with_warnings
+  blocking_issues: []
+  warnings:
+  - The reviewed source delta is a line-wrap-only transaction used to exercise the
+    reversible audit path.

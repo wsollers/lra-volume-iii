@@ -1305,6 +1305,24 @@ x>0\Rightarrow x^n>0.
 \operatorname{Positive}(x)\land\neg\operatorname{Positive}(x^n).
 \]
 \end{remark*}
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  The lemma can fail only if the hypothesis supplies a positive base and a
+  natural-number exponent while the resulting power is not positive.
+
+  \item[\operatorname{Positive}.]
+  A counterexample must keep the base positive but make the power nonpositive.
+  \[
+    x>0
+    \quad\text{and}\quad
+    x^n\le 0.
+  \]
+  \[
+    \operatorname{Positive}(x)\land\neg\operatorname{Positive}(x^n).
+  \]
+\end{description}
+\end{remark*}
 \begin{remark*}[Interpretation]
 Repeated multiplication of a positive real by itself remains positive.
 \end{remark*}
@@ -1344,6 +1362,24 @@ x^n<y^n.
 \[
 0<x<y\land y^n\le x^n.
 \]
+\end{remark*}
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  The lemma can fail only if the inputs satisfy the positive strict order
+  hypothesis while the $n$th-power comparison reverses or collapses.
+
+  \item[Order comparison.]
+  A counterexample preserves $0<x<y$ but has $y^n$ no larger than $x^n$.
+  \[
+    0<x<y
+    \quad\text{and}\quad
+    y^n\le x^n.
+  \]
+  \[
+    0<x<y\land y^n\le x^n.
+  \]
+\end{description}
 \end{remark*}
 \begin{remark*}[Interpretation]
 Integer powers are strictly increasing on the positive real axis.

@@ -1,0 +1,42 @@
+schema_version: lra.semantic-artifact-package/1.0
+artifact_label: def:bound
+created_at: '2026-07-15T00:00:00Z'
+source:
+  repository: wsollers/lra-volume-iii
+  commit: 847f97f7f6fd0bfad133c2ee24e4668df82a1e65
+  file: volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-upper-lower-bounds.tex
+  source_hash: sha256:1bc10db08eda4d7fa0f9ef49fdd94e4982fbd8f76ed135972bc17d59950a1dd8
+governance:
+  repository: wsollers/lra-governance
+  commit: eaabff0e2ec21699a4b62e5d09f50c0400cd6ee9
+  artifact_schema: constitution/schema/semantic-artifact.schema.json
+  package_schema: constitution/schema/semantic-artifact-package.schema.json
+review:
+  status: reviewed
+  reviewer: codex
+  notes: Preserves source TeX unchanged; semantic AST fields use raw-LaTeX placeholders for calibration.
+files:
+  artifact:
+    path: artifact.yaml
+    sha256: b3813365b961cc5ab8964b5a651a907ecc06d2b8aa1060eac4911e7d7b8cb8ab
+  corrected_tex:
+    path: corrected.tex
+    sha256: 29fe401055b834fedbbe4b493f9a9ff9eb1359060af00c4b66e795fd986c5d3e
+  source_patch:
+    path: source.patch
+    sha256: 3a5fb8c989b0e712190cf7f5dbbfe52d4aae216d2c8e38afb38004281cff4de4
+  validation:
+    path: validation.yaml
+    sha256: db734a1551db36d4c690c49d1c2da23cb1e18e19ae04e769f6464f7d3006e3e7
+  source_map:
+    path: source-map.yaml
+    sha256: a0fa341a44697f7f4df4a7ecdd9af00d2371c506957763f38dbece98636f6c39
+  registry_needs:
+    path: registry-needs.yaml
+    sha256: 05595fee2ce4ec120b2d654b949122e986c1029489256da64ecc04e5d93d1d1f
+  formalization_links:
+    path: formalization-links.yaml
+    sha256: 3dbe52956a178bd59d185a996e15133aff602e9141e44220683f23435b348664
+  proof_vault_links:
+    path: proof-vault-links.yaml
+    sha256: 782832a7ca0c472b8bd2f1a2a462888b2d1253bf852396774547583548be001b

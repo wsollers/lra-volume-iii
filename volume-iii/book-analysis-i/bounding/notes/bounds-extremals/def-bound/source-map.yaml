@@ -1,0 +1,45 @@
+schema_version: lra.semantic-artifact-source-map/1.0
+artifact_label: def:bound
+mappings:
+  - field: identity.label
+    source_file: volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-upper-lower-bounds.tex
+    line_start: 18
+    line_end: 18
+    origin: explicit
+    confidence: high
+    notes: Label appears in the primary definition.
+  - field: statement.canonical_latex
+    source_file: volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-upper-lower-bounds.tex
+    line_start: 26
+    line_end: 34
+    origin: explicit
+    confidence: high
+    notes: Standard quantified statement block.
+  - field: logical_forms.predicate_reading
+    source_file: volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-upper-lower-bounds.tex
+    line_start: 36
+    line_end: 43
+    origin: explicit
+    confidence: high
+    notes: Predicate reading block.
+  - field: logical_forms.negation
+    source_file: volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-upper-lower-bounds.tex
+    line_start: 45
+    line_end: 62
+    origin: explicit
+    confidence: high
+    notes: Quantified and predicate negation blocks.
+  - field: failure_analysis
+    source_file: volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-upper-lower-bounds.tex
+    line_start: 64
+    line_end: 91
+    origin: explicit
+    confidence: high
+    notes: Failure modes block.
+  - field: relationships.dependency_edges
+    source_file: volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-upper-lower-bounds.tex
+    line_start: 98
+    line_end: 105
+    origin: explicit
+    confidence: high
+    notes: Dependencies environment.

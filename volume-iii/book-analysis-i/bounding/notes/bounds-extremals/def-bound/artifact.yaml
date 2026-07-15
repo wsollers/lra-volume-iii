@@ -1,0 +1,370 @@
+schema_version: lra.semantic-artifact/1.0
+identity:
+  label: def:bound
+  kind: definition
+  title: Bound
+  canonical_name: Bound
+  status: reviewed
+  atomicity:
+    status: atomic
+    concepts_detected:
+      - one-sided bound
+    owning_concept: one-sided bound
+    split_reason: null
+location:
+  repository: wsollers/lra-volume-iii
+  commit: 847f97f7f6fd0bfad133c2ee24e4668df82a1e65
+  volume: iii
+  book: book-analysis-i
+  chapter: bounding
+  topic: bounds-extremals
+  source_file: volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-upper-lower-bounds.tex
+  source_line_start: 17
+  source_line_end: 105
+  source_hash: sha256:1bc10db08eda4d7fa0f9ef49fdd94e4982fbd8f76ed135972bc17d59950a1dd8
+classification:
+  mathematical_domain: real analysis / order theory
+  artifact_form: predicate definition
+  logical_shape: disjunction of universal one-sided comparisons under nonempty subset context
+  logical_framework: mathematical_vernacular
+  language_level: mixed
+context:
+  - id: ctx_ordered_set
+    kind: ambient_structure
+    name: ordered set
+    ontology_id: struct:ordered-set
+    construction: P = OrderedSet(S, leq)
+    ast:
+      kind: raw_latex
+      latex: P=\mathsf{OrderedSet}(S,\leq)
+parameters:
+  - id: S
+    symbol: S
+    role: carrier set
+    type:
+      kind: raw_latex
+      latex: \mathbf{Set}
+    implicit: false
+  - id: leq
+    symbol: \leq
+    role: order relation
+    type:
+      kind: raw_latex
+      latex: binary relation on S
+    implicit: false
+  - id: A
+    symbol: A
+    role: subset being bounded
+    type:
+      kind: raw_latex
+      latex: A\subseteq S
+    implicit: false
+  - id: b
+    symbol: b
+    role: candidate bound
+    type:
+      kind: raw_latex
+      latex: b\in S
+    implicit: false
+assumptions:
+  - id: A_nonempty
+    kind: nonemptiness
+    latex: A\neq\varnothing
+    ast:
+      kind: raw_latex
+      latex: A\neq\varnothing
+statement:
+  canonical_prose: A bound of a nonempty subset A of an ordered set is a candidate b in the ordered set that compares one-sidedly with every element of A, either as an upper bound or as a lower bound.
+  canonical_latex: A\neq\varnothing\quad\text{and}\quad\bigl[(\forall x\in A)(x\leq b)\ \text{or}\ (\forall x\in A)(b\leq x)\bigr].
+  semantic_ast:
+    kind: and
+    operands:
+      - kind: predicate
+        predicate_id: pred:is-nonempty
+        arguments:
+          - kind: variable
+            binder_id: A
+      - kind: or
+        operands:
+          - kind: forall
+            binder:
+              binder_id: x_upper
+              symbol: x
+              domain:
+                kind: variable
+                binder_id: A
+            restriction: null
+            body:
+              kind: relation
+              relation: \leq
+              left:
+                kind: variable
+                binder_id: x_upper
+              right:
+                kind: variable
+                binder_id: b
+          - kind: forall
+            binder:
+              binder_id: x_lower
+              symbol: x
+              domain:
+                kind: variable
+                binder_id: A
+            restriction: null
+            body:
+              kind: relation
+              relation: \leq
+              left:
+                kind: variable
+                binder_id: b
+              right:
+                kind: variable
+                binder_id: x_lower
+logical_forms:
+  standard_quantified:
+    latex: A\neq\varnothing\quad\text{and}\quad\bigl[(\forall x\in A)(x\leq b)\ \text{or}\ (\forall x\in A)(b\leq x)\bigr].
+    ast:
+      kind: and
+      operands:
+        - kind: predicate
+          predicate_id: pred:is-nonempty
+          arguments:
+            - kind: variable
+              binder_id: A
+        - kind: or
+          operands:
+            - kind: forall
+              binder:
+                binder_id: x_upper
+                symbol: x
+                domain:
+                  kind: variable
+                  binder_id: A
+              restriction: null
+              body:
+                kind: relation
+                relation: \leq
+                left:
+                  kind: variable
+                  binder_id: x_upper
+                right:
+                  kind: variable
+                  binder_id: b
+            - kind: forall
+              binder:
+                binder_id: x_lower
+                symbol: x
+                domain:
+                  kind: variable
+                  binder_id: A
+              restriction: null
+              body:
+                kind: relation
+                relation: \leq
+                left:
+                  kind: variable
+                  binder_id: b
+                right:
+                  kind: variable
+                  binder_id: x_lower
+  predicate_reading:
+    latex: S\in\mathbf{Set},\qquad A\subseteq S,\qquad P=\mathsf{OrderedSet}(S,\leq),\qquad \operatorname{UpperBound}(b,A,P)\lor\operatorname{LowerBound}(b,A,P).
+    ast:
+      kind: or
+      operands:
+        - kind: predicate
+          predicate_id: pred:upper-bound
+          arguments:
+            - kind: variable
+              binder_id: b
+            - kind: variable
+              binder_id: A
+            - kind: variable
+              binder_id: ctx_ordered_set
+        - kind: predicate
+          predicate_id: pred:lower-bound
+          arguments:
+            - kind: variable
+              binder_id: b
+            - kind: variable
+              binder_id: A
+            - kind: variable
+              binder_id: ctx_ordered_set
+    registry_predicates:
+      - pred:upper-bound
+      - pred:lower-bound
+    registry_structures:
+      - struct:ordered-set
+  negation:
+    mechanical:
+      latex: A=\varnothing\quad\text{or}\quad\bigl[(\exists x\in A)(b<x)\ \text{and}\ (\exists y\in A)(y<b)\bigr].
+      ast:
+        kind: or
+        operands:
+          - kind: predicate
+            predicate_id: pred:is-empty
+            arguments:
+              - kind: variable
+                binder_id: A
+          - kind: and
+            operands:
+              - kind: exists
+                binder:
+                  binder_id: x_fail_upper
+                  symbol: x
+                  domain:
+                    kind: variable
+                    binder_id: A
+                restriction: null
+                body:
+                  kind: relation
+                  relation: <
+                  left:
+                    kind: variable
+                    binder_id: b
+                  right:
+                    kind: variable
+                    binder_id: x_fail_upper
+              - kind: exists
+                binder:
+                  binder_id: y_fail_lower
+                  symbol: y
+                  domain:
+                    kind: variable
+                    binder_id: A
+                restriction: null
+                body:
+                  kind: relation
+                  relation: <
+                  left:
+                    kind: variable
+                    binder_id: y_fail_lower
+                  right:
+                    kind: variable
+                    binder_id: b
+    approved_normal_form:
+      latex: A=\varnothing\quad\text{or}\quad\bigl[(\exists x\in A)(b<x)\ \text{and}\ (\exists y\in A)(y<b)\bigr].
+      ast:
+        kind: or
+        operands:
+          - kind: predicate
+            predicate_id: pred:is-empty
+            arguments:
+              - kind: variable
+                binder_id: A
+          - kind: and
+            operands:
+              - kind: exists
+                binder:
+                  binder_id: x_fail_upper
+                  symbol: x
+                  domain:
+                    kind: variable
+                    binder_id: A
+                restriction: null
+                body:
+                  kind: relation
+                  relation: <
+                  left:
+                    kind: variable
+                    binder_id: b
+                  right:
+                    kind: variable
+                    binder_id: x_fail_upper
+              - kind: exists
+                binder:
+                  binder_id: y_fail_lower
+                  symbol: y
+                  domain:
+                    kind: variable
+                    binder_id: A
+                restriction: null
+                body:
+                  kind: relation
+                  relation: <
+                  left:
+                    kind: variable
+                    binder_id: y_fail_lower
+                  right:
+                    kind: variable
+                    binder_id: b
+    normalization_requires:
+      - id: order_strict_dual
+        reason: Uses the strict-order reading of not x <= b as b < x, and not b <= y as y < b, in the ambient ordered-set convention used by the source.
+        dependency_label: def:ordered-set
+  contrapositive: null
+  equivalent_forms: []
+semantics:
+  interpretation: A bound is a one-sided comparison witness; it need not be sharp and need not belong to the set being bounded.
+failure_analysis:
+  modes:
+    - id: empty_set
+      description: The source statement is framed for nonempty sets, so emptiness is recorded as an applicability failure.
+      latex: A=\varnothing
+    - id: neither_upper_nor_lower
+      description: The candidate fails to control the set from either side.
+      latex: (\exists x,y\in A)(b<x\ \text{and}\ y<b)
+relationships:
+  dependency_edges:
+    - kind: dependency
+      target: def:ordered-set
+      display: Ordered Set
+      notes: Ambient ordered structure.
+    - kind: dependency
+      target: def:subset
+      display: Subset
+      notes: A is a subset of S.
+    - kind: dependency
+      target: def:upper-bound
+      display: Upper Bound
+      notes: One side of the disjunctive definition.
+    - kind: dependency
+      target: def:lower-bound
+      display: Lower Bound
+      notes: One side of the disjunctive definition.
+  ontology_edges:
+    - kind: uses_ambient
+      target: struct:ordered-set
+      display: OrderedSet
+      notes: The comparison relation is interpreted through the ordered set.
+  provenance_edges: []
+  proof_edges: []
+notation:
+  used:
+    - \leq
+    - \subseteq
+    - \varnothing
+exposition:
+  interpretation: A bound is deliberately weaker than a sharp extremal value.
+verification:
+  canonical_proof: null
+  formalizations: []
+  external_library_crosswalks: []
+  proof_vault_records: []
+provenance:
+  explicit_from_source:
+    - identity.label
+    - identity.title
+    - statement.canonical_latex
+    - logical_forms.standard_quantified
+    - logical_forms.predicate_reading
+    - logical_forms.negation
+    - failure_analysis
+    - relationships.dependency_edges
+  normalized_from_source:
+    - statement.canonical_prose
+    - semantics.interpretation
+  inferred_from_registry:
+    - context.ctx_ordered_set
+    - logical_forms.predicate_reading.registry_structures
+    - logical_forms.predicate_reading.registry_predicates
+  generated_by_analysis:
+    - identity.atomicity
+    - classification
+  unresolved: []
+governance:
+  governance_repository: wsollers/lra-governance
+  governance_commit: eaabff0e2ec21699a4b62e5d09f50c0400cd6ee9
+  registry_commit: eaabff0e2ec21699a4b62e5d09f50c0400cd6ee9
+  schema_commit: eaabff0e2ec21699a4b62e5d09f50c0400cd6ee9
+  renderer_contract: topic-semantic-audit-loop/1.0
