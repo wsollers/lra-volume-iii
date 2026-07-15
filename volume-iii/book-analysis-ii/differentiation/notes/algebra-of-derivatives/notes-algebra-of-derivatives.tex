@@ -18,8 +18,8 @@ Let $A \subseteq \mathbb{R}$, let $f : A \to \mathbb{R}$, let $c \in A$ be a lim
 
 \begin{remark*}[Standard quantified statement]
 \[
-\operatorname{IsDifferentiable}(f,c) \;\Rightarrow\;
-\operatorname{Derivative}(\alpha f,\,c,\,\alpha f'(c)).
+\operatorname{IsDifferentiable}(f,c,\mathbb{R},\mathbb{R}) \;\Rightarrow\;
+\operatorname{Derivative}(\,\alpha f'(c),\alpha f,\,c,\mathbb{R},\mathbb{R}).
 \]
 \end{remark*}
 
@@ -49,9 +49,9 @@ Let $A \subseteq \mathbb{R}$, let $f, g : A \to \mathbb{R}$, and let $c \in A$ b
 
 \begin{remark*}[Standard quantified statement]
 \[
-\operatorname{IsDifferentiable}(f,c) \;\land\; \operatorname{IsDifferentiable}(g,c)
+\operatorname{IsDifferentiable}(f,c,\mathbb{R},\mathbb{R}) \;\land\; \operatorname{IsDifferentiable}(g,c,\mathbb{R},\mathbb{R})
 \;\Rightarrow\;
-\operatorname{Derivative}(f+g,\,c,\,f'(c)+g'(c)).
+\operatorname{Derivative}(\,f'(c)+g'(c),f+g,\,c,\mathbb{R},\mathbb{R}).
 \]
 \end{remark*}
 
@@ -81,9 +81,9 @@ Let $A \subseteq \mathbb{R}$, let $f, g : A \to \mathbb{R}$, and let $c \in A$ b
 
 \begin{remark*}[Standard quantified statement]
 \[
-\operatorname{IsDifferentiable}(f,c) \;\land\; \operatorname{IsDifferentiable}(g,c)
+\operatorname{IsDifferentiable}(f,c,\mathbb{R},\mathbb{R}) \;\land\; \operatorname{IsDifferentiable}(g,c,\mathbb{R},\mathbb{R})
 \;\Rightarrow\;
-\operatorname{Derivative}(fg,\,c,\,f'(c)g(c)+f(c)g'(c)).
+\operatorname{Derivative}(\,f'(c)g(c)+f(c)g'(c),fg,\,c,\mathbb{R},\mathbb{R}).
 \]
 \end{remark*}
 
@@ -115,7 +115,7 @@ Let $A \subseteq \mathbb{R}$, let $f, g : A \to \mathbb{R}$, and let $c \in A$ b
 
 \begin{remark*}[Standard quantified statement]
 \[
-\operatorname{IsDifferentiable}(f,c) \;\land\; \operatorname{IsDifferentiable}(g,c) \;\land\; g(c)\neq 0
+\operatorname{IsDifferentiable}(f,c,\mathbb{R},\mathbb{R}) \;\land\; \operatorname{IsDifferentiable}(g,c,\mathbb{R},\mathbb{R}) \;\land\; g(c)\neq 0
 \;\Rightarrow\;
 \operatorname{Derivative}\!\left(\tfrac{f}{g},\,c,\,\tfrac{f'(c)g(c)-f(c)g'(c)}{(g(c))^2}\right).
 \]
@@ -152,7 +152,7 @@ Let $A \subseteq \mathbb{R}$, let $f_1, \dots, f_n : A \to \mathbb{R}$, let $\al
 
 \begin{remark*}[Standard quantified statement]
 \[
-\forall i \in \{1,\dots,n\}\;\operatorname{IsDifferentiable}(f_i,c)
+\forall i \in \{1,\dots,n\}\;\operatorname{IsDifferentiable}(f_i,c,\mathbb{R},\mathbb{R})
 \;\Rightarrow\;
 \operatorname{Derivative}\!\left(\textstyle\sum_i \alpha_i f_i,\,c,\,\textstyle\sum_i \alpha_i f_i'(c)\right).
 \]
@@ -187,7 +187,7 @@ f_k'(c) \prod_{\substack{i=1\\i\neq k}}^{n} f_i(c).
 
 \begin{remark*}[Standard quantified statement]
 \[
-\forall i\;\operatorname{IsDifferentiable}(f_i,c)
+\forall i\;\operatorname{IsDifferentiable}(f_i,c,\mathbb{R},\mathbb{R})
 \;\Rightarrow\;
 \operatorname{Derivative}\!\left(\textstyle\prod_i f_i,\;c,\;\textstyle\sum_k f_k'(c)\prod_{i\neq k} f_i(c)\right).
 \]
@@ -197,6 +197,10 @@ f_k'(c) \prod_{\substack{i=1\\i\neq k}}^{n} f_i(c).
 If every factor is differentiable at $c$, then the product is differentiable
 at $c$ and its derivative is the sum obtained by differentiating one factor at
 a time.
+\[
+  f\colon A\to\mathbb{R},\\
+  \operatorname{Derivative}(D,f,a,\mathbb{R},\mathbb{R}).
+\]
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -224,9 +228,9 @@ Let $A \subseteq \mathbb{R}$, let $f : A \to \mathbb{R}$, let $c \in A$ be a lim
 
 \begin{remark*}[Standard quantified statement]
 \[
-\operatorname{IsDifferentiable}(f,c) \;\land\; n \in \mathbb{N}
+\operatorname{IsDifferentiable}(f,c,\mathbb{R},\mathbb{R}) \;\land\; n \in \mathbb{N}
 \;\Rightarrow\;
-\operatorname{Derivative}(f^n,\,c,\,n(f(c))^{n-1}f'(c)).
+\operatorname{Derivative}(\,n(f(c))^{n-1}f'(c),f^n,\,c,\mathbb{R},\mathbb{R}).
 \]
 \end{remark*}
 
@@ -255,7 +259,7 @@ Let $A \subseteq \mathbb{R}$, let $f_1, \dots, f_n : A \to \mathbb{R}$, let $\al
 
 \begin{remark*}[Standard quantified statement]
 \[
-\forall i\;\operatorname{IsDifferentiable}(f_i,c)
+\forall i\;\operatorname{IsDifferentiable}(f_i,c,\mathbb{R},\mathbb{R})
 \;\Rightarrow\;
 \operatorname{Derivative}\!\left(\textstyle\sum_i\alpha_i f_i,\;c,\;\textstyle\sum_i\alpha_i f_i'(c)\right).
 \]
@@ -265,6 +269,10 @@ Let $A \subseteq \mathbb{R}$, let $f_1, \dots, f_n : A \to \mathbb{R}$, let $\al
 If every function in the finite family is differentiable at $c$, then their
 weighted finite sum has derivative equal to the corresponding weighted finite
 sum of derivatives.
+\[
+  f\colon A\to\mathbb{R},\\
+  \operatorname{Derivative}(D,f,a,\mathbb{R},\mathbb{R}).
+\]
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -298,15 +306,19 @@ Let $I \subseteq \mathbb{R}$ be an interval, let $f : I \to \mathbb{R}$, and let
 
 \begin{remark*}[Standard quantified statement]
 \[
-\forall x \in I\;\operatorname{IsDifferentiable}(f,x)
+\forall x \in I\;\operatorname{IsDifferentiable}(f,x,\mathbb{R},\mathbb{R})
 \;\Rightarrow\;
-\forall x \in I\;\operatorname{Derivative}(\alpha f,\,x,\,\alpha f'(x)).
+\forall x \in I\;\operatorname{Derivative}(\,\alpha f'(x),\alpha f,\,x,\mathbb{R},\mathbb{R}).
 \]
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
 Differentiability of $f$ at each point of $I$ implies differentiability of
 $\alpha f$ at each point of $I$, with derivative scaled by $\alpha$ pointwise.
+\[
+  f\colon A\to\mathbb{R},\\
+  \operatorname{Derivative}(D,f,a,\mathbb{R},\mathbb{R}).
+\]
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -334,15 +346,19 @@ Let $I \subseteq \mathbb{R}$ be an interval, and let $f, g : I \to \mathbb{R}$. 
 
 \begin{remark*}[Standard quantified statement]
 \[
-\forall x \in I\;\bigl(\operatorname{IsDifferentiable}(f,x) \land \operatorname{IsDifferentiable}(g,x)\bigr)
+\forall x \in I\;\bigl(\operatorname{IsDifferentiable}(f,x,\mathbb{R},\mathbb{R}) \land \operatorname{IsDifferentiable}(g,x,\mathbb{R},\mathbb{R})\bigr)
 \;\Rightarrow\;
-\forall x \in I\;\operatorname{Derivative}(f+g,\,x,\,f'(x)+g'(x)).
+\forall x \in I\;\operatorname{Derivative}(\,f'(x)+g'(x),f+g,\,x,\mathbb{R},\mathbb{R}).
 \]
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
 If $f$ and $g$ are differentiable at every point of $I$, then $f+g$ is
 differentiable at every point of $I$, and the derivative is computed pointwise.
+\[
+  f\colon A\to\mathbb{R},\\
+  \operatorname{Derivative}(D,f,a,\mathbb{R},\mathbb{R}).
+\]
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -370,9 +386,9 @@ Let $I \subseteq \mathbb{R}$ be an interval, and let $f, g : I \to \mathbb{R}$. 
 
 \begin{remark*}[Standard quantified statement]
 \[
-\forall x \in I\;\bigl(\operatorname{IsDifferentiable}(f,x)\land\operatorname{IsDifferentiable}(g,x)\bigr)
+\forall x \in I\;\bigl(\operatorname{IsDifferentiable}(f,x,\mathbb{R},\mathbb{R})\land\operatorname{IsDifferentiable}(g,x,\mathbb{R},\mathbb{R})\bigr)
 \;\Rightarrow\;
-\forall x \in I\;\operatorname{Derivative}(fg,\,x,\,f'(x)g(x)+f(x)g'(x)).
+\forall x \in I\;\operatorname{Derivative}(\,f'(x)g(x)+f(x)g'(x),fg,\,x,\mathbb{R},\mathbb{R}).
 \]
 \end{remark*}
 
@@ -380,6 +396,10 @@ Let $I \subseteq \mathbb{R}$ be an interval, and let $f, g : I \to \mathbb{R}$. 
 If both factors are differentiable throughout $I$, then their product is
 differentiable throughout $I$, and the product-rule formula holds at each
 point.
+\[
+  f\colon A\to\mathbb{R},\\
+  \operatorname{Derivative}(D,f,a,\mathbb{R},\mathbb{R}).
+\]
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -407,7 +427,7 @@ Let $I \subseteq \mathbb{R}$ be an interval, and let $f, g : I \to \mathbb{R}$. 
 
 \begin{remark*}[Standard quantified statement]
 \[
-\forall x \in I\;\bigl(\operatorname{IsDifferentiable}(f,x)\land\operatorname{IsDifferentiable}(g,x)\land g(x)\neq 0\bigr)
+\forall x \in I\;\bigl(\operatorname{IsDifferentiable}(f,x,\mathbb{R},\mathbb{R})\land\operatorname{IsDifferentiable}(g,x,\mathbb{R},\mathbb{R})\land g(x)\neq 0\bigr)
 \;\Rightarrow\;
 \forall x \in I\;\operatorname{Derivative}\!\left(\tfrac{f}{g},\,x,\,\tfrac{f'(x)g(x)-f(x)g'(x)}{(g(x))^2}\right).
 \]
@@ -417,6 +437,10 @@ Let $I \subseteq \mathbb{R}$ be an interval, and let $f, g : I \to \mathbb{R}$. 
 If the numerator and denominator are differentiable throughout $I$ and the
 denominator never vanishes there, then the quotient is differentiable
 throughout $I$ with the quotient-rule derivative.
+\[
+  f\colon A\to\mathbb{R},\\
+  \operatorname{Derivative}(D,f,a,\mathbb{R},\mathbb{R}).
+\]
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -444,7 +468,7 @@ Let $I \subseteq \mathbb{R}$ be an interval, let $f_1, \dots, f_n : I \to \mathb
 
 \begin{remark*}[Standard quantified statement]
 \[
-\forall i\;\forall x\in I\;\operatorname{IsDifferentiable}(f_i,x)
+\forall i\;\forall x\in I\;\operatorname{IsDifferentiable}(f_i,x,\mathbb{R},\mathbb{R})
 \;\Rightarrow\;
 \forall x\in I\;\operatorname{Derivative}\!\left(\textstyle\sum_i\alpha_i f_i,\,x,\,\textstyle\sum_i\alpha_i f_i'(x)\right).
 \]
@@ -454,6 +478,10 @@ Let $I \subseteq \mathbb{R}$ be an interval, let $f_1, \dots, f_n : I \to \mathb
 If each function in the finite family is differentiable at every point of
 $I$, then the weighted finite sum is differentiable at every point of $I$ with
 the weighted sum of derivatives.
+\[
+  f\colon A\to\mathbb{R},\\
+  \operatorname{Derivative}(D,f,a,\mathbb{R},\mathbb{R}).
+\]
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -483,7 +511,7 @@ Let $I \subseteq \mathbb{R}$ be an interval, and let $f_1, \dots, f_n : I \to \m
 
 \begin{remark*}[Standard quantified statement]
 \[
-\forall i\;\forall x\in I\;\operatorname{IsDifferentiable}(f_i,x)
+\forall i\;\forall x\in I\;\operatorname{IsDifferentiable}(f_i,x,\mathbb{R},\mathbb{R})
 \;\Rightarrow\;
 \forall x\in I\;\operatorname{Derivative}\!\left(\textstyle\prod_i f_i,\;x,\;\textstyle\sum_k f_k'(x)\prod_{i\neq k} f_i(x)\right).
 \]
@@ -493,6 +521,10 @@ Let $I \subseteq \mathbb{R}$ be an interval, and let $f_1, \dots, f_n : I \to \m
 If every factor is differentiable at every point of $I$, then the finite
 product is differentiable at every point of $I$, with one summand for each
 choice of the differentiated factor.
+\[
+  f\colon A\to\mathbb{R},\\
+  \operatorname{Derivative}(D,f,a,\mathbb{R},\mathbb{R}).
+\]
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -520,9 +552,9 @@ Let $I \subseteq \mathbb{R}$ be an interval, let $f : I \to \mathbb{R}$, and let
 
 \begin{remark*}[Standard quantified statement]
 \[
-\forall x\in I\;\operatorname{IsDifferentiable}(f,x) \;\land\; n\in\mathbb{N}
+\forall x\in I\;\operatorname{IsDifferentiable}(f,x,\mathbb{R},\mathbb{R}) \;\land\; n\in\mathbb{N}
 \;\Rightarrow\;
-\forall x\in I\;\operatorname{Derivative}(f^n,\,x,\,n(f(x))^{n-1}f'(x)).
+\forall x\in I\;\operatorname{Derivative}(\,n(f(x))^{n-1}f'(x),f^n,\,x,\mathbb{R},\mathbb{R}).
 \]
 \end{remark*}
 
@@ -530,6 +562,10 @@ Let $I \subseteq \mathbb{R}$ be an interval, let $f : I \to \mathbb{R}$, and let
 If $f$ is differentiable at every point of $I$, then each integer power
 $f^n$ is differentiable at every point of $I$, with derivative given by the
 integer power rule.
+\[
+  f\colon A\to\mathbb{R},\\
+  \operatorname{Derivative}(D,f,a,\mathbb{R},\mathbb{R}).
+\]
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -557,7 +593,7 @@ Let $I \subseteq \mathbb{R}$ be an interval, let $f_1, \dots, f_n : I \to \mathb
 
 \begin{remark*}[Standard quantified statement]
 \[
-\forall i\;\forall x\in I\;\operatorname{IsDifferentiable}(f_i,x)
+\forall i\;\forall x\in I\;\operatorname{IsDifferentiable}(f_i,x,\mathbb{R},\mathbb{R})
 \;\Rightarrow\;
 \forall x\in I\;\operatorname{Derivative}\!\left(\textstyle\sum_i\alpha_i f_i,\;x,\;\textstyle\sum_i\alpha_i f_i'(x)\right).
 \]
@@ -566,6 +602,10 @@ Let $I \subseteq \mathbb{R}$ be an interval, let $f_1, \dots, f_n : I \to \mathb
 \begin{remark*}[Predicate reading]
 If every member of the finite family is differentiable on $I$, then their
 finite linear combination differentiates term by term on $I$.
+\[
+  f\colon A\to\mathbb{R},\\
+  \operatorname{Derivative}(D,f,a,\mathbb{R},\mathbb{R}).
+\]
 \end{remark*}
 
 \begin{remark*}[Interpretation]

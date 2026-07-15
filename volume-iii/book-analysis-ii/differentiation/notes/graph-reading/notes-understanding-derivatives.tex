@@ -103,7 +103,7 @@ then $f$ is constant on $I$.
 
 \begin{remark*}[Standard quantified statement]
 \[
-\forall x \in (a,b)\;\operatorname{Derivative}(f,x,0)
+\forall x \in (a,b)\;\operatorname{Derivative}(0,f,x,\mathbb{R},\mathbb{R})
 \;\Rightarrow\;
 \exists C \in \mathbb{R}\;\forall x \in I\;(f(x) = C).
 \]
@@ -112,13 +112,17 @@ then $f$ is constant on $I$.
 \begin{remark*}[Predicate reading]
 If the derivative of $f$ is zero at every interior point of the interval,
 then $f$ is constant on the whole closed interval.
+\[
+  f\colon A\to\mathbb{R},\\
+  \operatorname{Derivative}(D,f,a,\mathbb{R},\mathbb{R}).
+\]
 \end{remark*}
 
 \begin{remark*}[Interpretation]
 \[
 \lnot\bigl(\exists C \in \mathbb{R}\;\forall x \in I\;(f(x)=C)\bigr)
 \;\Rightarrow\;
-\exists x \in (a,b)\;\lnot\operatorname{Derivative}(f,x,0).
+\exists x \in (a,b)\;\lnot\operatorname{Derivative}(0,f,x,\mathbb{R},\mathbb{R}).
 \]
 If $f$ is not constant on $I$, then $f'$ is not identically zero on $(a,b)$.
 
@@ -162,6 +166,10 @@ then there exists $C \in \mathbb{R}$ such that $f(x) = g(x) + C$ for all $x \in 
 \begin{remark*}[Predicate reading]
 If two differentiable functions have equal derivatives at every interior
 point of the interval, then their difference is constant on the interval.
+\[
+  f\colon A\to\mathbb{R},\\
+  \operatorname{Derivative}(D,f,a,\mathbb{R},\mathbb{R}).
+\]
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -229,8 +237,8 @@ Note carefully: $f' \geq 0$ characterises \emph{nondecreasing} (weak), not \emph
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[thm:mean-value-theorem]{Theorem: Mean Value Theorem}
   \item \hyperref[def:derivative-at-a-point]{Definition: Derivative at a Point}
+  \item \hyperref[thm:mean-value-theorem]{Theorem: Mean Value Theorem}
 \end{itemize}
 \end{dependencies}
 
@@ -294,7 +302,7 @@ f(x) > f(c) \quad \text{for all } x \in I \text{ with } c < x < c + \delta.
 
 \begin{remark*}[Standard quantified statement]
 \[
-\operatorname{Derivative}(f,c,L) \;\land\; L > 0
+\operatorname{Derivative}(L,f,c,\mathbb{R},\mathbb{R}) \;\land\; L > 0
 \;\Rightarrow\;
 \exists \delta > 0\;\forall x \in I\;
 \bigl(c-\delta < x < c \Rightarrow f(x) < f(c)\bigr)
@@ -352,7 +360,7 @@ f(x) < f(c) \quad \text{for all } x \in I \text{ with } c < x < c + \delta.
 
 \begin{remark*}[Standard quantified statement]
 \[
-\operatorname{Derivative}(f,c,L) \;\land\; L < 0
+\operatorname{Derivative}(L,f,c,\mathbb{R},\mathbb{R}) \;\land\; L < 0
 \;\Rightarrow\;
 \exists \delta > 0\;\forall x \in I\;
 \bigl(c-\delta < x < c \Rightarrow f(x) > f(c)\bigr)
@@ -414,13 +422,19 @@ then $f$ has a relative maximum at $c$.
 \forall x\in(c-\delta,c)\;(f'(x)\geq 0)
 \;\land\;
 \forall x\in(c,c+\delta)\;(f'(x)\leq 0)\bigr]\\
-&\quad\Rightarrow\; \operatorname{IsLocalMaximum}(f,c).
+&\quad\Rightarrow\; \operatorname{IsLocalMaximum}(f,c,A).
 \end{align*}
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
 If $f'$ is nonnegative just to the left of $c$ and nonpositive just to the
 right of $c$, then $c$ is a local maximum of $f$.
+\[
+  f'\colon A\to\mathbb{R},\\
+
+  f\colon A\to\mathbb{R},\\
+  \operatorname{Derivative}(D,f,a,\mathbb{R},\mathbb{R}).
+\]
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -429,9 +443,9 @@ If the function is nondecreasing immediately to the left of $c$ and nonincreasin
 
 \begin{dependencies}
 \begin{itemize}
+  \item \hyperref[def:relative-maximum]{Definition: Relative Maximum}
   \item \hyperref[thm:nondecreasing-iff-nonneg-derivative]{Theorem: Nondecreasing Iff Nonnegative Derivative}
   \item \hyperref[thm:nonincreasing-iff-nonpos-derivative]{Theorem: Nonincreasing Iff Nonpositive Derivative}
-  \item \hyperref[def:relative-maximum]{Definition: Relative Maximum}
 \end{itemize}
 \end{dependencies}
 
@@ -458,13 +472,19 @@ then $f$ has a relative minimum at $c$.
 \forall x\in(c-\delta,c)\;(f'(x)\leq 0)
 \;\land\;
 \forall x\in(c,c+\delta)\;(f'(x)\geq 0)\bigr]\\
-&\quad\Rightarrow\; \operatorname{IsLocalMinimum}(f,c).
+&\quad\Rightarrow\; \operatorname{IsLocalMinimum}(f,c,A).
 \end{align*}
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
 If $f'$ is nonpositive just to the left of $c$ and nonnegative just to the
 right of $c$, then $c$ is a local minimum of $f$.
+\[
+  f'\colon A\to\mathbb{R},\\
+
+  f\colon A\to\mathbb{R},\\
+  \operatorname{Derivative}(D,f,a,\mathbb{R},\mathbb{R}).
+\]
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -473,7 +493,7 @@ If the derivative changes from nonpositive to nonnegative at $c$, the graph fall
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[thm:first-derivative-test-maximum]{Theorem: First Derivative Test: Relative Maximum}
   \item \hyperref[def:relative-minimum]{Definition: Relative Minimum}
+  \item \hyperref[thm:first-derivative-test-maximum]{Theorem: First Derivative Test: Relative Maximum}
 \end{itemize}
 \end{dependencies}

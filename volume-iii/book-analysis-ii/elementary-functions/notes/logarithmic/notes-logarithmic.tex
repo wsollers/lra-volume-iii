@@ -74,6 +74,36 @@ Equivalently, $\ln x$ is defined by the integral
 \]
 \end{remark*}
 
+\begin{remark*}[Negation predicate reading]
+\[
+\neg(y=\ln x)
+  \;\iff\;
+  x \leq 0 \;\vee\; (x>0 \wedge y\neq\ln x).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  The negated statement isolates the obstruction to the asserted condition.
+
+  \item[\neq-condition.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\neg(y=\ln x)
+  \;\iff\;
+  x \leq 0 \;\vee\; (x>0 \wedge y\neq\ln x).
+  \]
+  \[
+\neg(y=\ln x)
+  \;\iff\;
+  x \leq 0 \;\vee\; (x>0 \wedge y\neq\ln x).
+  \]
+\end{description}
+\end{remark*}
+
+
+
 \begin{remark*}[Interpretation]
 The inverse-of-exponential definition requires $e^x$ to be
 established first. The integral definition is self-contained and
@@ -142,6 +172,42 @@ the binary logarithm is $\log_2$.
   \left|\frac{\ln(1+x)}{x}-1\right|\geq\varepsilon_0.
 \]
 \end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\neg\left(\lim_{x\to 0}\frac{\ln(1+x)}{x}=1\right)
+  \;\iff\;
+  \exists\varepsilon_0>0,\;\forall\delta>0,\;\exists x:\;
+  0<|x|<\delta \;\wedge\;
+  \left|\frac{\ln(1+x)}{x}-1\right|\geq\varepsilon_0.
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  The negated statement isolates the obstruction to the asserted condition.
+
+  \item[\(\exists\)-condition.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\neg\left(\lim_{x\to 0}\frac{\ln(1+x)}{x}=1\right)
+  \;\iff\;
+  \exists\varepsilon_0>0,\;\forall\delta>0,\;\exists x:\;
+  0<|x|<\delta \;\wedge\;
+  \left|\frac{\ln(1+x)}{x}-1\right|\geq\varepsilon_0.
+  \]
+  \[
+\neg\left(\lim_{x\to 0}\frac{\ln(1+x)}{x}=1\right)
+  \;\iff\;
+  \exists\varepsilon_0>0,\;\forall\delta>0,\;\exists x:\;
+  0<|x|<\delta \;\wedge\;
+  \left|\frac{\ln(1+x)}{x}-1\right|\geq\varepsilon_0.
+  \]
+\end{description}
+\end{remark*}
+
+
 
 \begin{remark*}[Interpretation]
 The fundamental exponential limit $\lim(e^x-1)/x = 1$ and the
@@ -217,6 +283,39 @@ For every $r > 0$:
 \]
 \end{remark*}
 
+\begin{remark*}[Negation predicate reading]
+\[
+\neg\left(\lim_{x\to\infty}\frac{\ln x}{x^r}=0\right)
+  \;\iff\;
+  \exists\varepsilon_0>0,\;\forall M>0,\;\exists x>M:\;
+  x^{-r}|\ln x|\geq\varepsilon_0.
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  The negated statement isolates the obstruction to the asserted condition.
+
+  \item[\(\exists\)-condition.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\neg\left(\lim_{x\to\infty}\frac{\ln x}{x^r}=0\right)
+  \;\iff\;
+  \exists\varepsilon_0>0,\;\forall M>0,\;\exists x>M:\;
+  x^{-r}|\ln x|\geq\varepsilon_0.
+  \]
+  \[
+\neg\left(\lim_{x\to\infty}\frac{\ln x}{x^r}=0\right)
+  \;\iff\;
+  \exists\varepsilon_0>0,\;\forall M>0,\;\exists x>M:\;
+  x^{-r}|\ln x|\geq\varepsilon_0.
+  \]
+\end{description}
+\end{remark*}
+
+
+
 \begin{remark*}[Interpretation]
 For the first: substitute $x = e^t$ to get $t/e^{rt} \to 0$ by
 exponential dominance. For the second: substitute $x = 1/t$ and
@@ -235,15 +334,10 @@ integrability arguments near $0$.
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:natural-logarithm]{Natural Logarithm}
-  \item \hyperref[prop:limit-exponential-fundamental]{Fundamental Exponential Limit}
-  \item \hyperref[def:limit-function]{Function Limit}
-\end{itemize}
-
-
-\begin{itemize}
-  \item \hyperref[def:natural-logarithm]{Natural Logarithm}
   \item \hyperref[def:power-function]{Power Function}
-  \item \hyperref[prop:exponential-dominates-power]{Exponential Dominates Every Power}
+  \item \hyperref[def:limit-function]{Function Limit}
   \item \hyperref[def:limit-at-infinity]{Limit at Infinity}
+  \item \hyperref[prop:limit-exponential-fundamental]{Fundamental Exponential Limit}
+  \item \hyperref[prop:exponential-dominates-power]{Exponential Dominates Every Power}
 \end{itemize}
 \end{dependencies}

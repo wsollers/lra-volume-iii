@@ -59,36 +59,31 @@ x_n \not\to L
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{ConvergesTo}(x_n,L)
+\neg\operatorname{ConvergesTo}(x_n,L,\mathbb R)
 \;:=\;
 \exists \varepsilon > 0 \;\forall N \in \mathbb{N} \;\exists n \ge N
 \;\bigl(|x_n - L| \ge \varepsilon\bigr).
 \]
 \end{remark*}
-
 \begin{remark*}[Failure modes]
 \begin{description}
   \item[Exposition.]
-Failure of convergence to a fixed $L$ means that some positive tolerance
-cannot be controlled on any tail. The escaped terms may oscillate, drift
-monotonically away, or grow without bound, but all such behavior is
-captured by the same persistent-tolerance obstruction.
-\end{description}
-\end{remark*}
-
-\begin{remark*}[Failure modes]
-\begin{description}
-  \item[Exposition.]
-The negation decomposes into a single structural obstruction:
+Failure is witnessed by the negated condition displayed above.
+  \item[\operatorname{ConvergesTo}.]
 \[
-\underbrace{\exists \varepsilon > 0}_{\text{a fixed tolerance}}
-\;\underbrace{\forall N \in \mathbb{N}}_{\text{no tail suffices}}
-\;\underbrace{\exists n \ge N}_{\text{terms escape infinitely often}}
-\;\underbrace{|x_n - L| \ge \varepsilon}_{\text{outside the target interval}}.
+\begin{aligned}
+x_n \not\to L
+\;\Longleftrightarrow\;
+&\;\exists \varepsilon > 0 \;\forall N \in \mathbb{N} \;\exists n \ge N\\
+&\quad\bigl(|x_n - L| \ge \varepsilon\bigr).
+\end{aligned}
 \]
-The sequence fails to converge to $L$ not by drifting away once, but
-by returning outside the $\varepsilon$-interval infinitely often regardless
-of how far along the tail one looks.
+\[
+\neg\operatorname{ConvergesTo}(x_n,L,\mathbb R)
+\;:=\;
+\exists \varepsilon > 0 \;\forall N \in \mathbb{N} \;\exists n \ge N
+\;\bigl(|x_n - L| \ge \varepsilon\bigr).
+\]
 \end{description}
 \end{remark*}
 
@@ -175,30 +170,25 @@ x_n \not\to L
 \;\bigl(x_n \notin I_\varepsilon(L)\bigr).
 \]
 \end{remark*}
-
 \begin{remark*}[Failure modes]
 \begin{description}
   \item[Exposition.]
-Failure of the centered interval formulation is exactly failure to trap a
-tail in every centered interval about $L$. Different examples may escape by
-oscillation, by monotone drift, or by unbounded growth, but the formal
-failure is always the existence of one interval that every tail
-misses at least once.
-\end{description}
-\end{remark*}
-
-\begin{remark*}[Failure modes]
-\begin{description}
-  \item[Exposition.]
+Failure is witnessed by the negated condition displayed above.
+  \item[\operatorname{ConvergesTo}.]
 \[
-\underbrace{\exists \varepsilon > 0}_{\text{a fixed centered interval}}
-\;\underbrace{\forall N \in \mathbb{N}}_{\text{no tail suffices}}
-\;\underbrace{\exists n \ge N}_{\text{terms escape infinitely often}}
-\;\underbrace{x_n \notin I_\varepsilon(L)}_{\text{outside every candidate interval}}.
+\begin{aligned}
+x_n \not\to L
+\;\Longleftrightarrow\;
+&\;\exists \varepsilon > 0 \;\forall N \in \mathbb{N} \;\exists n \ge N\\
+&\quad\bigl(x_n \notin I_\varepsilon(L)\bigr).
+\end{aligned}
 \]
-The sequence fails to converge to $L$ precisely when some centered interval
-of $L$ contains only finitely many terms: infinitely many terms lie
-permanently outside it.
+\[
+\neg\operatorname{ConvergesTo}(x_n,L,\mathbb R)
+\;:=\;
+\exists \varepsilon > 0 \;\forall N \in \mathbb{N} \;\exists n \ge N
+\;\bigl(x_n \notin I_\varepsilon(L)\bigr).
+\]
 \end{description}
 \end{remark*}
 
@@ -304,7 +294,6 @@ the sense of \hyperref[def:m-tail]{Definition~\ref*{def:m-tail}}.
   \item \hyperref[def:convergent-sequence-neighborhood]{Convergence --- Centered Interval Formulation}
 \end{itemize}
 \end{dependencies}
-
 
 
 

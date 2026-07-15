@@ -35,6 +35,8 @@ Let \(I\subseteq\mathbb{R}\) be an open interval, let \(f:I\to\mathbb{R}\) be of
 
 \begin{remark*}[Predicate reading]
 \[
+  f'\colon A\to\mathbb{R},\\
+
 \exists U\ni c\;\exists V\ni f(c)\;
 \bigl(
 \operatorname{Bijective}(f|_U,U,V)
@@ -55,6 +57,16 @@ The hypotheses fail in different ways.
   \item If \(f'(c)=0\), the inverse may exist without being differentiable. The map \(f(x)=x^3\) is globally bijective, but its inverse \(x\mapsto x^{1/3}\) is not differentiable at \(0\).
   \item If \(f'\) is not continuous at \(c\), the sign of \(f'\) need not persist near \(c\). Mere differentiability with \(f'(c)\neq 0\) is therefore not enough to force local monotonicity or local invertibility.
 \end{itemize}
+
+
+  \item[\operatorname{IsDifferentiable}.]
+  The displayed obstruction is the predicate-level failure condition.
+  \[
+  \exists\varepsilon_0>0\;\forall\delta>0\;\exists x\in A\;\bigl(0<|x-a|<\delta\land |Q_f(x)-D|\ge\varepsilon_0\bigr).
+  \]
+  \[
+  \neg\,\operatorname{IsDifferentiable}(f,a,\mathbb{R},\mathbb{R}).
+  \]
 \end{description}
 \end{remark*}
 

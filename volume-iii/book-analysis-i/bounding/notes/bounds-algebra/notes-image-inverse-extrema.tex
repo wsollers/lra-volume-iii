@@ -173,6 +173,24 @@ P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\\
 The equality can fail if $f$ is not increasing, if $\sup A$ is not in the
 domain, or if the endpoint value of $f$ is not approached by values $f(a)$ with
 $a\in A$.
+
+
+  \item[\operatorname{LeastUpperBound} / \operatorname{OrderPreserving}.]
+  \[
+\sup f(A)\neq f(\sup A)
+\]
+\[
+\begin{aligned}
+&A\subseteq I,\qquad f\colon I\to\mathbb{R},\qquad
+B=f(A)=\{f(a):a\in A\},\\
+&P_I=\mathsf{OrderedSet}(I,\leq),\qquad
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\\
+&\operatorname{LeastUpperBound}(s,A,P_I)\land
+\operatorname{OrderPreserving}(f,P_I,P_{\mathbb{R}})\land
+\operatorname{IsContinuous}(f,s,I,\mathbb{R})\land
+\neg\operatorname{LeastUpperBound}(f(s),B,P_{\mathbb{R}}).
+\end{aligned}
+\]
 \end{description}
 \end{remark*}
 
@@ -182,6 +200,24 @@ $a\in A$.
 Increasingness gives $f(a)\leq f(s)$ for every $a\in A$.  The defining
 approximation property of the supremum gives points of $A$ arbitrarily close
 to $s$ from below, and continuity at $s$ makes their images approach $f(s)$.
+
+
+  \item[\operatorname{LeastUpperBound} / \operatorname{OrderPreserving}.]
+  \[
+\sup f(A)\neq f(\sup A)
+\]
+\[
+\begin{aligned}
+&A\subseteq I,\qquad f\colon I\to\mathbb{R},\qquad
+B=f(A)=\{f(a):a\in A\},\\
+&P_I=\mathsf{OrderedSet}(I,\leq),\qquad
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\\
+&\operatorname{LeastUpperBound}(s,A,P_I)\land
+\operatorname{OrderPreserving}(f,P_I,P_{\mathbb{R}})\land
+\operatorname{IsContinuous}(f,s,I,\mathbb{R})\land
+\neg\operatorname{LeastUpperBound}(f(s),B,P_{\mathbb{R}}).
+\end{aligned}
+\]
 \end{description}
 \end{remark*}
 
@@ -266,6 +302,24 @@ P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\\
 \item[Exposition.]
 The equality can fail if $f$ is not increasing, if $\inf A$ is not in the
 domain, or if the endpoint value is not reached as a limit of image values.
+
+
+  \item[\operatorname{GreatestLowerBound} / \operatorname{OrderPreserving}.]
+  \[
+\inf f(A)\neq f(\inf A)
+\]
+\[
+\begin{aligned}
+&A\subseteq I,\qquad f\colon I\to\mathbb{R},\qquad
+B=f(A)=\{f(a):a\in A\},\\
+&P_I=\mathsf{OrderedSet}(I,\leq),\qquad
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\\
+&\operatorname{GreatestLowerBound}(t,A,P_I)\land
+\operatorname{OrderPreserving}(f,P_I,P_{\mathbb{R}})\land
+\operatorname{IsContinuous}(f,t,I,\mathbb{R})\land
+\neg\operatorname{GreatestLowerBound}(f(t),B,P_{\mathbb{R}}).
+\end{aligned}
+\]
 \end{description}
 \end{remark*}
 
@@ -274,6 +328,24 @@ domain, or if the endpoint value is not reached as a limit of image values.
 \item[Exposition.]
 Increasingness gives $f(t)\leq f(a)$ for every $a\in A$.  Approximation of the
 infimum from above and continuity at $t$ make this lower bound sharp.
+
+
+  \item[\operatorname{GreatestLowerBound} / \operatorname{OrderPreserving}.]
+  \[
+\inf f(A)\neq f(\inf A)
+\]
+\[
+\begin{aligned}
+&A\subseteq I,\qquad f\colon I\to\mathbb{R},\qquad
+B=f(A)=\{f(a):a\in A\},\\
+&P_I=\mathsf{OrderedSet}(I,\leq),\qquad
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\\
+&\operatorname{GreatestLowerBound}(t,A,P_I)\land
+\operatorname{OrderPreserving}(f,P_I,P_{\mathbb{R}})\land
+\operatorname{IsContinuous}(f,t,I,\mathbb{R})\land
+\neg\operatorname{GreatestLowerBound}(f(t),B,P_{\mathbb{R}}).
+\end{aligned}
+\]
 \end{description}
 \end{remark*}
 
@@ -358,6 +430,24 @@ P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\\
 \item[Exposition.]
 The equality can fail if $f$ is not decreasing, if $\inf A$ is outside the
 domain, or if $f$ is not continuous at the lower endpoint.
+
+
+  \item[\operatorname{GreatestLowerBound} / \operatorname{OrderReversing}.]
+  \[
+\sup f(A)\neq f(\inf A)
+\]
+\[
+\begin{aligned}
+&A\subseteq I,\qquad f\colon I\to\mathbb{R},\qquad
+B=f(A)=\{f(a):a\in A\},\\
+&P_I=\mathsf{OrderedSet}(I,\leq),\qquad
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\\
+&\operatorname{GreatestLowerBound}(t,A,P_I)\land
+\operatorname{OrderReversing}(f,P_I,P_{\mathbb{R}})\land
+\operatorname{IsContinuous}(f,t,I,\mathbb{R})\land
+\neg\operatorname{LeastUpperBound}(f(t),B,P_{\mathbb{R}}).
+\end{aligned}
+\]
 \end{description}
 \end{remark*}
 
@@ -366,6 +456,24 @@ domain, or if $f$ is not continuous at the lower endpoint.
 \item[Exposition.]
 Decreasingness gives $f(a)\leq f(t)$ for every $a\in A$.  Approximation of
 $t$ from above and continuity at $t$ make this upper bound sharp.
+
+
+  \item[\operatorname{GreatestLowerBound} / \operatorname{OrderReversing}.]
+  \[
+\sup f(A)\neq f(\inf A)
+\]
+\[
+\begin{aligned}
+&A\subseteq I,\qquad f\colon I\to\mathbb{R},\qquad
+B=f(A)=\{f(a):a\in A\},\\
+&P_I=\mathsf{OrderedSet}(I,\leq),\qquad
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\\
+&\operatorname{GreatestLowerBound}(t,A,P_I)\land
+\operatorname{OrderReversing}(f,P_I,P_{\mathbb{R}})\land
+\operatorname{IsContinuous}(f,t,I,\mathbb{R})\land
+\neg\operatorname{LeastUpperBound}(f(t),B,P_{\mathbb{R}}).
+\end{aligned}
+\]
 \end{description}
 \end{remark*}
 
@@ -451,6 +559,24 @@ P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\\
 \item[Exposition.]
 The equality can fail if $f$ is not decreasing, if $\sup A$ is outside the
 domain, or if $f$ is not continuous at the upper endpoint.
+
+
+  \item[\operatorname{LeastUpperBound} / \operatorname{OrderReversing}.]
+  \[
+\inf f(A)\neq f(\sup A)
+\]
+\[
+\begin{aligned}
+&A\subseteq I,\qquad f\colon I\to\mathbb{R},\qquad
+B=f(A)=\{f(a):a\in A\},\\
+&P_I=\mathsf{OrderedSet}(I,\leq),\qquad
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\\
+&\operatorname{LeastUpperBound}(s,A,P_I)\land
+\operatorname{OrderReversing}(f,P_I,P_{\mathbb{R}})\land
+\operatorname{IsContinuous}(f,s,I,\mathbb{R})\land
+\neg\operatorname{GreatestLowerBound}(f(s),B,P_{\mathbb{R}}).
+\end{aligned}
+\]
 \end{description}
 \end{remark*}
 
@@ -459,6 +585,24 @@ domain, or if $f$ is not continuous at the upper endpoint.
 \item[Exposition.]
 Decreasingness gives $f(s)\leq f(a)$ for every $a\in A$.  Approximation of
 $s$ from below and continuity at $s$ make this lower bound sharp.
+
+
+  \item[\operatorname{LeastUpperBound} / \operatorname{OrderReversing}.]
+  \[
+\inf f(A)\neq f(\sup A)
+\]
+\[
+\begin{aligned}
+&A\subseteq I,\qquad f\colon I\to\mathbb{R},\qquad
+B=f(A)=\{f(a):a\in A\},\\
+&P_I=\mathsf{OrderedSet}(I,\leq),\qquad
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\\
+&\operatorname{LeastUpperBound}(s,A,P_I)\land
+\operatorname{OrderReversing}(f,P_I,P_{\mathbb{R}})\land
+\operatorname{IsContinuous}(f,s,I,\mathbb{R})\land
+\neg\operatorname{GreatestLowerBound}(f(s),B,P_{\mathbb{R}}).
+\end{aligned}
+\]
 \end{description}
 \end{remark*}
 
@@ -544,6 +688,24 @@ P_I=\mathsf{OrderedSet}(I,\leq),\\
 \item[Exposition.]
 The formula can fail if the inverse is not increasing, if $\sup B$ is outside
 the codomain set $J$, or if the inverse is not continuous at $\sup B$.
+
+
+  \item[\operatorname{LeastUpperBound} / \operatorname{OrderPreserving}.]
+  \[
+\sup f^{-1}(B)\neq f^{-1}(\sup B)
+\]
+\[
+\begin{aligned}
+&B\subseteq J,\qquad g=f^{-1},\qquad g\colon J\to I,\qquad
+C=g(B)=\{g(b):b\in B\},\\
+&P_J=\mathsf{OrderedSet}(J,\leq),\qquad
+P_I=\mathsf{OrderedSet}(I,\leq),\\
+&\operatorname{LeastUpperBound}(u,B,P_J)\land
+\operatorname{OrderPreserving}(g,P_J,P_I)\land
+\operatorname{IsContinuous}(g,u,J,I)\land
+\neg\operatorname{LeastUpperBound}(g(u),C,P_I).
+\end{aligned}
+\]
 \end{description}
 \end{remark*}
 
@@ -551,6 +713,24 @@ the codomain set $J$, or if the inverse is not continuous at $\sup B$.
 \begin{description}
 \item[Exposition.]
 Apply the increasing image supremum theorem to $g=f^{-1}$ and the set $B$.
+
+
+  \item[\operatorname{LeastUpperBound} / \operatorname{OrderPreserving}.]
+  \[
+\sup f^{-1}(B)\neq f^{-1}(\sup B)
+\]
+\[
+\begin{aligned}
+&B\subseteq J,\qquad g=f^{-1},\qquad g\colon J\to I,\qquad
+C=g(B)=\{g(b):b\in B\},\\
+&P_J=\mathsf{OrderedSet}(J,\leq),\qquad
+P_I=\mathsf{OrderedSet}(I,\leq),\\
+&\operatorname{LeastUpperBound}(u,B,P_J)\land
+\operatorname{OrderPreserving}(g,P_J,P_I)\land
+\operatorname{IsContinuous}(g,u,J,I)\land
+\neg\operatorname{LeastUpperBound}(g(u),C,P_I).
+\end{aligned}
+\]
 \end{description}
 \end{remark*}
 
@@ -636,6 +816,24 @@ P_I=\mathsf{OrderedSet}(I,\leq),\\
 \item[Exposition.]
 The formula can fail if the inverse is not increasing, if $\inf B$ is outside
 the codomain set $J$, or if the inverse is not continuous at $\inf B$.
+
+
+  \item[\operatorname{GreatestLowerBound} / \operatorname{OrderPreserving}.]
+  \[
+\inf f^{-1}(B)\neq f^{-1}(\inf B)
+\]
+\[
+\begin{aligned}
+&B\subseteq J,\qquad g=f^{-1},\qquad g\colon J\to I,\qquad
+C=g(B)=\{g(b):b\in B\},\\
+&P_J=\mathsf{OrderedSet}(J,\leq),\qquad
+P_I=\mathsf{OrderedSet}(I,\leq),\\
+&\operatorname{GreatestLowerBound}(v,B,P_J)\land
+\operatorname{OrderPreserving}(g,P_J,P_I)\land
+\operatorname{IsContinuous}(g,v,J,I)\land
+\neg\operatorname{GreatestLowerBound}(g(v),C,P_I).
+\end{aligned}
+\]
 \end{description}
 \end{remark*}
 
@@ -643,6 +841,24 @@ the codomain set $J$, or if the inverse is not continuous at $\inf B$.
 \begin{description}
 \item[Exposition.]
 Apply the increasing image infimum theorem to $g=f^{-1}$ and the set $B$.
+
+
+  \item[\operatorname{GreatestLowerBound} / \operatorname{OrderPreserving}.]
+  \[
+\inf f^{-1}(B)\neq f^{-1}(\inf B)
+\]
+\[
+\begin{aligned}
+&B\subseteq J,\qquad g=f^{-1},\qquad g\colon J\to I,\qquad
+C=g(B)=\{g(b):b\in B\},\\
+&P_J=\mathsf{OrderedSet}(J,\leq),\qquad
+P_I=\mathsf{OrderedSet}(I,\leq),\\
+&\operatorname{GreatestLowerBound}(v,B,P_J)\land
+\operatorname{OrderPreserving}(g,P_J,P_I)\land
+\operatorname{IsContinuous}(g,v,J,I)\land
+\neg\operatorname{GreatestLowerBound}(g(v),C,P_I).
+\end{aligned}
+\]
 \end{description}
 \end{remark*}
 
@@ -728,6 +944,24 @@ P_I=\mathsf{OrderedSet}(I,\leq),\\
 \item[Exposition.]
 The formula can fail if the inverse is not decreasing, if $\inf B$ is outside
 $J$, or if the inverse is not continuous at $\inf B$.
+
+
+  \item[\operatorname{GreatestLowerBound} / \operatorname{OrderReversing}.]
+  \[
+\sup f^{-1}(B)\neq f^{-1}(\inf B)
+\]
+\[
+\begin{aligned}
+&B\subseteq J,\qquad g=f^{-1},\qquad g\colon J\to I,\qquad
+C=g(B)=\{g(b):b\in B\},\\
+&P_J=\mathsf{OrderedSet}(J,\leq),\qquad
+P_I=\mathsf{OrderedSet}(I,\leq),\\
+&\operatorname{GreatestLowerBound}(v,B,P_J)\land
+\operatorname{OrderReversing}(g,P_J,P_I)\land
+\operatorname{IsContinuous}(g,v,J,I)\land
+\neg\operatorname{LeastUpperBound}(g(v),C,P_I).
+\end{aligned}
+\]
 \end{description}
 \end{remark*}
 
@@ -735,6 +969,24 @@ $J$, or if the inverse is not continuous at $\inf B$.
 \begin{description}
 \item[Exposition.]
 Apply the decreasing image infimum-to-supremum theorem to $g=f^{-1}$ and $B$.
+
+
+  \item[\operatorname{GreatestLowerBound} / \operatorname{OrderReversing}.]
+  \[
+\sup f^{-1}(B)\neq f^{-1}(\inf B)
+\]
+\[
+\begin{aligned}
+&B\subseteq J,\qquad g=f^{-1},\qquad g\colon J\to I,\qquad
+C=g(B)=\{g(b):b\in B\},\\
+&P_J=\mathsf{OrderedSet}(J,\leq),\qquad
+P_I=\mathsf{OrderedSet}(I,\leq),\\
+&\operatorname{GreatestLowerBound}(v,B,P_J)\land
+\operatorname{OrderReversing}(g,P_J,P_I)\land
+\operatorname{IsContinuous}(g,v,J,I)\land
+\neg\operatorname{LeastUpperBound}(g(v),C,P_I).
+\end{aligned}
+\]
 \end{description}
 \end{remark*}
 
@@ -821,6 +1073,24 @@ P_I=\mathsf{OrderedSet}(I,\leq),\\
 \item[Exposition.]
 The formula can fail if the inverse is not decreasing, if $\sup B$ is outside
 $J$, or if the inverse is not continuous at $\sup B$.
+
+
+  \item[\operatorname{LeastUpperBound} / \operatorname{OrderReversing}.]
+  \[
+\inf f^{-1}(B)\neq f^{-1}(\sup B)
+\]
+\[
+\begin{aligned}
+&B\subseteq J,\qquad g=f^{-1},\qquad g\colon J\to I,\qquad
+C=g(B)=\{g(b):b\in B\},\\
+&P_J=\mathsf{OrderedSet}(J,\leq),\qquad
+P_I=\mathsf{OrderedSet}(I,\leq),\\
+&\operatorname{LeastUpperBound}(u,B,P_J)\land
+\operatorname{OrderReversing}(g,P_J,P_I)\land
+\operatorname{IsContinuous}(g,u,J,I)\land
+\neg\operatorname{GreatestLowerBound}(g(u),C,P_I).
+\end{aligned}
+\]
 \end{description}
 \end{remark*}
 
@@ -828,6 +1098,24 @@ $J$, or if the inverse is not continuous at $\sup B$.
 \begin{description}
 \item[Exposition.]
 Apply the decreasing image supremum-to-infimum theorem to $g=f^{-1}$ and $B$.
+
+
+  \item[\operatorname{LeastUpperBound} / \operatorname{OrderReversing}.]
+  \[
+\inf f^{-1}(B)\neq f^{-1}(\sup B)
+\]
+\[
+\begin{aligned}
+&B\subseteq J,\qquad g=f^{-1},\qquad g\colon J\to I,\qquad
+C=g(B)=\{g(b):b\in B\},\\
+&P_J=\mathsf{OrderedSet}(J,\leq),\qquad
+P_I=\mathsf{OrderedSet}(I,\leq),\\
+&\operatorname{LeastUpperBound}(u,B,P_J)\land
+\operatorname{OrderReversing}(g,P_J,P_I)\land
+\operatorname{IsContinuous}(g,u,J,I)\land
+\neg\operatorname{GreatestLowerBound}(g(u),C,P_I).
+\end{aligned}
+\]
 \end{description}
 \end{remark*}
 

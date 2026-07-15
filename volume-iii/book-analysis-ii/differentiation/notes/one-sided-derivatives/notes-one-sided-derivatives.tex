@@ -34,7 +34,9 @@ In this case $f'_-(c) = L$.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{LeftDerivative}(f, c, L)
+  f\colon A\to\mathbb{R},\\
+
+\operatorname{LeftDerivative}(L,f,c,\mathbb{R},\mathbb{R})
 \;\Longleftrightarrow\;
 \operatorname{LeftLimit}\!\left(\lambda x.\,\frac{f(x)-f(c)}{x-c},\, c,\, L\right).
 \]
@@ -49,10 +51,29 @@ In this case $f'_-(c) = L$.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\forall L \in \mathbb{R}\;\lnot\operatorname{LeftDerivative}(f, c, L).
+  f\colon A\to\mathbb{R},\\
+
+\forall L \in \mathbb{R}\;\lnot\operatorname{LeftDerivative}(L,f,c,\mathbb{R},\mathbb{R}).
 \]
 No finite $L$ is the left-hand limit of the difference quotient.
 \end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  The failure is recorded by the negated formal condition.
+
+  \item[\operatorname{Derivative}.]
+  The displayed obstruction is the predicate-level failure condition.
+  \[
+  \exists\varepsilon_0>0\;\forall\delta>0\;\exists x\in A\;\bigl(0<|x-a|<\delta\land |Q_f(x)-D|\ge\varepsilon_0\bigr).
+  \]
+  \[
+  \neg\,\operatorname{Derivative}(D,f,a,\mathbb{R},\mathbb{R}).
+  \]
+\end{description}
+\end{remark*}
+
 
 \begin{remark*}[Interpretation]
 The left-hand derivative $f'_-(c)$ is the limit of the difference quotient as $x$ approaches $c$ \emph{strictly from the left}. It measures the instantaneous rate of change of $f$ at $c$ as seen from the left side. The right-hand derivative $f'_+(c)$ is the symmetric object from the right. At interior points of an interval, both one-sided derivatives are defined, and the full derivative $f'(c)$ exists if and only if they agree. At endpoints, only the inward one-sided derivative is accessible, and it serves as the boundary derivative. The canonical example: for $f(x) = |x|$ at $c = 0$, $f'_-(0) = -1$ and $f'_+(0) = +1$; since these disagree, $f'(0)$ does not exist.
@@ -90,7 +111,9 @@ In this case $f'_+(c) = L$.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{RightDerivative}(f, c, L)
+  f\colon A\to\mathbb{R},\\
+
+\operatorname{RightDerivative}(L,f,c,\mathbb{R},\mathbb{R})
 \;\Longleftrightarrow\;
 \operatorname{RightLimit}\!\left(\lambda x.\,\frac{f(x)-f(c)}{x-c},\, c,\, L\right).
 \]
@@ -105,9 +128,28 @@ In this case $f'_+(c) = L$.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\forall L \in \mathbb{R}\;\lnot\operatorname{RightDerivative}(f, c, L).
+  f\colon A\to\mathbb{R},\\
+
+\forall L \in \mathbb{R}\;\lnot\operatorname{RightDerivative}(L,f,c,\mathbb{R},\mathbb{R}).
 \]
 \end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  The failure is recorded by the negated formal condition.
+
+  \item[\operatorname{Derivative}.]
+  The displayed obstruction is the predicate-level failure condition.
+  \[
+  \exists\varepsilon_0>0\;\forall\delta>0\;\exists x\in A\;\bigl(0<|x-a|<\delta\land |Q_f(x)-D|\ge\varepsilon_0\bigr).
+  \]
+  \[
+  \neg\,\operatorname{Derivative}(D,f,a,\mathbb{R},\mathbb{R}).
+  \]
+\end{description}
+\end{remark*}
+
 
 \begin{remark*}[Interpretation]
 The right-hand derivative $f'_+(c)$ is the instantaneous rate of change
@@ -138,22 +180,48 @@ f'(c) = f'_-(c) = f'_+(c).
 
 \begin{remark*}[Standard quantified statement]
 \[
-\operatorname{IsDifferentiable}(f, c)
+\operatorname{IsDifferentiable}(f,c,\mathbb{R},\mathbb{R})
 \;\iff\;
-\Bigl(\operatorname{LeftDerivative}(f,c,L) \;\land\; \operatorname{RightDerivative}(f,c,L)\Bigr)
+\Bigl(\operatorname{LeftDerivative}(L,f,c,\mathbb{R},\mathbb{R}) \;\land\; \operatorname{RightDerivative}(L,f,c,\mathbb{R},\mathbb{R})\Bigr)
 \;\text{for some } L \in \mathbb{R}.
 \]
 \end{remark*}
 
 \begin{remark*}[Negated quantified statement]
 \[
-\lnot\operatorname{IsDifferentiable}(f,c)
+\lnot\operatorname{IsDifferentiable}(f,c,\mathbb{R},\mathbb{R})
 \;\iff\;
-\lnot\Bigl(\operatorname{LeftDerivative}(f,c,L) \;\land\; \operatorname{RightDerivative}(f,c,L)\Bigr)
+\lnot\Bigl(\operatorname{LeftDerivative}(L,f,c,\mathbb{R},\mathbb{R}) \;\land\; \operatorname{RightDerivative}(L,f,c,\mathbb{R},\mathbb{R})\Bigr)
 \;\text{for all } L \in \mathbb{R}.
 \]
 That is: either a one-sided derivative fails to exist, or both exist but are unequal.
 \end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+  f\colon A\to\mathbb{R},\\
+
+\neg\,\operatorname{Derivative}(D,f,a,\mathbb{R},\mathbb{R}).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  The failure is recorded by the negated formal condition.
+
+  \item[\operatorname{Derivative}.]
+  The displayed obstruction is the predicate-level failure condition.
+  \[
+  \exists\varepsilon_0>0\;\forall\delta>0\;\exists x\in A\;\bigl(0<|x-a|<\delta\land |Q_f(x)-D|\ge\varepsilon_0\bigr).
+  \]
+  \[
+  \neg\,\operatorname{Derivative}(D,f,a,\mathbb{R},\mathbb{R}).
+  \]
+\end{description}
+\end{remark*}
+
+
 
 \begin{remark*}[Interpretation]
 This theorem decomposes differentiability at an interior point into two one-sided conditions. It is the standard tool for proving non-differentiability: to show $f$ is not differentiable at $c$, compute $f'_-(c)$ and $f'_+(c)$ and observe they disagree. For $f(x) = |x|$ at $c = 0$: $f'_-(0) = -1 \neq +1 = f'_+(0)$, so $f$ is not differentiable at $0$. The theorem also provides the correct definition of differentiability on a closed interval $[a,b]$: differentiable on the open interior $(a,b)$ in the full sense, plus $f'_+(a)$ and $f'_-(b)$ both exist at the endpoints.

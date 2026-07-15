@@ -37,7 +37,9 @@ $E\subseteq A$. The oscillation of $f$ on $E$ is the extended real number
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{Oscillation}(f,E,\omega)
+  f\colon A\to\mathbb{R},\\
+
+\operatorname{Oscillation}(\omega,f,E,\mathbb{R})
 \coloneqq
 \omega=\sup\{\,|f(x_1)-f(x_2)|:x_1,x_2\in E\,\}.
 \]
@@ -57,7 +59,9 @@ $E\subseteq A$. The oscillation of $f$ on $E$ is the extended real number
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{Oscillation}(f,E,\omega)
+  f\colon A\to\mathbb{R},\\
+
+\neg\operatorname{Oscillation}(\omega,f,E,\mathbb{R})
 \Longleftrightarrow
 \omega\ne\sup\{\,|f(x_1)-f(x_2)|:x_1,x_2\in E\,\}.
 \]
@@ -69,6 +73,24 @@ $E\subseteq A$. The oscillation of $f$ on $E$ is the extended real number
 The proposed value $\omega$ fails either because it is not an upper
 bound for pairwise differences of function values on $E$, or because it
 is an upper bound but not the least such upper bound.
+
+
+  \item[\operatorname{Oscillation}.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\begin{aligned}
+&\text{Let } A\subseteq\mathbb{R},\; f:A\to\mathbb{R},\; E\subseteq A,\;
+\omega\in[0,\infty].\\
+&\omega(f;E)\ne\omega
+\Longleftrightarrow
+\omega\ne\sup\{\,|f(x_1)-f(x_2)|:x_1,x_2\in E\,\}.
+\end{aligned}
+  \]
+  \[
+\neg\operatorname{Oscillation}(\omega,f,E,\mathbb{R})
+\Longleftrightarrow
+\omega\ne\sup\{\,|f(x_1)-f(x_2)|:x_1,x_2\in E\,\}.
+  \]
 \end{description}
 \end{remark*}
 
@@ -80,6 +102,24 @@ is an upper bound but not the least such upper bound.
 \;\lor\;
 \underbrace{\exists \eta<\omega\; \forall x_1,x_2\in E:\; |f(x_1)-f(x_2)|\le \eta}_{\text{not least}}.
 \]
+
+
+  \item[\operatorname{Oscillation}.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\begin{aligned}
+&\text{Let } A\subseteq\mathbb{R},\; f:A\to\mathbb{R},\; E\subseteq A,\;
+\omega\in[0,\infty].\\
+&\omega(f;E)\ne\omega
+\Longleftrightarrow
+\omega\ne\sup\{\,|f(x_1)-f(x_2)|:x_1,x_2\in E\,\}.
+\end{aligned}
+  \]
+  \[
+\neg\operatorname{Oscillation}(\omega,f,E,\mathbb{R})
+\Longleftrightarrow
+\omega\ne\sup\{\,|f(x_1)-f(x_2)|:x_1,x_2\in E\,\}.
+  \]
 \end{description}
 \end{remark*}
 
@@ -91,10 +131,10 @@ close together. Zero oscillation means $f$ is constant on $E$.
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:function]{Function}
-  \item \hyperref[def:subset]{Subset}
-  \item \hyperref[def:supremum]{Supremum}
   \item \hyperref[def:real-chapter-absolute-value-on-r]{Absolute Value on $\mathbb{R}$}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:function]{Function}
+  \item \hyperref[def:supremum]{Supremum}
 \end{itemize}
 \end{dependencies}
 % ---------------------------------------------------------
@@ -128,7 +168,9 @@ with $\omega(f;A)$ denoting the oscillation of $f$ on the set $A$. Because the f
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{Oscillation}(f,x_0,\omega) \coloneqq
+  f\colon A\to\mathbb{R},\\
+
+\operatorname{Oscillation}(\omega,f,x_0,\mathbb{R}) \coloneqq
 \lim_{\delta \to 0^+} \omega\bigl(f;\,U_\delta(x_0)\cap E\bigr) = \omega,
 \quad U_\delta(x_0)=\{x \in \mathbb{R}: |x-x_0|<\delta\}.
 \]
@@ -149,7 +191,9 @@ with $\omega(f;A)$ denoting the oscillation of $f$ on the set $A$. Because the f
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{Oscillation}(f,x_0,\omega)
+  f\colon A\to\mathbb{R},\\
+
+\neg\operatorname{Oscillation}(\omega,f,x_0,\mathbb{R})
 \Longleftrightarrow
 \Bigl[\exists \delta_0>0:\, U_{\delta_0}(x_0)\cap E = \varnothing\Bigr]
 \lor
@@ -161,6 +205,27 @@ with $\omega(f;A)$ denoting the oscillation of $f$ on the set $A$. Because the f
 \begin{description}
   \item[Exposition.]
 The definition fails in two distinct ways: either the point $x_0$ has a punctured neighborhood missing $E$, so there are no arbitrarily small samples to measure, or the local oscillation values near $x_0$ refuse to stabilize, preventing the limit from existing.
+
+
+  \item[\operatorname{Oscillation}.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\begin{aligned}
+&\text{Let } E \subseteq \mathbb{R},\, f:E \to \mathbb{R},\, x_0 \in \mathbb{R},\, \omega \in [0,\infty].\\
+&\neg\bigl[(\forall \delta>0:\, U_\delta(x_0)\cap E \neq \varnothing)\ \land\ \omega(f;x_0)=\omega\bigr]\\
+&\Longleftrightarrow
+\Bigl[\exists \delta_0>0:\, U_{\delta_0}(x_0)\cap E = \varnothing\Bigr]\\
+&\qquad\lor
+\Bigl(\exists \varepsilon_0>0\; \forall \delta>0\; \exists r\;(0<r<\delta \land |\omega(f;U_r(x_0)\cap E)-\omega| \ge \varepsilon_0)\Bigr).
+\end{aligned}
+  \]
+  \[
+\neg\operatorname{Oscillation}(\omega,f,x_0,\mathbb{R})
+\Longleftrightarrow
+\Bigl[\exists \delta_0>0:\, U_{\delta_0}(x_0)\cap E = \varnothing\Bigr]
+\lor
+\Bigl(\exists \varepsilon_0>0\; \forall \delta>0\; \exists r\;(0<r<\delta \land |\omega(f;U_r(x_0)\cap E)-\omega| \ge \varepsilon_0)\Bigr).
+  \]
 \end{description}
 \end{remark*}
 
@@ -168,12 +233,33 @@ The definition fails in two distinct ways: either the point $x_0$ has a puncture
 \begin{description}
   \item[Exposition.]
 \[
-\neg\operatorname{Oscillation}(f,x_0,\omega)
+\neg\operatorname{Oscillation}(\omega,f,x_0,\mathbb{R})
 =
 \underbrace{\exists \delta_0>0:\, U_{\delta_0}(x_0)\cap E = \varnothing}_{\text{no nearby sample points}}
 \;\lor\;
 \underbrace{\exists \varepsilon_0>0\; \forall \delta>0\; \exists r\;(0<r<\delta \land |\omega(f;U_r(x_0)\cap E)-\omega| \ge \varepsilon_0)}_{\text{oscillation limit does not exist}}.
 \]
+
+
+  \item[\operatorname{Oscillation}.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\begin{aligned}
+&\text{Let } E \subseteq \mathbb{R},\, f:E \to \mathbb{R},\, x_0 \in \mathbb{R},\, \omega \in [0,\infty].\\
+&\neg\bigl[(\forall \delta>0:\, U_\delta(x_0)\cap E \neq \varnothing)\ \land\ \omega(f;x_0)=\omega\bigr]\\
+&\Longleftrightarrow
+\Bigl[\exists \delta_0>0:\, U_{\delta_0}(x_0)\cap E = \varnothing\Bigr]\\
+&\qquad\lor
+\Bigl(\exists \varepsilon_0>0\; \forall \delta>0\; \exists r\;(0<r<\delta \land |\omega(f;U_r(x_0)\cap E)-\omega| \ge \varepsilon_0)\Bigr).
+\end{aligned}
+  \]
+  \[
+\neg\operatorname{Oscillation}(\omega,f,x_0,\mathbb{R})
+\Longleftrightarrow
+\Bigl[\exists \delta_0>0:\, U_{\delta_0}(x_0)\cap E = \varnothing\Bigr]
+\lor
+\Bigl(\exists \varepsilon_0>0\; \forall \delta>0\; \exists r\;(0<r<\delta \land |\omega(f;U_r(x_0)\cap E)-\omega| \ge \varepsilon_0)\Bigr).
+  \]
 \end{description}
 \end{remark*}
 
@@ -210,7 +296,9 @@ Let $A \subseteq \mathbb{R}$, let $f \colon A \to \mathbb{R}$, and let $c \in A$
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{IsContinuous}(f,c) \Longleftrightarrow \operatorname{Oscillation}(f,c,0).
+  f\colon A\to\mathbb{R},\\
+
+\operatorname{IsContinuous}(f,c,\mathbb{R},\mathbb{R}) \Longleftrightarrow \operatorname{Oscillation}(0,f,c,\mathbb{R}).
 \]
 \end{remark*}
 
@@ -229,7 +317,9 @@ Let $A \subseteq \mathbb{R}$, let $f \colon A \to \mathbb{R}$, and let $c \in A$
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\bigl(\operatorname{IsContinuous}(f,c) \Longleftrightarrow \operatorname{Oscillation}(f,c,0)\bigr).
+  f\colon A\to\mathbb{R},\\
+
+\neg\bigl(\operatorname{IsContinuous}(f,c,\mathbb{R},\mathbb{R}) \Longleftrightarrow \operatorname{Oscillation}(0,f,c,\mathbb{R})\bigr).
 \]
 \end{remark*}
 
@@ -237,6 +327,23 @@ Let $A \subseteq \mathbb{R}$, let $f \colon A \to \mathbb{R}$, and let $c \in A$
 \begin{description}
   \item[Exposition.]
 The equivalence fails precisely in two mutually exclusive ways: either $f$ remains continuous at $c$ while the oscillation retains a positive lower bound, or $\omega(f;c)$ vanishes even though $f$ does not satisfy the $\varepsilon$-$\delta$ continuity condition at $c$.
+
+
+  \item[\operatorname{IsContinuous}.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\begin{aligned}
+&\text{Let } A \subseteq \mathbb{R},\; f \colon A \to \mathbb{R},\; c \in A.\\
+&\Bigl(\forall \varepsilon>0 \; \exists \delta>0 \; \forall x \in A \; (|x-c|<\delta \Rightarrow |f(x)-f(c)|<\varepsilon)\Bigr)
+\land \Bigl(\inf_{\delta>0}\sup\{|f(x)-f(y)| : x,y \in A,\; |x-c|<\delta,\; |y-c|<\delta\}>0\Bigr)\\
+&\qquad \lor\\
+&\Bigl(\exists \varepsilon_0>0 \; \forall \delta>0 \; \exists x \in A \; (|x-c|<\delta \land |f(x)-f(c)| \ge \varepsilon_0)\Bigr)
+\land \Bigl(\inf_{\delta>0}\sup\{|f(x)-f(y)| : x,y \in A,\; |x-c|<\delta,\; |y-c|<\delta\}=0\Bigr).
+\end{aligned}
+  \]
+  \[
+\neg\bigl(\operatorname{IsContinuous}(f,c,\mathbb{R},\mathbb{R}) \Longleftrightarrow \operatorname{Oscillation}(0,f,c,\mathbb{R})\bigr).
+  \]
 \end{description}
 \end{remark*}
 
@@ -244,10 +351,27 @@ The equivalence fails precisely in two mutually exclusive ways: either $f$ remai
 \begin{description}
   \item[Exposition.]
 \[
-\underbrace{\operatorname{IsContinuous}(f,c) \land \neg \operatorname{Oscillation}(f,c,0)}_{\text{Positive oscillation despite continuity}}
+\underbrace{\operatorname{IsContinuous}(f,c,\mathbb{R},\mathbb{R}) \land \neg \operatorname{Oscillation}(0,f,c,\mathbb{R})}_{\text{Positive oscillation despite continuity}}
 \;\lor\;
-\underbrace{\neg \operatorname{IsContinuous}(f,c) \land \operatorname{Oscillation}(f,c,0)}_{\text{Zero oscillation without continuity}}.
+\underbrace{\neg \operatorname{IsContinuous}(f,c,\mathbb{R},\mathbb{R}) \land \operatorname{Oscillation}(0,f,c,\mathbb{R})}_{\text{Zero oscillation without continuity}}.
 \]
+
+
+  \item[\operatorname{IsContinuous}.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\begin{aligned}
+&\text{Let } A \subseteq \mathbb{R},\; f \colon A \to \mathbb{R},\; c \in A.\\
+&\Bigl(\forall \varepsilon>0 \; \exists \delta>0 \; \forall x \in A \; (|x-c|<\delta \Rightarrow |f(x)-f(c)|<\varepsilon)\Bigr)
+\land \Bigl(\inf_{\delta>0}\sup\{|f(x)-f(y)| : x,y \in A,\; |x-c|<\delta,\; |y-c|<\delta\}>0\Bigr)\\
+&\qquad \lor\\
+&\Bigl(\exists \varepsilon_0>0 \; \forall \delta>0 \; \exists x \in A \; (|x-c|<\delta \land |f(x)-f(c)| \ge \varepsilon_0)\Bigr)
+\land \Bigl(\inf_{\delta>0}\sup\{|f(x)-f(y)| : x,y \in A,\; |x-c|<\delta,\; |y-c|<\delta\}=0\Bigr).
+\end{aligned}
+  \]
+  \[
+\neg\bigl(\operatorname{IsContinuous}(f,c,\mathbb{R},\mathbb{R}) \Longleftrightarrow \operatorname{Oscillation}(0,f,c,\mathbb{R})\bigr).
+  \]
 \end{description}
 \end{remark*}
 
@@ -292,14 +416,17 @@ x\in D(f)
 
 \begin{remark*}[Predicate reading]
 \[
+  f\colon A\to\mathbb{R},\qquad
+  x\colon A\to\mathbb{R},\\
+
 \begin{aligned}
 &x\in D(f)
 \Longleftrightarrow
-\operatorname{IsDiscontinuous}(f,x)\\
+\operatorname{IsDiscontinuous}(f,x,\mathbb{R},\mathbb{R})\\
 &\Longleftrightarrow
-\exists \omega\;(\operatorname{Oscillation}(f,x,\omega)\land \omega>0)\\
+\exists \omega\;(\operatorname{Oscillation}(f,x,\omega,\mathbb{R})\land \omega>0)\\
 &\Longleftrightarrow
-\exists n\in\mathbb{N}\;\exists \omega\;(\operatorname{Oscillation}(f,x,\omega)\land \omega\ge \tfrac1n).
+\exists n\in\mathbb{N}\;\exists \omega\;(\operatorname{Oscillation}(f,x,\omega,\mathbb{R})\land \omega\ge \tfrac1n).
 \end{aligned}
 \]
 \end{remark*}
@@ -317,11 +444,14 @@ x\in D(f)
 
 \begin{remark*}[Negation predicate reading]
 \[
+  f\colon A\to\mathbb{R},\qquad
+  x\colon A\to\mathbb{R},\\
+
 \begin{aligned}
 \exists x\in E\;\Bigl(
-&\exists \omega\;(\operatorname{IsDiscontinuous}(f,x)\land \operatorname{Oscillation}(f,x,\omega)\land \omega=0)\;\lor\\
-&\exists \omega\;(\neg\operatorname{IsDiscontinuous}(f,x)\land \operatorname{Oscillation}(f,x,\omega)\land \omega>0)\;\lor\\
-&\exists \omega\;(\operatorname{Oscillation}(f,x,\omega)\land \omega>0\land \forall n\in\mathbb{N}\; \omega<\tfrac1n)
+&\exists \omega\;(\operatorname{IsDiscontinuous}(f,x,\mathbb{R},\mathbb{R})\land \operatorname{Oscillation}(f,x,\omega,\mathbb{R})\land \omega=0)\;\lor\\
+&\exists \omega\;(\neg\operatorname{IsDiscontinuous}(f,x,\mathbb{R},\mathbb{R})\land \operatorname{Oscillation}(f,x,\omega,\mathbb{R})\land \omega>0)\;\lor\\
+&\exists \omega\;(\operatorname{Oscillation}(f,x,\omega,\mathbb{R})\land \omega>0\land \forall n\in\mathbb{N}\; \omega<\tfrac1n)
 \Bigr).
 \end{aligned}
 \]
@@ -331,6 +461,27 @@ x\in D(f)
 \begin{description}
   \item[Exposition.]
 The proposition fails precisely when some $x\in E$ is marked as discontinuous although its oscillation vanishes, or when $x$ is declared continuous despite a positive oscillation, or when a positive oscillation never exceeds any reciprocal integer, contradicting the Archimedean step that converts $\omega(f;x)>0$ into the countable union description.
+
+
+  \item[\operatorname{IsDiscontinuous}.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\begin{aligned}
+&\text{Let } f:E\to\mathbb{R}.\\
+&\neg\Bigl[\forall x\in E\;\bigl(x\in D(f)\Longleftrightarrow \omega(f;x)>0 \Longleftrightarrow \exists n\in\mathbb{N}\; \omega(f;x)\ge \tfrac1n\bigr)\Bigr]\\
+&\Longleftrightarrow \exists x\in E\;\Bigl((x\in D(f)\land \omega(f;x)=0)\lor(x\notin D(f)\land \omega(f;x)>0)\\
+&\qquad\qquad\lor(\omega(f;x)>0\land \forall n\in\mathbb{N}\; \omega(f;x)<\tfrac1n)\Bigr).
+\end{aligned}
+  \]
+  \[
+\begin{aligned}
+\exists x\in E\;\Bigl(
+&\exists \omega\;(\operatorname{IsDiscontinuous}(f,x,\mathbb{R},\mathbb{R})\land \operatorname{Oscillation}(f,x,\omega,\mathbb{R})\land \omega=0)\;\lor\\
+&\exists \omega\;(\neg\operatorname{IsDiscontinuous}(f,x,\mathbb{R},\mathbb{R})\land \operatorname{Oscillation}(f,x,\omega,\mathbb{R})\land \omega>0)\;\lor\\
+&\exists \omega\;(\operatorname{Oscillation}(f,x,\omega,\mathbb{R})\land \omega>0\land \forall n\in\mathbb{N}\; \omega<\tfrac1n)
+\Bigr).
+\end{aligned}
+  \]
 \end{description}
 \end{remark*}
 
@@ -345,6 +496,27 @@ x\notin D(f)\land \omega(f;x)>0 & \text{(Type II)},\\[4pt]
 \omega(f;x)>0\land \forall n\in\mathbb{N}\; \omega(f;x)<\tfrac1n & \text{(Type III)}.
 \end{cases}
 \]
+
+
+  \item[\operatorname{IsDiscontinuous}.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\begin{aligned}
+&\text{Let } f:E\to\mathbb{R}.\\
+&\neg\Bigl[\forall x\in E\;\bigl(x\in D(f)\Longleftrightarrow \omega(f;x)>0 \Longleftrightarrow \exists n\in\mathbb{N}\; \omega(f;x)\ge \tfrac1n\bigr)\Bigr]\\
+&\Longleftrightarrow \exists x\in E\;\Bigl((x\in D(f)\land \omega(f;x)=0)\lor(x\notin D(f)\land \omega(f;x)>0)\\
+&\qquad\qquad\lor(\omega(f;x)>0\land \forall n\in\mathbb{N}\; \omega(f;x)<\tfrac1n)\Bigr).
+\end{aligned}
+  \]
+  \[
+\begin{aligned}
+\exists x\in E\;\Bigl(
+&\exists \omega\;(\operatorname{IsDiscontinuous}(f,x,\mathbb{R},\mathbb{R})\land \operatorname{Oscillation}(f,x,\omega,\mathbb{R})\land \omega=0)\;\lor\\
+&\exists \omega\;(\neg\operatorname{IsDiscontinuous}(f,x,\mathbb{R},\mathbb{R})\land \operatorname{Oscillation}(f,x,\omega,\mathbb{R})\land \omega>0)\;\lor\\
+&\exists \omega\;(\operatorname{Oscillation}(f,x,\omega,\mathbb{R})\land \omega>0\land \forall n\in\mathbb{N}\; \omega<\tfrac1n)
+\Bigr).
+\end{aligned}
+  \]
 \end{description}
 \end{remark*}
 

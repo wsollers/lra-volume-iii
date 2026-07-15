@@ -29,7 +29,7 @@ Let $a<b$ and set $I=[a,b]$. A finite ordered set $P=\{x_0,\ldots,x_n\}$ with $n
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{Partition}(P,I) \coloneqq
+\mathsf{Partition}(P,I) \coloneqq
 \exists n\in\mathbb{N}\;\Bigl(n\ge 1 \land P=\{x_0,\ldots,x_n\}\subseteq I
 \land x_0=\min I \land x_n=\max I
 \land \forall i\in\{1,\ldots,n\}\;(x_{i-1}<x_i)\Bigr).
@@ -48,7 +48,7 @@ Let $a<b$ and set $I=[a,b]$. A finite ordered set $P=\{x_0,\ldots,x_n\}$ with $n
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{Partition}(P,I) \Longleftrightarrow
+\neg\mathsf{Partition}(P,I) \Longleftrightarrow
 \forall n\in\mathbb{N}\;\Bigl(n\ge 1 \Rightarrow
 \bigl(P\ne\{x_0,\ldots,x_n\}\lor P\nsubseteq I
 \lor x_0\ne\min I \lor x_n\ne\max I
@@ -60,6 +60,24 @@ Let $a<b$ and set $I=[a,b]$. A finite ordered set $P=\{x_0,\ldots,x_n\}$ with $n
 \begin{description}
   \item[Exposition.]
 The definition fails precisely in three ways: the left endpoint is omitted, the right endpoint is omitted, or the sequence of nodes ceases to be strictly increasing, leading to repeated or out-of-order points.
+
+
+  \item[\mathsf{Partition}.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\begin{aligned}
+&\text{Let } a<b,\; I=[a,b],\; n\in\mathbb{N},\; n\ge 1,\; \text{and } P=\{x_0,\ldots,x_n\}\subseteq I.\\
+&P \text{ is not a partition of } I\\
+&\Longleftrightarrow \bigl((x_0\ne a) \lor (x_n\ne b) \lor \exists i\in\{1,\ldots,n\}\;(x_{i-1}\ge x_i)\bigr).
+\end{aligned}
+  \]
+  \[
+\neg\mathsf{Partition}(P,I) \Longleftrightarrow
+\forall n\in\mathbb{N}\;\Bigl(n\ge 1 \Rightarrow
+\bigl(P\ne\{x_0,\ldots,x_n\}\lor P\nsubseteq I
+\lor x_0\ne\min I \lor x_n\ne\max I
+\lor \exists i\in\{1,\ldots,n\}\;(x_{i-1}\ge x_i)\bigr)\Bigr).
+  \]
 \end{description}
 \end{remark*}
 
@@ -73,6 +91,24 @@ The definition fails precisely in three ways: the left endpoint is omitted, the 
 \;\lor\;
 \underbrace{\exists i\in\{1,\ldots,n\}\;(x_{i-1}\ge x_i)}_{\text{nodes not strictly increasing}}.
 \]
+
+
+  \item[\mathsf{Partition}.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\begin{aligned}
+&\text{Let } a<b,\; I=[a,b],\; n\in\mathbb{N},\; n\ge 1,\; \text{and } P=\{x_0,\ldots,x_n\}\subseteq I.\\
+&P \text{ is not a partition of } I\\
+&\Longleftrightarrow \bigl((x_0\ne a) \lor (x_n\ne b) \lor \exists i\in\{1,\ldots,n\}\;(x_{i-1}\ge x_i)\bigr).
+\end{aligned}
+  \]
+  \[
+\neg\mathsf{Partition}(P,I) \Longleftrightarrow
+\forall n\in\mathbb{N}\;\Bigl(n\ge 1 \Rightarrow
+\bigl(P\ne\{x_0,\ldots,x_n\}\lor P\nsubseteq I
+\lor x_0\ne\min I \lor x_n\ne\max I
+\lor \exists i\in\{1,\ldots,n\}\;(x_{i-1}\ge x_i)\bigr)\Bigr).
+  \]
 \end{description}
 \end{remark*}
 
@@ -82,9 +118,9 @@ A partition records the finite list of nodes that slice a closed interval into a
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:closed-interval]{Closed Interval}
   \item \hyperref[def:natural-numbers]{Natural Numbers}
   \item \hyperref[def:order-on-r]{Order on $\mathbb{R}$}
+  \item \hyperref[def:closed-interval]{Closed Interval}
 \end{itemize}
 \end{dependencies}
 % ---------------------------------------------------------
@@ -110,11 +146,11 @@ Let $a,b \in \mathbb{R}$ with $a < b$. A list $\dot{\mathcal{P}}=\{([x_{i-1},x_i
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{TaggedPartition}(\dot{\mathcal{P}},P,[a,b])
+\mathsf{TaggedPartition}(\dot{\mathcal{P}},P,[a,b])
 \coloneqq
-\Bigl(\operatorname{Partition}(P,[a,b]) \land \dot{\mathcal{P}}=\{([x_{i-1},x_i],t_i)\}_{i=1}^n \land \forall i\;(t_i \in [x_{i-1},x_i])\Bigr),
+\Bigl(\mathsf{Partition}(P,[a,b]) \land \dot{\mathcal{P}}=\{([x_{i-1},x_i],t_i)\}_{i=1}^n \land \forall i\;(t_i \in [x_{i-1},x_i])\Bigr),
 \]
-where $\operatorname{Partition}(P,[a,b])$ abbreviates $a=x_0<\cdots<x_n=b$ for $P=\{[x_{i-1},x_i]\}_{i=1}^n$.
+where $\mathsf{Partition}(P,[a,b])$ abbreviates $a=x_0<\cdots<x_n=b$ for $P=\{[x_{i-1},x_i]\}_{i=1}^n$.
 \end{remark*}
 
 \begin{remark*}[Negated quantified statement]
@@ -132,7 +168,7 @@ where $\operatorname{Partition}(P,[a,b])$ abbreviates $a=x_0<\cdots<x_n=b$ for $
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{TaggedPartition}(\dot{\mathcal{P}},P,[a,b])
+\neg\mathsf{TaggedPartition}(\dot{\mathcal{P}},P,[a,b])
 \Longleftrightarrow
 (x_0\ne a)\lor(x_n\ne b)\lor
 \Bigl(\exists j\;(x_{j-1} \ge x_j)\Bigr) \lor \Bigl(\exists i\;(t_i \notin [x_{i-1},x_i])\Bigr).
@@ -143,6 +179,26 @@ where $\operatorname{Partition}(P,[a,b])$ abbreviates $a=x_0<\cdots<x_n=b$ for $
 \begin{description}
   \item[Exposition.]
 A list fails to be a tagged partition either because the subintervals do not form a valid partition (the mesh is disordered or has gaps) or because at least one chosen tag lies outside its designated subinterval.
+
+
+  \item[\mathsf{TaggedPartition}.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\begin{aligned}
+&\text{Let } a,b \in \mathbb{R} \text{ with } a<b, \text{ and } \dot{\mathcal{P}}=\{([x_{i-1},x_i],t_i)\}_{i=1}^n.\\
+&\dot{\mathcal{P}} \text{ is not a tagged partition of } [a,b]\\
+&\Longleftrightarrow
+\Bigl(x_0\ne a \lor x_n\ne b \lor
+\exists j \in \{1,\ldots,n\}\;(x_{j-1} \ge x_j) \lor
+\exists i \in \{1,\ldots,n\}\;(t_i \notin [x_{i-1},x_i])\Bigr).
+\end{aligned}
+  \]
+  \[
+\neg\mathsf{TaggedPartition}(\dot{\mathcal{P}},P,[a,b])
+\Longleftrightarrow
+(x_0\ne a)\lor(x_n\ne b)\lor
+\Bigl(\exists j\;(x_{j-1} \ge x_j)\Bigr) \lor \Bigl(\exists i\;(t_i \notin [x_{i-1},x_i])\Bigr).
+  \]
 \end{description}
 \end{remark*}
 
@@ -158,6 +214,26 @@ A list fails to be a tagged partition either because the subintervals do not for
 \;\lor\;
 \underbrace{\exists i\;(t_i \notin [x_{i-1},x_i])}_{\text{tag misplaced}}.
 \]
+
+
+  \item[\mathsf{TaggedPartition}.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\begin{aligned}
+&\text{Let } a,b \in \mathbb{R} \text{ with } a<b, \text{ and } \dot{\mathcal{P}}=\{([x_{i-1},x_i],t_i)\}_{i=1}^n.\\
+&\dot{\mathcal{P}} \text{ is not a tagged partition of } [a,b]\\
+&\Longleftrightarrow
+\Bigl(x_0\ne a \lor x_n\ne b \lor
+\exists j \in \{1,\ldots,n\}\;(x_{j-1} \ge x_j) \lor
+\exists i \in \{1,\ldots,n\}\;(t_i \notin [x_{i-1},x_i])\Bigr).
+\end{aligned}
+  \]
+  \[
+\neg\mathsf{TaggedPartition}(\dot{\mathcal{P}},P,[a,b])
+\Longleftrightarrow
+(x_0\ne a)\lor(x_n\ne b)\lor
+\Bigl(\exists j\;(x_{j-1} \ge x_j)\Bigr) \lor \Bigl(\exists i\;(t_i \notin [x_{i-1},x_i])\Bigr).
+  \]
 \end{description}
 \end{remark*}
 
@@ -191,7 +267,7 @@ Let $a,b \in \mathbb{R}$ with $a<b$ and set $I=[a,b]$. A gauge on $I$ is a funct
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{Gauge}(\delta,I)
+\mathsf{Gauge}(\delta,I)
 \coloneqq
 \bigl(\delta:I\to\mathbb{R}\bigr)
 \land
@@ -210,7 +286,7 @@ Let $a,b \in \mathbb{R}$ with $a<b$ and set $I=[a,b]$. A gauge on $I$ is a funct
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{Gauge}(\delta,I)
+\neg\mathsf{Gauge}(\delta,I)
 \Longleftrightarrow
 \neg\bigl(\delta:I\to\mathbb{R}\bigr)
 \lor
@@ -224,6 +300,23 @@ Let $a,b \in \mathbb{R}$ with $a<b$ and set $I=[a,b]$. A gauge on $I$ is a funct
 A purported gauge fails either because it is not a function from $I$ to
 \(\mathbb{R}\), or because it takes on a nonpositive value somewhere in
 $I$.
+
+
+  \item[\mathsf{Gauge}.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\begin{aligned}
+&\text{Let } a,b\in\mathbb{R} \text{ with } a<b, \text{ put } I=[a,b], \text{ and let } \delta:I\to\mathbb{R}.\\
+&\delta \text{ fails to be a gauge on } I \Longleftrightarrow \exists x\in I\;(\delta(x)\le 0).
+\end{aligned}
+  \]
+  \[
+\neg\mathsf{Gauge}(\delta,I)
+\Longleftrightarrow
+\neg\bigl(\delta:I\to\mathbb{R}\bigr)
+\lor
+\exists x\in I\;(\delta(x)\le 0).
+  \]
 \end{description}
 \end{remark*}
 
@@ -235,6 +328,23 @@ $I$.
 \;\lor\;
 \underbrace{\exists x\in I\;(\delta(x)\le 0)}_{\text{nonpositive gauge value}}
 \]
+
+
+  \item[\mathsf{Gauge}.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\begin{aligned}
+&\text{Let } a,b\in\mathbb{R} \text{ with } a<b, \text{ put } I=[a,b], \text{ and let } \delta:I\to\mathbb{R}.\\
+&\delta \text{ fails to be a gauge on } I \Longleftrightarrow \exists x\in I\;(\delta(x)\le 0).
+\end{aligned}
+  \]
+  \[
+\neg\mathsf{Gauge}(\delta,I)
+\Longleftrightarrow
+\neg\bigl(\delta:I\to\mathbb{R}\bigr)
+\lor
+\exists x\in I\;(\delta(x)\le 0).
+  \]
 \end{description}
 \end{remark*}
 
@@ -244,9 +354,9 @@ A gauge assigns to each point of the closed interval a positive radius, encoding
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:function]{Function}
-  \item \hyperref[def:closed-interval]{Closed Interval}
   \item \hyperref[def:order-on-r]{Order on $\mathbb{R}$}
+  \item \hyperref[def:closed-interval]{Closed Interval}
+  \item \hyperref[def:function]{Function}
 \end{itemize}
 \end{dependencies}
 % ---------------------------------------------------------
@@ -271,7 +381,7 @@ Let $[a,b]$ be a closed interval, let $\delta:[a,b]\to(0,\infty)$ be a gauge, an
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{IsDeltaFine}(\dot{\mathcal{P}},\delta) \coloneqq \forall i \in \{1,\dots,n\}\;\forall x \in [x_{i-1},x_i]\;( |x-t_i|<\delta(t_i)).
+\operatorname{IsDeltaFine}(\dot{\mathcal{P}},\delta,I) \coloneqq \forall i \in \{1,\dots,n\}\;\forall x \in [x_{i-1},x_i]\;( |x-t_i|<\delta(t_i)).
 \]
 \end{remark*}
 
@@ -284,7 +394,7 @@ Let $[a,b]$ be a closed interval, let $\delta:[a,b]\to(0,\infty)$ be a gauge, an
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg \operatorname{IsDeltaFine}(\dot{\mathcal{P}},\delta) \Longleftrightarrow \exists i \in \{1,\dots,n\}\;\exists x \in [x_{i-1},x_i]\;( |x-t_i|\ge \delta(t_i)).
+\neg \operatorname{IsDeltaFine}(\dot{\mathcal{P}},\delta,I) \Longleftrightarrow \exists i \in \{1,\dots,n\}\;\exists x \in [x_{i-1},x_i]\;( |x-t_i|\ge \delta(t_i)).
 \]
 \end{remark*}
 
@@ -292,6 +402,17 @@ Let $[a,b]$ be a closed interval, let $\delta:[a,b]\to(0,\infty)$ be a gauge, an
 \begin{description}
   \item[Exposition.]
 A tagged partition fails to be $\delta$-fine precisely when some subinterval contains a point whose distance from its tag reaches or exceeds the available radius $\delta(t_i)$, so the corresponding subinterval is not contained in the prescribed open neighborhood around its tag.
+
+
+  \item[\operatorname{IsDeltaFine}.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\exists i \in \{1,\dots,n\}\;\exists x \in [x_{i-1},x_i]\;
+\bigl(|x-t_i|\ge \delta(t_i)\bigr).
+  \]
+  \[
+\neg \operatorname{IsDeltaFine}(\dot{\mathcal{P}},\delta,I) \Longleftrightarrow \exists i \in \{1,\dots,n\}\;\exists x \in [x_{i-1},x_i]\;( |x-t_i|\ge \delta(t_i)).
+  \]
 \end{description}
 \end{remark*}
 
@@ -302,6 +423,17 @@ A tagged partition fails to be $\delta$-fine precisely when some subinterval con
 \underbrace{\exists i \in \{1,\dots,n\}\;\exists x \in [x_{i-1},x_i]}_{\text{choose offending subinterval and point}}
 \;\underbrace{(|x-t_i|\ge \delta(t_i))}_{\text{distance not controlled by }\delta}.
 \]
+
+
+  \item[\operatorname{IsDeltaFine}.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\exists i \in \{1,\dots,n\}\;\exists x \in [x_{i-1},x_i]\;
+\bigl(|x-t_i|\ge \delta(t_i)\bigr).
+  \]
+  \[
+\neg \operatorname{IsDeltaFine}(\dot{\mathcal{P}},\delta,I) \Longleftrightarrow \exists i \in \{1,\dots,n\}\;\exists x \in [x_{i-1},x_i]\;( |x-t_i|\ge \delta(t_i)).
+  \]
 \end{description}
 \end{remark*}
 
@@ -335,7 +467,12 @@ Let $\dot{\mathcal{P}}=\{([x_{i-1},x_i],t_i)\}_{i=1}^n$ be a tagged partition of
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-The displayed quantified statement is the predicate-level form of $label: its hypotheses name the input conditions, and its conclusion names the asserted structure or relation.
+\[
+\begin{aligned}
+&\text{Let } a<b,\; \delta:[a,b]\to(0,\infty), \text{ and } \dot{\mathcal{P}}=\{([x_{i-1},x_i],t_i)\}_{i=1}^n \text{ be }\delta\text{-fine on }[a,b].\\
+&\forall x\in[a,b]\;\exists i\in\{1,\ldots,n\}\;(|x-t_i|<\delta(t_i)).
+\end{aligned}
+\]
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -379,9 +516,9 @@ admits a $\delta$-fine tagged partition of $[a,b]$.
 \begin{aligned}
 \forall \delta:[a,b]\to(0,\infty)\quad
 \exists \dot{\mathcal{P}}\;\Bigl(
-&\operatorname{TaggedPartition}(\dot{\mathcal{P}},P,[a,b])\\
+&\mathsf{TaggedPartition}(\dot{\mathcal{P}},P,[a,b])\\
 &\land
-\operatorname{IsDeltaFine}(\dot{\mathcal{P}},\delta)
+\operatorname{IsDeltaFine}(\dot{\mathcal{P}},\delta,I)
 \Bigr).
 \end{aligned}
 \]
@@ -409,9 +546,9 @@ admits a $\delta$-fine tagged partition of $[a,b]$.
 \[
 \exists \delta:[a,b]\to(0,\infty)\;
 \forall \dot{\mathcal{P}}\;\Bigl(
-\operatorname{TaggedPartition}(\dot{\mathcal{P}},P,[a,b])
+\mathsf{TaggedPartition}(\dot{\mathcal{P}},P,[a,b])
 \Rightarrow
-\neg\operatorname{IsDeltaFine}(\dot{\mathcal{P}},\delta)
+\neg\operatorname{IsDeltaFine}(\dot{\mathcal{P}},\delta,I)
 \Bigr).
 \]
 \end{remark*}
@@ -422,6 +559,33 @@ admits a $\delta$-fine tagged partition of $[a,b]$.
 Failure would mean that a positive gauge $\delta$ defeats every tagged
 partition: no matter how the interval is subdivided and tagged, at least
 one subinterval is not contained in the gauge neighborhood around its tag.
+
+
+  \item[\operatorname{IsDeltaFine}.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\begin{aligned}
+&\text{Let } a,b \in \mathbb{R} \text{ with } a < b \text{ and let } \delta:[a,b]\to(0,\infty).\\
+&\neg\Bigl(\text{there exists a }\delta\text{-fine tagged partition of }[a,b]\Bigr)\\
+&\Longleftrightarrow
+\forall m \in \mathbb{N}\;\forall x_0,\ldots,x_m\;\forall t_1,\ldots,t_m\\
+&\qquad\Bigl[
+\bigl(a=x_0<x_1<\cdots<x_m=b
+\land \forall j\;(t_j\in[x_{j-1},x_j])\bigr)\\
+&\qquad\Rightarrow
+\exists j\in\{1,\ldots,m\}\;
+[x_{j-1},x_j]\nsubseteq(t_j-\delta(t_j),t_j+\delta(t_j))
+\Bigr].
+\end{aligned}
+  \]
+  \[
+\exists \delta:[a,b]\to(0,\infty)\;
+\forall \dot{\mathcal{P}}\;\Bigl(
+\mathsf{TaggedPartition}(\dot{\mathcal{P}},P,[a,b])
+\Rightarrow
+\neg\operatorname{IsDeltaFine}(\dot{\mathcal{P}},\delta,I)
+\Bigr).
+  \]
 \end{description}
 \end{remark*}
 
@@ -430,10 +594,37 @@ one subinterval is not contained in the gauge neighborhood around its tag.
   \item[Exposition.]
 \[
 \underbrace{\forall \dot{\mathcal{P}}\;
-\operatorname{TaggedPartition}(\dot{\mathcal{P}},P,[a,b])}_{\text{all tagged partitions}}
+\mathsf{TaggedPartition}(\dot{\mathcal{P}},P,[a,b])}_{\text{all tagged partitions}}
 \quad\Rightarrow\quad
-\underbrace{\neg\operatorname{IsDeltaFine}(\dot{\mathcal{P}},\delta)}_{\text{some interval escapes its gauge ball}}.
+\underbrace{\neg\operatorname{IsDeltaFine}(\dot{\mathcal{P}},\delta,I)}_{\text{some interval escapes its gauge ball}}.
 \]
+
+
+  \item[\operatorname{IsDeltaFine}.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\begin{aligned}
+&\text{Let } a,b \in \mathbb{R} \text{ with } a < b \text{ and let } \delta:[a,b]\to(0,\infty).\\
+&\neg\Bigl(\text{there exists a }\delta\text{-fine tagged partition of }[a,b]\Bigr)\\
+&\Longleftrightarrow
+\forall m \in \mathbb{N}\;\forall x_0,\ldots,x_m\;\forall t_1,\ldots,t_m\\
+&\qquad\Bigl[
+\bigl(a=x_0<x_1<\cdots<x_m=b
+\land \forall j\;(t_j\in[x_{j-1},x_j])\bigr)\\
+&\qquad\Rightarrow
+\exists j\in\{1,\ldots,m\}\;
+[x_{j-1},x_j]\nsubseteq(t_j-\delta(t_j),t_j+\delta(t_j))
+\Bigr].
+\end{aligned}
+  \]
+  \[
+\exists \delta:[a,b]\to(0,\infty)\;
+\forall \dot{\mathcal{P}}\;\Bigl(
+\mathsf{TaggedPartition}(\dot{\mathcal{P}},P,[a,b])
+\Rightarrow
+\neg\operatorname{IsDeltaFine}(\dot{\mathcal{P}},\delta,I)
+\Bigr).
+  \]
 \end{description}
 \end{remark*}
 

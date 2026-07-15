@@ -34,9 +34,13 @@ is a \textbf{strictly increasing index map} if
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{StrictOrderPreserving}(\sigma)
+\begin{gathered}
+\sigma\colon\mathbb{N}\to\mathbb{N},\quad
+P=\mathsf{OrderedSet}(\mathbb{N},\leq),\\
+\operatorname{StrictOrderPreserving}(\sigma,P,P)
 \coloneqq
 \forall k,\ell\in\mathbb{N}\;(k<\ell\Longrightarrow \sigma(k)<\sigma(\ell)).
+\end{gathered}
 \]
 \end{remark*}
 
@@ -50,10 +54,35 @@ is a \textbf{strictly increasing index map} if
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{StrictOrderPreserving}(\sigma)
+\begin{gathered}
+\sigma\colon\mathbb{N}\to\mathbb{N},\quad
+P=\mathsf{OrderedSet}(\mathbb{N},\leq),\\
+\neg\operatorname{StrictOrderPreserving}(\sigma,P,P)
+\Longleftrightarrow
+\exists k,\ell\in\mathbb{N}\;(k<\ell\land \sigma(\ell)\le \sigma(k)).
+\end{gathered}
+\]
+\end{remark*}
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+Failure is witnessed by the negated condition displayed above.
+  \item[\operatorname{StrictOrderPreserving}.]
+\[
+\sigma\text{ is not strictly increasing}
 \Longleftrightarrow
 \exists k,\ell\in\mathbb{N}\;(k<\ell\land \sigma(\ell)\le \sigma(k)).
 \]
+\[
+\begin{gathered}
+\sigma\colon\mathbb{N}\to\mathbb{N},\quad
+P=\mathsf{OrderedSet}(\mathbb{N},\leq),\\
+\neg\operatorname{StrictOrderPreserving}(\sigma,P,P)
+\Longleftrightarrow
+\exists k,\ell\in\mathbb{N}\;(k<\ell\land \sigma(\ell)\le \sigma(k)).
+\end{gathered}
+\]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -64,8 +93,8 @@ arbitrary rearrangement.
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:function]{Function}
   \item \hyperref[def:natural-numbers]{Natural Numbers}
+  \item \hyperref[def:function]{Function}
   \item \hyperref[thm:strict-order-successor-characterization]{Strict Order Successor Characterization}
 \end{itemize}
 \end{dependencies}
@@ -76,7 +105,7 @@ arbitrary rearrangement.
 
 \begin{definitionbox}{Definition (Subsequence)}
 \begin{definition}[Subsequence]
-\label{def:subsequence}
+\label{def:subsequence-of-sequence}
 Let $(x_n)$ be a real sequence. A \textbf{subsequence} of $(x_n)$ is a
 sequence $(x_{\sigma(k)})_{k\in\mathbb{N}}$, where
 $\sigma:\mathbb{N}\to\mathbb{N}$ is a strictly increasing index map.
@@ -104,7 +133,11 @@ $\sigma:\mathbb{N}\to\mathbb{N}$ is a strictly increasing index map.
 \coloneqq
 \exists \sigma\;
 \bigl(
-  \operatorname{StrictOrderPreserving}(\sigma)
+  \sigma\colon\mathbb{N}\to\mathbb{N}
+  \land
+  P=\mathsf{OrderedSet}(\mathbb{N},\leq)
+  \land
+  \operatorname{StrictOrderPreserving}(\sigma,P,P)
   \land
   \forall k\in\mathbb{N}\;(y_k=x_{\sigma(k)})
 \bigr).
@@ -130,6 +163,28 @@ $\sigma:\mathbb{N}\to\mathbb{N}$ is a strictly increasing index map.
 \[
 \neg\operatorname{IsSubsequence}(y_k,x_n).
 \]
+\end{remark*}
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+Failure is witnessed by the negated condition displayed above.
+  \item[\operatorname{IsSubsequence}.]
+\[
+\begin{aligned}
+&(y_k)\text{ is not a subsequence of }(x_n)\\
+&\quad\Longleftrightarrow\quad
+\forall \sigma:\mathbb{N}\to\mathbb{N}\;
+\Bigl(
+  \exists k,\ell\in\mathbb{N}\;(k<\ell\land \sigma(\ell)\le\sigma(k))
+  \lor
+  \exists k\in\mathbb{N}\;(y_k\neq x_{\sigma(k)})
+\Bigr).
+\end{aligned}
+\]
+\[
+\neg\operatorname{IsSubsequence}(y_k,x_n).
+\]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -178,13 +233,17 @@ subsequence $(x_{\sigma(k)})$ such that
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{IsClusterValue}(x_n,L)
+\operatorname{IsClusterValue}(x_n,L,\mathbb{R})
 \coloneqq
 \exists \sigma\;
 \bigl(
-  \operatorname{StrictOrderPreserving}(\sigma)
+  \sigma\colon\mathbb{N}\to\mathbb{N}
   \land
-  \operatorname{ConvergesTo}(x_{\sigma(k)},L)
+  P=\mathsf{OrderedSet}(\mathbb{N},\leq)
+  \land
+  \operatorname{StrictOrderPreserving}(\sigma,P,P)
+  \land
+  \operatorname{ConvergesTo}(x_{\sigma(k)},L,\mathbb{R})
 \bigr).
 \]
 \end{remark*}
@@ -197,7 +256,7 @@ subsequential limits.
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:subsequence]{Subsequence}
+  \item \hyperref[def:subsequence-of-sequence]{Subsequence}
   \item \hyperref[def:convergent-sequence]{Convergence of a Sequence}
 \end{itemize}
 \end{dependencies}
@@ -235,9 +294,9 @@ $\sigma:\mathbb{N}\to\mathbb{N}$ and a real number $L$ such that
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{HasConvergentSubsequence}(x_n)
+\operatorname{HasConvergentSubsequence}(x_n,\mathbb{R})
 \coloneqq
-\exists L\in\mathbb{R}\;\operatorname{IsClusterValue}(x_n,L).
+\exists L\in\mathbb{R}\;\operatorname{IsClusterValue}(x_n,L,\mathbb{R}).
 \]
 \end{remark*}
 
@@ -287,9 +346,13 @@ Then
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{StrictOrderPreserving}(\sigma)
+\begin{gathered}
+\sigma\colon\mathbb{N}\to\mathbb{N},\quad
+P=\mathsf{OrderedSet}(\mathbb{N},\leq),\\
+\operatorname{StrictOrderPreserving}(\sigma,P,P)
 \Longrightarrow
 \forall k\in\mathbb{N}\;(k\le\sigma(k)).
+\end{gathered}
 \]
 \end{remark*}
 
@@ -340,11 +403,15 @@ then every subsequence of $(x_n)$ converges to $L$.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{ConvergesTo}(x_n,L)
+\begin{gathered}
+\sigma\colon\mathbb{N}\to\mathbb{N},\quad
+P=\mathsf{OrderedSet}(\mathbb{N},\leq),\\
+\operatorname{ConvergesTo}(x_n,L,\mathbb{R})
 \land
-\operatorname{StrictOrderPreserving}(\sigma)
+\operatorname{StrictOrderPreserving}(\sigma,P,P)
 \Longrightarrow
-\operatorname{ConvergesTo}(x_{\sigma(k)},L).
+\operatorname{ConvergesTo}(x_{\sigma(k)},L,\mathbb{R}).
+\end{gathered}
 \]
 \end{remark*}
 
@@ -356,7 +423,7 @@ estimate for $(x_n)$ to a tail estimate for $(x_{\sigma(k)})$.
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:subsequence]{Subsequence}
+  \item \hyperref[def:subsequence-of-sequence]{Subsequence}
   \item \hyperref[def:convergent-sequence]{Convergence of a Sequence}
   \item \hyperref[thm:subsequence-indices-dominate-identity]{Subsequence Indices Dominate the Identity}
 \end{itemize}
@@ -395,9 +462,9 @@ K=L.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{ConvergesTo}(x_n,L)
+\operatorname{ConvergesTo}(x_n,L,\mathbb{R})
 \land
-\operatorname{IsClusterValue}(x_n,K)
+\operatorname{IsClusterValue}(x_n,K,\mathbb{R})
 \Longrightarrow
 K=L.
 \]
@@ -451,13 +518,13 @@ limits, then $(x_n)$ does not converge.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{IsClusterValue}(x_n,L)
+\operatorname{IsClusterValue}(x_n,L,\mathbb{R})
 \land
-\operatorname{IsClusterValue}(x_n,K)
+\operatorname{IsClusterValue}(x_n,K,\mathbb{R})
 \land
 L\neq K
 \Longrightarrow
-\neg\exists A\in\mathbb{R}\;\operatorname{ConvergesTo}(x_n,A).
+\neg\exists A\in\mathbb{R}\;\operatorname{ConvergesTo}(x_n,A,\mathbb{R}).
 \]
 \end{remark*}
 
@@ -506,11 +573,15 @@ Every subsequence of a bounded real sequence is bounded.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{Bounded}(x_n)
+\begin{gathered}
+\sigma\colon\mathbb{N}\to\mathbb{N},\quad
+P=\mathsf{OrderedSet}(\mathbb{N},\leq),\\
+\operatorname{Bounded}(x_n,\mathbb{R})
 \land
-\operatorname{StrictOrderPreserving}(\sigma)
+\operatorname{StrictOrderPreserving}(\sigma,P,P)
 \Longrightarrow
-\operatorname{Bounded}(x_{\sigma(k)}).
+\operatorname{Bounded}(x_{\sigma(k)},\mathbb{R}).
+\end{gathered}
 \]
 \end{remark*}
 
@@ -522,8 +593,8 @@ for the selection.
 
 \begin{dependencies}
 \begin{itemize}
+  \item \hyperref[def:subsequence-of-sequence]{Subsequence}
   \item \hyperref[def:bounded-sequence]{Bounded Sequence}
-  \item \hyperref[def:subsequence]{Subsequence}
 \end{itemize}
 \end{dependencies}
 
@@ -560,11 +631,18 @@ subsequence of a decreasing real sequence is decreasing.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{OrderPreserving}(x_n)
+\begin{gathered}
+\sigma\colon\mathbb{N}\to\mathbb{N},\\
+x_n\colon\mathbb{N}\to\mathbb{R},\quad
+x_{\sigma(k)}\colon\mathbb{N}\to\mathbb{R},\\
+P=\mathsf{OrderedSet}(\mathbb{N},\leq),\quad
+Q=\mathsf{OrderedSet}(\mathbb{R},\leq),\\
+\operatorname{OrderPreserving}(x_n,P,Q)
 \land
-\operatorname{StrictOrderPreserving}(\sigma)
+\operatorname{StrictOrderPreserving}(\sigma,P,P)
 \Longrightarrow
-\operatorname{OrderPreserving}(x_{\sigma(k)}).
+\operatorname{OrderPreserving}(x_{\sigma(k)},P,Q).
+\end{gathered}
 \]
 \end{remark*}
 
@@ -577,7 +655,7 @@ present in the sequence. This is why the index map must be strictly increasing.
 \begin{itemize}
   \item \hyperref[def:increasing-sequence]{Increasing Sequence}
   \item \hyperref[def:decreasing-sequence]{Decreasing Sequence}
-  \item \hyperref[def:subsequence]{Subsequence}
+  \item \hyperref[def:subsequence-of-sequence]{Subsequence}
 \end{itemize}
 \end{dependencies}
 
@@ -613,11 +691,16 @@ Every subsequence of a subsequence of $(x_n)$ is a subsequence of $(x_n)$.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{StrictOrderPreserving}(\sigma)
+\begin{gathered}
+\sigma\colon\mathbb{N}\to\mathbb{N},\quad
+\tau\colon\mathbb{N}\to\mathbb{N},\quad
+P=\mathsf{OrderedSet}(\mathbb{N},\leq),\\
+\operatorname{StrictOrderPreserving}(\sigma,P,P)
 \land
-\operatorname{StrictOrderPreserving}(\tau)
+\operatorname{StrictOrderPreserving}(\tau,P,P)
 \Longrightarrow
 \operatorname{IsSubsequence}(x_{\sigma(\tau(k))},x_n).
+\end{gathered}
 \]
 \end{remark*}
 
@@ -628,7 +711,7 @@ $\sigma\circ\tau$ is still strictly increasing.
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:subsequence]{Subsequence}
+  \item \hyperref[def:subsequence-of-sequence]{Subsequence}
   \item \hyperref[def:composition]{Composition}
 \end{itemize}
 \end{dependencies}
@@ -667,11 +750,15 @@ holds for every $k\ge K$.
 
 \begin{remark*}[Predicate reading]
 \[
+\begin{gathered}
+\sigma\colon\mathbb{N}\to\mathbb{N},\quad
+P_0=\mathsf{OrderedSet}(\mathbb{N},\leq),\\
 \operatorname{Eventually}(x_n,P)
 \land
-\operatorname{StrictOrderPreserving}(\sigma)
+\operatorname{StrictOrderPreserving}(\sigma,P_0,P_0)
 \Longrightarrow
 \operatorname{Eventually}(x_{\sigma(k)},P).
+\end{gathered}
 \]
 \end{remark*}
 
@@ -683,8 +770,8 @@ the subsequence.
 
 \begin{dependencies}
 \begin{itemize}
+  \item \hyperref[def:subsequence-of-sequence]{Subsequence}
   \item \hyperref[thm:subsequence-indices-dominate-identity]{Subsequence Indices Dominate the Identity}
-  \item \hyperref[def:subsequence]{Subsequence}
 \end{itemize}
 \end{dependencies}
 
@@ -723,11 +810,16 @@ $P(\sigma(k))$ holds for every $k\in\mathbb{N}$.
 
 \begin{remark*}[Predicate reading]
 \[
+\begin{gathered}
+P_0=\mathsf{OrderedSet}(\mathbb{N},\leq),\\
 \operatorname{Frequently}(x_n,P)
 \Longrightarrow
-\exists \sigma\;\bigl(\operatorname{StrictOrderPreserving}(\sigma)
+\exists \sigma\;\bigl(\sigma\colon\mathbb{N}\to\mathbb{N}
+\land
+\operatorname{StrictOrderPreserving}(\sigma,P_0,P_0)
 \land
 \forall k\in\mathbb{N}\;P(\sigma(k))\bigr).
+\end{gathered}
 \]
 \end{remark*}
 
@@ -738,8 +830,8 @@ construction chooses one later witness at each step.
 
 \begin{dependencies}
 \begin{itemize}
+  \item \hyperref[def:subsequence-of-sequence]{Subsequence}
   \item \hyperref[thm:well-ordering-principle]{Well-Ordering Principle}
-  \item \hyperref[def:subsequence]{Subsequence}
 \end{itemize}
 \end{dependencies}
 
@@ -777,7 +869,7 @@ m\le L\le M.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{IsClusterValue}(x_n,L)
+\operatorname{IsClusterValue}(x_n,L,\mathbb{R})
 \land
 \forall n\in\mathbb{N}\;(m\le x_n\le M)
 \Longrightarrow
@@ -793,7 +885,7 @@ subsequential limits remain inside any closed interval that contains all terms.
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[thm:boundedness-passes-to-subsequences]{Boundedness Passes to Subsequences}
-  \item \hyperref[thm:constant-comparison-for-sequence-limits]{Constant Comparison for Sequence Limits}
+  \item \hyperref[thm:constant-comparison-sequence-limits]{Constant Comparison for Sequence Limits}
 \end{itemize}
 \end{dependencies}
 
@@ -836,11 +928,15 @@ $(x_{\sigma(k)})$ there exists $K\in\mathbb{N}$ such that
 
 \begin{remark*}[Predicate reading]
 \[
+\begin{gathered}
+\sigma\colon\mathbb{N}\to\mathbb{N},\quad
+P_0=\mathsf{OrderedSet}(\mathbb{N},\leq),\\
 \operatorname{Eventually}(x_n,\;a_n\le x_n\le b_n)
 \land
-\operatorname{StrictOrderPreserving}(\sigma)
+\operatorname{StrictOrderPreserving}(\sigma,P_0,P_0)
 \Longrightarrow
 \operatorname{Eventually}(x_{\sigma(k)},\;a_{\sigma(k)}\le x_{\sigma(k)}\le b_{\sigma(k)}).
+\end{gathered}
 \]
 \end{remark*}
 
@@ -892,6 +988,8 @@ Every real sequence has a monotone subsequence.
 &P=\mathsf{OrderedSet}(\mathbb{N},\leq),\qquad
 Q=\mathsf{OrderedSet}(\mathbb{R},\leq),\\
 &\exists \sigma\;\bigl(
+\sigma\colon\mathbb{N}\to\mathbb{N}
+\land
 \operatorname{StrictOrderPreserving}(\sigma,P,P)
 \land
 \bigl[
@@ -913,7 +1011,7 @@ or there is an infinite rising chain.
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:monotone-sequence]{Monotone Sequence}
-  \item \hyperref[def:subsequence]{Subsequence}
+  \item \hyperref[def:subsequence-of-sequence]{Subsequence}
   \item \hyperref[thm:well-ordering-principle]{Well-Ordering Principle}
 \end{itemize}
 \end{dependencies}
@@ -951,9 +1049,9 @@ Every bounded real sequence has a convergent subsequence.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{Bounded}(x_n)
+\operatorname{Bounded}(x_n,\mathbb{R})
 \Longrightarrow
-\operatorname{HasConvergentSubsequence}(x_n).
+\operatorname{HasConvergentSubsequence}(x_n,\mathbb{R}).
 \]
 \end{remark*}
 
@@ -1014,7 +1112,7 @@ convergent subsequence whose limit belongs to $[a,b]$.
 \[
 \bigl[\forall n\in\mathbb{N}\;(a\le x_n\le b)\bigr]
 \Longrightarrow
-\exists L\in[a,b]\;\operatorname{IsClusterValue}(x_n,L).
+\exists L\in[a,b]\;\operatorname{IsClusterValue}(x_n,L,\mathbb{R}).
 \]
 \end{remark*}
 

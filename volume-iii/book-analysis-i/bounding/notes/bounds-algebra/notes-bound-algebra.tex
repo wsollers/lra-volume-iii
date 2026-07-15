@@ -71,6 +71,24 @@ and similarly for dilation and reflection.
 \item[Exposition.]
 The definition fails only if the image set omits an actual transformed point
 or contains a point that is not produced by transforming an element of $A$.
+
+
+  \item[\operatorname{FunctionalRelation} / \operatorname{ReplacementImage}.]
+  \[
+x\notin A+c\Longleftrightarrow(\forall a\in A)(x\neq a+c),
+\qquad
+x\notin\lambda A\Longleftrightarrow(\forall a\in A)(x\neq\lambda a).
+\]
+\[
+\begin{aligned}
+&A\subseteq\mathbb{R},\qquad A+c=\{a+c:a\in A\},\qquad
+\varphi_c\colon A\to A+c,\qquad
+\operatorname{FunctionalRelation}(\varphi_c,A,A+c),\qquad \varphi_c(a)=a+c,\\
+&\neg\operatorname{ReplacementImage}(B,A,\varphi_c)
+\end{aligned}
+\quad\text{means}\quad
+(\exists x)\bigl[x\in B\triangle(A+c)\bigr],
+\]
 \end{description}
 \end{remark*}
 
@@ -79,6 +97,24 @@ or contains a point that is not produced by transforming an element of $A$.
 \item[Exposition.]
 Every membership claim in a transformed set decomposes into an original element
 and the transformation rule that produced the new point.
+
+
+  \item[\operatorname{FunctionalRelation} / \operatorname{ReplacementImage}.]
+  \[
+x\notin A+c\Longleftrightarrow(\forall a\in A)(x\neq a+c),
+\qquad
+x\notin\lambda A\Longleftrightarrow(\forall a\in A)(x\neq\lambda a).
+\]
+\[
+\begin{aligned}
+&A\subseteq\mathbb{R},\qquad A+c=\{a+c:a\in A\},\qquad
+\varphi_c\colon A\to A+c,\qquad
+\operatorname{FunctionalRelation}(\varphi_c,A,A+c),\qquad \varphi_c(a)=a+c,\\
+&\neg\operatorname{ReplacementImage}(B,A,\varphi_c)
+\end{aligned}
+\quad\text{means}\quad
+(\exists x)\bigl[x\in B\triangle(A+c)\bigr],
+\]
 \end{description}
 \end{remark*}
 
@@ -146,6 +182,20 @@ A\subseteq\mathbb{R},\qquad A+c=\{a+c:a\in A\},\\
 \begin{description}
 \item[Exposition.]
 A failure would require a translated point above the translated upper bound.
+
+
+  \item[\operatorname{UpperBound}.]
+  \[
+(\forall a\in A)(a\leq u),\qquad
+(\exists y\in A+c)(u+c<y).
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+A\subseteq\mathbb{R},\qquad A+c=\{a+c:a\in A\},\\
+&\operatorname{UpperBound}(u,A,P)\land\neg\operatorname{UpperBound}(u+c,A+c,P).
+\end{aligned}
+\]
 \end{description}
 \end{remark*}
 
@@ -153,6 +203,20 @@ A failure would require a translated point above the translated upper bound.
 \begin{description}
 \item[Exposition.]
 Write $y=a+c$ with $a\in A$.  Then $a\leq u$ gives $a+c\leq u+c$.
+
+
+  \item[\operatorname{UpperBound}.]
+  \[
+(\forall a\in A)(a\leq u),\qquad
+(\exists y\in A+c)(u+c<y).
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+A\subseteq\mathbb{R},\qquad A+c=\{a+c:a\in A\},\\
+&\operatorname{UpperBound}(u,A,P)\land\neg\operatorname{UpperBound}(u+c,A+c,P).
+\end{aligned}
+\]
 \end{description}
 \end{remark*}
 
@@ -220,6 +284,20 @@ A\subseteq\mathbb{R},\qquad A+c=\{a+c:a\in A\},\\
 \begin{description}
 \item[Exposition.]
 A failure would require a translated point below the translated lower bound.
+
+
+  \item[\operatorname{LowerBound}.]
+  \[
+(\forall a\in A)(\ell\leq a),\qquad
+(\exists y\in A+c)(y<\ell+c).
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+A\subseteq\mathbb{R},\qquad A+c=\{a+c:a\in A\},\\
+&\operatorname{LowerBound}(\ell,A,P)\land\neg\operatorname{LowerBound}(\ell+c,A+c,P).
+\end{aligned}
+\]
 \end{description}
 \end{remark*}
 
@@ -227,6 +305,20 @@ A failure would require a translated point below the translated lower bound.
 \begin{description}
 \item[Exposition.]
 Write $y=a+c$ with $a\in A$.  Then $\ell\leq a$ gives $\ell+c\leq a+c$.
+
+
+  \item[\operatorname{LowerBound}.]
+  \[
+(\forall a\in A)(\ell\leq a),\qquad
+(\exists y\in A+c)(y<\ell+c).
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+A\subseteq\mathbb{R},\qquad A+c=\{a+c:a\in A\},\\
+&\operatorname{LowerBound}(\ell,A,P)\land\neg\operatorname{LowerBound}(\ell+c,A+c,P).
+\end{aligned}
+\]
 \end{description}
 \end{remark*}
 
@@ -296,6 +388,21 @@ A\subseteq\mathbb{R},\qquad \lambda A=\{\lambda a:a\in A\},\\
 \begin{description}
 \item[Exposition.]
 A failure would require positive multiplication to reverse an inequality.
+
+
+  \item[\operatorname{UpperBound}.]
+  \[
+\lambda>0,\qquad(\forall a\in A)(a\leq u),\qquad
+(\exists y\in\lambda A)(\lambda u<y).
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+A\subseteq\mathbb{R},\qquad \lambda A=\{\lambda a:a\in A\},\\
+&\lambda>0\land\operatorname{UpperBound}(u,A,P)\land
+\neg\operatorname{UpperBound}(\lambda u,\lambda A,P).
+\end{aligned}
+\]
 \end{description}
 \end{remark*}
 
@@ -304,6 +411,21 @@ A failure would require positive multiplication to reverse an inequality.
 \item[Exposition.]
 Write $y=\lambda a$ with $a\in A$.  Since $a\leq u$ and $\lambda>0$,
 $\lambda a\leq\lambda u$.
+
+
+  \item[\operatorname{UpperBound}.]
+  \[
+\lambda>0,\qquad(\forall a\in A)(a\leq u),\qquad
+(\exists y\in\lambda A)(\lambda u<y).
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+A\subseteq\mathbb{R},\qquad \lambda A=\{\lambda a:a\in A\},\\
+&\lambda>0\land\operatorname{UpperBound}(u,A,P)\land
+\neg\operatorname{UpperBound}(\lambda u,\lambda A,P).
+\end{aligned}
+\]
 \end{description}
 \end{remark*}
 
@@ -374,6 +496,21 @@ A\subseteq\mathbb{R},\qquad \lambda A=\{\lambda a:a\in A\},\\
 \item[Exposition.]
 A failure would require a positively dilated point below the positively
 dilated lower bound.
+
+
+  \item[\operatorname{LowerBound}.]
+  \[
+\lambda>0,\qquad(\forall a\in A)(\ell\leq a),\qquad
+(\exists y\in\lambda A)(y<\lambda\ell).
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+A\subseteq\mathbb{R},\qquad \lambda A=\{\lambda a:a\in A\},\\
+&\lambda>0\land\operatorname{LowerBound}(\ell,A,P)\land
+\neg\operatorname{LowerBound}(\lambda\ell,\lambda A,P).
+\end{aligned}
+\]
 \end{description}
 \end{remark*}
 
@@ -382,6 +519,21 @@ dilated lower bound.
 \item[Exposition.]
 Write $y=\lambda a$ with $a\in A$.  Since $\ell\leq a$ and $\lambda>0$,
 $\lambda\ell\leq\lambda a$.
+
+
+  \item[\operatorname{LowerBound}.]
+  \[
+\lambda>0,\qquad(\forall a\in A)(\ell\leq a),\qquad
+(\exists y\in\lambda A)(y<\lambda\ell).
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+A\subseteq\mathbb{R},\qquad \lambda A=\{\lambda a:a\in A\},\\
+&\lambda>0\land\operatorname{LowerBound}(\ell,A,P)\land
+\neg\operatorname{LowerBound}(\lambda\ell,\lambda A,P).
+\end{aligned}
+\]
 \end{description}
 \end{remark*}
 
@@ -452,6 +604,21 @@ A\subseteq\mathbb{R},\qquad \lambda A=\{\lambda a:a\in A\},\\
 \item[Exposition.]
 A failure would require negative multiplication not to reverse the lower-bound
 inequality.
+
+
+  \item[\operatorname{LowerBound} / \operatorname{UpperBound}.]
+  \[
+\lambda<0,\qquad(\forall a\in A)(\ell\leq a),\qquad
+(\exists y\in\lambda A)(\lambda\ell<y).
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+A\subseteq\mathbb{R},\qquad \lambda A=\{\lambda a:a\in A\},\\
+&\lambda<0\land\operatorname{LowerBound}(\ell,A,P)\land
+\neg\operatorname{UpperBound}(\lambda\ell,\lambda A,P).
+\end{aligned}
+\]
 \end{description}
 \end{remark*}
 
@@ -460,6 +627,21 @@ inequality.
 \item[Exposition.]
 Write $y=\lambda a$ with $a\in A$.  Since $\ell\leq a$ and $\lambda<0$,
 $\lambda a\leq\lambda\ell$.
+
+
+  \item[\operatorname{LowerBound} / \operatorname{UpperBound}.]
+  \[
+\lambda<0,\qquad(\forall a\in A)(\ell\leq a),\qquad
+(\exists y\in\lambda A)(\lambda\ell<y).
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+A\subseteq\mathbb{R},\qquad \lambda A=\{\lambda a:a\in A\},\\
+&\lambda<0\land\operatorname{LowerBound}(\ell,A,P)\land
+\neg\operatorname{UpperBound}(\lambda\ell,\lambda A,P).
+\end{aligned}
+\]
 \end{description}
 \end{remark*}
 
@@ -531,6 +713,21 @@ A\subseteq\mathbb{R},\qquad \lambda A=\{\lambda a:a\in A\},\\
 \item[Exposition.]
 A failure would require negative multiplication not to reverse the upper-bound
 inequality.
+
+
+  \item[\operatorname{UpperBound} / \operatorname{LowerBound}.]
+  \[
+\lambda<0,\qquad(\forall a\in A)(a\leq u),\qquad
+(\exists y\in\lambda A)(y<\lambda u).
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+A\subseteq\mathbb{R},\qquad \lambda A=\{\lambda a:a\in A\},\\
+&\lambda<0\land\operatorname{UpperBound}(u,A,P)\land
+\neg\operatorname{LowerBound}(\lambda u,\lambda A,P).
+\end{aligned}
+\]
 \end{description}
 \end{remark*}
 
@@ -539,6 +736,21 @@ inequality.
 \item[Exposition.]
 Write $y=\lambda a$ with $a\in A$.  Since $a\leq u$ and $\lambda<0$,
 $\lambda u\leq\lambda a$.
+
+
+  \item[\operatorname{UpperBound} / \operatorname{LowerBound}.]
+  \[
+\lambda<0,\qquad(\forall a\in A)(a\leq u),\qquad
+(\exists y\in\lambda A)(y<\lambda u).
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+A\subseteq\mathbb{R},\qquad \lambda A=\{\lambda a:a\in A\},\\
+&\lambda<0\land\operatorname{UpperBound}(u,A,P)\land
+\neg\operatorname{LowerBound}(\lambda u,\lambda A,P).
+\end{aligned}
+\]
 \end{description}
 \end{remark*}
 
@@ -619,6 +831,25 @@ A\subseteq\mathbb{R},\qquad -A=\{-a:a\in A\},\\
 \item[Exposition.]
 Reflection reverses the real line, so lower information becomes upper
 information and upper information becomes lower information.
+
+
+  \item[\operatorname{LowerBound} / \operatorname{UpperBound}.]
+
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+A\subseteq\mathbb{R},\qquad -A=\{-a:a\in A\},\\
+&\operatorname{LowerBound}(\ell,A,P)\land\neg\operatorname{UpperBound}(-\ell,-A,P)
+\end{aligned}
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+A\subseteq\mathbb{R},\qquad -A=\{-a:a\in A\},\\
+&\operatorname{LowerBound}(\ell,A,P)\Longrightarrow\operatorname{UpperBound}(-\ell,-A,P),\\
+&\operatorname{UpperBound}(u,A,P)\Longrightarrow\operatorname{LowerBound}(-u,-A,P).
+\end{aligned}
+\]
 \end{description}
 \end{remark*}
 
@@ -626,6 +857,25 @@ information and upper information becomes lower information.
 \begin{description}
 \item[Exposition.]
 Apply negative dilation with $\lambda=-1$.
+
+
+  \item[\operatorname{LowerBound} / \operatorname{UpperBound}.]
+
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+A\subseteq\mathbb{R},\qquad -A=\{-a:a\in A\},\\
+&\operatorname{LowerBound}(\ell,A,P)\land\neg\operatorname{UpperBound}(-\ell,-A,P)
+\end{aligned}
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+A\subseteq\mathbb{R},\qquad -A=\{-a:a\in A\},\\
+&\operatorname{LowerBound}(\ell,A,P)\Longrightarrow\operatorname{UpperBound}(-\ell,-A,P),\\
+&\operatorname{UpperBound}(u,A,P)\Longrightarrow\operatorname{LowerBound}(-u,-A,P).
+\end{aligned}
+\]
 \end{description}
 \end{remark*}
 

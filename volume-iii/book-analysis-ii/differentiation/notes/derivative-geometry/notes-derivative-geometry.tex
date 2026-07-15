@@ -27,7 +27,9 @@ then $f$ has a \emph{strict relative minimum} at $c$.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{IsLocalMinimum}(f, c)
+  f\colon A\to\mathbb{R},\\
+
+\operatorname{IsLocalMinimum}(f,c,A)
 \;\Longleftrightarrow\;
 \exists \delta > 0\;\forall x \in A\;
 \bigl(\operatorname{Within}(x, c, \delta) \implies f(c) \leq f(x)\bigr).
@@ -40,10 +42,10 @@ $f$ has a relative minimum at $c$ if $f(c)$ is the smallest value of $f$ in some
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:function]{Function}
-  \item \hyperref[def:subset]{Subset}
-  \item \hyperref[def:open-interval]{Open Interval}
   \item \hyperref[def:order-on-r]{Order on $\mathbb{R}$}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:function]{Function}
+  \item \hyperref[def:open-interval]{Open Interval}
 \end{itemize}
 \end{dependencies}
 % ---------------------------------------------------------
@@ -72,7 +74,9 @@ then $f$ has a \emph{strict relative maximum} at $c$.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{IsLocalMaximum}(f, c)
+  f\colon A\to\mathbb{R},\\
+
+\operatorname{IsLocalMaximum}(f,c,A)
 \;\Longleftrightarrow\;
 \exists \delta > 0\;\forall x \in A\;
 \bigl(\operatorname{Within}(x, c, \delta) \implies f(x) \leq f(c)\bigr).
@@ -100,17 +104,19 @@ Let $A \subseteq \mathbb{R}$, let $f : A \to \mathbb{R}$, and let $c \in A$. We 
 
 \begin{remark*}[Standard quantified statement]
 \[
-\operatorname{IsLocalExtremum}(f, c)
+\operatorname{IsLocalExtremum}(f,c,A)
 \;\Longleftrightarrow\;
-\operatorname{IsLocalMinimum}(f, c) \;\lor\; \operatorname{IsLocalMaximum}(f, c).
+\operatorname{IsLocalMinimum}(f,c,A) \;\lor\; \operatorname{IsLocalMaximum}(f,c,A).
 \]
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{IsLocalExtremum}(f, c)
+  f\colon A\to\mathbb{R},\\
+
+\operatorname{IsLocalExtremum}(f,c,A)
 \;\Longleftrightarrow\;
-\operatorname{IsLocalMinimum}(f, c) \;\lor\; \operatorname{IsLocalMaximum}(f, c).
+\operatorname{IsLocalMinimum}(f,c,A) \;\lor\; \operatorname{IsLocalMaximum}(f,c,A).
 \]
 \end{remark*}
 
@@ -141,23 +147,23 @@ f'(c) = 0.
 
 \begin{remark*}[Standard quantified statement]
 \[
-\operatorname{IsLocalExtremum}(f, c) \;\land\; \operatorname{IsDifferentiable}(f, c)
-\;\Rightarrow\; \operatorname{Derivative}(f, c, 0).
+\operatorname{IsLocalExtremum}(f,c,A) \;\land\; \operatorname{IsDifferentiable}(f,c,\mathbb{R},\mathbb{R})
+\;\Rightarrow\; \operatorname{Derivative}(0,f,c,\mathbb{R},\mathbb{R}).
 \]
 \end{remark*}
 
 \begin{remark*}[Interpretation]
 \[
-\operatorname{Derivative}(f, c, L) \;\land\; L \neq 0
-\;\Rightarrow\; \lnot\operatorname{IsLocalExtremum}(f, c).
+\operatorname{Derivative}(L,f,c,\mathbb{R},\mathbb{R}) \;\land\; L \neq 0
+\;\Rightarrow\; \lnot\operatorname{IsLocalExtremum}(f,c,A).
 \]
 If $f'(c)$ exists and is nonzero, then $c$ is not a relative extremum.
 
 
 \[
-\operatorname{Derivative}(f, c, L) \;\land\; L \neq 0
+\operatorname{Derivative}(L,f,c,\mathbb{R},\mathbb{R}) \;\land\; L \neq 0
 \;\Rightarrow\;
-\lnot\operatorname{IsLocalMinimum}(f, c) \;\land\; \lnot\operatorname{IsLocalMaximum}(f, c).
+\lnot\operatorname{IsLocalMinimum}(f,c,A) \;\land\; \lnot\operatorname{IsLocalMaximum}(f,c,A).
 \]
 
 
@@ -189,9 +195,9 @@ f'(c) = 0.
 
 \begin{remark*}[Standard quantified statement]
 \[
-\operatorname{IsLocalExtremum}(f,c)
+\operatorname{IsLocalExtremum}(f,c,A)
 \;\Rightarrow\;
-\lnot\operatorname{IsDifferentiable}(f,c) \;\lor\; \operatorname{Derivative}(f,c,0).
+\lnot\operatorname{IsDifferentiable}(f,c,\mathbb{R},\mathbb{R}) \;\lor\; \operatorname{Derivative}(0,f,c,\mathbb{R},\mathbb{R}).
 \]
 \end{remark*}
 
@@ -220,9 +226,9 @@ f'(c) = 0 \quad \text{or} \quad f'(c) \text{ does not exist.}
 
 \begin{remark*}[Standard quantified statement]
 \[
-\operatorname{IsLocalExtremum}(f,c)
+\operatorname{IsLocalExtremum}(f,c,A)
 \;\Rightarrow\;
-\operatorname{Derivative}(f,c,0) \;\lor\; \lnot\operatorname{IsDifferentiable}(f,c).
+\operatorname{Derivative}(0,f,c,\mathbb{R},\mathbb{R}) \;\lor\; \lnot\operatorname{IsDifferentiable}(f,c,\mathbb{R},\mathbb{R}).
 \]
 \end{remark*}
 

@@ -95,6 +95,36 @@ A\neq\varnothing
 \begin{description}
   \item[Exposition.]
 The property fails when there is a nonempty subset of the ambient ordered set that has at least one upper bound but has no least upper bound inside that same ambient set.
+
+
+  \item[\operatorname{LeastUpperBound} / \operatorname{HasLeastUpperBoundProperty}.]
+  \[
+\begin{aligned}
+&\text{Let }(S,\le)\text{ be an ordered set}.\\
+&S\text{ does not have the Least Upper Bound Property}\\
+&\Longleftrightarrow
+\exists A\subseteq S\;
+\Bigl[
+A\neq\varnothing
+\land
+\exists u\in S\;\forall x\in A\;(x\le u)
+\land
+\forall s\in S\;\neg\operatorname{LeastUpperBound}(s,A)
+\Bigr].
+\end{aligned}
+\]
+\[
+S\in\mathbf{Set},\qquad P=\mathsf{OrderedSet}(S,\leq),\qquad
+\neg\operatorname{HasLeastUpperBoundProperty}(P)\Longleftrightarrow
+\exists A\subseteq S\;
+\Bigl[
+A\neq\varnothing
+\land
+\exists u\in S\;\forall x\in A\;(x\le u)
+\land
+\forall s\in S\;\neg\operatorname{LeastUpperBound}(s,A,P)
+\Bigr].
+\]
 \end{description}
 \end{remark*}
 
@@ -109,6 +139,36 @@ The property fails when there is a nonempty subset of the ambient ordered set th
 \underbrace{\exists u\in S\;\forall x\in A\;(x\le u)}_{\text{bounded above in }S}
 \;\land\;
 \underbrace{\forall s\in S\;\neg\operatorname{LeastUpperBound}(s,A)}_{\text{no supremum in }S}.
+\]
+
+
+  \item[\operatorname{LeastUpperBound} / \operatorname{HasLeastUpperBoundProperty}.]
+  \[
+\begin{aligned}
+&\text{Let }(S,\le)\text{ be an ordered set}.\\
+&S\text{ does not have the Least Upper Bound Property}\\
+&\Longleftrightarrow
+\exists A\subseteq S\;
+\Bigl[
+A\neq\varnothing
+\land
+\exists u\in S\;\forall x\in A\;(x\le u)
+\land
+\forall s\in S\;\neg\operatorname{LeastUpperBound}(s,A)
+\Bigr].
+\end{aligned}
+\]
+\[
+S\in\mathbf{Set},\qquad P=\mathsf{OrderedSet}(S,\leq),\qquad
+\neg\operatorname{HasLeastUpperBoundProperty}(P)\Longleftrightarrow
+\exists A\subseteq S\;
+\Bigl[
+A\neq\varnothing
+\land
+\exists u\in S\;\forall x\in A\;(x\le u)
+\land
+\forall s\in S\;\neg\operatorname{LeastUpperBound}(s,A,P)
+\Bigr].
 \]
 \end{description}
 \end{remark*}
@@ -198,6 +258,35 @@ A\neq\varnothing
 \begin{description}
   \item[Exposition.]
 Completeness would fail if some nonempty subset of $\mathbb{R}$ were bounded above in $\mathbb{R}$ but had no supremum in $\mathbb{R}$.
+
+
+  \item[\operatorname{HasLeastUpperBoundProperty} / \operatorname{LeastUpperBound}.]
+  \[
+\begin{aligned}
+&\neg\operatorname{HasLeastUpperBoundProperty}(\mathbb{R})\\
+&\Longleftrightarrow
+\exists A\subseteq\mathbb{R}\;
+\Bigl[
+A\neq\varnothing
+\land
+\exists u\in\mathbb{R}\;\forall x\in A\;(x\le u)
+\land
+\forall s\in\mathbb{R}\;\neg\operatorname{LeastUpperBound}(s,A)
+\Bigr].
+\end{aligned}
+\]
+\[
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+\neg\operatorname{HasLeastUpperBoundProperty}(P_{\mathbb{R}})\Longleftrightarrow
+\exists A\subseteq\mathbb{R}\;
+\Bigl[
+A\neq\varnothing
+\land
+\exists u\in\mathbb{R}\;\forall x\in A\;(x\le u)
+\land
+\forall s\in\mathbb{R}\;\neg\operatorname{LeastUpperBound}(s,A,P_{\mathbb{R}})
+\Bigr].
+\]
 \end{description}
 \end{remark*}
 
@@ -212,6 +301,35 @@ Completeness would fail if some nonempty subset of $\mathbb{R}$ were bounded abo
 \underbrace{\exists u\in\mathbb{R}\;\forall x\in A\;(x\le u)}_{\text{bounded above in }\mathbb{R}}
 \;\land\;
 \underbrace{\forall s\in\mathbb{R}\;\neg\operatorname{LeastUpperBound}(s,A)}_{\text{missing real supremum}}.
+\]
+
+
+  \item[\operatorname{HasLeastUpperBoundProperty} / \operatorname{LeastUpperBound}.]
+  \[
+\begin{aligned}
+&\neg\operatorname{HasLeastUpperBoundProperty}(\mathbb{R})\\
+&\Longleftrightarrow
+\exists A\subseteq\mathbb{R}\;
+\Bigl[
+A\neq\varnothing
+\land
+\exists u\in\mathbb{R}\;\forall x\in A\;(x\le u)
+\land
+\forall s\in\mathbb{R}\;\neg\operatorname{LeastUpperBound}(s,A)
+\Bigr].
+\end{aligned}
+\]
+\[
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+\neg\operatorname{HasLeastUpperBoundProperty}(P_{\mathbb{R}})\Longleftrightarrow
+\exists A\subseteq\mathbb{R}\;
+\Bigl[
+A\neq\varnothing
+\land
+\exists u\in\mathbb{R}\;\forall x\in A\;(x\le u)
+\land
+\forall s\in\mathbb{R}\;\neg\operatorname{LeastUpperBound}(s,A,P_{\mathbb{R}})
+\Bigr].
 \]
 \end{description}
 \end{remark*}

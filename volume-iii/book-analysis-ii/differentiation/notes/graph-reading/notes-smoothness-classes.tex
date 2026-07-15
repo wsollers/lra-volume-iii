@@ -9,9 +9,9 @@ Let \(I\subseteq\mathbb{R}\) be an interval and let \(f:I\to\mathbb{R}\). The fu
 \[
   f\in C^1(I)
   \Longleftrightarrow
-  \bigl(\forall x\in I:\operatorname{IsDifferentiable}(f,x)\bigr)
+  \bigl(\forall x\in I:\operatorname{IsDifferentiable}(f,x,\mathbb{R},\mathbb{R})\bigr)
   \land
-  \operatorname{IsContinuous}(f',I).
+  \operatorname{IsContinuous}(f',I,\mathbb{R},\mathbb{R}).
 \]
 \end{remark*}
 
@@ -71,7 +71,9 @@ Let \(I\subseteq\mathbb{R}\) be an interval, let \(k\in\mathbb{N}\), and let \(f
 
 \begin{remark*}[Predicate reading]
 \[
-  \operatorname{IsClassC}(f,I,k).
+  f\colon A\to\mathbb{R},\\
+
+  \operatorname{IsClassC}(f,k,I).
 \]
 For a fixed interval \(I\), the classes are nested:
 \[
@@ -86,15 +88,41 @@ For a fixed interval \(I\), the classes are nested:
   \exists x\in I:\ \bigl[f^{(k)}\text{ fails to exist at }x\bigr]
   \vee
   \bigl[f^{(k)}\text{ exists on }I\land
-  \neg\operatorname{IsContinuous}(f^{(k)},x)\bigr].
+  \neg\operatorname{IsContinuous}(f^{(k)},x,\mathbb{R},\mathbb{R})\bigr].
 \]
 \end{remark*}
 
 \begin{remark*}[Negation predicate reading]
-\(\neg\operatorname{IsClassC}(f,I,k)\): somewhere the \(k\)-th derivative
+\[
+  f\colon A\to\mathbb{R},\\
+  f'\colon A\to\mathbb{R}.
+\]
+
+\(\neg\operatorname{IsClassC}(f,k,I)\): somewhere the \(k\)-th derivative
 either does not exist or exists but is not continuous. A single point where
 the top derivative is discontinuous certifies \(f\notin C^k(I)\).
+\[
+  f\colon I\to\mathbb{R},\\
+  \operatorname{IsClassC}(f,k,I).
+\]
 \end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  The failure is recorded by the negated formal condition.
+
+  \item[\operatorname{IsClassC}.]
+  The displayed obstruction is the predicate-level failure condition.
+  \[
+  \exists x\in I\;\neg\operatorname{IsClassC}(f,k,I).
+  \]
+  \[
+  \neg\,\operatorname{IsClassC}(f,k,I).
+  \]
+\end{description}
+\end{remark*}
+
 
 \begin{remark*}[Interpretation]
 The notation \(C^k(I)\) records \(k\) layers of differentiability together with continuity at the top layer. This is the regularity scale used to state how many times a theorem may differentiate a function without leaving the controlled setting.
@@ -135,6 +163,35 @@ A single order at which differentiability or continuity breaks demotes the
 function out of \(C^\infty\).
 \end{remark*}
 
+\begin{remark*}[Negation predicate reading]
+\[
+  f\colon A\to\mathbb{R},\\
+
+\neg\,\operatorname{IsClassC}(f,k,I).
+\]
+\end{remark*}
+
+
+
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  Smoothness fails as soon as one finite differentiability level fails.
+
+  \item[\operatorname{IsClassC}.]
+  The displayed obstruction is the predicate-level failure condition.
+  \[
+  \exists k\in\mathbb{N}\;\neg\operatorname{IsClassC}(f,k,I).
+  \]
+  \[
+  \neg\,\operatorname{IsClassC}(f,k,I).
+  \]
+\end{description}
+\end{remark*}
+
+
+
 \begin{remark*}[Interpretation]
 Smoothness is the regularity language imported by differential geometry. Smooth manifolds are assembled from \(C^\infty\) transition maps, and the tangent-map construction seeded by the differential uses this vocabulary.
 \end{remark*}
@@ -166,7 +223,16 @@ Let \(I\subseteq\mathbb{R}\) be an interval and let \(f:I\to\mathbb{R}\). The fu
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
+\[
+  f\colon A\to\mathbb{R},\\
+  f'\colon A\to\mathbb{R}.
+\]
+
 The displayed quantified statement is the predicate-level form of $label: its hypotheses name the input conditions, and its conclusion names the asserted structure or relation.
+\[
+  f\colon I\to\mathbb{R},\\
+  \operatorname{IsClassC}(f,k,I).
+\]
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -214,6 +280,16 @@ The inclusions do not fail; only their strictness needs witnesses.
         Maclaurin series is zero while the function is not.
 \end{itemize}
 These separators prove every displayed containment is a genuine drop.
+
+
+  \item[\operatorname{IsClassC}.]
+  The displayed obstruction is the predicate-level failure condition.
+  \[
+  \exists x\in I\;\neg\operatorname{IsClassC}(f,k,I).
+  \]
+  \[
+  \neg\,\operatorname{IsClassC}(f,k,I).
+  \]
 \end{description}
 \end{remark*}
 
@@ -273,10 +349,14 @@ there exists \(L\geq 0\) such that
 
 \begin{remark*}[Predicate reading]
 \[
+  f'\colon A\to\mathbb{R},\\
+
+  f\colon A\to\mathbb{R},\\
+
   f\in C^{1,1}(I)
   \Longleftrightarrow
-  \operatorname{IsClassC}(f,I,1)\land
-  \exists L\geq0:\operatorname{IsLipschitz}(f',I,L).
+  \operatorname{IsClassC}(f,1,I)\land
+  \exists L\geq0:\operatorname{IsLipschitz}(f',I,\mathbb{R},\mathbb{R},L).
 \]
 The smallest admissible \(L\) is the Lipschitz constant of \(f'\):
 \[
@@ -292,6 +372,35 @@ The smallest admissible \(L\) is the Lipschitz constant of \(f'\):
   \bigl(\forall L\geq0\;\exists x,y\in I:\ |f'(x)-f'(y)|>L|x-y|\bigr).
 \]
 \end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+  f\colon A\to\mathbb{R},\\
+
+\neg\,\operatorname{IsClassC}(f,k,I).
+\]
+\end{remark*}
+
+
+
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  The class condition fails if the function is not class C1 or if the derivative is not Lipschitz.
+
+  \item[\operatorname{IsLipschitz}.]
+  The displayed obstruction is the predicate-level failure condition.
+  \[
+  \neg\operatorname{IsClassC}(f,1,I)\;\lor\;\neg\operatorname{IsLipschitz}(f',I,\mathbb{R},\mathbb{R},L).
+  \]
+  \[
+  \neg\,\operatorname{IsLipschitz}(f',I,\mathbb{R},\mathbb{R},L).
+  \]
+\end{description}
+\end{remark*}
+
+
 
 \begin{remark*}[Interpretation]
 \(C^{1,1}\) says that \(f'\) behaves as if \(|f''|\leq L\), without requiring
@@ -346,6 +455,16 @@ two elementary functions.
   \item \(C^1\setminus C^{1,1}\): \(f(x)=|x|^{4/3}\) has continuous first
         derivative, but \(f'\) has unbounded difference quotients at \(0\).
 \end{itemize}
+
+
+  \item[\operatorname{IsClassC}.]
+  The displayed obstruction is the predicate-level failure condition.
+  \[
+  \exists x\in I\;\neg\operatorname{IsClassC}(f,k,I).
+  \]
+  \[
+  \neg\,\operatorname{IsClassC}(f,k,I).
+  \]
 \end{description}
 \end{remark*}
 
@@ -380,7 +499,7 @@ is Lipschitz with constant \(M\).
 \[
   \bigl(f\in C^2(I)\land \forall x\in I:\ |f''(x)|\leq M\bigr)
   \Rightarrow
-  f\in C^{1,1}(I)\land \operatorname{IsLipschitz}(f',I,M).
+  f\in C^{1,1}(I)\land \operatorname{IsLipschitz}(f',I,\mathbb{R},\mathbb{R},M).
 \]
 \end{remark*}
 

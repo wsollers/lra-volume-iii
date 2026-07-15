@@ -53,6 +53,25 @@ a_n\le a_{n+1}\le b_{n+1}\le b_n.
 \]
 \end{remark*}
 
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  Failure is witnessed by the displayed negated or contrapositive condition.
+
+  \item[\exists-condition.]
+  \[
+\exists n\in\mathbb{N}\;
+\Bigl([a_{n+1},b_{n+1}]\subseteq [a_n,b_n]\land
+(a_{n+1}<a_n\lor b_n<b_{n+1})\Bigr).
+\]
+\[
+(a_{n+1}<a_n\lor b_n<b_{n+1})
+\Longrightarrow
+[a_{n+1},b_{n+1}]\not\subseteq [a_n,b_n].
+\]
+\end{description}
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 One-step nesting of closed intervals moves the left endpoint to the right
 and the right endpoint to the left.
@@ -113,6 +132,22 @@ P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),
 \Longrightarrow
 \neg\operatorname{NestedClosedIntervals}(F,P_{\mathbb{R}}).
 \]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  Failure is witnessed by the displayed negated or contrapositive condition.
+
+  \item[\exists-condition.]
+  \[
+\exists n\in\mathbb{N}\;(a_{n+1}<a_n).
+\]
+\[
+F=([a_n,b_n])_{n\in\mathbb{N}},\qquad
+a\colon\mathbb{N}\to\mathbb{R},\qquad a(n)=a_n,
+\]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -177,6 +212,22 @@ P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),
 \]
 \end{remark*}
 
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  Failure is witnessed by the displayed negated or contrapositive condition.
+
+  \item[\exists-condition.]
+  \[
+\exists n\in\mathbb{N}\;(b_n<b_{n+1}).
+\]
+\[
+F=([a_n,b_n])_{n\in\mathbb{N}},\qquad
+b\colon\mathbb{N}\to\mathbb{R},\qquad b(n)=b_n,
+\]
+\end{description}
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 In a nested family, the right endpoints cannot move right as the intervals
 shrink.
@@ -230,6 +281,21 @@ F=([a_n,b_n])_{n\in\mathbb{N}},\qquad P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb
 \Longrightarrow
 \neg\operatorname{NestedClosedIntervals}(F,P_{\mathbb{R}}).
 \]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  Failure is witnessed by the displayed negated or contrapositive condition.
+
+  \item[\mathsf{OrderedSet}.]
+  \[
+\exists m,n\in\mathbb{N}\;(b_m<a_n).
+\]
+\[
+F=([a_n,b_n])_{n\in\mathbb{N}},\qquad P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),
+\]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -311,6 +377,28 @@ P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
 \lor
 \neg\operatorname{GreatestLowerBound}(\beta,B,P_{\mathbb{R}}).
 \]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  Failure is witnessed by the displayed negated or contrapositive condition.
+
+  \item[\operatorname{NestedClosedIntervals}.]
+  \[
+\operatorname{NestedClosedIntervals}([a_n,b_n])
+\land
+\alpha=\sup\{a_n:n\in\mathbb{N}\}
+\land
+\beta=\inf\{b_n:n\in\mathbb{N}\}
+\land
+\beta<\alpha.
+\]
+\[
+F=([a_n,b_n])_{n\in\mathbb{N}},\qquad
+A=\{a_n:n\in\mathbb{N}\},\qquad B=\{b_n:n\in\mathbb{N}\},
+\]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -396,6 +484,31 @@ C=\varnothing
 \]
 \end{remark*}
 
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  Failure is witnessed by the displayed negated or contrapositive condition.
+
+  \item[\mathsf{OrderedSet}.]
+  \[
+\begin{aligned}
+&\exists (a_n)\subseteq\mathbb{R}\;\exists (b_n)\subseteq\mathbb{R}\;\\
+&\Bigl[
+\bigl(\forall n\in\mathbb{N}\;(a_n\le b_n)\bigr)
+\land
+\bigl(\forall n\in\mathbb{N}\;([a_{n+1},b_{n+1}]\subseteq [a_n,b_n])\bigr)
+\land
+\forall x\in\mathbb{R}\;\exists n\in\mathbb{N}\;(x\notin [a_n,b_n])
+\Bigr].
+\end{aligned}
+\]
+\[
+F=([a_n,b_n])_{n\in\mathbb{N}},\qquad C=\bigcap_{n=1}^{\infty}[a_n,b_n],\qquad
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),
+\]
+\end{description}
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 Completeness prevents a nested closed bounded family from losing every point
 at the limiting stage.
@@ -472,6 +585,26 @@ P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
 \]
 \end{remark*}
 
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  Failure is witnessed by the displayed negated or contrapositive condition.
+
+  \item[\operatorname{NestedClosedBoundedIntervals}.]
+  \[
+\operatorname{NestedClosedBoundedIntervals}([a_n,b_n])
+\land
+\alpha=\sup\{a_n:n\in\mathbb{N}\}
+\land
+\exists n\in\mathbb{N}\;(\alpha\notin [a_n,b_n]).
+\]
+\[
+F=([a_n,b_n])_{n\in\mathbb{N}},\qquad A=\{a_n:n\in\mathbb{N}\},\qquad
+C=\bigcap_{n=1}^{\infty}[a_n,b_n],
+\]
+\end{description}
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 The least upper bound of the left endpoints is itself retained by every
 interval in the nested family.
@@ -545,6 +678,26 @@ P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
 \lor
 \neg\operatorname{NestedClosedBoundedIntervals}(F,P_{\mathbb{R}}).
 \]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  Failure is witnessed by the displayed negated or contrapositive condition.
+
+  \item[\operatorname{NestedClosedBoundedIntervals}.]
+  \[
+\operatorname{NestedClosedBoundedIntervals}([a_n,b_n])
+\land
+\beta=\inf\{b_n:n\in\mathbb{N}\}
+\land
+\exists n\in\mathbb{N}\;(\beta\notin [a_n,b_n]).
+\]
+\[
+F=([a_n,b_n])_{n\in\mathbb{N}},\qquad B=\{b_n:n\in\mathbb{N}\},\qquad
+C=\bigcap_{n=1}^{\infty}[a_n,b_n],
+\]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -624,6 +777,27 @@ P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad X=\mathbb{R},\qquad
 \lor
 \neg\operatorname{ConvergesTo}(d,0,X).
 \]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  Failure is witnessed by the displayed negated or contrapositive condition.
+
+  \item[\operatorname{NestedClosedBoundedIntervals}.]
+  \[
+\operatorname{NestedClosedBoundedIntervals}([a_n,b_n])
+\land
+\lim_{n\to\infty}(b_n-a_n)=0
+\land
+\forall x\in\mathbb{R}\;\exists y\in\mathbb{R}\;
+\left(y\in\bigcap_{n=1}^{\infty}[a_n,b_n]\land y\ne x\right).
+\]
+\[
+F=([a_n,b_n])_{n\in\mathbb{N}},\qquad
+d\colon\mathbb{N}\to\mathbb{R},\qquad d_n=b_n-a_n,
+\]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -716,6 +890,27 @@ P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad X=\mathbb{R},\qquad
 \]
 \end{remark*}
 
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  Failure is witnessed by the displayed negated or contrapositive condition.
+
+  \item[\operatorname{NestedClosedBoundedIntervals}.]
+  \[
+\operatorname{NestedClosedBoundedIntervals}([a_n,b_n])
+\land
+\lim_{n\to\infty}(b_n-a_n)=0
+\land
+\forall L\in\mathbb{R}\;
+\left(\lim_{n\to\infty}a_n\ne L\lor \lim_{n\to\infty}b_n\ne L\right).
+\]
+\[
+a\colon\mathbb{N}\to\mathbb{R},\qquad b\colon\mathbb{N}\to\mathbb{R},\qquad
+d\colon\mathbb{N}\to\mathbb{R},\qquad d_n=b_n-a_n,
+\]
+\end{description}
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 Vanishing interval length forces the two endpoint sequences to approach the
 same real number.
@@ -800,6 +995,25 @@ C\ne\{x\}
 \]
 \end{remark*}
 
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  Failure is witnessed by the displayed negated or contrapositive condition.
+
+  \item[\operatorname{IsEmpty}.]
+  \[
+\bigcap_{n=1}^{\infty}[a_n,b_n]=\{x\}
+\land
+\lim_{n\to\infty}(b_n-a_n)=0
+\land
+\left(\lim_{n\to\infty}a_n\ne x\lor \lim_{n\to\infty}b_n\ne x\right).
+\]
+\[
+a\colon\mathbb{N}\to\mathbb{R},\qquad b\colon\mathbb{N}\to\mathbb{R},\qquad d\colon\mathbb{N}\to\mathbb{R},\qquad d_n=b_n-a_n,
+\]
+\end{description}
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 If the intersection has a single survivor, both endpoint sequences converge
 to that survivor.
@@ -872,6 +1086,57 @@ for every $n\in\mathbb N$, but
 \exists x\in\mathbb{R}\;\forall n\in\mathbb{N}\;(x\in(a_n,b_n))
 \right].
 \]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\forall (a_n),(b_n)\;\forall\mathcal{I}\;
+\left[
+\mathcal{I}=\mathsf{IndexedFamily}((a_n,b_n),\mathbb{N},\mathbb{R})
+\land
+\operatorname{MembersSatisfy}(\mathcal{I},\mathsf{OpenBoundedInterval},\mathbb{R})
+\land
+\operatorname{Nested}(\mathcal{I},\subseteq)
+\Longrightarrow
+\exists x\in\mathbb{R}\;\forall n\in\mathbb{N}\;(x\in(a_n,b_n))
+\right].
+\]
+
+The negation predicate reading is the predicate-level form of the displayed negated statement.
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  Failure is witnessed by the displayed negated or contrapositive condition.
+
+  \item[\operatorname{MembersSatisfy} / \operatorname{Nested}.]
+  \[
+\forall (a_n),(b_n)\;\forall\mathcal{I}\;
+\left[
+\mathcal{I}=\mathsf{IndexedFamily}((a_n,b_n),\mathbb{N},\mathbb{R})
+\land
+\operatorname{MembersSatisfy}(\mathcal{I},\mathsf{OpenBoundedInterval},\mathbb{R})
+\land
+\operatorname{Nested}(\mathcal{I},\subseteq)
+\Longrightarrow
+\exists x\in\mathbb{R}\;\forall n\in\mathbb{N}\;(x\in(a_n,b_n))
+\right].
+\]
+\[
+\exists F\;\exists\mathcal{I}\;\exists C\;\bigl(
+\mathcal{I}=\mathsf{IndexedFamily}(F,\mathbb{N},\mathbb{R})
+\land C=\bigcap_{n=1}^{\infty}I_n
+\land \Phi=\mathsf{OpenBoundedInterval}
+\land
+\operatorname{MembersSatisfy}(\mathcal{I},\Phi,\mathbb{R})
+\land
+\operatorname{Nested}(\mathcal{I},\subseteq)
+\land
+\operatorname{IsEmpty}(C)
+\bigr).
+\]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -947,6 +1212,31 @@ C=\varnothing
 \]
 \end{remark*}
 
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  Failure is witnessed by the displayed negated or contrapositive condition.
+
+  \item[\operatorname{MembersSatisfy} / \operatorname{Nested}.]
+  \[
+\forall I_n\;\forall\mathcal{I}\;
+\left[
+\mathcal{I}=\mathsf{IndexedFamily}(I_n,\mathbb{N},\mathbb{R})
+\land
+\operatorname{MembersSatisfy}(\mathcal{I},\mathsf{NonemptyBoundedInterval},\mathbb{R})
+\land
+\operatorname{Nested}(\mathcal{I},\subseteq)
+\Longrightarrow
+\bigcap_{n=1}^{\infty}I_n\ne\varnothing
+\right].
+\]
+\[
+C=\bigcap_{n=1}^{\infty}I_n,\qquad F=(I_n)_{n\in\mathbb{N}},\qquad
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),
+\]
+\end{description}
+\end{remark*}
+
 \begin{remark*}[Interpretation]
 Dropping closedness can remove the endpoint that would otherwise remain in
 the limiting intersection.
@@ -1010,6 +1300,27 @@ C=\varnothing
 \Longrightarrow
 \neg\operatorname{NestedClosedBoundedIntervals}(F,P_{\mathbb{R}}).
 \]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  Failure is witnessed by the displayed negated or contrapositive condition.
+
+  \item[\operatorname{NestedClosedIntervals}.]
+  \[
+\forall I_n\;
+\left[
+\operatorname{NestedClosedIntervals}(I_n)
+\Longrightarrow
+\bigcap_{n=1}^{\infty}I_n\ne\varnothing
+\right].
+\]
+\[
+C=\bigcap_{n=1}^{\infty}I_n,\qquad F=(I_n)_{n\in\mathbb{N}},\qquad
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),
+\]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]

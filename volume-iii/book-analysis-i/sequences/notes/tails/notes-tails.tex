@@ -92,9 +92,9 @@ $(x_n)$ converges. Moreover, in this case,
 
 \begin{remark*}[Predicate reading]
 \[
-\Bigl(\exists L\in\mathbb{R}\,\operatorname{ConvergesTo}(x_n,L)\Bigr)
+\Bigl(\exists L\in\mathbb{R}\,\operatorname{ConvergesTo}(x_n,L,\mathbb{R})\Bigr)
 \Longleftrightarrow
-\Bigl(\exists L\in\mathbb{R}\,\operatorname{ConvergesTo}(x_{m+n},L)\Bigr).
+\Bigl(\exists L\in\mathbb{R}\,\operatorname{ConvergesTo}(x_{m+n},L,\mathbb{R})\Bigr).
 \]
 \end{remark*}
 
@@ -190,7 +190,22 @@ then $\displaystyle\lim_{n \to \infty} x_n = L$.
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-The displayed quantified statement is the predicate-level form of $label: its hypotheses name the input conditions, and its conclusion names the asserted structure or relation.
+\[
+\begin{aligned}
+&\forall (x_n) \subseteq \mathbb{R} \;\forall L \in \mathbb{R}
+ \;\forall (a_n) \subseteq (0, \infty)\\
+&\quad\Bigl(
+    \Bigl(
+        \lim_{n \to \infty} a_n = 0
+        \;\land\;
+        \exists c > 0 \;\exists m \in \mathbb{N}
+        \;\forall n \ge m \;\bigl(|x_n - L| \le c\, a_n\bigr)
+    \Bigr)
+    \;\Longrightarrow\;
+    \lim_{n \to \infty} x_n = L
+\Bigr).
+\end{aligned}
+\]
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -283,12 +298,12 @@ exists. If $L<1$, then $(x_n)$ converges and
 \begin{remark*}[Predicate reading]
 \[
 \bigl(
-\operatorname{ConvergesTo}\bigl(x_{n+1}/x_n,L\bigr)
+\operatorname{ConvergesTo}\bigl(x_{n+1}/x_n,L,\mathbb{R}\bigr)
 \land
 L<1
 \bigr)
 \Longrightarrow
-\operatorname{IsNull}(x_n).
+\operatorname{IsNull}(x_n,\mathbb{R}).
 \]
 \end{remark*}
 
@@ -309,37 +324,37 @@ L<1
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{ConvergesTo}\bigl(x_{n+1}/x_n,L\bigr)
+\operatorname{ConvergesTo}\bigl(x_{n+1}/x_n,L,\mathbb{R}\bigr)
 \land
 L<1
 \land
-\neg\operatorname{ConvergesTo}(x_n,0).
+\neg\operatorname{ConvergesTo}(x_n,0,\mathbb{R}).
 \]
 \end{remark*}
-
 \begin{remark*}[Failure modes]
 \begin{description}
   \item[Exposition.]
-A failure would be a positive sequence whose consecutive ratios settle below
-one in the limit but whose terms do not tend to zero. The theorem says this
-cannot happen: once the ratio limit is less than one, some tail has ratios
-bounded by a fixed number $r<1$, forcing geometric decay.
-\end{description}
-\end{remark*}
-
-\begin{remark*}[Failure modes]
-\begin{description}
-  \item[Exposition.]
+Failure is witnessed by the negated condition displayed above.
+  \item[\operatorname{ConvergesTo}.]
 \[
-\underbrace{(x_n)\subseteq(0,\infty)}_{\text{positive terms}}
-\quad
-\underbrace{\lim_{n\to\infty}\frac{x_{n+1}}{x_n}=L<1}_{\text{eventual ratio gap}}
-\quad
-\underbrace{\lim_{n\to\infty}x_n\neq 0}_{\text{fails to be null}}.
+\begin{aligned}
+&\exists (x_n)\subseteq (0,\infty)\;\exists L\in\mathbb{R}\\
+&\quad\Bigl(
+    \lim_{n\to\infty}\frac{x_{n+1}}{x_n}=L
+    \;\land\;
+    L<1
+    \;\land\;
+    \lim_{n\to\infty}x_n\neq 0
+\Bigr).
+\end{aligned}
 \]
-The positive-term hypothesis makes each ratio meaningful. The strict gap
-$L<1$ gives a tail on which $x_{n+1}\le r x_n$ for some $r<1$, and repeated
-iteration then gives domination by a null geometric sequence.
+\[
+\operatorname{ConvergesTo}\bigl(x_{n+1}/x_n,L,\mathbb{R}\bigr)
+\land
+L<1
+\land
+\neg\operatorname{ConvergesTo}(x_n,0,\mathbb{R}).
+\]
 \end{description}
 \end{remark*}
 

@@ -30,6 +30,8 @@ Let $f: D \to \mathbb{R}$ be a real-valued function and $c \in \operatorname{int
 
 \begin{remark*}[Predicate reading]
 \[
+  f\colon A\to\mathbb{R},\\
+
 \operatorname{Derivative}(L,f,\mathsf{Point}(c,D),\mathbb R,\mathbb R)
 \;\Longleftrightarrow\;
 \operatorname{TendsTo}\!\left(\lambda x.\,\frac{f(x)-f(c)}{x-c},\,c,\,L,\,\mathbb R,\,\mathbb R\right).
@@ -49,6 +51,8 @@ at $c$.
 
 \begin{remark*}[Negation predicate reading]
 \[
+  f\colon A\to\mathbb{R},\\
+
 \neg\operatorname{Derivative}(L,f,\mathsf{Point}(c,D),\mathbb R,\mathbb R)
 \;\Longleftrightarrow\;
 \neg\operatorname{TendsTo}\!\left(\lambda x.\,\frac{f(x)-f(c)}{x-c},\,c,\,L,\,\mathbb R,\,\mathbb R\right).
@@ -63,6 +67,16 @@ at $c$.
   \item The difference quotient oscillates without settling near any single value.
   \item The proposed value $L$ is the wrong candidate.
 \end{itemize}
+
+
+  \item[\operatorname{Derivative}.]
+  The displayed obstruction is the predicate-level failure condition.
+  \[
+  \exists\varepsilon_0>0\;\forall\delta>0\;\exists x\in A\;\bigl(0<|x-a|<\delta\land |Q_f(x)-D|\ge\varepsilon_0\bigr).
+  \]
+  \[
+  \neg\,\operatorname{Derivative}(D,f,a,\mathbb{R},\mathbb{R}).
+  \]
 \end{description}
 \end{remark*}
 
@@ -142,6 +156,16 @@ Let $f: D \to \mathbb{R}$ and $c \in \operatorname{int}(D)$. $f$ is differentiab
 \begin{description}
   \item[Exposition.]
 The topological derivative fails when a fixed output neighbourhood of $L$ cannot be entered by the difference quotient no matter how tightly the input is restricted around $c$. Geometric reading: no punctured neighbourhood around $c$ maps all secant slopes into any prescribed window around $L$.
+
+
+  \item[\operatorname{Derivative}.]
+  The displayed obstruction is the predicate-level failure condition.
+  \[
+  \exists\varepsilon_0>0\;\forall\delta>0\;\exists x\in A\;\bigl(0<|x-a|<\delta\land |Q_f(x)-D|\ge\varepsilon_0\bigr).
+  \]
+  \[
+  \neg\,\operatorname{Derivative}(D,f,a,\mathbb{R},\mathbb{R}).
+  \]
 \end{description}
 \end{remark*}
 
@@ -207,6 +231,16 @@ x_n\to c \;\land\; \frac{f(x_n)-f(c)}{x_n-c}\not\to L.
 \begin{description}
   \item[Exposition.]
 Failure occurs when a single approach sequence $(x_n) \to c$ exists along which the difference quotients either: (i) diverge to infinity (vertical tangent); (ii) oscillate without settling; (iii) converge but to a value other than $L$ (wrong slope candidate). A single such sequence certifies non-differentiability.
+
+
+  \item[\operatorname{Derivative}.]
+  The displayed obstruction is the predicate-level failure condition.
+  \[
+  \exists\varepsilon_0>0\;\forall\delta>0\;\exists x\in A\;\bigl(0<|x-a|<\delta\land |Q_f(x)-D|\ge\varepsilon_0\bigr).
+  \]
+  \[
+  \neg\,\operatorname{Derivative}(D,f,a,\mathbb{R},\mathbb{R}).
+  \]
 \end{description}
 \end{remark*}
 
@@ -217,6 +251,16 @@ Failure occurs when a single approach sequence $(x_n) \to c$ exists along which 
 \underbrace{x_n \to c}_{\text{approach condition}} \;\land\; \underbrace{\frac{f(x_n)-f(c)}{x_n-c} \not\to L}_{\text{quotient failure}}.
 \]
 The two canonical witness types are: two subsequences with different limiting difference quotients (e.g., $f(x) = |x|$ at $c = 0$), or quotients growing without bound.
+
+
+  \item[\operatorname{Derivative}.]
+  The displayed obstruction is the predicate-level failure condition.
+  \[
+  \exists\varepsilon_0>0\;\forall\delta>0\;\exists x\in A\;\bigl(0<|x-a|<\delta\land |Q_f(x)-D|\ge\varepsilon_0\bigr).
+  \]
+  \[
+  \neg\,\operatorname{Derivative}(D,f,a,\mathbb{R},\mathbb{R}).
+  \]
 \end{description}
 \end{remark*}
 
@@ -258,6 +302,8 @@ Let $f : A \to \mathbb{R}$ and $c \in A$ be a limit point of $A$. The following 
 
 \begin{remark*}[Predicate reading]
 \[
+  f\colon A\to\mathbb{R},\\
+
 \operatorname{Derivative}(L,f,\mathsf{Point}(c,A),\mathbb R,\mathbb R)
 \;\Longleftrightarrow\;
 \operatorname{Derivative}_{\mathrm{top}}(f,c,L)
@@ -277,10 +323,29 @@ x_n \to c \;\land\; \frac{f(x_n)-f(c)}{x_n-c} \not\to L.
 \]
 \end{remark*}
 
+\begin{remark*}[Negation predicate reading]
+\[
+  f\colon A\to\mathbb{R},\\
+
+\neg\,\operatorname{Derivative}(D,f,a,\mathbb{R},\mathbb{R}).
+\]
+\end{remark*}
+
+
 \begin{remark*}[Failure modes]
 \begin{description}
   \item[Exposition.]
 The equivalence cannot produce contradictory verdicts: if $c$ is a limit point of $A$, all three forms agree. Degenerate case: if $c$ is not a limit point of $A$, the punctured-interval and sequence conditions are vacuously satisfied by every candidate $L$ simultaneously, making the equivalence trivially true for all $L$ rather than characterizing a unique derivative.
+
+
+  \item[\operatorname{Derivative}.]
+  The displayed obstruction is the predicate-level failure condition.
+  \[
+  \exists\varepsilon_0>0\;\forall\delta>0\;\exists x\in A\;\bigl(0<|x-a|<\delta\land |Q_f(x)-D|\ge\varepsilon_0\bigr).
+  \]
+  \[
+  \neg\,\operatorname{Derivative}(D,f,a,\mathbb{R},\mathbb{R}).
+  \]
 \end{description}
 \end{remark*}
 
@@ -327,10 +392,29 @@ Let $f : A \to \mathbb{R}$ and $c \in \operatorname{int}(A)$. Then $f$ is differ
 \]
 \end{remark*}
 
+\begin{remark*}[Negation predicate reading]
+\[
+  f\colon A\to\mathbb{R},\\
+
+\neg\,\operatorname{Derivative}(D,f,a,\mathbb{R},\mathbb{R}).
+\]
+\end{remark*}
+
+
 \begin{remark*}[Failure modes]
 \begin{description}
   \item[Exposition.]
 The $h$-form fails in two branches: (i) The incremental ratio $(f(c+h)-f(c))/h$ has no finite limit as $h \to 0$ (corner, cusp, or vertical tangent at $c$). (ii) The ratio converges to a finite value different from $L$ (proposed $L$ is the wrong slope).
+
+
+  \item[\operatorname{Derivative}.]
+  The displayed obstruction is the predicate-level failure condition.
+  \[
+  \exists\varepsilon_0>0\;\forall\delta>0\;\exists x\in A\;\bigl(0<|x-a|<\delta\land |Q_f(x)-D|\ge\varepsilon_0\bigr).
+  \]
+  \[
+  \neg\,\operatorname{Derivative}(D,f,a,\mathbb{R},\mathbb{R}).
+  \]
 \end{description}
 \end{remark*}
 
@@ -393,6 +477,8 @@ Let $f : A \to \mathbb{R}$ and $c \in A$. If $f$ is differentiable at $c$, then 
 
 \begin{remark*}[Predicate reading]
 \[
+  f\colon A\to\mathbb{R},\\
+
 \operatorname{IsDifferentiable}(f,\mathsf{Point}(c,A),\mathbb R,\mathbb R)
 \;\Longrightarrow\;
 \operatorname{IsContinuous}(f,\mathsf{Point}(c,A),\mathbb R,\mathbb R).
@@ -404,6 +490,16 @@ Let $f : A \to \mathbb{R}$ and $c \in A$. If $f$ is differentiable at $c$, then 
   \item[Exposition.]
 The implication can only fail in the reverse direction: continuity at $c$
 does not force differentiability at $c$.
+
+
+  \item[\operatorname{Derivative}.]
+  The displayed obstruction is the predicate-level failure condition.
+  \[
+  \exists\varepsilon_0>0\;\forall\delta>0\;\exists x\in A\;\bigl(0<|x-a|<\delta\land |Q_f(x)-D|\ge\varepsilon_0\bigr).
+  \]
+  \[
+  \neg\,\operatorname{Derivative}(D,f,a,\mathbb{R},\mathbb{R}).
+  \]
 \end{description}
 \end{remark*}
 
@@ -411,6 +507,16 @@ does not force differentiability at $c$.
 \begin{description}
   \item[Exposition.]
 The converse fails: $f(x) = |x|$ is continuous at $0$ but not differentiable there.
+
+
+  \item[\operatorname{Derivative}.]
+  The displayed obstruction is the predicate-level failure condition.
+  \[
+  \exists\varepsilon_0>0\;\forall\delta>0\;\exists x\in A\;\bigl(0<|x-a|<\delta\land |Q_f(x)-D|\ge\varepsilon_0\bigr).
+  \]
+  \[
+  \neg\,\operatorname{Derivative}(D,f,a,\mathbb{R},\mathbb{R}).
+  \]
 \end{description}
 \end{remark*}
 
@@ -523,6 +629,8 @@ Let $f : A \to \mathbb{R}$ and $c \in A$. If $f$ is differentiable at $c$, its d
 
 \begin{remark*}[Predicate reading]
 \[
+  f\colon A\to\mathbb{R},\\
+
 \operatorname{Derivative}(L,f,\mathsf{Point}(c,A),\mathbb R,\mathbb R)
 \;\land\;
 \operatorname{Derivative}(L',f,\mathsf{Point}(c,A),\mathbb R,\mathbb R)
@@ -534,6 +642,16 @@ Let $f : A \to \mathbb{R}$ and $c \in A$. If $f$ is differentiable at $c$, its d
 \begin{description}
   \item[Exposition.]
 The uniqueness proof assumes $L \neq L'$ and takes $\varepsilon = |L - L'|/2 > 0$. The definition supplies $\delta$ making the difference quotient within $\varepsilon$ of both $L$ and $L'$ simultaneously, forcing $|L - L'| < 2\varepsilon = |L - L'|$, a contradiction. The cluster-point hypothesis on $c$ is essential: without it, the punctured-interval condition is vacuous and the limit is trivially satisfied by every value.
+
+
+  \item[\operatorname{Derivative}.]
+  The displayed obstruction is the predicate-level failure condition.
+  \[
+  \exists\varepsilon_0>0\;\forall\delta>0\;\exists x\in A\;\bigl(0<|x-a|<\delta\land |Q_f(x)-D|\ge\varepsilon_0\bigr).
+  \]
+  \[
+  \neg\,\operatorname{Derivative}(D,f,a,\mathbb{R},\mathbb{R}).
+  \]
 \end{description}
 \end{remark*}
 
@@ -591,8 +709,8 @@ The identity function has slope $1$ everywhere. It is the base case for computin
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:derivative-at-a-point]{Derivative at a Point}
   \item \hyperref[def:function]{Function}
+  \item \hyperref[def:derivative-at-a-point]{Derivative at a Point}
 \end{itemize}
 \end{dependencies}
 
@@ -617,7 +735,9 @@ Let $k\in\mathbb{R}$ and let $f(x)=k$ for all $x\in\mathbb{R}$. Then $f'(c)=0$ f
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{ConstantFunction}(f,k)
+  f\colon A\to\mathbb{R},\\
+
+\operatorname{ConstantFunction}(f,k,\mathbb{R})
 \Longrightarrow
 \forall c\in\mathbb{R}\;
 \operatorname{Derivative}(0,f,\mathsf{Point}(c,\mathbb R),\mathbb R,\mathbb R).

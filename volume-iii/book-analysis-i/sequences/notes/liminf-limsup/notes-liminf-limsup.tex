@@ -106,9 +106,9 @@ supremum sequence. The \textbf{limit superior} of $(x_n)$ is
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{Limsup}(x_n,L)
+\operatorname{Limsup}(x_n,L,\mathbb{R})
 \coloneqq
-\operatorname{ConvergesTo}(s_n,L).
+\operatorname{ConvergesTo}(s_n,L,\mathbb{R}).
 \]
 \end{remark*}
 
@@ -119,8 +119,8 @@ number to which the ceilings of the tails descend.
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:tail-supremum-sequence]{Tail Supremum Sequence}
   \item \hyperref[def:convergent-sequence]{Convergence of a Sequence}
+  \item \hyperref[def:tail-supremum-sequence]{Tail Supremum Sequence}
 \end{itemize}
 \end{dependencies}
 
@@ -150,9 +150,9 @@ infimum sequence. The \textbf{limit inferior} of $(x_n)$ is
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{Liminf}(x_n,L)
+\operatorname{Liminf}(x_n,L,\mathbb{R})
 \coloneqq
-\operatorname{ConvergesTo}(i_n,L).
+\operatorname{ConvergesTo}(i_n,L,\mathbb{R}).
 \]
 \end{remark*}
 
@@ -163,8 +163,8 @@ number to which the floors of the tails ascend.
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:tail-infimum-sequence]{Tail Infimum Sequence}
   \item \hyperref[def:convergent-sequence]{Convergence of a Sequence}
+  \item \hyperref[def:tail-infimum-sequence]{Tail Infimum Sequence}
 \end{itemize}
 \end{dependencies}
 
@@ -192,7 +192,12 @@ supremum sequence. Then $(s_n)$ is decreasing.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{OrderReversing}(s_n).
+\begin{gathered}
+s_n\colon\mathbb{N}\to\mathbb{R},\\
+P=\mathsf{OrderedSet}(\mathbb{N},\leq),\quad
+Q=\mathsf{OrderedSet}(\mathbb{R},\leq),\\
+\operatorname{OrderReversing}(s_n,P,Q).
+\end{gathered}
 \]
 \end{remark*}
 
@@ -232,7 +237,12 @@ infimum sequence. Then $(i_n)$ is increasing.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{OrderPreserving}(i_n).
+\begin{gathered}
+i_n\colon\mathbb{N}\to\mathbb{R},\\
+P=\mathsf{OrderedSet}(\mathbb{N},\leq),\quad
+Q=\mathsf{OrderedSet}(\mathbb{R},\leq),\\
+\operatorname{OrderPreserving}(i_n,P,Q).
+\end{gathered}
 \]
 \end{remark*}
 
@@ -281,7 +291,7 @@ the limits preserves this order.
 \begin{itemize}
   \item \hyperref[def:liminf-sequence]{Limit Inferior of a Sequence}
   \item \hyperref[def:limsup-sequence]{Limit Superior of a Sequence}
-  \item \hyperref[thm:constant-comparison-for-sequence-limits]{Constant Comparison for Sequence Limits}
+  \item \hyperref[thm:constant-comparison-sequence-limits]{Constant Comparison for Sequence Limits}
 \end{itemize}
 \end{dependencies}
 
@@ -323,12 +333,12 @@ x_n\to L
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{ConvergesTo}(x_n,L)
+\operatorname{ConvergesTo}(x_n,L,\mathbb{R})
 \Longleftrightarrow
 \bigl(
-  \operatorname{Liminf}(x_n,L)
+  \operatorname{Liminf}(x_n,L,\mathbb{R})
   \land
-  \operatorname{Limsup}(x_n,L)
+  \operatorname{Limsup}(x_n,L,\mathbb{R})
 \bigr).
 \]
 \end{remark*}
@@ -382,13 +392,13 @@ to $S$.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{Limsup}(x_n,S)
+\operatorname{Limsup}(x_n,S,\mathbb{R})
 \Longrightarrow
 \bigl(
-  \operatorname{IsClusterValue}(x_n,S)
+  \operatorname{IsClusterValue}(x_n,S,\mathbb{R})
   \land
   \forall L\in\mathbb{R}\;
-  (\operatorname{IsClusterValue}(x_n,L)\Longrightarrow L\le S)
+  (\operatorname{IsClusterValue}(x_n,L,\mathbb{R})\Longrightarrow L\le S)
 \bigr).
 \]
 \end{remark*}
@@ -442,13 +452,13 @@ equal to $I$.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{Liminf}(x_n,I)
+\operatorname{Liminf}(x_n,I,\mathbb{R})
 \Longrightarrow
 \bigl(
-  \operatorname{IsClusterValue}(x_n,I)
+  \operatorname{IsClusterValue}(x_n,I,\mathbb{R})
   \land
   \forall L\in\mathbb{R}\;
-  (\operatorname{IsClusterValue}(x_n,L)\Longrightarrow I\le L)
+  (\operatorname{IsClusterValue}(x_n,L,\mathbb{R})\Longrightarrow I\le L)
 \bigr).
 \]
 \end{remark*}
@@ -507,17 +517,17 @@ if and only if $(x_n)$ has two distinct subsequential limits.
 \begin{aligned}
 &\exists I,S\in\mathbb{R}\;
 \bigl(
-  \operatorname{Liminf}(x_n,I)
+  \operatorname{Liminf}(x_n,I,\mathbb{R})
   \land
-  \operatorname{Limsup}(x_n,S)
+  \operatorname{Limsup}(x_n,S,\mathbb{R})
   \land I<S
 \bigr)\\
 &\quad\Longleftrightarrow\quad
 \exists L,K\in\mathbb{R}\;
 \bigl(
   L\ne K
-  \land \operatorname{IsClusterValue}(x_n,L)
-  \land \operatorname{IsClusterValue}(x_n,K)
+  \land \operatorname{IsClusterValue}(x_n,L,\mathbb{R})
+  \land \operatorname{IsClusterValue}(x_n,K,\mathbb{R})
 \bigr).
 \end{aligned}
 \]
@@ -571,7 +581,15 @@ $N\in\mathbb{N}$ such that $x_n\le y_n$ for every $n\ge N$, then
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-The displayed quantified statement is the predicate-level form of $label: its hypotheses name the input conditions, and its conclusion names the asserted structure or relation.
+\[
+\begin{aligned}
+&\exists N\in\mathbb{N}\;\forall n\ge N\;(x_n\le y_n)\\
+&\quad\Longrightarrow\quad
+\limsup_{n\to\infty}x_n
+\le
+\limsup_{n\to\infty}y_n.
+\end{aligned}
+\]
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -620,7 +638,15 @@ $N\in\mathbb{N}$ such that $x_n\le y_n$ for every $n\ge N$, then
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-The displayed quantified statement is the predicate-level form of $label: its hypotheses name the input conditions, and its conclusion names the asserted structure or relation.
+\[
+\begin{aligned}
+&\exists N\in\mathbb{N}\;\forall n\ge N\;(x_n\le y_n)\\
+&\quad\Longrightarrow\quad
+\liminf_{n\to\infty}x_n
+\le
+\liminf_{n\to\infty}y_n.
+\end{aligned}
+\]
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -679,7 +705,17 @@ then
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-The displayed quantified statement is the predicate-level form of $label: its hypotheses name the input conditions, and its conclusion names the asserted structure or relation.
+\[
+\begin{aligned}
+&\exists N\in\mathbb{N}\;\forall n\ge N\;(a_n\le x_n\le b_n)\\
+&\quad\Longrightarrow\quad
+\limsup_{n\to\infty}a_n
+\le
+\limsup_{n\to\infty}x_n
+\le
+\limsup_{n\to\infty}b_n.
+\end{aligned}
+\]
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -736,7 +772,17 @@ then
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-The displayed quantified statement is the predicate-level form of $label: its hypotheses name the input conditions, and its conclusion names the asserted structure or relation.
+\[
+\begin{aligned}
+&\exists N\in\mathbb{N}\;\forall n\ge N\;(a_n\le x_n\le b_n)\\
+&\quad\Longrightarrow\quad
+\liminf_{n\to\infty}a_n
+\le
+\liminf_{n\to\infty}x_n
+\le
+\liminf_{n\to\infty}b_n.
+\end{aligned}
+\]
 \end{remark*}
 
 \begin{remark*}[Interpretation]

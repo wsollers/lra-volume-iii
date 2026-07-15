@@ -271,7 +271,14 @@ sequence $(1/x_n)$ defined by
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-The displayed quantified statement is the predicate-level form of $label: its hypotheses name the input conditions, and its conclusion names the asserted structure or relation.
+\[
+\begin{aligned}
+&\text{Let } (x_n) \text{ be a real sequence with }
+  \forall n\in\mathbb{N}\;(x_n\neq 0).\\
+&\forall n\in\mathbb{N}\;
+\left(\left(\frac{1}{x}\right)_n=\frac{1}{x_n}\right).
+\end{aligned}
+\]
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -317,7 +324,14 @@ the real sequence $(x_n/y_n)$ defined by
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-The displayed quantified statement is the predicate-level form of $label: its hypotheses name the input conditions, and its conclusion names the asserted structure or relation.
+\[
+\begin{aligned}
+&\text{Let } (x_n),(y_n) \text{ be real sequences with }
+  \forall n\in\mathbb{N}\;(y_n\neq 0).\\
+&\forall n\in\mathbb{N}\;
+\left(\left(\frac{x}{y}\right)_n=\frac{x_n}{y_n}\right).
+\end{aligned}
+\]
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -435,7 +449,13 @@ sequence $(\sqrt{x_n})$ defined by
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-The displayed quantified statement is the predicate-level form of $label: its hypotheses name the input conditions, and its conclusion names the asserted structure or relation.
+\[
+\begin{aligned}
+&\text{Let } (x_n) \text{ be a real sequence with }
+  \forall n\in\mathbb{N}\;(0\le x_n).\\
+&\forall n\in\mathbb{N}\;\bigl((\sqrt{x})_n=\sqrt{x_n}\bigr).
+\end{aligned}
+\]
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -486,9 +506,9 @@ $\alpha\in\mathbb{R}$. If $x_n\to L$, then $\alpha x_n\to \alpha L$.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{ConvergesTo}(x_n,L)
+\operatorname{ConvergesTo}(x_n,L,\mathbb{R})
 \Longrightarrow
-\operatorname{ConvergesTo}(\alpha x_n,\alpha L).
+\operatorname{ConvergesTo}(\alpha x_n,\alpha L,\mathbb{R}).
 \]
 \end{remark*}
 
@@ -539,12 +559,12 @@ x_n+y_n\to L+M
 \begin{remark*}[Predicate reading]
 \[
 \bigl(
-\operatorname{ConvergesTo}(x_n,L)
+\operatorname{ConvergesTo}(x_n,L,\mathbb{R})
 \land
-\operatorname{ConvergesTo}(y_n,M)
+\operatorname{ConvergesTo}(y_n,M,\mathbb{R})
 \bigr)
 \Longrightarrow
-\operatorname{ConvergesTo}(x_n+y_n,L+M).
+\operatorname{ConvergesTo}(x_n+y_n,L+M,\mathbb{R}).
 \]
 \end{remark*}
 
@@ -591,9 +611,9 @@ then $-x_n\to -L$.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{ConvergesTo}(x_n,L)
+\operatorname{ConvergesTo}(x_n,L,\mathbb{R})
 \Longrightarrow
-\operatorname{ConvergesTo}(-x_n,-L).
+\operatorname{ConvergesTo}(-x_n,-L,\mathbb{R}).
 \]
 \end{remark*}
 
@@ -604,8 +624,8 @@ multiple law in its most common special case.
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[thm:limit-of-scalar-multiple]{Limit of a Scalar Multiple}
   \item \hyperref[def:pointwise-negation-sequence]{Pointwise Negation of a Sequence}
+  \item \hyperref[thm:limit-of-scalar-multiple]{Limit of a Scalar Multiple}
 \end{itemize}
 \end{dependencies}
 
@@ -643,12 +663,12 @@ x_n-y_n\to L-M
 \begin{remark*}[Predicate reading]
 \[
 \bigl(
-\operatorname{ConvergesTo}(x_n,L)
+\operatorname{ConvergesTo}(x_n,L,\mathbb{R})
 \land
-\operatorname{ConvergesTo}(y_n,M)
+\operatorname{ConvergesTo}(y_n,M,\mathbb{R})
 \bigr)
 \Longrightarrow
-\operatorname{ConvergesTo}(x_n-y_n,L-M).
+\operatorname{ConvergesTo}(x_n-y_n,L-M,\mathbb{R}).
 \]
 \end{remark*}
 
@@ -659,9 +679,9 @@ It is therefore not a new analytic mechanism, but a useful named rule.
 
 \begin{dependencies}
 \begin{itemize}
+  \item \hyperref[def:pointwise-difference-sequence]{Pointwise Difference of Sequences}
   \item \hyperref[thm:limit-of-a-sum]{Limit of a Sum}
   \item \hyperref[thm:limit-of-a-negation]{Limit of a Negation}
-  \item \hyperref[def:pointwise-difference-sequence]{Pointwise Difference of Sequences}
 \end{itemize}
 \end{dependencies}
 
@@ -699,12 +719,12 @@ x_ny_n\to LM
 \begin{remark*}[Predicate reading]
 \[
 \bigl(
-\operatorname{ConvergesTo}(x_n,L)
+\operatorname{ConvergesTo}(x_n,L,\mathbb{R})
 \land
-\operatorname{ConvergesTo}(y_n,M)
+\operatorname{ConvergesTo}(y_n,M,\mathbb{R})
 \bigr)
 \Longrightarrow
-\operatorname{ConvergesTo}(x_ny_n,LM).
+\operatorname{ConvergesTo}(x_ny_n,LM,\mathbb{R}).
 \]
 \end{remark*}
 
@@ -753,7 +773,16 @@ L\neq 0 \;\land\; x_n\to L
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-The displayed quantified statement is the predicate-level form of $label: its hypotheses name the input conditions, and its conclusion names the asserted structure or relation.
+\[
+\begin{aligned}
+&\text{Let } (x_n) \text{ be a real sequence and let } L\in\mathbb{R}.\\
+&\bigl[
+L\neq 0 \;\land\; x_n\to L
+\bigr]
+\Longrightarrow
+\exists N\in\mathbb{N}\;\forall n\ge N\;(x_n\neq 0).
+\end{aligned}
+\]
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -799,9 +828,9 @@ then $1/x_n\to 1/L$.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{ConvergesTo}(x_n,L)
+\operatorname{ConvergesTo}(x_n,L,\mathbb{R})
 \Longrightarrow
-\operatorname{ConvergesTo}\left(\frac{1}{x_n},\frac{1}{L}\right).
+\operatorname{ConvergesTo}\left(\frac{1}{x_n},\frac{1}{L},\mathbb{R}\right).
 \]
 \end{remark*}
 
@@ -855,12 +884,12 @@ x_n\to L \;\land\; y_n\to M
 \begin{remark*}[Predicate reading]
 \[
 \bigl(
-\operatorname{ConvergesTo}(x_n,L)
+\operatorname{ConvergesTo}(x_n,L,\mathbb{R})
 \land
-\operatorname{ConvergesTo}(y_n,M)
+\operatorname{ConvergesTo}(y_n,M,\mathbb{R})
 \bigr)
 \Longrightarrow
-\operatorname{ConvergesTo}\left(\frac{x_n}{y_n},\frac{L}{M}\right).
+\operatorname{ConvergesTo}\left(\frac{x_n}{y_n},\frac{L}{M},\mathbb{R}\right).
 \]
 \end{remark*}
 
@@ -964,9 +993,9 @@ then $x_n^2\to L^2$.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{ConvergesTo}(x_n,L)
+\operatorname{ConvergesTo}(x_n,L,\mathbb{R})
 \Longrightarrow
-\operatorname{ConvergesTo}(x_n^2,L^2).
+\operatorname{ConvergesTo}(x_n^2,L^2,\mathbb{R}).
 \]
 \end{remark*}
 
@@ -1011,9 +1040,9 @@ then $|x_n|\to |L|$.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{ConvergesTo}(x_n,L)
+\operatorname{ConvergesTo}(x_n,L,\mathbb{R})
 \Longrightarrow
-\operatorname{ConvergesTo}(|x_n|,|L|).
+\operatorname{ConvergesTo}(|x_n|,|L|,\mathbb{R}).
 \]
 \end{remark*}
 
@@ -1057,7 +1086,14 @@ exists $N\in\mathbb{N}$ such that $0<x_n$ for every $n\ge N$.
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-The displayed quantified statement is the predicate-level form of $label: its hypotheses name the input conditions, and its conclusion names the asserted structure or relation.
+\[
+\begin{aligned}
+&\text{Let } (x_n) \text{ be a real sequence and let } L>0.\\
+&\bigl[x_n\to L\bigr]
+\Longrightarrow
+\exists N\in\mathbb{N}\;\forall n\ge N\;(0<x_n).
+\end{aligned}
+\]
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -1103,9 +1139,9 @@ $0\le L$ and $\sqrt{x_n}\to\sqrt{L}$.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{ConvergesTo}(x_n,L)
+\operatorname{ConvergesTo}(x_n,L,\mathbb{R})
 \Longrightarrow
-\operatorname{ConvergesTo}(\sqrt{x_n},\sqrt{L}).
+\operatorname{ConvergesTo}(\sqrt{x_n},\sqrt{L},\mathbb{R}).
 \]
 \end{remark*}
 
@@ -1153,9 +1189,9 @@ $p(x_n)\to p(L)$.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{ConvergesTo}(x_n,L)
+\operatorname{ConvergesTo}(x_n,L,\mathbb{R})
 \Longrightarrow
-\operatorname{ConvergesTo}(p(x_n),p(L)).
+\operatorname{ConvergesTo}(p(x_n),p(L),\mathbb{R}).
 \]
 \end{remark*}
 
@@ -1216,10 +1252,10 @@ x_n\to L
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{ConvergesTo}(x_n,L)
+\operatorname{ConvergesTo}(x_n,L,\mathbb{R})
 \Longrightarrow
 \operatorname{ConvergesTo}
-\left(\frac{p(x_n)}{q(x_n)},\frac{p(L)}{q(L)}\right).
+\left(\frac{p(x_n)}{q(x_n)},\frac{p(L)}{q(L)},\mathbb{R}\right).
 \]
 \end{remark*}
 

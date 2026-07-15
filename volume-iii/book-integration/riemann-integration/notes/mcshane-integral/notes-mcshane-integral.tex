@@ -85,7 +85,7 @@ with the intervals non-overlapping and covering \([a,b]\).
 \[
 \operatorname{IsDeltaFine}((P,\xi),\delta,[a,b])
 \Longleftrightarrow
-\operatorname{TaggedPartition}((P,\xi),P,[a,b])
+\mathsf{TaggedPartition}((P,\xi),P,[a,b])
 \land
 \forall i\;
 \bigl(\xi_i\in[a,b]\land [u_i,v_i]\subset
@@ -138,6 +138,8 @@ where
 
 \begin{remark*}[Predicate reading]
 \[
+  f\colon [a,b]\to\mathbb{R},\\
+
 \operatorname{HasDefiniteIntegral}(f,[a,b],\operatorname{McShaneCriterion},A)
 \Longleftrightarrow
 \forall\varepsilon>0\ \exists\delta:[a,b]\to(0,\infty)\ \forall(P,\xi)\,

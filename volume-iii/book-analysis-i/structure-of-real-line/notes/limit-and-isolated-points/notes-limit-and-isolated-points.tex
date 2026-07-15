@@ -33,6 +33,32 @@ E\subseteq\mathbb{R},\qquad x\in\mathbb{R},\qquad
 x \text{ is not a limit point of } E \Longleftrightarrow \exists r>0\;\forall y\in E\;(y=x \lor |y-x|\ge r).
 \]
 \end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+x \text{ is not a limit point of } E \Longleftrightarrow \exists r>0\;\forall y\in E\;(y=x \lor |y-x|\ge r).
+\]
+
+The negation predicate reading is the predicate-level form of the displayed negated statement.
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  Failure is witnessed by the displayed negated or contrapositive condition.
+
+  \item[\operatorname{IsCluster}.]
+  \[
+x \text{ is not a limit point of } E \Longleftrightarrow \exists r>0\;\forall y\in E\;(y=x \lor |y-x|\ge r).
+\]
+\[
+E\subseteq\mathbb{R},\qquad x\in\mathbb{R},\qquad
+\operatorname{IsCluster}(x,E,\mathbb{R})
+\Longleftrightarrow
+\forall r>0\;\exists y\in E\;(0<|y-x|<r).
+\]
+\end{description}
+\end{remark*}
 \begin{remark*}[Interpretation]
 Every punctured ball around a limit point meets $E$: the set accumulates at $x$. The strict inequality $0<|y-x|$ excludes $x$ itself, so $x$ need not belong to $E$ to be a limit point. This is the exact condition under which a sequence in $E$ can converge to $x$.
 \end{remark*}

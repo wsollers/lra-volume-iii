@@ -134,6 +134,31 @@ is a \textbf{cluster point} of $X$ if
 \]
 \end{remark*}
 
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  The negated statement isolates the obstruction to the asserted condition.
+
+  \item[\exists-condition.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+  \neg\,x\text{ is a cluster point of }X
+  \;\iff\;
+  \exists\varepsilon > 0,\;
+  \forall\, y \in X \setminus \{x\} :\;
+  \neg|y-x|<\varepsilon.
+\]
+  \[
+  \neg\,x\text{ is a cluster point of }X
+  \;\colonequiv\;
+  \exists\varepsilon > 0 :\;
+  I_\varepsilon^\times(x) \cap X = \emptyset.
+\]
+\end{description}
+\end{remark*}
+
+
+
 \begin{remark*}[Interpretation]
 A cluster point is approached by $X$ via distinct witnesses
 arbitrarily close. A cluster point need not belong to $X$: $0$ is
@@ -209,7 +234,7 @@ an \textbf{adherent point} of $X$ if
 
 \begin{remark*}[Predicate reading]
 \[
-  \operatorname{IsAdherent}(x,X)
+  \operatorname{IsAdherent}(x,X,\mathbb{R})
   \;\coloneqq\;
   \forall\varepsilon>0\;\exists y\in X\;(|y-x|<\varepsilon).
 \]
@@ -220,6 +245,30 @@ an \textbf{adherent point} of $X$ if
   \exists\varepsilon>0\;\forall y\in X\;(|y-x|\geq\varepsilon).
 \]
 \end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+  \exists\varepsilon>0\;\forall y\in X\;(|y-x|\geq\varepsilon).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  The negated statement isolates the obstruction to the asserted condition.
+
+  \item[\exists-condition.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+  \exists\varepsilon>0\;\forall y\in X\;(|y-x|\geq\varepsilon).
+\]
+  \[
+  \exists\varepsilon>0\;\forall y\in X\;(|y-x|\geq\varepsilon).
+\]
+\end{description}
+\end{remark*}
+
+
 
 \begin{remark*}[Interpretation]
 An adherent point can be witnessed by points of $X$ arbitrarily close to
@@ -251,7 +300,7 @@ Let $X\subseteq\mathbb{R}$ and let $x\in X$. The point $x$ is an
 
 \begin{remark*}[Predicate reading]
 \[
-  \operatorname{IsIsolated}(x,X)
+  \operatorname{IsIsolated}(x,X,\mathbb{R})
   \;\coloneqq\;
   x\in X\wedge\exists\varepsilon>0\;\bigl(I_\varepsilon(x)\cap X=\{x\}\bigr).
 \]
@@ -262,6 +311,30 @@ Let $X\subseteq\mathbb{R}$ and let $x\in X$. The point $x$ is an
   \forall\varepsilon>0\;\exists y\in X\setminus\{x\}\;(|y-x|<\varepsilon).
 \]
 \end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+  \forall\varepsilon>0\;\exists y\in X\setminus\{x\}\;(|y-x|<\varepsilon).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  The negated statement isolates the obstruction to the asserted condition.
+
+  \item[\exists-condition.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+  \forall\varepsilon>0\;\exists y\in X\setminus\{x\}\;(|y-x|<\varepsilon).
+\]
+  \[
+  \forall\varepsilon>0\;\exists y\in X\setminus\{x\}\;(|y-x|<\varepsilon).
+\]
+\end{description}
+\end{remark*}
+
+
 
 \begin{remark*}[Interpretation]
 An isolated point belongs to the set but has a centered open interval containing
@@ -298,7 +371,7 @@ an \textbf{interior point} of $X$ if
 
 \begin{remark*}[Predicate reading]
 \[
-  \operatorname{IsInterior}(x,X)\;\coloneqq\;\exists\varepsilon>0\;\bigl(I_\varepsilon(x)\subseteq X\bigr).
+  \operatorname{IsInterior}(x,X,\mathbb{R})\;\coloneqq\;\exists\varepsilon>0\;\bigl(I_\varepsilon(x)\subseteq X\bigr).
 \]
 \end{remark*}
 
@@ -333,7 +406,7 @@ a \textbf{boundary point} of $X$ if
 
 \begin{remark*}[Predicate reading]
 \[
-  \operatorname{IsOnBoundary}(x,X)\;\coloneqq\;
+  \operatorname{IsOnBoundary}(x,X,\mathbb{R})\;\coloneqq\;
   \forall\varepsilon>0\;\bigl(I_\varepsilon(x)\cap X\neq\emptyset\bigr)
   \wedge\bigl(I_\varepsilon(x)\cap X^c\neq\emptyset\bigr).
 \]
@@ -464,7 +537,7 @@ Let \(X\subseteq\mathbb{R}\) and \(x\in\mathbb{R}\).  Then
 \[
   x\in\overline{X}
   \;\Longleftrightarrow\;
-  \operatorname{IsAdherent}(x,X).
+  \operatorname{IsAdherent}(x,X,\mathbb{R}).
 \]
 \end{remark*}
 
@@ -495,9 +568,9 @@ a cluster point of \(X\).
 \[
   x\in X
   \;\Longrightarrow\;
-  \bigl(\operatorname{IsIsolated}(x,X)
+  \bigl(\operatorname{IsIsolated}(x,X,\mathbb{R})
   \Longleftrightarrow
-  \operatorname{IsAdherent}(x,X)\wedge\neg\operatorname{IsCluster}(x,X)\bigr).
+  \operatorname{IsAdherent}(x,X,\mathbb{R})\wedge\neg\operatorname{IsCluster}(x,X)\bigr).
 \]
 \end{remark*}
 
@@ -508,7 +581,6 @@ points prevents cluster behavior.
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:isolated-point-r]{Isolated Point}
   \item \hyperref[def:adherent-point-r]{Adherent Point}
   \item \hyperref[def:cluster-point-r]{Cluster Point}
 \end{itemize}
@@ -604,7 +676,6 @@ contains \(X\).
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:closure-r]{Closure}
   \item \hyperref[def:closed-set-r]{Closed Subset of \(\mathbb{R}\)}
   \item \hyperref[lem:closure-elementary]{Elementary Properties of Closures}
 \end{itemize}
@@ -636,7 +707,6 @@ lying inside \(X\).
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:boundary-r]{Boundary}
   \item \hyperref[def:closure-r]{Closure}
   \item \hyperref[def:interior-r]{Interior}
 \end{itemize}
@@ -727,6 +797,29 @@ $E\text{ is closed} \iff \overline{E} = E$.
 \]
 \end{remark*}
 
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  The negated statement isolates the obstruction to the asserted condition.
+
+  \item[\exists-condition.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+  \neg\,E\text{ is closed}
+  \;\iff\;
+  \exists x \notin E :\; x\text{ is an adherent point of }E.
+\]
+  \[
+  \neg\,E\text{ is closed}
+  \;\colonequiv\;
+  \exists x \notin E :\;
+  \forall\varepsilon>0 : I_\varepsilon(x)\cap E\neq\emptyset.
+\]
+\end{description}
+\end{remark*}
+
+
+
 \begin{remark*}[Interpretation]
 $E$ is closed iff it contains its own boundary. Examples:
 $[a,b]$ closed; $(a,b)$ not closed; $\mathbb{R}$ and $\emptyset$
@@ -797,7 +890,11 @@ If $I$ is an interval, then every $x\in I$ is a cluster point of $I$.
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-The displayed quantified statement is the predicate-level form of $label: its hypotheses name the input conditions, and its conclusion names the asserted structure or relation.
+\[
+  \operatorname{IsCluster}(x,I,\mathbb{R})
+  \;\Longleftrightarrow\;
+  \forall\varepsilon>0\;\exists y\in I\setminus\{x\}\;(|y-x|<\varepsilon).
+\]
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -832,7 +929,11 @@ $X\text{ is bounded} \iff \exists M>0,\;\forall x\in X:
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-The displayed quantified statement is the predicate-level form of $label: its hypotheses name the input conditions, and its conclusion names the asserted structure or relation.
+\[
+  \operatorname{Bounded}(X,\mathsf{OrderedSet}(\mathbb{R},\leq))
+  \;\Longleftrightarrow\;
+  \exists M>0\;\forall x\in X\;(|x|\leq M).
+\]
 \end{remark*}
 
 \begin{remark*}[Negated quantified statement]
@@ -841,6 +942,30 @@ The displayed quantified statement is the predicate-level form of $label: its hy
 \]
 \end{remark*}
 
+\begin{remark*}[Negation predicate reading]
+\[
+  \forall M>0\;\exists x\in X\;(|x|>M).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  The negated statement isolates the obstruction to the asserted condition.
+
+  \item[\exists-condition.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+  \forall M>0\;\exists x\in X\;(|x|>M).
+\]
+  \[
+  \forall M>0\;\exists x\in X\;(|x|>M).
+\]
+\end{description}
+\end{remark*}
+
+
+
 \begin{remark*}[Interpretation]
 A bounded subset of $\mathbb{R}$ fits inside some symmetric interval
 $[-M,M]$.
@@ -848,7 +973,6 @@ $[-M,M]$.
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:subset]{Subset}
   \item \hyperref[def:real-chapter-absolute-value-on-r]{Absolute Value on $\mathbb{R}$}
   \item \hyperref[def:order-on-r]{Order on $\mathbb{R}$}
 \end{itemize}
@@ -881,7 +1005,7 @@ a limit in $X$.
 
 \begin{remark*}[Predicate reading]
 \[
-  \operatorname{IsSequentiallyCompact}(X)
+  \operatorname{IsSequentiallyCompact}(X,\mathbb{R})
   \;\colonequiv\;
   X\text{ is closed} \wedge X\text{ is bounded}.
 \]
@@ -896,10 +1020,37 @@ a limit in $X$.
 \]
 \end{remark*}
 
+\begin{remark*}[Negation predicate reading]
+\[
+  \neg\bigl(X\text{ is closed}\wedge X\text{ is bounded}\bigr)
+  \;\iff\;
+  \exists (a_n)\subseteq X:\;
+  \text{no subsequence converges to a limit in } X.
+\]
+\end{remark*}
+
+
+
 \begin{remark*}[Failure modes]
 \begin{description}
   \item[Exposition.]
 The compactness conclusion fails when either closedness or boundedness fails.
+
+
+  \item[\exists-condition.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+  \neg\bigl(X\text{ is closed}\wedge X\text{ is bounded}\bigr)
+  \;\iff\;
+  \exists (a_n)\subseteq X:\;
+  \text{no subsequence converges to a limit in } X.
+\]
+  \[
+  \neg\bigl(X\text{ is closed}\wedge X\text{ is bounded}\bigr)
+  \;\iff\;
+  \exists (a_n)\subseteq X:\;
+  \text{no subsequence converges to a limit in } X.
+\]
 \end{description}
 \end{remark*}
 
@@ -909,6 +1060,22 @@ The compactness conclusion fails when either closedness or boundedness fails.
 Either $X\text{ is bounded}$ fails --- a sequence escapes to
 $\pm\infty$ --- or $X\text{ is closed}$ fails --- a convergent
 subsequence exists but its limit lies outside $X$.
+
+
+  \item[\exists-condition.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+  \neg\bigl(X\text{ is closed}\wedge X\text{ is bounded}\bigr)
+  \;\iff\;
+  \exists (a_n)\subseteq X:\;
+  \text{no subsequence converges to a limit in } X.
+\]
+  \[
+  \neg\bigl(X\text{ is closed}\wedge X\text{ is bounded}\bigr)
+  \;\iff\;
+  \exists (a_n)\subseteq X:\;
+  \text{no subsequence converges to a limit in } X.
+\]
 \end{description}
 \end{remark*}
 

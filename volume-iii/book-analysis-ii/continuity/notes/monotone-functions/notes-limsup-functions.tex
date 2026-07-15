@@ -73,6 +73,29 @@ where $U(\delta)=\{f(x):x\in E,\ 0<|x-x_0|<\delta\}$.
 \begin{description}
   \item[Exposition.]
 The definition can fail only in structurally distinct ways: punctured neighborhoods might be empty despite the accumulation-point hypothesis, or the upper envelopes may blow up while a finite limsup is asserted, or the lower envelopes may dive to negative infinity while a finite liminf is asserted.
+
+
+  \item[\(\forall\)-condition.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\begin{aligned}
+&\text{Let } f:E\to\mathbb{R},\ x_0 \text{ an accumulation point of } E,\ \text{and } U(\delta)=\{f(x):x\in E,\ 0<|x-x_0|<\delta\}.\\
+&\neg\Bigl[\limsup_{x\to x_0} f(x)=\inf_{\delta>0}\sup U(\delta)\ \land\ \liminf_{x\to x_0} f(x)=\sup_{\delta>0}\inf U(\delta)\Bigr]\\
+&\Longleftrightarrow
+\limsup_{x\to x_0} f(x)\ne\inf_{\delta>0}\sup U(\delta)
+\lor
+\liminf_{x\to x_0} f(x)\ne\sup_{\delta>0}\inf U(\delta).
+\end{aligned}
+  \]
+  \[
+\begin{aligned}
+&\neg\bigl(L=\limsup_{x\to x_0} f(x)\land l=\liminf_{x\to x_0} f(x)\bigr)\\
+&\Longleftrightarrow
+L\ne\inf_{\delta>0}\sup U(\delta)
+\lor
+l\ne\sup_{\delta>0}\inf U(\delta),
+\end{aligned}
+  \]
 \end{description}
 \end{remark*}
 
@@ -86,6 +109,29 @@ The definition can fail only in structurally distinct ways: punctured neighborho
 \ \lor\
 \underbrace{\Bigl(\sup_{\delta>0}\inf U(\delta)=-\infty \land l>-\infty\Bigr)}_{\text{lower envelope collapse}}.
 \]
+
+
+  \item[\(\exists\)-condition.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\begin{aligned}
+&\text{Let } f:E\to\mathbb{R},\ x_0 \text{ an accumulation point of } E,\ \text{and } U(\delta)=\{f(x):x\in E,\ 0<|x-x_0|<\delta\}.\\
+&\neg\Bigl[\limsup_{x\to x_0} f(x)=\inf_{\delta>0}\sup U(\delta)\ \land\ \liminf_{x\to x_0} f(x)=\sup_{\delta>0}\inf U(\delta)\Bigr]\\
+&\Longleftrightarrow
+\limsup_{x\to x_0} f(x)\ne\inf_{\delta>0}\sup U(\delta)
+\lor
+\liminf_{x\to x_0} f(x)\ne\sup_{\delta>0}\inf U(\delta).
+\end{aligned}
+  \]
+  \[
+\begin{aligned}
+&\neg\bigl(L=\limsup_{x\to x_0} f(x)\land l=\liminf_{x\to x_0} f(x)\bigr)\\
+&\Longleftrightarrow
+L\ne\inf_{\delta>0}\sup U(\delta)
+\lor
+l\ne\sup_{\delta>0}\inf U(\delta),
+\end{aligned}
+  \]
 \end{description}
 \end{remark*}
 
@@ -125,7 +171,15 @@ Let $A\subseteq \mathbb{R}$, let $x_0$ be a limit point of $A$, and let $f:A\to\
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-The displayed quantified statement is the predicate-level form of $label: its hypotheses name the input conditions, and its conclusion names the asserted structure or relation.
+\[
+\begin{aligned}
+&\forall A\subseteq\mathbb{R}\;\forall f:A\to\mathbb{R}\;\forall x_0\in\mathbb{R}:\\
+&\qquad
+\Bigl(\forall \eta>0\;\exists x\in A\setminus\{x_0\}\;(|x-x_0|<\eta)\Bigr)
+\Longrightarrow
+\limsup_{x\to x_0} f(x) \ge \liminf_{x\to x_0} f(x).
+\end{aligned}
+\]
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -158,7 +212,7 @@ Let $A \subseteq \mathbb{R}$, let $f \colon A \to \mathbb{R}$, let $x_0$ be a li
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{TendsTo}(f, A, x_0, L)
+\operatorname{TendsTo}(f,A,x_0,L,\mathbb{R})
 \Longleftrightarrow
 \bigl(\limsup_{x \to x_0} f(x) = L = \liminf_{x \to x_0} f(x)\bigr).
 \]
@@ -178,7 +232,7 @@ Let $A \subseteq \mathbb{R}$, let $f \colon A \to \mathbb{R}$, let $x_0$ be a li
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{TendsTo}(f,A,x_0,L)
+\neg\operatorname{TendsTo}(f,A,x_0,L,\mathbb{R})
 \Longleftrightarrow
 \bigl(\limsup_{x\to x_0} f(x)\ne L \lor \liminf_{x\to x_0} f(x)\ne L\bigr).
 \]
@@ -190,6 +244,24 @@ Let $A \subseteq \mathbb{R}$, let $f \colon A \to \mathbb{R}$, let $x_0$ be a li
 The criterion fails only when at least one side of the equivalence breaks:
 either the function fails to approach $L$ in the epsilon-delta sense, or
 one of the two extremal envelopes near $x_0$ does not equal $L$.
+
+
+  \item[\operatorname{TendsTo}.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\begin{aligned}
+&\text{Let } A \subseteq \mathbb{R},\; f \colon A \to \mathbb{R},\; x_0 \text{ a limit point of } A,\; L \in \mathbb{R}.\\
+&\Bigl[\exists \varepsilon_0>0\;\forall \delta>0\;\exists x\in A\setminus\{x_0\}\;
+\bigl(0<|x-x_0|<\delta\land |f(x)-L|\ge\varepsilon_0\bigr)\Bigr]\\
+&\qquad\Longleftrightarrow\qquad
+\bigl(\limsup_{x\to x_0} f(x)\ne L \lor \liminf_{x\to x_0} f(x)\ne L\bigr).
+\end{aligned}
+  \]
+  \[
+\neg\operatorname{TendsTo}(f,A,x_0,L,\mathbb{R})
+\Longleftrightarrow
+\bigl(\limsup_{x\to x_0} f(x)\ne L \lor \liminf_{x\to x_0} f(x)\ne L\bigr).
+  \]
 \end{description}
 \end{remark*}
 
@@ -204,6 +276,24 @@ one of the two extremal envelopes near $x_0$ does not equal $L$.
 \ \lor\
 \underbrace{\liminf_{x\to x_0} f(x)\ne L}_{\text{lower envelope mismatch}}.
 \]
+
+
+  \item[\operatorname{TendsTo}.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\begin{aligned}
+&\text{Let } A \subseteq \mathbb{R},\; f \colon A \to \mathbb{R},\; x_0 \text{ a limit point of } A,\; L \in \mathbb{R}.\\
+&\Bigl[\exists \varepsilon_0>0\;\forall \delta>0\;\exists x\in A\setminus\{x_0\}\;
+\bigl(0<|x-x_0|<\delta\land |f(x)-L|\ge\varepsilon_0\bigr)\Bigr]\\
+&\qquad\Longleftrightarrow\qquad
+\bigl(\limsup_{x\to x_0} f(x)\ne L \lor \liminf_{x\to x_0} f(x)\ne L\bigr).
+\end{aligned}
+  \]
+  \[
+\neg\operatorname{TendsTo}(f,A,x_0,L,\mathbb{R})
+\Longleftrightarrow
+\bigl(\limsup_{x\to x_0} f(x)\ne L \lor \liminf_{x\to x_0} f(x)\ne L\bigr).
+  \]
 \end{description}
 \end{remark*}
 

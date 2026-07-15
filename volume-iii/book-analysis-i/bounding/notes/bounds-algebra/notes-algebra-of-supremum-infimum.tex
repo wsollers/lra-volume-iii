@@ -80,6 +80,17 @@ and similarly for sum, difference, and quotient.
   \item[Exposition.]
 An arithmetic-image definition fails only if it omits a value produced by the
 rule or includes a value not produced by the rule.
+
+
+  \item[\exists-condition.]
+  \[
+x\notin A+B\Longleftrightarrow(\forall a\in A)(\forall b\in B)(x\neq a+b),
+\]
+\[
+C\ne AB
+\quad\text{means}\quad
+(\exists x)\bigl[x\in C\triangle AB\bigr],
+\]
 \end{description}
 \end{remark*}
 
@@ -88,6 +99,17 @@ rule or includes a value not produced by the rule.
   \item[Exposition.]
 Every membership claim decomposes into witnesses from the input sets and the
 arithmetic operation that produced the image point.
+
+
+  \item[\exists-condition.]
+  \[
+x\notin A+B\Longleftrightarrow(\forall a\in A)(\forall b\in B)(x\neq a+b),
+\]
+\[
+C\ne AB
+\quad\text{means}\quad
+(\exists x)\bigl[x\in C\triangle AB\bigr],
+\]
 \end{description}
 \end{remark*}
 
@@ -158,6 +180,20 @@ x\notin A^{-1}\Longleftrightarrow(\forall a\in A)(x\neq1/a).
 The reciprocal image is undefined if zero is allowed as an input value.  Once
 zero is excluded, the only definition failures are omitted or spurious
 reciprocal values.
+
+
+  \item[\mathsf{Reciprocal}.]
+  \[
+x\notin A^{-1}\Longleftrightarrow(\forall a\in A)(x\neq1/a).
+\]
+\[
+\begin{aligned}
+&A\subseteq\mathbb{R},\qquad 0\notin A,\qquad B\subseteq\mathbb{R},\\
+&B\ne\mathsf{Reciprocal}(A)
+\quad\text{means}\quad
+(\exists x)\bigl[x\in B\triangle A^{-1}\bigr].
+\end{aligned}
+\]
 \end{description}
 \end{remark*}
 
@@ -165,6 +201,20 @@ reciprocal values.
 \begin{description}
   \item[Exposition.]
 Every element of $A^{-1}$ has the form $1/a$ for a nonzero $a\in A$.
+
+
+  \item[\mathsf{Reciprocal}.]
+  \[
+x\notin A^{-1}\Longleftrightarrow(\forall a\in A)(x\neq1/a).
+\]
+\[
+\begin{aligned}
+&A\subseteq\mathbb{R},\qquad 0\notin A,\qquad B\subseteq\mathbb{R},\\
+&B\ne\mathsf{Reciprocal}(A)
+\quad\text{means}\quad
+(\exists x)\bigl[x\in B\triangle A^{-1}\bigr].
+\end{aligned}
+\]
 \end{description}
 \end{remark*}
 
@@ -238,6 +288,19 @@ is a contradictory configuration.
 \begin{description}
   \item[Exposition.]
 The formula could fail only if translation either failed to preserve upper bounds or failed to preserve leastness. Adding the same real number to every comparison preserves the order, so neither failure mode can occur.
+
+
+  \item[\operatorname{LeastUpperBound}.]
+  \[
+\sup(A+c)\ne \sup A+c
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad A+c=\{a+c:a\in A\},\\
+&\operatorname{LeastUpperBound}(s,A,P)\land
+\neg\operatorname{LeastUpperBound}(s+c,A+c,P)
+\end{aligned}
+\]
 \end{description}
 \end{remark*}
 
@@ -252,6 +315,19 @@ The formula could fail only if translation either failed to preserve upper bound
 \forall u\,[\operatorname{UpperBound}(u,A)\Longrightarrow s\le u]
 &\Longleftrightarrow
 \forall v\,[\operatorname{UpperBound}(v,A+c)\Longrightarrow s+c\le v].
+\end{aligned}
+\]
+
+
+  \item[\operatorname{LeastUpperBound}.]
+  \[
+\sup(A+c)\ne \sup A+c
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad A+c=\{a+c:a\in A\},\\
+&\operatorname{LeastUpperBound}(s,A,P)\land
+\neg\operatorname{LeastUpperBound}(s+c,A+c,P)
 \end{aligned}
 \]
 \end{description}
@@ -326,6 +402,19 @@ is impossible under the stated hypotheses.
   \item[Exposition.]
 The formula could fail only if translation failed to preserve lower bounds or
 failed to preserve greatestness among lower bounds.
+
+
+  \item[\operatorname{GreatestLowerBound}.]
+  \[
+\inf(A+c)\neq\inf A+c
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad A+c=\{a+c:a\in A\},\\
+&\operatorname{GreatestLowerBound}(t,A,P)\land
+\neg\operatorname{GreatestLowerBound}(t+c,A+c,P).
+\end{aligned}
+\]
 \end{description}
 \end{remark*}
 
@@ -336,6 +425,19 @@ failed to preserve greatestness among lower bounds.
 (\forall a\in A)(t\leq a)
 \Longleftrightarrow
 (\forall a\in A)(t+c\leq a+c).
+\]
+
+
+  \item[\operatorname{GreatestLowerBound}.]
+  \[
+\inf(A+c)\neq\inf A+c
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad A+c=\{a+c:a\in A\},\\
+&\operatorname{GreatestLowerBound}(t,A,P)\land
+\neg\operatorname{GreatestLowerBound}(t+c,A+c,P).
+\end{aligned}
 \]
 \end{description}
 \end{remark*}
@@ -414,6 +516,19 @@ is a contradictory configuration.
 \begin{description}
   \item[Exposition.]
 The formula could fail only if multiplying by a positive scalar failed to preserve upper bounds or failed to preserve leastness. Positive multiplication preserves the order, so both properties scale exactly.
+
+
+  \item[\operatorname{LeastUpperBound}.]
+  \[
+k>0,\quad \sup(kA)\ne k\sup A
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad kA=\{ka:a\in A\},\\
+&\operatorname{LeastUpperBound}(s,A,P)\land k>0\land
+\neg\operatorname{LeastUpperBound}(ks,kA,P)
+\end{aligned}
+\]
 \end{description}
 \end{remark*}
 
@@ -428,6 +543,19 @@ The formula could fail only if multiplying by a positive scalar failed to preser
 \operatorname{UpperBound}(u,A)
 &\Longleftrightarrow
 \operatorname{UpperBound}(ku,kA).
+\end{aligned}
+\]
+
+
+  \item[\operatorname{LeastUpperBound}.]
+  \[
+k>0,\quad \sup(kA)\ne k\sup A
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad kA=\{ka:a\in A\},\\
+&\operatorname{LeastUpperBound}(s,A,P)\land k>0\land
+\neg\operatorname{LeastUpperBound}(ks,kA,P)
 \end{aligned}
 \]
 \end{description}
@@ -504,6 +632,19 @@ is impossible under the stated hypotheses.
   \item[Exposition.]
 The formula could fail only if positive multiplication failed to preserve lower
 bounds or greatestness among lower bounds.
+
+
+  \item[\operatorname{GreatestLowerBound}.]
+  \[
+k>0,\quad \inf(kA)\neq k\inf A
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad kA=\{ka:a\in A\},\\
+&\operatorname{GreatestLowerBound}(t,A,P)\land k>0\land
+\neg\operatorname{GreatestLowerBound}(kt,kA,P).
+\end{aligned}
+\]
 \end{description}
 \end{remark*}
 
@@ -515,6 +656,19 @@ bounds or greatestness among lower bounds.
 \Longleftrightarrow
 (\forall a\in A)(kt\leq ka)
 \qquad(k>0).
+\]
+
+
+  \item[\operatorname{GreatestLowerBound}.]
+  \[
+k>0,\quad \inf(kA)\neq k\inf A
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad kA=\{ka:a\in A\},\\
+&\operatorname{GreatestLowerBound}(t,A,P)\land k>0\land
+\neg\operatorname{GreatestLowerBound}(kt,kA,P).
+\end{aligned}
 \]
 \end{description}
 \end{remark*}
@@ -594,6 +748,19 @@ is a contradictory configuration.
 \begin{description}
   \item[Exposition.]
 The formula could fail only if negative multiplication did not reverse lower bounds into upper bounds, or if the extremal value lost its leastness after reversal. Multiplication by a negative scalar reverses order exactly, so the infimum of $A$ becomes the supremum of $kA$.
+
+
+  \item[\operatorname{GreatestLowerBound} / \operatorname{LeastUpperBound}.]
+  \[
+k<0,\quad \sup(kA)\ne k\inf A
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad kA=\{ka:a\in A\},\\
+&\operatorname{GreatestLowerBound}(t,A,P)\land k<0\land
+\neg\operatorname{LeastUpperBound}(kt,kA,P)
+\end{aligned}
+\]
 \end{description}
 \end{remark*}
 
@@ -609,6 +776,19 @@ The formula could fail only if negative multiplication did not reverse lower bou
 &\Longleftrightarrow
 \operatorname{UpperBound}(kv,kA)
 \qquad(k<0).
+\end{aligned}
+\]
+
+
+  \item[\operatorname{GreatestLowerBound} / \operatorname{LeastUpperBound}.]
+  \[
+k<0,\quad \sup(kA)\ne k\inf A
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad kA=\{ka:a\in A\},\\
+&\operatorname{GreatestLowerBound}(t,A,P)\land k<0\land
+\neg\operatorname{LeastUpperBound}(kt,kA,P)
 \end{aligned}
 \]
 \end{description}
@@ -689,6 +869,19 @@ is impossible under the stated hypotheses.
 The formula could fail only if negative multiplication failed to reverse upper
 bounds into lower bounds or failed to preserve the extremal threshold after
 reversal.
+
+
+  \item[\operatorname{LeastUpperBound} / \operatorname{GreatestLowerBound}.]
+  \[
+k<0,\quad \inf(kA)\neq k\sup A
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad kA=\{ka:a\in A\},\\
+&\operatorname{LeastUpperBound}(s,A,P)\land k<0\land
+\neg\operatorname{GreatestLowerBound}(ks,kA,P).
+\end{aligned}
+\]
 \end{description}
 \end{remark*}
 
@@ -700,6 +893,19 @@ reversal.
 \Longleftrightarrow
 (\forall a\in A)(ks\leq ka)
 \qquad(k<0).
+\]
+
+
+  \item[\operatorname{LeastUpperBound} / \operatorname{GreatestLowerBound}.]
+  \[
+k<0,\quad \inf(kA)\neq k\sup A
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad kA=\{ka:a\in A\},\\
+&\operatorname{LeastUpperBound}(s,A,P)\land k<0\land
+\neg\operatorname{GreatestLowerBound}(ks,kA,P).
+\end{aligned}
 \]
 \end{description}
 \end{remark*}
@@ -784,6 +990,19 @@ is a contradictory configuration.
 \begin{description}
   \item[Exposition.]
 The theorem could fail only if negation did not convert lower bounds into upper bounds or did not preserve the extremal threshold after reversing order. The map $x\mapsto -x$ reverses all inequalities, so the exchange is exact.
+
+
+  \item[\operatorname{GreatestLowerBound} / \operatorname{LeastUpperBound}.]
+  \[
+\sup(-A)\ne -\inf A
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad -A=\{-a:a\in A\},\\
+&\operatorname{GreatestLowerBound}(t,A,P)\land
+\neg\operatorname{LeastUpperBound}(-t,-A,P)
+\end{aligned}
+\]
 \end{description}
 \end{remark*}
 
@@ -798,6 +1017,19 @@ The theorem could fail only if negation did not convert lower bounds into upper 
 \operatorname{LowerBound}(v,A)
 &\Longleftrightarrow
 \operatorname{UpperBound}(-v,-A).
+\end{aligned}
+\]
+
+
+  \item[\operatorname{GreatestLowerBound} / \operatorname{LeastUpperBound}.]
+  \[
+\sup(-A)\ne -\inf A
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad -A=\{-a:a\in A\},\\
+&\operatorname{GreatestLowerBound}(t,A,P)\land
+\neg\operatorname{LeastUpperBound}(-t,-A,P)
 \end{aligned}
 \]
 \end{description}
@@ -886,6 +1118,20 @@ is a contradictory configuration.
 \begin{description}
   \item[Exposition.]
 The equality could fail only if the sum of the two suprema did not bound the sum set, or if it were not the least such bound. The first part follows from adding the two upper-bound inequalities; the second follows by approximating each supremum from within its set.
+
+
+  \item[\operatorname{LeastUpperBound}.]
+  \[
+\sup(A+B)\ne \sup A+\sup B
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\qquad A+B=\{a+b:a\in A,\ b\in B\},\\
+&\operatorname{LeastUpperBound}(s_A,A,P)\land \operatorname{LeastUpperBound}(s_B,B,P)
+\land
+\neg\operatorname{LeastUpperBound}(s_A+s_B,A+B,P)
+\end{aligned}
+\]
 \end{description}
 \end{remark*}
 
@@ -900,6 +1146,20 @@ a\le \sup A,\quad b\le \sup B
 &\Longrightarrow
 \exists a\in A,\ b\in B:
 \sup A+\sup B-\varepsilon<a+b.
+\end{aligned}
+\]
+
+
+  \item[\operatorname{LeastUpperBound}.]
+  \[
+\sup(A+B)\ne \sup A+\sup B
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\qquad A+B=\{a+b:a\in A,\ b\in B\},\\
+&\operatorname{LeastUpperBound}(s_A,A,P)\land \operatorname{LeastUpperBound}(s_B,B,P)
+\land
+\neg\operatorname{LeastUpperBound}(s_A+s_B,A+B,P)
 \end{aligned}
 \]
 \end{description}
@@ -976,6 +1236,19 @@ is impossible under the stated hypotheses.
   \item[Exposition.]
 The equality could fail only if the sum of the two infima failed to be a lower
 bound of the sum set or failed to be the greatest such lower bound.
+
+
+  \item[\operatorname{GreatestLowerBound}.]
+  \[
+\inf(A+B)\neq\inf A+\inf B
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\qquad A+B=\{a+b:a\in A,\ b\in B\},\\
+&\operatorname{GreatestLowerBound}(t_A,A,P)\land\operatorname{GreatestLowerBound}(t_B,B,P)\land
+\neg\operatorname{GreatestLowerBound}(t_A+t_B,A+B,P).
+\end{aligned}
+\]
 \end{description}
 \end{remark*}
 
@@ -988,6 +1261,19 @@ t_A\leq a,\quad t_B\leq b
 t_A+t_B\leq a+b,
 \]
 and sharpness follows by choosing elements near each infimum.
+
+
+  \item[\operatorname{GreatestLowerBound}.]
+  \[
+\inf(A+B)\neq\inf A+\inf B
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\qquad A+B=\{a+b:a\in A,\ b\in B\},\\
+&\operatorname{GreatestLowerBound}(t_A,A,P)\land\operatorname{GreatestLowerBound}(t_B,B,P)\land
+\neg\operatorname{GreatestLowerBound}(t_A+t_B,A+B,P).
+\end{aligned}
+\]
 \end{description}
 \end{remark*}
 
@@ -1088,6 +1374,20 @@ is a contradictory configuration.
 \begin{description}
   \item[Exposition.]
 The formula could fail only if subtracting elements of $B$ did not convert the lower extremal behavior of $B$ into an upper contribution. Since $a-b=a+(-b)$, this is the sum theorem combined with the negation exchange.
+
+
+  \item[\operatorname{LeastUpperBound} / \operatorname{GreatestLowerBound}.]
+  \[
+\sup(A-B)\ne \sup A-\inf B
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\qquad A-B=\{a-b:a\in A,\ b\in B\},\\
+&\operatorname{LeastUpperBound}(s,A,P)\land \operatorname{GreatestLowerBound}(t,B,P)
+\land
+\neg\operatorname{LeastUpperBound}(s-t,A-B,P)
+\end{aligned}
+\]
 \end{description}
 \end{remark*}
 
@@ -1100,6 +1400,20 @@ A-B=A+(-B),
 \sup(-B)=-\inf B,
 \qquad
 \sup(A+(-B))=\sup A+\sup(-B).
+\]
+
+
+  \item[\operatorname{LeastUpperBound} / \operatorname{GreatestLowerBound}.]
+  \[
+\sup(A-B)\ne \sup A-\inf B
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\qquad A-B=\{a-b:a\in A,\ b\in B\},\\
+&\operatorname{LeastUpperBound}(s,A,P)\land \operatorname{GreatestLowerBound}(t,B,P)
+\land
+\neg\operatorname{LeastUpperBound}(s-t,A-B,P)
+\end{aligned}
 \]
 \end{description}
 \end{remark*}
@@ -1180,6 +1494,19 @@ is impossible under the stated hypotheses.
   \item[Exposition.]
 The formula could fail only if subtracting $B$ failed to convert its upper
 extremal behavior into a lower contribution.
+
+
+  \item[\operatorname{GreatestLowerBound} / \operatorname{LeastUpperBound}.]
+  \[
+\inf(A-B)\neq\inf A-\sup B
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\qquad A-B=\{a-b:a\in A,\ b\in B\},\\
+&\operatorname{GreatestLowerBound}(t,A,P)\land\operatorname{LeastUpperBound}(s,B,P)\land
+\neg\operatorname{GreatestLowerBound}(t-s,A-B,P).
+\end{aligned}
+\]
 \end{description}
 \end{remark*}
 
@@ -1190,6 +1517,19 @@ extremal behavior into a lower contribution.
 A-B=A+(-B),\qquad
 \inf(-B)=-\sup B,\qquad
 \inf(A+(-B))=\inf A+\inf(-B).
+\]
+
+
+  \item[\operatorname{GreatestLowerBound} / \operatorname{LeastUpperBound}.]
+  \[
+\inf(A-B)\neq\inf A-\sup B
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\qquad A-B=\{a-b:a\in A,\ b\in B\},\\
+&\operatorname{GreatestLowerBound}(t,A,P)\land\operatorname{LeastUpperBound}(s,B,P)\land
+\neg\operatorname{GreatestLowerBound}(t-s,A-B,P).
+\end{aligned}
 \]
 \end{description}
 \end{remark*}
@@ -1277,6 +1617,21 @@ is a contradictory configuration.
 \begin{description}
   \item[Exposition.]
 The formula separates into the cases $\lambda>0$, $\lambda=0$, and $\lambda<0$. Positive dilation scales the supremum, zero dilation collapses the set to $\{0\}$, and negative dilation turns the infimum into the supremum.
+
+
+  \item[\operatorname{LeastUpperBound} / \operatorname{GreatestLowerBound}.]
+  \[
+\sup(\lambda A)\ne \max\{\lambda\sup A,\lambda\inf A\}
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad \lambda A=\{\lambda a:a\in A\},\\
+&M=\max\{\lambda s,\lambda t\},\\
+&\operatorname{LeastUpperBound}(s,A,P)\land \operatorname{GreatestLowerBound}(t,A,P)
+\land
+\neg\operatorname{LeastUpperBound}(M,\lambda A,P)
+\end{aligned}
+\]
 \end{description}
 \end{remark*}
 
@@ -1290,6 +1645,21 @@ The formula separates into the cases $\lambda>0$, $\lambda=0$, and $\lambda<0$. 
 0, & \lambda=0,\\
 \lambda\inf A, & \lambda<0.
 \end{cases}
+\]
+
+
+  \item[\operatorname{LeastUpperBound} / \operatorname{GreatestLowerBound}.]
+  \[
+\sup(\lambda A)\ne \max\{\lambda\sup A,\lambda\inf A\}
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad \lambda A=\{\lambda a:a\in A\},\\
+&M=\max\{\lambda s,\lambda t\},\\
+&\operatorname{LeastUpperBound}(s,A,P)\land \operatorname{GreatestLowerBound}(t,A,P)
+\land
+\neg\operatorname{LeastUpperBound}(M,\lambda A,P)
+\end{aligned}
 \]
 \end{description}
 \end{remark*}
@@ -1376,6 +1746,21 @@ is a contradictory configuration.
 \begin{description}
   \item[Exposition.]
 The formula could fail only if the farthest absolute-value size were not achieved at one of the two extremal thresholds. Since every $a\in A$ lies between $\inf A$ and $\sup A$, its distance from zero is bounded by the larger endpoint magnitude.
+
+
+  \item[\operatorname{LeastUpperBound} / \operatorname{GreatestLowerBound}.]
+  \[
+\sup |A|\ne \max\{|\sup A|,|\inf A|\}
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad C=\{|a|:a\in A\},\\
+&M=\max\{|s|,|t|\},\\
+&\operatorname{LeastUpperBound}(s,A,P)\land \operatorname{GreatestLowerBound}(t,A,P)
+\land
+\neg\operatorname{LeastUpperBound}(M,C,P)
+\end{aligned}
+\]
 \end{description}
 \end{remark*}
 
@@ -1386,6 +1771,21 @@ The formula could fail only if the farthest absolute-value size were not achieve
 \inf A\le a\le \sup A
 \Longrightarrow
 |a|\le \max\{|\sup A|,|\inf A|\}.
+\]
+
+
+  \item[\operatorname{LeastUpperBound} / \operatorname{GreatestLowerBound}.]
+  \[
+\sup |A|\ne \max\{|\sup A|,|\inf A|\}
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad C=\{|a|:a\in A\},\\
+&M=\max\{|s|,|t|\},\\
+&\operatorname{LeastUpperBound}(s,A,P)\land \operatorname{GreatestLowerBound}(t,A,P)
+\land
+\neg\operatorname{LeastUpperBound}(M,C,P)
+\end{aligned}
 \]
 \end{description}
 \end{remark*}
@@ -1482,6 +1882,22 @@ The formula fails without a nonzero gap from zero: reciprocal images may be
 unbounded or undefined.  With the gap, reciprocal is order-reversing on the
 whole interval containing $A$, so the floor of $A$ becomes the ceiling of
 $A^{-1}$.
+
+
+  \item[\operatorname{LeastUpperBound} / \operatorname{GreatestLowerBound}.]
+  \[
+A\neq\varnothing,\quad A\text{ bounded},\quad 0\notin[\inf A,\sup A],
+\quad
+\sup(A^{-1})\neq(\inf A)^{-1}.
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad A^{-1}=\{1/a:a\in A\},\\
+&\operatorname{LeastUpperBound}(M,A,P),\qquad u=m^{-1},\\
+&\operatorname{GreatestLowerBound}(m,A,P)\land 0\notin[m,M]\land
+\neg\operatorname{LeastUpperBound}(u,A^{-1},P)
+\end{aligned}
+\]
 \end{description}
 \end{remark*}
 
@@ -1492,6 +1908,22 @@ Every $a\in A$ lies between $\inf A$ and $\sup A$, and the interval does not
 cross zero.  The reciprocal map reverses comparisons there, so
 $1/a\leq 1/\inf A$.  Leastness follows by applying the same reversal to values
 of $A$ approaching $\inf A$.
+
+
+  \item[\operatorname{LeastUpperBound} / \operatorname{GreatestLowerBound}.]
+  \[
+A\neq\varnothing,\quad A\text{ bounded},\quad 0\notin[\inf A,\sup A],
+\quad
+\sup(A^{-1})\neq(\inf A)^{-1}.
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad A^{-1}=\{1/a:a\in A\},\\
+&\operatorname{LeastUpperBound}(M,A,P),\qquad u=m^{-1},\\
+&\operatorname{GreatestLowerBound}(m,A,P)\land 0\notin[m,M]\land
+\neg\operatorname{LeastUpperBound}(u,A^{-1},P)
+\end{aligned}
+\]
 \end{description}
 \end{remark*}
 
@@ -1587,6 +2019,22 @@ is contradictory under the stated hypotheses.
 The formula fails without excluding zero from the closed extremal interval.
 Once zero is excluded, reciprocal reverses order and the ceiling of $A$ becomes
 the floor of $A^{-1}$.
+
+
+  \item[\operatorname{GreatestLowerBound} / \operatorname{LeastUpperBound}.]
+  \[
+A\neq\varnothing,\quad A\text{ bounded},\quad 0\notin[\inf A,\sup A],
+\quad
+\inf(A^{-1})\neq(\sup A)^{-1}.
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad A^{-1}=\{1/a:a\in A\},\\
+&\operatorname{GreatestLowerBound}(m,A,P),\qquad \ell=M^{-1},\\
+&\operatorname{LeastUpperBound}(M,A,P)\land 0\notin[m,M]\land
+\neg\operatorname{GreatestLowerBound}(\ell,A^{-1},P)
+\end{aligned}
+\]
 \end{description}
 \end{remark*}
 
@@ -1597,6 +2045,22 @@ Every reciprocal $1/a$ lies above $1/\sup A$ because reciprocal reverses order
 on the nonzero interval containing $A$.  Greatestness of $\sup A$ gives
 elements of $A$ arbitrarily close to that ceiling, which makes the lower bound
 sharp.
+
+
+  \item[\operatorname{GreatestLowerBound} / \operatorname{LeastUpperBound}.]
+  \[
+A\neq\varnothing,\quad A\text{ bounded},\quad 0\notin[\inf A,\sup A],
+\quad
+\inf(A^{-1})\neq(\sup A)^{-1}.
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad A^{-1}=\{1/a:a\in A\},\\
+&\operatorname{GreatestLowerBound}(m,A,P),\qquad \ell=M^{-1},\\
+&\operatorname{LeastUpperBound}(M,A,P)\land 0\notin[m,M]\land
+\neg\operatorname{GreatestLowerBound}(\ell,A^{-1},P)
+\end{aligned}
+\]
 \end{description}
 \end{remark*}
 
@@ -1686,6 +2150,22 @@ is a contradictory configuration.
   \item[Exposition.]
 A failure would require a product above all four endpoint products or would
 require the endpoint maximum not to be least.
+
+
+  \item[\operatorname{GreatestLowerBound} / \operatorname{LeastUpperBound}.]
+  \[
+\sup(AB)\neq
+\max\{(\inf A)(\inf B),(\inf A)(\sup B),(\sup A)(\inf B),(\sup A)(\sup B)\}
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\qquad AB=\{ab:a\in A,\ b\in B\},\\
+&M=\max\{\alpha\gamma,\alpha\delta,\beta\gamma,\beta\delta\},\\
+&\operatorname{GreatestLowerBound}(\alpha,A,P)\land\operatorname{LeastUpperBound}(\beta,A,P)\land\\
+&\operatorname{GreatestLowerBound}(\gamma,B,P)\land\operatorname{LeastUpperBound}(\delta,B,P)\land
+\neg\operatorname{LeastUpperBound}(M,AB,P)
+\end{aligned}
+\]
 \end{description}
 \end{remark*}
 
@@ -1696,6 +2176,22 @@ Every pair $(a,b)$ lies in the rectangle
 $[\inf A,\sup A]\times[\inf B,\sup B]$.  A bilinear product on a rectangle has
 its extreme values at corners, and elements can approximate the relevant
 corners from within the two sets.
+
+
+  \item[\operatorname{GreatestLowerBound} / \operatorname{LeastUpperBound}.]
+  \[
+\sup(AB)\neq
+\max\{(\inf A)(\inf B),(\inf A)(\sup B),(\sup A)(\inf B),(\sup A)(\sup B)\}
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\qquad AB=\{ab:a\in A,\ b\in B\},\\
+&M=\max\{\alpha\gamma,\alpha\delta,\beta\gamma,\beta\delta\},\\
+&\operatorname{GreatestLowerBound}(\alpha,A,P)\land\operatorname{LeastUpperBound}(\beta,A,P)\land\\
+&\operatorname{GreatestLowerBound}(\gamma,B,P)\land\operatorname{LeastUpperBound}(\delta,B,P)\land
+\neg\operatorname{LeastUpperBound}(M,AB,P)
+\end{aligned}
+\]
 \end{description}
 \end{remark*}
 
@@ -1790,6 +2286,25 @@ is a contradictory configuration.
   \item[Exposition.]
 A failure would require a product below all four endpoint products or would
 require the endpoint minimum not to be greatest.
+
+
+  \item[\operatorname{GreatestLowerBound} / \operatorname{LeastUpperBound}.]
+  \[
+\inf(AB)\neq
+\min\{(\inf A)(\inf B),(\inf A)(\sup B),(\sup A)(\inf B),(\sup A)(\sup B)\}
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+A,B\subseteq\mathbb{R},\qquad AB=\{ab:a\in A,\ b\in B\},\\
+&L=\min\{\alpha\gamma,\alpha\delta,\beta\gamma,\beta\delta\},\\
+&\operatorname{GreatestLowerBound}(\alpha,A,P)\land
+\operatorname{LeastUpperBound}(\beta,A,P)\land\\
+&\operatorname{GreatestLowerBound}(\gamma,B,P)\land
+\operatorname{LeastUpperBound}(\delta,B,P)\land
+\neg\operatorname{GreatestLowerBound}(L,AB,P)
+\end{aligned}
+\]
 \end{description}
 \end{remark*}
 
@@ -1798,6 +2313,25 @@ require the endpoint minimum not to be greatest.
   \item[Exposition.]
 Reduce to the same endpoint analysis as the supremum product formula, replacing
 the corner maximum by the corner minimum.
+
+
+  \item[\operatorname{GreatestLowerBound} / \operatorname{LeastUpperBound}.]
+  \[
+\inf(AB)\neq
+\min\{(\inf A)(\inf B),(\inf A)(\sup B),(\sup A)(\inf B),(\sup A)(\sup B)\}
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+A,B\subseteq\mathbb{R},\qquad AB=\{ab:a\in A,\ b\in B\},\\
+&L=\min\{\alpha\gamma,\alpha\delta,\beta\gamma,\beta\delta\},\\
+&\operatorname{GreatestLowerBound}(\alpha,A,P)\land
+\operatorname{LeastUpperBound}(\beta,A,P)\land\\
+&\operatorname{GreatestLowerBound}(\gamma,B,P)\land
+\operatorname{LeastUpperBound}(\delta,B,P)\land
+\neg\operatorname{GreatestLowerBound}(L,AB,P)
+\end{aligned}
+\]
 \end{description}
 \end{remark*}
 
@@ -1891,6 +2425,36 @@ is a contradictory configuration.
   \item[Exposition.]
 A failure would require the quotient set to see values not controlled by the
 reciprocal endpoint interval for $B$.
+
+
+  \item[\operatorname{GreatestLowerBound} / \operatorname{LeastUpperBound}.]
+
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+A,B\subseteq\mathbb{R},\qquad Q=A/B=\{a/b:a\in A,\ b\in B\},\\
+&M=\max\{\alpha/\gamma,\alpha/\delta,\beta/\gamma,\beta/\delta\},\\
+&\operatorname{GreatestLowerBound}(\alpha,A,P)\land
+\operatorname{LeastUpperBound}(\beta,A,P)\land\\
+&\operatorname{GreatestLowerBound}(\gamma,B,P)\land
+\operatorname{LeastUpperBound}(\delta,B,P)\land
+(0<\gamma\lor\delta<0)\land\\
+&\neg\operatorname{LeastUpperBound}(M,Q,P)
+\end{aligned}
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+A,B\subseteq\mathbb{R},\qquad Q=A/B=\{a/b:a\in A,\ b\in B\},\\
+&M=\max\{\alpha/\gamma,\alpha/\delta,\beta/\gamma,\beta/\delta\},\\
+&\operatorname{GreatestLowerBound}(\alpha,A,P)\land
+\operatorname{LeastUpperBound}(\beta,A,P)\land\\
+&\operatorname{GreatestLowerBound}(\gamma,B,P)\land
+\operatorname{LeastUpperBound}(\delta,B,P)\land
+(0<\gamma\lor\delta<0)\\
+&\Longrightarrow \operatorname{LeastUpperBound}(M,Q,P).
+\end{aligned}
+\]
 \end{description}
 \end{remark*}
 
@@ -1899,6 +2463,36 @@ reciprocal endpoint interval for $B$.
   \item[Exposition.]
 Use $A/B=A B^{-1}$, the reciprocal endpoint formulas for $B^{-1}$, and the
 product endpoint formula.
+
+
+  \item[\operatorname{GreatestLowerBound} / \operatorname{LeastUpperBound}.]
+
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+A,B\subseteq\mathbb{R},\qquad Q=A/B=\{a/b:a\in A,\ b\in B\},\\
+&M=\max\{\alpha/\gamma,\alpha/\delta,\beta/\gamma,\beta/\delta\},\\
+&\operatorname{GreatestLowerBound}(\alpha,A,P)\land
+\operatorname{LeastUpperBound}(\beta,A,P)\land\\
+&\operatorname{GreatestLowerBound}(\gamma,B,P)\land
+\operatorname{LeastUpperBound}(\delta,B,P)\land
+(0<\gamma\lor\delta<0)\land\\
+&\neg\operatorname{LeastUpperBound}(M,Q,P)
+\end{aligned}
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+A,B\subseteq\mathbb{R},\qquad Q=A/B=\{a/b:a\in A,\ b\in B\},\\
+&M=\max\{\alpha/\gamma,\alpha/\delta,\beta/\gamma,\beta/\delta\},\\
+&\operatorname{GreatestLowerBound}(\alpha,A,P)\land
+\operatorname{LeastUpperBound}(\beta,A,P)\land\\
+&\operatorname{GreatestLowerBound}(\gamma,B,P)\land
+\operatorname{LeastUpperBound}(\delta,B,P)\land
+(0<\gamma\lor\delta<0)\\
+&\Longrightarrow \operatorname{LeastUpperBound}(M,Q,P).
+\end{aligned}
+\]
 \end{description}
 \end{remark*}
 
@@ -1993,6 +2587,36 @@ is a contradictory configuration.
   \item[Exposition.]
 A failure would require a quotient below all endpoint quotients or would
 require the endpoint minimum not to be greatest among lower bounds.
+
+
+  \item[\operatorname{GreatestLowerBound} / \operatorname{LeastUpperBound}.]
+
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+A,B\subseteq\mathbb{R},\qquad Q=A/B=\{a/b:a\in A,\ b\in B\},\\
+&L=\min\{\alpha/\gamma,\alpha/\delta,\beta/\gamma,\beta/\delta\},\\
+&\operatorname{GreatestLowerBound}(\alpha,A,P)\land
+\operatorname{LeastUpperBound}(\beta,A,P)\land\\
+&\operatorname{GreatestLowerBound}(\gamma,B,P)\land
+\operatorname{LeastUpperBound}(\delta,B,P)\land
+(0<\gamma\lor\delta<0)\land\\
+&\neg\operatorname{GreatestLowerBound}(L,Q,P)
+\end{aligned}
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+A,B\subseteq\mathbb{R},\qquad Q=A/B=\{a/b:a\in A,\ b\in B\},\\
+&L=\min\{\alpha/\gamma,\alpha/\delta,\beta/\gamma,\beta/\delta\},\\
+&\operatorname{GreatestLowerBound}(\alpha,A,P)\land
+\operatorname{LeastUpperBound}(\beta,A,P)\land\\
+&\operatorname{GreatestLowerBound}(\gamma,B,P)\land
+\operatorname{LeastUpperBound}(\delta,B,P)\land
+(0<\gamma\lor\delta<0)\\
+&\Longrightarrow \operatorname{GreatestLowerBound}(L,Q,P).
+\end{aligned}
+\]
 \end{description}
 \end{remark*}
 
@@ -2001,6 +2625,36 @@ require the endpoint minimum not to be greatest among lower bounds.
   \item[Exposition.]
 Use $A/B=A B^{-1}$ and combine the reciprocal endpoint formulas with the
 product endpoint infimum formula.
+
+
+  \item[\operatorname{GreatestLowerBound} / \operatorname{LeastUpperBound}.]
+
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+A,B\subseteq\mathbb{R},\qquad Q=A/B=\{a/b:a\in A,\ b\in B\},\\
+&L=\min\{\alpha/\gamma,\alpha/\delta,\beta/\gamma,\beta/\delta\},\\
+&\operatorname{GreatestLowerBound}(\alpha,A,P)\land
+\operatorname{LeastUpperBound}(\beta,A,P)\land\\
+&\operatorname{GreatestLowerBound}(\gamma,B,P)\land
+\operatorname{LeastUpperBound}(\delta,B,P)\land
+(0<\gamma\lor\delta<0)\land\\
+&\neg\operatorname{GreatestLowerBound}(L,Q,P)
+\end{aligned}
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+A,B\subseteq\mathbb{R},\qquad Q=A/B=\{a/b:a\in A,\ b\in B\},\\
+&L=\min\{\alpha/\gamma,\alpha/\delta,\beta/\gamma,\beta/\delta\},\\
+&\operatorname{GreatestLowerBound}(\alpha,A,P)\land
+\operatorname{LeastUpperBound}(\beta,A,P)\land\\
+&\operatorname{GreatestLowerBound}(\gamma,B,P)\land
+\operatorname{LeastUpperBound}(\delta,B,P)\land
+(0<\gamma\lor\delta<0)\\
+&\Longrightarrow \operatorname{GreatestLowerBound}(L,Q,P).
+\end{aligned}
+\]
 \end{description}
 \end{remark*}
 
@@ -2098,6 +2752,25 @@ is a contradictory configuration.
 \begin{description}
   \item[Exposition.]
 The lower inequality could fail only if a sum fell below the sum of the two lower thresholds. The upper inequality could fail only if a sum rose above the sum of the two upper thresholds.
+
+
+  \item[\operatorname{GreatestLowerBound} / \operatorname{LeastUpperBound}.]
+  \[
+\inf(A+B)<\inf A+\inf B
+\quad\text{or}\quad
+\sup A+\sup B<\sup(A+B)
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+A,B\subseteq\mathbb{R},\qquad C=A+B=\{a+b:a\in A,\ b\in B\},\\
+&\bigl[\operatorname{GreatestLowerBound}(t_A,A,P)\land
+\operatorname{GreatestLowerBound}(t_B,B,P)\land \inf C<t_A+t_B\bigr]\\
+\lor
+&\bigl[\operatorname{LeastUpperBound}(s_A,A,P)\land
+\operatorname{LeastUpperBound}(s_B,B,P)\land s_A+s_B<\sup C\bigr]
+\end{aligned}
+\]
 \end{description}
 \end{remark*}
 
@@ -2108,6 +2781,25 @@ The lower inequality could fail only if a sum fell below the sum of the two lowe
 \inf A\le a\le \sup A,\quad \inf B\le b\le \sup B
 \Longrightarrow
 \inf A+\inf B\le a+b\le \sup A+\sup B.
+\]
+
+
+  \item[\operatorname{GreatestLowerBound} / \operatorname{LeastUpperBound}.]
+  \[
+\inf(A+B)<\inf A+\inf B
+\quad\text{or}\quad
+\sup A+\sup B<\sup(A+B)
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+A,B\subseteq\mathbb{R},\qquad C=A+B=\{a+b:a\in A,\ b\in B\},\\
+&\bigl[\operatorname{GreatestLowerBound}(t_A,A,P)\land
+\operatorname{GreatestLowerBound}(t_B,B,P)\land \inf C<t_A+t_B\bigr]\\
+\lor
+&\bigl[\operatorname{LeastUpperBound}(s_A,A,P)\land
+\operatorname{LeastUpperBound}(s_B,B,P)\land s_A+s_B<\sup C\bigr]
+\end{aligned}
 \]
 \end{description}
 \end{remark*}
@@ -2197,6 +2889,20 @@ when the ambient order is omitted.
 \begin{description}
   \item[Exposition.]
 Ambiguity occurs when the same set $A$ is considered inside different ordered ambient sets or under different order relations. The candidate bound may belong to one ambient set and not another, or the relevant comparison relation may change.
+
+
+  \item[\operatorname{WellDefined}.]
+  \[
+\text{The phrase ``}u\text{ is an upper bound of }A\text{''}
+\]
+\[
+\begin{aligned}
+&P_S=\mathsf{OrderedSet}(S,\le_S),\qquad
+P_T=\mathsf{OrderedSet}(T,\le_T),\\
+&X=\text{``$u$ is an upper bound of $A$''},\\
+&\neg\operatorname{WellDefined}(X,\text{ambient omitted})
+\end{aligned}
+\]
 \end{description}
 \end{remark*}
 
@@ -2209,6 +2915,20 @@ Ambiguity occurs when the same set $A$ is considered inside different ordered am
 \operatorname{UpperBound}_T(u,A)
 \]
 are separate assertions unless $S=T$ and $\le_S=\le_T$ on the elements being compared.
+
+
+  \item[\operatorname{WellDefined}.]
+  \[
+\text{The phrase ``}u\text{ is an upper bound of }A\text{''}
+\]
+\[
+\begin{aligned}
+&P_S=\mathsf{OrderedSet}(S,\le_S),\qquad
+P_T=\mathsf{OrderedSet}(T,\le_T),\\
+&X=\text{``$u$ is an upper bound of $A$''},\\
+&\neg\operatorname{WellDefined}(X,\text{ambient omitted})
+\end{aligned}
+\]
 \end{description}
 \end{remark*}
 
@@ -2278,6 +2998,21 @@ is possible when the larger ambient set contains the least upper bound but the s
 \begin{description}
   \item[Exposition.]
 The ambient-relative supremum can fail to transfer because the candidate least upper bound may not belong to the smaller ambient set, or because the smaller ambient set may have a different collection of upper bounds.
+
+
+  \item[\operatorname{LeastUpperBound}.]
+  \[
+\sup_S A=\sup_{S'} A
+\]
+\[
+\begin{aligned}
+&T=S',\qquad A\subseteq S,\qquad S\subseteq T,\\
+&P_S=\mathsf{OrderedSet}(S,\leq),\qquad
+P_T=\mathsf{OrderedSet}(T,\leq),\\
+&\operatorname{LeastUpperBound}(s,A,P_T)\land
+\neg\operatorname{LeastUpperBound}(s,A,P_S)
+\end{aligned}
+\]
 \end{description}
 \end{remark*}
 
@@ -2288,6 +3023,21 @@ The ambient-relative supremum can fail to transfer because the candidate least u
 s=\sup_{S'} A,\quad s\notin S
 \Longrightarrow
 s\text{ cannot be the supremum of }A\text{ relative to }S.
+\]
+
+
+  \item[\operatorname{LeastUpperBound}.]
+  \[
+\sup_S A=\sup_{S'} A
+\]
+\[
+\begin{aligned}
+&T=S',\qquad A\subseteq S,\qquad S\subseteq T,\\
+&P_S=\mathsf{OrderedSet}(S,\leq),\qquad
+P_T=\mathsf{OrderedSet}(T,\leq),\\
+&\operatorname{LeastUpperBound}(s,A,P_T)\land
+\neg\operatorname{LeastUpperBound}(s,A,P_S)
+\end{aligned}
 \]
 \end{description}
 \end{remark*}
@@ -2363,6 +3113,22 @@ is false.
 \begin{description}
   \item[Exposition.]
 The transfer from $S'$ to $S$ fails when the least upper bound exists in the larger ambient set but is missing from the smaller one. The smaller ambient set may contain upper bounds without containing a least upper bound.
+
+
+  \item[\operatorname{LeastUpperBound}.]
+  \[
+\text{Every ambient enlargement preserves and reflects existence of suprema.}
+\]
+\[
+\begin{aligned}
+&T=S',\qquad A\subseteq S,\qquad S\subseteq T,\\
+&P_S=\mathsf{OrderedSet}(S,\leq),\qquad
+P_T=\mathsf{OrderedSet}(T,\leq),\\
+&\bigl[\exists s\in T\,\operatorname{LeastUpperBound}(s,A,P_T)
+\Longrightarrow
+\exists t\in S\,\operatorname{LeastUpperBound}(t,A,P_S)\bigr]
+\end{aligned}
+\]
 \end{description}
 \end{remark*}
 
@@ -2372,6 +3138,22 @@ The transfer from $S'$ to $S$ fails when the least upper bound exists in the lar
 \[
 s=\sup_{S'} A,\quad s\notin S,\quad
 \text{and no }t\in S\text{ is least among the upper bounds of }A\text{ in }S.
+\]
+
+
+  \item[\operatorname{LeastUpperBound}.]
+  \[
+\text{Every ambient enlargement preserves and reflects existence of suprema.}
+\]
+\[
+\begin{aligned}
+&T=S',\qquad A\subseteq S,\qquad S\subseteq T,\\
+&P_S=\mathsf{OrderedSet}(S,\leq),\qquad
+P_T=\mathsf{OrderedSet}(T,\leq),\\
+&\bigl[\exists s\in T\,\operatorname{LeastUpperBound}(s,A,P_T)
+\Longrightarrow
+\exists t\in S\,\operatorname{LeastUpperBound}(t,A,P_S)\bigr]
+\end{aligned}
 \]
 \end{description}
 \end{remark*}
@@ -2444,6 +3226,19 @@ is false.
 \begin{description}
   \item[Exposition.]
 A rational candidate below $\sqrt{2}$ fails to be an upper bound. A rational candidate above $\sqrt{2}$ is an upper bound but is not least, because another rational upper bound lies between it and $\sqrt{2}$.
+
+
+  \item[\operatorname{LeastUpperBound}.]
+  \[
+\exists s\in\mathbb{Q}\;(s=\sup_{\mathbb{Q}}A)
+\]
+\[
+\begin{aligned}
+&P_{\mathbb{Q}}=\mathsf{OrderedSet}(\mathbb{Q},\leq),\qquad
+A=\{q\in\mathbb{Q}:q^2<2\},\\
+&\exists s\in\mathbb{Q}\;\operatorname{LeastUpperBound}(s,A,P_{\mathbb{Q}})
+\end{aligned}
+\]
 \end{description}
 \end{remark*}
 
@@ -2456,6 +3251,19 @@ s^2<2 &\Longrightarrow s\text{ is not an upper bound of }A,\\
 s^2>2 &\Longrightarrow s\text{ is not the least upper bound of }A.
 \end{cases}
 \qquad(s\in\mathbb{Q})
+\]
+
+
+  \item[\operatorname{LeastUpperBound}.]
+  \[
+\exists s\in\mathbb{Q}\;(s=\sup_{\mathbb{Q}}A)
+\]
+\[
+\begin{aligned}
+&P_{\mathbb{Q}}=\mathsf{OrderedSet}(\mathbb{Q},\leq),\qquad
+A=\{q\in\mathbb{Q}:q^2<2\},\\
+&\exists s\in\mathbb{Q}\;\operatorname{LeastUpperBound}(s,A,P_{\mathbb{Q}})
+\end{aligned}
 \]
 \end{description}
 \end{remark*}

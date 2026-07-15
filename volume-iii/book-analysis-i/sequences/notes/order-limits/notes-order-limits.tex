@@ -42,11 +42,16 @@ Let $(x_n)$ be an increasing real sequence that is bounded above. Then
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{OrderPreserving}(x_n)
+\begin{gathered}
+x_n\colon\mathbb{N}\to\mathbb{R},\\
+P=\mathsf{OrderedSet}(\mathbb{N},\leq),\quad
+Q=\mathsf{OrderedSet}(\mathbb{R},\leq),\\
+\operatorname{OrderPreserving}(x_n,P,Q)
 \land
-\operatorname{BoundedAbove}(x_n)
+\operatorname{BoundedAbove}(x_n,\mathbb{R})
 \Longrightarrow
-\operatorname{ConvergesTo}\bigl(x_n,\sup\{x_n:n\in\mathbb{N}\}\bigr).
+\operatorname{ConvergesTo}\bigl(x_n,\sup\{x_n:n\in\mathbb{N}\},\mathbb{R}\bigr).
+\end{gathered}
 \]
 \end{remark*}
 
@@ -100,11 +105,16 @@ Let $(x_n)$ be a decreasing real sequence that is bounded below. Then
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{OrderReversing}(x_n)
+\begin{gathered}
+x_n\colon\mathbb{N}\to\mathbb{R},\\
+P=\mathsf{OrderedSet}(\mathbb{N},\leq),\quad
+Q=\mathsf{OrderedSet}(\mathbb{R},\leq),\\
+\operatorname{OrderReversing}(x_n,P,Q)
 \land
-\operatorname{BoundedBelow}(x_n)
+\operatorname{BoundedBelow}(x_n,\mathbb{R})
 \Longrightarrow
-\operatorname{ConvergesTo}\bigl(x_n,\inf\{x_n:n\in\mathbb{N}\}\bigr).
+\operatorname{ConvergesTo}\bigl(x_n,\inf\{x_n:n\in\mathbb{N}\},\mathbb{R}\bigr).
+\end{gathered}
 \]
 \end{remark*}
 
@@ -128,7 +138,7 @@ falls toward its greatest lower barrier.
 
 \begin{theorembox}{Theorem (Tail Suprema and Infima Converge)}
 \begin{theorem}[Tail Suprema and Infima Converge]
-\label{thm:tail-suprema-and-infima-converge}
+\label{thm:tail-suprema-infima-converge}
 Let $(x_n)$ be a bounded real sequence. Define
 \[
   s_n=\sup\{x_k:k\ge n\},
@@ -139,7 +149,7 @@ Then $(s_n)$ and $(i_n)$ converge.
 
 \smallskip
 \noindent
-\hyperref[prf:tail-suprema-and-infima-converge]{\textit{Go to proof.}}
+\hyperref[prf:tail-suprema-infima-converge]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
 
@@ -164,13 +174,13 @@ Then $(s_n)$ and $(i_n)$ converge.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{Bounded}(x_n)
+\operatorname{Bounded}(x_n,\mathbb{R})
 \Longrightarrow
 \exists S,I\in\mathbb{R}\;
 \bigl(
-  \operatorname{ConvergesTo}(\sup\{x_k:k\ge n\},S)
+  \operatorname{ConvergesTo}(\sup\{x_k:k\ge n\},S,\mathbb{R})
   \land
-  \operatorname{ConvergesTo}(\inf\{x_k:k\ge n\},I)
+  \operatorname{ConvergesTo}(\inf\{x_k:k\ge n\},I,\mathbb{R})
 \bigr).
 \]
 \end{remark*}
@@ -197,12 +207,12 @@ for monotone convergence.
 
 \begin{theorembox}{Theorem (Bounded Sequence Has Limsup and Liminf)}
 \begin{theorem}[Bounded Sequence Has Limsup and Liminf]
-\label{thm:bounded-sequence-has-limsup-and-liminf}
+\label{thm:bounded-sequence-limsup-liminf}
 Every bounded real sequence has a limit superior and a limit inferior.
 
 \smallskip
 \noindent
-\hyperref[prf:bounded-sequence-has-limsup-and-liminf]{\textit{Go to proof.}}
+\hyperref[prf:bounded-sequence-limsup-liminf]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
 
@@ -221,13 +231,13 @@ Every bounded real sequence has a limit superior and a limit inferior.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{Bounded}(x_n)
+\operatorname{Bounded}(x_n,\mathbb{R})
 \Longrightarrow
 \exists S,I\in\mathbb{R}\;
 \bigl(
-  \operatorname{Limsup}(x_n,S)
+  \operatorname{Limsup}(x_n,S,\mathbb{R})
   \land
-  \operatorname{Liminf}(x_n,I)
+  \operatorname{Liminf}(x_n,I,\mathbb{R})
 \bigr).
 \]
 \end{remark*}
@@ -241,6 +251,6 @@ guaranteed order-theoretic limits of the tail envelopes.
 \begin{itemize}
   \item \hyperref[def:limsup-sequence]{Limit Superior of a Sequence}
   \item \hyperref[def:liminf-sequence]{Limit Inferior of a Sequence}
-  \item \hyperref[thm:tail-suprema-and-infima-converge]{Tail Suprema and Infima Converge}
+  \item \hyperref[thm:tail-suprema-infima-converge]{Tail Suprema and Infima Converge}
 \end{itemize}
 \end{dependencies}

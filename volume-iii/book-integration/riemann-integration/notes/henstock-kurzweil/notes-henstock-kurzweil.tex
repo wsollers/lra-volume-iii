@@ -52,7 +52,7 @@ A \emph{gauge} on \([a,b]\) is a function
 
 \begin{remark*}[Standard quantified statement]
 \[
-\operatorname{Gauge}(\delta,[a,b])
+\mathsf{Gauge}(\delta,[a,b])
 \Longleftrightarrow
 \delta:[a,b]\to(0,\infty).
 \]
@@ -138,6 +138,8 @@ The value is denoted \((\mathrm{HK})\int_a^b f\).
 
 \begin{remark*}[Predicate reading]
 \[
+  f\colon [a,b]\to\mathbb{R},\\
+
 \operatorname{HasDefiniteIntegral}(f,[a,b],\operatorname{HenstockKurzweilCriterion},A)
 \Longleftrightarrow
 \forall\varepsilon>0\ \exists\delta:[a,b]\to(0,\infty)\ \forall(P,\xi)\,
@@ -169,7 +171,7 @@ partition of \([a,b]\).
 
 \begin{remark*}[Standard quantified statement]
 \[
-\operatorname{Gauge}(\delta,[a,b])
+\mathsf{Gauge}(\delta,[a,b])
 \Longrightarrow
 \exists(P,\xi)\;\bigl((P,\xi)\text{ is }\delta\text{-fine}\bigr).
 \]
@@ -177,7 +179,7 @@ partition of \([a,b]\).
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{Gauge}(\delta,[a,b])
+\mathsf{Gauge}(\delta,[a,b])
 \Longrightarrow
 \exists(P,\xi)\;\operatorname{IsDeltaFine}((P,\xi),\delta,[a,b]).
 \]
@@ -225,9 +227,9 @@ hands over one mesh tolerance \(\delta_0\), the gauge proof uses
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:riemann-integral]{Riemann Integral}
-  \item \hyperref[def:henstock-kurzweil-integral]{Henstock--Kurzweil Integral}
   \item \hyperref[def:gauge-on-interval]{Gauge on an Interval}
+  \item \hyperref[def:henstock-kurzweil-integral]{Henstock--Kurzweil Integral}
+  \item \hyperref[def:riemann-integral]{Riemann Integral}
 \end{itemize}
 \end{dependencies}
 
@@ -258,7 +260,8 @@ F'(\xi)=f(\xi)
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{Derivative}(F,\xi)=f(\xi)
+  F\colon [a,b]\to\mathbb{R},\\
+\operatorname{Derivative}(f(\xi),F,\xi,\mathbb{R},\mathbb{R})
 \Longrightarrow
 \forall\varepsilon>0\ \exists\delta(\xi)>0\ \forall u,v\,
 \bigl(u\le \xi\le v\land u,v\in(\xi-\delta(\xi),\xi+\delta(\xi))
@@ -306,9 +309,9 @@ compact interval.
 
 \begin{dependencies}
 \begin{itemize}
+  \item \hyperref[def:derivative-at-a-point]{Derivative at a Point}
   \item \hyperref[def:henstock-kurzweil-integral]{Henstock--Kurzweil Integral}
   \item \hyperref[lem:hk-straddle]{Straddle Lemma}
-  \item \hyperref[def:derivative-at-a-point]{Derivative at a Point}
 \end{itemize}
 \end{dependencies}
 

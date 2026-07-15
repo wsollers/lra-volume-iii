@@ -118,6 +118,36 @@ For all $x \in \mathbb{R}$:
 The negation has no witness --- the identity holds universally.
 \end{remark*}
 
+\begin{remark*}[Negation predicate reading]
+\[
+\neg\,(\forall x:\sin^2 x+\cos^2 x=1)
+  \;\iff\;
+  \exists x\in\mathbb{R}:\sin^2 x+\cos^2 x\neq 1.
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  The negated statement isolates the obstruction to the asserted condition.
+
+  \item[\neq-condition.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\neg\,(\forall x:\sin^2 x+\cos^2 x=1)
+  \;\iff\;
+  \exists x\in\mathbb{R}:\sin^2 x+\cos^2 x\neq 1.
+  \]
+  \[
+\neg\,(\forall x:\sin^2 x+\cos^2 x=1)
+  \;\iff\;
+  \exists x\in\mathbb{R}:\sin^2 x+\cos^2 x\neq 1.
+  \]
+\end{description}
+\end{remark*}
+
+
+
 \begin{remark*}[Interpretation]
 Define $f(x) := \sin^2 x + \cos^2 x$. Then $f'(x) = 2\sin x \cos x
 + 2\cos x(-\sin x) = 0$, so $f$ is constant. Since $f(0) = 0 + 1 =
@@ -180,6 +210,39 @@ For all $x, y \in \mathbb{R}$:
 \]
 The negation has no witness.
 \end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\neg\,(\text{addition formula for }\sin)
+  \;\iff\;
+  \exists x,y\in\mathbb{R}:\;
+  \sin(x+y) \neq \sin x\cos y + \cos x\sin y.
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  The negated statement isolates the obstruction to the asserted condition.
+
+  \item[\neq-condition.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\neg\,(\text{addition formula for }\sin)
+  \;\iff\;
+  \exists x,y\in\mathbb{R}:\;
+  \sin(x+y) \neq \sin x\cos y + \cos x\sin y.
+  \]
+  \[
+\neg\,(\text{addition formula for }\sin)
+  \;\iff\;
+  \exists x,y\in\mathbb{R}:\;
+  \sin(x+y) \neq \sin x\cos y + \cos x\sin y.
+  \]
+\end{description}
+\end{remark*}
+
+
 
 \begin{remark*}[Interpretation]
 From the Cauchy product: $e^{i(x+y)} = e^{ix}e^{iy}$. Taking real
@@ -308,6 +371,36 @@ Dividing by $\sin^2 x$: $\cot^2 x + 1 = \csc^2 x$.
 \]
 \end{remark*}
 
+\begin{remark*}[Negation predicate reading]
+\[
+x\neq\arctan y
+  \;\iff\;
+  x\notin(-\pi/2,\pi/2) \;\vee\; \tan x \neq y.
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  The negated statement isolates the obstruction to the asserted condition.
+
+  \item[\neq-condition.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+x\neq\arctan y
+  \;\iff\;
+  x\notin(-\pi/2,\pi/2) \;\vee\; \tan x \neq y.
+  \]
+  \[
+x\neq\arctan y
+  \;\iff\;
+  x\notin(-\pi/2,\pi/2) \;\vee\; \tan x \neq y.
+  \]
+\end{description}
+\end{remark*}
+
+
+
 \begin{remark*}[Interpretation]
 \[
   \lim_{x \to +\infty} \arctan x = \frac{\pi}{2},
@@ -363,6 +456,42 @@ supremum and infimum of its range.
 \]
 \end{remark*}
 
+\begin{remark*}[Negation predicate reading]
+\[
+\neg\left(\lim_{x\to 0}\frac{\sin x}{x}=1\right)
+  \;\iff\;
+  \exists\varepsilon_0>0,\;\forall\delta>0,\;\exists x:\;
+  0<|x|<\delta \;\wedge\;
+  \left|\frac{\sin x}{x}-1\right|\geq\varepsilon_0.
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  The negated statement isolates the obstruction to the asserted condition.
+
+  \item[\(\exists\)-condition.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\neg\left(\lim_{x\to 0}\frac{\sin x}{x}=1\right)
+  \;\iff\;
+  \exists\varepsilon_0>0,\;\forall\delta>0,\;\exists x:\;
+  0<|x|<\delta \;\wedge\;
+  \left|\frac{\sin x}{x}-1\right|\geq\varepsilon_0.
+  \]
+  \[
+\neg\left(\lim_{x\to 0}\frac{\sin x}{x}=1\right)
+  \;\iff\;
+  \exists\varepsilon_0>0,\;\forall\delta>0,\;\exists x:\;
+  0<|x|<\delta \;\wedge\;
+  \left|\frac{\sin x}{x}-1\right|\geq\varepsilon_0.
+  \]
+\end{description}
+\end{remark*}
+
+
+
 \begin{remark*}[Interpretation]
 From the series: $\sin x / x = 1 - x^2/3! + x^4/5! - \cdots \to 1$
 as $x \to 0$ by continuity of power series at their center.
@@ -383,8 +512,8 @@ differentiation.
 \begin{itemize}
   \item \hyperref[def:sine-cosine]{Sine and Cosine}
   \item \hyperref[def:other-trig]{Tangent, Cotangent, Secant, Cosecant}
-  \item \hyperref[thm:continuous-inverse-theorem]{Continuous Inverse Theorem}
   \item \hyperref[def:closed-interval]{Closed Interval}
+  \item \hyperref[thm:continuous-inverse-theorem]{Continuous Inverse Theorem}
 \end{itemize}
 \end{dependencies}
 
@@ -443,6 +572,42 @@ differentiation.
 \]
 \end{remark*}
 
+\begin{remark*}[Negation predicate reading]
+\[
+\neg\left(\lim_{x\to 0}\frac{1-\cos x}{x^2}=\frac{1}{2}\right)
+  \;\iff\;
+  \exists\varepsilon_0>0,\;\forall\delta>0,\;\exists x:\;
+  0<|x|<\delta \;\wedge\;
+  \left|\frac{1-\cos x}{x^2}-\frac{1}{2}\right|\geq\varepsilon_0.
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  The negated statement isolates the obstruction to the asserted condition.
+
+  \item[\(\exists\)-condition.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\neg\left(\lim_{x\to 0}\frac{1-\cos x}{x^2}=\frac{1}{2}\right)
+  \;\iff\;
+  \exists\varepsilon_0>0,\;\forall\delta>0,\;\exists x:\;
+  0<|x|<\delta \;\wedge\;
+  \left|\frac{1-\cos x}{x^2}-\frac{1}{2}\right|\geq\varepsilon_0.
+  \]
+  \[
+\neg\left(\lim_{x\to 0}\frac{1-\cos x}{x^2}=\frac{1}{2}\right)
+  \;\iff\;
+  \exists\varepsilon_0>0,\;\forall\delta>0,\;\exists x:\;
+  0<|x|<\delta \;\wedge\;
+  \left|\frac{1-\cos x}{x^2}-\frac{1}{2}\right|\geq\varepsilon_0.
+  \]
+\end{description}
+\end{remark*}
+
+
+
 \begin{remark*}[Interpretation]
 Use the half-angle identity $1 - \cos x = 2\sin^2(x/2)$:
 \[
@@ -458,13 +623,7 @@ Use the half-angle identity $1 - \cos x = 2\sin^2(x/2)$:
   \item \hyperref[def:sine-cosine]{Sine and Cosine}
   \item \hyperref[def:limit-function]{Function Limit}
   \item \hyperref[thm:squeeze-function-limits]{Squeeze Theorem for Function Limits}
-\end{itemize}
-
-
-\begin{itemize}
-  \item \hyperref[def:sine-cosine]{Sine and Cosine}
   \item \hyperref[prop:trig-addition-formulas]{Trigonometric Addition Formulas}
   \item \hyperref[thm:fundamental-trig-limit]{Fundamental Trigonometric Limit}
-  \item \hyperref[def:limit-function]{Function Limit}
 \end{itemize}
 \end{dependencies}

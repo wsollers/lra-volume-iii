@@ -57,6 +57,22 @@ of $A\cup B$.
 \item[Exposition.]
 A failure would require a union element larger than both proposed upper
 bounds.
+
+
+  \item[\operatorname{UpperBound}.]
+  \[
+(\forall a\in A)(a\leq u_A),\quad
+(\forall b\in B)(b\leq u_B),\quad
+(\exists x\in A\cup B)(\max\{u_A,u_B\}<x).
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\\
+&U=A\cup B,\qquad m=\max\{u_A,u_B\},\\
+&\operatorname{UpperBound}(u_A,A,P)\land\operatorname{UpperBound}(u_B,B,P)\land
+\neg\operatorname{UpperBound}(m,U,P).
+\end{aligned}
+\]
 \end{description}
 \end{remark*}
 
@@ -130,6 +146,22 @@ bound of $A\cup B$.
 \item[Exposition.]
 A failure would require a union element smaller than both proposed lower
 bounds.
+
+
+  \item[\operatorname{LowerBound}.]
+  \[
+(\forall a\in A)(\ell_A\leq a),\quad
+(\forall b\in B)(\ell_B\leq b),\quad
+(\exists x\in A\cup B)(x<\min\{\ell_A,\ell_B\}).
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\\
+&U=A\cup B,\qquad m=\min\{\ell_A,\ell_B\},\\
+&\operatorname{LowerBound}(\ell_A,A,P)\land\operatorname{LowerBound}(\ell_B,B,P)\land
+\neg\operatorname{LowerBound}(m,U,P).
+\end{aligned}
+\]
 \end{description}
 \end{remark*}
 
@@ -200,6 +232,25 @@ The equivalence fails precisely if one side holds and the other does not.
 The forward direction could fail only if a bound for the union did not bound a
 piece.  The reverse direction could fail only if bounds for both pieces did not
 combine into a bound for the union.
+
+
+  \item[\operatorname{BoundedAbove}.]
+
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\qquad U=A\cup B,\\
+&\operatorname{BoundedAbove}(U,P)\oplus
+\bigl(\operatorname{BoundedAbove}(A,P)\land\operatorname{BoundedAbove}(B,P)\bigr).
+\end{aligned}
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\qquad U=A\cup B,\\
+&\operatorname{BoundedAbove}(U,P)
+\Longleftrightarrow
+\operatorname{BoundedAbove}(A,P)\land\operatorname{BoundedAbove}(B,P).
+\end{aligned}
+\]
 \end{description}
 \end{remark*}
 
@@ -271,6 +322,25 @@ The equivalence fails precisely if one side holds and the other does not.
 The forward direction could fail only if a lower bound for the union did not
 bound a piece.  The reverse direction could fail only if lower bounds for both
 pieces did not combine into a lower bound for the union.
+
+
+  \item[\operatorname{BoundedBelow}.]
+
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\qquad U=A\cup B,\\
+&\operatorname{BoundedBelow}(U,P)\oplus
+\bigl(\operatorname{BoundedBelow}(A,P)\land\operatorname{BoundedBelow}(B,P)\bigr).
+\end{aligned}
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\qquad U=A\cup B,\\
+&\operatorname{BoundedBelow}(U,P)
+\Longleftrightarrow
+\operatorname{BoundedBelow}(A,P)\land\operatorname{BoundedBelow}(B,P).
+\end{aligned}
+\]
 \end{description}
 \end{remark*}
 
@@ -342,6 +412,25 @@ one-sided equivalence fails.
 \item[Exposition.]
 Two-sided boundedness fails exactly through an upper-bound failure or a
 lower-bound failure.
+
+
+  \item[\operatorname{Bounded}.]
+
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\qquad U=A\cup B,\\
+&\operatorname{Bounded}(U,P)\oplus
+\bigl(\operatorname{Bounded}(A,P)\land\operatorname{Bounded}(B,P)\bigr).
+\end{aligned}
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\qquad U=A\cup B,\\
+&\operatorname{Bounded}(U,P)
+\Longleftrightarrow
+\operatorname{Bounded}(A,P)\land\operatorname{Bounded}(B,P).
+\end{aligned}
+\]
 \end{description}
 \end{remark*}
 
@@ -409,6 +498,19 @@ C\subseteq A,\quad (\forall a\in A)(a\leq u),\quad
 \item[Exposition.]
 A failure would require a counterexample in $C$ that is not already a
 counterexample in $A$.
+
+
+  \item[\operatorname{UpperBound}.]
+  \[
+C\subseteq A,\quad (\forall a\in A)(a\leq u),\quad
+(\exists c\in C)(u<c).
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad C\subseteq A\subseteq\mathbb{R},\\
+&\operatorname{UpperBound}(u,A,P)\land\neg\operatorname{UpperBound}(u,C,P).
+\end{aligned}
+\]
 \end{description}
 \end{remark*}
 
@@ -474,6 +576,19 @@ C\subseteq A,\quad (\forall a\in A)(\ell\leq a),\quad
 \item[Exposition.]
 A failure would require a point in $C$ below $\ell$, hence a point in $A$
 below $\ell$.
+
+
+  \item[\operatorname{LowerBound}.]
+  \[
+C\subseteq A,\quad (\forall a\in A)(\ell\leq a),\quad
+(\exists c\in C)(c<\ell).
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad C\subseteq A\subseteq\mathbb{R},\\
+&\operatorname{LowerBound}(\ell,A,P)\land\neg\operatorname{LowerBound}(\ell,C,P).
+\end{aligned}
+\]
 \end{description}
 \end{remark*}
 
@@ -536,6 +651,24 @@ is contradictory, and the same holds for lower bounds.
 \item[Exposition.]
 Intersection can lose elements, but it cannot introduce an element outside the
 parent set $A$.
+
+
+  \item[\operatorname{UpperBound} / \operatorname{LowerBound}.]
+
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\qquad C=A\cap B,\\
+&\operatorname{UpperBound}(u,A,P)\land
+\neg\operatorname{UpperBound}(u,C,P)
+\end{aligned}
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\qquad C=A\cap B,\\
+&\operatorname{UpperBound}(u,A,P)\Longrightarrow\operatorname{UpperBound}(u,C,P),\\
+&\operatorname{LowerBound}(\ell,A,P)\Longrightarrow\operatorname{LowerBound}(\ell,C,P).
+\end{aligned}
+\]
 \end{description}
 \end{remark*}
 
@@ -603,6 +736,24 @@ is contradictory, and the same holds for lower bounds.
 \item[Exposition.]
 Difference can remove elements from $A$, but it cannot create a new element
 outside $A$.
+
+
+  \item[\operatorname{UpperBound} / \operatorname{LowerBound}.]
+
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\qquad D=A\setminus B,\\
+&\operatorname{UpperBound}(u,A,P)\land
+\neg\operatorname{UpperBound}(u,D,P)
+\end{aligned}
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\qquad D=A\setminus B,\\
+&\operatorname{UpperBound}(u,A,P)\Longrightarrow\operatorname{UpperBound}(u,D,P),\\
+&\operatorname{LowerBound}(\ell,A,P)\Longrightarrow\operatorname{LowerBound}(\ell,D,P).
+\end{aligned}
+\]
 \end{description}
 \end{remark*}
 
@@ -675,6 +826,20 @@ or
 \item[Exposition.]
 The complement does not inherit bounds from $A$; it inherits them from the
 ambient set $E$.
+
+
+  \item[\operatorname{UpperBound} / \operatorname{LowerBound}.]
+  \[
+\operatorname{UpperBound}(u,E)\land\neg\operatorname{UpperBound}(u,E\setminus A)
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq E\subseteq\mathbb{R},\qquad C=E\setminus A,\\
+&\bigl(\operatorname{UpperBound}(u,E,P)\land\neg\operatorname{UpperBound}(u,C,P)\bigr)\\
+&\qquad{}\lor
+\bigl(\operatorname{LowerBound}(\ell,E,P)\land\neg\operatorname{LowerBound}(\ell,C,P)\bigr).
+\end{aligned}
+\]
 \end{description}
 \end{remark*}
 

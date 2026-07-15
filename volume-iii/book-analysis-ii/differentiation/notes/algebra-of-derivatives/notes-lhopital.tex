@@ -49,6 +49,16 @@ The rule is a one-way implication and is routinely misapplied.
         must stay nonzero so the Cauchy Mean Value Theorem applies and the
         derivative ratio is defined.
 \end{itemize}
+
+
+  \item[\operatorname{Derivative}.]
+  The displayed obstruction is the predicate-level failure condition.
+  \[
+  \exists\varepsilon_0>0\;\forall\delta>0\;\exists x\in A\;\bigl(0<|x-a|<\delta\land |Q_f(x)-D|\ge\varepsilon_0\bigr).
+  \]
+  \[
+  \neg\,\operatorname{Derivative}(D,f,a,\mathbb{R},\mathbb{R}).
+  \]
 \end{description}
 \end{remark*}
 
@@ -58,8 +68,8 @@ The \(0/0\) form is the Cauchy Mean Value Theorem read as a limit law. On a shri
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[thm:cauchy-mean-value-theorem]{Theorem: Cauchy Mean Value Theorem}
   \item \hyperref[def:limit-function]{Definition: Limit of a Function}
+  \item \hyperref[thm:cauchy-mean-value-theorem]{Theorem: Cauchy Mean Value Theorem}
   \item \hyperref[thm:squeeze-function-limits]{Theorem: Squeeze Theorem for Function Limits}
 \end{itemize}
 \end{dependencies}
@@ -98,6 +108,16 @@ No separate hypothesis on \(\lim_{x\to a^+}f(x)\) is required.
 \begin{description}
   \item[Exposition.]
 L'H\^{o}pital's Rule is a one-way implication and requires an indeterminate form. If the quotient is not of type \(0/0\) or \(\infty/\infty\), differentiating numerator and denominator can change the problem. The derivative ratio must also have a limit: for \(f(x)=x+\sin x\) and \(g(x)=x\) as \(x\to+\infty\), the quotient \(f/g\) tends to \(1\), but \(f'/g'=1+\cos x\) has no limit.
+
+
+  \item[\operatorname{Derivative}.]
+  The displayed obstruction is the predicate-level failure condition.
+  \[
+  \exists\varepsilon_0>0\;\forall\delta>0\;\exists x\in A\;\bigl(0<|x-a|<\delta\land |Q_f(x)-D|\ge\varepsilon_0\bigr).
+  \]
+  \[
+  \neg\,\operatorname{Derivative}(D,f,a,\mathbb{R},\mathbb{R}).
+  \]
 \end{description}
 \end{remark*}
 
@@ -107,8 +127,8 @@ The \(\infty/\infty\) form compares two functions whose magnitudes escape. The C
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[thm:cauchy-mean-value-theorem]{Theorem: Cauchy Mean Value Theorem}
   \item \hyperref[def:limit-function]{Definition: Limit of a Function}
+  \item \hyperref[thm:cauchy-mean-value-theorem]{Theorem: Cauchy Mean Value Theorem}
   \item \hyperref[thm:squeeze-function-limits]{Theorem: Squeeze Theorem for Function Limits}
 \end{itemize}
 \end{dependencies}

@@ -32,7 +32,7 @@ $x_n\to L$.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{IsDivergent}(x_n)
+\operatorname{IsDivergent}(x_n,\mathbb{R})
 \coloneqq
 \forall L\in\mathbb{R}\;\exists \varepsilon>0\;\forall N\in\mathbb{N}
 \;\exists n\ge N\;\bigl(|x_n-L|\ge\varepsilon\bigr).
@@ -50,10 +50,28 @@ $x_n\to L$.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{IsDivergent}(x_n)
+\neg\operatorname{IsDivergent}(x_n,\mathbb{R})
 \Longleftrightarrow
-\exists L\in\mathbb{R}\;\operatorname{ConvergesTo}(x_n,L).
+\exists L\in\mathbb{R}\;\operatorname{ConvergesTo}(x_n,L,\mathbb{R}).
 \]
+\end{remark*}
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+Failure is witnessed by the negated condition displayed above.
+  \item[\operatorname{IsDivergent}.]
+\[
+(x_n)\text{ is not divergent}
+\Longleftrightarrow
+\exists L\in\mathbb{R}\;\forall \varepsilon>0\;\exists N\in\mathbb{N}
+\;\forall n\ge N\;\bigl(|x_n-L|<\varepsilon\bigr).
+\]
+\[
+\neg\operatorname{IsDivergent}(x_n,\mathbb{R})
+\Longleftrightarrow
+\exists L\in\mathbb{R}\;\operatorname{ConvergesTo}(x_n,L,\mathbb{R}).
+\]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -95,7 +113,7 @@ x_n\to+\infty
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{DivergesToPositiveInfinity}(x_n)
+\operatorname{DivergesToPositiveInfinity}(x_n,\mathbb{R})
 \coloneqq
 \forall M\in\mathbb{R}\;\exists N\in\mathbb{N}\;\forall n\ge N
 \;\bigl(M<x_n\bigr).
@@ -109,6 +127,38 @@ x_n\not\to+\infty
 \exists M\in\mathbb{R}\;\forall N\in\mathbb{N}\;\exists n\ge N
 \;\bigl(x_n\le M\bigr).
 \]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+x_n\not\to+\infty
+\Longleftrightarrow
+\exists M\in\mathbb{R}\;\forall N\in\mathbb{N}\;\exists n\ge N
+\;\bigl(x_n\le M\bigr).
+\]
+\end{remark*}
+
+
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+Failure is witnessed by one real threshold that is reached or crossed
+infinitely often from below.
+  \item[\operatorname{DivergesToPositiveInfinity}.]
+\[
+x_n\not\to+\infty
+\Longleftrightarrow
+\exists M\in\mathbb{R}\;\forall N\in\mathbb{N}\;\exists n\ge N
+\;\bigl(x_n\le M\bigr).
+\]
+\[
+\neg\operatorname{DivergesToPositiveInfinity}(x_n,\mathbb{R})
+\Longleftrightarrow
+\exists M\in\mathbb{R}\;\forall N\in\mathbb{N}\;\exists n\ge N
+\;\bigl(x_n\le M\bigr).
+\]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -150,7 +200,7 @@ x_n\to-\infty
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{DivergesToNegativeInfinity}(x_n)
+\operatorname{DivergesToNegativeInfinity}(x_n,\mathbb{R})
 \coloneqq
 \forall M\in\mathbb{R}\;\exists N\in\mathbb{N}\;\forall n\ge N
 \;\bigl(x_n<M\bigr).
@@ -164,6 +214,38 @@ x_n\not\to-\infty
 \exists M\in\mathbb{R}\;\forall N\in\mathbb{N}\;\exists n\ge N
 \;\bigl(M\le x_n\bigr).
 \]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+x_n\not\to-\infty
+\Longleftrightarrow
+\exists M\in\mathbb{R}\;\forall N\in\mathbb{N}\;\exists n\ge N
+\;\bigl(M\le x_n\bigr).
+\]
+\end{remark*}
+
+
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+Failure is witnessed by one real threshold that is reached or crossed
+infinitely often from above.
+  \item[\operatorname{DivergesToNegativeInfinity}.]
+\[
+x_n\not\to-\infty
+\Longleftrightarrow
+\exists M\in\mathbb{R}\;\forall N\in\mathbb{N}\;\exists n\ge N
+\;\bigl(M\le x_n\bigr).
+\]
+\[
+\neg\operatorname{DivergesToNegativeInfinity}(x_n,\mathbb{R})
+\Longleftrightarrow
+\exists M\in\mathbb{R}\;\forall N\in\mathbb{N}\;\exists n\ge N
+\;\bigl(M\le x_n\bigr).
+\]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -216,11 +298,11 @@ and does not diverge to $-\infty$.
 \begin{remark*}[Predicate reading]
 \[
 \begin{aligned}
-\operatorname{IsOscillatory}(x_n)
+\operatorname{IsOscillatory}(x_n,\mathbb{R})
 \coloneqq\;&
-\operatorname{IsDivergent}(x_n)\\
-&\land\;\neg\operatorname{DivergesToPositiveInfinity}(x_n)\\
-&\land\;\neg\operatorname{DivergesToNegativeInfinity}(x_n).
+\operatorname{IsDivergent}(x_n,\mathbb{R})\\
+&\land\;\neg\operatorname{DivergesToPositiveInfinity}(x_n,\mathbb{R})\\
+&\land\;\neg\operatorname{DivergesToNegativeInfinity}(x_n,\mathbb{R}).
 \end{aligned}
 \]
 \end{remark*}
@@ -276,11 +358,11 @@ then $(x_n)$ is divergent.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{DivergesToPositiveInfinity}(x_n)
+\operatorname{DivergesToPositiveInfinity}(x_n,\mathbb{R})
 \lor
-\operatorname{DivergesToNegativeInfinity}(x_n)
+\operatorname{DivergesToNegativeInfinity}(x_n,\mathbb{R})
 \Longrightarrow
-\operatorname{IsDivergent}(x_n).
+\operatorname{IsDivergent}(x_n,\mathbb{R}).
 \]
 \end{remark*}
 
@@ -338,11 +420,11 @@ $L,K\in\mathbb{R}$ with $L\ne K$, then $(x_n)$ is divergent.
 &\exists L,K\in\mathbb{R}\;
 \bigl(
   L\ne K
-  \land \operatorname{IsClusterValue}(x_n,L)
-  \land \operatorname{IsClusterValue}(x_n,K)
+  \land \operatorname{IsClusterValue}(x_n,L,\mathbb{R})
+  \land \operatorname{IsClusterValue}(x_n,K,\mathbb{R})
 \bigr)\\
 &\quad\Longrightarrow
-\operatorname{IsDivergent}(x_n).
+\operatorname{IsDivergent}(x_n,\mathbb{R}).
 \end{aligned}
 \]
 \end{remark*}
@@ -399,13 +481,16 @@ $x_{\sigma(k)}\to+\infty$.
 
 \begin{remark*}[Predicate reading]
 \[
-\neg\operatorname{BoundedAbove}(x_n)
+\neg\operatorname{BoundedAbove}(x_n,\mathbb{R})
 \Longrightarrow
 \exists \sigma\;
 \bigl(
-  \operatorname{StrictOrderPreserving}(\sigma)
+  \sigma\colon\mathbb{N}\to\mathbb{N},\quad
+  P=\mathsf{OrderedSet}(\mathbb{N},\leq),\quad
+  Q=\mathsf{OrderedSet}(\mathbb{N},\leq),\\
+  \operatorname{StrictOrderPreserving}(\sigma,P,Q)
   \land
-  \operatorname{DivergesToPositiveInfinity}(x_{\sigma(k)})
+  \operatorname{DivergesToPositiveInfinity}(x_{\sigma(k)},\mathbb{R})
 \bigr).
 \]
 \end{remark*}
@@ -418,8 +503,8 @@ escapes to $+\infty$.
 
 \begin{dependencies}
 \begin{itemize}
+  \item \hyperref[def:subsequence-of-sequence]{Subsequence}
   \item \hyperref[def:sequence-bounded-above]{Sequence Bounded Above}
-  \item \hyperref[def:subsequence]{Subsequence}
   \item \hyperref[def:diverges-to-positive-infinity]{Divergence to Positive Infinity}
 \end{itemize}
 \end{dependencies}
@@ -461,13 +546,16 @@ $x_{\sigma(k)}\to-\infty$.
 
 \begin{remark*}[Predicate reading]
 \[
-\neg\operatorname{BoundedBelow}(x_n)
+\neg\operatorname{BoundedBelow}(x_n,\mathbb{R})
 \Longrightarrow
 \exists \sigma\;
 \bigl(
-  \operatorname{StrictOrderPreserving}(\sigma)
+  \sigma\colon\mathbb{N}\to\mathbb{N},\quad
+  P=\mathsf{OrderedSet}(\mathbb{N},\leq),\quad
+  Q=\mathsf{OrderedSet}(\mathbb{N},\leq),\\
+  \operatorname{StrictOrderPreserving}(\sigma,P,Q)
   \land
-  \operatorname{DivergesToNegativeInfinity}(x_{\sigma(k)})
+  \operatorname{DivergesToNegativeInfinity}(x_{\sigma(k)},\mathbb{R})
 \bigr).
 \]
 \end{remark*}
@@ -480,8 +568,8 @@ positive-infinity subsequence construction.
 
 \begin{dependencies}
 \begin{itemize}
+  \item \hyperref[def:subsequence-of-sequence]{Subsequence}
   \item \hyperref[def:sequence-bounded-below]{Sequence Bounded Below}
-  \item \hyperref[def:subsequence]{Subsequence}
   \item \hyperref[def:diverges-to-negative-infinity]{Divergence to Negative Infinity}
 \end{itemize}
 \end{dependencies}
@@ -527,15 +615,15 @@ subsequential limits of $(x_n)$.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{Bounded}(x_n)
+\operatorname{Bounded}(x_n,\mathbb{R})
 \land
-\operatorname{IsDivergent}(x_n)
+\operatorname{IsDivergent}(x_n,\mathbb{R})
 \Longrightarrow
 \exists L,K\in\mathbb{R}\;
 \bigl(
   L\ne K
-  \land \operatorname{IsClusterValue}(x_n,L)
-  \land \operatorname{IsClusterValue}(x_n,K)
+  \land \operatorname{IsClusterValue}(x_n,L,\mathbb{R})
+  \land \operatorname{IsClusterValue}(x_n,K,\mathbb{R})
 \bigr).
 \]
 \end{remark*}
@@ -548,8 +636,8 @@ least two incompatible subsequential limits.
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:bounded-sequence]{Bounded Sequence}
   \item \hyperref[def:divergent-sequence]{Divergent Sequence}
+  \item \hyperref[def:bounded-sequence]{Bounded Sequence}
   \item \hyperref[def:subsequential-limit]{Subsequential Limit}
   \item \hyperref[thm:bolzano-weierstrass-sequences]{Bolzano-Weierstrass Theorem for Sequences}
   \item \hyperref[thm:subsequences-preserve-limits]{Subsequences Preserve Limits}

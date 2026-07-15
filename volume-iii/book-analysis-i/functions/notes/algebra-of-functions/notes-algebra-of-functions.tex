@@ -63,6 +63,24 @@ injective, then $g\circ f:A\to C$ is injective.
 \]
 \end{remark*}
 
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  The negated statement isolates the obstruction to the asserted condition.
+
+  \item[\operatorname{Injective}.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+  \exists a_1,a_2\in A\;\bigl(a_1\neq a_2\;\wedge\;g(f(a_1))=g(f(a_2))\bigr).
+\]
+  \[
+  \neg\,\operatorname{Injective}(g\circ f,A,C).
+\]
+\end{description}
+\end{remark*}
+
+
+
 \begin{remark*}[Interpretation]
 Injectivity survives composition: equality after $g\circ f$ can be
 pulled back first through $g$ and then through $f$.
@@ -183,6 +201,28 @@ bijective, then $g\circ f:A\to C$ is bijective.
 \]
 \end{remark*}
 
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  The negated statement isolates the obstruction to the asserted condition.
+
+  \item[\operatorname{Bijective}.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\begin{aligned}
+&\exists a_1,a_2\in A\;\bigl(a_1\neq a_2\;\wedge\;g(f(a_1))=g(f(a_2))\bigr) \\
+&\quad\vee\;
+  \exists c\in C\;\forall a\in A\;\bigl(g(f(a))\neq c\bigr).
+\end{aligned}
+\]
+  \[
+  \neg\,\operatorname{Bijective}(g\circ f,A,C).
+\]
+\end{description}
+\end{remark*}
+
+
+
 \begin{remark*}[Interpretation]
 A bijection is an injective and surjective function. Since both of those
 properties are preserved by composition, bijectivity is preserved too.
@@ -277,6 +317,36 @@ Let $f:A\to B$, $S,T\subseteq B$. Then:
   \;\iff\; x\in f^{-1}(S^c).
 \]
 \end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+  x\notin f^{-1}(S)
+  \;\iff\; f(x)\notin S
+  \;\iff\; x\in f^{-1}(S^c).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  The negated statement isolates the obstruction to the asserted condition.
+
+  \item[\exists-condition.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+  x\notin f^{-1}(S)
+  \;\iff\; f(x)\notin S
+  \;\iff\; x\in f^{-1}(S^c).
+\]
+  \[
+  x\notin f^{-1}(S)
+  \;\iff\; f(x)\notin S
+  \;\iff\; x\in f^{-1}(S^c).
+\]
+\end{description}
+\end{remark*}
+
+
 
 \begin{remark*}[Interpretation]
 Preimage is a complete lattice homomorphism: it preserves all set

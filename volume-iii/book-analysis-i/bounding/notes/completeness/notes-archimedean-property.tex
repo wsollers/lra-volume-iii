@@ -69,6 +69,17 @@ P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
 \begin{description}
   \item[Exposition.]
 The theorem fails exactly when the natural numbers are bounded above by some real number.
+
+
+  \item[\operatorname{HasArchimedeanProperty}.]
+  \[
+\exists x\in\mathbb{R}\;\forall n\in\mathbb{N}\;(n\le x).
+\]
+\[
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+\neg\operatorname{HasArchimedeanProperty}(P_{\mathbb{R}})\Longleftrightarrow
+\exists x\in\mathbb{R}\;\forall n\in\mathbb{N}\;(n\le x).
+\]
 \end{description}
 \end{remark*}
 
@@ -80,6 +91,17 @@ The theorem fails exactly when the natural numbers are bounded above by some rea
 =
 \underbrace{\exists x\in\mathbb{R}}_{\text{real upper bound}}
 \;\underbrace{\forall n\in\mathbb{N}\;(n\le x)}_{\text{all natural numbers remain below it}}.
+\]
+
+
+  \item[\operatorname{HasArchimedeanProperty}.]
+  \[
+\exists x\in\mathbb{R}\;\forall n\in\mathbb{N}\;(n\le x).
+\]
+\[
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+\neg\operatorname{HasArchimedeanProperty}(P_{\mathbb{R}})\Longleftrightarrow
+\exists x\in\mathbb{R}\;\forall n\in\mathbb{N}\;(n\le x).
 \]
 \end{description}
 \end{remark*}
@@ -162,6 +184,15 @@ P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
   \item[Exposition.]
 The corollary fails only if some positive scale remains below every reciprocal
 natural number.
+
+
+  \item[\exists-condition.]
+  \[
+\exists \varepsilon>0\;\forall n\in\mathbb{N}\;\left(\frac{1}{n}\ge \varepsilon\right).
+\]
+\[
+\exists \varepsilon>0\;\forall n\in\mathbb{N}\;(1/n\ge \varepsilon).
+\]
 \end{description}
 \end{remark*}
 
@@ -172,6 +203,15 @@ natural number.
 \underbrace{\varepsilon>0}_{\text{positive scale}}
 \qquad\text{and}\qquad
 \underbrace{\forall n\in\mathbb{N}\;(1/n\ge\varepsilon)}_{\text{reciprocals never pass below it}}.
+\]
+
+
+  \item[\exists-condition.]
+  \[
+\exists \varepsilon>0\;\forall n\in\mathbb{N}\;\left(\frac{1}{n}\ge \varepsilon\right).
+\]
+\[
+\exists \varepsilon>0\;\forall n\in\mathbb{N}\;(1/n\ge \varepsilon).
 \]
 \end{description}
 \end{remark*}
@@ -234,6 +274,18 @@ P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
 \begin{description}
   \item[Exposition.]
 The corollary fails when a positive real step size has all of its natural multiples bounded above by some real threshold.
+
+
+  \item[\operatorname{HasArchimedeanProperty}.]
+  \[
+\exists x,y\in\mathbb{R}\;\bigl(x>0\land \forall n\in\mathbb{N}\;(nx\le y)\bigr).
+\]
+\[
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+\operatorname{HasArchimedeanProperty}(P_{\mathbb{R}})
+\Longrightarrow
+\forall x,y\in\mathbb{R}\;\bigl(x>0\rightarrow \exists n\in\mathbb{N}\;(nx>y)\bigr).
+\]
 \end{description}
 \end{remark*}
 
@@ -244,6 +296,18 @@ The corollary fails when a positive real step size has all of its natural multip
 \underbrace{\exists x\in\mathbb{R}\;(x>0)}_{\text{positive step size}}
 \;\land\;
 \underbrace{\exists y\in\mathbb{R}\;\forall n\in\mathbb{N}\;(nx\le y)}_{\text{all natural multiples stay bounded}}.
+\]
+
+
+  \item[\operatorname{HasArchimedeanProperty}.]
+  \[
+\exists x,y\in\mathbb{R}\;\bigl(x>0\land \forall n\in\mathbb{N}\;(nx\le y)\bigr).
+\]
+\[
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+\operatorname{HasArchimedeanProperty}(P_{\mathbb{R}})
+\Longrightarrow
+\forall x,y\in\mathbb{R}\;\bigl(x>0\rightarrow \exists n\in\mathbb{N}\;(nx>y)\bigr).
 \]
 \end{description}
 \end{remark*}
@@ -314,6 +378,17 @@ m\in\mathbb{Z}\land m\le x<m+1.
   \item[Exposition.]
 The lemma fails only if some real number lies in no half-open unit interval
 $[m,m+1)$ with integer left endpoint.
+
+
+  \item[\exists-condition.]
+  \[
+\exists x\in\mathbb{R}\;\forall m\in\mathbb{Z}\;(x<m\lor m+1\le x).
+\]
+\[
+\neg\exists m\in\mathbb{Z}\;(m=\lfloor x\rfloor)
+\Longleftrightarrow
+\forall m\in\mathbb{Z}\;(x<m\lor m+1\le x).
+\]
 \end{description}
 \end{remark*}
 
@@ -324,6 +399,17 @@ $[m,m+1)$ with integer left endpoint.
 \underbrace{x<m}_{\text{integer starts too high}}
 \qquad\text{or}\qquad
 \underbrace{m+1\le x}_{\text{integer interval ends too low}}.
+\]
+
+
+  \item[\exists-condition.]
+  \[
+\exists x\in\mathbb{R}\;\forall m\in\mathbb{Z}\;(x<m\lor m+1\le x).
+\]
+\[
+\neg\exists m\in\mathbb{Z}\;(m=\lfloor x\rfloor)
+\Longleftrightarrow
+\forall m\in\mathbb{Z}\;(x<m\lor m+1\le x).
 \]
 \end{description}
 \end{remark*}
@@ -390,6 +476,17 @@ m\in\mathbb{Z}\land m-1\le x<m.
   \item[Exposition.]
 The lemma fails only if some real number lies in no half-open unit interval
 $[m-1,m)$ with integer right endpoint.
+
+
+  \item[\exists-condition.]
+  \[
+\exists x\in\mathbb{R}\;\forall m\in\mathbb{Z}\;(x<m-1\lor m\le x).
+\]
+\[
+\neg\exists m\in\mathbb{Z}\;(m=\lfloor x\rfloor+1)
+\Longleftrightarrow
+\forall m\in\mathbb{Z}\;(x<m-1\lor m\le x).
+\]
 \end{description}
 \end{remark*}
 
@@ -400,6 +497,17 @@ $[m-1,m)$ with integer right endpoint.
 \underbrace{x<m-1}_{\text{right endpoint too high}}
 \qquad\text{or}\qquad
 \underbrace{m\le x}_{\text{right endpoint not above }x}.
+\]
+
+
+  \item[\exists-condition.]
+  \[
+\exists x\in\mathbb{R}\;\forall m\in\mathbb{Z}\;(x<m-1\lor m\le x).
+\]
+\[
+\neg\exists m\in\mathbb{Z}\;(m=\lfloor x\rfloor+1)
+\Longleftrightarrow
+\forall m\in\mathbb{Z}\;(x<m-1\lor m\le x).
 \]
 \end{description}
 \end{remark*}
@@ -467,6 +575,17 @@ m\in\mathbb{Z}\land x<m\le x+1.
   \item[Exposition.]
 The lemma fails only if every integer is either at or below $x$, or lies
 strictly above the next unit endpoint $x+1$.
+
+
+  \item[\exists-condition.]
+  \[
+\exists x\in\mathbb{R}\;\forall m\in\mathbb{Z}\;(m\le x\lor x+1<m).
+\]
+\[
+\neg\exists m\in\mathbb{Z}\;(m=\lfloor x\rfloor+1)
+\Longleftrightarrow
+\forall m\in\mathbb{Z}\;(m\le x\lor x+1<m).
+\]
 \end{description}
 \end{remark*}
 
@@ -477,6 +596,17 @@ strictly above the next unit endpoint $x+1$.
 \underbrace{m\le x}_{\text{not strictly above }x}
 \qquad\text{or}\qquad
 \underbrace{x+1<m}_{\text{overshoots one unit}}.
+\]
+
+
+  \item[\exists-condition.]
+  \[
+\exists x\in\mathbb{R}\;\forall m\in\mathbb{Z}\;(m\le x\lor x+1<m).
+\]
+\[
+\neg\exists m\in\mathbb{Z}\;(m=\lfloor x\rfloor+1)
+\Longleftrightarrow
+\forall m\in\mathbb{Z}\;(m\le x\lor x+1<m).
 \]
 \end{description}
 \end{remark*}
@@ -541,6 +671,17 @@ m\in\mathbb{Z}\land x<m.
 \begin{description}
   \item[Exposition.]
 The lemma fails only if some real number is an upper bound for all integers.
+
+
+  \item[\exists-condition.]
+  \[
+\exists x\in\mathbb{R}\;\forall m\in\mathbb{Z}\;(m\le x).
+\]
+\[
+\neg\exists m\in\mathbb{Z}\;(x<m)
+\Longleftrightarrow
+\forall m\in\mathbb{Z}\;(m\le x).
+\]
 \end{description}
 \end{remark*}
 
@@ -550,6 +691,17 @@ The lemma fails only if some real number is an upper bound for all integers.
 \[
 \underbrace{\exists x\in\mathbb{R}}_{\text{candidate upper bound}}
 \;\underbrace{\forall m\in\mathbb{Z}\;(m\le x)}_{\text{no integer lies above it}}.
+\]
+
+
+  \item[\exists-condition.]
+  \[
+\exists x\in\mathbb{R}\;\forall m\in\mathbb{Z}\;(m\le x).
+\]
+\[
+\neg\exists m\in\mathbb{Z}\;(x<m)
+\Longleftrightarrow
+\forall m\in\mathbb{Z}\;(m\le x).
 \]
 \end{description}
 \end{remark*}
@@ -621,6 +773,19 @@ m\in\mathbb{Z}\land \alpha<m<\beta.
   \item[Exposition.]
 The lemma fails only if an open interval of length greater than one still
 misses every integer.
+
+
+  \item[\exists-condition.]
+  \[
+\exists \alpha,\beta\in\mathbb{R}\;
+\bigl(\beta-\alpha>1\land
+\forall m\in\mathbb{Z}\;(m\le \alpha\lor \beta\le m)\bigr).
+\]
+\[
+\neg\exists m\;(m\in\mathbb{Z}\cap(\alpha,\beta))
+\Longleftrightarrow
+\forall m\in\mathbb{Z}\;(m\le \alpha\lor \beta\le m).
+\]
 \end{description}
 \end{remark*}
 
@@ -631,6 +796,19 @@ misses every integer.
 \underbrace{m\le \alpha}_{\text{integer at or left of the interval}}
 \qquad\text{or}\qquad
 \underbrace{\beta\le m}_{\text{integer at or right of the interval}}.
+\]
+
+
+  \item[\exists-condition.]
+  \[
+\exists \alpha,\beta\in\mathbb{R}\;
+\bigl(\beta-\alpha>1\land
+\forall m\in\mathbb{Z}\;(m\le \alpha\lor \beta\le m)\bigr).
+\]
+\[
+\neg\exists m\;(m\in\mathbb{Z}\cap(\alpha,\beta))
+\Longleftrightarrow
+\forall m\in\mathbb{Z}\;(m\le \alpha\lor \beta\le m).
 \]
 \end{description}
 \end{remark*}

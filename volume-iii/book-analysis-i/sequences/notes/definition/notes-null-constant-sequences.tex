@@ -27,7 +27,7 @@ $x_n = c$ for every $n \in \mathbb{N}$.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{IsConstant}(x_n,c)
+\operatorname{IsConstant}(x_n,c,\mathbb{R})
 \coloneqq
 \forall n \in \mathbb{N}\;(x_n = c).
 \]
@@ -48,24 +48,26 @@ $x_n = c$ for every $n \in \mathbb{N}$.
 \begin{remark*}[Negation predicate reading]
 \[
 \neg\exists c \in \mathbb{R}\;
-\operatorname{IsConstant}(x_n,c).
+\operatorname{IsConstant}(x_n,c,\mathbb{R}).
 \]
 \end{remark*}
-
 \begin{remark*}[Failure modes]
 \begin{description}
   \item[Exposition.]
-Every proposed constant value fails at some index.
-\end{description}
-\end{remark*}
-
-\begin{remark*}[Failure modes]
-\begin{description}
-  \item[Exposition.]
+Failure is witnessed by the negated condition displayed above.
+  \item[\operatorname{IsConstant}.]
 \[
+\begin{aligned}
+&\text{Let } (x_n) \text{ be a real sequence.}\\
+&(x_n) \text{ is not constant}
+\Longleftrightarrow
 \forall c \in \mathbb{R}\;
-\underbrace{\exists n \in \mathbb{N}\;(x_n \neq c)}
-_{\text{a term differs from the proposed constant value}}.
+\exists n \in \mathbb{N}\;(x_n \neq c).
+\end{aligned}
+\]
+\[
+\neg\exists c \in \mathbb{R}\;
+\operatorname{IsConstant}(x_n,c,\mathbb{R}).
 \]
 \end{description}
 \end{remark*}
@@ -109,7 +111,7 @@ $N \in \mathbb{N}$ such that $|x_n| < \varepsilon$ for every $n \ge N$.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{IsNull}(x_n)
+\operatorname{IsNull}(x_n,\mathbb{R})
 \coloneqq
 \forall \varepsilon > 0\;
 \exists N \in \mathbb{N}\;
@@ -132,25 +134,26 @@ $N \in \mathbb{N}$ such that $|x_n| < \varepsilon$ for every $n \ge N$.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{IsNull}(x_n).
+\neg\operatorname{IsNull}(x_n,\mathbb{R}).
 \]
 \end{remark*}
-
 \begin{remark*}[Failure modes]
 \begin{description}
   \item[Exposition.]
-Some positive tolerance is missed infinitely far out in the sequence.
-\end{description}
-\end{remark*}
-
-\begin{remark*}[Failure modes]
-\begin{description}
-  \item[Exposition.]
+Failure is witnessed by the negated condition displayed above.
+  \item[\operatorname{IsNull}.]
 \[
+\begin{aligned}
+&\text{Let } (x_n) \text{ be a real sequence.}\\
+&(x_n) \text{ is not a null sequence}
+\Longleftrightarrow
 \exists \varepsilon > 0\;
 \forall N \in \mathbb{N}\;
-\underbrace{\exists n \ge N\;(|x_n| \ge \varepsilon)}
-_{\text{the tail is not trapped inside the } \varepsilon\text{-band}}.
+\exists n \ge N\;(|x_n| \ge \varepsilon).
+\end{aligned}
+\]
+\[
+\neg\operatorname{IsNull}(x_n,\mathbb{R}).
 \]
 \end{description}
 \end{remark*}
@@ -198,9 +201,9 @@ for every $n \in \mathbb{N}$, then $(x_n)$ converges to $c$.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{IsConstant}(x_n,c)
+\operatorname{IsConstant}(x_n,c,\mathbb{R})
 \Longrightarrow
-\operatorname{ConvergesTo}(x_n,c).
+\operatorname{ConvergesTo}(x_n,c,\mathbb{R}).
 \]
 \end{remark*}
 
@@ -247,9 +250,9 @@ then $(x_n)$ is a null sequence.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{IsConstant}(x_n,0)
+\operatorname{IsConstant}(x_n,0,\mathbb{R})
 \Longrightarrow
-\operatorname{IsNull}(x_n).
+\operatorname{IsNull}(x_n,\mathbb{R}).
 \]
 \end{remark*}
 
@@ -302,9 +305,9 @@ $c = 0$.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{IsConstant}(x_n,c)
+\operatorname{IsConstant}(x_n,c,\mathbb{R})
 \Longrightarrow
-\bigl(\operatorname{IsNull}(x_n) \Longleftrightarrow c = 0\bigr).
+\bigl(\operatorname{IsNull}(x_n,\mathbb{R}) \Longleftrightarrow c = 0\bigr).
 \]
 \end{remark*}
 
@@ -348,7 +351,7 @@ $c \in \mathbb{R}$ such that $x_n = c$ for every $n \ge N$.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{IsUltimatelyConstant}(x_n,c)
+\operatorname{IsUltimatelyConstant}(x_n,c,\mathbb{R})
 \coloneqq
 \exists N \in \mathbb{N}\;
 \forall n \ge N\;(x_n = c).
@@ -371,25 +374,27 @@ $c \in \mathbb{R}$ such that $x_n = c$ for every $n \ge N$.
 \begin{remark*}[Negation predicate reading]
 \[
 \neg\exists c \in \mathbb{R}\;
-\operatorname{IsUltimatelyConstant}(x_n,c).
+\operatorname{IsUltimatelyConstant}(x_n,c,\mathbb{R}).
 \]
 \end{remark*}
-
 \begin{remark*}[Failure modes]
 \begin{description}
   \item[Exposition.]
-No tail of the sequence becomes permanently equal to a single real value.
-\end{description}
-\end{remark*}
-
-\begin{remark*}[Failure modes]
-\begin{description}
-  \item[Exposition.]
+Failure is witnessed by the negated condition displayed above.
+  \item[\operatorname{IsUltimatelyConstant}.]
 \[
+\begin{aligned}
+&\text{Let } (x_n) \text{ be a real sequence.}\\
+&(x_n) \text{ is not ultimately constant}
+\Longleftrightarrow
 \forall N \in \mathbb{N}\;
 \forall c \in \mathbb{R}\;
-\underbrace{\exists n \ge N\;(x_n \neq c)}
-_{\text{the proposed tail value fails later in the sequence}}.
+\exists n \ge N\;(x_n \neq c).
+\end{aligned}
+\]
+\[
+\neg\exists c \in \mathbb{R}\;
+\operatorname{IsUltimatelyConstant}(x_n,c,\mathbb{R}).
 \]
 \end{description}
 \end{remark*}
@@ -444,9 +449,9 @@ sequence.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{ConvergesTo}(x_n,L)
+\operatorname{ConvergesTo}(x_n,L,\mathbb{R})
 \Longleftrightarrow
-\operatorname{IsNull}(x_n - L).
+\operatorname{IsNull}(x_n - L,\mathbb{R}).
 \]
 \end{remark*}
 
@@ -505,9 +510,9 @@ $(x_n)$ converges to $c$.
 \begin{remark*}[Predicate reading]
 \[
 \begin{aligned}
-\operatorname{IsUltimatelyConstant}(x_n,c)
+\operatorname{IsUltimatelyConstant}(x_n,c,\mathbb{R})
 \Longrightarrow
-\operatorname{ConvergesTo}(x_n,c).
+\operatorname{ConvergesTo}(x_n,c,\mathbb{R}).
 \end{aligned}
 \]
 \end{remark*}
@@ -559,9 +564,9 @@ Every constant real sequence is ultimately constant.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{IsConstant}(x_n,c)
+\operatorname{IsConstant}(x_n,c,\mathbb{R})
 \Longrightarrow
-\operatorname{IsUltimatelyConstant}(x_n,c).
+\operatorname{IsUltimatelyConstant}(x_n,c,\mathbb{R}).
 \]
 \end{remark*}
 
@@ -611,9 +616,9 @@ that $x_n = 0$ for every $n \ge N_0$, then $(x_n)$ is a null sequence.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{IsUltimatelyConstant}(x_n,0)
+\operatorname{IsUltimatelyConstant}(x_n,0,\mathbb{R})
 \Longrightarrow
-\operatorname{IsNull}(x_n).
+\operatorname{IsNull}(x_n,\mathbb{R}).
 \]
 \end{remark*}
 
@@ -672,9 +677,9 @@ $(x_n)$ is a null sequence if and only if $c = 0$.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{IsUltimatelyConstant}(x_n,c)
+\operatorname{IsUltimatelyConstant}(x_n,c,\mathbb{R})
 \Longrightarrow
-\bigl(\operatorname{IsNull}(x_n) \Longleftrightarrow c = 0\bigr).
+\bigl(\operatorname{IsNull}(x_n,\mathbb{R}) \Longleftrightarrow c = 0\bigr).
 \]
 \end{remark*}
 
@@ -737,13 +742,13 @@ $(y_n)$ converges to $L$.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{EventuallyEqual}(x_n,y_n)
+\operatorname{EventuallyEqual}(x_n,y_n,\mathbb{R})
 \Longrightarrow
 \forall L \in \mathbb{R}\;
 \bigl(
-\operatorname{ConvergesTo}(x_n,L)
+\operatorname{ConvergesTo}(x_n,L,\mathbb{R})
 \Longleftrightarrow
-\operatorname{ConvergesTo}(y_n,L)
+\operatorname{ConvergesTo}(y_n,L,\mathbb{R})
 \bigr).
 \]
 \end{remark*}
@@ -786,7 +791,7 @@ that $x_n \le M$ for every $n \in \mathbb{N}$.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{BoundedAbove}(x_n)
+\operatorname{BoundedAbove}(x_n,\mathbb{R})
 \coloneqq
 \exists M \in \mathbb{R}\;
 \forall n \in \mathbb{N}\;(x_n \le M).
@@ -807,24 +812,25 @@ that $x_n \le M$ for every $n \in \mathbb{N}$.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{BoundedAbove}(x_n).
+\neg\operatorname{BoundedAbove}(x_n,\mathbb{R}).
 \]
 \end{remark*}
-
 \begin{remark*}[Failure modes]
 \begin{description}
   \item[Exposition.]
-Every proposed upper bound is exceeded by some term of the sequence.
-\end{description}
-\end{remark*}
-
-\begin{remark*}[Failure modes]
-\begin{description}
-  \item[Exposition.]
+Failure is witnessed by the negated condition displayed above.
+  \item[\operatorname{BoundedAbove}.]
 \[
+\begin{aligned}
+&\text{Let } (x_n) \text{ be a real sequence.}\\
+&(x_n) \text{ is not bounded above}
+\Longleftrightarrow
 \forall M \in \mathbb{R}\;
-\underbrace{\exists n \in \mathbb{N}\;(M < x_n)}
-_{\text{a term rises above the proposed ceiling}}.
+\exists n \in \mathbb{N}\;(M < x_n).
+\end{aligned}
+\]
+\[
+\neg\operatorname{BoundedAbove}(x_n,\mathbb{R}).
 \]
 \end{description}
 \end{remark*}
@@ -867,7 +873,7 @@ that $m \le x_n$ for every $n \in \mathbb{N}$.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{BoundedBelow}(x_n)
+\operatorname{BoundedBelow}(x_n,\mathbb{R})
 \coloneqq
 \exists m \in \mathbb{R}\;
 \forall n \in \mathbb{N}\;(m \le x_n).
@@ -888,24 +894,25 @@ that $m \le x_n$ for every $n \in \mathbb{N}$.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{BoundedBelow}(x_n).
+\neg\operatorname{BoundedBelow}(x_n,\mathbb{R}).
 \]
 \end{remark*}
-
 \begin{remark*}[Failure modes]
 \begin{description}
   \item[Exposition.]
-Every proposed lower bound is undercut by some term of the sequence.
-\end{description}
-\end{remark*}
-
-\begin{remark*}[Failure modes]
-\begin{description}
-  \item[Exposition.]
+Failure is witnessed by the negated condition displayed above.
+  \item[\operatorname{BoundedBelow}.]
 \[
+\begin{aligned}
+&\text{Let } (x_n) \text{ be a real sequence.}\\
+&(x_n) \text{ is not bounded below}
+\Longleftrightarrow
 \forall m \in \mathbb{R}\;
-\underbrace{\exists n \in \mathbb{N}\;(x_n < m)}
-_{\text{a term falls below the proposed floor}}.
+\exists n \in \mathbb{N}\;(x_n < m).
+\end{aligned}
+\]
+\[
+\neg\operatorname{BoundedBelow}(x_n,\mathbb{R}).
 \]
 \end{description}
 \end{remark*}
@@ -948,7 +955,7 @@ $|x_n| \le M$ for every $n \in \mathbb{N}$.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{Bounded}(x_n)
+\operatorname{Bounded}(x_n,\mathbb{R})
 \coloneqq
 \exists M > 0\;
 \forall n \in \mathbb{N}\;(|x_n| \le M).
@@ -969,24 +976,25 @@ $|x_n| \le M$ for every $n \in \mathbb{N}$.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{Bounded}(x_n).
+\neg\operatorname{Bounded}(x_n,\mathbb{R}).
 \]
 \end{remark*}
-
 \begin{remark*}[Failure modes]
 \begin{description}
   \item[Exposition.]
-Every symmetric bound around zero is escaped by some term of the sequence.
-\end{description}
-\end{remark*}
-
-\begin{remark*}[Failure modes]
-\begin{description}
-  \item[Exposition.]
+Failure is witnessed by the negated condition displayed above.
+  \item[\operatorname{Bounded}.]
 \[
+\begin{aligned}
+&\text{Let } (x_n) \text{ be a real sequence.}\\
+&(x_n) \text{ is not bounded}
+\Longleftrightarrow
 \forall M > 0\;
-\underbrace{\exists n \in \mathbb{N}\;(|x_n| > M)}
-_{\text{a term escapes the symmetric band of radius } M}.
+\exists n \in \mathbb{N}\;(|x_n| > M).
+\end{aligned}
+\]
+\[
+\neg\operatorname{Bounded}(x_n,\mathbb{R}).
 \]
 \end{description}
 \end{remark*}
@@ -1039,7 +1047,7 @@ $x_n \le M$ for every $n \ge N_0$.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{BoundedAbove}(x_n)
+\operatorname{BoundedAbove}(x_n,\mathbb{R})
 \Longleftrightarrow
 \exists M \in \mathbb{R}\;
 \operatorname{Eventually}\bigl(x_n,\; x_n \le M\bigr).
@@ -1095,7 +1103,7 @@ $m \le x_n$ for every $n \ge N_0$.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{BoundedBelow}(x_n)
+\operatorname{BoundedBelow}(x_n,\mathbb{R})
 \Longleftrightarrow
 \exists m \in \mathbb{R}\;
 \operatorname{Eventually}\bigl(x_n,\; m \le x_n\bigr).
@@ -1151,7 +1159,7 @@ every $n \ge N_0$.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{Bounded}(x_n)
+\operatorname{Bounded}(x_n,\mathbb{R})
 \Longleftrightarrow
 \exists M > 0\;
 \operatorname{Eventually}\bigl(x_n,\; |x_n| \le M\bigr).
@@ -1175,13 +1183,13 @@ initial segment can be enclosed by increasing the bound.
 
 \begin{theorembox}{Theorem (Bounded Sequence If and Only If Bounded Above and Below)}
 \begin{theorem}[Bounded Sequence If and Only If Bounded Above and Below]
-\label{thm:bounded-sequence-iff-bounded-above-and-below}
+\label{thm:bounded-sequence-bounded-above-below}
 Let $(x_n)$ be a real sequence. The sequence $(x_n)$ is bounded if and only
 if it is both bounded above and bounded below.
 
 \smallskip
 \noindent
-\hyperref[prf:bounded-sequence-iff-bounded-above-and-below]{\textit{Go to proof.}}
+\hyperref[prf:bounded-sequence-bounded-above-below]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
 
@@ -1205,12 +1213,12 @@ if it is both bounded above and bounded below.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{Bounded}(x_n)
+\operatorname{Bounded}(x_n,\mathbb{R})
 \Longleftrightarrow
 \bigl(
-\operatorname{BoundedBelow}(x_n)
+\operatorname{BoundedBelow}(x_n,\mathbb{R})
 \land
-\operatorname{BoundedAbove}(x_n)
+\operatorname{BoundedAbove}(x_n,\mathbb{R})
 \bigr).
 \]
 \end{remark*}
@@ -1235,14 +1243,14 @@ enlarged to a symmetric one.
 
 \begin{theorembox}{Theorem (Absolute Bound Gives Upper and Lower Bounds)}
 \begin{theorem}[Absolute Bound Gives Upper and Lower Bounds]
-\label{thm:absolute-bound-gives-upper-and-lower-bounds}
+\label{thm:absolute-bound-upper-lower-bounds}
 Let $(x_n)$ be a real sequence, and let $K > 0$. If $|x_n| \le K$ for every
 $n \in \mathbb{N}$, then $-K \le x_n \le K$ for every
 $n \in \mathbb{N}$.
 
 \smallskip
 \noindent
-\hyperref[prf:absolute-bound-gives-upper-and-lower-bounds]{\textit{Go to proof.}}
+\hyperref[prf:absolute-bound-upper-lower-bounds]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
 
@@ -1261,7 +1269,17 @@ $n \in \mathbb{N}$.
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-The displayed quantified statement is the predicate-level form of $label: its hypotheses name the input conditions, and its conclusion names the asserted structure or relation.
+\[
+\begin{aligned}
+&\text{Let } (x_n) \text{ be a real sequence.}\\
+&\forall K > 0\;
+\bigl[
+\forall n \in \mathbb{N}\;(|x_n| \le K)
+\bigr]\\
+&\qquad\Longrightarrow\qquad
+\forall n \in \mathbb{N}\;(-K \le x_n \land x_n \le K).
+\end{aligned}
+\]
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -1283,14 +1301,14 @@ directions. The upper barrier is $K$, and the lower barrier is $-K$.
 
 \begin{theorembox}{Theorem (Upper and Lower Bounds Give an Absolute Bound)}
 \begin{theorem}[Upper and Lower Bounds Give an Absolute Bound]
-\label{thm:upper-and-lower-bounds-give-absolute-bound}
+\label{thm:upper-lower-bounds-absolute-bound}
 Let $(x_n)$ be a real sequence. If there exist $m,M \in \mathbb{R}$ such
 that $m \le x_n \le M$ for every $n \in \mathbb{N}$, then there exists
 $K > 0$ such that $|x_n| \le K$ for every $n \in \mathbb{N}$.
 
 \smallskip
 \noindent
-\hyperref[prf:upper-and-lower-bounds-give-absolute-bound]{\textit{Go to proof.}}
+\hyperref[prf:upper-lower-bounds-absolute-bound]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
 
@@ -1313,7 +1331,21 @@ $K > 0$ such that $|x_n| \le K$ for every $n \in \mathbb{N}$.
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-The displayed quantified statement is the predicate-level form of $label: its hypotheses name the input conditions, and its conclusion names the asserted structure or relation.
+\[
+\begin{aligned}
+&\text{Let } (x_n) \text{ be a real sequence.}\\
+&\bigl[
+\exists m \in \mathbb{R}\;
+\exists M \in \mathbb{R}\;
+\forall n \in \mathbb{N}\;(m \le x_n \land x_n \le M)
+\bigr]\\
+&\qquad\Longrightarrow\qquad
+\bigl[
+\exists K > 0\;
+\forall n \in \mathbb{N}\;(|x_n| \le K)
+\bigr].
+\end{aligned}
+\]
 \end{remark*}
 
 \begin{remark*}[Interpretation]

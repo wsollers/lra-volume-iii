@@ -62,7 +62,7 @@ element of $A$ is less than or equal to $m$.
   Maximum failure means the candidate is not an attained upper bound of
   the set.
 
-  \item[Empty-set failure.]
+  \item[\operatorname{EmptySet}.]
   The definition is stated for nonempty subsets.
   \[
     A=\varnothing.
@@ -71,7 +71,7 @@ element of $A$ is less than or equal to $m$.
     \operatorname{EmptySet}(A).
   \]
 
-  \item[Attainment failure.]
+  \item[\operatorname{GreatestElement}.]
   The candidate is not an element of the set.
   \[
     m\notin A.
@@ -81,7 +81,7 @@ element of $A$ is less than or equal to $m$.
     \neg\operatorname{GreatestElement}(m,A,P).
   \]
 
-  \item[Upper-bound failure.]
+  \item[\operatorname{UpperBound}.]
   Some element of the set lies strictly above the candidate.
   \[
     (\exists x\in A)(m<x).
@@ -155,7 +155,7 @@ element of $A$ is greater than or equal to $m$.
   Minimum failure means the candidate is not an attained lower bound of
   the set.
 
-  \item[Empty-set failure.]
+  \item[\operatorname{EmptySet}.]
   The definition is stated for nonempty subsets.
   \[
     A=\varnothing.
@@ -164,7 +164,7 @@ element of $A$ is greater than or equal to $m$.
     \operatorname{EmptySet}(A).
   \]
 
-  \item[Attainment failure.]
+  \item[\operatorname{LeastElement}.]
   The candidate is not an element of the set.
   \[
     m\notin A.
@@ -174,7 +174,7 @@ element of $A$ is greater than or equal to $m$.
     \neg\operatorname{LeastElement}(m,A,P).
   \]
 
-  \item[Lower-bound failure.]
+  \item[\operatorname{LowerBound}.]
   Some element of the set lies strictly below the candidate.
   \[
     (\exists x\in A)(x<m).
@@ -255,7 +255,7 @@ $m,n\in S$ are both maxima of $A$, then $m=n$.
   Failure would require two distinct elements of $A$ each to dominate the
   entire set.
 
-  \item[Distinct-maxima failure.]
+  \item[\operatorname{GreatestElement}.]
   Two different candidates both satisfy the maximum predicate.
   \[
     \operatorname{GreatestElement}(m,A,P)\land
@@ -337,7 +337,7 @@ $m,n\in S$ are both minima of $A$, then $m=n$.
   Failure would require two distinct elements of $A$ each to lie below the
   entire set.
 
-  \item[Distinct-minima failure.]
+  \item[\operatorname{LeastElement}.]
   Two different candidates both satisfy the minimum predicate.
   \[
     \operatorname{LeastElement}(m,A,P)\land
@@ -400,13 +400,23 @@ $m=\max A$, then $m=\sup A$.
 \]
 \end{remark*}
 
+\begin{remark*}[Negation predicate reading]
+\[
+  \operatorname{GreatestElement}(m,A,P)
+  \quad\text{and}\quad
+  \neg\operatorname{LeastUpperBound}(m,A,P).
+\]
+
+The negation predicate reading is the predicate-level form of the displayed negated statement.
+\end{remark*}
+
 \begin{remark*}[Failure modes]
 \begin{description}
   \item[Exposition.]
   Failure would require an attained upper bound that is not least among
   upper bounds.
 
-  \item[Leastness failure.]
+  \item[\operatorname{GreatestElement} / \operatorname{LeastUpperBound}.]
   The candidate is a maximum but not the least upper bound.
   \[
     \operatorname{GreatestElement}(m,A,P)\land
@@ -470,13 +480,23 @@ $m=\min A$, then $m=\inf A$.
 \]
 \end{remark*}
 
+\begin{remark*}[Negation predicate reading]
+\[
+  \operatorname{LeastElement}(m,A,P)
+  \quad\text{and}\quad
+  \neg\operatorname{GreatestLowerBound}(m,A,P).
+\]
+
+The negation predicate reading is the predicate-level form of the displayed negated statement.
+\end{remark*}
+
 \begin{remark*}[Failure modes]
 \begin{description}
   \item[Exposition.]
   Failure would require an attained lower bound that is not greatest among
   lower bounds.
 
-  \item[Greatestness failure.]
+  \item[\operatorname{LeastElement} / \operatorname{GreatestLowerBound}.]
   The candidate is a minimum but not the greatest lower bound.
   \[
     \operatorname{LeastElement}(m,A,P)\land
@@ -545,13 +565,25 @@ $s=\sup A$ and $s\in A$, then $s=\max A$.
 \]
 \end{remark*}
 
+\begin{remark*}[Negation predicate reading]
+\[
+  \operatorname{LeastUpperBound}(s,A,P)
+  \quad\text{and}\quad
+  s\in A
+  \quad\text{and}\quad
+  \neg\operatorname{GreatestElement}(s,A,P).
+\]
+
+The negation predicate reading is the predicate-level form of the displayed negated statement.
+\end{remark*}
+
 \begin{remark*}[Failure modes]
 \begin{description}
   \item[Exposition.]
   Failure would require a supremum that belongs to the set but is not its
   maximum.
 
-  \item[Attained-supremum failure.]
+  \item[\operatorname{LeastUpperBound} / \operatorname{GreatestElement}.]
   The candidate is a least upper bound, belongs to the set, and yet is not
   the greatest element.
   \[
@@ -619,13 +651,25 @@ $i=\inf A$ and $i\in A$, then $i=\min A$.
 \]
 \end{remark*}
 
+\begin{remark*}[Negation predicate reading]
+\[
+  \operatorname{GreatestLowerBound}(i,A,P)
+  \quad\text{and}\quad
+  i\in A
+  \quad\text{and}\quad
+  \neg\operatorname{LeastElement}(i,A,P).
+\]
+
+The negation predicate reading is the predicate-level form of the displayed negated statement.
+\end{remark*}
+
 \begin{remark*}[Failure modes]
 \begin{description}
   \item[Exposition.]
   Failure would require an infimum that belongs to the set but is not its
   minimum.
 
-  \item[Attained-infimum failure.]
+  \item[\operatorname{GreatestLowerBound} / \operatorname{LeastElement}.]
   The candidate is a greatest lower bound, belongs to the set, and yet is not
   the least element.
   \[

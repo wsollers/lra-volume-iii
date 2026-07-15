@@ -223,6 +223,39 @@ Only $e^x$ is its own derivative.
 \]
 \end{remark*}
 
+\begin{remark*}[Negation predicate reading]
+\[
+\neg\left(\lim_{x\to 0}\frac{e^x-1}{x}=1\right)
+  \;\iff\;
+  \exists\varepsilon_0>0,\;\forall\delta>0,\;\exists x:\;
+  0<|x|<\delta \;\wedge\; \left|\frac{e^x-1}{x}-1\right|\geq\varepsilon_0.
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  The negated statement isolates the obstruction to the asserted condition.
+
+  \item[\(\exists\)-condition.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\neg\left(\lim_{x\to 0}\frac{e^x-1}{x}=1\right)
+  \;\iff\;
+  \exists\varepsilon_0>0,\;\forall\delta>0,\;\exists x:\;
+  0<|x|<\delta \;\wedge\; \left|\frac{e^x-1}{x}-1\right|\geq\varepsilon_0.
+  \]
+  \[
+\neg\left(\lim_{x\to 0}\frac{e^x-1}{x}=1\right)
+  \;\iff\;
+  \exists\varepsilon_0>0,\;\forall\delta>0,\;\exists x:\;
+  0<|x|<\delta \;\wedge\; \left|\frac{e^x-1}{x}-1\right|\geq\varepsilon_0.
+  \]
+\end{description}
+\end{remark*}
+
+
+
 \begin{remark*}[Interpretation]
 This is the statement $(e^x)'\big|_{x=0} = 1$. The series gives
 $(e^x - 1)/x = 1 + x/2! + x^2/3! + \cdots \to 1$ as $x \to 0$
@@ -288,6 +321,39 @@ functional equation, this implies $(e^x)' = e^x$ everywhere.
 \]
 \end{remark*}
 
+\begin{remark*}[Negation predicate reading]
+\[
+\neg\left(\lim_{x\to\infty}\!\left(1+\tfrac{1}{x}\right)^x=e\right)
+  \;\iff\;
+  \exists\varepsilon_0>0,\;\forall M>0,\;\exists x>M:\;
+  \left|\!\left(1+\frac{1}{x}\right)^x - e\right|\geq\varepsilon_0.
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  The negated statement isolates the obstruction to the asserted condition.
+
+  \item[\(\exists\)-condition.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\neg\left(\lim_{x\to\infty}\!\left(1+\tfrac{1}{x}\right)^x=e\right)
+  \;\iff\;
+  \exists\varepsilon_0>0,\;\forall M>0,\;\exists x>M:\;
+  \left|\!\left(1+\frac{1}{x}\right)^x - e\right|\geq\varepsilon_0.
+  \]
+  \[
+\neg\left(\lim_{x\to\infty}\!\left(1+\tfrac{1}{x}\right)^x=e\right)
+  \;\iff\;
+  \exists\varepsilon_0>0,\;\forall M>0,\;\exists x>M:\;
+  \left|\!\left(1+\frac{1}{x}\right)^x - e\right|\geq\varepsilon_0.
+  \]
+\end{description}
+\end{remark*}
+
+
+
 \begin{remark*}[Interpretation]
 Write $(1+1/x)^x = e^{x\ln(1+1/x)}$. Set $t = 1/x \to 0^+$ and use
 the fundamental logarithmic limit $\ln(1+t)/t \to 1$. Then
@@ -351,6 +417,39 @@ For every $r > 0$:
 \]
 \end{remark*}
 
+\begin{remark*}[Negation predicate reading]
+\[
+\neg\left(\lim_{x\to\infty}\frac{x^r}{e^x}=0\right)
+  \;\iff\;
+  \exists\varepsilon_0>0,\;\forall M>0,\;\exists x>M:\;
+  x^r e^{-x} \geq \varepsilon_0.
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  The negated statement isolates the obstruction to the asserted condition.
+
+  \item[\(\exists\)-condition.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\neg\left(\lim_{x\to\infty}\frac{x^r}{e^x}=0\right)
+  \;\iff\;
+  \exists\varepsilon_0>0,\;\forall M>0,\;\exists x>M:\;
+  x^r e^{-x} \geq \varepsilon_0.
+  \]
+  \[
+\neg\left(\lim_{x\to\infty}\frac{x^r}{e^x}=0\right)
+  \;\iff\;
+  \exists\varepsilon_0>0,\;\forall M>0,\;\exists x>M:\;
+  x^r e^{-x} \geq \varepsilon_0.
+  \]
+\end{description}
+\end{remark*}
+
+
+
 \begin{remark*}[Interpretation]
 Pick integer $n > r$. The series bound $e^x \geq x^n/n!$ gives
 $x^r/e^x \leq n!\, x^{r-n} \to 0$ since $r - n < 0$.
@@ -371,15 +470,9 @@ dominated convergence arguments, and comparison tests.
   \item \hyperref[def:number-e]{The Number $e$}
   \item \hyperref[def:exponential]{Exponential Function}
   \item \hyperref[def:natural-logarithm]{Natural Logarithm}
-  \item \hyperref[prop:limit-logarithm-fundamental]{Fundamental Logarithmic Limit}
-  \item \hyperref[def:limit-at-infinity]{Limit at Infinity}
-\end{itemize}
-
-
-\begin{itemize}
   \item \hyperref[def:power-function]{Power Function}
-  \item \hyperref[def:exponential]{Exponential Function}
   \item \hyperref[def:limit-at-infinity]{Limit at Infinity}
   \item \hyperref[thm:squeeze-function-limits]{Squeeze Theorem for Function Limits}
+  \item \hyperref[prop:limit-logarithm-fundamental]{Fundamental Logarithmic Limit}
 \end{itemize}
 \end{dependencies}

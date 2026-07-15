@@ -29,7 +29,9 @@ Let $A \subseteq \mathbb{R}$, let $f \colon A \to \mathbb{R}$, and let $a \in A$
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{IsDiscontinuous}(f,a) \coloneqq \neg \operatorname{IsContinuous}(f,a).
+  f\colon A\to\mathbb{R},\\
+
+\operatorname{IsDiscontinuous}(f,a,\mathbb{R},\mathbb{R}) \coloneqq \neg \operatorname{IsContinuous}(f,a,\mathbb{R},\mathbb{R}).
 \]
 \end{remark*}
 
@@ -47,9 +49,11 @@ Let $A \subseteq \mathbb{R}$, let $f \colon A \to \mathbb{R}$, and let $a \in A$
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg \operatorname{IsDiscontinuous}(f,a)
+  f\colon A\to\mathbb{R},\\
+
+\neg \operatorname{IsDiscontinuous}(f,a,\mathbb{R},\mathbb{R})
 \Longleftrightarrow
-\operatorname{IsContinuous}(f,a)
+\operatorname{IsContinuous}(f,a,\mathbb{R},\mathbb{R})
 \Longleftrightarrow
 \forall \varepsilon > 0\; \exists \delta > 0\; \forall x \in A\;
 \bigl(|x-a|<\delta \Rightarrow |f(x)-f(a)| < \varepsilon\bigr).
@@ -60,6 +64,27 @@ Let $A \subseteq \mathbb{R}$, let $f \colon A \to \mathbb{R}$, and let $a \in A$
 \begin{description}
   \item[Exposition.]
 Discontinuity arises either because the nearby values of $f$ do not approach any single real number as $x \to a$, or because a well-defined limit exists but disagrees with the actual value $f(a)$.
+
+
+  \item[\operatorname{IsDiscontinuous}.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\begin{aligned}
+&\text{Let } A \subseteq \mathbb{R},\; f \colon A \to \mathbb{R},\; a \in A.\\
+&f \text{ is discontinuous at } a
+\Longleftrightarrow
+\exists \varepsilon > 0\; \forall \delta > 0\; \exists x \in A\;
+\bigl(|x-a|<\delta \land |f(x)-f(a)| \ge \varepsilon\bigr).
+\end{aligned}
+  \]
+  \[
+\neg \operatorname{IsDiscontinuous}(f,a,\mathbb{R},\mathbb{R})
+\Longleftrightarrow
+\operatorname{IsContinuous}(f,a,\mathbb{R},\mathbb{R})
+\Longleftrightarrow
+\forall \varepsilon > 0\; \exists \delta > 0\; \forall x \in A\;
+\bigl(|x-a|<\delta \Rightarrow |f(x)-f(a)| < \varepsilon\bigr).
+  \]
 \end{description}
 \end{remark*}
 
@@ -67,10 +92,31 @@ Discontinuity arises either because the nearby values of $f$ do not approach any
 \begin{description}
   \item[Exposition.]
 \[
-\underbrace{\neg \exists L \in \mathbb{R}\; \operatorname{TendsTo}(f,A,a,L)}_{\text{no limit exists}}
+\underbrace{\neg \exists L \in \mathbb{R}\; \operatorname{TendsTo}(f,A,a,L,\mathbb{R})}_{\text{no limit exists}}
 \;\lor\;
-\underbrace{\bigl(\exists L \in \mathbb{R}\; \operatorname{TendsTo}(f,A,a,L) \land L \ne f(a)\bigr)}_{\text{limit-value mismatch}}.
+\underbrace{\bigl(\exists L \in \mathbb{R}\; \operatorname{TendsTo}(f,A,a,L,\mathbb{R}) \land L \ne f(a)\bigr)}_{\text{limit-value mismatch}}.
 \]
+
+
+  \item[\operatorname{IsDiscontinuous}.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\begin{aligned}
+&\text{Let } A \subseteq \mathbb{R},\; f \colon A \to \mathbb{R},\; a \in A.\\
+&f \text{ is discontinuous at } a
+\Longleftrightarrow
+\exists \varepsilon > 0\; \forall \delta > 0\; \exists x \in A\;
+\bigl(|x-a|<\delta \land |f(x)-f(a)| \ge \varepsilon\bigr).
+\end{aligned}
+  \]
+  \[
+\neg \operatorname{IsDiscontinuous}(f,a,\mathbb{R},\mathbb{R})
+\Longleftrightarrow
+\operatorname{IsContinuous}(f,a,\mathbb{R},\mathbb{R})
+\Longleftrightarrow
+\forall \varepsilon > 0\; \exists \delta > 0\; \forall x \in A\;
+\bigl(|x-a|<\delta \Rightarrow |f(x)-f(a)| < \varepsilon\bigr).
+  \]
 \end{description}
 \end{remark*}
 
@@ -102,7 +148,9 @@ f \text{ is discontinuous at } c \Longleftrightarrow
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{IsDiscontinuous}(f,c) \coloneqq \exists (x_n)\subseteq A:\; x_n\to c \;\land\; \neg\bigl(f(x_n)\to f(c)\bigr).
+  f\colon A\to\mathbb{R},\\
+
+\operatorname{IsDiscontinuous}(f,c,\mathbb{R},\mathbb{R}) \coloneqq \exists (x_n)\subseteq A:\; x_n\to c \;\land\; \neg\bigl(f(x_n)\to f(c)\bigr).
 \]
 \end{remark*}
 
@@ -115,9 +163,11 @@ f \text{ is continuous at } c \Longleftrightarrow
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg \operatorname{IsDiscontinuous}(f,c)
+  f\colon A\to\mathbb{R},\\
+
+\neg \operatorname{IsDiscontinuous}(f,c,\mathbb{R},\mathbb{R})
 \Longleftrightarrow
-\operatorname{IsContinuous}(f,c)
+\operatorname{IsContinuous}(f,c,\mathbb{R},\mathbb{R})
 \Longleftrightarrow
 \forall (x_n)\subseteq A:\; x_n\to c \;\Rightarrow\; f(x_n)\to f(c).
 \]
@@ -127,6 +177,21 @@ f \text{ is continuous at } c \Longleftrightarrow
 \begin{description}
   \item[Exposition.]
 The characterization fails --- meaning $f$ is NOT sequentially discontinuous --- when every sequence $(x_n)$ in $A$ converging to $c$ has $f(x_n) \to f(c)$. No sequential witness exists.
+
+
+  \item[\operatorname{IsDiscontinuous}.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+f \text{ is continuous at } c \Longleftrightarrow
+\forall (x_n)\subseteq A:\; x_n\to c \;\Rightarrow\; f(x_n)\to f(c).
+  \]
+  \[
+\neg \operatorname{IsDiscontinuous}(f,c,\mathbb{R},\mathbb{R})
+\Longleftrightarrow
+\operatorname{IsContinuous}(f,c,\mathbb{R},\mathbb{R})
+\Longleftrightarrow
+\forall (x_n)\subseteq A:\; x_n\to c \;\Rightarrow\; f(x_n)\to f(c).
+  \]
 \end{description}
 \end{remark*}
 
@@ -134,12 +199,27 @@ The characterization fails --- meaning $f$ is NOT sequentially discontinuous ---
 \begin{description}
   \item[Exposition.]
 \[
-\neg \operatorname{IsDiscontinuous}(f,c)
+\neg \operatorname{IsDiscontinuous}(f,c,\mathbb{R},\mathbb{R})
 \Longleftrightarrow
 \underbrace{\forall (x_n)\subseteq A:\;
   x_n\to c \;\Rightarrow\; f(x_n)\to f(c)
 }_{\text{every approach preserves the limit}}.
 \]
+
+
+  \item[\operatorname{IsDiscontinuous}.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+f \text{ is continuous at } c \Longleftrightarrow
+\forall (x_n)\subseteq A:\; x_n\to c \;\Rightarrow\; f(x_n)\to f(c).
+  \]
+  \[
+\neg \operatorname{IsDiscontinuous}(f,c,\mathbb{R},\mathbb{R})
+\Longleftrightarrow
+\operatorname{IsContinuous}(f,c,\mathbb{R},\mathbb{R})
+\Longleftrightarrow
+\forall (x_n)\subseteq A:\; x_n\to c \;\Rightarrow\; f(x_n)\to f(c).
+  \]
 \end{description}
 \end{remark*}
 
@@ -174,7 +254,9 @@ f \text{ is discontinuous at } c
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{IsDiscontinuous}(f,c) \coloneqq
+  f\colon A\to\mathbb{R},\\
+
+\operatorname{IsDiscontinuous}(f,c,\mathbb{R},\mathbb{R}) \coloneqq
 \exists V \text{ nbhd of } f(c)\;
 \forall U \text{ nbhd of } c\;
 \exists x \in U \cap A:\; f(x) \notin V.
@@ -193,9 +275,11 @@ f \text{ is continuous at } c
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg \operatorname{IsDiscontinuous}(f,c)
+  f\colon A\to\mathbb{R},\\
+
+\neg \operatorname{IsDiscontinuous}(f,c,\mathbb{R},\mathbb{R})
 \Longleftrightarrow
-\operatorname{IsContinuous}(f,c)
+\operatorname{IsContinuous}(f,c,\mathbb{R},\mathbb{R})
 \Longleftrightarrow
 \forall V \text{ nbhd of } f(c)\;
 \exists U \text{ nbhd of } c\;
@@ -207,6 +291,26 @@ f \text{ is continuous at } c
 \begin{description}
   \item[Exposition.]
 The neighbourhood discontinuity characterization fails --- meaning $f$ is actually continuous --- when every output neighbourhood $V$ of $f(c)$ can be matched by some input neighbourhood $U$ such that $f$ maps all of $U \cap A$ into $V$. No perpetually-missed output neighbourhood exists.
+
+
+  \item[\operatorname{IsDiscontinuous}.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+f \text{ is continuous at } c
+\Longleftrightarrow
+\forall V \text{ nbhd of } f(c)\;
+\exists U \text{ nbhd of } c\;
+\forall x \in U \cap A\; \bigl(f(x) \in V\bigr).
+  \]
+  \[
+\neg \operatorname{IsDiscontinuous}(f,c,\mathbb{R},\mathbb{R})
+\Longleftrightarrow
+\operatorname{IsContinuous}(f,c,\mathbb{R},\mathbb{R})
+\Longleftrightarrow
+\forall V \text{ nbhd of } f(c)\;
+\exists U \text{ nbhd of } c\;
+\forall x \in U \cap A\; \bigl(f(x) \in V\bigr).
+  \]
 \end{description}
 \end{remark*}
 
@@ -214,13 +318,33 @@ The neighbourhood discontinuity characterization fails --- meaning $f$ is actual
 \begin{description}
   \item[Exposition.]
 \[
-\neg \operatorname{IsDiscontinuous}(f,c)
+\neg \operatorname{IsDiscontinuous}(f,c,\mathbb{R},\mathbb{R})
 \Longleftrightarrow
 \forall V \text{ nbhd of } f(c)\;
 \underbrace{\exists U \text{ nbhd of } c}_{\text{some input window}}
 :\;
 \underbrace{\forall x \in U \cap A:\; f(x) \in V}_{\text{all outputs inside tolerance}}.
 \]
+
+
+  \item[\operatorname{IsDiscontinuous}.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+f \text{ is continuous at } c
+\Longleftrightarrow
+\forall V \text{ nbhd of } f(c)\;
+\exists U \text{ nbhd of } c\;
+\forall x \in U \cap A\; \bigl(f(x) \in V\bigr).
+  \]
+  \[
+\neg \operatorname{IsDiscontinuous}(f,c,\mathbb{R},\mathbb{R})
+\Longleftrightarrow
+\operatorname{IsContinuous}(f,c,\mathbb{R},\mathbb{R})
+\Longleftrightarrow
+\forall V \text{ nbhd of } f(c)\;
+\exists U \text{ nbhd of } c\;
+\forall x \in U \cap A\; \bigl(f(x) \in V\bigr).
+  \]
 \end{description}
 \end{remark*}
 
@@ -265,8 +389,10 @@ Let $A\subseteq \mathbb{R}$, let $f:A\to\mathbb{R}$, and let $c\in A$. The follo
 
 \begin{remark*}[Predicate reading]
 \[
+  f\colon A\to\mathbb{R},\\
+
 \begin{aligned}
-\operatorname{IsDiscontinuous}(f,c)
+\operatorname{IsDiscontinuous}(f,c,\mathbb{R},\mathbb{R})
 &\Longleftrightarrow
 \exists \varepsilon_0>0\;\forall \delta>0\;\exists x\in A:\;0<|x-c|<\delta \land |f(x)-f(c)|\ge \varepsilon_0\\
 &\Longleftrightarrow
@@ -281,6 +407,17 @@ Let $A\subseteq \mathbb{R}$, let $f:A\to\mathbb{R}$, and let $c\in A$. The follo
 \begin{description}
   \item[Exposition.]
 The equivalence cannot fail for functions at limit points of $A$: the proof that all three characterizations are equivalent is constructive in both directions. In the degenerate case where $c$ is not a limit point of $A$, the punctured-neighbourhood conditions are vacuously satisfied by every $L$, and the equivalence becomes trivial rather than informative.
+
+
+  \item[\operatorname{IsDiscontinuous}.]
+  The displayed obstruction is the predicate-level failure condition.
+  \[
+  \exists\varepsilon_0>0\;\forall\delta>0\;\exists x\in A\;
+  \bigl(|x-a|<\delta\land |f(x)-f(a)|\ge\varepsilon_0\bigr).
+  \]
+  \[
+  \operatorname{IsDiscontinuous}(f,a,\mathbb{R},\mathbb{R}).
+  \]
 \end{description}
 \end{remark*}
 
@@ -324,10 +461,13 @@ Let $A \subseteq \mathbb{R}$, let $f:A \to \mathbb{R}$, and let $x_0 \in A$ with
 
 \begin{remark*}[Predicate reading]
 \[
+  f\colon A\to\mathbb{R},\qquad
+  A\colon A\to\mathbb{R},\\
+
 \begin{aligned}
-\operatorname{IsRemovableDiscontinuity}(f,x_0) &\coloneqq \exists L \in \mathbb{R}\; \bigl(\operatorname{TendsTo}(f,A,x_0,L) \land L \ne f(x_0)\bigr).\\
-\operatorname{IsJumpDiscontinuity}(f,x_0) &\coloneqq \exists L_{-}, L_{+} \in \mathbb{R}\; \bigl(\operatorname{LeftLimit}(f,A,x_0,L_{-}) \land \operatorname{RightLimit}(f,A,x_0,L_{+}) \land L_{-} \ne L_{+}\bigr).\\
-\operatorname{IsEssentialDiscontinuity}(f,x_0) &\coloneqq \neg \operatorname{IsRemovableDiscontinuity}(f,x_0).
+\operatorname{IsRemovableDiscontinuity}(f,x_0,\mathbb{R},\mathbb{R}) &\coloneqq \exists L \in \mathbb{R}\; \bigl(\operatorname{TendsTo}(f,A,x_0,L,\mathbb{R}) \land L \ne f(x_0)\bigr).\\
+\operatorname{IsJumpDiscontinuity}(f,x_0,\mathbb{R},\mathbb{R}) &\coloneqq \exists L_{-}, L_{+} \in \mathbb{R}\; \bigl(\operatorname{LeftLimit}(f,A,x_0,L_{-},\mathbb{R}) \land \operatorname{RightLimit}(f,A,x_0,L_{+},\mathbb{R}) \land L_{-} \ne L_{+}\bigr).\\
+\operatorname{IsEssentialDiscontinuity}(f,x_0,\mathbb{R},\mathbb{R}) &\coloneqq \neg \operatorname{IsRemovableDiscontinuity}(f,x_0,\mathbb{R},\mathbb{R}).
 \end{aligned}
 \]
 \end{remark*}
@@ -354,10 +494,13 @@ Let $A \subseteq \mathbb{R}$, let $f:A \to \mathbb{R}$, and let $x_0 \in A$ with
 
 \begin{remark*}[Negation predicate reading]
 \[
+  f\colon A\to\mathbb{R},\qquad
+  A\colon A\to\mathbb{R},\\
+
 \begin{aligned}
-\neg \operatorname{IsRemovableDiscontinuity}(f,x_0) &\Longleftrightarrow \forall L \in \mathbb{R}\; \bigl(\neg\operatorname{TendsTo}(f,A,x_0,L) \lor L = f(x_0)\bigr).\\
-\neg \operatorname{IsJumpDiscontinuity}(f,x_0) &\Longleftrightarrow \forall L_{-}, L_{+} \in \mathbb{R}\; \bigl(\neg\operatorname{LeftLimit}(f,A,x_0,L_{-}) \lor \neg\operatorname{RightLimit}(f,A,x_0,L_{+}) \lor L_{-} = L_{+}\bigr).\\
-\neg \operatorname{IsEssentialDiscontinuity}(f,x_0) &\Longleftrightarrow \operatorname{IsRemovableDiscontinuity}(f,x_0).
+\neg \operatorname{IsRemovableDiscontinuity}(f,x_0,\mathbb{R},\mathbb{R}) &\Longleftrightarrow \forall L \in \mathbb{R}\; \bigl(\neg\operatorname{TendsTo}(f,A,x_0,L,\mathbb{R}) \lor L = f(x_0)\bigr).\\
+\neg \operatorname{IsJumpDiscontinuity}(f,x_0,\mathbb{R},\mathbb{R}) &\Longleftrightarrow \forall L_{-}, L_{+} \in \mathbb{R}\; \bigl(\neg\operatorname{LeftLimit}(f,A,x_0,L_{-},\mathbb{R}) \lor \neg\operatorname{RightLimit}(f,A,x_0,L_{+},\mathbb{R}) \lor L_{-} = L_{+}\bigr).\\
+\neg \operatorname{IsEssentialDiscontinuity}(f,x_0,\mathbb{R},\mathbb{R}) &\Longleftrightarrow \operatorname{IsRemovableDiscontinuity}(f,x_0,\mathbb{R},\mathbb{R}).
 \end{aligned}
 \]
 \end{remark*}
@@ -370,6 +513,34 @@ Let $A \subseteq \mathbb{R}$, let $f:A \to \mathbb{R}$, and let $x_0 \in A$ with
 \item Jump discontinuity fails when at least one of the one-sided limits does not exist, or when both one-sided limits exist but are equal (making it potentially removable or continuous).
 \item Essential discontinuity fails when the discontinuity is removable (the bilateral limit exists and differs from $f(x_0)$).
 \end{itemize}
+
+
+  \item[\operatorname{IsRemovableDiscontinuity}.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\begin{aligned}
+\neg\text{Removable}
+&\Longleftrightarrow
+\forall L \in \mathbb{R}\;
+\bigl(\lim_{x \to x_0} f(x) \ne L \lor L = f(x_0)\bigr),\\
+\neg\text{Jump}
+&\Longleftrightarrow
+\forall L_-,L_+ \in \mathbb{R}\;
+\bigl(\lim_{x \to x_0^-} f(x)\ne L_-
+\lor \lim_{x \to x_0^+} f(x)\ne L_+
+\lor L_-=L_+\bigr),\\
+\neg\text{Essential}
+&\Longleftrightarrow
+\text{Removable}.
+\end{aligned}
+  \]
+  \[
+\begin{aligned}
+\neg \operatorname{IsRemovableDiscontinuity}(f,x_0,\mathbb{R},\mathbb{R}) &\Longleftrightarrow \forall L \in \mathbb{R}\; \bigl(\neg\operatorname{TendsTo}(f,A,x_0,L,\mathbb{R}) \lor L = f(x_0)\bigr).\\
+\neg \operatorname{IsJumpDiscontinuity}(f,x_0,\mathbb{R},\mathbb{R}) &\Longleftrightarrow \forall L_{-}, L_{+} \in \mathbb{R}\; \bigl(\neg\operatorname{LeftLimit}(f,A,x_0,L_{-},\mathbb{R}) \lor \neg\operatorname{RightLimit}(f,A,x_0,L_{+},\mathbb{R}) \lor L_{-} = L_{+}\bigr).\\
+\neg \operatorname{IsEssentialDiscontinuity}(f,x_0,\mathbb{R},\mathbb{R}) &\Longleftrightarrow \operatorname{IsRemovableDiscontinuity}(f,x_0,\mathbb{R},\mathbb{R}).
+\end{aligned}
+  \]
 \end{description}
 \end{remark*}
 
@@ -378,11 +549,11 @@ Let $A \subseteq \mathbb{R}$, let $f:A \to \mathbb{R}$, and let $x_0 \in A$ with
   \item[Exposition.]
 \[
 \begin{aligned}
-\neg \operatorname{IsRemovableDiscontinuity}(f,x_0) &\Longleftrightarrow
+\neg \operatorname{IsRemovableDiscontinuity}(f,x_0,\mathbb{R},\mathbb{R}) &\Longleftrightarrow
 \underbrace{\neg \exists L \in \mathbb{R}\; \lim_{x \to x_0} f(x) = L}_{\text{no bilateral limit exists}}
 \;\lor\;
 \underbrace{\lim_{x \to x_0} f(x) = f(x_0)}_{\text{limit equals function value}}.\\
-\neg \operatorname{IsJumpDiscontinuity}(f,x_0) &\Longleftrightarrow
+\neg \operatorname{IsJumpDiscontinuity}(f,x_0,\mathbb{R},\mathbb{R}) &\Longleftrightarrow
 \underbrace{\neg \exists L_{-} \in \mathbb{R}\; \lim_{x \to x_0^-} f(x) = L_{-}}_{\text{no left limit}}
 \;\lor\;
 \underbrace{\neg \exists L_{+} \in \mathbb{R}\; \lim_{x \to x_0^+} f(x) = L_{+}}_{\text{no right limit}}\\
@@ -390,6 +561,34 @@ Let $A \subseteq \mathbb{R}$, let $f:A \to \mathbb{R}$, and let $x_0 \in A$ with
 \underbrace{\lim_{x \to x_0^-} f(x) = \lim_{x \to x_0^+} f(x)}_{\text{one-sided limits agree}}.
 \end{aligned}
 \]
+
+
+  \item[\operatorname{IsRemovableDiscontinuity}.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\begin{aligned}
+\neg\text{Removable}
+&\Longleftrightarrow
+\forall L \in \mathbb{R}\;
+\bigl(\lim_{x \to x_0} f(x) \ne L \lor L = f(x_0)\bigr),\\
+\neg\text{Jump}
+&\Longleftrightarrow
+\forall L_-,L_+ \in \mathbb{R}\;
+\bigl(\lim_{x \to x_0^-} f(x)\ne L_-
+\lor \lim_{x \to x_0^+} f(x)\ne L_+
+\lor L_-=L_+\bigr),\\
+\neg\text{Essential}
+&\Longleftrightarrow
+\text{Removable}.
+\end{aligned}
+  \]
+  \[
+\begin{aligned}
+\neg \operatorname{IsRemovableDiscontinuity}(f,x_0,\mathbb{R},\mathbb{R}) &\Longleftrightarrow \forall L \in \mathbb{R}\; \bigl(\neg\operatorname{TendsTo}(f,A,x_0,L,\mathbb{R}) \lor L = f(x_0)\bigr).\\
+\neg \operatorname{IsJumpDiscontinuity}(f,x_0,\mathbb{R},\mathbb{R}) &\Longleftrightarrow \forall L_{-}, L_{+} \in \mathbb{R}\; \bigl(\neg\operatorname{LeftLimit}(f,A,x_0,L_{-},\mathbb{R}) \lor \neg\operatorname{RightLimit}(f,A,x_0,L_{+},\mathbb{R}) \lor L_{-} = L_{+}\bigr).\\
+\neg \operatorname{IsEssentialDiscontinuity}(f,x_0,\mathbb{R},\mathbb{R}) &\Longleftrightarrow \operatorname{IsRemovableDiscontinuity}(f,x_0,\mathbb{R},\mathbb{R}).
+\end{aligned}
+  \]
 \end{description}
 \end{remark*}
 

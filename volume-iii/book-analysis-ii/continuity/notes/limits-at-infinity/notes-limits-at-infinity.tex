@@ -60,10 +60,10 @@ $M\in\mathbb{R}$ there exists $x\in X$ such that $x<M$.
 \begin{aligned}
 \neg\left(+\infty\in\operatorname{Closure}_{\overline{\mathbb{R}}}(X)\right)
 &\Longleftrightarrow
-\operatorname{BoundedAbove}(X,\mathbb{R},\le),\\
+\operatorname{BoundedAbove}(X,\mathbb{R}),\\
 \neg\left(-\infty\in\operatorname{Closure}_{\overline{\mathbb{R}}}(X)\right)
 &\Longleftrightarrow
-\operatorname{BoundedBelow}(X,\mathbb{R},\le).
+\operatorname{BoundedBelow}(X,\mathbb{R}).
 \end{aligned}
 \]
 \end{remark*}
@@ -73,6 +73,30 @@ $M\in\mathbb{R}$ there exists $x\in X$ such that $x<M$.
   \item[Exposition.]
 Infinite adherence fails at $+\infty$ exactly when $X$ is bounded above,
 and fails at $-\infty$ exactly when $X$ is bounded below.
+
+
+  \item[\operatorname{Closure}.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\begin{aligned}
+&\neg(+\infty\text{ is adherent to }X)
+\Longleftrightarrow
+\exists M\in\mathbb{R}\;\forall x\in X\;(x\le M),\\
+&\neg(-\infty\text{ is adherent to }X)
+\Longleftrightarrow
+\exists M\in\mathbb{R}\;\forall x\in X\;(x\ge M).
+\end{aligned}
+  \]
+  \[
+\begin{aligned}
+\neg\left(+\infty\in\operatorname{Closure}_{\overline{\mathbb{R}}}(X)\right)
+&\Longleftrightarrow
+\operatorname{BoundedAbove}(X,\mathbb{R}),\\
+\neg\left(-\infty\in\operatorname{Closure}_{\overline{\mathbb{R}}}(X)\right)
+&\Longleftrightarrow
+\operatorname{BoundedBelow}(X,\mathbb{R}).
+\end{aligned}
+  \]
 \end{description}
 \end{remark*}
 
@@ -84,6 +108,30 @@ and fails at $-\infty$ exactly when $X$ is bounded below.
 \qquad
 \underbrace{\exists M\in\mathbb{R}\;\forall x\in X\;(x\ge M)}_{\text{finite lower bound}}.
 \]
+
+
+  \item[\operatorname{Closure}.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\begin{aligned}
+&\neg(+\infty\text{ is adherent to }X)
+\Longleftrightarrow
+\exists M\in\mathbb{R}\;\forall x\in X\;(x\le M),\\
+&\neg(-\infty\text{ is adherent to }X)
+\Longleftrightarrow
+\exists M\in\mathbb{R}\;\forall x\in X\;(x\ge M).
+\end{aligned}
+  \]
+  \[
+\begin{aligned}
+\neg\left(+\infty\in\operatorname{Closure}_{\overline{\mathbb{R}}}(X)\right)
+&\Longleftrightarrow
+\operatorname{BoundedAbove}(X,\mathbb{R}),\\
+\neg\left(-\infty\in\operatorname{Closure}_{\overline{\mathbb{R}}}(X)\right)
+&\Longleftrightarrow
+\operatorname{BoundedBelow}(X,\mathbb{R}).
+\end{aligned}
+  \]
 \end{description}
 \end{remark*}
 
@@ -95,9 +143,9 @@ adherence uses rays.
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:subset]{Subset}
-  \item \hyperref[def:reals]{Real Numbers}
   \item \hyperref[def:extended-real-numbers]{Extended Real Numbers}
+  \item \hyperref[def:reals]{Real Numbers}
+  \item \hyperref[def:subset]{Subset}
   \item \hyperref[def:ray]{Ray}
 \end{itemize}
 \end{dependencies}
@@ -145,6 +193,20 @@ for every $\varepsilon > 0$ there exists $M \in \mathbb{R}$ such that for every 
 \begin{description}
   \item[Exposition.]
 The definition fails only when there is a fixed tolerance $\varepsilon_0$ that the function cannot satisfy on any tail of $X$, meaning every attempt to choose $M$ leaves some point $x > M$ with $|f(x) - L| \ge \varepsilon_0$.
+
+
+  \item[\operatorname{LimitAtInfinity}.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\begin{aligned}
+&\text{Let } X \subseteq \mathbb{R},\ \forall M \in \mathbb{R}\ \exists x \in X\ (x > M),\ f : X \to \mathbb{R},\ L \in \mathbb{R}.\\
+&\neg\bigl(\lim_{x \to +\infty} f(x) = L\bigr) \Longleftrightarrow \exists \varepsilon_0 > 0\ \forall M \in \mathbb{R}\ \exists x \in X\\
+&\qquad (x > M \land |f(x) - L| \ge \varepsilon_0).
+\end{aligned}
+  \]
+  \[
+\neg\operatorname{LimitAtInfinity}(f,+\infty,L) \Longleftrightarrow \exists \varepsilon_0 > 0\ \forall M \in \mathbb{R}\ \exists x \in X\ (x > M \land |f(x) - L| \ge \varepsilon_0).
+  \]
 \end{description}
 \end{remark*}
 
@@ -156,6 +218,20 @@ The definition fails only when there is a fixed tolerance $\varepsilon_0$ that t
 \underbrace{\forall M \in \mathbb{R}}_{\text{no tail succeeds}}
 \underbrace{\exists x \in X\ (x > M \land |f(x) - L| \ge \varepsilon_0)}_{\text{far-point violation}}.
 \]
+
+
+  \item[\operatorname{LimitAtInfinity}.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\begin{aligned}
+&\text{Let } X \subseteq \mathbb{R},\ \forall M \in \mathbb{R}\ \exists x \in X\ (x > M),\ f : X \to \mathbb{R},\ L \in \mathbb{R}.\\
+&\neg\bigl(\lim_{x \to +\infty} f(x) = L\bigr) \Longleftrightarrow \exists \varepsilon_0 > 0\ \forall M \in \mathbb{R}\ \exists x \in X\\
+&\qquad (x > M \land |f(x) - L| \ge \varepsilon_0).
+\end{aligned}
+  \]
+  \[
+\neg\operatorname{LimitAtInfinity}(f,+\infty,L) \Longleftrightarrow \exists \varepsilon_0 > 0\ \forall M \in \mathbb{R}\ \exists x \in X\ (x > M \land |f(x) - L| \ge \varepsilon_0).
+  \]
 \end{description}
 \end{remark*}
 

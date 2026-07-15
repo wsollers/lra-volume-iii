@@ -60,10 +60,10 @@ For an increasing function, the values just to the left of $c$ form a monotone i
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[ax:completeness-of-reals]{Completeness of $\mathbb{R}$}
   \item \hyperref[def:function-monotone]{Monotone Function}
-  \item \hyperref[def:supremum]{Supremum}
   \item \hyperref[def:infimum]{Infimum}
+  \item \hyperref[def:supremum]{Supremum}
+  \item \hyperref[ax:completeness-of-reals]{Completeness of $\mathbb{R}$}
 \end{itemize}
 \end{dependencies}
 \begin{corollarybox}{Corollary (Continuity Criterion for Monotone Functions)}
@@ -87,9 +87,12 @@ Let $I \subseteq \mathbb{R}$ be an interval, let $f:I \to \mathbb{R}$ be monoton
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{IsContinuous}(f,c)
+  f\colon A\to\mathbb{R},\qquad
+  c\colon A\to\mathbb{R},\\
+
+\operatorname{IsContinuous}(f,c,\mathbb{R},\mathbb{R})
 \Longleftrightarrow
-\bigl(\operatorname{LeftLimit}(f,c,f(c)) \land \operatorname{RightLimit}(f,c,f(c))\bigr).
+\bigl(\operatorname{LeftLimit}(f,c,f(c),\mathbb{R},\mathbb{R}) \land \operatorname{RightLimit}(f,c,f(c),\mathbb{R},\mathbb{R})\bigr).
 \]
 \end{remark*}
 
@@ -108,11 +111,14 @@ Let $I \subseteq \mathbb{R}$ be an interval, let $f:I \to \mathbb{R}$ be monoton
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{IsContinuous}(f,c)
+  f\colon A\to\mathbb{R},\qquad
+  c\colon A\to\mathbb{R},\\
+
+\neg\operatorname{IsContinuous}(f,c,\mathbb{R},\mathbb{R})
 \Longleftrightarrow
-\left(\exists L^{-}\,[\operatorname{LeftLimit}(f,c,L^{-}) \land L^{-} < f(c)]\right)
+\left(\exists L^{-}\,[\operatorname{LeftLimit}(f,c,L^{-},\mathbb{R},\mathbb{R}) \land L^{-} < f(c)]\right)
 \lor
-\left(\exists L^{+}\,[\operatorname{RightLimit}(f,c,L^{+}) \land f(c) < L^{+}]\right).
+\left(\exists L^{+}\,[\operatorname{RightLimit}(f,c,L^{+},\mathbb{R},\mathbb{R}) \land f(c) < L^{+}]\right).
 \]
 \end{remark*}
 
@@ -120,6 +126,27 @@ Let $I \subseteq \mathbb{R}$ be an interval, let $f:I \to \mathbb{R}$ be monoton
 \begin{description}
   \item[Exposition.]
 Continuity can fail only through a jump: either the graph arrives at $c$ from the left strictly below $f(c)$, or it departs to the right strictly above $f(c)$. Both jumps reflect the inability of the one-sided limits to match the function value at the interior point.
+
+
+  \item[\operatorname{IsContinuous}.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\begin{aligned}
+&\text{Let } I \subseteq \mathbb{R} \text{ be an interval, } f:I\to\mathbb{R} \text{ monotone increasing, and } c \text{ an interior point of } I.\\
+&\neg\bigl(f \text{ is continuous at } c\bigr)
+\Longleftrightarrow
+\left(\lim_{x\to c^-} f(x) < f(c)\right)
+\lor
+\left(f(c) < \lim_{x\to c^+} f(x)\right).
+\end{aligned}
+  \]
+  \[
+\neg\operatorname{IsContinuous}(f,c,\mathbb{R},\mathbb{R})
+\Longleftrightarrow
+\left(\exists L^{-}\,[\operatorname{LeftLimit}(f,c,L^{-},\mathbb{R},\mathbb{R}) \land L^{-} < f(c)]\right)
+\lor
+\left(\exists L^{+}\,[\operatorname{RightLimit}(f,c,L^{+},\mathbb{R},\mathbb{R}) \land f(c) < L^{+}]\right).
+  \]
 \end{description}
 \end{remark*}
 
@@ -127,12 +154,33 @@ Continuity can fail only through a jump: either the graph arrives at $c$ from th
 \begin{description}
   \item[Exposition.]
 \[
-\neg\operatorname{IsContinuous}(f,c)
+\neg\operatorname{IsContinuous}(f,c,\mathbb{R},\mathbb{R})
 =
-\underbrace{\left(\exists L^{-}\,[\operatorname{LeftLimit}(f,c,L^{-}) \land L^{-} < f(c)]\right)}_{\text{left jump at } c}
+\underbrace{\left(\exists L^{-}\,[\operatorname{LeftLimit}(f,c,L^{-},\mathbb{R},\mathbb{R}) \land L^{-} < f(c)]\right)}_{\text{left jump at } c}
 \lor
-\underbrace{\left(\exists L^{+}\,[\operatorname{RightLimit}(f,c,L^{+}) \land f(c) < L^{+}]\right)}_{\text{right jump at } c}.
+\underbrace{\left(\exists L^{+}\,[\operatorname{RightLimit}(f,c,L^{+},\mathbb{R},\mathbb{R}) \land f(c) < L^{+}]\right)}_{\text{right jump at } c}.
 \]
+
+
+  \item[\operatorname{IsContinuous}.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\begin{aligned}
+&\text{Let } I \subseteq \mathbb{R} \text{ be an interval, } f:I\to\mathbb{R} \text{ monotone increasing, and } c \text{ an interior point of } I.\\
+&\neg\bigl(f \text{ is continuous at } c\bigr)
+\Longleftrightarrow
+\left(\lim_{x\to c^-} f(x) < f(c)\right)
+\lor
+\left(f(c) < \lim_{x\to c^+} f(x)\right).
+\end{aligned}
+  \]
+  \[
+\neg\operatorname{IsContinuous}(f,c,\mathbb{R},\mathbb{R})
+\Longleftrightarrow
+\left(\exists L^{-}\,[\operatorname{LeftLimit}(f,c,L^{-},\mathbb{R},\mathbb{R}) \land L^{-} < f(c)]\right)
+\lor
+\left(\exists L^{+}\,[\operatorname{RightLimit}(f,c,L^{+},\mathbb{R},\mathbb{R}) \land f(c) < L^{+}]\right).
+  \]
 \end{description}
 \end{remark*}
 
@@ -175,12 +223,15 @@ j_f(c)\coloneqq f(c^+)-f(c^-).
 
 \begin{remark*}[Predicate reading]
 \[
+  f\colon A\to\mathbb{R},\qquad
+  c\colon A\to\mathbb{R},\\
+
 \operatorname{IsInterval}(I,\mathbb{R})
-\land \operatorname{OrderPreserving}(f,I)
-\land \operatorname{IsInterior}(c,I)
+\land \operatorname{OrderPreserving}(f,I,\mathsf{OrderedSet}(\mathbb{R},\leq))
+\land \operatorname{IsInterior}(c,I,\mathbb{R})
 \land \exists L_-,L_+\in\mathbb{R}\;
-\bigl(\operatorname{LeftLimit}(f,c,L_-)
-\land \operatorname{RightLimit}(f,c,L_+)
+\bigl(\operatorname{LeftLimit}(f,c,L_-,\mathbb{R},\mathbb{R})
+\land \operatorname{RightLimit}(f,c,L_+,\mathbb{R},\mathbb{R})
 \land j=L_+-L_-\bigr).
 \]
 \end{remark*}
@@ -206,13 +257,16 @@ j_f(c)\coloneqq f(c^+)-f(c^-).
 
 \begin{remark*}[Negation predicate reading]
 \[
+  f\colon A\to\mathbb{R},\qquad
+  c\colon A\to\mathbb{R},\\
+
 \neg\operatorname{IsInterval}(I,\mathbb{R})
-\lor \neg\operatorname{OrderPreserving}(f,I)
-\lor \neg\operatorname{IsInterior}(c,I)
+\lor \neg\operatorname{OrderPreserving}(f,I,\mathsf{OrderedSet}(\mathbb{R},\leq))
+\lor \neg\operatorname{IsInterior}(c,I,\mathbb{R})
 \lor
 \forall L_-,L_+\in\mathbb{R}\;
-\bigl(\neg\operatorname{LeftLimit}(f,c,L_-)
-\lor \neg\operatorname{RightLimit}(f,c,L_+)
+\bigl(\neg\operatorname{LeftLimit}(f,c,L_-,\mathbb{R},\mathbb{R})
+\lor \neg\operatorname{RightLimit}(f,c,L_+,\mathbb{R},\mathbb{R})
 \lor j\ne L_+-L_-\bigr).
 \]
 \end{remark*}
@@ -223,6 +277,36 @@ j_f(c)\coloneqq f(c^+)-f(c^-).
 A proposed jump value fails when a required one-sided limit does not
 exist, or when both one-sided limits exist but the proposed value is not
 their difference.
+
+
+  \item[\operatorname{IsInterval}.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\begin{aligned}
+&\forall I\subseteq\mathbb{R}\;\forall f:I\to\mathbb{R}\;\forall c\in I\;\forall j\in\mathbb{R}:\\
+&\neg\bigl(j=j_f(c)\bigr)
+\Longleftrightarrow
+\neg\bigl(\forall x,y\in I\;\forall z\in\mathbb{R}\;(x<z<y\Rightarrow z\in I)\bigr)\\
+&\qquad\lor
+\neg\bigl(\forall x,y\in I\;(x<y\Rightarrow f(x)\le f(y))\bigr)
+\lor \neg\bigl(\exists a,b\in I\;(a<c<b)\bigr)\\
+&\qquad\lor
+\forall L_-,L_+\in\mathbb{R}\;
+\bigl(\lim_{x\to c^-}f(x)\ne L_-
+\lor \lim_{x\to c^+}f(x)\ne L_+
+\lor j\ne L_+-L_-\bigr).
+\end{aligned}
+  \]
+  \[
+\neg\operatorname{IsInterval}(I,\mathbb{R})
+\lor \neg\operatorname{OrderPreserving}(f,I,\mathsf{OrderedSet}(\mathbb{R},\leq))
+\lor \neg\operatorname{IsInterior}(c,I,\mathbb{R})
+\lor
+\forall L_-,L_+\in\mathbb{R}\;
+\bigl(\neg\operatorname{LeftLimit}(f,c,L_-,\mathbb{R},\mathbb{R})
+\lor \neg\operatorname{RightLimit}(f,c,L_+,\mathbb{R},\mathbb{R})
+\lor j\ne L_+-L_-\bigr).
+  \]
 \end{description}
 \end{remark*}
 
@@ -236,6 +320,36 @@ their difference.
 \lor
 \underbrace{j\ne f(c^+)-f(c^-)}_{\text{incorrect jump magnitude}}.
 \]
+
+
+  \item[\operatorname{IsInterval}.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\begin{aligned}
+&\forall I\subseteq\mathbb{R}\;\forall f:I\to\mathbb{R}\;\forall c\in I\;\forall j\in\mathbb{R}:\\
+&\neg\bigl(j=j_f(c)\bigr)
+\Longleftrightarrow
+\neg\bigl(\forall x,y\in I\;\forall z\in\mathbb{R}\;(x<z<y\Rightarrow z\in I)\bigr)\\
+&\qquad\lor
+\neg\bigl(\forall x,y\in I\;(x<y\Rightarrow f(x)\le f(y))\bigr)
+\lor \neg\bigl(\exists a,b\in I\;(a<c<b)\bigr)\\
+&\qquad\lor
+\forall L_-,L_+\in\mathbb{R}\;
+\bigl(\lim_{x\to c^-}f(x)\ne L_-
+\lor \lim_{x\to c^+}f(x)\ne L_+
+\lor j\ne L_+-L_-\bigr).
+\end{aligned}
+  \]
+  \[
+\neg\operatorname{IsInterval}(I,\mathbb{R})
+\lor \neg\operatorname{OrderPreserving}(f,I,\mathsf{OrderedSet}(\mathbb{R},\leq))
+\lor \neg\operatorname{IsInterior}(c,I,\mathbb{R})
+\lor
+\forall L_-,L_+\in\mathbb{R}\;
+\bigl(\neg\operatorname{LeftLimit}(f,c,L_-,\mathbb{R},\mathbb{R})
+\lor \neg\operatorname{RightLimit}(f,c,L_+,\mathbb{R},\mathbb{R})
+\lor j\ne L_+-L_-\bigr).
+  \]
 \end{description}
 \end{remark*}
 
@@ -275,7 +389,11 @@ Let $I \subseteq \mathbb{R}$ be an interval, let $f:I \to \mathbb{R}$ be monoton
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{Monotone}\bigl(f,\mathsf{OrderedSet}(I,\leq)\bigr) \land \operatorname{IsDiscontinuous}(f,a) \Longrightarrow \exists L^{-},L^{+} \in \mathbb{R} \; \bigl(\operatorname{LeftLimit}(f,a,L^{-}) \land \operatorname{RightLimit}(f,a,L^{+})\bigr).
+  f\colon A\to\mathbb{R},\qquad
+  a\colon A\to\mathbb{R},\qquad
+  I\subseteq\mathbb{R},\\
+
+\operatorname{Monotone}\bigl(f,\mathsf{OrderedSet}(I,\leq)\bigr) \land \operatorname{IsDiscontinuous}(f,a,\mathbb{R},\mathbb{R}) \Longrightarrow \exists L^{-},L^{+} \in \mathbb{R} \; \bigl(\operatorname{LeftLimit}(f,a,L^{-},\mathbb{R},\mathbb{R}) \land \operatorname{RightLimit}(f,a,L^{+},\mathbb{R},\mathbb{R})\bigr).
 \]
 \end{remark*}
 
@@ -312,12 +430,15 @@ a\ne b\land
 
 \begin{remark*}[Predicate reading]
 \[
+  f\colon A\to\mathbb{R},\qquad
+  I\subseteq\mathbb{R},\\
+
 \operatorname{Monotone}\bigl(f,\mathsf{OrderedSet}(I,\leq)\bigr)\land
 \begin{cases}
 a,b\in I,\\
 a\neq b,\\
-\operatorname{IsDiscontinuous}(f,a),\\
-\operatorname{IsDiscontinuous}(f,b)
+\operatorname{IsDiscontinuous}(f,a,\mathbb{R},\mathbb{R}),\\
+\operatorname{IsDiscontinuous}(f,b,\mathbb{R},\mathbb{R})
 \end{cases}
 \Longrightarrow
 (f(a^-),f(a^+))\cap(f(b^-),f(b^+))=\varnothing.
@@ -350,7 +471,10 @@ Let $I \subseteq \mathbb{R}$ be an interval and let $f:I\to\mathbb{R}$ be monoto
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{Monotone}\bigl(f,\mathsf{OrderedSet}(I,\leq)\bigr) \Longrightarrow \#\{c \in I : \operatorname{IsDiscontinuous}(f,c)\} \le \aleph_0.
+  f\colon A\to\mathbb{R},\qquad
+  I\subseteq\mathbb{R},\\
+
+\operatorname{Monotone}\bigl(f,\mathsf{OrderedSet}(I,\leq)\bigr) \Longrightarrow \#\{c \in I : \operatorname{IsDiscontinuous}(f,c,\mathbb{R},\mathbb{R})\} \le \aleph_0.
 \]
 \end{remark*}
 
@@ -381,9 +505,11 @@ Let $f:[a,b]\to\mathbb{R}$ be monotone. Then the set $\{x\in[a,b]:f \text{ is co
 
 \begin{remark*}[Predicate reading]
 \[
+  f\colon A\to\mathbb{R},\\
+
 \operatorname{Monotone}\bigl(f,\mathsf{OrderedSet}([a,b],\leq)\bigr)
 \Longrightarrow
-\operatorname{IsDense}\bigl(\{x\in[a,b]:\operatorname{IsContinuous}(f,x)\},[a,b]\bigr).
+\operatorname{IsDense}\bigl(\{x\in[a,b]:\operatorname{IsContinuous}(f,x,\mathbb{R},\mathbb{R})\},[a,b]\bigr).
 \]
 \end{remark*}
 
@@ -398,11 +524,36 @@ Let $f:[a,b]\to\mathbb{R}$ be monotone. Then the set $\{x\in[a,b]:f \text{ is co
 
 \begin{remark*}[Negation predicate reading]
 \[
+  f\colon A\to\mathbb{R},\\
+
 \exists u,v\in[a,b]\;
 \Bigl(u<v \land
-\forall c\in(u,v)\;\neg\operatorname{IsContinuous}(f,c)\Bigr).
+\forall c\in(u,v)\;\neg\operatorname{IsContinuous}(f,c,\mathbb{R},\mathbb{R})\Bigr).
 \]
 \end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  The negated statement isolates the obstruction to the asserted condition.
+
+  \item[\operatorname{IsContinuous}.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\exists u,v\in[a,b]\;
+\Bigl(u<v \land
+\forall c\in(u,v)\;\exists \varepsilon_c>0\;\forall \delta>0\;\exists x\in[a,b]\;
+\bigl(|x-c|<\delta\land |f(x)-f(c)|\ge\varepsilon_c\bigr)\Bigr).
+  \]
+  \[
+\exists u,v\in[a,b]\;
+\Bigl(u<v \land
+\forall c\in(u,v)\;\neg\operatorname{IsContinuous}(f,c,\mathbb{R},\mathbb{R})\Bigr).
+  \]
+\end{description}
+\end{remark*}
+
+
 
 \begin{remark*}[Interpretation]
 A monotone function on a closed interval can only jump at most countably many times, so the points of discontinuity leave room inside every subinterval for a continuity point. Thus, although the function may fail to be continuous at isolated or countably many locations, continuity still occurs throughout any interval one inspects. This property ensures that monotone functions retain many features of continuous functions when arguments depend only on dense sets of continuity points.
@@ -434,8 +585,10 @@ Let $f:[a,b]\to\mathbb{R}$ be continuous on $[a,b]$. Then $f$ is injective if an
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{IsContinuous}(f,[a,b]) \Longrightarrow
-\bigl(\operatorname{Injective}(f) \Longleftrightarrow
+  f\colon A\to\mathbb{R},\\
+
+\operatorname{IsContinuous}(f,[a,b],\mathbb{R},\mathbb{R}) \Longrightarrow
+\bigl(\operatorname{Injective}(f,A,\mathbb{R}) \Longleftrightarrow
 \operatorname{StrictlyMonotone}(f,[a,b])\bigr).
 \]
 \end{remark*}
@@ -468,7 +621,14 @@ Let $I\subseteq\mathbb{R}$ be an interval and let $f:I\to\mathbb{R}$ be strictly
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-The displayed quantified statement is the predicate-level form of $label: its hypotheses name the input conditions, and its conclusion names the asserted structure or relation.
+\[
+\begin{aligned}
+&\text{Let } I\subseteq\mathbb{R} \text{ be an interval and } f:I\to\mathbb{R}.\\
+&\Bigl[(\forall x,y\in I)(x<y \Rightarrow f(x)<f(y)) \land \forall c\in I\;\forall \varepsilon>0\;\exists \delta>0\;\forall x\in I\bigl(|x-c|<\delta \Rightarrow |f(x)-f(c)|<\varepsilon\bigr)\Bigr]\\
+&\quad\Longrightarrow \Bigl[\exists g:f(I)\to I \text{ such that } (\forall x\in I)\, g(f(x))=x \land (\forall y\in f(I))\, f(g(y))=y\\
+&\qquad\land (\forall u,v\in f(I))(u<v \Rightarrow g(u)<g(v)) \land \forall y\in f(I)\;\forall \varepsilon>0\;\exists \eta>0\;\forall u\in f(I)\bigl(|u-y|<\eta \Rightarrow |g(u)-g(y)|<\varepsilon\bigr)\Bigr].
+\end{aligned}
+\]
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -477,9 +637,9 @@ A continuous strictly monotone function on an interval never reverses the order 
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[thm:bolzano-intermediate-value]{Bolzano's Intermediate Value Theorem}
-  \item \hyperref[def:function-strictly-increasing]{Strictly Increasing Function}
   \item \hyperref[def:function-strictly-decreasing]{Strictly Decreasing Function}
+  \item \hyperref[def:function-strictly-increasing]{Strictly Increasing Function}
+  \item \hyperref[thm:bolzano-intermediate-value]{Bolzano's Intermediate Value Theorem}
   \item \hyperref[def:continuous-at-point]{Continuity at a Point}
 \end{itemize}
 \end{dependencies}

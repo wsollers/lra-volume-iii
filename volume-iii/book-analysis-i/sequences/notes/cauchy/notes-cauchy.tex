@@ -37,7 +37,7 @@ Let $(x_n)$ be a real sequence. The sequence $(x_n)$ is a
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{IsCauchy}(x_n)
+\operatorname{IsCauchy}(x_n,\mathbb{R})
 \coloneqq
 \forall \varepsilon>0 \;\exists N\in\mathbb{N}\;\forall m,n\ge N
 \;\bigl(|x_m-x_n|<\varepsilon\bigr).
@@ -57,11 +57,32 @@ Let $(x_n)$ be a real sequence. The sequence $(x_n)$ is a
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{IsCauchy}(x_n)
+\neg\operatorname{IsCauchy}(x_n,\mathbb{R})
 \Longleftrightarrow
 \exists \varepsilon>0 \;\forall N\in\mathbb{N}\;\exists m,n\ge N
 \;\bigl(|x_m-x_n|\ge\varepsilon\bigr).
 \]
+\end{remark*}
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+Failure is witnessed by the negated condition displayed above.
+  \item[\operatorname{IsCauchy}.]
+\[
+\begin{aligned}
+&(x_n)\text{ is not Cauchy}\\
+&\quad\Longleftrightarrow\quad
+\exists \varepsilon>0 \;\forall N\in\mathbb{N}\;\exists m,n\ge N
+\;\bigl(|x_m-x_n|\ge\varepsilon\bigr).
+\end{aligned}
+\]
+\[
+\neg\operatorname{IsCauchy}(x_n,\mathbb{R})
+\Longleftrightarrow
+\exists \varepsilon>0 \;\forall N\in\mathbb{N}\;\exists m,n\ge N
+\;\bigl(|x_m-x_n|\ge\varepsilon\bigr).
+\]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -112,9 +133,9 @@ Cauchy.
 \[
 \forall (x_n)\subseteq\mathbb{R}\;
 \Bigl(
-  \exists L\in\mathbb{R}\;\operatorname{ConvergesTo}(x_n,L)
+  \exists L\in\mathbb{R}\;\operatorname{ConvergesTo}(x_n,L,\mathbb{R})
   \Longrightarrow
-  \operatorname{IsCauchy}(x_n)
+  \operatorname{IsCauchy}(x_n,\mathbb{R})
 \Bigr).
 \]
 \end{remark*}
@@ -166,9 +187,9 @@ Every Cauchy real sequence is bounded.
 \[
 \forall (x_n)\subseteq\mathbb{R}\;
 \bigl(
-  \operatorname{IsCauchy}(x_n)
+  \operatorname{IsCauchy}(x_n,\mathbb{R})
   \Longrightarrow
-  \operatorname{Bounded}(x_n)
+  \operatorname{Bounded}(x_n,\mathbb{R})
 \bigr).
 \]
 \end{remark*}
@@ -191,13 +212,13 @@ before that tail can be absorbed into a single larger bound.
 
 \begin{theorembox}{Theorem (Cauchy Sequence with a Convergent Subsequence)}
 \begin{theorem}[Cauchy Sequence with a Convergent Subsequence]
-\label{thm:cauchy-sequence-with-convergent-subsequence}
+\label{thm:cauchy-convergent-subsequence-converges}
 Let $(x_n)$ be a Cauchy real sequence. If a subsequence of $(x_n)$
 converges to $L\in\mathbb{R}$, then $(x_n)$ converges to $L$.
 
 \smallskip
 \noindent
-\hyperref[prf:cauchy-sequence-with-convergent-subsequence]{\textit{Go to proof.}}
+\hyperref[prf:cauchy-convergent-subsequence-converges]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
 
@@ -235,11 +256,11 @@ converges to $L\in\mathbb{R}$, then $(x_n)$ converges to $L$.
 &\forall (x_n)\subseteq\mathbb{R}\;\forall L\in\mathbb{R}\\
 &\quad
 \Bigl(
-  \operatorname{IsCauchy}(x_n)
+  \operatorname{IsCauchy}(x_n,\mathbb{R})
   \land
-  \operatorname{IsClusterValue}(x_n,L)
+  \operatorname{IsClusterValue}(x_n,L,\mathbb{R})
   \Longrightarrow
-  \operatorname{ConvergesTo}(x_n,L)
+  \operatorname{ConvergesTo}(x_n,L,\mathbb{R})
 \Bigr).
 \end{aligned}
 \]
@@ -253,10 +274,10 @@ the limit of the whole sequence.
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:cauchy-sequence]{Cauchy Sequence}
-  \item \hyperref[def:subsequence]{Subsequence}
-  \item \hyperref[def:subsequential-limit]{Subsequential Limit}
+  \item \hyperref[def:subsequence-of-sequence]{Subsequence}
   \item \hyperref[def:convergent-sequence]{Convergence of a Sequence}
+  \item \hyperref[def:cauchy-sequence]{Cauchy Sequence}
+  \item \hyperref[def:subsequential-limit]{Subsequential Limit}
 \end{itemize}
 \end{dependencies}
 
@@ -296,9 +317,9 @@ $(x_n)$ is Cauchy.
 \[
 \forall (x_n)\subseteq\mathbb{R}\;
 \Bigl(
-  \exists L\in\mathbb{R}\;\operatorname{ConvergesTo}(x_n,L)
+  \exists L\in\mathbb{R}\;\operatorname{ConvergesTo}(x_n,L,\mathbb{R})
   \Longleftrightarrow
-  \operatorname{IsCauchy}(x_n)
+  \operatorname{IsCauchy}(x_n,\mathbb{R})
 \Bigr).
 \]
 \end{remark*}
@@ -314,7 +335,7 @@ converging inside that space.
   \item \hyperref[thm:convergent-sequences-are-cauchy]{Convergent Sequences Are Cauchy}
   \item \hyperref[thm:cauchy-sequences-are-bounded]{Cauchy Sequences Are Bounded}
   \item \hyperref[thm:bolzano-weierstrass-sequences]{Bolzano-Weierstrass Theorem for Sequences}
-  \item \hyperref[thm:cauchy-sequence-with-convergent-subsequence]{Cauchy Sequence with a Convergent Subsequence}
+  \item \hyperref[thm:cauchy-convergent-subsequence-converges]{Cauchy Sequence with a Convergent Subsequence}
 \end{itemize}
 \end{dependencies}
 
@@ -348,7 +369,7 @@ $N$-tail has pairwise term distances less than $\varepsilon$.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{IsCauchy}(x_n)
+\operatorname{IsCauchy}(x_n,\mathbb{R})
 \Longleftrightarrow
 \forall \varepsilon>0\;\exists N\in\mathbb{N}\;\forall p,q\in\mathbb{N}
 \;\bigl(|x_{N+p}-x_{N+q}|<\varepsilon\bigr).
@@ -398,7 +419,7 @@ every sufficiently late tail has arbitrarily small pairwise diameter.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{IsCauchy}(x_n)
+\operatorname{IsCauchy}(x_n,\mathbb{R})
 \Longleftrightarrow
 \forall \varepsilon>0\;\exists N_0\in\mathbb{N}\;\forall N\ge N_0\;\forall m,n\ge N
 \;\bigl(|x_m-x_n|<\varepsilon\bigr).
@@ -454,9 +475,9 @@ If $(x_n)$ is a Cauchy real sequence, then
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{IsCauchy}(x_n)
+\operatorname{IsCauchy}(x_n,\mathbb{R})
 \Longrightarrow
-\operatorname{IsNull}\bigl(|x_{n+1}-x_n|\bigr).
+\operatorname{IsNull}\bigl(|x_{n+1}-x_n|,\mathbb{R}\bigr).
 \]
 \end{remark*}
 
@@ -505,9 +526,9 @@ Then $(\alpha x_n)$ is Cauchy.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{IsCauchy}(x_n)
+\operatorname{IsCauchy}(x_n,\mathbb{R})
 \Longrightarrow
-\operatorname{IsCauchy}(\alpha x_n).
+\operatorname{IsCauchy}(\alpha x_n,\mathbb{R}).
 \]
 \end{remark*}
 
@@ -557,11 +578,11 @@ Cauchy.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{IsCauchy}(x_n)
+\operatorname{IsCauchy}(x_n,\mathbb{R})
 \land
-\operatorname{IsCauchy}(y_n)
+\operatorname{IsCauchy}(y_n,\mathbb{R})
 \Longrightarrow
-\operatorname{IsCauchy}(x_n+y_n).
+\operatorname{IsCauchy}(x_n+y_n,\mathbb{R}).
 \]
 \end{remark*}
 
@@ -611,11 +632,11 @@ Cauchy.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{IsCauchy}(x_n)
+\operatorname{IsCauchy}(x_n,\mathbb{R})
 \land
-\operatorname{IsCauchy}(y_n)
+\operatorname{IsCauchy}(y_n,\mathbb{R})
 \Longrightarrow
-\operatorname{IsCauchy}(x_n-y_n).
+\operatorname{IsCauchy}(x_n-y_n,\mathbb{R}).
 \]
 \end{remark*}
 
@@ -626,9 +647,9 @@ sequence. It is often the form used to compare two approximating sequences.
 
 \begin{dependencies}
 \begin{itemize}
+  \item \hyperref[def:pointwise-difference-sequence]{Pointwise Difference of Sequences}
   \item \hyperref[thm:sum-cauchy-sequences]{Sums of Cauchy Sequences}
   \item \hyperref[thm:scalar-multiple-cauchy-sequence]{Scalar Multiples of Cauchy Sequences}
-  \item \hyperref[def:pointwise-difference-sequence]{Pointwise Difference of Sequences}
 \end{itemize}
 \end{dependencies}
 
@@ -667,11 +688,11 @@ $\alpha,\beta\in\mathbb{R}$. Then $(\alpha x_n+\beta y_n)$ is Cauchy.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{IsCauchy}(x_n)
+\operatorname{IsCauchy}(x_n,\mathbb{R})
 \land
-\operatorname{IsCauchy}(y_n)
+\operatorname{IsCauchy}(y_n,\mathbb{R})
 \Longrightarrow
-\operatorname{IsCauchy}(\alpha x_n+\beta y_n).
+\operatorname{IsCauchy}(\alpha x_n+\beta y_n,\mathbb{R}).
 \]
 \end{remark*}
 
@@ -722,11 +743,11 @@ Cauchy.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{IsCauchy}(x_n)
+\operatorname{IsCauchy}(x_n,\mathbb{R})
 \land
-\operatorname{IsCauchy}(y_n)
+\operatorname{IsCauchy}(y_n,\mathbb{R})
 \Longrightarrow
-\operatorname{IsCauchy}(x_ny_n).
+\operatorname{IsCauchy}(x_ny_n,\mathbb{R}).
 \]
 \end{remark*}
 
@@ -737,8 +758,8 @@ is supplied automatically because every Cauchy real sequence is bounded.
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[thm:cauchy-sequences-are-bounded]{Cauchy Sequences Are Bounded}
   \item \hyperref[def:pointwise-product-sequence]{Pointwise Product of Sequences}
+  \item \hyperref[thm:cauchy-sequences-are-bounded]{Cauchy Sequences Are Bounded}
 \end{itemize}
 \end{dependencies}
 
@@ -777,11 +798,11 @@ $(1/x_n)$ is Cauchy.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{IsCauchy}(x_n)
+\operatorname{IsCauchy}(x_n,\mathbb{R})
 \land
 \exists c>0\;\exists N_0\in\mathbb{N}\;\forall n\ge N_0\;( |x_n|\ge c )
 \Longrightarrow
-\operatorname{IsCauchy}(1/x_n).
+\operatorname{IsCauchy}(1/x_n,\mathbb{R}).
 \]
 \end{remark*}
 
@@ -837,13 +858,13 @@ then $(x_n/y_n)$ is Cauchy.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{IsCauchy}(x_n)
+\operatorname{IsCauchy}(x_n,\mathbb{R})
 \land
-\operatorname{IsCauchy}(y_n)
+\operatorname{IsCauchy}(y_n,\mathbb{R})
 \land
 \exists c>0\;\exists N_0\in\mathbb{N}\;\forall n\ge N_0\;( |y_n|\ge c )
 \Longrightarrow
-\operatorname{IsCauchy}(x_n/y_n).
+\operatorname{IsCauchy}(x_n/y_n,\mathbb{R}).
 \]
 \end{remark*}
 
@@ -854,9 +875,9 @@ theorem for a denominator eventually bounded away from zero.
 
 \begin{dependencies}
 \begin{itemize}
+  \item \hyperref[def:pointwise-quotient-sequence]{Pointwise Quotient of Sequences}
   \item \hyperref[thm:product-cauchy-sequences]{Products of Cauchy Sequences}
   \item \hyperref[thm:reciprocal-cauchy-sequence]{Reciprocals of Cauchy Sequences}
-  \item \hyperref[def:pointwise-quotient-sequence]{Pointwise Quotient of Sequences}
 \end{itemize}
 \end{dependencies}
 
@@ -888,9 +909,9 @@ Let $(x_n)$ be a Cauchy real sequence. Then $(|x_n|)$ is Cauchy.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{IsCauchy}(x_n)
+\operatorname{IsCauchy}(x_n,\mathbb{R})
 \Longrightarrow
-\operatorname{IsCauchy}(|x_n|).
+\operatorname{IsCauchy}(|x_n|,\mathbb{R}).
 \]
 \end{remark*}
 

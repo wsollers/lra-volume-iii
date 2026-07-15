@@ -33,7 +33,9 @@ $L$ is the \textbf{right-hand limit} of $f$ at $c$ if
 
 \begin{remark*}[Predicate reading]
 \[
-  \operatorname{RightLimit}(f,c,L)
+  f\colon A\to\mathbb{R},\\
+
+  \operatorname{RightLimit}(L,f,c,\mathbb{R},\mathbb{R})
   \;\coloneqq\;
   \forall\varepsilon>0\;\exists\delta>0\;\forall x\in A\;
   0<x-c<\delta\Rightarrow |f(x)-L|<\varepsilon.
@@ -49,7 +51,9 @@ $L$ is the \textbf{right-hand limit} of $f$ at $c$ if
 
 \begin{remark*}[Negation predicate reading]
 \[
-  \neg\,\operatorname{RightLimit}(f,c,L).
+  f\colon A\to\mathbb{R},\\
+
+  \neg\,\operatorname{RightLimit}(L,f,c,\mathbb{R},\mathbb{R}).
 \]
 \end{remark*}
 
@@ -58,6 +62,17 @@ $L$ is the \textbf{right-hand limit} of $f$ at $c$ if
   \item[Exposition.]
 A proposed right-hand limit fails when some positive output tolerance is
 violated arbitrarily close to $c$ from the right.
+
+
+  \item[\operatorname{RightLimit}.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\exists\varepsilon_0>0\;\forall\delta>0\;\exists x\in A\;
+  0<x-c<\delta\;\wedge\; |f(x)-L|\geq\varepsilon_0.
+  \]
+  \[
+\neg\,\operatorname{RightLimit}(L,f,c,\mathbb{R},\mathbb{R}).
+  \]
 \end{description}
 \end{remark*}
 
@@ -68,6 +83,17 @@ violated arbitrarily close to $c$ from the right.
   \exists\varepsilon_0>0\;\forall\delta>0\;\exists x\in A\;
   0<x-c<\delta\;\wedge\; |f(x)-L|\geq\varepsilon_0.
 \]
+
+
+  \item[\operatorname{RightLimit}.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\exists\varepsilon_0>0\;\forall\delta>0\;\exists x\in A\;
+  0<x-c<\delta\;\wedge\; |f(x)-L|\geq\varepsilon_0.
+  \]
+  \[
+\neg\,\operatorname{RightLimit}(L,f,c,\mathbb{R},\mathbb{R}).
+  \]
 \end{description}
 \end{remark*}
 
@@ -105,7 +131,9 @@ $L$ is the \textbf{left-hand limit} of $f$ at $c$ if
 
 \begin{remark*}[Predicate reading]
 \[
-  \operatorname{LeftLimit}(f,c,L)
+  f\colon A\to\mathbb{R},\\
+
+  \operatorname{LeftLimit}(L,f,c,\mathbb{R},\mathbb{R})
   \;\coloneqq\;
   \forall\varepsilon>0\;\exists\delta>0\;\forall x\in A\;
   0<c-x<\delta\Rightarrow |f(x)-L|<\varepsilon.
@@ -121,7 +149,9 @@ $L$ is the \textbf{left-hand limit} of $f$ at $c$ if
 
 \begin{remark*}[Negation predicate reading]
 \[
-  \neg\,\operatorname{LeftLimit}(f,c,L).
+  f\colon A\to\mathbb{R},\\
+
+  \neg\,\operatorname{LeftLimit}(L,f,c,\mathbb{R},\mathbb{R}).
 \]
 \end{remark*}
 
@@ -130,6 +160,17 @@ $L$ is the \textbf{left-hand limit} of $f$ at $c$ if
   \item[Exposition.]
 A proposed left-hand limit fails when some positive output tolerance is
 violated arbitrarily close to $c$ from the left.
+
+
+  \item[\operatorname{LeftLimit}.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\exists\varepsilon_0>0\;\forall\delta>0\;\exists x\in A\;
+  0<c-x<\delta\;\wedge\; |f(x)-L|\geq\varepsilon_0.
+  \]
+  \[
+\neg\,\operatorname{LeftLimit}(L,f,c,\mathbb{R},\mathbb{R}).
+  \]
 \end{description}
 \end{remark*}
 
@@ -140,6 +181,17 @@ violated arbitrarily close to $c$ from the left.
   \exists\varepsilon_0>0\;\forall\delta>0\;\exists x\in A\;
   0<c-x<\delta\;\wedge\; |f(x)-L|\geq\varepsilon_0.
 \]
+
+
+  \item[\operatorname{LeftLimit}.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\exists\varepsilon_0>0\;\forall\delta>0\;\exists x\in A\;
+  0<c-x<\delta\;\wedge\; |f(x)-L|\geq\varepsilon_0.
+  \]
+  \[
+\neg\,\operatorname{LeftLimit}(L,f,c,\mathbb{R},\mathbb{R}).
+  \]
 \end{description}
 \end{remark*}
 
@@ -186,7 +238,9 @@ $x_n\to c$, one has $f(x_n)\to L$.
 
 \begin{remark*}[Predicate reading]
 \[
-  \operatorname{RightLimit}(f,c,L)
+  f\colon A\to\mathbb{R},\\
+
+  \operatorname{RightLimit}(L,f,c,\mathbb{R},\mathbb{R})
   \;\Longleftrightarrow\;
   \forall (x_n)\subseteq A\cap(c,\infty)\;
   x_n\to c\Rightarrow f(x_n)\to L.
@@ -237,7 +291,9 @@ $x_n\to c$, one has $f(x_n)\to L$.
 
 \begin{remark*}[Predicate reading]
 \[
-  \operatorname{LeftLimit}(f,c,L)
+  f\colon A\to\mathbb{R},\\
+
+  \operatorname{LeftLimit}(L,f,c,\mathbb{R},\mathbb{R})
   \;\Longleftrightarrow\;
   \forall (x_n)\subseteq A\cap(-\infty,c)\;
   x_n\to c\Rightarrow f(x_n)\to L.
@@ -291,9 +347,11 @@ $\lim_{x\to c^-}f(x)=L$.
 
 \begin{remark*}[Predicate reading]
 \[
-  \operatorname{TendsTo}(f,c,L)
+  f\colon A\to\mathbb{R},\\
+
+  \operatorname{TendsTo}(f,c,L,\mathbb{R},\mathbb{R})
   \;\Longleftrightarrow\;
-  \operatorname{RightLimit}(f,c,L)\wedge\operatorname{LeftLimit}(f,c,L).
+  \operatorname{RightLimit}(L,f,c,\mathbb{R},\mathbb{R})\wedge\operatorname{LeftLimit}(L,f,c,\mathbb{R},\mathbb{R}).
 \]
 \end{remark*}
 
@@ -314,9 +372,11 @@ $\lim_{x\to c^-}f(x)=L$.
 
 \begin{remark*}[Negation predicate reading]
 \[
-  \neg\,\operatorname{TendsTo}(f,c,L)
+  f\colon A\to\mathbb{R},\\
+
+  \neg\,\operatorname{TendsTo}(f,c,L,\mathbb{R},\mathbb{R})
   \;\Longleftrightarrow\;
-  \neg\,\operatorname{RightLimit}(f,c,L)\vee\neg\,\operatorname{LeftLimit}(f,c,L).
+  \neg\,\operatorname{RightLimit}(L,f,c,\mathbb{R},\mathbb{R})\vee\neg\,\operatorname{LeftLimit}(L,f,c,\mathbb{R},\mathbb{R}).
 \]
 \end{remark*}
 
@@ -326,6 +386,27 @@ $\lim_{x\to c^-}f(x)=L$.
 A two-sided limit fails precisely when the right-hand limit fails, the
 left-hand limit fails, or the two one-sided behaviours do not meet at the
 same value.
+
+
+  \item[\operatorname{TendsTo}.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\begin{aligned}
+&\exists\varepsilon_0>0\;\forall\delta>0\;\exists x\in A\;
+  0<|x-c|<\delta\;\wedge\; |f(x)-L|\geq\varepsilon_0 \\
+&\quad\Longleftrightarrow
+\Bigl[\exists\varepsilon_0>0\;\forall\delta>0\;\exists x\in A\;
+  0<x-c<\delta\;\wedge\; |f(x)-L|\geq\varepsilon_0\Bigr] \\
+&\qquad\vee
+\Bigl[\exists\varepsilon_0>0\;\forall\delta>0\;\exists x\in A\;
+  0<c-x<\delta\;\wedge\; |f(x)-L|\geq\varepsilon_0\Bigr].
+\end{aligned}
+  \]
+  \[
+\neg\,\operatorname{TendsTo}(f,c,L,\mathbb{R},\mathbb{R})
+  \;\Longleftrightarrow\;
+  \neg\,\operatorname{RightLimit}(L,f,c,\mathbb{R},\mathbb{R})\vee\neg\,\operatorname{LeftLimit}(L,f,c,\mathbb{R},\mathbb{R}).
+  \]
 \end{description}
 \end{remark*}
 
@@ -333,10 +414,31 @@ same value.
 \begin{description}
   \item[Exposition.]
 \[
-  \neg\,\operatorname{TendsTo}(f,c,L)
+  \neg\,\operatorname{TendsTo}(f,c,L,\mathbb{R},\mathbb{R})
   \;\Longleftrightarrow\;
-  \neg\,\operatorname{RightLimit}(f,c,L)\vee\neg\,\operatorname{LeftLimit}(f,c,L).
+  \neg\,\operatorname{RightLimit}(L,f,c,\mathbb{R},\mathbb{R})\vee\neg\,\operatorname{LeftLimit}(L,f,c,\mathbb{R},\mathbb{R}).
 \]
+
+
+  \item[\operatorname{TendsTo}.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\begin{aligned}
+&\exists\varepsilon_0>0\;\forall\delta>0\;\exists x\in A\;
+  0<|x-c|<\delta\;\wedge\; |f(x)-L|\geq\varepsilon_0 \\
+&\quad\Longleftrightarrow
+\Bigl[\exists\varepsilon_0>0\;\forall\delta>0\;\exists x\in A\;
+  0<x-c<\delta\;\wedge\; |f(x)-L|\geq\varepsilon_0\Bigr] \\
+&\qquad\vee
+\Bigl[\exists\varepsilon_0>0\;\forall\delta>0\;\exists x\in A\;
+  0<c-x<\delta\;\wedge\; |f(x)-L|\geq\varepsilon_0\Bigr].
+\end{aligned}
+  \]
+  \[
+\neg\,\operatorname{TendsTo}(f,c,L,\mathbb{R},\mathbb{R})
+  \;\Longleftrightarrow\;
+  \neg\,\operatorname{RightLimit}(L,f,c,\mathbb{R},\mathbb{R})\vee\neg\,\operatorname{LeftLimit}(L,f,c,\mathbb{R},\mathbb{R}).
+  \]
 \end{description}
 \end{remark*}
 

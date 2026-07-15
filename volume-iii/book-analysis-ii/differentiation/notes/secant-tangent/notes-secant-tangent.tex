@@ -30,6 +30,10 @@ m_{\mathrm{sec}}(x_1, x_2) := \frac{f(x_2) - f(x_1)}{x_2 - x_1}.
 
 \begin{remark*}[Predicate reading]
 The displayed quantified statement is the predicate-level form of $label: its hypotheses name the input conditions, and its conclusion names the asserted structure or relation.
+\[
+  f\colon A\to\mathbb{R},\\
+  \operatorname{SecantLine}(\ell,f,a,b).
+\]
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -38,10 +42,10 @@ With increments $\Delta x := x_2 - x_1$ and $\Delta y := f(x_2) - f(x_1)$, the s
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:function]{Function}
   \item \hyperref[def:reals]{Real Numbers}
-  \item \hyperref[def:ordered-pair]{Ordered Pair}
+  \item \hyperref[def:function]{Function}
   \item \hyperref[def:euclid-line]{Euclidean Line}
+  \item \hyperref[def:ordered-pair]{Ordered Pair}
 \end{itemize}
 \end{dependencies}
 
@@ -90,7 +94,7 @@ y = f(c) + f'(c)(x - c).
 
 \begin{remark*}[Standard quantified statement]
 \[
-\operatorname{IsDifferentiable}(f, c) \;\Rightarrow\;
+\operatorname{IsDifferentiable}(f,c,\mathbb{R},\mathbb{R}) \;\Rightarrow\;
 \operatorname{HasLinearApproximation}(f, c) = f(c) + f'(c)(x - c).
 \]
 \end{remark*}

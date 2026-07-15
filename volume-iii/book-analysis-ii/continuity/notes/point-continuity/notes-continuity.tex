@@ -66,6 +66,24 @@ Let $E \subseteq \mathbb{R}$ and $a \in E$. A set $U \subseteq \mathbb{R}$ is a 
 \begin{description}
   \item[Exposition.]
 Failure occurs precisely when no radius $\delta$ makes $U$ coincide with the relative interval slice: for every $\delta > 0$ either $U$ contains a point outside $E \cap (a-\delta,a+\delta)$ or the slice contains a point missing from $U$.
+
+
+  \item[\operatorname{IsNeighborhood}.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\begin{aligned}
+&\text{Let } E \subseteq \mathbb{R},\ a \in E,\ \text{and } U \subseteq \mathbb{R}.\\
+&U \text{ fails to be a neighborhood of } a \text{ in } E
+\Longleftrightarrow
+\forall \delta > 0\; \bigl(U \ne E \cap (a-\delta, a+\delta)\bigr).
+\end{aligned}
+  \]
+  \[
+\neg \operatorname{IsNeighborhood}(U,a,E)
+\Longleftrightarrow
+\forall \delta > 0\;
+\bigl(U \ne E \cap (a-\delta, a+\delta)\bigr).
+  \]
 \end{description}
 \end{remark*}
 
@@ -78,6 +96,24 @@ Failure occurs precisely when no radius $\delta$ makes $U$ coincide with the rel
 \;\lor\;
 \underbrace{\bigl(\exists y \in E \cap (a-\delta,a+\delta):\ y \notin U\bigr)}_{\text{missing point}}.
 \]
+
+
+  \item[\operatorname{IsNeighborhood}.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\begin{aligned}
+&\text{Let } E \subseteq \mathbb{R},\ a \in E,\ \text{and } U \subseteq \mathbb{R}.\\
+&U \text{ fails to be a neighborhood of } a \text{ in } E
+\Longleftrightarrow
+\forall \delta > 0\; \bigl(U \ne E \cap (a-\delta, a+\delta)\bigr).
+\end{aligned}
+  \]
+  \[
+\neg \operatorname{IsNeighborhood}(U,a,E)
+\Longleftrightarrow
+\forall \delta > 0\;
+\bigl(U \ne E \cap (a-\delta, a+\delta)\bigr).
+  \]
 \end{description}
 \end{remark*}
 
@@ -121,6 +157,8 @@ Let $A \subseteq \mathbb{R}$, let $f : A \to \mathbb{R}$, and let $c \in A$. The
 
 \begin{remark*}[Predicate reading]
 \[
+  f\colon A\to\mathbb{R},\\
+
 \begin{aligned}
 \operatorname{IsContinuous}(f,\mathsf{Point}(c,A),\mathbb R,\mathbb R)
 &\Longleftrightarrow
@@ -148,6 +186,8 @@ Let $A \subseteq \mathbb{R}$, let $f : A \to \mathbb{R}$, and let $c \in A$. The
 
 \begin{remark*}[Negation predicate reading]
 \[
+  f\colon A\to\mathbb{R},\\
+
 \neg\operatorname{IsContinuous}(f,\mathsf{Point}(c,A),\mathbb R,\mathbb R)
 \Longleftrightarrow
 \exists \varepsilon_0>0\;\forall \delta>0\;\exists x\in A\;
@@ -159,6 +199,25 @@ Let $A \subseteq \mathbb{R}$, let $f : A \to \mathbb{R}$, and let $c \in A$. The
 \begin{description}
   \item[Exposition.]
 Continuity at $c$ fails precisely when there exists a persistent output gap $\varepsilon_0>0$ such that no matter how small the chosen centered interval about $c$ is, a point of $A$ within that interval keeps the function values at least $\varepsilon_0$ away from $f(c)$. The single failure branch records this inescapable oscillation near $c$.
+
+
+  \item[\operatorname{IsContinuous}.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\begin{aligned}
+&\text{Let } A \subseteq \mathbb{R},\ f:A\to\mathbb{R},\ c\in A.\\
+&f \text{ is not continuous at } c
+\Longleftrightarrow
+\exists \varepsilon_0>0\;\forall \delta>0\;\exists x\in A\;
+\bigl(|x-c|<\delta \land |f(x)-f(c)| \ge \varepsilon_0\bigr).
+\end{aligned}
+  \]
+  \[
+\neg\operatorname{IsContinuous}(f,\mathsf{Point}(c,A),\mathbb R,\mathbb R)
+\Longleftrightarrow
+\exists \varepsilon_0>0\;\forall \delta>0\;\exists x\in A\;
+\bigl(|x-c|<\delta \land |f(x)-f(c)| \ge \varepsilon_0\bigr).
+  \]
 \end{description}
 \end{remark*}
 
@@ -172,6 +231,25 @@ Continuity at $c$ fails precisely when there exists a persistent output gap $\va
 :\
 |x-c|<\delta \land |f(x)-f(c)| \ge \varepsilon_0.
 \]
+
+
+  \item[\operatorname{IsContinuous}.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\begin{aligned}
+&\text{Let } A \subseteq \mathbb{R},\ f:A\to\mathbb{R},\ c\in A.\\
+&f \text{ is not continuous at } c
+\Longleftrightarrow
+\exists \varepsilon_0>0\;\forall \delta>0\;\exists x\in A\;
+\bigl(|x-c|<\delta \land |f(x)-f(c)| \ge \varepsilon_0\bigr).
+\end{aligned}
+  \]
+  \[
+\neg\operatorname{IsContinuous}(f,\mathsf{Point}(c,A),\mathbb R,\mathbb R)
+\Longleftrightarrow
+\exists \varepsilon_0>0\;\forall \delta>0\;\exists x\in A\;
+\bigl(|x-c|<\delta \land |f(x)-f(c)| \ge \varepsilon_0\bigr).
+  \]
 \end{description}
 \end{remark*}
 
@@ -211,6 +289,8 @@ f\bigl(A \cap I_\delta(c)\bigr) \subseteq I_\varepsilon(f(c)).
 
 \begin{remark*}[Predicate reading]
 \[
+  f\colon A\to\mathbb{R},\\
+
 \operatorname{IsContinuous}(f,\mathsf{Point}(c,A),\mathbb R,\mathbb R)
 \Longleftrightarrow
 \forall \varepsilon > 0\; \exists \delta > 0:\;
@@ -230,6 +310,8 @@ f\bigl(A \cap I_\delta(c)\bigr) \subseteq I_\varepsilon(f(c)).
 
 \begin{remark*}[Negation predicate reading]
 \[
+  f\colon A\to\mathbb{R},\\
+
 \operatorname{IsDiscontinuous}(f,\mathsf{Point}(c,A),\mathbb R,\mathbb R)
 \Longleftrightarrow
 \exists \varepsilon_{0} > 0\; \forall \delta > 0:\;
@@ -241,6 +323,23 @@ f\bigl(A \cap I_\delta(c)\bigr) \nsubseteq I_{\varepsilon_0}(f(c)).
 \begin{description}
   \item[Exposition.]
 Failure occurs precisely when some fixed output tolerance cannot be matched by any centered interval about $c$. This manifests by finding points of $A$ arbitrarily close to $c$ whose images either exceed the upper endpoint $f(c)+\varepsilon_{0}$ or fall below the lower endpoint $f(c)-\varepsilon_{0}$.
+
+
+  \item[\operatorname{IsDiscontinuous}.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\begin{aligned}
+&\text{Let } A \subseteq \mathbb{R},\; f:A \to \mathbb{R},\; c \in A.\\
+&\neg\bigl(f \text{ is continuous at } c\bigr) \Longleftrightarrow \exists \varepsilon_{0} > 0\; \forall \delta > 0:\\
+&\qquad f\bigl(A \cap I_\delta(c)\bigr) \nsubseteq I_{\varepsilon_0}(f(c)).
+\end{aligned}
+  \]
+  \[
+\operatorname{IsDiscontinuous}(f,\mathsf{Point}(c,A),\mathbb R,\mathbb R)
+\Longleftrightarrow
+\exists \varepsilon_{0} > 0\; \forall \delta > 0:\;
+f\bigl(A \cap I_\delta(c)\bigr) \nsubseteq I_{\varepsilon_0}(f(c)).
+  \]
 \end{description}
 \end{remark*}
 
@@ -257,6 +356,23 @@ Failure occurs precisely when some fixed output tolerance cannot be matched by a
 \exists x \in A \cap (c-\delta,c+\delta): f(x) \le f(c)-\varepsilon_{0}
 \Bigr)}_{\text{undershoot}}.
 \]
+
+
+  \item[\operatorname{IsDiscontinuous}.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\begin{aligned}
+&\text{Let } A \subseteq \mathbb{R},\; f:A \to \mathbb{R},\; c \in A.\\
+&\neg\bigl(f \text{ is continuous at } c\bigr) \Longleftrightarrow \exists \varepsilon_{0} > 0\; \forall \delta > 0:\\
+&\qquad f\bigl(A \cap I_\delta(c)\bigr) \nsubseteq I_{\varepsilon_0}(f(c)).
+\end{aligned}
+  \]
+  \[
+\operatorname{IsDiscontinuous}(f,\mathsf{Point}(c,A),\mathbb R,\mathbb R)
+\Longleftrightarrow
+\exists \varepsilon_{0} > 0\; \forall \delta > 0:\;
+f\bigl(A \cap I_\delta(c)\bigr) \nsubseteq I_{\varepsilon_0}(f(c)).
+  \]
 \end{description}
 \end{remark*}
 
@@ -296,6 +412,8 @@ Let $A \subseteq \mathbb{R}$, let $c \in A$, and let $f \colon A \to \mathbb{R}$
 
 \begin{remark*}[Predicate reading]
 \[
+  f\colon A\to\mathbb{R},\\
+
 \operatorname{IsContinuous}(f,\mathsf{Point}(c,A),\mathbb R,\mathbb R)
 \Longleftrightarrow
 \forall x_n\;
@@ -318,6 +436,8 @@ Let $A \subseteq \mathbb{R}$, let $c \in A$, and let $f \colon A \to \mathbb{R}$
 
 \begin{remark*}[Negation predicate reading]
 \[
+  f\colon A\to\mathbb{R},\\
+
 \neg\operatorname{IsContinuous}(f,\mathsf{Point}(c,A),\mathbb R,\mathbb R)
 \Longleftrightarrow
 \exists x_n\;
@@ -331,6 +451,26 @@ Let $A \subseteq \mathbb{R}$, let $c \in A$, and let $f \colon A \to \mathbb{R}$
 \begin{description}
   \item[Exposition.]
 Continuity at $c$ fails sequentially when there exists a sequence $(x_n)_{n\in\mathbb{N}}$ in $A$ with $x_n \to c$ but $f(x_n)$ does not converge to $f(c)$. This manifests in two distinct ways: either $f(x_n)$ converges to some limit different from $f(c)$, or $f(x_n)$ fails to converge entirely (oscillating without settling or diverging to infinity).
+
+
+  \item[\operatorname{IsContinuous}.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\begin{aligned}
+&\text{Let } A \subseteq \mathbb{R},\; c \in A,\; f \colon A \to \mathbb{R}.\\
+&f \text{ is not continuous at } c \Longleftrightarrow
+\exists (x_n)_{n\in\mathbb{N}} \subseteq A\;
+\Bigl(\lim_{n\to\infty} x_n = c \land \lim_{n\to\infty} f(x_n) \ne f(c)\Bigr).
+\end{aligned}
+  \]
+  \[
+\neg\operatorname{IsContinuous}(f,\mathsf{Point}(c,A),\mathbb R,\mathbb R)
+\Longleftrightarrow
+\exists x_n\;
+\Bigl(\mathsf{Sequence}(x_n, A)
+\land \operatorname{ConvergesTo}(x_n,c,\mathbb R)
+\land \neg\operatorname{ConvergesTo}(f(x_n),f(c),\mathbb R)\Bigr).
+  \]
 \end{description}
 \end{remark*}
 
@@ -344,6 +484,26 @@ Continuity at $c$ fails sequentially when there exists a sequence $(x_n)_{n\in\m
 \;\land\;
 \underbrace{\lim_{n\to\infty} f(x_n) \ne f(c)}_{\text{image sequence fails}}.
 \]
+
+
+  \item[\operatorname{IsContinuous}.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\begin{aligned}
+&\text{Let } A \subseteq \mathbb{R},\; c \in A,\; f \colon A \to \mathbb{R}.\\
+&f \text{ is not continuous at } c \Longleftrightarrow
+\exists (x_n)_{n\in\mathbb{N}} \subseteq A\;
+\Bigl(\lim_{n\to\infty} x_n = c \land \lim_{n\to\infty} f(x_n) \ne f(c)\Bigr).
+\end{aligned}
+  \]
+  \[
+\neg\operatorname{IsContinuous}(f,\mathsf{Point}(c,A),\mathbb R,\mathbb R)
+\Longleftrightarrow
+\exists x_n\;
+\Bigl(\mathsf{Sequence}(x_n, A)
+\land \operatorname{ConvergesTo}(x_n,c,\mathbb R)
+\land \neg\operatorname{ConvergesTo}(f(x_n),f(c),\mathbb R)\Bigr).
+  \]
 \end{description}
 \end{remark*}
 

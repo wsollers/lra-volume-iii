@@ -63,7 +63,7 @@ for all sufficiently small $h$ with $a+h\in A$, and
 
 \begin{remark*}[Standard quantified statement]
 \[
-\operatorname{IsDifferentiable}(f,a)
+\operatorname{IsDifferentiable}(f,a,\mathbb{R},\mathbb{R})
 \Longleftrightarrow
 \exists L\in\mathbb{R}\;\exists r\;
 \bigl(f(a+h)=f(a)+Lh+r(h)\ \text{and}\ r(h)=o(h)\bigr).
@@ -71,9 +71,18 @@ for all sufficiently small $h$ with $a+h\in A$, and
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-The predicate $\operatorname{IsDifferentiable}(f,a)$ can be read as the
+\[
+  f\colon A\to\mathbb{R},\\
+  f'\colon A\to\mathbb{R}.
+\]
+
+The predicate $\operatorname{IsDifferentiable}(f,a,\mathbb{R},\mathbb{R})$ can be read as the
 existence of a linear coefficient $L$ and a remainder $r$ whose size is
 negligible compared with the increment $h$.
+\[
+  f\colon A\to\mathbb{R},\\
+  \operatorname{Derivative}(D,f,a,\mathbb{R},\mathbb{R}).
+\]
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -111,7 +120,7 @@ $f$ is differentiable at $a$ with derivative $L$ if and only if
 
 \begin{remark*}[Standard quantified statement]
 \[
-\operatorname{Derivative}(f,a,L)
+\operatorname{Derivative}(L,f,a,\mathbb{R},\mathbb{R})
 \Longleftrightarrow
 f(a+h)=f(a)+Lh+o(h)\quad(h\to 0).
 \]

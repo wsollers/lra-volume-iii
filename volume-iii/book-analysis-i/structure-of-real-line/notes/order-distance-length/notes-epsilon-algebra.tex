@@ -40,6 +40,23 @@ m=\min\{a,b\},\qquad
 \neg\operatorname{Positive}(m,\mathbb{R}).
 \]
 \end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  Failure is witnessed by the displayed negated or contrapositive condition.
+
+  \item[\operatorname{Positive}.]
+  \[
+\exists a,b\in\mathbb{R}\;\bigl(a>0\land b>0\land \min\{a,b\}\le 0\bigr).
+\]
+\[
+m=\min\{a,b\},\qquad
+\operatorname{Positive}(a,\mathbb{R})\land\operatorname{Positive}(b,\mathbb{R})\land
+\neg\operatorname{Positive}(m,\mathbb{R}).
+\]
+\end{description}
+\end{remark*}
 \begin{remark*}[Interpretation]
 Choosing the smaller of two positive bounds still leaves a positive bound.
 \end{remark*}
@@ -78,6 +95,21 @@ If $\varepsilon>0$, then
 \[
 \operatorname{Positive}(\varepsilon,\mathbb{R})\land\neg\operatorname{Positive}(\varepsilon/2,\mathbb{R}).
 \]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  Failure is witnessed by the displayed negated or contrapositive condition.
+
+  \item[\operatorname{Positive}.]
+  \[
+\exists\varepsilon\in\mathbb{R}\;\bigl(\varepsilon>0\land \varepsilon/2\le 0\bigr).
+\]
+\[
+\operatorname{Positive}(\varepsilon,\mathbb{R})\land\neg\operatorname{Positive}(\varepsilon/2,\mathbb{R}).
+\]
+\end{description}
 \end{remark*}
 \begin{remark*}[Interpretation]
 Halving a positive tolerance produces a smaller positive tolerance.
@@ -121,6 +153,23 @@ If $\varepsilon>0$, then
 \varepsilon/2+\varepsilon/2\ne\varepsilon.
 \]
 \end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  Failure is witnessed by the displayed negated or contrapositive condition.
+
+  \item[\operatorname{Positive}.]
+  \[
+\exists\varepsilon\in\mathbb{R}\;\bigl(\varepsilon>0\land
+\varepsilon/2+\varepsilon/2\ne\varepsilon\bigr).
+\]
+\[
+\operatorname{Positive}(\varepsilon,\mathbb{R})\land
+\varepsilon/2+\varepsilon/2\ne\varepsilon.
+\]
+\end{description}
+\end{remark*}
 \begin{remark*}[Interpretation]
 The standard two-error estimate assigns half the tolerance to each error term.
 \end{remark*}
@@ -163,6 +212,23 @@ If $0<\delta\le a$ and $0<\delta\le b$, then
 \bigl(0<\delta\le a\land 0<\delta\le b\bigr)\land
 \neg(\delta\le\min\{a,b\}).
 \]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  Failure is witnessed by the displayed negated or contrapositive condition.
+
+  \item[\exists-condition.]
+  \[
+\exists \delta,a,b\in\mathbb{R}\;
+\bigl(0<\delta\le a\land 0<\delta\le b\land \min\{a,b\}<\delta\bigr).
+\]
+\[
+\bigl(0<\delta\le a\land 0<\delta\le b\bigr)\land
+\neg(\delta\le\min\{a,b\}).
+\]
+\end{description}
 \end{remark*}
 \begin{remark*}[Interpretation]
 If a positive quantity is below each of two bounds, it is below their minimum.
@@ -210,6 +276,24 @@ If $\varepsilon>0$ and $c>0$, then there exists $\delta>0$ such that
 \varepsilon>0\land c>0\land
 \forall\delta\in\mathbb{R}\;(\delta\le 0\lor \delta\ge\varepsilon\lor \delta\ge c).
 \]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  Failure is witnessed by the displayed negated or contrapositive condition.
+
+  \item[\exists-condition.]
+  \[
+\exists \varepsilon,c\in\mathbb{R}\;
+\bigl(\varepsilon>0\land c>0\land
+\forall\delta\in\mathbb{R}\;(\delta\le 0\lor \delta\ge\varepsilon\lor \delta\ge c)\bigr).
+\]
+\[
+\varepsilon>0\land c>0\land
+\forall\delta\in\mathbb{R}\;(\delta\le 0\lor \delta\ge\varepsilon\lor \delta\ge c).
+\]
+\end{description}
 \end{remark*}
 \begin{remark*}[Interpretation]
 Given two positive constraints, one can choose a single positive tolerance

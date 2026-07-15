@@ -83,7 +83,7 @@ $A$.
   The set may be empty; $s$ may fail to be an upper bound; or $s$ may be an
   upper bound that is not least among upper bounds.
 
-  \item[Mechanism.]
+  \item[\operatorname{LeastUpperBound} / \operatorname{UpperBound}.]
   The first clause is a domain failure.  The second is a bound failure.  The
   third is a sharpness failure witnessed by a strictly smaller upper bound.
   \[
@@ -179,7 +179,7 @@ bound of $A$ and no larger element of $S$ is a lower bound of $A$.
   The set may be empty; $i$ may fail to be a lower bound; or $i$ may be a
   lower bound that is not greatest among lower bounds.
 
-  \item[Mechanism.]
+  \item[\operatorname{GreatestLowerBound} / \operatorname{LowerBound}.]
   The first clause is a domain failure.  The second is a bound failure.  The
   third is a sharpness failure witnessed by a strictly larger lower bound.
   \[
@@ -270,7 +270,7 @@ $s,t\in S$ are both suprema of $A$, then $s=t$.
   Failure would require two distinct least upper bounds for the same
   nonempty set.
 
-  \item[Mechanism.]
+  \item[\operatorname{LeastUpperBound}.]
   Each candidate is an upper bound and each lies below every upper bound;
   applying these minimality clauses to the other candidate gives both
   $s\leq t$ and $t\leq s$.
@@ -358,7 +358,7 @@ $i,j\in S$ are both infima of $A$, then $i=j$.
   Failure would require two distinct greatest lower bounds for the same
   nonempty set.
 
-  \item[Mechanism.]
+  \item[\operatorname{GreatestLowerBound}.]
   Each candidate is a lower bound and each lies above every lower bound;
   applying these maximality clauses to the other candidate gives both
   $i\leq j$ and $j\leq i$.
@@ -432,12 +432,22 @@ below $s$:
 \]
 \end{remark*}
 
+\begin{remark*}[Negation predicate reading]
+\[
+  \operatorname{LeastUpperBound}(s,A,P)
+  \quad\text{and}\quad
+  (\exists x\in A)(s<x).
+\]
+
+The negation predicate reading is the predicate-level form of the displayed negated statement.
+\end{remark*}
+
 \begin{remark*}[Failure modes]
 \begin{description}
   \item[Exposition.]
   Failure would mean that a supremum is not an upper bound.
 
-  \item[Mechanism.]
+  \item[\operatorname{LeastUpperBound} / \operatorname{GreatestLowerBound}.]
   This is exactly the first clause in the definition of supremum.
   \[
     \operatorname{LeastUpperBound}(s,A,P)
@@ -504,12 +514,22 @@ above $i$:
 \]
 \end{remark*}
 
+\begin{remark*}[Negation predicate reading]
+\[
+  \operatorname{GreatestLowerBound}(i,A,P)
+  \quad\text{and}\quad
+  (\exists x\in A)(x<i).
+\]
+
+The negation predicate reading is the predicate-level form of the displayed negated statement.
+\end{remark*}
+
 \begin{remark*}[Failure modes]
 \begin{description}
   \item[Exposition.]
   Failure would mean that an infimum is not a lower bound.
 
-  \item[Mechanism.]
+  \item[\operatorname{GreatestLowerBound}.]
   This is exactly the first clause in the definition of infimum.
   \[
     \operatorname{GreatestLowerBound}(i,A,P)
@@ -574,13 +594,23 @@ of $A$.
 \]
 \end{remark*}
 
+\begin{remark*}[Negation predicate reading]
+\[
+  A\subseteq B,\quad \operatorname{UpperBound}(u,B,P),
+  \quad\text{and}\quad
+  (\exists x\in A)(u<x).
+\]
+
+The negation predicate reading is the predicate-level form of the displayed negated statement.
+\end{remark*}
+
 \begin{remark*}[Failure modes]
 \begin{description}
   \item[Exposition.]
   Failure would require a counterexample in the smaller set even though
   the larger set is already bounded by $u$.
 
-  \item[Mechanism.]
+  \item[\operatorname{UpperBound} / \operatorname{GreatestLowerBound}.]
   Any counterexample $x\in A$ is also an element of $B$, contradicting the
   upper-bound hypothesis for $B$.
   \[
@@ -645,13 +675,23 @@ bound of $A$.
 \]
 \end{remark*}
 
+\begin{remark*}[Negation predicate reading]
+\[
+  A\subseteq B,\quad \operatorname{LowerBound}(\ell,B,P),
+  \quad\text{and}\quad
+  (\exists x\in A)(x<\ell).
+\]
+
+The negation predicate reading is the predicate-level form of the displayed negated statement.
+\end{remark*}
+
 \begin{remark*}[Failure modes]
 \begin{description}
   \item[Exposition.]
   Failure would require a smaller-set counterexample to a lower bound that
   already works on the larger set.
 
-  \item[Mechanism.]
+  \item[\operatorname{LowerBound} / \operatorname{GreatestLowerBound}.]
   Any counterexample $x\in A$ lies in $B$, contradicting the lower-bound
   hypothesis for $B$.
   \[
@@ -714,12 +754,21 @@ $A\subseteq B$, then $\sup A\leq\sup B$.
 \]
 \end{remark*}
 
+\begin{remark*}[Negation predicate reading]
+\[
+  A\subseteq B,\quad \operatorname{LeastUpperBound}(s_A,A,P),\quad
+  \operatorname{LeastUpperBound}(s_B,B,P),\quad s_B<s_A.
+\]
+
+The negation predicate reading is the predicate-level form of the displayed negated statement.
+\end{remark*}
+
 \begin{remark*}[Failure modes]
 \begin{description}
   \item[Exposition.]
   Failure would mean enlarging a nonempty set lowers its least upper bound.
 
-  \item[Mechanism.]
+  \item[\operatorname{LeastUpperBound} / \operatorname{GreatestLowerBound}.]
   The value $\sup B$ bounds $B$, hence bounds $A$; since $\sup A$ is least
   among upper bounds of $A$, $\sup A\leq\sup B$.
   \[
@@ -782,13 +831,22 @@ $A\subseteq B$, then $\inf B\leq\inf A$.
 \]
 \end{remark*}
 
+\begin{remark*}[Negation predicate reading]
+\[
+  A\subseteq B,\quad \operatorname{GreatestLowerBound}(i_A,A,P),\quad
+  \operatorname{GreatestLowerBound}(i_B,B,P),\quad i_A<i_B.
+\]
+
+The negation predicate reading is the predicate-level form of the displayed negated statement.
+\end{remark*}
+
 \begin{remark*}[Failure modes]
 \begin{description}
   \item[Exposition.]
   Failure would mean enlarging a nonempty set raises its greatest lower
   bound.
 
-  \item[Mechanism.]
+  \item[\operatorname{GreatestLowerBound}.]
   The value $\inf B$ bounds $B$ below, hence bounds $A$ below; since
   $\inf A$ is greatest among lower bounds of $A$, $\inf B\leq\inf A$.
   \[
@@ -854,13 +912,24 @@ $A$ if and only if $s\leq u$.
 \]
 \end{remark*}
 
+\begin{remark*}[Negation predicate reading]
+\[
+  \operatorname{LeastUpperBound}(s,A,P)
+  \quad\text{and}\quad
+  (\exists u)\bigl[(\operatorname{UpperBound}(u,A,P)\land u<s)
+  \lor(s\leq u\land\neg\operatorname{UpperBound}(u,A,P))\bigr].
+\]
+
+The negation predicate reading is the predicate-level form of the displayed negated statement.
+\end{remark*}
+
 \begin{remark*}[Failure modes]
 \begin{description}
   \item[Exposition.]
   Failure would mean an upper bound below the supremum, or a number above
   the supremum that fails to bound the set.
 
-  \item[Mechanism.]
+  \item[\operatorname{LeastUpperBound} / \operatorname{UpperBound}.]
   Leastness gives the forward implication.  The fact that $s$ bounds $A$
   gives the reverse implication by transitivity.
   \[
@@ -927,13 +996,24 @@ of $A$ if and only if $\ell\leq i$.
 \]
 \end{remark*}
 
+\begin{remark*}[Negation predicate reading]
+\[
+  \operatorname{GreatestLowerBound}(i,A,P)
+  \quad\text{and}\quad
+  (\exists \ell)\bigl[(\operatorname{LowerBound}(\ell,A,P)\land i<\ell)
+  \lor(\ell\leq i\land\neg\operatorname{LowerBound}(\ell,A,P))\bigr].
+\]
+
+The negation predicate reading is the predicate-level form of the displayed negated statement.
+\end{remark*}
+
 \begin{remark*}[Failure modes]
 \begin{description}
   \item[Exposition.]
   Failure would mean a lower bound above the infimum, or a number below the
   infimum that fails to bound the set below.
 
-  \item[Mechanism.]
+  \item[\operatorname{GreatestLowerBound} / \operatorname{LowerBound}.]
   Greatestness gives the forward implication.  The fact that $i$ bounds
   $A$ below gives the reverse implication by transitivity.
   \[
@@ -995,12 +1075,20 @@ $s=\sup A$.  Then $x\leq s$ for every $x\in A$.
 \]
 \end{remark*}
 
+\begin{remark*}[Negation predicate reading]
+\[
+  \operatorname{LeastUpperBound}(s,A,P)\quad\text{and}\quad(\exists x\in A)(s<x).
+\]
+
+The negation predicate reading is the predicate-level form of the displayed negated statement.
+\end{remark*}
+
 \begin{remark*}[Failure modes]
 \begin{description}
   \item[Exposition.]
   Failure would mean the supremum is not an upper bound.
 
-  \item[Mechanism.]
+  \item[\operatorname{LeastUpperBound} / \operatorname{GreatestLowerBound}.]
   This is the upper-bound clause in the definition of supremum.
   \[
     \operatorname{LeastUpperBound}(s,A,P)\quad\text{and}\quad(\exists x\in A)(s<x).
@@ -1056,12 +1144,20 @@ $i=\inf A$.  Then $i\leq x$ for every $x\in A$.
 \]
 \end{remark*}
 
+\begin{remark*}[Negation predicate reading]
+\[
+  \operatorname{GreatestLowerBound}(i,A,P)\quad\text{and}\quad(\exists x\in A)(x<i).
+\]
+
+The negation predicate reading is the predicate-level form of the displayed negated statement.
+\end{remark*}
+
 \begin{remark*}[Failure modes]
 \begin{description}
   \item[Exposition.]
   Failure would mean the infimum is not a lower bound.
 
-  \item[Mechanism.]
+  \item[\operatorname{GreatestLowerBound}.]
   This is the lower-bound clause in the definition of infimum.
   \[
     \operatorname{GreatestLowerBound}(i,A,P)\quad\text{and}\quad(\exists x\in A)(x<i).
@@ -1122,13 +1218,22 @@ Then $\inf A\leq\sup A$.
 \]
 \end{remark*}
 
+\begin{remark*}[Negation predicate reading]
+\[
+  \operatorname{GreatestLowerBound}(i,A,P),\quad \operatorname{LeastUpperBound}(s,A,P),
+  \quad\text{and}\quad s<i.
+\]
+
+The negation predicate reading is the predicate-level form of the displayed negated statement.
+\end{remark*}
+
 \begin{remark*}[Failure modes]
 \begin{description}
   \item[Exposition.]
   Failure would put the greatest lower bound strictly above the least upper
   bound of the same nonempty set.
 
-  \item[Mechanism.]
+  \item[\operatorname{GreatestLowerBound} / \operatorname{LeastUpperBound}.]
   Choose $a\in A$.  Then $i\leq a$ because $i$ is a lower bound, and
   $a\leq s$ because $s$ is an upper bound.
   \[
@@ -1272,13 +1377,23 @@ $x\in A$ is below some $y\in B$, then $\sup A\leq\sup B$.
 \]
 \end{remark*}
 
+\begin{remark*}[Negation predicate reading]
+\[
+  [\forall x\in A\,\exists y\in B\,(x\leq y)]
+  \quad\text{and}\quad
+  \sup B<\sup A.
+\]
+
+The negation predicate reading is the predicate-level form of the displayed negated statement.
+\end{remark*}
+
 \begin{remark*}[Failure modes]
 \begin{description}
   \item[Exposition.]
   Failure would mean $A$ reaches higher in supremum than $B$ even though
   each element of $A$ is dominated by an element of $B$.
 
-  \item[Mechanism.]
+  \item[\operatorname{GreatestLowerBound}.]
   Every element of $B$ lies below $\sup B$, so every element of $A$ also
   lies below $\sup B$.  Thus $\sup B$ is an upper bound for $A$.
   \[
@@ -1346,6 +1461,17 @@ $s$ such that $s=\sup S$.
 \]
 \end{remark*}
 
+\begin{remark*}[Negation predicate reading]
+\[
+  S\neq\varnothing,\quad
+  \operatorname{BoundedAbove}(S,P),
+  \quad\text{and}\quad
+  (\forall s\in\mathbb{R})\neg\operatorname{LeastUpperBound}(s,S,P).
+\]
+
+The negation predicate reading is the predicate-level form of the displayed negated statement.
+\end{remark*}
+
 \begin{remark*}[Failure modes]
 \begin{description}
   \item[Exposition.]
@@ -1353,7 +1479,7 @@ $s$ such that $s=\sup S$.
   bounded above; outside complete ordered settings, the existence clause
   can fail.
 
-  \item[Mechanism.]
+  \item[\operatorname{BoundedAbove} / \operatorname{LeastUpperBound}.]
   The hypotheses separate domain nonemptiness from one-sided boundedness.
   The conclusion asserts existence of the sharp upper bound.
   \[
@@ -1423,13 +1549,24 @@ exists a real number $i$ such that $i=\inf S$.
 \]
 \end{remark*}
 
+\begin{remark*}[Negation predicate reading]
+\[
+  S\neq\varnothing,\quad
+  \operatorname{BoundedBelow}(S,P),
+  \quad\text{and}\quad
+  (\forall i\in\mathbb{R})\neg\operatorname{GreatestLowerBound}(i,S,P).
+\]
+
+The negation predicate reading is the predicate-level form of the displayed negated statement.
+\end{remark*}
+
 \begin{remark*}[Failure modes]
 \begin{description}
   \item[Exposition.]
   In $\mathbb{R}$ the theorem cannot fail once the set is nonempty and
   bounded below.
 
-  \item[Mechanism.]
+  \item[\operatorname{BoundedBelow} / \operatorname{GreatestLowerBound}.]
   Apply the least upper bound property to $-S$ or argue by the order-dual
   form of completeness.
   \[

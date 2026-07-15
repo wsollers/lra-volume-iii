@@ -50,6 +50,8 @@ Then there exists a step function $s_\varepsilon:[a,b]\to\mathbb{R}$ such that
 
 \begin{remark*}[Negation predicate reading]
 \[
+  s\colon A\to\mathbb{R},\\
+
 \forall s:[a,b]\to\mathbb{R}\;
 \Bigl(\operatorname{IsStepFunction}(s,[a,b]) \Rightarrow
 \exists x\in[a,b]\;(|f(x)-s(x)|\ge\varepsilon)\Bigr).
@@ -60,6 +62,21 @@ Then there exists a step function $s_\varepsilon:[a,b]\to\mathbb{R}$ such that
 \begin{description}
   \item[Exposition.]
 The statement fails precisely when a continuous $f$ and tolerance $\varepsilon$ are fixed but every step function leaves an error of at least $\varepsilon$ at some point in $[a,b]$.
+
+
+  \item[\operatorname{IsStepFunction}.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\begin{aligned}
+&\text{Let } f:[a,b]\to\mathbb{R} \text{ be continuous and let } \varepsilon>0.\\
+&\forall s:[a,b]\to\mathbb{R} \text{ step function } \exists x\in[a,b]\;(|f(x)-s(x)|\ge\varepsilon).
+\end{aligned}
+  \]
+  \[
+\forall s:[a,b]\to\mathbb{R}\;
+\Bigl(\operatorname{IsStepFunction}(s,[a,b]) \Rightarrow
+\exists x\in[a,b]\;(|f(x)-s(x)|\ge\varepsilon)\Bigr).
+  \]
 \end{description}
 \end{remark*}
 
@@ -70,6 +87,21 @@ The statement fails precisely when a continuous $f$ and tolerance $\varepsilon$ 
 \underbrace{\forall s:[a,b]\to\mathbb{R} \text{ step function }}_{\text{all approximants}}
 \underbrace{\exists x\in[a,b]\;(|f(x)-s(x)|\ge\varepsilon)}_{\text{witnessed large deviation}}.
 \]
+
+
+  \item[\operatorname{IsStepFunction}.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\begin{aligned}
+&\text{Let } f:[a,b]\to\mathbb{R} \text{ be continuous and let } \varepsilon>0.\\
+&\forall s:[a,b]\to\mathbb{R} \text{ step function } \exists x\in[a,b]\;(|f(x)-s(x)|\ge\varepsilon).
+\end{aligned}
+  \]
+  \[
+\forall s:[a,b]\to\mathbb{R}\;
+\Bigl(\operatorname{IsStepFunction}(s,[a,b]) \Rightarrow
+\exists x\in[a,b]\;(|f(x)-s(x)|\ge\varepsilon)\Bigr).
+  \]
 \end{description}
 \end{remark*}
 
@@ -113,6 +145,8 @@ for every $k\in\{1,\ldots,m\}$.
 
 \begin{remark*}[Predicate reading]
 \[
+  g\colon A\to\mathbb{R},\\
+
 \operatorname{IsPiecewiseLinear}(g,[a,b]) \coloneqq
 \exists m \in \mathbb{N}\;\Bigl(m \ge 1 \land
 \exists x_0,\ldots,x_m \in [a,b]\;
@@ -138,6 +172,8 @@ for every $k\in\{1,\ldots,m\}$.
 
 \begin{remark*}[Negation predicate reading]
 \[
+  g\colon A\to\mathbb{R},\\
+
 \neg\operatorname{IsPiecewiseLinear}(g,[a,b])
 \Longleftrightarrow
 \forall m \in \mathbb{N}\;\Bigl(m \ge 1 \Rightarrow
@@ -154,6 +190,31 @@ for every $k\in\{1,\ldots,m\}$.
 A proposed piecewise-linear structure can fail because no finite ordered
 partition of $[a,b]$ is available, or because for every such partition
 at least one subinterval has a restriction of $g$ that is not affine.
+
+
+  \item[\operatorname{IsPiecewiseLinear}.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\begin{aligned}
+&\text{Let } a,b \in \mathbb{R} \text{ with } a<b \text{ and } g:[a,b]\to\mathbb{R}.\\
+&g \text{ is not piecewise linear}\\
+&\Longleftrightarrow
+\forall m \in \mathbb{N}\;\Bigl(m \ge 1 \Rightarrow
+\forall x_0,\ldots,x_m \in [a,b]\;
+\bigl[a=x_0 < \cdots < x_m = b\\
+&\qquad\qquad\Rightarrow
+\exists k \in \{1,\ldots,m\}\; g|_{[x_{k-1},x_k]} \text{ is not affine}\bigr]\Bigr).
+\end{aligned}
+  \]
+  \[
+\neg\operatorname{IsPiecewiseLinear}(g,[a,b])
+\Longleftrightarrow
+\forall m \in \mathbb{N}\;\Bigl(m \ge 1 \Rightarrow
+\forall x_0,\ldots,x_m \in [a,b]\;
+\bigl[a=x_0 < \cdots < x_m = b
+\Rightarrow
+\exists k \in \{1,\ldots,m\}\; g|_{[x_{k-1},x_k]} \text{ is not affine}\bigr]\Bigr).
+  \]
 \end{description}
 \end{remark*}
 
@@ -166,6 +227,31 @@ at least one subinterval has a restriction of $g$ that is not affine.
 \;\lor\;
 \underbrace{\exists k\in\{1,\ldots,m\}\; g|_{[x_{k-1},x_k]}\text{ is not affine}}_{\text{non-affine segment}}.
 \]
+
+
+  \item[\operatorname{IsPiecewiseLinear}.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\begin{aligned}
+&\text{Let } a,b \in \mathbb{R} \text{ with } a<b \text{ and } g:[a,b]\to\mathbb{R}.\\
+&g \text{ is not piecewise linear}\\
+&\Longleftrightarrow
+\forall m \in \mathbb{N}\;\Bigl(m \ge 1 \Rightarrow
+\forall x_0,\ldots,x_m \in [a,b]\;
+\bigl[a=x_0 < \cdots < x_m = b\\
+&\qquad\qquad\Rightarrow
+\exists k \in \{1,\ldots,m\}\; g|_{[x_{k-1},x_k]} \text{ is not affine}\bigr]\Bigr).
+\end{aligned}
+  \]
+  \[
+\neg\operatorname{IsPiecewiseLinear}(g,[a,b])
+\Longleftrightarrow
+\forall m \in \mathbb{N}\;\Bigl(m \ge 1 \Rightarrow
+\forall x_0,\ldots,x_m \in [a,b]\;
+\bigl[a=x_0 < \cdots < x_m = b
+\Rightarrow
+\exists k \in \{1,\ldots,m\}\; g|_{[x_{k-1},x_k]} \text{ is not affine}\bigr]\Bigr).
+  \]
 \end{description}
 \end{remark*}
 
@@ -178,10 +264,10 @@ nodes that covers the whole interval.
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:function]{Function}
-  \item \hyperref[def:closed-interval]{Closed Interval}
   \item \hyperref[def:natural-numbers]{Natural Numbers}
   \item \hyperref[def:order-on-r]{Order on $\mathbb{R}$}
+  \item \hyperref[def:closed-interval]{Closed Interval}
+  \item \hyperref[def:function]{Function}
 \end{itemize}
 \end{dependencies}
 % ---------------------------------------------------------
@@ -206,7 +292,13 @@ Let $f\colon[a,b]\to\mathbb{R}$ be continuous and let $\varepsilon>0$. Then ther
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-The displayed quantified statement is the predicate-level form of $label: its hypotheses name the input conditions, and its conclusion names the asserted structure or relation.
+\[
+\begin{aligned}
+&\text{Let } f\colon[a,b]\to\mathbb{R},\; f \text{ continuous},\; \varepsilon>0.\\
+&\exists\text{ continuous piecewise linear }\ell_\varepsilon\colon[a,b]\to\mathbb{R}:
+\sup_{x\in[a,b]}|f(x)-\ell_\varepsilon(x)|<\varepsilon.
+\end{aligned}
+\]
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -215,8 +307,8 @@ Every continuous function on a compact interval can be uniformly approximated by
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[thm:heine-cantor]{Heine--Cantor Theorem}
   \item \hyperref[def:piecewise-linear-function]{Piecewise Linear Function}
+  \item \hyperref[thm:heine-cantor]{Heine--Cantor Theorem}
   \item \hyperref[def:continuous-at-point]{Continuity at a Point}
 \end{itemize}
 \end{dependencies}
@@ -243,7 +335,9 @@ Let $f:[a,b]\to\mathbb{R}$ be continuous. For every $\varepsilon>0$ there exists
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{IsContinuous}(f,[a,b])
+  f\colon A\to\mathbb{R},\\
+
+\operatorname{IsContinuous}(f,[a,b],\mathbb{R},\mathbb{R})
 \Longrightarrow
 \forall \varepsilon>0\;\exists p\in\mathbb{R}[x]\;
 \bigl(\|f-p\|_{\infty,[a,b]}<\varepsilon\bigr).
@@ -304,10 +398,10 @@ The nth Bernstein polynomial samples f at the uniformly spaced nodes k/n, weight
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:function]{Function}
   \item \hyperref[def:natural-numbers]{Natural Numbers}
-  \item \hyperref[def:multiplication-on-r]{Multiplication on $\mathbb{R}$}
   \item \hyperref[def:addition-on-r]{Addition on $\mathbb{R}$}
+  \item \hyperref[def:function]{Function}
+  \item \hyperref[def:multiplication-on-r]{Multiplication on $\mathbb{R}$}
 \end{itemize}
 \end{dependencies}
 % ---------------------------------------------------------
@@ -331,7 +425,12 @@ Let $f:[0,1]\to\mathbb{R}$ be continuous, and for each $n\in\mathbb{N}$ let $B_n
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-The displayed quantified statement is the predicate-level form of $label: its hypotheses name the input conditions, and its conclusion names the asserted structure or relation.
+\[
+\begin{aligned}
+&\text{Let } f:[0,1]\to\mathbb{R} \text{ be continuous, and for each } n\in\mathbb{N} \text{ let } B_n \text{ be the $n$th Bernstein polynomial of } f.\\
+&\forall \varepsilon>0\;\exists n_\varepsilon\in\mathbb{N}\;\forall n\ge n_\varepsilon:\ \|f-B_n\|_\infty<\varepsilon.
+\end{aligned}
+\]
 \end{remark*}
 
 \begin{remark*}[Interpretation]

@@ -59,6 +59,27 @@ A,B\subseteq\mathbb{R},\qquad P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq
 \land\neg\operatorname{HasDedekindSeparator}(A,B,P_{\mathbb{R}}).
 \]
 \end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  Failure is witnessed by the displayed negated or contrapositive condition.
+
+  \item[\mathsf{OrderedSet}.]
+  \[
+\exists A,B\subseteq\mathbb{R}\;
+\Bigl[
+A\ne\varnothing\land B\ne\varnothing\land
+\forall a\in A\;\forall b\in B\;(a\le b)
+\land
+\forall c\in\mathbb{R}\;\exists a\in A\;\exists b\in B\;(c<a\lor b<c)
+\Bigr].
+\]
+\[
+A,B\subseteq\mathbb{R},\qquad P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),
+\]
+\end{description}
+\end{remark*}
 \begin{remark*}[Interpretation]
 If one nonempty set lies entirely to the left of another, completeness supplies
 a real separator between them.
@@ -128,6 +149,24 @@ A,B\subseteq\mathbb{R},\qquad P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq
 \operatorname{IsDedekindGap}(A,B,P_{\mathbb{R}}).
 \]
 \end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  Failure is witnessed by the displayed negated or contrapositive condition.
+
+  \item[\operatorname{IsDedekindSeparation} / \operatorname{HasDedekindSeparator}.]
+  \[
+\exists A,B\subseteq\mathbb{R}\;
+\bigl(\operatorname{IsDedekindSeparation}(A,B,\mathbb{R})\land
+\neg\operatorname{HasDedekindSeparator}(A,B,\mathbb{R})\bigr).
+\]
+\[
+A,B\subseteq\mathbb{R},\qquad P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+\operatorname{IsDedekindGap}(A,B,P_{\mathbb{R}}).
+\]
+\end{description}
+\end{remark*}
 \begin{remark*}[Interpretation]
 The real line has no ordered partition into a left part and a right part with
 an unfilled gap between them.
@@ -169,6 +208,22 @@ P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
 P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
 \neg\operatorname{IsOrderComplete}(P_{\mathbb{R}}).
 \]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  Failure is witnessed by the displayed negated or contrapositive condition.
+
+  \item[\operatorname{IsDedekindGap} / \operatorname{IsOrderComplete}.]
+  \[
+\exists A,B\subseteq\mathbb{R}\;\operatorname{IsDedekindGap}(A,B,\mathbb{R}).
+\]
+\[
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+\neg\operatorname{IsOrderComplete}(P_{\mathbb{R}}).
+\]
+\end{description}
 \end{remark*}
 \begin{remark*}[Interpretation]
 Every Dedekind separation of the real line is accounted for by a real boundary

@@ -56,6 +56,22 @@ D\subseteq S\subseteq\mathbb{R},\qquad
 \begin{description}
 \item[Exposition.]
 Density fails when some point of $S$ has a positive-radius neighborhood that contains no point of $D$.
+
+
+  \item[\operatorname{IsDense}.]
+  \[
+\begin{aligned}
+&\text{Let }D\subseteq S\subseteq\mathbb{R}.\\
+&D\text{ is not dense in }S
+\Longleftrightarrow
+\exists x\in S\;\exists \varepsilon_0>0\;\forall d\in D\;\bigl(|x-d|\ge \varepsilon_0\bigr).
+\end{aligned}
+\]
+\[
+D\subseteq S\subseteq\mathbb{R},\qquad
+\neg\operatorname{IsDense}(D,S)\Longleftrightarrow
+\exists x\in S\;\exists \varepsilon_0>0\;\forall d\in D\;\bigl(|x-d|\ge \varepsilon_0\bigr).
+\]
 \end{description}
 \end{remark*}
 
@@ -68,6 +84,22 @@ Density fails when some point of $S$ has a positive-radius neighborhood that con
 \underbrace{\exists x\in S}_{\text{point not approximated}}
 \;\underbrace{\exists \varepsilon_0>0}_{\text{positive exclusion radius}}
 \;\underbrace{\forall d\in D\;\bigl(|x-d|\ge \varepsilon_0\bigr)}_{\text{no point of }D\text{ enters the neighborhood}}.
+\]
+
+
+  \item[\operatorname{IsDense}.]
+  \[
+\begin{aligned}
+&\text{Let }D\subseteq S\subseteq\mathbb{R}.\\
+&D\text{ is not dense in }S
+\Longleftrightarrow
+\exists x\in S\;\exists \varepsilon_0>0\;\forall d\in D\;\bigl(|x-d|\ge \varepsilon_0\bigr).
+\end{aligned}
+\]
+\[
+D\subseteq S\subseteq\mathbb{R},\qquad
+\neg\operatorname{IsDense}(D,S)\Longleftrightarrow
+\exists x\in S\;\exists \varepsilon_0>0\;\forall d\in D\;\bigl(|x-d|\ge \varepsilon_0\bigr).
 \]
 \end{description}
 \end{remark*}
@@ -135,6 +167,23 @@ D_A=\mathsf{OrderDenseSet}(A,P_X),\qquad
 \begin{description}
 \item[Exposition.]
 Order density fails when there is a nonempty open interval of $X$ that contains no point of $A$.
+
+
+  \item[\operatorname{IsOrderDenseSubset}.]
+  \[
+\begin{aligned}
+&\text{Let }X\text{ be a linearly ordered set and }A\subseteq X.\\
+&A\text{ is not order dense in }X
+\Longleftrightarrow
+\exists a,b\in X\;\bigl(a<b\land \forall c\in A\;(c\le a\lor b\le c)\bigr).
+\end{aligned}
+\]
+\[
+X\in\mathbf{Set},\qquad A\subseteq X,\qquad P_X=\mathsf{OrderedSet}(X,\leq),\qquad
+D_A=\mathsf{OrderDenseSet}(A,P_X),\qquad
+\neg\operatorname{IsOrderDenseSubset}(A,P_X)\Longleftrightarrow
+\exists a,b\in X\;\bigl(a<b\land \forall c\in A\;(c\le a\lor b\le c)\bigr).
+\]
 \end{description}
 \end{remark*}
 
@@ -147,6 +196,23 @@ Order density fails when there is a nonempty open interval of $X$ that contains 
 \underbrace{\exists a,b\in X\;(a<b)}_{\text{nonempty interval}}
 \;\land\;
 \underbrace{\forall c\in A\;(c\le a\lor b\le c)}_{\text{no point of }A\text{ lies between }a\text{ and }b}.
+\]
+
+
+  \item[\operatorname{IsOrderDenseSubset}.]
+  \[
+\begin{aligned}
+&\text{Let }X\text{ be a linearly ordered set and }A\subseteq X.\\
+&A\text{ is not order dense in }X
+\Longleftrightarrow
+\exists a,b\in X\;\bigl(a<b\land \forall c\in A\;(c\le a\lor b\le c)\bigr).
+\end{aligned}
+\]
+\[
+X\in\mathbf{Set},\qquad A\subseteq X,\qquad P_X=\mathsf{OrderedSet}(X,\leq),\qquad
+D_A=\mathsf{OrderDenseSet}(A,P_X),\qquad
+\neg\operatorname{IsOrderDenseSubset}(A,P_X)\Longleftrightarrow
+\exists a,b\in X\;\bigl(a<b\land \forall c\in A\;(c\le a\lor b\le c)\bigr).
 \]
 \end{description}
 \end{remark*}
@@ -203,6 +269,18 @@ D_{\mathbb{Q}}=\mathsf{OrderDenseSet}(\mathbb{Q},P_{\mathbb{R}}),\qquad
 \begin{description}
 \item[Exposition.]
 The theorem would fail precisely if some nonempty real interval contained no rational number.
+
+
+  \item[\operatorname{IsOrderDenseSubset}.]
+  \[
+\exists a,b\in\mathbb{R}\;\bigl(a<b\land \forall q\in\mathbb{Q}\;(q\le a\lor b\le q)\bigr).
+\]
+\[
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad \mathbb{Q}\subseteq\mathbb{R},\qquad
+D_{\mathbb{Q}}=\mathsf{OrderDenseSet}(\mathbb{Q},P_{\mathbb{R}}),\qquad
+\neg\operatorname{IsOrderDenseSubset}(\mathbb{Q},P_{\mathbb{R}})\Longleftrightarrow
+\exists a,b\in\mathbb{R}\;\bigl(a<b\land \forall q\in\mathbb{Q}\;(q\le a\lor b\le q)\bigr).
+\]
 \end{description}
 \end{remark*}
 
@@ -215,6 +293,18 @@ The theorem would fail precisely if some nonempty real interval contained no rat
 \underbrace{\exists a,b\in\mathbb{R}\;(a<b)}_{\text{nonempty real interval}}
 \;\land\;
 \underbrace{\forall q\in\mathbb{Q}\;(q\le a\lor b\le q)}_{\text{no rational lies inside}}.
+\]
+
+
+  \item[\operatorname{IsOrderDenseSubset}.]
+  \[
+\exists a,b\in\mathbb{R}\;\bigl(a<b\land \forall q\in\mathbb{Q}\;(q\le a\lor b\le q)\bigr).
+\]
+\[
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad \mathbb{Q}\subseteq\mathbb{R},\qquad
+D_{\mathbb{Q}}=\mathsf{OrderDenseSet}(\mathbb{Q},P_{\mathbb{R}}),\qquad
+\neg\operatorname{IsOrderDenseSubset}(\mathbb{Q},P_{\mathbb{R}})\Longleftrightarrow
+\exists a,b\in\mathbb{R}\;\bigl(a<b\land \forall q\in\mathbb{Q}\;(q\le a\lor b\le q)\bigr).
 \]
 \end{description}
 \end{remark*}
@@ -558,6 +648,18 @@ D_I=\mathsf{OrderDenseSet}(I,P_{\mathbb{R}}),\qquad
 \begin{description}
 \item[Exposition.]
 The theorem would fail precisely if some nonempty real interval contained no irrational number.
+
+
+  \item[\operatorname{IsOrderDenseSubset}.]
+  \[
+\exists a,b\in\mathbb{R}\;\bigl(a<b\land \forall s\in\mathbb{R}\setminus\mathbb{Q}\;(s\le a\lor b\le s)\bigr).
+\]
+\[
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad I=\mathbb{R}\setminus\mathbb{Q},\qquad
+D_I=\mathsf{OrderDenseSet}(I,P_{\mathbb{R}}),\qquad
+\neg\operatorname{IsOrderDenseSubset}(I,P_{\mathbb{R}})\Longleftrightarrow
+\exists a,b\in\mathbb{R}\;\bigl(a<b\land \forall s\in\mathbb{R}\setminus\mathbb{Q}\;(s\le a\lor b\le s)\bigr).
+\]
 \end{description}
 \end{remark*}
 
@@ -570,6 +672,18 @@ The theorem would fail precisely if some nonempty real interval contained no irr
 \underbrace{\exists a,b\in\mathbb{R}\;(a<b)}_{\text{nonempty real interval}}
 \;\land\;
 \underbrace{\forall s\in\mathbb{R}\setminus\mathbb{Q}\;(s\le a\lor b\le s)}_{\text{no irrational lies inside}}.
+\]
+
+
+  \item[\operatorname{IsOrderDenseSubset}.]
+  \[
+\exists a,b\in\mathbb{R}\;\bigl(a<b\land \forall s\in\mathbb{R}\setminus\mathbb{Q}\;(s\le a\lor b\le s)\bigr).
+\]
+\[
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad I=\mathbb{R}\setminus\mathbb{Q},\qquad
+D_I=\mathsf{OrderDenseSet}(I,P_{\mathbb{R}}),\qquad
+\neg\operatorname{IsOrderDenseSubset}(I,P_{\mathbb{R}})\Longleftrightarrow
+\exists a,b\in\mathbb{R}\;\bigl(a<b\land \forall s\in\mathbb{R}\setminus\mathbb{Q}\;(s\le a\lor b\le s)\bigr).
 \]
 \end{description}
 \end{remark*}
@@ -728,6 +842,24 @@ D_{\mathbb{R}}=\mathsf{OrderDenseSet}(\mathbb{R},P_{\mathbb{R}}),\qquad
 \neg\operatorname{HasDenseOrder}(P_{\mathbb{R}}).
 \]
 \end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  Failure is witnessed by the displayed negated or contrapositive condition.
+
+  \item[\operatorname{HasDenseOrder}.]
+  \[
+\exists a,b\in\mathbb{R}\;
+\bigl(a<b\land \forall c\in\mathbb{R}\;(c\le a\lor b\le c)\bigr).
+\]
+\[
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+D_{\mathbb{R}}=\mathsf{OrderDenseSet}(\mathbb{R},P_{\mathbb{R}}),\qquad
+\neg\operatorname{HasDenseOrder}(P_{\mathbb{R}}).
+\]
+\end{description}
+\end{remark*}
 \begin{remark*}[Interpretation]
 No two distinct real numbers are consecutive; every nonempty open real interval
 contains another real point.
@@ -877,6 +1009,30 @@ D_I=\mathsf{OrderDenseSet}(I,P_{\mathbb{R}}),\qquad
 \begin{description}
 \item[Exposition.]
 The corollary fails if a nonempty real interval misses all rational points or misses all irrational points.
+
+
+  \item[\operatorname{IsOrderDenseSubset}.]
+  \[
+\exists a,b\in\mathbb{R}\;
+\Bigl[
+a<b\land
+\bigl(
+\forall q\in\mathbb{Q}\;(q\le a\lor b\le q)
+\lor
+\forall s\in\mathbb{R}\setminus\mathbb{Q}\;(s\le a\lor b\le s)
+\bigr)
+\Bigr].
+\]
+\[
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad I=\mathbb{R}\setminus\mathbb{Q},\qquad
+D_{\mathbb{Q}}=\mathsf{OrderDenseSet}(\mathbb{Q},P_{\mathbb{R}}),\qquad
+D_I=\mathsf{OrderDenseSet}(I,P_{\mathbb{R}}),\qquad
+\neg\Bigl[
+\operatorname{IsOrderDenseSubset}(\mathbb{Q},P_{\mathbb{R}})
+\land
+\operatorname{IsOrderDenseSubset}(I,P_{\mathbb{R}})
+\Bigr].
+\]
 \end{description}
 \end{remark*}
 
@@ -890,6 +1046,30 @@ The corollary fails if a nonempty real interval misses all rational points or mi
 \underbrace{\forall q\in\mathbb{Q}\;(q\le a\lor b\le q)}_{\text{no rational point}}
 \;\lor\;
 \underbrace{\forall s\in\mathbb{R}\setminus\mathbb{Q}\;(s\le a\lor b\le s)}_{\text{no irrational point}}
+\Bigr].
+\]
+
+
+  \item[\operatorname{IsOrderDenseSubset}.]
+  \[
+\exists a,b\in\mathbb{R}\;
+\Bigl[
+a<b\land
+\bigl(
+\forall q\in\mathbb{Q}\;(q\le a\lor b\le q)
+\lor
+\forall s\in\mathbb{R}\setminus\mathbb{Q}\;(s\le a\lor b\le s)
+\bigr)
+\Bigr].
+\]
+\[
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad I=\mathbb{R}\setminus\mathbb{Q},\qquad
+D_{\mathbb{Q}}=\mathsf{OrderDenseSet}(\mathbb{Q},P_{\mathbb{R}}),\qquad
+D_I=\mathsf{OrderDenseSet}(I,P_{\mathbb{R}}),\qquad
+\neg\Bigl[
+\operatorname{IsOrderDenseSubset}(\mathbb{Q},P_{\mathbb{R}})
+\land
+\operatorname{IsOrderDenseSubset}(I,P_{\mathbb{R}})
 \Bigr].
 \]
 \end{description}

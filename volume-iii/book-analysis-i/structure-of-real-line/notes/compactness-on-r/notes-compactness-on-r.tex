@@ -45,6 +45,26 @@ K\subseteq\mathbb{R},\qquad
 \Rightarrow K\not\subseteq\textstyle\bigcup_{i\in J}U_i)\bigr).
 \]
 \end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  Failure is witnessed by the displayed negated or contrapositive condition.
+
+  \item[\operatorname{IsCompact} / \operatorname{OpenCover}.]
+  \[
+K \text{ not compact} \Longleftrightarrow \exists \{U_i\}_{i\in I}\Bigl(\bigl(\forall i\in I\;U_i \text{ open}\bigr)\land K\subseteq\textstyle\bigcup_{i\in I}U_i \land \forall \text{finite } J\subseteq I\;K\not\subseteq\textstyle\bigcup_{i\in J}U_i\Bigr).
+\]
+\[
+K\subseteq\mathbb{R},\qquad
+\neg\operatorname{IsCompact}(K,\mathbb{R})
+\Longleftrightarrow
+\exists \mathcal{U}\;\bigl(\operatorname{OpenCover}(\mathcal{U},K,\mathbb{R})
+\land \forall J\;(J\subseteq I\land \operatorname{FiniteSet}(J)
+\Rightarrow K\not\subseteq\textstyle\bigcup_{i\in J}U_i)\bigr).
+\]
+\end{description}
+\end{remark*}
 \begin{remark*}[Interpretation]
 Compactness is a finiteness property phrased entirely in open sets: no matter how a set is covered by open pieces, finitely many already do the job. This is what later guarantees, on a compact domain, that continuous functions attain extrema and are uniformly continuous --- the facts Analysis~I relies on. Crucially, this definition does not mention order or boundedness, so it transfers unchanged to the torus.
 \end{remark*}

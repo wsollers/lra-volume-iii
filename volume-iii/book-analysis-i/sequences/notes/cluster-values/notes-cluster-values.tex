@@ -33,7 +33,7 @@ L\text{ is a cluster value of }(x_n)
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{IsClusterValue}(x_n,L)
+\operatorname{IsClusterValue}(x_n,L,\mathbb{R})
 \coloneqq
 \forall \varepsilon>0\;\forall N\in\mathbb{N}\;\exists n\ge N
 \;\bigl(|x_n-L|<\varepsilon\bigr).
@@ -47,6 +47,37 @@ L\text{ is not a cluster value of }(x_n)
 \exists \varepsilon>0\;\exists N\in\mathbb{N}\;\forall n\ge N
 \;\bigl(|x_n-L|\ge\varepsilon\bigr).
 \]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+L\text{ is not a cluster value of }(x_n)
+\Longleftrightarrow
+\exists \varepsilon>0\;\exists N\in\mathbb{N}\;\forall n\ge N
+\;\bigl(|x_n-L|\ge\varepsilon\bigr).
+\]
+\end{remark*}
+
+
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+Failure is witnessed by a tail that avoids one fixed neighborhood of $L$.
+  \item[\operatorname{IsClusterValue}.]
+\[
+L\text{ is not a cluster value of }(x_n)
+\Longleftrightarrow
+\exists \varepsilon>0\;\exists N\in\mathbb{N}\;\forall n\ge N
+\;\bigl(|x_n-L|\ge\varepsilon\bigr).
+\]
+\[
+\neg\operatorname{IsClusterValue}(x_n,L,\mathbb{R})
+\Longleftrightarrow
+\exists \varepsilon>0\;\exists N\in\mathbb{N}\;\forall n\ge N
+\;\bigl(|x_n-L|\ge\varepsilon\bigr).
+\]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -90,9 +121,9 @@ L\text{ is a subsequential limit of }(x_n)
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{IsClusterValue}(x_n,L)
+\operatorname{IsClusterValue}(x_n,L,\mathbb{R})
 \Longleftrightarrow
-\operatorname{IsClusterValue}(x_n,L).
+\operatorname{IsClusterValue}(x_n,L,\mathbb{R}).
 \]
 \end{remark*}
 
@@ -139,9 +170,9 @@ Every bounded real sequence has at least one cluster value.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{Bounded}(x_n)
+\operatorname{Bounded}(x_n,\mathbb{R})
 \Longrightarrow
-\exists L\in\mathbb{R}\;\operatorname{IsClusterValue}(x_n,L).
+\exists L\in\mathbb{R}\;\operatorname{IsClusterValue}(x_n,L,\mathbb{R}).
 \]
 \end{remark*}
 
@@ -208,23 +239,23 @@ $\liminf_{n\to\infty}x_n$ is the smallest cluster value of $(x_n)$.
 \begin{remark*}[Predicate reading]
 \[
 \begin{aligned}
-&\operatorname{Bounded}(x_n)
+&\operatorname{Bounded}(x_n,\mathbb{R})
 \Longrightarrow\\
 &\quad
 \operatorname{IsClusterValue}
-\bigl(x_n,\limsup_{n\to\infty}x_n\bigr)
+\bigl(x_n,\limsup_{n\to\infty}x_n,\mathbb{R}\bigr)
 \land
 \forall L\in\mathbb{R}\;
-\bigl(\operatorname{IsClusterValue}(x_n,L)
+\bigl(\operatorname{IsClusterValue}(x_n,L,\mathbb{R})
 \Longrightarrow L\le \limsup_{n\to\infty}x_n\bigr),\\
-&\operatorname{Bounded}(x_n)
+&\operatorname{Bounded}(x_n,\mathbb{R})
 \Longrightarrow\\
 &\quad
 \operatorname{IsClusterValue}
-\bigl(x_n,\liminf_{n\to\infty}x_n\bigr)
+\bigl(x_n,\liminf_{n\to\infty}x_n,\mathbb{R}\bigr)
 \land
 \forall L\in\mathbb{R}\;
-\bigl(\operatorname{IsClusterValue}(x_n,L)
+\bigl(\operatorname{IsClusterValue}(x_n,L,\mathbb{R})
 \Longrightarrow \liminf_{n\to\infty}x_n\le L\bigr).
 \end{aligned}
 \]

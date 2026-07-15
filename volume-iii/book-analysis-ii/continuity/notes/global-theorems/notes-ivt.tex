@@ -30,12 +30,14 @@ Let $A \subseteq \mathbb{R}$ and $f \colon A \to \mathbb{R}$. The function $f$ i
 
 \begin{remark*}[Predicate reading]
 \[
+  f\colon A\to\mathbb{R},\\
+
 \operatorname{Bounded}(f,A) \coloneqq \exists M>0 \; \forall x \in A \; (|f(x)| \le M).
 \]
 
 
 \[
-\operatorname{IsContinuous}(f,[a,b])
+\operatorname{IsContinuous}(f,[a,b],\mathbb{R},\mathbb{R})
 \land \forall x\in[a,b]\;(f(x)\neq c)
 \Longrightarrow
 \Bigl[\bigl(\forall x\in[a,b]\; f(x)>c\bigr)
@@ -65,6 +67,21 @@ Let $A \subseteq \mathbb{R}$ and $f \colon A \to \mathbb{R}$. The function $f$ i
 \begin{description}
   \item[Exposition.]
 Failure occurs precisely when every proposed positive bound $M$ is exceeded by some value of $|f(x)|$ with $x \in A$.
+
+
+  \item[\operatorname{Bounded}.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\begin{aligned}
+&\text{Let } A \subseteq \mathbb{R} \text{ and } f \colon A \to \mathbb{R}.\\
+&\neg(f \text{ bounded on } A)
+\Longleftrightarrow
+\forall M>0 \; \exists x \in A \; (|f(x)| > M).
+\end{aligned}
+  \]
+  \[
+\neg \operatorname{Bounded}(f,A) \Longleftrightarrow \forall M>0 \; \exists x \in A \; (|f(x)| > M).
+  \]
 \end{description}
 \end{remark*}
 
@@ -75,6 +92,21 @@ Failure occurs precisely when every proposed positive bound $M$ is exceeded by s
 \underbrace{\forall M>0}_{\text{no admissible bound}}
 \; \underbrace{\exists x \in A \; (|f(x)| > M)}_{\text{value exceeding } M}.
 \]
+
+
+  \item[\operatorname{Bounded}.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\begin{aligned}
+&\text{Let } A \subseteq \mathbb{R} \text{ and } f \colon A \to \mathbb{R}.\\
+&\neg(f \text{ bounded on } A)
+\Longleftrightarrow
+\forall M>0 \; \exists x \in A \; (|f(x)| > M).
+\end{aligned}
+  \]
+  \[
+\neg \operatorname{Bounded}(f,A) \Longleftrightarrow \forall M>0 \; \exists x \in A \; (|f(x)| > M).
+  \]
 \end{description}
 \end{remark*}
 
@@ -88,10 +120,10 @@ The definition packages the informal idea that the values of $f$ stay within a f
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:function]{Function}
-  \item \hyperref[def:subset]{Subset}
   \item \hyperref[def:real-chapter-absolute-value-on-r]{Absolute Value on $\mathbb{R}$}
   \item \hyperref[def:order-on-r]{Order on $\mathbb{R}$}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:function]{Function}
 \end{itemize}
 \end{dependencies}
 % ---------------------------------------------------------
@@ -118,7 +150,9 @@ Let $a<b$ and let $f:[a,b]\to\mathbb{R}$ be continuous on $[a,b]$. Then there ex
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{IsContinuous}(f,[a,b]) \Longrightarrow \operatorname{Bounded}(f,[a,b]).
+  f\colon A\to\mathbb{R},\\
+
+\operatorname{IsContinuous}(f,[a,b],\mathbb{R},\mathbb{R}) \Longrightarrow \operatorname{Bounded}(f,[a,b]).
 \]
 \end{remark*}
 
@@ -134,7 +168,9 @@ Let $a<b$ and let $f:[a,b]\to\mathbb{R}$ be continuous on $[a,b]$. Then there ex
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{IsContinuous}(f,[a,b]) \land \neg\operatorname{Bounded}(f,[a,b]).
+  f\colon A\to\mathbb{R},\\
+
+\operatorname{IsContinuous}(f,[a,b],\mathbb{R},\mathbb{R}) \land \neg\operatorname{Bounded}(f,[a,b]).
 \]
 \end{remark*}
 
@@ -142,6 +178,20 @@ Let $a<b$ and let $f:[a,b]\to\mathbb{R}$ be continuous on $[a,b]$. Then there ex
 \begin{description}
   \item[Exposition.]
 Each component hypothesis is indispensable: without closedness (for instance $f(x)=1/x$ on $(0,1]$) continuity does not prevent divergence near the missing endpoint; without bounded domain (for example $f(x)=x$ on $[0,\infty)$) linear growth forces unbounded values; without continuity (take $f(0)=0$ and $f(x)=1/x$ for $x\in(0,1]$) the discontinuity at $0$ again creates arbitrarily large magnitudes.
+
+
+  \item[\operatorname{IsContinuous}.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\begin{aligned}
+&\text{Let } a<b \text{ and } f:[a,b]\to\mathbb{R}.\\
+&\Bigl(\forall c\in[a,b]\;\forall \varepsilon>0\;\exists \delta>0\;\forall x\in[a,b]\bigl(|x-c|<\delta \Rightarrow |f(x)-f(c)|<\varepsilon\bigr)\Bigr)\\
+&\qquad\land \Bigl(\forall M>0\;\exists x\in[a,b]\;(|f(x)|>M)\Bigr).
+\end{aligned}
+  \]
+  \[
+\operatorname{IsContinuous}(f,[a,b],\mathbb{R},\mathbb{R}) \land \neg\operatorname{Bounded}(f,[a,b]).
+  \]
 \end{description}
 \end{remark*}
 
@@ -150,15 +200,29 @@ Each component hypothesis is indispensable: without closedness (for instance $f(
   \item[Exposition.]
 \[
 \begin{aligned}
-\neg\bigl[\operatorname{IsClosedInterval}(a,b) \land \operatorname{Bounded}([a,b]) \land \operatorname{IsContinuous}(f,[a,b])\bigr]
+\neg\bigl[\operatorname{IsClosedInterval}(a,b) \land \operatorname{Bounded}([a,b]) \land \operatorname{IsContinuous}(f,[a,b],\mathbb{R},\mathbb{R})\bigr]
 &=
 \underbrace{\neg\operatorname{IsClosedInterval}(a,b)}_{\text{missing endpoint}}
 \lor
 \underbrace{\neg\operatorname{Bounded}([a,b])}_{\text{unbounded domain}}
 \lor
-\underbrace{\neg\operatorname{IsContinuous}(f,[a,b])}_{\text{discontinuity}}.
+\underbrace{\neg\operatorname{IsContinuous}(f,[a,b],\mathbb{R},\mathbb{R})}_{\text{discontinuity}}.
 \end{aligned}
 \]
+
+
+  \item[\operatorname{IsContinuous}.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\begin{aligned}
+&\text{Let } a<b \text{ and } f:[a,b]\to\mathbb{R}.\\
+&\Bigl(\forall c\in[a,b]\;\forall \varepsilon>0\;\exists \delta>0\;\forall x\in[a,b]\bigl(|x-c|<\delta \Rightarrow |f(x)-f(c)|<\varepsilon\bigr)\Bigr)\\
+&\qquad\land \Bigl(\forall M>0\;\exists x\in[a,b]\;(|f(x)|>M)\Bigr).
+\end{aligned}
+  \]
+  \[
+\operatorname{IsContinuous}(f,[a,b],\mathbb{R},\mathbb{R}) \land \neg\operatorname{Bounded}(f,[a,b]).
+  \]
 \end{description}
 \end{remark*}
 
@@ -200,9 +264,9 @@ Let $A \subseteq \mathbb{R}$ and let $f \colon A \to \mathbb{R}$. A point $x^{*}
 \begin{remark*}[Predicate reading]
 \[
 \begin{aligned}
-&(x^{*} \in A) \land \operatorname{GreatestElement}(f(x^{*}), f(A))
+&(x^{*} \in A) \land \operatorname{GreatestElement}(f(x^{*}),f(A),\mathsf{OrderedSet}(\mathbb{R},\leq))
 \Longleftrightarrow (x^{*} \in A) \land \forall x \in A\; (f(x) \le f(x^{*})),\\
-&(x_{*} \in A) \land \operatorname{LeastElement}(f(x_{*}), f(A))
+&(x_{*} \in A) \land \operatorname{LeastElement}(f(x_{*}),f(A),\mathsf{OrderedSet}(\mathbb{R},\leq))
 \Longleftrightarrow (x_{*} \in A) \land \forall x \in A\; (f(x_{*}) \le f(x)).
 \end{aligned}
 \]
@@ -223,9 +287,9 @@ Let $A \subseteq \mathbb{R}$ and let $f \colon A \to \mathbb{R}$. A point $x^{*}
 \begin{remark*}[Negation predicate reading]
 \[
 \begin{aligned}
-&\neg\bigl[(x^{*} \in A) \land \operatorname{GreatestElement}(f(x^{*}), f(A))\bigr]
+&\neg\bigl[(x^{*} \in A) \land \operatorname{GreatestElement}(f(x^{*}),f(A),\mathsf{OrderedSet}(\mathbb{R},\leq))\bigr]
 \Longleftrightarrow (x^{*} \notin A) \lor \bigl(\exists x \in A\; (f(x) > f(x^{*}))\bigr),\\
-&\neg\bigl[(x_{*} \in A) \land \operatorname{LeastElement}(f(x_{*}), f(A))\bigr]
+&\neg\bigl[(x_{*} \in A) \land \operatorname{LeastElement}(f(x_{*}),f(A),\mathsf{OrderedSet}(\mathbb{R},\leq))\bigr]
 \Longleftrightarrow (x_{*} \notin A) \lor \bigl(\exists x \in A\; (f(x_{*}) > f(x))\bigr).
 \end{aligned}
 \]
@@ -235,6 +299,27 @@ Let $A \subseteq \mathbb{R}$ and let $f \colon A \to \mathbb{R}$. A point $x^{*}
 \begin{description}
   \item[Exposition.]
 An alleged absolute maximum can fail because the proposed point lies outside the domain $A$, or because some $x \in A$ produces a strictly larger function value. An alleged absolute minimum fails for the analogous reasons, either by leaving the domain or by admitting a point in $A$ with a strictly smaller value.
+
+
+  \item[\operatorname{GreatestElement}.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\begin{aligned}
+&\text{Let } A \subseteq \mathbb{R},\; f \colon A \to \mathbb{R},\; x^{*}, x_{*} \in \mathbb{R}.\\
+&x^{*} \text{ fails to be an absolute maximum of } f \text{ on } A\\
+&\Longleftrightarrow (x^{*} \notin A) \lor \bigl(\exists x \in A\; (f(x) > f(x^{*}))\bigr).\\
+&x_{*} \text{ fails to be an absolute minimum of } f \text{ on } A\\
+&\Longleftrightarrow (x_{*} \notin A) \lor \bigl(\exists x \in A\; (f(x_{*}) > f(x))\bigr).
+\end{aligned}
+  \]
+  \[
+\begin{aligned}
+&\neg\bigl[(x^{*} \in A) \land \operatorname{GreatestElement}(f(x^{*}),f(A),\mathsf{OrderedSet}(\mathbb{R},\leq))\bigr]
+\Longleftrightarrow (x^{*} \notin A) \lor \bigl(\exists x \in A\; (f(x) > f(x^{*}))\bigr),\\
+&\neg\bigl[(x_{*} \in A) \land \operatorname{LeastElement}(f(x_{*}),f(A),\mathsf{OrderedSet}(\mathbb{R},\leq))\bigr]
+\Longleftrightarrow (x_{*} \notin A) \lor \bigl(\exists x \in A\; (f(x_{*}) > f(x))\bigr).
+\end{aligned}
+  \]
 \end{description}
 \end{remark*}
 
@@ -243,16 +328,37 @@ An alleged absolute maximum can fail because the proposed point lies outside the
   \item[Exposition.]
 \[
 \begin{aligned}
-&\neg\bigl[(x^{*} \in A) \land \operatorname{GreatestElement}(f(x^{*}), f(A))\bigr]
+&\neg\bigl[(x^{*} \in A) \land \operatorname{GreatestElement}(f(x^{*}),f(A),\mathsf{OrderedSet}(\mathbb{R},\leq))\bigr]
 = \underbrace{(x^{*} \notin A)}_{\text{external point}}
 \lor
 \underbrace{\bigl(\exists x \in A\; (f(x) > f(x^{*}))\bigr)}_{\text{better value}},\\
-&\neg\bigl[(x_{*} \in A) \land \operatorname{LeastElement}(f(x_{*}), f(A))\bigr]
+&\neg\bigl[(x_{*} \in A) \land \operatorname{LeastElement}(f(x_{*}),f(A),\mathsf{OrderedSet}(\mathbb{R},\leq))\bigr]
 = \underbrace{(x_{*} \notin A)}_{\text{external point}}
 \lor
 \underbrace{\bigl(\exists x \in A\; (f(x_{*}) > f(x))\bigr)}_{\text{better value}}.
 \end{aligned}
 \]
+
+
+  \item[\operatorname{GreatestElement}.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\begin{aligned}
+&\text{Let } A \subseteq \mathbb{R},\; f \colon A \to \mathbb{R},\; x^{*}, x_{*} \in \mathbb{R}.\\
+&x^{*} \text{ fails to be an absolute maximum of } f \text{ on } A\\
+&\Longleftrightarrow (x^{*} \notin A) \lor \bigl(\exists x \in A\; (f(x) > f(x^{*}))\bigr).\\
+&x_{*} \text{ fails to be an absolute minimum of } f \text{ on } A\\
+&\Longleftrightarrow (x_{*} \notin A) \lor \bigl(\exists x \in A\; (f(x_{*}) > f(x))\bigr).
+\end{aligned}
+  \]
+  \[
+\begin{aligned}
+&\neg\bigl[(x^{*} \in A) \land \operatorname{GreatestElement}(f(x^{*}),f(A),\mathsf{OrderedSet}(\mathbb{R},\leq))\bigr]
+\Longleftrightarrow (x^{*} \notin A) \lor \bigl(\exists x \in A\; (f(x) > f(x^{*}))\bigr),\\
+&\neg\bigl[(x_{*} \in A) \land \operatorname{LeastElement}(f(x_{*}),f(A),\mathsf{OrderedSet}(\mathbb{R},\leq))\bigr]
+\Longleftrightarrow (x_{*} \notin A) \lor \bigl(\exists x \in A\; (f(x_{*}) > f(x))\bigr).
+\end{aligned}
+  \]
 \end{description}
 \end{remark*}
 
@@ -266,9 +372,9 @@ An absolute maximum identifies the highest value that $f$ attains on its domain 
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:function]{Function}
-  \item \hyperref[def:subset]{Subset}
   \item \hyperref[def:order-on-r]{Order on $\mathbb{R}$}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:function]{Function}
   \item \hyperref[def:maximum]{Maximum}
   \item \hyperref[def:minimum]{Minimum}
 \end{itemize}
@@ -296,8 +402,10 @@ Let $a,b \in \mathbb{R}$ with $a<b$, and let $f:[a,b] \to \mathbb{R}$ be continu
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{IsContinuous}(f,[a,b]) \Longrightarrow \exists x_m,x_M\in [a,b]\;
-\bigl(\operatorname{GreatestElement}(f(x_M),f([a,b])) \land \operatorname{LeastElement}(f(x_m),f([a,b]))\bigr).
+  f\colon A\to\mathbb{R},\\
+
+\operatorname{IsContinuous}(f,[a,b],\mathbb{R},\mathbb{R}) \Longrightarrow \exists x_m,x_M\in [a,b]\;
+\bigl(\operatorname{GreatestElement}(f(x_M),f([a,b]),\mathsf{OrderedSet}(\mathbb{R},\leq)) \land \operatorname{LeastElement}(f(x_m),f([a,b]),\mathsf{OrderedSet}(\mathbb{R},\leq))\bigr).
 \]
 \end{remark*}
 
@@ -308,6 +416,17 @@ The theorem can fail if the compact interval hypothesis is lost, or if
 the function is not continuous on the whole interval. Without compactness
 an extremal value may exist only as a limiting value, and without
 continuity the graph may jump over its supremum or infimum.
+
+
+  \item[\operatorname{IsContinuous}.]
+  The formal obstruction is failure of the continuity hypothesis used by the conclusion.
+  \[
+  \exists c\in A\;\exists\varepsilon_0>0\;\forall\delta>0\;\exists x\in A\;
+  \bigl(|x-c|<\delta\land |f(x)-f(c)|\ge\varepsilon_0\bigr).
+  \]
+  \[
+  \neg\,\operatorname{IsContinuous}(f,A,\mathbb{R},\mathbb{R}).
+  \]
 \end{description}
 \end{remark*}
 
@@ -322,6 +441,17 @@ continuity the graph may jump over its supremum or infimum.
 \underbrace{\exists c\in[a,b]\;\exists \varepsilon>0\;\forall \delta>0\;\exists x\in[a,b]\;
 \bigl(|x-c|<\delta\land |f(x)-f(c)|\ge\varepsilon\bigr)}_{\text{loss of continuity}}.
 \]
+
+
+  \item[\operatorname{IsContinuous}.]
+  The displayed obstruction is the predicate-level failure condition.
+  \[
+  \exists c\in A\;\exists\varepsilon_0>0\;\forall\delta>0\;\exists x\in A\;
+  \bigl(|x-c|<\delta\land |f(x)-f(c)|\ge\varepsilon_0\bigr).
+  \]
+  \[
+  \neg\,\operatorname{IsContinuous}(f,A,\mathbb{R},\mathbb{R}).
+  \]
 \end{description}
 \end{remark*}
 
@@ -359,6 +489,17 @@ Let $a,b \in \mathbb{R}$ with $a<b$ and let $f:[a,b]\to\mathbb{R}$ be continuous
   \item[Exposition.]
 The root conclusion can fail if $f$ is not continuous on $[a,b]$, or if
 the endpoint values do not have opposite signs.
+
+
+  \item[\operatorname{IsContinuous}.]
+  The formal obstruction is failure of the continuity hypothesis used by the conclusion.
+  \[
+  \exists c\in A\;\exists\varepsilon_0>0\;\forall\delta>0\;\exists x\in A\;
+  \bigl(|x-c|<\delta\land |f(x)-f(c)|\ge\varepsilon_0\bigr).
+  \]
+  \[
+  \neg\,\operatorname{IsContinuous}(f,A,\mathbb{R},\mathbb{R}).
+  \]
 \end{description}
 \end{remark*}
 
@@ -371,6 +512,17 @@ the endpoint values do not have opposite signs.
 \;\lor\;
 \underbrace{\bigl(f(a)f(b)\ge 0\bigr)}_{\text{no sign change}}.
 \]
+
+
+  \item[\operatorname{IsContinuous}.]
+  The displayed obstruction is the predicate-level failure condition.
+  \[
+  \exists c\in A\;\exists\varepsilon_0>0\;\forall\delta>0\;\exists x\in A\;
+  \bigl(|x-c|<\delta\land |f(x)-f(c)|\ge\varepsilon_0\bigr).
+  \]
+  \[
+  \neg\,\operatorname{IsContinuous}(f,A,\mathbb{R},\mathbb{R}).
+  \]
 \end{description}
 \end{remark*}
 
@@ -411,7 +563,18 @@ Let $I \subseteq \mathbb{R}$ be an interval, let $f \colon I \to \mathbb{R}$ be 
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-The displayed quantified statement is the predicate-level form of $label: its hypotheses name the input conditions, and its conclusion names the asserted structure or relation.
+\[
+\forall I\subseteq\mathbb{R}\;\forall f:I\to\mathbb{R}\;\forall a,b\in I\;\forall k\in\mathbb{R}\;
+\Bigl[
+\bigl(\forall x,y\in I\;\forall z\in\mathbb{R}\;(x<z<y\Rightarrow z\in I)\bigr)
+\land
+\bigl(\forall c\in I\;\forall \varepsilon>0\;\exists \delta>0\;\forall x\in I\;
+(|x-c|<\delta\Rightarrow |f(x)-f(c)|<\varepsilon)\bigr)
+\land f(a)<k<f(b)
+\Rightarrow
+\exists c\in I\;\bigl(\min\{a,b\}<c<\max\{a,b\}\land f(c)=k\bigr)
+\Bigr].
+\]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
@@ -420,6 +583,17 @@ The displayed quantified statement is the predicate-level form of $label: its hy
 The conclusion can fail only if the continuity-on-an-interval hypothesis
 breaks down, or if the proposed level $k$ is not strictly between the two
 attained endpoint values.
+
+
+  \item[\operatorname{IsContinuous}.]
+  The formal obstruction is failure of the continuity hypothesis used by the conclusion.
+  \[
+  \exists c\in A\;\exists\varepsilon_0>0\;\forall\delta>0\;\exists x\in A\;
+  \bigl(|x-c|<\delta\land |f(x)-f(c)|\ge\varepsilon_0\bigr).
+  \]
+  \[
+  \neg\,\operatorname{IsContinuous}(f,A,\mathbb{R},\mathbb{R}).
+  \]
 \end{description}
 \end{remark*}
 
@@ -437,6 +611,17 @@ attained endpoint values.
 \underbrace{\neg\bigl(f(a)<k<f(b)\bigr)}_{\text{level not between endpoint values}}.
 \end{aligned}
 \]
+
+
+  \item[\operatorname{IsContinuous}.]
+  The displayed obstruction is the predicate-level failure condition.
+  \[
+  \exists c\in A\;\exists\varepsilon_0>0\;\forall\delta>0\;\exists x\in A\;
+  \bigl(|x-c|<\delta\land |f(x)-f(c)|\ge\varepsilon_0\bigr).
+  \]
+  \[
+  \neg\,\operatorname{IsContinuous}(f,A,\mathbb{R},\mathbb{R}).
+  \]
 \end{description}
 \end{remark*}
 
@@ -446,12 +631,12 @@ A continuous real-valued function on an interval cannot skip any intermediate sc
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:function]{Function}
-  \item \hyperref[def:subset]{Subset}
-  \item \hyperref[def:continuous-at-point]{Continuity at a Point}
   \item \hyperref[def:order-on-r]{Order on $\mathbb{R}$}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:function]{Function}
   \item \hyperref[def:maximum]{Maximum}
   \item \hyperref[def:minimum]{Minimum}
+  \item \hyperref[def:continuous-at-point]{Continuity at a Point}
 \end{itemize}
 \end{dependencies}
 % ---------------------------------------------------------
@@ -482,7 +667,9 @@ f([a,b])=[\min_{[a,b]} f,\max_{[a,b]} f].
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{IsContinuous}(f,[a,b]) \Longrightarrow f([a,b])=[\min_{[a,b]} f,\max_{[a,b]} f].
+  f\colon A\to\mathbb{R},\\
+
+\operatorname{IsContinuous}(f,[a,b],\mathbb{R},\mathbb{R}) \Longrightarrow f([a,b])=[\min_{[a,b]} f,\max_{[a,b]} f].
 \]
 \end{remark*}
 
@@ -527,9 +714,11 @@ Let $I \subseteq \mathbb{R}$ be an interval and let $f:I \to \mathbb{R}$ be cont
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{IsContinuous}(f,I)
+  f\colon A\to\mathbb{R},\\
+
+\operatorname{IsContinuous}(f,I,\mathbb{R},\mathbb{R})
 \Longrightarrow
-\mathsf{Interval}(f(I)).
+\mathsf{Interval}(f(I),\mathbb{R},\mathbb{R},\mathbb{R}).
 \]
 \end{remark*}
 
@@ -553,10 +742,43 @@ y\notin f(I).
 
 \begin{remark*}[Negation predicate reading]
 \[
-\mathsf{Interval}(I)\land\operatorname{IsContinuous}(f,I)
-\land\neg\mathsf{Interval}(f(I)).
+  f\colon A\to\mathbb{R},\\
+
+\mathsf{Interval}(I,\mathbb{R},\mathbb{R},\mathbb{R})\land\operatorname{IsContinuous}(f,I,\mathbb{R},\mathbb{R})
+\land\neg\mathsf{Interval}(f(I),\mathbb{R},\mathbb{R},\mathbb{R}).
 \]
 \end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  The negated statement isolates the obstruction to the asserted condition.
+
+  \item[\operatorname{IsContinuous}.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\begin{aligned}
+&\exists I\subseteq\mathbb{R}\;\exists f:I\to\mathbb{R}\;
+\exists y_1,y_2\in f(I)\;\exists y\in\mathbb{R}:\\
+&\qquad
+\bigl(\forall x_1,x_2\in I\;\forall z\in\mathbb{R}\;(x_1<z<x_2\Rightarrow z\in I)\bigr)\\
+&\qquad\land
+\bigl(\forall c\in I\;\forall \varepsilon>0\;\exists \delta>0\;\forall x\in I\;
+(|x-c|<\delta\Rightarrow |f(x)-f(c)|<\varepsilon)\bigr)\\
+&\qquad\land
+y_1<y<y_2
+\land
+y\notin f(I).
+\end{aligned}
+  \]
+  \[
+\mathsf{Interval}(I,\mathbb{R},\mathbb{R},\mathbb{R})\land\operatorname{IsContinuous}(f,I,\mathbb{R},\mathbb{R})
+\land\neg\mathsf{Interval}(f(I),\mathbb{R},\mathbb{R},\mathbb{R}).
+  \]
+\end{description}
+\end{remark*}
+
+
 
 \begin{remark*}[Interpretation]
 Continuous functions cannot tear gaps open inside their images of intervals. Once the function achieves two output values, continuity and the Intermediate Value Theorem force every intermediate value to occur as well, so the image remains an interval even when $I$ is unbounded or half-open. Failure occurs precisely when continuity breaks, because discontinuities can skip intermediate heights and leave disconnected image sets.
@@ -590,7 +812,14 @@ Let $a,b\in\mathbb{R}$ satisfy $a<b$, let $f:[a,b]\to\mathbb{R}$ be continuous, 
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
-The displayed quantified statement is the predicate-level form of $label: its hypotheses name the input conditions, and its conclusion names the asserted structure or relation.
+\[
+\begin{aligned}
+&\text{Let } a<b,\; f:[a,b]\to\mathbb{R} \text{ be continuous, and } c\in\mathbb{R}.\\
+&\Bigl(\forall x\in[a,b]\; f(x)\neq c\Bigr)
+\Rightarrow
+\Bigl[\bigl(\forall x\in[a,b]\; f(x)>c\bigr)\lor\bigl(\forall x\in[a,b]\; f(x)<c\bigr)\Bigr].
+\end{aligned}
+\]
 \end{remark*}
 
 \begin{remark*}[Negated quantified statement]
@@ -608,7 +837,9 @@ The displayed quantified statement is the predicate-level form of $label: its hy
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{IsContinuous}(f,[a,b])
+  f\colon A\to\mathbb{R},\\
+
+\operatorname{IsContinuous}(f,[a,b],\mathbb{R},\mathbb{R})
 \land
 \Bigl(\forall x\in[a,b]\; f(x)\neq c\Bigr)
 \land
@@ -619,6 +850,39 @@ The displayed quantified statement is the predicate-level form of $label: its hy
 \Bigr].
 \]
 \end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  The negated statement isolates the obstruction to the asserted condition.
+
+  \item[\operatorname{IsContinuous}.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\begin{aligned}
+&\text{Let } a<b,\; f:[a,b]\to\mathbb{R} \text{ be continuous, and } c\in\mathbb{R}.\\
+&\Bigl(\forall x\in[a,b]\; f(x)\neq c\Bigr)
+\land
+\Bigl(\exists u\in[a,b]\; f(u)\le c\Bigr)
+\land
+\Bigl(\exists v\in[a,b]\; f(v)\ge c\Bigr).
+\end{aligned}
+  \]
+  \[
+\operatorname{IsContinuous}(f,[a,b],\mathbb{R},\mathbb{R})
+\land
+\Bigl(\forall x\in[a,b]\; f(x)\neq c\Bigr)
+\land
+\neg\Bigl[
+\bigl(\forall x\in[a,b]\; f(x)>c\bigr)
+\lor
+\bigl(\forall x\in[a,b]\; f(x)<c\bigr)
+\Bigr].
+  \]
+\end{description}
+\end{remark*}
+
+
 
 \begin{remark*}[Interpretation]
 \[
@@ -634,7 +898,7 @@ The displayed quantified statement is the predicate-level form of $label: its hy
 
 
 \[
-\operatorname{IsContinuous}(f,[a,b])
+\operatorname{IsContinuous}(f,[a,b],\mathbb{R},\mathbb{R})
 \land
 \Bigl(\exists x\in[a,b]\; f(x)\le c\Bigr)
 \land

@@ -67,7 +67,7 @@ for all $x\in A$.
   A candidate bound can fail because the set is empty or because the
   candidate does not control the set from either side.
 
-  \item[Empty-set failure.]
+  \item[\operatorname{EmptySet}.]
   The bounded-comparison statement is stated for nonempty sets.
   \[
     A=\varnothing.
@@ -76,7 +76,7 @@ for all $x\in A$.
     \operatorname{EmptySet}(A).
   \]
 
-  \item[Two-sided defeat.]
+  \item[\operatorname{UpperBound} / \operatorname{LowerBound}.]
   The candidate lies strictly between two elements of $A$.
   \[
     (\exists x,y\in A)(b<x\ \text{and}\ y<b).
@@ -149,7 +149,7 @@ of $A$ is less than or equal to $u$.
   Upper-bound failure means the candidate does not sit above the whole
   set in the ambient order.
 
-  \item[Empty-set failure.]
+  \item[\operatorname{EmptySet}.]
   The definition is stated for nonempty subsets.
   \[
     A=\varnothing.
@@ -158,7 +158,7 @@ of $A$ is less than or equal to $u$.
     \operatorname{EmptySet}(A).
   \]
 
-  \item[Counterexample element.]
+  \item[\operatorname{UpperBound}.]
   Some element of $A$ lies strictly above the proposed upper bound.
   \[
     (\exists x\in A)(u<x).
@@ -229,7 +229,7 @@ element of $A$ is greater than or equal to $\ell$.
   Lower-bound failure means the candidate does not sit below the whole
   set in the ambient order.
 
-  \item[Empty-set failure.]
+  \item[\operatorname{EmptySet}.]
   The definition is stated for nonempty subsets.
   \[
     A=\varnothing.
@@ -238,7 +238,7 @@ element of $A$ is greater than or equal to $\ell$.
     \operatorname{EmptySet}(A).
   \]
 
-  \item[Counterexample element.]
+  \item[\operatorname{LowerBound}.]
   Some element of $A$ lies strictly below the proposed lower bound.
   \[
     (\exists x\in A)(x<\ell).
@@ -274,31 +274,33 @@ set $A$ is \emph{bounded above} if it has at least one upper bound in $S$.
 
 \begin{remark*}[Standard quantified statement]
 \[
-  A\neq\varnothing
-  \quad\text{and}\quad
   (\exists u\in S)(\forall x\in A)(x\leq u).
 \]
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
 \[
-  S\in\mathbf{Set},\qquad A\subseteq S,\qquad P=\mathsf{OrderedSet}(S,\leq),\qquad
-  \operatorname{BoundedAbove}(A,P).
+  P=\mathsf{OrderedSet}(S,\leq),\qquad A\subseteq S,\qquad
+  \operatorname{IsNonempty}(A),\qquad
+  \operatorname{BoundedAbove}(A,P)
+  \Longleftrightarrow
+  (\exists u\in S)\operatorname{UpperBound}(u,A,P).
 \]
 \end{remark*}
 
 \begin{remark*}[Negated quantified statement]
 \[
-  A=\varnothing
-  \quad\text{or}\quad
   (\forall u\in S)(\exists x\in A)(u<x).
 \]
 \end{remark*}
 
 \begin{remark*}[Negation predicate reading]
 \[
-  S\in\mathbf{Set},\qquad A\subseteq S,\qquad P=\mathsf{OrderedSet}(S,\leq),\qquad
-  \neg\operatorname{BoundedAbove}(A,P).
+  P=\mathsf{OrderedSet}(S,\leq),\qquad A\subseteq S,\qquad
+  \operatorname{IsNonempty}(A),\qquad
+  \neg\operatorname{BoundedAbove}(A,P)
+  \Longleftrightarrow
+  (\forall u\in S)\neg\operatorname{UpperBound}(u,A,P).
 \]
 \end{remark*}
 
@@ -308,7 +310,7 @@ set $A$ is \emph{bounded above} if it has at least one upper bound in $S$.
   Bounded-above failure means there is no single element of the ambient
   ordered set that lies above all elements of $A$.
 
-  \item[Empty-set failure.]
+  \item[\operatorname{EmptySet}.]
   The definition is stated for nonempty subsets.
   \[
     A=\varnothing.
@@ -317,7 +319,7 @@ set $A$ is \emph{bounded above} if it has at least one upper bound in $S$.
     \operatorname{EmptySet}(A).
   \]
 
-  \item[Unbounded-above failure.]
+  \item[\operatorname{BoundedAbove}.]
   Every proposed upper-bound candidate is defeated by a larger element of $A$.
   \[
     (\forall u\in S)(\exists x\in A)(u<x).
@@ -352,31 +354,33 @@ set $A$ is \emph{bounded below} if it has at least one lower bound in $S$.
 
 \begin{remark*}[Standard quantified statement]
 \[
-  A\neq\varnothing
-  \quad\text{and}\quad
   (\exists \ell\in S)(\forall x\in A)(\ell\leq x).
 \]
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
 \[
-  S\in\mathbf{Set},\qquad A\subseteq S,\qquad P=\mathsf{OrderedSet}(S,\leq),\qquad
-  \operatorname{BoundedBelow}(A,P).
+  P=\mathsf{OrderedSet}(S,\leq),\qquad A\subseteq S,\qquad
+  \operatorname{IsNonempty}(A),\qquad
+  \operatorname{BoundedBelow}(A,P)
+  \Longleftrightarrow
+  (\exists \ell\in S)\operatorname{LowerBound}(\ell,A,P).
 \]
 \end{remark*}
 
 \begin{remark*}[Negated quantified statement]
 \[
-  A=\varnothing
-  \quad\text{or}\quad
   (\forall \ell\in S)(\exists x\in A)(x<\ell).
 \]
 \end{remark*}
 
 \begin{remark*}[Negation predicate reading]
 \[
-  S\in\mathbf{Set},\qquad A\subseteq S,\qquad P=\mathsf{OrderedSet}(S,\leq),\qquad
-  \neg\operatorname{BoundedBelow}(A,P).
+  P=\mathsf{OrderedSet}(S,\leq),\qquad A\subseteq S,\qquad
+  \operatorname{IsNonempty}(A),\qquad
+  \neg\operatorname{BoundedBelow}(A,P)
+  \Longleftrightarrow
+  (\forall \ell\in S)\neg\operatorname{LowerBound}(\ell,A,P).
 \]
 \end{remark*}
 
@@ -386,7 +390,7 @@ set $A$ is \emph{bounded below} if it has at least one lower bound in $S$.
   Bounded-below failure means there is no single element of the ambient
   ordered set that lies below all elements of $A$.
 
-  \item[Empty-set failure.]
+  \item[\operatorname{EmptySet}.]
   The definition is stated for nonempty subsets.
   \[
     A=\varnothing.
@@ -395,7 +399,7 @@ set $A$ is \emph{bounded below} if it has at least one lower bound in $S$.
     \operatorname{EmptySet}(A).
   \]
 
-  \item[Unbounded-below failure.]
+  \item[\operatorname{BoundedBelow}.]
   Every proposed lower-bound candidate is defeated by a smaller element of $A$.
   \[
     (\forall \ell\in S)(\exists x\in A)(x<\ell).
@@ -430,31 +434,33 @@ set $A$ is \emph{bounded} if it is bounded above and bounded below.
 
 \begin{remark*}[Standard quantified statement]
 \[
-  A\neq\varnothing
-  \quad\text{and}\quad
   (\exists \ell,u\in S)(\forall x\in A)(\ell\leq x\leq u).
 \]
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
 \[
-  S\in\mathbf{Set},\qquad A\subseteq S,\qquad P=\mathsf{OrderedSet}(S,\leq),\qquad
-  \operatorname{Bounded}(A,P).
+  P=\mathsf{OrderedSet}(S,\leq),\qquad A\subseteq S,\qquad
+  \operatorname{IsNonempty}(A),\qquad
+  \operatorname{Bounded}(A,P)
+  \Longleftrightarrow
+  \operatorname{BoundedBelow}(A,P)\land\operatorname{BoundedAbove}(A,P).
 \]
 \end{remark*}
 
 \begin{remark*}[Negated quantified statement]
 \[
-  A=\varnothing
-  \quad\text{or}\quad
   (\forall \ell,u\in S)(\exists x\in A)(x<\ell\ \text{or}\ u<x).
 \]
 \end{remark*}
 
 \begin{remark*}[Negation predicate reading]
 \[
-  S\in\mathbf{Set},\qquad A\subseteq S,\qquad P=\mathsf{OrderedSet}(S,\leq),\qquad
-  \neg\operatorname{Bounded}(A,P).
+  P=\mathsf{OrderedSet}(S,\leq),\qquad A\subseteq S,\qquad
+  \operatorname{IsNonempty}(A),\qquad
+  \neg\operatorname{Bounded}(A,P)
+  \Longleftrightarrow
+  \neg\operatorname{BoundedBelow}(A,P)\lor\neg\operatorname{BoundedAbove}(A,P).
 \]
 \end{remark*}
 
@@ -464,7 +470,7 @@ set $A$ is \emph{bounded} if it is bounded above and bounded below.
   Boundedness fails when the set is outside the nonempty scope or when at
   least one of the two one-sided bounding requirements fails.
 
-  \item[Empty-set failure.]
+  \item[\operatorname{EmptySet}.]
   The definition is stated for nonempty subsets.
   \[
     A=\varnothing.
@@ -473,7 +479,7 @@ set $A$ is \emph{bounded} if it is bounded above and bounded below.
     \operatorname{EmptySet}(A).
   \]
 
-  \item[One-sided failure.]
+  \item[\operatorname{Bounded}.]
   The set is unbounded above or unbounded below.
   \[
     \neg(\exists \ell,u\in S)(\forall x\in A)(\ell\leq x\leq u).

@@ -67,6 +67,23 @@ m\neq\|P\|
 \begin{description}
   \item[Exposition.]
 Failure occurs either when $m$ underestimates the largest subinterval of $P$ or when $m$ overshoots that largest subinterval.
+
+
+  \item[\neq-condition.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\begin{aligned}
+&\text{Let } a,b\in\mathbb{R} \text{ with } a<b, \text{ and let } P=\{x_0,\ldots,x_n\} \text{ be a partition of } [a,b].\\
+&\neg\bigl(m \text{ is the mesh of } P\bigr)
+\Longleftrightarrow
+\bigl(m<\max_{1\le i\le n}(x_i - x_{i-1})\bigr)\lor\bigl(m>\max_{1\le i\le n}(x_i - x_{i-1})\bigr).
+\end{aligned}
+  \]
+  \[
+m\neq\|P\|
+\Longleftrightarrow
+\bigl(m<\max_{1\le i\le n}(x_i - x_{i-1})\bigr)\lor\bigl(m>\max_{1\le i\le n}(x_i - x_{i-1})\bigr).
+  \]
 \end{description}
 \end{remark*}
 
@@ -80,6 +97,23 @@ m\neq\|P\|
 \;\lor\;
 \underbrace{\bigl(m>\max_{1\le i\le n}(x_i - x_{i-1})\bigr)}_{\text{Overestimate}}.
 \]
+
+
+  \item[\neq-condition.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\begin{aligned}
+&\text{Let } a,b\in\mathbb{R} \text{ with } a<b, \text{ and let } P=\{x_0,\ldots,x_n\} \text{ be a partition of } [a,b].\\
+&\neg\bigl(m \text{ is the mesh of } P\bigr)
+\Longleftrightarrow
+\bigl(m<\max_{1\le i\le n}(x_i - x_{i-1})\bigr)\lor\bigl(m>\max_{1\le i\le n}(x_i - x_{i-1})\bigr).
+\end{aligned}
+  \]
+  \[
+m\neq\|P\|
+\Longleftrightarrow
+\bigl(m<\max_{1\le i\le n}(x_i - x_{i-1})\bigr)\lor\bigl(m>\max_{1\le i\le n}(x_i - x_{i-1})\bigr).
+  \]
 \end{description}
 \end{remark*}
 
@@ -131,6 +165,16 @@ Let $[a,b] \subseteq \mathbb{R}$ and let $P$ and $Q$ be partitions of $[a,b]$. T
 \begin{description}
   \item[Exposition.]
 Failure occurs precisely when some point listed in P fails to appear in Q, meaning Q omits at least one of the partition points it was supposed to inherit from P.
+
+
+  \item[\operatorname{IsRefinement}.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\exists x\;(x\in P \land x\notin Q).
+  \]
+  \[
+\neg \operatorname{IsRefinement}(Q,P) \Longleftrightarrow \exists x \in P\; (x \notin Q).
+  \]
 \end{description}
 \end{remark*}
 
@@ -140,6 +184,16 @@ Failure occurs precisely when some point listed in P fails to appear in Q, meani
 \[
 \underbrace{\exists x \in P\; (x \notin Q)}_{\text{point of }P\text{ omitted by }Q}.
 \]
+
+
+  \item[\operatorname{IsRefinement}.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\exists x\;(x\in P \land x\notin Q).
+  \]
+  \[
+\neg \operatorname{IsRefinement}(Q,P) \Longleftrightarrow \exists x \in P\; (x \notin Q).
+  \]
 \end{description}
 \end{remark*}
 
@@ -205,6 +259,24 @@ R = P \cup Q.
 \begin{description}
   \item[Exposition.]
 The claim that a partition $R$ is the common refinement of $P$ and $Q$ fails exactly when $R$ either contains a node not present in $P \cup Q$ or omits a node that $P \cup Q$ contributes. These are the only two structural ways in which $R$ can differ from $P \cup Q$.
+
+
+  \item[\operatorname{IsCommonRefinement}.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\begin{aligned}
+&a<b\land P,Q\subseteq [a,b]\land R\subseteq [a,b]\\
+&\Longrightarrow
+\neg\bigl(\forall x\in\mathbb{R}\;(x\in R\Longleftrightarrow x\in P\cup Q)\bigr)\\
+&\Longleftrightarrow
+\bigl(\exists x\in R\;(x\notin P\cup Q)\bigr)
+\lor
+\bigl(\exists x\in P\cup Q\;(x\notin R)\bigr).
+\end{aligned}
+  \]
+  \[
+\neg \operatorname{IsCommonRefinement}(R,P,Q) \Longleftrightarrow R \ne P \cup Q.
+  \]
 \end{description}
 \end{remark*}
 
@@ -218,6 +290,24 @@ R \ne P \cup Q
 \;\lor\;
 \underbrace{\exists x \in (P \cup Q) \setminus R}_{\text{missing node}}.
 \]
+
+
+  \item[\operatorname{IsCommonRefinement}.]
+  The displayed obstruction is the corresponding failure mode.
+  \[
+\begin{aligned}
+&a<b\land P,Q\subseteq [a,b]\land R\subseteq [a,b]\\
+&\Longrightarrow
+\neg\bigl(\forall x\in\mathbb{R}\;(x\in R\Longleftrightarrow x\in P\cup Q)\bigr)\\
+&\Longleftrightarrow
+\bigl(\exists x\in R\;(x\notin P\cup Q)\bigr)
+\lor
+\bigl(\exists x\in P\cup Q\;(x\notin R)\bigr).
+\end{aligned}
+  \]
+  \[
+\neg \operatorname{IsCommonRefinement}(R,P,Q) \Longleftrightarrow R \ne P \cup Q.
+  \]
 \end{description}
 \end{remark*}
 
