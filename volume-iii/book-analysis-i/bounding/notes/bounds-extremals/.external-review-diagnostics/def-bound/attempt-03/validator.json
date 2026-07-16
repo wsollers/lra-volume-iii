@@ -1,0 +1,9 @@
+{
+  "returncode": 0,
+  "commands": [
+    "C:\\Users\\wsoll\\AppData\\Local\\Programs\\Python\\Python313\\python.exe ..\\lra-governance\\tools\\governance\\validate_semantic_artifact.py --artifact C:\\Users\\wsoll\\AppData\\Local\\Temp\\lra-review-attempt-3-4jf2erid\\artifact.yaml --package-dir C:\\Users\\wsoll\\AppData\\Local\\Temp\\lra-review-attempt-3-4jf2erid --governance-root ..\\lra-governance --strict --repos-root ..",
+    "C:\\Users\\wsoll\\AppData\\Local\\Programs\\Python\\Python313\\python.exe ..\\lra-governance\\tools\\governance\\validate_external_reviewer_evidence.py --package C:\\Users\\wsoll\\AppData\\Local\\Temp\\lra-review-attempt-3-4jf2erid\\package.yaml"
+  ],
+  "stdout": "# Semantic Artifact Validation\n- **Result:** PASS\n- **Errors:** 0\n- **Warnings:** 0\n\n## Errors\n\n_None._\n\n## Warnings\n\n_None._\n# External GPT Reviewer Evidence\nResult: PASS\n\n## Errors\n_None._\n\n## Warnings\n_None._\n",
+  "stderr": ""
+}

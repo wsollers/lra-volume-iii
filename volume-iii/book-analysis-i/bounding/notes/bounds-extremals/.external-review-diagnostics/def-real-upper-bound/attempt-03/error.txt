@@ -1,0 +1,1 @@
+background response resp_0ea94adc6c6c2345006a57bf957e0881918108adb8054734b0 ended with status 'failed': {'code': 'insufficient_quota', 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.'}

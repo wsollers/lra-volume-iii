@@ -1,0 +1,243 @@
+{
+  "id": "resp_0a41bd853778e832006a57ba55b80481a18520b7d13c761529",
+  "object": "response",
+  "created_at": 1784134229,
+  "status": "completed",
+  "background": true,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1784134448,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": null,
+  "max_output_tokens": null,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0a41bd853778e832006a57ba57dc2881a1b46cb657e00bf07c",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "rs_0a41bd853778e832006a57ba66d6dc81a195adc685f44a3218",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "rs_0a41bd853778e832006a57ba72920081a1aaa735f495e8d790",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "rs_0a41bd853778e832006a57ba7e278881a1a0bf566ee402806f",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "rs_0a41bd853778e832006a57ba88f52c81a1aa5c8a9fb2d1ef9d",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "rs_0a41bd853778e832006a57ba93290081a1b5eb31eb9c30dcc4",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "rs_0a41bd853778e832006a57ba9e973481a1995a6ca8dabe97cb",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "rs_0a41bd853778e832006a57baaabd5881a18805f53da61c674f",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "rs_0a41bd853778e832006a57bab4987081a187fdda7aac259824",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "rs_0a41bd853778e832006a57babf12f881a1b932231f19d4b4be",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "rs_0a41bd853778e832006a57bac7d0a881a18f6a560d3345b01e",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "rs_0a41bd853778e832006a57bacfccc081a1ad19b589a1f74f78",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "rs_0a41bd853778e832006a57bad8e1d481a1925a3fcef883ee0c",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "rs_0a41bd853778e832006a57bae3847c81a185c5cfb4bb134a5c",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_0a41bd853778e832006a57baea9ce081a1a76038abfb977838",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"result\":\"reviewed\",\"blocking_issues\":[],\"artifact_yaml\":\"schema_version: lra.semantic-artifact/1.0\\nidentity:\\n  label: def:bound\\n  kind: definition\\n  title: Bound\\n  canonical_name: Bound\\n  status: reviewed\\n  atomicity:\\n    status: atomic\\n    concepts_detected:\\n      - Bound\\n    owning_concept: Bound\\n    split_reason: null\\nlocation:\\n  repository: wsollers/lra-volume-iii\\n  commit: '8510270c72dbd86dc6ccc686c0806a8cd4a2dfd6'\\n  volume: iii\\n  book: book-analysis-i\\n  chapter: bounding\\n  topic: bounds-extremals\\n  source_file: volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-upper-lower-bounds.tex\\n  source_line_start: 15\\n  source_line_end: 97\\n  source_hash: sha256:5fcaf3660caaa0ca4f5fe137097371c41ece293e4351f7ae842aa5394b567597\\nclassification:\\n  mathematical_domain: order theory\\n  artifact_form: predicate_definition\\n  logical_shape: disjunction_of_universal_conditions\\n  logical_framework: mathematical_vernacular\\n  language_level: object_language\\ncontext:\\n  - id: ctx-P\\n    kind: ambient_structure\\n    name: ordered set P with carrier S and order relation '\\\\leq'\\n    ontology_id: struct:ordered-set\\n    construction: 'P=\\\\mathsf{OrderedSet}(S,\\\\leq)'\\n    ast: null\\nparameters:\\n  - id: param-A\\n    symbol: A\\n    role: subset_being_bounded\\n    type:\\n      kind: subset\\n      carrier: S\\n      ambient_context: ctx-P\\n    implicit: false\\n  - id: param-b\\n    symbol: b\\n    role: bound_candidate\\n    type:\\n      kind: element\\n      carrier: S\\n      ambient_context: ctx-P\\n    implicit: false\\nassumptions:\\n  - id: asm-A-nonempty\\n    kind: nonemptiness\\n    latex: 'A\\\\neq\\\\varnothing'\\n    ast:\\n      kind: not\\n      argument:\\n        kind: equals\\n        left:\\n          kind: variable\\n          id: param-A\\n          parameter_id: param-A\\n          symbol: A\\n        right:\\n          kind: constant\\n          symbol: '\\\\varnothing'\\nstatement:\\n  canonical_prose: Under the standing assumption that A is nonempty, b is a bound of A exactly when every element of A is below b or every element of A is above b.\\n  canonical_latex: 'b\\\\text{ is a bound of }A\\\\Longleftrightarrow\\\\bigl[(\\\\forall x\\\\in A)(x\\\\leq b)\\\\lor(\\\\forall x\\\\in A)(b\\\\leq x)\\\\bigr]'\\n  semantic_ast:\\n    kind: or\\n    arguments:\\n      - kind: forall\\n        binder_id: binder-upper-x\\n        binder:\\n          id: binder-upper-x\\n          binder_id: binder-upper-x\\n          symbol: x\\n          type:\\n            kind: element\\n            carrier_parameter_id: param-A\\n        restriction:\\n          kind: membership\\n          element:\\n            kind: variable\\n            id: binder-upper-x\\n            binder_id: binder-upper-x\\n            symbol: x\\n          set:\\n            kind: variable\\n            id: param-A\\n            parameter_id: param-A\\n            symbol: A\\n        body:\\n          kind: relation\\n          relation_symbol: '\\\\leq'\\n          left:\\n            kind: variable\\n            id: binder-upper-x\\n            binder_id: binder-upper-x\\n            symbol: x\\n          right:\\n            kind: variable\\n            id: param-b\\n            parameter_id: param-b\\n            symbol: b\\n      - kind: forall\\n        binder_id: binder-lower-x\\n        binder:\\n          id: binder-lower-x\\n          binder_id: binder-lower-x\\n          symbol: x\\n          type:\\n            kind: element\\n            carrier_parameter_id: param-A\\n        restriction:\\n          kind: membership\\n          element:\\n            kind: variable\\n            id: binder-lower-x\\n            binder_id: binder-lower-x\\n            symbol: x\\n          set:\\n            kind: variable\\n            id: param-A\\n            parameter_id: param-A\\n            symbol: A\\n        body:\\n          kind: relation\\n          relation_symbol: '\\\\leq'\\n          left:\\n            kind: variable\\n            id: param-b\\n            parameter_id: param-b\\n            symbol: b\\n          right:\\n            kind: variable\\n            id: binder-lower-x\\n            binder_id: binder-lower-x\\n            symbol: x\\nlogical_forms:\\n  standard_quantified:\\n    latex: 'b\\\\text{ is a bound of }A\\\\Longleftrightarrow\\\\bigl[(\\\\forall x\\\\in A)(x\\\\leq b)\\\\lor(\\\\forall x\\\\in A)(b\\\\leq x)\\\\bigr]'\\n    ast:\\n      kind: or\\n      arguments:\\n        - kind: forall\\n          binder_id: binder-upper-x\\n          binder:\\n            id: binder-upper-x\\n            binder_id: binder-upper-x\\n            symbol: x\\n            type:\\n              kind: element\\n              carrier_parameter_id: param-A\\n          restriction:\\n            kind: membership\\n            element:\\n              kind: variable\\n              id: binder-upper-x\\n              binder_id: binder-upper-x\\n              symbol: x\\n            set:\\n              kind: variable\\n              id: param-A\\n              parameter_id: param-A\\n              symbol: A\\n          body:\\n            kind: relation\\n            relation_symbol: '\\\\leq'\\n            left:\\n              kind: variable\\n              id: binder-upper-x\\n              binder_id: binder-upper-x\\n              symbol: x\\n            right:\\n              kind: variable\\n              id: param-b\\n              parameter_id: param-b\\n              symbol: b\\n        - kind: forall\\n          binder_id: binder-lower-x\\n          binder:\\n            id: binder-lower-x\\n            binder_id: binder-lower-x\\n            symbol: x\\n            type:\\n              kind: element\\n              carrier_parameter_id: param-A\\n          restriction:\\n            kind: membership\\n            element:\\n              kind: variable\\n              id: binder-lower-x\\n              binder_id: binder-lower-x\\n              symbol: x\\n            set:\\n              kind: variable\\n              id: param-A\\n              parameter_id: param-A\\n              symbol: A\\n          body:\\n            kind: relation\\n            relation_symbol: '\\\\leq'\\n            left:\\n              kind: variable\\n              id: param-b\\n              parameter_id: param-b\\n              symbol: b\\n            right:\\n              kind: variable\\n              id: binder-lower-x\\n              binder_id: binder-lower-x\\n              symbol: x\\n  predicate_reading:\\n    latex: 'P=\\\\mathsf{OrderedSet}(S,\\\\leq),\\\\qquad\\\\operatorname{UpperBound}(b,A,P)\\\\lor\\\\operatorname{LowerBound}(b,A,P)'\\n    ast:\\n      kind: or\\n      arguments:\\n        - kind: predicate\\n          predicate_id: pred:upper-bound\\n          arguments:\\n            - kind: variable\\n              id: param-b\\n              parameter_id: param-b\\n              symbol: b\\n            - kind: variable\\n              id: param-A\\n              parameter_id: param-A\\n              symbol: A\\n            - kind: constant\\n              id: ctx-P\\n              context_id: ctx-P\\n              symbol: P\\n        - kind: predicate\\n          predicate_id: pred:lower-bound\\n          arguments:\\n            - kind: variable\\n              id: param-b\\n              parameter_id: param-b\\n              symbol: b\\n            - kind: variable\\n              id: param-A\\n              parameter_id: param-A\\n              symbol: A\\n            - kind: constant\\n              id: ctx-P\\n              context_id: ctx-P\\n              symbol: P\\n    registry_predicates:\\n      - pred:upper-bound\\n      - pred:lower-bound\\n    registry_structures:\\n      - struct:ordered-set\\n  negation:\\n    mechanical:\\n      latex: '\\\\neg\\\\bigl[(\\\\forall x\\\\in A)(x\\\\leq b)\\\\lor(\\\\forall x\\\\in A)(b\\\\leq x)\\\\bigr]'\\n      ast:\\n        kind: not\\n        argument:\\n          kind: or\\n          arguments:\\n            - kind: forall\\n              binder_id: binder-upper-x\\n              binder:\\n                id: binder-upper-x\\n                binder_id: binder-upper-x\\n                symbol: x\\n                type:\\n                  kind: element\\n                  carrier_parameter_id: param-A\\n              restriction:\\n                kind: membership\\n                element:\\n                  kind: variable\\n                  id: binder-upper-x\\n                  binder_id: binder-upper-x\\n                  symbol: x\\n                set:\\n                  kind: variable\\n                  id: param-A\\n                  parameter_id: param-A\\n                  symbol: A\\n              body:\\n                kind: relation\\n                relation_symbol: '\\\\leq'\\n                left:\\n                  kind: variable\\n                  id: binder-upper-x\\n                  binder_id: binder-upper-x\\n                  symbol: x\\n                right:\\n                  kind: variable\\n                  id: param-b\\n                  parameter_id: param-b\\n                  symbol: b\\n            - kind: forall\\n              binder_id: binder-lower-x\\n              binder:\\n                id: binder-lower-x\\n                binder_id: binder-lower-x\\n                symbol: x\\n                type:\\n                  kind: element\\n                  carrier_parameter_id: param-A\\n              restriction:\\n                kind: membership\\n                element:\\n                  kind: variable\\n                  id: binder-lower-x\\n                  binder_id: binder-lower-x\\n                  symbol: x\\n                set:\\n                  kind: variable\\n                  id: param-A\\n                  parameter_id: param-A\\n                  symbol: A\\n              body:\\n                kind: relation\\n                relation_symbol: '\\\\leq'\\n                left:\\n                  kind: variable\\n                  id: param-b\\n                  parameter_id: param-b\\n                  symbol: b\\n                right:\\n                  kind: variable\\n                  id: binder-lower-x\\n                  binder_id: binder-lower-x\\n                  symbol: x\\n    approved_normal_form:\\n      latex: '(\\\\exists x\\\\in A)(x\\\\nleq b)\\\\land(\\\\exists y\\\\in A)(b\\\\nleq y)'\\n      ast:\\n        kind: and\\n        arguments:\\n          - kind: exists\\n            binder_id: binder-failure-upper-x\\n            binder:\\n              id: binder-failure-upper-x\\n              binder_id: binder-failure-upper-x\\n              symbol: x\\n              type:\\n                kind: element\\n                carrier_parameter_id: param-A\\n            restriction:\\n              kind: membership\\n              element:\\n                kind: variable\\n                id: binder-failure-upper-x\\n                binder_id: binder-failure-upper-x\\n                symbol: x\\n              set:\\n                kind: variable\\n                id: param-A\\n                parameter_id: param-A\\n                symbol: A\\n            body:\\n              kind: not\\n              argument:\\n                kind: relation\\n                relation_symbol: '\\\\leq'\\n                left:\\n                  kind: variable\\n                  id: binder-failure-upper-x\\n                  binder_id: binder-failure-upper-x\\n                  symbol: x\\n                right:\\n                  kind: variable\\n                  id: param-b\\n                  parameter_id: param-b\\n                  symbol: b\\n          - kind: exists\\n            binder_id: binder-failure-lower-y\\n            binder:\\n              id: binder-failure-lower-y\\n              binder_id: binder-failure-lower-y\\n              symbol: y\\n              type:\\n                kind: element\\n                carrier_parameter_id: param-A\\n            restriction:\\n              kind: membership\\n              element:\\n                kind: variable\\n                id: binder-failure-lower-y\\n                binder_id: binder-failure-lower-y\\n                symbol: y\\n              set:\\n                kind: variable\\n                id: param-A\\n                parameter_id: param-A\\n                symbol: A\\n            body:\\n              kind: not\\n              argument:\\n                kind: relation\\n                relation_symbol: '\\\\leq'\\n                left:\\n                  kind: variable\\n                  id: param-b\\n                  parameter_id: param-b\\n                  symbol: b\\n                right:\\n                  kind: variable\\n                  id: binder-failure-lower-y\\n                  binder_id: binder-failure-lower-y\\n                  symbol: y\\n    normalization_requires:\\n      - id: norm-classical-quantifier-duality\\n        reason: Replacing each negated restricted universal statement by an existential witness of failure uses classical quantifier duality.\\n        dependency_label: null\\n  contrapositive: null\\n  equivalent_forms: []\\nsemantics:\\n  witness_dependencies:\\n    - witness: x\\n      role: failure_of_upper_bound_condition\\n      depends_on:\\n        - A\\n        - b\\n        - '\\\\leq'\\n    - witness: y\\n      role: failure_of_lower_bound_condition\\n      depends_on:\\n        - A\\n        - b\\n        - '\\\\leq'\\n  vacuity_behavior:\\n    - condition: 'A=\\\\varnothing'\\n      behavior: Both universal comparison clauses are vacuously true, but the source definition is inapplicable because nonemptiness is a standing assumption.\\n  definedness:\\n    mode: partial\\n    conditions:\\n      - 'A\\\\subseteq S'\\n      - 'A\\\\neq\\\\varnothing'\\n      - 'b\\\\in S'\\n    obligations: []\\n  uniqueness_conditions: []\\n  equality_cases:\\n    - A bound may belong to A, but membership in A is not required.\\n  edge_cases:\\n    - A candidate may satisfy both one-sided conditions, for example when A is a singleton containing b.\\nfailure_analysis:\\n  applicability_failures:\\n    - id: applicability-empty-set\\n      condition: 'A=\\\\varnothing'\\n      explanation: The source definition assumes that A is nonempty; emptiness is not part of the negation of the bound condition.\\n      predicate:\\n        kind: predicate\\n        predicate_id: pred:is-empty\\n        arguments:\\n          - kind: variable\\n            id: param-A\\n            parameter_id: param-A\\n            symbol: A\\n  statement_failure_modes:\\n    - id: failure-both-one-sided-conditions\\n      condition: '(\\\\exists x\\\\in A)(x\\\\nleq b)\\\\land(\\\\exists y\\\\in A)(b\\\\nleq y)'\\n      explanation: The candidate fails to be a bound exactly when it fails both the upper-bound and lower-bound conditions.\\n      witnesses:\\n        - x\\n        - y\\n  counterexample_shape: A nonempty subset A with one witness not below b and one witness not above b; in a non-total order either witness may be incomparable with b.\\nrelationships:\\n  dependency_edges: []\\n  ontology_edges:\\n    - kind: uses_ambient\\n      target: struct:ordered-set\\n      display: OrderedSet\\n      notes: The order relation supplies the two one-sided comparison conditions.\\n  provenance_edges: []\\n  proof_edges: []\\nnotation:\\n  introduced: []\\n  used:\\n    - symbol: '\\\\leq'\\n      registry_id: null\\n    - symbol: '\\\\nleq'\\n      registry_id: null\\n    - symbol: '\\\\varnothing'\\n      registry_id: null\\n  local_conventions:\\n    - Failed non-strict comparisons are not rewritten as strict inequalities without an additional total-order law.\\nexposition:\\n  interpretation: A bound controls the set from at least one side. It need not be sharp and need not belong to the set being bounded.\\n  exposition: []\\n  examples: []\\n  non_examples: []\\n  common_confusions:\\n    - Empty-set inapplicability must not be treated as actual failure of the bound condition.\\n    - In a partial order, x not less than or equal to b does not imply that b is strictly less than x.\\nverification:\\n  canonical_proof: null\\n  formalizations: []\\n  external_library_crosswalks: []\\n  proof_vault_records: []\\nprovenance:\\n  explicit_from_source:\\n    - identity.label\\n    - identity.title\\n    - context\\n    - parameters\\n    - assumptions\\n    - statement\\n    - exposition.interpretation\\n  normalized_from_source:\\n    - statement.canonical_latex\\n    - logical_forms.standard_quantified\\n    - logical_forms.predicate_reading\\n    - failure_analysis.applicability_failures\\n  inferred_from_registry:\\n    - pred:upper-bound\\n    - pred:lower-bound\\n    - pred:is-empty\\n    - struct:ordered-set\\n  generated_by_analysis:\\n    - logical_forms.negation.mechanical\\n    - logical_forms.negation.approved_normal_form\\n    - semantics.vacuity_behavior\\n    - failure_analysis.statement_failure_modes\\n  unresolved: []\\ngovernance:\\n  governance_repository: wsollers/lra-governance\\n  governance_commit: '14e7ff483eaff7098faaa9113200c1aa5a9841c6'\\n  registry_commit: '14e7ff483eaff7098faaa9113200c1aa5a9841c6'\\n  schema_commit: '14e7ff483eaff7098faaa9113200c1aa5a9841c6'\\n  renderer_contract: governed-tex-v1\\n\",\"corrected_tex\":\"\\\\begin{definitionbox}{Bound}\\n\\\\begin{definition}[Bound]\\n\\\\label{def:bound}\\nLet $(S,\\\\leq)$ be an ordered set, let $A\\\\subseteq S$ be nonempty, and let\\n$b\\\\in S$.  The element $b$ is a \\\\emph{bound} of $A$ if and only if it\\ncontrols every element of $A$ from at least one side: either $x\\\\leq b$\\nfor every $x\\\\in A$, or $b\\\\leq x$ for every $x\\\\in A$.\\n\\\\end{definition}\\n\\\\end{definitionbox}\\n\\n\\\\begin{remark*}[Standard quantified statement]\\n\\\\[\\n  b\\\\text{ is a bound of }A\\n  \\\\quad\\\\Longleftrightarrow\\\\quad\\n  \\\\bigl[(\\\\forall x\\\\in A)(x\\\\leq b)\\n  \\\\ \\\\text{or}\\\\ \\n  (\\\\forall x\\\\in A)(b\\\\leq x)\\\\bigr].\\n\\\\]\\n\\\\end{remark*}\\n\\n\\\\begin{remark*}[Predicate reading]\\n\\\\[\\n  P=\\\\mathsf{OrderedSet}(S,\\\\leq),\\\\qquad\\n  \\\\operatorname{UpperBound}(b,A,P)\\n  \\\\lor\\n  \\\\operatorname{LowerBound}(b,A,P).\\n\\\\]\\n\\\\end{remark*}\\n\\n\\\\begin{remark*}[Negated quantified statement]\\n\\\\[\\n  (\\\\exists x\\\\in A)(x\\\\nleq b)\\n  \\\\quad\\\\text{and}\\\\quad\\n  (\\\\exists y\\\\in A)(b\\\\nleq y).\\n\\\\]\\n\\\\end{remark*}\\n\\n\\\\begin{remark*}[Negation predicate reading]\\n\\\\[\\n  P=\\\\mathsf{OrderedSet}(S,\\\\leq),\\\\qquad\\n  \\\\neg\\\\operatorname{UpperBound}(b,A,P)\\n  \\\\land\\n  \\\\neg\\\\operatorname{LowerBound}(b,A,P).\\n\\\\]\\n\\\\end{remark*}\\n\\n\\\\begin{remark*}[Failure modes]\\n\\\\begin{description}\\n  \\\\item[Exposition.]\\n  Under the standing nonemptiness assumption, a candidate fails to be a\\n  bound exactly when it fails both one-sided comparison conditions.  Empty-set\\n  input is instead a failure of applicability.\\n\\n  \\\\item[Applicability failure.]\\n  The definition is stated only for nonempty subsets.\\n  \\\\[\\n    A=\\\\varnothing.\\n  \\\\]\\n  \\\\[\\n    \\\\operatorname{IsEmpty}(A).\\n  \\\\]\\n\\n  \\\\item[Failure of the bound condition.]\\n  There is an element of $A$ that is not below $b$, and there is an element\\n  of $A$ that is not above $b$.\\n  \\\\[\\n    \\\\begin{aligned}\\n      &(\\\\exists x\\\\in A)(x\\\\nleq b),\\\\\\\\\\n      &(\\\\exists y\\\\in A)(b\\\\nleq y).\\n    \\\\end{aligned}\\n  \\\\]\\n  \\\\[\\n    P=\\\\mathsf{OrderedSet}(S,\\\\leq),\\\\qquad\\n    \\\\neg\\\\operatorname{UpperBound}(b,A,P)\\n    \\\\land\\n    \\\\neg\\\\operatorname{LowerBound}(b,A,P).\\n  \\\\]\\n  The non-comparisons are not rewritten as strict inequalities without an\\n  additional total-order law.\\n\\\\end{description}\\n\\\\end{remark*}\\n\\n\\\\begin{remark*}[Interpretation]\\nA bound controls the set from at least one side.  It need not be sharp and it\\nneed not belong to the set being bounded.\\n\\\\end{remark*}\\n\\n\\\\NoLocalDependencies\\n\",\"source_patch\":\"diff --git a/volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-upper-lower-bounds.tex b/volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-upper-lower-bounds.tex\\n--- a/volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-upper-lower-bounds.tex\\n+++ b/volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-upper-lower-bounds.tex\\n@@ -17,7 +17,7 @@\\n \\\\label{def:bound}\\n Let $(S,\\\\leq)$ be an ordered set, let $A\\\\subseteq S$ be nonempty, and let\\n-$b\\\\in S$.  A \\\\emph{bound} of $A$ means a one-sided comparison between $b$\\n-and every element of $A$: either $x\\\\leq b$ for all $x\\\\in A$, or $b\\\\leq x$\\n-for all $x\\\\in A$.\\n+$b\\\\in S$.  The element $b$ is a \\\\emph{bound} of $A$ if and only if it\\n+controls every element of $A$ from at least one side: either $x\\\\leq b$\\n+for every $x\\\\in A$, or $b\\\\leq x$ for every $x\\\\in A$.\\n \\\\end{definition}\\n \\\\end{definitionbox}\\n@@ -25,37 +25,35 @@\\n \\\\begin{remark*}[Standard quantified statement]\\n \\\\[\\n-  A\\\\neq\\\\varnothing\\n-  \\\\quad\\\\text{and}\\\\quad\\n+  b\\\\text{ is a bound of }A\\n+  \\\\quad\\\\Longleftrightarrow\\\\quad\\n   \\\\bigl[(\\\\forall x\\\\in A)(x\\\\leq b)\\n   \\\\ \\\\text{or}\\\\ \\n   (\\\\forall x\\\\in A)(b\\\\leq x)\\\\bigr].\\n \\\\]\\n \\\\end{remark*}\\n \\n \\\\begin{remark*}[Predicate reading]\\n \\\\[\\n-  S\\\\in\\\\mathbf{Set},\\\\qquad A\\\\subseteq S,\\\\qquad P=\\\\mathsf{OrderedSet}(S,\\\\leq),\\\\qquad\\n+  P=\\\\mathsf{OrderedSet}(S,\\\\leq),\\\\qquad\\n   \\\\operatorname{UpperBound}(b,A,P)\\n   \\\\lor\\n   \\\\operatorname{LowerBound}(b,A,P).\\n \\\\]\\n \\\\end{remark*}\\n \\n \\\\begin{remark*}[Negated quantified statement]\\n \\\\[\\n-  A=\\\\varnothing\\n-  \\\\quad\\\\text{or}\\\\quad\\n-  \\\\bigl[(\\\\exists x\\\\in A)(b<x)\\n-  \\\\ \\\\text{and}\\\\ \\n-  (\\\\exists y\\\\in A)(y<b)\\\\bigr].\\n+  (\\\\exists x\\\\in A)(x\\\\nleq b)\\n+  \\\\quad\\\\text{and}\\\\quad\\n+  (\\\\exists y\\\\in A)(b\\\\nleq y).\\n \\\\]\\n \\\\end{remark*}\\n \\n \\\\begin{remark*}[Negation predicate reading]\\n \\\\[\\n-  S\\\\in\\\\mathbf{Set},\\\\qquad A\\\\subseteq S,\\\\qquad P=\\\\mathsf{OrderedSet}(S,\\\\leq),\\\\qquad\\n+  P=\\\\mathsf{OrderedSet}(S,\\\\leq),\\\\qquad\\n   \\\\neg\\\\operatorname{UpperBound}(b,A,P)\\n   \\\\land\\n   \\\\neg\\\\operatorname{LowerBound}(b,A,P).\\n \\\\]\\n \\\\end{remark*}\\n@@ -63,33 +61,42 @@\\n \\\\begin{remark*}[Failure modes]\\n \\\\begin{description}\\n   \\\\item[Exposition.]\\n-  A candidate bound can fail because the set is empty or because the\\n-  candidate does not control the set from either side.\\n+  Under the standing nonemptiness assumption, a candidate fails to be a\\n+  bound exactly when it fails both one-sided comparison conditions.  Empty-set\\n+  input is instead a failure of applicability.\\n \\n-  \\\\item[\\\\operatorname{EmptySet}.]\\n-  The bounded-comparison statement is stated for nonempty sets.\\n+  \\\\item[Applicability failure.]\\n+  The definition is stated only for nonempty subsets.\\n   \\\\[\\n     A=\\\\varnothing.\\n   \\\\]\\n   \\\\[\\n-    \\\\operatorname{EmptySet}(A).\\n+    \\\\operatorname{IsEmpty}(A).\\n   \\\\]\\n \\n-  \\\\item[\\\\operatorname{UpperBound} / \\\\operatorname{LowerBound}.]\\n-  The candidate lies strictly between two elements of $A$.\\n+  \\\\item[Failure of the bound condition.]\\n+  There is an element of $A$ that is not below $b$, and there is an element\\n+  of $A$ that is not above $b$.\\n   \\\\[\\n-    (\\\\exists x,y\\\\in A)(b<x\\\\ \\\\text{and}\\\\ y<b).\\n+    \\\\begin{aligned}\\n+      &(\\\\exists x\\\\in A)(x\\\\nleq b),\\\\\\\\\\n+      &(\\\\exists y\\\\in A)(b\\\\nleq y).\\n+    \\\\end{aligned}\\n   \\\\]\\n   \\\\[\\n     P=\\\\mathsf{OrderedSet}(S,\\\\leq),\\\\qquad\\n     \\\\neg\\\\operatorname{UpperBound}(b,A,P)\\n     \\\\land\\n     \\\\neg\\\\operatorname{LowerBound}(b,A,P).\\n   \\\\]\\n+  The non-comparisons are not rewritten as strict inequalities without an\\n+  additional total-order law.\\n \\\\end{description}\\n \\\\end{remark*}\\n \\n \\\\begin{remark*}[Interpretation]\\n-A bound is a one-sided comparison witness.  It need not be sharp and it\\n+A bound controls the set from at least one side.  It need not be sharp and it\\n need not belong to the set being bounded.\\n \\\\end{remark*}\\n+\\n+\\\\NoLocalDependencies\\n\",\"validation_yaml\":\"schema_version: lra.semantic-artifact-validation/1.0\\nartifact_label: def:bound\\nresult: pass\\nchecks:\\n  schema_conformance: pass\\n  atomicity: pass\\n  source_identity: pass\\n  binder_scope: pass\\n  assumption_separation: pass\\n  statement_shape: pass\\n  predicate_registry: pass\\n  structure_registry: pass\\n  negation: pass\\n  normalization_assumptions: pass\\n  contrapositive_policy: pass\\n  applicability_failure: pass\\n  order_strength: pass\\n  governed_block_policy: pass\\n  yaml_tex_equivalence: pass\\n  formalization_resolution: skipped\\n  proof_vault_resolution: skipped\\ndiagnostics:\\n  - code: PROOF_VAULT_CANDIDATE_NOT_ASSERTED\\n    severity: info\\n    field: verification.proof_vault_records\\n    message: The supplied candidate is not asserted as a foreign key because no authoritative metadata record was available in the controlling input.\\n    autofixable: false\\n\",\"source_map_yaml\":\"schema_version: lra.semantic-artifact-source-map/1.0\\nartifact_label: def:bound\\nmappings:\\n  - field: identity\\n    source_file: volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-upper-lower-bounds.tex\\n    line_start: 15\\n    line_end: 17\\n    origin: explicit\\n    confidence: high\\n    notes: Environment kind, title, and label are explicit.\\n  - field: context\\n    source_file: volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-upper-lower-bounds.tex\\n    line_start: 18\\n    line_end: 18\\n    origin: explicit\\n    confidence: high\\n    notes: The ordered-set ambient is explicit.\\n  - field: parameters\\n    source_file: volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-upper-lower-bounds.tex\\n    line_start: 18\\n    line_end: 19\\n    origin: explicit\\n    confidence: high\\n    notes: A and b, including their ambient types, are explicit.\\n  - field: assumptions\\n    source_file: volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-upper-lower-bounds.tex\\n    line_start: 18\\n    line_end: 18\\n    origin: explicit\\n    confidence: high\\n    notes: Nonemptiness is a standing assumption rather than part of the defined condition.\\n  - field: statement\\n    source_file: volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-upper-lower-bounds.tex\\n    line_start: 18\\n    line_end: 21\\n    origin: normalized\\n    confidence: high\\n    notes: The defining prose is normalized to an explicit biconditional without changing the disjunctive condition.\\n  - field: logical_forms.standard_quantified\\n    source_file: volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-upper-lower-bounds.tex\\n    line_start: 25\\n    line_end: 33\\n    origin: normalized\\n    confidence: high\\n    notes: The standing nonemptiness assumption is separated from the defined condition, and the defined term is shown explicitly.\\n  - field: logical_forms.predicate_reading\\n    source_file: volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-upper-lower-bounds.tex\\n    line_start: 35\\n    line_end: 42\\n    origin: registry_inference\\n    confidence: high\\n    notes: Uses pred:upper-bound, pred:lower-bound, and struct:ordered-set; the unregistered Set assertion is removed.\\n  - field: logical_forms.negation.mechanical\\n    source_file: volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-upper-lower-bounds.tex\\n    line_start: 44\\n    line_end: 52\\n    origin: analysis\\n    confidence: high\\n    notes: Mechanical negation applies only to the defined disjunction and not to the standing nonemptiness assumption.\\n  - field: logical_forms.negation.approved_normal_form\\n    source_file: volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-upper-lower-bounds.tex\\n    line_start: 44\\n    line_end: 52\\n    origin: normalized\\n    confidence: high\\n    notes: Strict inequalities are replaced by order-safe negated non-strict comparisons; classical quantifier duality is recorded.\\n  - field: failure_analysis\\n    source_file: volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-upper-lower-bounds.tex\\n    line_start: 63\\n    line_end: 90\\n    origin: normalized\\n    confidence: high\\n    notes: Empty-set inapplicability is separated from actual failure of both one-sided comparison conditions.\\n  - field: exposition.interpretation\\n    source_file: volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-upper-lower-bounds.tex\\n    line_start: 92\\n    line_end: 95\\n    origin: normalized\\n    confidence: high\\n    notes: The interpretation is retained with a precise description of the one-sided control condition.\\n  - field: relationships.dependency_edges\\n    source_file: null\\n    line_start: null\\n    line_end: null\\n    origin: analysis\\n    confidence: medium\\n    notes: No prior local formal dependency was supplied, so the governed silent marker is generated.\\n\",\"registry_needs_yaml\":\"schema_version: lra.semantic-artifact-registry-needs/1.0\\nartifact_label: def:bound\\nmissing_predicates: []\\nmissing_structures: []\\nmissing_relations: []\\nmissing_notation: []\\nalias_candidates: []\\nambiguities: []\\n\",\"formalization_links_yaml\":\"schema_version: lra.semantic-artifact-formalization-links/1.0\\nartifact_label: def:bound\\nresolved: []\\n\",\"proof_vault_links_yaml\":\"schema_version: lra.semantic-artifact-proof-vault-links/1.0\\nartifact_label: def:bound\\nresolved:\\n  - status: skipped\\n    message: Candidate volume-iii/book-analysis-i/bounding/def-bound at proof-vault commit 0fd83b95d948462a47d3be9914a3e809a489a864 was supplied, but no foreign key is asserted without verification against lra-proof-vault/metadata.yaml.\\n\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "high",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "lra_semantic_review",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "result",
+          "blocking_issues",
+          "artifact_yaml",
+          "corrected_tex",
+          "source_patch",
+          "validation_yaml",
+          "source_map_yaml",
+          "registry_needs_yaml",
+          "formalization_links_yaml",
+          "proof_vault_links_yaml"
+        ],
+        "properties": {
+          "result": {
+            "enum": [
+              "reviewed",
+              "blocked"
+            ]
+          },
+          "blocking_issues": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "artifact_yaml": {
+            "type": "string",
+            "minLength": 1
+          },
+          "corrected_tex": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source_patch": {
+            "type": "string",
+            "minLength": 1
+          },
+          "validation_yaml": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source_map_yaml": {
+            "type": "string",
+            "minLength": 1
+          },
+          "registry_needs_yaml": {
+            "type": "string",
+            "minLength": 1
+          },
+          "formalization_links_yaml": {
+            "type": "string",
+            "minLength": 1
+          },
+          "proof_vault_links_yaml": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 109319,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 102400
+    },
+    "output_tokens": 68891,
+    "output_tokens_details": {
+      "reasoning_tokens": 7107
+    },
+    "total_tokens": 178210
+  },
+  "user": null,
+  "metadata": {}
+}

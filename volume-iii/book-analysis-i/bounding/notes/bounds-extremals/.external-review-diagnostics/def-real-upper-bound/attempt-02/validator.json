@@ -1,0 +1,8 @@
+{
+  "returncode": 1,
+  "commands": [
+    "C:\\Users\\wsoll\\AppData\\Local\\Programs\\Python\\Python313\\python.exe ..\\lra-governance\\tools\\governance\\validate_semantic_artifact.py --artifact C:\\Users\\wsoll\\AppData\\Local\\Temp\\lra-review-attempt-2-3xfz9zxq\\artifact.yaml --package-dir C:\\Users\\wsoll\\AppData\\Local\\Temp\\lra-review-attempt-2-3xfz9zxq --governance-root ..\\lra-governance --strict --repos-root .."
+  ],
+  "stdout": "# Semantic Artifact Validation\n- **Result:** FAIL\n- **Errors:** 4\n- **Warnings:** 0\n\n## Errors\n\n- ast:statement.semantic_ast.right: quantifier binder lacks binder_id\n- ast:logical_forms.standard_quantified.ast.right: quantifier binder lacks binder_id\n- ast:logical_forms.negation.mechanical.ast: quantifier binder lacks binder_id\n- ast:logical_forms.negation.approved_normal_form.ast: quantifier binder lacks binder_id\n\n## Warnings\n\n_None._\n",
+  "stderr": ""
+}
