@@ -8,11 +8,11 @@
 \end{remark*}
 
 \begin{theorem*}[Equivalence of Definitions of the Derivative at a Point]
-Let $A \subseteq \mathbb{R}$, let $f : A \to \mathbb{R}$, and let $c \in A$ be a limit point of $A$. Let $L \in \mathbb{R}$. The following are equivalent:
-\begin{enumerate}[label=(\roman*)]
-\item \textbf{(Epsilon--Delta)} $\forall \varepsilon > 0\;\exists \delta > 0\;\forall x \in A\;\bigl(0 < |x-c| < \delta \Rightarrow \left|\tfrac{f(x)-f(c)}{x-c} - L\right| < \varepsilon\bigr)$.
-\item \textbf{(Neighbourhood)} For every $\varepsilon > 0$, there exists a neighbourhood $V$ of $c$ such that $x \in (A \cap V) \setminus \{c\} \Rightarrow \left|\tfrac{f(x)-f(c)}{x-c} - L\right| < \varepsilon$.
-\item \textbf{(Sequential)} $\forall (x_n) \subseteq A \setminus \{c\}\;\bigl(x_n \to c \Rightarrow \tfrac{f(x_n)-f(c)}{x_n-c} \to L\bigr)$.
+Let $f : A \to \mathbb{R}$ and $c \in A$ be a limit point of $A$. The following are equivalent:
+\begin{enumerate}
+  \item $f$ is differentiable at $c$ in the $\varepsilon$-$\delta$ sense with derivative $L$.
+  \item $f$ is differentiable at $c$ in the topological sense with derivative $L$.
+  \item $f$ is differentiable at $c$ in the sequential sense with derivative $L$.
 \end{enumerate}
 \end{theorem*}
 

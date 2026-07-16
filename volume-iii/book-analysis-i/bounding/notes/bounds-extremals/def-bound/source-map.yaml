@@ -1,0 +1,87 @@
+schema_version: lra.semantic-artifact-source-map/1.0
+artifact_label: def:bound
+mappings:
+  - field: identity
+    source_file: volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-upper-lower-bounds.tex
+    line_start: 15
+    line_end: 17
+    origin: explicit
+    confidence: high
+    notes: Environment kind, title, and label are explicit.
+  - field: context
+    source_file: volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-upper-lower-bounds.tex
+    line_start: 18
+    line_end: 18
+    origin: explicit
+    confidence: high
+    notes: The ordered-set ambient is explicit.
+  - field: parameters
+    source_file: volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-upper-lower-bounds.tex
+    line_start: 18
+    line_end: 19
+    origin: explicit
+    confidence: high
+    notes: A and b, including their ambient types, are explicit.
+  - field: assumptions
+    source_file: volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-upper-lower-bounds.tex
+    line_start: 18
+    line_end: 18
+    origin: explicit
+    confidence: high
+    notes: Nonemptiness is a standing assumption rather than part of the defined condition.
+  - field: statement
+    source_file: volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-upper-lower-bounds.tex
+    line_start: 18
+    line_end: 21
+    origin: normalized
+    confidence: high
+    notes: The defining prose is normalized to an explicit biconditional without changing the disjunctive condition.
+  - field: logical_forms.standard_quantified
+    source_file: volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-upper-lower-bounds.tex
+    line_start: 25
+    line_end: 33
+    origin: normalized
+    confidence: high
+    notes: The standing nonemptiness assumption is separated from the defined condition, and the defined term is shown explicitly.
+  - field: logical_forms.predicate_reading
+    source_file: volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-upper-lower-bounds.tex
+    line_start: 35
+    line_end: 42
+    origin: registry_inference
+    confidence: high
+    notes: Uses pred:upper-bound, pred:lower-bound, and struct:ordered-set; the unregistered Set assertion is removed.
+  - field: logical_forms.negation.mechanical
+    source_file: volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-upper-lower-bounds.tex
+    line_start: 44
+    line_end: 52
+    origin: analysis
+    confidence: high
+    notes: Mechanical negation applies only to the defined disjunction and not to the standing nonemptiness assumption.
+  - field: logical_forms.negation.approved_normal_form
+    source_file: volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-upper-lower-bounds.tex
+    line_start: 44
+    line_end: 52
+    origin: normalized
+    confidence: high
+    notes: Strict inequalities are replaced by order-safe negated non-strict comparisons; classical quantifier duality is recorded.
+  - field: failure_analysis
+    source_file: volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-upper-lower-bounds.tex
+    line_start: 63
+    line_end: 90
+    origin: normalized
+    confidence: high
+    notes: Empty-set inapplicability is separated from actual failure of both one-sided comparison conditions.
+  - field: exposition.interpretation
+    source_file: volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-upper-lower-bounds.tex
+    line_start: 92
+    line_end: 95
+    origin: normalized
+    confidence: high
+    notes: The interpretation is retained with a precise description of the one-sided control condition.
+  - field: relationships.dependency_edges
+    source_file: null
+    line_start: null
+    line_end: null
+    origin: analysis
+    confidence: medium
+    notes: No prior local formal dependency was supplied, so the governed silent marker is generated.
