@@ -13,9 +13,9 @@ sequential form is the disproving tool, since one bad approach sequence is enoug
 \begin{definitionbox}{Definition (Derivative at a Point)}
 \begin{definition}[Derivative at a Point]
 \label{def:derivative-at-a-point}
-Let $f: D \to \mathbb{R}$ be a real-valued function and $c \in \operatorname{int}(D)$. We say $f$ is \emph{differentiable at $c$} with \emph{derivative} $L = f'(c)$ if and only if:
+Let $A \subseteq \mathbb{R}$, let $f: A \to \mathbb{R}$ be a real-valued function, and let $c \in A$ be a limit point of $A$. We say $f$ is \emph{differentiable at $c$} with \emph{derivative} $L = f'(c)$ if and only if:
 \[
-\forall \varepsilon > 0 \;\exists \delta > 0 \;\forall x \in D
+\forall \varepsilon > 0 \;\exists \delta > 0 \;\forall x \in A
 \Bigl(0 < |x - c| < \delta \implies \left| \frac{f(x) - f(c)}{x - c} - L \right| < \varepsilon\Bigr).
 \]
 \end{definition}
@@ -23,7 +23,7 @@ Let $f: D \to \mathbb{R}$ be a real-valued function and $c \in \operatorname{int
 
 \begin{remark*}[Standard quantified statement]
 \[
-\forall \varepsilon > 0 \;\exists \delta > 0 \;\forall x \in D
+\forall \varepsilon > 0 \;\exists \delta > 0 \;\forall x \in A
 \Bigl(0 < |x - c| < \delta \implies \left|\frac{f(x)-f(c)}{x-c} - L\right| < \varepsilon\Bigr).
 \]
 \end{remark*}
@@ -32,20 +32,20 @@ Let $f: D \to \mathbb{R}$ be a real-valued function and $c \in \operatorname{int
 \[
   f\colon A\to\mathbb{R},\\
 
-\operatorname{Derivative}(L,f,\mathsf{Point}(c,D),\mathbb R,\mathbb R)
+\operatorname{Derivative}(L,f,\mathsf{Point}(c,A),\mathbb R,\mathbb R)
 \;\Longleftrightarrow\;
 \operatorname{TendsTo}\!\left(\lambda x.\,\frac{f(x)-f(c)}{x-c},\,c,\,L,\,\mathbb R,\,\mathbb R\right).
 \]
 The predicate
-$\operatorname{Derivative}(L,f,\mathsf{Point}(c,D),\mathbb R,\mathbb R)$
+$\operatorname{Derivative}(L,f,\mathsf{Point}(c,A),\mathbb R,\mathbb R)$
 asserts that $L$ is the value of the limit of the difference quotient of $f$
 at $c$.
 \end{remark*}
 
 \begin{remark*}[Negated quantified statement]
 \[
-\forall L \in \mathbb{R}\;\exists \varepsilon > 0\;\forall \delta > 0\;\exists x \in D
-\Bigl(0 < |x-c| < \delta \;\land\; \left|\frac{f(x)-f(c)}{x-c} - L\right| \ge \varepsilon\Bigr).
+\exists \varepsilon_0 > 0\;\forall \delta > 0\;\exists x \in A
+\Bigl(0 < |x-c| < \delta \;\land\; \left|\frac{f(x)-f(c)}{x-c} - L\right| \ge \varepsilon_0\Bigr).
 \]
 \end{remark*}
 
@@ -53,7 +53,7 @@ at $c$.
 \[
   f\colon A\to\mathbb{R},\\
 
-\neg\operatorname{Derivative}(L,f,\mathsf{Point}(c,D),\mathbb R,\mathbb R)
+\neg\operatorname{Derivative}(L,f,\mathsf{Point}(c,A),\mathbb R,\mathbb R)
 \;\Longleftrightarrow\;
 \neg\operatorname{TendsTo}\!\left(\lambda x.\,\frac{f(x)-f(c)}{x-c},\,c,\,L,\,\mathbb R,\,\mathbb R\right).
 \]
@@ -111,7 +111,7 @@ Carath\'{e}odory, this is the factor \(\varphi(x)=x+c\), continuous at
 \begin{definitionbox}{Definition (Topological Definition of Derivative at a Point)}
 \begin{definition}[Topological Definition of Derivative at a Point]
 \label{def:topological-definition-of-derivative-at-a-point}
-Let $f: D \to \mathbb{R}$ and $c \in \operatorname{int}(D)$. $f$ is differentiable at $c$ with derivative $L$ if for every neighbourhood $V$ of $L$, there exists a neighbourhood $U$ of $c$ such that for all $x \in (U \setminus \{c\}) \cap D$:
+Let $A \subseteq \mathbb{R}$, let $f: A \to \mathbb{R}$, and let $c \in A$ be a limit point of $A$. $f$ is differentiable at $c$ with derivative $L$ if for every neighbourhood $V$ of $L$, there exists a neighbourhood $U$ of $c$ such that for all $x \in (U \setminus \{c\}) \cap A$:
 \[
 \frac{f(x) - f(c)}{x - c} \in V.
 \]
@@ -121,7 +121,7 @@ Let $f: D \to \mathbb{R}$ and $c \in \operatorname{int}(D)$. $f$ is differentiab
 \begin{remark*}[Standard quantified statement]
 \[
 \forall V \text{ neighbourhood of } L\;\exists U \text{ neighbourhood of } c\;
-\forall x \in (U \setminus \{c\}) \cap D:\;
+\forall x \in (U \setminus \{c\}) \cap A:\;
 \frac{f(x)-f(c)}{x-c} \in V.
 \]
 \end{remark*}
@@ -130,7 +130,7 @@ Let $f: D \to \mathbb{R}$ and $c \in \operatorname{int}(D)$. $f$ is differentiab
 \[
 \operatorname{Derivative}_{\mathrm{top}}(f,c,L)
 \;\Longleftrightarrow\;
-\forall V \ni L\;\exists U \ni c\;\forall x \in (U\setminus\{c\})\cap D:\;
+\forall V \ni L\;\exists U \ni c\;\forall x \in (U\setminus\{c\})\cap A:\;
 \frac{f(x)-f(c)}{x-c}\in V.
 \]
 \end{remark*}
@@ -138,7 +138,7 @@ Let $f: D \to \mathbb{R}$ and $c \in \operatorname{int}(D)$. $f$ is differentiab
 \begin{remark*}[Negated quantified statement]
 \[
 \exists V \text{ neighbourhood of } L\;\forall U \text{ neighbourhood of } c\;
-\exists x \in (U \setminus \{c\}) \cap D:\;
+\exists x \in (U \setminus \{c\}) \cap A:\;
 \frac{f(x)-f(c)}{x-c} \notin V.
 \]
 \end{remark*}
@@ -147,7 +147,7 @@ Let $f: D \to \mathbb{R}$ and $c \in \operatorname{int}(D)$. $f$ is differentiab
 \[
 \neg\operatorname{Derivative}_{\mathrm{top}}(f,c,L)
 \;\Longleftrightarrow\;
-\exists V \ni L\;\forall U \ni c\;\exists x \in (U\setminus\{c\})\cap D:\;
+\exists V \ni L\;\forall U \ni c\;\exists x \in (U\setminus\{c\})\cap A:\;
 \frac{f(x)-f(c)}{x-c}\notin V.
 \]
 \end{remark*}
@@ -351,6 +351,19 @@ The equivalence cannot produce contradictory verdicts: if $c$ is a limit point o
 
 \begin{remark*}[Interpretation]
 The three forms are notational restatements of the same underlying limit condition on the difference quotient. Analysts choose whichever form is most convenient for the proof at hand.
+\end{remark*}
+
+\begin{remark*}[Source comparison]
+The route used here is LRA-authored from source-backed components rather than
+a verbatim single-source theorem. Bruckner's treatment of function limits gives
+the epsilon--delta, sequential, and mapping/neighbourhood formulations, and
+his derivative definition treats the derivative as the limit of the difference
+quotient; see Sections 5.1.1--5.1.3 and 7.2.1.
+This theorem applies that limit-equivalence route to
+\[
+Q_f(x)=\frac{f(x)-f(c)}{x-c}
+\]
+at the cluster point $c$ of $A$ \cite{ThomsonBrucknerBrucknerElementaryRealAnalysis2}.
 \end{remark*}
 
 \begin{dependencies}
