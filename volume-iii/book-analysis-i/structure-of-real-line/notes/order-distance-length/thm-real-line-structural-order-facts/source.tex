@@ -1,0 +1,46 @@
+\begin{theorembox}{Theorem (Real Line Structural Order Facts)}
+\begin{theorem}[Real Line Structural Order Facts]\label{thm:real-line-structural-order-facts}
+The real line has the following structural properties: $\mathbb{R}$ is
+linearly ordered by $\leq$, $\mathbb{R}$ is an ordered field, and
+$\mathbb{R}$ satisfies the least upper bound property.  Explicitly, whenever
+$A\subseteq\mathbb{R}$ is nonempty and bounded above in $\mathbb{R}$, there
+exists $s\in\mathbb{R}$ such that
+\[
+  (\forall a\in A)(a\leq s)
+\]
+and
+\[
+  (\forall u\in\mathbb{R})
+  \left[
+  (\forall a\in A)(a\leq u)
+  \Longrightarrow
+  s\leq u
+  \right].
+\]
+\hyperref[prf:real-line-structural-order-facts]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{TotallyOrderedSet}(\mathbb{R},\leq)
+\land
+\operatorname{OrderedField}(\mathbb{R})
+\land
+\operatorname{HasLeastUpperBoundProperty}(\mathbb{R}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The real line combines order, algebra, and completeness. These three
+structures are the ambient facts used by distance, interval, and convergence
+arguments throughout the volume.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:r-totally-ordered-set]{$\mathbb{R}$ Is a Totally Ordered Set}
+  \item \hyperref[thm:r-is-an-ordered-field]{$\mathbb{R}$ Is an Ordered Field}
+  \item \hyperref[thm:lub-property-r]{Least-Upper-Bound Property}
+\end{itemize}
+\end{dependencies}

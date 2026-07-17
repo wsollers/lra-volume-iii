@@ -1,0 +1,123 @@
+\begin{theorem}[Nested Interval Theorem]
+\label{thm:nested-interval-theorem}
+Let $(a_n)$ and $(b_n)$ be sequences in $\mathbb{R}$ such that
+\[
+  (\forall n\in\mathbb{N})(a_n\leq b_n)
+\]
+and
+\[
+  (\forall n\in\mathbb{N})([a_{n+1},b_{n+1}]\subseteq [a_n,b_n]).
+\]
+Define
+\[
+  \alpha:=\sup\{a_n:n\in\mathbb{N}\},
+  \qquad
+  \beta:=\inf\{b_n:n\in\mathbb{N}\}.
+\]
+Then
+\[
+  \alpha\leq\beta
+\]
+and
+\[
+  \bigcap_{n=1}^{\infty}[a_n,b_n]\neq\varnothing.
+\]
+In particular, there exists $x\in\mathbb{R}$ such that
+\[
+  (\forall n\in\mathbb{N})(a_n\leq x\leq b_n).
+\]
+\hyperref[prf:nested-interval-theorem]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{aligned}
+&\forall (a_n)\subseteq\mathbb{R}\;\forall (b_n)\subseteq\mathbb{R}\;\\
+&\Bigl[
+\bigl(\forall n\in\mathbb{N}\;(a_n\le b_n)\bigr)
+\land
+\bigl(\forall n\in\mathbb{N}\;([a_{n+1},b_{n+1}]\subseteq [a_n,b_n])\bigr)
+\\
+&\qquad\Longrightarrow
+\exists x\in\mathbb{R}\;\forall n\in\mathbb{N}\;(x\in [a_n,b_n])
+\Bigr].
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+F=(I_n)_{n\in\mathbb{N}},\qquad C=\bigcap_{n=1}^{\infty}I_n,\qquad
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),
+\]
+\[
+\operatorname{NestedClosedBoundedIntervals}(F,P_{\mathbb{R}})\Longrightarrow
+\operatorname{IsNonempty}(C).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\begin{aligned}
+&\exists (a_n)\subseteq\mathbb{R}\;\exists (b_n)\subseteq\mathbb{R}\;\\
+&\Bigl[
+\bigl(\forall n\in\mathbb{N}\;(a_n\le b_n)\bigr)
+\land
+\bigl(\forall n\in\mathbb{N}\;([a_{n+1},b_{n+1}]\subseteq [a_n,b_n])\bigr)
+\land
+\forall x\in\mathbb{R}\;\exists n\in\mathbb{N}\;(x\notin [a_n,b_n])
+\Bigr].
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+F=([a_n,b_n])_{n\in\mathbb{N}},\qquad C=\bigcap_{n=1}^{\infty}[a_n,b_n],\qquad
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),
+\]
+\[
+C=\varnothing
+\Longrightarrow
+\neg\operatorname{NestedClosedBoundedIntervals}(F,P_{\mathbb{R}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  Failure is witnessed by the displayed negated or contrapositive condition.
+
+  \item[\mathsf{OrderedSet}.]
+  \[
+\begin{aligned}
+&\exists (a_n)\subseteq\mathbb{R}\;\exists (b_n)\subseteq\mathbb{R}\;\\
+&\Bigl[
+\bigl(\forall n\in\mathbb{N}\;(a_n\le b_n)\bigr)
+\land
+\bigl(\forall n\in\mathbb{N}\;([a_{n+1},b_{n+1}]\subseteq [a_n,b_n])\bigr)
+\land
+\forall x\in\mathbb{R}\;\exists n\in\mathbb{N}\;(x\notin [a_n,b_n])
+\Bigr].
+\end{aligned}
+\]
+\[
+F=([a_n,b_n])_{n\in\mathbb{N}},\qquad C=\bigcap_{n=1}^{\infty}[a_n,b_n],\qquad
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Completeness prevents a nested closed bounded family from losing every point
+at the limiting stage.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[def:closed-interval]{Closed Interval};
+\hyperref[def:bounded-subset-of-r]{Bounded Subset of the Real Line};
+\hyperref[def:supremum]{Supremum};
+\hyperref[ax:completeness-of-reals]{Axiom~\ref*{ax:completeness-of-reals}}.
+\end{dependencies}
+

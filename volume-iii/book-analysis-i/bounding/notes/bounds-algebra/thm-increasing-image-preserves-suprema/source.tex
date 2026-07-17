@@ -1,0 +1,130 @@
+\begin{theorem}[Increasing Image Preserves Suprema]
+\label{thm:increasing-image-preserves-suprema}
+Let $I\subseteq\mathbb{R}$ be an interval, let $A\subseteq I$ be nonempty and
+bounded above, and suppose $s:=\sup A\in I$.  If $f\colon I\to\mathbb{R}$ is
+increasing and continuous at $s$ relative to $I$, then
+$f[A]:=\{f(a):a\in A\}$ is bounded above, and
+\[
+  \sup f[A]=f(\sup A).
+\]
+\hyperref[prf:increasing-image-preserves-suprema]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+A\neq\varnothing,\quad s=\sup A\in I,\quad f\text{ increasing and continuous at }s
+\Longrightarrow
+\sup\{f(a):a\in A\}=f(s).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\begin{aligned}
+&A\subseteq I,\qquad f\colon I\to\mathbb{R},\qquad
+B=f(A)=\{f(a):a\in A\},\\
+&P_I=\mathsf{OrderedSet}(I,\leq),\qquad
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\\
+&\operatorname{LeastUpperBound}(s,A,P_I)\land
+\operatorname{OrderPreserving}(f,P_I,P_{\mathbb{R}})\land
+\operatorname{IsContinuous}(f,s,I,\mathbb{R})
+\Longrightarrow
+\operatorname{LeastUpperBound}(f(s),B,P_{\mathbb{R}}).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\sup f(A)\neq f(\sup A)
+\]
+is impossible under the stated hypotheses.
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\begin{aligned}
+&A\subseteq I,\qquad f\colon I\to\mathbb{R},\qquad
+B=f(A)=\{f(a):a\in A\},\\
+&P_I=\mathsf{OrderedSet}(I,\leq),\qquad
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\\
+&\operatorname{LeastUpperBound}(s,A,P_I)\land
+\operatorname{OrderPreserving}(f,P_I,P_{\mathbb{R}})\land
+\operatorname{IsContinuous}(f,s,I,\mathbb{R})\land
+\neg\operatorname{LeastUpperBound}(f(s),B,P_{\mathbb{R}}).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
+The equality can fail if $f$ is not increasing, if $\sup A$ is not in the
+domain, or if the endpoint value of $f$ is not approached by values $f(a)$ with
+$a\in A$.
+
+
+  \item[\operatorname{LeastUpperBound} / \operatorname{OrderPreserving}.]
+  \[
+\sup f(A)\neq f(\sup A)
+\]
+\[
+\begin{aligned}
+&A\subseteq I,\qquad f\colon I\to\mathbb{R},\qquad
+B=f(A)=\{f(a):a\in A\},\\
+&P_I=\mathsf{OrderedSet}(I,\leq),\qquad
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\\
+&\operatorname{LeastUpperBound}(s,A,P_I)\land
+\operatorname{OrderPreserving}(f,P_I,P_{\mathbb{R}})\land
+\operatorname{IsContinuous}(f,s,I,\mathbb{R})\land
+\neg\operatorname{LeastUpperBound}(f(s),B,P_{\mathbb{R}}).
+\end{aligned}
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
+Increasingness gives $f(a)\leq f(s)$ for every $a\in A$.  The defining
+approximation property of the supremum gives points of $A$ arbitrarily close
+to $s$ from below, and continuity at $s$ makes their images approach $f(s)$.
+
+
+  \item[\operatorname{LeastUpperBound} / \operatorname{OrderPreserving}.]
+  \[
+\sup f(A)\neq f(\sup A)
+\]
+\[
+\begin{aligned}
+&A\subseteq I,\qquad f\colon I\to\mathbb{R},\qquad
+B=f(A)=\{f(a):a\in A\},\\
+&P_I=\mathsf{OrderedSet}(I,\leq),\qquad
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\\
+&\operatorname{LeastUpperBound}(s,A,P_I)\land
+\operatorname{OrderPreserving}(f,P_I,P_{\mathbb{R}})\land
+\operatorname{IsContinuous}(f,s,I,\mathbb{R})\land
+\neg\operatorname{LeastUpperBound}(f(s),B,P_{\mathbb{R}}).
+\end{aligned}
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+An increasing continuous function carries the right endpoint of a bounded set
+to the right endpoint of its image, provided that endpoint lies in the domain.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:reals]{Real Numbers}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:function]{Function}
+  \item \hyperref[def:function-increasing]{Increasing Function}
+  \item \hyperref[def:supremum]{Supremum}
+  \item \hyperref[def:continuous-at-point]{Continuity at a Point}
+\end{itemize}
+\end{dependencies}
+

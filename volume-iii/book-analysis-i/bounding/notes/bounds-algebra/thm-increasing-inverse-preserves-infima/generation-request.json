@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "thm:increasing-inverse-preserves-infima",
+  "kind": "theorem",
+  "title": "Increasing Inverse Preserves Infima",
+  "source": {
+    "label": "thm:increasing-inverse-preserves-infima",
+    "kind": "theorem",
+    "title": "Increasing Inverse Preserves Infima",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "bounds-algebra",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-image-inverse-extrema.tex",
+    "source_line_start": 759,
+    "source_line_end": 887,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-increasing-inverse-preserves-infima",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-increasing-inverse-preserves-infima/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-increasing-inverse-preserves-infima/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-increasing-inverse-preserves-infima",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-increasing-inverse-preserves-infima/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-increasing-inverse-preserves-infima/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-image-inverse-extrema.tex",
+      "label": "thm:increasing-inverse-preserves-infima",
+      "environment_kind": "theorem",
+      "source_line_start": 759,
+      "source_line_end": 887,
+      "current_tex": "\\begin{theorem}[Increasing Inverse Preserves Infima]\n\\label{thm:increasing-inverse-preserves-infima}\nLet $I,J\\subseteq\\mathbb{R}$ be intervals, and let $f\\colon I\\to J$ be a continuous\nstrictly increasing bijection.  Let $B\\subseteq J$ be nonempty and bounded\nbelow, and suppose $\\inf B\\in J$.  Then\n$f^{-1}[B]:=\\{f^{-1}(b):b\\in B\\}$ is bounded below, and\n\\[\n  \\inf f^{-1}[B]=f^{-1}(\\inf B).\n\\]\n\\hyperref[prf:increasing-inverse-preserves-infima]{Go to proof.}\n\\end{theorem}\n\\end{theorembox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\nB\\neq\\varnothing,\\quad \\inf B\\in J,\\quad f^{-1}\\text{ increasing and continuous at }\\inf B\n\\Longrightarrow\n\\inf f^{-1}(B)=f^{-1}(\\inf B).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\n\\begin{aligned}\n&B\\subseteq J,\\qquad g=f^{-1},\\qquad g\\colon J\\to I,\\qquad\nC=g(B)=\\{g(b):b\\in B\\},\\\\\n&P_J=\\mathsf{OrderedSet}(J,\\leq),\\qquad\nP_I=\\mathsf{OrderedSet}(I,\\leq),\\\\\n&\\operatorname{GreatestLowerBound}(v,B,P_J)\\land\n\\operatorname{OrderPreserving}(g,P_J,P_I)\\land\n\\operatorname{IsContinuous}(g,v,J,I)\n\\Longrightarrow\n\\operatorname{GreatestLowerBound}(g(v),C,P_I).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\n\\inf f^{-1}(B)\\neq f^{-1}(\\inf B)\n\\]\nis impossible under the stated hypotheses.\n\\end{remark*}\n\n\\begin{remark*}[Negation predicate reading]\n\\[\n\\begin{aligned}\n&B\\subseteq J,\\qquad g=f^{-1},\\qquad g\\colon J\\to I,\\qquad\nC=g(B)=\\{g(b):b\\in B\\},\\\\\n&P_J=\\mathsf{OrderedSet}(J,\\leq),\\qquad\nP_I=\\mathsf{OrderedSet}(I,\\leq),\\\\\n&\\operatorname{GreatestLowerBound}(v,B,P_J)\\land\n\\operatorname{OrderPreserving}(g,P_J,P_I)\\land\n\\operatorname{IsContinuous}(g,v,J,I)\\land\n\\neg\\operatorname{GreatestLowerBound}(g(v),C,P_I).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n\\item[Exposition.]\nThe formula can fail if the inverse is not increasing, if $\\inf B$ is outside\nthe codomain set $J$, or if the inverse is not continuous at $\\inf B$.\n\n\n  \\item[\\operatorname{GreatestLowerBound} / \\operatorname{OrderPreserving}.]\n  \\[\n\\inf f^{-1}(B)\\neq f^{-1}(\\inf B)\n\\]\n\\[\n\\begin{aligned}\n&B\\subseteq J,\\qquad g=f^{-1},\\qquad g\\colon J\\to I,\\qquad\nC=g(B)=\\{g(b):b\\in B\\},\\\\\n&P_J=\\mathsf{OrderedSet}(J,\\leq),\\qquad\nP_I=\\mathsf{OrderedSet}(I,\\leq),\\\\\n&\\operatorname{GreatestLowerBound}(v,B,P_J)\\land\n\\operatorname{OrderPreserving}(g,P_J,P_I)\\land\n\\operatorname{IsContinuous}(g,v,J,I)\\land\n\\neg\\operatorname{GreatestLowerBound}(g(v),C,P_I).\n\\end{aligned}\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n\\item[Exposition.]\nApply the increasing image infimum theorem to $g=f^{-1}$ and the set $B$.\n\n\n  \\item[\\operatorname{GreatestLowerBound} / \\operatorname{OrderPreserving}.]\n  \\[\n\\inf f^{-1}(B)\\neq f^{-1}(\\inf B)\n\\]\n\\[\n\\begin{aligned}\n&B\\subseteq J,\\qquad g=f^{-1},\\qquad g\\colon J\\to I,\\qquad\nC=g(B)=\\{g(b):b\\in B\\},\\\\\n&P_J=\\mathsf{OrderedSet}(J,\\leq),\\qquad\nP_I=\\mathsf{OrderedSet}(I,\\leq),\\\\\n&\\operatorname{GreatestLowerBound}(v,B,P_J)\\land\n\\operatorname{OrderPreserving}(g,P_J,P_I)\\land\n\\operatorname{IsContinuous}(g,v,J,I)\\land\n\\neg\\operatorname{GreatestLowerBound}(g(v),C,P_I).\n\\end{aligned}\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nThe inverse preserves lower endpoints under the same increasing and continuity\nhypotheses required for the direct image theorem.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:reals]{Real Numbers}\n  \\item \\hyperref[def:ordered-set]{Ordered Set}\n  \\item \\hyperref[def:subset]{Subset}\n  \\item \\hyperref[def:function]{Function}\n  \\item \\hyperref[def:function-increasing]{Increasing Function}\n  \\item \\hyperref[def:infimum]{Infimum}\n  \\item \\hyperref[def:continuous-at-point]{Continuity at a Point}\n  \\item \\hyperref[thm:increasing-image-preserves-infima]{Increasing Image Preserves Infima}\n\\end{itemize}\n\\end{dependencies}\n\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

@@ -7,13 +7,17 @@ dilation reverses order.
 \begin{definitionbox}{Definition (Displacement, Dilation, and Reflection)}
 \begin{definition}[Displacement, Dilation, and Reflection]
 \label{def:displacement-dilation-reflection}
-Let $A\subseteq\mathbb{R}$ and let $c,\lambda\in\mathbb{R}$.  Define
+Let $A\subseteq\mathbb{R}$. For $c,\lambda\in\mathbb{R}$, the
+\textbf{displacement} of $A$ by $c$, the \textbf{dilation} of $A$ by
+$\lambda$, and the \textbf{reflection} of $A$ through the origin are
+defined, respectively, by
 \[
-  A+c:=\{a+c:a\in A\},\qquad
-  A-c:=\{a-c:a\in A\},\qquad
-  \lambda A:=\{\lambda a:a\in A\}.
+A+c:=\{a+c:a\in A\},
+\qquad
+\lambda A:=\{\lambda a:a\in A\},
+\qquad
+-A:=\{-a:a\in A\}.
 \]
-The set $-A:=(-1)A$ is the \emph{reflection} of $A$ through the origin.
 \end{definition}
 \end{definitionbox}
 
@@ -21,7 +25,9 @@ The set $-A:=(-1)A$ is the \emph{reflection} of $A$ through the origin.
 \[
 x\in A+c\Longleftrightarrow(\exists a\in A)(x=a+c),
 \qquad
-x\in\lambda A\Longleftrightarrow(\exists a\in A)(x=\lambda a).
+x\in\lambda A\Longleftrightarrow(\exists a\in A)(x=\lambda a),
+\qquad
+x\in -A\Longleftrightarrow(\exists a\in A)(x=-a).
 \]
 \end{remark*}
 
@@ -128,6 +134,8 @@ is the special dilation that reverses the real line.
   \item \hyperref[def:reals]{Real Numbers}
   \item \hyperref[def:subset]{Subset}
   \item \hyperref[def:function]{Function}
+  \item \hyperref[def:functional-relation]{Functional Relation}
+  \item \hyperref[def:image-set]{Image Set}
   \item \hyperref[def:addition-on-r]{Addition on $\mathbb{R}$}
   \item \hyperref[def:subtraction-on-r]{Subtraction on $\mathbb{R}$}
   \item \hyperref[def:multiplication-on-r]{Multiplication on $\mathbb{R}$}
@@ -137,8 +145,13 @@ is the special dilation that reverses the real line.
 \begin{propositionbox}{Proposition (Translation Preserves Upper Bounds)}
 \begin{proposition}[Translation Preserves Upper Bounds]
 \label{prop:translation-preserves-upper-bounds}
-Let $A\subseteq\mathbb{R}$ be nonempty.  If $u$ is an upper bound of $A$,
-then $u+c$ is an upper bound of $A+c$.
+Let $A\subseteq\mathbb{R}$ and let $c,u\in\mathbb{R}$.  If $u$ is an
+upper bound of $A$, then $u+c$ is an upper bound of $A+c$; that is,
+\[
+\left(\forall a\in A,\ a\leq u\right)
+\Longrightarrow
+\left(\forall x\in A+c,\ x\leq u+c\right).
+\]
 \hyperref[prf:translation-preserves-upper-bounds]{Go to proof.}
 \end{proposition}
 \end{propositionbox}
@@ -147,7 +160,7 @@ then $u+c$ is an upper bound of $A+c$.
 \[
 (\forall a\in A)(a\leq u)
 \Longrightarrow
-(\forall y\in A+c)(y\leq u+c).
+(\forall x\in A+c)(x\leq u+c).
 \]
 \end{remark*}
 
@@ -239,8 +252,13 @@ relative order between points and the bound is unchanged.
 \begin{propositionbox}{Proposition (Translation Preserves Lower Bounds)}
 \begin{proposition}[Translation Preserves Lower Bounds]
 \label{prop:translation-preserves-lower-bounds}
-Let $A\subseteq\mathbb{R}$ be nonempty.  If $\ell$ is a lower bound of $A$,
-then $\ell+c$ is a lower bound of $A+c$.
+Let $A\subseteq\mathbb{R}$ and let $c,\ell\in\mathbb{R}$.  If $\ell$ is
+a lower bound of $A$, then $\ell+c$ is a lower bound of $A+c$; that is,
+\[
+\left(\forall a\in A,\ \ell\leq a\right)
+\Longrightarrow
+\left(\forall x\in A+c,\ \ell+c\leq x\right).
+\]
 \hyperref[prf:translation-preserves-lower-bounds]{Go to proof.}
 \end{proposition}
 \end{propositionbox}
@@ -249,7 +267,7 @@ then $\ell+c$ is a lower bound of $A+c$.
 \[
 (\forall a\in A)(\ell\leq a)
 \Longrightarrow
-(\forall y\in A+c)(\ell+c\leq y).
+(\forall x\in A+c)(\ell+c\leq x).
 \]
 \end{remark*}
 
@@ -341,8 +359,14 @@ to both sides preserves the order relation.
 \begin{propositionbox}{Proposition (Positive Dilation Preserves Upper Bounds)}
 \begin{proposition}[Positive Dilation Preserves Upper Bounds]
 \label{prop:positive-dilation-preserves-upper-bounds}
-Let $A\subseteq\mathbb{R}$ be nonempty and let $\lambda>0$.  If $u$ is an
-upper bound of $A$, then $\lambda u$ is an upper bound of $\lambda A$.
+Let $A\subseteq\mathbb{R}$, let $\lambda>0$, and let $u\in\mathbb{R}$.
+If $u$ is an upper bound of $A$, then $\lambda u$ is an upper bound of
+$\lambda A$; that is,
+\[
+\left(\forall a\in A,\ a\leq u\right)
+\Longrightarrow
+\left(\forall x\in\lambda A,\ x\leq \lambda u\right).
+\]
 \hyperref[prf:positive-dilation-preserves-upper-bounds]{Go to proof.}
 \end{proposition}
 \end{propositionbox}
@@ -351,7 +375,7 @@ upper bound of $A$, then $\lambda u$ is an upper bound of $\lambda A$.
 \[
 \lambda>0\land(\forall a\in A)(a\leq u)
 \Longrightarrow
-(\forall y\in\lambda A)(y\leq\lambda u).
+(\forall x\in\lambda A)(x\leq\lambda u).
 \]
 \end{remark*}
 
@@ -448,8 +472,14 @@ upper bounds dilate to upper bounds.
 \begin{propositionbox}{Proposition (Positive Dilation Preserves Lower Bounds)}
 \begin{proposition}[Positive Dilation Preserves Lower Bounds]
 \label{prop:positive-dilation-preserves-lower-bounds}
-Let $A\subseteq\mathbb{R}$ be nonempty and let $\lambda>0$.  If $\ell$ is a
-lower bound of $A$, then $\lambda\ell$ is a lower bound of $\lambda A$.
+Let $A\subseteq\mathbb{R}$, let $\lambda>0$, and let
+$\ell\in\mathbb{R}$.  If $\ell$ is a lower bound of $A$, then
+$\lambda\ell$ is a lower bound of $\lambda A$; that is,
+\[
+\left(\forall a\in A,\ \ell\leq a\right)
+\Longrightarrow
+\left(\forall x\in\lambda A,\ \lambda\ell\leq x\right).
+\]
 \hyperref[prf:positive-dilation-preserves-lower-bounds]{Go to proof.}
 \end{proposition}
 \end{propositionbox}
@@ -458,7 +488,7 @@ lower bound of $A$, then $\lambda\ell$ is a lower bound of $\lambda A$.
 \[
 \lambda>0\land(\forall a\in A)(\ell\leq a)
 \Longrightarrow
-(\forall y\in\lambda A)(\lambda\ell\leq y).
+(\forall x\in\lambda A)(\lambda\ell\leq x).
 \]
 \end{remark*}
 
@@ -556,8 +586,14 @@ preserves upper-bound information: order is not reversed.
 \begin{propositionbox}{Proposition (Negative Dilation Sends Lower Bounds to Upper Bounds)}
 \begin{proposition}[Negative Dilation Sends Lower Bounds to Upper Bounds]
 \label{prop:negative-dilation-sends-lower-to-upper-bounds}
-Let $A\subseteq\mathbb{R}$ be nonempty and let $\lambda<0$.  If $\ell$ is a
-lower bound of $A$, then $\lambda\ell$ is an upper bound of $\lambda A$.
+Let $A\subseteq\mathbb{R}$, let $\lambda<0$, and let
+$\ell\in\mathbb{R}$.  If $\ell$ is a lower bound of $A$, then
+$\lambda\ell$ is an upper bound of $\lambda A$; that is,
+\[
+\left(\forall a\in A,\ \ell\leq a\right)
+\Longrightarrow
+\left(\forall x\in\lambda A,\ x\leq \lambda\ell\right).
+\]
 \hyperref[prf:negative-dilation-sends-lower-to-upper-bounds]{Go to proof.}
 \end{proposition}
 \end{propositionbox}
@@ -566,7 +602,7 @@ lower bound of $A$, then $\lambda\ell$ is an upper bound of $\lambda A$.
 \[
 \lambda<0\land(\forall a\in A)(\ell\leq a)
 \Longrightarrow
-(\forall y\in\lambda A)(y\leq\lambda\ell).
+(\forall x\in\lambda A)(x\leq\lambda\ell).
 \]
 \end{remark*}
 
@@ -665,8 +701,14 @@ upper bounds after dilation.
 \begin{propositionbox}{Proposition (Negative Dilation Sends Upper Bounds to Lower Bounds)}
 \begin{proposition}[Negative Dilation Sends Upper Bounds to Lower Bounds]
 \label{prop:negative-dilation-sends-upper-to-lower-bounds}
-Let $A\subseteq\mathbb{R}$ be nonempty and let $\lambda<0$.  If $u$ is an
-upper bound of $A$, then $\lambda u$ is a lower bound of $\lambda A$.
+Let $A\subseteq\mathbb{R}$, let $\lambda<0$, and let $u\in\mathbb{R}$.
+If $u$ is an upper bound of $A$, then $\lambda u$ is a lower bound of
+$\lambda A$; that is,
+\[
+\left(\forall a\in A,\ a\leq u\right)
+\Longrightarrow
+\left(\forall x\in\lambda A,\ \lambda u\leq x\right).
+\]
 \hyperref[prf:negative-dilation-sends-upper-to-lower-bounds]{Go to proof.}
 \end{proposition}
 \end{propositionbox}
@@ -675,7 +717,7 @@ upper bound of $A$, then $\lambda u$ is a lower bound of $\lambda A$.
 \[
 \lambda<0\land(\forall a\in A)(a\leq u)
 \Longrightarrow
-(\forall y\in\lambda A)(\lambda u\leq y).
+(\forall x\in\lambda A)(\lambda u\leq x).
 \]
 \end{remark*}
 
@@ -774,22 +816,43 @@ because multiplying by a negative scalar reverses inequalities.
 \begin{corollarybox}{Corollary (Reflection Swaps Upper and Lower Bounds)}
 \begin{corollary}[Reflection Swaps Upper and Lower Bounds]
 \label{cor:reflection-swaps-upper-lower-bounds}
-Let $A\subseteq\mathbb{R}$ be nonempty.  If $\ell$ is a lower bound of $A$,
-then $-\ell$ is an upper bound of $-A$.  If $u$ is an upper bound of $A$,
-then $-u$ is a lower bound of $-A$.
+Let $A\subseteq\mathbb{R}$. For every $b\in\mathbb{R}$,
+\[
+b\text{ is an upper bound of }A
+\Longleftrightarrow
+-b\text{ is a lower bound of }-A,
+\]
+and
+\[
+b\text{ is a lower bound of }A
+\Longleftrightarrow
+-b\text{ is an upper bound of }-A.
+\]
+Equivalently,
+\[
+\left(\forall a\in A,\ a\leq b\right)
+\Longleftrightarrow
+\left(\forall x\in -A,\ -b\leq x\right),
+\]
+and
+\[
+\left(\forall a\in A,\ b\leq a\right)
+\Longleftrightarrow
+\left(\forall x\in -A,\ x\leq -b\right).
+\]
 \hyperref[prf:reflection-swaps-upper-lower-bounds]{Go to proof.}
 \end{corollary}
 \end{corollarybox}
 
 \begin{remark*}[Standard quantified statement]
 \[
-(\forall a\in A)(\ell\leq a)\Longrightarrow
-(\forall y\in -A)(y\leq-\ell),
+(\forall a\in A)(a\leq b)\Longleftrightarrow
+(\forall x\in -A)(-b\leq x),
 \]
 and
 \[
-(\forall a\in A)(a\leq u)\Longrightarrow
-(\forall y\in -A)(-u\leq y).
+(\forall a\in A)(b\leq a)\Longleftrightarrow
+(\forall x\in -A)(x\leq -b).
 \]
 \end{remark*}
 
@@ -798,14 +861,25 @@ and
 \begin{aligned}
 &P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
 A\subseteq\mathbb{R},\qquad -A=\{-a:a\in A\},\\
-&\operatorname{LowerBound}(\ell,A,P)\Longrightarrow\operatorname{UpperBound}(-\ell,-A,P),\\
-&\operatorname{UpperBound}(u,A,P)\Longrightarrow\operatorname{LowerBound}(-u,-A,P).
+&\operatorname{UpperBound}(b,A,P)\Longleftrightarrow\operatorname{LowerBound}(-b,-A,P),\\
+&\operatorname{LowerBound}(b,A,P)\Longleftrightarrow\operatorname{UpperBound}(-b,-A,P).
 \end{aligned}
 \]
 \end{remark*}
 
 \begin{remark*}[Negated quantified statement]
-A failure is a failure of negative dilation at the scalar $\lambda=-1$.
+A failure is a failure of one of the displayed biconditionals:
+\[
+\bigl[(\forall a\in A)(a\leq b)\bigr]
+\not\Longleftrightarrow
+\bigl[(\forall x\in -A)(-b\leq x)\bigr],
+\]
+or
+\[
+\bigl[(\forall a\in A)(b\leq a)\bigr]
+\not\Longleftrightarrow
+\bigl[(\forall x\in -A)(x\leq -b)\bigr].
+\]
 \end{remark*}
 
 \begin{remark*}[Negation predicate reading]
@@ -813,7 +887,7 @@ A failure is a failure of negative dilation at the scalar $\lambda=-1$.
 \begin{aligned}
 &P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
 A\subseteq\mathbb{R},\qquad -A=\{-a:a\in A\},\\
-&\operatorname{LowerBound}(\ell,A,P)\land\neg\operatorname{UpperBound}(-\ell,-A,P)
+&\operatorname{UpperBound}(b,A,P)\not\Longleftrightarrow\operatorname{LowerBound}(-b,-A,P)
 \end{aligned}
 \]
 or
@@ -821,7 +895,7 @@ or
 \begin{aligned}
 &P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
 A\subseteq\mathbb{R},\qquad -A=\{-a:a\in A\},\\
-&\operatorname{UpperBound}(u,A,P)\land\neg\operatorname{LowerBound}(-u,-A,P).
+&\operatorname{LowerBound}(b,A,P)\not\Longleftrightarrow\operatorname{UpperBound}(-b,-A,P).
 \end{aligned}
 \]
 \end{remark*}
@@ -839,15 +913,15 @@ information and upper information becomes lower information.
 \begin{aligned}
 &P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
 A\subseteq\mathbb{R},\qquad -A=\{-a:a\in A\},\\
-&\operatorname{LowerBound}(\ell,A,P)\land\neg\operatorname{UpperBound}(-\ell,-A,P)
+&\operatorname{UpperBound}(b,A,P)\not\Longleftrightarrow\operatorname{LowerBound}(-b,-A,P)
 \end{aligned}
 \]
 \[
 \begin{aligned}
 &P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
 A\subseteq\mathbb{R},\qquad -A=\{-a:a\in A\},\\
-&\operatorname{LowerBound}(\ell,A,P)\Longrightarrow\operatorname{UpperBound}(-\ell,-A,P),\\
-&\operatorname{UpperBound}(u,A,P)\Longrightarrow\operatorname{LowerBound}(-u,-A,P).
+&\operatorname{UpperBound}(b,A,P)\Longleftrightarrow\operatorname{LowerBound}(-b,-A,P),\\
+&\operatorname{LowerBound}(b,A,P)\Longleftrightarrow\operatorname{UpperBound}(-b,-A,P).
 \end{aligned}
 \]
 \end{description}
@@ -865,15 +939,15 @@ Apply negative dilation with $\lambda=-1$.
 \begin{aligned}
 &P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
 A\subseteq\mathbb{R},\qquad -A=\{-a:a\in A\},\\
-&\operatorname{LowerBound}(\ell,A,P)\land\neg\operatorname{UpperBound}(-\ell,-A,P)
+&\operatorname{LowerBound}(b,A,P)\not\Longleftrightarrow\operatorname{UpperBound}(-b,-A,P)
 \end{aligned}
 \]
 \[
 \begin{aligned}
 &P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
 A\subseteq\mathbb{R},\qquad -A=\{-a:a\in A\},\\
-&\operatorname{LowerBound}(\ell,A,P)\Longrightarrow\operatorname{UpperBound}(-\ell,-A,P),\\
-&\operatorname{UpperBound}(u,A,P)\Longrightarrow\operatorname{LowerBound}(-u,-A,P).
+&\operatorname{UpperBound}(b,A,P)\Longleftrightarrow\operatorname{LowerBound}(-b,-A,P),\\
+&\operatorname{LowerBound}(b,A,P)\Longleftrightarrow\operatorname{UpperBound}(-b,-A,P).
 \end{aligned}
 \]
 \end{description}

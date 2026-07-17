@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "def:union-of-intervals",
+  "kind": "definition",
+  "title": "Union of Intervals",
+  "source": {
+    "label": "def:union-of-intervals",
+    "kind": "definition",
+    "title": "Union of Intervals",
+    "book": "book-analysis-i",
+    "chapter": "structure-of-real-line",
+    "section": "intervals-as-subsets",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/structure-of-real-line/notes/intervals-as-subsets/notes-intervals-as-subsets.tex",
+    "source_line_start": 91,
+    "source_line_end": 124,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/structure-of-real-line/notes/intervals-as-subsets/def-union-of-intervals",
+      "artifact": "volume-iii/book-analysis-i/structure-of-real-line/notes/intervals-as-subsets/def-union-of-intervals/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/structure-of-real-line/notes/intervals-as-subsets/def-union-of-intervals/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/structure-of-real-line/notes/intervals-as-subsets/def-union-of-intervals",
+    "artifact": "volume-iii/book-analysis-i/structure-of-real-line/notes/intervals-as-subsets/def-union-of-intervals/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/structure-of-real-line/notes/intervals-as-subsets/def-union-of-intervals/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/structure-of-real-line/notes/intervals-as-subsets/notes-intervals-as-subsets.tex",
+      "label": "def:union-of-intervals",
+      "environment_kind": "definition",
+      "source_line_start": 91,
+      "source_line_end": 124,
+      "current_tex": "\\begin{definitionbox}{Definition (Union of Intervals)}\n\\begin{definition}[Union of Intervals]\n\\label{def:union-of-intervals}\nLet $\\{I_\\lambda\\}_{\\lambda\\in\\Lambda}$ be a family of intervals in\n$\\mathbb{R}$.  Their \\emph{union} is the set\n\\[\n  \\bigcup_{\\lambda\\in\\Lambda}I_\\lambda\n  :=\n  \\{x\\in\\mathbb{R}:(\\exists\\lambda\\in\\Lambda)(x\\in I_\\lambda)\\}.\n\\]\n\\end{definition}\n\\end{definitionbox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\nI\\cup J=\\{x\\in\\mathbb{R}:x\\in I\\lor x\\in J\\}.\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nThe union collects every point that belongs to at least one of the two\nintervals. It may be one interval, or it may split if the original intervals\nleave a gap.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:open-interval]{Open Interval}\n  \\item \\hyperref[def:closed-interval]{Closed Interval}\n  \\item \\hyperref[def:union]{Union}\n\\end{itemize}\n\\end{dependencies}\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

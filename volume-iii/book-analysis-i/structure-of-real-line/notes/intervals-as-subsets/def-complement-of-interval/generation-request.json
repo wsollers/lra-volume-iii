@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "def:complement-of-interval",
+  "kind": "definition",
+  "title": "Complement of an Interval",
+  "source": {
+    "label": "def:complement-of-interval",
+    "kind": "definition",
+    "title": "Complement of an Interval",
+    "book": "book-analysis-i",
+    "chapter": "structure-of-real-line",
+    "section": "intervals-as-subsets",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/structure-of-real-line/notes/intervals-as-subsets/notes-intervals-as-subsets.tex",
+    "source_line_start": 156,
+    "source_line_end": 189,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/structure-of-real-line/notes/intervals-as-subsets/def-complement-of-interval",
+      "artifact": "volume-iii/book-analysis-i/structure-of-real-line/notes/intervals-as-subsets/def-complement-of-interval/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/structure-of-real-line/notes/intervals-as-subsets/def-complement-of-interval/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/structure-of-real-line/notes/intervals-as-subsets/def-complement-of-interval",
+    "artifact": "volume-iii/book-analysis-i/structure-of-real-line/notes/intervals-as-subsets/def-complement-of-interval/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/structure-of-real-line/notes/intervals-as-subsets/def-complement-of-interval/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/structure-of-real-line/notes/intervals-as-subsets/notes-intervals-as-subsets.tex",
+      "label": "def:complement-of-interval",
+      "environment_kind": "definition",
+      "source_line_start": 156,
+      "source_line_end": 189,
+      "current_tex": "\\begin{definitionbox}{Definition (Complement of an Interval)}\n\\begin{definition}[Complement of an Interval]\n\\label{def:complement-of-interval}\nLet $I\\subseteq\\mathbb{R}$ be an interval. Its \\emph{complement} in\n$\\mathbb{R}$ is the set\n\\[\n  I^{c}:=\\mathbb{R}\\setminus I\n  =\n  \\{x\\in\\mathbb{R}:x\\notin I\\}.\n\\]\n\\end{definition}\n\\end{definitionbox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\nI^c=\\{x\\in\\mathbb{R}:x\\notin I\\}.\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nThe complement records every real point excluded by the interval. Endpoint\nmembership reverses: an endpoint included in $I$ is excluded from $I^c$, and an\nendpoint excluded from $I$ is included in $I^c$.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:open-interval]{Open Interval}\n  \\item \\hyperref[def:closed-interval]{Closed Interval}\n  \\item \\hyperref[def:complement]{Complement}\n\\end{itemize}\n\\end{dependencies}\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

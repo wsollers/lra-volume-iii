@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "lem:integer-ceiling-lemma",
+  "kind": "lemma",
+  "title": "Integer Ceiling Lemma",
+  "source": {
+    "label": "lem:integer-ceiling-lemma",
+    "kind": "lemma",
+    "title": "Integer Ceiling Lemma",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "completeness",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-archimedean-property.tex",
+    "source_line_start": 565,
+    "source_line_end": 670,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-integer-ceiling-lemma",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-integer-ceiling-lemma/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-integer-ceiling-lemma/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-integer-ceiling-lemma",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-integer-ceiling-lemma/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-integer-ceiling-lemma/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-archimedean-property.tex",
+      "label": "lem:integer-ceiling-lemma",
+      "environment_kind": "lemma",
+      "source_line_start": 565,
+      "source_line_end": 670,
+      "current_tex": "\\begin{lemma}[Integer Ceiling Lemma]\n\\label{lem:integer-ceiling-lemma}\nFor every $x\\in\\mathbb{R}$, there exists a unique $m\\in\\mathbb{Z}$ such that\n\\[\n  m-1<x\\leq m.\n\\]\nEquivalently,\n\\[\n  (\\forall x\\in\\mathbb{R})(\\exists!m\\in\\mathbb{Z})(m-1<x\\leq m).\n\\]\nThe unique integer $m$ is denoted by\n\\[\n  m=\\lceil x\\rceil.\n\\]\n\n\\smallskip\n\\noindent\n\\hyperref[prf:integer-ceiling-lemma]{\\textit{Go to proof.}}\n\\end{lemma}\n\\end{lemmabox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\forall x\\in\\mathbb{R}\\;\\exists m\\in\\mathbb{Z}\\;(x<m\\le x+1).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\nm=\\lfloor x\\rfloor+1\n\\Longleftrightarrow\nm\\in\\mathbb{Z}\\land x<m\\le x+1.\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\n\\exists x\\in\\mathbb{R}\\;\\forall m\\in\\mathbb{Z}\\;(m\\le x\\lor x+1<m).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negation predicate reading]\n\\[\n\\neg\\exists m\\in\\mathbb{Z}\\;(m=\\lfloor x\\rfloor+1)\n\\Longleftrightarrow\n\\forall m\\in\\mathbb{Z}\\;(m\\le x\\lor x+1<m).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\nThe lemma fails only if every integer is either at or below $x$, or lies\nstrictly above the next unit endpoint $x+1$.\n\n\n  \\item[\\exists-condition.]\n  \\[\n\\exists x\\in\\mathbb{R}\\;\\forall m\\in\\mathbb{Z}\\;(m\\le x\\lor x+1<m).\n\\]\n\\[\n\\neg\\exists m\\in\\mathbb{Z}\\;(m=\\lfloor x\\rfloor+1)\n\\Longleftrightarrow\n\\forall m\\in\\mathbb{Z}\\;(m\\le x\\lor x+1<m).\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\n\\[\n\\underbrace{m\\le x}_{\\text{not strictly above }x}\n\\qquad\\text{or}\\qquad\n\\underbrace{x+1<m}_{\\text{overshoots one unit}}.\n\\]\n\n\n  \\item[\\exists-condition.]\n  \\[\n\\exists x\\in\\mathbb{R}\\;\\forall m\\in\\mathbb{Z}\\;(m\\le x\\lor x+1<m).\n\\]\n\\[\n\\neg\\exists m\\in\\mathbb{Z}\\;(m=\\lfloor x\\rfloor+1)\n\\Longleftrightarrow\n\\forall m\\in\\mathbb{Z}\\;(m\\le x\\lor x+1<m).\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nThere is always an integer just above a real number, and it can be chosen no\nfarther than one unit above that number.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n\\item \\hyperref[def:reals]{Real Numbers}.\n\\item \\hyperref[def:integers]{Integers}.\n\\item \\hyperref[lem:archimedean-integer-part-lemma]{Archimedean Integer Part Lemma}.\n\\end{itemize}\n\\end{dependencies}\n\n\n\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

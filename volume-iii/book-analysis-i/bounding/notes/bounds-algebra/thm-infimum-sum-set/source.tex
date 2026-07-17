@@ -1,0 +1,133 @@
+\begin{theorem}[Infimum of a Sum Set]
+\label{thm:infimum-sum-set}
+Let $A,B\subseteq\mathbb{R}$ be nonempty and bounded below. Then
+\[
+  \inf(A+B)=\inf A+\inf B.
+\]
+\hyperref[prf:infimum-sum-set]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+A,B\neq\varnothing,\quad A,B\text{ bounded below}
+\quad\Longrightarrow\quad
+\inf\{a+b:a\in A,\ b\in B\}=\inf A+\inf B.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\qquad A+B=\{a+b:a\in A,\ b\in B\},\\
+&\operatorname{GreatestLowerBound}(t_A,A,P)\land\operatorname{GreatestLowerBound}(t_B,B,P)
+\Longrightarrow
+\operatorname{GreatestLowerBound}(t_A+t_B,A+B,P).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\inf(A+B)\neq\inf A+\inf B
+\]
+is impossible under the stated hypotheses.
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\qquad A+B=\{a+b:a\in A,\ b\in B\},\\
+&\operatorname{GreatestLowerBound}(t_A,A,P)\land\operatorname{GreatestLowerBound}(t_B,B,P)\land
+\neg\operatorname{GreatestLowerBound}(t_A+t_B,A+B,P).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+The equality could fail only if the sum of the two infima failed to be a lower
+bound of the sum set or failed to be the greatest such lower bound.
+
+
+  \item[\operatorname{GreatestLowerBound}.]
+  \[
+\inf(A+B)\neq\inf A+\inf B
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\qquad A+B=\{a+b:a\in A,\ b\in B\},\\
+&\operatorname{GreatestLowerBound}(t_A,A,P)\land\operatorname{GreatestLowerBound}(t_B,B,P)\land
+\neg\operatorname{GreatestLowerBound}(t_A+t_B,A+B,P).
+\end{aligned}
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+\[
+t_A\leq a,\quad t_B\leq b
+\Longrightarrow
+t_A+t_B\leq a+b,
+\]
+and sharpness follows by choosing elements near each infimum.
+
+
+  \item[\operatorname{GreatestLowerBound}.]
+  \[
+\inf(A+B)\neq\inf A+\inf B
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\qquad A+B=\{a+b:a\in A,\ b\in B\},\\
+&\operatorname{GreatestLowerBound}(t_A,A,P)\land\operatorname{GreatestLowerBound}(t_B,B,P)\land
+\neg\operatorname{GreatestLowerBound}(t_A+t_B,A+B,P).
+\end{aligned}
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The lowest limiting value of pairwise sums is obtained by combining values
+near the separate floors of the two sets.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:reals]{Real Numbers}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:addition-on-r]{Addition on $\mathbb{R}$}
+  \item \hyperref[def:set-arithmetic-images]{Set Arithmetic Images}
+  \item \hyperref[def:real-lower-bound]{Lower Bound}
+  \item \hyperref[def:infimum]{Infimum}
+  \item \hyperref[def:epsilon-characterization-of-infimum]{Epsilon Characterization of Infimum}
+  \item \hyperref[prop:lower-bound-property-of-infimum]{Lower Bound Property of Infimum}
+  \item \hyperref[prop:every-element-lies-above-the-infimum]{Every Element Lies Above the Infimum}
+\end{itemize}
+\end{dependencies}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

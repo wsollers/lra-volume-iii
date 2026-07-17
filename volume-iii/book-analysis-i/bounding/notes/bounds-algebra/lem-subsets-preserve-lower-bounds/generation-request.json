@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "lem:subsets-preserve-lower-bounds",
+  "kind": "lemma",
+  "title": "Subsets Preserve Lower Bounds",
+  "source": {
+    "label": "lem:subsets-preserve-lower-bounds",
+    "kind": "lemma",
+    "title": "Subsets Preserve Lower Bounds",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "bounds-algebra",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-set-operations-and-bounds.tex",
+    "source_line_start": 573,
+    "source_line_end": 656,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/lem-subsets-preserve-lower-bounds",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/lem-subsets-preserve-lower-bounds/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/lem-subsets-preserve-lower-bounds/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/lem-subsets-preserve-lower-bounds",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/lem-subsets-preserve-lower-bounds/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/lem-subsets-preserve-lower-bounds/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-set-operations-and-bounds.tex",
+      "label": "lem:subsets-preserve-lower-bounds",
+      "environment_kind": "lemma",
+      "source_line_start": 573,
+      "source_line_end": 656,
+      "current_tex": "\\begin{lemma}[Subsets Preserve Lower Bounds]\n\\label{lem:subsets-preserve-lower-bounds}\nLet $C\\subseteq A\\subseteq\\mathbb{R}$. Every lower bound of $A$ is a\nlower bound of $C$; that is, for every $\\ell\\in\\mathbb{R}$,\n\\[\n\\left(\\forall a\\in A,\\ \\ell\\leq a\\right)\n\\Longrightarrow\n(\\forall c\\in C,\\ \\ell\\leq c).\n\\]\nConsequently, every subset of a set bounded below is bounded below.\n\\hyperref[prf:subsets-preserve-lower-bounds]{Go to proof.}\n\\end{lemma}\n\\end{lemmabox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\nC\\subseteq A\\land(\\forall a\\in A)(\\ell\\leq a)\n\\Longrightarrow\n(\\forall c\\in C)(\\ell\\leq c).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad C\\subseteq A\\subseteq\\mathbb{R},\\\\\n&\\operatorname{LowerBound}(\\ell,A,P)\n\\Longrightarrow \\operatorname{LowerBound}(\\ell,C,P).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\nC\\subseteq A,\\quad (\\forall a\\in A)(\\ell\\leq a),\\quad\n(\\exists c\\in C)(c<\\ell).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negation predicate reading]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad C\\subseteq A\\subseteq\\mathbb{R},\\\\\n&\\operatorname{LowerBound}(\\ell,A,P)\\land\\neg\\operatorname{LowerBound}(\\ell,C,P).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n\\item[Exposition.]\nA failure would require a point in $C$ below $\\ell$, hence a point in $A$\nbelow $\\ell$.\n\n\n  \\item[\\operatorname{LowerBound}.]\n  \\[\nC\\subseteq A,\\quad (\\forall a\\in A)(\\ell\\leq a),\\quad\n(\\exists c\\in C)(c<\\ell).\n\\]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad C\\subseteq A\\subseteq\\mathbb{R},\\\\\n&\\operatorname{LowerBound}(\\ell,A,P)\\land\\neg\\operatorname{LowerBound}(\\ell,C,P).\n\\end{aligned}\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nSubset inheritance removes possible counterexamples; it cannot create a new\none.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n\\item \\hyperref[def:reals]{Real Numbers}.\n\\item \\hyperref[def:ordered-set]{Ordered Set}.\n\\item \\hyperref[def:subset]{Subset}.\n\\item \\hyperref[def:real-lower-bound]{Lower Bound}.\n\\end{itemize}\n\\end{dependencies}\n\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

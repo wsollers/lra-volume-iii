@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "lem:irrational-minus-irrational-need-not-be-irrational",
+  "kind": "lemma",
+  "title": "Irrational Minus Irrational Need Not Be Irrational",
+  "source": {
+    "label": "lem:irrational-minus-irrational-need-not-be-irrational",
+    "kind": "lemma",
+    "title": "Irrational Minus Irrational Need Not Be Irrational",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "completeness",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-density.tex",
+    "source_line_start": 482,
+    "source_line_end": 517,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-irrational-minus-irrational-need-not-be-irrational",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-irrational-minus-irrational-need-not-be-irrational/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-irrational-minus-irrational-need-not-be-irrational/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-irrational-minus-irrational-need-not-be-irrational",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-irrational-minus-irrational-need-not-be-irrational/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-irrational-minus-irrational-need-not-be-irrational/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-density.tex",
+      "label": "lem:irrational-minus-irrational-need-not-be-irrational",
+      "environment_kind": "lemma",
+      "source_line_start": 482,
+      "source_line_end": 517,
+      "current_tex": "\\begin{lemma}[Irrational Minus Irrational Need Not Be Irrational]\n\\label{lem:irrational-minus-irrational-need-not-be-irrational}\nThere exist irrational numbers $x,y\\in\\mathbb{R}\\setminus\\mathbb{Q}$ such\nthat\n\\[\n  x-y\\in\\mathbb{Q}.\n\\]\nFor example, one may take $x=y=\\sqrt{2}$.\n\\hyperref[prf:irrational-minus-irrational-need-not-be-irrational]{\\textit{Go to proof.}}\n\\end{lemma}\n\\end{lemmabox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\exists x,y\\in\\mathbb{R}\\setminus\\mathbb{Q}\\;(x-y\\in\\mathbb{Q}).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\n\\exists x,y\\in\\mathbb{R}\\setminus\\mathbb{Q}\\;(x-y\\in\\mathbb{Q}).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nTaking $x=y=\\sqrt{2}$ gives $x-y=0$, so irrationality is not closed under\ndifference.\n\\end{remark*}\n\n\\begin{dependencies}\n\\hyperref[thm:square-root-of-two-is-irrational]{Theorem~\\ref*{thm:square-root-of-two-is-irrational}},\n\\hyperref[thm:zero-is-a-rational]{Theorem~\\ref*{thm:zero-is-a-rational}},\n\\hyperref[cor:field-laws-on-r]{Corollary~\\ref*{cor:field-laws-on-r}}.\n\\end{dependencies}\n\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

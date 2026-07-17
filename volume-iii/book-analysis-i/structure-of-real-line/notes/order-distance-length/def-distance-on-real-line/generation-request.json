@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "def:distance-on-real-line",
+  "kind": "definition",
+  "title": "Distance on the Real Line",
+  "source": {
+    "label": "def:distance-on-real-line",
+    "kind": "definition",
+    "title": "Distance on the Real Line",
+    "book": "book-analysis-i",
+    "chapter": "structure-of-real-line",
+    "section": "order-distance-length",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/structure-of-real-line/notes/order-distance-length/notes-order-distance-length.tex",
+    "source_line_start": 8,
+    "source_line_end": 42,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/structure-of-real-line/notes/order-distance-length/def-distance-on-real-line",
+      "artifact": "volume-iii/book-analysis-i/structure-of-real-line/notes/order-distance-length/def-distance-on-real-line/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/structure-of-real-line/notes/order-distance-length/def-distance-on-real-line/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/structure-of-real-line/notes/order-distance-length/def-distance-on-real-line",
+    "artifact": "volume-iii/book-analysis-i/structure-of-real-line/notes/order-distance-length/def-distance-on-real-line/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/structure-of-real-line/notes/order-distance-length/def-distance-on-real-line/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/structure-of-real-line/notes/order-distance-length/notes-order-distance-length.tex",
+      "label": "def:distance-on-real-line",
+      "environment_kind": "definition",
+      "source_line_start": 8,
+      "source_line_end": 42,
+      "current_tex": "\\begin{definitionbox}{Definition (Distance on the Real Line)}\n\\begin{definition}[Distance on the Real Line]\n\\label{def:distance-on-real-line}\nThe \\emph{distance} on $\\mathbb{R}$ is the map\n\\[\n  d:\\mathbb{R}\\times\\mathbb{R}\\longrightarrow\\mathbb{R}\n\\]\ndefined by\n\\[\n  d(x,y)=|x-y|\n  \\qquad(x,y\\in\\mathbb{R}).\n\\]\n\\end{definition}\n\\end{definitionbox}\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\forall x,y\\in\\mathbb{R}\\;(d(x,y)=|x-y|).\n\\]\n\\end{remark*}\n\\begin{remark*}[Predicate reading]\n\\[\n\\operatorname{Distance}(d,\\mathbb{R})\n\\Longleftrightarrow\n\\forall x,y\\in\\mathbb{R}\\;(d(x,y)=|x-y|).\n\\]\n\\end{remark*}\n\\begin{remark*}[Interpretation]\nThe distance between two points is the length of the segment joining them. It is the metric that makes ``close'' precise and is the basis for balls, neighborhoods, and open sets.\n\\end{remark*}\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[thm:triangle-inequality]{Triangle Inequality}\n\\end{itemize}\n\\end{dependencies}\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

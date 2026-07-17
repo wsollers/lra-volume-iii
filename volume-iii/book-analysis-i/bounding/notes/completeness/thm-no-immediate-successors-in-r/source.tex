@@ -1,0 +1,45 @@
+\begin{theorem}[No Immediate Successors in $\mathbb{R}$]\label{thm:no-immediate-successors-in-r}
+For every $a\in\mathbb{R}$, there is no least real number greater than $a$:
+\[
+  \neg(\exists m\in\mathbb{R})
+  \left[
+  a<m
+  \land
+  (\forall x\in\mathbb{R})(a<x\Longrightarrow m\leq x)
+  \right].
+\]
+\hyperref[prf:no-immediate-successors-in-r]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a\in\mathbb{R}\;
+\neg\exists m\in\mathbb{R}\;
+\bigl(a<m\land \forall x\in\mathbb{R}\;(a<x\Longrightarrow m\le x)\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+D_{\mathbb{R}}=\mathsf{OrderDenseSet}(\mathbb{R},P_{\mathbb{R}}),\qquad
+\operatorname{HasDenseOrder}(P_{\mathbb{R}})
+\Longrightarrow
+\forall a\in\mathbb{R}\;
+\neg\exists m\in\mathbb{R}\;
+\bigl(a<m\land \forall x\in\mathbb{R}\;(a<x\Longrightarrow m\le x)\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Every real number with a point to its right has another real point still closer
+on that side; the order on $\mathbb{R}$ has no next element.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[cor:no-adjacent-real-numbers]{No Adjacent Real Numbers}
+\end{itemize}
+\end{dependencies}
+

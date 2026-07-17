@@ -8,9 +8,17 @@ Relative to a set $E$, each point of the line is interior to $E$, exterior to $E
 \begin{definitionbox}{Definition (Interior Point)}
 \begin{definition}[Interior Point]
 \label{def:interior-point}
-Let $E\subseteq\mathbb{R}$ and $x\in\mathbb{R}$. Then $x$ is an interior point of $E$ exactly when
+Let $A\subseteq\mathbb{R}$ and $x\in\mathbb{R}$.  The point $x$ is an
+interior point of $A$ if there exists $r>0$ such that
 \[
-\exists r>0\;(B_{r}(x)\subseteq E).
+  B_r(x)\subseteq A.
+\]
+Equivalently,
+\[
+  x\text{ is an interior point of }A
+  \Longleftrightarrow
+  (\exists r>0)(\forall y\in\mathbb{R})
+  \bigl(|x-y|<r\Longrightarrow y\in A\bigr).
 \]
 \end{definition}
 \end{definitionbox}
@@ -30,9 +38,16 @@ An interior point of $E$ sits inside $E$ with room to spare: a whole ball around
 \begin{definitionbox}{Definition (Exterior Point)}
 \begin{definition}[Exterior Point]
 \label{def:exterior-point}
-Let $E\subseteq\mathbb{R}$ and $x\in\mathbb{R}$. Then $x$ is an exterior point of $E$ exactly when
+Let $A\subseteq\mathbb{R}$ and $x\in\mathbb{R}$.  The point $x$ is an
+exterior point of $A$ if there exists $r>0$ such that
 \[
-\exists r>0\;(B_{r}(x)\subseteq \mathbb{R}\setminus E).
+  B_r(x)\subseteq\mathbb{R}\setminus A.
+\]
+Equivalently,
+\[
+  x\text{ is an exterior point of }A
+  \Longleftrightarrow
+  (\exists r>0)(B_r(x)\cap A=\varnothing).
 \]
 \end{definition}
 \end{definitionbox}
@@ -52,9 +67,15 @@ An exterior point of $E$ is interior to the complement: a whole ball around it m
 \begin{definitionbox}{Definition (Boundary Point)}
 \begin{definition}[Boundary Point]
 \label{def:boundary-point}
-Let $E\subseteq\mathbb{R}$ and $x\in\mathbb{R}$. Then $x$ is a boundary point of $E$ exactly when
+Let $A\subseteq\mathbb{R}$ and $x\in\mathbb{R}$.  The point $x$ is a
+boundary point of $A$ if every open ball centered at $x$ meets both $A$ and
+its complement; that is,
 \[
-\forall r>0\;(B_{r}(x)\cap E\neq\emptyset \;\land\; B_{r}(x)\cap(\mathbb{R}\setminus E)\neq\emptyset).
+  (\forall r>0)(B_r(x)\cap A\neq\varnothing)
+\]
+and
+\[
+  (\forall r>0)(B_r(x)\cap(\mathbb{R}\setminus A)\neq\varnothing).
 \]
 \end{definition}
 \end{definitionbox}
@@ -74,7 +95,20 @@ A boundary point of $E$ is approached from both sides: every ball around it meet
 \begin{definitionbox}{Definition (Interior of a Set)}
 \begin{definition}[Interior of a Set]
 \label{def:interior-of-set}
-The \emph{interior} of $E\subseteq\mathbb{R}$, written $\operatorname{int}(E)$, is the set of all interior points of $E$.
+Let $A\subseteq\mathbb{R}$.  The \emph{interior} of $A$ is the set of all
+interior points of $A$:
+\[
+  \operatorname{int}(A)
+  :=
+  \{x\in\mathbb{R}:(\exists r>0)(B_r(x)\subseteq A)\}.
+\]
+Equivalently,
+\[
+  x\in\operatorname{int}(A)
+  \Longleftrightarrow
+  (\exists r>0)(\forall y\in\mathbb{R})
+  \bigl(|x-y|<r\Longrightarrow y\in A\bigr).
+\]
 \end{definition}
 \end{definitionbox}
 \begin{remark*}[Standard quantified statement]

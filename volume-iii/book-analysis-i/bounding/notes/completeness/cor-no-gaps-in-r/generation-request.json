@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "cor:no-gaps-in-r",
+  "kind": "corollary",
+  "title": "No Gaps in $\\mathbb{R}$",
+  "source": {
+    "label": "cor:no-gaps-in-r",
+    "kind": "corollary",
+    "title": "No Gaps in $\\mathbb{R}$",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "completeness",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-order-separation.tex",
+    "source_line_start": 189,
+    "source_line_end": 265,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/cor-no-gaps-in-r",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/cor-no-gaps-in-r/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/cor-no-gaps-in-r/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/cor-no-gaps-in-r",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/cor-no-gaps-in-r/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/cor-no-gaps-in-r/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-order-separation.tex",
+      "label": "cor:no-gaps-in-r",
+      "environment_kind": "corollary",
+      "source_line_start": 189,
+      "source_line_end": 265,
+      "current_tex": "\\begin{corollary}[No Gaps in $\\mathbb{R}$]\n\\label{cor:no-gaps-in-r}\nLet $L,U\\subseteq\\mathbb{R}$ be nonempty sets satisfying\n\\[\n  L\\cap U=\\varnothing,\n  \\qquad\n  L\\cup U=\\mathbb{R},\n\\]\nand\n\\[\n  (\\forall \\ell\\in L)(\\forall u\\in U)(\\ell<u).\n\\]\nThen there exists a unique $c\\in\\mathbb{R}$ such that exactly one of the\nfollowing alternatives holds:\n\\[\n  L=\\{x\\in\\mathbb{R}:x<c\\},\n  \\qquad\n  U=\\{x\\in\\mathbb{R}:c\\leq x\\},\n\\]\nor\n\\[\n  L=\\{x\\in\\mathbb{R}:x\\leq c\\},\n  \\qquad\n  U=\\{x\\in\\mathbb{R}:c<x\\}.\n\\]\nThus every Dedekind cut of $\\mathbb{R}$ is determined by a real number.\n\\hyperref[prf:no-gaps-in-r]{Go to proof.}\n\\end{corollary}\n\\end{corollarybox}\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\neg\\exists A,B\\subseteq\\mathbb{R}\\;\\operatorname{IsDedekindGap}(A,B,\\mathbb{R}).\n\\]\n\\end{remark*}\n\\begin{remark*}[Predicate reading]\n\\[\nP_{\\mathbb{R}}=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad\n\\operatorname{IsOrderComplete}(P_{\\mathbb{R}}).\n\\]\n\\end{remark*}\n\\begin{remark*}[Negated quantified statement]\n\\[\n\\exists A,B\\subseteq\\mathbb{R}\\;\\operatorname{IsDedekindGap}(A,B,\\mathbb{R}).\n\\]\n\\end{remark*}\n\\begin{remark*}[Negation predicate reading]\n\\[\nP_{\\mathbb{R}}=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad\n\\neg\\operatorname{IsOrderComplete}(P_{\\mathbb{R}}).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\n  Failure is witnessed by the displayed negated or contrapositive condition.\n\n  \\item[\\operatorname{IsDedekindGap} / \\operatorname{IsOrderComplete}.]\n  \\[\n\\exists A,B\\subseteq\\mathbb{R}\\;\\operatorname{IsDedekindGap}(A,B,\\mathbb{R}).\n\\]\n\\[\nP_{\\mathbb{R}}=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad\n\\neg\\operatorname{IsOrderComplete}(P_{\\mathbb{R}}).\n\\]\n\\end{description}\n\\end{remark*}\n\\begin{remark*}[Interpretation]\nEvery Dedekind separation of the real line is accounted for by a real boundary\npoint.\n\\end{remark*}\n\\begin{dependencies}\n\\hyperref[def:reals]{Real Numbers};\n\\hyperref[def:ordered-set]{Ordered Set};\n\\hyperref[thm:dedekind-cut-property]{Dedekind Cut Property}.\n\\end{dependencies}\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

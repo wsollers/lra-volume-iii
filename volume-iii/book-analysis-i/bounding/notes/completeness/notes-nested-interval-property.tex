@@ -7,15 +7,20 @@
 \begin{lemmabox}{Lemma (Nested Closed Intervals Have Ordered Endpoints)}
 \begin{lemma}[Nested Closed Intervals Have Ordered Endpoints]
 \label{lem:nested-closed-intervals-have-ordered-endpoints}
-Let $\{[a_n,b_n]\}_{n\in\mathbb N}$ be a sequence of closed intervals such that
+Let $(a_n)$ and $(b_n)$ be sequences in $\mathbb{R}$ satisfying
 \[
-  [a_{n+1},b_{n+1}]\subseteq [a_n,b_n]
+  (\forall n\in\mathbb{N})(a_n\leq b_n)
 \]
-for every $n\in\mathbb N$. Then
+and
 \[
-  a_n\le a_{n+1}\le b_{n+1}\le b_n
+  (\forall n\in\mathbb{N})([a_{n+1},b_{n+1}]\subseteq [a_n,b_n]).
 \]
-for every $n\in\mathbb N$.
+Then, for all $m,n\in\mathbb{N}$,
+\[
+  n\leq m
+  \Longrightarrow
+  a_n\leq a_m\leq b_m\leq b_n.
+\]
 \hyperref[prf:nested-closed-intervals-have-ordered-endpoints]{Go to proof.}
 \end{lemma}
 \end{lemmabox}
@@ -24,7 +29,7 @@ for every $n\in\mathbb N$.
 \[
 \forall n\in\mathbb{N}\;
 \Bigl([a_{n+1},b_{n+1}]\subseteq [a_n,b_n]
-\rightarrow
+\Longrightarrow
 a_n\le a_{n+1}\le b_{n+1}\le b_n\Bigr).
 \]
 \end{remark*}
@@ -84,8 +89,18 @@ and the right endpoint to the left.
 \begin{lemmabox}{Lemma (Left Endpoints of Nested Intervals Are Increasing)}
 \begin{lemma}[Left Endpoints of Nested Intervals Are Increasing]
 \label{lem:left-endpoints-nested-intervals-increasing}
-Let $\{[a_n,b_n]\}_{n\in\mathbb N}$ be a nested sequence of closed intervals.
-Then the sequence $(a_n)$ is monotone increasing.
+Let $(a_n)$ and $(b_n)$ be sequences in $\mathbb{R}$ such that
+\[
+  (\forall n\in\mathbb{N})(a_n\leq b_n)
+\]
+and
+\[
+  (\forall n\in\mathbb{N})([a_{n+1},b_{n+1}]\subseteq [a_n,b_n]).
+\]
+Then
+\[
+  (\forall n\in\mathbb{N})(a_n\leq a_{n+1}).
+\]
 \hyperref[prf:left-endpoints-nested-intervals-increasing]{Go to proof.}
 \end{lemma}
 \end{lemmabox}
@@ -99,7 +114,7 @@ Then the sequence $(a_n)$ is monotone increasing.
 \begin{remark*}[Predicate reading]
 \[
 F=([a_n,b_n])_{n\in\mathbb{N}},\qquad
-a\colon\mathbb{N}\to\mathbb{R},\qquad a(n)=a_n,
+a\colon\mathbb{N}\longrightarrow\mathbb{R},\qquad a(n)=a_n,
 \]
 \[
 P_{\mathbb{N}}=\mathsf{OrderedSet}(\mathbb{N},\leq),\qquad
@@ -121,7 +136,7 @@ P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),
 \begin{remark*}[Negation predicate reading]
 \[
 F=([a_n,b_n])_{n\in\mathbb{N}},\qquad
-a\colon\mathbb{N}\to\mathbb{R},\qquad a(n)=a_n,
+a\colon\mathbb{N}\longrightarrow\mathbb{R},\qquad a(n)=a_n,
 \]
 \[
 P_{\mathbb{N}}=\mathsf{OrderedSet}(\mathbb{N},\leq),\qquad
@@ -145,7 +160,7 @@ P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),
 \]
 \[
 F=([a_n,b_n])_{n\in\mathbb{N}},\qquad
-a\colon\mathbb{N}\to\mathbb{R},\qquad a(n)=a_n,
+a\colon\mathbb{N}\longrightarrow\mathbb{R},\qquad a(n)=a_n,
 \]
 \end{description}
 \end{remark*}
@@ -162,8 +177,18 @@ shrink.
 \begin{lemmabox}{Lemma (Right Endpoints of Nested Intervals Are Decreasing)}
 \begin{lemma}[Right Endpoints of Nested Intervals Are Decreasing]
 \label{lem:right-endpoints-nested-intervals-decreasing}
-Let $\{[a_n,b_n]\}_{n\in\mathbb N}$ be a nested sequence of closed intervals.
-Then the sequence $(b_n)$ is monotone decreasing.
+Let $(a_n)$ and $(b_n)$ be sequences in $\mathbb{R}$ such that
+\[
+  (\forall n\in\mathbb{N})(a_n\leq b_n)
+\]
+and
+\[
+  (\forall n\in\mathbb{N})([a_{n+1},b_{n+1}]\subseteq [a_n,b_n]).
+\]
+Then
+\[
+  (\forall n\in\mathbb{N})(b_{n+1}\leq b_n).
+\]
 \hyperref[prf:right-endpoints-nested-intervals-decreasing]{Go to proof.}
 \end{lemma}
 \end{lemmabox}
@@ -177,7 +202,7 @@ Then the sequence $(b_n)$ is monotone decreasing.
 \begin{remark*}[Predicate reading]
 \[
 F=([a_n,b_n])_{n\in\mathbb{N}},\qquad
-b\colon\mathbb{N}\to\mathbb{R},\qquad b(n)=b_n,
+b\colon\mathbb{N}\longrightarrow\mathbb{R},\qquad b(n)=b_n,
 \]
 \[
 P_{\mathbb{N}}=\mathsf{OrderedSet}(\mathbb{N},\leq),\qquad
@@ -199,7 +224,7 @@ P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),
 \begin{remark*}[Negation predicate reading]
 \[
 F=([a_n,b_n])_{n\in\mathbb{N}},\qquad
-b\colon\mathbb{N}\to\mathbb{R},\qquad b(n)=b_n,
+b\colon\mathbb{N}\longrightarrow\mathbb{R},\qquad b(n)=b_n,
 \]
 \[
 P_{\mathbb{N}}=\mathsf{OrderedSet}(\mathbb{N},\leq),\qquad
@@ -223,7 +248,7 @@ P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),
 \]
 \[
 F=([a_n,b_n])_{n\in\mathbb{N}},\qquad
-b\colon\mathbb{N}\to\mathbb{R},\qquad b(n)=b_n,
+b\colon\mathbb{N}\longrightarrow\mathbb{R},\qquad b(n)=b_n,
 \]
 \end{description}
 \end{remark*}
@@ -240,11 +265,20 @@ shrink.
 \begin{lemmabox}{Lemma (Left Endpoints Are Bounded Above by Right Endpoints)}
 \begin{lemma}[Left Endpoints Are Bounded Above by Right Endpoints]
 \label{lem:left-endpoints-bounded-above-by-right-endpoints}
-Let $\{[a_n,b_n]\}_{n\in\mathbb N}$ be a nested sequence of closed intervals.
-Then for all $m,n\in\mathbb N$,
+Let $(a_n)$ and $(b_n)$ be sequences in $\mathbb{R}$ such that
 \[
-  a_n\le b_m.
+  (\forall n\in\mathbb{N})(a_n\leq b_n)
 \]
+and
+\[
+  (\forall n\in\mathbb{N})([a_{n+1},b_{n+1}]\subseteq [a_n,b_n]).
+\]
+Then
+\[
+  (\forall m,n\in\mathbb{N})(a_n\leq b_m).
+\]
+Consequently, every $b_m$ is an upper bound of $\{a_n:n\in\mathbb{N}\}$, and
+every $a_n$ is a lower bound of $\{b_m:m\in\mathbb{N}\}$.
 \hyperref[prf:left-endpoints-bounded-above-by-right-endpoints]{Go to proof.}
 \end{lemma}
 \end{lemmabox}
@@ -310,15 +344,25 @@ endpoints come from different stages of the nested family.
 \begin{lemmabox}{Lemma (Endpoint Supremum Infimum Inequality)}
 \begin{lemma}[Endpoint Supremum Infimum Inequality]
 \label{lem:endpoint-supremum-infimum-inequality}
-Let $\{[a_n,b_n]\}_{n\in\mathbb N}$ be a nested sequence of closed intervals. If
+Let $(a_n)$ and $(b_n)$ be sequences in $\mathbb{R}$ satisfying
 \[
-  \alpha=\sup\{a_n:n\in\mathbb N\}
-  \quad\text{and}\quad
-  \beta=\inf\{b_n:n\in\mathbb N\},
+  (\forall n\in\mathbb{N})(a_n\leq b_n)
 \]
-then
+and
 \[
-  \alpha\le \beta.
+  (\forall n\in\mathbb{N})([a_{n+1},b_{n+1}]\subseteq [a_n,b_n]).
+\]
+Define
+\[
+  \alpha:=\sup\{a_n:n\in\mathbb{N}\}
+\]
+and
+\[
+  \beta:=\inf\{b_n:n\in\mathbb{N}\}.
+\]
+Then
+\[
+  \alpha\leq\beta.
 \]
 \hyperref[prf:endpoint-supremum-infimum-inequality]{Go to proof.}
 \end{lemma}
@@ -417,14 +461,31 @@ endpoints.
 \begin{theorembox}{Theorem (Nested Interval Theorem)}
 \begin{theorem}[Nested Interval Theorem]
 \label{thm:nested-interval-theorem}
-Let $\{[a_n,b_n]\}_{n\in\mathbb N}$ be a sequence of nonempty closed bounded
-intervals in $\mathbb R$ such that
+Let $(a_n)$ and $(b_n)$ be sequences in $\mathbb{R}$ such that
 \[
-  [a_{n+1},b_{n+1}]\subseteq [a_n,b_n]
+  (\forall n\in\mathbb{N})(a_n\leq b_n)
 \]
-for every $n\in\mathbb N$. Then
+and
+\[
+  (\forall n\in\mathbb{N})([a_{n+1},b_{n+1}]\subseteq [a_n,b_n]).
+\]
+Define
+\[
+  \alpha:=\sup\{a_n:n\in\mathbb{N}\},
+  \qquad
+  \beta:=\inf\{b_n:n\in\mathbb{N}\}.
+\]
+Then
+\[
+  \alpha\leq\beta
+\]
+and
 \[
   \bigcap_{n=1}^{\infty}[a_n,b_n]\neq\varnothing.
+\]
+In particular, there exists $x\in\mathbb{R}$ such that
+\[
+  (\forall n\in\mathbb{N})(a_n\leq x\leq b_n).
 \]
 \hyperref[prf:nested-interval-theorem]{Go to proof.}
 \end{theorem}
@@ -439,7 +500,7 @@ for every $n\in\mathbb N$. Then
 \land
 \bigl(\forall n\in\mathbb{N}\;([a_{n+1},b_{n+1}]\subseteq [a_n,b_n])\bigr)
 \\
-&\qquad\rightarrow
+&\qquad\Longrightarrow
 \exists x\in\mathbb{R}\;\forall n\in\mathbb{N}\;(x\in [a_n,b_n])
 \Bigr].
 \end{aligned}
@@ -524,12 +585,16 @@ at the limiting stage.
 \begin{corollarybox}{Corollary (Nested Interval Intersection Contains the Endpoint Supremum)}
 \begin{corollary}[Nested Interval Intersection Contains the Endpoint Supremum]
 \label{cor:nested-interval-intersection-contains-endpoint-supremum}
-Let $\{[a_n,b_n]\}_{n\in\mathbb N}$ be a nested sequence of nonempty closed
-bounded intervals. If
+Let $(a_n)$ and $(b_n)$ satisfy the hypotheses of the Nested Interval Theorem,
+and define
 \[
-  \alpha=\sup\{a_n:n\in\mathbb N\},
+  \alpha:=\sup\{a_n:n\in\mathbb{N}\}.
 \]
-then
+Then
+\[
+  (\forall n\in\mathbb{N})(a_n\leq\alpha\leq b_n).
+\]
+Therefore,
 \[
   \alpha\in \bigcap_{n=1}^{\infty}[a_n,b_n].
 \]
@@ -619,12 +684,16 @@ interval in the nested family.
 \begin{corollarybox}{Corollary (Nested Interval Intersection Contains the Endpoint Infimum)}
 \begin{corollary}[Nested Interval Intersection Contains the Endpoint Infimum]
 \label{cor:nested-interval-intersection-contains-endpoint-infimum}
-Let $\{[a_n,b_n]\}_{n\in\mathbb N}$ be a nested sequence of nonempty closed
-bounded intervals. If
+Let $(a_n)$ and $(b_n)$ satisfy the hypotheses of the Nested Interval Theorem,
+and define
 \[
-  \beta=\inf\{b_n:n\in\mathbb N\},
+  \beta:=\inf\{b_n:n\in\mathbb{N}\}.
 \]
-then
+Then
+\[
+  (\forall n\in\mathbb{N})(a_n\leq\beta\leq b_n).
+\]
+Therefore,
 \[
   \beta\in \bigcap_{n=1}^{\infty}[a_n,b_n].
 \]
@@ -714,14 +783,29 @@ interval in the nested family.
 \begin{corollarybox}{Corollary (Nested Intervals with Vanishing Length Have Unique Point)}
 \begin{corollary}[Nested Intervals with Vanishing Length Have Unique Point]
 \label{cor:nested-intervals-vanishing-length-have-unique-point}
-Let $\{[a_n,b_n]\}_{n\in\mathbb N}$ be a nested sequence of nonempty closed
-bounded intervals. If
+Let $(a_n)$ and $(b_n)$ be sequences in $\mathbb{R}$ such that
 \[
-  \lim_{n\to\infty}(b_n-a_n)=0,
+  (\forall n\in\mathbb{N})(a_n\leq b_n),
 \]
-then there exists a unique $x\in\mathbb R$ such that
+\[
+  (\forall n\in\mathbb{N})([a_{n+1},b_{n+1}]\subseteq [a_n,b_n]),
+\]
+and
+\[
+  (\forall\varepsilon>0)(\exists N\in\mathbb{N})(\forall n\in\mathbb{N})
+  \bigl(n\geq N\Longrightarrow 0\leq b_n-a_n<\varepsilon\bigr).
+\]
+Then there exists a unique $x\in\mathbb{R}$ such that
+\[
+  (\forall n\in\mathbb{N})(a_n\leq x\leq b_n).
+\]
+Equivalently,
 \[
   \bigcap_{n=1}^{\infty}[a_n,b_n]=\{x\}.
+\]
+Moreover,
+\[
+  x=\sup\{a_n:n\in\mathbb{N}\}=\inf\{b_n:n\in\mathbb{N}\}.
 \]
 \hyperref[prf:nested-intervals-vanishing-length-have-unique-point]{Go to proof.}
 \end{corollary}
@@ -729,17 +813,17 @@ then there exists a unique $x\in\mathbb R$ such that
 
 \begin{remark*}[Standard quantified statement]
 \[
-\lim_{n\to\infty}(b_n-a_n)=0
+\lim_{n\longrightarrow\infty}(b_n-a_n)=0
 \Longrightarrow
 \exists x\in\mathbb{R}\;\forall y\in\mathbb{R}\;
-\left(y\in\bigcap_{n=1}^{\infty}[a_n,b_n]\leftrightarrow y=x\right).
+\left(y\in\bigcap_{n=1}^{\infty}[a_n,b_n]\Longleftrightarrow y=x\right).
 \]
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
 \[
 F=([a_n,b_n])_{n\in\mathbb{N}},\qquad
-d\colon\mathbb{N}\to\mathbb{R},\qquad d_n=b_n-a_n,
+d\colon\mathbb{N}\longrightarrow\mathbb{R},\qquad d_n=b_n-a_n,
 \]
 \[
 P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad X=\mathbb{R},\qquad
@@ -756,7 +840,7 @@ P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad X=\mathbb{R},\qquad
 \[
 \operatorname{NestedClosedBoundedIntervals}([a_n,b_n])
 \land
-\lim_{n\to\infty}(b_n-a_n)=0
+\lim_{n\longrightarrow\infty}(b_n-a_n)=0
 \land
 \forall x\in\mathbb{R}\;\exists y\in\mathbb{R}\;
 \left(y\in\bigcap_{n=1}^{\infty}[a_n,b_n]\land y\ne x\right).
@@ -766,7 +850,7 @@ P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad X=\mathbb{R},\qquad
 \begin{remark*}[Negation predicate reading]
 \[
 F=([a_n,b_n])_{n\in\mathbb{N}},\qquad
-d\colon\mathbb{N}\to\mathbb{R},\qquad d_n=b_n-a_n,
+d\colon\mathbb{N}\longrightarrow\mathbb{R},\qquad d_n=b_n-a_n,
 \]
 \[
 P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad X=\mathbb{R},\qquad
@@ -788,14 +872,14 @@ P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad X=\mathbb{R},\qquad
   \[
 \operatorname{NestedClosedBoundedIntervals}([a_n,b_n])
 \land
-\lim_{n\to\infty}(b_n-a_n)=0
+\lim_{n\longrightarrow\infty}(b_n-a_n)=0
 \land
 \forall x\in\mathbb{R}\;\exists y\in\mathbb{R}\;
 \left(y\in\bigcap_{n=1}^{\infty}[a_n,b_n]\land y\ne x\right).
 \]
 \[
 F=([a_n,b_n])_{n\in\mathbb{N}},\qquad
-d\colon\mathbb{N}\to\mathbb{R},\qquad d_n=b_n-a_n,
+d\colon\mathbb{N}\longrightarrow\mathbb{R},\qquad d_n=b_n-a_n,
 \]
 \end{description}
 \end{remark*}
@@ -813,14 +897,23 @@ two distinct points.
 \begin{corollarybox}{Corollary (Nested Intervals with Vanishing Length Have Equal Endpoint Limits)}
 \begin{corollary}[Nested Intervals with Vanishing Length Have Equal Endpoint Limits]
 \label{cor:nested-intervals-vanishing-length-have-equal-endpoint-limits}
-Let $\{[a_n,b_n]\}_{n\in\mathbb N}$ be a nested sequence of nonempty closed
-bounded intervals. If
+Let $(a_n)$ and $(b_n)$ satisfy
 \[
-  \lim_{n\to\infty}(b_n-a_n)=0,
+  (\forall n\in\mathbb{N})(a_n\leq b_n),
 \]
-then $(a_n)$ and $(b_n)$ converge and
 \[
-  \lim_{n\to\infty}a_n=\lim_{n\to\infty}b_n.
+  (\forall n\in\mathbb{N})([a_{n+1},b_{n+1}]\subseteq [a_n,b_n]),
+\]
+and
+\[
+  (\forall\varepsilon>0)(\exists N\in\mathbb{N})(\forall n\in\mathbb{N})
+  \bigl(n\geq N\Longrightarrow b_n-a_n<\varepsilon\bigr).
+\]
+Then there exists $x\in\mathbb{R}$ such that
+\[
+  \lim_{n\longrightarrow\infty}a_n=x
+  \qquad\text{and}\qquad
+  \lim_{n\longrightarrow\infty}b_n=x.
 \]
 \hyperref[prf:nested-intervals-vanishing-length-have-equal-endpoint-limits]{Go to proof.}
 \end{corollary}
@@ -828,17 +921,17 @@ then $(a_n)$ and $(b_n)$ converge and
 
 \begin{remark*}[Standard quantified statement]
 \[
-\lim_{n\to\infty}(b_n-a_n)=0
+\lim_{n\longrightarrow\infty}(b_n-a_n)=0
 \Longrightarrow
 \exists L\in\mathbb{R}\;
-\left(\lim_{n\to\infty}a_n=L\land \lim_{n\to\infty}b_n=L\right).
+\left(\lim_{n\longrightarrow\infty}a_n=L\land \lim_{n\longrightarrow\infty}b_n=L\right).
 \]
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
 \[
 F=([a_n,b_n])_{n\in\mathbb{N}},\qquad
-a\colon\mathbb{N}\to\mathbb{R},\qquad b\colon\mathbb{N}\to\mathbb{R},\qquad d\colon\mathbb{N}\to\mathbb{R},
+a\colon\mathbb{N}\longrightarrow\mathbb{R},\qquad b\colon\mathbb{N}\longrightarrow\mathbb{R},\qquad d\colon\mathbb{N}\longrightarrow\mathbb{R},
 \]
 \[
 a(n)=a_n,\qquad b(n)=b_n,\qquad d_n=b_n-a_n,
@@ -862,17 +955,17 @@ P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad X=\mathbb{R},\qquad
 \[
 \operatorname{NestedClosedBoundedIntervals}([a_n,b_n])
 \land
-\lim_{n\to\infty}(b_n-a_n)=0
+\lim_{n\longrightarrow\infty}(b_n-a_n)=0
 \land
 \forall L\in\mathbb{R}\;
-\left(\lim_{n\to\infty}a_n\ne L\lor \lim_{n\to\infty}b_n\ne L\right).
+\left(\lim_{n\longrightarrow\infty}a_n\ne L\lor \lim_{n\longrightarrow\infty}b_n\ne L\right).
 \]
 \end{remark*}
 
 \begin{remark*}[Negation predicate reading]
 \[
-a\colon\mathbb{N}\to\mathbb{R},\qquad b\colon\mathbb{N}\to\mathbb{R},\qquad
-d\colon\mathbb{N}\to\mathbb{R},\qquad d_n=b_n-a_n,
+a\colon\mathbb{N}\longrightarrow\mathbb{R},\qquad b\colon\mathbb{N}\longrightarrow\mathbb{R},\qquad
+d\colon\mathbb{N}\longrightarrow\mathbb{R},\qquad d_n=b_n-a_n,
 \]
 \[
 F=([a_n,b_n])_{n\in\mathbb{N}},\qquad
@@ -899,14 +992,14 @@ P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad X=\mathbb{R},\qquad
   \[
 \operatorname{NestedClosedBoundedIntervals}([a_n,b_n])
 \land
-\lim_{n\to\infty}(b_n-a_n)=0
+\lim_{n\longrightarrow\infty}(b_n-a_n)=0
 \land
 \forall L\in\mathbb{R}\;
-\left(\lim_{n\to\infty}a_n\ne L\lor \lim_{n\to\infty}b_n\ne L\right).
+\left(\lim_{n\longrightarrow\infty}a_n\ne L\lor \lim_{n\longrightarrow\infty}b_n\ne L\right).
 \]
 \[
-a\colon\mathbb{N}\to\mathbb{R},\qquad b\colon\mathbb{N}\to\mathbb{R},\qquad
-d\colon\mathbb{N}\to\mathbb{R},\qquad d_n=b_n-a_n,
+a\colon\mathbb{N}\longrightarrow\mathbb{R},\qquad b\colon\mathbb{N}\longrightarrow\mathbb{R},\qquad
+d\colon\mathbb{N}\longrightarrow\mathbb{R},\qquad d_n=b_n-a_n,
 \]
 \end{description}
 \end{remark*}
@@ -924,20 +1017,23 @@ same real number.
 \begin{corollarybox}{Corollary (Unique Point in Nested Intervals Is Endpoint Limit)}
 \begin{corollary}[Unique Point in Nested Intervals Is Endpoint Limit]
 \label{cor:unique-point-in-nested-intervals-is-endpoint-limit}
-Let $\{[a_n,b_n]\}_{n\in\mathbb N}$ be a nested sequence of nonempty closed
-bounded intervals. If
+Let $(a_n)$ and $(b_n)$ be sequences in $\mathbb{R}$ satisfying
 \[
-  \lim_{n\to\infty}(b_n-a_n)=0
+  (\forall n\in\mathbb{N})(a_n\leq b_n)
 \]
 and
 \[
-  \bigcap_{n=1}^{\infty}[a_n,b_n]=\{x\},
+  (\forall n\in\mathbb{N})([a_{n+1},b_{n+1}]\subseteq [a_n,b_n]).
 \]
-then
+Suppose there exists $x\in\mathbb{R}$ such that
 \[
-  \lim_{n\to\infty}a_n=x
+  \bigcap_{n=1}^{\infty}[a_n,b_n]=\{x\}.
+\]
+Then
+\[
+  \lim_{n\longrightarrow\infty}a_n=x
   \quad\text{and}\quad
-  \lim_{n\to\infty}b_n=x.
+  \lim_{n\longrightarrow\infty}b_n=x.
 \]
 \hyperref[prf:unique-point-in-nested-intervals-is-endpoint-limit]{Go to proof.}
 \end{corollary}
@@ -946,18 +1042,18 @@ then
 \begin{remark*}[Standard quantified statement]
 \[
 \left[
-\lim_{n\to\infty}(b_n-a_n)=0
+\lim_{n\longrightarrow\infty}(b_n-a_n)=0
 \land
 \bigcap_{n=1}^{\infty}[a_n,b_n]=\{x\}
 \right]
 \Longrightarrow
-\left(\lim_{n\to\infty}a_n=x\land \lim_{n\to\infty}b_n=x\right).
+\left(\lim_{n\longrightarrow\infty}a_n=x\land \lim_{n\longrightarrow\infty}b_n=x\right).
 \]
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
 \[
-a\colon\mathbb{N}\to\mathbb{R},\qquad b\colon\mathbb{N}\to\mathbb{R},\qquad d\colon\mathbb{N}\to\mathbb{R},\qquad d_n=b_n-a_n,
+a\colon\mathbb{N}\longrightarrow\mathbb{R},\qquad b\colon\mathbb{N}\longrightarrow\mathbb{R},\qquad d\colon\mathbb{N}\longrightarrow\mathbb{R},\qquad d_n=b_n-a_n,
 \]
 \[
 C=\bigcap_{n=1}^{\infty}[a_n,b_n],\qquad X=\mathbb{R},\qquad
@@ -975,19 +1071,19 @@ C=\{x\}
 \[
 \bigcap_{n=1}^{\infty}[a_n,b_n]=\{x\}
 \land
-\lim_{n\to\infty}(b_n-a_n)=0
+\lim_{n\longrightarrow\infty}(b_n-a_n)=0
 \land
-\left(\lim_{n\to\infty}a_n\ne x\lor \lim_{n\to\infty}b_n\ne x\right).
+\left(\lim_{n\longrightarrow\infty}a_n\ne x\lor \lim_{n\longrightarrow\infty}b_n\ne x\right).
 \]
 \end{remark*}
 
 \begin{remark*}[Negation predicate reading]
 \[
-a\colon\mathbb{N}\to\mathbb{R},\qquad b\colon\mathbb{N}\to\mathbb{R},\qquad d\colon\mathbb{N}\to\mathbb{R},\qquad d_n=b_n-a_n,
+a\colon\mathbb{N}\longrightarrow\mathbb{R},\qquad b\colon\mathbb{N}\longrightarrow\mathbb{R},\qquad d\colon\mathbb{N}\longrightarrow\mathbb{R},\qquad d_n=b_n-a_n,
 \]
 \[
 C=\bigcap_{n=1}^{\infty}[a_n,b_n],\qquad X=\mathbb{R},\qquad
-\left(\lim_{n\to\infty}a_n\ne x\lor \lim_{n\to\infty}b_n\ne x\right)
+\left(\lim_{n\longrightarrow\infty}a_n\ne x\lor \lim_{n\longrightarrow\infty}b_n\ne x\right)
 \Longrightarrow
 C\ne\{x\}
 \lor
@@ -1004,12 +1100,12 @@ C\ne\{x\}
   \[
 \bigcap_{n=1}^{\infty}[a_n,b_n]=\{x\}
 \land
-\lim_{n\to\infty}(b_n-a_n)=0
+\lim_{n\longrightarrow\infty}(b_n-a_n)=0
 \land
-\left(\lim_{n\to\infty}a_n\ne x\lor \lim_{n\to\infty}b_n\ne x\right).
+\left(\lim_{n\longrightarrow\infty}a_n\ne x\lor \lim_{n\longrightarrow\infty}b_n\ne x\right).
 \]
 \[
-a\colon\mathbb{N}\to\mathbb{R},\qquad b\colon\mathbb{N}\to\mathbb{R},\qquad d\colon\mathbb{N}\to\mathbb{R},\qquad d_n=b_n-a_n,
+a\colon\mathbb{N}\longrightarrow\mathbb{R},\qquad b\colon\mathbb{N}\longrightarrow\mathbb{R},\qquad d\colon\mathbb{N}\longrightarrow\mathbb{R},\qquad d_n=b_n-a_n,
 \]
 \end{description}
 \end{remark*}
@@ -1029,14 +1125,18 @@ to that survivor.
 \begin{propositionbox}{Proposition (Open Nested Intervals Need Not Have Nonempty Intersection)}
 \begin{proposition}[Open Nested Intervals Need Not Have Nonempty Intersection]
 \label{prop:open-nested-intervals-need-not-have-nonempty-intersection}
-There exists a nested sequence of nonempty open bounded intervals $(a_n,b_n)$
-such that
+There exists a sequence $(I_n)_{n\in\mathbb{N}}$ of nonempty bounded open
+intervals in $\mathbb{R}$ such that
 \[
-  (a_{n+1},b_{n+1})\subseteq (a_n,b_n)
+  (\forall n\in\mathbb{N})(I_{n+1}\subseteq I_n),
 \]
-for every $n\in\mathbb N$, but
+but
 \[
-  \bigcap_{n=1}^{\infty}(a_n,b_n)=\varnothing.
+  \bigcap_{n=1}^{\infty}I_n=\varnothing.
+\]
+One such sequence is
+\[
+  I_n=\left(0,\frac{1}{n}\right).
 \]
 \hyperref[prf:open-nested-intervals-need-not-have-nonempty-intersection]{Go to proof.}
 \end{proposition}
@@ -1152,8 +1252,19 @@ would retain.
 \begin{propositionbox}{Proposition (Closedness Is Necessary in the Nested Interval Theorem)}
 \begin{proposition}[Closedness Is Necessary in the Nested Interval Theorem]
 \label{prop:closedness-is-necessary-in-nested-interval-theorem}
-The conclusion of the Nested Interval Theorem can fail if the intervals are
-not closed.
+There exists a sequence $(I_n)_{n\in\mathbb{N}}$ of nonempty bounded intervals
+in $\mathbb{R}$, not all of which are closed, such that
+\[
+  (\forall n\in\mathbb{N})(I_{n+1}\subseteq I_n),
+\]
+but
+\[
+  \bigcap_{n=1}^{\infty}I_n=\varnothing.
+\]
+For example,
+\[
+  I_n=\left(0,\frac{1}{n}\right].
+\]
 \hyperref[prf:closedness-is-necessary-in-nested-interval-theorem]{Go to proof.}
 \end{proposition}
 \end{propositionbox}
@@ -1250,8 +1361,19 @@ the limiting intersection.
 \begin{propositionbox}{Proposition (Boundedness Is Necessary in the Nested Interval Theorem)}
 \begin{proposition}[Boundedness Is Necessary in the Nested Interval Theorem]
 \label{prop:boundedness-is-necessary-in-nested-interval-theorem}
-The conclusion of the Nested Interval Theorem can fail for nested nonempty
-closed intervals that are not bounded.
+There exists a sequence $(I_n)_{n\in\mathbb{N}}$ of nonempty closed unbounded
+intervals in $\mathbb{R}$ such that
+\[
+  (\forall n\in\mathbb{N})(I_{n+1}\subseteq I_n),
+\]
+but
+\[
+  \bigcap_{n=1}^{\infty}I_n=\varnothing.
+\]
+For example,
+\[
+  I_n=[n,\infty).
+\]
 \hyperref[prf:boundedness-is-necessary-in-nested-interval-theorem]{Go to proof.}
 \end{proposition}
 \end{propositionbox}

@@ -1,0 +1,116 @@
+\begin{lemma}[Endpoint Supremum Infimum Inequality]
+\label{lem:endpoint-supremum-infimum-inequality}
+Let $(a_n)$ and $(b_n)$ be sequences in $\mathbb{R}$ satisfying
+\[
+  (\forall n\in\mathbb{N})(a_n\leq b_n)
+\]
+and
+\[
+  (\forall n\in\mathbb{N})([a_{n+1},b_{n+1}]\subseteq [a_n,b_n]).
+\]
+Define
+\[
+  \alpha:=\sup\{a_n:n\in\mathbb{N}\}
+\]
+and
+\[
+  \beta:=\inf\{b_n:n\in\mathbb{N}\}.
+\]
+Then
+\[
+  \alpha\leq\beta.
+\]
+\hyperref[prf:endpoint-supremum-infimum-inequality]{Go to proof.}
+\end{lemma}
+\end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\alpha=\sup\{a_n:n\in\mathbb{N}\}\land
+\beta=\inf\{b_n:n\in\mathbb{N}\}
+\Longrightarrow
+\alpha\le \beta.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+F=([a_n,b_n])_{n\in\mathbb{N}},\qquad
+A=\{a_n:n\in\mathbb{N}\},\qquad B=\{b_n:n\in\mathbb{N}\},
+\]
+\[
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+\operatorname{NestedClosedIntervals}(F,P_{\mathbb{R}})
+\land
+\operatorname{LeastUpperBound}(\alpha,A,P_{\mathbb{R}})
+\land
+\operatorname{GreatestLowerBound}(\beta,B,P_{\mathbb{R}})
+\Longrightarrow
+\alpha\le \beta.
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\operatorname{NestedClosedIntervals}([a_n,b_n])
+\land
+\alpha=\sup\{a_n:n\in\mathbb{N}\}
+\land
+\beta=\inf\{b_n:n\in\mathbb{N}\}
+\land
+\beta<\alpha.
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+F=([a_n,b_n])_{n\in\mathbb{N}},\qquad
+A=\{a_n:n\in\mathbb{N}\},\qquad B=\{b_n:n\in\mathbb{N}\},
+\]
+\[
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+\beta<\alpha
+\Longrightarrow
+\neg\operatorname{NestedClosedIntervals}(F,P_{\mathbb{R}})
+\lor
+\neg\operatorname{LeastUpperBound}(\alpha,A,P_{\mathbb{R}})
+\lor
+\neg\operatorname{GreatestLowerBound}(\beta,B,P_{\mathbb{R}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  Failure is witnessed by the displayed negated or contrapositive condition.
+
+  \item[\operatorname{NestedClosedIntervals}.]
+  \[
+\operatorname{NestedClosedIntervals}([a_n,b_n])
+\land
+\alpha=\sup\{a_n:n\in\mathbb{N}\}
+\land
+\beta=\inf\{b_n:n\in\mathbb{N}\}
+\land
+\beta<\alpha.
+\]
+\[
+F=([a_n,b_n])_{n\in\mathbb{N}},\qquad
+A=\{a_n:n\in\mathbb{N}\},\qquad B=\{b_n:n\in\mathbb{N}\},
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The supremum of all left endpoints cannot pass the infimum of all right
+endpoints.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[def:closed-interval]{Closed Interval};
+\hyperref[def:supremum]{Supremum};
+\hyperref[def:infimum]{Infimum}.
+\end{dependencies}
+
+\input{volume-iii/book-analysis-i/bounding/notes/completeness/figure-nested-interval-endpoints}
+

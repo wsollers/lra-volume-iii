@@ -1,0 +1,116 @@
+\begin{lemma}[Rational Gap Example for Suprema]
+\label{lem:rational-gap-suprema}
+Let
+\[
+  A=\{q\in\mathbb{Q}:q^2<2\}.
+\]
+Then $A$ is nonempty and bounded above in $\mathbb{Q}$, but $A$ has no supremum relative to $\mathbb{Q}$.
+\hyperref[prf:rational-gap-suprema]{Go to proof.}
+\end{lemma}
+\end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+A=\{q\in\mathbb{Q}:q^2<2\}
+\quad\Longrightarrow\quad
+\sup_{\mathbb{Q}} A\text{ does not exist}.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\begin{aligned}
+&P_{\mathbb{Q}}=\mathsf{OrderedSet}(\mathbb{Q},\leq),\qquad
+A=\{q\in\mathbb{Q}:q^2<2\},\\
+&\neg\exists s\in\mathbb{Q}\;\operatorname{LeastUpperBound}(s,A,P_{\mathbb{Q}}).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\exists s\in\mathbb{Q}\;(s=\sup_{\mathbb{Q}}A)
+\]
+is false for this set.
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\begin{aligned}
+&P_{\mathbb{Q}}=\mathsf{OrderedSet}(\mathbb{Q},\leq),\qquad
+A=\{q\in\mathbb{Q}:q^2<2\},\\
+&\exists s\in\mathbb{Q}\;\operatorname{LeastUpperBound}(s,A,P_{\mathbb{Q}})
+\end{aligned}
+\]
+is false.
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+A rational candidate below $\sqrt{2}$ fails to be an upper bound. A rational candidate above $\sqrt{2}$ is an upper bound but is not least, because another rational upper bound lies between it and $\sqrt{2}$.
+
+
+  \item[\operatorname{LeastUpperBound}.]
+  \[
+\exists s\in\mathbb{Q}\;(s=\sup_{\mathbb{Q}}A)
+\]
+\[
+\begin{aligned}
+&P_{\mathbb{Q}}=\mathsf{OrderedSet}(\mathbb{Q},\leq),\qquad
+A=\{q\in\mathbb{Q}:q^2<2\},\\
+&\exists s\in\mathbb{Q}\;\operatorname{LeastUpperBound}(s,A,P_{\mathbb{Q}})
+\end{aligned}
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+\[
+\begin{cases}
+s^2<2 &\Longrightarrow s\text{ is not an upper bound of }A,\\
+s^2>2 &\Longrightarrow s\text{ is not the least upper bound of }A.
+\end{cases}
+\qquad(s\in\mathbb{Q})
+\]
+
+
+  \item[\operatorname{LeastUpperBound}.]
+  \[
+\exists s\in\mathbb{Q}\;(s=\sup_{\mathbb{Q}}A)
+\]
+\[
+\begin{aligned}
+&P_{\mathbb{Q}}=\mathsf{OrderedSet}(\mathbb{Q},\leq),\qquad
+A=\{q\in\mathbb{Q}:q^2<2\},\\
+&\exists s\in\mathbb{Q}\;\operatorname{LeastUpperBound}(s,A,P_{\mathbb{Q}})
+\end{aligned}
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The set wants $\sqrt{2}$ as its least ceiling, but that number is not rational. The rational ambient set therefore has a visible gap where the supremum should be.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:rationals]{Rational Numbers}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:square-root]{Square Root}
+  \item \hyperref[def:real-upper-bound]{Upper Bound}
+  \item \hyperref[def:supremum]{Supremum}
+  \item \hyperref[thm:no-rational-square-root-of-two]{No Rational Square Root of Two}
+  \item \hyperref[thm:sqrt-two-squared-is-two]{Its Square Is Two}
+  \item \hyperref[thm:ambient-existence-supremum]{Ambient Existence of Supremum}
+\end{itemize}
+\end{dependencies}
+
+
+
+
+
+\input{volume-iii/book-analysis-i/bounding/notes/bounds-algebra/figure-bounds-algebra}

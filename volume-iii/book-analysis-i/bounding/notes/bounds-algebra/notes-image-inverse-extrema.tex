@@ -109,13 +109,12 @@ farther from $0$:
 \begin{theorembox}{Theorem (Increasing Image Preserves Suprema)}
 \begin{theorem}[Increasing Image Preserves Suprema]
 \label{thm:increasing-image-preserves-suprema}
-Let $I\subseteq\mathbb{R}$, let $A\subseteq I$ be nonempty and bounded above,
-and let $f:I\to\mathbb{R}$ be increasing.  Suppose $s=\sup A$ belongs to $I$
-and $f$ is continuous at $s$.  Then
+Let $I\subseteq\mathbb{R}$ be an interval, let $A\subseteq I$ be nonempty and
+bounded above, and suppose $s:=\sup A\in I$.  If $f\colon I\to\mathbb{R}$ is
+increasing and continuous at $s$ relative to $I$, then
+$f[A]:=\{f(a):a\in A\}$ is bounded above, and
 \[
-  \sup f(A)=f(\sup A),
-  \qquad
-  f(A)=\{f(a):a\in A\}.
+  \sup f[A]=f(\sup A).
 \]
 \hyperref[prf:increasing-image-preserves-suprema]{Go to proof.}
 \end{theorem}
@@ -241,11 +240,12 @@ to the right endpoint of its image, provided that endpoint lies in the domain.
 \begin{theorembox}{Theorem (Increasing Image Preserves Infima)}
 \begin{theorem}[Increasing Image Preserves Infima]
 \label{thm:increasing-image-preserves-infima}
-Let $I\subseteq\mathbb{R}$, let $A\subseteq I$ be nonempty and bounded below,
-and let $f:I\to\mathbb{R}$ be increasing.  Suppose $t=\inf A$ belongs to $I$
-and $f$ is continuous at $t$.  Then
+Let $I\subseteq\mathbb{R}$ be an interval, let $A\subseteq I$ be nonempty and
+bounded below, and suppose $i:=\inf A\in I$.  If $f\colon I\to\mathbb{R}$ is
+increasing and continuous at $i$ relative to $I$, then
+$f[A]:=\{f(a):a\in A\}$ is bounded below, and
 \[
-  \inf f(A)=f(\inf A).
+  \inf f[A]=f(\inf A).
 \]
 \hyperref[prf:increasing-image-preserves-infima]{Go to proof.}
 \end{theorem}
@@ -369,11 +369,12 @@ to the left endpoint of its image when the endpoint belongs to the domain.
 \begin{theorembox}{Theorem (Decreasing Image Sends Infimum to Supremum)}
 \begin{theorem}[Decreasing Image Sends Infimum to Supremum]
 \label{thm:decreasing-image-infimum-to-supremum}
-Let $I\subseteq\mathbb{R}$, let $A\subseteq I$ be nonempty and bounded below,
-and let $f:I\to\mathbb{R}$ be decreasing.  Suppose $t=\inf A$ belongs to $I$
-and $f$ is continuous at $t$.  Then
+Let $I\subseteq\mathbb{R}$ be an interval, let $A\subseteq I$ be nonempty and
+bounded below, and suppose $i:=\inf A\in I$.  If $f\colon I\to\mathbb{R}$ is
+decreasing and continuous at $i$ relative to $I$, then
+$f[A]:=\{f(a):a\in A\}$ is bounded above, and
 \[
-  \sup f(A)=f(\inf A).
+  \sup f[A]=f(\inf A).
 \]
 \hyperref[prf:decreasing-image-infimum-to-supremum]{Go to proof.}
 \end{theorem}
@@ -498,11 +499,12 @@ of the original set becomes the upper endpoint of the image.
 \begin{theorembox}{Theorem (Decreasing Image Sends Supremum to Infimum)}
 \begin{theorem}[Decreasing Image Sends Supremum to Infimum]
 \label{thm:decreasing-image-supremum-to-infimum}
-Let $I\subseteq\mathbb{R}$, let $A\subseteq I$ be nonempty and bounded above,
-and let $f:I\to\mathbb{R}$ be decreasing.  Suppose $s=\sup A$ belongs to $I$
-and $f$ is continuous at $s$.  Then
+Let $I\subseteq\mathbb{R}$ be an interval, let $A\subseteq I$ be nonempty and
+bounded above, and suppose $s:=\sup A\in I$.  If $f\colon I\to\mathbb{R}$ is
+decreasing and continuous at $s$ relative to $I$, then
+$f[A]:=\{f(a):a\in A\}$ is bounded below, and
 \[
-  \inf f(A)=f(\sup A).
+  \inf f[A]=f(\sup A).
 \]
 \hyperref[prf:decreasing-image-supremum-to-infimum]{Go to proof.}
 \end{theorem}
@@ -627,11 +629,12 @@ to the lower endpoint of the image.
 \begin{theorembox}{Theorem (Increasing Inverse Preserves Suprema)}
 \begin{theorem}[Increasing Inverse Preserves Suprema]
 \label{thm:increasing-inverse-preserves-suprema}
-Let $I,J\subseteq\mathbb{R}$, and let $f:I\to J$ be bijective.  Suppose
-$f^{-1}:J\to I$ is increasing and continuous.  If $B\subseteq J$ is nonempty
-and bounded above, and if $\sup B\in J$, then
+Let $I,J\subseteq\mathbb{R}$ be intervals, and let $f\colon I\to J$ be a continuous
+strictly increasing bijection.  Let $B\subseteq J$ be nonempty and bounded
+above, and suppose $\sup B\in J$.  Then
+$f^{-1}[B]:=\{f^{-1}(b):b\in B\}$ is bounded above, and
 \[
-  \sup f^{-1}(B)=f^{-1}(\sup B).
+  \sup f^{-1}[B]=f^{-1}(\sup B).
 \]
 \hyperref[prf:increasing-inverse-preserves-suprema]{Go to proof.}
 \end{theorem}
@@ -755,11 +758,12 @@ inverse map on the codomain side.
 \begin{theorembox}{Theorem (Increasing Inverse Preserves Infima)}
 \begin{theorem}[Increasing Inverse Preserves Infima]
 \label{thm:increasing-inverse-preserves-infima}
-Let $I,J\subseteq\mathbb{R}$, and let $f:I\to J$ be bijective.  Suppose
-$f^{-1}:J\to I$ is increasing and continuous.  If $B\subseteq J$ is nonempty
-and bounded below, and if $\inf B\in J$, then
+Let $I,J\subseteq\mathbb{R}$ be intervals, and let $f\colon I\to J$ be a continuous
+strictly increasing bijection.  Let $B\subseteq J$ be nonempty and bounded
+below, and suppose $\inf B\in J$.  Then
+$f^{-1}[B]:=\{f^{-1}(b):b\in B\}$ is bounded below, and
 \[
-  \inf f^{-1}(B)=f^{-1}(\inf B).
+  \inf f^{-1}[B]=f^{-1}(\inf B).
 \]
 \hyperref[prf:increasing-inverse-preserves-infima]{Go to proof.}
 \end{theorem}
@@ -883,11 +887,12 @@ hypotheses required for the direct image theorem.
 \begin{theorembox}{Theorem (Decreasing Inverse Sends Infimum to Supremum)}
 \begin{theorem}[Decreasing Inverse Sends Infimum to Supremum]
 \label{thm:decreasing-inverse-infimum-to-supremum}
-Let $I,J\subseteq\mathbb{R}$, and let $f:I\to J$ be bijective.  Suppose
-$f^{-1}:J\to I$ is decreasing and continuous.  If $B\subseteq J$ is nonempty
-and bounded below, and if $\inf B\in J$, then
+Let $I,J\subseteq\mathbb{R}$ be intervals, and let $f\colon I\to J$ be a continuous
+strictly decreasing bijection.  Let $B\subseteq J$ be nonempty and bounded
+below, and suppose $\inf B\in J$.  Then
+$f^{-1}[B]:=\{f^{-1}(b):b\in B\}$ is bounded above, and
 \[
-  \sup f^{-1}(B)=f^{-1}(\inf B).
+  \sup f^{-1}[B]=f^{-1}(\inf B).
 \]
 \hyperref[prf:decreasing-inverse-infimum-to-supremum]{Go to proof.}
 \end{theorem}
@@ -1012,11 +1017,12 @@ codomain infimum becomes a supremum after applying the inverse.
 \begin{theorembox}{Theorem (Decreasing Inverse Sends Supremum to Infimum)}
 \begin{theorem}[Decreasing Inverse Sends Supremum to Infimum]
 \label{thm:decreasing-inverse-supremum-to-infimum}
-Let $I,J\subseteq\mathbb{R}$, and let $f:I\to J$ be bijective.  Suppose
-$f^{-1}:J\to I$ is decreasing and continuous.  If $B\subseteq J$ is nonempty
-and bounded above, and if $\sup B\in J$, then
+Let $I,J\subseteq\mathbb{R}$ be intervals, and let $f\colon I\to J$ be a continuous
+strictly decreasing bijection.  Let $B\subseteq J$ be nonempty and bounded
+above, and suppose $\sup B\in J$.  Then
+$f^{-1}[B]:=\{f^{-1}(b):b\in B\}$ is bounded below, and
 \[
-  \inf f^{-1}(B)=f^{-1}(\sup B).
+  \inf f^{-1}[B]=f^{-1}(\sup B).
 \]
 \hyperref[prf:decreasing-inverse-supremum-to-infimum]{Go to proof.}
 \end{theorem}

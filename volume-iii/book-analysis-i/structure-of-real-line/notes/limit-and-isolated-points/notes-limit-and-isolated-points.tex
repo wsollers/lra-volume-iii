@@ -8,9 +8,15 @@ A limit point of $E$ is one that $E$ crowds arbitrarily closely, even with the p
 \begin{definitionbox}{Definition (Limit Point)}
 \begin{definition}[Limit Point]
 \label{def:limit-point}
-Let $E\subseteq\mathbb{R}$ and $x\in\mathbb{R}$. Then $x$ is a \emph{limit point} of $E$ exactly when
+Let $A\subseteq\mathbb{R}$ and $x\in\mathbb{R}$.  The point $x$ is a
+\emph{limit point} of $A$ if every deleted open ball centered at $x$ contains
+a point of $A$; that is,
 \[
-\forall r>0\;\exists y\in E\;\bigl(0<|y-x|<r\bigr).
+  (\forall r>0)\bigl((B_r(x)\setminus\{x\})\cap A\neq\varnothing\bigr).
+\]
+Equivalently,
+\[
+  (\forall r>0)(\exists a\in A)(0<|a-x|<r).
 \]
 \end{definition}
 \end{definitionbox}
@@ -30,13 +36,13 @@ E\subseteq\mathbb{R},\qquad x\in\mathbb{R},\qquad
 \end{remark*}
 \begin{remark*}[Negated quantified statement]
 \[
-x \text{ is not a limit point of } E \Longleftrightarrow \exists r>0\;\forall y\in E\;(y=x \lor |y-x|\ge r).
+x \text{ is not a limit point of } E \Longleftrightarrow \exists r>0\;\forall y\in E\;(y=x \lor |y-x|\geq r).
 \]
 \end{remark*}
 
 \begin{remark*}[Negation predicate reading]
 \[
-x \text{ is not a limit point of } E \Longleftrightarrow \exists r>0\;\forall y\in E\;(y=x \lor |y-x|\ge r).
+x \text{ is not a limit point of } E \Longleftrightarrow \exists r>0\;\forall y\in E\;(y=x \lor |y-x|\geq r).
 \]
 
 The negation predicate reading is the predicate-level form of the displayed negated statement.
@@ -49,7 +55,7 @@ The negation predicate reading is the predicate-level form of the displayed nega
 
   \item[\operatorname{IsCluster}.]
   \[
-x \text{ is not a limit point of } E \Longleftrightarrow \exists r>0\;\forall y\in E\;(y=x \lor |y-x|\ge r).
+x \text{ is not a limit point of } E \Longleftrightarrow \exists r>0\;\forall y\in E\;(y=x \lor |y-x|\geq r).
 \]
 \[
 E\subseteq\mathbb{R},\qquad x\in\mathbb{R},\qquad
@@ -70,9 +76,21 @@ Every punctured ball around a limit point meets $E$: the set accumulates at $x$.
 \begin{definitionbox}{Definition (Isolated Point)}
 \begin{definition}[Isolated Point]
 \label{def:isolated-point}
-Let $E\subseteq\mathbb{R}$ and $x\in E$. Then $x$ is an \emph{isolated point} of $E$ exactly when
+Let $A\subseteq\mathbb{R}$ and $x\in\mathbb{R}$.  The point $x$ is an
+\emph{isolated point} of $A$ if
 \[
-\exists r>0\;\forall y\in E\;\bigl(|y-x|<r \Rightarrow y=x\bigr).
+  x\in A
+\]
+and there exists $r>0$ such that
+\[
+  B_r(x)\cap A=\{x\}.
+\]
+Equivalently,
+\[
+  x\in A
+  \quad\text{and}\quad
+  (\exists r>0)(\forall a\in A)
+  \bigl(|a-x|<r\Longrightarrow a=x\bigr).
 \]
 \end{definition}
 \end{definitionbox}
@@ -80,7 +98,7 @@ Let $E\subseteq\mathbb{R}$ and $x\in E$. Then $x$ is an \emph{isolated point} of
 \[
 x \text{ is an isolated point of } E
 \Longleftrightarrow
-x\in E \land \exists r>0\;\forall y\in E\;\bigl(|y-x|<r \Rightarrow y=x\bigr).
+x\in E \land \exists r>0\;\forall y\in E\;\bigl(|y-x|<r \Longrightarrow y=x\bigr).
 \]
 \end{remark*}
 
@@ -89,7 +107,7 @@ x\in E \land \exists r>0\;\forall y\in E\;\bigl(|y-x|<r \Rightarrow y=x\bigr).
 E\subseteq\mathbb{R},\qquad x\in E,\qquad
 \operatorname{IsIsolated}(x,E,\mathbb{R})
 \Longleftrightarrow
-\exists r>0\;\forall y\in E\;\bigl(|y-x|<r \Rightarrow y=x\bigr).
+\exists r>0\;\forall y\in E\;\bigl(|y-x|<r \Longrightarrow y=x\bigr).
 \]
 \end{remark*}
 \begin{remark*}[Interpretation]

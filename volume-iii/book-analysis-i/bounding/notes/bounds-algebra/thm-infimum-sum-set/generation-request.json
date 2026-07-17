@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "thm:infimum-sum-set",
+  "kind": "theorem",
+  "title": "Infimum of a Sum Set",
+  "source": {
+    "label": "thm:infimum-sum-set",
+    "kind": "theorem",
+    "title": "Infimum of a Sum Set",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "bounds-algebra",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-algebra-of-supremum-infimum.tex",
+    "source_line_start": 1200,
+    "source_line_end": 1333,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-infimum-sum-set",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-infimum-sum-set/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-infimum-sum-set/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-infimum-sum-set",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-infimum-sum-set/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-infimum-sum-set/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-algebra-of-supremum-infimum.tex",
+      "label": "thm:infimum-sum-set",
+      "environment_kind": "theorem",
+      "source_line_start": 1200,
+      "source_line_end": 1333,
+      "current_tex": "\\begin{theorem}[Infimum of a Sum Set]\n\\label{thm:infimum-sum-set}\nLet $A,B\\subseteq\\mathbb{R}$ be nonempty and bounded below. Then\n\\[\n  \\inf(A+B)=\\inf A+\\inf B.\n\\]\n\\hyperref[prf:infimum-sum-set]{Go to proof.}\n\\end{theorem}\n\\end{theorembox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\nA,B\\neq\\varnothing,\\quad A,B\\text{ bounded below}\n\\quad\\Longrightarrow\\quad\n\\inf\\{a+b:a\\in A,\\ b\\in B\\}=\\inf A+\\inf B.\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A,B\\subseteq\\mathbb{R},\\qquad A+B=\\{a+b:a\\in A,\\ b\\in B\\},\\\\\n&\\operatorname{GreatestLowerBound}(t_A,A,P)\\land\\operatorname{GreatestLowerBound}(t_B,B,P)\n\\Longrightarrow\n\\operatorname{GreatestLowerBound}(t_A+t_B,A+B,P).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\n\\inf(A+B)\\neq\\inf A+\\inf B\n\\]\nis impossible under the stated hypotheses.\n\\end{remark*}\n\n\\begin{remark*}[Negation predicate reading]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A,B\\subseteq\\mathbb{R},\\qquad A+B=\\{a+b:a\\in A,\\ b\\in B\\},\\\\\n&\\operatorname{GreatestLowerBound}(t_A,A,P)\\land\\operatorname{GreatestLowerBound}(t_B,B,P)\\land\n\\neg\\operatorname{GreatestLowerBound}(t_A+t_B,A+B,P).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\nThe equality could fail only if the sum of the two infima failed to be a lower\nbound of the sum set or failed to be the greatest such lower bound.\n\n\n  \\item[\\operatorname{GreatestLowerBound}.]\n  \\[\n\\inf(A+B)\\neq\\inf A+\\inf B\n\\]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A,B\\subseteq\\mathbb{R},\\qquad A+B=\\{a+b:a\\in A,\\ b\\in B\\},\\\\\n&\\operatorname{GreatestLowerBound}(t_A,A,P)\\land\\operatorname{GreatestLowerBound}(t_B,B,P)\\land\n\\neg\\operatorname{GreatestLowerBound}(t_A+t_B,A+B,P).\n\\end{aligned}\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\n\\[\nt_A\\leq a,\\quad t_B\\leq b\n\\Longrightarrow\nt_A+t_B\\leq a+b,\n\\]\nand sharpness follows by choosing elements near each infimum.\n\n\n  \\item[\\operatorname{GreatestLowerBound}.]\n  \\[\n\\inf(A+B)\\neq\\inf A+\\inf B\n\\]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A,B\\subseteq\\mathbb{R},\\qquad A+B=\\{a+b:a\\in A,\\ b\\in B\\},\\\\\n&\\operatorname{GreatestLowerBound}(t_A,A,P)\\land\\operatorname{GreatestLowerBound}(t_B,B,P)\\land\n\\neg\\operatorname{GreatestLowerBound}(t_A+t_B,A+B,P).\n\\end{aligned}\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nThe lowest limiting value of pairwise sums is obtained by combining values\nnear the separate floors of the two sets.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:reals]{Real Numbers}\n  \\item \\hyperref[def:ordered-set]{Ordered Set}\n  \\item \\hyperref[def:subset]{Subset}\n  \\item \\hyperref[def:addition-on-r]{Addition on $\\mathbb{R}$}\n  \\item \\hyperref[def:set-arithmetic-images]{Set Arithmetic Images}\n  \\item \\hyperref[def:real-lower-bound]{Lower Bound}\n  \\item \\hyperref[def:infimum]{Infimum}\n  \\item \\hyperref[def:epsilon-characterization-of-infimum]{Epsilon Characterization of Infimum}\n  \\item \\hyperref[prop:lower-bound-property-of-infimum]{Lower Bound Property of Infimum}\n  \\item \\hyperref[prop:every-element-lies-above-the-infimum]{Every Element Lies Above the Infimum}\n\\end{itemize}\n\\end{dependencies}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

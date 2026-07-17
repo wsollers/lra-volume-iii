@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "thm:decreasing-inverse-infimum-to-supremum",
+  "kind": "theorem",
+  "title": "Decreasing Inverse Sends Infimum to Supremum",
+  "source": {
+    "label": "thm:decreasing-inverse-infimum-to-supremum",
+    "kind": "theorem",
+    "title": "Decreasing Inverse Sends Infimum to Supremum",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "bounds-algebra",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-image-inverse-extrema.tex",
+    "source_line_start": 888,
+    "source_line_end": 1017,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-decreasing-inverse-infimum-to-supremum",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-decreasing-inverse-infimum-to-supremum/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-decreasing-inverse-infimum-to-supremum/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-decreasing-inverse-infimum-to-supremum",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-decreasing-inverse-infimum-to-supremum/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-decreasing-inverse-infimum-to-supremum/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-image-inverse-extrema.tex",
+      "label": "thm:decreasing-inverse-infimum-to-supremum",
+      "environment_kind": "theorem",
+      "source_line_start": 888,
+      "source_line_end": 1017,
+      "current_tex": "\\begin{theorem}[Decreasing Inverse Sends Infimum to Supremum]\n\\label{thm:decreasing-inverse-infimum-to-supremum}\nLet $I,J\\subseteq\\mathbb{R}$ be intervals, and let $f\\colon I\\to J$ be a continuous\nstrictly decreasing bijection.  Let $B\\subseteq J$ be nonempty and bounded\nbelow, and suppose $\\inf B\\in J$.  Then\n$f^{-1}[B]:=\\{f^{-1}(b):b\\in B\\}$ is bounded above, and\n\\[\n  \\sup f^{-1}[B]=f^{-1}(\\inf B).\n\\]\n\\hyperref[prf:decreasing-inverse-infimum-to-supremum]{Go to proof.}\n\\end{theorem}\n\\end{theorembox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\nB\\neq\\varnothing,\\quad \\inf B\\in J,\\quad f^{-1}\\text{ decreasing and continuous at }\\inf B\n\\Longrightarrow\n\\sup f^{-1}(B)=f^{-1}(\\inf B).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\n\\begin{aligned}\n&B\\subseteq J,\\qquad g=f^{-1},\\qquad g\\colon J\\to I,\\qquad\nC=g(B)=\\{g(b):b\\in B\\},\\\\\n&P_J=\\mathsf{OrderedSet}(J,\\leq),\\qquad\nP_I=\\mathsf{OrderedSet}(I,\\leq),\\\\\n&\\operatorname{GreatestLowerBound}(v,B,P_J)\\land\n\\operatorname{OrderReversing}(g,P_J,P_I)\\land\n\\operatorname{IsContinuous}(g,v,J,I)\n\\Longrightarrow\n\\operatorname{LeastUpperBound}(g(v),C,P_I).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\n\\sup f^{-1}(B)\\neq f^{-1}(\\inf B)\n\\]\nis impossible under the stated hypotheses.\n\\end{remark*}\n\n\\begin{remark*}[Negation predicate reading]\n\\[\n\\begin{aligned}\n&B\\subseteq J,\\qquad g=f^{-1},\\qquad g\\colon J\\to I,\\qquad\nC=g(B)=\\{g(b):b\\in B\\},\\\\\n&P_J=\\mathsf{OrderedSet}(J,\\leq),\\qquad\nP_I=\\mathsf{OrderedSet}(I,\\leq),\\\\\n&\\operatorname{GreatestLowerBound}(v,B,P_J)\\land\n\\operatorname{OrderReversing}(g,P_J,P_I)\\land\n\\operatorname{IsContinuous}(g,v,J,I)\\land\n\\neg\\operatorname{LeastUpperBound}(g(v),C,P_I).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n\\item[Exposition.]\nThe formula can fail if the inverse is not decreasing, if $\\inf B$ is outside\n$J$, or if the inverse is not continuous at $\\inf B$.\n\n\n  \\item[\\operatorname{GreatestLowerBound} / \\operatorname{OrderReversing}.]\n  \\[\n\\sup f^{-1}(B)\\neq f^{-1}(\\inf B)\n\\]\n\\[\n\\begin{aligned}\n&B\\subseteq J,\\qquad g=f^{-1},\\qquad g\\colon J\\to I,\\qquad\nC=g(B)=\\{g(b):b\\in B\\},\\\\\n&P_J=\\mathsf{OrderedSet}(J,\\leq),\\qquad\nP_I=\\mathsf{OrderedSet}(I,\\leq),\\\\\n&\\operatorname{GreatestLowerBound}(v,B,P_J)\\land\n\\operatorname{OrderReversing}(g,P_J,P_I)\\land\n\\operatorname{IsContinuous}(g,v,J,I)\\land\n\\neg\\operatorname{LeastUpperBound}(g(v),C,P_I).\n\\end{aligned}\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n\\item[Exposition.]\nApply the decreasing image infimum-to-supremum theorem to $g=f^{-1}$ and $B$.\n\n\n  \\item[\\operatorname{GreatestLowerBound} / \\operatorname{OrderReversing}.]\n  \\[\n\\sup f^{-1}(B)\\neq f^{-1}(\\inf B)\n\\]\n\\[\n\\begin{aligned}\n&B\\subseteq J,\\qquad g=f^{-1},\\qquad g\\colon J\\to I,\\qquad\nC=g(B)=\\{g(b):b\\in B\\},\\\\\n&P_J=\\mathsf{OrderedSet}(J,\\leq),\\qquad\nP_I=\\mathsf{OrderedSet}(I,\\leq),\\\\\n&\\operatorname{GreatestLowerBound}(v,B,P_J)\\land\n\\operatorname{OrderReversing}(g,P_J,P_I)\\land\n\\operatorname{IsContinuous}(g,v,J,I)\\land\n\\neg\\operatorname{LeastUpperBound}(g(v),C,P_I).\n\\end{aligned}\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nA decreasing inverse reverses endpoint roles for subsets of the codomain, so a\ncodomain infimum becomes a supremum after applying the inverse.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:reals]{Real Numbers}\n  \\item \\hyperref[def:ordered-set]{Ordered Set}\n  \\item \\hyperref[def:subset]{Subset}\n  \\item \\hyperref[def:function]{Function}\n  \\item \\hyperref[def:function-decreasing]{Decreasing Function}\n  \\item \\hyperref[def:infimum]{Infimum}\n  \\item \\hyperref[def:supremum]{Supremum}\n  \\item \\hyperref[def:continuous-at-point]{Continuity at a Point}\n  \\item \\hyperref[thm:decreasing-image-infimum-to-supremum]{Decreasing Image Sends Infimum to Supremum}\n\\end{itemize}\n\\end{dependencies}\n\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

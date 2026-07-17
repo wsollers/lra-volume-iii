@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "thm:supremum-sum-set",
+  "kind": "theorem",
+  "title": "Supremum of a Sum Set",
+  "source": {
+    "label": "thm:supremum-sum-set",
+    "kind": "theorem",
+    "title": "Supremum of a Sum Set",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "bounds-algebra",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-algebra-of-supremum-infimum.tex",
+    "source_line_start": 1076,
+    "source_line_end": 1199,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-supremum-sum-set",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-supremum-sum-set/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-supremum-sum-set/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-supremum-sum-set",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-supremum-sum-set/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-supremum-sum-set/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-algebra-of-supremum-infimum.tex",
+      "label": "thm:supremum-sum-set",
+      "environment_kind": "theorem",
+      "source_line_start": 1076,
+      "source_line_end": 1199,
+      "current_tex": "\\begin{theorem}[Supremum of a Sum Set]\n\\label{thm:supremum-sum-set}\nLet $A,B\\subseteq\\mathbb{R}$ be nonempty and bounded above. Then\n\\[\n  \\sup(A+B)=\\sup A+\\sup B,\n  \\qquad\n  A+B=\\{a+b:a\\in A,\\ b\\in B\\}.\n\\]\n\n\\smallskip\n\\noindent\n\\hyperref[prf:supremum-sum-set]{\\textit{Go to proof.}}\n\\end{theorem}\n\\end{theorembox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\nA,B\\neq\\varnothing,\\quad A,B\\text{ bounded above}\n\\quad\\Longrightarrow\\quad\n\\sup\\{a+b:a\\in A,\\ b\\in B\\}=\\sup A+\\sup B.\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A,B\\subseteq\\mathbb{R},\\qquad A+B=\\{a+b:a\\in A,\\ b\\in B\\},\\\\\n&\\operatorname{LeastUpperBound}(s_A,A,P)\\land \\operatorname{LeastUpperBound}(s_B,B,P)\n\\Longrightarrow\n\\operatorname{LeastUpperBound}(s_A+s_B,A+B,P).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\n\\sup(A+B)\\ne \\sup A+\\sup B\n\\]\nis impossible under the stated hypotheses.\n\\end{remark*}\n\n\\begin{remark*}[Negation predicate reading]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A,B\\subseteq\\mathbb{R},\\qquad A+B=\\{a+b:a\\in A,\\ b\\in B\\},\\\\\n&\\operatorname{LeastUpperBound}(s_A,A,P)\\land \\operatorname{LeastUpperBound}(s_B,B,P)\n\\land\n\\neg\\operatorname{LeastUpperBound}(s_A+s_B,A+B,P)\n\\end{aligned}\n\\]\nis a contradictory configuration.\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\nThe equality could fail only if the sum of the two suprema did not bound the sum set, or if it were not the least such bound. The first part follows from adding the two upper-bound inequalities; the second follows by approximating each supremum from within its set.\n\n\n  \\item[\\operatorname{LeastUpperBound}.]\n  \\[\n\\sup(A+B)\\ne \\sup A+\\sup B\n\\]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A,B\\subseteq\\mathbb{R},\\qquad A+B=\\{a+b:a\\in A,\\ b\\in B\\},\\\\\n&\\operatorname{LeastUpperBound}(s_A,A,P)\\land \\operatorname{LeastUpperBound}(s_B,B,P)\n\\land\n\\neg\\operatorname{LeastUpperBound}(s_A+s_B,A+B,P)\n\\end{aligned}\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\n\\[\n\\begin{aligned}\na\\le \\sup A,\\quad b\\le \\sup B\n&\\Longrightarrow a+b\\le \\sup A+\\sup B,\\\\\n\\varepsilon>0\n&\\Longrightarrow\n\\exists a\\in A,\\ b\\in B:\n\\sup A+\\sup B-\\varepsilon<a+b.\n\\end{aligned}\n\\]\n\n\n  \\item[\\operatorname{LeastUpperBound}.]\n  \\[\n\\sup(A+B)\\ne \\sup A+\\sup B\n\\]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A,B\\subseteq\\mathbb{R},\\qquad A+B=\\{a+b:a\\in A,\\ b\\in B\\},\\\\\n&\\operatorname{LeastUpperBound}(s_A,A,P)\\land \\operatorname{LeastUpperBound}(s_B,B,P)\n\\land\n\\neg\\operatorname{LeastUpperBound}(s_A+s_B,A+B,P)\n\\end{aligned}\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nThe highest limiting value of all pairwise sums is obtained by combining values that approach the separate ceilings of $A$ and $B$.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:reals]{Real Numbers}\n  \\item \\hyperref[def:ordered-set]{Ordered Set}\n  \\item \\hyperref[def:subset]{Subset}\n  \\item \\hyperref[def:addition-on-r]{Addition on $\\mathbb{R}$}\n  \\item \\hyperref[def:set-arithmetic-images]{Set Arithmetic Images}\n  \\item \\hyperref[def:real-upper-bound]{Upper Bound}\n  \\item \\hyperref[def:supremum]{Supremum}\n  \\item \\hyperref[def:epsilon-characterization-of-supremum]{Epsilon Characterization of Supremum}\n  \\item \\hyperref[prop:upper-bound-property-of-supremum]{Upper Bound Property of Supremum}\n  \\item \\hyperref[prop:every-element-lies-below-the-supremum]{Every Element Lies Below the Supremum}\n\\end{itemize}\n\\end{dependencies}\n\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

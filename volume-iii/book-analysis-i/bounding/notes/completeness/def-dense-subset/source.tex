@@ -1,0 +1,115 @@
+\begin{definition}[Dense Subset]
+\label{def:dense-subset}
+Let $(X,\tau)$ be a topological space and let $D\subseteq X$.  The set
+$D$ is \emph{dense in} $X$ if $\overline{D}=X$.  Equivalently, every
+nonempty open subset of $X$ intersects $D$.
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{aligned}
+&\overline{D}=X
+\Longleftrightarrow
+\forall U\in\tau\;
+\bigl(U\neq\varnothing\Longrightarrow \exists d\in D\;(d\in U)\bigr).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+X\in\mathbf{Set},\qquad D\subseteq X,\qquad
+\operatorname{DenseSubset}(D,X,\tau)\coloneqq
+\overline{D}=X
+\Longleftrightarrow
+\forall U\in\tau\;
+\bigl(U\neq\varnothing\Longrightarrow \exists d\in D\;(d\in U)\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\begin{aligned}
+&\text{Let }(X,\tau)\text{ be a topological space and }D\subseteq X.\\
+&D\text{ is not dense in }X
+\Longleftrightarrow
+\exists U\in\tau\;\bigl(U\neq\varnothing\land U\cap D=\varnothing\bigr).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+X\in\mathbf{Set},\qquad D\subseteq X,\qquad
+\neg\operatorname{DenseSubset}(D,X,\tau)\Longleftrightarrow
+\exists U\in\tau\;\bigl(U\neq\varnothing\land U\cap D=\varnothing\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
+Density fails when some nonempty open subset of $X$ contains no point of
+$D$.
+
+
+  \item[\operatorname{DenseSubset}.]
+  \[
+\begin{aligned}
+&\text{Let }(X,\tau)\text{ be a topological space and }D\subseteq X.\\
+&D\text{ is not dense in }X
+\Longleftrightarrow
+\exists U\in\tau\;\bigl(U\neq\varnothing\land U\cap D=\varnothing\bigr).
+\end{aligned}
+\]
+\[
+X\in\mathbf{Set},\qquad D\subseteq X,\qquad
+\neg\operatorname{DenseSubset}(D,X,\tau)\Longleftrightarrow
+\exists U\in\tau\;\bigl(U\neq\varnothing\land U\cap D=\varnothing\bigr).
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
+\[
+\neg\operatorname{DenseSubset}(D,X,\tau)
+=
+\underbrace{\exists U\in\tau\;(U\neq\varnothing)}_{\text{nonempty open set}}
+\;\land\;
+\underbrace{U\cap D=\varnothing}_{\text{no point of }D\text{ lies in }U}.
+\]
+
+
+  \item[\operatorname{DenseSubset}.]
+  \[
+\begin{aligned}
+&\text{Let }(X,\tau)\text{ be a topological space and }D\subseteq X.\\
+&D\text{ is not dense in }X
+\Longleftrightarrow
+\exists U\in\tau\;\bigl(U\neq\varnothing\land U\cap D=\varnothing\bigr).
+\end{aligned}
+\]
+\[
+X\in\mathbf{Set},\qquad D\subseteq X,\qquad
+\neg\operatorname{DenseSubset}(D,X,\tau)\Longleftrightarrow
+\exists U\in\tau\;\bigl(U\neq\varnothing\land U\cap D=\varnothing\bigr).
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Density says that no nonempty open part of $X$ misses $D$.  It does not
+say that every point of $X$ belongs to $D$; it says that $D$ is
+topologically unavoidable inside $X$.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:intersection]{Intersection}
+\end{itemize}
+\end{dependencies}
+\input{volume-iii/book-analysis-i/bounding/notes/completeness/figure-dense-subset}

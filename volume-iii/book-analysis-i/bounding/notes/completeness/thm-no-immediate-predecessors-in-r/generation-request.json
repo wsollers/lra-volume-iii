@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "thm:no-immediate-predecessors-in-r",
+  "kind": "theorem",
+  "title": "No Immediate Predecessors in $\\mathbb{R}$",
+  "source": {
+    "label": "thm:no-immediate-predecessors-in-r",
+    "kind": "theorem",
+    "title": "No Immediate Predecessors in $\\mathbb{R}$",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "completeness",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-density.tex",
+    "source_line_start": 951,
+    "source_line_end": 997,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/thm-no-immediate-predecessors-in-r",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/thm-no-immediate-predecessors-in-r/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/thm-no-immediate-predecessors-in-r/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/thm-no-immediate-predecessors-in-r",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/thm-no-immediate-predecessors-in-r/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/thm-no-immediate-predecessors-in-r/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-density.tex",
+      "label": "thm:no-immediate-predecessors-in-r",
+      "environment_kind": "theorem",
+      "source_line_start": 951,
+      "source_line_end": 997,
+      "current_tex": "\\begin{theorem}[No Immediate Predecessors in $\\mathbb{R}$]\\label{thm:no-immediate-predecessors-in-r}\nFor every $a\\in\\mathbb{R}$, there is no greatest real number less than $a$:\n\\[\n  \\neg(\\exists m\\in\\mathbb{R})\n  \\left[\n  m<a\n  \\land\n  (\\forall x\\in\\mathbb{R})(x<a\\Longrightarrow x\\leq m)\n  \\right].\n\\]\n\\hyperref[prf:no-immediate-predecessors-in-r]{Go to proof.}\n\\end{theorem}\n\\end{theorembox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\forall a\\in\\mathbb{R}\\;\n\\neg\\exists m\\in\\mathbb{R}\\;\n\\bigl(m<a\\land \\forall x\\in\\mathbb{R}\\;(x<a\\Longrightarrow x\\le m)\\bigr).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\nP_{\\mathbb{R}}=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad\nD_{\\mathbb{R}}=\\mathsf{OrderDenseSet}(\\mathbb{R},P_{\\mathbb{R}}),\\qquad\n\\operatorname{HasDenseOrder}(P_{\\mathbb{R}})\n\\Longrightarrow\n\\forall a\\in\\mathbb{R}\\;\n\\neg\\exists m\\in\\mathbb{R}\\;\n\\bigl(m<a\\land \\forall x\\in\\mathbb{R}\\;(x<a\\Longrightarrow x\\le m)\\bigr).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nEvery real number with a point to its left has another real point still closer\non that side; the order on $\\mathbb{R}$ has no previous element.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[cor:no-adjacent-real-numbers]{No Adjacent Real Numbers}\n\\end{itemize}\n\\end{dependencies}\n\n\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

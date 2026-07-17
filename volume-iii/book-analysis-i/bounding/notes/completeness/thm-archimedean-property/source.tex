@@ -1,0 +1,117 @@
+\begin{theorem}[Archimedean Property]
+\label{thm:archimedean-property}
+For every $x,y\in\mathbb{R}$, if $x>0$ and $y>0$, then there exists
+$n\in\mathbb{N}$ such that
+\[
+  nx>y.
+\]
+Equivalently,
+\[
+  (\forall x,y\in\mathbb{R})
+  \bigl[(x>0\land y>0)\Longrightarrow(\exists n\in\mathbb{N})(nx>y)\bigr].
+\]
+
+\smallskip
+\noindent
+\hyperref[prf:archimedean-property]{\textit{Go to proof.}}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x\in\mathbb{R}\;\exists n\in\mathbb{N}\;(n>x).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+\operatorname{HasArchimedeanProperty}(P_{\mathbb{R}})\Longleftrightarrow
+\forall x\in\mathbb{R}\;\exists n\in\mathbb{N}\;(n>x).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\exists x\in\mathbb{R}\;\forall n\in\mathbb{N}\;(n\le x).
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+\neg\operatorname{HasArchimedeanProperty}(P_{\mathbb{R}})\Longleftrightarrow
+\exists x\in\mathbb{R}\;\forall n\in\mathbb{N}\;(n\le x).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+The theorem fails exactly when the natural numbers are bounded above by some real number.
+
+
+  \item[\operatorname{HasArchimedeanProperty}.]
+  \[
+\exists x\in\mathbb{R}\;\forall n\in\mathbb{N}\;(n\le x).
+\]
+\[
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+\neg\operatorname{HasArchimedeanProperty}(P_{\mathbb{R}})\Longleftrightarrow
+\exists x\in\mathbb{R}\;\forall n\in\mathbb{N}\;(n\le x).
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+\[
+\neg\operatorname{HasArchimedeanProperty}(\mathbb{R})
+=
+\underbrace{\exists x\in\mathbb{R}}_{\text{real upper bound}}
+\;\underbrace{\forall n\in\mathbb{N}\;(n\le x)}_{\text{all natural numbers remain below it}}.
+\]
+
+
+  \item[\operatorname{HasArchimedeanProperty}.]
+  \[
+\exists x\in\mathbb{R}\;\forall n\in\mathbb{N}\;(n\le x).
+\]
+\[
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+\neg\operatorname{HasArchimedeanProperty}(P_{\mathbb{R}})\Longleftrightarrow
+\exists x\in\mathbb{R}\;\forall n\in\mathbb{N}\;(n\le x).
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The Archimedean Property says that the natural numbers do not stop below any real ceiling. No real number is so large that every natural number remains below it. In this chapter, the result is a consequence of completeness: a bounded copy of $\mathbb{N}$ would have a supremum, and that supremum is contradicted by shifting one natural number upward.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+\item \hyperref[def:reals]{Real Numbers}.
+\item \hyperref[def:natural-numbers]{Natural Numbers}.
+\item \hyperref[def:ordered-set]{Ordered Set}.
+\item \hyperref[def:supremum]{Supremum}.
+\item \hyperref[ax:completeness-of-reals]{Completeness of the Reals}.
+\end{itemize}
+\end{dependencies}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

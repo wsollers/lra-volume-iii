@@ -1,0 +1,128 @@
+\begin{theorem}[Increasing Image Preserves Infima]
+\label{thm:increasing-image-preserves-infima}
+Let $I\subseteq\mathbb{R}$ be an interval, let $A\subseteq I$ be nonempty and
+bounded below, and suppose $i:=\inf A\in I$.  If $f\colon I\to\mathbb{R}$ is
+increasing and continuous at $i$ relative to $I$, then
+$f[A]:=\{f(a):a\in A\}$ is bounded below, and
+\[
+  \inf f[A]=f(\inf A).
+\]
+\hyperref[prf:increasing-image-preserves-infima]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+A\neq\varnothing,\quad t=\inf A\in I,\quad f\text{ increasing and continuous at }t
+\Longrightarrow
+\inf\{f(a):a\in A\}=f(t).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\begin{aligned}
+&A\subseteq I,\qquad f\colon I\to\mathbb{R},\qquad
+B=f(A)=\{f(a):a\in A\},\\
+&P_I=\mathsf{OrderedSet}(I,\leq),\qquad
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\\
+&\operatorname{GreatestLowerBound}(t,A,P_I)\land
+\operatorname{OrderPreserving}(f,P_I,P_{\mathbb{R}})\land
+\operatorname{IsContinuous}(f,t,I,\mathbb{R})
+\Longrightarrow
+\operatorname{GreatestLowerBound}(f(t),B,P_{\mathbb{R}}).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\inf f(A)\neq f(\inf A)
+\]
+is impossible under the stated hypotheses.
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\begin{aligned}
+&A\subseteq I,\qquad f\colon I\to\mathbb{R},\qquad
+B=f(A)=\{f(a):a\in A\},\\
+&P_I=\mathsf{OrderedSet}(I,\leq),\qquad
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\\
+&\operatorname{GreatestLowerBound}(t,A,P_I)\land
+\operatorname{OrderPreserving}(f,P_I,P_{\mathbb{R}})\land
+\operatorname{IsContinuous}(f,t,I,\mathbb{R})\land
+\neg\operatorname{GreatestLowerBound}(f(t),B,P_{\mathbb{R}}).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
+The equality can fail if $f$ is not increasing, if $\inf A$ is not in the
+domain, or if the endpoint value is not reached as a limit of image values.
+
+
+  \item[\operatorname{GreatestLowerBound} / \operatorname{OrderPreserving}.]
+  \[
+\inf f(A)\neq f(\inf A)
+\]
+\[
+\begin{aligned}
+&A\subseteq I,\qquad f\colon I\to\mathbb{R},\qquad
+B=f(A)=\{f(a):a\in A\},\\
+&P_I=\mathsf{OrderedSet}(I,\leq),\qquad
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\\
+&\operatorname{GreatestLowerBound}(t,A,P_I)\land
+\operatorname{OrderPreserving}(f,P_I,P_{\mathbb{R}})\land
+\operatorname{IsContinuous}(f,t,I,\mathbb{R})\land
+\neg\operatorname{GreatestLowerBound}(f(t),B,P_{\mathbb{R}}).
+\end{aligned}
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
+Increasingness gives $f(t)\leq f(a)$ for every $a\in A$.  Approximation of the
+infimum from above and continuity at $t$ make this lower bound sharp.
+
+
+  \item[\operatorname{GreatestLowerBound} / \operatorname{OrderPreserving}.]
+  \[
+\inf f(A)\neq f(\inf A)
+\]
+\[
+\begin{aligned}
+&A\subseteq I,\qquad f\colon I\to\mathbb{R},\qquad
+B=f(A)=\{f(a):a\in A\},\\
+&P_I=\mathsf{OrderedSet}(I,\leq),\qquad
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\\
+&\operatorname{GreatestLowerBound}(t,A,P_I)\land
+\operatorname{OrderPreserving}(f,P_I,P_{\mathbb{R}})\land
+\operatorname{IsContinuous}(f,t,I,\mathbb{R})\land
+\neg\operatorname{GreatestLowerBound}(f(t),B,P_{\mathbb{R}}).
+\end{aligned}
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+An increasing continuous function carries the left endpoint of a bounded set
+to the left endpoint of its image when the endpoint belongs to the domain.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:reals]{Real Numbers}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:function]{Function}
+  \item \hyperref[def:function-increasing]{Increasing Function}
+  \item \hyperref[def:infimum]{Infimum}
+  \item \hyperref[def:continuous-at-point]{Continuity at a Point}
+\end{itemize}
+\end{dependencies}
+

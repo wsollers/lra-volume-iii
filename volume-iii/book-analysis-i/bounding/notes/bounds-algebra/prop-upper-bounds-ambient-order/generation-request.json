@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "prop:upper-bounds-ambient-order",
+  "kind": "proposition",
+  "title": "Upper Bounds Depend on the Ambient Order",
+  "source": {
+    "label": "prop:upper-bounds-ambient-order",
+    "kind": "proposition",
+    "title": "Upper Bounds Depend on the Ambient Order",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "bounds-algebra",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-algebra-of-supremum-infimum.tex",
+    "source_line_start": 2842,
+    "source_line_end": 2956,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/prop-upper-bounds-ambient-order",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/prop-upper-bounds-ambient-order/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/prop-upper-bounds-ambient-order/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/prop-upper-bounds-ambient-order",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/prop-upper-bounds-ambient-order/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/prop-upper-bounds-ambient-order/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-algebra-of-supremum-infimum.tex",
+      "label": "prop:upper-bounds-ambient-order",
+      "environment_kind": "proposition",
+      "source_line_start": 2842,
+      "source_line_end": 2956,
+      "current_tex": "\\begin{proposition}[Upper Bounds Depend on the Ambient Order]\n\\label{prop:upper-bounds-ambient-order}\nLet $(S,\\le_S)$ and $(T,\\le_T)$ be ordered sets, and let $A\\subseteq S\\cap T$. Whether $u$ is an upper bound of $A$ must be interpreted relative to the chosen ambient order.\n\\hyperref[prf:upper-bounds-ambient-order]{Go to proof.}\n\\end{proposition}\n\\end{propositionbox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\begin{aligned}\n&u\\text{ is an upper bound of }A\\text{ in }S\n\\Longleftrightarrow\nu\\in S\\text{ and }\\forall x\\in A\\;(x\\le_S u),\\\\\n&u\\text{ is an upper bound of }A\\text{ in }T\n\\Longleftrightarrow\nu\\in T\\text{ and }\\forall x\\in A\\;(x\\le_T u).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\n\\begin{aligned}\n&P_S=\\mathsf{OrderedSet}(S,\\le_S),\\qquad\nP_T=\\mathsf{OrderedSet}(T,\\le_T),\\qquad A\\subseteq S\\cap T,\\\\\n&\\operatorname{UpperBound}(u,A,P_S)\n\\Longleftrightarrow\nu\\in S\\land \\forall x\\in A\\;(x\\le_S u),\\\\\n&\\operatorname{UpperBound}(u,A,P_T)\n\\Longleftrightarrow\nu\\in T\\land \\forall x\\in A\\;(x\\le_T u).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\n\\text{The phrase ``}u\\text{ is an upper bound of }A\\text{''}\n\\]\nis not well-determined until the ambient ordered set and its order relation are fixed.\n\\end{remark*}\n\n\\begin{remark*}[Negation predicate reading]\n\\[\n\\begin{aligned}\n&P_S=\\mathsf{OrderedSet}(S,\\le_S),\\qquad\nP_T=\\mathsf{OrderedSet}(T,\\le_T),\\\\\n&X=\\text{``$u$ is an upper bound of $A$''},\\\\\n&\\neg\\operatorname{WellDefined}(X,\\text{ambient omitted})\n\\end{aligned}\n\\]\nwhen the ambient order is omitted.\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\nAmbiguity occurs when the same set $A$ is considered inside different ordered ambient sets or under different order relations. The candidate bound may belong to one ambient set and not another, or the relevant comparison relation may change.\n\n\n  \\item[\\operatorname{WellDefined}.]\n  \\[\n\\text{The phrase ``}u\\text{ is an upper bound of }A\\text{''}\n\\]\n\\[\n\\begin{aligned}\n&P_S=\\mathsf{OrderedSet}(S,\\le_S),\\qquad\nP_T=\\mathsf{OrderedSet}(T,\\le_T),\\\\\n&X=\\text{``$u$ is an upper bound of $A$''},\\\\\n&\\neg\\operatorname{WellDefined}(X,\\text{ambient omitted})\n\\end{aligned}\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\n\\[\n\\operatorname{UpperBound}_S(u,A)\n\\text{ and }\n\\operatorname{UpperBound}_T(u,A)\n\\]\nare separate assertions unless $S=T$ and $\\le_S=\\le_T$ on the elements being compared.\n\n\n  \\item[\\operatorname{WellDefined}.]\n  \\[\n\\text{The phrase ``}u\\text{ is an upper bound of }A\\text{''}\n\\]\n\\[\n\\begin{aligned}\n&P_S=\\mathsf{OrderedSet}(S,\\le_S),\\qquad\nP_T=\\mathsf{OrderedSet}(T,\\le_T),\\\\\n&X=\\text{``$u$ is an upper bound of $A$''},\\\\\n&\\neg\\operatorname{WellDefined}(X,\\text{ambient omitted})\n\\end{aligned}\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nAn upper bound is not only about the subset; it is also about where the subset lives. Changing the ambient order changes the universe of possible bounds and the comparison used to test them.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:ordered-set]{Ordered Set}\n  \\item \\hyperref[def:subset]{Subset}\n  \\item \\hyperref[def:real-upper-bound]{Upper Bound}\n\\end{itemize}\n\\end{dependencies}\n\n\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

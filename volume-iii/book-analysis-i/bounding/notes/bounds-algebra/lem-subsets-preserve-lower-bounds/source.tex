@@ -1,0 +1,83 @@
+\begin{lemma}[Subsets Preserve Lower Bounds]
+\label{lem:subsets-preserve-lower-bounds}
+Let $C\subseteq A\subseteq\mathbb{R}$. Every lower bound of $A$ is a
+lower bound of $C$; that is, for every $\ell\in\mathbb{R}$,
+\[
+\left(\forall a\in A,\ \ell\leq a\right)
+\Longrightarrow
+(\forall c\in C,\ \ell\leq c).
+\]
+Consequently, every subset of a set bounded below is bounded below.
+\hyperref[prf:subsets-preserve-lower-bounds]{Go to proof.}
+\end{lemma}
+\end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+C\subseteq A\land(\forall a\in A)(\ell\leq a)
+\Longrightarrow
+(\forall c\in C)(\ell\leq c).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad C\subseteq A\subseteq\mathbb{R},\\
+&\operatorname{LowerBound}(\ell,A,P)
+\Longrightarrow \operatorname{LowerBound}(\ell,C,P).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+C\subseteq A,\quad (\forall a\in A)(\ell\leq a),\quad
+(\exists c\in C)(c<\ell).
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad C\subseteq A\subseteq\mathbb{R},\\
+&\operatorname{LowerBound}(\ell,A,P)\land\neg\operatorname{LowerBound}(\ell,C,P).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
+A failure would require a point in $C$ below $\ell$, hence a point in $A$
+below $\ell$.
+
+
+  \item[\operatorname{LowerBound}.]
+  \[
+C\subseteq A,\quad (\forall a\in A)(\ell\leq a),\quad
+(\exists c\in C)(c<\ell).
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad C\subseteq A\subseteq\mathbb{R},\\
+&\operatorname{LowerBound}(\ell,A,P)\land\neg\operatorname{LowerBound}(\ell,C,P).
+\end{aligned}
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Subset inheritance removes possible counterexamples; it cannot create a new
+one.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+\item \hyperref[def:reals]{Real Numbers}.
+\item \hyperref[def:ordered-set]{Ordered Set}.
+\item \hyperref[def:subset]{Subset}.
+\item \hyperref[def:real-lower-bound]{Lower Bound}.
+\end{itemize}
+\end{dependencies}
+

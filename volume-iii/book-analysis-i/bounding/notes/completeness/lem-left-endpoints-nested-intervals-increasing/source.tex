@@ -1,0 +1,87 @@
+\begin{lemma}[Left Endpoints of Nested Intervals Are Increasing]
+\label{lem:left-endpoints-nested-intervals-increasing}
+Let $(a_n)$ and $(b_n)$ be sequences in $\mathbb{R}$ such that
+\[
+  (\forall n\in\mathbb{N})(a_n\leq b_n)
+\]
+and
+\[
+  (\forall n\in\mathbb{N})([a_{n+1},b_{n+1}]\subseteq [a_n,b_n]).
+\]
+Then
+\[
+  (\forall n\in\mathbb{N})(a_n\leq a_{n+1}).
+\]
+\hyperref[prf:left-endpoints-nested-intervals-increasing]{Go to proof.}
+\end{lemma}
+\end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall n\in\mathbb{N}\;(a_n\le a_{n+1}).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+F=([a_n,b_n])_{n\in\mathbb{N}},\qquad
+a\colon\mathbb{N}\longrightarrow\mathbb{R},\qquad a(n)=a_n,
+\]
+\[
+P_{\mathbb{N}}=\mathsf{OrderedSet}(\mathbb{N},\leq),\qquad
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),
+\]
+\[
+\operatorname{NestedClosedIntervals}(F,P_{\mathbb{R}})
+\Longrightarrow
+\operatorname{OrderPreserving}(a,P_{\mathbb{N}},P_{\mathbb{R}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\exists n\in\mathbb{N}\;(a_{n+1}<a_n).
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+F=([a_n,b_n])_{n\in\mathbb{N}},\qquad
+a\colon\mathbb{N}\longrightarrow\mathbb{R},\qquad a(n)=a_n,
+\]
+\[
+P_{\mathbb{N}}=\mathsf{OrderedSet}(\mathbb{N},\leq),\qquad
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),
+\]
+\[
+\neg\operatorname{OrderPreserving}(a,P_{\mathbb{N}},P_{\mathbb{R}})
+\Longrightarrow
+\neg\operatorname{NestedClosedIntervals}(F,P_{\mathbb{R}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  Failure is witnessed by the displayed negated or contrapositive condition.
+
+  \item[\exists-condition.]
+  \[
+\exists n\in\mathbb{N}\;(a_{n+1}<a_n).
+\]
+\[
+F=([a_n,b_n])_{n\in\mathbb{N}},\qquad
+a\colon\mathbb{N}\longrightarrow\mathbb{R},\qquad a(n)=a_n,
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+In a nested family, the left endpoints cannot move left as the intervals
+shrink.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[def:closed-interval]{Closed Interval}.
+\end{dependencies}
+

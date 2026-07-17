@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "def:set-arithmetic-images",
+  "kind": "definition",
+  "title": "Set Arithmetic Images",
+  "source": {
+    "label": "def:set-arithmetic-images",
+    "kind": "definition",
+    "title": "Set Arithmetic Images",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "bounds-algebra",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-algebra-of-supremum-infimum.tex",
+    "source_line_start": 12,
+    "source_line_end": 144,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/def-set-arithmetic-images",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/def-set-arithmetic-images/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/def-set-arithmetic-images/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/def-set-arithmetic-images",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/def-set-arithmetic-images/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/def-set-arithmetic-images/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-algebra-of-supremum-infimum.tex",
+      "label": "def:set-arithmetic-images",
+      "environment_kind": "definition",
+      "source_line_start": 12,
+      "source_line_end": 144,
+      "current_tex": "\\begin{definition}[Set Arithmetic Images]\n\\label{def:set-arithmetic-images}\nLet $A,B\\subseteq\\mathbb{R}$ and let $c\\in\\mathbb{R}$.  The arithmetic\nimages of $A$ and $B$ under addition, subtraction, and multiplication are\ndefined by\n\\[\n  A+B:=\\{a+b:a\\in A,\\ b\\in B\\},\n\\]\n\\[\n  A-B:=\\{a-b:a\\in A,\\ b\\in B\\},\n\\]\nand\n\\[\n  AB:=\\{ab:a\\in A,\\ b\\in B\\}.\n\\]\nThe scalar image of $A$ under multiplication by $c$ is\n\\[\n  cA:=\\{ca:a\\in A\\}.\n\\]\n\\end{definition}\n\\end{definitionbox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\nx\\in A+B\\Longleftrightarrow(\\exists a\\in A)(\\exists b\\in B)(x=a+b),\n\\]\nand similarly for difference and product.  For the scalar image,\n\\[\nx\\in cA\\Longleftrightarrow(\\exists a\\in A)(x=ca).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\nLet\n\\[\nD=A\\times B,\n\\]\nand define the arithmetic rules by\n\\[\n\\varphi_{+}(a,b)=a+b,\\qquad\n\\varphi_{-}(a,b)=a-b,\n\\]\n\\[\n\\varphi_{\\cdot}(a,b)=ab,\\qquad\n\\varphi_c(a)=ca.\n\\]\nThen\n\\[\n\\operatorname{ReplacementImage}(A+B,D,\\varphi_{+}),\n\\]\n\\[\n\\operatorname{ReplacementImage}(A-B,D,\\varphi_{-}),\n\\quad\n\\operatorname{ReplacementImage}(AB,D,\\varphi_{\\cdot}),\n\\]\n\\[\n\\operatorname{ReplacementImage}(cA,A,\\varphi_c).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\nx\\notin A+B\\Longleftrightarrow(\\forall a\\in A)(\\forall b\\in B)(x\\neq a+b),\n\\]\nwith the analogous readings for the other arithmetic images.\n\\end{remark*}\n\n\\begin{remark*}[Negation predicate reading]\n\\[\nC\\ne AB\n\\quad\\text{means}\\quad\n(\\exists x)\\bigl[x\\in C\\triangle AB\\bigr],\n\\]\nand similarly for sum, difference, product, and scalar image.\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\nAn arithmetic-image definition fails only if it omits a value produced by the\nrule or includes a value not produced by the rule.\n\n\n  \\item[\\exists-condition.]\n  \\[\nx\\notin A+B\\Longleftrightarrow(\\forall a\\in A)(\\forall b\\in B)(x\\neq a+b),\n\\]\n\\[\nC\\ne AB\n\\quad\\text{means}\\quad\n(\\exists x)\\bigl[x\\in C\\triangle AB\\bigr],\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\nEvery membership claim decomposes into witnesses from the input sets and the\narithmetic operation that produced the image point.\n\n\n  \\item[\\exists-condition.]\n  \\[\nx\\notin A+B\\Longleftrightarrow(\\forall a\\in A)(\\forall b\\in B)(x\\neq a+b),\n\\]\n\\[\nC\\ne AB\n\\quad\\text{means}\\quad\n(\\exists x)\\bigl[x\\in C\\triangle AB\\bigr],\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nSet arithmetic turns pointwise arithmetic into images of sets. Membership in\none of these images is always witnessed by input elements from the original\nsets and the corresponding arithmetic operation.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:reals]{Real Numbers}\n  \\item \\hyperref[def:subset]{Subset}\n  \\item \\hyperref[def:cartesian-product]{Cartesian Product}\n  \\item \\hyperref[def:image-set]{Image Set}\n  \\item \\hyperref[def:addition-on-r]{Addition on $\\mathbb{R}$}\n  \\item \\hyperref[def:subtraction-on-r]{Subtraction on $\\mathbb{R}$}\n  \\item \\hyperref[def:multiplication-on-r]{Multiplication on $\\mathbb{R}$}\n\\end{itemize}\n\\end{dependencies}\n\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

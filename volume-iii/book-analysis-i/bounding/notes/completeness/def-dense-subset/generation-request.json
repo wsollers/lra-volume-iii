@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "def:dense-subset",
+  "kind": "definition",
+  "title": "Dense Subset",
+  "source": {
+    "label": "def:dense-subset",
+    "kind": "definition",
+    "title": "Dense Subset",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "completeness",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-density.tex",
+    "source_line_start": 11,
+    "source_line_end": 126,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/def-dense-subset",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/def-dense-subset/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/def-dense-subset/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/def-dense-subset",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/def-dense-subset/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/def-dense-subset/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-density.tex",
+      "label": "def:dense-subset",
+      "environment_kind": "definition",
+      "source_line_start": 11,
+      "source_line_end": 126,
+      "current_tex": "\\begin{definition}[Dense Subset]\n\\label{def:dense-subset}\nLet $(X,\\tau)$ be a topological space and let $D\\subseteq X$.  The set\n$D$ is \\emph{dense in} $X$ if $\\overline{D}=X$.  Equivalently, every\nnonempty open subset of $X$ intersects $D$.\n\\end{definition}\n\\end{definitionbox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\begin{aligned}\n&\\overline{D}=X\n\\Longleftrightarrow\n\\forall U\\in\\tau\\;\n\\bigl(U\\neq\\varnothing\\Longrightarrow \\exists d\\in D\\;(d\\in U)\\bigr).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\nX\\in\\mathbf{Set},\\qquad D\\subseteq X,\\qquad\n\\operatorname{DenseSubset}(D,X,\\tau)\\coloneqq\n\\overline{D}=X\n\\Longleftrightarrow\n\\forall U\\in\\tau\\;\n\\bigl(U\\neq\\varnothing\\Longrightarrow \\exists d\\in D\\;(d\\in U)\\bigr).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\n\\begin{aligned}\n&\\text{Let }(X,\\tau)\\text{ be a topological space and }D\\subseteq X.\\\\\n&D\\text{ is not dense in }X\n\\Longleftrightarrow\n\\exists U\\in\\tau\\;\\bigl(U\\neq\\varnothing\\land U\\cap D=\\varnothing\\bigr).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negation predicate reading]\n\\[\nX\\in\\mathbf{Set},\\qquad D\\subseteq X,\\qquad\n\\neg\\operatorname{DenseSubset}(D,X,\\tau)\\Longleftrightarrow\n\\exists U\\in\\tau\\;\\bigl(U\\neq\\varnothing\\land U\\cap D=\\varnothing\\bigr).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n\\item[Exposition.]\nDensity fails when some nonempty open subset of $X$ contains no point of\n$D$.\n\n\n  \\item[\\operatorname{DenseSubset}.]\n  \\[\n\\begin{aligned}\n&\\text{Let }(X,\\tau)\\text{ be a topological space and }D\\subseteq X.\\\\\n&D\\text{ is not dense in }X\n\\Longleftrightarrow\n\\exists U\\in\\tau\\;\\bigl(U\\neq\\varnothing\\land U\\cap D=\\varnothing\\bigr).\n\\end{aligned}\n\\]\n\\[\nX\\in\\mathbf{Set},\\qquad D\\subseteq X,\\qquad\n\\neg\\operatorname{DenseSubset}(D,X,\\tau)\\Longleftrightarrow\n\\exists U\\in\\tau\\;\\bigl(U\\neq\\varnothing\\land U\\cap D=\\varnothing\\bigr).\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n\\item[Exposition.]\n\\[\n\\neg\\operatorname{DenseSubset}(D,X,\\tau)\n=\n\\underbrace{\\exists U\\in\\tau\\;(U\\neq\\varnothing)}_{\\text{nonempty open set}}\n\\;\\land\\;\n\\underbrace{U\\cap D=\\varnothing}_{\\text{no point of }D\\text{ lies in }U}.\n\\]\n\n\n  \\item[\\operatorname{DenseSubset}.]\n  \\[\n\\begin{aligned}\n&\\text{Let }(X,\\tau)\\text{ be a topological space and }D\\subseteq X.\\\\\n&D\\text{ is not dense in }X\n\\Longleftrightarrow\n\\exists U\\in\\tau\\;\\bigl(U\\neq\\varnothing\\land U\\cap D=\\varnothing\\bigr).\n\\end{aligned}\n\\]\n\\[\nX\\in\\mathbf{Set},\\qquad D\\subseteq X,\\qquad\n\\neg\\operatorname{DenseSubset}(D,X,\\tau)\\Longleftrightarrow\n\\exists U\\in\\tau\\;\\bigl(U\\neq\\varnothing\\land U\\cap D=\\varnothing\\bigr).\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nDensity says that no nonempty open part of $X$ misses $D$.  It does not\nsay that every point of $X$ belongs to $D$; it says that $D$ is\ntopologically unavoidable inside $X$.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:subset]{Subset}\n  \\item \\hyperref[def:intersection]{Intersection}\n\\end{itemize}\n\\end{dependencies}\n\\input{volume-iii/book-analysis-i/bounding/notes/completeness/figure-dense-subset}\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

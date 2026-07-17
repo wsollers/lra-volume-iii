@@ -1,0 +1,116 @@
+\begin{theorem}[Scalar Multiplication by a Positive Scalar]
+\label{thm:scalar-mult-positive}
+Let $A\subseteq\mathbb{R}$ be nonempty and bounded above, and let
+$k\in\mathbb{R}$ satisfy $k>0$.  Then $kA:=\{ka:a\in A\}$ is nonempty and
+bounded above, and
+\[
+  \sup(kA)=k\sup A.
+\]
+\hyperref[prf:scalar-mult-positive]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+A\neq\varnothing,\quad A\text{ bounded above},\quad k\in\mathbb{R},\quad k>0
+\quad\Longrightarrow\quad
+\sup\{ka:a\in A\}=k\sup A.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad kA=\{ka:a\in A\},\\
+&\operatorname{LeastUpperBound}(s,A,P)\land k>0
+\Longrightarrow
+\operatorname{LeastUpperBound}(ks,kA,P).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+k>0,\quad \sup(kA)\ne k\sup A
+\]
+is impossible under the stated hypotheses.
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad kA=\{ka:a\in A\},\\
+&\operatorname{LeastUpperBound}(s,A,P)\land k>0\land
+\neg\operatorname{LeastUpperBound}(ks,kA,P)
+\end{aligned}
+\]
+is a contradictory configuration.
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+The formula could fail only if multiplying by a positive scalar failed to preserve upper bounds or failed to preserve leastness. Positive multiplication preserves the order, so both properties scale exactly.
+
+
+  \item[\operatorname{LeastUpperBound}.]
+  \[
+k>0,\quad \sup(kA)\ne k\sup A
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad kA=\{ka:a\in A\},\\
+&\operatorname{LeastUpperBound}(s,A,P)\land k>0\land
+\neg\operatorname{LeastUpperBound}(ks,kA,P)
+\end{aligned}
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+\[
+\begin{aligned}
+\forall a\in A\;(a\leq s)
+&\Longleftrightarrow
+\forall a\in A\;(ka\leq ks),\\
+\operatorname{UpperBound}(u,A)
+&\Longleftrightarrow
+\operatorname{UpperBound}(ku,kA).
+\end{aligned}
+\]
+
+
+  \item[\operatorname{LeastUpperBound}.]
+  \[
+k>0,\quad \sup(kA)\ne k\sup A
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad kA=\{ka:a\in A\},\\
+&\operatorname{LeastUpperBound}(s,A,P)\land k>0\land
+\neg\operatorname{LeastUpperBound}(ks,kA,P)
+\end{aligned}
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Positive scaling stretches the set without reversing order. The least ceiling stretches by the same positive factor.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:reals]{Real Numbers}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:multiplication-on-r]{Multiplication on $\mathbb{R}$}
+  \item \hyperref[def:set-arithmetic-images]{Set Arithmetic Images}
+  \item \hyperref[def:real-upper-bound]{Upper Bound}
+  \item \hyperref[def:supremum]{Supremum}
+  \item \hyperref[prop:upper-bound-comparison-with-the-supremum]{Upper Bound Comparison with the Supremum}
+  \item \hyperref[thm:ineq-nonstrict-multiply-positive]{Multiplication by a Positive Scalar Preserves Nonstrict Inequality}
+\end{itemize}
+\end{dependencies}
+

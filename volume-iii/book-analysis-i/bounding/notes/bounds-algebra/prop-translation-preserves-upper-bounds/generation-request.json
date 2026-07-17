@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "prop:translation-preserves-upper-bounds",
+  "kind": "proposition",
+  "title": "Translation Preserves Upper Bounds",
+  "source": {
+    "label": "prop:translation-preserves-upper-bounds",
+    "kind": "proposition",
+    "title": "Translation Preserves Upper Bounds",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "bounds-algebra",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-bound-algebra.tex",
+    "source_line_start": 146,
+    "source_line_end": 252,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/prop-translation-preserves-upper-bounds",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/prop-translation-preserves-upper-bounds/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/prop-translation-preserves-upper-bounds/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/prop-translation-preserves-upper-bounds",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/prop-translation-preserves-upper-bounds/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/prop-translation-preserves-upper-bounds/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-bound-algebra.tex",
+      "label": "prop:translation-preserves-upper-bounds",
+      "environment_kind": "proposition",
+      "source_line_start": 146,
+      "source_line_end": 252,
+      "current_tex": "\\begin{proposition}[Translation Preserves Upper Bounds]\n\\label{prop:translation-preserves-upper-bounds}\nLet $A\\subseteq\\mathbb{R}$ and let $c,u\\in\\mathbb{R}$.  If $u$ is an\nupper bound of $A$, then $u+c$ is an upper bound of $A+c$; that is,\n\\[\n\\left(\\forall a\\in A,\\ a\\leq u\\right)\n\\Longrightarrow\n\\left(\\forall x\\in A+c,\\ x\\leq u+c\\right).\n\\]\n\\hyperref[prf:translation-preserves-upper-bounds]{Go to proof.}\n\\end{proposition}\n\\end{propositionbox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\n(\\forall a\\in A)(a\\leq u)\n\\Longrightarrow\n(\\forall x\\in A+c)(x\\leq u+c).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad\nA\\subseteq\\mathbb{R},\\qquad A+c=\\{a+c:a\\in A\\},\\\\\n&\\operatorname{UpperBound}(u,A,P)\\Longrightarrow\\operatorname{UpperBound}(u+c,A+c,P).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\n(\\forall a\\in A)(a\\leq u),\\qquad\n(\\exists y\\in A+c)(u+c<y).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negation predicate reading]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad\nA\\subseteq\\mathbb{R},\\qquad A+c=\\{a+c:a\\in A\\},\\\\\n&\\operatorname{UpperBound}(u,A,P)\\land\\neg\\operatorname{UpperBound}(u+c,A+c,P).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n\\item[Exposition.]\nA failure would require a translated point above the translated upper bound.\n\n\n  \\item[\\operatorname{UpperBound}.]\n  \\[\n(\\forall a\\in A)(a\\leq u),\\qquad\n(\\exists y\\in A+c)(u+c<y).\n\\]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad\nA\\subseteq\\mathbb{R},\\qquad A+c=\\{a+c:a\\in A\\},\\\\\n&\\operatorname{UpperBound}(u,A,P)\\land\\neg\\operatorname{UpperBound}(u+c,A+c,P).\n\\end{aligned}\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n\\item[Exposition.]\nWrite $y=a+c$ with $a\\in A$.  Then $a\\leq u$ gives $a+c\\leq u+c$.\n\n\n  \\item[\\operatorname{UpperBound}.]\n  \\[\n(\\forall a\\in A)(a\\leq u),\\qquad\n(\\exists y\\in A+c)(u+c<y).\n\\]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad\nA\\subseteq\\mathbb{R},\\qquad A+c=\\{a+c:a\\in A\\},\\\\\n&\\operatorname{UpperBound}(u,A,P)\\land\\neg\\operatorname{UpperBound}(u+c,A+c,P).\n\\end{aligned}\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nTranslation shifts the set and its upper bound by the same amount, so the\nrelative order between points and the bound is unchanged.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:reals]{Real Numbers}\n  \\item \\hyperref[def:ordered-set]{Ordered Set}\n  \\item \\hyperref[def:subset]{Subset}\n  \\item \\hyperref[def:addition-on-r]{Addition on $\\mathbb{R}$}\n  \\item \\hyperref[def:displacement-dilation-reflection]{Displacement, Dilation, and Reflection}\n  \\item \\hyperref[def:real-upper-bound]{Upper Bound}\n\\end{itemize}\n\\end{dependencies}\n\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

@@ -1,0 +1,121 @@
+\begin{theorem}[Supremum of a Difference Set]
+\label{thm:supremum-difference-set}
+Let $A,B\subseteq\mathbb{R}$ be nonempty, with $A$ bounded above and $B$ bounded below. Then
+\[
+  \sup(A-B)=\sup A-\inf B,
+  \qquad
+  A-B=\{a-b:a\in A,\ b\in B\}.
+\]
+\hyperref[prf:supremum-difference-set]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+A,B\neq\varnothing,\quad A\text{ bounded above},\quad B\text{ bounded below}
+\quad\Longrightarrow\quad
+\sup\{a-b:a\in A,\ b\in B\}=\sup A-\inf B.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\qquad A-B=\{a-b:a\in A,\ b\in B\},\\
+&\operatorname{LeastUpperBound}(s,A,P)\land \operatorname{GreatestLowerBound}(t,B,P)
+\Longrightarrow
+\operatorname{LeastUpperBound}(s-t,A-B,P).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\sup(A-B)\ne \sup A-\inf B
+\]
+is impossible under the stated hypotheses.
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\qquad A-B=\{a-b:a\in A,\ b\in B\},\\
+&\operatorname{LeastUpperBound}(s,A,P)\land \operatorname{GreatestLowerBound}(t,B,P)
+\land
+\neg\operatorname{LeastUpperBound}(s-t,A-B,P)
+\end{aligned}
+\]
+is a contradictory configuration.
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+The formula could fail only if subtracting elements of $B$ did not convert the lower extremal behavior of $B$ into an upper contribution. Since $a-b=a+(-b)$, this is the sum theorem combined with the negation exchange.
+
+
+  \item[\operatorname{LeastUpperBound} / \operatorname{GreatestLowerBound}.]
+  \[
+\sup(A-B)\ne \sup A-\inf B
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\qquad A-B=\{a-b:a\in A,\ b\in B\},\\
+&\operatorname{LeastUpperBound}(s,A,P)\land \operatorname{GreatestLowerBound}(t,B,P)
+\land
+\neg\operatorname{LeastUpperBound}(s-t,A-B,P)
+\end{aligned}
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+\[
+A-B=A+(-B),
+\qquad
+\sup(-B)=-\inf B,
+\qquad
+\sup(A+(-B))=\sup A+\sup(-B).
+\]
+
+
+  \item[\operatorname{LeastUpperBound} / \operatorname{GreatestLowerBound}.]
+  \[
+\sup(A-B)\ne \sup A-\inf B
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\qquad A-B=\{a-b:a\in A,\ b\in B\},\\
+&\operatorname{LeastUpperBound}(s,A,P)\land \operatorname{GreatestLowerBound}(t,B,P)
+\land
+\neg\operatorname{LeastUpperBound}(s-t,A-B,P)
+\end{aligned}
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The largest possible difference comes from making the first term as large as possible and the subtracted term as small as possible.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:reals]{Real Numbers}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:addition-on-r]{Addition on $\mathbb{R}$}
+  \item \hyperref[def:subtraction-on-r]{Subtraction on $\mathbb{R}$}
+  \item \hyperref[def:set-arithmetic-images]{Set Arithmetic Images}
+  \item \hyperref[def:real-upper-bound]{Upper Bound}
+  \item \hyperref[def:real-lower-bound]{Lower Bound}
+  \item \hyperref[def:supremum]{Supremum}
+  \item \hyperref[def:infimum]{Infimum}
+  \item \hyperref[def:epsilon-characterization-of-supremum]{Epsilon Characterization of Supremum}
+  \item \hyperref[def:epsilon-characterization-of-infimum]{Epsilon Characterization of Infimum}
+  \item \hyperref[thm:negation-exchange-sup-inf]{Negation Exchanges Supremum and Infimum}
+  \item \hyperref[thm:supremum-sum-set]{Supremum of a Sum Set}
+\end{itemize}
+\end{dependencies}
+

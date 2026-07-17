@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "prop:positive-dilation-preserves-lower-bounds",
+  "kind": "proposition",
+  "title": "Positive Dilation Preserves Lower Bounds",
+  "source": {
+    "label": "prop:positive-dilation-preserves-lower-bounds",
+    "kind": "proposition",
+    "title": "Positive Dilation Preserves Lower Bounds",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "bounds-algebra",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-bound-algebra.tex",
+    "source_line_start": 473,
+    "source_line_end": 586,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/prop-positive-dilation-preserves-lower-bounds",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/prop-positive-dilation-preserves-lower-bounds/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/prop-positive-dilation-preserves-lower-bounds/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/prop-positive-dilation-preserves-lower-bounds",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/prop-positive-dilation-preserves-lower-bounds/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/prop-positive-dilation-preserves-lower-bounds/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-bound-algebra.tex",
+      "label": "prop:positive-dilation-preserves-lower-bounds",
+      "environment_kind": "proposition",
+      "source_line_start": 473,
+      "source_line_end": 586,
+      "current_tex": "\\begin{proposition}[Positive Dilation Preserves Lower Bounds]\n\\label{prop:positive-dilation-preserves-lower-bounds}\nLet $A\\subseteq\\mathbb{R}$, let $\\lambda>0$, and let\n$\\ell\\in\\mathbb{R}$.  If $\\ell$ is a lower bound of $A$, then\n$\\lambda\\ell$ is a lower bound of $\\lambda A$; that is,\n\\[\n\\left(\\forall a\\in A,\\ \\ell\\leq a\\right)\n\\Longrightarrow\n\\left(\\forall x\\in\\lambda A,\\ \\lambda\\ell\\leq x\\right).\n\\]\n\\hyperref[prf:positive-dilation-preserves-lower-bounds]{Go to proof.}\n\\end{proposition}\n\\end{propositionbox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\lambda>0\\land(\\forall a\\in A)(\\ell\\leq a)\n\\Longrightarrow\n(\\forall x\\in\\lambda A)(\\lambda\\ell\\leq x).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad\nA\\subseteq\\mathbb{R},\\qquad \\lambda A=\\{\\lambda a:a\\in A\\},\\\\\n&\\lambda>0\\land\\operatorname{LowerBound}(\\ell,A,P)\n\\Longrightarrow\\operatorname{LowerBound}(\\lambda\\ell,\\lambda A,P).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\n\\lambda>0,\\qquad(\\forall a\\in A)(\\ell\\leq a),\\qquad\n(\\exists y\\in\\lambda A)(y<\\lambda\\ell).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negation predicate reading]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad\nA\\subseteq\\mathbb{R},\\qquad \\lambda A=\\{\\lambda a:a\\in A\\},\\\\\n&\\lambda>0\\land\\operatorname{LowerBound}(\\ell,A,P)\\land\n\\neg\\operatorname{LowerBound}(\\lambda\\ell,\\lambda A,P).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n\\item[Exposition.]\nA failure would require a positively dilated point below the positively\ndilated lower bound.\n\n\n  \\item[\\operatorname{LowerBound}.]\n  \\[\n\\lambda>0,\\qquad(\\forall a\\in A)(\\ell\\leq a),\\qquad\n(\\exists y\\in\\lambda A)(y<\\lambda\\ell).\n\\]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad\nA\\subseteq\\mathbb{R},\\qquad \\lambda A=\\{\\lambda a:a\\in A\\},\\\\\n&\\lambda>0\\land\\operatorname{LowerBound}(\\ell,A,P)\\land\n\\neg\\operatorname{LowerBound}(\\lambda\\ell,\\lambda A,P).\n\\end{aligned}\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n\\item[Exposition.]\nWrite $y=\\lambda a$ with $a\\in A$.  Since $\\ell\\leq a$ and $\\lambda>0$,\n$\\lambda\\ell\\leq\\lambda a$.\n\n\n  \\item[\\operatorname{LowerBound}.]\n  \\[\n\\lambda>0,\\qquad(\\forall a\\in A)(\\ell\\leq a),\\qquad\n(\\exists y\\in\\lambda A)(y<\\lambda\\ell).\n\\]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad\nA\\subseteq\\mathbb{R},\\qquad \\lambda A=\\{\\lambda a:a\\in A\\},\\\\\n&\\lambda>0\\land\\operatorname{LowerBound}(\\ell,A,P)\\land\n\\neg\\operatorname{LowerBound}(\\lambda\\ell,\\lambda A,P).\n\\end{aligned}\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nPositive dilation preserves lower-bound information for the same reason it\npreserves upper-bound information: order is not reversed.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:reals]{Real Numbers}\n  \\item \\hyperref[def:ordered-set]{Ordered Set}\n  \\item \\hyperref[def:subset]{Subset}\n  \\item \\hyperref[def:multiplication-on-r]{Multiplication on $\\mathbb{R}$}\n  \\item \\hyperref[def:displacement-dilation-reflection]{Displacement, Dilation, and Reflection}\n  \\item \\hyperref[def:real-lower-bound]{Lower Bound}\n\\end{itemize}\n\\end{dependencies}\n\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

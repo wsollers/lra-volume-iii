@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "thm:negative-scalar-mult-infimum",
+  "kind": "theorem",
+  "title": "Negative Scalar Multiplication of the Infimum",
+  "source": {
+    "label": "thm:negative-scalar-mult-infimum",
+    "kind": "theorem",
+    "title": "Negative Scalar Multiplication of the Infimum",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "bounds-algebra",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-algebra-of-supremum-infimum.tex",
+    "source_line_start": 831,
+    "source_line_end": 950,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-negative-scalar-mult-infimum",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-negative-scalar-mult-infimum/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-negative-scalar-mult-infimum/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-negative-scalar-mult-infimum",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-negative-scalar-mult-infimum/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-negative-scalar-mult-infimum/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-algebra-of-supremum-infimum.tex",
+      "label": "thm:negative-scalar-mult-infimum",
+      "environment_kind": "theorem",
+      "source_line_start": 831,
+      "source_line_end": 950,
+      "current_tex": "\\begin{theorem}[Negative Scalar Multiplication of the Infimum]\n\\label{thm:negative-scalar-mult-infimum}\nLet $A\\subseteq\\mathbb{R}$ be nonempty and bounded above, and let\n$k\\in\\mathbb{R}$ satisfy $k<0$.  Then $kA:=\\{ka:a\\in A\\}$ is nonempty and\nbounded below, and\n\\[\n  \\inf(kA)=k\\sup A.\n\\]\n\\hyperref[prf:negative-scalar-mult-infimum]{Go to proof.}\n\\end{theorem}\n\\end{theorembox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\nk\\in\\mathbb{R},\\quad k<0,\\quad A\\neq\\varnothing,\\quad A\\text{ bounded above}\n\\quad\\Longrightarrow\\quad\n\\inf\\{ka:a\\in A\\}=k\\sup A.\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A\\subseteq\\mathbb{R},\\qquad kA=\\{ka:a\\in A\\},\\\\\n&\\operatorname{LeastUpperBound}(s,A,P)\\land k<0\n\\Longrightarrow\n\\operatorname{GreatestLowerBound}(ks,kA,P).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\nk<0,\\quad \\inf(kA)\\neq k\\sup A\n\\]\nis impossible under the stated hypotheses.\n\\end{remark*}\n\n\\begin{remark*}[Negation predicate reading]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A\\subseteq\\mathbb{R},\\qquad kA=\\{ka:a\\in A\\},\\\\\n&\\operatorname{LeastUpperBound}(s,A,P)\\land k<0\\land\n\\neg\\operatorname{GreatestLowerBound}(ks,kA,P).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\nThe formula could fail only if negative multiplication failed to reverse upper\nbounds into lower bounds or failed to preserve the extremal threshold after\nreversal.\n\n\n  \\item[\\operatorname{LeastUpperBound} / \\operatorname{GreatestLowerBound}.]\n  \\[\nk<0,\\quad \\inf(kA)\\neq k\\sup A\n\\]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A\\subseteq\\mathbb{R},\\qquad kA=\\{ka:a\\in A\\},\\\\\n&\\operatorname{LeastUpperBound}(s,A,P)\\land k<0\\land\n\\neg\\operatorname{GreatestLowerBound}(ks,kA,P).\n\\end{aligned}\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\n\\[\n(\\forall a\\in A)(a\\leq s)\n\\Longleftrightarrow\n(\\forall a\\in A)(ks\\leq ka)\n\\qquad(k<0).\n\\]\n\n\n  \\item[\\operatorname{LeastUpperBound} / \\operatorname{GreatestLowerBound}.]\n  \\[\nk<0,\\quad \\inf(kA)\\neq k\\sup A\n\\]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A\\subseteq\\mathbb{R},\\qquad kA=\\{ka:a\\in A\\},\\\\\n&\\operatorname{LeastUpperBound}(s,A,P)\\land k<0\\land\n\\neg\\operatorname{GreatestLowerBound}(ks,kA,P).\n\\end{aligned}\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nNegative scaling reflects the set, so the ceiling of $A$ becomes the floor of\n$kA$.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:reals]{Real Numbers}\n  \\item \\hyperref[def:ordered-set]{Ordered Set}\n  \\item \\hyperref[def:subset]{Subset}\n  \\item \\hyperref[def:multiplication-on-r]{Multiplication on $\\mathbb{R}$}\n  \\item \\hyperref[def:division-on-r]{Division on $\\mathbb{R}$}\n  \\item \\hyperref[def:displacement-dilation-reflection]{Displacement, Dilation, and Reflection}\n  \\item \\hyperref[def:real-upper-bound]{Upper Bound}\n  \\item \\hyperref[def:real-lower-bound]{Lower Bound}\n  \\item \\hyperref[def:supremum]{Supremum}\n  \\item \\hyperref[def:infimum]{Infimum}\n  \\item \\hyperref[prop:negative-dilation-sends-upper-to-lower-bounds]{Negative Dilation Sends Upper Bounds to Lower Bounds}\n  \\item \\hyperref[thm:ineq-multiply-negative]{Multiplication by a Negative Scalar Reverses Inequality}\n  \\item \\hyperref[lem:division-by-negative-reverses-order]{Division by Negative Reverses Order}\n\\end{itemize}\n\\end{dependencies}\n\n\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

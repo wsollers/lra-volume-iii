@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "thm:infimum-reciprocal-set",
+  "kind": "theorem",
+  "title": "Infimum of a Reciprocal Set",
+  "source": {
+    "label": "thm:infimum-reciprocal-set",
+    "kind": "theorem",
+    "title": "Infimum of a Reciprocal Set",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "bounds-algebra",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-algebra-of-supremum-infimum.tex",
+    "source_line_start": 1968,
+    "source_line_end": 2102,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-infimum-reciprocal-set",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-infimum-reciprocal-set/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-infimum-reciprocal-set/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-infimum-reciprocal-set",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-infimum-reciprocal-set/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-infimum-reciprocal-set/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-algebra-of-supremum-infimum.tex",
+      "label": "thm:infimum-reciprocal-set",
+      "environment_kind": "theorem",
+      "source_line_start": 1968,
+      "source_line_end": 2102,
+      "current_tex": "\\begin{theorem}[Infimum of a Reciprocal Set]\n\\label{thm:infimum-reciprocal-set}\nLet $A\\subseteq\\mathbb{R}$ be nonempty and bounded, and suppose that\n$0<\\inf A$ or $\\sup A<0$.  Define\n\\[\n  A^{-1}:=\\{1/a:a\\in A\\}.\n\\]\nThen\n\\[\n  \\inf(A^{-1})=\\frac{1}{\\sup A}.\n\\]\n\\hyperref[prf:infimum-reciprocal-set]{Go to proof.}\n\\end{theorem}\n\\end{theorembox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\nA\\neq\\varnothing,\\quad A\\text{ bounded},\\quad\n0\\notin[\\inf A,\\sup A]\n\\quad\\Longrightarrow\\quad\n\\inf\\{1/a:a\\in A\\}=(\\sup A)^{-1}.\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A\\subseteq\\mathbb{R},\\qquad A^{-1}=\\{1/a:a\\in A\\},\\\\\n&\\ell=M^{-1},\\\\\n&\\operatorname{GreatestLowerBound}(m,A,P)\\land\\operatorname{LeastUpperBound}(M,A,P)\\land\n0\\notin[m,M]\n\\Longrightarrow\n\\operatorname{GreatestLowerBound}(\\ell,A^{-1},P).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\nA\\neq\\varnothing,\\quad A\\text{ bounded},\\quad 0\\notin[\\inf A,\\sup A],\n\\quad\n\\inf(A^{-1})\\neq(\\sup A)^{-1}.\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negation predicate reading]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A\\subseteq\\mathbb{R},\\qquad A^{-1}=\\{1/a:a\\in A\\},\\\\\n&\\operatorname{GreatestLowerBound}(m,A,P),\\qquad \\ell=M^{-1},\\\\\n&\\operatorname{LeastUpperBound}(M,A,P)\\land 0\\notin[m,M]\\land\n\\neg\\operatorname{GreatestLowerBound}(\\ell,A^{-1},P)\n\\end{aligned}\n\\]\nis contradictory under the stated hypotheses.\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\nThe formula fails without excluding zero from the closed extremal interval.\nOnce zero is excluded, reciprocal reverses order and the ceiling of $A$ becomes\nthe floor of $A^{-1}$.\n\n\n  \\item[\\operatorname{GreatestLowerBound} / \\operatorname{LeastUpperBound}.]\n  \\[\nA\\neq\\varnothing,\\quad A\\text{ bounded},\\quad 0\\notin[\\inf A,\\sup A],\n\\quad\n\\inf(A^{-1})\\neq(\\sup A)^{-1}.\n\\]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A\\subseteq\\mathbb{R},\\qquad A^{-1}=\\{1/a:a\\in A\\},\\\\\n&\\operatorname{GreatestLowerBound}(m,A,P),\\qquad \\ell=M^{-1},\\\\\n&\\operatorname{LeastUpperBound}(M,A,P)\\land 0\\notin[m,M]\\land\n\\neg\\operatorname{GreatestLowerBound}(\\ell,A^{-1},P)\n\\end{aligned}\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\nEvery reciprocal $1/a$ lies above $1/\\sup A$ because reciprocal reverses order\non the nonzero interval containing $A$.  Greatestness of $\\sup A$ gives\nelements of $A$ arbitrarily close to that ceiling, which makes the lower bound\nsharp.\n\n\n  \\item[\\operatorname{GreatestLowerBound} / \\operatorname{LeastUpperBound}.]\n  \\[\nA\\neq\\varnothing,\\quad A\\text{ bounded},\\quad 0\\notin[\\inf A,\\sup A],\n\\quad\n\\inf(A^{-1})\\neq(\\sup A)^{-1}.\n\\]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A\\subseteq\\mathbb{R},\\qquad A^{-1}=\\{1/a:a\\in A\\},\\\\\n&\\operatorname{GreatestLowerBound}(m,A,P),\\qquad \\ell=M^{-1},\\\\\n&\\operatorname{LeastUpperBound}(M,A,P)\\land 0\\notin[m,M]\\land\n\\neg\\operatorname{GreatestLowerBound}(\\ell,A^{-1},P)\n\\end{aligned}\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nFor nonzero bounded sets that stay on one side of zero, reciprocal swaps the\ntwo extremal thresholds.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:reals]{Real Numbers}\n  \\item \\hyperref[def:ordered-set]{Ordered Set}\n  \\item \\hyperref[def:subset]{Subset}\n  \\item \\hyperref[def:division-on-r]{Division on $\\mathbb{R}$}\n  \\item \\hyperref[def:reciprocal-image]{Reciprocal Image}\n  \\item \\hyperref[def:real-lower-bound]{Lower Bound}\n  \\item \\hyperref[def:real-upper-bound]{Upper Bound}\n  \\item \\hyperref[def:bounded]{Bounded Set}\n  \\item \\hyperref[def:infimum]{Infimum}\n  \\item \\hyperref[def:supremum]{Supremum}\n  \\item \\hyperref[def:epsilon-characterization-of-infimum]{Epsilon Characterization of Infimum}\n  \\item \\hyperref[def:epsilon-characterization-of-supremum]{Epsilon Characterization of Supremum}\n  \\item \\hyperref[prop:every-element-lies-above-the-infimum]{Every Element Lies Above the Infimum}\n  \\item \\hyperref[prop:every-element-lies-below-the-supremum]{Every Element Lies Below the Supremum}\n  \\item \\hyperref[thm:reciprocal-reverses-nonstrict-order-on-same-sign-r]{Reciprocal Reverses Non-Strict Order on Same-Sign Reals}\n  \\item \\hyperref[thm:supremum-reciprocal-set]{Supremum of a Reciprocal Set}\n\\end{itemize}\n\\end{dependencies}\n\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

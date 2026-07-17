@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "def:reciprocal-image",
+  "kind": "definition",
+  "title": "Reciprocal Image",
+  "source": {
+    "label": "def:reciprocal-image",
+    "kind": "definition",
+    "title": "Reciprocal Image",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "bounds-algebra",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-algebra-of-supremum-infimum.tex",
+    "source_line_start": 145,
+    "source_line_end": 249,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/def-reciprocal-image",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/def-reciprocal-image/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/def-reciprocal-image/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/def-reciprocal-image",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/def-reciprocal-image/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/def-reciprocal-image/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-algebra-of-supremum-infimum.tex",
+      "label": "def:reciprocal-image",
+      "environment_kind": "definition",
+      "source_line_start": 145,
+      "source_line_end": 249,
+      "current_tex": "\\begin{definition}[Reciprocal Image]\n\\label{def:reciprocal-image}\nLet $A\\subseteq\\mathbb{R}$ and suppose $0\\notin A$.  The \\emph{reciprocal\nimage} of $A$ is the set\n\\[\n  A^{-1}:=\\left\\{\\frac{1}{a}:a\\in A\\right\\}.\n\\]\n\\end{definition}\n\\end{definitionbox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\nx\\in A^{-1}\\Longleftrightarrow(\\exists a\\in A)\\left(x=\\frac{1}{a}\\right).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\n\\begin{aligned}\n&A\\subseteq\\mathbb{R},\\qquad 0\\notin A,\\\\\n&A^{-1}=\\left\\{x\\in\\mathbb{R}:(\\exists a\\in A)\\left(x=\\frac{1}{a}\\right)\\right\\},\\\\\n&\\operatorname{ReplacementImage}(A^{-1},A,\\varphi_{1/x}),\\qquad\n\\varphi_{1/x}(a)=\\frac{1}{a}.\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\nx\\notin A^{-1}\\Longleftrightarrow(\\forall a\\in A)\\left(x\\neq\\frac{1}{a}\\right).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negation predicate reading]\n\\[\n\\begin{aligned}\n&A\\subseteq\\mathbb{R},\\qquad 0\\notin A,\\qquad B\\subseteq\\mathbb{R},\\\\\n&B\\ne A^{-1}\n\\quad\\text{means}\\quad\n(\\exists x)\\bigl[x\\in B\\triangle A^{-1}\\bigr].\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\nThe reciprocal image is undefined if zero is allowed as an input value.  Once\nzero is excluded, the only definition failures are omitted or spurious\nreciprocal values.\n\n\n  \\item[\\mathsf{Reciprocal}.]\n  \\[\nx\\notin A^{-1}\\Longleftrightarrow(\\forall a\\in A)\\left(x\\neq\\frac{1}{a}\\right).\n\\]\n\\[\n\\begin{aligned}\n&A\\subseteq\\mathbb{R},\\qquad 0\\notin A,\\qquad B\\subseteq\\mathbb{R},\\\\\n&B\\ne A^{-1}\n\\quad\\text{means}\\quad\n(\\exists x)\\bigl[x\\in B\\triangle A^{-1}\\bigr].\n\\end{aligned}\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\nEvery element of $A^{-1}$ has the form $1/a$ for a nonzero $a\\in A$.\n\n\n  \\item[\\mathsf{Reciprocal}.]\n  \\[\nx\\notin A^{-1}\\Longleftrightarrow(\\forall a\\in A)\\left(x\\neq\\frac{1}{a}\\right).\n\\]\n\\[\n\\begin{aligned}\n&A\\subseteq\\mathbb{R},\\qquad 0\\notin A,\\qquad B\\subseteq\\mathbb{R},\\\\\n&B\\ne A^{-1}\n\\quad\\text{means}\\quad\n(\\exists x)\\bigl[x\\in B\\triangle A^{-1}\\bigr].\n\\end{aligned}\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nThe reciprocal image applies inversion to every element of $A$. The exclusion\nof zero is structural, since reciprocal values are undefined at zero.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:reals]{Real Numbers}\n  \\item \\hyperref[def:subset]{Subset}\n  \\item \\hyperref[def:image-set]{Image Set}\n  \\item \\hyperref[def:division-on-r]{Division on $\\mathbb{R}$}\n\\end{itemize}\n\\end{dependencies}\n\n% --- Algebra of Supremum Cluster ---\n\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

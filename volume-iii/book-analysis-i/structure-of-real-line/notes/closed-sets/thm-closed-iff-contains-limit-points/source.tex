@@ -1,0 +1,32 @@
+\begin{theorembox}{Theorem (Closed Sets Contain Their Limit Points)}
+\begin{theorem}[Closed Sets Contain Their Limit Points]
+\label{thm:closed-iff-contains-limit-points}
+Let $F\subseteq\mathbb{R}$.  Then $F$ is closed if and only if every limit
+point of $F$ belongs to $F$.  Explicitly,
+\[
+  F\text{ is closed}
+  \Longleftrightarrow
+  (\forall x\in\mathbb{R})
+  \leqft[
+  \leqft((\forall r>0)\bigl((B_r(x)\setminus\{x\})\cap F\neq\varnothing\bigr)\right)
+  \Longrightarrow
+  x\in F
+  \right].
+\]
+\hyperref[prf:closed-iff-contains-limit-points]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+\begin{remark*}[Standard quantified statement]
+\[
+F \text{ closed} \Longleftrightarrow \forall x\in\mathbb{R}\;\bigl(x \text{ is a limit point of } F \Longrightarrow x\in F\bigr).
+\]
+\end{remark*}
+\begin{remark*}[Interpretation]
+This is the convergence-flavored description of closedness: a closed set cannot be approached from outside without already containing the approached point. It is the form used when showing limits of sequences in $F$ stay in $F$.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:closed-set]{Closed Set in $\mathbb{R}$}
+  \item \hyperref[def:limit-point]{Limit Point}
+\end{itemize}
+\end{dependencies}

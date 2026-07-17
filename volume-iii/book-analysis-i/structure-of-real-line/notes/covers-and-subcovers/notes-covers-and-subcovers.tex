@@ -8,9 +8,14 @@ A cover of $E$ is a family of sets whose union contains $E$; an open cover uses 
 \begin{definitionbox}{Definition (Open Cover)}
 \begin{definition}[Open Cover]
 \label{def:real-open-cover}
-Let $E\subseteq\mathbb{R}$. An \emph{open cover} of $E$ is a family $\{U_{i}\}_{i\in I}$ of open subsets of $\mathbb{R}$ with
+Let $K\subseteq\mathbb{R}$.  A family $\mathcal{U}$ of open subsets of
+$\mathbb{R}$ is an \emph{open cover} of $K$ if
 \[
-E\subseteq\bigcup_{i\in I} U_{i}.
+  K\subseteq\bigcup_{U\in\mathcal{U}}U.
+\]
+Equivalently,
+\[
+  (\forall x\in K)(\exists U\in\mathcal{U})(x\in U).
 \]
 \end{definition}
 \end{definitionbox}
@@ -30,7 +35,12 @@ An open cover is a way of surrounding every point of $E$ with an open piece of t
 \begin{definitionbox}{Definition (Subcover and Finite Subcover)}
 \begin{definition}[Subcover and Finite Subcover]
 \label{def:finite-subcover}
-Let $\{U_{i}\}_{i\in I}$ be an open cover of $E$. A \emph{subcover} is a subfamily $\{U_{i}\}_{i\in J}$ with $J\subseteq I$ that still covers $E$. It is a \emph{finite subcover} when $J$ is finite.
+Let $K\subseteq\mathbb{R}$, and let $\mathcal{U}$ be an open cover of $K$.
+A subfamily $\mathcal{V}\subseteq\mathcal{U}$ is a \emph{subcover} of $K$ if
+\[
+  K\subseteq\bigcup_{V\in\mathcal{V}}V.
+\]
+It is a \emph{finite subcover} if $\mathcal{V}$ is finite.
 \end{definition}
 \end{definitionbox}
 \begin{remark*}[Standard quantified statement]

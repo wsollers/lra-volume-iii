@@ -1,0 +1,111 @@
+\begin{definition}[Order Dense Subset]
+\label{def:order-dense-subset}
+Let $(S,\leq)$ be a linearly ordered set and let $D\subseteq S$.  The set
+$D$ is \emph{order dense in} $S$ if between every two elements $x<y$ of
+$S$ there lies an element of $D$.
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{aligned}
+&\operatorname{OrderDenseSubset}(D,P)
+\Longleftrightarrow
+\forall x,y\in S\;\bigl(x<y\Longrightarrow \exists d\in D\;(x<d<y)\bigr).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+S\in\mathbf{Set},\qquad D\subseteq S,\qquad P=\mathsf{TotallyOrderedSet}(S,\leq),\qquad
+\operatorname{OrderDenseSubset}(D,P)\coloneqq
+\forall x,y\in S\;\bigl(x<y\Longrightarrow \exists d\in D\;(x<d<y)\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\begin{aligned}
+&\text{Let }(S,\leq)\text{ be a linearly ordered set and }D\subseteq S.\\
+&D\text{ is not order dense in }S
+\Longleftrightarrow
+\exists x,y\in S\;\bigl(x<y\land \forall d\in D\;(d\leq x\lor y\leq d)\bigr).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+S\in\mathbf{Set},\qquad D\subseteq S,\qquad P=\mathsf{TotallyOrderedSet}(S,\leq),\qquad
+\neg\operatorname{OrderDenseSubset}(D,P)\Longleftrightarrow
+\exists x,y\in S\;\bigl(x<y\land \forall d\in D\;(d\leq x\lor y\leq d)\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
+Order density fails when there is a nonempty open interval of $S$ that
+contains no point of $D$.
+
+
+  \item[\operatorname{OrderDenseSubset}.]
+  \[
+\begin{aligned}
+&\text{Let }(S,\leq)\text{ be a linearly ordered set and }D\subseteq S.\\
+&D\text{ is not order dense in }S
+\Longleftrightarrow
+\exists x,y\in S\;\bigl(x<y\land \forall d\in D\;(d\leq x\lor y\leq d)\bigr).
+\end{aligned}
+\]
+\[
+S\in\mathbf{Set},\qquad D\subseteq S,\qquad P=\mathsf{TotallyOrderedSet}(S,\leq),\qquad
+\neg\operatorname{OrderDenseSubset}(D,P)\Longleftrightarrow
+\exists x,y\in S\;\bigl(x<y\land \forall d\in D\;(d\leq x\lor y\leq d)\bigr).
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
+\[
+\neg\operatorname{OrderDenseSubset}(D,P)
+=
+\underbrace{\exists x,y\in S\;(x<y)}_{\text{nonempty interval}}
+\;\land\;
+\underbrace{\forall d\in D\;(d\leq x\lor y\leq d)}_{\text{no point of }D\text{ lies between }x\text{ and }y}.
+\]
+
+
+  \item[\operatorname{OrderDenseSubset}.]
+  \[
+\begin{aligned}
+&\text{Let }(S,\leq)\text{ be a linearly ordered set and }D\subseteq S.\\
+&D\text{ is not order dense in }S
+\Longleftrightarrow
+\exists x,y\in S\;\bigl(x<y\land \forall d\in D\;(d\leq x\lor y\leq d)\bigr).
+\end{aligned}
+\]
+\[
+S\in\mathbf{Set},\qquad D\subseteq S,\qquad P=\mathsf{TotallyOrderedSet}(S,\leq),\qquad
+\neg\operatorname{OrderDenseSubset}(D,P)\Longleftrightarrow
+\exists x,y\in S\;\bigl(x<y\land \forall d\in D\;(d\leq x\lor y\leq d)\bigr).
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Order density is an interval-penetration property. It ignores metric distance
+and asks only whether every ordered gap contains a point of the subset. A
+subset can therefore be order dense in $S$ precisely when no nonempty open
+interval of $S$ is missed entirely by that subset.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:totally-ordered-set]{Total Order}
+\end{itemize}
+\end{dependencies}

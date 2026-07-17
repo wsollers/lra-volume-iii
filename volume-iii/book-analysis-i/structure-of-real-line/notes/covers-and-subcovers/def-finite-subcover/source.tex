@@ -1,0 +1,26 @@
+\begin{definitionbox}{Definition (Subcover and Finite Subcover)}
+\begin{definition}[Subcover and Finite Subcover]
+\label{def:finite-subcover}
+Let $K\subseteq\mathbb{R}$, and let $\mathcal{U}$ be an open cover of $K$.
+A subfamily $\mathcal{V}\subseteq\mathcal{U}$ is a \emph{subcover} of $K$ if
+\[
+  K\subseteq\bigcup_{V\in\mathcal{V}}V.
+\]
+It is a \emph{finite subcover} if $\mathcal{V}$ is finite.
+\end{definition}
+\end{definitionbox}
+\begin{remark*}[Standard quantified statement]
+\[
+\{U_i\}_{i\in J} \text{ is a finite subcover of } E
+\Longleftrightarrow
+\bigl(J\subseteq I \land J \text{ is finite} \land E\subseteq\textstyle\bigcup_{i\in J}U_i\bigr).
+\]
+\end{remark*}
+\begin{remark*}[Interpretation]
+A subcover discards some pieces while still covering $E$; a finite subcover discards all but finitely many. The existence of a finite subcover for \emph{every} open cover is the defining property of compactness.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:real-open-cover]{Open Cover}
+\end{itemize}
+\end{dependencies}

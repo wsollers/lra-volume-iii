@@ -9,28 +9,30 @@ those elementary moves explicitly.
 \begin{lemmabox}{Lemma (Minimum of Positive Numbers Is Positive)}
 \begin{lemma}[Minimum of Positive Numbers Is Positive]
 \label{lem:minimum-of-positive-numbers-is-positive}
-If $a>0$ and $b>0$, then
+For every $a,b\in\mathbb{R}$,
 \[
-\min\{a,b\}>0.
+  (a>0\land b>0)
+  \Longrightarrow
+  \min\{a,b\}>0.
 \]
 \hyperref[prf:minimum-of-positive-numbers-is-positive]{Go to proof.}
 \end{lemma}
 \end{lemmabox}
 \begin{remark*}[Standard quantified statement]
 \[
-\forall a,b\in\mathbb{R}\;\bigl((a>0\land b>0)\Rightarrow \min\{a,b\}>0\bigr).
+\forall a,b\in\mathbb{R}\;\bigl((a>0\land b>0)\Longrightarrow \min\{a,b\}>0\bigr).
 \]
 \end{remark*}
 \begin{remark*}[Predicate reading]
 \[
 m=\min\{a,b\},\qquad
 \operatorname{Positive}(a,\mathbb{R})\land\operatorname{Positive}(b,\mathbb{R})
-\Rightarrow \operatorname{Positive}(m,\mathbb{R}).
+\Longrightarrow \operatorname{Positive}(m,\mathbb{R}).
 \]
 \end{remark*}
 \begin{remark*}[Negated quantified statement]
 \[
-\exists a,b\in\mathbb{R}\;\bigl(a>0\land b>0\land \min\{a,b\}\le 0\bigr).
+\exists a,b\in\mathbb{R}\;\bigl(a>0\land b>0\land \min\{a,b\}\leq 0\bigr).
 \]
 \end{remark*}
 \begin{remark*}[Negation predicate reading]
@@ -48,7 +50,7 @@ m=\min\{a,b\},\qquad
 
   \item[\operatorname{Positive}.]
   \[
-\exists a,b\in\mathbb{R}\;\bigl(a>0\land b>0\land \min\{a,b\}\le 0\bigr).
+\exists a,b\in\mathbb{R}\;\bigl(a>0\land b>0\land \min\{a,b\}\leq 0\bigr).
 \]
 \[
 m=\min\{a,b\},\qquad
@@ -68,27 +70,29 @@ Choosing the smaller of two positive bounds still leaves a positive bound.
 \begin{lemmabox}{Lemma (Half Epsilon Is Positive)}
 \begin{lemma}[Half Epsilon Is Positive]
 \label{lem:half-epsilon-is-positive}
-If $\varepsilon>0$, then
+For every $\varepsilon\in\mathbb{R}$,
 \[
-\frac{\varepsilon}{2}>0.
+  \varepsilon>0
+  \Longrightarrow
+  \frac{\varepsilon}{2}>0.
 \]
 \hyperref[prf:half-epsilon-is-positive]{Go to proof.}
 \end{lemma}
 \end{lemmabox}
 \begin{remark*}[Standard quantified statement]
 \[
-\forall \varepsilon\in\mathbb{R}\;\bigl(\varepsilon>0\Rightarrow \varepsilon/2>0\bigr).
+\forall \varepsilon\in\mathbb{R}\;\bigl(\varepsilon>0\Longrightarrow \varepsilon/2>0\bigr).
 \]
 \end{remark*}
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{Positive}(\varepsilon,\mathbb{R})\Rightarrow
+\operatorname{Positive}(\varepsilon,\mathbb{R})\Longrightarrow
 \operatorname{Positive}(\varepsilon/2,\mathbb{R}).
 \]
 \end{remark*}
 \begin{remark*}[Negated quantified statement]
 \[
-\exists\varepsilon\in\mathbb{R}\;\bigl(\varepsilon>0\land \varepsilon/2\le 0\bigr).
+\exists\varepsilon\in\mathbb{R}\;\bigl(\varepsilon>0\land \varepsilon/2\leq 0\bigr).
 \]
 \end{remark*}
 \begin{remark*}[Negation predicate reading]
@@ -104,7 +108,7 @@ If $\varepsilon>0$, then
 
   \item[\operatorname{Positive}.]
   \[
-\exists\varepsilon\in\mathbb{R}\;\bigl(\varepsilon>0\land \varepsilon/2\le 0\bigr).
+\exists\varepsilon\in\mathbb{R}\;\bigl(\varepsilon>0\land \varepsilon/2\leq 0\bigr).
 \]
 \[
 \operatorname{Positive}(\varepsilon,\mathbb{R})\land\neg\operatorname{Positive}(\varepsilon/2,\mathbb{R}).
@@ -122,22 +126,24 @@ Halving a positive tolerance produces a smaller positive tolerance.
 \begin{lemmabox}{Lemma (Epsilon Splitting)}
 \begin{lemma}[Epsilon Splitting]
 \label{lem:epsilon-splitting}
-If $\varepsilon>0$, then
+For every $\varepsilon\in\mathbb{R}$,
 \[
-\frac{\varepsilon}{2}+\frac{\varepsilon}{2}=\varepsilon.
+  \varepsilon>0
+  \Longrightarrow
+  \frac{\varepsilon}{2}+\frac{\varepsilon}{2}=\varepsilon.
 \]
 \hyperref[prf:epsilon-splitting]{Go to proof.}
 \end{lemma}
 \end{lemmabox}
 \begin{remark*}[Standard quantified statement]
 \[
-\forall \varepsilon\in\mathbb{R}\;\bigl(\varepsilon>0\Rightarrow
+\forall \varepsilon\in\mathbb{R}\;\bigl(\varepsilon>0\Longrightarrow
 \varepsilon/2+\varepsilon/2=\varepsilon\bigr).
 \]
 \end{remark*}
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{Positive}(\varepsilon,\mathbb{R})\Rightarrow
+\operatorname{Positive}(\varepsilon,\mathbb{R})\Longrightarrow
 \varepsilon/2+\varepsilon/2=\varepsilon.
 \]
 \end{remark*}
@@ -181,9 +187,11 @@ The standard two-error estimate assigns half the tolerance to each error term.
 \begin{lemmabox}{Lemma (Positive Minimum Bound)}
 \begin{lemma}[Positive Minimum Bound]
 \label{lem:positive-minimum-bound}
-If $0<\delta\le a$ and $0<\delta\le b$, then
+For every $\delta,a,b\in\mathbb{R}$,
 \[
-\delta\le \min\{a,b\}.
+  (0<\delta\leq a\land 0<\delta\leq b)
+  \Longrightarrow
+  \delta\leq \min\{a,b\}.
 \]
 \hyperref[prf:positive-minimum-bound]{Go to proof.}
 \end{lemma}
@@ -191,26 +199,26 @@ If $0<\delta\le a$ and $0<\delta\le b$, then
 \begin{remark*}[Standard quantified statement]
 \[
 \forall \delta,a,b\in\mathbb{R}\;
-\bigl((0<\delta\le a\land 0<\delta\le b)\Rightarrow
-\delta\le \min\{a,b\}\bigr).
+\bigl((0<\delta\leq a\land 0<\delta\leq b)\Longrightarrow
+\delta\leq \min\{a,b\}\bigr).
 \]
 \end{remark*}
 \begin{remark*}[Predicate reading]
 \[
-\bigl(0<\delta\le a\land 0<\delta\le b\bigr)
-\Rightarrow \delta\le\min\{a,b\}.
+\bigl(0<\delta\leq a\land 0<\delta\leq b\bigr)
+\Longrightarrow \delta\leq\min\{a,b\}.
 \]
 \end{remark*}
 \begin{remark*}[Negated quantified statement]
 \[
 \exists \delta,a,b\in\mathbb{R}\;
-\bigl(0<\delta\le a\land 0<\delta\le b\land \min\{a,b\}<\delta\bigr).
+\bigl(0<\delta\leq a\land 0<\delta\leq b\land \min\{a,b\}<\delta\bigr).
 \]
 \end{remark*}
 \begin{remark*}[Negation predicate reading]
 \[
-\bigl(0<\delta\le a\land 0<\delta\le b\bigr)\land
-\neg(\delta\le\min\{a,b\}).
+\bigl(0<\delta\leq a\land 0<\delta\leq b\bigr)\land
+\neg(\delta\leq\min\{a,b\}).
 \]
 \end{remark*}
 
@@ -222,11 +230,11 @@ If $0<\delta\le a$ and $0<\delta\le b$, then
   \item[\exists-condition.]
   \[
 \exists \delta,a,b\in\mathbb{R}\;
-\bigl(0<\delta\le a\land 0<\delta\le b\land \min\{a,b\}<\delta\bigr).
+\bigl(0<\delta\leq a\land 0<\delta\leq b\land \min\{a,b\}<\delta\bigr).
 \]
 \[
-\bigl(0<\delta\le a\land 0<\delta\le b\bigr)\land
-\neg(\delta\le\min\{a,b\}).
+\bigl(0<\delta\leq a\land 0<\delta\leq b\bigr)\land
+\neg(\delta\leq\min\{a,b\}).
 \]
 \end{description}
 \end{remark*}
@@ -241,11 +249,12 @@ If a positive quantity is below each of two bounds, it is below their minimum.
 \begin{lemmabox}{Lemma (Choosing a Smaller Positive Number)}
 \begin{lemma}[Choosing a Smaller Positive Number]
 \label{lem:choosing-a-smaller-positive-number}
-If $\varepsilon>0$ and $c>0$, then there exists $\delta>0$ such that
+For every $\varepsilon,c\in\mathbb{R}$, if $\varepsilon>0$ and $c>0$, then
+there exists $\delta\in\mathbb{R}$ such that
 \[
-0<\delta<\varepsilon
-\quad\text{and}\quad
-0<\delta<c.
+  0<\delta<\varepsilon
+  \qquad\text{and}\qquad
+  0<\delta<c.
 \]
 \hyperref[prf:choosing-a-smaller-positive-number]{Go to proof.}
 \end{lemma}
@@ -253,14 +262,14 @@ If $\varepsilon>0$ and $c>0$, then there exists $\delta>0$ such that
 \begin{remark*}[Standard quantified statement]
 \[
 \forall \varepsilon,c\in\mathbb{R}\;
-\bigl((\varepsilon>0\land c>0)\Rightarrow
+\bigl((\varepsilon>0\land c>0)\Longrightarrow
 \exists\delta\in\mathbb{R}\;(0<\delta<\varepsilon\land 0<\delta<c)\bigr).
 \]
 \end{remark*}
 \begin{remark*}[Predicate reading]
 \[
 \varepsilon>0\land c>0
-\Rightarrow
+\Longrightarrow
 \exists\delta\in\mathbb{R}\;(0<\delta<\varepsilon\land 0<\delta<c).
 \]
 \end{remark*}
@@ -268,13 +277,13 @@ If $\varepsilon>0$ and $c>0$, then there exists $\delta>0$ such that
 \[
 \exists \varepsilon,c\in\mathbb{R}\;
 \bigl(\varepsilon>0\land c>0\land
-\forall\delta\in\mathbb{R}\;(\delta\le 0\lor \delta\ge\varepsilon\lor \delta\ge c)\bigr).
+\forall\delta\in\mathbb{R}\;(\delta\leq 0\lor \delta\geq\varepsilon\lor \delta\geq c)\bigr).
 \]
 \end{remark*}
 \begin{remark*}[Negation predicate reading]
 \[
 \varepsilon>0\land c>0\land
-\forall\delta\in\mathbb{R}\;(\delta\le 0\lor \delta\ge\varepsilon\lor \delta\ge c).
+\forall\delta\in\mathbb{R}\;(\delta\leq 0\lor \delta\geq\varepsilon\lor \delta\geq c).
 \]
 \end{remark*}
 
@@ -287,11 +296,11 @@ If $\varepsilon>0$ and $c>0$, then there exists $\delta>0$ such that
   \[
 \exists \varepsilon,c\in\mathbb{R}\;
 \bigl(\varepsilon>0\land c>0\land
-\forall\delta\in\mathbb{R}\;(\delta\le 0\lor \delta\ge\varepsilon\lor \delta\ge c)\bigr).
+\forall\delta\in\mathbb{R}\;(\delta\leq 0\lor \delta\geq\varepsilon\lor \delta\geq c)\bigr).
 \]
 \[
 \varepsilon>0\land c>0\land
-\forall\delta\in\mathbb{R}\;(\delta\le 0\lor \delta\ge\varepsilon\lor \delta\ge c).
+\forall\delta\in\mathbb{R}\;(\delta\leq 0\lor \delta\geq\varepsilon\lor \delta\geq c).
 \]
 \end{description}
 \end{remark*}

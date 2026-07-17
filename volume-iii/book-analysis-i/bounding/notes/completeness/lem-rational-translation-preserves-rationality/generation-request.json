@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "lem:rational-translation-preserves-rationality",
+  "kind": "lemma",
+  "title": "Rational Translation Preserves Rationality",
+  "source": {
+    "label": "lem:rational-translation-preserves-rationality",
+    "kind": "lemma",
+    "title": "Rational Translation Preserves Rationality",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "completeness",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-density.tex",
+    "source_line_start": 345,
+    "source_line_end": 376,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-rational-translation-preserves-rationality",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-rational-translation-preserves-rationality/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-rational-translation-preserves-rationality/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-rational-translation-preserves-rationality",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-rational-translation-preserves-rationality/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-rational-translation-preserves-rationality/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-density.tex",
+      "label": "lem:rational-translation-preserves-rationality",
+      "environment_kind": "lemma",
+      "source_line_start": 345,
+      "source_line_end": 376,
+      "current_tex": "\\begin{lemma}[Rational Translation Preserves Rationality]\n\\label{lem:rational-translation-preserves-rationality}\nFor every $r,q\\in\\mathbb{Q}$,\n\\[\n  r+q\\in\\mathbb{Q}.\n\\]\n\\hyperref[prf:rational-translation-preserves-rationality]{\\textit{Go to proof.}}\n\\end{lemma}\n\\end{lemmabox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\forall r,q\\in\\mathbb{Q}\\;(r+q\\in\\mathbb{Q}).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\nr\\in\\mathbb{Q}\\land q\\in\\mathbb{Q}\\Longrightarrow r+q\\in\\mathbb{Q}.\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nThe rational numbers are closed under addition, so translating a rational by a\nrational keeps it rational.\n\\end{remark*}\n\n\\begin{dependencies}\n\\hyperref[thm:q-is-a-field]{Theorem~\\ref*{thm:q-is-a-field}}.\n\\end{dependencies}\n\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

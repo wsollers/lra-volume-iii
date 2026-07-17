@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "lem:epsilon-splitting",
+  "kind": "lemma",
+  "title": "Epsilon Splitting",
+  "source": {
+    "label": "lem:epsilon-splitting",
+    "kind": "lemma",
+    "title": "Epsilon Splitting",
+    "book": "book-analysis-i",
+    "chapter": "structure-of-real-line",
+    "section": "order-distance-length",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/structure-of-real-line/notes/order-distance-length/notes-epsilon-algebra.tex",
+    "source_line_start": 126,
+    "source_line_end": 187,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/structure-of-real-line/notes/order-distance-length/lem-epsilon-splitting",
+      "artifact": "volume-iii/book-analysis-i/structure-of-real-line/notes/order-distance-length/lem-epsilon-splitting/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/structure-of-real-line/notes/order-distance-length/lem-epsilon-splitting/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/structure-of-real-line/notes/order-distance-length/lem-epsilon-splitting",
+    "artifact": "volume-iii/book-analysis-i/structure-of-real-line/notes/order-distance-length/lem-epsilon-splitting/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/structure-of-real-line/notes/order-distance-length/lem-epsilon-splitting/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/structure-of-real-line/notes/order-distance-length/notes-epsilon-algebra.tex",
+      "label": "lem:epsilon-splitting",
+      "environment_kind": "lemma",
+      "source_line_start": 126,
+      "source_line_end": 187,
+      "current_tex": "\\begin{lemmabox}{Lemma (Epsilon Splitting)}\n\\begin{lemma}[Epsilon Splitting]\n\\label{lem:epsilon-splitting}\nFor every $\\varepsilon\\in\\mathbb{R}$,\n\\[\n  \\varepsilon>0\n  \\Longrightarrow\n  \\frac{\\varepsilon}{2}+\\frac{\\varepsilon}{2}=\\varepsilon.\n\\]\n\\hyperref[prf:epsilon-splitting]{Go to proof.}\n\\end{lemma}\n\\end{lemmabox}\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\forall \\varepsilon\\in\\mathbb{R}\\;\\bigl(\\varepsilon>0\\Longrightarrow\n\\varepsilon/2+\\varepsilon/2=\\varepsilon\\bigr).\n\\]\n\\end{remark*}\n\\begin{remark*}[Predicate reading]\n\\[\n\\operatorname{Positive}(\\varepsilon,\\mathbb{R})\\Longrightarrow\n\\varepsilon/2+\\varepsilon/2=\\varepsilon.\n\\]\n\\end{remark*}\n\\begin{remark*}[Negated quantified statement]\n\\[\n\\exists\\varepsilon\\in\\mathbb{R}\\;\\bigl(\\varepsilon>0\\land\n\\varepsilon/2+\\varepsilon/2\\ne\\varepsilon\\bigr).\n\\]\n\\end{remark*}\n\\begin{remark*}[Negation predicate reading]\n\\[\n\\operatorname{Positive}(\\varepsilon,\\mathbb{R})\\land\n\\varepsilon/2+\\varepsilon/2\\ne\\varepsilon.\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\n  Failure is witnessed by the displayed negated or contrapositive condition.\n\n  \\item[\\operatorname{Positive}.]\n  \\[\n\\exists\\varepsilon\\in\\mathbb{R}\\;\\bigl(\\varepsilon>0\\land\n\\varepsilon/2+\\varepsilon/2\\ne\\varepsilon\\bigr).\n\\]\n\\[\n\\operatorname{Positive}(\\varepsilon,\\mathbb{R})\\land\n\\varepsilon/2+\\varepsilon/2\\ne\\varepsilon.\n\\]\n\\end{description}\n\\end{remark*}\n\\begin{remark*}[Interpretation]\nThe standard two-error estimate assigns half the tolerance to each error term.\n\\end{remark*}\n\\begin{dependencies}\n\\hyperref[def:real-ordered-field]{Complete Ordered Field}.\n\\end{dependencies}\n\\input{volume-iii/book-analysis-i/structure-of-real-line/notes/order-distance-length/figure-epsilon-splitting}\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

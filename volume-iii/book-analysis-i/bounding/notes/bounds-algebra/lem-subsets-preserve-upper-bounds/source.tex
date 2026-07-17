@@ -1,0 +1,83 @@
+\begin{lemma}[Subsets Preserve Upper Bounds]
+\label{lem:subsets-preserve-upper-bounds}
+Let $C\subseteq A\subseteq\mathbb{R}$. Every upper bound of $A$ is an
+upper bound of $C$; that is, for every $u\in\mathbb{R}$,
+\[
+\left(\forall a\in A,\ a\leq u\right)
+\Longrightarrow
+(\forall c\in C,\ c\leq u).
+\]
+Consequently, every subset of a set bounded above is bounded above.
+\hyperref[prf:subsets-preserve-upper-bounds]{Go to proof.}
+\end{lemma}
+\end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+C\subseteq A\land(\forall a\in A)(a\leq u)
+\Longrightarrow
+(\forall c\in C)(c\leq u).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad C\subseteq A\subseteq\mathbb{R},\\
+&\operatorname{UpperBound}(u,A,P)
+\Longrightarrow \operatorname{UpperBound}(u,C,P).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+C\subseteq A,\quad (\forall a\in A)(a\leq u),\quad
+(\exists c\in C)(u<c).
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad C\subseteq A\subseteq\mathbb{R},\\
+&\operatorname{UpperBound}(u,A,P)\land\neg\operatorname{UpperBound}(u,C,P).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
+A failure would require a counterexample in $C$ that is not already a
+counterexample in $A$.
+
+
+  \item[\operatorname{UpperBound}.]
+  \[
+C\subseteq A,\quad (\forall a\in A)(a\leq u),\quad
+(\exists c\in C)(u<c).
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad C\subseteq A\subseteq\mathbb{R},\\
+&\operatorname{UpperBound}(u,A,P)\land\neg\operatorname{UpperBound}(u,C,P).
+\end{aligned}
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Since $C\subseteq A$, every $c\in C$ is an element of $A$.  The upper-bound
+condition on $A$ therefore applies directly to $c$.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+\item \hyperref[def:reals]{Real Numbers}.
+\item \hyperref[def:ordered-set]{Ordered Set}.
+\item \hyperref[def:subset]{Subset}.
+\item \hyperref[def:real-upper-bound]{Upper Bound}.
+\end{itemize}
+\end{dependencies}
+

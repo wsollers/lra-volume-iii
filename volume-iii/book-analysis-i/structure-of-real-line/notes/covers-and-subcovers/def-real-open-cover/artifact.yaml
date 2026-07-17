@@ -1,0 +1,210 @@
+schema_version: lra.semantic-artifact/1.0
+identity:
+  label: def:real-open-cover
+  kind: definition
+  title: Open Cover
+  canonical_name: Open Cover
+  status: draft
+  atomicity:
+    status: atomic
+    concepts_detected:
+    - Open Cover
+    owning_concept: Open Cover
+    split_reason: null
+location:
+  repository: wsollers/lra-volume-iii
+  commit: 77009ab9cde1bf3c2eef193c4d03a256afc4ccde
+  volume: iii
+  book: book-analysis-i
+  chapter: structure-of-real-line
+  topic: covers-and-subcovers
+  source_file: volume-iii/book-analysis-i/structure-of-real-line/notes/covers-and-subcovers/notes-covers-and-subcovers.tex
+  source_line_start: 8
+  source_line_end: 35
+  source_hash: sha256:3e6392fcdcec310c75049e52ef1c5a0262185ed9e996cf2fc78bec16f0286976
+classification:
+  mathematical_domain: real analysis
+  artifact_form: definition
+  logical_shape: source-decorated quantified statement
+  logical_framework: mathematical_vernacular
+  language_level: object_language
+context: []
+parameters:
+- id: E
+  symbol: E
+  role: subset
+  type:
+    kind: raw_latex
+    latex: source-declared type
+  implicit: false
+- id: IU_i
+  symbol: IU_i
+  role: element
+  type:
+    kind: raw_latex
+    latex: source-declared type
+  implicit: false
+assumptions: []
+statement:
+  canonical_prose: Codex-local extraction of the source statement for Open Cover.
+  canonical_latex: \{U_i\}_{i\in I} \text{ is an open cover of } E \Longleftrightarrow
+    \bigl(\forall i\in I\;U_i \text{ open}\bigr)\land E\subseteq\textstyle\bigcup_{i\in
+    I}U_i.
+  semantic_ast:
+    kind: iff
+    left:
+      kind: raw_latex
+      latex: \{U_i\}_{i\in I} \text{ is an open cover of } E
+    right:
+      kind: and
+      left:
+        kind: forall
+        binder: &id001
+          binder_id: i
+          symbol: i
+          domain:
+            kind: variable
+            binder_id: IU_i
+        restriction: null
+        body: &id002
+          kind: raw_latex
+          latex: \text{ open}
+      right: &id003
+        kind: relation
+        relation: \subseteq
+        left:
+          kind: variable
+          binder_id: E
+        right:
+          kind: raw_latex
+          latex: \textstyle\bigcup_{i\in I}U_i
+logical_forms:
+  standard_quantified:
+    latex: \{U_i\}_{i\in I} \text{ is an open cover of } E \Longleftrightarrow \bigl(\forall
+      i\in I\;U_i \text{ open}\bigr)\land E\subseteq\textstyle\bigcup_{i\in I}U_i.
+    ast:
+      kind: iff
+      left:
+        kind: raw_latex
+        latex: \{U_i\}_{i\in I} \text{ is an open cover of } E
+      right:
+        kind: and
+        left:
+          kind: forall
+          binder:
+            binder_id: i
+            symbol: i
+            domain:
+              kind: variable
+              binder_id: IU_i
+          restriction: null
+          body:
+            kind: raw_latex
+            latex: \text{ open}
+        right:
+          kind: relation
+          relation: \subseteq
+          left:
+            kind: variable
+            binder_id: E
+          right:
+            kind: raw_latex
+            latex: \textstyle\bigcup_{i\in I}U_i
+  predicate_reading: null
+  negation:
+    mechanical:
+      latex: Not(\{U_i\}_{i\in I} \text{ is an open cover of } E \Longleftrightarrow
+        \bigl(\forall i\in I\;U_i \text{ open}\bigr)\land E\subseteq\textstyle\bigcup_{i\in
+        I}U_i.)
+      ast:
+        kind: or
+        left:
+          kind: exists
+          binder: *id001
+          restriction: null
+          body:
+            kind: not
+            operand: *id002
+        right:
+          kind: not
+          operand: *id003
+    approved_normal_form: null
+    normalization_requires: []
+  contrapositive: null
+  equivalent_forms: []
+semantics:
+  witness_dependencies: []
+  vacuity_behavior: []
+  definedness:
+    mode: source_context
+    conditions: []
+    obligations: []
+  uniqueness_conditions: []
+  equality_cases: []
+  edge_cases: []
+failure_analysis:
+  applicability_failures: []
+  statement_failures:
+  - id: fail-source-negation
+    description: Failure is witnessed by the source negated quantified statement when
+      present.
+    minimal_failure_shape: Not(\{U_i\}_{i\in I} \text{ is an open cover of } E \Longleftrightarrow
+      \bigl(\forall i\in I\;U_i \text{ open}\bigr)\land E\subseteq\textstyle\bigcup_{i\in
+      I}U_i.)
+  counterexample_shape: Not(\{U_i\}_{i\in I} \text{ is an open cover of } E \Longleftrightarrow
+    \bigl(\forall i\in I\;U_i \text{ open}\bigr)\land E\subseteq\textstyle\bigcup_{i\in
+    I}U_i.)
+relationships:
+  dependency_edges: []
+  ontology_edges: []
+  provenance_edges: []
+  proof_edges: []
+notation:
+  introduced: []
+  used: []
+  local_conventions: []
+exposition:
+  interpretation: An open cover is a way of surrounding every point of $E$ with an
+    open piece of the family. The index set $I$ may be infinite; the question compactness
+    asks is whether finitely many pieces already suffice.
+  exposition: []
+  examples: []
+  non_examples: []
+  common_confusions: []
+verification:
+  canonical_proof: null
+  formalizations: []
+  external_library_crosswalks: []
+  proof_vault_records: []
+provenance:
+  origin:
+    kind: explicit_source_statement
+    source_status: single_primary_statement
+    primary_source_statement:
+      role: primary_statement
+      source_id: null
+      label: def:real-open-cover
+      citation: null
+      page_range: null
+      evidence: Generated from the local LaTeX formal environment and its routed source
+        decorations.
+      notes: Codex-authored local semantic extraction; not externally reviewed.
+    component_sources: []
+    derivation_rule: null
+    requires_review: true
+  explicit_from_source:
+  - \{U_i\}_{i\in I} \text{ is an open cover of } E \Longleftrightarrow \bigl(\forall
+    i\in I\;U_i \text{ open}\bigr)\land E\subseteq\textstyle\bigcup_{i\in I}U_i.
+  normalized_from_source:
+  - \{U_i\}_{i\in I} \text{ is an open cover of } E \Longleftrightarrow \bigl(\forall
+    i\in I\;U_i \text{ open}\bigr)\land E\subseteq\textstyle\bigcup_{i\in I}U_i.
+  inferred_from_registry: []
+  generated_by_analysis:
+  - Codex local semantic payload generation from source decorations
+  unresolved: []
+governance:
+  governance_repository: wsollers/lra-governance
+  governance_commit: 01c642757dc85341c556df8e914642aed2531058
+  registry_commit: 01c642757dc85341c556df8e914642aed2531058
+  schema_commit: 01c642757dc85341c556df8e914642aed2531058
+  renderer_contract: governed-tex-v1

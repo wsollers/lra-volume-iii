@@ -1,0 +1,106 @@
+\begin{proposition}[Translation Preserves Lower Bounds]
+\label{prop:translation-preserves-lower-bounds}
+Let $A\subseteq\mathbb{R}$ and let $c,\ell\in\mathbb{R}$.  If $\ell$ is
+a lower bound of $A$, then $\ell+c$ is a lower bound of $A+c$; that is,
+\[
+\left(\forall a\in A,\ \ell\leq a\right)
+\Longrightarrow
+\left(\forall x\in A+c,\ \ell+c\leq x\right).
+\]
+\hyperref[prf:translation-preserves-lower-bounds]{Go to proof.}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+(\forall a\in A)(\ell\leq a)
+\Longrightarrow
+(\forall x\in A+c)(\ell+c\leq x).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+A\subseteq\mathbb{R},\qquad A+c=\{a+c:a\in A\},\\
+&\operatorname{LowerBound}(\ell,A,P)\Longrightarrow\operatorname{LowerBound}(\ell+c,A+c,P).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+(\forall a\in A)(\ell\leq a),\qquad
+(\exists y\in A+c)(y<\ell+c).
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+A\subseteq\mathbb{R},\qquad A+c=\{a+c:a\in A\},\\
+&\operatorname{LowerBound}(\ell,A,P)\land\neg\operatorname{LowerBound}(\ell+c,A+c,P).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
+A failure would require a translated point below the translated lower bound.
+
+
+  \item[\operatorname{LowerBound}.]
+  \[
+(\forall a\in A)(\ell\leq a),\qquad
+(\exists y\in A+c)(y<\ell+c).
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+A\subseteq\mathbb{R},\qquad A+c=\{a+c:a\in A\},\\
+&\operatorname{LowerBound}(\ell,A,P)\land\neg\operatorname{LowerBound}(\ell+c,A+c,P).
+\end{aligned}
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
+Write $y=a+c$ with $a\in A$.  Then $\ell\leq a$ gives $\ell+c\leq a+c$.
+
+
+  \item[\operatorname{LowerBound}.]
+  \[
+(\forall a\in A)(\ell\leq a),\qquad
+(\exists y\in A+c)(y<\ell+c).
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+A\subseteq\mathbb{R},\qquad A+c=\{a+c:a\in A\},\\
+&\operatorname{LowerBound}(\ell,A,P)\land\neg\operatorname{LowerBound}(\ell+c,A+c,P).
+\end{aligned}
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Translation preserves lower-bound information because adding the same constant
+to both sides preserves the order relation.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:reals]{Real Numbers}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:addition-on-r]{Addition on $\mathbb{R}$}
+  \item \hyperref[def:displacement-dilation-reflection]{Displacement, Dilation, and Reflection}
+  \item \hyperref[def:real-lower-bound]{Lower Bound}
+\end{itemize}
+\end{dependencies}
+

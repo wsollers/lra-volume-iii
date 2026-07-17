@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "thm:translation-invariance-supremum",
+  "kind": "theorem",
+  "title": "Translation Invariance of the Supremum",
+  "source": {
+    "label": "thm:translation-invariance-supremum",
+    "kind": "theorem",
+    "title": "Translation Invariance of the Supremum",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "bounds-algebra",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-algebra-of-supremum-infimum.tex",
+    "source_line_start": 250,
+    "source_line_end": 364,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-translation-invariance-supremum",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-translation-invariance-supremum/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-translation-invariance-supremum/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-translation-invariance-supremum",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-translation-invariance-supremum/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-translation-invariance-supremum/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-algebra-of-supremum-infimum.tex",
+      "label": "thm:translation-invariance-supremum",
+      "environment_kind": "theorem",
+      "source_line_start": 250,
+      "source_line_end": 364,
+      "current_tex": "\\begin{theorem}[Translation Invariance of the Supremum]\n\\label{thm:translation-invariance-supremum}\nLet $A\\subseteq\\mathbb{R}$ be nonempty and bounded above, and let\n$c\\in\\mathbb{R}$.  Then $A+c:=\\{a+c:a\\in A\\}$ is nonempty and bounded above,\nand\n\\[\n  \\sup(A+c)=\\sup A+c.\n\\]\n\\hyperref[prf:translation-invariance-supremum]{Go to proof.}\n\\end{theorem}\n\\end{theorembox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\nA\\neq\\varnothing,\\quad A\\text{ bounded above},\\quad c\\in\\mathbb{R}\n\\quad\\Longrightarrow\\quad\n\\sup\\{a+c:a\\in A\\}=\\sup A+c.\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A\\subseteq\\mathbb{R},\\qquad A+c=\\{a+c:a\\in A\\},\\\\\n&\\operatorname{LeastUpperBound}(s,A,P)\n\\Longrightarrow\n\\operatorname{LeastUpperBound}(s+c,A+c,P).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\n\\sup(A+c)\\ne \\sup A+c\n\\]\nis impossible under the stated hypotheses.\n\\end{remark*}\n\n\\begin{remark*}[Negation predicate reading]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A\\subseteq\\mathbb{R},\\qquad A+c=\\{a+c:a\\in A\\},\\\\\n&\\operatorname{LeastUpperBound}(s,A,P)\\land\n\\neg\\operatorname{LeastUpperBound}(s+c,A+c,P)\n\\end{aligned}\n\\]\nis a contradictory configuration.\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\nThe formula could fail only if translation either failed to preserve upper bounds or failed to preserve leastness. Adding the same real number to every comparison preserves the order, so neither failure mode can occur.\n\n\n  \\item[\\operatorname{LeastUpperBound}.]\n  \\[\n\\sup(A+c)\\ne \\sup A+c\n\\]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A\\subseteq\\mathbb{R},\\qquad A+c=\\{a+c:a\\in A\\},\\\\\n&\\operatorname{LeastUpperBound}(s,A,P)\\land\n\\neg\\operatorname{LeastUpperBound}(s+c,A+c,P)\n\\end{aligned}\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\n\\[\n\\begin{aligned}\n\\forall a\\in A\\;(a\\leq s)\n&\\Longleftrightarrow\n\\forall a\\in A\\;(a+c\\leq s+c),\\\\\n\\forall u\\,[\\operatorname{UpperBound}(u,A)\\Longrightarrow s\\leq u]\n&\\Longleftrightarrow\n\\forall v\\,[\\operatorname{UpperBound}(v,A+c)\\Longrightarrow s+c\\leq v].\n\\end{aligned}\n\\]\n\n\n  \\item[\\operatorname{LeastUpperBound}.]\n  \\[\n\\sup(A+c)\\ne \\sup A+c\n\\]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A\\subseteq\\mathbb{R},\\qquad A+c=\\{a+c:a\\in A\\},\\\\\n&\\operatorname{LeastUpperBound}(s,A,P)\\land\n\\neg\\operatorname{LeastUpperBound}(s+c,A+c,P)\n\\end{aligned}\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nTranslation shifts the entire set and all of its ceilings by the same amount. The least ceiling therefore shifts by exactly that amount.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:reals]{Real Numbers}\n  \\item \\hyperref[def:ordered-set]{Ordered Set}\n  \\item \\hyperref[def:subset]{Subset}\n  \\item \\hyperref[def:addition-on-r]{Addition on $\\mathbb{R}$}\n  \\item \\hyperref[def:set-arithmetic-images]{Set Arithmetic Images}\n  \\item \\hyperref[def:real-upper-bound]{Upper Bound}\n  \\item \\hyperref[def:supremum]{Supremum}\n\\end{itemize}\n\\end{dependencies}\n\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

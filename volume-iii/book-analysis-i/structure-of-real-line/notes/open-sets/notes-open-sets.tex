@@ -8,9 +8,15 @@ An open set is one that contains a ball around each of its points. On the line t
 \begin{definitionbox}{Definition (Open Set in $\mathbb{R}$)}
 \begin{definition}[Open Set in $\mathbb{R}$]
 \label{def:open-set}
-A set $U\subseteq\mathbb{R}$ is \emph{open} exactly when
+A set $U\subseteq\mathbb{R}$ is \emph{open} if every point of $U$ is the
+center of an open ball contained in $U$; that is,
 \[
-\forall x\in U\;\exists r>0\;(B_{r}(x)\subseteq U).
+  (\forall x\in U)(\exists r>0)(B_r(x)\subseteq U).
+\]
+Equivalently,
+\[
+  (\forall x\in U)(\exists r>0)(\forall y\in\mathbb{R})
+  \bigl(|x-y|<r\Longrightarrow y\in U\bigr).
 \]
 \end{definition}
 \end{definitionbox}
@@ -30,7 +36,14 @@ U\subseteq\mathbb{R},\qquad
 \end{remark*}
 \begin{remark*}[Negated quantified statement]
 \[
-U \text{ is not open} \Longleftrightarrow \exists x\in U\;\forall r>0\;(B_{r}(x)\not\subseteq U).
+\begin{aligned}
+U \text{ is not open}
+&\Longleftrightarrow
+\exists x\in U\;\forall r>0\;(B_{r}(x)\not\subseteq U)\\
+&\Longleftrightarrow
+\exists x\in U\;\forall r>0\;\exists y\in\mathbb{R}\,
+\bigl(|x-y|<r\land y\notin U\bigr).
+\end{aligned}
 \]
 \end{remark*}
 \begin{remark*}[Negation predicate reading]
@@ -38,29 +51,42 @@ U \text{ is not open} \Longleftrightarrow \exists x\in U\;\forall r>0\;(B_{r}(x)
 U\subseteq\mathbb{R},\qquad
 \neg\operatorname{IsOpen}(U,\mathbb{R})
 \Longleftrightarrow
-\exists x\in U\;\forall r>0\;(B_{r}(x)\not\subseteq U).
+\exists x\in U\;\forall r>0\;\exists y\in\mathbb{R}\,
+\bigl(|x-y|<r\land y\notin U\bigr).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
 \begin{description}
   \item[Exposition.]
-  Failure is witnessed by the displayed negated or contrapositive condition.
+  Failure is witnessed by a point of $U$ at which no positive-radius ball
+  remains inside $U$.
 
   \item[\operatorname{IsOpen}.]
   \[
-U \text{ is not open} \Longleftrightarrow \exists x\in U\;\forall r>0\;(B_{r}(x)\not\subseteq U).
-\]
+  U\subseteq\mathbb{R},\qquad
+  \neg\operatorname{IsOpen}(U,\mathbb{R})
+  \Longleftrightarrow
+  \exists x\in U\;\forall r>0\;\exists y\in\mathbb{R}\,
+  \bigl(|x-y|<r\land y\notin U\bigr).
+  \]
+  The set $U$ fails to be open precisely when there exists a point $x\in U$
+  such that every positive-radius ball centered at $x$ contains a point outside
+  $U$:
 \[
-U\subseteq\mathbb{R},\qquad
-\neg\operatorname{IsOpen}(U,\mathbb{R})
-\Longleftrightarrow
-\exists x\in U\;\forall r>0\;(B_{r}(x)\not\subseteq U).
+\exists x\in U\;\forall r>0\;\exists y\in\mathbb{R}\,
+\bigl(|x-y|<r\land y\notin U\bigr).
 \]
+  Thus failure consists of a witness point $x\in U$, failure at every radius
+  $r>0$, and for each such radius a witness $y\notin U$ lying within that
+  radius.
 \end{description}
 \end{remark*}
 \begin{remark*}[Interpretation]
-An open set has interior room around each of its points: a small step in either direction remains inside the set. The empty set and $\mathbb{R}$ are open, and open intervals are the model examples.
+An open set has interior room around each of its points. Around each point
+$x\in U$, there is a positive radius, possibly depending on $x$, within which
+every real number remains in $U$. The empty set and $\mathbb{R}$ are open, and
+open intervals are the model examples.
 \end{remark*}
 \begin{dependencies}
 \begin{itemize}
@@ -70,7 +96,14 @@ An open set has interior room around each of its points: a small step in either 
 \begin{theorembox}{Theorem (Open Intervals Are Open)}
 \begin{theorem}[Open Intervals Are Open]
 \label{thm:open-interval-is-open}
-Every open interval $(a,b)$, every open ray $(a,\infty)$ and $(-\infty,b)$, and $\mathbb{R}$ itself are open sets.
+Let $a,b\in\mathbb{R}$ with $a<b$.  Then the interval
+\[
+  (a,b):=\{x\in\mathbb{R}:a<x<b\}
+\]
+is open in $\mathbb{R}$.  Explicitly,
+\[
+  (\forall x\in(a,b))(\exists r>0)(B_r(x)\subseteq(a,b)).
+\]
 \hyperref[prf:open-interval-is-open]{Go to proof.}
 \end{theorem}
 \end{theorembox}
@@ -104,7 +137,22 @@ The name ``open interval'' is justified: each such interval satisfies the open-s
 \begin{theorembox}{Theorem (Unions and Finite Intersections of Open Sets)}
 \begin{theorem}[Unions and Finite Intersections of Open Sets]
 \label{thm:open-set-closure-operations}
-An arbitrary union of open subsets of $\mathbb{R}$ is open, and a finite intersection of open subsets of $\mathbb{R}$ is open.
+The following statements hold in $\mathbb{R}$:
+\begin{enumerate}[label=(\roman*)]
+  \item The sets $\varnothing$ and $\mathbb{R}$ are open.
+  \item If $\{U_\lambda\}_{\lambda\in\Lambda}$ is any family of open subsets
+  of $\mathbb{R}$, then
+  \[
+    \bigcup_{\lambda\in\Lambda}U_\lambda
+  \]
+  is open.
+  \item If $n\in\mathbb{N}$ and $U_1,\ldots,U_n\subseteq\mathbb{R}$ are open,
+  then
+  \[
+    \bigcap_{k=1}^{n}U_k
+  \]
+  is open.
+\end{enumerate}
 \hyperref[prf:open-set-closure-operations]{Go to proof.}
 \end{theorem}
 \end{theorembox}

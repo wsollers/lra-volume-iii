@@ -1,0 +1,104 @@
+\begin{definition}[Reciprocal Image]
+\label{def:reciprocal-image}
+Let $A\subseteq\mathbb{R}$ and suppose $0\notin A$.  The \emph{reciprocal
+image} of $A$ is the set
+\[
+  A^{-1}:=\left\{\frac{1}{a}:a\in A\right\}.
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+x\in A^{-1}\Longleftrightarrow(\exists a\in A)\left(x=\frac{1}{a}\right).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\begin{aligned}
+&A\subseteq\mathbb{R},\qquad 0\notin A,\\
+&A^{-1}=\left\{x\in\mathbb{R}:(\exists a\in A)\left(x=\frac{1}{a}\right)\right\},\\
+&\operatorname{ReplacementImage}(A^{-1},A,\varphi_{1/x}),\qquad
+\varphi_{1/x}(a)=\frac{1}{a}.
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+x\notin A^{-1}\Longleftrightarrow(\forall a\in A)\left(x\neq\frac{1}{a}\right).
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\begin{aligned}
+&A\subseteq\mathbb{R},\qquad 0\notin A,\qquad B\subseteq\mathbb{R},\\
+&B\ne A^{-1}
+\quad\text{means}\quad
+(\exists x)\bigl[x\in B\triangle A^{-1}\bigr].
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+The reciprocal image is undefined if zero is allowed as an input value.  Once
+zero is excluded, the only definition failures are omitted or spurious
+reciprocal values.
+
+
+  \item[\mathsf{Reciprocal}.]
+  \[
+x\notin A^{-1}\Longleftrightarrow(\forall a\in A)\left(x\neq\frac{1}{a}\right).
+\]
+\[
+\begin{aligned}
+&A\subseteq\mathbb{R},\qquad 0\notin A,\qquad B\subseteq\mathbb{R},\\
+&B\ne A^{-1}
+\quad\text{means}\quad
+(\exists x)\bigl[x\in B\triangle A^{-1}\bigr].
+\end{aligned}
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+Every element of $A^{-1}$ has the form $1/a$ for a nonzero $a\in A$.
+
+
+  \item[\mathsf{Reciprocal}.]
+  \[
+x\notin A^{-1}\Longleftrightarrow(\forall a\in A)\left(x\neq\frac{1}{a}\right).
+\]
+\[
+\begin{aligned}
+&A\subseteq\mathbb{R},\qquad 0\notin A,\qquad B\subseteq\mathbb{R},\\
+&B\ne A^{-1}
+\quad\text{means}\quad
+(\exists x)\bigl[x\in B\triangle A^{-1}\bigr].
+\end{aligned}
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The reciprocal image applies inversion to every element of $A$. The exclusion
+of zero is structural, since reciprocal values are undefined at zero.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:reals]{Real Numbers}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:image-set]{Image Set}
+  \item \hyperref[def:division-on-r]{Division on $\mathbb{R}$}
+\end{itemize}
+\end{dependencies}
+
+% --- Algebra of Supremum Cluster ---
+

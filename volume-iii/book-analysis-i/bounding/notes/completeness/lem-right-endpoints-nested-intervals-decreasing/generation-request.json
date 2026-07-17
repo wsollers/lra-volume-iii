@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "lem:right-endpoints-nested-intervals-decreasing",
+  "kind": "lemma",
+  "title": "Right Endpoints of Nested Intervals Are Decreasing",
+  "source": {
+    "label": "lem:right-endpoints-nested-intervals-decreasing",
+    "kind": "lemma",
+    "title": "Right Endpoints of Nested Intervals Are Decreasing",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "completeness",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-nested-interval-property.tex",
+    "source_line_start": 178,
+    "source_line_end": 265,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-right-endpoints-nested-intervals-decreasing",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-right-endpoints-nested-intervals-decreasing/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-right-endpoints-nested-intervals-decreasing/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-right-endpoints-nested-intervals-decreasing",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-right-endpoints-nested-intervals-decreasing/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-right-endpoints-nested-intervals-decreasing/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-nested-interval-property.tex",
+      "label": "lem:right-endpoints-nested-intervals-decreasing",
+      "environment_kind": "lemma",
+      "source_line_start": 178,
+      "source_line_end": 265,
+      "current_tex": "\\begin{lemma}[Right Endpoints of Nested Intervals Are Decreasing]\n\\label{lem:right-endpoints-nested-intervals-decreasing}\nLet $(a_n)$ and $(b_n)$ be sequences in $\\mathbb{R}$ such that\n\\[\n  (\\forall n\\in\\mathbb{N})(a_n\\leq b_n)\n\\]\nand\n\\[\n  (\\forall n\\in\\mathbb{N})([a_{n+1},b_{n+1}]\\subseteq [a_n,b_n]).\n\\]\nThen\n\\[\n  (\\forall n\\in\\mathbb{N})(b_{n+1}\\leq b_n).\n\\]\n\\hyperref[prf:right-endpoints-nested-intervals-decreasing]{Go to proof.}\n\\end{lemma}\n\\end{lemmabox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\forall n\\in\\mathbb{N}\\;(b_{n+1}\\le b_n).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\nF=([a_n,b_n])_{n\\in\\mathbb{N}},\\qquad\nb\\colon\\mathbb{N}\\longrightarrow\\mathbb{R},\\qquad b(n)=b_n,\n\\]\n\\[\nP_{\\mathbb{N}}=\\mathsf{OrderedSet}(\\mathbb{N},\\leq),\\qquad\nP_{\\mathbb{R}}=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\n\\]\n\\[\n\\operatorname{NestedClosedIntervals}(F,P_{\\mathbb{R}})\n\\Longrightarrow\n\\operatorname{OrderReversing}(b,P_{\\mathbb{N}},P_{\\mathbb{R}}).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\n\\exists n\\in\\mathbb{N}\\;(b_n<b_{n+1}).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negation predicate reading]\n\\[\nF=([a_n,b_n])_{n\\in\\mathbb{N}},\\qquad\nb\\colon\\mathbb{N}\\longrightarrow\\mathbb{R},\\qquad b(n)=b_n,\n\\]\n\\[\nP_{\\mathbb{N}}=\\mathsf{OrderedSet}(\\mathbb{N},\\leq),\\qquad\nP_{\\mathbb{R}}=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\n\\]\n\\[\n\\neg\\operatorname{OrderReversing}(b,P_{\\mathbb{N}},P_{\\mathbb{R}})\n\\Longrightarrow\n\\neg\\operatorname{NestedClosedIntervals}(F,P_{\\mathbb{R}}).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\n  Failure is witnessed by the displayed negated or contrapositive condition.\n\n  \\item[\\exists-condition.]\n  \\[\n\\exists n\\in\\mathbb{N}\\;(b_n<b_{n+1}).\n\\]\n\\[\nF=([a_n,b_n])_{n\\in\\mathbb{N}},\\qquad\nb\\colon\\mathbb{N}\\longrightarrow\\mathbb{R},\\qquad b(n)=b_n,\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nIn a nested family, the right endpoints cannot move right as the intervals\nshrink.\n\\end{remark*}\n\n\\begin{dependencies}\n\\hyperref[def:closed-interval]{Closed Interval}.\n\\end{dependencies}\n\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

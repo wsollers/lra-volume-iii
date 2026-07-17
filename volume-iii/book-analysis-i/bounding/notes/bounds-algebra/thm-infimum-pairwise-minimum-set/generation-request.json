@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "thm:infimum-pairwise-minimum-set",
+  "kind": "theorem",
+  "title": "Infimum of the Pairwise Minimum Set",
+  "source": {
+    "label": "thm:infimum-pairwise-minimum-set",
+    "kind": "theorem",
+    "title": "Infimum of the Pairwise Minimum Set",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "bounds-algebra",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-lattice-operations-and-bounds.tex",
+    "source_line_start": 487,
+    "source_line_end": 595,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-infimum-pairwise-minimum-set",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-infimum-pairwise-minimum-set/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-infimum-pairwise-minimum-set/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-infimum-pairwise-minimum-set",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-infimum-pairwise-minimum-set/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-infimum-pairwise-minimum-set/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-lattice-operations-and-bounds.tex",
+      "label": "thm:infimum-pairwise-minimum-set",
+      "environment_kind": "theorem",
+      "source_line_start": 487,
+      "source_line_end": 595,
+      "current_tex": "\\begin{theorem}[Infimum of the Pairwise Minimum Set]\n\\label{thm:infimum-pairwise-minimum-set}\nLet $A,B\\subseteq\\mathbb{R}$ be nonempty and bounded below. Then $A\\wedge B$\nis bounded below and\n\\[\n\\inf(A\\wedge B)=\\min\\{\\inf A,\\inf B\\}.\n\\]\n\\hyperref[prf:infimum-pairwise-minimum-set]{Go to proof.}\n\\end{theorem}\n\\end{theorembox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\nA,B\\neq\\varnothing,\\quad A,B\\text{ bounded below}\n\\quad\\Longrightarrow\\quad\n\\inf(A\\wedge B)=\\min\\{\\inf A,\\inf B\\}.\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A,B\\subseteq\\mathbb{R},\\\\\n&N=A\\wedge B,\\qquad L=\\min\\{t_A,t_B\\},\\\\\n&\\operatorname{GreatestLowerBound}(t_A,A,P)\\land\\operatorname{GreatestLowerBound}(t_B,B,P)\n\\Longrightarrow\n\\operatorname{GreatestLowerBound}(L,N,P).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\n\\inf(A\\wedge B)\\neq\\min\\{\\inf A,\\inf B\\}\n\\]\nis impossible under the stated hypotheses.\n\\end{remark*}\n\n\\begin{remark*}[Negation predicate reading]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A,B\\subseteq\\mathbb{R},\\\\\n&N=A\\wedge B,\\qquad L=\\min\\{t_A,t_B\\},\\\\\n&\\operatorname{GreatestLowerBound}(t_A,A,P)\\land\\operatorname{GreatestLowerBound}(t_B,B,P)\\land\n\\neg\\operatorname{GreatestLowerBound}(L,N,P).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n\\item[Exposition.]\nThe formula could fail only if the smaller infimum failed to bound all pairwise\nminima from below, or if that lower bound were not sharp.\n\n\n  \\item[\\operatorname{GreatestLowerBound}.]\n  \\[\n\\inf(A\\wedge B)\\neq\\min\\{\\inf A,\\inf B\\}\n\\]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A,B\\subseteq\\mathbb{R},\\\\\n&N=A\\wedge B,\\qquad L=\\min\\{t_A,t_B\\},\\\\\n&\\operatorname{GreatestLowerBound}(t_A,A,P)\\land\\operatorname{GreatestLowerBound}(t_B,B,P)\\land\n\\neg\\operatorname{GreatestLowerBound}(L,N,P).\n\\end{aligned}\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n\\item[Exposition.]\nEvery pairwise minimum is at least the smaller of the two infima.  Sharpness\ncomes from holding one set nonempty and approaching the smaller lower threshold.\n\n\n  \\item[\\operatorname{GreatestLowerBound}.]\n  \\[\n\\inf(A\\wedge B)\\neq\\min\\{\\inf A,\\inf B\\}\n\\]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A,B\\subseteq\\mathbb{R},\\\\\n&N=A\\wedge B,\\qquad L=\\min\\{t_A,t_B\\},\\\\\n&\\operatorname{GreatestLowerBound}(t_A,A,P)\\land\\operatorname{GreatestLowerBound}(t_B,B,P)\\land\n\\neg\\operatorname{GreatestLowerBound}(L,N,P).\n\\end{aligned}\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nThe lower edge of the pairwise minimum set is the smaller of the two individual\nlower edges.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:reals]{Real Numbers}\n  \\item \\hyperref[def:ordered-set]{Ordered Set}\n  \\item \\hyperref[def:subset]{Subset}\n  \\item \\hyperref[def:pairwise-maximum-minimum-sets]{Pairwise Maximum and Minimum Sets}\n  \\item \\hyperref[def:minimum]{Minimum}\n  \\item \\hyperref[def:infimum]{Infimum}\n\\end{itemize}\n\\end{dependencies}\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

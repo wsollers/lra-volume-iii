@@ -13,7 +13,22 @@ development.
 \begin{theorembox}{Theorem (Closure Laws for Closed Sets)}
 \begin{theorem}[Closure Laws for Closed Sets]
 \label{thm:closed-set-closure-operations}
-An arbitrary intersection of closed subsets of $\mathbb{R}$ is closed, and a finite union of closed subsets of $\mathbb{R}$ is closed.
+The following statements hold in $\mathbb{R}$:
+\begin{enumerate}[label=(\roman*)]
+  \item The sets $\varnothing$ and $\mathbb{R}$ are closed.
+  \item If $\{F_\lambda\}_{\lambda\in\Lambda}$ is any family of closed subsets
+  of $\mathbb{R}$, then
+  \[
+    \bigcap_{\lambda\in\Lambda}F_\lambda
+  \]
+  is closed.
+  \item If $n\in\mathbb{N}$ and $F_1,\ldots,F_n\subseteq\mathbb{R}$ are
+  closed, then
+  \[
+    \bigcup_{k=1}^{n}F_k
+  \]
+  is closed.
+\end{enumerate}
 \hyperref[prf:closed-set-closure-operations]{Go to proof.}
 \end{theorem}
 \end{theorembox}

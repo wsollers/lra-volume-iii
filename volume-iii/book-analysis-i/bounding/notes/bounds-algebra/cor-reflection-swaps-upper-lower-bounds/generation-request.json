@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "cor:reflection-swaps-upper-lower-bounds",
+  "kind": "corollary",
+  "title": "Reflection Swaps Upper and Lower Bounds",
+  "source": {
+    "label": "cor:reflection-swaps-upper-lower-bounds",
+    "kind": "corollary",
+    "title": "Reflection Swaps Upper and Lower Bounds",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "bounds-algebra",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-bound-algebra.tex",
+    "source_line_start": 817,
+    "source_line_end": 974,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/cor-reflection-swaps-upper-lower-bounds",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/cor-reflection-swaps-upper-lower-bounds/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/cor-reflection-swaps-upper-lower-bounds/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/cor-reflection-swaps-upper-lower-bounds",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/cor-reflection-swaps-upper-lower-bounds/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/cor-reflection-swaps-upper-lower-bounds/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-bound-algebra.tex",
+      "label": "cor:reflection-swaps-upper-lower-bounds",
+      "environment_kind": "corollary",
+      "source_line_start": 817,
+      "source_line_end": 974,
+      "current_tex": "\\begin{corollary}[Reflection Swaps Upper and Lower Bounds]\n\\label{cor:reflection-swaps-upper-lower-bounds}\nLet $A\\subseteq\\mathbb{R}$. For every $b\\in\\mathbb{R}$,\n\\[\nb\\text{ is an upper bound of }A\n\\Longleftrightarrow\n-b\\text{ is a lower bound of }-A,\n\\]\nand\n\\[\nb\\text{ is a lower bound of }A\n\\Longleftrightarrow\n-b\\text{ is an upper bound of }-A.\n\\]\nEquivalently,\n\\[\n\\left(\\forall a\\in A,\\ a\\leq b\\right)\n\\Longleftrightarrow\n\\left(\\forall x\\in -A,\\ -b\\leq x\\right),\n\\]\nand\n\\[\n\\left(\\forall a\\in A,\\ b\\leq a\\right)\n\\Longleftrightarrow\n\\left(\\forall x\\in -A,\\ x\\leq -b\\right).\n\\]\n\\hyperref[prf:reflection-swaps-upper-lower-bounds]{Go to proof.}\n\\end{corollary}\n\\end{corollarybox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\n(\\forall a\\in A)(a\\leq b)\\Longleftrightarrow\n(\\forall x\\in -A)(-b\\leq x),\n\\]\nand\n\\[\n(\\forall a\\in A)(b\\leq a)\\Longleftrightarrow\n(\\forall x\\in -A)(x\\leq -b).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad\nA\\subseteq\\mathbb{R},\\qquad -A=\\{-a:a\\in A\\},\\\\\n&\\operatorname{UpperBound}(b,A,P)\\Longleftrightarrow\\operatorname{LowerBound}(-b,-A,P),\\\\\n&\\operatorname{LowerBound}(b,A,P)\\Longleftrightarrow\\operatorname{UpperBound}(-b,-A,P).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\nA failure is a failure of one of the displayed biconditionals:\n\\[\n\\bigl[(\\forall a\\in A)(a\\leq b)\\bigr]\n\\not\\Longleftrightarrow\n\\bigl[(\\forall x\\in -A)(-b\\leq x)\\bigr],\n\\]\nor\n\\[\n\\bigl[(\\forall a\\in A)(b\\leq a)\\bigr]\n\\not\\Longleftrightarrow\n\\bigl[(\\forall x\\in -A)(x\\leq -b)\\bigr].\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negation predicate reading]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad\nA\\subseteq\\mathbb{R},\\qquad -A=\\{-a:a\\in A\\},\\\\\n&\\operatorname{UpperBound}(b,A,P)\\not\\Longleftrightarrow\\operatorname{LowerBound}(-b,-A,P)\n\\end{aligned}\n\\]\nor\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad\nA\\subseteq\\mathbb{R},\\qquad -A=\\{-a:a\\in A\\},\\\\\n&\\operatorname{LowerBound}(b,A,P)\\not\\Longleftrightarrow\\operatorname{UpperBound}(-b,-A,P).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n\\item[Exposition.]\nReflection reverses the real line, so lower information becomes upper\ninformation and upper information becomes lower information.\n\n\n  \\item[\\operatorname{LowerBound} / \\operatorname{UpperBound}.]\n\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad\nA\\subseteq\\mathbb{R},\\qquad -A=\\{-a:a\\in A\\},\\\\\n&\\operatorname{UpperBound}(b,A,P)\\not\\Longleftrightarrow\\operatorname{LowerBound}(-b,-A,P)\n\\end{aligned}\n\\]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad\nA\\subseteq\\mathbb{R},\\qquad -A=\\{-a:a\\in A\\},\\\\\n&\\operatorname{UpperBound}(b,A,P)\\Longleftrightarrow\\operatorname{LowerBound}(-b,-A,P),\\\\\n&\\operatorname{LowerBound}(b,A,P)\\Longleftrightarrow\\operatorname{UpperBound}(-b,-A,P).\n\\end{aligned}\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n\\item[Exposition.]\nApply negative dilation with $\\lambda=-1$.\n\n\n  \\item[\\operatorname{LowerBound} / \\operatorname{UpperBound}.]\n\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad\nA\\subseteq\\mathbb{R},\\qquad -A=\\{-a:a\\in A\\},\\\\\n&\\operatorname{LowerBound}(b,A,P)\\not\\Longleftrightarrow\\operatorname{UpperBound}(-b,-A,P)\n\\end{aligned}\n\\]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad\nA\\subseteq\\mathbb{R},\\qquad -A=\\{-a:a\\in A\\},\\\\\n&\\operatorname{UpperBound}(b,A,P)\\Longleftrightarrow\\operatorname{LowerBound}(-b,-A,P),\\\\\n&\\operatorname{LowerBound}(b,A,P)\\Longleftrightarrow\\operatorname{UpperBound}(-b,-A,P).\n\\end{aligned}\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nReflection is negative dilation by $-1$, so it exchanges the roles of upper\nand lower bounds.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:reals]{Real Numbers}\n  \\item \\hyperref[def:ordered-set]{Ordered Set}\n  \\item \\hyperref[def:subset]{Subset}\n  \\item \\hyperref[def:multiplication-on-r]{Multiplication on $\\mathbb{R}$}\n  \\item \\hyperref[def:displacement-dilation-reflection]{Displacement, Dilation, and Reflection}\n  \\item \\hyperref[def:real-lower-bound]{Lower Bound}\n  \\item \\hyperref[def:real-upper-bound]{Upper Bound}\n  \\item \\hyperref[prop:negative-dilation-sends-lower-to-upper-bounds]{Negative Dilation Sends Lower Bounds to Upper Bounds}\n  \\item \\hyperref[prop:negative-dilation-sends-upper-to-lower-bounds]{Negative Dilation Sends Upper Bounds to Lower Bounds}\n\\end{itemize}\n\\end{dependencies}\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

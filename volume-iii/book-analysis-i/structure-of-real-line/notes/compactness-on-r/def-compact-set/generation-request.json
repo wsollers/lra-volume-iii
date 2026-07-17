@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "def:compact-set",
+  "kind": "definition",
+  "title": "Compact Set in $\\mathbb{R}$",
+  "source": {
+    "label": "def:compact-set",
+    "kind": "definition",
+    "title": "Compact Set in $\\mathbb{R}$",
+    "book": "book-analysis-i",
+    "chapter": "structure-of-real-line",
+    "section": "compactness-on-r",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/structure-of-real-line/notes/compactness-on-r/notes-compactness-on-r.tex",
+    "source_line_start": 8,
+    "source_line_end": 84,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/structure-of-real-line/notes/compactness-on-r/def-compact-set",
+      "artifact": "volume-iii/book-analysis-i/structure-of-real-line/notes/compactness-on-r/def-compact-set/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/structure-of-real-line/notes/compactness-on-r/def-compact-set/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/structure-of-real-line/notes/compactness-on-r/def-compact-set",
+    "artifact": "volume-iii/book-analysis-i/structure-of-real-line/notes/compactness-on-r/def-compact-set/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/structure-of-real-line/notes/compactness-on-r/def-compact-set/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/structure-of-real-line/notes/compactness-on-r/notes-compactness-on-r.tex",
+      "label": "def:compact-set",
+      "environment_kind": "definition",
+      "source_line_start": 8,
+      "source_line_end": 84,
+      "current_tex": "\\begin{definitionbox}{Definition (Compact Set in $\\mathbb{R}$)}\n\\begin{definition}[Compact Set in $\\mathbb{R}$]\n\\label{def:compact-set}\nA set $K\\subseteq\\mathbb{R}$ is \\emph{compact} if every open cover of $K$ has\na finite subcover.  Explicitly, for every family $\\mathcal{U}$ of open\nsubsets of $\\mathbb{R}$,\n\\[\n  K\\subseteq\\bigcup_{U\\in\\mathcal{U}}U\n\\]\nimplies that there exists a finite subfamily $\\mathcal{V}\\subseteq\\mathcal{U}$\nsuch that\n\\[\n  K\\subseteq\\bigcup_{V\\in\\mathcal{V}}V.\n\\]\n\\end{definition}\n\\end{definitionbox}\n\\begin{remark*}[Standard quantified statement]\n\\[\nK \\text{ compact} \\Longleftrightarrow \\forall \\{U_i\\}_{i\\in I}\\Bigl(\\bigl(\\forall i\\in I\\;U_i \\text{ open}\\bigr)\\land K\\subseteq\\textstyle\\bigcup_{i\\in I}U_i \\Longrightarrow \\exists \\text{finite } J\\subseteq I\\;K\\subseteq\\textstyle\\bigcup_{i\\in J}U_i\\Bigr).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\nK\\subseteq\\mathbb{R},\\qquad\n\\operatorname{IsCompact}(K,\\mathbb{R})\n\\Longleftrightarrow\n\\forall \\mathcal{U}\\;\\bigl(\\operatorname{OpenCover}(\\mathcal{U},K,\\mathbb{R})\n\\Longrightarrow \\exists J\\;(J\\subseteq I\\land \\operatorname{FiniteSet}(J)\n\\land K\\subseteq\\textstyle\\bigcup_{i\\in J}U_i)\\bigr).\n\\]\n\\end{remark*}\n\\begin{remark*}[Negated quantified statement]\n\\[\nK \\text{ not compact} \\Longleftrightarrow \\exists \\{U_i\\}_{i\\in I}\\Bigl(\\bigl(\\forall i\\in I\\;U_i \\text{ open}\\bigr)\\land K\\subseteq\\textstyle\\bigcup_{i\\in I}U_i \\land \\forall \\text{finite } J\\subseteq I\\;K\\not\\subseteq\\textstyle\\bigcup_{i\\in J}U_i\\Bigr).\n\\]\n\\end{remark*}\n\\begin{remark*}[Negation predicate reading]\n\\[\nK\\subseteq\\mathbb{R},\\qquad\n\\neg\\operatorname{IsCompact}(K,\\mathbb{R})\n\\Longleftrightarrow\n\\exists \\mathcal{U}\\;\\bigl(\\operatorname{OpenCover}(\\mathcal{U},K,\\mathbb{R})\n\\land \\forall J\\;(J\\subseteq I\\land \\operatorname{FiniteSet}(J)\n\\Longrightarrow K\\not\\subseteq\\textstyle\\bigcup_{i\\in J}U_i)\\bigr).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\n  Failure is witnessed by the displayed negated or contrapositive condition.\n\n  \\item[\\operatorname{IsCompact} / \\operatorname{OpenCover}.]\n  \\[\nK \\text{ not compact} \\Longleftrightarrow \\exists \\{U_i\\}_{i\\in I}\\Bigl(\\bigl(\\forall i\\in I\\;U_i \\text{ open}\\bigr)\\land K\\subseteq\\textstyle\\bigcup_{i\\in I}U_i \\land \\forall \\text{finite } J\\subseteq I\\;K\\not\\subseteq\\textstyle\\bigcup_{i\\in J}U_i\\Bigr).\n\\]\n\\[\nK\\subseteq\\mathbb{R},\\qquad\n\\neg\\operatorname{IsCompact}(K,\\mathbb{R})\n\\Longleftrightarrow\n\\exists \\mathcal{U}\\;\\bigl(\\operatorname{OpenCover}(\\mathcal{U},K,\\mathbb{R})\n\\land \\forall J\\;(J\\subseteq I\\land \\operatorname{FiniteSet}(J)\n\\Longrightarrow K\\not\\subseteq\\textstyle\\bigcup_{i\\in J}U_i)\\bigr).\n\\]\n\\end{description}\n\\end{remark*}\n\\begin{remark*}[Interpretation]\nCompactness is a finiteness property phrased entirely in open sets: no matter how a set is covered by open pieces, finitely many already do the job. This is what later guarantees, on a compact domain, that continuous functions attain extrema and are uniformly continuous --- the facts Analysis~I relies on. Crucially, this definition does not mention order or boundedness, so it transfers unchanged to the torus.\n\\end{remark*}\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:real-open-cover]{Open Cover}\n  \\item \\hyperref[def:finite-subcover]{Subcover and Finite Subcover}\n\\end{itemize}\n\\end{dependencies}\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

@@ -1,0 +1,116 @@
+\begin{theorem}[Ambient Existence of Supremum]
+\label{thm:ambient-existence-supremum}
+There are ordered sets $S\subseteq S'$ and a subset $A\subseteq S$ such that $A$ has a supremum relative to $S'$ but has no supremum relative to $S$.
+\hyperref[prf:ambient-existence-supremum]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\exists S\subseteq S'\;\exists A\subseteq S:
+\quad
+\sup_{S'} A\text{ exists}
+\quad\text{and}\quad
+\sup_S A\text{ does not exist}.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\begin{aligned}
+&T=S',\qquad A\subseteq S,\qquad S\subseteq T,\\
+&P_S=\mathsf{OrderedSet}(S,\leq),\qquad
+P_T=\mathsf{OrderedSet}(T,\leq),\\
+&\exists s\in T:\operatorname{LeastUpperBound}(s,A,P_T)
+\land
+\neg\exists t\in S\;\operatorname{LeastUpperBound}(t,A,P_S).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\text{Every ambient enlargement preserves and reflects existence of suprema.}
+\]
+This assertion is false.
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\begin{aligned}
+&T=S',\qquad A\subseteq S,\qquad S\subseteq T,\\
+&P_S=\mathsf{OrderedSet}(S,\leq),\qquad
+P_T=\mathsf{OrderedSet}(T,\leq),\\
+&\bigl[\exists s\in T\,\operatorname{LeastUpperBound}(s,A,P_T)
+\Longrightarrow
+\exists t\in S\,\operatorname{LeastUpperBound}(t,A,P_S)\bigr]
+\end{aligned}
+\]
+is false.
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+The transfer from $S'$ to $S$ fails when the least upper bound exists in the larger ambient set but is missing from the smaller one. The smaller ambient set may contain upper bounds without containing a least upper bound.
+
+
+  \item[\operatorname{LeastUpperBound}.]
+  \[
+\text{Every ambient enlargement preserves and reflects existence of suprema.}
+\]
+\[
+\begin{aligned}
+&T=S',\qquad A\subseteq S,\qquad S\subseteq T,\\
+&P_S=\mathsf{OrderedSet}(S,\leq),\qquad
+P_T=\mathsf{OrderedSet}(T,\leq),\\
+&\bigl[\exists s\in T\,\operatorname{LeastUpperBound}(s,A,P_T)
+\Longrightarrow
+\exists t\in S\,\operatorname{LeastUpperBound}(t,A,P_S)\bigr]
+\end{aligned}
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+\[
+s=\sup_{S'} A,\quad s\notin S,\quad
+\text{and no }t\in S\text{ is least among the upper bounds of }A\text{ in }S.
+\]
+
+
+  \item[\operatorname{LeastUpperBound}.]
+  \[
+\text{Every ambient enlargement preserves and reflects existence of suprema.}
+\]
+\[
+\begin{aligned}
+&T=S',\qquad A\subseteq S,\qquad S\subseteq T,\\
+&P_S=\mathsf{OrderedSet}(S,\leq),\qquad
+P_T=\mathsf{OrderedSet}(T,\leq),\\
+&\bigl[\exists s\in T\,\operatorname{LeastUpperBound}(s,A,P_T)
+\Longrightarrow
+\exists t\in S\,\operatorname{LeastUpperBound}(t,A,P_S)\bigr]
+\end{aligned}
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Completeness is an ambient property. A larger ordered universe can fill a gap that remains absent in a smaller ordered universe.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:real-upper-bound]{Upper Bound}
+  \item \hyperref[def:supremum]{Supremum}
+  \item \hyperref[prop:suprema-ambient-set]{Suprema Depend on the Ambient Set}
+\end{itemize}
+\end{dependencies}
+
+
+

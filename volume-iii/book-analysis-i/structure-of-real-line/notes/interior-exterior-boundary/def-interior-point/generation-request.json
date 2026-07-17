@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "def:interior-point",
+  "kind": "definition",
+  "title": "Interior Point",
+  "source": {
+    "label": "def:interior-point",
+    "kind": "definition",
+    "title": "Interior Point",
+    "book": "book-analysis-i",
+    "chapter": "structure-of-real-line",
+    "section": "interior-exterior-boundary",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/structure-of-real-line/notes/interior-exterior-boundary/notes-interior-exterior-boundary.tex",
+    "source_line_start": 8,
+    "source_line_end": 38,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/structure-of-real-line/notes/interior-exterior-boundary/def-interior-point",
+      "artifact": "volume-iii/book-analysis-i/structure-of-real-line/notes/interior-exterior-boundary/def-interior-point/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/structure-of-real-line/notes/interior-exterior-boundary/def-interior-point/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/structure-of-real-line/notes/interior-exterior-boundary/def-interior-point",
+    "artifact": "volume-iii/book-analysis-i/structure-of-real-line/notes/interior-exterior-boundary/def-interior-point/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/structure-of-real-line/notes/interior-exterior-boundary/def-interior-point/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/structure-of-real-line/notes/interior-exterior-boundary/notes-interior-exterior-boundary.tex",
+      "label": "def:interior-point",
+      "environment_kind": "definition",
+      "source_line_start": 8,
+      "source_line_end": 38,
+      "current_tex": "\\begin{definitionbox}{Definition (Interior Point)}\n\\begin{definition}[Interior Point]\n\\label{def:interior-point}\nLet $A\\subseteq\\mathbb{R}$ and $x\\in\\mathbb{R}$.  The point $x$ is an\ninterior point of $A$ if there exists $r>0$ such that\n\\[\n  B_r(x)\\subseteq A.\n\\]\nEquivalently,\n\\[\n  x\\text{ is an interior point of }A\n  \\Longleftrightarrow\n  (\\exists r>0)(\\forall y\\in\\mathbb{R})\n  \\bigl(|x-y|<r\\Longrightarrow y\\in A\\bigr).\n\\]\n\\end{definition}\n\\end{definitionbox}\n\\begin{remark*}[Standard quantified statement]\n\\[\nx \\text{ is an interior point of } E \\Longleftrightarrow \\exists r>0\\;(B_{r}(x)\\subseteq E).\n\\]\n\\end{remark*}\n\\begin{remark*}[Interpretation]\nAn interior point of $E$ sits inside $E$ with room to spare: a whole ball around it lies in $E$.\n\\end{remark*}\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:open-ball]{Open Ball on the Real Line}\n\\end{itemize}\n\\end{dependencies}\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

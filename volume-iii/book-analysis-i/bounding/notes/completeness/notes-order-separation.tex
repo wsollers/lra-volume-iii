@@ -3,14 +3,17 @@
 \label{thm:order-separation-by-supremum}
 Let $A,B\subseteq\mathbb{R}$ be nonempty sets such that
 \[
-a\le b
+  (\forall a\in A)(\forall b\in B)(a\leq b).
 \]
-for every $a\in A$ and every $b\in B$.
-Then there exists $c\in\mathbb{R}$ such that
+Then $A$ is bounded above, $B$ is bounded below, and the real number
+$c:=\sup A$ separates $A$ from $B$; that is,
 \[
-a\le c\le b
+  (\forall a\in A)(\forall b\in B)(a\leq c\leq b).
 \]
-for every $a\in A$ and every $b\in B$.
+In particular,
+\[
+  \sup A\leq\inf B.
+\]
 \hyperref[prf:order-separation-by-supremum]{Go to proof.}
 \end{theorem}
 \end{theorembox}
@@ -20,7 +23,7 @@ for every $a\in A$ and every $b\in B$.
 \Bigl[
 (A\ne\varnothing\land B\ne\varnothing\land
 \forall a\in A\;\forall b\in B\;(a\le b))
-\Rightarrow
+\Longrightarrow
 \exists c\in\mathbb{R}\;\forall a\in A\;\forall b\in B\;(a\le c\le b)
 \Bigr].
 \]
@@ -32,7 +35,7 @@ A,B\subseteq\mathbb{R},\qquad P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq
 \[
 \bigl(A\ne\varnothing\land B\ne\varnothing\land
 \forall a\in A\;\forall b\in B\;(a\le b)\bigr)
-\Rightarrow
+\Longrightarrow
 \operatorname{HasDedekindSeparator}(A,B,P_{\mathbb{R}}).
 \]
 Equivalently, there exists $c\in\mathbb{R}$ such that
@@ -97,20 +100,22 @@ a real separator between them.
 \begin{theorembox}{Theorem (Dedekind Cut Property)}
 \begin{theorem}[Dedekind Cut Property]
 \label{thm:dedekind-cut-property}
-Let $A,B\subseteq\mathbb{R}$ be nonempty sets such that
+Let $L,U\subseteq\mathbb{R}$ be nonempty sets satisfying
 \[
-A\cup B=\mathbb{R},\qquad A\cap B=\varnothing,
+  L\cap U=\varnothing,
+  \qquad
+  L\cup U=\mathbb{R},
 \]
 and
 \[
-a<b
+  (\forall \ell\in L)(\forall u\in U)(\ell<u).
 \]
-for every $a\in A$ and every $b\in B$.
-Then there exists $c\in\mathbb{R}$ such that
+Then either $L$ has a maximum or $U$ has a minimum.  Equivalently,
 \[
-a\le c\le b
+  \max L\text{ exists}
+  \qquad\text{or}\qquad
+  \min U\text{ exists}.
 \]
-for every $a\in A$ and every $b\in B$.
 \hyperref[prf:dedekind-cut-property]{Go to proof.}
 \end{theorem}
 \end{theorembox}
@@ -120,7 +125,7 @@ for every $a\in A$ and every $b\in B$.
 \Bigl[
 (A,B\ne\varnothing\land A\cup B=\mathbb{R}\land A\cap B=\varnothing
 \land \forall a\in A\;\forall b\in B\;(a<b))
-\Rightarrow
+\Longrightarrow
 \exists c\in\mathbb{R}\;\forall a\in A\;\forall b\in B\;(a\le c\le b)
 \Bigr].
 \]
@@ -130,7 +135,7 @@ for every $a\in A$ and every $b\in B$.
 A,B\subseteq\mathbb{R},\qquad P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),
 \]
 \[
-\operatorname{IsDedekindSeparation}(A,B,P_{\mathbb{R}})\Rightarrow
+\operatorname{IsDedekindSeparation}(A,B,P_{\mathbb{R}})\Longrightarrow
 \operatorname{HasDedekindSeparator}(A,B,P_{\mathbb{R}}).
 \]
 Equivalently, the conclusion supplies some $c\in\mathbb{R}$ with
@@ -183,7 +188,30 @@ an unfilled gap between them.
 \begin{corollarybox}{Corollary (No Gaps in $\mathbb{R}$)}
 \begin{corollary}[No Gaps in $\mathbb{R}$]
 \label{cor:no-gaps-in-r}
-The real line has no Dedekind gaps.
+Let $L,U\subseteq\mathbb{R}$ be nonempty sets satisfying
+\[
+  L\cap U=\varnothing,
+  \qquad
+  L\cup U=\mathbb{R},
+\]
+and
+\[
+  (\forall \ell\in L)(\forall u\in U)(\ell<u).
+\]
+Then there exists a unique $c\in\mathbb{R}$ such that exactly one of the
+following alternatives holds:
+\[
+  L=\{x\in\mathbb{R}:x<c\},
+  \qquad
+  U=\{x\in\mathbb{R}:c\leq x\},
+\]
+or
+\[
+  L=\{x\in\mathbb{R}:x\leq c\},
+  \qquad
+  U=\{x\in\mathbb{R}:c<x\}.
+\]
+Thus every Dedekind cut of $\mathbb{R}$ is determined by a real number.
 \hyperref[prf:no-gaps-in-r]{Go to proof.}
 \end{corollary}
 \end{corollarybox}

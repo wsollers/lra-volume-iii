@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "thm:lub-property-implies-monotone-convergence",
+  "kind": "theorem",
+  "title": "Least Upper Bound Property Implies Monotone Convergence",
+  "source": {
+    "label": "thm:lub-property-implies-monotone-convergence",
+    "kind": "theorem",
+    "title": "Least Upper Bound Property Implies Monotone Convergence",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "completeness",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-completeness-equivalences.tex",
+    "source_line_start": 13,
+    "source_line_end": 93,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/thm-lub-property-implies-monotone-convergence",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/thm-lub-property-implies-monotone-convergence/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/thm-lub-property-implies-monotone-convergence/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/thm-lub-property-implies-monotone-convergence",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/thm-lub-property-implies-monotone-convergence/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/thm-lub-property-implies-monotone-convergence/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-completeness-equivalences.tex",
+      "label": "thm:lub-property-implies-monotone-convergence",
+      "environment_kind": "theorem",
+      "source_line_start": 13,
+      "source_line_end": 93,
+      "current_tex": "\\begin{theorem}[Least Upper Bound Property Implies Monotone Convergence]\n\\label{thm:lub-property-implies-monotone-convergence}\nLet $F$ be a linearly ordered field satisfying the least upper bound property.\nLet $(x_n)_{n\\in\\mathbb{N}}$ be a sequence in $F$.  If\n\\[\n  (\\forall n\\in\\mathbb{N})(x_n\\leq x_{n+1})\n\\]\nand\n\\[\n  (\\exists M\\in F)(\\forall n\\in\\mathbb{N})(x_n\\leq M),\n\\]\nthen the set\n\\[\n  X:=\\{x_n:n\\in\\mathbb{N}\\}\n\\]\nhas a supremum $s\\in F$, and\n\\[\n  (\\forall\\varepsilon\\in F)\\left[\n  \\varepsilon>0\n  \\Longrightarrow\n  (\\exists N\\in\\mathbb{N})(\\forall n\\in\\mathbb{N})\n  \\bigl(n\\geq N\\Longrightarrow |x_n-s|<\\varepsilon\\bigr)\n  \\right].\n\\]\nConsequently,\n\\[\n  \\lim_{n\\longrightarrow\\infty}x_n=s=\\sup\\{x_n:n\\in\\mathbb{N}\\}.\n\\]\nDually, if\n\\[\n  (\\forall n\\in\\mathbb{N})(x_{n+1}\\leq x_n)\n\\]\nand\n\\[\n  (\\exists m\\in F)(\\forall n\\in\\mathbb{N})(m\\leq x_n),\n\\]\nthen\n\\[\n  \\lim_{n\\longrightarrow\\infty}x_n=\\inf\\{x_n:n\\in\\mathbb{N}\\}.\n\\]\n\n\\smallskip\n\\noindent\n\\hyperref[prf:lub-property-implies-monotone-convergence]{\\textit{Go to proof.}}\n\\end{theorem}\n\\end{theorembox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\operatorname{HasLeastUpperBoundProperty}(\\mathbb{R})\n\\Longrightarrow\n\\forall (x_n)\\subseteq\\mathbb{R}\\;\n\\bigl(\n  \\operatorname{Monotone}((x_n),\\mathsf{OrderedSet}(\\mathbb{R},\\leq))\n  \\land\n  \\operatorname{Bounded}(x_n)\n  \\Longrightarrow\n  \\operatorname{ConvergesTo}(x_n)\n\\bigr).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nThe least upper bound property supplies the missing limit for a bounded\nmonotone sequence: the supremum or infimum of its range becomes the sequence\nlimit.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:real-sequence]{Real Sequence}\n  \\item \\hyperref[def:sequence]{Sequence}\n  \\item \\hyperref[def:convergent-sequence]{Convergent Sequence}\n  \\item \\hyperref[def:monotone-sequence]{Monotone Sequence}\n  \\item \\hyperref[def:bounded-sequence]{Bounded Sequence}\n  \\item \\hyperref[def:least-upper-bound-property]{Least Upper Bound Property}\n  \\item \\hyperref[thm:monotone-convergence-theorem]{Monotone Convergence Theorem}\n\\end{itemize}\n\\end{dependencies}\n\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

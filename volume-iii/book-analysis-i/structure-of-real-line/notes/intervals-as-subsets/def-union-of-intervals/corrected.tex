@@ -1,0 +1,32 @@
+\begin{definitionbox}{Definition (Union of Intervals)}
+\begin{definition}[Union of Intervals]
+\label{def:union-of-intervals}
+Let $\{I_\lambda\}_{\lambda\in\Lambda}$ be a family of intervals in
+$\mathbb{R}$.  Their \emph{union} is the set
+\[
+  \bigcup_{\lambda\in\Lambda}I_\lambda
+  :=
+  \{x\in\mathbb{R}:(\exists\lambda\in\Lambda)(x\in I_\lambda)\}.
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+I\cup J=\{x\in\mathbb{R}:x\in I\lor x\in J\}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The union collects every point that belongs to at least one of the two
+intervals. It may be one interval, or it may split if the original intervals
+leave a gap.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:open-interval]{Open Interval}
+  \item \hyperref[def:closed-interval]{Closed Interval}
+  \item \hyperref[def:union]{Union}
+\end{itemize}
+\end{dependencies}

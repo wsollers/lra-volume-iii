@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "thm:decreasing-image-infimum-to-supremum",
+  "kind": "theorem",
+  "title": "Decreasing Image Sends Infimum to Supremum",
+  "source": {
+    "label": "thm:decreasing-image-infimum-to-supremum",
+    "kind": "theorem",
+    "title": "Decreasing Image Sends Infimum to Supremum",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "bounds-algebra",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-image-inverse-extrema.tex",
+    "source_line_start": 370,
+    "source_line_end": 499,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-decreasing-image-infimum-to-supremum",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-decreasing-image-infimum-to-supremum/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-decreasing-image-infimum-to-supremum/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-decreasing-image-infimum-to-supremum",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-decreasing-image-infimum-to-supremum/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-decreasing-image-infimum-to-supremum/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-image-inverse-extrema.tex",
+      "label": "thm:decreasing-image-infimum-to-supremum",
+      "environment_kind": "theorem",
+      "source_line_start": 370,
+      "source_line_end": 499,
+      "current_tex": "\\begin{theorem}[Decreasing Image Sends Infimum to Supremum]\n\\label{thm:decreasing-image-infimum-to-supremum}\nLet $I\\subseteq\\mathbb{R}$ be an interval, let $A\\subseteq I$ be nonempty and\nbounded below, and suppose $i:=\\inf A\\in I$.  If $f\\colon I\\to\\mathbb{R}$ is\ndecreasing and continuous at $i$ relative to $I$, then\n$f[A]:=\\{f(a):a\\in A\\}$ is bounded above, and\n\\[\n  \\sup f[A]=f(\\inf A).\n\\]\n\\hyperref[prf:decreasing-image-infimum-to-supremum]{Go to proof.}\n\\end{theorem}\n\\end{theorembox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\nA\\neq\\varnothing,\\quad t=\\inf A\\in I,\\quad f\\text{ decreasing and continuous at }t\n\\Longrightarrow\n\\sup\\{f(a):a\\in A\\}=f(t).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\n\\begin{aligned}\n&A\\subseteq I,\\qquad f\\colon I\\to\\mathbb{R},\\qquad\nB=f(A)=\\{f(a):a\\in A\\},\\\\\n&P_I=\\mathsf{OrderedSet}(I,\\leq),\\qquad\nP_{\\mathbb{R}}=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\\\\n&\\operatorname{GreatestLowerBound}(t,A,P_I)\\land\n\\operatorname{OrderReversing}(f,P_I,P_{\\mathbb{R}})\\land\n\\operatorname{IsContinuous}(f,t,I,\\mathbb{R})\n\\Longrightarrow\n\\operatorname{LeastUpperBound}(f(t),B,P_{\\mathbb{R}}).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\n\\sup f(A)\\neq f(\\inf A)\n\\]\nis impossible under the stated hypotheses.\n\\end{remark*}\n\n\\begin{remark*}[Negation predicate reading]\n\\[\n\\begin{aligned}\n&A\\subseteq I,\\qquad f\\colon I\\to\\mathbb{R},\\qquad\nB=f(A)=\\{f(a):a\\in A\\},\\\\\n&P_I=\\mathsf{OrderedSet}(I,\\leq),\\qquad\nP_{\\mathbb{R}}=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\\\\n&\\operatorname{GreatestLowerBound}(t,A,P_I)\\land\n\\operatorname{OrderReversing}(f,P_I,P_{\\mathbb{R}})\\land\n\\operatorname{IsContinuous}(f,t,I,\\mathbb{R})\\land\n\\neg\\operatorname{LeastUpperBound}(f(t),B,P_{\\mathbb{R}}).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n\\item[Exposition.]\nThe equality can fail if $f$ is not decreasing, if $\\inf A$ is outside the\ndomain, or if $f$ is not continuous at the lower endpoint.\n\n\n  \\item[\\operatorname{GreatestLowerBound} / \\operatorname{OrderReversing}.]\n  \\[\n\\sup f(A)\\neq f(\\inf A)\n\\]\n\\[\n\\begin{aligned}\n&A\\subseteq I,\\qquad f\\colon I\\to\\mathbb{R},\\qquad\nB=f(A)=\\{f(a):a\\in A\\},\\\\\n&P_I=\\mathsf{OrderedSet}(I,\\leq),\\qquad\nP_{\\mathbb{R}}=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\\\\n&\\operatorname{GreatestLowerBound}(t,A,P_I)\\land\n\\operatorname{OrderReversing}(f,P_I,P_{\\mathbb{R}})\\land\n\\operatorname{IsContinuous}(f,t,I,\\mathbb{R})\\land\n\\neg\\operatorname{LeastUpperBound}(f(t),B,P_{\\mathbb{R}}).\n\\end{aligned}\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n\\item[Exposition.]\nDecreasingness gives $f(a)\\leq f(t)$ for every $a\\in A$.  Approximation of\n$t$ from above and continuity at $t$ make this upper bound sharp.\n\n\n  \\item[\\operatorname{GreatestLowerBound} / \\operatorname{OrderReversing}.]\n  \\[\n\\sup f(A)\\neq f(\\inf A)\n\\]\n\\[\n\\begin{aligned}\n&A\\subseteq I,\\qquad f\\colon I\\to\\mathbb{R},\\qquad\nB=f(A)=\\{f(a):a\\in A\\},\\\\\n&P_I=\\mathsf{OrderedSet}(I,\\leq),\\qquad\nP_{\\mathbb{R}}=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\\\\n&\\operatorname{GreatestLowerBound}(t,A,P_I)\\land\n\\operatorname{OrderReversing}(f,P_I,P_{\\mathbb{R}})\\land\n\\operatorname{IsContinuous}(f,t,I,\\mathbb{R})\\land\n\\neg\\operatorname{LeastUpperBound}(f(t),B,P_{\\mathbb{R}}).\n\\end{aligned}\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nA decreasing continuous function reverses endpoint roles: the lower endpoint\nof the original set becomes the upper endpoint of the image.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:reals]{Real Numbers}\n  \\item \\hyperref[def:ordered-set]{Ordered Set}\n  \\item \\hyperref[def:subset]{Subset}\n  \\item \\hyperref[def:function]{Function}\n  \\item \\hyperref[def:function-decreasing]{Decreasing Function}\n  \\item \\hyperref[def:infimum]{Infimum}\n  \\item \\hyperref[def:supremum]{Supremum}\n  \\item \\hyperref[def:continuous-at-point]{Continuity at a Point}\n\\end{itemize}\n\\end{dependencies}\n\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

@@ -1,0 +1,34 @@
+\begin{theorembox}{Theorem (Compact Subsets of $\mathbb{R}$ Are Closed and Bounded)}
+\begin{theorem}[Compact Subsets of $\mathbb{R}$ Are Closed and Bounded]
+\label{thm:compact-implies-closed-bounded}
+Let $K\subseteq\mathbb{R}$.  If $K$ is compact, then $K$ is closed and
+bounded.  Explicitly,
+\[
+  K\text{ compact}
+  \Longrightarrow
+  \leqft[
+  \mathbb{R}\setminus K\text{ is open}
+  \right]
+  \land
+  \leqft[
+  (\exists M>0)(\forall x\in K)(|x|\leq M)
+  \right].
+\]
+\hyperref[prf:compact-implies-closed-bounded]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+\begin{remark*}[Standard quantified statement]
+\[
+K \text{ compact} \Longrightarrow (K \text{ closed} \land K \text{ bounded}).
+\]
+\end{remark*}
+\begin{remark*}[Interpretation]
+This is the easy half of Heine--Borel and holds the same way in every metric space. Boundedness comes from covering $K$ by growing balls about a fixed point; closedness comes from separating an outside point from $K$ by disjoint balls. The converse --- closed and bounded implies compact --- is special to $\mathbb{R}^{n}$ and is the next theorem.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:compact-set]{Compact Set in $\mathbb{R}$}
+  \item \hyperref[def:closed-set]{Closed Set in $\mathbb{R}$}
+  \item \hyperref[def:bounded-subset-of-r]{Bounded Subset of the Real Line}
+\end{itemize}
+\end{dependencies}

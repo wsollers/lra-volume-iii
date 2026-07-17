@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "lem:nested-closed-intervals-have-ordered-endpoints",
+  "kind": "lemma",
+  "title": "Nested Closed Intervals Have Ordered Endpoints",
+  "source": {
+    "label": "lem:nested-closed-intervals-have-ordered-endpoints",
+    "kind": "lemma",
+    "title": "Nested Closed Intervals Have Ordered Endpoints",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "completeness",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-nested-interval-property.tex",
+    "source_line_start": 8,
+    "source_line_end": 89,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-nested-closed-intervals-have-ordered-endpoints",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-nested-closed-intervals-have-ordered-endpoints/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-nested-closed-intervals-have-ordered-endpoints/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-nested-closed-intervals-have-ordered-endpoints",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-nested-closed-intervals-have-ordered-endpoints/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-nested-closed-intervals-have-ordered-endpoints/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-nested-interval-property.tex",
+      "label": "lem:nested-closed-intervals-have-ordered-endpoints",
+      "environment_kind": "lemma",
+      "source_line_start": 8,
+      "source_line_end": 89,
+      "current_tex": "\\begin{lemma}[Nested Closed Intervals Have Ordered Endpoints]\n\\label{lem:nested-closed-intervals-have-ordered-endpoints}\nLet $(a_n)$ and $(b_n)$ be sequences in $\\mathbb{R}$ satisfying\n\\[\n  (\\forall n\\in\\mathbb{N})(a_n\\leq b_n)\n\\]\nand\n\\[\n  (\\forall n\\in\\mathbb{N})([a_{n+1},b_{n+1}]\\subseteq [a_n,b_n]).\n\\]\nThen, for all $m,n\\in\\mathbb{N}$,\n\\[\n  n\\leq m\n  \\Longrightarrow\n  a_n\\leq a_m\\leq b_m\\leq b_n.\n\\]\n\\hyperref[prf:nested-closed-intervals-have-ordered-endpoints]{Go to proof.}\n\\end{lemma}\n\\end{lemmabox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\forall n\\in\\mathbb{N}\\;\n\\Bigl([a_{n+1},b_{n+1}]\\subseteq [a_n,b_n]\n\\Longrightarrow\na_n\\le a_{n+1}\\le b_{n+1}\\le b_n\\Bigr).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\n[a_{n+1},b_{n+1}]\\subseteq [a_n,b_n]\n\\Longrightarrow\na_n\\le a_{n+1}\\le b_{n+1}\\le b_n.\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\n\\exists n\\in\\mathbb{N}\\;\n\\Bigl([a_{n+1},b_{n+1}]\\subseteq [a_n,b_n]\\land\n(a_{n+1}<a_n\\lor b_n<b_{n+1})\\Bigr).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negation predicate reading]\n\\[\n(a_{n+1}<a_n\\lor b_n<b_{n+1})\n\\Longrightarrow\n[a_{n+1},b_{n+1}]\\not\\subseteq [a_n,b_n].\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\n  Failure is witnessed by the displayed negated or contrapositive condition.\n\n  \\item[\\exists-condition.]\n  \\[\n\\exists n\\in\\mathbb{N}\\;\n\\Bigl([a_{n+1},b_{n+1}]\\subseteq [a_n,b_n]\\land\n(a_{n+1}<a_n\\lor b_n<b_{n+1})\\Bigr).\n\\]\n\\[\n(a_{n+1}<a_n\\lor b_n<b_{n+1})\n\\Longrightarrow\n[a_{n+1},b_{n+1}]\\not\\subseteq [a_n,b_n].\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nOne-step nesting of closed intervals moves the left endpoint to the right\nand the right endpoint to the left.\n\\end{remark*}\n\n\\begin{dependencies}\n\\hyperref[def:closed-interval]{Closed Interval}.\n\\end{dependencies}\n\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

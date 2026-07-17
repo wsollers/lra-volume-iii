@@ -1,0 +1,30 @@
+\begin{definitionbox}{Definition (Neighborhood of a Point)}
+\begin{definition}[Neighborhood of a Point]
+\label{def:neighborhood-of-point}
+Let $x\in\mathbb{R}$.  A set $N\subseteq\mathbb{R}$ is a
+\emph{neighborhood} of $x$ if there exists $r>0$ such that
+\[
+  B_r(x)\subseteq N.
+\]
+Equivalently,
+\[
+  N\text{ is a neighborhood of }x
+  \Longleftrightarrow
+  (\exists r>0)(\forall y\in\mathbb{R})
+  \bigl(|x-y|<r\Longrightarrow y\in N\bigr).
+\]
+\end{definition}
+\end{definitionbox}
+\begin{remark*}[Standard quantified statement]
+\[
+N \text{ is a neighborhood of } x \Longleftrightarrow \exists r>0\;(B_{r}(x)\subseteq N).
+\]
+\end{remark*}
+\begin{remark*}[Interpretation]
+A neighborhood of $x$ is any set with room to spare around $x$ --- it contains a whole ball, not just $x$ itself. Neighborhoods are the language of ``near $x$'' used to define interior points and limits.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:open-ball]{Open Ball on the Real Line}
+\end{itemize}
+\end{dependencies}

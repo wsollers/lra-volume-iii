@@ -8,7 +8,20 @@ Closed sets are the complements of open sets. They can equivalently be described
 \begin{definitionbox}{Definition (Closed Set in $\mathbb{R}$)}
 \begin{definition}[Closed Set in $\mathbb{R}$]
 \label{def:closed-set}
-A set $F\subseteq\mathbb{R}$ is \emph{closed} exactly when its complement $\mathbb{R}\setminus F$ is open.
+A set $F\subseteq\mathbb{R}$ is \emph{closed} if its complement in
+$\mathbb{R}$ is open; that is,
+\[
+  F\text{ is closed}
+  \Longleftrightarrow
+  \mathbb{R}\setminus F\text{ is open}.
+\]
+Equivalently,
+\[
+  F\text{ is closed}
+  \Longleftrightarrow
+  (\forall x\in\mathbb{R}\setminus F)(\exists r>0)
+  \bigl(B_r(x)\subseteq\mathbb{R}\setminus F\bigr).
+\]
 \end{definition}
 \end{definitionbox}
 \begin{remark*}[Standard quantified statement]
@@ -27,13 +40,24 @@ Closed and open are complementary, not opposite: a set can be both (e.g.\ $\empt
 \begin{theorembox}{Theorem (Closed Sets Contain Their Limit Points)}
 \begin{theorem}[Closed Sets Contain Their Limit Points]
 \label{thm:closed-iff-contains-limit-points}
-A set $F\subseteq\mathbb{R}$ is closed if and only if it contains every one of its limit points.
+Let $F\subseteq\mathbb{R}$.  Then $F$ is closed if and only if every limit
+point of $F$ belongs to $F$.  Explicitly,
+\[
+  F\text{ is closed}
+  \Longleftrightarrow
+  (\forall x\in\mathbb{R})
+  \leqft[
+  \leqft((\forall r>0)\bigl((B_r(x)\setminus\{x\})\cap F\neq\varnothing\bigr)\right)
+  \Longrightarrow
+  x\in F
+  \right].
+\]
 \hyperref[prf:closed-iff-contains-limit-points]{Go to proof.}
 \end{theorem}
 \end{theorembox}
 \begin{remark*}[Standard quantified statement]
 \[
-F \text{ closed} \Longleftrightarrow \forall x\in\mathbb{R}\;\bigl(x \text{ is a limit point of } F \Rightarrow x\in F\bigr).
+F \text{ closed} \Longleftrightarrow \forall x\in\mathbb{R}\;\bigl(x \text{ is a limit point of } F \Longrightarrow x\in F\bigr).
 \]
 \end{remark*}
 \begin{remark*}[Interpretation]

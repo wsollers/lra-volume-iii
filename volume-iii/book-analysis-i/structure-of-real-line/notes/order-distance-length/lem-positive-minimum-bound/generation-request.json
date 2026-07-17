@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "lem:positive-minimum-bound",
+  "kind": "lemma",
+  "title": "Positive Minimum Bound",
+  "source": {
+    "label": "lem:positive-minimum-bound",
+    "kind": "lemma",
+    "title": "Positive Minimum Bound",
+    "book": "book-analysis-i",
+    "chapter": "structure-of-real-line",
+    "section": "order-distance-length",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/structure-of-real-line/notes/order-distance-length/notes-epsilon-algebra.tex",
+    "source_line_start": 187,
+    "source_line_end": 249,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/structure-of-real-line/notes/order-distance-length/lem-positive-minimum-bound",
+      "artifact": "volume-iii/book-analysis-i/structure-of-real-line/notes/order-distance-length/lem-positive-minimum-bound/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/structure-of-real-line/notes/order-distance-length/lem-positive-minimum-bound/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/structure-of-real-line/notes/order-distance-length/lem-positive-minimum-bound",
+    "artifact": "volume-iii/book-analysis-i/structure-of-real-line/notes/order-distance-length/lem-positive-minimum-bound/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/structure-of-real-line/notes/order-distance-length/lem-positive-minimum-bound/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/structure-of-real-line/notes/order-distance-length/notes-epsilon-algebra.tex",
+      "label": "lem:positive-minimum-bound",
+      "environment_kind": "lemma",
+      "source_line_start": 187,
+      "source_line_end": 249,
+      "current_tex": "\\begin{lemmabox}{Lemma (Positive Minimum Bound)}\n\\begin{lemma}[Positive Minimum Bound]\n\\label{lem:positive-minimum-bound}\nFor every $\\delta,a,b\\in\\mathbb{R}$,\n\\[\n  (0<\\delta\\leq a\\land 0<\\delta\\leq b)\n  \\Longrightarrow\n  \\delta\\leq \\min\\{a,b\\}.\n\\]\n\\hyperref[prf:positive-minimum-bound]{Go to proof.}\n\\end{lemma}\n\\end{lemmabox}\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\forall \\delta,a,b\\in\\mathbb{R}\\;\n\\bigl((0<\\delta\\leq a\\land 0<\\delta\\leq b)\\Longrightarrow\n\\delta\\leq \\min\\{a,b\\}\\bigr).\n\\]\n\\end{remark*}\n\\begin{remark*}[Predicate reading]\n\\[\n\\bigl(0<\\delta\\leq a\\land 0<\\delta\\leq b\\bigr)\n\\Longrightarrow \\delta\\leq\\min\\{a,b\\}.\n\\]\n\\end{remark*}\n\\begin{remark*}[Negated quantified statement]\n\\[\n\\exists \\delta,a,b\\in\\mathbb{R}\\;\n\\bigl(0<\\delta\\leq a\\land 0<\\delta\\leq b\\land \\min\\{a,b\\}<\\delta\\bigr).\n\\]\n\\end{remark*}\n\\begin{remark*}[Negation predicate reading]\n\\[\n\\bigl(0<\\delta\\leq a\\land 0<\\delta\\leq b\\bigr)\\land\n\\neg(\\delta\\leq\\min\\{a,b\\}).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\n  Failure is witnessed by the displayed negated or contrapositive condition.\n\n  \\item[\\exists-condition.]\n  \\[\n\\exists \\delta,a,b\\in\\mathbb{R}\\;\n\\bigl(0<\\delta\\leq a\\land 0<\\delta\\leq b\\land \\min\\{a,b\\}<\\delta\\bigr).\n\\]\n\\[\n\\bigl(0<\\delta\\leq a\\land 0<\\delta\\leq b\\bigr)\\land\n\\neg(\\delta\\leq\\min\\{a,b\\}).\n\\]\n\\end{description}\n\\end{remark*}\n\\begin{remark*}[Interpretation]\nIf a positive quantity is below each of two bounds, it is below their minimum.\n\\end{remark*}\n\\begin{dependencies}\n\\hyperref[def:real-ordered-field]{Complete Ordered Field};\n\\hyperref[lem:minimum-of-positive-numbers-is-positive]{Minimum of Positive Numbers Is Positive}.\n\\end{dependencies}\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

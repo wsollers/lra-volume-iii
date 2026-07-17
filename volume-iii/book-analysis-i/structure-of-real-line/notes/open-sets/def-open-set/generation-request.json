@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "def:open-set",
+  "kind": "definition",
+  "title": "Open Set in $\\mathbb{R}$",
+  "source": {
+    "label": "def:open-set",
+    "kind": "definition",
+    "title": "Open Set in $\\mathbb{R}$",
+    "book": "book-analysis-i",
+    "chapter": "structure-of-real-line",
+    "section": "open-sets",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/structure-of-real-line/notes/open-sets/notes-open-sets.tex",
+    "source_line_start": 8,
+    "source_line_end": 96,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/structure-of-real-line/notes/open-sets/def-open-set",
+      "artifact": "volume-iii/book-analysis-i/structure-of-real-line/notes/open-sets/def-open-set/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/structure-of-real-line/notes/open-sets/def-open-set/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/structure-of-real-line/notes/open-sets/def-open-set",
+    "artifact": "volume-iii/book-analysis-i/structure-of-real-line/notes/open-sets/def-open-set/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/structure-of-real-line/notes/open-sets/def-open-set/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/structure-of-real-line/notes/open-sets/notes-open-sets.tex",
+      "label": "def:open-set",
+      "environment_kind": "definition",
+      "source_line_start": 8,
+      "source_line_end": 96,
+      "current_tex": "\\begin{definitionbox}{Definition (Open Set in $\\mathbb{R}$)}\n\\begin{definition}[Open Set in $\\mathbb{R}$]\n\\label{def:open-set}\nA set $U\\subseteq\\mathbb{R}$ is \\emph{open} if every point of $U$ is the\ncenter of an open ball contained in $U$; that is,\n\\[\n  (\\forall x\\in U)(\\exists r>0)(B_r(x)\\subseteq U).\n\\]\nEquivalently,\n\\[\n  (\\forall x\\in U)(\\exists r>0)(\\forall y\\in\\mathbb{R})\n  \\bigl(|x-y|<r\\Longrightarrow y\\in U\\bigr).\n\\]\n\\end{definition}\n\\end{definitionbox}\n\\begin{remark*}[Standard quantified statement]\n\\[\nU \\text{ is open} \\Longleftrightarrow \\forall x\\in U\\;\\exists r>0\\;(B_{r}(x)\\subseteq U).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\nU\\subseteq\\mathbb{R},\\qquad\n\\operatorname{IsOpen}(U,\\mathbb{R})\n\\Longleftrightarrow\n\\forall x\\in U\\;\\exists r>0\\;(B_{r}(x)\\subseteq U).\n\\]\n\\end{remark*}\n\\begin{remark*}[Negated quantified statement]\n\\[\n\\begin{aligned}\nU \\text{ is not open}\n&\\Longleftrightarrow\n\\exists x\\in U\\;\\forall r>0\\;(B_{r}(x)\\not\\subseteq U)\\\\\n&\\Longleftrightarrow\n\\exists x\\in U\\;\\forall r>0\\;\\exists y\\in\\mathbb{R}\\,\n\\bigl(|x-y|<r\\land y\\notin U\\bigr).\n\\end{aligned}\n\\]\n\\end{remark*}\n\\begin{remark*}[Negation predicate reading]\n\\[\nU\\subseteq\\mathbb{R},\\qquad\n\\neg\\operatorname{IsOpen}(U,\\mathbb{R})\n\\Longleftrightarrow\n\\exists x\\in U\\;\\forall r>0\\;\\exists y\\in\\mathbb{R}\\,\n\\bigl(|x-y|<r\\land y\\notin U\\bigr).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\n  Failure is witnessed by a point of $U$ at which no positive-radius ball\n  remains inside $U$.\n\n  \\item[\\operatorname{IsOpen}.]\n  \\[\n  U\\subseteq\\mathbb{R},\\qquad\n  \\neg\\operatorname{IsOpen}(U,\\mathbb{R})\n  \\Longleftrightarrow\n  \\exists x\\in U\\;\\forall r>0\\;\\exists y\\in\\mathbb{R}\\,\n  \\bigl(|x-y|<r\\land y\\notin U\\bigr).\n  \\]\n  The set $U$ fails to be open precisely when there exists a point $x\\in U$\n  such that every positive-radius ball centered at $x$ contains a point outside\n  $U$:\n\\[\n\\exists x\\in U\\;\\forall r>0\\;\\exists y\\in\\mathbb{R}\\,\n\\bigl(|x-y|<r\\land y\\notin U\\bigr).\n\\]\n  Thus failure consists of a witness point $x\\in U$, failure at every radius\n  $r>0$, and for each such radius a witness $y\\notin U$ lying within that\n  radius.\n\\end{description}\n\\end{remark*}\n\\begin{remark*}[Interpretation]\nAn open set has interior room around each of its points. Around each point\n$x\\in U$, there is a positive radius, possibly depending on $x$, within which\nevery real number remains in $U$. The empty set and $\\mathbb{R}$ are open, and\nopen intervals are the model examples.\n\\end{remark*}\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:open-ball]{Open Ball on the Real Line}\n\\end{itemize}\n\\end{dependencies}\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

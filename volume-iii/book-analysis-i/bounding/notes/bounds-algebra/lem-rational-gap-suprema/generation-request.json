@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "lem:rational-gap-suprema",
+  "kind": "lemma",
+  "title": "Rational Gap Example for Suprema",
+  "source": {
+    "label": "lem:rational-gap-suprema",
+    "kind": "lemma",
+    "title": "Rational Gap Example for Suprema",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "bounds-algebra",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-algebra-of-supremum-infimum.tex",
+    "source_line_start": 3186,
+    "source_line_end": 3302,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/lem-rational-gap-suprema",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/lem-rational-gap-suprema/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/lem-rational-gap-suprema/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/lem-rational-gap-suprema",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/lem-rational-gap-suprema/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/lem-rational-gap-suprema/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-algebra-of-supremum-infimum.tex",
+      "label": "lem:rational-gap-suprema",
+      "environment_kind": "lemma",
+      "source_line_start": 3186,
+      "source_line_end": 3302,
+      "current_tex": "\\begin{lemma}[Rational Gap Example for Suprema]\n\\label{lem:rational-gap-suprema}\nLet\n\\[\n  A=\\{q\\in\\mathbb{Q}:q^2<2\\}.\n\\]\nThen $A$ is nonempty and bounded above in $\\mathbb{Q}$, but $A$ has no supremum relative to $\\mathbb{Q}$.\n\\hyperref[prf:rational-gap-suprema]{Go to proof.}\n\\end{lemma}\n\\end{lemmabox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\nA=\\{q\\in\\mathbb{Q}:q^2<2\\}\n\\quad\\Longrightarrow\\quad\n\\sup_{\\mathbb{Q}} A\\text{ does not exist}.\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\n\\begin{aligned}\n&P_{\\mathbb{Q}}=\\mathsf{OrderedSet}(\\mathbb{Q},\\leq),\\qquad\nA=\\{q\\in\\mathbb{Q}:q^2<2\\},\\\\\n&\\neg\\exists s\\in\\mathbb{Q}\\;\\operatorname{LeastUpperBound}(s,A,P_{\\mathbb{Q}}).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\n\\exists s\\in\\mathbb{Q}\\;(s=\\sup_{\\mathbb{Q}}A)\n\\]\nis false for this set.\n\\end{remark*}\n\n\\begin{remark*}[Negation predicate reading]\n\\[\n\\begin{aligned}\n&P_{\\mathbb{Q}}=\\mathsf{OrderedSet}(\\mathbb{Q},\\leq),\\qquad\nA=\\{q\\in\\mathbb{Q}:q^2<2\\},\\\\\n&\\exists s\\in\\mathbb{Q}\\;\\operatorname{LeastUpperBound}(s,A,P_{\\mathbb{Q}})\n\\end{aligned}\n\\]\nis false.\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\nA rational candidate below $\\sqrt{2}$ fails to be an upper bound. A rational candidate above $\\sqrt{2}$ is an upper bound but is not least, because another rational upper bound lies between it and $\\sqrt{2}$.\n\n\n  \\item[\\operatorname{LeastUpperBound}.]\n  \\[\n\\exists s\\in\\mathbb{Q}\\;(s=\\sup_{\\mathbb{Q}}A)\n\\]\n\\[\n\\begin{aligned}\n&P_{\\mathbb{Q}}=\\mathsf{OrderedSet}(\\mathbb{Q},\\leq),\\qquad\nA=\\{q\\in\\mathbb{Q}:q^2<2\\},\\\\\n&\\exists s\\in\\mathbb{Q}\\;\\operatorname{LeastUpperBound}(s,A,P_{\\mathbb{Q}})\n\\end{aligned}\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\n\\[\n\\begin{cases}\ns^2<2 &\\Longrightarrow s\\text{ is not an upper bound of }A,\\\\\ns^2>2 &\\Longrightarrow s\\text{ is not the least upper bound of }A.\n\\end{cases}\n\\qquad(s\\in\\mathbb{Q})\n\\]\n\n\n  \\item[\\operatorname{LeastUpperBound}.]\n  \\[\n\\exists s\\in\\mathbb{Q}\\;(s=\\sup_{\\mathbb{Q}}A)\n\\]\n\\[\n\\begin{aligned}\n&P_{\\mathbb{Q}}=\\mathsf{OrderedSet}(\\mathbb{Q},\\leq),\\qquad\nA=\\{q\\in\\mathbb{Q}:q^2<2\\},\\\\\n&\\exists s\\in\\mathbb{Q}\\;\\operatorname{LeastUpperBound}(s,A,P_{\\mathbb{Q}})\n\\end{aligned}\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nThe set wants $\\sqrt{2}$ as its least ceiling, but that number is not rational. The rational ambient set therefore has a visible gap where the supremum should be.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:rationals]{Rational Numbers}\n  \\item \\hyperref[def:ordered-set]{Ordered Set}\n  \\item \\hyperref[def:subset]{Subset}\n  \\item \\hyperref[def:square-root]{Square Root}\n  \\item \\hyperref[def:real-upper-bound]{Upper Bound}\n  \\item \\hyperref[def:supremum]{Supremum}\n  \\item \\hyperref[thm:no-rational-square-root-of-two]{No Rational Square Root of Two}\n  \\item \\hyperref[thm:sqrt-two-squared-is-two]{Its Square Is Two}\n  \\item \\hyperref[thm:ambient-existence-supremum]{Ambient Existence of Supremum}\n\\end{itemize}\n\\end{dependencies}\n\n\n\n\n\n\\input{volume-iii/book-analysis-i/bounding/notes/bounds-algebra/figure-bounds-algebra}\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

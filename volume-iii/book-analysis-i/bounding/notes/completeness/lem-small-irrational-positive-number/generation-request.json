@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "lem:small-irrational-positive-number",
+  "kind": "lemma",
+  "title": "Small Irrational Positive Number",
+  "source": {
+    "label": "lem:small-irrational-positive-number",
+    "kind": "lemma",
+    "title": "Small Irrational Positive Number",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "completeness",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-density.tex",
+    "source_line_start": 810,
+    "source_line_end": 837,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-small-irrational-positive-number",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-small-irrational-positive-number/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-small-irrational-positive-number/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-small-irrational-positive-number",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-small-irrational-positive-number/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-small-irrational-positive-number/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-density.tex",
+      "label": "lem:small-irrational-positive-number",
+      "environment_kind": "lemma",
+      "source_line_start": 810,
+      "source_line_end": 837,
+      "current_tex": "\\begin{lemma}[Small Irrational Positive Number]\n\\label{lem:small-irrational-positive-number}\nFor every $\\varepsilon\\in\\mathbb{R}$ with $\\varepsilon>0$, there exists\n$\\eta\\in\\mathbb{R}\\setminus\\mathbb{Q}$ such that\n\\[\n  0<\\eta<\\varepsilon.\n\\]\n\\hyperref[prf:small-irrational-positive-number]{\\textit{Go to proof.}}\n\\end{lemma}\n\\end{lemmabox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\forall \\varepsilon>0\\;\\exists \\eta\\in\\mathbb{R}\\setminus\\mathbb{Q}\\;\n(0<\\eta<\\varepsilon).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nThe density of the irrationals applied to the interval $(0,\\varepsilon)$ gives\nan irrational positive number as small as desired.\n\\end{remark*}\n\n\\begin{dependencies}\n\\hyperref[thm:density-of-irrationals-in-reals]{Density of the Irrationals}.\n\\end{dependencies}\n\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

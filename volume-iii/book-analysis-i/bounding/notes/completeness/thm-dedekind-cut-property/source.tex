@@ -1,0 +1,87 @@
+\begin{theorem}[Dedekind Cut Property]
+\label{thm:dedekind-cut-property}
+Let $L,U\subseteq\mathbb{R}$ be nonempty sets satisfying
+\[
+  L\cap U=\varnothing,
+  \qquad
+  L\cup U=\mathbb{R},
+\]
+and
+\[
+  (\forall \ell\in L)(\forall u\in U)(\ell<u).
+\]
+Then either $L$ has a maximum or $U$ has a minimum.  Equivalently,
+\[
+  \max L\text{ exists}
+  \qquad\text{or}\qquad
+  \min U\text{ exists}.
+\]
+\hyperref[prf:dedekind-cut-property]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+\begin{remark*}[Standard quantified statement]
+\[
+\forall A,B\subseteq\mathbb{R}\;
+\Bigl[
+(A,B\ne\varnothing\land A\cup B=\mathbb{R}\land A\cap B=\varnothing
+\land \forall a\in A\;\forall b\in B\;(a<b))
+\Longrightarrow
+\exists c\in\mathbb{R}\;\forall a\in A\;\forall b\in B\;(a\le c\le b)
+\Bigr].
+\]
+\end{remark*}
+\begin{remark*}[Predicate reading]
+\[
+A,B\subseteq\mathbb{R},\qquad P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),
+\]
+\[
+\operatorname{IsDedekindSeparation}(A,B,P_{\mathbb{R}})\Longrightarrow
+\operatorname{HasDedekindSeparator}(A,B,P_{\mathbb{R}}).
+\]
+Equivalently, the conclusion supplies some $c\in\mathbb{R}$ with
+\(\operatorname{IsDedekindSeparator}(c,A,B,P_{\mathbb{R}})\).
+\end{remark*}
+\begin{remark*}[Negated quantified statement]
+\[
+\exists A,B\subseteq\mathbb{R}\;
+\bigl(\operatorname{IsDedekindSeparation}(A,B,\mathbb{R})\land
+\neg\operatorname{HasDedekindSeparator}(A,B,\mathbb{R})\bigr).
+\]
+\end{remark*}
+\begin{remark*}[Negation predicate reading]
+\[
+A,B\subseteq\mathbb{R},\qquad P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+\operatorname{IsDedekindGap}(A,B,P_{\mathbb{R}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  Failure is witnessed by the displayed negated or contrapositive condition.
+
+  \item[\operatorname{IsDedekindSeparation} / \operatorname{HasDedekindSeparator}.]
+  \[
+\exists A,B\subseteq\mathbb{R}\;
+\bigl(\operatorname{IsDedekindSeparation}(A,B,\mathbb{R})\land
+\neg\operatorname{HasDedekindSeparator}(A,B,\mathbb{R})\bigr).
+\]
+\[
+A,B\subseteq\mathbb{R},\qquad P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+\operatorname{IsDedekindGap}(A,B,P_{\mathbb{R}}).
+\]
+\end{description}
+\end{remark*}
+\begin{remark*}[Interpretation]
+The real line has no ordered partition into a left part and a right part with
+an unfilled gap between them.
+\end{remark*}
+\begin{dependencies}
+\hyperref[def:reals]{Real Numbers};
+\hyperref[def:ordered-set]{Ordered Set};
+\hyperref[def:subset]{Subset};
+\hyperref[def:union]{Union};
+\hyperref[def:intersection]{Intersection};
+\hyperref[thm:order-separation-by-supremum]{Order Separation by Supremum}.
+\end{dependencies}
+

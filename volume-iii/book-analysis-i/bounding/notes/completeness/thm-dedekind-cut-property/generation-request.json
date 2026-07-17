@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "thm:dedekind-cut-property",
+  "kind": "theorem",
+  "title": "Dedekind Cut Property",
+  "source": {
+    "label": "thm:dedekind-cut-property",
+    "kind": "theorem",
+    "title": "Dedekind Cut Property",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "completeness",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-order-separation.tex",
+    "source_line_start": 101,
+    "source_line_end": 188,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/thm-dedekind-cut-property",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/thm-dedekind-cut-property/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/thm-dedekind-cut-property/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/thm-dedekind-cut-property",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/thm-dedekind-cut-property/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/thm-dedekind-cut-property/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-order-separation.tex",
+      "label": "thm:dedekind-cut-property",
+      "environment_kind": "theorem",
+      "source_line_start": 101,
+      "source_line_end": 188,
+      "current_tex": "\\begin{theorem}[Dedekind Cut Property]\n\\label{thm:dedekind-cut-property}\nLet $L,U\\subseteq\\mathbb{R}$ be nonempty sets satisfying\n\\[\n  L\\cap U=\\varnothing,\n  \\qquad\n  L\\cup U=\\mathbb{R},\n\\]\nand\n\\[\n  (\\forall \\ell\\in L)(\\forall u\\in U)(\\ell<u).\n\\]\nThen either $L$ has a maximum or $U$ has a minimum.  Equivalently,\n\\[\n  \\max L\\text{ exists}\n  \\qquad\\text{or}\\qquad\n  \\min U\\text{ exists}.\n\\]\n\\hyperref[prf:dedekind-cut-property]{Go to proof.}\n\\end{theorem}\n\\end{theorembox}\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\forall A,B\\subseteq\\mathbb{R}\\;\n\\Bigl[\n(A,B\\ne\\varnothing\\land A\\cup B=\\mathbb{R}\\land A\\cap B=\\varnothing\n\\land \\forall a\\in A\\;\\forall b\\in B\\;(a<b))\n\\Longrightarrow\n\\exists c\\in\\mathbb{R}\\;\\forall a\\in A\\;\\forall b\\in B\\;(a\\le c\\le b)\n\\Bigr].\n\\]\n\\end{remark*}\n\\begin{remark*}[Predicate reading]\n\\[\nA,B\\subseteq\\mathbb{R},\\qquad P_{\\mathbb{R}}=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\n\\]\n\\[\n\\operatorname{IsDedekindSeparation}(A,B,P_{\\mathbb{R}})\\Longrightarrow\n\\operatorname{HasDedekindSeparator}(A,B,P_{\\mathbb{R}}).\n\\]\nEquivalently, the conclusion supplies some $c\\in\\mathbb{R}$ with\n\\(\\operatorname{IsDedekindSeparator}(c,A,B,P_{\\mathbb{R}})\\).\n\\end{remark*}\n\\begin{remark*}[Negated quantified statement]\n\\[\n\\exists A,B\\subseteq\\mathbb{R}\\;\n\\bigl(\\operatorname{IsDedekindSeparation}(A,B,\\mathbb{R})\\land\n\\neg\\operatorname{HasDedekindSeparator}(A,B,\\mathbb{R})\\bigr).\n\\]\n\\end{remark*}\n\\begin{remark*}[Negation predicate reading]\n\\[\nA,B\\subseteq\\mathbb{R},\\qquad P_{\\mathbb{R}}=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad\n\\operatorname{IsDedekindGap}(A,B,P_{\\mathbb{R}}).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\n  Failure is witnessed by the displayed negated or contrapositive condition.\n\n  \\item[\\operatorname{IsDedekindSeparation} / \\operatorname{HasDedekindSeparator}.]\n  \\[\n\\exists A,B\\subseteq\\mathbb{R}\\;\n\\bigl(\\operatorname{IsDedekindSeparation}(A,B,\\mathbb{R})\\land\n\\neg\\operatorname{HasDedekindSeparator}(A,B,\\mathbb{R})\\bigr).\n\\]\n\\[\nA,B\\subseteq\\mathbb{R},\\qquad P_{\\mathbb{R}}=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad\n\\operatorname{IsDedekindGap}(A,B,P_{\\mathbb{R}}).\n\\]\n\\end{description}\n\\end{remark*}\n\\begin{remark*}[Interpretation]\nThe real line has no ordered partition into a left part and a right part with\nan unfilled gap between them.\n\\end{remark*}\n\\begin{dependencies}\n\\hyperref[def:reals]{Real Numbers};\n\\hyperref[def:ordered-set]{Ordered Set};\n\\hyperref[def:subset]{Subset};\n\\hyperref[def:union]{Union};\n\\hyperref[def:intersection]{Intersection};\n\\hyperref[thm:order-separation-by-supremum]{Order Separation by Supremum}.\n\\end{dependencies}\n\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

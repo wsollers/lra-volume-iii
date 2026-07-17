@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "thm:monotone-convergence-implies-lub-property",
+  "kind": "theorem",
+  "title": "Monotone Convergence Implies Least Upper Bound Property",
+  "source": {
+    "label": "thm:monotone-convergence-implies-lub-property",
+    "kind": "theorem",
+    "title": "Monotone Convergence Implies Least Upper Bound Property",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "completeness",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-completeness-equivalences.tex",
+    "source_line_start": 94,
+    "source_line_end": 173,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/thm-monotone-convergence-implies-lub-property",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/thm-monotone-convergence-implies-lub-property/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/thm-monotone-convergence-implies-lub-property/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/thm-monotone-convergence-implies-lub-property",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/thm-monotone-convergence-implies-lub-property/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/thm-monotone-convergence-implies-lub-property/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-completeness-equivalences.tex",
+      "label": "thm:monotone-convergence-implies-lub-property",
+      "environment_kind": "theorem",
+      "source_line_start": 94,
+      "source_line_end": 173,
+      "current_tex": "\\begin{theorem}[Monotone Convergence Implies Least Upper Bound Property]\n\\label{thm:monotone-convergence-implies-lub-property}\nLet $F$ be an Archimedean linearly ordered field.  Suppose that every\nincreasing sequence in $F$ that is bounded above converges in $F$; explicitly,\nsuppose that for every sequence $(x_n)_{n\\in\\mathbb{N}}$ in $F$,\n\\[\n  \\left[(\\forall n\\in\\mathbb{N})(x_n\\leq x_{n+1})\\right]\n  \\land\n  \\left[(\\exists M\\in F)(\\forall n\\in\\mathbb{N})(x_n\\leq M)\\right]\n\\]\nimplies that there exists $L\\in F$ such that\n\\[\n  (\\forall\\varepsilon\\in F)\\left[\n  \\varepsilon>0\n  \\Longrightarrow\n  (\\exists N\\in\\mathbb{N})(\\forall n\\in\\mathbb{N})\n  \\bigl(n\\geq N\\Longrightarrow |x_n-L|<\\varepsilon\\bigr)\n  \\right].\n\\]\nThen $F$ has the least upper bound property.  That is, for every\n$A\\subseteq F$,\n\\[\n  \\left[\n  A\\neq\\varnothing\n  \\land\n  (\\exists u\\in F)(\\forall a\\in A)(a\\leq u)\n  \\right]\n\\]\nimplies that there exists $s\\in F$ satisfying\n\\[\n  (\\forall a\\in A)(a\\leq s)\n\\]\nand\n\\[\n  (\\forall u\\in F)\\left[\n  (\\forall a\\in A)(a\\leq u)\n  \\Longrightarrow\n  s\\leq u\n  \\right].\n\\]\n\n\\smallskip\n\\noindent\n\\hyperref[prf:monotone-convergence-implies-lub-property]{\\textit{Go to proof.}}\n\\end{theorem}\n\\end{theorembox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\bigl[\\forall (x_n)\\subseteq\\mathbb{R}\\;\n(\\operatorname{Monotone}((x_n),\\mathsf{OrderedSet}(\\mathbb{R},\\leq))\\land\\operatorname{Bounded}(x_n)\n\\Longrightarrow \\operatorname{ConvergesTo}(x_n))\\bigr]\n\\Longrightarrow\n\\operatorname{HasLeastUpperBoundProperty}(\\mathbb{R}).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nStarting from a nonempty set $A\\subseteq\\mathbb{R}$ bounded above, choose an\nelement of $A$ and an upper bound. Bisect the bracket. Keep the upper endpoint\nwhen the midpoint is still an upper bound; otherwise keep the midpoint as a\nnew lower endpoint. The two endpoint sequences are bounded and monotone, so\nmonotone convergence produces a common limiting boundary, which is the\nsupremum of $A$.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:real-sequence]{Real Sequence}\n  \\item \\hyperref[def:sequence]{Sequence}\n  \\item \\hyperref[def:convergent-sequence]{Convergent Sequence}\n  \\item \\hyperref[def:monotone-sequence]{Monotone Sequence}\n  \\item \\hyperref[def:bounded-sequence]{Bounded Sequence}\n  \\item \\hyperref[def:supremum]{Supremum}\n  \\item \\hyperref[def:least-upper-bound-property]{Least Upper Bound Property}\n  \\item \\hyperref[thm:monotone-convergence-theorem]{Monotone Convergence Theorem}\n\\end{itemize}\n\\end{dependencies}\n\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

@@ -1,0 +1,119 @@
+\begin{corollary}[Nested Intervals with Vanishing Length Have Equal Endpoint Limits]
+\label{cor:nested-intervals-vanishing-length-have-equal-endpoint-limits}
+Let $(a_n)$ and $(b_n)$ satisfy
+\[
+  (\forall n\in\mathbb{N})(a_n\leq b_n),
+\]
+\[
+  (\forall n\in\mathbb{N})([a_{n+1},b_{n+1}]\subseteq [a_n,b_n]),
+\]
+and
+\[
+  (\forall\varepsilon>0)(\exists N\in\mathbb{N})(\forall n\in\mathbb{N})
+  \bigl(n\geq N\Longrightarrow b_n-a_n<\varepsilon\bigr).
+\]
+Then there exists $x\in\mathbb{R}$ such that
+\[
+  \lim_{n\longrightarrow\infty}a_n=x
+  \qquad\text{and}\qquad
+  \lim_{n\longrightarrow\infty}b_n=x.
+\]
+\hyperref[prf:nested-intervals-vanishing-length-have-equal-endpoint-limits]{Go to proof.}
+\end{corollary}
+\end{corollarybox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\lim_{n\longrightarrow\infty}(b_n-a_n)=0
+\Longrightarrow
+\exists L\in\mathbb{R}\;
+\left(\lim_{n\longrightarrow\infty}a_n=L\land \lim_{n\longrightarrow\infty}b_n=L\right).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+F=([a_n,b_n])_{n\in\mathbb{N}},\qquad
+a\colon\mathbb{N}\longrightarrow\mathbb{R},\qquad b\colon\mathbb{N}\longrightarrow\mathbb{R},\qquad d\colon\mathbb{N}\longrightarrow\mathbb{R},
+\]
+\[
+a(n)=a_n,\qquad b(n)=b_n,\qquad d_n=b_n-a_n,
+\]
+\[
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad X=\mathbb{R},\qquad
+\operatorname{NestedClosedBoundedIntervals}(F,P_{\mathbb{R}})
+\land
+\operatorname{ConvergesTo}(d,0,X)
+\Longrightarrow
+\exists L\in\mathbb{R}\;
+\left(
+\operatorname{ConvergesTo}(a,L,X)
+\land
+\operatorname{ConvergesTo}(b,L,X)
+\right).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\operatorname{NestedClosedBoundedIntervals}([a_n,b_n])
+\land
+\lim_{n\longrightarrow\infty}(b_n-a_n)=0
+\land
+\forall L\in\mathbb{R}\;
+\left(\lim_{n\longrightarrow\infty}a_n\ne L\lor \lim_{n\longrightarrow\infty}b_n\ne L\right).
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+a\colon\mathbb{N}\longrightarrow\mathbb{R},\qquad b\colon\mathbb{N}\longrightarrow\mathbb{R},\qquad
+d\colon\mathbb{N}\longrightarrow\mathbb{R},\qquad d_n=b_n-a_n,
+\]
+\[
+F=([a_n,b_n])_{n\in\mathbb{N}},\qquad
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad X=\mathbb{R},\qquad
+\neg\exists L\in\mathbb{R}\;
+\left(
+\operatorname{ConvergesTo}(a,L,X)
+\land
+\operatorname{ConvergesTo}(b,L,X)
+\right)
+\Longrightarrow
+\neg\operatorname{NestedClosedBoundedIntervals}(F,P_{\mathbb{R}})
+\lor
+\neg\operatorname{ConvergesTo}(d,0,X).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  Failure is witnessed by the displayed negated or contrapositive condition.
+
+  \item[\operatorname{NestedClosedBoundedIntervals}.]
+  \[
+\operatorname{NestedClosedBoundedIntervals}([a_n,b_n])
+\land
+\lim_{n\longrightarrow\infty}(b_n-a_n)=0
+\land
+\forall L\in\mathbb{R}\;
+\left(\lim_{n\longrightarrow\infty}a_n\ne L\lor \lim_{n\longrightarrow\infty}b_n\ne L\right).
+\]
+\[
+a\colon\mathbb{N}\longrightarrow\mathbb{R},\qquad b\colon\mathbb{N}\longrightarrow\mathbb{R},\qquad
+d\colon\mathbb{N}\longrightarrow\mathbb{R},\qquad d_n=b_n-a_n,
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Vanishing interval length forces the two endpoint sequences to approach the
+same real number.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[def:closed-interval]{Closed Interval};
+\hyperref[def:bounded-subset-of-r]{Bounded Subset of the Real Line}.
+\end{dependencies}
+

@@ -1,0 +1,114 @@
+\begin{proposition}[Upper Bounds Depend on the Ambient Order]
+\label{prop:upper-bounds-ambient-order}
+Let $(S,\le_S)$ and $(T,\le_T)$ be ordered sets, and let $A\subseteq S\cap T$. Whether $u$ is an upper bound of $A$ must be interpreted relative to the chosen ambient order.
+\hyperref[prf:upper-bounds-ambient-order]{Go to proof.}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{aligned}
+&u\text{ is an upper bound of }A\text{ in }S
+\Longleftrightarrow
+u\in S\text{ and }\forall x\in A\;(x\le_S u),\\
+&u\text{ is an upper bound of }A\text{ in }T
+\Longleftrightarrow
+u\in T\text{ and }\forall x\in A\;(x\le_T u).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\begin{aligned}
+&P_S=\mathsf{OrderedSet}(S,\le_S),\qquad
+P_T=\mathsf{OrderedSet}(T,\le_T),\qquad A\subseteq S\cap T,\\
+&\operatorname{UpperBound}(u,A,P_S)
+\Longleftrightarrow
+u\in S\land \forall x\in A\;(x\le_S u),\\
+&\operatorname{UpperBound}(u,A,P_T)
+\Longleftrightarrow
+u\in T\land \forall x\in A\;(x\le_T u).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\text{The phrase ``}u\text{ is an upper bound of }A\text{''}
+\]
+is not well-determined until the ambient ordered set and its order relation are fixed.
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\begin{aligned}
+&P_S=\mathsf{OrderedSet}(S,\le_S),\qquad
+P_T=\mathsf{OrderedSet}(T,\le_T),\\
+&X=\text{``$u$ is an upper bound of $A$''},\\
+&\neg\operatorname{WellDefined}(X,\text{ambient omitted})
+\end{aligned}
+\]
+when the ambient order is omitted.
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+Ambiguity occurs when the same set $A$ is considered inside different ordered ambient sets or under different order relations. The candidate bound may belong to one ambient set and not another, or the relevant comparison relation may change.
+
+
+  \item[\operatorname{WellDefined}.]
+  \[
+\text{The phrase ``}u\text{ is an upper bound of }A\text{''}
+\]
+\[
+\begin{aligned}
+&P_S=\mathsf{OrderedSet}(S,\le_S),\qquad
+P_T=\mathsf{OrderedSet}(T,\le_T),\\
+&X=\text{``$u$ is an upper bound of $A$''},\\
+&\neg\operatorname{WellDefined}(X,\text{ambient omitted})
+\end{aligned}
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+\[
+\operatorname{UpperBound}_S(u,A)
+\text{ and }
+\operatorname{UpperBound}_T(u,A)
+\]
+are separate assertions unless $S=T$ and $\le_S=\le_T$ on the elements being compared.
+
+
+  \item[\operatorname{WellDefined}.]
+  \[
+\text{The phrase ``}u\text{ is an upper bound of }A\text{''}
+\]
+\[
+\begin{aligned}
+&P_S=\mathsf{OrderedSet}(S,\le_S),\qquad
+P_T=\mathsf{OrderedSet}(T,\le_T),\\
+&X=\text{``$u$ is an upper bound of $A$''},\\
+&\neg\operatorname{WellDefined}(X,\text{ambient omitted})
+\end{aligned}
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+An upper bound is not only about the subset; it is also about where the subset lives. Changing the ambient order changes the universe of possible bounds and the comparison used to test them.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:real-upper-bound]{Upper Bound}
+\end{itemize}
+\end{dependencies}
+
+

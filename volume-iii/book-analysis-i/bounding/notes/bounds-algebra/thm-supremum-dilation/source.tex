@@ -1,0 +1,127 @@
+\begin{theorem}[Supremum of a Dilation]
+\label{thm:supremum-dilation}
+Let $A\subseteq\mathbb{R}$ be nonempty and bounded, and let $\lambda\in\mathbb{R}$. Then
+\[
+  \sup(\lambda A)=\max\{\lambda\sup A,\lambda\inf A\},
+  \qquad
+  \lambda A=\{\lambda a:a\in A\}.
+\]
+\hyperref[prf:supremum-dilation]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+A\neq\varnothing,\quad A\text{ bounded},\quad \lambda\in\mathbb{R}
+\quad\Longrightarrow\quad
+\sup\{\lambda a:a\in A\}=\max\{\lambda\sup A,\lambda\inf A\}.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad \lambda A=\{\lambda a:a\in A\},\\
+&M=\max\{\lambda s,\lambda t\},\\
+&\operatorname{LeastUpperBound}(s,A,P)\land \operatorname{GreatestLowerBound}(t,A,P)
+\Longrightarrow
+\operatorname{LeastUpperBound}(M,\lambda A,P).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\sup(\lambda A)\ne \max\{\lambda\sup A,\lambda\inf A\}
+\]
+is impossible under the stated hypotheses.
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad \lambda A=\{\lambda a:a\in A\},\\
+&M=\max\{\lambda s,\lambda t\},\\
+&\operatorname{LeastUpperBound}(s,A,P)\land \operatorname{GreatestLowerBound}(t,A,P)
+\land
+\neg\operatorname{LeastUpperBound}(M,\lambda A,P)
+\end{aligned}
+\]
+is a contradictory configuration.
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+The formula separates into the cases $\lambda>0$, $\lambda=0$, and $\lambda<0$. Positive dilation scales the supremum, zero dilation collapses the set to $\{0\}$, and negative dilation turns the infimum into the supremum.
+
+
+  \item[\operatorname{LeastUpperBound} / \operatorname{GreatestLowerBound}.]
+  \[
+\sup(\lambda A)\ne \max\{\lambda\sup A,\lambda\inf A\}
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad \lambda A=\{\lambda a:a\in A\},\\
+&M=\max\{\lambda s,\lambda t\},\\
+&\operatorname{LeastUpperBound}(s,A,P)\land \operatorname{GreatestLowerBound}(t,A,P)
+\land
+\neg\operatorname{LeastUpperBound}(M,\lambda A,P)
+\end{aligned}
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+\[
+\sup(\lambda A)=
+\begin{cases}
+\lambda\sup A, & \lambda>0,\\
+0, & \lambda=0,\\
+\lambda\inf A, & \lambda<0.
+\end{cases}
+\]
+
+
+  \item[\operatorname{LeastUpperBound} / \operatorname{GreatestLowerBound}.]
+  \[
+\sup(\lambda A)\ne \max\{\lambda\sup A,\lambda\inf A\}
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad \lambda A=\{\lambda a:a\in A\},\\
+&M=\max\{\lambda s,\lambda t\},\\
+&\operatorname{LeastUpperBound}(s,A,P)\land \operatorname{GreatestLowerBound}(t,A,P)
+\land
+\neg\operatorname{LeastUpperBound}(M,\lambda A,P)
+\end{aligned}
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A dilation either preserves the order, collapses all points to zero, or reverses the order. The displayed maximum packages those three cases into one formula.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:reals]{Real Numbers}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:multiplication-on-r]{Multiplication on $\mathbb{R}$}
+  \item \hyperref[def:displacement-dilation-reflection]{Displacement, Dilation, and Reflection}
+  \item \hyperref[def:real-upper-bound]{Upper Bound}
+  \item \hyperref[def:real-lower-bound]{Lower Bound}
+  \item \hyperref[def:bounded]{Bounded Set}
+  \item \hyperref[def:supremum]{Supremum}
+  \item \hyperref[def:infimum]{Infimum}
+  \item \hyperref[def:maximum]{Maximum}
+  \item \hyperref[thm:infimum-less-than-supremum]{Infimum Is Less Than or Equal to the Supremum}
+  \item \hyperref[thm:scalar-mult-positive]{Scalar Multiplication by a Positive Scalar}
+  \item \hyperref[thm:scalar-mult-negative]{Scalar Multiplication by a Negative Scalar}
+\end{itemize}
+\end{dependencies}
+
+

@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "def:exterior-point",
+  "kind": "definition",
+  "title": "Exterior Point",
+  "source": {
+    "label": "def:exterior-point",
+    "kind": "definition",
+    "title": "Exterior Point",
+    "book": "book-analysis-i",
+    "chapter": "structure-of-real-line",
+    "section": "interior-exterior-boundary",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/structure-of-real-line/notes/interior-exterior-boundary/notes-interior-exterior-boundary.tex",
+    "source_line_start": 38,
+    "source_line_end": 67,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/structure-of-real-line/notes/interior-exterior-boundary/def-exterior-point",
+      "artifact": "volume-iii/book-analysis-i/structure-of-real-line/notes/interior-exterior-boundary/def-exterior-point/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/structure-of-real-line/notes/interior-exterior-boundary/def-exterior-point/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/structure-of-real-line/notes/interior-exterior-boundary/def-exterior-point",
+    "artifact": "volume-iii/book-analysis-i/structure-of-real-line/notes/interior-exterior-boundary/def-exterior-point/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/structure-of-real-line/notes/interior-exterior-boundary/def-exterior-point/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/structure-of-real-line/notes/interior-exterior-boundary/notes-interior-exterior-boundary.tex",
+      "label": "def:exterior-point",
+      "environment_kind": "definition",
+      "source_line_start": 38,
+      "source_line_end": 67,
+      "current_tex": "\\begin{definitionbox}{Definition (Exterior Point)}\n\\begin{definition}[Exterior Point]\n\\label{def:exterior-point}\nLet $A\\subseteq\\mathbb{R}$ and $x\\in\\mathbb{R}$.  The point $x$ is an\nexterior point of $A$ if there exists $r>0$ such that\n\\[\n  B_r(x)\\subseteq\\mathbb{R}\\setminus A.\n\\]\nEquivalently,\n\\[\n  x\\text{ is an exterior point of }A\n  \\Longleftrightarrow\n  (\\exists r>0)(B_r(x)\\cap A=\\varnothing).\n\\]\n\\end{definition}\n\\end{definitionbox}\n\\begin{remark*}[Standard quantified statement]\n\\[\nx \\text{ is an exterior point of } E \\Longleftrightarrow \\exists r>0\\;(B_{r}(x)\\subseteq \\mathbb{R}\\setminus E).\n\\]\n\\end{remark*}\n\\begin{remark*}[Interpretation]\nAn exterior point of $E$ is interior to the complement: a whole ball around it misses $E$.\n\\end{remark*}\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:open-ball]{Open Ball on the Real Line}\n\\end{itemize}\n\\end{dependencies}\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

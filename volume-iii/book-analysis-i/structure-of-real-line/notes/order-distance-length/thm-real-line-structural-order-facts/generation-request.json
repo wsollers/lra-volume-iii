@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "thm:real-line-structural-order-facts",
+  "kind": "theorem",
+  "title": "Real Line Structural Order Facts",
+  "source": {
+    "label": "thm:real-line-structural-order-facts",
+    "kind": "theorem",
+    "title": "Real Line Structural Order Facts",
+    "book": "book-analysis-i",
+    "chapter": "structure-of-real-line",
+    "section": "order-distance-length",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/structure-of-real-line/notes/order-distance-length/notes-order-distance-length.tex",
+    "source_line_start": 116,
+    "source_line_end": 162,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/structure-of-real-line/notes/order-distance-length/thm-real-line-structural-order-facts",
+      "artifact": "volume-iii/book-analysis-i/structure-of-real-line/notes/order-distance-length/thm-real-line-structural-order-facts/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/structure-of-real-line/notes/order-distance-length/thm-real-line-structural-order-facts/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/structure-of-real-line/notes/order-distance-length/thm-real-line-structural-order-facts",
+    "artifact": "volume-iii/book-analysis-i/structure-of-real-line/notes/order-distance-length/thm-real-line-structural-order-facts/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/structure-of-real-line/notes/order-distance-length/thm-real-line-structural-order-facts/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/structure-of-real-line/notes/order-distance-length/notes-order-distance-length.tex",
+      "label": "thm:real-line-structural-order-facts",
+      "environment_kind": "theorem",
+      "source_line_start": 116,
+      "source_line_end": 162,
+      "current_tex": "\\begin{theorembox}{Theorem (Real Line Structural Order Facts)}\n\\begin{theorem}[Real Line Structural Order Facts]\\label{thm:real-line-structural-order-facts}\nThe real line has the following structural properties: $\\mathbb{R}$ is\nlinearly ordered by $\\leq$, $\\mathbb{R}$ is an ordered field, and\n$\\mathbb{R}$ satisfies the least upper bound property.  Explicitly, whenever\n$A\\subseteq\\mathbb{R}$ is nonempty and bounded above in $\\mathbb{R}$, there\nexists $s\\in\\mathbb{R}$ such that\n\\[\n  (\\forall a\\in A)(a\\leq s)\n\\]\nand\n\\[\n  (\\forall u\\in\\mathbb{R})\n  \\left[\n  (\\forall a\\in A)(a\\leq u)\n  \\Longrightarrow\n  s\\leq u\n  \\right].\n\\]\n\\hyperref[prf:real-line-structural-order-facts]{Go to proof.}\n\\end{theorem}\n\\end{theorembox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\operatorname{TotallyOrderedSet}(\\mathbb{R},\\leq)\n\\land\n\\operatorname{OrderedField}(\\mathbb{R})\n\\land\n\\operatorname{HasLeastUpperBoundProperty}(\\mathbb{R}).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nThe real line combines order, algebra, and completeness. These three\nstructures are the ambient facts used by distance, interval, and convergence\narguments throughout the volume.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[thm:r-totally-ordered-set]{$\\mathbb{R}$ Is a Totally Ordered Set}\n  \\item \\hyperref[thm:r-is-an-ordered-field]{$\\mathbb{R}$ Is an Ordered Field}\n  \\item \\hyperref[thm:lub-property-r]{Least-Upper-Bound Property}\n\\end{itemize}\n\\end{dependencies}\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

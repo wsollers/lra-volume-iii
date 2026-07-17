@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "thm:closed-set-closure-operations",
+  "kind": "theorem",
+  "title": "Closure Laws for Closed Sets",
+  "source": {
+    "label": "thm:closed-set-closure-operations",
+    "kind": "theorem",
+    "title": "Closure Laws for Closed Sets",
+    "book": "book-analysis-i",
+    "chapter": "structure-of-real-line",
+    "section": "unions-and-intersections",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/structure-of-real-line/notes/unions-and-intersections/notes-unions-and-intersections.tex",
+    "source_line_start": 13,
+    "source_line_end": 50,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/structure-of-real-line/notes/unions-and-intersections/thm-closed-set-closure-operations",
+      "artifact": "volume-iii/book-analysis-i/structure-of-real-line/notes/unions-and-intersections/thm-closed-set-closure-operations/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/structure-of-real-line/notes/unions-and-intersections/thm-closed-set-closure-operations/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/structure-of-real-line/notes/unions-and-intersections/thm-closed-set-closure-operations",
+    "artifact": "volume-iii/book-analysis-i/structure-of-real-line/notes/unions-and-intersections/thm-closed-set-closure-operations/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/structure-of-real-line/notes/unions-and-intersections/thm-closed-set-closure-operations/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/structure-of-real-line/notes/unions-and-intersections/notes-unions-and-intersections.tex",
+      "label": "thm:closed-set-closure-operations",
+      "environment_kind": "theorem",
+      "source_line_start": 13,
+      "source_line_end": 50,
+      "current_tex": "\\begin{theorembox}{Theorem (Closure Laws for Closed Sets)}\n\\begin{theorem}[Closure Laws for Closed Sets]\n\\label{thm:closed-set-closure-operations}\nThe following statements hold in $\\mathbb{R}$:\n\\begin{enumerate}[label=(\\roman*)]\n  \\item The sets $\\varnothing$ and $\\mathbb{R}$ are closed.\n  \\item If $\\{F_\\lambda\\}_{\\lambda\\in\\Lambda}$ is any family of closed subsets\n  of $\\mathbb{R}$, then\n  \\[\n    \\bigcap_{\\lambda\\in\\Lambda}F_\\lambda\n  \\]\n  is closed.\n  \\item If $n\\in\\mathbb{N}$ and $F_1,\\ldots,F_n\\subseteq\\mathbb{R}$ are\n  closed, then\n  \\[\n    \\bigcup_{k=1}^{n}F_k\n  \\]\n  is closed.\n\\end{enumerate}\n\\hyperref[prf:closed-set-closure-operations]{Go to proof.}\n\\end{theorem}\n\\end{theorembox}\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\Bigl(\\forall i\\in I\\;F_i\\text{ closed}\\Bigr)\\Longrightarrow \\Bigl(\\bigcap_{i\\in I} F_{i}\\Bigr) \\text{ closed};\\qquad\n\\Bigl(\\bigwedge_{k=1}^{n} F_k\\text{ closed}\\Bigr)\\Longrightarrow \\Bigl(\\bigcup_{k=1}^{n} F_{k}\\Bigr) \\text{ closed}.\n\\]\n\\end{remark*}\n\\begin{remark*}[Interpretation]\nThe roles of union and intersection swap relative to open sets: closed sets are stable under arbitrary intersection but only finite union. The asymmetry mirrors the open case under De~Morgan's laws.\n\\end{remark*}\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:closed-set]{Closed Set in $\\mathbb{R}$}\n  \\item \\hyperref[thm:open-set-closure-operations]{Unions and Finite Intersections of Open Sets}\n\\end{itemize}\n\\end{dependencies}\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

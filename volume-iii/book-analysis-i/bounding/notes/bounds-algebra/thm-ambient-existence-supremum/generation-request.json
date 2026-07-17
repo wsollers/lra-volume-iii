@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "thm:ambient-existence-supremum",
+  "kind": "theorem",
+  "title": "Ambient Existence of Supremum",
+  "source": {
+    "label": "thm:ambient-existence-supremum",
+    "kind": "theorem",
+    "title": "Ambient Existence of Supremum",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "bounds-algebra",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-algebra-of-supremum-infimum.tex",
+    "source_line_start": 3069,
+    "source_line_end": 3185,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-ambient-existence-supremum",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-ambient-existence-supremum/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-ambient-existence-supremum/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-ambient-existence-supremum",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-ambient-existence-supremum/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-ambient-existence-supremum/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-algebra-of-supremum-infimum.tex",
+      "label": "thm:ambient-existence-supremum",
+      "environment_kind": "theorem",
+      "source_line_start": 3069,
+      "source_line_end": 3185,
+      "current_tex": "\\begin{theorem}[Ambient Existence of Supremum]\n\\label{thm:ambient-existence-supremum}\nThere are ordered sets $S\\subseteq S'$ and a subset $A\\subseteq S$ such that $A$ has a supremum relative to $S'$ but has no supremum relative to $S$.\n\\hyperref[prf:ambient-existence-supremum]{Go to proof.}\n\\end{theorem}\n\\end{theorembox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\exists S\\subseteq S'\\;\\exists A\\subseteq S:\n\\quad\n\\sup_{S'} A\\text{ exists}\n\\quad\\text{and}\\quad\n\\sup_S A\\text{ does not exist}.\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\n\\begin{aligned}\n&T=S',\\qquad A\\subseteq S,\\qquad S\\subseteq T,\\\\\n&P_S=\\mathsf{OrderedSet}(S,\\leq),\\qquad\nP_T=\\mathsf{OrderedSet}(T,\\leq),\\\\\n&\\exists s\\in T:\\operatorname{LeastUpperBound}(s,A,P_T)\n\\land\n\\neg\\exists t\\in S\\;\\operatorname{LeastUpperBound}(t,A,P_S).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\n\\text{Every ambient enlargement preserves and reflects existence of suprema.}\n\\]\nThis assertion is false.\n\\end{remark*}\n\n\\begin{remark*}[Negation predicate reading]\n\\[\n\\begin{aligned}\n&T=S',\\qquad A\\subseteq S,\\qquad S\\subseteq T,\\\\\n&P_S=\\mathsf{OrderedSet}(S,\\leq),\\qquad\nP_T=\\mathsf{OrderedSet}(T,\\leq),\\\\\n&\\bigl[\\exists s\\in T\\,\\operatorname{LeastUpperBound}(s,A,P_T)\n\\Longrightarrow\n\\exists t\\in S\\,\\operatorname{LeastUpperBound}(t,A,P_S)\\bigr]\n\\end{aligned}\n\\]\nis false.\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\nThe transfer from $S'$ to $S$ fails when the least upper bound exists in the larger ambient set but is missing from the smaller one. The smaller ambient set may contain upper bounds without containing a least upper bound.\n\n\n  \\item[\\operatorname{LeastUpperBound}.]\n  \\[\n\\text{Every ambient enlargement preserves and reflects existence of suprema.}\n\\]\n\\[\n\\begin{aligned}\n&T=S',\\qquad A\\subseteq S,\\qquad S\\subseteq T,\\\\\n&P_S=\\mathsf{OrderedSet}(S,\\leq),\\qquad\nP_T=\\mathsf{OrderedSet}(T,\\leq),\\\\\n&\\bigl[\\exists s\\in T\\,\\operatorname{LeastUpperBound}(s,A,P_T)\n\\Longrightarrow\n\\exists t\\in S\\,\\operatorname{LeastUpperBound}(t,A,P_S)\\bigr]\n\\end{aligned}\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\n\\[\ns=\\sup_{S'} A,\\quad s\\notin S,\\quad\n\\text{and no }t\\in S\\text{ is least among the upper bounds of }A\\text{ in }S.\n\\]\n\n\n  \\item[\\operatorname{LeastUpperBound}.]\n  \\[\n\\text{Every ambient enlargement preserves and reflects existence of suprema.}\n\\]\n\\[\n\\begin{aligned}\n&T=S',\\qquad A\\subseteq S,\\qquad S\\subseteq T,\\\\\n&P_S=\\mathsf{OrderedSet}(S,\\leq),\\qquad\nP_T=\\mathsf{OrderedSet}(T,\\leq),\\\\\n&\\bigl[\\exists s\\in T\\,\\operatorname{LeastUpperBound}(s,A,P_T)\n\\Longrightarrow\n\\exists t\\in S\\,\\operatorname{LeastUpperBound}(t,A,P_S)\\bigr]\n\\end{aligned}\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nCompleteness is an ambient property. A larger ordered universe can fill a gap that remains absent in a smaller ordered universe.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:ordered-set]{Ordered Set}\n  \\item \\hyperref[def:subset]{Subset}\n  \\item \\hyperref[def:real-upper-bound]{Upper Bound}\n  \\item \\hyperref[def:supremum]{Supremum}\n  \\item \\hyperref[prop:suprema-ambient-set]{Suprema Depend on the Ambient Set}\n\\end{itemize}\n\\end{dependencies}\n\n\n\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

@@ -8,15 +8,22 @@ Compactness is defined by the open-cover property, deliberately and not as ``clo
 \begin{definitionbox}{Definition (Compact Set in $\mathbb{R}$)}
 \begin{definition}[Compact Set in $\mathbb{R}$]
 \label{def:compact-set}
-A set $K\subseteq\mathbb{R}$ is \emph{compact} exactly when every open cover of $K$ admits a finite subcover:
+A set $K\subseteq\mathbb{R}$ is \emph{compact} if every open cover of $K$ has
+a finite subcover.  Explicitly, for every family $\mathcal{U}$ of open
+subsets of $\mathbb{R}$,
 \[
-\forall \{U_i\}_{i\in I}\text{ open cover of }K\;\exists \text{finite } J\subseteq I\;\Bigl(K\subseteq\bigcup_{i\in J}U_i\Bigr).
+  K\subseteq\bigcup_{U\in\mathcal{U}}U
+\]
+implies that there exists a finite subfamily $\mathcal{V}\subseteq\mathcal{U}$
+such that
+\[
+  K\subseteq\bigcup_{V\in\mathcal{V}}V.
 \]
 \end{definition}
 \end{definitionbox}
 \begin{remark*}[Standard quantified statement]
 \[
-K \text{ compact} \Longleftrightarrow \forall \{U_i\}_{i\in I}\Bigl(\bigl(\forall i\in I\;U_i \text{ open}\bigr)\land K\subseteq\textstyle\bigcup_{i\in I}U_i \Rightarrow \exists \text{finite } J\subseteq I\;K\subseteq\textstyle\bigcup_{i\in J}U_i\Bigr).
+K \text{ compact} \Longleftrightarrow \forall \{U_i\}_{i\in I}\Bigl(\bigl(\forall i\in I\;U_i \text{ open}\bigr)\land K\subseteq\textstyle\bigcup_{i\in I}U_i \Longrightarrow \exists \text{finite } J\subseteq I\;K\subseteq\textstyle\bigcup_{i\in J}U_i\Bigr).
 \]
 \end{remark*}
 
@@ -26,7 +33,7 @@ K\subseteq\mathbb{R},\qquad
 \operatorname{IsCompact}(K,\mathbb{R})
 \Longleftrightarrow
 \forall \mathcal{U}\;\bigl(\operatorname{OpenCover}(\mathcal{U},K,\mathbb{R})
-\Rightarrow \exists J\;(J\subseteq I\land \operatorname{FiniteSet}(J)
+\Longrightarrow \exists J\;(J\subseteq I\land \operatorname{FiniteSet}(J)
 \land K\subseteq\textstyle\bigcup_{i\in J}U_i)\bigr).
 \]
 \end{remark*}
@@ -42,7 +49,7 @@ K\subseteq\mathbb{R},\qquad
 \Longleftrightarrow
 \exists \mathcal{U}\;\bigl(\operatorname{OpenCover}(\mathcal{U},K,\mathbb{R})
 \land \forall J\;(J\subseteq I\land \operatorname{FiniteSet}(J)
-\Rightarrow K\not\subseteq\textstyle\bigcup_{i\in J}U_i)\bigr).
+\Longrightarrow K\not\subseteq\textstyle\bigcup_{i\in J}U_i)\bigr).
 \]
 \end{remark*}
 
@@ -61,7 +68,7 @@ K\subseteq\mathbb{R},\qquad
 \Longleftrightarrow
 \exists \mathcal{U}\;\bigl(\operatorname{OpenCover}(\mathcal{U},K,\mathbb{R})
 \land \forall J\;(J\subseteq I\land \operatorname{FiniteSet}(J)
-\Rightarrow K\not\subseteq\textstyle\bigcup_{i\in J}U_i)\bigr).
+\Longrightarrow K\not\subseteq\textstyle\bigcup_{i\in J}U_i)\bigr).
 \]
 \end{description}
 \end{remark*}
@@ -77,7 +84,19 @@ Compactness is a finiteness property phrased entirely in open sets: no matter ho
 \begin{theorembox}{Theorem (Compact Subsets of $\mathbb{R}$ Are Closed and Bounded)}
 \begin{theorem}[Compact Subsets of $\mathbb{R}$ Are Closed and Bounded]
 \label{thm:compact-implies-closed-bounded}
-If $K\subseteq\mathbb{R}$ is compact, then $K$ is closed and bounded.
+Let $K\subseteq\mathbb{R}$.  If $K$ is compact, then $K$ is closed and
+bounded.  Explicitly,
+\[
+  K\text{ compact}
+  \Longrightarrow
+  \leqft[
+  \mathbb{R}\setminus K\text{ is open}
+  \right]
+  \land
+  \leqft[
+  (\exists M>0)(\forall x\in K)(|x|\leq M)
+  \right].
+\]
 \hyperref[prf:compact-implies-closed-bounded]{Go to proof.}
 \end{theorem}
 \end{theorembox}

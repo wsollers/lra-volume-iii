@@ -1,0 +1,107 @@
+\begin{corollary}[Unique Point in Nested Intervals Is Endpoint Limit]
+\label{cor:unique-point-in-nested-intervals-is-endpoint-limit}
+Let $(a_n)$ and $(b_n)$ be sequences in $\mathbb{R}$ satisfying
+\[
+  (\forall n\in\mathbb{N})(a_n\leq b_n)
+\]
+and
+\[
+  (\forall n\in\mathbb{N})([a_{n+1},b_{n+1}]\subseteq [a_n,b_n]).
+\]
+Suppose there exists $x\in\mathbb{R}$ such that
+\[
+  \bigcap_{n=1}^{\infty}[a_n,b_n]=\{x\}.
+\]
+Then
+\[
+  \lim_{n\longrightarrow\infty}a_n=x
+  \quad\text{and}\quad
+  \lim_{n\longrightarrow\infty}b_n=x.
+\]
+\hyperref[prf:unique-point-in-nested-intervals-is-endpoint-limit]{Go to proof.}
+\end{corollary}
+\end{corollarybox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\left[
+\lim_{n\longrightarrow\infty}(b_n-a_n)=0
+\land
+\bigcap_{n=1}^{\infty}[a_n,b_n]=\{x\}
+\right]
+\Longrightarrow
+\left(\lim_{n\longrightarrow\infty}a_n=x\land \lim_{n\longrightarrow\infty}b_n=x\right).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+a\colon\mathbb{N}\longrightarrow\mathbb{R},\qquad b\colon\mathbb{N}\longrightarrow\mathbb{R},\qquad d\colon\mathbb{N}\longrightarrow\mathbb{R},\qquad d_n=b_n-a_n,
+\]
+\[
+C=\bigcap_{n=1}^{\infty}[a_n,b_n],\qquad X=\mathbb{R},\qquad
+C=\{x\}
+\land
+\operatorname{ConvergesTo}(d,0,X)
+\Longrightarrow
+\operatorname{ConvergesTo}(a,x,X)
+\land
+\operatorname{ConvergesTo}(b,x,X).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\bigcap_{n=1}^{\infty}[a_n,b_n]=\{x\}
+\land
+\lim_{n\longrightarrow\infty}(b_n-a_n)=0
+\land
+\left(\lim_{n\longrightarrow\infty}a_n\ne x\lor \lim_{n\longrightarrow\infty}b_n\ne x\right).
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+a\colon\mathbb{N}\longrightarrow\mathbb{R},\qquad b\colon\mathbb{N}\longrightarrow\mathbb{R},\qquad d\colon\mathbb{N}\longrightarrow\mathbb{R},\qquad d_n=b_n-a_n,
+\]
+\[
+C=\bigcap_{n=1}^{\infty}[a_n,b_n],\qquad X=\mathbb{R},\qquad
+\left(\lim_{n\longrightarrow\infty}a_n\ne x\lor \lim_{n\longrightarrow\infty}b_n\ne x\right)
+\Longrightarrow
+C\ne\{x\}
+\lor
+\neg\operatorname{ConvergesTo}(d,0,X).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  Failure is witnessed by the displayed negated or contrapositive condition.
+
+  \item[\operatorname{IsEmpty}.]
+  \[
+\bigcap_{n=1}^{\infty}[a_n,b_n]=\{x\}
+\land
+\lim_{n\longrightarrow\infty}(b_n-a_n)=0
+\land
+\left(\lim_{n\longrightarrow\infty}a_n\ne x\lor \lim_{n\longrightarrow\infty}b_n\ne x\right).
+\]
+\[
+a\colon\mathbb{N}\longrightarrow\mathbb{R},\qquad b\colon\mathbb{N}\longrightarrow\mathbb{R},\qquad d\colon\mathbb{N}\longrightarrow\mathbb{R},\qquad d_n=b_n-a_n,
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+If the intersection has a single survivor, both endpoint sequences converge
+to that survivor.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[def:closed-interval]{Closed Interval};
+\hyperref[def:bounded-subset-of-r]{Bounded Subset of the Real Line}.
+\end{dependencies}
+
+\input{volume-iii/book-analysis-i/bounding/notes/completeness/figure-nested-interval-failures}
+

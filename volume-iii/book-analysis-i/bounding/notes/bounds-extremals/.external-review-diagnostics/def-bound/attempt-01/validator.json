@@ -1,8 +1,0 @@
-{
-  "returncode": 1,
-  "commands": [
-    "C:\\Users\\wsoll\\AppData\\Local\\Programs\\Python\\Python313\\python.exe ..\\lra-governance\\tools\\governance\\validate_semantic_artifact.py --artifact C:\\Users\\wsoll\\AppData\\Local\\Temp\\lra-review-attempt-1-x2s72ck_\\artifact.yaml --package-dir C:\\Users\\wsoll\\AppData\\Local\\Temp\\lra-review-attempt-1-x2s72ck_ --governance-root ..\\lra-governance --strict --repos-root .."
-  ],
-  "stdout": "# Semantic Artifact Validation\n- **Result:** FAIL\n- **Errors:** 5\n- **Warnings:** 0\n\n## Errors\n\n- strict-warning: ast:statement.semantic_ast: raw_latex prevents complete scope validation\n- strict-warning: ast:logical_forms.standard_quantified.ast: raw_latex prevents complete scope validation\n- strict-warning: ast:logical_forms.negation.mechanical.ast: raw_latex prevents complete scope validation\n- strict-warning: ast:logical_forms.negation.approved_normal_form.ast: raw_latex prevents complete scope validation\n- strict-warning: unresolved:PROOF_VAULT_CANDIDATE_UNVERIFIED: Does the supplied proof-vault candidate resolve to an authoritative metadata record for this definition?\n\n## Warnings\n\n_None._\n",
-  "stderr": ""
-}

@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "cor:complements-inherit-ambient-bounds",
+  "kind": "corollary",
+  "title": "Complements Inherit Ambient Bounds",
+  "source": {
+    "label": "cor:complements-inherit-ambient-bounds",
+    "kind": "corollary",
+    "title": "Complements Inherit Ambient Bounds",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "bounds-algebra",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-set-operations-and-bounds.tex",
+    "source_line_start": 874,
+    "source_line_end": 980,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/cor-complements-inherit-ambient-bounds",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/cor-complements-inherit-ambient-bounds/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/cor-complements-inherit-ambient-bounds/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/cor-complements-inherit-ambient-bounds",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/cor-complements-inherit-ambient-bounds/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/cor-complements-inherit-ambient-bounds/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-set-operations-and-bounds.tex",
+      "label": "cor:complements-inherit-ambient-bounds",
+      "environment_kind": "corollary",
+      "source_line_start": 874,
+      "source_line_end": 980,
+      "current_tex": "\\begin{corollary}[Complements Inherit Ambient Bounds]\n\\label{cor:complements-inherit-ambient-bounds}\nLet $A\\subseteq S\\subseteq\\mathbb{R}$. Every upper bound of $S$ is an\nupper bound of the relative complement $S\\setminus A$, and every lower\nbound of $S$ is a lower bound of $S\\setminus A$; that is, for all\n$u,\\ell\\in\\mathbb{R}$,\n\\[\n\\left(\\forall s\\in S,\\ s\\leq u\\right)\n\\Longrightarrow\n(\\forall x\\in S\\setminus A,\\ x\\leq u),\n\\]\nand\n\\[\n\\left(\\forall s\\in S,\\ \\ell\\leq s\\right)\n\\Longrightarrow\n(\\forall x\\in S\\setminus A,\\ \\ell\\leq x).\n\\]\n\\hyperref[prf:complements-inherit-ambient-bounds]{Go to proof.}\n\\end{corollary}\n\\end{corollarybox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\begin{aligned}\n&(\\forall s\\in S)(s\\leq u)\n\\Longrightarrow(\\forall x\\in S\\setminus A)(x\\leq u),\\\\\n&(\\forall s\\in S)(\\ell\\leq s)\n\\Longrightarrow(\\forall x\\in S\\setminus A)(\\ell\\leq x).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A\\subseteq S\\subseteq\\mathbb{R},\\qquad C=S\\setminus A,\\\\\n&\\operatorname{UpperBound}(u,S,P)\\Longrightarrow\\operatorname{UpperBound}(u,C,P),\\\\\n&\\operatorname{LowerBound}(\\ell,S,P)\\Longrightarrow\\operatorname{LowerBound}(\\ell,C,P).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\n\\operatorname{UpperBound}(u,S)\\land\\neg\\operatorname{UpperBound}(u,S\\setminus A)\n\\]\nor\n\\[\n\\operatorname{LowerBound}(\\ell,S)\\land\\neg\\operatorname{LowerBound}(\\ell,S\\setminus A).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negation predicate reading]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A\\subseteq S\\subseteq\\mathbb{R},\\qquad C=S\\setminus A,\\\\\n&\\bigl(\\operatorname{UpperBound}(u,S,P)\\land\\neg\\operatorname{UpperBound}(u,C,P)\\bigr)\\\\\n&\\qquad{}\\lor\n\\bigl(\\operatorname{LowerBound}(\\ell,S,P)\\land\\neg\\operatorname{LowerBound}(\\ell,C,P)\\bigr).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n\\item[Exposition.]\nThe complement does not inherit bounds from $A$; it inherits them from the\nambient set $S$.\n\n\n  \\item[\\operatorname{UpperBound} / \\operatorname{LowerBound}.]\n  \\[\n\\operatorname{UpperBound}(u,S)\\land\\neg\\operatorname{UpperBound}(u,S\\setminus A)\n\\]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A\\subseteq S\\subseteq\\mathbb{R},\\qquad C=S\\setminus A,\\\\\n&\\bigl(\\operatorname{UpperBound}(u,S,P)\\land\\neg\\operatorname{UpperBound}(u,C,P)\\bigr)\\\\\n&\\qquad{}\\lor\n\\bigl(\\operatorname{LowerBound}(\\ell,S,P)\\land\\neg\\operatorname{LowerBound}(\\ell,C,P)\\bigr).\n\\end{aligned}\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nEvery point of $S\\setminus A$ is a point of $S$, so every ambient bound of\n$S$ applies to the complement.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n\\item \\hyperref[def:reals]{Real Numbers}.\n\\item \\hyperref[def:ordered-set]{Ordered Set}.\n\\item \\hyperref[def:subset]{Subset}.\n\\item \\hyperref[def:complement]{Complement}.\n\\item \\hyperref[def:set-difference]{Set Difference}.\n\\item \\hyperref[def:real-upper-bound]{Upper Bound}.\n\\item \\hyperref[def:real-lower-bound]{Lower Bound}.\n\\item \\hyperref[def:bounded-above]{Bounded Above}.\n\\item \\hyperref[def:bounded-below]{Bounded Below}.\n\\item \\hyperref[def:bounded]{Bounded Set}.\n\\item \\hyperref[lem:subsets-preserve-upper-bounds]{Subsets Preserve Upper Bounds}.\n\\item \\hyperref[lem:subsets-preserve-lower-bounds]{Subsets Preserve Lower Bounds}.\n\\end{itemize}\n\\end{dependencies}\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

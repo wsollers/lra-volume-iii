@@ -1,0 +1,111 @@
+\begin{proposition}[Suprema Depend on the Ambient Set]
+\label{prop:suprema-ambient-set}
+Let $A\subseteq S\subseteq S'$ be subsets of an ordered set. The supremum of $A$ relative to $S$, if it exists, need not agree with the supremum of $A$ relative to $S'$.
+\hyperref[prf:suprema-ambient-set]{Go to proof.}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\sup_S A\text{ and }\sup_{S'} A
+\]
+are ambient-relative objects and may differ in existence or value.
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\begin{aligned}
+&T=S',\qquad A\subseteq S,\qquad S\subseteq T,\\
+&P_S=\mathsf{OrderedSet}(S,\leq),\qquad
+P_T=\mathsf{OrderedSet}(T,\leq),\\
+&\operatorname{LeastUpperBound}(s,A,P_S)
+\quad\text{and}\quad
+\operatorname{LeastUpperBound}(s,A,P_T)
+\end{aligned}
+\]
+are different assertions unless the ambient upper-bound sets agree.
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\sup_S A=\sup_{S'} A
+\]
+is not guaranteed by $A\subseteq S\subseteq S'$ alone.
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\begin{aligned}
+&T=S',\qquad A\subseteq S,\qquad S\subseteq T,\\
+&P_S=\mathsf{OrderedSet}(S,\leq),\qquad
+P_T=\mathsf{OrderedSet}(T,\leq),\\
+&\operatorname{LeastUpperBound}(s,A,P_T)\land
+\neg\operatorname{LeastUpperBound}(s,A,P_S)
+\end{aligned}
+\]
+is possible when the larger ambient set contains the least upper bound but the smaller one does not.
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+The ambient-relative supremum can fail to transfer because the candidate least upper bound may not belong to the smaller ambient set, or because the smaller ambient set may have a different collection of upper bounds.
+
+
+  \item[\operatorname{LeastUpperBound}.]
+  \[
+\sup_S A=\sup_{S'} A
+\]
+\[
+\begin{aligned}
+&T=S',\qquad A\subseteq S,\qquad S\subseteq T,\\
+&P_S=\mathsf{OrderedSet}(S,\leq),\qquad
+P_T=\mathsf{OrderedSet}(T,\leq),\\
+&\operatorname{LeastUpperBound}(s,A,P_T)\land
+\neg\operatorname{LeastUpperBound}(s,A,P_S)
+\end{aligned}
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+\[
+s=\sup_{S'} A,\quad s\notin S
+\Longrightarrow
+s\text{ cannot be the supremum of }A\text{ relative to }S.
+\]
+
+
+  \item[\operatorname{LeastUpperBound}.]
+  \[
+\sup_S A=\sup_{S'} A
+\]
+\[
+\begin{aligned}
+&T=S',\qquad A\subseteq S,\qquad S\subseteq T,\\
+&P_S=\mathsf{OrderedSet}(S,\leq),\qquad
+P_T=\mathsf{OrderedSet}(T,\leq),\\
+&\operatorname{LeastUpperBound}(s,A,P_T)\land
+\neg\operatorname{LeastUpperBound}(s,A,P_S)
+\end{aligned}
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Suprema are least upper bounds inside a chosen universe. Enlarging or shrinking that universe can create or remove the point that should serve as the least ceiling.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:real-upper-bound]{Upper Bound}
+  \item \hyperref[def:supremum]{Supremum}
+  \item \hyperref[prop:upper-bounds-ambient-order]{Upper Bounds Depend on the Ambient Order}
+\end{itemize}
+\end{dependencies}
+
+

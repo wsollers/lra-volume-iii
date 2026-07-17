@@ -1,0 +1,200 @@
+schema_version: lra.semantic-artifact/1.0
+identity:
+  label: thm:distance-is-a-metric
+  kind: theorem
+  title: The Distance Function Is a Metric
+  canonical_name: The Distance Function Is a Metric
+  status: draft
+  atomicity:
+    status: atomic
+    concepts_detected:
+    - The Distance Function Is a Metric
+    owning_concept: The Distance Function Is a Metric
+    split_reason: null
+location:
+  repository: wsollers/lra-volume-iii
+  commit: 77009ab9cde1bf3c2eef193c4d03a256afc4ccde
+  volume: iii
+  book: book-analysis-i
+  chapter: structure-of-real-line
+  topic: order-distance-length
+  source_file: volume-iii/book-analysis-i/structure-of-real-line/notes/order-distance-length/notes-order-distance-length.tex
+  source_line_start: 72
+  source_line_end: 116
+  source_hash: sha256:c3ca0aa128e465fcf8af4526ba71c24383add8ca9141f83f1f5306b61ef1b2d3
+classification:
+  mathematical_domain: real analysis
+  artifact_form: theorem
+  logical_shape: source-decorated quantified statement
+  logical_framework: mathematical_vernacular
+  language_level: object_language
+context:
+- id: R
+  kind: ambient_space
+  name: \mathbb{R}
+  ontology_id: null
+  construction: real line with the source-declared structure
+  ast:
+    kind: constant
+    name: \mathbb{R}
+parameters: []
+assumptions: []
+statement:
+  canonical_prose: Codex-local extraction of the source statement for The Distance
+    Function Is a Metric.
+  canonical_latex: 'd:\mathbb{R}\times\mathbb{R}\longrightarrow\mathbb{R},\qquad
+
+    \mathsf{MetricSpace}(\mathbb{R},d)
+
+    \Longleftrightarrow
+
+    \text{$d$ satisfies nonnegativity, identity of indiscernibles, symmetry, and the
+    triangle inequality.}'
+  semantic_ast: &id001
+    kind: iff
+    left:
+      kind: raw_latex
+      latex: \mathsf{MetricSpace}(\mathbb{R},d)
+    right:
+      kind: raw_latex
+      latex: \text{$d$ satisfies nonnegativity, identity of indiscernibles, symmetry,
+        and the triangle inequality.}
+logical_forms:
+  standard_quantified:
+    latex: \forall x,y,z\in\mathbb{R}\;\bigl(d(x,y)\geq 0\ \land\ (d(x,y)=0\Longleftrightarrow
+      x=y)\ \land\ d(x,y)=d(y,x)\ \land\ d(x,z)\leq d(x,y)+d(y,z)\bigr).
+    ast:
+      kind: membership
+      element:
+        kind: variable
+        binder_id: z
+      set:
+        kind: raw_latex
+        latex: \mathbb{R}\bigl(d(x,y)\geq 0\ \land\ (d(x,y)=0\Longleftrightarrow x=y)\
+          \land\ d(x,y)=d(y,x)\ \land\ d(x,z)\leq d(x,y)+d(y,z)\bigr)
+  predicate_reading:
+    latex: 'd:\mathbb{R}\times\mathbb{R}\longrightarrow\mathbb{R},\qquad
+
+      \mathsf{MetricSpace}(\mathbb{R},d)
+
+      \Longleftrightarrow
+
+      \text{$d$ satisfies nonnegativity, identity of indiscernibles, symmetry, and
+      the triangle inequality.}'
+    ast:
+      kind: iff
+      left:
+        kind: raw_latex
+        latex: \mathsf{MetricSpace}(\mathbb{R},d)
+      right:
+        kind: raw_latex
+        latex: \text{$d$ satisfies nonnegativity, identity of indiscernibles, symmetry,
+          and the triangle inequality.}
+    registry_predicates: []
+    registry_structures: []
+  negation:
+    mechanical:
+      latex: Not(\forall x,y,z\in\mathbb{R}\;\bigl(d(x,y)\geq 0\ \land\ (d(x,y)=0\Longleftrightarrow
+        x=y)\ \land\ d(x,y)=d(y,x)\ \land\ d(x,z)\leq d(x,y)+d(y,z)\bigr).)
+      ast:
+        kind: not
+        operand: *id001
+    approved_normal_form: null
+    normalization_requires: []
+  contrapositive: null
+  equivalent_forms: []
+semantics:
+  witness_dependencies: []
+  vacuity_behavior: []
+  definedness:
+    mode: source_context
+    conditions: []
+    obligations: []
+  uniqueness_conditions: []
+  equality_cases: []
+  edge_cases: []
+failure_analysis:
+  applicability_failures: []
+  statement_failures:
+  - id: fail-source-negation
+    description: Failure is witnessed by the source negated quantified statement when
+      present.
+    minimal_failure_shape: Not(\forall x,y,z\in\mathbb{R}\;\bigl(d(x,y)\geq 0\ \land\
+      (d(x,y)=0\Longleftrightarrow x=y)\ \land\ d(x,y)=d(y,x)\ \land\ d(x,z)\leq d(x,y)+d(y,z)\bigr).)
+  counterexample_shape: Not(\forall x,y,z\in\mathbb{R}\;\bigl(d(x,y)\geq 0\ \land\
+    (d(x,y)=0\Longleftrightarrow x=y)\ \land\ d(x,y)=d(y,x)\ \land\ d(x,z)\leq d(x,y)+d(y,z)\bigr).)
+relationships:
+  dependency_edges:
+  - kind: uses_reference
+    target: def:distance-on-real-line
+    display: Distance on the Real Line
+    notes: Listed in the source dependency block.
+  - kind: uses_reference
+    target: thm:triangle-inequality
+    display: Triangle Inequality
+    notes: Listed in the source dependency block.
+  ontology_edges: []
+  provenance_edges: []
+  proof_edges:
+  - kind: proved_by
+    target: prf:distance-is-a-metric
+    display: Go to proof.
+    notes: null
+notation:
+  introduced: []
+  used:
+  - symbol: \mathbb{R}
+    meaning: the real line
+  local_conventions: []
+exposition:
+  interpretation: 'The three metric axioms are exactly the properties of $|\cdot|$:
+    nonnegativity with the zero-distance characterization, symmetry, and the triangle
+    inequality. This is the precise sense in which $\mathbb{R}$ is a one-dimensional
+    metric space.'
+  exposition: []
+  examples: []
+  non_examples: []
+  common_confusions: []
+verification:
+  canonical_proof: null
+  formalizations: []
+  external_library_crosswalks: []
+  proof_vault_records: []
+provenance:
+  origin:
+    kind: explicit_source_statement
+    source_status: single_primary_statement
+    primary_source_statement:
+      role: primary_statement
+      source_id: null
+      label: thm:distance-is-a-metric
+      citation: null
+      page_range: null
+      evidence: Generated from the local LaTeX formal environment and its routed source
+        decorations.
+      notes: Codex-authored local semantic extraction; not externally reviewed.
+    component_sources: []
+    derivation_rule: null
+    requires_review: true
+  explicit_from_source:
+  - \forall x,y,z\in\mathbb{R}\;\bigl(d(x,y)\geq 0\ \land\ (d(x,y)=0\Longleftrightarrow
+    x=y)\ \land\ d(x,y)=d(y,x)\ \land\ d(x,z)\leq d(x,y)+d(y,z)\bigr).
+  normalized_from_source:
+  - 'd:\mathbb{R}\times\mathbb{R}\longrightarrow\mathbb{R},\qquad
+
+    \mathsf{MetricSpace}(\mathbb{R},d)
+
+    \Longleftrightarrow
+
+    \text{$d$ satisfies nonnegativity, identity of indiscernibles, symmetry, and the
+    triangle inequality.}'
+  inferred_from_registry: []
+  generated_by_analysis:
+  - Codex local semantic payload generation from source decorations
+  unresolved: []
+governance:
+  governance_repository: wsollers/lra-governance
+  governance_commit: 01c642757dc85341c556df8e914642aed2531058
+  registry_commit: 01c642757dc85341c556df8e914642aed2531058
+  schema_commit: 01c642757dc85341c556df8e914642aed2531058
+  renderer_contract: governed-tex-v1

@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "prop:suprema-ambient-set",
+  "kind": "proposition",
+  "title": "Suprema Depend on the Ambient Set",
+  "source": {
+    "label": "prop:suprema-ambient-set",
+    "kind": "proposition",
+    "title": "Suprema Depend on the Ambient Set",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "bounds-algebra",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-algebra-of-supremum-infimum.tex",
+    "source_line_start": 2957,
+    "source_line_end": 3068,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/prop-suprema-ambient-set",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/prop-suprema-ambient-set/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/prop-suprema-ambient-set/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/prop-suprema-ambient-set",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/prop-suprema-ambient-set/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/prop-suprema-ambient-set/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-algebra-of-supremum-infimum.tex",
+      "label": "prop:suprema-ambient-set",
+      "environment_kind": "proposition",
+      "source_line_start": 2957,
+      "source_line_end": 3068,
+      "current_tex": "\\begin{proposition}[Suprema Depend on the Ambient Set]\n\\label{prop:suprema-ambient-set}\nLet $A\\subseteq S\\subseteq S'$ be subsets of an ordered set. The supremum of $A$ relative to $S$, if it exists, need not agree with the supremum of $A$ relative to $S'$.\n\\hyperref[prf:suprema-ambient-set]{Go to proof.}\n\\end{proposition}\n\\end{propositionbox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\sup_S A\\text{ and }\\sup_{S'} A\n\\]\nare ambient-relative objects and may differ in existence or value.\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\n\\begin{aligned}\n&T=S',\\qquad A\\subseteq S,\\qquad S\\subseteq T,\\\\\n&P_S=\\mathsf{OrderedSet}(S,\\leq),\\qquad\nP_T=\\mathsf{OrderedSet}(T,\\leq),\\\\\n&\\operatorname{LeastUpperBound}(s,A,P_S)\n\\quad\\text{and}\\quad\n\\operatorname{LeastUpperBound}(s,A,P_T)\n\\end{aligned}\n\\]\nare different assertions unless the ambient upper-bound sets agree.\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\n\\sup_S A=\\sup_{S'} A\n\\]\nis not guaranteed by $A\\subseteq S\\subseteq S'$ alone.\n\\end{remark*}\n\n\\begin{remark*}[Negation predicate reading]\n\\[\n\\begin{aligned}\n&T=S',\\qquad A\\subseteq S,\\qquad S\\subseteq T,\\\\\n&P_S=\\mathsf{OrderedSet}(S,\\leq),\\qquad\nP_T=\\mathsf{OrderedSet}(T,\\leq),\\\\\n&\\operatorname{LeastUpperBound}(s,A,P_T)\\land\n\\neg\\operatorname{LeastUpperBound}(s,A,P_S)\n\\end{aligned}\n\\]\nis possible when the larger ambient set contains the least upper bound but the smaller one does not.\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\nThe ambient-relative supremum can fail to transfer because the candidate least upper bound may not belong to the smaller ambient set, or because the smaller ambient set may have a different collection of upper bounds.\n\n\n  \\item[\\operatorname{LeastUpperBound}.]\n  \\[\n\\sup_S A=\\sup_{S'} A\n\\]\n\\[\n\\begin{aligned}\n&T=S',\\qquad A\\subseteq S,\\qquad S\\subseteq T,\\\\\n&P_S=\\mathsf{OrderedSet}(S,\\leq),\\qquad\nP_T=\\mathsf{OrderedSet}(T,\\leq),\\\\\n&\\operatorname{LeastUpperBound}(s,A,P_T)\\land\n\\neg\\operatorname{LeastUpperBound}(s,A,P_S)\n\\end{aligned}\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\n\\[\ns=\\sup_{S'} A,\\quad s\\notin S\n\\Longrightarrow\ns\\text{ cannot be the supremum of }A\\text{ relative to }S.\n\\]\n\n\n  \\item[\\operatorname{LeastUpperBound}.]\n  \\[\n\\sup_S A=\\sup_{S'} A\n\\]\n\\[\n\\begin{aligned}\n&T=S',\\qquad A\\subseteq S,\\qquad S\\subseteq T,\\\\\n&P_S=\\mathsf{OrderedSet}(S,\\leq),\\qquad\nP_T=\\mathsf{OrderedSet}(T,\\leq),\\\\\n&\\operatorname{LeastUpperBound}(s,A,P_T)\\land\n\\neg\\operatorname{LeastUpperBound}(s,A,P_S)\n\\end{aligned}\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nSuprema are least upper bounds inside a chosen universe. Enlarging or shrinking that universe can create or remove the point that should serve as the least ceiling.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:ordered-set]{Ordered Set}\n  \\item \\hyperref[def:subset]{Subset}\n  \\item \\hyperref[def:real-upper-bound]{Upper Bound}\n  \\item \\hyperref[def:supremum]{Supremum}\n  \\item \\hyperref[prop:upper-bounds-ambient-order]{Upper Bounds Depend on the Ambient Order}\n\\end{itemize}\n\\end{dependencies}\n\n\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

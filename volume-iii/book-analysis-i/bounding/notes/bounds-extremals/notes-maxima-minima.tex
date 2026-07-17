@@ -2,8 +2,8 @@
 
 \begin{remark*}[Exposition]
 Maxima and minima are attained sharp bounds.  They are stronger than
-suprema and infima because the extremal element must belong to the
-nonempty set itself.
+suprema and infima because the extremal element must belong to the set
+itself.
 \end{remark*}
 
 \begin{figure}[htbp]
@@ -16,42 +16,38 @@ nonempty set itself.
 \begin{definitionbox}{Maximum}
 \begin{definition}[Maximum]
 \label{def:maximum}
-Let $(S,\leq)$ be an ordered set and let $A\subseteq S$ be nonempty.  An
-element $m\in S$ is the \emph{maximum} of $A$ if $m\in A$ and every
-element of $A$ is less than or equal to $m$.
+Let $A\subseteq\mathbb{R}$.  An element $m\in A$ is the \emph{maximum}
+of $A$, written $m=\max A$, if every element of $A$ is less than or equal
+to $m$.
 \end{definition}
 \end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
-  A\neq\varnothing
-  \quad\text{and}\quad
   m\in A
   \quad\text{and}\quad
-  (\forall x\in A)(x\leq m).
+  (\forall a\in A)(a\leq m).
 \]
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
 \[
-  S\in\mathbf{Set},\qquad A\subseteq S,\qquad P=\mathsf{OrderedSet}(S,\leq),\qquad
+  A\subseteq\mathbb{R},\qquad P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
   \operatorname{GreatestElement}(m,A,P).
 \]
 \end{remark*}
 
 \begin{remark*}[Negated quantified statement]
 \[
-  A=\varnothing
-  \quad\text{or}\quad
   m\notin A
   \quad\text{or}\quad
-  (\exists x\in A)(m<x).
+  (\exists a\in A)(m<a).
 \]
 \end{remark*}
 
 \begin{remark*}[Negation predicate reading]
 \[
-  S\in\mathbf{Set},\qquad A\subseteq S,\qquad P=\mathsf{OrderedSet}(S,\leq),\qquad
+  A\subseteq\mathbb{R},\qquad P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
   \neg\operatorname{GreatestElement}(m,A,P).
 \]
 \end{remark*}
@@ -62,32 +58,23 @@ element of $A$ is less than or equal to $m$.
   Maximum failure means the candidate is not an attained upper bound of
   the set.
 
-  \item[\operatorname{EmptySet}.]
-  The definition is stated for nonempty subsets.
-  \[
-    A=\varnothing.
-  \]
-  \[
-    \operatorname{EmptySet}(A).
-  \]
-
   \item[\operatorname{GreatestElement}.]
   The candidate is not an element of the set.
   \[
     m\notin A.
   \]
   \[
-    P=\mathsf{OrderedSet}(S,\leq),\qquad
+    P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
     \neg\operatorname{GreatestElement}(m,A,P).
   \]
 
   \item[\operatorname{UpperBound}.]
   Some element of the set lies strictly above the candidate.
   \[
-    (\exists x\in A)(m<x).
+    (\exists a\in A)(m<a).
   \]
   \[
-    P=\mathsf{OrderedSet}(S,\leq),\qquad
+    P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
     \neg\operatorname{UpperBound}(m,A,P).
   \]
 \end{description}
@@ -96,6 +83,11 @@ element of $A$ is less than or equal to $m$.
 \begin{remark*}[Interpretation]
 A maximum is an upper bound that is attained by the set itself.  The
 attainment condition separates maximum from supremum.
+\end{remark*}
+
+\begin{remark*}[Empty-set convention]
+The empty set has no maximum, since there is no element $m\in\varnothing$
+that can attain the upper bound.
 \end{remark*}
 
 \begin{dependencies}
@@ -109,43 +101,39 @@ attainment condition separates maximum from supremum.
 \begin{definitionbox}{Minimum}
 \begin{definition}[Minimum]
 \label{def:minimum}
-Let $(S,\leq)$ be an ordered set and let $A\subseteq S$ be nonempty.  An
-element $m\in S$ is the \emph{minimum} of $A$ if $m\in A$ and every
-element of $A$ is greater than or equal to $m$.
+Let $A\subseteq\mathbb{R}$.  An element $n\in A$ is the \emph{minimum}
+of $A$, written $n=\min A$, if every element of $A$ is greater than or
+equal to $n$.
 \end{definition}
 \end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
-  A\neq\varnothing
+  n\in A
   \quad\text{and}\quad
-  m\in A
-  \quad\text{and}\quad
-  (\forall x\in A)(m\leq x).
+  (\forall a\in A)(n\leq a).
 \]
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
 \[
-  S\in\mathbf{Set},\qquad A\subseteq S,\qquad P=\mathsf{OrderedSet}(S,\leq),\qquad
-  \operatorname{LeastElement}(m,A,P).
+  A\subseteq\mathbb{R},\qquad P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+  \operatorname{LeastElement}(n,A,P).
 \]
 \end{remark*}
 
 \begin{remark*}[Negated quantified statement]
 \[
-  A=\varnothing
+  n\notin A
   \quad\text{or}\quad
-  m\notin A
-  \quad\text{or}\quad
-  (\exists x\in A)(x<m).
+  (\exists a\in A)(a<n).
 \]
 \end{remark*}
 
 \begin{remark*}[Negation predicate reading]
 \[
-  S\in\mathbf{Set},\qquad A\subseteq S,\qquad P=\mathsf{OrderedSet}(S,\leq),\qquad
-  \neg\operatorname{LeastElement}(m,A,P).
+  A\subseteq\mathbb{R},\qquad P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+  \neg\operatorname{LeastElement}(n,A,P).
 \]
 \end{remark*}
 
@@ -155,33 +143,24 @@ element of $A$ is greater than or equal to $m$.
   Minimum failure means the candidate is not an attained lower bound of
   the set.
 
-  \item[\operatorname{EmptySet}.]
-  The definition is stated for nonempty subsets.
-  \[
-    A=\varnothing.
-  \]
-  \[
-    \operatorname{EmptySet}(A).
-  \]
-
   \item[\operatorname{LeastElement}.]
   The candidate is not an element of the set.
   \[
-    m\notin A.
+    n\notin A.
   \]
   \[
-    P=\mathsf{OrderedSet}(S,\leq),\qquad
-    \neg\operatorname{LeastElement}(m,A,P).
+    P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+    \neg\operatorname{LeastElement}(n,A,P).
   \]
 
   \item[\operatorname{LowerBound}.]
   Some element of the set lies strictly below the candidate.
   \[
-    (\exists x\in A)(x<m).
+    (\exists a\in A)(a<n).
   \]
   \[
-    P=\mathsf{OrderedSet}(S,\leq),\qquad
-    \neg\operatorname{LowerBound}(m,A,P).
+    P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+    \neg\operatorname{LowerBound}(n,A,P).
   \]
 \end{description}
 \end{remark*}
@@ -189,6 +168,11 @@ element of $A$ is greater than or equal to $m$.
 \begin{remark*}[Interpretation]
 A minimum is a lower bound that is attained by the set itself.  The
 attainment condition separates minimum from infimum.
+\end{remark*}
+
+\begin{remark*}[Empty-set convention]
+The empty set has no minimum, since there is no element $n\in\varnothing$
+that can attain the lower bound.
 \end{remark*}
 
 \begin{dependencies}
@@ -202,8 +186,8 @@ attainment condition separates minimum from infimum.
 \begin{propositionbox}{Uniqueness of the Maximum}
 \begin{proposition}[Uniqueness of the Maximum]
 \label{prop:uniqueness-of-the-maximum}
-Let $(S,\leq)$ be an ordered set and let $A\subseteq S$ be nonempty.  If
-$m,n\in S$ are both maxima of $A$, then $m=n$.
+Let $A\subseteq\mathbb{R}$.  If $m_{1},m_{2}\in A$ are both maxima of
+$A$, then $m_{1}=m_{2}$.
 
 \hyperref[prf:uniqueness-of-the-maximum]{Go to proof.}
 \end{proposition}
@@ -211,41 +195,38 @@ $m,n\in S$ are both maxima of $A$, then $m=n$.
 
 \begin{remark*}[Standard quantified statement]
 \[
-  A\neq\varnothing
+  \operatorname{GreatestElement}(m_{1},A,P)
   \quad\text{and}\quad
-  \operatorname{GreatestElement}(m,A,P)
-  \quad\text{and}\quad
-  \operatorname{GreatestElement}(n,A,P)
+  \operatorname{GreatestElement}(m_{2},A,P)
   \quad\Longrightarrow\quad
-  m=n.
+  m_{1}=m_{2}.
 \]
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
 \[
-  S\in\mathbf{Set},\qquad A\subseteq S,\qquad P=\mathsf{OrderedSet}(S,\leq),\qquad
-  \operatorname{GreatestElement}(m,A,P)\land\operatorname{GreatestElement}(n,A,P)
-  \Longrightarrow m=n.
+  A\subseteq\mathbb{R},\qquad P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+  \operatorname{GreatestElement}(m_{1},A,P)\land
+  \operatorname{GreatestElement}(m_{2},A,P)
+  \Longrightarrow m_{1}=m_{2}.
 \]
 \end{remark*}
 
 \begin{remark*}[Negated quantified statement]
 \[
-  A\neq\varnothing
+  \operatorname{GreatestElement}(m_{1},A,P)
   \quad\text{and}\quad
-  \operatorname{GreatestElement}(m,A,P)
+  \operatorname{GreatestElement}(m_{2},A,P)
   \quad\text{and}\quad
-  \operatorname{GreatestElement}(n,A,P)
-  \quad\text{and}\quad
-  m\neq n.
+  m_{1}\neq m_{2}.
 \]
 \end{remark*}
 
 \begin{remark*}[Negation predicate reading]
 \[
-  S\in\mathbf{Set},\qquad A\subseteq S,\qquad P=\mathsf{OrderedSet}(S,\leq),\qquad
-  \operatorname{GreatestElement}(m,A,P)\land
-  \operatorname{GreatestElement}(n,A,P)\land m\neq n.
+  A\subseteq\mathbb{R},\qquad P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+  \operatorname{GreatestElement}(m_{1},A,P)\land
+  \operatorname{GreatestElement}(m_{2},A,P)\land m_{1}\neq m_{2}.
 \]
 \end{remark*}
 
@@ -258,20 +239,20 @@ $m,n\in S$ are both maxima of $A$, then $m=n$.
   \item[\operatorname{GreatestElement}.]
   Two different candidates both satisfy the maximum predicate.
   \[
-    \operatorname{GreatestElement}(m,A,P)\land
-    \operatorname{GreatestElement}(n,A,P)\land m\neq n.
+    \operatorname{GreatestElement}(m_{1},A,P)\land
+    \operatorname{GreatestElement}(m_{2},A,P)\land m_{1}\neq m_{2}.
   \]
   \[
-    P=\mathsf{OrderedSet}(S,\leq),\qquad
-    \operatorname{GreatestElement}(m,A,P)\land
-    \operatorname{GreatestElement}(n,A,P)\land m\neq n.
+    P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+    \operatorname{GreatestElement}(m_{1},A,P)\land
+    \operatorname{GreatestElement}(m_{2},A,P)\land m_{1}\neq m_{2}.
   \]
 \end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
-Uniqueness says that attainment at the top of a set cannot occur at two
-distinct ordered-set elements.
+Uniqueness says that attainment at the top of a real set cannot occur at
+two distinct real elements.
 \end{remark*}
 
 \begin{dependencies}
@@ -285,49 +266,46 @@ distinct ordered-set elements.
 \begin{propositionbox}{Uniqueness of the Minimum}
 \begin{proposition}[Uniqueness of the Minimum]
 \label{prop:uniqueness-of-the-minimum}
-Let $(S,\leq)$ be an ordered set and let $A\subseteq S$ be nonempty.  If
-$m,n\in S$ are both minima of $A$, then $m=n$.
+Let $A\subseteq\mathbb{R}$.  If $n_{1},n_{2}\in A$ are both minima of
+$A$, then $n_{1}=n_{2}$.
 \hyperref[prf:uniqueness-of-the-minimum]{\textit{Go to proof.}}
 \end{proposition}
 \end{propositionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
-  A\neq\varnothing
+  \operatorname{LeastElement}(n_{1},A,P)
   \quad\text{and}\quad
-  \operatorname{LeastElement}(m,A,P)
-  \quad\text{and}\quad
-  \operatorname{LeastElement}(n,A,P)
+  \operatorname{LeastElement}(n_{2},A,P)
   \quad\Longrightarrow\quad
-  m=n.
+  n_{1}=n_{2}.
 \]
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
 \[
-  S\in\mathbf{Set},\qquad A\subseteq S,\qquad P=\mathsf{OrderedSet}(S,\leq),\qquad
-  \operatorname{LeastElement}(m,A,P)\land\operatorname{LeastElement}(n,A,P)
-  \Longrightarrow m=n.
+  A\subseteq\mathbb{R},\qquad P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+  \operatorname{LeastElement}(n_{1},A,P)\land
+  \operatorname{LeastElement}(n_{2},A,P)
+  \Longrightarrow n_{1}=n_{2}.
 \]
 \end{remark*}
 
 \begin{remark*}[Negated quantified statement]
 \[
-  A\neq\varnothing
+  \operatorname{LeastElement}(n_{1},A,P)
   \quad\text{and}\quad
-  \operatorname{LeastElement}(m,A,P)
+  \operatorname{LeastElement}(n_{2},A,P)
   \quad\text{and}\quad
-  \operatorname{LeastElement}(n,A,P)
-  \quad\text{and}\quad
-  m\neq n.
+  n_{1}\neq n_{2}.
 \]
 \end{remark*}
 
 \begin{remark*}[Negation predicate reading]
 \[
-  S\in\mathbf{Set},\qquad A\subseteq S,\qquad P=\mathsf{OrderedSet}(S,\leq),\qquad
-  \operatorname{LeastElement}(m,A,P)\land
-  \operatorname{LeastElement}(n,A,P)\land m\neq n.
+  A\subseteq\mathbb{R},\qquad P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+  \operatorname{LeastElement}(n_{1},A,P)\land
+  \operatorname{LeastElement}(n_{2},A,P)\land n_{1}\neq n_{2}.
 \]
 \end{remark*}
 
@@ -340,20 +318,20 @@ $m,n\in S$ are both minima of $A$, then $m=n$.
   \item[\operatorname{LeastElement}.]
   Two different candidates both satisfy the minimum predicate.
   \[
-    \operatorname{LeastElement}(m,A,P)\land
-    \operatorname{LeastElement}(n,A,P)\land m\neq n.
+    \operatorname{LeastElement}(n_{1},A,P)\land
+    \operatorname{LeastElement}(n_{2},A,P)\land n_{1}\neq n_{2}.
   \]
   \[
-    P=\mathsf{OrderedSet}(S,\leq),\qquad
-    \operatorname{LeastElement}(m,A,P)\land
-    \operatorname{LeastElement}(n,A,P)\land m\neq n.
+    P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+    \operatorname{LeastElement}(n_{1},A,P)\land
+    \operatorname{LeastElement}(n_{2},A,P)\land n_{1}\neq n_{2}.
   \]
 \end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
-Uniqueness says that attainment at the bottom of a set cannot occur at two
-distinct ordered-set elements.
+Uniqueness says that attainment at the bottom of a real set cannot occur
+at two distinct real elements.
 \end{remark*}
 
 \begin{dependencies}
@@ -367,8 +345,7 @@ distinct ordered-set elements.
 \begin{propositionbox}{Maximum Implies Supremum}
 \begin{proposition}[Maximum Implies Supremum]
 \label{prop:maximum-implies-supremum}
-Let $(S,\leq)$ be an ordered set and let $A\subseteq S$ be nonempty.  If
-$m=\max A$, then $m=\sup A$.
+Let $A\subseteq\mathbb{R}$.  If $m=\max A$, then $m=\sup A$.
 
 \hyperref[prf:maximum-implies-supremum]{Go to proof.}
 \end{proposition}
@@ -376,8 +353,6 @@ $m=\max A$, then $m=\sup A$.
 
 \begin{remark*}[Standard quantified statement]
 \[
-  A\neq\varnothing
-  \quad\text{and}\quad
   \operatorname{GreatestElement}(m,A,P)
   \quad\Longrightarrow\quad
   \operatorname{LeastUpperBound}(m,A,P).
@@ -386,7 +361,7 @@ $m=\max A$, then $m=\sup A$.
 
 \begin{remark*}[Predicate reading]
 \[
-  S\in\mathbf{Set},\qquad A\subseteq S,\qquad P=\mathsf{OrderedSet}(S,\leq),\qquad
+  A\subseteq\mathbb{R},\qquad P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
   \operatorname{GreatestElement}(m,A,P)\Longrightarrow
   \operatorname{LeastUpperBound}(m,A,P).
 \]
@@ -423,7 +398,7 @@ The negation predicate reading is the predicate-level form of the displayed nega
     \neg\operatorname{LeastUpperBound}(m,A,P).
   \]
   \[
-    P=\mathsf{OrderedSet}(S,\leq),\qquad
+    P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
     \operatorname{GreatestElement}(m,A,P)\land
     \neg\operatorname{LeastUpperBound}(m,A,P).
   \]
@@ -448,43 +423,40 @@ any upper bound must lie above the attained element.
 \begin{propositionbox}{Minimum Implies Infimum}
 \begin{proposition}[Minimum Implies Infimum]
 \label{prop:minimum-implies-infimum}
-Let $(S,\leq)$ be an ordered set and let $A\subseteq S$ be nonempty.  If
-$m=\min A$, then $m=\inf A$.
+Let $A\subseteq\mathbb{R}$.  If $n=\min A$, then $n=\inf A$.
 \hyperref[prf:minimum-implies-infimum]{\textit{Go to proof.}}
 \end{proposition}
 \end{propositionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
-  A\neq\varnothing
-  \quad\text{and}\quad
-  \operatorname{LeastElement}(m,A,P)
+  \operatorname{LeastElement}(n,A,P)
   \quad\Longrightarrow\quad
-  \operatorname{GreatestLowerBound}(m,A,P).
+  \operatorname{GreatestLowerBound}(n,A,P).
 \]
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
 \[
-  S\in\mathbf{Set},\qquad A\subseteq S,\qquad P=\mathsf{OrderedSet}(S,\leq),\qquad
-  \operatorname{LeastElement}(m,A,P)\Longrightarrow
-  \operatorname{GreatestLowerBound}(m,A,P).
+  A\subseteq\mathbb{R},\qquad P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+  \operatorname{LeastElement}(n,A,P)\Longrightarrow
+  \operatorname{GreatestLowerBound}(n,A,P).
 \]
 \end{remark*}
 
 \begin{remark*}[Negated quantified statement]
 \[
-  \operatorname{LeastElement}(m,A,P)
+  \operatorname{LeastElement}(n,A,P)
   \quad\text{and}\quad
-  \neg\operatorname{GreatestLowerBound}(m,A,P).
+  \neg\operatorname{GreatestLowerBound}(n,A,P).
 \]
 \end{remark*}
 
 \begin{remark*}[Negation predicate reading]
 \[
-  \operatorname{LeastElement}(m,A,P)
+  \operatorname{LeastElement}(n,A,P)
   \quad\text{and}\quad
-  \neg\operatorname{GreatestLowerBound}(m,A,P).
+  \neg\operatorname{GreatestLowerBound}(n,A,P).
 \]
 
 The negation predicate reading is the predicate-level form of the displayed negated statement.
@@ -499,13 +471,13 @@ The negation predicate reading is the predicate-level form of the displayed nega
   \item[\operatorname{LeastElement} / \operatorname{GreatestLowerBound}.]
   The candidate is a minimum but not the greatest lower bound.
   \[
-    \operatorname{LeastElement}(m,A,P)\land
-    \neg\operatorname{GreatestLowerBound}(m,A,P).
+    \operatorname{LeastElement}(n,A,P)\land
+    \neg\operatorname{GreatestLowerBound}(n,A,P).
   \]
   \[
-    P=\mathsf{OrderedSet}(S,\leq),\qquad
-    \operatorname{LeastElement}(m,A,P)\land
-    \neg\operatorname{GreatestLowerBound}(m,A,P).
+    P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+    \operatorname{LeastElement}(n,A,P)\land
+    \neg\operatorname{GreatestLowerBound}(n,A,P).
   \]
 \end{description}
 \end{remark*}
@@ -528,8 +500,8 @@ any lower bound must lie below the attained element.
 \begin{propositionbox}{Supremum in the Set is the Maximum}
 \begin{proposition}[Supremum in the Set is the Maximum]
 \label{prop:supremum-in-the-set-is-the-maximum}
-Let $(S,\leq)$ be an ordered set and let $A\subseteq S$ be nonempty.  If
-$s=\sup A$ and $s\in A$, then $s=\max A$.
+Let $A\subseteq\mathbb{R}$ and suppose $s=\sup A$.  If $s\in A$, then
+$s=\max A$.
 
 \hyperref[prf:supremum-in-the-set-is-the-maximum]{Go to proof.}
 \end{proposition}
@@ -537,8 +509,6 @@ $s=\sup A$ and $s\in A$, then $s=\max A$.
 
 \begin{remark*}[Standard quantified statement]
 \[
-  A\neq\varnothing
-  \quad\text{and}\quad
   \operatorname{LeastUpperBound}(s,A,P)
   \quad\text{and}\quad
   s\in A
@@ -549,7 +519,7 @@ $s=\sup A$ and $s\in A$, then $s=\max A$.
 
 \begin{remark*}[Predicate reading]
 \[
-  S\in\mathbf{Set},\qquad A\subseteq S,\qquad P=\mathsf{OrderedSet}(S,\leq),\qquad
+  A\subseteq\mathbb{R},\qquad P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
   \operatorname{LeastUpperBound}(s,A,P)\land s\in A
   \Longrightarrow \operatorname{GreatestElement}(s,A,P).
 \]
@@ -591,7 +561,7 @@ The negation predicate reading is the predicate-level form of the displayed nega
     \neg\operatorname{GreatestElement}(s,A,P).
   \]
   \[
-    P=\mathsf{OrderedSet}(S,\leq),\qquad
+    P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
     \operatorname{LeastUpperBound}(s,A,P)\land s\in A\land
     \neg\operatorname{GreatestElement}(s,A,P).
   \]
@@ -615,16 +585,14 @@ maximum.
 \begin{propositionbox}{Infimum in the Set is the Minimum}
 \begin{proposition}[Infimum in the Set is the Minimum]
 \label{prop:infimum-in-the-set-is-the-minimum}
-Let $(S,\leq)$ be an ordered set and let $A\subseteq S$ be nonempty.  If
-$i=\inf A$ and $i\in A$, then $i=\min A$.
+Let $A\subseteq\mathbb{R}$ and suppose $i=\inf A$.  If $i\in A$, then
+$i=\min A$.
 \hyperref[prf:infimum-in-the-set-is-the-minimum]{\textit{Go to proof.}}
 \end{proposition}
 \end{propositionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
-  A\neq\varnothing
-  \quad\text{and}\quad
   \operatorname{GreatestLowerBound}(i,A,P)
   \quad\text{and}\quad
   i\in A
@@ -635,7 +603,7 @@ $i=\inf A$ and $i\in A$, then $i=\min A$.
 
 \begin{remark*}[Predicate reading]
 \[
-  S\in\mathbf{Set},\qquad A\subseteq S,\qquad P=\mathsf{OrderedSet}(S,\leq),\qquad
+  A\subseteq\mathbb{R},\qquad P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
   \operatorname{GreatestLowerBound}(i,A,P)\land i\in A
   \Longrightarrow \operatorname{LeastElement}(i,A,P).
 \]
@@ -677,7 +645,7 @@ The negation predicate reading is the predicate-level form of the displayed nega
     \neg\operatorname{LeastElement}(i,A,P).
   \]
   \[
-    P=\mathsf{OrderedSet}(S,\leq),\qquad
+    P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
     \operatorname{GreatestLowerBound}(i,A,P)\land i\in A\land
     \neg\operatorname{LeastElement}(i,A,P).
   \]

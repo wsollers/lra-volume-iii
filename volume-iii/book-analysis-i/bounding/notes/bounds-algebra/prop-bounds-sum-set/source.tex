@@ -1,0 +1,143 @@
+\begin{proposition}[Bounds for Suprema and Infima Under Set Addition]
+\label{prop:bounds-sum-set}
+Let $A,B\subseteq\mathbb{R}$ be nonempty and bounded. Then
+\[
+  \inf A+\inf B\leq \inf(A+B)
+  \qquad\text{and}\qquad
+  \sup(A+B)\leq \sup A+\sup B.
+\]
+\hyperref[prf:bounds-sum-set]{Go to proof.}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+A,B\neq\varnothing,\quad A,B\text{ bounded}
+\quad\Longrightarrow\quad
+\inf A+\inf B\leq \inf(A+B)
+\quad\land\quad
+\sup(A+B)\leq \sup A+\sup B.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+A,B\subseteq\mathbb{R},\qquad C=A+B=\{a+b:a\in A,\ b\in B\},\\
+&\operatorname{GreatestLowerBound}(t_A,A,P)\land
+\operatorname{GreatestLowerBound}(t_B,B,P)\land\\
+&\operatorname{LeastUpperBound}(s_A,A,P)\land
+\operatorname{LeastUpperBound}(s_B,B,P)
+\Longrightarrow
+t_A+t_B\leq \inf C\leq \sup C\leq s_A+s_B.
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\inf(A+B)<\inf A+\inf B
+\quad\text{or}\quad
+\sup A+\sup B<\sup(A+B)
+\]
+is impossible under the stated hypotheses.
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+A,B\subseteq\mathbb{R},\qquad C=A+B=\{a+b:a\in A,\ b\in B\},\\
+&\bigl[\operatorname{GreatestLowerBound}(t_A,A,P)\land
+\operatorname{GreatestLowerBound}(t_B,B,P)\land \inf C<t_A+t_B\bigr]\\
+\lor
+&\bigl[\operatorname{LeastUpperBound}(s_A,A,P)\land
+\operatorname{LeastUpperBound}(s_B,B,P)\land s_A+s_B<\sup C\bigr]
+\end{aligned}
+\]
+is a contradictory configuration.
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+The lower inequality could fail only if a sum fell below the sum of the two lower thresholds. The upper inequality could fail only if a sum rose above the sum of the two upper thresholds.
+
+
+  \item[\operatorname{GreatestLowerBound} / \operatorname{LeastUpperBound}.]
+  \[
+\inf(A+B)<\inf A+\inf B
+\quad\text{or}\quad
+\sup A+\sup B<\sup(A+B)
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+A,B\subseteq\mathbb{R},\qquad C=A+B=\{a+b:a\in A,\ b\in B\},\\
+&\bigl[\operatorname{GreatestLowerBound}(t_A,A,P)\land
+\operatorname{GreatestLowerBound}(t_B,B,P)\land \inf C<t_A+t_B\bigr]\\
+\lor
+&\bigl[\operatorname{LeastUpperBound}(s_A,A,P)\land
+\operatorname{LeastUpperBound}(s_B,B,P)\land s_A+s_B<\sup C\bigr]
+\end{aligned}
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+\[
+\inf A\le a\le \sup A,\quad \inf B\le b\le \sup B
+\Longrightarrow
+\inf A+\inf B\le a+b\le \sup A+\sup B.
+\]
+
+
+  \item[\operatorname{GreatestLowerBound} / \operatorname{LeastUpperBound}.]
+  \[
+\inf(A+B)<\inf A+\inf B
+\quad\text{or}\quad
+\sup A+\sup B<\sup(A+B)
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+A,B\subseteq\mathbb{R},\qquad C=A+B=\{a+b:a\in A,\ b\in B\},\\
+&\bigl[\operatorname{GreatestLowerBound}(t_A,A,P)\land
+\operatorname{GreatestLowerBound}(t_B,B,P)\land \inf C<t_A+t_B\bigr]\\
+\lor
+&\bigl[\operatorname{LeastUpperBound}(s_A,A,P)\land
+\operatorname{LeastUpperBound}(s_B,B,P)\land s_A+s_B<\sup C\bigr]
+\end{aligned}
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Every element of the sum set is built from one element of $A$ and one element of $B$. Adding the individual lower and upper controls gives immediate lower and upper controls for every such sum.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:reals]{Real Numbers}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:addition-on-r]{Addition on $\mathbb{R}$}
+  \item \hyperref[def:set-arithmetic-images]{Set Arithmetic Images}
+  \item \hyperref[def:real-lower-bound]{Lower Bound}
+  \item \hyperref[def:real-upper-bound]{Upper Bound}
+  \item \hyperref[def:bounded]{Bounded Set}
+  \item \hyperref[def:infimum]{Infimum}
+  \item \hyperref[def:supremum]{Supremum}
+  \item \hyperref[thm:infimum-sum-set]{Infimum of a Sum Set}
+  \item \hyperref[thm:supremum-sum-set]{Supremum of a Sum Set}
+\end{itemize}
+\end{dependencies}
+
+
+
+
+% --- Containing-set / Ambient-set Cluster ---
+

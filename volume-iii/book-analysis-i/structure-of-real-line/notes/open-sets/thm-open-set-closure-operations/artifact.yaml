@@ -1,0 +1,207 @@
+schema_version: lra.semantic-artifact/1.0
+identity:
+  label: thm:open-set-closure-operations
+  kind: theorem
+  title: Unions and Finite Intersections of Open Sets
+  canonical_name: Unions and Finite Intersections of Open Sets
+  status: draft
+  atomicity:
+    status: atomic
+    concepts_detected:
+    - Unions and Finite Intersections of Open Sets
+    owning_concept: Unions and Finite Intersections of Open Sets
+    split_reason: null
+location:
+  repository: wsollers/lra-volume-iii
+  commit: 77009ab9cde1bf3c2eef193c4d03a256afc4ccde
+  volume: iii
+  book: book-analysis-i
+  chapter: structure-of-real-line
+  topic: open-sets
+  source_file: volume-iii/book-analysis-i/structure-of-real-line/notes/open-sets/notes-open-sets.tex
+  source_line_start: 137
+  source_line_end: 173
+  source_hash: sha256:3f93c2eff8a2ed646941fbc06d5bee547392374be846c0da387644e565b4fa80
+classification:
+  mathematical_domain: real analysis
+  artifact_form: theorem
+  logical_shape: source-decorated quantified statement
+  logical_framework: mathematical_vernacular
+  language_level: object_language
+context: []
+parameters:
+- id: IU_i
+  symbol: IU_i
+  role: element
+  type:
+    kind: raw_latex
+    latex: source-declared type
+  implicit: false
+assumptions: []
+statement:
+  canonical_prose: Codex-local extraction of the source statement for Unions and Finite
+    Intersections of Open Sets.
+  canonical_latex: '\Bigl(\forall i\in I\;U_i\text{ open}\Bigr)\Longrightarrow \Bigl(\bigcup_{i\in
+    I} U_{i}\Bigr) \text{ open};\qquad
+
+    \Bigl(\bigwedge_{k=1}^{n} U_k\text{ open}\Bigr)\Longrightarrow \Bigl(\bigcap_{k=1}^{n}
+    U_{k}\Bigr) \text{ open}.'
+  semantic_ast: &id001
+    kind: implies
+    left:
+      kind: forall
+      binder:
+        binder_id: i
+        symbol: i
+        domain:
+          kind: variable
+          binder_id: IU_i
+      restriction: null
+      body:
+        kind: raw_latex
+        latex: \text{ open}
+    right:
+      kind: implies
+      left:
+        kind: raw_latex
+        latex: (\bigcup_{i\in I} U_{i}\Bigr) \text{ open}; \Bigl(\bigwedge_{k=1}^{n}
+          U_k\text{ open}\Bigr)
+      right:
+        kind: raw_latex
+        latex: (\bigcap_{k=1}^{n} U_{k}\Bigr) \text{ open}
+logical_forms:
+  standard_quantified:
+    latex: '\Bigl(\forall i\in I\;U_i\text{ open}\Bigr)\Longrightarrow \Bigl(\bigcup_{i\in
+      I} U_{i}\Bigr) \text{ open};\qquad
+
+      \Bigl(\bigwedge_{k=1}^{n} U_k\text{ open}\Bigr)\Longrightarrow \Bigl(\bigcap_{k=1}^{n}
+      U_{k}\Bigr) \text{ open}.'
+    ast:
+      kind: implies
+      left:
+        kind: forall
+        binder:
+          binder_id: i
+          symbol: i
+          domain:
+            kind: variable
+            binder_id: IU_i
+        restriction: null
+        body:
+          kind: raw_latex
+          latex: \text{ open}
+      right:
+        kind: implies
+        left:
+          kind: raw_latex
+          latex: (\bigcup_{i\in I} U_{i}\Bigr) \text{ open}; \Bigl(\bigwedge_{k=1}^{n}
+            U_k\text{ open}\Bigr)
+        right:
+          kind: raw_latex
+          latex: (\bigcap_{k=1}^{n} U_{k}\Bigr) \text{ open}
+  predicate_reading: null
+  negation:
+    mechanical:
+      latex: 'Not(\Bigl(\forall i\in I\;U_i\text{ open}\Bigr)\Longrightarrow \Bigl(\bigcup_{i\in
+        I} U_{i}\Bigr) \text{ open};\qquad
+
+        \Bigl(\bigwedge_{k=1}^{n} U_k\text{ open}\Bigr)\Longrightarrow \Bigl(\bigcap_{k=1}^{n}
+        U_{k}\Bigr) \text{ open}.)'
+      ast:
+        kind: not
+        operand: *id001
+    approved_normal_form: null
+    normalization_requires: []
+  contrapositive: null
+  equivalent_forms: []
+semantics:
+  witness_dependencies: []
+  vacuity_behavior: []
+  definedness:
+    mode: source_context
+    conditions: []
+    obligations: []
+  uniqueness_conditions: []
+  equality_cases: []
+  edge_cases: []
+failure_analysis:
+  applicability_failures: []
+  statement_failures:
+  - id: fail-source-negation
+    description: Failure is witnessed by the source negated quantified statement when
+      present.
+    minimal_failure_shape: 'Not(\Bigl(\forall i\in I\;U_i\text{ open}\Bigr)\Longrightarrow
+      \Bigl(\bigcup_{i\in I} U_{i}\Bigr) \text{ open};\qquad
+
+      \Bigl(\bigwedge_{k=1}^{n} U_k\text{ open}\Bigr)\Longrightarrow \Bigl(\bigcap_{k=1}^{n}
+      U_{k}\Bigr) \text{ open}.)'
+  counterexample_shape: 'Not(\Bigl(\forall i\in I\;U_i\text{ open}\Bigr)\Longrightarrow
+    \Bigl(\bigcup_{i\in I} U_{i}\Bigr) \text{ open};\qquad
+
+    \Bigl(\bigwedge_{k=1}^{n} U_k\text{ open}\Bigr)\Longrightarrow \Bigl(\bigcap_{k=1}^{n}
+    U_{k}\Bigr) \text{ open}.)'
+relationships:
+  dependency_edges: []
+  ontology_edges: []
+  provenance_edges: []
+  proof_edges:
+  - kind: proved_by
+    target: prf:open-set-closure-operations
+    display: Go to proof.
+    notes: null
+notation:
+  introduced: []
+  used: []
+  local_conventions: []
+exposition:
+  interpretation: 'Openness is preserved by arbitrary unions but only finite intersections.
+    The infinite intersection $\bigcap_n(-1/n,1/n)=\{0\}$ shows why ``finite'''' cannot
+    be dropped: a shrinking family of open intervals can close down onto a single
+    point.'
+  exposition: []
+  examples: []
+  non_examples: []
+  common_confusions: []
+verification:
+  canonical_proof: null
+  formalizations: []
+  external_library_crosswalks: []
+  proof_vault_records: []
+provenance:
+  origin:
+    kind: explicit_source_statement
+    source_status: single_primary_statement
+    primary_source_statement:
+      role: primary_statement
+      source_id: null
+      label: thm:open-set-closure-operations
+      citation: null
+      page_range: null
+      evidence: Generated from the local LaTeX formal environment and its routed source
+        decorations.
+      notes: Codex-authored local semantic extraction; not externally reviewed.
+    component_sources: []
+    derivation_rule: null
+    requires_review: true
+  explicit_from_source:
+  - '\Bigl(\forall i\in I\;U_i\text{ open}\Bigr)\Longrightarrow \Bigl(\bigcup_{i\in
+    I} U_{i}\Bigr) \text{ open};\qquad
+
+    \Bigl(\bigwedge_{k=1}^{n} U_k\text{ open}\Bigr)\Longrightarrow \Bigl(\bigcap_{k=1}^{n}
+    U_{k}\Bigr) \text{ open}.'
+  normalized_from_source:
+  - '\Bigl(\forall i\in I\;U_i\text{ open}\Bigr)\Longrightarrow \Bigl(\bigcup_{i\in
+    I} U_{i}\Bigr) \text{ open};\qquad
+
+    \Bigl(\bigwedge_{k=1}^{n} U_k\text{ open}\Bigr)\Longrightarrow \Bigl(\bigcap_{k=1}^{n}
+    U_{k}\Bigr) \text{ open}.'
+  inferred_from_registry: []
+  generated_by_analysis:
+  - Codex local semantic payload generation from source decorations
+  unresolved: []
+governance:
+  governance_repository: wsollers/lra-governance
+  governance_commit: 01c642757dc85341c556df8e914642aed2531058
+  registry_commit: 01c642757dc85341c556df8e914642aed2531058
+  schema_commit: 01c642757dc85341c556df8e914642aed2531058
+  renderer_contract: governed-tex-v1

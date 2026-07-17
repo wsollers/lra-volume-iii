@@ -1,0 +1,124 @@
+\begin{theorem}[Negation Exchanges Supremum and Infimum]
+\label{thm:negation-exchange-sup-inf}
+Let $A\subseteq\mathbb{R}$ be nonempty and bounded below.  Then
+$-A:=\{-a:a\in A\}$ is nonempty and bounded above, and
+\[
+  \sup(-A)=-\inf A.
+\]
+
+\smallskip
+\noindent
+\hyperref[prf:negation-exchange-sup-inf]{\textit{Go to proof.}}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+A\neq\varnothing,\quad A\text{ bounded below}
+\quad\Longrightarrow\quad
+\sup\{-a:a\in A\}=-\inf A.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad -A=\{-a:a\in A\},\\
+&\operatorname{GreatestLowerBound}(t,A,P)
+\Longrightarrow
+\operatorname{LeastUpperBound}(-t,-A,P).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\sup(-A)\ne -\inf A
+\]
+is impossible under the stated hypotheses.
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad -A=\{-a:a\in A\},\\
+&\operatorname{GreatestLowerBound}(t,A,P)\land
+\neg\operatorname{LeastUpperBound}(-t,-A,P)
+\end{aligned}
+\]
+is a contradictory configuration.
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+The theorem could fail only if negation did not convert lower bounds into upper bounds or did not preserve the extremal threshold after reversing order. The map $x\mapsto -x$ reverses all inequalities, so the exchange is exact.
+
+
+  \item[\operatorname{GreatestLowerBound} / \operatorname{LeastUpperBound}.]
+  \[
+\sup(-A)\ne -\inf A
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad -A=\{-a:a\in A\},\\
+&\operatorname{GreatestLowerBound}(t,A,P)\land
+\neg\operatorname{LeastUpperBound}(-t,-A,P)
+\end{aligned}
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+\[
+\begin{aligned}
+\forall a\in A\;(t\leq a)
+&\Longleftrightarrow
+\forall a\in A\;(-a\leq -t),\\
+\operatorname{LowerBound}(v,A)
+&\Longleftrightarrow
+\operatorname{UpperBound}(-v,-A).
+\end{aligned}
+\]
+
+
+  \item[\operatorname{GreatestLowerBound} / \operatorname{LeastUpperBound}.]
+  \[
+\sup(-A)\ne -\inf A
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad -A=\{-a:a\in A\},\\
+&\operatorname{GreatestLowerBound}(t,A,P)\land
+\neg\operatorname{LeastUpperBound}(-t,-A,P)
+\end{aligned}
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Negation reflects the real line through the origin. Floors become ceilings, so the infimum of the original set becomes the negative of the supremum of the reflected set.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:reals]{Real Numbers}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:multiplication-on-r]{Multiplication on $\mathbb{R}$}
+  \item \hyperref[def:displacement-dilation-reflection]{Displacement, Dilation, and Reflection}
+  \item \hyperref[def:real-lower-bound]{Lower Bound}
+  \item \hyperref[def:real-upper-bound]{Upper Bound}
+  \item \hyperref[def:infimum]{Infimum}
+  \item \hyperref[def:supremum]{Supremum}
+  \item \hyperref[cor:reflection-swaps-upper-lower-bounds]{Reflection Swaps Upper and Lower Bounds}
+  \item \hyperref[thm:ineq-multiply-negative]{Multiplication by a Negative Scalar Reverses Inequality}
+\end{itemize}
+\end{dependencies}
+
+
+
+
+

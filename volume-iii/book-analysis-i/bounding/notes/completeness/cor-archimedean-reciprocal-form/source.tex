@@ -1,0 +1,100 @@
+\begin{corollary}[Archimedean Reciprocal Form]
+\label{cor:archimedean-reciprocal-form}
+For every $\varepsilon\in\mathbb{R}$ with $\varepsilon>0$, there exists
+$n\in\mathbb{N}$ such that
+\[
+  0<\frac{1}{n}<\varepsilon.
+\]
+Equivalently,
+\[
+  (\forall\varepsilon>0)(\exists n\in\mathbb{N})\left(\frac{1}{n}<\varepsilon\right).
+\]
+
+\smallskip
+\noindent
+\hyperref[prf:archimedean-reciprocal-form]{\textit{Go to proof.}}
+\end{corollary}
+\end{corollarybox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall \varepsilon\in\mathbb{R}\;
+\bigl(\varepsilon>0\Longrightarrow
+\exists n\in\mathbb{N}\;(0<1/n<\varepsilon)\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+\operatorname{HasArchimedeanProperty}(P_{\mathbb{R}})
+\Longrightarrow
+\forall \varepsilon>0\;\exists n\in\mathbb{N}\;(0<1/n<\varepsilon).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\exists \varepsilon>0\;\forall n\in\mathbb{N}\;\left(\frac{1}{n}\ge \varepsilon\right).
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\exists \varepsilon>0\;\forall n\in\mathbb{N}\;(1/n\ge \varepsilon).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+The corollary fails only if some positive scale remains below every reciprocal
+natural number.
+
+
+  \item[\exists-condition.]
+  \[
+\exists \varepsilon>0\;\forall n\in\mathbb{N}\;\left(\frac{1}{n}\ge \varepsilon\right).
+\]
+\[
+\exists \varepsilon>0\;\forall n\in\mathbb{N}\;(1/n\ge \varepsilon).
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+\[
+\underbrace{\varepsilon>0}_{\text{positive scale}}
+\qquad\text{and}\qquad
+\underbrace{\forall n\in\mathbb{N}\;(1/n\ge\varepsilon)}_{\text{reciprocals never pass below it}}.
+\]
+
+
+  \item[\exists-condition.]
+  \[
+\exists \varepsilon>0\;\forall n\in\mathbb{N}\;\left(\frac{1}{n}\ge \varepsilon\right).
+\]
+\[
+\exists \varepsilon>0\;\forall n\in\mathbb{N}\;(1/n\ge \varepsilon).
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The reciprocals of the natural numbers descend below every positive real
+tolerance.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+\item \hyperref[def:reals]{Real Numbers}.
+\item \hyperref[def:natural-numbers]{Natural Numbers}.
+\item \hyperref[def:ordered-set]{Ordered Set}.
+\item \hyperref[thm:archimedean-property]{Archimedean Property}.
+\end{itemize}
+\end{dependencies}
+
+
+

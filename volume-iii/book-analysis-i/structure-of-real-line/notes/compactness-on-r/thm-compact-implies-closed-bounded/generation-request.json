@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "thm:compact-implies-closed-bounded",
+  "kind": "theorem",
+  "title": "Compact Subsets of $\\mathbb{R}$ Are Closed and Bounded",
+  "source": {
+    "label": "thm:compact-implies-closed-bounded",
+    "kind": "theorem",
+    "title": "Compact Subsets of $\\mathbb{R}$ Are Closed and Bounded",
+    "book": "book-analysis-i",
+    "chapter": "structure-of-real-line",
+    "section": "compactness-on-r",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/structure-of-real-line/notes/compactness-on-r/notes-compactness-on-r.tex",
+    "source_line_start": 84,
+    "source_line_end": 118,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/structure-of-real-line/notes/compactness-on-r/thm-compact-implies-closed-bounded",
+      "artifact": "volume-iii/book-analysis-i/structure-of-real-line/notes/compactness-on-r/thm-compact-implies-closed-bounded/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/structure-of-real-line/notes/compactness-on-r/thm-compact-implies-closed-bounded/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/structure-of-real-line/notes/compactness-on-r/thm-compact-implies-closed-bounded",
+    "artifact": "volume-iii/book-analysis-i/structure-of-real-line/notes/compactness-on-r/thm-compact-implies-closed-bounded/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/structure-of-real-line/notes/compactness-on-r/thm-compact-implies-closed-bounded/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/structure-of-real-line/notes/compactness-on-r/notes-compactness-on-r.tex",
+      "label": "thm:compact-implies-closed-bounded",
+      "environment_kind": "theorem",
+      "source_line_start": 84,
+      "source_line_end": 118,
+      "current_tex": "\\begin{theorembox}{Theorem (Compact Subsets of $\\mathbb{R}$ Are Closed and Bounded)}\n\\begin{theorem}[Compact Subsets of $\\mathbb{R}$ Are Closed and Bounded]\n\\label{thm:compact-implies-closed-bounded}\nLet $K\\subseteq\\mathbb{R}$.  If $K$ is compact, then $K$ is closed and\nbounded.  Explicitly,\n\\[\n  K\\text{ compact}\n  \\Longrightarrow\n  \\leqft[\n  \\mathbb{R}\\setminus K\\text{ is open}\n  \\right]\n  \\land\n  \\leqft[\n  (\\exists M>0)(\\forall x\\in K)(|x|\\leq M)\n  \\right].\n\\]\n\\hyperref[prf:compact-implies-closed-bounded]{Go to proof.}\n\\end{theorem}\n\\end{theorembox}\n\\begin{remark*}[Standard quantified statement]\n\\[\nK \\text{ compact} \\Longrightarrow (K \\text{ closed} \\land K \\text{ bounded}).\n\\]\n\\end{remark*}\n\\begin{remark*}[Interpretation]\nThis is the easy half of Heine--Borel and holds the same way in every metric space. Boundedness comes from covering $K$ by growing balls about a fixed point; closedness comes from separating an outside point from $K$ by disjoint balls. The converse --- closed and bounded implies compact --- is special to $\\mathbb{R}^{n}$ and is the next theorem.\n\\end{remark*}\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:compact-set]{Compact Set in $\\mathbb{R}$}\n  \\item \\hyperref[def:closed-set]{Closed Set in $\\mathbb{R}$}\n  \\item \\hyperref[def:bounded-subset-of-r]{Bounded Subset of the Real Line}\n\\end{itemize}\n\\end{dependencies}\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

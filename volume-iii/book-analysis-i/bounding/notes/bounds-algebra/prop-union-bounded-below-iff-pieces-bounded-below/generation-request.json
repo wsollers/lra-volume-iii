@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "prop:union-bounded-below-iff-pieces-bounded-below",
+  "kind": "proposition",
+  "title": "Union Is Bounded Below Exactly When Both Pieces Are",
+  "source": {
+    "label": "prop:union-bounded-below-iff-pieces-bounded-below",
+    "kind": "proposition",
+    "title": "Union Is Bounded Below Exactly When Both Pieces Are",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "bounds-algebra",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-set-operations-and-bounds.tex",
+    "source_line_start": 299,
+    "source_line_end": 397,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/prop-union-bounded-below-iff-pieces-bounded-below",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/prop-union-bounded-below-iff-pieces-bounded-below/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/prop-union-bounded-below-iff-pieces-bounded-below/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/prop-union-bounded-below-iff-pieces-bounded-below",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/prop-union-bounded-below-iff-pieces-bounded-below/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/prop-union-bounded-below-iff-pieces-bounded-below/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-set-operations-and-bounds.tex",
+      "label": "prop:union-bounded-below-iff-pieces-bounded-below",
+      "environment_kind": "proposition",
+      "source_line_start": 299,
+      "source_line_end": 397,
+      "current_tex": "\\begin{proposition}[Union Is Bounded Below Exactly When Both Pieces Are]\n\\label{prop:union-bounded-below-iff-pieces-bounded-below}\nLet $A,B\\subseteq\\mathbb{R}$. The union $A\\cup B$ is bounded below if and\nonly if both $A$ and $B$ are bounded below; equivalently,\n\\[\n\\left(\\exists \\ell\\in\\mathbb{R}\\ \\forall x\\in A\\cup B,\\ \\ell\\leq x\\right)\n\\Longleftrightarrow\n\\left[\n\\left(\\exists \\ell_A\\in\\mathbb{R}\\ \\forall a\\in A,\\ \\ell_A\\leq a\\right)\n\\land\n\\left(\\exists \\ell_B\\in\\mathbb{R}\\ \\forall b\\in B,\\ \\ell_B\\leq b\\right)\n\\right].\n\\]\n\\hyperref[prf:union-bounded-below-iff-pieces-bounded-below]{Go to proof.}\n\\end{proposition}\n\\end{propositionbox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\bigl[(\\exists \\ell\\in\\mathbb{R})(\\forall x\\in A\\cup B)(\\ell\\leq x)\\bigr]\n\\Longleftrightarrow\n\\bigl[(\\exists \\ell_A\\in\\mathbb{R})(\\forall a\\in A)(\\ell_A\\leq a)\\bigr]\n\\land\n\\bigl[(\\exists \\ell_B\\in\\mathbb{R})(\\forall b\\in B)(\\ell_B\\leq b)\\bigr].\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A,B\\subseteq\\mathbb{R},\\qquad U=A\\cup B,\\\\\n&\\operatorname{BoundedBelow}(U,P)\n\\Longleftrightarrow\n\\operatorname{BoundedBelow}(A,P)\\land\\operatorname{BoundedBelow}(B,P).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\nThe equivalence fails precisely if one side holds and the other does not.\n\\end{remark*}\n\n\\begin{remark*}[Negation predicate reading]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A,B\\subseteq\\mathbb{R},\\qquad U=A\\cup B,\\\\\n&\\operatorname{BoundedBelow}(U,P)\\oplus\n\\bigl(\\operatorname{BoundedBelow}(A,P)\\land\\operatorname{BoundedBelow}(B,P)\\bigr).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n\\item[Exposition.]\nThe forward direction could fail only if a lower bound for the union did not\nbound a piece.  The reverse direction could fail only if lower bounds for both\npieces did not combine into a lower bound for the union.\n\n\n  \\item[\\operatorname{BoundedBelow}.]\n\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A,B\\subseteq\\mathbb{R},\\qquad U=A\\cup B,\\\\\n&\\operatorname{BoundedBelow}(U,P)\\oplus\n\\bigl(\\operatorname{BoundedBelow}(A,P)\\land\\operatorname{BoundedBelow}(B,P)\\bigr).\n\\end{aligned}\n\\]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A,B\\subseteq\\mathbb{R},\\qquad U=A\\cup B,\\\\\n&\\operatorname{BoundedBelow}(U,P)\n\\Longleftrightarrow\n\\operatorname{BoundedBelow}(A,P)\\land\\operatorname{BoundedBelow}(B,P).\n\\end{aligned}\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nUse subset inheritance for the forward direction and\n\\hyperref[lem:union-preserves-lower-bounds]{Union Preserves Lower Bounds} for\nthe reverse direction.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n\\item \\hyperref[def:reals]{Real Numbers}.\n\\item \\hyperref[def:ordered-set]{Ordered Set}.\n\\item \\hyperref[def:subset]{Subset}.\n\\item \\hyperref[def:union]{Union}.\n\\item \\hyperref[def:bounded-below]{Bounded Below}.\n\\item \\hyperref[lem:union-preserves-lower-bounds]{Union Preserves Lower Bounds}.\n\\item \\hyperref[lem:subsets-preserve-lower-bounds]{Subsets Preserve Lower Bounds}.\n\\end{itemize}\n\\end{dependencies}\n\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

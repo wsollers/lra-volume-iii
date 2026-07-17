@@ -1,0 +1,61 @@
+\begin{lemmabox}{Lemma (Positive Minimum Bound)}
+\begin{lemma}[Positive Minimum Bound]
+\label{lem:positive-minimum-bound}
+For every $\delta,a,b\in\mathbb{R}$,
+\[
+  (0<\delta\leq a\land 0<\delta\leq b)
+  \Longrightarrow
+  \delta\leq \min\{a,b\}.
+\]
+\hyperref[prf:positive-minimum-bound]{Go to proof.}
+\end{lemma}
+\end{lemmabox}
+\begin{remark*}[Standard quantified statement]
+\[
+\forall \delta,a,b\in\mathbb{R}\;
+\bigl((0<\delta\leq a\land 0<\delta\leq b)\Longrightarrow
+\delta\leq \min\{a,b\}\bigr).
+\]
+\end{remark*}
+\begin{remark*}[Predicate reading]
+\[
+\bigl(0<\delta\leq a\land 0<\delta\leq b\bigr)
+\Longrightarrow \delta\leq\min\{a,b\}.
+\]
+\end{remark*}
+\begin{remark*}[Negated quantified statement]
+\[
+\exists \delta,a,b\in\mathbb{R}\;
+\bigl(0<\delta\leq a\land 0<\delta\leq b\land \min\{a,b\}<\delta\bigr).
+\]
+\end{remark*}
+\begin{remark*}[Negation predicate reading]
+\[
+\bigl(0<\delta\leq a\land 0<\delta\leq b\bigr)\land
+\neg(\delta\leq\min\{a,b\}).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  Failure is witnessed by the displayed negated or contrapositive condition.
+
+  \item[\exists-condition.]
+  \[
+\exists \delta,a,b\in\mathbb{R}\;
+\bigl(0<\delta\leq a\land 0<\delta\leq b\land \min\{a,b\}<\delta\bigr).
+\]
+\[
+\bigl(0<\delta\leq a\land 0<\delta\leq b\bigr)\land
+\neg(\delta\leq\min\{a,b\}).
+\]
+\end{description}
+\end{remark*}
+\begin{remark*}[Interpretation]
+If a positive quantity is below each of two bounds, it is below their minimum.
+\end{remark*}
+\begin{dependencies}
+\hyperref[def:real-ordered-field]{Complete Ordered Field};
+\hyperref[lem:minimum-of-positive-numbers-is-positive]{Minimum of Positive Numbers Is Positive}.
+\end{dependencies}

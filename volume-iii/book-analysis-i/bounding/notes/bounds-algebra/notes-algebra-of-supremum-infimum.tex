@@ -11,14 +11,22 @@ algebraic transformations of those extremal values.
 \begin{definitionbox}{Definition (Set Arithmetic Images)}
 \begin{definition}[Set Arithmetic Images]
 \label{def:set-arithmetic-images}
-Let $A,B\subseteq\mathbb{R}$.  Define
+Let $A,B\subseteq\mathbb{R}$ and let $c\in\mathbb{R}$.  The arithmetic
+images of $A$ and $B$ under addition, subtraction, and multiplication are
+defined by
 \[
-  A+B:=\{a+b:a\in A,\ b\in B\},\qquad
-  A-B:=\{a-b:a\in A,\ b\in B\},
+  A+B:=\{a+b:a\in A,\ b\in B\},
 \]
 \[
-  AB:=\{ab:a\in A,\ b\in B\},\qquad
-  A/B:=\{a/b:a\in A,\ b\in B,\ b\neq0\}.
+  A-B:=\{a-b:a\in A,\ b\in B\},
+\]
+and
+\[
+  AB:=\{ab:a\in A,\ b\in B\}.
+\]
+The scalar image of $A$ under multiplication by $c$ is
+\[
+  cA:=\{ca:a\in A\}.
 \]
 \end{definition}
 \end{definitionbox}
@@ -27,23 +35,25 @@ Let $A,B\subseteq\mathbb{R}$.  Define
 \[
 x\in A+B\Longleftrightarrow(\exists a\in A)(\exists b\in B)(x=a+b),
 \]
-and similarly for difference, product, and quotient with the quotient condition
-$b\neq0$.
+and similarly for difference and product.  For the scalar image,
+\[
+x\in cA\Longleftrightarrow(\exists a\in A)(x=ca).
+\]
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
 Let
 \[
-D=A\times B,\qquad D_{\div}=\{(a,b)\in A\times B:b\ne0\},
+D=A\times B,
 \]
-and define functional rules on these domains by
+and define the arithmetic rules by
 \[
-\varphi_{+}\colon D\to\mathbb{R},\quad (a,b)\mapsto a+b,\qquad
-\varphi_{-}\colon D\to\mathbb{R},\quad (a,b)\mapsto a-b,
+\varphi_{+}(a,b)=a+b,\qquad
+\varphi_{-}(a,b)=a-b,
 \]
 \[
-\varphi_{\cdot}\colon D\to\mathbb{R},\quad (a,b)\mapsto ab,\qquad
-\varphi_{\div}\colon D_{\div}\to\mathbb{R},\quad (a,b)\mapsto a/b.
+\varphi_{\cdot}(a,b)=ab,\qquad
+\varphi_c(a)=ca.
 \]
 Then
 \[
@@ -55,7 +65,7 @@ Then
 \operatorname{ReplacementImage}(AB,D,\varphi_{\cdot}),
 \]
 \[
-\operatorname{ReplacementImage}(A/B,D_{\div},\varphi_{\div}).
+\operatorname{ReplacementImage}(cA,A,\varphi_c).
 \]
 \end{remark*}
 
@@ -72,7 +82,7 @@ C\ne AB
 \quad\text{means}\quad
 (\exists x)\bigl[x\in C\triangle AB\bigr],
 \]
-and similarly for sum, difference, and quotient.
+and similarly for sum, difference, product, and scalar image.
 \end{remark*}
 
 \begin{remark*}[Failure modes]
@@ -124,27 +134,27 @@ sets and the corresponding arithmetic operation.
   \item \hyperref[def:reals]{Real Numbers}
   \item \hyperref[def:subset]{Subset}
   \item \hyperref[def:cartesian-product]{Cartesian Product}
+  \item \hyperref[def:image-set]{Image Set}
   \item \hyperref[def:addition-on-r]{Addition on $\mathbb{R}$}
   \item \hyperref[def:subtraction-on-r]{Subtraction on $\mathbb{R}$}
   \item \hyperref[def:multiplication-on-r]{Multiplication on $\mathbb{R}$}
-  \item \hyperref[def:division-on-r]{Division on $\mathbb{R}$}
 \end{itemize}
 \end{dependencies}
 
 \begin{definitionbox}{Definition (Reciprocal Image)}
 \begin{definition}[Reciprocal Image]
 \label{def:reciprocal-image}
-Let $A\subseteq\mathbb{R}$ and suppose $0\notin A$.  The reciprocal image of
-$A$ is
+Let $A\subseteq\mathbb{R}$ and suppose $0\notin A$.  The \emph{reciprocal
+image} of $A$ is the set
 \[
-  A^{-1}:=\{1/a:a\in A\}.
+  A^{-1}:=\left\{\frac{1}{a}:a\in A\right\}.
 \]
 \end{definition}
 \end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
-x\in A^{-1}\Longleftrightarrow(\exists a\in A)(x=1/a).
+x\in A^{-1}\Longleftrightarrow(\exists a\in A)\left(x=\frac{1}{a}\right).
 \]
 \end{remark*}
 
@@ -152,14 +162,16 @@ x\in A^{-1}\Longleftrightarrow(\exists a\in A)(x=1/a).
 \[
 \begin{aligned}
 &A\subseteq\mathbb{R},\qquad 0\notin A,\\
-&\mathsf{Reciprocal}(A)=A^{-1}.
+&A^{-1}=\left\{x\in\mathbb{R}:(\exists a\in A)\left(x=\frac{1}{a}\right)\right\},\\
+&\operatorname{ReplacementImage}(A^{-1},A,\varphi_{1/x}),\qquad
+\varphi_{1/x}(a)=\frac{1}{a}.
 \end{aligned}
 \]
 \end{remark*}
 
 \begin{remark*}[Negated quantified statement]
 \[
-x\notin A^{-1}\Longleftrightarrow(\forall a\in A)(x\neq1/a).
+x\notin A^{-1}\Longleftrightarrow(\forall a\in A)\left(x\neq\frac{1}{a}\right).
 \]
 \end{remark*}
 
@@ -167,7 +179,7 @@ x\notin A^{-1}\Longleftrightarrow(\forall a\in A)(x\neq1/a).
 \[
 \begin{aligned}
 &A\subseteq\mathbb{R},\qquad 0\notin A,\qquad B\subseteq\mathbb{R},\\
-&B\ne\mathsf{Reciprocal}(A)
+&B\ne A^{-1}
 \quad\text{means}\quad
 (\exists x)\bigl[x\in B\triangle A^{-1}\bigr].
 \end{aligned}
@@ -184,12 +196,12 @@ reciprocal values.
 
   \item[\mathsf{Reciprocal}.]
   \[
-x\notin A^{-1}\Longleftrightarrow(\forall a\in A)(x\neq1/a).
+x\notin A^{-1}\Longleftrightarrow(\forall a\in A)\left(x\neq\frac{1}{a}\right).
 \]
 \[
 \begin{aligned}
 &A\subseteq\mathbb{R},\qquad 0\notin A,\qquad B\subseteq\mathbb{R},\\
-&B\ne\mathsf{Reciprocal}(A)
+&B\ne A^{-1}
 \quad\text{means}\quad
 (\exists x)\bigl[x\in B\triangle A^{-1}\bigr].
 \end{aligned}
@@ -205,12 +217,12 @@ Every element of $A^{-1}$ has the form $1/a$ for a nonzero $a\in A$.
 
   \item[\mathsf{Reciprocal}.]
   \[
-x\notin A^{-1}\Longleftrightarrow(\forall a\in A)(x\neq1/a).
+x\notin A^{-1}\Longleftrightarrow(\forall a\in A)\left(x\neq\frac{1}{a}\right).
 \]
 \[
 \begin{aligned}
 &A\subseteq\mathbb{R},\qquad 0\notin A,\qquad B\subseteq\mathbb{R},\\
-&B\ne\mathsf{Reciprocal}(A)
+&B\ne A^{-1}
 \quad\text{means}\quad
 (\exists x)\bigl[x\in B\triangle A^{-1}\bigr].
 \end{aligned}
@@ -227,6 +239,7 @@ of zero is structural, since reciprocal values are undefined at zero.
 \begin{itemize}
   \item \hyperref[def:reals]{Real Numbers}
   \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:image-set]{Image Set}
   \item \hyperref[def:division-on-r]{Division on $\mathbb{R}$}
 \end{itemize}
 \end{dependencies}
@@ -236,11 +249,11 @@ of zero is structural, since reciprocal values are undefined at zero.
 \begin{theorembox}{Theorem (Translation Invariance of the Supremum)}
 \begin{theorem}[Translation Invariance of the Supremum]
 \label{thm:translation-invariance-supremum}
-Let $A\subseteq\mathbb{R}$ be nonempty and bounded above, and let $c\in\mathbb{R}$. Then
+Let $A\subseteq\mathbb{R}$ be nonempty and bounded above, and let
+$c\in\mathbb{R}$.  Then $A+c:=\{a+c:a\in A\}$ is nonempty and bounded above,
+and
 \[
-  \sup(A+c)=\sup A+c,
-  \qquad
-  A+c=\{a+c:a\in A\}.
+  \sup(A+c)=\sup A+c.
 \]
 \hyperref[prf:translation-invariance-supremum]{Go to proof.}
 \end{theorem}
@@ -248,10 +261,9 @@ Let $A\subseteq\mathbb{R}$ be nonempty and bounded above, and let $c\in\mathbb{R
 
 \begin{remark*}[Standard quantified statement]
 \[
-\begin{aligned}
-&\text{Let }A\subseteq\mathbb{R}\text{ be nonempty and bounded above, and let }c\in\mathbb{R}.\\
-&\sup\{a+c:a\in A\}=\sup A+c.
-\end{aligned}
+A\neq\varnothing,\quad A\text{ bounded above},\quad c\in\mathbb{R}
+\quad\Longrightarrow\quad
+\sup\{a+c:a\in A\}=\sup A+c.
 \]
 \end{remark*}
 
@@ -309,12 +321,12 @@ The formula could fail only if translation either failed to preserve upper bound
   \item[Exposition.]
 \[
 \begin{aligned}
-\forall a\in A\;(a\le s)
+\forall a\in A\;(a\leq s)
 &\Longleftrightarrow
-\forall a\in A\;(a+c\le s+c),\\
-\forall u\,[\operatorname{UpperBound}(u,A)\Longrightarrow s\le u]
+\forall a\in A\;(a+c\leq s+c),\\
+\forall u\,[\operatorname{UpperBound}(u,A)\Longrightarrow s\leq u]
 &\Longleftrightarrow
-\forall v\,[\operatorname{UpperBound}(v,A+c)\Longrightarrow s+c\le v].
+\forall v\,[\operatorname{UpperBound}(v,A+c)\Longrightarrow s+c\leq v].
 \end{aligned}
 \]
 
@@ -353,7 +365,8 @@ Translation shifts the entire set and all of its ceilings by the same amount. Th
 \begin{theorem}[Translation Invariance of the Infimum]
 \label{thm:translation-invariance-infimum}
 Let $A\subseteq\mathbb{R}$ be nonempty and bounded below, and let
-$c\in\mathbb{R}$. Then
+$c\in\mathbb{R}$.  Then $A+c:=\{a+c:a\in A\}$ is nonempty and bounded below,
+and
 \[
   \inf(A+c)=\inf A+c.
 \]
@@ -363,7 +376,7 @@ $c\in\mathbb{R}$. Then
 
 \begin{remark*}[Standard quantified statement]
 \[
-A\neq\varnothing,\quad A\text{ bounded below}
+A\neq\varnothing,\quad A\text{ bounded below},\quad c\in\mathbb{R}
 \quad\Longrightarrow\quad
 \inf\{a+c:a\in A\}=\inf A+c.
 \]
@@ -464,11 +477,11 @@ by that amount.
 \begin{theorembox}{Theorem (Scalar Multiplication by a Positive Scalar)}
 \begin{theorem}[Scalar Multiplication by a Positive Scalar]
 \label{thm:scalar-mult-positive}
-Let $A\subseteq\mathbb{R}$ be nonempty and bounded above, and let $k>0$. Then
+Let $A\subseteq\mathbb{R}$ be nonempty and bounded above, and let
+$k\in\mathbb{R}$ satisfy $k>0$.  Then $kA:=\{ka:a\in A\}$ is nonempty and
+bounded above, and
 \[
-  \sup(kA)=k\sup A,
-  \qquad
-  kA=\{ka:a\in A\}.
+  \sup(kA)=k\sup A.
 \]
 \hyperref[prf:scalar-mult-positive]{Go to proof.}
 \end{theorem}
@@ -476,10 +489,9 @@ Let $A\subseteq\mathbb{R}$ be nonempty and bounded above, and let $k>0$. Then
 
 \begin{remark*}[Standard quantified statement]
 \[
-\begin{aligned}
-&\text{Let }A\subseteq\mathbb{R}\text{ be nonempty and bounded above, and let }k>0.\\
-&\sup\{ka:a\in A\}=k\sup A.
-\end{aligned}
+A\neq\varnothing,\quad A\text{ bounded above},\quad k\in\mathbb{R},\quad k>0
+\quad\Longrightarrow\quad
+\sup\{ka:a\in A\}=k\sup A.
 \]
 \end{remark*}
 
@@ -537,9 +549,9 @@ k>0,\quad \sup(kA)\ne k\sup A
   \item[Exposition.]
 \[
 \begin{aligned}
-\forall a\in A\;(a\le s)
+\forall a\in A\;(a\leq s)
 &\Longleftrightarrow
-\forall a\in A\;(ka\le ks),\\
+\forall a\in A\;(ka\leq ks),\\
 \operatorname{UpperBound}(u,A)
 &\Longleftrightarrow
 \operatorname{UpperBound}(ku,kA).
@@ -582,8 +594,9 @@ Positive scaling stretches the set without reversing order. The least ceiling st
 \begin{theorembox}{Theorem (Positive Scalar Multiplication of the Infimum)}
 \begin{theorem}[Positive Scalar Multiplication of the Infimum]
 \label{thm:positive-scalar-mult-infimum}
-Let $A\subseteq\mathbb{R}$ be nonempty and bounded below, and let $k>0$.
-Then
+Let $A\subseteq\mathbb{R}$ be nonempty and bounded below, and let
+$k\in\mathbb{R}$ satisfy $k>0$.  Then $kA:=\{ka:a\in A\}$ is nonempty and
+bounded below, and
 \[
   \inf(kA)=k\inf A.
 \]
@@ -593,7 +606,7 @@ Then
 
 \begin{remark*}[Standard quantified statement]
 \[
-k>0,\quad A\neq\varnothing,\quad A\text{ bounded below}
+k\in\mathbb{R},\quad k>0,\quad A\neq\varnothing,\quad A\text{ bounded below}
 \quad\Longrightarrow\quad
 \inf\{ka:a\in A\}=k\inf A.
 \]
@@ -696,11 +709,11 @@ Positive scaling stretches the floor of the set by the same factor.
 \begin{theorembox}{Theorem (Scalar Multiplication by a Negative Scalar)}
 \begin{theorem}[Scalar Multiplication by a Negative Scalar]
 \label{thm:scalar-mult-negative}
-Let $A\subseteq\mathbb{R}$ be nonempty and bounded below, and let $k<0$. Then
+Let $A\subseteq\mathbb{R}$ be nonempty and bounded below, and let
+$k\in\mathbb{R}$ satisfy $k<0$.  Then $kA:=\{ka:a\in A\}$ is nonempty and
+bounded above, and
 \[
-  \sup(kA)=k\inf A,
-  \qquad
-  kA=\{ka:a\in A\}.
+  \sup(kA)=k\inf A.
 \]
 \hyperref[prf:scalar-mult-negative]{Go to proof.}
 \end{theorem}
@@ -708,10 +721,9 @@ Let $A\subseteq\mathbb{R}$ be nonempty and bounded below, and let $k<0$. Then
 
 \begin{remark*}[Standard quantified statement]
 \[
-\begin{aligned}
-&\text{Let }A\subseteq\mathbb{R}\text{ be nonempty and bounded below, and let }k<0.\\
-&\sup\{ka:a\in A\}=k\inf A.
-\end{aligned}
+A\neq\varnothing,\quad A\text{ bounded below},\quad k\in\mathbb{R},\quad k<0
+\quad\Longrightarrow\quad
+\sup\{ka:a\in A\}=k\inf A.
 \]
 \end{remark*}
 
@@ -769,9 +781,9 @@ k<0,\quad \sup(kA)\ne k\inf A
   \item[Exposition.]
 \[
 \begin{aligned}
-\forall a\in A\;(t\le a)
+\forall a\in A\;(t\leq a)
 &\Longleftrightarrow
-\forall a\in A\;(ka\le kt),\\
+\forall a\in A\;(ka\leq kt),\\
 \operatorname{LowerBound}(v,A)
 &\Longleftrightarrow
 \operatorname{UpperBound}(kv,kA)
@@ -818,8 +830,9 @@ Negative scaling reflects the set and changes floors into ceilings. The lowest p
 \begin{theorembox}{Theorem (Negative Scalar Multiplication of the Infimum)}
 \begin{theorem}[Negative Scalar Multiplication of the Infimum]
 \label{thm:negative-scalar-mult-infimum}
-Let $A\subseteq\mathbb{R}$ be nonempty and bounded above, and let $k<0$.
-Then
+Let $A\subseteq\mathbb{R}$ be nonempty and bounded above, and let
+$k\in\mathbb{R}$ satisfy $k<0$.  Then $kA:=\{ka:a\in A\}$ is nonempty and
+bounded below, and
 \[
   \inf(kA)=k\sup A.
 \]
@@ -829,7 +842,7 @@ Then
 
 \begin{remark*}[Standard quantified statement]
 \[
-k<0,\quad A\neq\varnothing,\quad A\text{ bounded above}
+k\in\mathbb{R},\quad k<0,\quad A\neq\varnothing,\quad A\text{ bounded above}
 \quad\Longrightarrow\quad
 \inf\{ka:a\in A\}=k\sup A.
 \]
@@ -937,7 +950,8 @@ $kA$.
 \begin{theorembox}{Theorem (Negation Exchanges Supremum and Infimum)}
 \begin{theorem}[Negation Exchanges Supremum and Infimum]
 \label{thm:negation-exchange-sup-inf}
-Let $A\subseteq\mathbb{R}$ be nonempty and bounded below. Then $-A=\{-a:a\in A\}$ is bounded above and
+Let $A\subseteq\mathbb{R}$ be nonempty and bounded below.  Then
+$-A:=\{-a:a\in A\}$ is nonempty and bounded above, and
 \[
   \sup(-A)=-\inf A.
 \]
@@ -950,10 +964,9 @@ Let $A\subseteq\mathbb{R}$ be nonempty and bounded below. Then $-A=\{-a:a\in A\}
 
 \begin{remark*}[Standard quantified statement]
 \[
-\begin{aligned}
-&\text{Let }A\subseteq\mathbb{R}\text{ be nonempty and bounded below.}\\
-&\sup\{-a:a\in A\}=-\inf A.
-\end{aligned}
+A\neq\varnothing,\quad A\text{ bounded below}
+\quad\Longrightarrow\quad
+\sup\{-a:a\in A\}=-\inf A.
 \]
 \end{remark*}
 
@@ -1011,9 +1024,9 @@ The theorem could fail only if negation did not convert lower bounds into upper 
   \item[Exposition.]
 \[
 \begin{aligned}
-\forall a\in A\;(t\le a)
+\forall a\in A\;(t\leq a)
 &\Longleftrightarrow
-\forall a\in A\;(-a\le -t),\\
+\forall a\in A\;(-a\leq -t),\\
 \operatorname{LowerBound}(v,A)
 &\Longleftrightarrow
 \operatorname{UpperBound}(-v,-A).
@@ -1062,11 +1075,10 @@ Negation reflects the real line through the origin. Floors become ceilings, so t
 \begin{theorembox}{Theorem (Supremum of a Sum Set)}
 \begin{theorem}[Supremum of a Sum Set]
 \label{thm:supremum-sum-set}
-Let $A,B\subseteq\mathbb{R}$ be nonempty and bounded above. Then
+Let $A,B\subseteq\mathbb{R}$ be nonempty and bounded above.  Then
+$A+B:=\{a+b:a\in A,\ b\in B\}$ is nonempty and bounded above, and
 \[
-  \sup(A+B)=\sup A+\sup B,
-  \qquad
-  A+B=\{a+b:a\in A,\ b\in B\}.
+  \sup(A+B)=\sup A+\sup B.
 \]
 
 \smallskip
@@ -1077,10 +1089,9 @@ Let $A,B\subseteq\mathbb{R}$ be nonempty and bounded above. Then
 
 \begin{remark*}[Standard quantified statement]
 \[
-\begin{aligned}
-&\text{Let }A,B\subseteq\mathbb{R}\text{ be nonempty and bounded above.}\\
-&\sup\{a+b:a\in A,\ b\in B\}=\sup A+\sup B.
-\end{aligned}
+A,B\neq\varnothing,\quad A,B\text{ bounded above}
+\quad\Longrightarrow\quad
+\sup\{a+b:a\in A,\ b\in B\}=\sup A+\sup B.
 \]
 \end{remark*}
 
@@ -1187,7 +1198,8 @@ The highest limiting value of all pairwise sums is obtained by combining values 
 \begin{theorembox}{Theorem (Infimum of a Sum Set)}
 \begin{theorem}[Infimum of a Sum Set]
 \label{thm:infimum-sum-set}
-Let $A,B\subseteq\mathbb{R}$ be nonempty and bounded below. Then
+Let $A,B\subseteq\mathbb{R}$ be nonempty and bounded below.  Then
+$A+B:=\{a+b:a\in A,\ b\in B\}$ is nonempty and bounded below, and
 \[
   \inf(A+B)=\inf A+\inf B.
 \]
@@ -1321,11 +1333,11 @@ near the separate floors of the two sets.
 \begin{theorembox}{Theorem (Supremum of a Difference Set)}
 \begin{theorem}[Supremum of a Difference Set]
 \label{thm:supremum-difference-set}
-Let $A,B\subseteq\mathbb{R}$ be nonempty, with $A$ bounded above and $B$ bounded below. Then
+Let $A,B\subseteq\mathbb{R}$ be nonempty, with $A$ bounded above and $B$
+bounded below.  Then $A-B:=\{a-b:a\in A,\ b\in B\}$ is nonempty and bounded
+above, and
 \[
-  \sup(A-B)=\sup A-\inf B,
-  \qquad
-  A-B=\{a-b:a\in A,\ b\in B\}.
+  \sup(A-B)=\sup A-\inf B.
 \]
 \hyperref[prf:supremum-difference-set]{Go to proof.}
 \end{theorem}
@@ -1333,10 +1345,9 @@ Let $A,B\subseteq\mathbb{R}$ be nonempty, with $A$ bounded above and $B$ bounded
 
 \begin{remark*}[Standard quantified statement]
 \[
-\begin{aligned}
-&\text{Let }A,B\subseteq\mathbb{R}\text{ be nonempty, }A\text{ bounded above, and }B\text{ bounded below.}\\
-&\sup\{a-b:a\in A,\ b\in B\}=\sup A-\inf B.
-\end{aligned}
+A,B\neq\varnothing,\quad A\text{ bounded above},\quad B\text{ bounded below}
+\quad\Longrightarrow\quad
+\sup\{a-b:a\in A,\ b\in B\}=\sup A-\inf B.
 \]
 \end{remark*}
 
@@ -1445,7 +1456,8 @@ The largest possible difference comes from making the first term as large as pos
 \begin{theorem}[Infimum of a Difference Set]
 \label{thm:infimum-difference-set}
 Let $A,B\subseteq\mathbb{R}$ be nonempty, with $A$ bounded below and $B$
-bounded above. Then
+bounded above.  Then $A-B:=\{a-b:a\in A,\ b\in B\}$ is nonempty and bounded
+below, and
 \[
   \inf(A-B)=\inf A-\sup B.
 \]
@@ -1562,11 +1574,16 @@ possible and the subtracted term as large as possible.
 \begin{theorembox}{Theorem (Supremum of a Dilation)}
 \begin{theorem}[Supremum of a Dilation]
 \label{thm:supremum-dilation}
-Let $A\subseteq\mathbb{R}$ be nonempty and bounded, and let $\lambda\in\mathbb{R}$. Then
+Let $A\subseteq\mathbb{R}$ be nonempty and bounded, and let
+$\lambda\in\mathbb{R}$.  Then $\lambda A:=\{\lambda a:a\in A\}$ is nonempty
+and bounded above, and
 \[
-  \sup(\lambda A)=\max\{\lambda\sup A,\lambda\inf A\},
-  \qquad
-  \lambda A=\{\lambda a:a\in A\}.
+  \sup(\lambda A)=
+  \begin{cases}
+    \lambda\sup A, & \lambda>0,\\
+    0, & \lambda=0,\\
+    \lambda\inf A, & \lambda<0.
+  \end{cases}
 \]
 \hyperref[prf:supremum-dilation]{Go to proof.}
 \end{theorem}
@@ -1574,10 +1591,14 @@ Let $A\subseteq\mathbb{R}$ be nonempty and bounded, and let $\lambda\in\mathbb{R
 
 \begin{remark*}[Standard quantified statement]
 \[
-\begin{aligned}
-&\text{Let }A\subseteq\mathbb{R}\text{ be nonempty and bounded, and let }\lambda\in\mathbb{R}.\\
-&\sup\{\lambda a:a\in A\}=\max\{\lambda\sup A,\lambda\inf A\}.
-\end{aligned}
+A\neq\varnothing,\quad A\text{ bounded},\quad \lambda\in\mathbb{R}
+\quad\Longrightarrow\quad
+\sup\{\lambda a:a\in A\}=
+\begin{cases}
+  \lambda\sup A, & \lambda>0,\\
+  0, & \lambda=0,\\
+  \lambda\inf A, & \lambda<0.
+\end{cases}
 \]
 \end{remark*}
 
@@ -1691,11 +1712,10 @@ A dilation either preserves the order, collapses all points to zero, or reverses
 \begin{theorembox}{Theorem (Supremum of the Absolute-Value Image)}
 \begin{theorem}[Supremum of the Absolute-Value Image]
 \label{thm:supremum-absolute-value-image}
-Let $A\subseteq\mathbb{R}$ be nonempty and bounded. Then
+Let $A\subseteq\mathbb{R}$ be nonempty and bounded.  Then
+$|A|:=\{|a|:a\in A\}$ is nonempty and bounded above, and
 \[
-  \sup |A|=\max\{|\sup A|,|\inf A|\},
-  \qquad
-  |A|=\{|a|:a\in A\}.
+  \sup |A|=\max\{|\inf A|,|\sup A|\}.
 \]
 \hyperref[prf:supremum-absolute-value-image]{Go to proof.}
 \end{theorem}
@@ -1703,10 +1723,9 @@ Let $A\subseteq\mathbb{R}$ be nonempty and bounded. Then
 
 \begin{remark*}[Standard quantified statement]
 \[
-\begin{aligned}
-&\text{Let }A\subseteq\mathbb{R}\text{ be nonempty and bounded.}\\
-&\sup\{|a|:a\in A\}=\max\{|\sup A|,|\inf A|\}.
-\end{aligned}
+A\neq\varnothing,\quad A\text{ bounded}
+\quad\Longrightarrow\quad
+\sup\{|a|:a\in A\}=\max\{|\inf A|,|\sup A|\}.
 \]
 \end{remark*}
 
@@ -1825,7 +1844,7 @@ $0<\inf A$ or $\sup A<0$.  Define
 \[
   A^{-1}:=\{1/a:a\in A\}.
 \]
-Then
+Then $A^{-1}$ is bounded above, and
 \[
   \sup(A^{-1})=\frac{1}{\inf A}.
 \]
@@ -1836,7 +1855,7 @@ Then
 \begin{remark*}[Standard quantified statement]
 \[
 A\neq\varnothing,\quad A\text{ bounded},\quad
-0\notin[\inf A,\sup A]
+0<\inf A\ \lor\ \sup A<0
 \quad\Longrightarrow\quad
 \sup\{1/a:a\in A\}=(\inf A)^{-1}.
 \]
@@ -1963,7 +1982,7 @@ $0<\inf A$ or $\sup A<0$.  Define
 \[
   A^{-1}:=\{1/a:a\in A\}.
 \]
-Then
+Then $A^{-1}$ is bounded below, and
 \[
   \inf(A^{-1})=\frac{1}{\sup A}.
 \]
@@ -1974,7 +1993,7 @@ Then
 \begin{remark*}[Standard quantified statement]
 \[
 A\neq\varnothing,\quad A\text{ bounded},\quad
-0\notin[\inf A,\sup A]
+0<\inf A\ \lor\ \sup A<0
 \quad\Longrightarrow\quad
 \inf\{1/a:a\in A\}=(\sup A)^{-1}.
 \]
@@ -2093,7 +2112,8 @@ two extremal thresholds.
 \begin{theorembox}{Theorem (Supremum of a Product Set)}
 \begin{theorem}[Supremum of a Product Set]
 \label{thm:supremum-product-set}
-Let $A,B\subseteq\mathbb{R}$ be nonempty and bounded. Then
+Let $A,B\subseteq\mathbb{R}$ be nonempty and bounded.  Then
+$AB:=\{ab:a\in A,\ b\in B\}$ is bounded, and
 \[
   \sup(AB)=
   \max\{(\inf A)(\inf B),(\inf A)(\sup B),(\sup A)(\inf B),(\sup A)(\sup B)\}.
@@ -2107,8 +2127,9 @@ Let $A,B\subseteq\mathbb{R}$ be nonempty and bounded. Then
 A,B\neq\varnothing,\quad A,B\text{ bounded}
 \quad\Longrightarrow\quad
 \sup\{ab:a\in A,\ b\in B\}
+=
+\max\{(\inf A)(\inf B),(\inf A)(\sup B),(\sup A)(\inf B),(\sup A)(\sup B)\}.
 \]
-equals the maximum of the four endpoint products.
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
@@ -2223,7 +2244,8 @@ products of the endpoint interval rectangle containing $A\times B$.
 \begin{theorembox}{Theorem (Infimum of a Product Set)}
 \begin{theorem}[Infimum of a Product Set]
 \label{thm:infimum-product-set}
-Let $A,B\subseteq\mathbb{R}$ be nonempty and bounded. Then
+Let $A,B\subseteq\mathbb{R}$ be nonempty and bounded.  Then
+$AB:=\{ab:a\in A,\ b\in B\}$ is bounded, and
 \[
   \inf(AB)=
   \min\{(\inf A)(\inf B),(\inf A)(\sup B),(\sup A)(\inf B),(\sup A)(\sup B)\}.
@@ -2237,8 +2259,9 @@ Let $A,B\subseteq\mathbb{R}$ be nonempty and bounded. Then
 A,B\neq\varnothing,\quad A,B\text{ bounded}
 \quad\Longrightarrow\quad
 \inf\{ab:a\in A,\ b\in B\}
+=
+\min\{(\inf A)(\inf B),(\inf A)(\sup B),(\sup A)(\inf B),(\sup A)(\sup B)\}.
 \]
-equals the minimum of the four endpoint products.
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
@@ -2365,7 +2388,8 @@ products that control the enclosing rectangle.
 \begin{theorem}[Supremum of a Quotient Set]
 \label{thm:supremum-quotient-set}
 Let $A,B\subseteq\mathbb{R}$ be nonempty and bounded, and suppose
-$0<\inf B$ or $\sup B<0$. Then
+$0<\inf B$ or $\sup B<0$.  Then
+$A/B:=\{a/b:a\in A,\ b\in B\}$ is bounded, and
 \[
   \sup(A/B)=
   \max\left\{\frac{\inf A}{\inf B},\frac{\inf A}{\sup B},
@@ -2378,9 +2402,12 @@ $0<\inf B$ or $\sup B<0$. Then
 \begin{remark*}[Standard quantified statement]
 \[
 A,B\neq\varnothing,\quad A,B\text{ bounded},\quad 0\notin[\inf B,\sup B]
+\quad\Longrightarrow\quad
+\sup\{a/b:a\in A,\ b\in B\}
+=
+\max\left\{\frac{\inf A}{\inf B},\frac{\inf A}{\sup B},
+\frac{\sup A}{\inf B},\frac{\sup A}{\sup B}\right\}.
 \]
-implies that the supremum of $\{a/b:a\in A,\ b\in B\}$ is the maximum of the
-four endpoint quotients.
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
@@ -2527,7 +2554,8 @@ again determined by endpoint combinations.
 \begin{theorem}[Infimum of a Quotient Set]
 \label{thm:infimum-quotient-set}
 Let $A,B\subseteq\mathbb{R}$ be nonempty and bounded, and suppose
-$0<\inf B$ or $\sup B<0$. Then
+$0<\inf B$ or $\sup B<0$.  Then
+$A/B:=\{a/b:a\in A,\ b\in B\}$ is bounded, and
 \[
   \inf(A/B)=
   \min\left\{\frac{\inf A}{\inf B},\frac{\inf A}{\sup B},
@@ -2540,9 +2568,12 @@ $0<\inf B$ or $\sup B<0$. Then
 \begin{remark*}[Standard quantified statement]
 \[
 A,B\neq\varnothing,\quad A,B\text{ bounded},\quad 0\notin[\inf B,\sup B]
+\quad\Longrightarrow\quad
+\inf\{a/b:a\in A,\ b\in B\}
+=
+\min\left\{\frac{\inf A}{\inf B},\frac{\inf A}{\sup B},
+\frac{\sup A}{\inf B},\frac{\sup A}{\sup B}\right\}.
 \]
-implies that the infimum of $\{a/b:a\in A,\ b\in B\}$ is the minimum of the
-four endpoint quotients.
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
@@ -2688,11 +2719,22 @@ combination.
 \begin{propositionbox}{Proposition (Bounds for Suprema and Infima Under Set Addition)}
 \begin{proposition}[Bounds for Suprema and Infima Under Set Addition]
 \label{prop:bounds-sum-set}
-Let $A,B\subseteq\mathbb{R}$ be nonempty and bounded. Then
+Let $A,B\subseteq\mathbb{R}$, and let
+$u_A,u_B,\ell_A,\ell_B\in\mathbb{R}$.  If $u_A$ is an upper bound of $A$ and
+$u_B$ is an upper bound of $B$, then $u_A+u_B$ is an upper bound of $A+B$:
 \[
-  \inf A+\inf B\le \inf(A+B)
-  \qquad\text{and}\qquad
-  \sup(A+B)\le \sup A+\sup B.
+  \left[(\forall a\in A)(a\leq u_A)\land
+  (\forall b\in B)(b\leq u_B)\right]
+  \Longrightarrow
+  (\forall x\in A+B)(x\leq u_A+u_B).
+\]
+If $\ell_A$ is a lower bound of $A$ and $\ell_B$ is a lower bound of $B$, then
+$\ell_A+\ell_B$ is a lower bound of $A+B$:
+\[
+  \left[(\forall a\in A)(\ell_A\leq a)\land
+  (\forall b\in B)(\ell_B\leq b)\right]
+  \Longrightarrow
+  (\forall x\in A+B)(\ell_A+\ell_B\leq x).
 \]
 \hyperref[prf:bounds-sum-set]{Go to proof.}
 \end{proposition}
@@ -2700,12 +2742,16 @@ Let $A,B\subseteq\mathbb{R}$ be nonempty and bounded. Then
 
 \begin{remark*}[Standard quantified statement]
 \[
-\begin{aligned}
-&\text{Let }A,B\subseteq\mathbb{R}\text{ be nonempty and bounded.}\\
-&\inf A+\inf B\le \inf(A+B)
-\quad\land\quad
-\sup(A+B)\le \sup A+\sup B.
-\end{aligned}
+\left[(\forall a\in A)(a\leq u_A)\land
+(\forall b\in B)(b\leq u_B)\right]
+\Longrightarrow
+(\forall x\in A+B)(x\leq u_A+u_B),
+\]
+\[
+\left[(\forall a\in A)(\ell_A\leq a)\land
+(\forall b\in B)(\ell_B\leq b)\right]
+\Longrightarrow
+(\forall x\in A+B)(\ell_A+\ell_B\leq x).
 \]
 \end{remark*}
 
@@ -2719,7 +2765,7 @@ A,B\subseteq\mathbb{R},\qquad C=A+B=\{a+b:a\in A,\ b\in B\},\\
 &\operatorname{LeastUpperBound}(s_A,A,P)\land
 \operatorname{LeastUpperBound}(s_B,B,P)
 \Longrightarrow
-t_A+t_B\le \inf C\le \sup C\le s_A+s_B.
+t_A+t_B\leq \inf C\leq \sup C\leq s_A+s_B.
 \end{aligned}
 \]
 \end{remark*}
@@ -2833,21 +2879,23 @@ Every element of the sum set is built from one element of $A$ and one element of
 \begin{propositionbox}{Proposition (Upper Bounds Depend on the Ambient Order)}
 \begin{proposition}[Upper Bounds Depend on the Ambient Order]
 \label{prop:upper-bounds-ambient-order}
-Let $(S,\le_S)$ and $(T,\le_T)$ be ordered sets, and let $A\subseteq S\cap T$. Whether $u$ is an upper bound of $A$ must be interpreted relative to the chosen ambient order.
+Let $(P,\leq)$ be a partially ordered set, and let
+$A\subseteq S\subseteq S'\subseteq P$.  The upper bounds of $A$ relative to
+$S$ are exactly those upper bounds of $A$ relative to $S'$ that belong to $S$:
+\[
+  \{u\in S:(\forall a\in A)(a\leq u)\}
+  =
+  S\cap\{u\in S':(\forall a\in A)(a\leq u)\}.
+\]
 \hyperref[prf:upper-bounds-ambient-order]{Go to proof.}
 \end{proposition}
 \end{propositionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
-\begin{aligned}
-&u\text{ is an upper bound of }A\text{ in }S
-\Longleftrightarrow
-u\in S\text{ and }\forall x\in A\;(x\le_S u),\\
-&u\text{ is an upper bound of }A\text{ in }T
-\Longleftrightarrow
-u\in T\text{ and }\forall x\in A\;(x\le_T u).
-\end{aligned}
+\{u\in S:(\forall a\in A)(a\leq u)\}
+=
+S\cap\{u\in S':(\forall a\in A)(a\leq u)\}.
 \]
 \end{remark*}
 
@@ -2948,16 +2996,35 @@ An upper bound is not only about the subset; it is also about where the subset l
 \begin{propositionbox}{Proposition (Suprema Depend on the Ambient Set)}
 \begin{proposition}[Suprema Depend on the Ambient Set]
 \label{prop:suprema-ambient-set}
-Let $A\subseteq S\subseteq S'$ be subsets of an ordered set. The supremum of $A$ relative to $S$, if it exists, need not agree with the supremum of $A$ relative to $S'$.
+There exist a linearly ordered set $(P,\leq)$, subsets
+$A\subseteq S\subseteq S'\subseteq P$, and relative suprema $\sup_S A$ and
+$\sup_{S'}A$ such that
+\[
+  \sup_S A\ne\sup_{S'}A.
+\]
+For example, in $\mathbb{R}$, let
+\[
+  A=(0,1),\qquad
+  S=(0,1)\cup\{2\},
+  \qquad
+  S'=(0,1)\cup\left\{\frac{3}{2},2\right\}.
+\]
+Then
+\[
+  \sup_S A=2,
+  \qquad
+  \sup_{S'}A=\frac{3}{2}.
+\]
 \hyperref[prf:suprema-ambient-set]{Go to proof.}
 \end{proposition}
 \end{propositionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
-\sup_S A\text{ and }\sup_{S'} A
+\exists A\subseteq S\subseteq S'\subseteq P
+\quad
+\bigl(\sup_S A\ne\sup_{S'}A\bigr).
 \]
-are ambient-relative objects and may differ in existence or value.
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
@@ -3060,7 +3127,19 @@ Suprema are least upper bounds inside a chosen universe. Enlarging or shrinking 
 \begin{theorembox}{Theorem (Ambient Existence of Supremum)}
 \begin{theorem}[Ambient Existence of Supremum]
 \label{thm:ambient-existence-supremum}
-There are ordered sets $S\subseteq S'$ and a subset $A\subseteq S$ such that $A$ has a supremum relative to $S'$ but has no supremum relative to $S$.
+There exist a linearly ordered set $(P,\leq)$ and subsets
+$A\subseteq S\subseteq S'\subseteq P$ such that $A$ has a supremum relative to
+$S'$ but has no supremum relative to $S$.  For example, in $\mathbb{R}$, let
+\[
+  A=S=(0,1),
+  \qquad
+  S'=(0,1].
+\]
+Then
+\[
+  \sup_{S'}A=1,
+\]
+whereas $A$ has no upper bound in $S$, and hence no supremum relative to $S$.
 \hyperref[prf:ambient-existence-supremum]{Go to proof.}
 \end{theorem}
 \end{theorembox}
@@ -3181,7 +3260,20 @@ Let
 \[
   A=\{q\in\mathbb{Q}:q^2<2\}.
 \]
-Then $A$ is nonempty and bounded above in $\mathbb{Q}$, but $A$ has no supremum relative to $\mathbb{Q}$.
+Then $A$ is nonempty and bounded above relative to $\mathbb{Q}$, but $A$ has
+no supremum in $\mathbb{Q}$:
+\[
+  \nexists s\in\mathbb{Q}\left[
+  (\forall q\in A)(q\leq s)
+  \land
+  \forall u\in\mathbb{Q}
+  \bigl((\forall q\in A)(q\leq u)\Longrightarrow s\leq u\bigr)
+  \right].
+\]
+When $A$ is regarded as a subset of $\mathbb{R}$, its supremum exists and is
+\[
+  \sup_{\mathbb{R}}A=\sqrt{2}.
+\]
 \hyperref[prf:rational-gap-suprema]{Go to proof.}
 \end{lemma}
 \end{lemmabox}
@@ -3190,7 +3282,15 @@ Then $A$ is nonempty and bounded above in $\mathbb{Q}$, but $A$ has no supremum 
 \[
 A=\{q\in\mathbb{Q}:q^2<2\}
 \quad\Longrightarrow\quad
-\sup_{\mathbb{Q}} A\text{ does not exist}.
+\nexists s\in\mathbb{Q}\left[
+(\forall q\in A)(q\leq s)
+\land
+\forall u\in\mathbb{Q}
+\bigl((\forall q\in A)(q\leq u)\Longrightarrow s\leq u\bigr)
+\right].
+\]
+\[
+\sup_{\mathbb{R}}A=\sqrt{2}.
 \]
 \end{remark*}
 

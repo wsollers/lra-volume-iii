@@ -1,0 +1,137 @@
+\begin{definition}[Pairwise Maximum and Minimum Sets]
+\label{def:pairwise-maximum-minimum-sets}
+Let $A,B\subseteq\mathbb{R}$.  The \emph{pairwise maximum set} and
+\emph{pairwise minimum set} of $A$ and $B$ are defined, respectively, by
+\[
+  A\vee B:=\{\max\{a,b\}:a\in A,\ b\in B\},
+\]
+and
+\[
+  A\wedge B:=\{\min\{a,b\}:a\in A,\ b\in B\}.
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+x\in A\vee B
+\Longleftrightarrow
+(\exists a\in A)(\exists b\in B)\bigl(x=\max\{a,b\}\bigr),
+\]
+and
+\[
+x\in A\wedge B
+\Longleftrightarrow
+(\exists a\in A)(\exists b\in B)\bigl(x=\min\{a,b\}\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\begin{aligned}
+&A,B\subseteq\mathbb{R},\qquad D=A\times B,\\
+&M=A\vee B=\{\max\{a,b\}:a\in A,\ b\in B\},\\
+&N=A\wedge B=\{\min\{a,b\}:a\in A,\ b\in B\},\\
+&\varphi_{\max}\colon D\to M,\qquad \varphi_{\min}\colon D\to N,\\
+&\varphi_{\max}(a,b)=\max\{a,b\},\qquad
+\varphi_{\min}(a,b)=\min\{a,b\},\\
+&\operatorname{ReplacementImage}(M,D,\varphi_{\max}),\qquad
+\operatorname{ReplacementImage}(N,D,\varphi_{\min}).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+x\notin A\vee B
+\Longleftrightarrow
+(\forall a\in A)(\forall b\in B)\bigl(x\neq\max\{a,b\}\bigr),
+\]
+and
+\[
+x\notin A\wedge B
+\Longleftrightarrow
+(\forall a\in A)(\forall b\in B)\bigl(x\neq\min\{a,b\}\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\begin{aligned}
+&A,B\subseteq\mathbb{R},\qquad
+M=A\vee B=\{\max\{a,b\}:a\in A,\ b\in B\},\\
+&C\ne M
+\end{aligned}
+\quad\text{means}\quad
+(\exists x)\bigl[x\in C\triangle M\bigr],
+\]
+and similarly for $A\wedge B$.
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
+The definition fails only if the image set omits a pairwise maximum or minimum,
+or if it includes a value not produced by one of the pairwise rules.
+
+
+  \item[\exists-condition.]
+  \[
+x\notin A\vee B
+\Longleftrightarrow
+(\forall a\in A)(\forall b\in B)\bigl(x\neq\max\{a,b\}\bigr),
+\]
+\[
+\begin{aligned}
+&A,B\subseteq\mathbb{R},\qquad
+M=A\vee B=\{\max\{a,b\}:a\in A,\ b\in B\},\\
+&C\ne M
+\end{aligned}
+\quad\text{means}\quad
+(\exists x)\bigl[x\in C\triangle M\bigr],
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
+Every membership claim decomposes into two input witnesses and one order-based
+operation: either the larger input or the smaller input is selected.
+
+
+  \item[\exists-condition.]
+  \[
+x\notin A\vee B
+\Longleftrightarrow
+(\forall a\in A)(\forall b\in B)\bigl(x\neq\max\{a,b\}\bigr),
+\]
+\[
+\begin{aligned}
+&A,B\subseteq\mathbb{R},\qquad
+M=A\vee B=\{\max\{a,b\}:a\in A,\ b\in B\},\\
+&C\ne M
+\end{aligned}
+\quad\text{means}\quad
+(\exists x)\bigl[x\in C\triangle M\bigr],
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Pairwise maximum and minimum sets collect the order-selected output from
+every pair of inputs, one from each source set.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:reals]{Real Numbers}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:cartesian-product]{Cartesian Product}
+  \item \hyperref[def:function]{Function}
+  \item \hyperref[def:image-set]{Image Set}
+  \item \hyperref[def:maximum]{Maximum}
+  \item \hyperref[def:minimum]{Minimum}
+\end{itemize}
+\end{dependencies}
+

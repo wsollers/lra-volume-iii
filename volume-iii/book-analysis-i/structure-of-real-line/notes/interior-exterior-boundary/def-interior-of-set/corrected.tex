@@ -1,0 +1,32 @@
+\begin{definitionbox}{Definition (Interior of a Set)}
+\begin{definition}[Interior of a Set]
+\label{def:interior-of-set}
+Let $A\subseteq\mathbb{R}$.  The \emph{interior} of $A$ is the set of all
+interior points of $A$:
+\[
+  \operatorname{int}(A)
+  :=
+  \{x\in\mathbb{R}:(\exists r>0)(B_r(x)\subseteq A)\}.
+\]
+Equivalently,
+\[
+  x\in\operatorname{int}(A)
+  \Longleftrightarrow
+  (\exists r>0)(\forall y\in\mathbb{R})
+  \bigl(|x-y|<r\Longrightarrow y\in A\bigr).
+\]
+\end{definition}
+\end{definitionbox}
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{int}(E)=\{\,x\in\mathbb{R}: \exists r>0\;(B_r(x)\subseteq E)\,\}.
+\]
+\end{remark*}
+\begin{remark*}[Interpretation]
+The interior is the largest open set inside $E$; $E$ is open exactly when $E=\operatorname{int}(E)$. The boundary is what $E$ and its complement share, and a set is closed exactly when it contains its boundary.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:interior-point]{Interior Point}
+\end{itemize}
+\end{dependencies}

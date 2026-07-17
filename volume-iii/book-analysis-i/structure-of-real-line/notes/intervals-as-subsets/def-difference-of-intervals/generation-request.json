@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "def:difference-of-intervals",
+  "kind": "definition",
+  "title": "Difference of Intervals",
+  "source": {
+    "label": "def:difference-of-intervals",
+    "kind": "definition",
+    "title": "Difference of Intervals",
+    "book": "book-analysis-i",
+    "chapter": "structure-of-real-line",
+    "section": "intervals-as-subsets",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/structure-of-real-line/notes/intervals-as-subsets/notes-intervals-as-subsets.tex",
+    "source_line_start": 189,
+    "source_line_end": 292,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/structure-of-real-line/notes/intervals-as-subsets/def-difference-of-intervals",
+      "artifact": "volume-iii/book-analysis-i/structure-of-real-line/notes/intervals-as-subsets/def-difference-of-intervals/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/structure-of-real-line/notes/intervals-as-subsets/def-difference-of-intervals/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/structure-of-real-line/notes/intervals-as-subsets/def-difference-of-intervals",
+    "artifact": "volume-iii/book-analysis-i/structure-of-real-line/notes/intervals-as-subsets/def-difference-of-intervals/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/structure-of-real-line/notes/intervals-as-subsets/def-difference-of-intervals/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/structure-of-real-line/notes/intervals-as-subsets/notes-intervals-as-subsets.tex",
+      "label": "def:difference-of-intervals",
+      "environment_kind": "definition",
+      "source_line_start": 189,
+      "source_line_end": 292,
+      "current_tex": "\\begin{definitionbox}{Definition (Difference of Intervals)}\n\\begin{definition}[Difference of Intervals]\n\\label{def:difference-of-intervals}\nLet $I,J\\subseteq\\mathbb{R}$ be intervals.  The \\emph{difference} of $I$ and\n$J$ is the set\n\\[\n  I\\setminus J\n  :=\n  \\{x\\in\\mathbb{R}:x\\in I\\text{ and }x\\notin J\\}.\n\\]\n\\end{definition}\n\\end{definitionbox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\nI\\setminus J=\\{x\\in\\mathbb{R}:x\\in I\\land x\\notin J\\}=I\\cap J^c.\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\nFor any $x\\in\\mathbb{R}$,\n\\[\nx\\in I\\cup J \\Longleftrightarrow (x\\in I)\\lor(x\\in J),\n\\]\n\\[\nx\\in I\\cap J \\Longleftrightarrow (x\\in I)\\land(x\\in J),\n\\]\n\\[\nx\\in I^c \\Longleftrightarrow x\\notin I,\n\\qquad\nx\\in I\\setminus J \\Longleftrightarrow (x\\in I)\\land(x\\notin J).\n\\]\nThese are set-theoretic operations; no arithmetic operation is being performed\non the endpoints.\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nThe intersection of two intervals is either empty or another interval. For\nexample, if $a\\leq b$ and $c\\leq d$, then\n\\[\n[a,b]\\cap[c,d]\n=\n\\begin{cases}\n[\\max\\{a,c\\},\\min\\{b,d\\}], & \\max\\{a,c\\}\\leq \\min\\{b,d\\},\\\\\n\\varnothing, & \\max\\{a,c\\}>\\min\\{b,d\\}.\n\\end{cases}\n\\]\nEndpoint inclusion follows the endpoint rules of the original intervals.\n\n\nThe union of two intervals need not be an interval:\n\\[\n(0,1)\\cup(2,3)\n\\]\nhas a gap. If two intervals overlap or touch without a missing endpoint, their\nunion is again an interval, for instance\n\\[\n(0,2]\\cup[2,5)=(0,5).\n\\]\nThe missing or included endpoints determine whether the joined set is truly\none interval.\n\n\nThe complement of a bounded interval usually splits into two rays:\n\\[\n(a,b)^c=(-\\infty,a]\\cup[b,\\infty),\n\\qquad\n[a,b]^c=(-\\infty,a)\\cup(b,\\infty).\n\\]\nComplements reverse endpoint inclusion: an endpoint excluded from the interval\nis included in the complement, and an endpoint included in the interval is\nexcluded from the complement.\n\n\nA difference is an intersection with a complement, so it can also split:\n\\[\n(0,5)\\setminus[2,3]=(0,2)\\cup(3,5).\n\\]\nIf the removed interval only cuts off one side, the result may remain a single\ninterval:\n\\[\n(0,5)\\setminus(3,\\infty)=(0,3].\n\\]\nThe bracket at $3$ appears because $3\\notin(3,\\infty)$, so it is not removed.\n\n\nOpen sets in $\\mathbb{R}$ are built from unions of open intervals. Closed sets\nare understood through complements of open sets. Boundaries arise when a point\nis not cleanly inside a set or its complement. Thus interval set operations are\nthe grammar behind the metric topology of the real line.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:open-interval]{Open Interval}\n  \\item \\hyperref[def:closed-interval]{Closed Interval}\n  \\item \\hyperref[def:left-half-open-interval]{Left-Half-Open Interval}\n  \\item \\hyperref[def:right-half-open-interval]{Right-Half-Open Interval}\n  \\item \\hyperref[def:union-of-intervals]{Union of Intervals}\n  \\item \\hyperref[def:intersection-of-intervals]{Intersection of Intervals}\n  \\item \\hyperref[def:complement-of-interval]{Complement of an Interval}\n\\end{itemize}\n\\end{dependencies}\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

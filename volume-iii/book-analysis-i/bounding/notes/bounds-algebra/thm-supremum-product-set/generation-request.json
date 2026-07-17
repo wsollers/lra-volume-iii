@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "thm:supremum-product-set",
+  "kind": "theorem",
+  "title": "Supremum of a Product Set",
+  "source": {
+    "label": "thm:supremum-product-set",
+    "kind": "theorem",
+    "title": "Supremum of a Product Set",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "bounds-algebra",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-algebra-of-supremum-infimum.tex",
+    "source_line_start": 2103,
+    "source_line_end": 2232,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-supremum-product-set",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-supremum-product-set/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-supremum-product-set/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-supremum-product-set",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-supremum-product-set/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-supremum-product-set/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-algebra-of-supremum-infimum.tex",
+      "label": "thm:supremum-product-set",
+      "environment_kind": "theorem",
+      "source_line_start": 2103,
+      "source_line_end": 2232,
+      "current_tex": "\\begin{theorem}[Supremum of a Product Set]\n\\label{thm:supremum-product-set}\nLet $A,B\\subseteq\\mathbb{R}$ be nonempty and bounded. Then\n\\[\n  \\sup(AB)=\n  \\max\\{(\\inf A)(\\inf B),(\\inf A)(\\sup B),(\\sup A)(\\inf B),(\\sup A)(\\sup B)\\}.\n\\]\n\\hyperref[prf:supremum-product-set]{Go to proof.}\n\\end{theorem}\n\\end{theorembox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\nA,B\\neq\\varnothing,\\quad A,B\\text{ bounded}\n\\quad\\Longrightarrow\\quad\n\\sup\\{ab:a\\in A,\\ b\\in B\\}\n\\]\nequals the maximum of the four endpoint products.\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A,B\\subseteq\\mathbb{R},\\qquad AB=\\{ab:a\\in A,\\ b\\in B\\},\\\\\n&M=\\max\\{\\alpha\\gamma,\\alpha\\delta,\\beta\\gamma,\\beta\\delta\\},\\\\\n&\\operatorname{GreatestLowerBound}(\\alpha,A,P)\\land\\operatorname{LeastUpperBound}(\\beta,A,P)\\land\\\\\n&\\operatorname{GreatestLowerBound}(\\gamma,B,P)\\land\\operatorname{LeastUpperBound}(\\delta,B,P)\n\\Longrightarrow\n\\operatorname{LeastUpperBound}(M,AB,P).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\n\\sup(AB)\\neq\n\\max\\{(\\inf A)(\\inf B),(\\inf A)(\\sup B),(\\sup A)(\\inf B),(\\sup A)(\\sup B)\\}\n\\]\nis impossible under the stated hypotheses.\n\\end{remark*}\n\n\\begin{remark*}[Negation predicate reading]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A,B\\subseteq\\mathbb{R},\\qquad AB=\\{ab:a\\in A,\\ b\\in B\\},\\\\\n&M=\\max\\{\\alpha\\gamma,\\alpha\\delta,\\beta\\gamma,\\beta\\delta\\},\\\\\n&\\operatorname{GreatestLowerBound}(\\alpha,A,P)\\land\\operatorname{LeastUpperBound}(\\beta,A,P)\\land\\\\\n&\\operatorname{GreatestLowerBound}(\\gamma,B,P)\\land\\operatorname{LeastUpperBound}(\\delta,B,P)\\land\n\\neg\\operatorname{LeastUpperBound}(M,AB,P)\n\\end{aligned}\n\\]\nis a contradictory configuration.\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\nA failure would require a product above all four endpoint products or would\nrequire the endpoint maximum not to be least.\n\n\n  \\item[\\operatorname{GreatestLowerBound} / \\operatorname{LeastUpperBound}.]\n  \\[\n\\sup(AB)\\neq\n\\max\\{(\\inf A)(\\inf B),(\\inf A)(\\sup B),(\\sup A)(\\inf B),(\\sup A)(\\sup B)\\}\n\\]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A,B\\subseteq\\mathbb{R},\\qquad AB=\\{ab:a\\in A,\\ b\\in B\\},\\\\\n&M=\\max\\{\\alpha\\gamma,\\alpha\\delta,\\beta\\gamma,\\beta\\delta\\},\\\\\n&\\operatorname{GreatestLowerBound}(\\alpha,A,P)\\land\\operatorname{LeastUpperBound}(\\beta,A,P)\\land\\\\\n&\\operatorname{GreatestLowerBound}(\\gamma,B,P)\\land\\operatorname{LeastUpperBound}(\\delta,B,P)\\land\n\\neg\\operatorname{LeastUpperBound}(M,AB,P)\n\\end{aligned}\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\nEvery pair $(a,b)$ lies in the rectangle\n$[\\inf A,\\sup A]\\times[\\inf B,\\sup B]$.  A bilinear product on a rectangle has\nits extreme values at corners, and elements can approximate the relevant\ncorners from within the two sets.\n\n\n  \\item[\\operatorname{GreatestLowerBound} / \\operatorname{LeastUpperBound}.]\n  \\[\n\\sup(AB)\\neq\n\\max\\{(\\inf A)(\\inf B),(\\inf A)(\\sup B),(\\sup A)(\\inf B),(\\sup A)(\\sup B)\\}\n\\]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A,B\\subseteq\\mathbb{R},\\qquad AB=\\{ab:a\\in A,\\ b\\in B\\},\\\\\n&M=\\max\\{\\alpha\\gamma,\\alpha\\delta,\\beta\\gamma,\\beta\\delta\\},\\\\\n&\\operatorname{GreatestLowerBound}(\\alpha,A,P)\\land\\operatorname{LeastUpperBound}(\\beta,A,P)\\land\\\\\n&\\operatorname{GreatestLowerBound}(\\gamma,B,P)\\land\\operatorname{LeastUpperBound}(\\delta,B,P)\\land\n\\neg\\operatorname{LeastUpperBound}(M,AB,P)\n\\end{aligned}\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nThe supremum of a bounded product set is controlled by the four corner\nproducts of the endpoint interval rectangle containing $A\\times B$.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:reals]{Real Numbers}\n  \\item \\hyperref[def:ordered-set]{Ordered Set}\n  \\item \\hyperref[def:subset]{Subset}\n  \\item \\hyperref[def:multiplication-on-r]{Multiplication on $\\mathbb{R}$}\n  \\item \\hyperref[def:set-arithmetic-images]{Set Arithmetic Images}\n  \\item \\hyperref[def:real-lower-bound]{Lower Bound}\n  \\item \\hyperref[def:real-upper-bound]{Upper Bound}\n  \\item \\hyperref[def:bounded]{Bounded Set}\n  \\item \\hyperref[def:infimum]{Infimum}\n  \\item \\hyperref[def:supremum]{Supremum}\n  \\item \\hyperref[def:maximum]{Maximum}\n  \\item \\hyperref[def:epsilon-characterization-of-infimum]{Epsilon Characterization of Infimum}\n  \\item \\hyperref[def:epsilon-characterization-of-supremum]{Epsilon Characterization of Supremum}\n  \\item \\hyperref[prop:every-element-lies-above-the-infimum]{Every Element Lies Above the Infimum}\n  \\item \\hyperref[prop:every-element-lies-below-the-supremum]{Every Element Lies Below the Supremum}\n\\end{itemize}\n\\end{dependencies}\n\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

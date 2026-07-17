@@ -1,0 +1,299 @@
+schema_version: lra.semantic-artifact/1.0
+identity:
+  label: lem:minimum-of-positive-numbers-is-positive
+  kind: lemma
+  title: Minimum of Positive Numbers Is Positive
+  canonical_name: Minimum of Positive Numbers Is Positive
+  status: draft
+  atomicity:
+    status: atomic
+    concepts_detected:
+    - Minimum of Positive Numbers Is Positive
+    owning_concept: Minimum of Positive Numbers Is Positive
+    split_reason: null
+location:
+  repository: wsollers/lra-volume-iii
+  commit: 77009ab9cde1bf3c2eef193c4d03a256afc4ccde
+  volume: iii
+  book: book-analysis-i
+  chapter: structure-of-real-line
+  topic: order-distance-length
+  source_file: volume-iii/book-analysis-i/structure-of-real-line/notes/order-distance-length/notes-epsilon-algebra.tex
+  source_line_start: 9
+  source_line_end: 70
+  source_hash: sha256:da8099afbf4566b8425d08f55f908eeb6268845933bc62a2bfdda9506f89b15d
+classification:
+  mathematical_domain: real analysis
+  artifact_form: lemma
+  logical_shape: source-decorated quantified statement
+  logical_framework: mathematical_vernacular
+  language_level: object_language
+context:
+- id: R
+  kind: ambient_space
+  name: \mathbb{R}
+  ontology_id: null
+  construction: real line with the source-declared structure
+  ast:
+    kind: constant
+    name: \mathbb{R}
+parameters:
+- id: a
+  symbol: a
+  role: element
+  type:
+    kind: constant
+    name: \mathbb{R}
+  implicit: false
+- id: b
+  symbol: b
+  role: element
+  type:
+    kind: constant
+    name: \mathbb{R}
+  implicit: false
+- id: m
+  symbol: m
+  role: element
+  type:
+    kind: constant
+    name: \mathbb{R}
+  implicit: false
+assumptions: []
+statement:
+  canonical_prose: Codex-local extraction of the source statement for Minimum of Positive
+    Numbers Is Positive.
+  canonical_latex: 'm=\min\{a,b\},\qquad
+
+    \operatorname{Positive}(a,\mathbb{R})\land\operatorname{Positive}(b,\mathbb{R})
+
+    \Longrightarrow \operatorname{Positive}(m,\mathbb{R}).'
+  semantic_ast: &id001
+    kind: implies
+    left:
+      kind: and
+      left:
+        kind: predicate
+        predicate_id: pred:positive
+        arguments:
+        - kind: variable
+          binder_id: a
+        - kind: constant
+          name: \mathbb{R}
+      right:
+        kind: predicate
+        predicate_id: pred:positive
+        arguments:
+        - kind: variable
+          binder_id: b
+        - kind: constant
+          name: \mathbb{R}
+    right:
+      kind: predicate
+      predicate_id: pred:positive
+      arguments:
+      - kind: variable
+        binder_id: m
+      - kind: constant
+        name: \mathbb{R}
+logical_forms:
+  standard_quantified:
+    latex: \forall a,b\in\mathbb{R}\;\bigl((a>0\land b>0)\Longrightarrow \min\{a,b\}>0\bigr).
+    ast:
+      kind: membership
+      element:
+        kind: variable
+        binder_id: b
+      set:
+        kind: raw_latex
+        latex: \mathbb{R}\bigl((a>0\land b>0)\Longrightarrow \min\{a,b\}>0\bigr)
+  predicate_reading:
+    latex: 'm=\min\{a,b\},\qquad
+
+      \operatorname{Positive}(a,\mathbb{R})\land\operatorname{Positive}(b,\mathbb{R})
+
+      \Longrightarrow \operatorname{Positive}(m,\mathbb{R}).'
+    ast:
+      kind: implies
+      left:
+        kind: and
+        left:
+          kind: predicate
+          predicate_id: pred:positive
+          arguments:
+          - kind: variable
+            binder_id: a
+          - kind: constant
+            name: \mathbb{R}
+        right:
+          kind: predicate
+          predicate_id: pred:positive
+          arguments:
+          - kind: variable
+            binder_id: b
+          - kind: constant
+            name: \mathbb{R}
+      right:
+        kind: predicate
+        predicate_id: pred:positive
+        arguments:
+        - kind: variable
+          binder_id: m
+        - kind: constant
+          name: \mathbb{R}
+    registry_predicates:
+    - pred:positive
+    registry_structures: []
+  negation:
+    mechanical:
+      latex: \exists a,b\in\mathbb{R}\;\bigl(a>0\land b>0\land \min\{a,b\}\leq 0\bigr).
+      ast:
+        kind: not
+        operand: *id001
+    approved_normal_form:
+      latex: \exists a,b\in\mathbb{R}\bigl(a>0\land b>0\land \min\{a,b\}\leq 0\bigr)
+      ast:
+        kind: exists
+        binder:
+          binder_id: a
+          symbol: a
+          domain: &id002
+            kind: constant
+            name: \mathbb{R}
+        restriction: null
+        body:
+          kind: exists
+          binder:
+            binder_id: b
+            symbol: b
+            domain: *id002
+          restriction: null
+          body:
+            kind: and
+            left:
+              kind: relation
+              relation: '>'
+              left:
+                kind: variable
+                binder_id: a
+              right:
+                kind: constant
+                name: '0'
+            right:
+              kind: and
+              left:
+                kind: relation
+                relation: '>'
+                left:
+                  kind: variable
+                  binder_id: b
+                right:
+                  kind: constant
+                  name: '0'
+              right:
+                kind: relation
+                relation: \leq
+                left:
+                  kind: raw_latex
+                  latex: \min\{a,b\}
+                right:
+                  kind: constant
+                  name: '0'
+    normalization_requires: []
+  contrapositive: null
+  equivalent_forms: []
+semantics:
+  witness_dependencies: []
+  vacuity_behavior: []
+  definedness:
+    mode: source_context
+    conditions: []
+    obligations: []
+  uniqueness_conditions: []
+  equality_cases: []
+  edge_cases: []
+failure_analysis:
+  applicability_failures: []
+  statement_failures:
+  - id: fail-source-negation
+    description: Failure is witnessed by the source negated quantified statement when
+      present.
+    minimal_failure_shape: \exists a,b\in\mathbb{R}\;\bigl(a>0\land b>0\land \min\{a,b\}\leq
+      0\bigr).
+    source_failure_modes: "\\begin{description}\n  \\item[Exposition.]\n  Failure\
+      \ is witnessed by the displayed negated or contrapositive condition.\n\n  \\\
+      item[\\operatorname{Positive}.]\n  \\[\n\\exists a,b\\in\\mathbb{R}\\;\\bigl(a>0\\\
+      land b>0\\land \\min\\{a,b\\}\\leq 0\\bigr).\n\\]\n\\[\nm=\\min\\{a,b\\},\\\
+      qquad\n\\operatorname{Positive}(a,\\mathbb{R})\\land\\operatorname{Positive}(b,\\\
+      mathbb{R})\\land\n\\neg\\operatorname{Positive}(m,\\mathbb{R}).\n\\]\n\\end{description}"
+  counterexample_shape: \exists a,b\in\mathbb{R}\;\bigl(a>0\land b>0\land \min\{a,b\}\leq
+    0\bigr).
+relationships:
+  dependency_edges:
+  - kind: uses_reference
+    target: def:real-ordered-field
+    display: Complete Ordered Field
+    notes: Listed in the source dependency block.
+  - kind: uses_reference
+    target: thm:ineq-transitivity-strict
+    display: Transitivity of Strict Inequality
+    notes: Listed in the source dependency block.
+  ontology_edges: []
+  provenance_edges: []
+  proof_edges:
+  - kind: proved_by
+    target: prf:minimum-of-positive-numbers-is-positive
+    display: Go to proof.
+    notes: null
+notation:
+  introduced: []
+  used:
+  - symbol: \mathbb{R}
+    meaning: the real line
+  local_conventions: []
+exposition:
+  interpretation: Choosing the smaller of two positive bounds still leaves a positive
+    bound.
+  exposition: []
+  examples: []
+  non_examples: []
+  common_confusions: []
+verification:
+  canonical_proof: null
+  formalizations: []
+  external_library_crosswalks: []
+  proof_vault_records: []
+provenance:
+  origin:
+    kind: explicit_source_statement
+    source_status: single_primary_statement
+    primary_source_statement:
+      role: primary_statement
+      source_id: null
+      label: lem:minimum-of-positive-numbers-is-positive
+      citation: null
+      page_range: null
+      evidence: Generated from the local LaTeX formal environment and its routed source
+        decorations.
+      notes: Codex-authored local semantic extraction; not externally reviewed.
+    component_sources: []
+    derivation_rule: null
+    requires_review: true
+  explicit_from_source:
+  - \forall a,b\in\mathbb{R}\;\bigl((a>0\land b>0)\Longrightarrow \min\{a,b\}>0\bigr).
+  normalized_from_source:
+  - 'm=\min\{a,b\},\qquad
+
+    \operatorname{Positive}(a,\mathbb{R})\land\operatorname{Positive}(b,\mathbb{R})
+
+    \Longrightarrow \operatorname{Positive}(m,\mathbb{R}).'
+  inferred_from_registry: []
+  generated_by_analysis:
+  - Codex local semantic payload generation from source decorations
+  unresolved: []
+governance:
+  governance_repository: wsollers/lra-governance
+  governance_commit: 01c642757dc85341c556df8e914642aed2531058
+  registry_commit: 01c642757dc85341c556df8e914642aed2531058
+  schema_commit: 01c642757dc85341c556df8e914642aed2531058
+  renderer_contract: governed-tex-v1

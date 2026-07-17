@@ -24,9 +24,9 @@ to be nonempty throughout this section.
 \begin{definitionbox}{Supremum}
 \begin{definition}[Supremum]
 \label{def:supremum}
-Let $(S,\leq)$ be an ordered set, let $A\subseteq S$ be nonempty, and let
-$s\in S$.  The element $s$ is the \emph{supremum} of $A$ if $s$ is an
-upper bound of $A$ and no smaller element of $S$ is an upper bound of
+Let $A\subseteq\mathbb{R}$ be nonempty and let $s\in\mathbb{R}$.  The
+element $s$ is the \emph{supremum} of $A$, written $s=\sup A$, if $s$ is an
+upper bound of $A$ and $s$ is less than or equal to every upper bound of
 $A$.
 \end{definition}
 \end{definitionbox}
@@ -35,20 +35,20 @@ $A$.
 \[
   A\neq\varnothing
   \quad\text{and}\quad
-  (\forall x\in A)(x\leq s)
+  (\forall a\in A)(a\leq s)
   \quad\text{and}\quad
-  (\forall u\in S)\bigl[(\forall x\in A)(x\leq u)\Rightarrow s\leq u\bigr].
+  (\forall u\in\mathbb{R})\bigl[(\forall a\in A)(a\leq u)\Rightarrow s\leq u\bigr].
 \]
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
 \[
-  S\in\mathbf{Set},\qquad A\subseteq S,\qquad P=\mathsf{OrderedSet}(S,\leq),\qquad
+  P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad
   \operatorname{LeastUpperBound}(s,A,P)
   :=
   \operatorname{UpperBound}(s,A,P)
   \land
-  (\forall u\in S)
+  (\forall u\in\mathbb{R})
   \bigl(\operatorname{UpperBound}(u,A,P)\Rightarrow s\leq u\bigr).
 \]
 \end{remark*}
@@ -57,22 +57,22 @@ $A$.
 \[
   A=\varnothing
   \quad\text{or}\quad
-  (\exists x\in A)(s<x)
+  (\exists a\in A)(s<a)
   \quad\text{or}\quad
-  (\exists u\in S)\bigl[(\forall x\in A)(x\leq u)\ \text{and}\ u<s\bigr].
+  (\exists u\in\mathbb{R})\bigl[(\forall a\in A)(a\leq u)\ \text{and}\ u<s\bigr].
 \]
 \end{remark*}
 
 \begin{remark*}[Negation predicate reading]
 \[
-  S\in\mathbf{Set},\qquad A\subseteq S,\qquad P=\mathsf{OrderedSet}(S,\leq),\qquad
+  P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad
   \neg\operatorname{LeastUpperBound}(s,A,P)
   \Longleftrightarrow
   A=\varnothing
   \lor
   \neg\operatorname{UpperBound}(s,A,P)
   \lor
-  (\exists u\in S)
+  (\exists u\in\mathbb{R})
   \bigl(\operatorname{UpperBound}(u,A,P)\land u<s\bigr).
 \]
 \end{remark*}
@@ -89,9 +89,9 @@ $A$.
   \[
     A=\varnothing
     \quad\text{or}\quad
-    (\exists x\in A)(s<x)
+    (\exists a\in A)(s<a)
     \quad\text{or}\quad
-    (\exists u\in S)\bigl[(\forall x\in A)(x\leq u)\ \text{and}\ u<s\bigr].
+    (\exists u\in\mathbb{R})\bigl[(\forall a\in A)(a\leq u)\ \text{and}\ u<s\bigr].
   \]
   \[
     \neg\operatorname{LeastUpperBound}(s,A,P)
@@ -100,7 +100,7 @@ $A$.
     \lor
     \neg\operatorname{UpperBound}(s,A,P)
     \lor
-    (\exists u\in S)
+    (\exists u\in\mathbb{R})
     \bigl(\operatorname{UpperBound}(u,A,P)\land u<s\bigr).
   \]
 \end{description}
@@ -110,20 +110,29 @@ $A$.
 A supremum is the least upper bound: it combines upper-bound control with leastness among all upper bounds.
 \end{remark*}
 
+\begin{remark*}[Empty-set convention]
+Nonemptiness is a standing hypothesis for real suprema in this section.  The
+empty set is bounded above in $\mathbb{R}$, but it has no real supremum:
+every real number is an upper bound of $\varnothing$, and $\mathbb{R}$ has no
+least element.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:ordered-set]{Ordered Set}
   \item \hyperref[def:subset]{Subset}
   \item \hyperref[def:real-upper-bound]{Upper Bound}
+  \item \hyperref[def:is-nonempty]{Nonempty}
 \end{itemize}
 \end{dependencies}
 
 \begin{definitionbox}{Infimum}
 \begin{definition}[Infimum]
 \label{def:infimum}
-Let $(S,\leq)$ be an ordered set, let $A\subseteq S$ be nonempty, and let
-$i\in S$.  The element $i$ is the \emph{infimum} of $A$ if $i$ is a lower
-bound of $A$ and no larger element of $S$ is a lower bound of $A$.
+Let $A\subseteq\mathbb{R}$ be nonempty and let $i\in\mathbb{R}$.  The
+element $i$ is the \emph{infimum} of $A$, written $i=\inf A$, if $i$ is a
+lower bound of $A$ and every lower bound of $A$ is less than or equal to
+$i$.
 \end{definition}
 \end{definitionbox}
 
@@ -131,20 +140,20 @@ bound of $A$ and no larger element of $S$ is a lower bound of $A$.
 \[
   A\neq\varnothing
   \quad\text{and}\quad
-  (\forall x\in A)(i\leq x)
+  (\forall a\in A)(i\leq a)
   \quad\text{and}\quad
-  (\forall \ell\in S)\bigl[(\forall x\in A)(\ell\leq x)\Rightarrow \ell\leq i\bigr].
+  (\forall \ell\in\mathbb{R})\bigl[(\forall a\in A)(\ell\leq a)\Rightarrow \ell\leq i\bigr].
 \]
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
 \[
-  S\in\mathbf{Set},\qquad A\subseteq S,\qquad P=\mathsf{OrderedSet}(S,\leq),\qquad
+  P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad
   \operatorname{GreatestLowerBound}(i,A,P)
   :=
   \operatorname{LowerBound}(i,A,P)
   \land
-  (\forall \ell\in S)
+  (\forall \ell\in\mathbb{R})
   \bigl(\operatorname{LowerBound}(\ell,A,P)\Rightarrow \ell\leq i\bigr).
 \]
 \end{remark*}
@@ -153,22 +162,22 @@ bound of $A$ and no larger element of $S$ is a lower bound of $A$.
 \[
   A=\varnothing
   \quad\text{or}\quad
-  (\exists x\in A)(x<i)
+  (\exists a\in A)(a<i)
   \quad\text{or}\quad
-  (\exists \ell\in S)\bigl[(\forall x\in A)(\ell\leq x)\ \text{and}\ i<\ell\bigr].
+  (\exists \ell\in\mathbb{R})\bigl[(\forall a\in A)(\ell\leq a)\ \text{and}\ i<\ell\bigr].
 \]
 \end{remark*}
 
 \begin{remark*}[Negation predicate reading]
 \[
-  S\in\mathbf{Set},\qquad A\subseteq S,\qquad P=\mathsf{OrderedSet}(S,\leq),\qquad
+  P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad
   \neg\operatorname{GreatestLowerBound}(i,A,P)
   \Longleftrightarrow
   A=\varnothing
   \lor
   \neg\operatorname{LowerBound}(i,A,P)
   \lor
-  (\exists \ell\in S)
+  (\exists \ell\in\mathbb{R})
   \bigl(\operatorname{LowerBound}(\ell,A,P)\land i<\ell\bigr).
 \]
 \end{remark*}
@@ -185,9 +194,9 @@ bound of $A$ and no larger element of $S$ is a lower bound of $A$.
   \[
     A=\varnothing
     \quad\text{or}\quad
-    (\exists x\in A)(x<i)
+    (\exists a\in A)(a<i)
     \quad\text{or}\quad
-    (\exists \ell\in S)\bigl[(\forall x\in A)(\ell\leq x)\ \text{and}\ i<\ell\bigr].
+    (\exists \ell\in\mathbb{R})\bigl[(\forall a\in A)(\ell\leq a)\ \text{and}\ i<\ell\bigr].
   \]
   \[
     \neg\operatorname{GreatestLowerBound}(i,A,P)
@@ -196,7 +205,7 @@ bound of $A$ and no larger element of $S$ is a lower bound of $A$.
     \lor
     \neg\operatorname{LowerBound}(i,A,P)
     \lor
-    (\exists \ell\in S)
+    (\exists \ell\in\mathbb{R})
     \bigl(\operatorname{LowerBound}(\ell,A,P)\land i<\ell\bigr).
   \]
 \end{description}
@@ -206,11 +215,19 @@ bound of $A$ and no larger element of $S$ is a lower bound of $A$.
 An infimum is the greatest lower bound: it combines lower-bound control with greatestness among all lower bounds.
 \end{remark*}
 
+\begin{remark*}[Empty-set convention]
+Nonemptiness is a standing hypothesis for real infima in this section.  The
+empty set is bounded below in $\mathbb{R}$, but it has no real infimum:
+every real number is a lower bound of $\varnothing$, and $\mathbb{R}$ has no
+greatest element.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:ordered-set]{Ordered Set}
   \item \hyperref[def:subset]{Subset}
   \item \hyperref[def:real-lower-bound]{Lower Bound}
+  \item \hyperref[def:is-nonempty]{Nonempty}
 \end{itemize}
 \end{dependencies}
 
@@ -559,9 +576,8 @@ The statement records how the infimum predicate controls uniqueness or lower-bou
 \begin{lemmabox}{Subset Inclusion Preserves Upper Bounds}
 \begin{lemma}[Subset Inclusion Preserves Upper Bounds]
 \label{lem:subset-inclusion-preserves-upper-bounds}
-Let $A\subseteq B\subseteq S$ be nonempty subsets of an ordered set
-$(S,\leq)$.  If $u$ is an upper bound of $B$, then $u$ is an upper bound
-of $A$.
+Let $A\subseteq B\subseteq S$ be subsets of an ordered set $(S,\leq)$.  If
+$u$ is an upper bound of $B$, then $u$ is an upper bound of $A$.
 
 \hyperref[prf:subset-inclusion-preserves-upper-bounds]{Go to proof.}
 \end{lemma}
@@ -569,10 +585,10 @@ of $A$.
 
 \begin{remark*}[Standard quantified statement]
 \[
-  A\neq\varnothing,\quad A\subseteq B,\quad
-  (\forall y\in B)(y\leq u)
+  A\subseteq B,\quad
+  (\forall b\in B)(b\leq u)
   \quad\Longrightarrow\quad
-  (\forall x\in A)(x\leq u).
+  (\forall a\in A)(a\leq u).
 \]
 \end{remark*}
 
@@ -641,19 +657,18 @@ A supremum is the least upper bound: it combines upper-bound control with leastn
 \begin{lemmabox}{Subset Inclusion Preserves Lower Bounds}
 \begin{lemma}[Subset Inclusion Preserves Lower Bounds]
 \label{lem:subset-inclusion-preserves-lower-bounds}
-Let $A\subseteq B\subseteq S$ be nonempty subsets of an ordered set
-$(S,\leq)$.  If $\ell$ is a lower bound of $B$, then $\ell$ is a lower
-bound of $A$.
+Let $A\subseteq B\subseteq S$ be subsets of an ordered set $(S,\leq)$.  If
+$\ell$ is a lower bound of $B$, then $\ell$ is a lower bound of $A$.
 \hyperref[prf:subset-inclusion-preserves-lower-bounds]{\textit{Go to proof.}}
 \end{lemma}
 \end{lemmabox}
 
 \begin{remark*}[Standard quantified statement]
 \[
-  A\neq\varnothing,\quad A\subseteq B,\quad
-  (\forall y\in B)(\ell\leq y)
+  A\subseteq B,\quad
+  (\forall b\in B)(\ell\leq b)
   \quad\Longrightarrow\quad
-  (\forall x\in A)(\ell\leq x).
+  (\forall a\in A)(\ell\leq a).
 \]
 \end{remark*}
 
@@ -1343,8 +1358,8 @@ to be attained by the set.
 \begin{propositionbox}{Order Comparison of Suprema}
 \begin{proposition}[Order Comparison of Suprema]
 \label{prop:order-comparison-of-suprema}
-Let $A,B\subseteq\mathbb{R}$ be nonempty and bounded above.  If every
-$x\in A$ is below some $y\in B$, then $\sup A\leq\sup B$.
+Let $A,B\subseteq\mathbb{R}$ be nonempty subsets whose suprema exist.  If
+every $a\in A$ is below some $b\in B$, then $\sup A\leq\sup B$.
 
 \hyperref[prf:order-comparison-of-suprema]{Go to proof.}
 \end{proposition}
@@ -1353,9 +1368,11 @@ $x\in A$ is below some $y\in B$, then $\sup A\leq\sup B$.
 \begin{remark*}[Standard quantified statement]
 \[
   A\neq\varnothing,\quad B\neq\varnothing,\quad
-  (\forall x\in A)(\exists y\in B)(x\leq y)
+  \operatorname{LeastUpperBound}(s_A,A,P),\quad
+  \operatorname{LeastUpperBound}(s_B,B,P),\quad
+  (\forall a\in A)(\exists b\in B)(a\leq b)
   \quad\Longrightarrow\quad
-  \sup A\leq\sup B.
+  s_A\leq s_B.
 \]
 \end{remark*}
 
@@ -1516,7 +1533,9 @@ A supremum is the least upper bound: it combines upper-bound control with leastn
 \begin{theorem}[Greatest Lower Bound Property Implies Existence of Infima]
 \label{thm:glb-property-implies-existence-of-infima}
 Let $S\subseteq\mathbb{R}$ be nonempty and bounded below.  Then there
-exists a real number $i$ such that $i=\inf S$.
+exists a real number $i$ such that $i=\inf S$; equivalently, every
+nonempty bounded-below subset of $\mathbb{R}$ has an infimum in
+$\mathbb{R}$.
 \hyperref[prf:glb-property-implies-existence-of-infima]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}

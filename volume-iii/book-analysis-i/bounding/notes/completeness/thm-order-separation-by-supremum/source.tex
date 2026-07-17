@@ -1,0 +1,98 @@
+\begin{theorem}[Order Separation by Supremum]
+\label{thm:order-separation-by-supremum}
+Let $A,B\subseteq\mathbb{R}$ be nonempty sets such that
+\[
+  (\forall a\in A)(\forall b\in B)(a\leq b).
+\]
+Then $A$ is bounded above, $B$ is bounded below, and the real number
+$c:=\sup A$ separates $A$ from $B$; that is,
+\[
+  (\forall a\in A)(\forall b\in B)(a\leq c\leq b).
+\]
+In particular,
+\[
+  \sup A\leq\inf B.
+\]
+\hyperref[prf:order-separation-by-supremum]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+\begin{remark*}[Standard quantified statement]
+\[
+\forall A,B\subseteq\mathbb{R}\;
+\Bigl[
+(A\ne\varnothing\land B\ne\varnothing\land
+\forall a\in A\;\forall b\in B\;(a\le b))
+\Longrightarrow
+\exists c\in\mathbb{R}\;\forall a\in A\;\forall b\in B\;(a\le c\le b)
+\Bigr].
+\]
+\end{remark*}
+\begin{remark*}[Predicate reading]
+\[
+A,B\subseteq\mathbb{R},\qquad P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),
+\]
+\[
+\bigl(A\ne\varnothing\land B\ne\varnothing\land
+\forall a\in A\;\forall b\in B\;(a\le b)\bigr)
+\Longrightarrow
+\operatorname{HasDedekindSeparator}(A,B,P_{\mathbb{R}}).
+\]
+Equivalently, there exists $c\in\mathbb{R}$ such that
+\(\operatorname{IsDedekindSeparator}(c,A,B,P_{\mathbb{R}})\).
+\end{remark*}
+\begin{remark*}[Negated quantified statement]
+\[
+\exists A,B\subseteq\mathbb{R}\;
+\Bigl[
+A\ne\varnothing\land B\ne\varnothing\land
+\forall a\in A\;\forall b\in B\;(a\le b)
+\land
+\forall c\in\mathbb{R}\;\exists a\in A\;\exists b\in B\;(c<a\lor b<c)
+\Bigr].
+\]
+\end{remark*}
+\begin{remark*}[Negation predicate reading]
+\[
+A,B\subseteq\mathbb{R},\qquad P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),
+\]
+\[
+\bigl(A\ne\varnothing\land B\ne\varnothing\land
+\forall a\in A\;\forall b\in B\;(a\le b)\bigr)
+\land\neg\operatorname{HasDedekindSeparator}(A,B,P_{\mathbb{R}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  Failure is witnessed by the displayed negated or contrapositive condition.
+
+  \item[\mathsf{OrderedSet}.]
+  \[
+\exists A,B\subseteq\mathbb{R}\;
+\Bigl[
+A\ne\varnothing\land B\ne\varnothing\land
+\forall a\in A\;\forall b\in B\;(a\le b)
+\land
+\forall c\in\mathbb{R}\;\exists a\in A\;\exists b\in B\;(c<a\lor b<c)
+\Bigr].
+\]
+\[
+A,B\subseteq\mathbb{R},\qquad P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),
+\]
+\end{description}
+\end{remark*}
+\begin{remark*}[Interpretation]
+If one nonempty set lies entirely to the left of another, completeness supplies
+a real separator between them.
+\end{remark*}
+\begin{dependencies}
+\hyperref[def:reals]{Real Numbers};
+\hyperref[def:ordered-set]{Ordered Set};
+\hyperref[def:subset]{Subset};
+\hyperref[def:real-upper-bound]{Upper Bound};
+\hyperref[def:supremum]{Supremum};
+\hyperref[ax:completeness-of-reals]{Completeness of $\mathbb{R}$}.
+\end{dependencies}
+\input{volume-iii/book-analysis-i/bounding/notes/completeness/figure-order-separation}
+

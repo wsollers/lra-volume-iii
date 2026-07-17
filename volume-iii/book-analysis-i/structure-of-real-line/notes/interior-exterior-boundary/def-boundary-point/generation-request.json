@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "def:boundary-point",
+  "kind": "definition",
+  "title": "Boundary Point",
+  "source": {
+    "label": "def:boundary-point",
+    "kind": "definition",
+    "title": "Boundary Point",
+    "book": "book-analysis-i",
+    "chapter": "structure-of-real-line",
+    "section": "interior-exterior-boundary",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/structure-of-real-line/notes/interior-exterior-boundary/notes-interior-exterior-boundary.tex",
+    "source_line_start": 67,
+    "source_line_end": 95,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/structure-of-real-line/notes/interior-exterior-boundary/def-boundary-point",
+      "artifact": "volume-iii/book-analysis-i/structure-of-real-line/notes/interior-exterior-boundary/def-boundary-point/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/structure-of-real-line/notes/interior-exterior-boundary/def-boundary-point/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/structure-of-real-line/notes/interior-exterior-boundary/def-boundary-point",
+    "artifact": "volume-iii/book-analysis-i/structure-of-real-line/notes/interior-exterior-boundary/def-boundary-point/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/structure-of-real-line/notes/interior-exterior-boundary/def-boundary-point/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/structure-of-real-line/notes/interior-exterior-boundary/notes-interior-exterior-boundary.tex",
+      "label": "def:boundary-point",
+      "environment_kind": "definition",
+      "source_line_start": 67,
+      "source_line_end": 95,
+      "current_tex": "\\begin{definitionbox}{Definition (Boundary Point)}\n\\begin{definition}[Boundary Point]\n\\label{def:boundary-point}\nLet $A\\subseteq\\mathbb{R}$ and $x\\in\\mathbb{R}$.  The point $x$ is a\nboundary point of $A$ if every open ball centered at $x$ meets both $A$ and\nits complement; that is,\n\\[\n  (\\forall r>0)(B_r(x)\\cap A\\neq\\varnothing)\n\\]\nand\n\\[\n  (\\forall r>0)(B_r(x)\\cap(\\mathbb{R}\\setminus A)\\neq\\varnothing).\n\\]\n\\end{definition}\n\\end{definitionbox}\n\\begin{remark*}[Standard quantified statement]\n\\[\nx \\text{ is a boundary point of } E \\Longleftrightarrow \\forall r>0\\;(B_{r}(x)\\cap E\\neq\\emptyset \\;\\land\\; B_{r}(x)\\cap(\\mathbb{R}\\setminus E)\\neq\\emptyset).\n\\]\n\\end{remark*}\n\\begin{remark*}[Interpretation]\nA boundary point of $E$ is approached from both sides: every ball around it meets both $E$ and its complement.\n\\end{remark*}\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:open-ball]{Open Ball on the Real Line}\n\\end{itemize}\n\\end{dependencies}\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

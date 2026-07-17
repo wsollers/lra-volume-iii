@@ -1,0 +1,108 @@
+\begin{theorem}[Infimum of the Pairwise Minimum Set]
+\label{thm:infimum-pairwise-minimum-set}
+Let $A,B\subseteq\mathbb{R}$ be nonempty and bounded below. Then $A\wedge B$
+is bounded below and
+\[
+\inf(A\wedge B)=\min\{\inf A,\inf B\}.
+\]
+\hyperref[prf:infimum-pairwise-minimum-set]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+A,B\neq\varnothing,\quad A,B\text{ bounded below}
+\quad\Longrightarrow\quad
+\inf(A\wedge B)=\min\{\inf A,\inf B\}.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\\
+&N=A\wedge B,\qquad L=\min\{t_A,t_B\},\\
+&\operatorname{GreatestLowerBound}(t_A,A,P)\land\operatorname{GreatestLowerBound}(t_B,B,P)
+\Longrightarrow
+\operatorname{GreatestLowerBound}(L,N,P).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\inf(A\wedge B)\neq\min\{\inf A,\inf B\}
+\]
+is impossible under the stated hypotheses.
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\\
+&N=A\wedge B,\qquad L=\min\{t_A,t_B\},\\
+&\operatorname{GreatestLowerBound}(t_A,A,P)\land\operatorname{GreatestLowerBound}(t_B,B,P)\land
+\neg\operatorname{GreatestLowerBound}(L,N,P).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
+The formula could fail only if the smaller infimum failed to bound all pairwise
+minima from below, or if that lower bound were not sharp.
+
+
+  \item[\operatorname{GreatestLowerBound}.]
+  \[
+\inf(A\wedge B)\neq\min\{\inf A,\inf B\}
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\\
+&N=A\wedge B,\qquad L=\min\{t_A,t_B\},\\
+&\operatorname{GreatestLowerBound}(t_A,A,P)\land\operatorname{GreatestLowerBound}(t_B,B,P)\land
+\neg\operatorname{GreatestLowerBound}(L,N,P).
+\end{aligned}
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
+Every pairwise minimum is at least the smaller of the two infima.  Sharpness
+comes from holding one set nonempty and approaching the smaller lower threshold.
+
+
+  \item[\operatorname{GreatestLowerBound}.]
+  \[
+\inf(A\wedge B)\neq\min\{\inf A,\inf B\}
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\\
+&N=A\wedge B,\qquad L=\min\{t_A,t_B\},\\
+&\operatorname{GreatestLowerBound}(t_A,A,P)\land\operatorname{GreatestLowerBound}(t_B,B,P)\land
+\neg\operatorname{GreatestLowerBound}(L,N,P).
+\end{aligned}
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The lower edge of the pairwise minimum set is the smaller of the two individual
+lower edges.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:reals]{Real Numbers}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:pairwise-maximum-minimum-sets]{Pairwise Maximum and Minimum Sets}
+  \item \hyperref[def:minimum]{Minimum}
+  \item \hyperref[def:infimum]{Infimum}
+\end{itemize}
+\end{dependencies}

@@ -12,8 +12,44 @@ interval forms of the same gap-free principle.
 \begin{theorembox}{Theorem (Least Upper Bound Property Implies Monotone Convergence)}
 \begin{theorem}[Least Upper Bound Property Implies Monotone Convergence]
 \label{thm:lub-property-implies-monotone-convergence}
-Assume the ordered field $\mathbb{R}$ has the least upper bound property. Then
-every bounded monotone real sequence converges.
+Let $F$ be a linearly ordered field satisfying the least upper bound property.
+Let $(x_n)_{n\in\mathbb{N}}$ be a sequence in $F$.  If
+\[
+  (\forall n\in\mathbb{N})(x_n\leq x_{n+1})
+\]
+and
+\[
+  (\exists M\in F)(\forall n\in\mathbb{N})(x_n\leq M),
+\]
+then the set
+\[
+  X:=\{x_n:n\in\mathbb{N}\}
+\]
+has a supremum $s\in F$, and
+\[
+  (\forall\varepsilon\in F)\left[
+  \varepsilon>0
+  \Longrightarrow
+  (\exists N\in\mathbb{N})(\forall n\in\mathbb{N})
+  \bigl(n\geq N\Longrightarrow |x_n-s|<\varepsilon\bigr)
+  \right].
+\]
+Consequently,
+\[
+  \lim_{n\longrightarrow\infty}x_n=s=\sup\{x_n:n\in\mathbb{N}\}.
+\]
+Dually, if
+\[
+  (\forall n\in\mathbb{N})(x_{n+1}\leq x_n)
+\]
+and
+\[
+  (\exists m\in F)(\forall n\in\mathbb{N})(m\leq x_n),
+\]
+then
+\[
+  \lim_{n\longrightarrow\infty}x_n=\inf\{x_n:n\in\mathbb{N}\}.
+\]
 
 \smallskip
 \noindent
@@ -30,7 +66,7 @@ every bounded monotone real sequence converges.
   \operatorname{Monotone}((x_n),\mathsf{OrderedSet}(\mathbb{R},\leq))
   \land
   \operatorname{Bounded}(x_n)
-  \rightarrow
+  \Longrightarrow
   \operatorname{ConvergesTo}(x_n)
 \bigr).
 \]
@@ -57,8 +93,44 @@ limit.
 \begin{theorembox}{Theorem (Monotone Convergence Implies Least Upper Bound Property)}
 \begin{theorem}[Monotone Convergence Implies Least Upper Bound Property]
 \label{thm:monotone-convergence-implies-lub-property}
-Assume every bounded monotone real sequence converges. Then $\mathbb{R}$ has
-the least upper bound property.
+Let $F$ be an Archimedean linearly ordered field.  Suppose that every
+increasing sequence in $F$ that is bounded above converges in $F$; explicitly,
+suppose that for every sequence $(x_n)_{n\in\mathbb{N}}$ in $F$,
+\[
+  \left[(\forall n\in\mathbb{N})(x_n\leq x_{n+1})\right]
+  \land
+  \left[(\exists M\in F)(\forall n\in\mathbb{N})(x_n\leq M)\right]
+\]
+implies that there exists $L\in F$ such that
+\[
+  (\forall\varepsilon\in F)\left[
+  \varepsilon>0
+  \Longrightarrow
+  (\exists N\in\mathbb{N})(\forall n\in\mathbb{N})
+  \bigl(n\geq N\Longrightarrow |x_n-L|<\varepsilon\bigr)
+  \right].
+\]
+Then $F$ has the least upper bound property.  That is, for every
+$A\subseteq F$,
+\[
+  \left[
+  A\neq\varnothing
+  \land
+  (\exists u\in F)(\forall a\in A)(a\leq u)
+  \right]
+\]
+implies that there exists $s\in F$ satisfying
+\[
+  (\forall a\in A)(a\leq s)
+\]
+and
+\[
+  (\forall u\in F)\left[
+  (\forall a\in A)(a\leq u)
+  \Longrightarrow
+  s\leq u
+  \right].
+\]
 
 \smallskip
 \noindent
@@ -70,7 +142,7 @@ the least upper bound property.
 \[
 \bigl[\forall (x_n)\subseteq\mathbb{R}\;
 (\operatorname{Monotone}((x_n),\mathsf{OrderedSet}(\mathbb{R},\leq))\land\operatorname{Bounded}(x_n)
-\Rightarrow \operatorname{ConvergesTo}(x_n))\bigr]
+\Longrightarrow \operatorname{ConvergesTo}(x_n))\bigr]
 \Longrightarrow
 \operatorname{HasLeastUpperBoundProperty}(\mathbb{R}).
 \]
@@ -101,10 +173,15 @@ supremum of $A$.
 \begin{theorembox}{Theorem (Least Upper Bound Property Equivalent to Monotone Convergence)}
 \begin{theorem}[Least Upper Bound Property Equivalent to Monotone Convergence]
 \label{thm:lub-property-equivalent-monotone-convergence}
-Over the Archimedean ordered field axioms, the following are equivalent:
+Let $F$ be an Archimedean linearly ordered field.  The following statements are
+equivalent:
 \begin{enumerate}[label=(\roman*)]
-  \item $\mathbb{R}$ has the least upper bound property.
-  \item Every bounded monotone real sequence converges.
+  \item Every nonempty subset of $F$ that is bounded above has a least upper
+  bound in $F$.
+  \item Every increasing sequence in $F$ that is bounded above converges in
+  $F$.
+  \item Every decreasing sequence in $F$ that is bounded below converges in
+  $F$.
 \end{enumerate}
 
 \smallskip
@@ -119,7 +196,7 @@ Over the Archimedean ordered field axioms, the following are equivalent:
 \Longleftrightarrow
 \forall (x_n)\subseteq\mathbb{R}\;
 \bigl(\operatorname{Monotone}((x_n),\mathsf{OrderedSet}(\mathbb{R},\leq))\land\operatorname{Bounded}(x_n)
-\Rightarrow \operatorname{ConvergesTo}(x_n)\bigr).
+\Longrightarrow \operatorname{ConvergesTo}(x_n)\bigr).
 \]
 \end{remark*}
 
@@ -144,11 +221,27 @@ completeness as the same principle expressed in different languages.
 \begin{theorembox}{Theorem (Least Upper Bound Property Equivalent to Nested Intervals)}
 \begin{theorem}[Least Upper Bound Property Equivalent to Nested Intervals]
 \label{thm:lub-property-equivalent-nested-interval-property}
-Over the Archimedean ordered field axioms, the following are equivalent:
+Let $F$ be an Archimedean linearly ordered field.  The following statements are
+equivalent:
 \begin{enumerate}[label=(\roman*)]
-  \item $\mathbb{R}$ has the least upper bound property.
-  \item Every nested sequence of nonempty closed bounded intervals in
-        $\mathbb{R}$ has nonempty intersection.
+  \item Every nonempty subset of $F$ that is bounded above has a least upper
+  bound in $F$.
+  \item For every pair of sequences $(a_n)$ and $(b_n)$ in $F$ satisfying
+  \[
+    (\forall n\in\mathbb{N})(a_n\leq b_n)
+  \]
+  and
+  \[
+    (\forall n\in\mathbb{N})([a_{n+1},b_{n+1}]\subseteq [a_n,b_n]),
+  \]
+  there exists $x\in F$ such that
+  \[
+    (\forall n\in\mathbb{N})(a_n\leq x\leq b_n).
+  \]
+  Equivalently,
+  \[
+    \bigcap_{n=1}^{\infty}[a_n,b_n]\neq\varnothing.
+  \]
 \end{enumerate}
 
 \smallskip
@@ -184,14 +277,17 @@ line.
 \begin{theorembox}{Theorem (Standard Completeness Equivalences)}
 \begin{theorem}[Standard Completeness Equivalences]
 \label{thm:standard-completeness-equivalences}
-Over the Archimedean ordered field axioms, the following are equivalent:
+Let $F$ be an Archimedean linearly ordered field.  The following statements are
+equivalent:
 \begin{enumerate}[label=(\roman*)]
-  \item $\mathbb{R}$ has the least upper bound property.
-  \item Every bounded monotone real sequence converges.
-  \item Every nested sequence of nonempty closed bounded intervals in
-        $\mathbb{R}$ has nonempty intersection.
-  \item Every bounded real sequence has a convergent subsequence.
-  \item Every Cauchy sequence in $\mathbb{R}$ converges.
+  \item $F$ has the least upper bound property.
+  \item $F$ has the greatest lower bound property.
+  \item Every increasing sequence in $F$ that is bounded above converges, and
+  every decreasing sequence in $F$ that is bounded below converges.
+  \item Every nested sequence of nonempty closed bounded intervals in $F$ has
+  nonempty intersection.
+  \item Every Cauchy sequence in $F$ converges in $F$.
+  \item Every bounded sequence in $F$ has a convergent subsequence.
 \end{enumerate}
 
 \smallskip

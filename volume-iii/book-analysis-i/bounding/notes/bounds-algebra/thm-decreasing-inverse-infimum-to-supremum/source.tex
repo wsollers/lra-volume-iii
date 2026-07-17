@@ -1,0 +1,129 @@
+\begin{theorem}[Decreasing Inverse Sends Infimum to Supremum]
+\label{thm:decreasing-inverse-infimum-to-supremum}
+Let $I,J\subseteq\mathbb{R}$ be intervals, and let $f\colon I\to J$ be a continuous
+strictly decreasing bijection.  Let $B\subseteq J$ be nonempty and bounded
+below, and suppose $\inf B\in J$.  Then
+$f^{-1}[B]:=\{f^{-1}(b):b\in B\}$ is bounded above, and
+\[
+  \sup f^{-1}[B]=f^{-1}(\inf B).
+\]
+\hyperref[prf:decreasing-inverse-infimum-to-supremum]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+B\neq\varnothing,\quad \inf B\in J,\quad f^{-1}\text{ decreasing and continuous at }\inf B
+\Longrightarrow
+\sup f^{-1}(B)=f^{-1}(\inf B).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\begin{aligned}
+&B\subseteq J,\qquad g=f^{-1},\qquad g\colon J\to I,\qquad
+C=g(B)=\{g(b):b\in B\},\\
+&P_J=\mathsf{OrderedSet}(J,\leq),\qquad
+P_I=\mathsf{OrderedSet}(I,\leq),\\
+&\operatorname{GreatestLowerBound}(v,B,P_J)\land
+\operatorname{OrderReversing}(g,P_J,P_I)\land
+\operatorname{IsContinuous}(g,v,J,I)
+\Longrightarrow
+\operatorname{LeastUpperBound}(g(v),C,P_I).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\sup f^{-1}(B)\neq f^{-1}(\inf B)
+\]
+is impossible under the stated hypotheses.
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\begin{aligned}
+&B\subseteq J,\qquad g=f^{-1},\qquad g\colon J\to I,\qquad
+C=g(B)=\{g(b):b\in B\},\\
+&P_J=\mathsf{OrderedSet}(J,\leq),\qquad
+P_I=\mathsf{OrderedSet}(I,\leq),\\
+&\operatorname{GreatestLowerBound}(v,B,P_J)\land
+\operatorname{OrderReversing}(g,P_J,P_I)\land
+\operatorname{IsContinuous}(g,v,J,I)\land
+\neg\operatorname{LeastUpperBound}(g(v),C,P_I).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
+The formula can fail if the inverse is not decreasing, if $\inf B$ is outside
+$J$, or if the inverse is not continuous at $\inf B$.
+
+
+  \item[\operatorname{GreatestLowerBound} / \operatorname{OrderReversing}.]
+  \[
+\sup f^{-1}(B)\neq f^{-1}(\inf B)
+\]
+\[
+\begin{aligned}
+&B\subseteq J,\qquad g=f^{-1},\qquad g\colon J\to I,\qquad
+C=g(B)=\{g(b):b\in B\},\\
+&P_J=\mathsf{OrderedSet}(J,\leq),\qquad
+P_I=\mathsf{OrderedSet}(I,\leq),\\
+&\operatorname{GreatestLowerBound}(v,B,P_J)\land
+\operatorname{OrderReversing}(g,P_J,P_I)\land
+\operatorname{IsContinuous}(g,v,J,I)\land
+\neg\operatorname{LeastUpperBound}(g(v),C,P_I).
+\end{aligned}
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
+Apply the decreasing image infimum-to-supremum theorem to $g=f^{-1}$ and $B$.
+
+
+  \item[\operatorname{GreatestLowerBound} / \operatorname{OrderReversing}.]
+  \[
+\sup f^{-1}(B)\neq f^{-1}(\inf B)
+\]
+\[
+\begin{aligned}
+&B\subseteq J,\qquad g=f^{-1},\qquad g\colon J\to I,\qquad
+C=g(B)=\{g(b):b\in B\},\\
+&P_J=\mathsf{OrderedSet}(J,\leq),\qquad
+P_I=\mathsf{OrderedSet}(I,\leq),\\
+&\operatorname{GreatestLowerBound}(v,B,P_J)\land
+\operatorname{OrderReversing}(g,P_J,P_I)\land
+\operatorname{IsContinuous}(g,v,J,I)\land
+\neg\operatorname{LeastUpperBound}(g(v),C,P_I).
+\end{aligned}
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A decreasing inverse reverses endpoint roles for subsets of the codomain, so a
+codomain infimum becomes a supremum after applying the inverse.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:reals]{Real Numbers}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:function]{Function}
+  \item \hyperref[def:function-decreasing]{Decreasing Function}
+  \item \hyperref[def:infimum]{Infimum}
+  \item \hyperref[def:supremum]{Supremum}
+  \item \hyperref[def:continuous-at-point]{Continuity at a Point}
+  \item \hyperref[thm:decreasing-image-infimum-to-supremum]{Decreasing Image Sends Infimum to Supremum}
+\end{itemize}
+\end{dependencies}
+

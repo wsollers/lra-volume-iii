@@ -1,0 +1,161 @@
+\begin{theorem}[Supremum of a Quotient Set]
+\label{thm:supremum-quotient-set}
+Let $A,B\subseteq\mathbb{R}$ be nonempty and bounded, and suppose
+$0<\inf B$ or $\sup B<0$. Then
+\[
+  \sup(A/B)=
+  \max\left\{\frac{\inf A}{\inf B},\frac{\inf A}{\sup B},
+              \frac{\sup A}{\inf B},\frac{\sup A}{\sup B}\right\}.
+\]
+\hyperref[prf:supremum-quotient-set]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+A,B\neq\varnothing,\quad A,B\text{ bounded},\quad 0\notin[\inf B,\sup B]
+\]
+implies that the supremum of $\{a/b:a\in A,\ b\in B\}$ is the maximum of the
+four endpoint quotients.
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+A,B\subseteq\mathbb{R},\qquad Q=A/B=\{a/b:a\in A,\ b\in B\},\\
+&M=\max\{\alpha/\gamma,\alpha/\delta,\beta/\gamma,\beta/\delta\},\\
+&\operatorname{GreatestLowerBound}(\alpha,A,P)\land
+\operatorname{LeastUpperBound}(\beta,A,P)\land\\
+&\operatorname{GreatestLowerBound}(\gamma,B,P)\land
+\operatorname{LeastUpperBound}(\delta,B,P)\land
+(0<\gamma\lor\delta<0)\\
+&\Longrightarrow \operatorname{LeastUpperBound}(M,Q,P).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+The displayed endpoint maximum is not the supremum of $A/B$.
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+A,B\subseteq\mathbb{R},\qquad Q=A/B=\{a/b:a\in A,\ b\in B\},\\
+&M=\max\{\alpha/\gamma,\alpha/\delta,\beta/\gamma,\beta/\delta\},\\
+&\operatorname{GreatestLowerBound}(\alpha,A,P)\land
+\operatorname{LeastUpperBound}(\beta,A,P)\land\\
+&\operatorname{GreatestLowerBound}(\gamma,B,P)\land
+\operatorname{LeastUpperBound}(\delta,B,P)\land
+(0<\gamma\lor\delta<0)\land\\
+&\neg\operatorname{LeastUpperBound}(M,Q,P)
+\end{aligned}
+\]
+is a contradictory configuration.
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+A failure would require the quotient set to see values not controlled by the
+reciprocal endpoint interval for $B$.
+
+
+  \item[\operatorname{GreatestLowerBound} / \operatorname{LeastUpperBound}.]
+
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+A,B\subseteq\mathbb{R},\qquad Q=A/B=\{a/b:a\in A,\ b\in B\},\\
+&M=\max\{\alpha/\gamma,\alpha/\delta,\beta/\gamma,\beta/\delta\},\\
+&\operatorname{GreatestLowerBound}(\alpha,A,P)\land
+\operatorname{LeastUpperBound}(\beta,A,P)\land\\
+&\operatorname{GreatestLowerBound}(\gamma,B,P)\land
+\operatorname{LeastUpperBound}(\delta,B,P)\land
+(0<\gamma\lor\delta<0)\land\\
+&\neg\operatorname{LeastUpperBound}(M,Q,P)
+\end{aligned}
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+A,B\subseteq\mathbb{R},\qquad Q=A/B=\{a/b:a\in A,\ b\in B\},\\
+&M=\max\{\alpha/\gamma,\alpha/\delta,\beta/\gamma,\beta/\delta\},\\
+&\operatorname{GreatestLowerBound}(\alpha,A,P)\land
+\operatorname{LeastUpperBound}(\beta,A,P)\land\\
+&\operatorname{GreatestLowerBound}(\gamma,B,P)\land
+\operatorname{LeastUpperBound}(\delta,B,P)\land
+(0<\gamma\lor\delta<0)\\
+&\Longrightarrow \operatorname{LeastUpperBound}(M,Q,P).
+\end{aligned}
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+Use $A/B=A B^{-1}$, the reciprocal endpoint formulas for $B^{-1}$, and the
+product endpoint formula.
+
+
+  \item[\operatorname{GreatestLowerBound} / \operatorname{LeastUpperBound}.]
+
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+A,B\subseteq\mathbb{R},\qquad Q=A/B=\{a/b:a\in A,\ b\in B\},\\
+&M=\max\{\alpha/\gamma,\alpha/\delta,\beta/\gamma,\beta/\delta\},\\
+&\operatorname{GreatestLowerBound}(\alpha,A,P)\land
+\operatorname{LeastUpperBound}(\beta,A,P)\land\\
+&\operatorname{GreatestLowerBound}(\gamma,B,P)\land
+\operatorname{LeastUpperBound}(\delta,B,P)\land
+(0<\gamma\lor\delta<0)\land\\
+&\neg\operatorname{LeastUpperBound}(M,Q,P)
+\end{aligned}
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+A,B\subseteq\mathbb{R},\qquad Q=A/B=\{a/b:a\in A,\ b\in B\},\\
+&M=\max\{\alpha/\gamma,\alpha/\delta,\beta/\gamma,\beta/\delta\},\\
+&\operatorname{GreatestLowerBound}(\alpha,A,P)\land
+\operatorname{LeastUpperBound}(\beta,A,P)\land\\
+&\operatorname{GreatestLowerBound}(\gamma,B,P)\land
+\operatorname{LeastUpperBound}(\delta,B,P)\land
+(0<\gamma\lor\delta<0)\\
+&\Longrightarrow \operatorname{LeastUpperBound}(M,Q,P).
+\end{aligned}
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A quotient set is a product set with the reciprocal image of the denominator.
+Once zero is excluded from the denominator interval, the quotient supremum is
+again determined by endpoint combinations.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:reals]{Real Numbers}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:multiplication-on-r]{Multiplication on $\mathbb{R}$}
+  \item \hyperref[def:division-on-r]{Division on $\mathbb{R}$}
+  \item \hyperref[def:set-arithmetic-images]{Set Arithmetic Images}
+  \item \hyperref[def:reciprocal-image]{Reciprocal Image}
+  \item \hyperref[def:real-lower-bound]{Lower Bound}
+  \item \hyperref[def:real-upper-bound]{Upper Bound}
+  \item \hyperref[def:bounded]{Bounded Set}
+  \item \hyperref[def:infimum]{Infimum}
+  \item \hyperref[def:supremum]{Supremum}
+  \item \hyperref[def:maximum]{Maximum}
+  \item \hyperref[thm:supremum-reciprocal-set]{Supremum of a Reciprocal Set}
+  \item \hyperref[thm:infimum-reciprocal-set]{Infimum of a Reciprocal Set}
+  \item \hyperref[thm:supremum-product-set]{Supremum of a Product Set}
+\end{itemize}
+\end{dependencies}
+

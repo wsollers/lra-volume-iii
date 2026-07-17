@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "lem:archimedean-integer-part-lemma",
+  "kind": "lemma",
+  "title": "Archimedean Integer Part Lemma",
+  "source": {
+    "label": "lem:archimedean-integer-part-lemma",
+    "kind": "lemma",
+    "title": "Archimedean Integer Part Lemma",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "completeness",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-archimedean-property.tex",
+    "source_line_start": 461,
+    "source_line_end": 564,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-archimedean-integer-part-lemma",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-archimedean-integer-part-lemma/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-archimedean-integer-part-lemma/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-archimedean-integer-part-lemma",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-archimedean-integer-part-lemma/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-archimedean-integer-part-lemma/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-archimedean-property.tex",
+      "label": "lem:archimedean-integer-part-lemma",
+      "environment_kind": "lemma",
+      "source_line_start": 461,
+      "source_line_end": 564,
+      "current_tex": "\\begin{lemma}[Archimedean Integer Part Lemma]\n\\label{lem:archimedean-integer-part-lemma}\nFor every $x\\in\\mathbb{R}$, there exists a unique integer $m\\in\\mathbb{Z}$\nsuch that\n\\[\n  m\\leq x<m+1.\n\\]\nEquivalently,\n\\[\n  (\\forall x\\in\\mathbb{R})(\\exists!m\\in\\mathbb{Z})(m\\leq x<m+1).\n\\]\n\n\\smallskip\n\\noindent\n\\hyperref[prf:archimedean-integer-part-lemma]{\\textit{Go to proof.}}\n\\end{lemma}\n\\end{lemmabox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\forall x\\in\\mathbb{R}\\;\\exists m\\in\\mathbb{Z}\\;(m-1\\le x<m).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\nm=\\lfloor x\\rfloor+1\n\\Longleftrightarrow\nm\\in\\mathbb{Z}\\land m-1\\le x<m.\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\n\\exists x\\in\\mathbb{R}\\;\\forall m\\in\\mathbb{Z}\\;(x<m-1\\lor m\\le x).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negation predicate reading]\n\\[\n\\neg\\exists m\\in\\mathbb{Z}\\;(m=\\lfloor x\\rfloor+1)\n\\Longleftrightarrow\n\\forall m\\in\\mathbb{Z}\\;(x<m-1\\lor m\\le x).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\nThe lemma fails only if some real number lies in no half-open unit interval\n$[m-1,m)$ with integer right endpoint.\n\n\n  \\item[\\exists-condition.]\n  \\[\n\\exists x\\in\\mathbb{R}\\;\\forall m\\in\\mathbb{Z}\\;(x<m-1\\lor m\\le x).\n\\]\n\\[\n\\neg\\exists m\\in\\mathbb{Z}\\;(m=\\lfloor x\\rfloor+1)\n\\Longleftrightarrow\n\\forall m\\in\\mathbb{Z}\\;(x<m-1\\lor m\\le x).\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\n\\[\n\\underbrace{x<m-1}_{\\text{right endpoint too high}}\n\\qquad\\text{or}\\qquad\n\\underbrace{m\\le x}_{\\text{right endpoint not above }x}.\n\\]\n\n\n  \\item[\\exists-condition.]\n  \\[\n\\exists x\\in\\mathbb{R}\\;\\forall m\\in\\mathbb{Z}\\;(x<m-1\\lor m\\le x).\n\\]\n\\[\n\\neg\\exists m\\in\\mathbb{Z}\\;(m=\\lfloor x\\rfloor+1)\n\\Longleftrightarrow\n\\forall m\\in\\mathbb{Z}\\;(x<m-1\\lor m\\le x).\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nThis is the integer-part lemma with the endpoint shifted by one.  It produces\nthe first integer strictly above $x$ when the unit interval is written with its\ninteger endpoint on the right.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n\\item \\hyperref[def:reals]{Real Numbers}.\n\\item \\hyperref[def:integers]{Integers}.\n\\item \\hyperref[lem:integer-part-lemma]{Integer Part Lemma}.\n\\end{itemize}\n\\end{dependencies}\n\n\n\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "def:real-open-cover",
+  "kind": "definition",
+  "title": "Open Cover",
+  "source": {
+    "label": "def:real-open-cover",
+    "kind": "definition",
+    "title": "Open Cover",
+    "book": "book-analysis-i",
+    "chapter": "structure-of-real-line",
+    "section": "covers-and-subcovers",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/structure-of-real-line/notes/covers-and-subcovers/notes-covers-and-subcovers.tex",
+    "source_line_start": 8,
+    "source_line_end": 35,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/structure-of-real-line/notes/covers-and-subcovers/def-real-open-cover",
+      "artifact": "volume-iii/book-analysis-i/structure-of-real-line/notes/covers-and-subcovers/def-real-open-cover/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/structure-of-real-line/notes/covers-and-subcovers/def-real-open-cover/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/structure-of-real-line/notes/covers-and-subcovers/def-real-open-cover",
+    "artifact": "volume-iii/book-analysis-i/structure-of-real-line/notes/covers-and-subcovers/def-real-open-cover/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/structure-of-real-line/notes/covers-and-subcovers/def-real-open-cover/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/structure-of-real-line/notes/covers-and-subcovers/notes-covers-and-subcovers.tex",
+      "label": "def:real-open-cover",
+      "environment_kind": "definition",
+      "source_line_start": 8,
+      "source_line_end": 35,
+      "current_tex": "\\begin{definitionbox}{Definition (Open Cover)}\n\\begin{definition}[Open Cover]\n\\label{def:real-open-cover}\nLet $K\\subseteq\\mathbb{R}$.  A family $\\mathcal{U}$ of open subsets of\n$\\mathbb{R}$ is an \\emph{open cover} of $K$ if\n\\[\n  K\\subseteq\\bigcup_{U\\in\\mathcal{U}}U.\n\\]\nEquivalently,\n\\[\n  (\\forall x\\in K)(\\exists U\\in\\mathcal{U})(x\\in U).\n\\]\n\\end{definition}\n\\end{definitionbox}\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\{U_i\\}_{i\\in I} \\text{ is an open cover of } E \\Longleftrightarrow \\bigl(\\forall i\\in I\\;U_i \\text{ open}\\bigr)\\land E\\subseteq\\textstyle\\bigcup_{i\\in I}U_i.\n\\]\n\\end{remark*}\n\\begin{remark*}[Interpretation]\nAn open cover is a way of surrounding every point of $E$ with an open piece of the family. The index set $I$ may be infinite; the question compactness asks is whether finitely many pieces already suffice.\n\\end{remark*}\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:open-set]{Open Set in $\\mathbb{R}$}\n\\end{itemize}\n\\end{dependencies}\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "thm:open-interval-is-open",
+  "kind": "theorem",
+  "title": "Open Intervals Are Open",
+  "source": {
+    "label": "thm:open-interval-is-open",
+    "kind": "theorem",
+    "title": "Open Intervals Are Open",
+    "book": "book-analysis-i",
+    "chapter": "structure-of-real-line",
+    "section": "open-sets",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/structure-of-real-line/notes/open-sets/notes-open-sets.tex",
+    "source_line_start": 96,
+    "source_line_end": 137,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/structure-of-real-line/notes/open-sets/thm-open-interval-is-open",
+      "artifact": "volume-iii/book-analysis-i/structure-of-real-line/notes/open-sets/thm-open-interval-is-open/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/structure-of-real-line/notes/open-sets/thm-open-interval-is-open/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/structure-of-real-line/notes/open-sets/thm-open-interval-is-open",
+    "artifact": "volume-iii/book-analysis-i/structure-of-real-line/notes/open-sets/thm-open-interval-is-open/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/structure-of-real-line/notes/open-sets/thm-open-interval-is-open/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/structure-of-real-line/notes/open-sets/notes-open-sets.tex",
+      "label": "thm:open-interval-is-open",
+      "environment_kind": "theorem",
+      "source_line_start": 96,
+      "source_line_end": 137,
+      "current_tex": "\\begin{theorembox}{Theorem (Open Intervals Are Open)}\n\\begin{theorem}[Open Intervals Are Open]\n\\label{thm:open-interval-is-open}\nLet $a,b\\in\\mathbb{R}$ with $a<b$.  Then the interval\n\\[\n  (a,b):=\\{x\\in\\mathbb{R}:a<x<b\\}\n\\]\nis open in $\\mathbb{R}$.  Explicitly,\n\\[\n  (\\forall x\\in(a,b))(\\exists r>0)(B_r(x)\\subseteq(a,b)).\n\\]\n\\hyperref[prf:open-interval-is-open]{Go to proof.}\n\\end{theorem}\n\\end{theorembox}\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\begin{gathered}\n\\forall a,b\\in\\mathbb{R}\\;(a<b\\Longrightarrow (a,b)\\text{ is open}),\\\\\n\\forall a\\in\\mathbb{R}\\;\\bigl((a,\\infty)\\text{ is open}\\land(-\\infty,a)\\text{ is open}\\bigr),\n\\qquad \\mathbb{R}\\text{ is open}.\n\\end{gathered}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\nI\\subseteq\\mathbb{R},\\qquad\n\\operatorname{IsOpenInterval}(I,\\mathbb{R})\n\\Longrightarrow\n\\operatorname{IsOpen}(I,\\mathbb{R}).\n\\]\n\\end{remark*}\n\\begin{remark*}[Interpretation]\nThe name ``open interval'' is justified: each such interval satisfies the open-set condition, with the radius at $x$ taken as the distance to the nearer endpoint.\n\\end{remark*}\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:open-set]{Open Set in $\\mathbb{R}$}\n  \\item \\hyperref[def:open-interval]{Open Interval}\n\\end{itemize}\n\\end{dependencies}\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

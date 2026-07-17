@@ -1,0 +1,105 @@
+\begin{lemma}[Integer Ceiling Lemma]
+\label{lem:integer-ceiling-lemma}
+For every $x\in\mathbb{R}$, there exists a unique $m\in\mathbb{Z}$ such that
+\[
+  m-1<x\leq m.
+\]
+Equivalently,
+\[
+  (\forall x\in\mathbb{R})(\exists!m\in\mathbb{Z})(m-1<x\leq m).
+\]
+The unique integer $m$ is denoted by
+\[
+  m=\lceil x\rceil.
+\]
+
+\smallskip
+\noindent
+\hyperref[prf:integer-ceiling-lemma]{\textit{Go to proof.}}
+\end{lemma}
+\end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x\in\mathbb{R}\;\exists m\in\mathbb{Z}\;(x<m\le x+1).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+m=\lfloor x\rfloor+1
+\Longleftrightarrow
+m\in\mathbb{Z}\land x<m\le x+1.
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\exists x\in\mathbb{R}\;\forall m\in\mathbb{Z}\;(m\le x\lor x+1<m).
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\neg\exists m\in\mathbb{Z}\;(m=\lfloor x\rfloor+1)
+\Longleftrightarrow
+\forall m\in\mathbb{Z}\;(m\le x\lor x+1<m).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+The lemma fails only if every integer is either at or below $x$, or lies
+strictly above the next unit endpoint $x+1$.
+
+
+  \item[\exists-condition.]
+  \[
+\exists x\in\mathbb{R}\;\forall m\in\mathbb{Z}\;(m\le x\lor x+1<m).
+\]
+\[
+\neg\exists m\in\mathbb{Z}\;(m=\lfloor x\rfloor+1)
+\Longleftrightarrow
+\forall m\in\mathbb{Z}\;(m\le x\lor x+1<m).
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+\[
+\underbrace{m\le x}_{\text{not strictly above }x}
+\qquad\text{or}\qquad
+\underbrace{x+1<m}_{\text{overshoots one unit}}.
+\]
+
+
+  \item[\exists-condition.]
+  \[
+\exists x\in\mathbb{R}\;\forall m\in\mathbb{Z}\;(m\le x\lor x+1<m).
+\]
+\[
+\neg\exists m\in\mathbb{Z}\;(m=\lfloor x\rfloor+1)
+\Longleftrightarrow
+\forall m\in\mathbb{Z}\;(m\le x\lor x+1<m).
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+There is always an integer just above a real number, and it can be chosen no
+farther than one unit above that number.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+\item \hyperref[def:reals]{Real Numbers}.
+\item \hyperref[def:integers]{Integers}.
+\item \hyperref[lem:archimedean-integer-part-lemma]{Archimedean Integer Part Lemma}.
+\end{itemize}
+\end{dependencies}
+
+
+

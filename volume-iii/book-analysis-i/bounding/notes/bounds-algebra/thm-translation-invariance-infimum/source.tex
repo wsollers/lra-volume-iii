@@ -1,0 +1,112 @@
+\begin{theorem}[Translation Invariance of the Infimum]
+\label{thm:translation-invariance-infimum}
+Let $A\subseteq\mathbb{R}$ be nonempty and bounded below, and let
+$c\in\mathbb{R}$.  Then $A+c:=\{a+c:a\in A\}$ is nonempty and bounded below,
+and
+\[
+  \inf(A+c)=\inf A+c.
+\]
+\hyperref[prf:translation-invariance-infimum]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+A\neq\varnothing,\quad A\text{ bounded below}
+\quad\Longrightarrow\quad
+\inf\{a+c:a\in A\}=\inf A+c.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad A+c=\{a+c:a\in A\},\\
+&\operatorname{GreatestLowerBound}(t,A,P)
+\Longrightarrow
+\operatorname{GreatestLowerBound}(t+c,A+c,P).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\inf(A+c)\neq\inf A+c
+\]
+is impossible under the stated hypotheses.
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad A+c=\{a+c:a\in A\},\\
+&\operatorname{GreatestLowerBound}(t,A,P)\land
+\neg\operatorname{GreatestLowerBound}(t+c,A+c,P).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+The formula could fail only if translation failed to preserve lower bounds or
+failed to preserve greatestness among lower bounds.
+
+
+  \item[\operatorname{GreatestLowerBound}.]
+  \[
+\inf(A+c)\neq\inf A+c
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad A+c=\{a+c:a\in A\},\\
+&\operatorname{GreatestLowerBound}(t,A,P)\land
+\neg\operatorname{GreatestLowerBound}(t+c,A+c,P).
+\end{aligned}
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+\[
+(\forall a\in A)(t\leq a)
+\Longleftrightarrow
+(\forall a\in A)(t+c\leq a+c).
+\]
+
+
+  \item[\operatorname{GreatestLowerBound}.]
+  \[
+\inf(A+c)\neq\inf A+c
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad A+c=\{a+c:a\in A\},\\
+&\operatorname{GreatestLowerBound}(t,A,P)\land
+\neg\operatorname{GreatestLowerBound}(t+c,A+c,P).
+\end{aligned}
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Translation shifts every floor by the same amount, so the greatest floor shifts
+by that amount.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:reals]{Real Numbers}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:addition-on-r]{Addition on $\mathbb{R}$}
+  \item \hyperref[def:set-arithmetic-images]{Set Arithmetic Images}
+  \item \hyperref[def:real-lower-bound]{Lower Bound}
+  \item \hyperref[def:infimum]{Infimum}
+\end{itemize}
+\end{dependencies}
+
+
+

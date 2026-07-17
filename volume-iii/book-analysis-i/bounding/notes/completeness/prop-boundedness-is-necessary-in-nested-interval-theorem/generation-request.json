@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "prop:boundedness-is-necessary-in-nested-interval-theorem",
+  "kind": "proposition",
+  "title": "Boundedness Is Necessary in the Nested Interval Theorem",
+  "source": {
+    "label": "prop:boundedness-is-necessary-in-nested-interval-theorem",
+    "kind": "proposition",
+    "title": "Boundedness Is Necessary in the Nested Interval Theorem",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "completeness",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-nested-interval-property.tex",
+    "source_line_start": 1363,
+    "source_line_end": 1461,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/prop-boundedness-is-necessary-in-nested-interval-theorem",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/prop-boundedness-is-necessary-in-nested-interval-theorem/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/prop-boundedness-is-necessary-in-nested-interval-theorem/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/prop-boundedness-is-necessary-in-nested-interval-theorem",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/prop-boundedness-is-necessary-in-nested-interval-theorem/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/prop-boundedness-is-necessary-in-nested-interval-theorem/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-nested-interval-property.tex",
+      "label": "prop:boundedness-is-necessary-in-nested-interval-theorem",
+      "environment_kind": "proposition",
+      "source_line_start": 1363,
+      "source_line_end": 1461,
+      "current_tex": "\\begin{proposition}[Boundedness Is Necessary in the Nested Interval Theorem]\n\\label{prop:boundedness-is-necessary-in-nested-interval-theorem}\nThere exists a sequence $(I_n)_{n\\in\\mathbb{N}}$ of nonempty closed unbounded\nintervals in $\\mathbb{R}$ such that\n\\[\n  (\\forall n\\in\\mathbb{N})(I_{n+1}\\subseteq I_n),\n\\]\nbut\n\\[\n  \\bigcap_{n=1}^{\\infty}I_n=\\varnothing.\n\\]\nFor example,\n\\[\n  I_n=[n,\\infty).\n\\]\n\\hyperref[prf:boundedness-is-necessary-in-nested-interval-theorem]{Go to proof.}\n\\end{proposition}\n\\end{propositionbox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\exists I_n\\;\n\\bigl(\n\\operatorname{NestedClosedIntervals}(I_n)\n\\land\n\\neg\\operatorname{IsBoundedInterval}(I_n)\n\\land\n\\bigcap_{n=1}^{\\infty}I_n=\\varnothing\n\\bigr).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\nF=(I_n)_{n\\in\\mathbb{N}},\\qquad C=\\bigcap_{n=1}^{\\infty}I_n,\\qquad\n\\neg\\operatorname{IsBoundedInterval}(I_n,\\mathbb{R})\n\\quad\\text{can make}\\quad\n\\operatorname{IsNonempty}(C)\n\\text{ fail.}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\n\\forall I_n\\;\n\\left[\n\\operatorname{NestedClosedIntervals}(I_n)\n\\Longrightarrow\n\\bigcap_{n=1}^{\\infty}I_n\\ne\\varnothing\n\\right].\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negation predicate reading]\n\\[\nC=\\bigcap_{n=1}^{\\infty}I_n,\\qquad F=(I_n)_{n\\in\\mathbb{N}},\\qquad\nP_{\\mathbb{R}}=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\n\\]\n\\[\nC=\\varnothing\n\\Longrightarrow\n\\neg\\operatorname{NestedClosedBoundedIntervals}(F,P_{\\mathbb{R}}).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\n  Failure is witnessed by the displayed negated or contrapositive condition.\n\n  \\item[\\operatorname{NestedClosedIntervals}.]\n  \\[\n\\forall I_n\\;\n\\left[\n\\operatorname{NestedClosedIntervals}(I_n)\n\\Longrightarrow\n\\bigcap_{n=1}^{\\infty}I_n\\ne\\varnothing\n\\right].\n\\]\n\\[\nC=\\bigcap_{n=1}^{\\infty}I_n,\\qquad F=(I_n)_{n\\in\\mathbb{N}},\\qquad\nP_{\\mathbb{R}}=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nNested closed bounded intervals cannot keep shrinking or relocating in a way\nthat loses every real point. The endpoint lemmas convert containment into\nmonotone endpoint control, and completeness supplies a real point that survives\nall stages at once.\n\\end{remark*}\n\n\\begin{dependencies}\n\\hyperref[def:closed-interval]{Closed Interval}.\n\\end{dependencies}\n\n\\input{volume-iii/book-analysis-i/bounding/notes/completeness/figure-nested-intervals}\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

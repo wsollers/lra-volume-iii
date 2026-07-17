@@ -1,0 +1,117 @@
+\begin{theorem}[Infimum of a Difference Set]
+\label{thm:infimum-difference-set}
+Let $A,B\subseteq\mathbb{R}$ be nonempty, with $A$ bounded below and $B$
+bounded above. Then
+\[
+  \inf(A-B)=\inf A-\sup B.
+\]
+\hyperref[prf:infimum-difference-set]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+A,B\neq\varnothing,\quad A\text{ bounded below},\quad B\text{ bounded above}
+\quad\Longrightarrow\quad
+\inf\{a-b:a\in A,\ b\in B\}=\inf A-\sup B.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\qquad A-B=\{a-b:a\in A,\ b\in B\},\\
+&\operatorname{GreatestLowerBound}(t,A,P)\land\operatorname{LeastUpperBound}(s,B,P)
+\Longrightarrow
+\operatorname{GreatestLowerBound}(t-s,A-B,P).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\inf(A-B)\neq\inf A-\sup B
+\]
+is impossible under the stated hypotheses.
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\qquad A-B=\{a-b:a\in A,\ b\in B\},\\
+&\operatorname{GreatestLowerBound}(t,A,P)\land\operatorname{LeastUpperBound}(s,B,P)\land
+\neg\operatorname{GreatestLowerBound}(t-s,A-B,P).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+The formula could fail only if subtracting $B$ failed to convert its upper
+extremal behavior into a lower contribution.
+
+
+  \item[\operatorname{GreatestLowerBound} / \operatorname{LeastUpperBound}.]
+  \[
+\inf(A-B)\neq\inf A-\sup B
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\qquad A-B=\{a-b:a\in A,\ b\in B\},\\
+&\operatorname{GreatestLowerBound}(t,A,P)\land\operatorname{LeastUpperBound}(s,B,P)\land
+\neg\operatorname{GreatestLowerBound}(t-s,A-B,P).
+\end{aligned}
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+\[
+A-B=A+(-B),\qquad
+\inf(-B)=-\sup B,\qquad
+\inf(A+(-B))=\inf A+\inf(-B).
+\]
+
+
+  \item[\operatorname{GreatestLowerBound} / \operatorname{LeastUpperBound}.]
+  \[
+\inf(A-B)\neq\inf A-\sup B
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\qquad A-B=\{a-b:a\in A,\ b\in B\},\\
+&\operatorname{GreatestLowerBound}(t,A,P)\land\operatorname{LeastUpperBound}(s,B,P)\land
+\neg\operatorname{GreatestLowerBound}(t-s,A-B,P).
+\end{aligned}
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The smallest possible difference comes from making the first term as small as
+possible and the subtracted term as large as possible.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:reals]{Real Numbers}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:addition-on-r]{Addition on $\mathbb{R}$}
+  \item \hyperref[def:subtraction-on-r]{Subtraction on $\mathbb{R}$}
+  \item \hyperref[def:set-arithmetic-images]{Set Arithmetic Images}
+  \item \hyperref[def:real-lower-bound]{Lower Bound}
+  \item \hyperref[def:real-upper-bound]{Upper Bound}
+  \item \hyperref[def:infimum]{Infimum}
+  \item \hyperref[def:supremum]{Supremum}
+  \item \hyperref[def:epsilon-characterization-of-infimum]{Epsilon Characterization of Infimum}
+  \item \hyperref[def:epsilon-characterization-of-supremum]{Epsilon Characterization of Supremum}
+  \item \hyperref[thm:infimum-sum-set]{Infimum of a Sum Set}
+  \item \hyperref[thm:negative-scalar-mult-infimum]{Negative Scalar Multiplication of the Infimum}
+\end{itemize}
+\end{dependencies}
+
+

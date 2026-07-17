@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "thm:supremum-difference-set",
+  "kind": "theorem",
+  "title": "Supremum of a Difference Set",
+  "source": {
+    "label": "thm:supremum-difference-set",
+    "kind": "theorem",
+    "title": "Supremum of a Difference Set",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "bounds-algebra",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-algebra-of-supremum-infimum.tex",
+    "source_line_start": 1334,
+    "source_line_end": 1455,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-supremum-difference-set",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-supremum-difference-set/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-supremum-difference-set/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-supremum-difference-set",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-supremum-difference-set/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-supremum-difference-set/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-algebra-of-supremum-infimum.tex",
+      "label": "thm:supremum-difference-set",
+      "environment_kind": "theorem",
+      "source_line_start": 1334,
+      "source_line_end": 1455,
+      "current_tex": "\\begin{theorem}[Supremum of a Difference Set]\n\\label{thm:supremum-difference-set}\nLet $A,B\\subseteq\\mathbb{R}$ be nonempty, with $A$ bounded above and $B$ bounded below. Then\n\\[\n  \\sup(A-B)=\\sup A-\\inf B,\n  \\qquad\n  A-B=\\{a-b:a\\in A,\\ b\\in B\\}.\n\\]\n\\hyperref[prf:supremum-difference-set]{Go to proof.}\n\\end{theorem}\n\\end{theorembox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\nA,B\\neq\\varnothing,\\quad A\\text{ bounded above},\\quad B\\text{ bounded below}\n\\quad\\Longrightarrow\\quad\n\\sup\\{a-b:a\\in A,\\ b\\in B\\}=\\sup A-\\inf B.\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A,B\\subseteq\\mathbb{R},\\qquad A-B=\\{a-b:a\\in A,\\ b\\in B\\},\\\\\n&\\operatorname{LeastUpperBound}(s,A,P)\\land \\operatorname{GreatestLowerBound}(t,B,P)\n\\Longrightarrow\n\\operatorname{LeastUpperBound}(s-t,A-B,P).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\n\\sup(A-B)\\ne \\sup A-\\inf B\n\\]\nis impossible under the stated hypotheses.\n\\end{remark*}\n\n\\begin{remark*}[Negation predicate reading]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A,B\\subseteq\\mathbb{R},\\qquad A-B=\\{a-b:a\\in A,\\ b\\in B\\},\\\\\n&\\operatorname{LeastUpperBound}(s,A,P)\\land \\operatorname{GreatestLowerBound}(t,B,P)\n\\land\n\\neg\\operatorname{LeastUpperBound}(s-t,A-B,P)\n\\end{aligned}\n\\]\nis a contradictory configuration.\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\nThe formula could fail only if subtracting elements of $B$ did not convert the lower extremal behavior of $B$ into an upper contribution. Since $a-b=a+(-b)$, this is the sum theorem combined with the negation exchange.\n\n\n  \\item[\\operatorname{LeastUpperBound} / \\operatorname{GreatestLowerBound}.]\n  \\[\n\\sup(A-B)\\ne \\sup A-\\inf B\n\\]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A,B\\subseteq\\mathbb{R},\\qquad A-B=\\{a-b:a\\in A,\\ b\\in B\\},\\\\\n&\\operatorname{LeastUpperBound}(s,A,P)\\land \\operatorname{GreatestLowerBound}(t,B,P)\n\\land\n\\neg\\operatorname{LeastUpperBound}(s-t,A-B,P)\n\\end{aligned}\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\n\\[\nA-B=A+(-B),\n\\qquad\n\\sup(-B)=-\\inf B,\n\\qquad\n\\sup(A+(-B))=\\sup A+\\sup(-B).\n\\]\n\n\n  \\item[\\operatorname{LeastUpperBound} / \\operatorname{GreatestLowerBound}.]\n  \\[\n\\sup(A-B)\\ne \\sup A-\\inf B\n\\]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A,B\\subseteq\\mathbb{R},\\qquad A-B=\\{a-b:a\\in A,\\ b\\in B\\},\\\\\n&\\operatorname{LeastUpperBound}(s,A,P)\\land \\operatorname{GreatestLowerBound}(t,B,P)\n\\land\n\\neg\\operatorname{LeastUpperBound}(s-t,A-B,P)\n\\end{aligned}\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nThe largest possible difference comes from making the first term as large as possible and the subtracted term as small as possible.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:reals]{Real Numbers}\n  \\item \\hyperref[def:ordered-set]{Ordered Set}\n  \\item \\hyperref[def:subset]{Subset}\n  \\item \\hyperref[def:addition-on-r]{Addition on $\\mathbb{R}$}\n  \\item \\hyperref[def:subtraction-on-r]{Subtraction on $\\mathbb{R}$}\n  \\item \\hyperref[def:set-arithmetic-images]{Set Arithmetic Images}\n  \\item \\hyperref[def:real-upper-bound]{Upper Bound}\n  \\item \\hyperref[def:real-lower-bound]{Lower Bound}\n  \\item \\hyperref[def:supremum]{Supremum}\n  \\item \\hyperref[def:infimum]{Infimum}\n  \\item \\hyperref[def:epsilon-characterization-of-supremum]{Epsilon Characterization of Supremum}\n  \\item \\hyperref[def:epsilon-characterization-of-infimum]{Epsilon Characterization of Infimum}\n  \\item \\hyperref[thm:negation-exchange-sup-inf]{Negation Exchanges Supremum and Infimum}\n  \\item \\hyperref[thm:supremum-sum-set]{Supremum of a Sum Set}\n\\end{itemize}\n\\end{dependencies}\n\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

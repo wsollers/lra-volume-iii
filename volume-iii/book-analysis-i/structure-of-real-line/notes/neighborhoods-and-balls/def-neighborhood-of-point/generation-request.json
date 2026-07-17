@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "def:neighborhood-of-point",
+  "kind": "definition",
+  "title": "Neighborhood of a Point",
+  "source": {
+    "label": "def:neighborhood-of-point",
+    "kind": "definition",
+    "title": "Neighborhood of a Point",
+    "book": "book-analysis-i",
+    "chapter": "structure-of-real-line",
+    "section": "neighborhoods-and-balls",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/structure-of-real-line/notes/neighborhoods-and-balls/notes-neighborhoods-and-balls.tex",
+    "source_line_start": 40,
+    "source_line_end": 70,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/structure-of-real-line/notes/neighborhoods-and-balls/def-neighborhood-of-point",
+      "artifact": "volume-iii/book-analysis-i/structure-of-real-line/notes/neighborhoods-and-balls/def-neighborhood-of-point/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/structure-of-real-line/notes/neighborhoods-and-balls/def-neighborhood-of-point/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/structure-of-real-line/notes/neighborhoods-and-balls/def-neighborhood-of-point",
+    "artifact": "volume-iii/book-analysis-i/structure-of-real-line/notes/neighborhoods-and-balls/def-neighborhood-of-point/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/structure-of-real-line/notes/neighborhoods-and-balls/def-neighborhood-of-point/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/structure-of-real-line/notes/neighborhoods-and-balls/notes-neighborhoods-and-balls.tex",
+      "label": "def:neighborhood-of-point",
+      "environment_kind": "definition",
+      "source_line_start": 40,
+      "source_line_end": 70,
+      "current_tex": "\\begin{definitionbox}{Definition (Neighborhood of a Point)}\n\\begin{definition}[Neighborhood of a Point]\n\\label{def:neighborhood-of-point}\nLet $x\\in\\mathbb{R}$.  A set $N\\subseteq\\mathbb{R}$ is a\n\\emph{neighborhood} of $x$ if there exists $r>0$ such that\n\\[\n  B_r(x)\\subseteq N.\n\\]\nEquivalently,\n\\[\n  N\\text{ is a neighborhood of }x\n  \\Longleftrightarrow\n  (\\exists r>0)(\\forall y\\in\\mathbb{R})\n  \\bigl(|x-y|<r\\Longrightarrow y\\in N\\bigr).\n\\]\n\\end{definition}\n\\end{definitionbox}\n\\begin{remark*}[Standard quantified statement]\n\\[\nN \\text{ is a neighborhood of } x \\Longleftrightarrow \\exists r>0\\;(B_{r}(x)\\subseteq N).\n\\]\n\\end{remark*}\n\\begin{remark*}[Interpretation]\nA neighborhood of $x$ is any set with room to spare around $x$ --- it contains a whole ball, not just $x$ itself. Neighborhoods are the language of ``near $x$'' used to define interior points and limits.\n\\end{remark*}\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:open-ball]{Open Ball on the Real Line}\n\\end{itemize}\n\\end{dependencies}\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

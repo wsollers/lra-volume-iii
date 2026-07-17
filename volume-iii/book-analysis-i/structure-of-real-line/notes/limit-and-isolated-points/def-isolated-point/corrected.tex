@@ -1,0 +1,45 @@
+\begin{definitionbox}{Definition (Isolated Point)}
+\begin{definition}[Isolated Point]
+\label{def:isolated-point}
+Let $A\subseteq\mathbb{R}$ and $x\in\mathbb{R}$.  The point $x$ is an
+\emph{isolated point} of $A$ if
+\[
+  x\in A
+\]
+and there exists $r>0$ such that
+\[
+  B_r(x)\cap A=\{x\}.
+\]
+Equivalently,
+\[
+  x\in A
+  \quad\text{and}\quad
+  (\exists r>0)(\forall a\in A)
+  \bigl(|a-x|<r\Longrightarrow a=x\bigr).
+\]
+\end{definition}
+\end{definitionbox}
+\begin{remark*}[Standard quantified statement]
+\[
+x \text{ is an isolated point of } E
+\Longleftrightarrow
+x\in E \land \exists r>0\;\forall y\in E\;\bigl(|y-x|<r \Longrightarrow y=x\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+E\subseteq\mathbb{R},\qquad x\in E,\qquad
+\operatorname{IsIsolated}(x,E,\mathbb{R})
+\Longleftrightarrow
+\exists r>0\;\forall y\in E\;\bigl(|y-x|<r \Longrightarrow y=x\bigr).
+\]
+\end{remark*}
+\begin{remark*}[Interpretation]
+An isolated point sits in $E$ but stands apart: some ball around it contains no other point of $E$. A point of $E$ is either isolated or a limit point of $E$, never both.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:open-ball]{Open Ball on the Real Line}
+\end{itemize}
+\end{dependencies}

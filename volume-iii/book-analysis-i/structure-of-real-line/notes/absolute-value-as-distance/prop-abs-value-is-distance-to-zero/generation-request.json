@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "prop:abs-value-is-distance-to-zero",
+  "kind": "proposition",
+  "title": "Absolute Value Is Distance to the Origin",
+  "source": {
+    "label": "prop:abs-value-is-distance-to-zero",
+    "kind": "proposition",
+    "title": "Absolute Value Is Distance to the Origin",
+    "book": "book-analysis-i",
+    "chapter": "structure-of-real-line",
+    "section": "absolute-value-as-distance",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/structure-of-real-line/notes/absolute-value-as-distance/notes-absolute-value-as-distance.tex",
+    "source_line_start": 8,
+    "source_line_end": 39,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/structure-of-real-line/notes/absolute-value-as-distance/prop-abs-value-is-distance-to-zero",
+      "artifact": "volume-iii/book-analysis-i/structure-of-real-line/notes/absolute-value-as-distance/prop-abs-value-is-distance-to-zero/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/structure-of-real-line/notes/absolute-value-as-distance/prop-abs-value-is-distance-to-zero/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/structure-of-real-line/notes/absolute-value-as-distance/prop-abs-value-is-distance-to-zero",
+    "artifact": "volume-iii/book-analysis-i/structure-of-real-line/notes/absolute-value-as-distance/prop-abs-value-is-distance-to-zero/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/structure-of-real-line/notes/absolute-value-as-distance/prop-abs-value-is-distance-to-zero/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/structure-of-real-line/notes/absolute-value-as-distance/notes-absolute-value-as-distance.tex",
+      "label": "prop:abs-value-is-distance-to-zero",
+      "environment_kind": "proposition",
+      "source_line_start": 8,
+      "source_line_end": 39,
+      "current_tex": "\\begin{propositionbox}{Proposition (Absolute Value Is Distance to the Origin)}\n\\begin{proposition}[Absolute Value Is Distance to the Origin]\n\\label{prop:abs-value-is-distance-to-zero}\nThroughout, $\\mathbb{R}$ is equipped with its usual metric\n\\[\n  d(x,y):=|x-y|.\n\\]\nFor every $x\\in\\mathbb{R}$,\n\\[\n  |x|=d(x,0).\n\\]\nEquivalently,\n\\[\n  (\\forall x\\in\\mathbb{R})(|x|=|x-0|).\n\\]\n\\hyperref[prf:abs-value-is-distance-to-zero]{Go to proof.}\n\\end{proposition}\n\\end{propositionbox}\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\forall a\\in\\mathbb{R}\\;(|a|=d(a,0)).\n\\]\n\\end{remark*}\n\\begin{remark*}[Interpretation]\nAbsolute value is not a separate idea from distance; it is the distance to the origin. The two-sided bound $|x|\\le r \\Leftrightarrow -r\\le x\\le r$ is then exactly the statement that $x$ lies within distance $r$ of $0$, i.e.\\ in the interval $[-r,r]$.\n\\end{remark*}\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:distance-on-real-line]{Distance on the Real Line}\n\\end{itemize}\n\\end{dependencies}\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

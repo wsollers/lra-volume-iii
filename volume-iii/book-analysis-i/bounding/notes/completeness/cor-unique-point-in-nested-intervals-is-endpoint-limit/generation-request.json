@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "cor:unique-point-in-nested-intervals-is-endpoint-limit",
+  "kind": "corollary",
+  "title": "Unique Point in Nested Intervals Is Endpoint Limit",
+  "source": {
+    "label": "cor:unique-point-in-nested-intervals-is-endpoint-limit",
+    "kind": "corollary",
+    "title": "Unique Point in Nested Intervals Is Endpoint Limit",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "completeness",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-nested-interval-property.tex",
+    "source_line_start": 1019,
+    "source_line_end": 1126,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/cor-unique-point-in-nested-intervals-is-endpoint-limit",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/cor-unique-point-in-nested-intervals-is-endpoint-limit/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/cor-unique-point-in-nested-intervals-is-endpoint-limit/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/cor-unique-point-in-nested-intervals-is-endpoint-limit",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/cor-unique-point-in-nested-intervals-is-endpoint-limit/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/cor-unique-point-in-nested-intervals-is-endpoint-limit/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-nested-interval-property.tex",
+      "label": "cor:unique-point-in-nested-intervals-is-endpoint-limit",
+      "environment_kind": "corollary",
+      "source_line_start": 1019,
+      "source_line_end": 1126,
+      "current_tex": "\\begin{corollary}[Unique Point in Nested Intervals Is Endpoint Limit]\n\\label{cor:unique-point-in-nested-intervals-is-endpoint-limit}\nLet $(a_n)$ and $(b_n)$ be sequences in $\\mathbb{R}$ satisfying\n\\[\n  (\\forall n\\in\\mathbb{N})(a_n\\leq b_n)\n\\]\nand\n\\[\n  (\\forall n\\in\\mathbb{N})([a_{n+1},b_{n+1}]\\subseteq [a_n,b_n]).\n\\]\nSuppose there exists $x\\in\\mathbb{R}$ such that\n\\[\n  \\bigcap_{n=1}^{\\infty}[a_n,b_n]=\\{x\\}.\n\\]\nThen\n\\[\n  \\lim_{n\\longrightarrow\\infty}a_n=x\n  \\quad\\text{and}\\quad\n  \\lim_{n\\longrightarrow\\infty}b_n=x.\n\\]\n\\hyperref[prf:unique-point-in-nested-intervals-is-endpoint-limit]{Go to proof.}\n\\end{corollary}\n\\end{corollarybox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\left[\n\\lim_{n\\longrightarrow\\infty}(b_n-a_n)=0\n\\land\n\\bigcap_{n=1}^{\\infty}[a_n,b_n]=\\{x\\}\n\\right]\n\\Longrightarrow\n\\left(\\lim_{n\\longrightarrow\\infty}a_n=x\\land \\lim_{n\\longrightarrow\\infty}b_n=x\\right).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\na\\colon\\mathbb{N}\\longrightarrow\\mathbb{R},\\qquad b\\colon\\mathbb{N}\\longrightarrow\\mathbb{R},\\qquad d\\colon\\mathbb{N}\\longrightarrow\\mathbb{R},\\qquad d_n=b_n-a_n,\n\\]\n\\[\nC=\\bigcap_{n=1}^{\\infty}[a_n,b_n],\\qquad X=\\mathbb{R},\\qquad\nC=\\{x\\}\n\\land\n\\operatorname{ConvergesTo}(d,0,X)\n\\Longrightarrow\n\\operatorname{ConvergesTo}(a,x,X)\n\\land\n\\operatorname{ConvergesTo}(b,x,X).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\n\\bigcap_{n=1}^{\\infty}[a_n,b_n]=\\{x\\}\n\\land\n\\lim_{n\\longrightarrow\\infty}(b_n-a_n)=0\n\\land\n\\left(\\lim_{n\\longrightarrow\\infty}a_n\\ne x\\lor \\lim_{n\\longrightarrow\\infty}b_n\\ne x\\right).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negation predicate reading]\n\\[\na\\colon\\mathbb{N}\\longrightarrow\\mathbb{R},\\qquad b\\colon\\mathbb{N}\\longrightarrow\\mathbb{R},\\qquad d\\colon\\mathbb{N}\\longrightarrow\\mathbb{R},\\qquad d_n=b_n-a_n,\n\\]\n\\[\nC=\\bigcap_{n=1}^{\\infty}[a_n,b_n],\\qquad X=\\mathbb{R},\\qquad\n\\left(\\lim_{n\\longrightarrow\\infty}a_n\\ne x\\lor \\lim_{n\\longrightarrow\\infty}b_n\\ne x\\right)\n\\Longrightarrow\nC\\ne\\{x\\}\n\\lor\n\\neg\\operatorname{ConvergesTo}(d,0,X).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\n  Failure is witnessed by the displayed negated or contrapositive condition.\n\n  \\item[\\operatorname{IsEmpty}.]\n  \\[\n\\bigcap_{n=1}^{\\infty}[a_n,b_n]=\\{x\\}\n\\land\n\\lim_{n\\longrightarrow\\infty}(b_n-a_n)=0\n\\land\n\\left(\\lim_{n\\longrightarrow\\infty}a_n\\ne x\\lor \\lim_{n\\longrightarrow\\infty}b_n\\ne x\\right).\n\\]\n\\[\na\\colon\\mathbb{N}\\longrightarrow\\mathbb{R},\\qquad b\\colon\\mathbb{N}\\longrightarrow\\mathbb{R},\\qquad d\\colon\\mathbb{N}\\longrightarrow\\mathbb{R},\\qquad d_n=b_n-a_n,\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nIf the intersection has a single survivor, both endpoint sequences converge\nto that survivor.\n\\end{remark*}\n\n\\begin{dependencies}\n\\hyperref[def:closed-interval]{Closed Interval};\n\\hyperref[def:bounded-subset-of-r]{Bounded Subset of the Real Line}.\n\\end{dependencies}\n\n\\input{volume-iii/book-analysis-i/bounding/notes/completeness/figure-nested-interval-failures}\n\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

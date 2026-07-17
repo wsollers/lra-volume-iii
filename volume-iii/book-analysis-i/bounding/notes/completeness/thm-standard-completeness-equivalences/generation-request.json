@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "thm:standard-completeness-equivalences",
+  "kind": "theorem",
+  "title": "Standard Completeness Equivalences",
+  "source": {
+    "label": "thm:standard-completeness-equivalences",
+    "kind": "theorem",
+    "title": "Standard Completeness Equivalences",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "completeness",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-completeness-equivalences.tex",
+    "source_line_start": 278,
+    "source_line_end": 336,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/thm-standard-completeness-equivalences",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/thm-standard-completeness-equivalences/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/thm-standard-completeness-equivalences/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/thm-standard-completeness-equivalences",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/thm-standard-completeness-equivalences/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/thm-standard-completeness-equivalences/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-completeness-equivalences.tex",
+      "label": "thm:standard-completeness-equivalences",
+      "environment_kind": "theorem",
+      "source_line_start": 278,
+      "source_line_end": 336,
+      "current_tex": "\\begin{theorem}[Standard Completeness Equivalences]\n\\label{thm:standard-completeness-equivalences}\nLet $F$ be an Archimedean linearly ordered field.  The following statements are\nequivalent:\n\\begin{enumerate}[label=(\\roman*)]\n  \\item $F$ has the least upper bound property.\n  \\item $F$ has the greatest lower bound property.\n  \\item Every increasing sequence in $F$ that is bounded above converges, and\n  every decreasing sequence in $F$ that is bounded below converges.\n  \\item Every nested sequence of nonempty closed bounded intervals in $F$ has\n  nonempty intersection.\n  \\item Every Cauchy sequence in $F$ converges in $F$.\n  \\item Every bounded sequence in $F$ has a convergent subsequence.\n\\end{enumerate}\n\n\\smallskip\n\\noindent\n\\hyperref[prf:standard-completeness-equivalences]{\\textit{Go to proof.}}\n\\end{theorem}\n\\end{theorembox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\text{LUB property}\n\\Longleftrightarrow\n\\text{monotone convergence}\n\\Longleftrightarrow\n\\text{nested intervals}\n\\Longleftrightarrow\n\\text{Bolzano--Weierstrass}\n\\Longleftrightarrow\n\\text{Cauchy completeness}.\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nThe first statement is the order version. The second and fifth are sequence\nversions. The third is the interval version. The fourth is the compactness\nversion for bounded sequences.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:real-sequence]{Real Sequence}\n  \\item \\hyperref[def:sequence]{Sequence}\n  \\item \\hyperref[def:subsequence-of-sequence]{Subsequence}\n  \\item \\hyperref[def:convergent-sequence]{Convergent Sequence}\n  \\item \\hyperref[def:closed-interval]{Closed Interval}\n  \\item \\hyperref[def:cauchy-sequence]{Cauchy Sequence}\n  \\item \\hyperref[def:monotone-sequence]{Monotone Sequence}\n  \\item \\hyperref[def:bounded-sequence]{Bounded Sequence}\n  \\item \\hyperref[def:least-upper-bound-property]{Least Upper Bound Property}\n  \\item \\hyperref[thm:monotone-convergence-theorem]{Monotone Convergence Theorem}\n  \\item \\hyperref[thm:nested-interval-theorem]{Nested Interval Theorem}\n  \\item \\hyperref[thm:bolzano-weierstrass-sequences]{Bolzano--Weierstrass Theorem for Sequences}\n  \\item \\hyperref[thm:cauchy-criterion-real-sequences]{Cauchy Criterion for Real Sequences}\n\\end{itemize}\n\\end{dependencies}\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

@@ -1,0 +1,79 @@
+\begin{theorem}[Monotone Convergence Implies Least Upper Bound Property]
+\label{thm:monotone-convergence-implies-lub-property}
+Let $F$ be an Archimedean linearly ordered field.  Suppose that every
+increasing sequence in $F$ that is bounded above converges in $F$; explicitly,
+suppose that for every sequence $(x_n)_{n\in\mathbb{N}}$ in $F$,
+\[
+  \left[(\forall n\in\mathbb{N})(x_n\leq x_{n+1})\right]
+  \land
+  \left[(\exists M\in F)(\forall n\in\mathbb{N})(x_n\leq M)\right]
+\]
+implies that there exists $L\in F$ such that
+\[
+  (\forall\varepsilon\in F)\left[
+  \varepsilon>0
+  \Longrightarrow
+  (\exists N\in\mathbb{N})(\forall n\in\mathbb{N})
+  \bigl(n\geq N\Longrightarrow |x_n-L|<\varepsilon\bigr)
+  \right].
+\]
+Then $F$ has the least upper bound property.  That is, for every
+$A\subseteq F$,
+\[
+  \left[
+  A\neq\varnothing
+  \land
+  (\exists u\in F)(\forall a\in A)(a\leq u)
+  \right]
+\]
+implies that there exists $s\in F$ satisfying
+\[
+  (\forall a\in A)(a\leq s)
+\]
+and
+\[
+  (\forall u\in F)\left[
+  (\forall a\in A)(a\leq u)
+  \Longrightarrow
+  s\leq u
+  \right].
+\]
+
+\smallskip
+\noindent
+\hyperref[prf:monotone-convergence-implies-lub-property]{\textit{Go to proof.}}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\bigl[\forall (x_n)\subseteq\mathbb{R}\;
+(\operatorname{Monotone}((x_n),\mathsf{OrderedSet}(\mathbb{R},\leq))\land\operatorname{Bounded}(x_n)
+\Longrightarrow \operatorname{ConvergesTo}(x_n))\bigr]
+\Longrightarrow
+\operatorname{HasLeastUpperBoundProperty}(\mathbb{R}).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Starting from a nonempty set $A\subseteq\mathbb{R}$ bounded above, choose an
+element of $A$ and an upper bound. Bisect the bracket. Keep the upper endpoint
+when the midpoint is still an upper bound; otherwise keep the midpoint as a
+new lower endpoint. The two endpoint sequences are bounded and monotone, so
+monotone convergence produces a common limiting boundary, which is the
+supremum of $A$.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:real-sequence]{Real Sequence}
+  \item \hyperref[def:sequence]{Sequence}
+  \item \hyperref[def:convergent-sequence]{Convergent Sequence}
+  \item \hyperref[def:monotone-sequence]{Monotone Sequence}
+  \item \hyperref[def:bounded-sequence]{Bounded Sequence}
+  \item \hyperref[def:supremum]{Supremum}
+  \item \hyperref[def:least-upper-bound-property]{Least Upper Bound Property}
+  \item \hyperref[thm:monotone-convergence-theorem]{Monotone Convergence Theorem}
+\end{itemize}
+\end{dependencies}
+

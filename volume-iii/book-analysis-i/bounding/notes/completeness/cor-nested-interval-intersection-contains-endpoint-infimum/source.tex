@@ -1,0 +1,98 @@
+\begin{corollary}[Nested Interval Intersection Contains the Endpoint Infimum]
+\label{cor:nested-interval-intersection-contains-endpoint-infimum}
+Let $(a_n)$ and $(b_n)$ satisfy the hypotheses of the Nested Interval Theorem,
+and define
+\[
+  \beta:=\inf\{b_n:n\in\mathbb{N}\}.
+\]
+Then
+\[
+  (\forall n\in\mathbb{N})(a_n\leq\beta\leq b_n).
+\]
+Therefore,
+\[
+  \beta\in \bigcap_{n=1}^{\infty}[a_n,b_n].
+\]
+\hyperref[prf:nested-interval-intersection-contains-endpoint-infimum]{Go to proof.}
+\end{corollary}
+\end{corollarybox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\beta=\inf\{b_n:n\in\mathbb{N}\}
+\Longrightarrow
+\forall n\in\mathbb{N}\;(\beta\in [a_n,b_n]).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+F=([a_n,b_n])_{n\in\mathbb{N}},\qquad B=\{b_n:n\in\mathbb{N}\},\qquad
+C=\bigcap_{n=1}^{\infty}[a_n,b_n],
+\]
+\[
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+\operatorname{NestedClosedBoundedIntervals}(F,P_{\mathbb{R}})
+\land
+\operatorname{GreatestLowerBound}(\beta,B,P_{\mathbb{R}})
+\Longrightarrow
+\beta\in C.
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\operatorname{NestedClosedBoundedIntervals}([a_n,b_n])
+\land
+\beta=\inf\{b_n:n\in\mathbb{N}\}
+\land
+\exists n\in\mathbb{N}\;(\beta\notin [a_n,b_n]).
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+F=([a_n,b_n])_{n\in\mathbb{N}},\qquad B=\{b_n:n\in\mathbb{N}\},\qquad
+C=\bigcap_{n=1}^{\infty}[a_n,b_n],
+\]
+\[
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+\beta\notin C
+\Longrightarrow
+\neg\operatorname{GreatestLowerBound}(\beta,B,P_{\mathbb{R}})
+\lor
+\neg\operatorname{NestedClosedBoundedIntervals}(F,P_{\mathbb{R}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  Failure is witnessed by the displayed negated or contrapositive condition.
+
+  \item[\operatorname{NestedClosedBoundedIntervals}.]
+  \[
+\operatorname{NestedClosedBoundedIntervals}([a_n,b_n])
+\land
+\beta=\inf\{b_n:n\in\mathbb{N}\}
+\land
+\exists n\in\mathbb{N}\;(\beta\notin [a_n,b_n]).
+\]
+\[
+F=([a_n,b_n])_{n\in\mathbb{N}},\qquad B=\{b_n:n\in\mathbb{N}\},\qquad
+C=\bigcap_{n=1}^{\infty}[a_n,b_n],
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The greatest lower bound of the right endpoints is itself retained by every
+interval in the nested family.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[def:closed-interval]{Closed Interval};
+\hyperref[def:bounded-subset-of-r]{Bounded Subset of the Real Line};
+\hyperref[def:infimum]{Infimum}.
+\end{dependencies}
+

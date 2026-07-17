@@ -1,0 +1,95 @@
+\begin{lemma}[Union Preserves Lower Bounds]
+\label{lem:union-preserves-lower-bounds}
+Let $A,B\subseteq\mathbb{R}$. For every $\ell\in\mathbb{R}$, if $\ell$ is
+a lower bound of both $A$ and $B$, then $\ell$ is a lower bound of
+$A\cup B$; that is,
+\[
+\left[
+(\forall a\in A,\ \ell\leq a)
+\land
+(\forall b\in B,\ \ell\leq b)
+\right]
+\Longrightarrow
+(\forall x\in A\cup B,\ \ell\leq x).
+\]
+\hyperref[prf:union-preserves-lower-bounds]{Go to proof.}
+\end{lemma}
+\end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\bigl[(\forall a\in A)(\ell\leq a)\land(\forall b\in B)(\ell\leq b)\bigr]
+\Longrightarrow
+(\forall x\in A\cup B)(\ell\leq x).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\\
+&U=A\cup B,\\
+&\operatorname{LowerBound}(\ell,A,P)\land\operatorname{LowerBound}(\ell,B,P)
+\Longrightarrow \operatorname{LowerBound}(\ell,U,P).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+(\forall a\in A)(\ell\leq a),\quad
+(\forall b\in B)(\ell\leq b),\quad
+(\exists x\in A\cup B)(x<\ell).
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\\
+&U=A\cup B,\\
+&\operatorname{LowerBound}(\ell,A,P)\land\operatorname{LowerBound}(\ell,B,P)\land
+\neg\operatorname{LowerBound}(\ell,U,P).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
+A failure would require a union element smaller than the proposed common
+lower bound.
+
+
+  \item[\operatorname{LowerBound}.]
+  \[
+(\forall a\in A)(\ell\leq a),\quad
+(\forall b\in B)(\ell\leq b),\quad
+(\exists x\in A\cup B)(x<\ell).
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\\
+&U=A\cup B,\\
+&\operatorname{LowerBound}(\ell,A,P)\land\operatorname{LowerBound}(\ell,B,P)\land
+\neg\operatorname{LowerBound}(\ell,U,P).
+\end{aligned}
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Every $x\in A\cup B$ lies in $A$ or in $B$.  In either case the common
+lower-bound hypothesis gives $\ell\leq x$.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+\item \hyperref[def:reals]{Real Numbers}.
+\item \hyperref[def:ordered-set]{Ordered Set}.
+\item \hyperref[def:subset]{Subset}.
+\item \hyperref[def:union]{Union}.
+\item \hyperref[def:real-lower-bound]{Lower Bound}.
+\end{itemize}
+\end{dependencies}
+

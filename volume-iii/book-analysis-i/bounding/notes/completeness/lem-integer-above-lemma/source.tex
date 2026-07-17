@@ -1,0 +1,97 @@
+\begin{lemma}[Integer Above Lemma]
+\label{lem:integer-above-lemma}
+For every $x\in\mathbb{R}$, there exists $n\in\mathbb{N}$ such that
+\[
+  x<n.
+\]
+Equivalently,
+\[
+  (\forall x\in\mathbb{R})(\exists n\in\mathbb{N})(x<n).
+\]
+
+\smallskip
+\noindent
+\hyperref[prf:integer-above-lemma]{\textit{Go to proof.}}
+\end{lemma}
+\end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x\in\mathbb{R}\;\exists m\in\mathbb{Z}\;(x<m).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+m\in\mathbb{Z}\land x<m.
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\exists x\in\mathbb{R}\;\forall m\in\mathbb{Z}\;(m\le x).
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\neg\exists m\in\mathbb{Z}\;(x<m)
+\Longleftrightarrow
+\forall m\in\mathbb{Z}\;(m\le x).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+The lemma fails only if some real number is an upper bound for all integers.
+
+
+  \item[\exists-condition.]
+  \[
+\exists x\in\mathbb{R}\;\forall m\in\mathbb{Z}\;(m\le x).
+\]
+\[
+\neg\exists m\in\mathbb{Z}\;(x<m)
+\Longleftrightarrow
+\forall m\in\mathbb{Z}\;(m\le x).
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+\[
+\underbrace{\exists x\in\mathbb{R}}_{\text{candidate upper bound}}
+\;\underbrace{\forall m\in\mathbb{Z}\;(m\le x)}_{\text{no integer lies above it}}.
+\]
+
+
+  \item[\exists-condition.]
+  \[
+\exists x\in\mathbb{R}\;\forall m\in\mathbb{Z}\;(m\le x).
+\]
+\[
+\neg\exists m\in\mathbb{Z}\;(x<m)
+\Longleftrightarrow
+\forall m\in\mathbb{Z}\;(m\le x).
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Integers are unbounded above in the real line. The Integer Ceiling Lemma gives
+the sharper version with $m$ no farther than one unit above $x$.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+\item \hyperref[def:reals]{Real Numbers}.
+\item \hyperref[def:integers]{Integers}.
+\item \hyperref[lem:integer-ceiling-lemma]{Integer Ceiling Lemma}.
+\end{itemize}
+\end{dependencies}
+
+
+

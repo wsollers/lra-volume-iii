@@ -1,0 +1,112 @@
+\begin{proposition}[Positive Dilation Preserves Upper Bounds]
+\label{prop:positive-dilation-preserves-upper-bounds}
+Let $A\subseteq\mathbb{R}$, let $\lambda>0$, and let $u\in\mathbb{R}$.
+If $u$ is an upper bound of $A$, then $\lambda u$ is an upper bound of
+$\lambda A$; that is,
+\[
+\left(\forall a\in A,\ a\leq u\right)
+\Longrightarrow
+\left(\forall x\in\lambda A,\ x\leq \lambda u\right).
+\]
+\hyperref[prf:positive-dilation-preserves-upper-bounds]{Go to proof.}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\lambda>0\land(\forall a\in A)(a\leq u)
+\Longrightarrow
+(\forall x\in\lambda A)(x\leq\lambda u).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+A\subseteq\mathbb{R},\qquad \lambda A=\{\lambda a:a\in A\},\\
+&\lambda>0\land\operatorname{UpperBound}(u,A,P)
+\Longrightarrow\operatorname{UpperBound}(\lambda u,\lambda A,P).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\lambda>0,\qquad(\forall a\in A)(a\leq u),\qquad
+(\exists y\in\lambda A)(\lambda u<y).
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+A\subseteq\mathbb{R},\qquad \lambda A=\{\lambda a:a\in A\},\\
+&\lambda>0\land\operatorname{UpperBound}(u,A,P)\land
+\neg\operatorname{UpperBound}(\lambda u,\lambda A,P).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
+A failure would require positive multiplication to reverse an inequality.
+
+
+  \item[\operatorname{UpperBound}.]
+  \[
+\lambda>0,\qquad(\forall a\in A)(a\leq u),\qquad
+(\exists y\in\lambda A)(\lambda u<y).
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+A\subseteq\mathbb{R},\qquad \lambda A=\{\lambda a:a\in A\},\\
+&\lambda>0\land\operatorname{UpperBound}(u,A,P)\land
+\neg\operatorname{UpperBound}(\lambda u,\lambda A,P).
+\end{aligned}
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
+Write $y=\lambda a$ with $a\in A$.  Since $a\leq u$ and $\lambda>0$,
+$\lambda a\leq\lambda u$.
+
+
+  \item[\operatorname{UpperBound}.]
+  \[
+\lambda>0,\qquad(\forall a\in A)(a\leq u),\qquad
+(\exists y\in\lambda A)(\lambda u<y).
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+A\subseteq\mathbb{R},\qquad \lambda A=\{\lambda a:a\in A\},\\
+&\lambda>0\land\operatorname{UpperBound}(u,A,P)\land
+\neg\operatorname{UpperBound}(\lambda u,\lambda A,P).
+\end{aligned}
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Positive dilation stretches or contracts the set without reversing order, so
+upper bounds dilate to upper bounds.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:reals]{Real Numbers}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:multiplication-on-r]{Multiplication on $\mathbb{R}$}
+  \item \hyperref[def:displacement-dilation-reflection]{Displacement, Dilation, and Reflection}
+  \item \hyperref[def:real-upper-bound]{Upper Bound}
+\end{itemize}
+\end{dependencies}
+

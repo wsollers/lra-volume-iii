@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "lem:union-preserves-lower-bounds",
+  "kind": "lemma",
+  "title": "Union Preserves Lower Bounds",
+  "source": {
+    "label": "lem:union-preserves-lower-bounds",
+    "kind": "lemma",
+    "title": "Union Preserves Lower Bounds",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "bounds-algebra",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-set-operations-and-bounds.tex",
+    "source_line_start": 104,
+    "source_line_end": 199,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/lem-union-preserves-lower-bounds",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/lem-union-preserves-lower-bounds/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/lem-union-preserves-lower-bounds/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/lem-union-preserves-lower-bounds",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/lem-union-preserves-lower-bounds/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/lem-union-preserves-lower-bounds/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-set-operations-and-bounds.tex",
+      "label": "lem:union-preserves-lower-bounds",
+      "environment_kind": "lemma",
+      "source_line_start": 104,
+      "source_line_end": 199,
+      "current_tex": "\\begin{lemma}[Union Preserves Lower Bounds]\n\\label{lem:union-preserves-lower-bounds}\nLet $A,B\\subseteq\\mathbb{R}$. For every $\\ell\\in\\mathbb{R}$, if $\\ell$ is\na lower bound of both $A$ and $B$, then $\\ell$ is a lower bound of\n$A\\cup B$; that is,\n\\[\n\\left[\n(\\forall a\\in A,\\ \\ell\\leq a)\n\\land\n(\\forall b\\in B,\\ \\ell\\leq b)\n\\right]\n\\Longrightarrow\n(\\forall x\\in A\\cup B,\\ \\ell\\leq x).\n\\]\n\\hyperref[prf:union-preserves-lower-bounds]{Go to proof.}\n\\end{lemma}\n\\end{lemmabox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\bigl[(\\forall a\\in A)(\\ell\\leq a)\\land(\\forall b\\in B)(\\ell\\leq b)\\bigr]\n\\Longrightarrow\n(\\forall x\\in A\\cup B)(\\ell\\leq x).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A,B\\subseteq\\mathbb{R},\\\\\n&U=A\\cup B,\\\\\n&\\operatorname{LowerBound}(\\ell,A,P)\\land\\operatorname{LowerBound}(\\ell,B,P)\n\\Longrightarrow \\operatorname{LowerBound}(\\ell,U,P).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\n(\\forall a\\in A)(\\ell\\leq a),\\quad\n(\\forall b\\in B)(\\ell\\leq b),\\quad\n(\\exists x\\in A\\cup B)(x<\\ell).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negation predicate reading]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A,B\\subseteq\\mathbb{R},\\\\\n&U=A\\cup B,\\\\\n&\\operatorname{LowerBound}(\\ell,A,P)\\land\\operatorname{LowerBound}(\\ell,B,P)\\land\n\\neg\\operatorname{LowerBound}(\\ell,U,P).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n\\item[Exposition.]\nA failure would require a union element smaller than the proposed common\nlower bound.\n\n\n  \\item[\\operatorname{LowerBound}.]\n  \\[\n(\\forall a\\in A)(\\ell\\leq a),\\quad\n(\\forall b\\in B)(\\ell\\leq b),\\quad\n(\\exists x\\in A\\cup B)(x<\\ell).\n\\]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A,B\\subseteq\\mathbb{R},\\\\\n&U=A\\cup B,\\\\\n&\\operatorname{LowerBound}(\\ell,A,P)\\land\\operatorname{LowerBound}(\\ell,B,P)\\land\n\\neg\\operatorname{LowerBound}(\\ell,U,P).\n\\end{aligned}\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nEvery $x\\in A\\cup B$ lies in $A$ or in $B$.  In either case the common\nlower-bound hypothesis gives $\\ell\\leq x$.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n\\item \\hyperref[def:reals]{Real Numbers}.\n\\item \\hyperref[def:ordered-set]{Ordered Set}.\n\\item \\hyperref[def:subset]{Subset}.\n\\item \\hyperref[def:union]{Union}.\n\\item \\hyperref[def:real-lower-bound]{Lower Bound}.\n\\end{itemize}\n\\end{dependencies}\n\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

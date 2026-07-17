@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "thm:scalar-mult-positive",
+  "kind": "theorem",
+  "title": "Scalar Multiplication by a Positive Scalar",
+  "source": {
+    "label": "thm:scalar-mult-positive",
+    "kind": "theorem",
+    "title": "Scalar Multiplication by a Positive Scalar",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "bounds-algebra",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-algebra-of-supremum-infimum.tex",
+    "source_line_start": 478,
+    "source_line_end": 594,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-scalar-mult-positive",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-scalar-mult-positive/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-scalar-mult-positive/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-scalar-mult-positive",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-scalar-mult-positive/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-scalar-mult-positive/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-algebra-of-supremum-infimum.tex",
+      "label": "thm:scalar-mult-positive",
+      "environment_kind": "theorem",
+      "source_line_start": 478,
+      "source_line_end": 594,
+      "current_tex": "\\begin{theorem}[Scalar Multiplication by a Positive Scalar]\n\\label{thm:scalar-mult-positive}\nLet $A\\subseteq\\mathbb{R}$ be nonempty and bounded above, and let\n$k\\in\\mathbb{R}$ satisfy $k>0$.  Then $kA:=\\{ka:a\\in A\\}$ is nonempty and\nbounded above, and\n\\[\n  \\sup(kA)=k\\sup A.\n\\]\n\\hyperref[prf:scalar-mult-positive]{Go to proof.}\n\\end{theorem}\n\\end{theorembox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\nA\\neq\\varnothing,\\quad A\\text{ bounded above},\\quad k\\in\\mathbb{R},\\quad k>0\n\\quad\\Longrightarrow\\quad\n\\sup\\{ka:a\\in A\\}=k\\sup A.\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A\\subseteq\\mathbb{R},\\qquad kA=\\{ka:a\\in A\\},\\\\\n&\\operatorname{LeastUpperBound}(s,A,P)\\land k>0\n\\Longrightarrow\n\\operatorname{LeastUpperBound}(ks,kA,P).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\nk>0,\\quad \\sup(kA)\\ne k\\sup A\n\\]\nis impossible under the stated hypotheses.\n\\end{remark*}\n\n\\begin{remark*}[Negation predicate reading]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A\\subseteq\\mathbb{R},\\qquad kA=\\{ka:a\\in A\\},\\\\\n&\\operatorname{LeastUpperBound}(s,A,P)\\land k>0\\land\n\\neg\\operatorname{LeastUpperBound}(ks,kA,P)\n\\end{aligned}\n\\]\nis a contradictory configuration.\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\nThe formula could fail only if multiplying by a positive scalar failed to preserve upper bounds or failed to preserve leastness. Positive multiplication preserves the order, so both properties scale exactly.\n\n\n  \\item[\\operatorname{LeastUpperBound}.]\n  \\[\nk>0,\\quad \\sup(kA)\\ne k\\sup A\n\\]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A\\subseteq\\mathbb{R},\\qquad kA=\\{ka:a\\in A\\},\\\\\n&\\operatorname{LeastUpperBound}(s,A,P)\\land k>0\\land\n\\neg\\operatorname{LeastUpperBound}(ks,kA,P)\n\\end{aligned}\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\n\\[\n\\begin{aligned}\n\\forall a\\in A\\;(a\\leq s)\n&\\Longleftrightarrow\n\\forall a\\in A\\;(ka\\leq ks),\\\\\n\\operatorname{UpperBound}(u,A)\n&\\Longleftrightarrow\n\\operatorname{UpperBound}(ku,kA).\n\\end{aligned}\n\\]\n\n\n  \\item[\\operatorname{LeastUpperBound}.]\n  \\[\nk>0,\\quad \\sup(kA)\\ne k\\sup A\n\\]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A\\subseteq\\mathbb{R},\\qquad kA=\\{ka:a\\in A\\},\\\\\n&\\operatorname{LeastUpperBound}(s,A,P)\\land k>0\\land\n\\neg\\operatorname{LeastUpperBound}(ks,kA,P)\n\\end{aligned}\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nPositive scaling stretches the set without reversing order. The least ceiling stretches by the same positive factor.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:reals]{Real Numbers}\n  \\item \\hyperref[def:ordered-set]{Ordered Set}\n  \\item \\hyperref[def:subset]{Subset}\n  \\item \\hyperref[def:multiplication-on-r]{Multiplication on $\\mathbb{R}$}\n  \\item \\hyperref[def:set-arithmetic-images]{Set Arithmetic Images}\n  \\item \\hyperref[def:real-upper-bound]{Upper Bound}\n  \\item \\hyperref[def:supremum]{Supremum}\n  \\item \\hyperref[prop:upper-bound-comparison-with-the-supremum]{Upper Bound Comparison with the Supremum}\n  \\item \\hyperref[thm:ineq-nonstrict-multiply-positive]{Multiplication by a Positive Scalar Preserves Nonstrict Inequality}\n\\end{itemize}\n\\end{dependencies}\n\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

@@ -1,0 +1,235 @@
+schema_version: lra.semantic-artifact/1.0
+identity:
+  label: def:boundary-point
+  kind: definition
+  title: Boundary Point
+  canonical_name: Boundary Point
+  status: draft
+  atomicity:
+    status: atomic
+    concepts_detected:
+    - Boundary Point
+    owning_concept: Boundary Point
+    split_reason: null
+location:
+  repository: wsollers/lra-volume-iii
+  commit: 77009ab9cde1bf3c2eef193c4d03a256afc4ccde
+  volume: iii
+  book: book-analysis-i
+  chapter: structure-of-real-line
+  topic: interior-exterior-boundary
+  source_file: volume-iii/book-analysis-i/structure-of-real-line/notes/interior-exterior-boundary/notes-interior-exterior-boundary.tex
+  source_line_start: 67
+  source_line_end: 95
+  source_hash: sha256:80d159c51aed61f6d05f27274257fe1c25ccaabc9e41dd7a9e5fa578ddb1fefc
+classification:
+  mathematical_domain: real analysis
+  artifact_form: definition
+  logical_shape: source-decorated quantified statement
+  logical_framework: mathematical_vernacular
+  language_level: object_language
+context:
+- id: R
+  kind: ambient_space
+  name: \mathbb{R}
+  ontology_id: null
+  construction: real line with the source-declared structure
+  ast:
+    kind: constant
+    name: \mathbb{R}
+parameters: []
+assumptions: []
+statement:
+  canonical_prose: Codex-local extraction of the source statement for Boundary Point.
+  canonical_latex: x \text{ is a boundary point of } E \Longleftrightarrow \forall
+    r>0\;(B_{r}(x)\cap E\neq\emptyset \;\land\; B_{r}(x)\cap(\mathbb{R}\setminus E)\neq\emptyset).
+  semantic_ast:
+    kind: iff
+    left:
+      kind: raw_latex
+      latex: x \text{ is a boundary point of } E
+    right:
+      kind: forall
+      binder: &id001
+        binder_id: r
+        symbol: r
+        domain:
+          kind: constant
+          name: \mathbb{R}
+      restriction: &id002
+        kind: relation
+        relation: '>'
+        left:
+          kind: variable
+          binder_id: r
+        right:
+          kind: constant
+          name: '0'
+      body:
+        kind: and
+        left:
+          kind: not
+          operand: &id003
+            kind: equals
+            left:
+              kind: raw_latex
+              latex: B_{r}(x)\cap E
+            right:
+              kind: raw_latex
+              latex: q\emptyset
+        right:
+          kind: not
+          operand: &id004
+            kind: equals
+            left:
+              kind: raw_latex
+              latex: B_{r}(x)\cap(\mathbb{R}\setminus E)
+            right:
+              kind: raw_latex
+              latex: q\emptyset
+logical_forms:
+  standard_quantified:
+    latex: x \text{ is a boundary point of } E \Longleftrightarrow \forall r>0\;(B_{r}(x)\cap
+      E\neq\emptyset \;\land\; B_{r}(x)\cap(\mathbb{R}\setminus E)\neq\emptyset).
+    ast:
+      kind: iff
+      left:
+        kind: raw_latex
+        latex: x \text{ is a boundary point of } E
+      right:
+        kind: forall
+        binder:
+          binder_id: r
+          symbol: r
+          domain:
+            kind: constant
+            name: \mathbb{R}
+        restriction:
+          kind: relation
+          relation: '>'
+          left:
+            kind: variable
+            binder_id: r
+          right:
+            kind: constant
+            name: '0'
+        body:
+          kind: and
+          left:
+            kind: not
+            operand:
+              kind: equals
+              left:
+                kind: raw_latex
+                latex: B_{r}(x)\cap E
+              right:
+                kind: raw_latex
+                latex: q\emptyset
+          right:
+            kind: not
+            operand:
+              kind: equals
+              left:
+                kind: raw_latex
+                latex: B_{r}(x)\cap(\mathbb{R}\setminus E)
+              right:
+                kind: raw_latex
+                latex: q\emptyset
+  predicate_reading: null
+  negation:
+    mechanical:
+      latex: Not(x \text{ is a boundary point of } E \Longleftrightarrow \forall r>0\;(B_{r}(x)\cap
+        E\neq\emptyset \;\land\; B_{r}(x)\cap(\mathbb{R}\setminus E)\neq\emptyset).)
+      ast:
+        kind: exists
+        binder: *id001
+        restriction: *id002
+        body:
+          kind: or
+          left: *id003
+          right: *id004
+    approved_normal_form: null
+    normalization_requires: []
+  contrapositive: null
+  equivalent_forms: []
+semantics:
+  witness_dependencies: []
+  vacuity_behavior: []
+  definedness:
+    mode: source_context
+    conditions: []
+    obligations: []
+  uniqueness_conditions: []
+  equality_cases: []
+  edge_cases: []
+failure_analysis:
+  applicability_failures: []
+  statement_failures:
+  - id: fail-source-negation
+    description: Failure is witnessed by the source negated quantified statement when
+      present.
+    minimal_failure_shape: Not(x \text{ is a boundary point of } E \Longleftrightarrow
+      \forall r>0\;(B_{r}(x)\cap E\neq\emptyset \;\land\; B_{r}(x)\cap(\mathbb{R}\setminus
+      E)\neq\emptyset).)
+  counterexample_shape: Not(x \text{ is a boundary point of } E \Longleftrightarrow
+    \forall r>0\;(B_{r}(x)\cap E\neq\emptyset \;\land\; B_{r}(x)\cap(\mathbb{R}\setminus
+    E)\neq\emptyset).)
+relationships:
+  dependency_edges:
+  - kind: uses_reference
+    target: def:open-ball
+    display: Open Ball on the Real Line
+    notes: Listed in the source dependency block.
+  ontology_edges: []
+  provenance_edges: []
+  proof_edges: []
+notation:
+  introduced: []
+  used:
+  - symbol: \mathbb{R}
+    meaning: the real line
+  local_conventions: []
+exposition:
+  interpretation: 'A boundary point of $E$ is approached from both sides: every ball
+    around it meets both $E$ and its complement.'
+  exposition: []
+  examples: []
+  non_examples: []
+  common_confusions: []
+verification:
+  canonical_proof: null
+  formalizations: []
+  external_library_crosswalks: []
+  proof_vault_records: []
+provenance:
+  origin:
+    kind: explicit_source_statement
+    source_status: single_primary_statement
+    primary_source_statement:
+      role: primary_statement
+      source_id: null
+      label: def:boundary-point
+      citation: null
+      page_range: null
+      evidence: Generated from the local LaTeX formal environment and its routed source
+        decorations.
+      notes: Codex-authored local semantic extraction; not externally reviewed.
+    component_sources: []
+    derivation_rule: null
+    requires_review: true
+  explicit_from_source:
+  - x \text{ is a boundary point of } E \Longleftrightarrow \forall r>0\;(B_{r}(x)\cap
+    E\neq\emptyset \;\land\; B_{r}(x)\cap(\mathbb{R}\setminus E)\neq\emptyset).
+  normalized_from_source:
+  - x \text{ is a boundary point of } E \Longleftrightarrow \forall r>0\;(B_{r}(x)\cap
+    E\neq\emptyset \;\land\; B_{r}(x)\cap(\mathbb{R}\setminus E)\neq\emptyset).
+  inferred_from_registry: []
+  generated_by_analysis:
+  - Codex local semantic payload generation from source decorations
+  unresolved: []
+governance:
+  governance_repository: wsollers/lra-governance
+  governance_commit: 01c642757dc85341c556df8e914642aed2531058
+  registry_commit: 01c642757dc85341c556df8e914642aed2531058
+  schema_commit: 01c642757dc85341c556df8e914642aed2531058
+  renderer_contract: governed-tex-v1

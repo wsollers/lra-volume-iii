@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "thm:closed-bounded-interval-compact",
+  "kind": "theorem",
+  "title": "Closed Bounded Intervals Are Compact",
+  "source": {
+    "label": "thm:closed-bounded-interval-compact",
+    "kind": "theorem",
+    "title": "Closed Bounded Intervals Are Compact",
+    "book": "book-analysis-i",
+    "chapter": "structure-of-real-line",
+    "section": "heine-borel",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/structure-of-real-line/notes/heine-borel/notes-heine-borel.tex",
+    "source_line_start": 8,
+    "source_line_end": 53,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/structure-of-real-line/notes/heine-borel/thm-closed-bounded-interval-compact",
+      "artifact": "volume-iii/book-analysis-i/structure-of-real-line/notes/heine-borel/thm-closed-bounded-interval-compact/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/structure-of-real-line/notes/heine-borel/thm-closed-bounded-interval-compact/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/structure-of-real-line/notes/heine-borel/thm-closed-bounded-interval-compact",
+    "artifact": "volume-iii/book-analysis-i/structure-of-real-line/notes/heine-borel/thm-closed-bounded-interval-compact/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/structure-of-real-line/notes/heine-borel/thm-closed-bounded-interval-compact/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/structure-of-real-line/notes/heine-borel/notes-heine-borel.tex",
+      "label": "thm:closed-bounded-interval-compact",
+      "environment_kind": "theorem",
+      "source_line_start": 8,
+      "source_line_end": 53,
+      "current_tex": "\\begin{theorembox}{Theorem (Closed Bounded Intervals Are Compact)}\n\\begin{theorem}[Closed Bounded Intervals Are Compact]\n\\label{thm:closed-bounded-interval-compact}\nLet $a,b\\in\\mathbb{R}$ with $a\\leq b$.  Then the interval\n\\[\n  [a,b]:=\\{x\\in\\mathbb{R}:a\\leq x\\leq b\\}\n\\]\nis compact.  Explicitly, for every family $\\mathcal{U}$ of open subsets of\n$\\mathbb{R}$,\n\\[\n  [a,b]\\subseteq\\bigcup_{U\\in\\mathcal{U}}U\n\\]\nimplies that there exists a finite subfamily $\\mathcal{V}\\subseteq\\mathcal{U}$\nsuch that\n\\[\n  [a,b]\\subseteq\\bigcup_{V\\in\\mathcal{V}}V.\n\\]\n\\hyperref[prf:closed-bounded-interval-compact]{Go to proof.}\n\\end{theorem}\n\\end{theorembox}\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\forall a,b\\in\\mathbb{R}\\;\\bigl(a\\leq b \\Longrightarrow [a,b]\\text{ is compact}\\bigr).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\nI=[a,b]\\subseteq\\mathbb{R},\\qquad\n\\operatorname{IsClosedInterval}(I,\\mathbb{R})\\land\n\\operatorname{IsBoundedInterval}(I,\\mathbb{R})\n\\Longrightarrow\n\\operatorname{IsCompact}(I,\\mathbb{R}).\n\\]\n\\end{remark*}\n\\begin{remark*}[Interpretation]\nThis is the hard half. The standard proof uses completeness directly: let $S$ be the set of $x\\in[a,b]$ such that $[a,x]$ has a finite subcover, and show $\\sup S=b$ is attained. Bisection (the nested-interval method) gives the same result. Either route shows completeness is what makes the line compact in the large.\n\\end{remark*}\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:compact-set]{Compact Set in $\\mathbb{R}$}\n  \\item \\hyperref[def:closed-interval]{Closed Interval}\n  \\item \\hyperref[thm:lub-property-r]{Least-Upper-Bound Property}\n\\end{itemize}\n\\end{dependencies}\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

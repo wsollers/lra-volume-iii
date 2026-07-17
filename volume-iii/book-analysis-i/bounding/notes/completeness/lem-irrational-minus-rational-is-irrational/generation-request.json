@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "lem:irrational-minus-rational-is-irrational",
+  "kind": "lemma",
+  "title": "Irrational Minus Rational Is Irrational",
+  "source": {
+    "label": "lem:irrational-minus-rational-is-irrational",
+    "kind": "lemma",
+    "title": "Irrational Minus Rational Is Irrational",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "completeness",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-density.tex",
+    "source_line_start": 585,
+    "source_line_end": 627,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-irrational-minus-rational-is-irrational",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-irrational-minus-rational-is-irrational/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-irrational-minus-rational-is-irrational/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-irrational-minus-rational-is-irrational",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-irrational-minus-rational-is-irrational/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-irrational-minus-rational-is-irrational/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-density.tex",
+      "label": "lem:irrational-minus-rational-is-irrational",
+      "environment_kind": "lemma",
+      "source_line_start": 585,
+      "source_line_end": 627,
+      "current_tex": "\\begin{lemma}[Irrational Minus Rational Is Irrational]\n\\label{lem:irrational-minus-rational-is-irrational}\nFor every $x\\in\\mathbb{R}\\setminus\\mathbb{Q}$ and every $q\\in\\mathbb{Q}$,\n\\[\n  x-q\\in\\mathbb{R}\\setminus\\mathbb{Q}.\n\\]\n\\hyperref[prf:irrational-minus-rational-is-irrational]{\\textit{Go to proof.}}\n\\end{lemma}\n\\end{lemmabox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\forall x\\in\\mathbb{R}\\setminus\\mathbb{Q}\\;\\forall q\\in\\mathbb{Q}\\;\n\\bigl(x-q\\in\\mathbb{R}\\setminus\\mathbb{Q}\\bigr).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\nx\\in\\mathbb{R}\\setminus\\mathbb{Q}\\land q\\in\\mathbb{Q}\n\\Longrightarrow x-q\\in\\mathbb{R}\\setminus\\mathbb{Q}.\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nSubtracting a rational is the same as adding its rational additive inverse, so\nan irrational remains irrational.\n\\end{remark*}\n\n\\begin{dependencies}\n\\hyperref[lem:rational-translation-preserves-irrationality]{Rational Translation Preserves Irrationality}.\n\\end{dependencies}\n\n\\input{volume-iii/book-analysis-i/bounding/notes/completeness/figure-rational-irrational-translation}\n\n\n\n\n\n\n\n\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

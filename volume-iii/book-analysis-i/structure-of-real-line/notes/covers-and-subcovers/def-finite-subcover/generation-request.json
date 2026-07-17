@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "def:finite-subcover",
+  "kind": "definition",
+  "title": "Subcover and Finite Subcover",
+  "source": {
+    "label": "def:finite-subcover",
+    "kind": "definition",
+    "title": "Subcover and Finite Subcover",
+    "book": "book-analysis-i",
+    "chapter": "structure-of-real-line",
+    "section": "covers-and-subcovers",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/structure-of-real-line/notes/covers-and-subcovers/notes-covers-and-subcovers.tex",
+    "source_line_start": 35,
+    "source_line_end": 61,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/structure-of-real-line/notes/covers-and-subcovers/def-finite-subcover",
+      "artifact": "volume-iii/book-analysis-i/structure-of-real-line/notes/covers-and-subcovers/def-finite-subcover/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/structure-of-real-line/notes/covers-and-subcovers/def-finite-subcover/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/structure-of-real-line/notes/covers-and-subcovers/def-finite-subcover",
+    "artifact": "volume-iii/book-analysis-i/structure-of-real-line/notes/covers-and-subcovers/def-finite-subcover/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/structure-of-real-line/notes/covers-and-subcovers/def-finite-subcover/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/structure-of-real-line/notes/covers-and-subcovers/notes-covers-and-subcovers.tex",
+      "label": "def:finite-subcover",
+      "environment_kind": "definition",
+      "source_line_start": 35,
+      "source_line_end": 61,
+      "current_tex": "\\begin{definitionbox}{Definition (Subcover and Finite Subcover)}\n\\begin{definition}[Subcover and Finite Subcover]\n\\label{def:finite-subcover}\nLet $K\\subseteq\\mathbb{R}$, and let $\\mathcal{U}$ be an open cover of $K$.\nA subfamily $\\mathcal{V}\\subseteq\\mathcal{U}$ is a \\emph{subcover} of $K$ if\n\\[\n  K\\subseteq\\bigcup_{V\\in\\mathcal{V}}V.\n\\]\nIt is a \\emph{finite subcover} if $\\mathcal{V}$ is finite.\n\\end{definition}\n\\end{definitionbox}\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\{U_i\\}_{i\\in J} \\text{ is a finite subcover of } E\n\\Longleftrightarrow\n\\bigl(J\\subseteq I \\land J \\text{ is finite} \\land E\\subseteq\\textstyle\\bigcup_{i\\in J}U_i\\bigr).\n\\]\n\\end{remark*}\n\\begin{remark*}[Interpretation]\nA subcover discards some pieces while still covering $E$; a finite subcover discards all but finitely many. The existence of a finite subcover for \\emph{every} open cover is the defining property of compactness.\n\\end{remark*}\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:real-open-cover]{Open Cover}\n\\end{itemize}\n\\end{dependencies}\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

@@ -1,0 +1,95 @@
+\begin{lemma}[Union Preserves Upper Bounds]
+\label{lem:union-preserves-upper-bounds}
+Let $A,B\subseteq\mathbb{R}$. For every $u\in\mathbb{R}$, if $u$ is an
+upper bound of both $A$ and $B$, then $u$ is an upper bound of
+$A\cup B$; that is,
+\[
+\left[
+(\forall a\in A,\ a\leq u)
+\land
+(\forall b\in B,\ b\leq u)
+\right]
+\Longrightarrow
+(\forall x\in A\cup B,\ x\leq u).
+\]
+\hyperref[prf:union-preserves-upper-bounds]{Go to proof.}
+\end{lemma}
+\end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\bigl[(\forall a\in A)(a\leq u)\land(\forall b\in B)(b\leq u)\bigr]
+\Longrightarrow
+(\forall x\in A\cup B)(x\leq u).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\\
+&U=A\cup B,\\
+&\operatorname{UpperBound}(u,A,P)\land\operatorname{UpperBound}(u,B,P)
+\Longrightarrow \operatorname{UpperBound}(u,U,P).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+(\forall a\in A)(a\leq u),\quad
+(\forall b\in B)(b\leq u),\quad
+(\exists x\in A\cup B)(u<x).
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\\
+&U=A\cup B,\\
+&\operatorname{UpperBound}(u,A,P)\land\operatorname{UpperBound}(u,B,P)\land
+\neg\operatorname{UpperBound}(u,U,P).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
+A failure would require a union element larger than the proposed common
+upper bound.
+
+
+  \item[\operatorname{UpperBound}.]
+  \[
+(\forall a\in A)(a\leq u),\quad
+(\forall b\in B)(b\leq u),\quad
+(\exists x\in A\cup B)(u<x).
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\\
+&U=A\cup B,\\
+&\operatorname{UpperBound}(u,A,P)\land\operatorname{UpperBound}(u,B,P)\land
+\neg\operatorname{UpperBound}(u,U,P).
+\end{aligned}
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Every $x\in A\cup B$ lies in $A$ or in $B$.  In either case the common
+upper-bound hypothesis gives $x\leq u$.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+\item \hyperref[def:reals]{Real Numbers}.
+\item \hyperref[def:ordered-set]{Ordered Set}.
+\item \hyperref[def:subset]{Subset}.
+\item \hyperref[def:union]{Union}.
+\item \hyperref[def:real-upper-bound]{Upper Bound}.
+\end{itemize}
+\end{dependencies}
+

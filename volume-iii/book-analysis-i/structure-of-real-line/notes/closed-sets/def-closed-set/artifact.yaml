@@ -1,0 +1,152 @@
+schema_version: lra.semantic-artifact/1.0
+identity:
+  label: def:closed-set
+  kind: definition
+  title: Closed Set in $\mathbb{R}$
+  canonical_name: Closed Set in $\mathbb{R}$
+  status: draft
+  atomicity:
+    status: atomic
+    concepts_detected:
+    - Closed Set in $\mathbb{R}$
+    owning_concept: Closed Set in $\mathbb{R}$
+    split_reason: null
+location:
+  repository: wsollers/lra-volume-iii
+  commit: 77009ab9cde1bf3c2eef193c4d03a256afc4ccde
+  volume: iii
+  book: book-analysis-i
+  chapter: structure-of-real-line
+  topic: closed-sets
+  source_file: volume-iii/book-analysis-i/structure-of-real-line/notes/closed-sets/notes-closed-sets.tex
+  source_line_start: 8
+  source_line_end: 40
+  source_hash: sha256:7c804a945e6d8aa5baed03b5c586d0656f28502696ced5d48199da18d1c017f2
+classification:
+  mathematical_domain: real analysis
+  artifact_form: definition
+  logical_shape: source-decorated quantified statement
+  logical_framework: mathematical_vernacular
+  language_level: object_language
+context:
+- id: R
+  kind: ambient_space
+  name: \mathbb{R}
+  ontology_id: null
+  construction: real line with the source-declared structure
+  ast:
+    kind: constant
+    name: \mathbb{R}
+parameters: []
+assumptions: []
+statement:
+  canonical_prose: Codex-local extraction of the source statement for Closed Set in
+    $\mathbb{R}$.
+  canonical_latex: F \text{ is closed} \Longleftrightarrow (\mathbb{R}\setminus F)
+    \text{ is open}.
+  semantic_ast:
+    kind: iff
+    left:
+      kind: raw_latex
+      latex: F \text{ is closed}
+    right: &id001
+      kind: raw_latex
+      latex: (\mathbb{R}\setminus F) \text{ is open}
+logical_forms:
+  standard_quantified:
+    latex: F \text{ is closed} \Longleftrightarrow (\mathbb{R}\setminus F) \text{
+      is open}.
+    ast:
+      kind: iff
+      left:
+        kind: raw_latex
+        latex: F \text{ is closed}
+      right:
+        kind: raw_latex
+        latex: (\mathbb{R}\setminus F) \text{ is open}
+  predicate_reading: null
+  negation:
+    mechanical:
+      latex: Not(F \text{ is closed} \Longleftrightarrow (\mathbb{R}\setminus F) \text{
+        is open}.)
+      ast:
+        kind: not
+        operand: *id001
+    approved_normal_form: null
+    normalization_requires: []
+  contrapositive: null
+  equivalent_forms: []
+semantics:
+  witness_dependencies: []
+  vacuity_behavior: []
+  definedness:
+    mode: source_context
+    conditions: []
+    obligations: []
+  uniqueness_conditions: []
+  equality_cases: []
+  edge_cases: []
+failure_analysis:
+  applicability_failures: []
+  statement_failures:
+  - id: fail-source-negation
+    description: Failure is witnessed by the source negated quantified statement when
+      present.
+    minimal_failure_shape: Not(F \text{ is closed} \Longleftrightarrow (\mathbb{R}\setminus
+      F) \text{ is open}.)
+  counterexample_shape: Not(F \text{ is closed} \Longleftrightarrow (\mathbb{R}\setminus
+    F) \text{ is open}.)
+relationships:
+  dependency_edges: []
+  ontology_edges: []
+  provenance_edges: []
+  proof_edges: []
+notation:
+  introduced: []
+  used:
+  - symbol: \mathbb{R}
+    meaning: the real line
+  local_conventions: []
+exposition:
+  interpretation: 'Closed and open are complementary, not opposite: a set can be both
+    (e.g.\ $\emptyset$, $\mathbb{R}$) or neither (e.g.\ $[0,1)$). Closed intervals
+    $[a,b]$ are closed, as are finite sets and $\mathbb{R}$ itself.'
+  exposition: []
+  examples: []
+  non_examples: []
+  common_confusions: []
+verification:
+  canonical_proof: null
+  formalizations: []
+  external_library_crosswalks: []
+  proof_vault_records: []
+provenance:
+  origin:
+    kind: explicit_source_statement
+    source_status: single_primary_statement
+    primary_source_statement:
+      role: primary_statement
+      source_id: null
+      label: def:closed-set
+      citation: null
+      page_range: null
+      evidence: Generated from the local LaTeX formal environment and its routed source
+        decorations.
+      notes: Codex-authored local semantic extraction; not externally reviewed.
+    component_sources: []
+    derivation_rule: null
+    requires_review: true
+  explicit_from_source:
+  - F \text{ is closed} \Longleftrightarrow (\mathbb{R}\setminus F) \text{ is open}.
+  normalized_from_source:
+  - F \text{ is closed} \Longleftrightarrow (\mathbb{R}\setminus F) \text{ is open}.
+  inferred_from_registry: []
+  generated_by_analysis:
+  - Codex local semantic payload generation from source decorations
+  unresolved: []
+governance:
+  governance_repository: wsollers/lra-governance
+  governance_commit: 01c642757dc85341c556df8e914642aed2531058
+  registry_commit: 01c642757dc85341c556df8e914642aed2531058
+  schema_commit: 01c642757dc85341c556df8e914642aed2531058
+  renderer_contract: governed-tex-v1

@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "cor:archimedean-reciprocal-form",
+  "kind": "corollary",
+  "title": "Archimedean Reciprocal Form",
+  "source": {
+    "label": "cor:archimedean-reciprocal-form",
+    "kind": "corollary",
+    "title": "Archimedean Reciprocal Form",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "completeness",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-archimedean-property.tex",
+    "source_line_start": 148,
+    "source_line_end": 248,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/cor-archimedean-reciprocal-form",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/cor-archimedean-reciprocal-form/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/cor-archimedean-reciprocal-form/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/cor-archimedean-reciprocal-form",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/cor-archimedean-reciprocal-form/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/cor-archimedean-reciprocal-form/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-archimedean-property.tex",
+      "label": "cor:archimedean-reciprocal-form",
+      "environment_kind": "corollary",
+      "source_line_start": 148,
+      "source_line_end": 248,
+      "current_tex": "\\begin{corollary}[Archimedean Reciprocal Form]\n\\label{cor:archimedean-reciprocal-form}\nFor every $\\varepsilon\\in\\mathbb{R}$ with $\\varepsilon>0$, there exists\n$n\\in\\mathbb{N}$ such that\n\\[\n  0<\\frac{1}{n}<\\varepsilon.\n\\]\nEquivalently,\n\\[\n  (\\forall\\varepsilon>0)(\\exists n\\in\\mathbb{N})\\left(\\frac{1}{n}<\\varepsilon\\right).\n\\]\n\n\\smallskip\n\\noindent\n\\hyperref[prf:archimedean-reciprocal-form]{\\textit{Go to proof.}}\n\\end{corollary}\n\\end{corollarybox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\forall \\varepsilon\\in\\mathbb{R}\\;\n\\bigl(\\varepsilon>0\\Longrightarrow\n\\exists n\\in\\mathbb{N}\\;(0<1/n<\\varepsilon)\\bigr).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\nP_{\\mathbb{R}}=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad\n\\operatorname{HasArchimedeanProperty}(P_{\\mathbb{R}})\n\\Longrightarrow\n\\forall \\varepsilon>0\\;\\exists n\\in\\mathbb{N}\\;(0<1/n<\\varepsilon).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\n\\exists \\varepsilon>0\\;\\forall n\\in\\mathbb{N}\\;\\left(\\frac{1}{n}\\ge \\varepsilon\\right).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negation predicate reading]\n\\[\n\\exists \\varepsilon>0\\;\\forall n\\in\\mathbb{N}\\;(1/n\\ge \\varepsilon).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\nThe corollary fails only if some positive scale remains below every reciprocal\nnatural number.\n\n\n  \\item[\\exists-condition.]\n  \\[\n\\exists \\varepsilon>0\\;\\forall n\\in\\mathbb{N}\\;\\left(\\frac{1}{n}\\ge \\varepsilon\\right).\n\\]\n\\[\n\\exists \\varepsilon>0\\;\\forall n\\in\\mathbb{N}\\;(1/n\\ge \\varepsilon).\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\n\\[\n\\underbrace{\\varepsilon>0}_{\\text{positive scale}}\n\\qquad\\text{and}\\qquad\n\\underbrace{\\forall n\\in\\mathbb{N}\\;(1/n\\ge\\varepsilon)}_{\\text{reciprocals never pass below it}}.\n\\]\n\n\n  \\item[\\exists-condition.]\n  \\[\n\\exists \\varepsilon>0\\;\\forall n\\in\\mathbb{N}\\;\\left(\\frac{1}{n}\\ge \\varepsilon\\right).\n\\]\n\\[\n\\exists \\varepsilon>0\\;\\forall n\\in\\mathbb{N}\\;(1/n\\ge \\varepsilon).\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nThe reciprocals of the natural numbers descend below every positive real\ntolerance.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n\\item \\hyperref[def:reals]{Real Numbers}.\n\\item \\hyperref[def:natural-numbers]{Natural Numbers}.\n\\item \\hyperref[def:ordered-set]{Ordered Set}.\n\\item \\hyperref[thm:archimedean-property]{Archimedean Property}.\n\\end{itemize}\n\\end{dependencies}\n\n\n\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

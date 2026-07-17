@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "lem:rational-translation-preserves-irrationality",
+  "kind": "lemma",
+  "title": "Rational Translation Preserves Irrationality",
+  "source": {
+    "label": "lem:rational-translation-preserves-irrationality",
+    "kind": "lemma",
+    "title": "Rational Translation Preserves Irrationality",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "completeness",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-density.tex",
+    "source_line_start": 448,
+    "source_line_end": 481,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-rational-translation-preserves-irrationality",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-rational-translation-preserves-irrationality/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-rational-translation-preserves-irrationality/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-rational-translation-preserves-irrationality",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-rational-translation-preserves-irrationality/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-rational-translation-preserves-irrationality/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-density.tex",
+      "label": "lem:rational-translation-preserves-irrationality",
+      "environment_kind": "lemma",
+      "source_line_start": 448,
+      "source_line_end": 481,
+      "current_tex": "\\begin{lemma}[Rational Translation Preserves Irrationality]\n\\label{lem:rational-translation-preserves-irrationality}\nFor every $q\\in\\mathbb{Q}$ and every $x\\in\\mathbb{R}\\setminus\\mathbb{Q}$,\n\\[\n  q+x\\in\\mathbb{R}\\setminus\\mathbb{Q}.\n\\]\n\\hyperref[prf:rational-translation-preserves-irrationality]{\\textit{Go to proof.}}\n\\end{lemma}\n\\end{lemmabox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\forall q\\in\\mathbb{Q}\\;\\forall x\\in\\mathbb{R}\\setminus\\mathbb{Q}\\;\n\\bigl(q+x\\in\\mathbb{R}\\setminus\\mathbb{Q}\\bigr).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\nq\\in\\mathbb{Q}\\land x\\in\\mathbb{R}\\setminus\\mathbb{Q}\n\\Longrightarrow q+x\\in\\mathbb{R}\\setminus\\mathbb{Q}.\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nA rational translate of an irrational remains irrational; otherwise\nsubtracting the rational translation would make the original number rational.\n\\end{remark*}\n\n\\begin{dependencies}\n\\hyperref[lem:rational-difference-preserves-rationality]{Rational Difference Preserves Rationality}.\n\\end{dependencies}\n\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

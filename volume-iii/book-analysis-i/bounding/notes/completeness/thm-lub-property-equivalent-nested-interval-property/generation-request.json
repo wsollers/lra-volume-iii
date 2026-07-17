@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "thm:lub-property-equivalent-nested-interval-property",
+  "kind": "theorem",
+  "title": "Least Upper Bound Property Equivalent to Nested Intervals",
+  "source": {
+    "label": "thm:lub-property-equivalent-nested-interval-property",
+    "kind": "theorem",
+    "title": "Least Upper Bound Property Equivalent to Nested Intervals",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "completeness",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-completeness-equivalences.tex",
+    "source_line_start": 222,
+    "source_line_end": 277,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/thm-lub-property-equivalent-nested-interval-property",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/thm-lub-property-equivalent-nested-interval-property/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/thm-lub-property-equivalent-nested-interval-property/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/thm-lub-property-equivalent-nested-interval-property",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/thm-lub-property-equivalent-nested-interval-property/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/thm-lub-property-equivalent-nested-interval-property/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-completeness-equivalences.tex",
+      "label": "thm:lub-property-equivalent-nested-interval-property",
+      "environment_kind": "theorem",
+      "source_line_start": 222,
+      "source_line_end": 277,
+      "current_tex": "\\begin{theorem}[Least Upper Bound Property Equivalent to Nested Intervals]\n\\label{thm:lub-property-equivalent-nested-interval-property}\nLet $F$ be an Archimedean linearly ordered field.  The following statements are\nequivalent:\n\\begin{enumerate}[label=(\\roman*)]\n  \\item Every nonempty subset of $F$ that is bounded above has a least upper\n  bound in $F$.\n  \\item For every pair of sequences $(a_n)$ and $(b_n)$ in $F$ satisfying\n  \\[\n    (\\forall n\\in\\mathbb{N})(a_n\\leq b_n)\n  \\]\n  and\n  \\[\n    (\\forall n\\in\\mathbb{N})([a_{n+1},b_{n+1}]\\subseteq [a_n,b_n]),\n  \\]\n  there exists $x\\in F$ such that\n  \\[\n    (\\forall n\\in\\mathbb{N})(a_n\\leq x\\leq b_n).\n  \\]\n  Equivalently,\n  \\[\n    \\bigcap_{n=1}^{\\infty}[a_n,b_n]\\neq\\varnothing.\n  \\]\n\\end{enumerate}\n\n\\smallskip\n\\noindent\n\\hyperref[prf:lub-property-equivalent-nested-interval-property]{\\textit{Go to proof.}}\n\\end{theorem}\n\\end{theorembox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\operatorname{HasLeastUpperBoundProperty}(\\mathbb{R})\n\\Longleftrightarrow\n\\text{every nested sequence of nonempty closed bounded intervals has nonempty intersection}.\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nNested intervals express completeness geometrically: repeatedly shrinking\nclosed bounded intervals cannot shrink around a missing point in the real\nline.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:sequence]{Sequence}\n  \\item \\hyperref[def:closed-interval]{Closed Interval}\n  \\item \\hyperref[def:bounded]{Bounded Set}\n  \\item \\hyperref[def:least-upper-bound-property]{Least Upper Bound Property}\n  \\item \\hyperref[thm:nested-interval-theorem]{Nested Interval Theorem}\n\\end{itemize}\n\\end{dependencies}\n\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

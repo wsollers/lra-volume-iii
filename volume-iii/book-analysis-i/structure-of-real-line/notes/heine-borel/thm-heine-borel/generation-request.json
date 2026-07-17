@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "thm:heine-borel",
+  "kind": "theorem",
+  "title": "Heine--Borel Theorem for $\\mathbb{R}$",
+  "source": {
+    "label": "thm:heine-borel",
+    "kind": "theorem",
+    "title": "Heine--Borel Theorem for $\\mathbb{R}$",
+    "book": "book-analysis-i",
+    "chapter": "structure-of-real-line",
+    "section": "heine-borel",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/structure-of-real-line/notes/heine-borel/notes-heine-borel.tex",
+    "source_line_start": 53,
+    "source_line_end": 89,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/structure-of-real-line/notes/heine-borel/thm-heine-borel",
+      "artifact": "volume-iii/book-analysis-i/structure-of-real-line/notes/heine-borel/thm-heine-borel/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/structure-of-real-line/notes/heine-borel/thm-heine-borel/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/structure-of-real-line/notes/heine-borel/thm-heine-borel",
+    "artifact": "volume-iii/book-analysis-i/structure-of-real-line/notes/heine-borel/thm-heine-borel/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/structure-of-real-line/notes/heine-borel/thm-heine-borel/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/structure-of-real-line/notes/heine-borel/notes-heine-borel.tex",
+      "label": "thm:heine-borel",
+      "environment_kind": "theorem",
+      "source_line_start": 53,
+      "source_line_end": 89,
+      "current_tex": "\\begin{theorembox}{Theorem (Heine--Borel Theorem for $\\mathbb{R}$)}\n\\begin{theorem}[Heine--Borel Theorem for $\\mathbb{R}$]\n\\label{thm:heine-borel}\nLet $K\\subseteq\\mathbb{R}$.  Then $K$ is compact if and only if $K$ is closed\nand bounded.  Explicitly,\n\\[\n  K\\text{ is compact}\n  \\Longleftrightarrow\n  \\leqft[\n  \\mathbb{R}\\setminus K\\text{ is open}\n  \\right]\n  \\land\n  \\leqft[\n  (\\exists M>0)(\\forall x\\in K)(|x|\\leq M)\n  \\right].\n\\]\n\\hyperref[prf:heine-borel]{Go to proof.}\n\\end{theorem}\n\\end{theorembox}\n\\begin{remark*}[Standard quantified statement]\n\\[\nK \\text{ compact} \\Longleftrightarrow (K \\text{ closed} \\land K \\text{ bounded}).\n\\]\n\\end{remark*}\n\\begin{remark*}[Interpretation]\nHeine--Borel is the bridge into Analysis~I: it certifies that the closed bounded sets --- the ones on which the Extreme Value and uniform-continuity theorems live --- are exactly the compact ones. It is stated here as the equivalence \\emph{on $\\mathbb{R}$}; the open-cover side is the definition that later carries to the torus, while ``closed and bounded'' does not.\n\\end{remark*}\n\\begin{remark*}[Exposition]\nWith Heine--Borel in hand the chain is complete: number construction $\\to$ embedded number systems $\\to$ the real line as an ordered metric space $\\to$ Analysis~I. Completeness, introduced as the last rung of the embedding ladder, is exactly the property that makes the line compact in the large, and compactness is the hypothesis Analysis~I leans on.\n\\end{remark*}\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[thm:compact-implies-closed-bounded]{Compact Subsets of $\\mathbb{R}$ Are Closed and Bounded}\n  \\item \\hyperref[thm:closed-bounded-interval-compact]{Closed Bounded Intervals Are Compact}\n\\end{itemize}\n\\end{dependencies}\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

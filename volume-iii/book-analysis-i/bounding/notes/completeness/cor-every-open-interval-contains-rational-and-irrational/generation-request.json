@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "cor:every-open-interval-contains-rational-and-irrational",
+  "kind": "corollary",
+  "title": "Rational and Irrational Points in Every Open Interval",
+  "source": {
+    "label": "cor:every-open-interval-contains-rational-and-irrational",
+    "kind": "corollary",
+    "title": "Rational and Irrational Points in Every Open Interval",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "completeness",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-density.tex",
+    "source_line_start": 998,
+    "source_line_end": 1190,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/cor-every-open-interval-contains-rational-and-irrational",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/cor-every-open-interval-contains-rational-and-irrational/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/cor-every-open-interval-contains-rational-and-irrational/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/cor-every-open-interval-contains-rational-and-irrational",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/cor-every-open-interval-contains-rational-and-irrational/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/cor-every-open-interval-contains-rational-and-irrational/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-density.tex",
+      "label": "cor:every-open-interval-contains-rational-and-irrational",
+      "environment_kind": "corollary",
+      "source_line_start": 998,
+      "source_line_end": 1190,
+      "current_tex": "\\begin{corollary}[Rational and Irrational Points in Every Open Interval]\n\\label{cor:every-open-interval-contains-rational-and-irrational}\nFor every $a,b\\in\\mathbb{R}$ with $a<b$, there exist\n$q\\in\\mathbb{Q}$ and $s\\in\\mathbb{R}\\setminus\\mathbb{Q}$ such that\n\\[\n  a<q<b\n  \\qquad\\text{and}\\qquad\n  a<s<b.\n\\]\n\\hyperref[prf:every-open-interval-contains-rational-and-irrational]{Go to proof.}\n\\end{corollary}\n\\end{corollarybox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\forall a,b\\in\\mathbb{R}\\;\n\\Bigl[\na<b\\Longrightarrow\n\\bigl(\\exists q\\in\\mathbb{Q}\\;(a<q<b)\\land \\exists s\\in\\mathbb{R}\\setminus\\mathbb{Q}\\;(a<s<b)\\bigr)\n\\Bigr].\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\nP_{\\mathbb{R}}=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad I=\\mathbb{R}\\setminus\\mathbb{Q},\\qquad\nD_{\\mathbb{Q}}=\\mathsf{OrderDenseSet}(\\mathbb{Q},P_{\\mathbb{R}}),\\qquad\nD_I=\\mathsf{OrderDenseSet}(I,P_{\\mathbb{R}}),\\qquad\n\\operatorname{IsOrderDenseSubset}(\\mathbb{Q},P_{\\mathbb{R}})\n\\land\n\\operatorname{IsOrderDenseSubset}(I,P_{\\mathbb{R}}).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\n\\exists a,b\\in\\mathbb{R}\\;\n\\Bigl[\na<b\\land\n\\bigl(\n\\forall q\\in\\mathbb{Q}\\;(q\\le a\\lor b\\le q)\n\\lor\n\\forall s\\in\\mathbb{R}\\setminus\\mathbb{Q}\\;(s\\le a\\lor b\\le s)\n\\bigr)\n\\Bigr].\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negation predicate reading]\n\\[\nP_{\\mathbb{R}}=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad I=\\mathbb{R}\\setminus\\mathbb{Q},\\qquad\nD_{\\mathbb{Q}}=\\mathsf{OrderDenseSet}(\\mathbb{Q},P_{\\mathbb{R}}),\\qquad\nD_I=\\mathsf{OrderDenseSet}(I,P_{\\mathbb{R}}),\\qquad\n\\neg\\Bigl[\n\\operatorname{IsOrderDenseSubset}(\\mathbb{Q},P_{\\mathbb{R}})\n\\land\n\\operatorname{IsOrderDenseSubset}(I,P_{\\mathbb{R}})\n\\Bigr].\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n\\item[Exposition.]\nThe corollary fails if a nonempty real interval misses all rational points or misses all irrational points.\n\n\n  \\item[\\operatorname{IsOrderDenseSubset}.]\n  \\[\n\\exists a,b\\in\\mathbb{R}\\;\n\\Bigl[\na<b\\land\n\\bigl(\n\\forall q\\in\\mathbb{Q}\\;(q\\le a\\lor b\\le q)\n\\lor\n\\forall s\\in\\mathbb{R}\\setminus\\mathbb{Q}\\;(s\\le a\\lor b\\le s)\n\\bigr)\n\\Bigr].\n\\]\n\\[\nP_{\\mathbb{R}}=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad I=\\mathbb{R}\\setminus\\mathbb{Q},\\qquad\nD_{\\mathbb{Q}}=\\mathsf{OrderDenseSet}(\\mathbb{Q},P_{\\mathbb{R}}),\\qquad\nD_I=\\mathsf{OrderDenseSet}(I,P_{\\mathbb{R}}),\\qquad\n\\neg\\Bigl[\n\\operatorname{IsOrderDenseSubset}(\\mathbb{Q},P_{\\mathbb{R}})\n\\land\n\\operatorname{IsOrderDenseSubset}(I,P_{\\mathbb{R}})\n\\Bigr].\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n\\item[Exposition.]\n\\[\n\\exists a,b\\in\\mathbb{R}\\;(a<b)\n\\;\\land\\;\n\\Bigl[\n\\underbrace{\\forall q\\in\\mathbb{Q}\\;(q\\le a\\lor b\\le q)}_{\\text{no rational point}}\n\\;\\lor\\;\n\\underbrace{\\forall s\\in\\mathbb{R}\\setminus\\mathbb{Q}\\;(s\\le a\\lor b\\le s)}_{\\text{no irrational point}}\n\\Bigr].\n\\]\n\n\n  \\item[\\operatorname{IsOrderDenseSubset}.]\n  \\[\n\\exists a,b\\in\\mathbb{R}\\;\n\\Bigl[\na<b\\land\n\\bigl(\n\\forall q\\in\\mathbb{Q}\\;(q\\le a\\lor b\\le q)\n\\lor\n\\forall s\\in\\mathbb{R}\\setminus\\mathbb{Q}\\;(s\\le a\\lor b\\le s)\n\\bigr)\n\\Bigr].\n\\]\n\\[\nP_{\\mathbb{R}}=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad I=\\mathbb{R}\\setminus\\mathbb{Q},\\qquad\nD_{\\mathbb{Q}}=\\mathsf{OrderDenseSet}(\\mathbb{Q},P_{\\mathbb{R}}),\\qquad\nD_I=\\mathsf{OrderDenseSet}(I,P_{\\mathbb{R}}),\\qquad\n\\neg\\Bigl[\n\\operatorname{IsOrderDenseSubset}(\\mathbb{Q},P_{\\mathbb{R}})\n\\land\n\\operatorname{IsOrderDenseSubset}(I,P_{\\mathbb{R}})\n\\Bigr].\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nThe corollary combines the two density theorems. Every real interval, no matter how small, contains representatives of both arithmetic types. Thus neither the rational numbers nor the irrational numbers occupy isolated regions of the real line.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n\\item \\hyperref[def:reals]{Real Numbers}.\n\\item \\hyperref[def:rationals]{Rational Numbers}.\n\\item \\hyperref[def:ordered-set]{Ordered Set}.\n\\item \\hyperref[def:set-difference]{Set Difference}.\n\\item \\hyperref[def:open-interval]{Open Interval}.\n\\item \\hyperref[thm:density-of-rationals-in-reals]{Density of the Rationals}.\n\\item \\hyperref[thm:density-of-irrationals-in-reals]{Density of the Irrationals}.\n\\end{itemize}\n\\end{dependencies}\n\n\n\n\n\n\\input{volume-iii/book-analysis-i/bounding/notes/completeness/figure-zoom-invariance}\n\n\n\\begin{exposition}\nDensity in $\\mathbb{R}$ has a scale-invariant consequence: no matter how small a nonempty\nopen interval becomes, it still contains both rational and irrational points. The interleaving\nof $\\mathbb{Q}$ and $\\mathbb{R}\\setminus\\mathbb{Q}$ is therefore not a large-scale phenomenon.\nIt persists at every interval scale.\n\nThis has three important consequences. First, the continuum does not become locally discrete\nunder magnification. For every nonempty open interval $(a,b)$, both\n\\[\n\\mathbb{Q}\\cap(a,b)\n\\qquad\\text{and}\\qquad\n(\\mathbb{R}\\setminus\\mathbb{Q})\\cap(a,b)\n\\]\nremain nonempty, and in fact infinite. Density is therefore stable under repeated restriction\nto smaller intervals.\n\nSecond, this behavior sharply distinguishes the real line from discrete numerical models.\nFloating-point systems form a discrete set of representable values, so repeated magnification\neventually reaches a scale at which adjacent representable numbers leave no further point\nstrictly between them. At that stage, interval penetration fails in the discrete model even\nthough it continues to hold in $\\mathbb{R}$.\n\nThird, the Archimedean Property supplies the scale mechanism behind this behavior. Given any\npositive scale $\\varepsilon$, there exists $n\\in\\mathbb{N}$ with\n\\[\n\\frac{1}{n}<\\varepsilon.\n\\]\nThis makes it possible to construct rational approximations at arbitrarily small interval\nscales, which is one of the basic engines behind density arguments.\n\nThe resulting contrast is structural. Smooth mathematical models are built in a setting where\ninterval penetration persists at every scale, whereas finite computational models eventually\nencounter a smallest representable separation. The transition from continuum behavior to\ndiscrete behavior occurs exactly where nonempty intervals in the numerical model cease to\ncontain further \\\\representable points.\n\\end{exposition}\n\n\\input{volume-iii/book-analysis-i/bounding/notes/completeness/figure-density-chain}\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

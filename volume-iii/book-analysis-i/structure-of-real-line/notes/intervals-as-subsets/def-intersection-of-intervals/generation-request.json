@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "def:intersection-of-intervals",
+  "kind": "definition",
+  "title": "Intersection of Intervals",
+  "source": {
+    "label": "def:intersection-of-intervals",
+    "kind": "definition",
+    "title": "Intersection of Intervals",
+    "book": "book-analysis-i",
+    "chapter": "structure-of-real-line",
+    "section": "intervals-as-subsets",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/structure-of-real-line/notes/intervals-as-subsets/notes-intervals-as-subsets.tex",
+    "source_line_start": 124,
+    "source_line_end": 156,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/structure-of-real-line/notes/intervals-as-subsets/def-intersection-of-intervals",
+      "artifact": "volume-iii/book-analysis-i/structure-of-real-line/notes/intervals-as-subsets/def-intersection-of-intervals/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/structure-of-real-line/notes/intervals-as-subsets/def-intersection-of-intervals/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/structure-of-real-line/notes/intervals-as-subsets/def-intersection-of-intervals",
+    "artifact": "volume-iii/book-analysis-i/structure-of-real-line/notes/intervals-as-subsets/def-intersection-of-intervals/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/structure-of-real-line/notes/intervals-as-subsets/def-intersection-of-intervals/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/structure-of-real-line/notes/intervals-as-subsets/notes-intervals-as-subsets.tex",
+      "label": "def:intersection-of-intervals",
+      "environment_kind": "definition",
+      "source_line_start": 124,
+      "source_line_end": 156,
+      "current_tex": "\\begin{definitionbox}{Definition (Intersection of Intervals)}\n\\begin{definition}[Intersection of Intervals]\n\\label{def:intersection-of-intervals}\nLet $\\{I_\\lambda\\}_{\\lambda\\in\\Lambda}$ be a family of intervals in\n$\\mathbb{R}$.  Their \\emph{intersection} is the set\n\\[\n  \\bigcap_{\\lambda\\in\\Lambda}I_\\lambda\n  :=\n  \\{x\\in\\mathbb{R}:(\\forall\\lambda\\in\\Lambda)(x\\in I_\\lambda)\\}.\n\\]\n\\end{definition}\n\\end{definitionbox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\nI\\cap J=\\{x\\in\\mathbb{R}:x\\in I\\land x\\in J\\}.\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nThe intersection keeps exactly the points common to both intervals. On the\nreal line this common part is either empty or another interval.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:open-interval]{Open Interval}\n  \\item \\hyperref[def:closed-interval]{Closed Interval}\n  \\item \\hyperref[def:intersection]{Intersection}\n\\end{itemize}\n\\end{dependencies}\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

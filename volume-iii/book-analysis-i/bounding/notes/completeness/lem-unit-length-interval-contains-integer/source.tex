@@ -1,0 +1,107 @@
+\begin{lemma}[Unit-Length Interval Contains an Integer]
+\label{lem:unit-length-interval-contains-integer}
+For every $x\in\mathbb{R}$, there exists $m\in\mathbb{Z}$ such that
+\[
+  x\leq m\leq x+1.
+\]
+Equivalently,
+\[
+  (\forall x\in\mathbb{R})([x,x+1]\cap\mathbb{Z}\neq\varnothing).
+\]
+
+\smallskip
+\noindent
+\hyperref[prf:unit-length-interval-contains-integer]{\textit{Go to proof.}}
+\end{lemma}
+\end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall \alpha,\beta\in\mathbb{R}\;
+\bigl(\beta-\alpha>1\Longrightarrow
+\exists m\in\mathbb{Z}\;(\alpha<m<\beta)\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+m\in\mathbb{Z}\cap(\alpha,\beta)
+\Longleftrightarrow
+m\in\mathbb{Z}\land \alpha<m<\beta.
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\exists \alpha,\beta\in\mathbb{R}\;
+\bigl(\beta-\alpha>1\land
+\forall m\in\mathbb{Z}\;(m\le \alpha\lor \beta\le m)\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\neg\exists m\;(m\in\mathbb{Z}\cap(\alpha,\beta))
+\Longleftrightarrow
+\forall m\in\mathbb{Z}\;(m\le \alpha\lor \beta\le m).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+The lemma fails only if an open interval of length greater than one still
+misses every integer.
+
+
+  \item[\exists-condition.]
+  \[
+\exists \alpha,\beta\in\mathbb{R}\;
+\bigl(\beta-\alpha>1\land
+\forall m\in\mathbb{Z}\;(m\le \alpha\lor \beta\le m)\bigr).
+\]
+\[
+\neg\exists m\;(m\in\mathbb{Z}\cap(\alpha,\beta))
+\Longleftrightarrow
+\forall m\in\mathbb{Z}\;(m\le \alpha\lor \beta\le m).
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+\[
+\underbrace{m\le \alpha}_{\text{integer at or left of the interval}}
+\qquad\text{or}\qquad
+\underbrace{\beta\le m}_{\text{integer at or right of the interval}}.
+\]
+
+
+  \item[\exists-condition.]
+  \[
+\exists \alpha,\beta\in\mathbb{R}\;
+\bigl(\beta-\alpha>1\land
+\forall m\in\mathbb{Z}\;(m\le \alpha\lor \beta\le m)\bigr).
+\]
+\[
+\neg\exists m\;(m\in\mathbb{Z}\cap(\alpha,\beta))
+\Longleftrightarrow
+\forall m\in\mathbb{Z}\;(m\le \alpha\lor \beta\le m).
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Open intervals longer than one unit cannot fit between consecutive integers.
+At least one integer must lie strictly inside.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+\item \hyperref[def:reals]{Real Numbers}.
+\item \hyperref[def:integers]{Integers}.
+\item \hyperref[def:open-interval]{Open Interval}.
+\item \hyperref[lem:integer-ceiling-lemma]{Integer Ceiling Lemma}.
+\end{itemize}
+\end{dependencies}

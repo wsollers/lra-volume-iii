@@ -1,0 +1,32 @@
+\begin{definitionbox}{Definition (Closed Set in $\mathbb{R}$)}
+\begin{definition}[Closed Set in $\mathbb{R}$]
+\label{def:closed-set}
+A set $F\subseteq\mathbb{R}$ is \emph{closed} if its complement in
+$\mathbb{R}$ is open; that is,
+\[
+  F\text{ is closed}
+  \Longleftrightarrow
+  \mathbb{R}\setminus F\text{ is open}.
+\]
+Equivalently,
+\[
+  F\text{ is closed}
+  \Longleftrightarrow
+  (\forall x\in\mathbb{R}\setminus F)(\exists r>0)
+  \bigl(B_r(x)\subseteq\mathbb{R}\setminus F\bigr).
+\]
+\end{definition}
+\end{definitionbox}
+\begin{remark*}[Standard quantified statement]
+\[
+F \text{ is closed} \Longleftrightarrow (\mathbb{R}\setminus F) \text{ is open}.
+\]
+\end{remark*}
+\begin{remark*}[Interpretation]
+Closed and open are complementary, not opposite: a set can be both (e.g.\ $\emptyset$, $\mathbb{R}$) or neither (e.g.\ $[0,1)$). Closed intervals $[a,b]$ are closed, as are finite sets and $\mathbb{R}$ itself.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:open-set]{Open Set in $\mathbb{R}$}
+\end{itemize}
+\end{dependencies}

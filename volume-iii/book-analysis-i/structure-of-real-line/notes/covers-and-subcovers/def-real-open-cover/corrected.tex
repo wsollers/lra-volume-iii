@@ -1,0 +1,27 @@
+\begin{definitionbox}{Definition (Open Cover)}
+\begin{definition}[Open Cover]
+\label{def:real-open-cover}
+Let $K\subseteq\mathbb{R}$.  A family $\mathcal{U}$ of open subsets of
+$\mathbb{R}$ is an \emph{open cover} of $K$ if
+\[
+  K\subseteq\bigcup_{U\in\mathcal{U}}U.
+\]
+Equivalently,
+\[
+  (\forall x\in K)(\exists U\in\mathcal{U})(x\in U).
+\]
+\end{definition}
+\end{definitionbox}
+\begin{remark*}[Standard quantified statement]
+\[
+\{U_i\}_{i\in I} \text{ is an open cover of } E \Longleftrightarrow \bigl(\forall i\in I\;U_i \text{ open}\bigr)\land E\subseteq\textstyle\bigcup_{i\in I}U_i.
+\]
+\end{remark*}
+\begin{remark*}[Interpretation]
+An open cover is a way of surrounding every point of $E$ with an open piece of the family. The index set $I$ may be infinite; the question compactness asks is whether finitely many pieces already suffice.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:open-set]{Open Set in $\mathbb{R}$}
+\end{itemize}
+\end{dependencies}

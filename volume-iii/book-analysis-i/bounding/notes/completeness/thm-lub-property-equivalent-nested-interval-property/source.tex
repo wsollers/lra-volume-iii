@@ -1,0 +1,55 @@
+\begin{theorem}[Least Upper Bound Property Equivalent to Nested Intervals]
+\label{thm:lub-property-equivalent-nested-interval-property}
+Let $F$ be an Archimedean linearly ordered field.  The following statements are
+equivalent:
+\begin{enumerate}[label=(\roman*)]
+  \item Every nonempty subset of $F$ that is bounded above has a least upper
+  bound in $F$.
+  \item For every pair of sequences $(a_n)$ and $(b_n)$ in $F$ satisfying
+  \[
+    (\forall n\in\mathbb{N})(a_n\leq b_n)
+  \]
+  and
+  \[
+    (\forall n\in\mathbb{N})([a_{n+1},b_{n+1}]\subseteq [a_n,b_n]),
+  \]
+  there exists $x\in F$ such that
+  \[
+    (\forall n\in\mathbb{N})(a_n\leq x\leq b_n).
+  \]
+  Equivalently,
+  \[
+    \bigcap_{n=1}^{\infty}[a_n,b_n]\neq\varnothing.
+  \]
+\end{enumerate}
+
+\smallskip
+\noindent
+\hyperref[prf:lub-property-equivalent-nested-interval-property]{\textit{Go to proof.}}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{HasLeastUpperBoundProperty}(\mathbb{R})
+\Longleftrightarrow
+\text{every nested sequence of nonempty closed bounded intervals has nonempty intersection}.
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Nested intervals express completeness geometrically: repeatedly shrinking
+closed bounded intervals cannot shrink around a missing point in the real
+line.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:sequence]{Sequence}
+  \item \hyperref[def:closed-interval]{Closed Interval}
+  \item \hyperref[def:bounded]{Bounded Set}
+  \item \hyperref[def:least-upper-bound-property]{Least Upper Bound Property}
+  \item \hyperref[thm:nested-interval-theorem]{Nested Interval Theorem}
+\end{itemize}
+\end{dependencies}
+

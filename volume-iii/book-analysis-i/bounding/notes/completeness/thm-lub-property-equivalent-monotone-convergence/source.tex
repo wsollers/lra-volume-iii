@@ -1,0 +1,47 @@
+\begin{theorem}[Least Upper Bound Property Equivalent to Monotone Convergence]
+\label{thm:lub-property-equivalent-monotone-convergence}
+Let $F$ be an Archimedean linearly ordered field.  The following statements are
+equivalent:
+\begin{enumerate}[label=(\roman*)]
+  \item Every nonempty subset of $F$ that is bounded above has a least upper
+  bound in $F$.
+  \item Every increasing sequence in $F$ that is bounded above converges in
+  $F$.
+  \item Every decreasing sequence in $F$ that is bounded below converges in
+  $F$.
+\end{enumerate}
+
+\smallskip
+\noindent
+\hyperref[prf:lub-property-equivalent-monotone-convergence]{\textit{Go to proof.}}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{HasLeastUpperBoundProperty}(\mathbb{R})
+\Longleftrightarrow
+\forall (x_n)\subseteq\mathbb{R}\;
+\bigl(\operatorname{Monotone}((x_n),\mathsf{OrderedSet}(\mathbb{R},\leq))\land\operatorname{Bounded}(x_n)
+\Longrightarrow \operatorname{ConvergesTo}(x_n)\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The equivalence identifies order completeness and monotone sequential
+completeness as the same principle expressed in different languages.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:real-sequence]{Real Sequence}
+  \item \hyperref[def:sequence]{Sequence}
+  \item \hyperref[def:convergent-sequence]{Convergent Sequence}
+  \item \hyperref[def:monotone-sequence]{Monotone Sequence}
+  \item \hyperref[def:bounded-sequence]{Bounded Sequence}
+  \item \hyperref[def:least-upper-bound-property]{Least Upper Bound Property}
+  \item \hyperref[thm:lub-property-implies-monotone-convergence]{Least Upper Bound Property Implies Monotone Convergence}
+  \item \hyperref[thm:monotone-convergence-implies-lub-property]{Monotone Convergence Implies Least Upper Bound Property}
+\end{itemize}
+\end{dependencies}
+

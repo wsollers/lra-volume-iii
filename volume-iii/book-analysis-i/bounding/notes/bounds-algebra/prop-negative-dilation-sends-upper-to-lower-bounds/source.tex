@@ -1,0 +1,114 @@
+\begin{proposition}[Negative Dilation Sends Upper Bounds to Lower Bounds]
+\label{prop:negative-dilation-sends-upper-to-lower-bounds}
+Let $A\subseteq\mathbb{R}$, let $\lambda<0$, and let $u\in\mathbb{R}$.
+If $u$ is an upper bound of $A$, then $\lambda u$ is a lower bound of
+$\lambda A$; that is,
+\[
+\left(\forall a\in A,\ a\leq u\right)
+\Longrightarrow
+\left(\forall x\in\lambda A,\ \lambda u\leq x\right).
+\]
+\hyperref[prf:negative-dilation-sends-upper-to-lower-bounds]{Go to proof.}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\lambda<0\land(\forall a\in A)(a\leq u)
+\Longrightarrow
+(\forall x\in\lambda A)(\lambda u\leq x).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+A\subseteq\mathbb{R},\qquad \lambda A=\{\lambda a:a\in A\},\\
+&\lambda<0\land\operatorname{UpperBound}(u,A,P)
+\Longrightarrow\operatorname{LowerBound}(\lambda u,\lambda A,P).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\lambda<0,\qquad(\forall a\in A)(a\leq u),\qquad
+(\exists y\in\lambda A)(y<\lambda u).
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+A\subseteq\mathbb{R},\qquad \lambda A=\{\lambda a:a\in A\},\\
+&\lambda<0\land\operatorname{UpperBound}(u,A,P)\land
+\neg\operatorname{LowerBound}(\lambda u,\lambda A,P).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
+A failure would require negative multiplication not to reverse the upper-bound
+inequality.
+
+
+  \item[\operatorname{UpperBound} / \operatorname{LowerBound}.]
+  \[
+\lambda<0,\qquad(\forall a\in A)(a\leq u),\qquad
+(\exists y\in\lambda A)(y<\lambda u).
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+A\subseteq\mathbb{R},\qquad \lambda A=\{\lambda a:a\in A\},\\
+&\lambda<0\land\operatorname{UpperBound}(u,A,P)\land
+\neg\operatorname{LowerBound}(\lambda u,\lambda A,P).
+\end{aligned}
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
+Write $y=\lambda a$ with $a\in A$.  Since $a\leq u$ and $\lambda<0$,
+$\lambda u\leq\lambda a$.
+
+
+  \item[\operatorname{UpperBound} / \operatorname{LowerBound}.]
+  \[
+\lambda<0,\qquad(\forall a\in A)(a\leq u),\qquad
+(\exists y\in\lambda A)(y<\lambda u).
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+A\subseteq\mathbb{R},\qquad \lambda A=\{\lambda a:a\in A\},\\
+&\lambda<0\land\operatorname{UpperBound}(u,A,P)\land
+\neg\operatorname{LowerBound}(\lambda u,\lambda A,P).
+\end{aligned}
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Negative dilation sends upper-bound information to lower-bound information
+because multiplying by a negative scalar reverses inequalities.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:reals]{Real Numbers}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:multiplication-on-r]{Multiplication on $\mathbb{R}$}
+  \item \hyperref[def:displacement-dilation-reflection]{Displacement, Dilation, and Reflection}
+  \item \hyperref[def:real-upper-bound]{Upper Bound}
+  \item \hyperref[def:real-lower-bound]{Lower Bound}
+\end{itemize}
+\end{dependencies}
+

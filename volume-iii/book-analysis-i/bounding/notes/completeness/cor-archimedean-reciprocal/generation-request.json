@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "cor:archimedean-reciprocal",
+  "kind": "corollary",
+  "title": "The Reciprocal Sequence Converges to Zero",
+  "source": {
+    "label": "cor:archimedean-reciprocal",
+    "kind": "corollary",
+    "title": "The Reciprocal Sequence Converges to Zero",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "completeness",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-archimedean-property.tex",
+    "source_line_start": 249,
+    "source_line_end": 357,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/cor-archimedean-reciprocal",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/cor-archimedean-reciprocal/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/cor-archimedean-reciprocal/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/cor-archimedean-reciprocal",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/cor-archimedean-reciprocal/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/cor-archimedean-reciprocal/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-archimedean-property.tex",
+      "label": "cor:archimedean-reciprocal",
+      "environment_kind": "corollary",
+      "source_line_start": 249,
+      "source_line_end": 357,
+      "current_tex": "\\begin{corollary}[The Reciprocal Sequence Converges to Zero]\n\\label{cor:archimedean-reciprocal}\nFor every $\\varepsilon\\in\\mathbb{R}$ with $\\varepsilon>0$, there exists\n$N\\in\\mathbb{N}$ such that, for every $n\\in\\mathbb{N}$,\n\\[\n  n\\geq N\n  \\Longrightarrow\n  \\left|\\frac{1}{n}-0\\right|<\\varepsilon.\n\\]\nHence,\n\\[\n  \\lim_{n\\longrightarrow\\infty}\\frac{1}{n}=0.\n\\]\n\n\\smallskip\n\\noindent\n\\hyperref[prf:archimedean-reciprocal]{\\textit{Go to proof.}}\n\\end{corollary}\n\\end{corollarybox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\forall x,y\\in\\mathbb{R}\\;\\bigl(x>0\\Longrightarrow \\exists n\\in\\mathbb{N}\\;(nx>y)\\bigr).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\nP_{\\mathbb{R}}=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad\n\\operatorname{HasArchimedeanProperty}(P_{\\mathbb{R}})\n\\Longrightarrow\n\\forall x,y\\in\\mathbb{R}\\;\\bigl(x>0\\Longrightarrow \\exists n\\in\\mathbb{N}\\;(nx>y)\\bigr).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\n\\exists x,y\\in\\mathbb{R}\\;\\bigl(x>0\\land \\forall n\\in\\mathbb{N}\\;(nx\\le y)\\bigr).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negation predicate reading]\n\\[\n\\exists x,y\\in\\mathbb{R}\\;\\bigl(x>0\\land \\forall n\\in\\mathbb{N}\\;(nx\\le y)\\bigr).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\nThe corollary fails when a positive real step size has all of its natural multiples bounded above by some real threshold.\n\n\n  \\item[\\operatorname{HasArchimedeanProperty}.]\n  \\[\n\\exists x,y\\in\\mathbb{R}\\;\\bigl(x>0\\land \\forall n\\in\\mathbb{N}\\;(nx\\le y)\\bigr).\n\\]\n\\[\nP_{\\mathbb{R}}=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad\n\\operatorname{HasArchimedeanProperty}(P_{\\mathbb{R}})\n\\Longrightarrow\n\\forall x,y\\in\\mathbb{R}\\;\\bigl(x>0\\Longrightarrow \\exists n\\in\\mathbb{N}\\;(nx>y)\\bigr).\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\n\\[\n\\underbrace{\\exists x\\in\\mathbb{R}\\;(x>0)}_{\\text{positive step size}}\n\\;\\land\\;\n\\underbrace{\\exists y\\in\\mathbb{R}\\;\\forall n\\in\\mathbb{N}\\;(nx\\le y)}_{\\text{all natural multiples stay bounded}}.\n\\]\n\n\n  \\item[\\operatorname{HasArchimedeanProperty}.]\n  \\[\n\\exists x,y\\in\\mathbb{R}\\;\\bigl(x>0\\land \\forall n\\in\\mathbb{N}\\;(nx\\le y)\\bigr).\n\\]\n\\[\nP_{\\mathbb{R}}=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad\n\\operatorname{HasArchimedeanProperty}(P_{\\mathbb{R}})\n\\Longrightarrow\n\\forall x,y\\in\\mathbb{R}\\;\\bigl(x>0\\Longrightarrow \\exists n\\in\\mathbb{N}\\;(nx>y)\\bigr).\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nAny fixed positive real step eventually passes any real threshold when repeated enough times. The statement is the Archimedean Property applied after rescaling by the positive number $x$: growth by units becomes growth by steps of size $x$.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n\\item \\hyperref[def:reals]{Real Numbers}.\n\\item \\hyperref[def:natural-numbers]{Natural Numbers}.\n\\item \\hyperref[def:ordered-set]{Ordered Set}.\n\\item \\hyperref[thm:archimedean-property]{Archimedean Property}.\n\\end{itemize}\n\\end{dependencies}\n\n\\input{volume-iii/book-analysis-i/bounding/notes/completeness/figure-archimedean-integer-step}\n\n\n\n\n\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

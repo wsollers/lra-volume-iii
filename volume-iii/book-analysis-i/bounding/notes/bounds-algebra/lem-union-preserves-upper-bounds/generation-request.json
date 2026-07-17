@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "lem:union-preserves-upper-bounds",
+  "kind": "lemma",
+  "title": "Union Preserves Upper Bounds",
+  "source": {
+    "label": "lem:union-preserves-upper-bounds",
+    "kind": "lemma",
+    "title": "Union Preserves Upper Bounds",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "bounds-algebra",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-set-operations-and-bounds.tex",
+    "source_line_start": 8,
+    "source_line_end": 103,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/lem-union-preserves-upper-bounds",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/lem-union-preserves-upper-bounds/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/lem-union-preserves-upper-bounds/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/lem-union-preserves-upper-bounds",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/lem-union-preserves-upper-bounds/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/lem-union-preserves-upper-bounds/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-set-operations-and-bounds.tex",
+      "label": "lem:union-preserves-upper-bounds",
+      "environment_kind": "lemma",
+      "source_line_start": 8,
+      "source_line_end": 103,
+      "current_tex": "\\begin{lemma}[Union Preserves Upper Bounds]\n\\label{lem:union-preserves-upper-bounds}\nLet $A,B\\subseteq\\mathbb{R}$. For every $u\\in\\mathbb{R}$, if $u$ is an\nupper bound of both $A$ and $B$, then $u$ is an upper bound of\n$A\\cup B$; that is,\n\\[\n\\left[\n(\\forall a\\in A,\\ a\\leq u)\n\\land\n(\\forall b\\in B,\\ b\\leq u)\n\\right]\n\\Longrightarrow\n(\\forall x\\in A\\cup B,\\ x\\leq u).\n\\]\n\\hyperref[prf:union-preserves-upper-bounds]{Go to proof.}\n\\end{lemma}\n\\end{lemmabox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\bigl[(\\forall a\\in A)(a\\leq u)\\land(\\forall b\\in B)(b\\leq u)\\bigr]\n\\Longrightarrow\n(\\forall x\\in A\\cup B)(x\\leq u).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A,B\\subseteq\\mathbb{R},\\\\\n&U=A\\cup B,\\\\\n&\\operatorname{UpperBound}(u,A,P)\\land\\operatorname{UpperBound}(u,B,P)\n\\Longrightarrow \\operatorname{UpperBound}(u,U,P).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\n(\\forall a\\in A)(a\\leq u),\\quad\n(\\forall b\\in B)(b\\leq u),\\quad\n(\\exists x\\in A\\cup B)(u<x).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negation predicate reading]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A,B\\subseteq\\mathbb{R},\\\\\n&U=A\\cup B,\\\\\n&\\operatorname{UpperBound}(u,A,P)\\land\\operatorname{UpperBound}(u,B,P)\\land\n\\neg\\operatorname{UpperBound}(u,U,P).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n\\item[Exposition.]\nA failure would require a union element larger than the proposed common\nupper bound.\n\n\n  \\item[\\operatorname{UpperBound}.]\n  \\[\n(\\forall a\\in A)(a\\leq u),\\quad\n(\\forall b\\in B)(b\\leq u),\\quad\n(\\exists x\\in A\\cup B)(u<x).\n\\]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A,B\\subseteq\\mathbb{R},\\\\\n&U=A\\cup B,\\\\\n&\\operatorname{UpperBound}(u,A,P)\\land\\operatorname{UpperBound}(u,B,P)\\land\n\\neg\\operatorname{UpperBound}(u,U,P).\n\\end{aligned}\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nEvery $x\\in A\\cup B$ lies in $A$ or in $B$.  In either case the common\nupper-bound hypothesis gives $x\\leq u$.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n\\item \\hyperref[def:reals]{Real Numbers}.\n\\item \\hyperref[def:ordered-set]{Ordered Set}.\n\\item \\hyperref[def:subset]{Subset}.\n\\item \\hyperref[def:union]{Union}.\n\\item \\hyperref[def:real-upper-bound]{Upper Bound}.\n\\end{itemize}\n\\end{dependencies}\n\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

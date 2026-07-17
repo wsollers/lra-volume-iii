@@ -1,0 +1,113 @@
+\begin{corollary}[Nested Intervals with Vanishing Length Have Unique Point]
+\label{cor:nested-intervals-vanishing-length-have-unique-point}
+Let $(a_n)$ and $(b_n)$ be sequences in $\mathbb{R}$ such that
+\[
+  (\forall n\in\mathbb{N})(a_n\leq b_n),
+\]
+\[
+  (\forall n\in\mathbb{N})([a_{n+1},b_{n+1}]\subseteq [a_n,b_n]),
+\]
+and
+\[
+  (\forall\varepsilon>0)(\exists N\in\mathbb{N})(\forall n\in\mathbb{N})
+  \bigl(n\geq N\Longrightarrow 0\leq b_n-a_n<\varepsilon\bigr).
+\]
+Then there exists a unique $x\in\mathbb{R}$ such that
+\[
+  (\forall n\in\mathbb{N})(a_n\leq x\leq b_n).
+\]
+Equivalently,
+\[
+  \bigcap_{n=1}^{\infty}[a_n,b_n]=\{x\}.
+\]
+Moreover,
+\[
+  x=\sup\{a_n:n\in\mathbb{N}\}=\inf\{b_n:n\in\mathbb{N}\}.
+\]
+\hyperref[prf:nested-intervals-vanishing-length-have-unique-point]{Go to proof.}
+\end{corollary}
+\end{corollarybox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\lim_{n\longrightarrow\infty}(b_n-a_n)=0
+\Longrightarrow
+\exists x\in\mathbb{R}\;\forall y\in\mathbb{R}\;
+\left(y\in\bigcap_{n=1}^{\infty}[a_n,b_n]\Longleftrightarrow y=x\right).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+F=([a_n,b_n])_{n\in\mathbb{N}},\qquad
+d\colon\mathbb{N}\longrightarrow\mathbb{R},\qquad d_n=b_n-a_n,
+\]
+\[
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad X=\mathbb{R},\qquad
+\operatorname{NestedClosedBoundedIntervals}(F,P_{\mathbb{R}})
+\land
+\operatorname{ConvergesTo}(d,0,X)
+\Longrightarrow
+\exists x\in\mathbb{R}\;
+\left(\bigcap_{n=1}^{\infty}[a_n,b_n]=\{x\}\right).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\operatorname{NestedClosedBoundedIntervals}([a_n,b_n])
+\land
+\lim_{n\longrightarrow\infty}(b_n-a_n)=0
+\land
+\forall x\in\mathbb{R}\;\exists y\in\mathbb{R}\;
+\left(y\in\bigcap_{n=1}^{\infty}[a_n,b_n]\land y\ne x\right).
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+F=([a_n,b_n])_{n\in\mathbb{N}},\qquad
+d\colon\mathbb{N}\longrightarrow\mathbb{R},\qquad d_n=b_n-a_n,
+\]
+\[
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad X=\mathbb{R},\qquad
+\neg\exists x\in\mathbb{R}\;
+\left(\bigcap_{n=1}^{\infty}[a_n,b_n]=\{x\}\right)
+\Longrightarrow
+\neg\operatorname{NestedClosedBoundedIntervals}(F,P_{\mathbb{R}})
+\lor
+\neg\operatorname{ConvergesTo}(d,0,X).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  Failure is witnessed by the displayed negated or contrapositive condition.
+
+  \item[\operatorname{NestedClosedBoundedIntervals}.]
+  \[
+\operatorname{NestedClosedBoundedIntervals}([a_n,b_n])
+\land
+\lim_{n\longrightarrow\infty}(b_n-a_n)=0
+\land
+\forall x\in\mathbb{R}\;\exists y\in\mathbb{R}\;
+\left(y\in\bigcap_{n=1}^{\infty}[a_n,b_n]\land y\ne x\right).
+\]
+\[
+F=([a_n,b_n])_{n\in\mathbb{N}},\qquad
+d\colon\mathbb{N}\longrightarrow\mathbb{R},\qquad d_n=b_n-a_n,
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+When nested lengths tend to zero, the surviving intersection cannot contain
+two distinct points.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[def:closed-interval]{Closed Interval};
+\hyperref[def:bounded-subset-of-r]{Bounded Subset of the Real Line}.
+\end{dependencies}
+

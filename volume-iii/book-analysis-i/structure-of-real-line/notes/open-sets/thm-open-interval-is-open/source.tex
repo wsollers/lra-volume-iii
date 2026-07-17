@@ -1,0 +1,41 @@
+\begin{theorembox}{Theorem (Open Intervals Are Open)}
+\begin{theorem}[Open Intervals Are Open]
+\label{thm:open-interval-is-open}
+Let $a,b\in\mathbb{R}$ with $a<b$.  Then the interval
+\[
+  (a,b):=\{x\in\mathbb{R}:a<x<b\}
+\]
+is open in $\mathbb{R}$.  Explicitly,
+\[
+  (\forall x\in(a,b))(\exists r>0)(B_r(x)\subseteq(a,b)).
+\]
+\hyperref[prf:open-interval-is-open]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{gathered}
+\forall a,b\in\mathbb{R}\;(a<b\Longrightarrow (a,b)\text{ is open}),\\
+\forall a\in\mathbb{R}\;\bigl((a,\infty)\text{ is open}\land(-\infty,a)\text{ is open}\bigr),
+\qquad \mathbb{R}\text{ is open}.
+\end{gathered}
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+I\subseteq\mathbb{R},\qquad
+\operatorname{IsOpenInterval}(I,\mathbb{R})
+\Longrightarrow
+\operatorname{IsOpen}(I,\mathbb{R}).
+\]
+\end{remark*}
+\begin{remark*}[Interpretation]
+The name ``open interval'' is justified: each such interval satisfies the open-set condition, with the radius at $x$ taken as the distance to the nearer endpoint.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:open-set]{Open Set in $\mathbb{R}$}
+  \item \hyperref[def:open-interval]{Open Interval}
+\end{itemize}
+\end{dependencies}

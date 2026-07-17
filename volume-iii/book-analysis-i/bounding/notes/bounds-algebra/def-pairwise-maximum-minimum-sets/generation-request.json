@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "def:pairwise-maximum-minimum-sets",
+  "kind": "definition",
+  "title": "Pairwise Maximum and Minimum Sets",
+  "source": {
+    "label": "def:pairwise-maximum-minimum-sets",
+    "kind": "definition",
+    "title": "Pairwise Maximum and Minimum Sets",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "bounds-algebra",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-lattice-operations-and-bounds.tex",
+    "source_line_start": 16,
+    "source_line_end": 153,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/def-pairwise-maximum-minimum-sets",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/def-pairwise-maximum-minimum-sets/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/def-pairwise-maximum-minimum-sets/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/def-pairwise-maximum-minimum-sets",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/def-pairwise-maximum-minimum-sets/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/def-pairwise-maximum-minimum-sets/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-lattice-operations-and-bounds.tex",
+      "label": "def:pairwise-maximum-minimum-sets",
+      "environment_kind": "definition",
+      "source_line_start": 16,
+      "source_line_end": 153,
+      "current_tex": "\\begin{definition}[Pairwise Maximum and Minimum Sets]\n\\label{def:pairwise-maximum-minimum-sets}\nLet $A,B\\subseteq\\mathbb{R}$.  The \\emph{pairwise maximum set} and\n\\emph{pairwise minimum set} of $A$ and $B$ are defined, respectively, by\n\\[\n  A\\vee B:=\\{\\max\\{a,b\\}:a\\in A,\\ b\\in B\\},\n\\]\nand\n\\[\n  A\\wedge B:=\\{\\min\\{a,b\\}:a\\in A,\\ b\\in B\\}.\n\\]\n\\end{definition}\n\\end{definitionbox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\nx\\in A\\vee B\n\\Longleftrightarrow\n(\\exists a\\in A)(\\exists b\\in B)\\bigl(x=\\max\\{a,b\\}\\bigr),\n\\]\nand\n\\[\nx\\in A\\wedge B\n\\Longleftrightarrow\n(\\exists a\\in A)(\\exists b\\in B)\\bigl(x=\\min\\{a,b\\}\\bigr).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\n\\begin{aligned}\n&A,B\\subseteq\\mathbb{R},\\qquad D=A\\times B,\\\\\n&M=A\\vee B=\\{\\max\\{a,b\\}:a\\in A,\\ b\\in B\\},\\\\\n&N=A\\wedge B=\\{\\min\\{a,b\\}:a\\in A,\\ b\\in B\\},\\\\\n&\\varphi_{\\max}\\colon D\\to M,\\qquad \\varphi_{\\min}\\colon D\\to N,\\\\\n&\\varphi_{\\max}(a,b)=\\max\\{a,b\\},\\qquad\n\\varphi_{\\min}(a,b)=\\min\\{a,b\\},\\\\\n&\\operatorname{ReplacementImage}(M,D,\\varphi_{\\max}),\\qquad\n\\operatorname{ReplacementImage}(N,D,\\varphi_{\\min}).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\nx\\notin A\\vee B\n\\Longleftrightarrow\n(\\forall a\\in A)(\\forall b\\in B)\\bigl(x\\neq\\max\\{a,b\\}\\bigr),\n\\]\nand\n\\[\nx\\notin A\\wedge B\n\\Longleftrightarrow\n(\\forall a\\in A)(\\forall b\\in B)\\bigl(x\\neq\\min\\{a,b\\}\\bigr).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negation predicate reading]\n\\[\n\\begin{aligned}\n&A,B\\subseteq\\mathbb{R},\\qquad\nM=A\\vee B=\\{\\max\\{a,b\\}:a\\in A,\\ b\\in B\\},\\\\\n&C\\ne M\n\\end{aligned}\n\\quad\\text{means}\\quad\n(\\exists x)\\bigl[x\\in C\\triangle M\\bigr],\n\\]\nand similarly for $A\\wedge B$.\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n\\item[Exposition.]\nThe definition fails only if the image set omits a pairwise maximum or minimum,\nor if it includes a value not produced by one of the pairwise rules.\n\n\n  \\item[\\exists-condition.]\n  \\[\nx\\notin A\\vee B\n\\Longleftrightarrow\n(\\forall a\\in A)(\\forall b\\in B)\\bigl(x\\neq\\max\\{a,b\\}\\bigr),\n\\]\n\\[\n\\begin{aligned}\n&A,B\\subseteq\\mathbb{R},\\qquad\nM=A\\vee B=\\{\\max\\{a,b\\}:a\\in A,\\ b\\in B\\},\\\\\n&C\\ne M\n\\end{aligned}\n\\quad\\text{means}\\quad\n(\\exists x)\\bigl[x\\in C\\triangle M\\bigr],\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n\\item[Exposition.]\nEvery membership claim decomposes into two input witnesses and one order-based\noperation: either the larger input or the smaller input is selected.\n\n\n  \\item[\\exists-condition.]\n  \\[\nx\\notin A\\vee B\n\\Longleftrightarrow\n(\\forall a\\in A)(\\forall b\\in B)\\bigl(x\\neq\\max\\{a,b\\}\\bigr),\n\\]\n\\[\n\\begin{aligned}\n&A,B\\subseteq\\mathbb{R},\\qquad\nM=A\\vee B=\\{\\max\\{a,b\\}:a\\in A,\\ b\\in B\\},\\\\\n&C\\ne M\n\\end{aligned}\n\\quad\\text{means}\\quad\n(\\exists x)\\bigl[x\\in C\\triangle M\\bigr],\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nPairwise maximum and minimum sets collect the order-selected output from\nevery pair of inputs, one from each source set.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:reals]{Real Numbers}\n  \\item \\hyperref[def:subset]{Subset}\n  \\item \\hyperref[def:cartesian-product]{Cartesian Product}\n  \\item \\hyperref[def:function]{Function}\n  \\item \\hyperref[def:image-set]{Image Set}\n  \\item \\hyperref[def:maximum]{Maximum}\n  \\item \\hyperref[def:minimum]{Minimum}\n\\end{itemize}\n\\end{dependencies}\n\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

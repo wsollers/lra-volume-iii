@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "thm:closed-iff-contains-limit-points",
+  "kind": "theorem",
+  "title": "Closed Sets Contain Their Limit Points",
+  "source": {
+    "label": "thm:closed-iff-contains-limit-points",
+    "kind": "theorem",
+    "title": "Closed Sets Contain Their Limit Points",
+    "book": "book-analysis-i",
+    "chapter": "structure-of-real-line",
+    "section": "closed-sets",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/structure-of-real-line/notes/closed-sets/notes-closed-sets.tex",
+    "source_line_start": 40,
+    "source_line_end": 72,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/structure-of-real-line/notes/closed-sets/thm-closed-iff-contains-limit-points",
+      "artifact": "volume-iii/book-analysis-i/structure-of-real-line/notes/closed-sets/thm-closed-iff-contains-limit-points/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/structure-of-real-line/notes/closed-sets/thm-closed-iff-contains-limit-points/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/structure-of-real-line/notes/closed-sets/thm-closed-iff-contains-limit-points",
+    "artifact": "volume-iii/book-analysis-i/structure-of-real-line/notes/closed-sets/thm-closed-iff-contains-limit-points/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/structure-of-real-line/notes/closed-sets/thm-closed-iff-contains-limit-points/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/structure-of-real-line/notes/closed-sets/notes-closed-sets.tex",
+      "label": "thm:closed-iff-contains-limit-points",
+      "environment_kind": "theorem",
+      "source_line_start": 40,
+      "source_line_end": 72,
+      "current_tex": "\\begin{theorembox}{Theorem (Closed Sets Contain Their Limit Points)}\n\\begin{theorem}[Closed Sets Contain Their Limit Points]\n\\label{thm:closed-iff-contains-limit-points}\nLet $F\\subseteq\\mathbb{R}$.  Then $F$ is closed if and only if every limit\npoint of $F$ belongs to $F$.  Explicitly,\n\\[\n  F\\text{ is closed}\n  \\Longleftrightarrow\n  (\\forall x\\in\\mathbb{R})\n  \\leqft[\n  \\leqft((\\forall r>0)\\bigl((B_r(x)\\setminus\\{x\\})\\cap F\\neq\\varnothing\\bigr)\\right)\n  \\Longrightarrow\n  x\\in F\n  \\right].\n\\]\n\\hyperref[prf:closed-iff-contains-limit-points]{Go to proof.}\n\\end{theorem}\n\\end{theorembox}\n\\begin{remark*}[Standard quantified statement]\n\\[\nF \\text{ closed} \\Longleftrightarrow \\forall x\\in\\mathbb{R}\\;\\bigl(x \\text{ is a limit point of } F \\Longrightarrow x\\in F\\bigr).\n\\]\n\\end{remark*}\n\\begin{remark*}[Interpretation]\nThis is the convergence-flavored description of closedness: a closed set cannot be approached from outside without already containing the approached point. It is the form used when showing limits of sequences in $F$ stay in $F$.\n\\end{remark*}\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:closed-set]{Closed Set in $\\mathbb{R}$}\n  \\item \\hyperref[def:limit-point]{Limit Point}\n\\end{itemize}\n\\end{dependencies}\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

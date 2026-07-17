@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "thm:density-of-rationals-in-reals",
+  "kind": "theorem",
+  "title": "Density of the Rationals",
+  "source": {
+    "label": "thm:density-of-rationals-in-reals",
+    "kind": "theorem",
+    "title": "Density of the Rationals",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "completeness",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-density.tex",
+    "source_line_start": 239,
+    "source_line_end": 344,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/thm-density-of-rationals-in-reals",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/thm-density-of-rationals-in-reals/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/thm-density-of-rationals-in-reals/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/thm-density-of-rationals-in-reals",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/thm-density-of-rationals-in-reals/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/thm-density-of-rationals-in-reals/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-density.tex",
+      "label": "thm:density-of-rationals-in-reals",
+      "environment_kind": "theorem",
+      "source_line_start": 239,
+      "source_line_end": 344,
+      "current_tex": "\\begin{theorem}[Density of the Rationals]\n\\label{thm:density-of-rationals-in-reals}\nFor every $a,b\\in\\mathbb{R}$ with $a<b$, there exists $q\\in\\mathbb{Q}$ such\nthat\n\\[\n  a<q<b.\n\\]\nEquivalently,\n\\[\n  (\\forall a,b\\in\\mathbb{R})\n  \\bigl[a<b\\Longrightarrow(\\exists q\\in\\mathbb{Q})(a<q<b)\\bigr].\n\\]\n\\hyperref[prf:density-of-rationals-in-reals]{Go to proof.}\n\\end{theorem}\n\\end{theorembox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\forall a,b\\in\\mathbb{R}\\;\\bigl(a<b\\Longrightarrow \\exists q\\in\\mathbb{Q}\\;(a<q<b)\\bigr).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\nP_{\\mathbb{R}}=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad \\mathbb{Q}\\subseteq\\mathbb{R},\\qquad\nD_{\\mathbb{Q}}=\\mathsf{OrderDenseSet}(\\mathbb{Q},P_{\\mathbb{R}}),\\qquad\n\\operatorname{IsOrderDenseSubset}(\\mathbb{Q},P_{\\mathbb{R}})\\Longleftrightarrow\n\\forall a,b\\in\\mathbb{R}\\;\\bigl(a<b\\Longrightarrow \\exists q\\in\\mathbb{Q}\\;(a<q<b)\\bigr).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\n\\exists a,b\\in\\mathbb{R}\\;\\bigl(a<b\\land \\forall q\\in\\mathbb{Q}\\;(q\\le a\\lor b\\le q)\\bigr).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negation predicate reading]\n\\[\nP_{\\mathbb{R}}=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad \\mathbb{Q}\\subseteq\\mathbb{R},\\qquad\nD_{\\mathbb{Q}}=\\mathsf{OrderDenseSet}(\\mathbb{Q},P_{\\mathbb{R}}),\\qquad\n\\neg\\operatorname{IsOrderDenseSubset}(\\mathbb{Q},P_{\\mathbb{R}})\\Longleftrightarrow\n\\exists a,b\\in\\mathbb{R}\\;\\bigl(a<b\\land \\forall q\\in\\mathbb{Q}\\;(q\\le a\\lor b\\le q)\\bigr).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n\\item[Exposition.]\nThe theorem would fail precisely if some nonempty real interval contained no rational number.\n\n\n  \\item[\\operatorname{IsOrderDenseSubset}.]\n  \\[\n\\exists a,b\\in\\mathbb{R}\\;\\bigl(a<b\\land \\forall q\\in\\mathbb{Q}\\;(q\\le a\\lor b\\le q)\\bigr).\n\\]\n\\[\nP_{\\mathbb{R}}=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad \\mathbb{Q}\\subseteq\\mathbb{R},\\qquad\nD_{\\mathbb{Q}}=\\mathsf{OrderDenseSet}(\\mathbb{Q},P_{\\mathbb{R}}),\\qquad\n\\neg\\operatorname{IsOrderDenseSubset}(\\mathbb{Q},P_{\\mathbb{R}})\\Longleftrightarrow\n\\exists a,b\\in\\mathbb{R}\\;\\bigl(a<b\\land \\forall q\\in\\mathbb{Q}\\;(q\\le a\\lor b\\le q)\\bigr).\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n\\item[Exposition.]\n\\[\n\\neg\\operatorname{IsOrderDenseSubset}(\\mathbb{Q},\\mathbb{R})\n=\n\\underbrace{\\exists a,b\\in\\mathbb{R}\\;(a<b)}_{\\text{nonempty real interval}}\n\\;\\land\\;\n\\underbrace{\\forall q\\in\\mathbb{Q}\\;(q\\le a\\lor b\\le q)}_{\\text{no rational lies inside}}.\n\\]\n\n\n  \\item[\\operatorname{IsOrderDenseSubset}.]\n  \\[\n\\exists a,b\\in\\mathbb{R}\\;\\bigl(a<b\\land \\forall q\\in\\mathbb{Q}\\;(q\\le a\\lor b\\le q)\\bigr).\n\\]\n\\[\nP_{\\mathbb{R}}=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad \\mathbb{Q}\\subseteq\\mathbb{R},\\qquad\nD_{\\mathbb{Q}}=\\mathsf{OrderDenseSet}(\\mathbb{Q},P_{\\mathbb{R}}),\\qquad\n\\neg\\operatorname{IsOrderDenseSubset}(\\mathbb{Q},P_{\\mathbb{R}})\\Longleftrightarrow\n\\exists a,b\\in\\mathbb{R}\\;\\bigl(a<b\\land \\forall q\\in\\mathbb{Q}\\;(q\\le a\\lor b\\le q)\\bigr).\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nRational numbers penetrate every real interval. The theorem does not say that every real number is rational; it says that rational numbers are never separated from a real interval by a positive order gap. This is the interval form of rational density in the real line.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n\\item \\hyperref[def:reals]{Real Numbers}.\n\\item \\hyperref[def:rationals]{Rational Numbers}.\n\\item \\hyperref[def:ordered-set]{Ordered Set}.\n\\item \\hyperref[def:subset]{Subset}.\n\\item \\hyperref[def:order-dense-subset]{Order Dense Subset}.\n\\item \\hyperref[thm:archimedean-property]{Archimedean Property}.\n\\end{itemize}\n\\end{dependencies}\n\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

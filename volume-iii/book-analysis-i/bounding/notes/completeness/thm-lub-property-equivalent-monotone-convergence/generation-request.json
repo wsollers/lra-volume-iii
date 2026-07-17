@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "thm:lub-property-equivalent-monotone-convergence",
+  "kind": "theorem",
+  "title": "Least Upper Bound Property Equivalent to Monotone Convergence",
+  "source": {
+    "label": "thm:lub-property-equivalent-monotone-convergence",
+    "kind": "theorem",
+    "title": "Least Upper Bound Property Equivalent to Monotone Convergence",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "completeness",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-completeness-equivalences.tex",
+    "source_line_start": 174,
+    "source_line_end": 221,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/thm-lub-property-equivalent-monotone-convergence",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/thm-lub-property-equivalent-monotone-convergence/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/thm-lub-property-equivalent-monotone-convergence/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/thm-lub-property-equivalent-monotone-convergence",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/thm-lub-property-equivalent-monotone-convergence/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/thm-lub-property-equivalent-monotone-convergence/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-completeness-equivalences.tex",
+      "label": "thm:lub-property-equivalent-monotone-convergence",
+      "environment_kind": "theorem",
+      "source_line_start": 174,
+      "source_line_end": 221,
+      "current_tex": "\\begin{theorem}[Least Upper Bound Property Equivalent to Monotone Convergence]\n\\label{thm:lub-property-equivalent-monotone-convergence}\nLet $F$ be an Archimedean linearly ordered field.  The following statements are\nequivalent:\n\\begin{enumerate}[label=(\\roman*)]\n  \\item Every nonempty subset of $F$ that is bounded above has a least upper\n  bound in $F$.\n  \\item Every increasing sequence in $F$ that is bounded above converges in\n  $F$.\n  \\item Every decreasing sequence in $F$ that is bounded below converges in\n  $F$.\n\\end{enumerate}\n\n\\smallskip\n\\noindent\n\\hyperref[prf:lub-property-equivalent-monotone-convergence]{\\textit{Go to proof.}}\n\\end{theorem}\n\\end{theorembox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\operatorname{HasLeastUpperBoundProperty}(\\mathbb{R})\n\\Longleftrightarrow\n\\forall (x_n)\\subseteq\\mathbb{R}\\;\n\\bigl(\\operatorname{Monotone}((x_n),\\mathsf{OrderedSet}(\\mathbb{R},\\leq))\\land\\operatorname{Bounded}(x_n)\n\\Longrightarrow \\operatorname{ConvergesTo}(x_n)\\bigr).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nThe equivalence identifies order completeness and monotone sequential\ncompleteness as the same principle expressed in different languages.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:real-sequence]{Real Sequence}\n  \\item \\hyperref[def:sequence]{Sequence}\n  \\item \\hyperref[def:convergent-sequence]{Convergent Sequence}\n  \\item \\hyperref[def:monotone-sequence]{Monotone Sequence}\n  \\item \\hyperref[def:bounded-sequence]{Bounded Sequence}\n  \\item \\hyperref[def:least-upper-bound-property]{Least Upper Bound Property}\n  \\item \\hyperref[thm:lub-property-implies-monotone-convergence]{Least Upper Bound Property Implies Monotone Convergence}\n  \\item \\hyperref[thm:monotone-convergence-implies-lub-property]{Monotone Convergence Implies Least Upper Bound Property}\n\\end{itemize}\n\\end{dependencies}\n\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

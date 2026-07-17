@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "thm:supremum-dilation",
+  "kind": "theorem",
+  "title": "Supremum of a Dilation",
+  "source": {
+    "label": "thm:supremum-dilation",
+    "kind": "theorem",
+    "title": "Supremum of a Dilation",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "bounds-algebra",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-algebra-of-supremum-infimum.tex",
+    "source_line_start": 1574,
+    "source_line_end": 1701,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-supremum-dilation",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-supremum-dilation/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-supremum-dilation/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-supremum-dilation",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-supremum-dilation/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-supremum-dilation/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-algebra-of-supremum-infimum.tex",
+      "label": "thm:supremum-dilation",
+      "environment_kind": "theorem",
+      "source_line_start": 1574,
+      "source_line_end": 1701,
+      "current_tex": "\\begin{theorem}[Supremum of a Dilation]\n\\label{thm:supremum-dilation}\nLet $A\\subseteq\\mathbb{R}$ be nonempty and bounded, and let $\\lambda\\in\\mathbb{R}$. Then\n\\[\n  \\sup(\\lambda A)=\\max\\{\\lambda\\sup A,\\lambda\\inf A\\},\n  \\qquad\n  \\lambda A=\\{\\lambda a:a\\in A\\}.\n\\]\n\\hyperref[prf:supremum-dilation]{Go to proof.}\n\\end{theorem}\n\\end{theorembox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\nA\\neq\\varnothing,\\quad A\\text{ bounded},\\quad \\lambda\\in\\mathbb{R}\n\\quad\\Longrightarrow\\quad\n\\sup\\{\\lambda a:a\\in A\\}=\\max\\{\\lambda\\sup A,\\lambda\\inf A\\}.\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A\\subseteq\\mathbb{R},\\qquad \\lambda A=\\{\\lambda a:a\\in A\\},\\\\\n&M=\\max\\{\\lambda s,\\lambda t\\},\\\\\n&\\operatorname{LeastUpperBound}(s,A,P)\\land \\operatorname{GreatestLowerBound}(t,A,P)\n\\Longrightarrow\n\\operatorname{LeastUpperBound}(M,\\lambda A,P).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\n\\sup(\\lambda A)\\ne \\max\\{\\lambda\\sup A,\\lambda\\inf A\\}\n\\]\nis impossible under the stated hypotheses.\n\\end{remark*}\n\n\\begin{remark*}[Negation predicate reading]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A\\subseteq\\mathbb{R},\\qquad \\lambda A=\\{\\lambda a:a\\in A\\},\\\\\n&M=\\max\\{\\lambda s,\\lambda t\\},\\\\\n&\\operatorname{LeastUpperBound}(s,A,P)\\land \\operatorname{GreatestLowerBound}(t,A,P)\n\\land\n\\neg\\operatorname{LeastUpperBound}(M,\\lambda A,P)\n\\end{aligned}\n\\]\nis a contradictory configuration.\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\nThe formula separates into the cases $\\lambda>0$, $\\lambda=0$, and $\\lambda<0$. Positive dilation scales the supremum, zero dilation collapses the set to $\\{0\\}$, and negative dilation turns the infimum into the supremum.\n\n\n  \\item[\\operatorname{LeastUpperBound} / \\operatorname{GreatestLowerBound}.]\n  \\[\n\\sup(\\lambda A)\\ne \\max\\{\\lambda\\sup A,\\lambda\\inf A\\}\n\\]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A\\subseteq\\mathbb{R},\\qquad \\lambda A=\\{\\lambda a:a\\in A\\},\\\\\n&M=\\max\\{\\lambda s,\\lambda t\\},\\\\\n&\\operatorname{LeastUpperBound}(s,A,P)\\land \\operatorname{GreatestLowerBound}(t,A,P)\n\\land\n\\neg\\operatorname{LeastUpperBound}(M,\\lambda A,P)\n\\end{aligned}\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\n\\[\n\\sup(\\lambda A)=\n\\begin{cases}\n\\lambda\\sup A, & \\lambda>0,\\\\\n0, & \\lambda=0,\\\\\n\\lambda\\inf A, & \\lambda<0.\n\\end{cases}\n\\]\n\n\n  \\item[\\operatorname{LeastUpperBound} / \\operatorname{GreatestLowerBound}.]\n  \\[\n\\sup(\\lambda A)\\ne \\max\\{\\lambda\\sup A,\\lambda\\inf A\\}\n\\]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A\\subseteq\\mathbb{R},\\qquad \\lambda A=\\{\\lambda a:a\\in A\\},\\\\\n&M=\\max\\{\\lambda s,\\lambda t\\},\\\\\n&\\operatorname{LeastUpperBound}(s,A,P)\\land \\operatorname{GreatestLowerBound}(t,A,P)\n\\land\n\\neg\\operatorname{LeastUpperBound}(M,\\lambda A,P)\n\\end{aligned}\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nA dilation either preserves the order, collapses all points to zero, or reverses the order. The displayed maximum packages those three cases into one formula.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:reals]{Real Numbers}\n  \\item \\hyperref[def:ordered-set]{Ordered Set}\n  \\item \\hyperref[def:subset]{Subset}\n  \\item \\hyperref[def:multiplication-on-r]{Multiplication on $\\mathbb{R}$}\n  \\item \\hyperref[def:displacement-dilation-reflection]{Displacement, Dilation, and Reflection}\n  \\item \\hyperref[def:real-upper-bound]{Upper Bound}\n  \\item \\hyperref[def:real-lower-bound]{Lower Bound}\n  \\item \\hyperref[def:bounded]{Bounded Set}\n  \\item \\hyperref[def:supremum]{Supremum}\n  \\item \\hyperref[def:infimum]{Infimum}\n  \\item \\hyperref[def:maximum]{Maximum}\n  \\item \\hyperref[thm:infimum-less-than-supremum]{Infimum Is Less Than or Equal to the Supremum}\n  \\item \\hyperref[thm:scalar-mult-positive]{Scalar Multiplication by a Positive Scalar}\n  \\item \\hyperref[thm:scalar-mult-negative]{Scalar Multiplication by a Negative Scalar}\n\\end{itemize}\n\\end{dependencies}\n\n\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

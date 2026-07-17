@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "def:bounded-subset-of-r",
+  "kind": "definition",
+  "title": "Bounded Subset of the Real Line",
+  "source": {
+    "label": "def:bounded-subset-of-r",
+    "kind": "definition",
+    "title": "Bounded Subset of the Real Line",
+    "book": "book-analysis-i",
+    "chapter": "structure-of-real-line",
+    "section": "intervals-as-subsets",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/structure-of-real-line/notes/intervals-as-subsets/notes-intervals-as-subsets.tex",
+    "source_line_start": 9,
+    "source_line_end": 81,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/structure-of-real-line/notes/intervals-as-subsets/def-bounded-subset-of-r",
+      "artifact": "volume-iii/book-analysis-i/structure-of-real-line/notes/intervals-as-subsets/def-bounded-subset-of-r/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/structure-of-real-line/notes/intervals-as-subsets/def-bounded-subset-of-r/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/structure-of-real-line/notes/intervals-as-subsets/def-bounded-subset-of-r",
+    "artifact": "volume-iii/book-analysis-i/structure-of-real-line/notes/intervals-as-subsets/def-bounded-subset-of-r/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/structure-of-real-line/notes/intervals-as-subsets/def-bounded-subset-of-r/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/structure-of-real-line/notes/intervals-as-subsets/notes-intervals-as-subsets.tex",
+      "label": "def:bounded-subset-of-r",
+      "environment_kind": "definition",
+      "source_line_start": 9,
+      "source_line_end": 81,
+      "current_tex": "\\begin{definitionbox}{Definition (Bounded Subset of the Real Line)}\n\\begin{definition}[Bounded Subset of the Real Line]\n\\label{def:bounded-subset-of-r}\nA set $A\\subseteq\\mathbb{R}$ is \\emph{bounded} if there exists $M>0$ such that\n\\[\n  (\\forall x\\in A)(|x|\\leq M).\n\\]\nEquivalently,\n\\[\n  A\\text{ is bounded}\n  \\Longleftrightarrow\n  (\\exists M>0)(\\forall x\\in A)(-M\\leq x\\leq M).\n\\]\n\\end{definition}\n\\end{definitionbox}\n\\begin{remark*}[Standard quantified statement]\n\\[\nE \\text{ is bounded} \\Longleftrightarrow \\exists M\\ge 0\\;\\forall x\\in E\\;(|x|\\le M).\n\\]\n\\end{remark*}\n\\begin{remark*}[Predicate reading]\n\\[\nE\\subseteq\\mathbb{R},\\qquad P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad\n\\operatorname{Bounded}(E,P)\n\\Longleftrightarrow\n\\exists M\\ge 0\\;\\forall x\\in E\\;(|x|\\le M).\n\\]\n\\end{remark*}\n\\begin{remark*}[Negated quantified statement]\n\\[\nE \\text{ is unbounded} \\Longleftrightarrow \\forall M\\ge 0\\;\\exists x\\in E\\;(|x|>M).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negation predicate reading]\n\\[\nE \\text{ is unbounded} \\Longleftrightarrow \\forall M\\ge 0\\;\\exists x\\in E\\;(|x|>M).\n\\]\n\nThe negation predicate reading is the predicate-level form of the displayed negated statement.\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\n  Failure is witnessed by the displayed negated or contrapositive condition.\n\n  \\item[\\operatorname{Bounded}.]\n  \\[\nE \\text{ is unbounded} \\Longleftrightarrow \\forall M\\ge 0\\;\\exists x\\in E\\;(|x|>M).\n\\]\n\\[\nE\\subseteq\\mathbb{R},\\qquad P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad\n\\operatorname{Bounded}(E,P)\n\\Longleftrightarrow\n\\exists M\\ge 0\\;\\forall x\\in E\\;(|x|\\le M).\n\\]\n\\end{description}\n\\end{remark*}\n\\begin{remark*}[Interpretation]\nBoundedness says $E$ fits inside a single closed interval --- it does not run off to infinity. Together with closedness it is one half of the Heine--Borel characterization of compact subsets of $\\mathbb{R}$.\n\\end{remark*}\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:closed-interval]{Closed Interval}\n  \\item \\hyperref[thm:triangle-inequality]{Triangle Inequality}\n\\end{itemize}\n\\end{dependencies}\n\n\\subsection*{Set Operations on Intervals}\n\\label{subsec:set-operations-on-intervals}\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

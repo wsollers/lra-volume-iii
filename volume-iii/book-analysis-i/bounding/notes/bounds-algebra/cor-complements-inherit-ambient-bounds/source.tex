@@ -1,0 +1,106 @@
+\begin{corollary}[Complements Inherit Ambient Bounds]
+\label{cor:complements-inherit-ambient-bounds}
+Let $A\subseteq S\subseteq\mathbb{R}$. Every upper bound of $S$ is an
+upper bound of the relative complement $S\setminus A$, and every lower
+bound of $S$ is a lower bound of $S\setminus A$; that is, for all
+$u,\ell\in\mathbb{R}$,
+\[
+\left(\forall s\in S,\ s\leq u\right)
+\Longrightarrow
+(\forall x\in S\setminus A,\ x\leq u),
+\]
+and
+\[
+\left(\forall s\in S,\ \ell\leq s\right)
+\Longrightarrow
+(\forall x\in S\setminus A,\ \ell\leq x).
+\]
+\hyperref[prf:complements-inherit-ambient-bounds]{Go to proof.}
+\end{corollary}
+\end{corollarybox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{aligned}
+&(\forall s\in S)(s\leq u)
+\Longrightarrow(\forall x\in S\setminus A)(x\leq u),\\
+&(\forall s\in S)(\ell\leq s)
+\Longrightarrow(\forall x\in S\setminus A)(\ell\leq x).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq S\subseteq\mathbb{R},\qquad C=S\setminus A,\\
+&\operatorname{UpperBound}(u,S,P)\Longrightarrow\operatorname{UpperBound}(u,C,P),\\
+&\operatorname{LowerBound}(\ell,S,P)\Longrightarrow\operatorname{LowerBound}(\ell,C,P).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\operatorname{UpperBound}(u,S)\land\neg\operatorname{UpperBound}(u,S\setminus A)
+\]
+or
+\[
+\operatorname{LowerBound}(\ell,S)\land\neg\operatorname{LowerBound}(\ell,S\setminus A).
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq S\subseteq\mathbb{R},\qquad C=S\setminus A,\\
+&\bigl(\operatorname{UpperBound}(u,S,P)\land\neg\operatorname{UpperBound}(u,C,P)\bigr)\\
+&\qquad{}\lor
+\bigl(\operatorname{LowerBound}(\ell,S,P)\land\neg\operatorname{LowerBound}(\ell,C,P)\bigr).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
+The complement does not inherit bounds from $A$; it inherits them from the
+ambient set $S$.
+
+
+  \item[\operatorname{UpperBound} / \operatorname{LowerBound}.]
+  \[
+\operatorname{UpperBound}(u,S)\land\neg\operatorname{UpperBound}(u,S\setminus A)
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq S\subseteq\mathbb{R},\qquad C=S\setminus A,\\
+&\bigl(\operatorname{UpperBound}(u,S,P)\land\neg\operatorname{UpperBound}(u,C,P)\bigr)\\
+&\qquad{}\lor
+\bigl(\operatorname{LowerBound}(\ell,S,P)\land\neg\operatorname{LowerBound}(\ell,C,P)\bigr).
+\end{aligned}
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Every point of $S\setminus A$ is a point of $S$, so every ambient bound of
+$S$ applies to the complement.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+\item \hyperref[def:reals]{Real Numbers}.
+\item \hyperref[def:ordered-set]{Ordered Set}.
+\item \hyperref[def:subset]{Subset}.
+\item \hyperref[def:complement]{Complement}.
+\item \hyperref[def:set-difference]{Set Difference}.
+\item \hyperref[def:real-upper-bound]{Upper Bound}.
+\item \hyperref[def:real-lower-bound]{Lower Bound}.
+\item \hyperref[def:bounded-above]{Bounded Above}.
+\item \hyperref[def:bounded-below]{Bounded Below}.
+\item \hyperref[def:bounded]{Bounded Set}.
+\item \hyperref[lem:subsets-preserve-upper-bounds]{Subsets Preserve Upper Bounds}.
+\item \hyperref[lem:subsets-preserve-lower-bounds]{Subsets Preserve Lower Bounds}.
+\end{itemize}
+\end{dependencies}

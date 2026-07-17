@@ -1,0 +1,102 @@
+\begin{lemma}[Integer Part Lemma]
+\label{lem:integer-part-lemma}
+For every $x\in\mathbb{R}$ satisfying $x\geq0$, there exists a unique
+$n\in\mathbb{N}_0$ such that
+\[
+  n\leq x<n+1.
+\]
+Equivalently,
+\[
+  (\forall x\in\mathbb{R})
+  \left[x\geq0\Longrightarrow(\exists!n\in\mathbb{N}_0)(n\leq x<n+1)\right].
+\]
+
+\smallskip
+\noindent
+\hyperref[prf:integer-part-lemma]{\textit{Go to proof.}}
+\end{lemma}
+\end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x\in\mathbb{R}\;\exists m\in\mathbb{Z}\;(m\le x<m+1).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+m=\lfloor x\rfloor\Longleftrightarrow
+m\in\mathbb{Z}\land m\le x<m+1.
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\exists x\in\mathbb{R}\;\forall m\in\mathbb{Z}\;(x<m\lor m+1\le x).
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\neg\exists m\in\mathbb{Z}\;(m=\lfloor x\rfloor)
+\Longleftrightarrow
+\forall m\in\mathbb{Z}\;(x<m\lor m+1\le x).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+The lemma fails only if some real number lies in no half-open unit interval
+$[m,m+1)$ with integer left endpoint.
+
+
+  \item[\exists-condition.]
+  \[
+\exists x\in\mathbb{R}\;\forall m\in\mathbb{Z}\;(x<m\lor m+1\le x).
+\]
+\[
+\neg\exists m\in\mathbb{Z}\;(m=\lfloor x\rfloor)
+\Longleftrightarrow
+\forall m\in\mathbb{Z}\;(x<m\lor m+1\le x).
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+\[
+\underbrace{x<m}_{\text{integer starts too high}}
+\qquad\text{or}\qquad
+\underbrace{m+1\le x}_{\text{integer interval ends too low}}.
+\]
+
+
+  \item[\exists-condition.]
+  \[
+\exists x\in\mathbb{R}\;\forall m\in\mathbb{Z}\;(x<m\lor m+1\le x).
+\]
+\[
+\neg\exists m\in\mathbb{Z}\;(m=\lfloor x\rfloor)
+\Longleftrightarrow
+\forall m\in\mathbb{Z}\;(x<m\lor m+1\le x).
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Every real number has an integer part: the real line is tiled by consecutive
+unit intervals whose left endpoints are integers.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+\item \hyperref[def:reals]{Real Numbers}.
+\item \hyperref[def:integers]{Integers}.
+\item \hyperref[thm:archimedean-property]{Archimedean Property}.
+\end{itemize}
+\end{dependencies}
+
+
+

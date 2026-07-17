@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "cor:union-bounded-iff-pieces-bounded",
+  "kind": "corollary",
+  "title": "Union Is Bounded Exactly When Both Pieces Are",
+  "source": {
+    "label": "cor:union-bounded-iff-pieces-bounded",
+    "kind": "corollary",
+    "title": "Union Is Bounded Exactly When Both Pieces Are",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "bounds-algebra",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-set-operations-and-bounds.tex",
+    "source_line_start": 398,
+    "source_line_end": 488,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/cor-union-bounded-iff-pieces-bounded",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/cor-union-bounded-iff-pieces-bounded/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/cor-union-bounded-iff-pieces-bounded/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/cor-union-bounded-iff-pieces-bounded",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/cor-union-bounded-iff-pieces-bounded/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/cor-union-bounded-iff-pieces-bounded/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-set-operations-and-bounds.tex",
+      "label": "cor:union-bounded-iff-pieces-bounded",
+      "environment_kind": "corollary",
+      "source_line_start": 398,
+      "source_line_end": 488,
+      "current_tex": "\\begin{corollary}[Union Is Bounded Exactly When Both Pieces Are]\n\\label{cor:union-bounded-iff-pieces-bounded}\nLet $A,B\\subseteq\\mathbb{R}$. The union $A\\cup B$ is bounded if and only\nif both $A$ and $B$ are bounded; that is,\n\\[\nA\\cup B\\text{ is bounded}\n\\Longleftrightarrow\n\\bigl(A\\text{ is bounded}\\land B\\text{ is bounded}\\bigr).\n\\]\n\\hyperref[prf:union-bounded-iff-pieces-bounded]{Go to proof.}\n\\end{corollary}\n\\end{corollarybox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\operatorname{Bounded}(A\\cup B)\n\\Longleftrightarrow\n\\operatorname{Bounded}(A)\\land\\operatorname{Bounded}(B).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A,B\\subseteq\\mathbb{R},\\qquad U=A\\cup B,\\\\\n&\\operatorname{Bounded}(U,P)\n\\Longleftrightarrow\n\\operatorname{Bounded}(A,P)\\land\\operatorname{Bounded}(B,P).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\nThe two-sided boundedness equivalence fails if either the upper or lower\none-sided equivalence fails.\n\\end{remark*}\n\n\\begin{remark*}[Negation predicate reading]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A,B\\subseteq\\mathbb{R},\\qquad U=A\\cup B,\\\\\n&\\operatorname{Bounded}(U,P)\\oplus\n\\bigl(\\operatorname{Bounded}(A,P)\\land\\operatorname{Bounded}(B,P)\\bigr).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n\\item[Exposition.]\nTwo-sided boundedness fails exactly through an upper-bound failure or a\nlower-bound failure.\n\n\n  \\item[\\operatorname{Bounded}.]\n\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A,B\\subseteq\\mathbb{R},\\qquad U=A\\cup B,\\\\\n&\\operatorname{Bounded}(U,P)\\oplus\n\\bigl(\\operatorname{Bounded}(A,P)\\land\\operatorname{Bounded}(B,P)\\bigr).\n\\end{aligned}\n\\]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A,B\\subseteq\\mathbb{R},\\qquad U=A\\cup B,\\\\\n&\\operatorname{Bounded}(U,P)\n\\Longleftrightarrow\n\\operatorname{Bounded}(A,P)\\land\\operatorname{Bounded}(B,P).\n\\end{aligned}\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nApply the bounded-above and bounded-below union equivalences separately.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n\\item \\hyperref[def:reals]{Real Numbers}.\n\\item \\hyperref[def:ordered-set]{Ordered Set}.\n\\item \\hyperref[def:subset]{Subset}.\n\\item \\hyperref[def:union]{Union}.\n\\item \\hyperref[def:bounded]{Bounded Set}.\n\\item \\hyperref[prop:union-bounded-above-iff-pieces-bounded-above]{Union Is Bounded Above Exactly When Both Pieces Are}.\n\\item \\hyperref[prop:union-bounded-below-iff-pieces-bounded-below]{Union Is Bounded Below Exactly When Both Pieces Are}.\n\\end{itemize}\n\\end{dependencies}\n\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

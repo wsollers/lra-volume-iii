@@ -1,0 +1,137 @@
+\begin{definition}[Displacement, Dilation, and Reflection]
+\label{def:displacement-dilation-reflection}
+Let $A\subseteq\mathbb{R}$. For $c,\lambda\in\mathbb{R}$, the
+\textbf{displacement} of $A$ by $c$, the \textbf{dilation} of $A$ by
+$\lambda$, and the \textbf{reflection} of $A$ through the origin are
+defined, respectively, by
+\[
+A+c:=\{a+c:a\in A\},
+\qquad
+\lambda A:=\{\lambda a:a\in A\},
+\qquad
+-A:=\{-a:a\in A\}.
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+x\in A+c\Longleftrightarrow(\exists a\in A)(x=a+c),
+\qquad
+x\in\lambda A\Longleftrightarrow(\exists a\in A)(x=\lambda a),
+\qquad
+x\in -A\Longleftrightarrow(\exists a\in A)(x=-a).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\begin{aligned}
+&A\subseteq\mathbb{R},\qquad A+c=\{a+c:a\in A\},\qquad
+\lambda A=\{\lambda a:a\in A\},\qquad -A=\{-a:a\in A\},\\
+&\varphi_c\colon A\to A+c,\qquad
+\varphi_\lambda\colon A\to\lambda A,\qquad
+\varphi_-\colon A\to -A,\\
+&\operatorname{FunctionalRelation}(\varphi_c,A,A+c),\qquad
+\operatorname{FunctionalRelation}(\varphi_\lambda,A,\lambda A),\qquad
+\operatorname{FunctionalRelation}(\varphi_-,A,-A),\\
+&\varphi_c(a)=a+c,\qquad \varphi_\lambda(a)=\lambda a,\qquad \varphi_-(a)=-a,\\
+&\operatorname{ReplacementImage}(A+c,A,\varphi_c),\qquad
+\operatorname{ReplacementImage}(\lambda A,A,\varphi_\lambda),\qquad
+\operatorname{ReplacementImage}(-A,A,\varphi_-).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+x\notin A+c\Longleftrightarrow(\forall a\in A)(x\neq a+c),
+\qquad
+x\notin\lambda A\Longleftrightarrow(\forall a\in A)(x\neq\lambda a).
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\begin{aligned}
+&A\subseteq\mathbb{R},\qquad A+c=\{a+c:a\in A\},\qquad
+\varphi_c\colon A\to A+c,\qquad
+\operatorname{FunctionalRelation}(\varphi_c,A,A+c),\qquad \varphi_c(a)=a+c,\\
+&\neg\operatorname{ReplacementImage}(B,A,\varphi_c)
+\end{aligned}
+\quad\text{means}\quad
+(\exists x)\bigl[x\in B\triangle(A+c)\bigr],
+\]
+and similarly for dilation and reflection.
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
+The definition fails only if the image set omits an actual transformed point
+or contains a point that is not produced by transforming an element of $A$.
+
+
+  \item[\operatorname{FunctionalRelation} / \operatorname{ReplacementImage}.]
+  \[
+x\notin A+c\Longleftrightarrow(\forall a\in A)(x\neq a+c),
+\qquad
+x\notin\lambda A\Longleftrightarrow(\forall a\in A)(x\neq\lambda a).
+\]
+\[
+\begin{aligned}
+&A\subseteq\mathbb{R},\qquad A+c=\{a+c:a\in A\},\qquad
+\varphi_c\colon A\to A+c,\qquad
+\operatorname{FunctionalRelation}(\varphi_c,A,A+c),\qquad \varphi_c(a)=a+c,\\
+&\neg\operatorname{ReplacementImage}(B,A,\varphi_c)
+\end{aligned}
+\quad\text{means}\quad
+(\exists x)\bigl[x\in B\triangle(A+c)\bigr],
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
+Every membership claim in a transformed set decomposes into an original element
+and the transformation rule that produced the new point.
+
+
+  \item[\operatorname{FunctionalRelation} / \operatorname{ReplacementImage}.]
+  \[
+x\notin A+c\Longleftrightarrow(\forall a\in A)(x\neq a+c),
+\qquad
+x\notin\lambda A\Longleftrightarrow(\forall a\in A)(x\neq\lambda a).
+\]
+\[
+\begin{aligned}
+&A\subseteq\mathbb{R},\qquad A+c=\{a+c:a\in A\},\qquad
+\varphi_c\colon A\to A+c,\qquad
+\operatorname{FunctionalRelation}(\varphi_c,A,A+c),\qquad \varphi_c(a)=a+c,\\
+&\neg\operatorname{ReplacementImage}(B,A,\varphi_c)
+\end{aligned}
+\quad\text{means}\quad
+(\exists x)\bigl[x\in B\triangle(A+c)\bigr],
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Displacement slides the set, dilation stretches or collapses it, and reflection
+is the special dilation that reverses the real line.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:reals]{Real Numbers}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:function]{Function}
+  \item \hyperref[def:functional-relation]{Functional Relation}
+  \item \hyperref[def:image-set]{Image Set}
+  \item \hyperref[def:addition-on-r]{Addition on $\mathbb{R}$}
+  \item \hyperref[def:subtraction-on-r]{Subtraction on $\mathbb{R}$}
+  \item \hyperref[def:multiplication-on-r]{Multiplication on $\mathbb{R}$}
+\end{itemize}
+\end{dependencies}
+

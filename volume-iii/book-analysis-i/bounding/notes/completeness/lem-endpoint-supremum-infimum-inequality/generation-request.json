@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "lem:endpoint-supremum-infimum-inequality",
+  "kind": "lemma",
+  "title": "Endpoint Supremum Infimum Inequality",
+  "source": {
+    "label": "lem:endpoint-supremum-infimum-inequality",
+    "kind": "lemma",
+    "title": "Endpoint Supremum Infimum Inequality",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "completeness",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-nested-interval-property.tex",
+    "source_line_start": 346,
+    "source_line_end": 462,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-endpoint-supremum-infimum-inequality",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-endpoint-supremum-infimum-inequality/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-endpoint-supremum-infimum-inequality/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-endpoint-supremum-infimum-inequality",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-endpoint-supremum-infimum-inequality/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-endpoint-supremum-infimum-inequality/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-nested-interval-property.tex",
+      "label": "lem:endpoint-supremum-infimum-inequality",
+      "environment_kind": "lemma",
+      "source_line_start": 346,
+      "source_line_end": 462,
+      "current_tex": "\\begin{lemma}[Endpoint Supremum Infimum Inequality]\n\\label{lem:endpoint-supremum-infimum-inequality}\nLet $(a_n)$ and $(b_n)$ be sequences in $\\mathbb{R}$ satisfying\n\\[\n  (\\forall n\\in\\mathbb{N})(a_n\\leq b_n)\n\\]\nand\n\\[\n  (\\forall n\\in\\mathbb{N})([a_{n+1},b_{n+1}]\\subseteq [a_n,b_n]).\n\\]\nDefine\n\\[\n  \\alpha:=\\sup\\{a_n:n\\in\\mathbb{N}\\}\n\\]\nand\n\\[\n  \\beta:=\\inf\\{b_n:n\\in\\mathbb{N}\\}.\n\\]\nThen\n\\[\n  \\alpha\\leq\\beta.\n\\]\n\\hyperref[prf:endpoint-supremum-infimum-inequality]{Go to proof.}\n\\end{lemma}\n\\end{lemmabox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\alpha=\\sup\\{a_n:n\\in\\mathbb{N}\\}\\land\n\\beta=\\inf\\{b_n:n\\in\\mathbb{N}\\}\n\\Longrightarrow\n\\alpha\\le \\beta.\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\nF=([a_n,b_n])_{n\\in\\mathbb{N}},\\qquad\nA=\\{a_n:n\\in\\mathbb{N}\\},\\qquad B=\\{b_n:n\\in\\mathbb{N}\\},\n\\]\n\\[\nP_{\\mathbb{R}}=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad\n\\operatorname{NestedClosedIntervals}(F,P_{\\mathbb{R}})\n\\land\n\\operatorname{LeastUpperBound}(\\alpha,A,P_{\\mathbb{R}})\n\\land\n\\operatorname{GreatestLowerBound}(\\beta,B,P_{\\mathbb{R}})\n\\Longrightarrow\n\\alpha\\le \\beta.\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\n\\operatorname{NestedClosedIntervals}([a_n,b_n])\n\\land\n\\alpha=\\sup\\{a_n:n\\in\\mathbb{N}\\}\n\\land\n\\beta=\\inf\\{b_n:n\\in\\mathbb{N}\\}\n\\land\n\\beta<\\alpha.\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negation predicate reading]\n\\[\nF=([a_n,b_n])_{n\\in\\mathbb{N}},\\qquad\nA=\\{a_n:n\\in\\mathbb{N}\\},\\qquad B=\\{b_n:n\\in\\mathbb{N}\\},\n\\]\n\\[\nP_{\\mathbb{R}}=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad\n\\beta<\\alpha\n\\Longrightarrow\n\\neg\\operatorname{NestedClosedIntervals}(F,P_{\\mathbb{R}})\n\\lor\n\\neg\\operatorname{LeastUpperBound}(\\alpha,A,P_{\\mathbb{R}})\n\\lor\n\\neg\\operatorname{GreatestLowerBound}(\\beta,B,P_{\\mathbb{R}}).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\n  Failure is witnessed by the displayed negated or contrapositive condition.\n\n  \\item[\\operatorname{NestedClosedIntervals}.]\n  \\[\n\\operatorname{NestedClosedIntervals}([a_n,b_n])\n\\land\n\\alpha=\\sup\\{a_n:n\\in\\mathbb{N}\\}\n\\land\n\\beta=\\inf\\{b_n:n\\in\\mathbb{N}\\}\n\\land\n\\beta<\\alpha.\n\\]\n\\[\nF=([a_n,b_n])_{n\\in\\mathbb{N}},\\qquad\nA=\\{a_n:n\\in\\mathbb{N}\\},\\qquad B=\\{b_n:n\\in\\mathbb{N}\\},\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nThe supremum of all left endpoints cannot pass the infimum of all right\nendpoints.\n\\end{remark*}\n\n\\begin{dependencies}\n\\hyperref[def:closed-interval]{Closed Interval};\n\\hyperref[def:supremum]{Supremum};\n\\hyperref[def:infimum]{Infimum}.\n\\end{dependencies}\n\n\\input{volume-iii/book-analysis-i/bounding/notes/completeness/figure-nested-interval-endpoints}\n\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "thm:negation-exchange-sup-inf",
+  "kind": "theorem",
+  "title": "Negation Exchanges Supremum and Infimum",
+  "source": {
+    "label": "thm:negation-exchange-sup-inf",
+    "kind": "theorem",
+    "title": "Negation Exchanges Supremum and Infimum",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "bounds-algebra",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-algebra-of-supremum-infimum.tex",
+    "source_line_start": 951,
+    "source_line_end": 1075,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-negation-exchange-sup-inf",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-negation-exchange-sup-inf/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-negation-exchange-sup-inf/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-negation-exchange-sup-inf",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-negation-exchange-sup-inf/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-negation-exchange-sup-inf/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-algebra-of-supremum-infimum.tex",
+      "label": "thm:negation-exchange-sup-inf",
+      "environment_kind": "theorem",
+      "source_line_start": 951,
+      "source_line_end": 1075,
+      "current_tex": "\\begin{theorem}[Negation Exchanges Supremum and Infimum]\n\\label{thm:negation-exchange-sup-inf}\nLet $A\\subseteq\\mathbb{R}$ be nonempty and bounded below.  Then\n$-A:=\\{-a:a\\in A\\}$ is nonempty and bounded above, and\n\\[\n  \\sup(-A)=-\\inf A.\n\\]\n\n\\smallskip\n\\noindent\n\\hyperref[prf:negation-exchange-sup-inf]{\\textit{Go to proof.}}\n\\end{theorem}\n\\end{theorembox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\nA\\neq\\varnothing,\\quad A\\text{ bounded below}\n\\quad\\Longrightarrow\\quad\n\\sup\\{-a:a\\in A\\}=-\\inf A.\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A\\subseteq\\mathbb{R},\\qquad -A=\\{-a:a\\in A\\},\\\\\n&\\operatorname{GreatestLowerBound}(t,A,P)\n\\Longrightarrow\n\\operatorname{LeastUpperBound}(-t,-A,P).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\n\\sup(-A)\\ne -\\inf A\n\\]\nis impossible under the stated hypotheses.\n\\end{remark*}\n\n\\begin{remark*}[Negation predicate reading]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A\\subseteq\\mathbb{R},\\qquad -A=\\{-a:a\\in A\\},\\\\\n&\\operatorname{GreatestLowerBound}(t,A,P)\\land\n\\neg\\operatorname{LeastUpperBound}(-t,-A,P)\n\\end{aligned}\n\\]\nis a contradictory configuration.\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\nThe theorem could fail only if negation did not convert lower bounds into upper bounds or did not preserve the extremal threshold after reversing order. The map $x\\mapsto -x$ reverses all inequalities, so the exchange is exact.\n\n\n  \\item[\\operatorname{GreatestLowerBound} / \\operatorname{LeastUpperBound}.]\n  \\[\n\\sup(-A)\\ne -\\inf A\n\\]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A\\subseteq\\mathbb{R},\\qquad -A=\\{-a:a\\in A\\},\\\\\n&\\operatorname{GreatestLowerBound}(t,A,P)\\land\n\\neg\\operatorname{LeastUpperBound}(-t,-A,P)\n\\end{aligned}\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\n\\[\n\\begin{aligned}\n\\forall a\\in A\\;(t\\leq a)\n&\\Longleftrightarrow\n\\forall a\\in A\\;(-a\\leq -t),\\\\\n\\operatorname{LowerBound}(v,A)\n&\\Longleftrightarrow\n\\operatorname{UpperBound}(-v,-A).\n\\end{aligned}\n\\]\n\n\n  \\item[\\operatorname{GreatestLowerBound} / \\operatorname{LeastUpperBound}.]\n  \\[\n\\sup(-A)\\ne -\\inf A\n\\]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A\\subseteq\\mathbb{R},\\qquad -A=\\{-a:a\\in A\\},\\\\\n&\\operatorname{GreatestLowerBound}(t,A,P)\\land\n\\neg\\operatorname{LeastUpperBound}(-t,-A,P)\n\\end{aligned}\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nNegation reflects the real line through the origin. Floors become ceilings, so the infimum of the original set becomes the negative of the supremum of the reflected set.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:reals]{Real Numbers}\n  \\item \\hyperref[def:ordered-set]{Ordered Set}\n  \\item \\hyperref[def:subset]{Subset}\n  \\item \\hyperref[def:multiplication-on-r]{Multiplication on $\\mathbb{R}$}\n  \\item \\hyperref[def:displacement-dilation-reflection]{Displacement, Dilation, and Reflection}\n  \\item \\hyperref[def:real-lower-bound]{Lower Bound}\n  \\item \\hyperref[def:real-upper-bound]{Upper Bound}\n  \\item \\hyperref[def:infimum]{Infimum}\n  \\item \\hyperref[def:supremum]{Supremum}\n  \\item \\hyperref[cor:reflection-swaps-upper-lower-bounds]{Reflection Swaps Upper and Lower Bounds}\n  \\item \\hyperref[thm:ineq-multiply-negative]{Multiplication by a Negative Scalar Reverses Inequality}\n\\end{itemize}\n\\end{dependencies}\n\n\n\n\n\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

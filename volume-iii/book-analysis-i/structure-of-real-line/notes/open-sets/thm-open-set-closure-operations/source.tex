@@ -1,0 +1,36 @@
+\begin{theorembox}{Theorem (Unions and Finite Intersections of Open Sets)}
+\begin{theorem}[Unions and Finite Intersections of Open Sets]
+\label{thm:open-set-closure-operations}
+The following statements hold in $\mathbb{R}$:
+\begin{enumerate}[label=(\roman*)]
+  \item The sets $\varnothing$ and $\mathbb{R}$ are open.
+  \item If $\{U_\lambda\}_{\lambda\in\Lambda}$ is any family of open subsets
+  of $\mathbb{R}$, then
+  \[
+    \bigcup_{\lambda\in\Lambda}U_\lambda
+  \]
+  is open.
+  \item If $n\in\mathbb{N}$ and $U_1,\ldots,U_n\subseteq\mathbb{R}$ are open,
+  then
+  \[
+    \bigcap_{k=1}^{n}U_k
+  \]
+  is open.
+\end{enumerate}
+\hyperref[prf:open-set-closure-operations]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+\begin{remark*}[Standard quantified statement]
+\[
+\Bigl(\forall i\in I\;U_i\text{ open}\Bigr)\Longrightarrow \Bigl(\bigcup_{i\in I} U_{i}\Bigr) \text{ open};\qquad
+\Bigl(\bigwedge_{k=1}^{n} U_k\text{ open}\Bigr)\Longrightarrow \Bigl(\bigcap_{k=1}^{n} U_{k}\Bigr) \text{ open}.
+\]
+\end{remark*}
+\begin{remark*}[Interpretation]
+Openness is preserved by arbitrary unions but only finite intersections. The infinite intersection $\bigcap_n(-1/n,1/n)=\{0\}$ shows why ``finite'' cannot be dropped: a shrinking family of open intervals can close down onto a single point.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:open-set]{Open Set in $\mathbb{R}$}
+\end{itemize}
+\end{dependencies}

@@ -1,0 +1,87 @@
+\begin{lemma}[Right Endpoints of Nested Intervals Are Decreasing]
+\label{lem:right-endpoints-nested-intervals-decreasing}
+Let $(a_n)$ and $(b_n)$ be sequences in $\mathbb{R}$ such that
+\[
+  (\forall n\in\mathbb{N})(a_n\leq b_n)
+\]
+and
+\[
+  (\forall n\in\mathbb{N})([a_{n+1},b_{n+1}]\subseteq [a_n,b_n]).
+\]
+Then
+\[
+  (\forall n\in\mathbb{N})(b_{n+1}\leq b_n).
+\]
+\hyperref[prf:right-endpoints-nested-intervals-decreasing]{Go to proof.}
+\end{lemma}
+\end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall n\in\mathbb{N}\;(b_{n+1}\le b_n).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+F=([a_n,b_n])_{n\in\mathbb{N}},\qquad
+b\colon\mathbb{N}\longrightarrow\mathbb{R},\qquad b(n)=b_n,
+\]
+\[
+P_{\mathbb{N}}=\mathsf{OrderedSet}(\mathbb{N},\leq),\qquad
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),
+\]
+\[
+\operatorname{NestedClosedIntervals}(F,P_{\mathbb{R}})
+\Longrightarrow
+\operatorname{OrderReversing}(b,P_{\mathbb{N}},P_{\mathbb{R}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\exists n\in\mathbb{N}\;(b_n<b_{n+1}).
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+F=([a_n,b_n])_{n\in\mathbb{N}},\qquad
+b\colon\mathbb{N}\longrightarrow\mathbb{R},\qquad b(n)=b_n,
+\]
+\[
+P_{\mathbb{N}}=\mathsf{OrderedSet}(\mathbb{N},\leq),\qquad
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),
+\]
+\[
+\neg\operatorname{OrderReversing}(b,P_{\mathbb{N}},P_{\mathbb{R}})
+\Longrightarrow
+\neg\operatorname{NestedClosedIntervals}(F,P_{\mathbb{R}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  Failure is witnessed by the displayed negated or contrapositive condition.
+
+  \item[\exists-condition.]
+  \[
+\exists n\in\mathbb{N}\;(b_n<b_{n+1}).
+\]
+\[
+F=([a_n,b_n])_{n\in\mathbb{N}},\qquad
+b\colon\mathbb{N}\longrightarrow\mathbb{R},\qquad b(n)=b_n,
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+In a nested family, the right endpoints cannot move right as the intervals
+shrink.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[def:closed-interval]{Closed Interval}.
+\end{dependencies}
+

@@ -1,0 +1,108 @@
+\begin{proposition}[Closedness Is Necessary in the Nested Interval Theorem]
+\label{prop:closedness-is-necessary-in-nested-interval-theorem}
+There exists a sequence $(I_n)_{n\in\mathbb{N}}$ of nonempty bounded intervals
+in $\mathbb{R}$, not all of which are closed, such that
+\[
+  (\forall n\in\mathbb{N})(I_{n+1}\subseteq I_n),
+\]
+but
+\[
+  \bigcap_{n=1}^{\infty}I_n=\varnothing.
+\]
+For example,
+\[
+  I_n=\left(0,\frac{1}{n}\right].
+\]
+\hyperref[prf:closedness-is-necessary-in-nested-interval-theorem]{Go to proof.}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\exists I_n\;\exists\mathcal{I}\;
+\bigl(
+\mathcal{I}=\mathsf{IndexedFamily}(I_n,\mathbb{N},\mathbb{R})
+\land
+\operatorname{MembersSatisfy}(\mathcal{I},\mathsf{NonemptyBoundedInterval},\mathbb{R})
+\land
+\operatorname{Nested}(\mathcal{I},\subseteq)
+\land
+\neg\operatorname{IsClosedInterval}(I_n)
+\land
+\bigcap_{n=1}^{\infty}I_n=\varnothing
+\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\mathcal{I}=\mathsf{IndexedFamily}(I_n,\mathbb{N},\mathbb{R}),\qquad C=\bigcap_{n=1}^{\infty}I_n,\qquad
+\neg\operatorname{IsClosedInterval}(I_n,\mathbb{R})
+\quad\text{can make}\quad
+\operatorname{IsNonempty}(C)
+\text{ fail.}
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\forall I_n\;\forall\mathcal{I}\;
+\left[
+\mathcal{I}=\mathsf{IndexedFamily}(I_n,\mathbb{N},\mathbb{R})
+\land
+\operatorname{MembersSatisfy}(\mathcal{I},\mathsf{NonemptyBoundedInterval},\mathbb{R})
+\land
+\operatorname{Nested}(\mathcal{I},\subseteq)
+\Longrightarrow
+\bigcap_{n=1}^{\infty}I_n\ne\varnothing
+\right].
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+C=\bigcap_{n=1}^{\infty}I_n,\qquad F=(I_n)_{n\in\mathbb{N}},\qquad
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),
+\]
+\[
+C=\varnothing
+\Longrightarrow
+\neg\operatorname{NestedClosedBoundedIntervals}(F,P_{\mathbb{R}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  Failure is witnessed by the displayed negated or contrapositive condition.
+
+  \item[\operatorname{MembersSatisfy} / \operatorname{Nested}.]
+  \[
+\forall I_n\;\forall\mathcal{I}\;
+\left[
+\mathcal{I}=\mathsf{IndexedFamily}(I_n,\mathbb{N},\mathbb{R})
+\land
+\operatorname{MembersSatisfy}(\mathcal{I},\mathsf{NonemptyBoundedInterval},\mathbb{R})
+\land
+\operatorname{Nested}(\mathcal{I},\subseteq)
+\Longrightarrow
+\bigcap_{n=1}^{\infty}I_n\ne\varnothing
+\right].
+\]
+\[
+C=\bigcap_{n=1}^{\infty}I_n,\qquad F=(I_n)_{n\in\mathbb{N}},\qquad
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Dropping closedness can remove the endpoint that would otherwise remain in
+the limiting intersection.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[def:open-interval]{Open Interval};
+\hyperref[def:bounded-subset-of-r]{Bounded Subset of the Real Line}.
+\end{dependencies}
+

@@ -1,0 +1,132 @@
+\begin{definition}[Set Arithmetic Images]
+\label{def:set-arithmetic-images}
+Let $A,B\subseteq\mathbb{R}$ and let $c\in\mathbb{R}$.  The arithmetic
+images of $A$ and $B$ under addition, subtraction, and multiplication are
+defined by
+\[
+  A+B:=\{a+b:a\in A,\ b\in B\},
+\]
+\[
+  A-B:=\{a-b:a\in A,\ b\in B\},
+\]
+and
+\[
+  AB:=\{ab:a\in A,\ b\in B\}.
+\]
+The scalar image of $A$ under multiplication by $c$ is
+\[
+  cA:=\{ca:a\in A\}.
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+x\in A+B\Longleftrightarrow(\exists a\in A)(\exists b\in B)(x=a+b),
+\]
+and similarly for difference and product.  For the scalar image,
+\[
+x\in cA\Longleftrightarrow(\exists a\in A)(x=ca).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+Let
+\[
+D=A\times B,
+\]
+and define the arithmetic rules by
+\[
+\varphi_{+}(a,b)=a+b,\qquad
+\varphi_{-}(a,b)=a-b,
+\]
+\[
+\varphi_{\cdot}(a,b)=ab,\qquad
+\varphi_c(a)=ca.
+\]
+Then
+\[
+\operatorname{ReplacementImage}(A+B,D,\varphi_{+}),
+\]
+\[
+\operatorname{ReplacementImage}(A-B,D,\varphi_{-}),
+\quad
+\operatorname{ReplacementImage}(AB,D,\varphi_{\cdot}),
+\]
+\[
+\operatorname{ReplacementImage}(cA,A,\varphi_c).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+x\notin A+B\Longleftrightarrow(\forall a\in A)(\forall b\in B)(x\neq a+b),
+\]
+with the analogous readings for the other arithmetic images.
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+C\ne AB
+\quad\text{means}\quad
+(\exists x)\bigl[x\in C\triangle AB\bigr],
+\]
+and similarly for sum, difference, product, and scalar image.
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+An arithmetic-image definition fails only if it omits a value produced by the
+rule or includes a value not produced by the rule.
+
+
+  \item[\exists-condition.]
+  \[
+x\notin A+B\Longleftrightarrow(\forall a\in A)(\forall b\in B)(x\neq a+b),
+\]
+\[
+C\ne AB
+\quad\text{means}\quad
+(\exists x)\bigl[x\in C\triangle AB\bigr],
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+Every membership claim decomposes into witnesses from the input sets and the
+arithmetic operation that produced the image point.
+
+
+  \item[\exists-condition.]
+  \[
+x\notin A+B\Longleftrightarrow(\forall a\in A)(\forall b\in B)(x\neq a+b),
+\]
+\[
+C\ne AB
+\quad\text{means}\quad
+(\exists x)\bigl[x\in C\triangle AB\bigr],
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Set arithmetic turns pointwise arithmetic into images of sets. Membership in
+one of these images is always witnessed by input elements from the original
+sets and the corresponding arithmetic operation.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:reals]{Real Numbers}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:cartesian-product]{Cartesian Product}
+  \item \hyperref[def:image-set]{Image Set}
+  \item \hyperref[def:addition-on-r]{Addition on $\mathbb{R}$}
+  \item \hyperref[def:subtraction-on-r]{Subtraction on $\mathbb{R}$}
+  \item \hyperref[def:multiplication-on-r]{Multiplication on $\mathbb{R}$}
+\end{itemize}
+\end{dependencies}
+

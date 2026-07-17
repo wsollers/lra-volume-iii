@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "lem:integer-above-lemma",
+  "kind": "lemma",
+  "title": "Integer Above Lemma",
+  "source": {
+    "label": "lem:integer-above-lemma",
+    "kind": "lemma",
+    "title": "Integer Above Lemma",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "completeness",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-archimedean-property.tex",
+    "source_line_start": 671,
+    "source_line_end": 768,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-integer-above-lemma",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-integer-above-lemma/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-integer-above-lemma/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-integer-above-lemma",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-integer-above-lemma/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-integer-above-lemma/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-archimedean-property.tex",
+      "label": "lem:integer-above-lemma",
+      "environment_kind": "lemma",
+      "source_line_start": 671,
+      "source_line_end": 768,
+      "current_tex": "\\begin{lemma}[Integer Above Lemma]\n\\label{lem:integer-above-lemma}\nFor every $x\\in\\mathbb{R}$, there exists $n\\in\\mathbb{N}$ such that\n\\[\n  x<n.\n\\]\nEquivalently,\n\\[\n  (\\forall x\\in\\mathbb{R})(\\exists n\\in\\mathbb{N})(x<n).\n\\]\n\n\\smallskip\n\\noindent\n\\hyperref[prf:integer-above-lemma]{\\textit{Go to proof.}}\n\\end{lemma}\n\\end{lemmabox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\forall x\\in\\mathbb{R}\\;\\exists m\\in\\mathbb{Z}\\;(x<m).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\nm\\in\\mathbb{Z}\\land x<m.\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\n\\exists x\\in\\mathbb{R}\\;\\forall m\\in\\mathbb{Z}\\;(m\\le x).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negation predicate reading]\n\\[\n\\neg\\exists m\\in\\mathbb{Z}\\;(x<m)\n\\Longleftrightarrow\n\\forall m\\in\\mathbb{Z}\\;(m\\le x).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\nThe lemma fails only if some real number is an upper bound for all integers.\n\n\n  \\item[\\exists-condition.]\n  \\[\n\\exists x\\in\\mathbb{R}\\;\\forall m\\in\\mathbb{Z}\\;(m\\le x).\n\\]\n\\[\n\\neg\\exists m\\in\\mathbb{Z}\\;(x<m)\n\\Longleftrightarrow\n\\forall m\\in\\mathbb{Z}\\;(m\\le x).\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\n\\[\n\\underbrace{\\exists x\\in\\mathbb{R}}_{\\text{candidate upper bound}}\n\\;\\underbrace{\\forall m\\in\\mathbb{Z}\\;(m\\le x)}_{\\text{no integer lies above it}}.\n\\]\n\n\n  \\item[\\exists-condition.]\n  \\[\n\\exists x\\in\\mathbb{R}\\;\\forall m\\in\\mathbb{Z}\\;(m\\le x).\n\\]\n\\[\n\\neg\\exists m\\in\\mathbb{Z}\\;(x<m)\n\\Longleftrightarrow\n\\forall m\\in\\mathbb{Z}\\;(m\\le x).\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nIntegers are unbounded above in the real line. The Integer Ceiling Lemma gives\nthe sharper version with $m$ no farther than one unit above $x$.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n\\item \\hyperref[def:reals]{Real Numbers}.\n\\item \\hyperref[def:integers]{Integers}.\n\\item \\hyperref[lem:integer-ceiling-lemma]{Integer Ceiling Lemma}.\n\\end{itemize}\n\\end{dependencies}\n\n\n\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

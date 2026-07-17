@@ -1,0 +1,66 @@
+\begin{corollary}[No Adjacent Real Numbers]
+\label{cor:no-adjacent-real-numbers}
+For every $a,b\in\mathbb{R}$, if $a<b$, then there exists
+$c\in\mathbb{R}$ such that
+\[
+  a<c<b.
+\]
+\hyperref[prf:no-adjacent-real-numbers]{Go to proof.}
+\end{corollary}
+\end{corollarybox}
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a,b\in\mathbb{R}\;\bigl(a<b\Longrightarrow
+\exists c\in\mathbb{R}\;(a<c<b)\bigr).
+\]
+\end{remark*}
+\begin{remark*}[Predicate reading]
+\[
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+D_{\mathbb{R}}=\mathsf{OrderDenseSet}(\mathbb{R},P_{\mathbb{R}}),\qquad
+\operatorname{HasDenseOrder}(P_{\mathbb{R}}).
+\]
+\end{remark*}
+\begin{remark*}[Negated quantified statement]
+\[
+\exists a,b\in\mathbb{R}\;
+\bigl(a<b\land \forall c\in\mathbb{R}\;(c\le a\lor b\le c)\bigr).
+\]
+\end{remark*}
+\begin{remark*}[Negation predicate reading]
+\[
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+D_{\mathbb{R}}=\mathsf{OrderDenseSet}(\mathbb{R},P_{\mathbb{R}}),\qquad
+\neg\operatorname{HasDenseOrder}(P_{\mathbb{R}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  Failure is witnessed by the displayed negated or contrapositive condition.
+
+  \item[\operatorname{HasDenseOrder}.]
+  \[
+\exists a,b\in\mathbb{R}\;
+\bigl(a<b\land \forall c\in\mathbb{R}\;(c\le a\lor b\le c)\bigr).
+\]
+\[
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+D_{\mathbb{R}}=\mathsf{OrderDenseSet}(\mathbb{R},P_{\mathbb{R}}),\qquad
+\neg\operatorname{HasDenseOrder}(P_{\mathbb{R}}).
+\]
+\end{description}
+\end{remark*}
+\begin{remark*}[Interpretation]
+No two distinct real numbers are consecutive; every nonempty open real interval
+contains another real point.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+\item \hyperref[def:reals]{Real Numbers}.
+\item \hyperref[def:ordered-set]{Ordered Set}.
+\item \hyperref[thm:density-of-rationals-in-reals]{Density of the Rationals}.
+\end{itemize}
+\end{dependencies}
+

@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "thm:increasing-image-preserves-suprema",
+  "kind": "theorem",
+  "title": "Increasing Image Preserves Suprema",
+  "source": {
+    "label": "thm:increasing-image-preserves-suprema",
+    "kind": "theorem",
+    "title": "Increasing Image Preserves Suprema",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "bounds-algebra",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-image-inverse-extrema.tex",
+    "source_line_start": 110,
+    "source_line_end": 240,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-increasing-image-preserves-suprema",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-increasing-image-preserves-suprema/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-increasing-image-preserves-suprema/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-increasing-image-preserves-suprema",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-increasing-image-preserves-suprema/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-increasing-image-preserves-suprema/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-image-inverse-extrema.tex",
+      "label": "thm:increasing-image-preserves-suprema",
+      "environment_kind": "theorem",
+      "source_line_start": 110,
+      "source_line_end": 240,
+      "current_tex": "\\begin{theorem}[Increasing Image Preserves Suprema]\n\\label{thm:increasing-image-preserves-suprema}\nLet $I\\subseteq\\mathbb{R}$ be an interval, let $A\\subseteq I$ be nonempty and\nbounded above, and suppose $s:=\\sup A\\in I$.  If $f\\colon I\\to\\mathbb{R}$ is\nincreasing and continuous at $s$ relative to $I$, then\n$f[A]:=\\{f(a):a\\in A\\}$ is bounded above, and\n\\[\n  \\sup f[A]=f(\\sup A).\n\\]\n\\hyperref[prf:increasing-image-preserves-suprema]{Go to proof.}\n\\end{theorem}\n\\end{theorembox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\nA\\neq\\varnothing,\\quad s=\\sup A\\in I,\\quad f\\text{ increasing and continuous at }s\n\\Longrightarrow\n\\sup\\{f(a):a\\in A\\}=f(s).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\n\\begin{aligned}\n&A\\subseteq I,\\qquad f\\colon I\\to\\mathbb{R},\\qquad\nB=f(A)=\\{f(a):a\\in A\\},\\\\\n&P_I=\\mathsf{OrderedSet}(I,\\leq),\\qquad\nP_{\\mathbb{R}}=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\\\\n&\\operatorname{LeastUpperBound}(s,A,P_I)\\land\n\\operatorname{OrderPreserving}(f,P_I,P_{\\mathbb{R}})\\land\n\\operatorname{IsContinuous}(f,s,I,\\mathbb{R})\n\\Longrightarrow\n\\operatorname{LeastUpperBound}(f(s),B,P_{\\mathbb{R}}).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\n\\sup f(A)\\neq f(\\sup A)\n\\]\nis impossible under the stated hypotheses.\n\\end{remark*}\n\n\\begin{remark*}[Negation predicate reading]\n\\[\n\\begin{aligned}\n&A\\subseteq I,\\qquad f\\colon I\\to\\mathbb{R},\\qquad\nB=f(A)=\\{f(a):a\\in A\\},\\\\\n&P_I=\\mathsf{OrderedSet}(I,\\leq),\\qquad\nP_{\\mathbb{R}}=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\\\\n&\\operatorname{LeastUpperBound}(s,A,P_I)\\land\n\\operatorname{OrderPreserving}(f,P_I,P_{\\mathbb{R}})\\land\n\\operatorname{IsContinuous}(f,s,I,\\mathbb{R})\\land\n\\neg\\operatorname{LeastUpperBound}(f(s),B,P_{\\mathbb{R}}).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n\\item[Exposition.]\nThe equality can fail if $f$ is not increasing, if $\\sup A$ is not in the\ndomain, or if the endpoint value of $f$ is not approached by values $f(a)$ with\n$a\\in A$.\n\n\n  \\item[\\operatorname{LeastUpperBound} / \\operatorname{OrderPreserving}.]\n  \\[\n\\sup f(A)\\neq f(\\sup A)\n\\]\n\\[\n\\begin{aligned}\n&A\\subseteq I,\\qquad f\\colon I\\to\\mathbb{R},\\qquad\nB=f(A)=\\{f(a):a\\in A\\},\\\\\n&P_I=\\mathsf{OrderedSet}(I,\\leq),\\qquad\nP_{\\mathbb{R}}=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\\\\n&\\operatorname{LeastUpperBound}(s,A,P_I)\\land\n\\operatorname{OrderPreserving}(f,P_I,P_{\\mathbb{R}})\\land\n\\operatorname{IsContinuous}(f,s,I,\\mathbb{R})\\land\n\\neg\\operatorname{LeastUpperBound}(f(s),B,P_{\\mathbb{R}}).\n\\end{aligned}\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n\\item[Exposition.]\nIncreasingness gives $f(a)\\leq f(s)$ for every $a\\in A$.  The defining\napproximation property of the supremum gives points of $A$ arbitrarily close\nto $s$ from below, and continuity at $s$ makes their images approach $f(s)$.\n\n\n  \\item[\\operatorname{LeastUpperBound} / \\operatorname{OrderPreserving}.]\n  \\[\n\\sup f(A)\\neq f(\\sup A)\n\\]\n\\[\n\\begin{aligned}\n&A\\subseteq I,\\qquad f\\colon I\\to\\mathbb{R},\\qquad\nB=f(A)=\\{f(a):a\\in A\\},\\\\\n&P_I=\\mathsf{OrderedSet}(I,\\leq),\\qquad\nP_{\\mathbb{R}}=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\\\\n&\\operatorname{LeastUpperBound}(s,A,P_I)\\land\n\\operatorname{OrderPreserving}(f,P_I,P_{\\mathbb{R}})\\land\n\\operatorname{IsContinuous}(f,s,I,\\mathbb{R})\\land\n\\neg\\operatorname{LeastUpperBound}(f(s),B,P_{\\mathbb{R}}).\n\\end{aligned}\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nAn increasing continuous function carries the right endpoint of a bounded set\nto the right endpoint of its image, provided that endpoint lies in the domain.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:reals]{Real Numbers}\n  \\item \\hyperref[def:ordered-set]{Ordered Set}\n  \\item \\hyperref[def:subset]{Subset}\n  \\item \\hyperref[def:function]{Function}\n  \\item \\hyperref[def:function-increasing]{Increasing Function}\n  \\item \\hyperref[def:supremum]{Supremum}\n  \\item \\hyperref[def:continuous-at-point]{Continuity at a Point}\n\\end{itemize}\n\\end{dependencies}\n\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

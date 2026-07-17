@@ -1,0 +1,88 @@
+\begin{definitionbox}{Definition (Open Set in $\mathbb{R}$)}
+\begin{definition}[Open Set in $\mathbb{R}$]
+\label{def:open-set}
+A set $U\subseteq\mathbb{R}$ is \emph{open} if every point of $U$ is the
+center of an open ball contained in $U$; that is,
+\[
+  (\forall x\in U)(\exists r>0)(B_r(x)\subseteq U).
+\]
+Equivalently,
+\[
+  (\forall x\in U)(\exists r>0)(\forall y\in\mathbb{R})
+  \bigl(|x-y|<r\Longrightarrow y\in U\bigr).
+\]
+\end{definition}
+\end{definitionbox}
+\begin{remark*}[Standard quantified statement]
+\[
+U \text{ is open} \Longleftrightarrow \forall x\in U\;\exists r>0\;(B_{r}(x)\subseteq U).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+U\subseteq\mathbb{R},\qquad
+\operatorname{IsOpen}(U,\mathbb{R})
+\Longleftrightarrow
+\forall x\in U\;\exists r>0\;(B_{r}(x)\subseteq U).
+\]
+\end{remark*}
+\begin{remark*}[Negated quantified statement]
+\[
+\begin{aligned}
+U \text{ is not open}
+&\Longleftrightarrow
+\exists x\in U\;\forall r>0\;(B_{r}(x)\not\subseteq U)\\
+&\Longleftrightarrow
+\exists x\in U\;\forall r>0\;\exists y\in\mathbb{R}\,
+\bigl(|x-y|<r\land y\notin U\bigr).
+\end{aligned}
+\]
+\end{remark*}
+\begin{remark*}[Negation predicate reading]
+\[
+U\subseteq\mathbb{R},\qquad
+\neg\operatorname{IsOpen}(U,\mathbb{R})
+\Longleftrightarrow
+\exists x\in U\;\forall r>0\;\exists y\in\mathbb{R}\,
+\bigl(|x-y|<r\land y\notin U\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  Failure is witnessed by a point of $U$ at which no positive-radius ball
+  remains inside $U$.
+
+  \item[\operatorname{IsOpen}.]
+  \[
+  U\subseteq\mathbb{R},\qquad
+  \neg\operatorname{IsOpen}(U,\mathbb{R})
+  \Longleftrightarrow
+  \exists x\in U\;\forall r>0\;\exists y\in\mathbb{R}\,
+  \bigl(|x-y|<r\land y\notin U\bigr).
+  \]
+  The set $U$ fails to be open precisely when there exists a point $x\in U$
+  such that every positive-radius ball centered at $x$ contains a point outside
+  $U$:
+\[
+\exists x\in U\;\forall r>0\;\exists y\in\mathbb{R}\,
+\bigl(|x-y|<r\land y\notin U\bigr).
+\]
+  Thus failure consists of a witness point $x\in U$, failure at every radius
+  $r>0$, and for each such radius a witness $y\notin U$ lying within that
+  radius.
+\end{description}
+\end{remark*}
+\begin{remark*}[Interpretation]
+An open set has interior room around each of its points. Around each point
+$x\in U$, there is a positive radius, possibly depending on $x$, within which
+every real number remains in $U$. The empty set and $\mathbb{R}$ are open, and
+open intervals are the model examples.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:open-ball]{Open Ball on the Real Line}
+\end{itemize}
+\end{dependencies}

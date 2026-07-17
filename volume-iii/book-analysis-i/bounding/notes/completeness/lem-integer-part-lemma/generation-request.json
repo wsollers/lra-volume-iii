@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "lem:integer-part-lemma",
+  "kind": "lemma",
+  "title": "Integer Part Lemma",
+  "source": {
+    "label": "lem:integer-part-lemma",
+    "kind": "lemma",
+    "title": "Integer Part Lemma",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "completeness",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-archimedean-property.tex",
+    "source_line_start": 358,
+    "source_line_end": 460,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-integer-part-lemma",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-integer-part-lemma/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-integer-part-lemma/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-integer-part-lemma",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-integer-part-lemma/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-integer-part-lemma/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-archimedean-property.tex",
+      "label": "lem:integer-part-lemma",
+      "environment_kind": "lemma",
+      "source_line_start": 358,
+      "source_line_end": 460,
+      "current_tex": "\\begin{lemma}[Integer Part Lemma]\n\\label{lem:integer-part-lemma}\nFor every $x\\in\\mathbb{R}$ satisfying $x\\geq0$, there exists a unique\n$n\\in\\mathbb{N}_0$ such that\n\\[\n  n\\leq x<n+1.\n\\]\nEquivalently,\n\\[\n  (\\forall x\\in\\mathbb{R})\n  \\left[x\\geq0\\Longrightarrow(\\exists!n\\in\\mathbb{N}_0)(n\\leq x<n+1)\\right].\n\\]\n\n\\smallskip\n\\noindent\n\\hyperref[prf:integer-part-lemma]{\\textit{Go to proof.}}\n\\end{lemma}\n\\end{lemmabox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\forall x\\in\\mathbb{R}\\;\\exists m\\in\\mathbb{Z}\\;(m\\le x<m+1).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\nm=\\lfloor x\\rfloor\\Longleftrightarrow\nm\\in\\mathbb{Z}\\land m\\le x<m+1.\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\n\\exists x\\in\\mathbb{R}\\;\\forall m\\in\\mathbb{Z}\\;(x<m\\lor m+1\\le x).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negation predicate reading]\n\\[\n\\neg\\exists m\\in\\mathbb{Z}\\;(m=\\lfloor x\\rfloor)\n\\Longleftrightarrow\n\\forall m\\in\\mathbb{Z}\\;(x<m\\lor m+1\\le x).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\nThe lemma fails only if some real number lies in no half-open unit interval\n$[m,m+1)$ with integer left endpoint.\n\n\n  \\item[\\exists-condition.]\n  \\[\n\\exists x\\in\\mathbb{R}\\;\\forall m\\in\\mathbb{Z}\\;(x<m\\lor m+1\\le x).\n\\]\n\\[\n\\neg\\exists m\\in\\mathbb{Z}\\;(m=\\lfloor x\\rfloor)\n\\Longleftrightarrow\n\\forall m\\in\\mathbb{Z}\\;(x<m\\lor m+1\\le x).\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\n\\[\n\\underbrace{x<m}_{\\text{integer starts too high}}\n\\qquad\\text{or}\\qquad\n\\underbrace{m+1\\le x}_{\\text{integer interval ends too low}}.\n\\]\n\n\n  \\item[\\exists-condition.]\n  \\[\n\\exists x\\in\\mathbb{R}\\;\\forall m\\in\\mathbb{Z}\\;(x<m\\lor m+1\\le x).\n\\]\n\\[\n\\neg\\exists m\\in\\mathbb{Z}\\;(m=\\lfloor x\\rfloor)\n\\Longleftrightarrow\n\\forall m\\in\\mathbb{Z}\\;(x<m\\lor m+1\\le x).\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nEvery real number has an integer part: the real line is tiled by consecutive\nunit intervals whose left endpoints are integers.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n\\item \\hyperref[def:reals]{Real Numbers}.\n\\item \\hyperref[def:integers]{Integers}.\n\\item \\hyperref[thm:archimedean-property]{Archimedean Property}.\n\\end{itemize}\n\\end{dependencies}\n\n\n\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

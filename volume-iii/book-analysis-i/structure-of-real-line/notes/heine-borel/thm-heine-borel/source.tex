@@ -1,0 +1,36 @@
+\begin{theorembox}{Theorem (Heine--Borel Theorem for $\mathbb{R}$)}
+\begin{theorem}[Heine--Borel Theorem for $\mathbb{R}$]
+\label{thm:heine-borel}
+Let $K\subseteq\mathbb{R}$.  Then $K$ is compact if and only if $K$ is closed
+and bounded.  Explicitly,
+\[
+  K\text{ is compact}
+  \Longleftrightarrow
+  \leqft[
+  \mathbb{R}\setminus K\text{ is open}
+  \right]
+  \land
+  \leqft[
+  (\exists M>0)(\forall x\in K)(|x|\leq M)
+  \right].
+\]
+\hyperref[prf:heine-borel]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+\begin{remark*}[Standard quantified statement]
+\[
+K \text{ compact} \Longleftrightarrow (K \text{ closed} \land K \text{ bounded}).
+\]
+\end{remark*}
+\begin{remark*}[Interpretation]
+Heine--Borel is the bridge into Analysis~I: it certifies that the closed bounded sets --- the ones on which the Extreme Value and uniform-continuity theorems live --- are exactly the compact ones. It is stated here as the equivalence \emph{on $\mathbb{R}$}; the open-cover side is the definition that later carries to the torus, while ``closed and bounded'' does not.
+\end{remark*}
+\begin{remark*}[Exposition]
+With Heine--Borel in hand the chain is complete: number construction $\to$ embedded number systems $\to$ the real line as an ordered metric space $\to$ Analysis~I. Completeness, introduced as the last rung of the embedding ladder, is exactly the property that makes the line compact in the large, and compactness is the hypothesis Analysis~I leans on.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[thm:compact-implies-closed-bounded]{Compact Subsets of $\mathbb{R}$ Are Closed and Bounded}
+  \item \hyperref[thm:closed-bounded-interval-compact]{Closed Bounded Intervals Are Compact}
+\end{itemize}
+\end{dependencies}

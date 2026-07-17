@@ -1,0 +1,103 @@
+\begin{corollary}[Differences Inherit Bounds]
+\label{cor:differences-inherit-bounds}
+Let $A,B\subseteq\mathbb{R}$. Every upper bound of $A$ is an upper bound
+of $A\setminus B$, and every lower bound of $A$ is a lower bound of
+$A\setminus B$; that is, for all $u,\ell\in\mathbb{R}$,
+\[
+\left(\forall a\in A,\ a\leq u\right)
+\Longrightarrow
+(\forall x\in A\setminus B,\ x\leq u),
+\]
+and
+\[
+\left(\forall a\in A,\ \ell\leq a\right)
+\Longrightarrow
+(\forall x\in A\setminus B,\ \ell\leq x).
+\]
+\hyperref[prf:differences-inherit-bounds]{Go to proof.}
+\end{corollary}
+\end{corollarybox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{aligned}
+&(\forall a\in A)(a\leq u)
+\Longrightarrow(\forall x\in A\setminus B)(x\leq u),\\
+&(\forall a\in A)(\ell\leq a)
+\Longrightarrow(\forall x\in A\setminus B)(\ell\leq x).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\qquad D=A\setminus B,\\
+&\operatorname{UpperBound}(u,A,P)\Longrightarrow\operatorname{UpperBound}(u,D,P),\\
+&\operatorname{LowerBound}(\ell,A,P)\Longrightarrow\operatorname{LowerBound}(\ell,D,P).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+A failure would be a failure of subset inheritance for
+$A\setminus B\subseteq A$.
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\qquad D=A\setminus B,\\
+&\operatorname{UpperBound}(u,A,P)\land
+\neg\operatorname{UpperBound}(u,D,P)
+\end{aligned}
+\]
+is contradictory, and the same holds for lower bounds.
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
+Difference can remove elements from $A$, but it cannot create a new element
+outside $A$.
+
+
+  \item[\operatorname{UpperBound} / \operatorname{LowerBound}.]
+
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\qquad D=A\setminus B,\\
+&\operatorname{UpperBound}(u,A,P)\land
+\neg\operatorname{UpperBound}(u,D,P)
+\end{aligned}
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\qquad D=A\setminus B,\\
+&\operatorname{UpperBound}(u,A,P)\Longrightarrow\operatorname{UpperBound}(u,D,P),\\
+&\operatorname{LowerBound}(\ell,A,P)\Longrightarrow\operatorname{LowerBound}(\ell,D,P).
+\end{aligned}
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Apply subset inheritance to $C=A\setminus B$.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+\item \hyperref[def:reals]{Real Numbers}.
+\item \hyperref[def:ordered-set]{Ordered Set}.
+\item \hyperref[def:subset]{Subset}.
+\item \hyperref[def:set-difference]{Set Difference}.
+\item \hyperref[def:real-upper-bound]{Upper Bound}.
+\item \hyperref[def:real-lower-bound]{Lower Bound}.
+\item \hyperref[def:bounded-above]{Bounded Above}.
+\item \hyperref[def:bounded-below]{Bounded Below}.
+\item \hyperref[def:bounded]{Bounded Set}.
+\item \hyperref[lem:subsets-preserve-upper-bounds]{Subsets Preserve Upper Bounds}.
+\item \hyperref[lem:subsets-preserve-lower-bounds]{Subsets Preserve Lower Bounds}.
+\end{itemize}
+\end{dependencies}
+

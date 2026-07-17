@@ -8,13 +8,26 @@ Heine--Borel closes the chapter by proving the converse direction: on $\mathbb{R
 \begin{theorembox}{Theorem (Closed Bounded Intervals Are Compact)}
 \begin{theorem}[Closed Bounded Intervals Are Compact]
 \label{thm:closed-bounded-interval-compact}
-Every closed bounded interval $[a,b]\subseteq\mathbb{R}$ is compact.
+Let $a,b\in\mathbb{R}$ with $a\leq b$.  Then the interval
+\[
+  [a,b]:=\{x\in\mathbb{R}:a\leq x\leq b\}
+\]
+is compact.  Explicitly, for every family $\mathcal{U}$ of open subsets of
+$\mathbb{R}$,
+\[
+  [a,b]\subseteq\bigcup_{U\in\mathcal{U}}U
+\]
+implies that there exists a finite subfamily $\mathcal{V}\subseteq\mathcal{U}$
+such that
+\[
+  [a,b]\subseteq\bigcup_{V\in\mathcal{V}}V.
+\]
 \hyperref[prf:closed-bounded-interval-compact]{Go to proof.}
 \end{theorem}
 \end{theorembox}
 \begin{remark*}[Standard quantified statement]
 \[
-\forall a,b\in\mathbb{R}\;\bigl(a\le b \Longrightarrow [a,b]\text{ is compact}\bigr).
+\forall a,b\in\mathbb{R}\;\bigl(a\leq b \Longrightarrow [a,b]\text{ is compact}\bigr).
 \]
 \end{remark*}
 
@@ -40,7 +53,19 @@ This is the hard half. The standard proof uses completeness directly: let $S$ be
 \begin{theorembox}{Theorem (Heine--Borel Theorem for $\mathbb{R}$)}
 \begin{theorem}[Heine--Borel Theorem for $\mathbb{R}$]
 \label{thm:heine-borel}
-A set $K\subseteq\mathbb{R}$ is compact if and only if $K$ is closed and bounded.
+Let $K\subseteq\mathbb{R}$.  Then $K$ is compact if and only if $K$ is closed
+and bounded.  Explicitly,
+\[
+  K\text{ is compact}
+  \Longleftrightarrow
+  \leqft[
+  \mathbb{R}\setminus K\text{ is open}
+  \right]
+  \land
+  \leqft[
+  (\exists M>0)(\forall x\in K)(|x|\leq M)
+  \right].
+\]
 \hyperref[prf:heine-borel]{Go to proof.}
 \end{theorem}
 \end{theorembox}

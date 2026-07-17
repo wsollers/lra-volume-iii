@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "prop:translation-preserves-lower-bounds",
+  "kind": "proposition",
+  "title": "Translation Preserves Lower Bounds",
+  "source": {
+    "label": "prop:translation-preserves-lower-bounds",
+    "kind": "proposition",
+    "title": "Translation Preserves Lower Bounds",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "bounds-algebra",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-bound-algebra.tex",
+    "source_line_start": 253,
+    "source_line_end": 359,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/prop-translation-preserves-lower-bounds",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/prop-translation-preserves-lower-bounds/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/prop-translation-preserves-lower-bounds/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/prop-translation-preserves-lower-bounds",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/prop-translation-preserves-lower-bounds/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/prop-translation-preserves-lower-bounds/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-bound-algebra.tex",
+      "label": "prop:translation-preserves-lower-bounds",
+      "environment_kind": "proposition",
+      "source_line_start": 253,
+      "source_line_end": 359,
+      "current_tex": "\\begin{proposition}[Translation Preserves Lower Bounds]\n\\label{prop:translation-preserves-lower-bounds}\nLet $A\\subseteq\\mathbb{R}$ and let $c,\\ell\\in\\mathbb{R}$.  If $\\ell$ is\na lower bound of $A$, then $\\ell+c$ is a lower bound of $A+c$; that is,\n\\[\n\\left(\\forall a\\in A,\\ \\ell\\leq a\\right)\n\\Longrightarrow\n\\left(\\forall x\\in A+c,\\ \\ell+c\\leq x\\right).\n\\]\n\\hyperref[prf:translation-preserves-lower-bounds]{Go to proof.}\n\\end{proposition}\n\\end{propositionbox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\n(\\forall a\\in A)(\\ell\\leq a)\n\\Longrightarrow\n(\\forall x\\in A+c)(\\ell+c\\leq x).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad\nA\\subseteq\\mathbb{R},\\qquad A+c=\\{a+c:a\\in A\\},\\\\\n&\\operatorname{LowerBound}(\\ell,A,P)\\Longrightarrow\\operatorname{LowerBound}(\\ell+c,A+c,P).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\n(\\forall a\\in A)(\\ell\\leq a),\\qquad\n(\\exists y\\in A+c)(y<\\ell+c).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negation predicate reading]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad\nA\\subseteq\\mathbb{R},\\qquad A+c=\\{a+c:a\\in A\\},\\\\\n&\\operatorname{LowerBound}(\\ell,A,P)\\land\\neg\\operatorname{LowerBound}(\\ell+c,A+c,P).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n\\item[Exposition.]\nA failure would require a translated point below the translated lower bound.\n\n\n  \\item[\\operatorname{LowerBound}.]\n  \\[\n(\\forall a\\in A)(\\ell\\leq a),\\qquad\n(\\exists y\\in A+c)(y<\\ell+c).\n\\]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad\nA\\subseteq\\mathbb{R},\\qquad A+c=\\{a+c:a\\in A\\},\\\\\n&\\operatorname{LowerBound}(\\ell,A,P)\\land\\neg\\operatorname{LowerBound}(\\ell+c,A+c,P).\n\\end{aligned}\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n\\item[Exposition.]\nWrite $y=a+c$ with $a\\in A$.  Then $\\ell\\leq a$ gives $\\ell+c\\leq a+c$.\n\n\n  \\item[\\operatorname{LowerBound}.]\n  \\[\n(\\forall a\\in A)(\\ell\\leq a),\\qquad\n(\\exists y\\in A+c)(y<\\ell+c).\n\\]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad\nA\\subseteq\\mathbb{R},\\qquad A+c=\\{a+c:a\\in A\\},\\\\\n&\\operatorname{LowerBound}(\\ell,A,P)\\land\\neg\\operatorname{LowerBound}(\\ell+c,A+c,P).\n\\end{aligned}\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nTranslation preserves lower-bound information because adding the same constant\nto both sides preserves the order relation.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:reals]{Real Numbers}\n  \\item \\hyperref[def:ordered-set]{Ordered Set}\n  \\item \\hyperref[def:subset]{Subset}\n  \\item \\hyperref[def:addition-on-r]{Addition on $\\mathbb{R}$}\n  \\item \\hyperref[def:displacement-dilation-reflection]{Displacement, Dilation, and Reflection}\n  \\item \\hyperref[def:real-lower-bound]{Lower Bound}\n\\end{itemize}\n\\end{dependencies}\n\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

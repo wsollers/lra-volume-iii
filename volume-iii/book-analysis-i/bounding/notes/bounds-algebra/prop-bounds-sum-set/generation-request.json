@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "prop:bounds-sum-set",
+  "kind": "proposition",
+  "title": "Bounds for Suprema and Infima Under Set Addition",
+  "source": {
+    "label": "prop:bounds-sum-set",
+    "kind": "proposition",
+    "title": "Bounds for Suprema and Infima Under Set Addition",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "bounds-algebra",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-algebra-of-supremum-infimum.tex",
+    "source_line_start": 2698,
+    "source_line_end": 2841,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/prop-bounds-sum-set",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/prop-bounds-sum-set/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/prop-bounds-sum-set/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/prop-bounds-sum-set",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/prop-bounds-sum-set/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/prop-bounds-sum-set/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-algebra-of-supremum-infimum.tex",
+      "label": "prop:bounds-sum-set",
+      "environment_kind": "proposition",
+      "source_line_start": 2698,
+      "source_line_end": 2841,
+      "current_tex": "\\begin{proposition}[Bounds for Suprema and Infima Under Set Addition]\n\\label{prop:bounds-sum-set}\nLet $A,B\\subseteq\\mathbb{R}$ be nonempty and bounded. Then\n\\[\n  \\inf A+\\inf B\\leq \\inf(A+B)\n  \\qquad\\text{and}\\qquad\n  \\sup(A+B)\\leq \\sup A+\\sup B.\n\\]\n\\hyperref[prf:bounds-sum-set]{Go to proof.}\n\\end{proposition}\n\\end{propositionbox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\nA,B\\neq\\varnothing,\\quad A,B\\text{ bounded}\n\\quad\\Longrightarrow\\quad\n\\inf A+\\inf B\\leq \\inf(A+B)\n\\quad\\land\\quad\n\\sup(A+B)\\leq \\sup A+\\sup B.\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad\nA,B\\subseteq\\mathbb{R},\\qquad C=A+B=\\{a+b:a\\in A,\\ b\\in B\\},\\\\\n&\\operatorname{GreatestLowerBound}(t_A,A,P)\\land\n\\operatorname{GreatestLowerBound}(t_B,B,P)\\land\\\\\n&\\operatorname{LeastUpperBound}(s_A,A,P)\\land\n\\operatorname{LeastUpperBound}(s_B,B,P)\n\\Longrightarrow\nt_A+t_B\\leq \\inf C\\leq \\sup C\\leq s_A+s_B.\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\n\\inf(A+B)<\\inf A+\\inf B\n\\quad\\text{or}\\quad\n\\sup A+\\sup B<\\sup(A+B)\n\\]\nis impossible under the stated hypotheses.\n\\end{remark*}\n\n\\begin{remark*}[Negation predicate reading]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad\nA,B\\subseteq\\mathbb{R},\\qquad C=A+B=\\{a+b:a\\in A,\\ b\\in B\\},\\\\\n&\\bigl[\\operatorname{GreatestLowerBound}(t_A,A,P)\\land\n\\operatorname{GreatestLowerBound}(t_B,B,P)\\land \\inf C<t_A+t_B\\bigr]\\\\\n\\lor\n&\\bigl[\\operatorname{LeastUpperBound}(s_A,A,P)\\land\n\\operatorname{LeastUpperBound}(s_B,B,P)\\land s_A+s_B<\\sup C\\bigr]\n\\end{aligned}\n\\]\nis a contradictory configuration.\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\nThe lower inequality could fail only if a sum fell below the sum of the two lower thresholds. The upper inequality could fail only if a sum rose above the sum of the two upper thresholds.\n\n\n  \\item[\\operatorname{GreatestLowerBound} / \\operatorname{LeastUpperBound}.]\n  \\[\n\\inf(A+B)<\\inf A+\\inf B\n\\quad\\text{or}\\quad\n\\sup A+\\sup B<\\sup(A+B)\n\\]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad\nA,B\\subseteq\\mathbb{R},\\qquad C=A+B=\\{a+b:a\\in A,\\ b\\in B\\},\\\\\n&\\bigl[\\operatorname{GreatestLowerBound}(t_A,A,P)\\land\n\\operatorname{GreatestLowerBound}(t_B,B,P)\\land \\inf C<t_A+t_B\\bigr]\\\\\n\\lor\n&\\bigl[\\operatorname{LeastUpperBound}(s_A,A,P)\\land\n\\operatorname{LeastUpperBound}(s_B,B,P)\\land s_A+s_B<\\sup C\\bigr]\n\\end{aligned}\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\n\\[\n\\inf A\\le a\\le \\sup A,\\quad \\inf B\\le b\\le \\sup B\n\\Longrightarrow\n\\inf A+\\inf B\\le a+b\\le \\sup A+\\sup B.\n\\]\n\n\n  \\item[\\operatorname{GreatestLowerBound} / \\operatorname{LeastUpperBound}.]\n  \\[\n\\inf(A+B)<\\inf A+\\inf B\n\\quad\\text{or}\\quad\n\\sup A+\\sup B<\\sup(A+B)\n\\]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad\nA,B\\subseteq\\mathbb{R},\\qquad C=A+B=\\{a+b:a\\in A,\\ b\\in B\\},\\\\\n&\\bigl[\\operatorname{GreatestLowerBound}(t_A,A,P)\\land\n\\operatorname{GreatestLowerBound}(t_B,B,P)\\land \\inf C<t_A+t_B\\bigr]\\\\\n\\lor\n&\\bigl[\\operatorname{LeastUpperBound}(s_A,A,P)\\land\n\\operatorname{LeastUpperBound}(s_B,B,P)\\land s_A+s_B<\\sup C\\bigr]\n\\end{aligned}\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nEvery element of the sum set is built from one element of $A$ and one element of $B$. Adding the individual lower and upper controls gives immediate lower and upper controls for every such sum.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:reals]{Real Numbers}\n  \\item \\hyperref[def:ordered-set]{Ordered Set}\n  \\item \\hyperref[def:subset]{Subset}\n  \\item \\hyperref[def:addition-on-r]{Addition on $\\mathbb{R}$}\n  \\item \\hyperref[def:set-arithmetic-images]{Set Arithmetic Images}\n  \\item \\hyperref[def:real-lower-bound]{Lower Bound}\n  \\item \\hyperref[def:real-upper-bound]{Upper Bound}\n  \\item \\hyperref[def:bounded]{Bounded Set}\n  \\item \\hyperref[def:infimum]{Infimum}\n  \\item \\hyperref[def:supremum]{Supremum}\n  \\item \\hyperref[thm:infimum-sum-set]{Infimum of a Sum Set}\n  \\item \\hyperref[thm:supremum-sum-set]{Supremum of a Sum Set}\n\\end{itemize}\n\\end{dependencies}\n\n\n\n\n% --- Containing-set / Ambient-set Cluster ---\n\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

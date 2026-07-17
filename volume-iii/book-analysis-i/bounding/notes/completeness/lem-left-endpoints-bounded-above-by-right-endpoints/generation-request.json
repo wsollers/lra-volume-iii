@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "lem:left-endpoints-bounded-above-by-right-endpoints",
+  "kind": "lemma",
+  "title": "Left Endpoints Are Bounded Above by Right Endpoints",
+  "source": {
+    "label": "lem:left-endpoints-bounded-above-by-right-endpoints",
+    "kind": "lemma",
+    "title": "Left Endpoints Are Bounded Above by Right Endpoints",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "completeness",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-nested-interval-property.tex",
+    "source_line_start": 266,
+    "source_line_end": 345,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-left-endpoints-bounded-above-by-right-endpoints",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-left-endpoints-bounded-above-by-right-endpoints/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-left-endpoints-bounded-above-by-right-endpoints/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-left-endpoints-bounded-above-by-right-endpoints",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-left-endpoints-bounded-above-by-right-endpoints/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-left-endpoints-bounded-above-by-right-endpoints/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-nested-interval-property.tex",
+      "label": "lem:left-endpoints-bounded-above-by-right-endpoints",
+      "environment_kind": "lemma",
+      "source_line_start": 266,
+      "source_line_end": 345,
+      "current_tex": "\\begin{lemma}[Left Endpoints Are Bounded Above by Right Endpoints]\n\\label{lem:left-endpoints-bounded-above-by-right-endpoints}\nLet $(a_n)$ and $(b_n)$ be sequences in $\\mathbb{R}$ such that\n\\[\n  (\\forall n\\in\\mathbb{N})(a_n\\leq b_n)\n\\]\nand\n\\[\n  (\\forall n\\in\\mathbb{N})([a_{n+1},b_{n+1}]\\subseteq [a_n,b_n]).\n\\]\nThen\n\\[\n  (\\forall m,n\\in\\mathbb{N})(a_n\\leq b_m).\n\\]\nConsequently, every $b_m$ is an upper bound of $\\{a_n:n\\in\\mathbb{N}\\}$, and\nevery $a_n$ is a lower bound of $\\{b_m:m\\in\\mathbb{N}\\}$.\n\\]\n\\hyperref[prf:left-endpoints-bounded-above-by-right-endpoints]{Go to proof.}\n\\end{lemma}\n\\end{lemmabox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\forall m,n\\in\\mathbb{N}\\;(a_n\\le b_m).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\nF=([a_n,b_n])_{n\\in\\mathbb{N}},\\qquad P_{\\mathbb{R}}=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\n\\]\n\\[\n\\operatorname{NestedClosedIntervals}(F,P_{\\mathbb{R}})\n\\Longrightarrow\n\\forall m,n\\in\\mathbb{N}\\;(a_n\\le b_m).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\n\\exists m,n\\in\\mathbb{N}\\;(b_m<a_n).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negation predicate reading]\n\\[\nF=([a_n,b_n])_{n\\in\\mathbb{N}},\\qquad P_{\\mathbb{R}}=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\n\\]\n\\[\n\\exists m,n\\in\\mathbb{N}\\;(b_m<a_n)\n\\Longrightarrow\n\\neg\\operatorname{NestedClosedIntervals}(F,P_{\\mathbb{R}}).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\n  Failure is witnessed by the displayed negated or contrapositive condition.\n\n  \\item[\\mathsf{OrderedSet}.]\n  \\[\n\\exists m,n\\in\\mathbb{N}\\;(b_m<a_n).\n\\]\n\\[\nF=([a_n,b_n])_{n\\in\\mathbb{N}},\\qquad P_{\\mathbb{R}}=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nEvery left endpoint lies below every right endpoint, even when the two\nendpoints come from different stages of the nested family.\n\\end{remark*}\n\n\\begin{dependencies}\n\\hyperref[def:closed-interval]{Closed Interval}.\n\\end{dependencies}\n\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

@@ -9,38 +9,44 @@ join is their maximum and their meet is their minimum:
 \]
 Thus lattice operations are not a new order relation; they are the operations
 created by the order.  The set-level constructions below apply those pairwise
-operations to all pairs of points from two nonempty sets.
+operations to all pairs of points from two sets.
 \end{remark*}
 
-\begin{definitionbox}{Definition (Pointwise Maximum and Minimum Sets)}
-\begin{definition}[Pointwise Maximum and Minimum Sets]
-\label{def:pointwise-maximum-minimum-sets}
-Let $A,B\subseteq\mathbb{R}$ be nonempty.  Define
+\begin{definitionbox}{Definition (Pairwise Maximum and Minimum Sets)}
+\begin{definition}[Pairwise Maximum and Minimum Sets]
+\label{def:pairwise-maximum-minimum-sets}
+Let $A,B\subseteq\mathbb{R}$.  The \emph{pairwise maximum set} and
+\emph{pairwise minimum set} of $A$ and $B$ are defined, respectively, by
 \[
-  \max(A,B):=\{\max\{a,b\}:a\in A,\ b\in B\},
+  A\vee B:=\{\max\{a,b\}:a\in A,\ b\in B\},
 \]
 and
 \[
-  \min(A,B):=\{\min\{a,b\}:a\in A,\ b\in B\}.
+  A\wedge B:=\{\min\{a,b\}:a\in A,\ b\in B\}.
 \]
 \end{definition}
 \end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
-x\in\max(A,B)
+x\in A\vee B
 \Longleftrightarrow
 (\exists a\in A)(\exists b\in B)\bigl(x=\max\{a,b\}\bigr),
 \]
-and similarly for $\min(A,B)$ with $\min\{a,b\}$.
+and
+\[
+x\in A\wedge B
+\Longleftrightarrow
+(\exists a\in A)(\exists b\in B)\bigl(x=\min\{a,b\}\bigr).
+\]
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
 \[
 \begin{aligned}
 &A,B\subseteq\mathbb{R},\qquad D=A\times B,\\
-&M=\max(A,B)=\{\max\{a,b\}:a\in A,\ b\in B\},\\
-&N=\min(A,B)=\{\min\{a,b\}:a\in A,\ b\in B\},\\
+&M=A\vee B=\{\max\{a,b\}:a\in A,\ b\in B\},\\
+&N=A\wedge B=\{\min\{a,b\}:a\in A,\ b\in B\},\\
 &\varphi_{\max}\colon D\to M,\qquad \varphi_{\min}\colon D\to N,\\
 &\varphi_{\max}(a,b)=\max\{a,b\},\qquad
 \varphi_{\min}(a,b)=\min\{a,b\},\\
@@ -52,24 +58,29 @@ and similarly for $\min(A,B)$ with $\min\{a,b\}$.
 
 \begin{remark*}[Negated quantified statement]
 \[
-x\notin\max(A,B)
+x\notin A\vee B
 \Longleftrightarrow
 (\forall a\in A)(\forall b\in B)\bigl(x\neq\max\{a,b\}\bigr),
 \]
-and similarly for $\min(A,B)$.
+and
+\[
+x\notin A\wedge B
+\Longleftrightarrow
+(\forall a\in A)(\forall b\in B)\bigl(x\neq\min\{a,b\}\bigr).
+\]
 \end{remark*}
 
 \begin{remark*}[Negation predicate reading]
 \[
 \begin{aligned}
 &A,B\subseteq\mathbb{R},\qquad
-M=\max(A,B)=\{\max\{a,b\}:a\in A,\ b\in B\},\\
+M=A\vee B=\{\max\{a,b\}:a\in A,\ b\in B\},\\
 &C\ne M
 \end{aligned}
 \quad\text{means}\quad
 (\exists x)\bigl[x\in C\triangle M\bigr],
 \]
-and similarly for $\min(A,B)$.
+and similarly for $A\wedge B$.
 \end{remark*}
 
 \begin{remark*}[Failure modes]
@@ -81,14 +92,14 @@ or if it includes a value not produced by one of the pairwise rules.
 
   \item[\exists-condition.]
   \[
-x\notin\max(A,B)
+x\notin A\vee B
 \Longleftrightarrow
 (\forall a\in A)(\forall b\in B)\bigl(x\neq\max\{a,b\}\bigr),
 \]
 \[
 \begin{aligned}
 &A,B\subseteq\mathbb{R},\qquad
-M=\max(A,B)=\{\max\{a,b\}:a\in A,\ b\in B\},\\
+M=A\vee B=\{\max\{a,b\}:a\in A,\ b\in B\},\\
 &C\ne M
 \end{aligned}
 \quad\text{means}\quad
@@ -106,14 +117,14 @@ operation: either the larger input or the smaller input is selected.
 
   \item[\exists-condition.]
   \[
-x\notin\max(A,B)
+x\notin A\vee B
 \Longleftrightarrow
 (\forall a\in A)(\forall b\in B)\bigl(x\neq\max\{a,b\}\bigr),
 \]
 \[
 \begin{aligned}
 &A,B\subseteq\mathbb{R},\qquad
-M=\max(A,B)=\{\max\{a,b\}:a\in A,\ b\in B\},\\
+M=A\vee B=\{\max\{a,b\}:a\in A,\ b\in B\},\\
 &C\ne M
 \end{aligned}
 \quad\text{means}\quad
@@ -123,7 +134,7 @@ M=\max(A,B)=\{\max\{a,b\}:a\in A,\ b\in B\},\\
 \end{remark*}
 
 \begin{remark*}[Interpretation]
-Pointwise maximum and minimum sets collect the order-selected output from
+Pairwise maximum and minimum sets collect the order-selected output from
 every pair of inputs, one from each source set.
 \end{remark*}
 
@@ -133,19 +144,21 @@ every pair of inputs, one from each source set.
   \item \hyperref[def:subset]{Subset}
   \item \hyperref[def:cartesian-product]{Cartesian Product}
   \item \hyperref[def:function]{Function}
+  \item \hyperref[def:image-set]{Image Set}
   \item \hyperref[def:maximum]{Maximum}
   \item \hyperref[def:minimum]{Minimum}
 \end{itemize}
 \end{dependencies}
 
-\begin{theorembox}{Theorem (Supremum of the Pointwise Maximum Set)}
-\begin{theorem}[Supremum of the Pointwise Maximum Set]
-\label{thm:supremum-pointwise-maximum-set}
-Let $A,B\subseteq\mathbb{R}$ be nonempty and bounded above.  Then
+\begin{theorembox}{Theorem (Supremum of the Pairwise Maximum Set)}
+\begin{theorem}[Supremum of the Pairwise Maximum Set]
+\label{thm:supremum-pairwise-maximum-set}
+Let $A,B\subseteq\mathbb{R}$ be nonempty and bounded above. Then $A\vee B$
+is bounded above and
 \[
-  \sup\max(A,B)=\max\{\sup A,\sup B\}.
+\sup(A\vee B)=\max\{\sup A,\sup B\}.
 \]
-\hyperref[prf:supremum-pointwise-maximum-set]{Go to proof.}
+\hyperref[prf:supremum-pairwise-maximum-set]{Go to proof.}
 \end{theorem}
 \end{theorembox}
 
@@ -153,7 +166,7 @@ Let $A,B\subseteq\mathbb{R}$ be nonempty and bounded above.  Then
 \[
 A,B\neq\varnothing,\quad A,B\text{ bounded above}
 \quad\Longrightarrow\quad
-\sup\{\max\{a,b\}:a\in A,\ b\in B\}=\max\{\sup A,\sup B\}.
+\sup(A\vee B)=\max\{\sup A,\sup B\}.
 \]
 \end{remark*}
 
@@ -161,7 +174,7 @@ A,B\neq\varnothing,\quad A,B\text{ bounded above}
 \[
 \begin{aligned}
 &P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\\
-&M=\max(A,B),\qquad U=\max\{s_A,s_B\},\\
+&M=A\vee B,\qquad U=\max\{s_A,s_B\},\\
 &\operatorname{LeastUpperBound}(s_A,A,P)\land\operatorname{LeastUpperBound}(s_B,B,P)
 \Longrightarrow
 \operatorname{LeastUpperBound}(U,M,P).
@@ -171,7 +184,7 @@ A,B\neq\varnothing,\quad A,B\text{ bounded above}
 
 \begin{remark*}[Negated quantified statement]
 \[
-\sup\max(A,B)\neq\max\{\sup A,\sup B\}
+\sup(A\vee B)\neq\max\{\sup A,\sup B\}
 \]
 is impossible under the stated hypotheses.
 \end{remark*}
@@ -180,7 +193,7 @@ is impossible under the stated hypotheses.
 \[
 \begin{aligned}
 &P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\\
-&M=\max(A,B),\qquad U=\max\{s_A,s_B\},\\
+&M=A\vee B,\qquad U=\max\{s_A,s_B\},\\
 &\operatorname{LeastUpperBound}(s_A,A,P)\land\operatorname{LeastUpperBound}(s_B,B,P)\land
 \neg\operatorname{LeastUpperBound}(U,M,P).
 \end{aligned}
@@ -196,12 +209,12 @@ all pairwise maxima, or if it were not the least such bound.
 
   \item[\operatorname{LeastUpperBound}.]
   \[
-\sup\max(A,B)\neq\max\{\sup A,\sup B\}
+\sup(A\vee B)\neq\max\{\sup A,\sup B\}
 \]
 \[
 \begin{aligned}
 &P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\\
-&M=\max(A,B),\qquad U=\max\{s_A,s_B\},\\
+&M=A\vee B,\qquad U=\max\{s_A,s_B\},\\
 &\operatorname{LeastUpperBound}(s_A,A,P)\land\operatorname{LeastUpperBound}(s_B,B,P)\land
 \neg\operatorname{LeastUpperBound}(U,M,P).
 \end{aligned}
@@ -219,12 +232,12 @@ set approach its own supremum.
 
   \item[\operatorname{LeastUpperBound}.]
   \[
-\sup\max(A,B)\neq\max\{\sup A,\sup B\}
+\sup(A\vee B)\neq\max\{\sup A,\sup B\}
 \]
 \[
 \begin{aligned}
 &P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\\
-&M=\max(A,B),\qquad U=\max\{s_A,s_B\},\\
+&M=A\vee B,\qquad U=\max\{s_A,s_B\},\\
 &\operatorname{LeastUpperBound}(s_A,A,P)\land\operatorname{LeastUpperBound}(s_B,B,P)\land
 \neg\operatorname{LeastUpperBound}(U,M,P).
 \end{aligned}
@@ -242,20 +255,21 @@ individual upper endpoints.
   \item \hyperref[def:reals]{Real Numbers}
   \item \hyperref[def:ordered-set]{Ordered Set}
   \item \hyperref[def:subset]{Subset}
-  \item \hyperref[def:pointwise-maximum-minimum-sets]{Pointwise Maximum and Minimum Sets}
+  \item \hyperref[def:pairwise-maximum-minimum-sets]{Pairwise Maximum and Minimum Sets}
   \item \hyperref[def:maximum]{Maximum}
   \item \hyperref[def:supremum]{Supremum}
 \end{itemize}
 \end{dependencies}
 
-\begin{theorembox}{Theorem (Infimum of the Pointwise Maximum Set)}
-\begin{theorem}[Infimum of the Pointwise Maximum Set]
-\label{thm:infimum-pointwise-maximum-set}
-Let $A,B\subseteq\mathbb{R}$ be nonempty and bounded below.  Then
+\begin{theorembox}{Theorem (Infimum of the Pairwise Maximum Set)}
+\begin{theorem}[Infimum of the Pairwise Maximum Set]
+\label{thm:infimum-pairwise-maximum-set}
+Let $A,B\subseteq\mathbb{R}$ be nonempty and bounded below. Then $A\vee B$
+is bounded below and
 \[
-  \inf\max(A,B)=\max\{\inf A,\inf B\}.
+\inf(A\vee B)=\max\{\inf A,\inf B\}.
 \]
-\hyperref[prf:infimum-pointwise-maximum-set]{Go to proof.}
+\hyperref[prf:infimum-pairwise-maximum-set]{Go to proof.}
 \end{theorem}
 \end{theorembox}
 
@@ -263,7 +277,7 @@ Let $A,B\subseteq\mathbb{R}$ be nonempty and bounded below.  Then
 \[
 A,B\neq\varnothing,\quad A,B\text{ bounded below}
 \quad\Longrightarrow\quad
-\inf\{\max\{a,b\}:a\in A,\ b\in B\}=\max\{\inf A,\inf B\}.
+\inf(A\vee B)=\max\{\inf A,\inf B\}.
 \]
 \end{remark*}
 
@@ -271,7 +285,7 @@ A,B\neq\varnothing,\quad A,B\text{ bounded below}
 \[
 \begin{aligned}
 &P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\\
-&M=\max(A,B),\qquad L=\max\{t_A,t_B\},\\
+&M=A\vee B,\qquad L=\max\{t_A,t_B\},\\
 &\operatorname{GreatestLowerBound}(t_A,A,P)\land\operatorname{GreatestLowerBound}(t_B,B,P)
 \Longrightarrow
 \operatorname{GreatestLowerBound}(L,M,P).
@@ -281,7 +295,7 @@ A,B\neq\varnothing,\quad A,B\text{ bounded below}
 
 \begin{remark*}[Negated quantified statement]
 \[
-\inf\max(A,B)\neq\max\{\inf A,\inf B\}
+\inf(A\vee B)\neq\max\{\inf A,\inf B\}
 \]
 is impossible under the stated hypotheses.
 \end{remark*}
@@ -290,7 +304,7 @@ is impossible under the stated hypotheses.
 \[
 \begin{aligned}
 &P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\\
-&M=\max(A,B),\qquad L=\max\{t_A,t_B\},\\
+&M=A\vee B,\qquad L=\max\{t_A,t_B\},\\
 &\operatorname{GreatestLowerBound}(t_A,A,P)\land\operatorname{GreatestLowerBound}(t_B,B,P)\land
 \neg\operatorname{GreatestLowerBound}(L,M,P).
 \end{aligned}
@@ -307,12 +321,12 @@ that threshold from above.
 
   \item[\operatorname{GreatestLowerBound}.]
   \[
-\inf\max(A,B)\neq\max\{\inf A,\inf B\}
+\inf(A\vee B)\neq\max\{\inf A,\inf B\}
 \]
 \[
 \begin{aligned}
 &P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\\
-&M=\max(A,B),\qquad L=\max\{t_A,t_B\},\\
+&M=A\vee B,\qquad L=\max\{t_A,t_B\},\\
 &\operatorname{GreatestLowerBound}(t_A,A,P)\land\operatorname{GreatestLowerBound}(t_B,B,P)\land
 \neg\operatorname{GreatestLowerBound}(L,M,P).
 \end{aligned}
@@ -330,12 +344,12 @@ close to the larger lower threshold.
 
   \item[\operatorname{GreatestLowerBound}.]
   \[
-\inf\max(A,B)\neq\max\{\inf A,\inf B\}
+\inf(A\vee B)\neq\max\{\inf A,\inf B\}
 \]
 \[
 \begin{aligned}
 &P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\\
-&M=\max(A,B),\qquad L=\max\{t_A,t_B\},\\
+&M=A\vee B,\qquad L=\max\{t_A,t_B\},\\
 &\operatorname{GreatestLowerBound}(t_A,A,P)\land\operatorname{GreatestLowerBound}(t_B,B,P)\land
 \neg\operatorname{GreatestLowerBound}(L,M,P).
 \end{aligned}
@@ -353,20 +367,21 @@ individual lower edges.
   \item \hyperref[def:reals]{Real Numbers}
   \item \hyperref[def:ordered-set]{Ordered Set}
   \item \hyperref[def:subset]{Subset}
-  \item \hyperref[def:pointwise-maximum-minimum-sets]{Pointwise Maximum and Minimum Sets}
+  \item \hyperref[def:pairwise-maximum-minimum-sets]{Pairwise Maximum and Minimum Sets}
   \item \hyperref[def:maximum]{Maximum}
   \item \hyperref[def:infimum]{Infimum}
 \end{itemize}
 \end{dependencies}
 
-\begin{theorembox}{Theorem (Supremum of the Pointwise Minimum Set)}
-\begin{theorem}[Supremum of the Pointwise Minimum Set]
-\label{thm:supremum-pointwise-minimum-set}
-Let $A,B\subseteq\mathbb{R}$ be nonempty and bounded above.  Then
+\begin{theorembox}{Theorem (Supremum of the Pairwise Minimum Set)}
+\begin{theorem}[Supremum of the Pairwise Minimum Set]
+\label{thm:supremum-pairwise-minimum-set}
+Let $A,B\subseteq\mathbb{R}$ be nonempty and bounded above. Then $A\wedge B$
+is bounded above and
 \[
-  \sup\min(A,B)=\min\{\sup A,\sup B\}.
+\sup(A\wedge B)=\min\{\sup A,\sup B\}.
 \]
-\hyperref[prf:supremum-pointwise-minimum-set]{Go to proof.}
+\hyperref[prf:supremum-pairwise-minimum-set]{Go to proof.}
 \end{theorem}
 \end{theorembox}
 
@@ -374,7 +389,7 @@ Let $A,B\subseteq\mathbb{R}$ be nonempty and bounded above.  Then
 \[
 A,B\neq\varnothing,\quad A,B\text{ bounded above}
 \quad\Longrightarrow\quad
-\sup\{\min\{a,b\}:a\in A,\ b\in B\}=\min\{\sup A,\sup B\}.
+\sup(A\wedge B)=\min\{\sup A,\sup B\}.
 \]
 \end{remark*}
 
@@ -382,7 +397,7 @@ A,B\neq\varnothing,\quad A,B\text{ bounded above}
 \[
 \begin{aligned}
 &P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\\
-&N=\min(A,B),\qquad U=\min\{s_A,s_B\},\\
+&N=A\wedge B,\qquad U=\min\{s_A,s_B\},\\
 &\operatorname{LeastUpperBound}(s_A,A,P)\land\operatorname{LeastUpperBound}(s_B,B,P)
 \Longrightarrow
 \operatorname{LeastUpperBound}(U,N,P).
@@ -392,7 +407,7 @@ A,B\neq\varnothing,\quad A,B\text{ bounded above}
 
 \begin{remark*}[Negated quantified statement]
 \[
-\sup\min(A,B)\neq\min\{\sup A,\sup B\}
+\sup(A\wedge B)\neq\min\{\sup A,\sup B\}
 \]
 is impossible under the stated hypotheses.
 \end{remark*}
@@ -401,7 +416,7 @@ is impossible under the stated hypotheses.
 \[
 \begin{aligned}
 &P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\\
-&N=\min(A,B),\qquad U=\min\{s_A,s_B\},\\
+&N=A\wedge B,\qquad U=\min\{s_A,s_B\},\\
 &\operatorname{LeastUpperBound}(s_A,A,P)\land\operatorname{LeastUpperBound}(s_B,B,P)\land
 \neg\operatorname{LeastUpperBound}(U,N,P).
 \end{aligned}
@@ -417,12 +432,12 @@ pairwise minima, or if that upper bound were not sharp.
 
   \item[\operatorname{LeastUpperBound}.]
   \[
-\sup\min(A,B)\neq\min\{\sup A,\sup B\}
+\sup(A\wedge B)\neq\min\{\sup A,\sup B\}
 \]
 \[
 \begin{aligned}
 &P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\\
-&N=\min(A,B),\qquad U=\min\{s_A,s_B\},\\
+&N=A\wedge B,\qquad U=\min\{s_A,s_B\},\\
 &\operatorname{LeastUpperBound}(s_A,A,P)\land\operatorname{LeastUpperBound}(s_B,B,P)\land
 \neg\operatorname{LeastUpperBound}(U,N,P).
 \end{aligned}
@@ -439,12 +454,12 @@ Sharpness comes from taking both inputs near their own suprema.
 
   \item[\operatorname{LeastUpperBound}.]
   \[
-\sup\min(A,B)\neq\min\{\sup A,\sup B\}
+\sup(A\wedge B)\neq\min\{\sup A,\sup B\}
 \]
 \[
 \begin{aligned}
 &P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\\
-&N=\min(A,B),\qquad U=\min\{s_A,s_B\},\\
+&N=A\wedge B,\qquad U=\min\{s_A,s_B\},\\
 &\operatorname{LeastUpperBound}(s_A,A,P)\land\operatorname{LeastUpperBound}(s_B,B,P)\land
 \neg\operatorname{LeastUpperBound}(U,N,P).
 \end{aligned}
@@ -462,20 +477,21 @@ individual upper edges.
   \item \hyperref[def:reals]{Real Numbers}
   \item \hyperref[def:ordered-set]{Ordered Set}
   \item \hyperref[def:subset]{Subset}
-  \item \hyperref[def:pointwise-maximum-minimum-sets]{Pointwise Maximum and Minimum Sets}
+  \item \hyperref[def:pairwise-maximum-minimum-sets]{Pairwise Maximum and Minimum Sets}
   \item \hyperref[def:minimum]{Minimum}
   \item \hyperref[def:supremum]{Supremum}
 \end{itemize}
 \end{dependencies}
 
-\begin{theorembox}{Theorem (Infimum of the Pointwise Minimum Set)}
-\begin{theorem}[Infimum of the Pointwise Minimum Set]
-\label{thm:infimum-pointwise-minimum-set}
-Let $A,B\subseteq\mathbb{R}$ be nonempty and bounded below.  Then
+\begin{theorembox}{Theorem (Infimum of the Pairwise Minimum Set)}
+\begin{theorem}[Infimum of the Pairwise Minimum Set]
+\label{thm:infimum-pairwise-minimum-set}
+Let $A,B\subseteq\mathbb{R}$ be nonempty and bounded below. Then $A\wedge B$
+is bounded below and
 \[
-  \inf\min(A,B)=\min\{\inf A,\inf B\}.
+\inf(A\wedge B)=\min\{\inf A,\inf B\}.
 \]
-\hyperref[prf:infimum-pointwise-minimum-set]{Go to proof.}
+\hyperref[prf:infimum-pairwise-minimum-set]{Go to proof.}
 \end{theorem}
 \end{theorembox}
 
@@ -483,7 +499,7 @@ Let $A,B\subseteq\mathbb{R}$ be nonempty and bounded below.  Then
 \[
 A,B\neq\varnothing,\quad A,B\text{ bounded below}
 \quad\Longrightarrow\quad
-\inf\{\min\{a,b\}:a\in A,\ b\in B\}=\min\{\inf A,\inf B\}.
+\inf(A\wedge B)=\min\{\inf A,\inf B\}.
 \]
 \end{remark*}
 
@@ -491,7 +507,7 @@ A,B\neq\varnothing,\quad A,B\text{ bounded below}
 \[
 \begin{aligned}
 &P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\\
-&N=\min(A,B),\qquad L=\min\{t_A,t_B\},\\
+&N=A\wedge B,\qquad L=\min\{t_A,t_B\},\\
 &\operatorname{GreatestLowerBound}(t_A,A,P)\land\operatorname{GreatestLowerBound}(t_B,B,P)
 \Longrightarrow
 \operatorname{GreatestLowerBound}(L,N,P).
@@ -501,7 +517,7 @@ A,B\neq\varnothing,\quad A,B\text{ bounded below}
 
 \begin{remark*}[Negated quantified statement]
 \[
-\inf\min(A,B)\neq\min\{\inf A,\inf B\}
+\inf(A\wedge B)\neq\min\{\inf A,\inf B\}
 \]
 is impossible under the stated hypotheses.
 \end{remark*}
@@ -510,7 +526,7 @@ is impossible under the stated hypotheses.
 \[
 \begin{aligned}
 &P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\\
-&N=\min(A,B),\qquad L=\min\{t_A,t_B\},\\
+&N=A\wedge B,\qquad L=\min\{t_A,t_B\},\\
 &\operatorname{GreatestLowerBound}(t_A,A,P)\land\operatorname{GreatestLowerBound}(t_B,B,P)\land
 \neg\operatorname{GreatestLowerBound}(L,N,P).
 \end{aligned}
@@ -526,12 +542,12 @@ minima from below, or if that lower bound were not sharp.
 
   \item[\operatorname{GreatestLowerBound}.]
   \[
-\inf\min(A,B)\neq\min\{\inf A,\inf B\}
+\inf(A\wedge B)\neq\min\{\inf A,\inf B\}
 \]
 \[
 \begin{aligned}
 &P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\\
-&N=\min(A,B),\qquad L=\min\{t_A,t_B\},\\
+&N=A\wedge B,\qquad L=\min\{t_A,t_B\},\\
 &\operatorname{GreatestLowerBound}(t_A,A,P)\land\operatorname{GreatestLowerBound}(t_B,B,P)\land
 \neg\operatorname{GreatestLowerBound}(L,N,P).
 \end{aligned}
@@ -548,12 +564,12 @@ comes from holding one set nonempty and approaching the smaller lower threshold.
 
   \item[\operatorname{GreatestLowerBound}.]
   \[
-\inf\min(A,B)\neq\min\{\inf A,\inf B\}
+\inf(A\wedge B)\neq\min\{\inf A,\inf B\}
 \]
 \[
 \begin{aligned}
 &P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\\
-&N=\min(A,B),\qquad L=\min\{t_A,t_B\},\\
+&N=A\wedge B,\qquad L=\min\{t_A,t_B\},\\
 &\operatorname{GreatestLowerBound}(t_A,A,P)\land\operatorname{GreatestLowerBound}(t_B,B,P)\land
 \neg\operatorname{GreatestLowerBound}(L,N,P).
 \end{aligned}
@@ -571,7 +587,7 @@ lower edges.
   \item \hyperref[def:reals]{Real Numbers}
   \item \hyperref[def:ordered-set]{Ordered Set}
   \item \hyperref[def:subset]{Subset}
-  \item \hyperref[def:pointwise-maximum-minimum-sets]{Pointwise Maximum and Minimum Sets}
+  \item \hyperref[def:pairwise-maximum-minimum-sets]{Pairwise Maximum and Minimum Sets}
   \item \hyperref[def:minimum]{Minimum}
   \item \hyperref[def:infimum]{Infimum}
 \end{itemize}

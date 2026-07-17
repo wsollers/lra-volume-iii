@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "thm:order-separation-by-supremum",
+  "kind": "theorem",
+  "title": "Order Separation by Supremum",
+  "source": {
+    "label": "thm:order-separation-by-supremum",
+    "kind": "theorem",
+    "title": "Order Separation by Supremum",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "completeness",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-order-separation.tex",
+    "source_line_start": 2,
+    "source_line_end": 100,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/thm-order-separation-by-supremum",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/thm-order-separation-by-supremum/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/thm-order-separation-by-supremum/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/thm-order-separation-by-supremum",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/thm-order-separation-by-supremum/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/thm-order-separation-by-supremum/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-order-separation.tex",
+      "label": "thm:order-separation-by-supremum",
+      "environment_kind": "theorem",
+      "source_line_start": 2,
+      "source_line_end": 100,
+      "current_tex": "\\begin{theorem}[Order Separation by Supremum]\n\\label{thm:order-separation-by-supremum}\nLet $A,B\\subseteq\\mathbb{R}$ be nonempty sets such that\n\\[\n  (\\forall a\\in A)(\\forall b\\in B)(a\\leq b).\n\\]\nThen $A$ is bounded above, $B$ is bounded below, and the real number\n$c:=\\sup A$ separates $A$ from $B$; that is,\n\\[\n  (\\forall a\\in A)(\\forall b\\in B)(a\\leq c\\leq b).\n\\]\nIn particular,\n\\[\n  \\sup A\\leq\\inf B.\n\\]\n\\hyperref[prf:order-separation-by-supremum]{Go to proof.}\n\\end{theorem}\n\\end{theorembox}\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\forall A,B\\subseteq\\mathbb{R}\\;\n\\Bigl[\n(A\\ne\\varnothing\\land B\\ne\\varnothing\\land\n\\forall a\\in A\\;\\forall b\\in B\\;(a\\le b))\n\\Longrightarrow\n\\exists c\\in\\mathbb{R}\\;\\forall a\\in A\\;\\forall b\\in B\\;(a\\le c\\le b)\n\\Bigr].\n\\]\n\\end{remark*}\n\\begin{remark*}[Predicate reading]\n\\[\nA,B\\subseteq\\mathbb{R},\\qquad P_{\\mathbb{R}}=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\n\\]\n\\[\n\\bigl(A\\ne\\varnothing\\land B\\ne\\varnothing\\land\n\\forall a\\in A\\;\\forall b\\in B\\;(a\\le b)\\bigr)\n\\Longrightarrow\n\\operatorname{HasDedekindSeparator}(A,B,P_{\\mathbb{R}}).\n\\]\nEquivalently, there exists $c\\in\\mathbb{R}$ such that\n\\(\\operatorname{IsDedekindSeparator}(c,A,B,P_{\\mathbb{R}})\\).\n\\end{remark*}\n\\begin{remark*}[Negated quantified statement]\n\\[\n\\exists A,B\\subseteq\\mathbb{R}\\;\n\\Bigl[\nA\\ne\\varnothing\\land B\\ne\\varnothing\\land\n\\forall a\\in A\\;\\forall b\\in B\\;(a\\le b)\n\\land\n\\forall c\\in\\mathbb{R}\\;\\exists a\\in A\\;\\exists b\\in B\\;(c<a\\lor b<c)\n\\Bigr].\n\\]\n\\end{remark*}\n\\begin{remark*}[Negation predicate reading]\n\\[\nA,B\\subseteq\\mathbb{R},\\qquad P_{\\mathbb{R}}=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\n\\]\n\\[\n\\bigl(A\\ne\\varnothing\\land B\\ne\\varnothing\\land\n\\forall a\\in A\\;\\forall b\\in B\\;(a\\le b)\\bigr)\n\\land\\neg\\operatorname{HasDedekindSeparator}(A,B,P_{\\mathbb{R}}).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\n  Failure is witnessed by the displayed negated or contrapositive condition.\n\n  \\item[\\mathsf{OrderedSet}.]\n  \\[\n\\exists A,B\\subseteq\\mathbb{R}\\;\n\\Bigl[\nA\\ne\\varnothing\\land B\\ne\\varnothing\\land\n\\forall a\\in A\\;\\forall b\\in B\\;(a\\le b)\n\\land\n\\forall c\\in\\mathbb{R}\\;\\exists a\\in A\\;\\exists b\\in B\\;(c<a\\lor b<c)\n\\Bigr].\n\\]\n\\[\nA,B\\subseteq\\mathbb{R},\\qquad P_{\\mathbb{R}}=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\n\\]\n\\end{description}\n\\end{remark*}\n\\begin{remark*}[Interpretation]\nIf one nonempty set lies entirely to the left of another, completeness supplies\na real separator between them.\n\\end{remark*}\n\\begin{dependencies}\n\\hyperref[def:reals]{Real Numbers};\n\\hyperref[def:ordered-set]{Ordered Set};\n\\hyperref[def:subset]{Subset};\n\\hyperref[def:real-upper-bound]{Upper Bound};\n\\hyperref[def:supremum]{Supremum};\n\\hyperref[ax:completeness-of-reals]{Completeness of $\\mathbb{R}$}.\n\\end{dependencies}\n\\input{volume-iii/book-analysis-i/bounding/notes/completeness/figure-order-separation}\n\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

@@ -9,7 +9,16 @@ The interval shapes were introduced in \S\ref{sec:intervals-on-a-number-line}. H
 \begin{definitionbox}{Definition (Bounded Subset of the Real Line)}
 \begin{definition}[Bounded Subset of the Real Line]
 \label{def:bounded-subset-of-r}
-A set $E\subseteq\mathbb{R}$ is \emph{bounded} exactly when there exists $M\ge 0$ such that $|x|\le M$ for all $x\in E$; equivalently, $E$ is contained in some closed interval $[-M,M]$.
+A set $A\subseteq\mathbb{R}$ is \emph{bounded} if there exists $M>0$ such that
+\[
+  (\forall x\in A)(|x|\leq M).
+\]
+Equivalently,
+\[
+  A\text{ is bounded}
+  \Longleftrightarrow
+  (\exists M>0)(\forall x\in A)(-M\leq x\leq M).
+\]
 \end{definition}
 \end{definitionbox}
 \begin{remark*}[Standard quantified statement]
@@ -82,9 +91,12 @@ complements, and differences may split into several interval pieces.
 \begin{definitionbox}{Definition (Union of Intervals)}
 \begin{definition}[Union of Intervals]
 \label{def:union-of-intervals}
-Let $I,J\subseteq\mathbb{R}$ be intervals. Their \emph{union} is the set
+Let $\{I_\lambda\}_{\lambda\in\Lambda}$ be a family of intervals in
+$\mathbb{R}$.  Their \emph{union} is the set
 \[
-I\cup J=\{x\in\mathbb{R}:x\in I\text{ or }x\in J\}.
+  \bigcup_{\lambda\in\Lambda}I_\lambda
+  :=
+  \{x\in\mathbb{R}:(\exists\lambda\in\Lambda)(x\in I_\lambda)\}.
 \]
 \end{definition}
 \end{definitionbox}
@@ -112,9 +124,12 @@ leave a gap.
 \begin{definitionbox}{Definition (Intersection of Intervals)}
 \begin{definition}[Intersection of Intervals]
 \label{def:intersection-of-intervals}
-Let $I,J\subseteq\mathbb{R}$ be intervals. Their \emph{intersection} is the set
+Let $\{I_\lambda\}_{\lambda\in\Lambda}$ be a family of intervals in
+$\mathbb{R}$.  Their \emph{intersection} is the set
 \[
-I\cap J=\{x\in\mathbb{R}:x\in I\text{ and }x\in J\}.
+  \bigcap_{\lambda\in\Lambda}I_\lambda
+  :=
+  \{x\in\mathbb{R}:(\forall\lambda\in\Lambda)(x\in I_\lambda)\}.
 \]
 \end{definition}
 \end{definitionbox}
@@ -144,8 +159,9 @@ real line this common part is either empty or another interval.
 Let $I\subseteq\mathbb{R}$ be an interval. Its \emph{complement} in
 $\mathbb{R}$ is the set
 \[
-I^{c}=\mathbb{R}\setminus I
-=\{x\in\mathbb{R}:x\notin I\}.
+  I^{c}:=\mathbb{R}\setminus I
+  =
+  \{x\in\mathbb{R}:x\notin I\}.
 \]
 \end{definition}
 \end{definitionbox}
@@ -173,11 +189,12 @@ endpoint excluded from $I$ is included in $I^c$.
 \begin{definitionbox}{Definition (Difference of Intervals)}
 \begin{definition}[Difference of Intervals]
 \label{def:difference-of-intervals}
-Let $I,J\subseteq\mathbb{R}$ be intervals. The \emph{difference} of $I$ by
+Let $I,J\subseteq\mathbb{R}$ be intervals.  The \emph{difference} of $I$ and
 $J$ is the set
 \[
-I\setminus J=\{x\in\mathbb{R}:x\in I\text{ and }x\notin J\}
-=I\cap J^{c}.
+  I\setminus J
+  :=
+  \{x\in\mathbb{R}:x\in I\text{ and }x\notin J\}.
 \]
 \end{definition}
 \end{definitionbox}

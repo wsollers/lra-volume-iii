@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "cor:no-adjacent-real-numbers",
+  "kind": "corollary",
+  "title": "No Adjacent Real Numbers",
+  "source": {
+    "label": "cor:no-adjacent-real-numbers",
+    "kind": "corollary",
+    "title": "No Adjacent Real Numbers",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "completeness",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-density.tex",
+    "source_line_start": 838,
+    "source_line_end": 904,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/cor-no-adjacent-real-numbers",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/cor-no-adjacent-real-numbers/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/cor-no-adjacent-real-numbers/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/cor-no-adjacent-real-numbers",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/cor-no-adjacent-real-numbers/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/cor-no-adjacent-real-numbers/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-density.tex",
+      "label": "cor:no-adjacent-real-numbers",
+      "environment_kind": "corollary",
+      "source_line_start": 838,
+      "source_line_end": 904,
+      "current_tex": "\\begin{corollary}[No Adjacent Real Numbers]\n\\label{cor:no-adjacent-real-numbers}\nFor every $a,b\\in\\mathbb{R}$, if $a<b$, then there exists\n$c\\in\\mathbb{R}$ such that\n\\[\n  a<c<b.\n\\]\n\\hyperref[prf:no-adjacent-real-numbers]{Go to proof.}\n\\end{corollary}\n\\end{corollarybox}\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\forall a,b\\in\\mathbb{R}\\;\\bigl(a<b\\Longrightarrow\n\\exists c\\in\\mathbb{R}\\;(a<c<b)\\bigr).\n\\]\n\\end{remark*}\n\\begin{remark*}[Predicate reading]\n\\[\nP_{\\mathbb{R}}=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad\nD_{\\mathbb{R}}=\\mathsf{OrderDenseSet}(\\mathbb{R},P_{\\mathbb{R}}),\\qquad\n\\operatorname{HasDenseOrder}(P_{\\mathbb{R}}).\n\\]\n\\end{remark*}\n\\begin{remark*}[Negated quantified statement]\n\\[\n\\exists a,b\\in\\mathbb{R}\\;\n\\bigl(a<b\\land \\forall c\\in\\mathbb{R}\\;(c\\le a\\lor b\\le c)\\bigr).\n\\]\n\\end{remark*}\n\\begin{remark*}[Negation predicate reading]\n\\[\nP_{\\mathbb{R}}=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad\nD_{\\mathbb{R}}=\\mathsf{OrderDenseSet}(\\mathbb{R},P_{\\mathbb{R}}),\\qquad\n\\neg\\operatorname{HasDenseOrder}(P_{\\mathbb{R}}).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\n  Failure is witnessed by the displayed negated or contrapositive condition.\n\n  \\item[\\operatorname{HasDenseOrder}.]\n  \\[\n\\exists a,b\\in\\mathbb{R}\\;\n\\bigl(a<b\\land \\forall c\\in\\mathbb{R}\\;(c\\le a\\lor b\\le c)\\bigr).\n\\]\n\\[\nP_{\\mathbb{R}}=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad\nD_{\\mathbb{R}}=\\mathsf{OrderDenseSet}(\\mathbb{R},P_{\\mathbb{R}}),\\qquad\n\\neg\\operatorname{HasDenseOrder}(P_{\\mathbb{R}}).\n\\]\n\\end{description}\n\\end{remark*}\n\\begin{remark*}[Interpretation]\nNo two distinct real numbers are consecutive; every nonempty open real interval\ncontains another real point.\n\\end{remark*}\n\\begin{dependencies}\n\\begin{itemize}\n\\item \\hyperref[def:reals]{Real Numbers}.\n\\item \\hyperref[def:ordered-set]{Ordered Set}.\n\\item \\hyperref[thm:density-of-rationals-in-reals]{Density of the Rationals}.\n\\end{itemize}\n\\end{dependencies}\n\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

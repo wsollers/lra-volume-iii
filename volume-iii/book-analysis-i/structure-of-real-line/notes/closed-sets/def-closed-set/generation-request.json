@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "def:closed-set",
+  "kind": "definition",
+  "title": "Closed Set in $\\mathbb{R}$",
+  "source": {
+    "label": "def:closed-set",
+    "kind": "definition",
+    "title": "Closed Set in $\\mathbb{R}$",
+    "book": "book-analysis-i",
+    "chapter": "structure-of-real-line",
+    "section": "closed-sets",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/structure-of-real-line/notes/closed-sets/notes-closed-sets.tex",
+    "source_line_start": 8,
+    "source_line_end": 40,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/structure-of-real-line/notes/closed-sets/def-closed-set",
+      "artifact": "volume-iii/book-analysis-i/structure-of-real-line/notes/closed-sets/def-closed-set/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/structure-of-real-line/notes/closed-sets/def-closed-set/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/structure-of-real-line/notes/closed-sets/def-closed-set",
+    "artifact": "volume-iii/book-analysis-i/structure-of-real-line/notes/closed-sets/def-closed-set/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/structure-of-real-line/notes/closed-sets/def-closed-set/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/structure-of-real-line/notes/closed-sets/notes-closed-sets.tex",
+      "label": "def:closed-set",
+      "environment_kind": "definition",
+      "source_line_start": 8,
+      "source_line_end": 40,
+      "current_tex": "\\begin{definitionbox}{Definition (Closed Set in $\\mathbb{R}$)}\n\\begin{definition}[Closed Set in $\\mathbb{R}$]\n\\label{def:closed-set}\nA set $F\\subseteq\\mathbb{R}$ is \\emph{closed} if its complement in\n$\\mathbb{R}$ is open; that is,\n\\[\n  F\\text{ is closed}\n  \\Longleftrightarrow\n  \\mathbb{R}\\setminus F\\text{ is open}.\n\\]\nEquivalently,\n\\[\n  F\\text{ is closed}\n  \\Longleftrightarrow\n  (\\forall x\\in\\mathbb{R}\\setminus F)(\\exists r>0)\n  \\bigl(B_r(x)\\subseteq\\mathbb{R}\\setminus F\\bigr).\n\\]\n\\end{definition}\n\\end{definitionbox}\n\\begin{remark*}[Standard quantified statement]\n\\[\nF \\text{ is closed} \\Longleftrightarrow (\\mathbb{R}\\setminus F) \\text{ is open}.\n\\]\n\\end{remark*}\n\\begin{remark*}[Interpretation]\nClosed and open are complementary, not opposite: a set can be both (e.g.\\ $\\emptyset$, $\\mathbb{R}$) or neither (e.g.\\ $[0,1)$). Closed intervals $[a,b]$ are closed, as are finite sets and $\\mathbb{R}$ itself.\n\\end{remark*}\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:open-set]{Open Set in $\\mathbb{R}$}\n\\end{itemize}\n\\end{dependencies}\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "lem:unit-length-interval-contains-integer",
+  "kind": "lemma",
+  "title": "Unit-Length Interval Contains an Integer",
+  "source": {
+    "label": "lem:unit-length-interval-contains-integer",
+    "kind": "lemma",
+    "title": "Unit-Length Interval Contains an Integer",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "completeness",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-archimedean-property.tex",
+    "source_line_start": 769,
+    "source_line_end": 876,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-unit-length-interval-contains-integer",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-unit-length-interval-contains-integer/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-unit-length-interval-contains-integer/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-unit-length-interval-contains-integer",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-unit-length-interval-contains-integer/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-unit-length-interval-contains-integer/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-archimedean-property.tex",
+      "label": "lem:unit-length-interval-contains-integer",
+      "environment_kind": "lemma",
+      "source_line_start": 769,
+      "source_line_end": 876,
+      "current_tex": "\\begin{lemma}[Unit-Length Interval Contains an Integer]\n\\label{lem:unit-length-interval-contains-integer}\nFor every $x\\in\\mathbb{R}$, there exists $m\\in\\mathbb{Z}$ such that\n\\[\n  x\\leq m\\leq x+1.\n\\]\nEquivalently,\n\\[\n  (\\forall x\\in\\mathbb{R})([x,x+1]\\cap\\mathbb{Z}\\neq\\varnothing).\n\\]\n\n\\smallskip\n\\noindent\n\\hyperref[prf:unit-length-interval-contains-integer]{\\textit{Go to proof.}}\n\\end{lemma}\n\\end{lemmabox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\forall \\alpha,\\beta\\in\\mathbb{R}\\;\n\\bigl(\\beta-\\alpha>1\\Longrightarrow\n\\exists m\\in\\mathbb{Z}\\;(\\alpha<m<\\beta)\\bigr).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\nm\\in\\mathbb{Z}\\cap(\\alpha,\\beta)\n\\Longleftrightarrow\nm\\in\\mathbb{Z}\\land \\alpha<m<\\beta.\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\n\\exists \\alpha,\\beta\\in\\mathbb{R}\\;\n\\bigl(\\beta-\\alpha>1\\land\n\\forall m\\in\\mathbb{Z}\\;(m\\le \\alpha\\lor \\beta\\le m)\\bigr).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negation predicate reading]\n\\[\n\\neg\\exists m\\;(m\\in\\mathbb{Z}\\cap(\\alpha,\\beta))\n\\Longleftrightarrow\n\\forall m\\in\\mathbb{Z}\\;(m\\le \\alpha\\lor \\beta\\le m).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\nThe lemma fails only if an open interval of length greater than one still\nmisses every integer.\n\n\n  \\item[\\exists-condition.]\n  \\[\n\\exists \\alpha,\\beta\\in\\mathbb{R}\\;\n\\bigl(\\beta-\\alpha>1\\land\n\\forall m\\in\\mathbb{Z}\\;(m\\le \\alpha\\lor \\beta\\le m)\\bigr).\n\\]\n\\[\n\\neg\\exists m\\;(m\\in\\mathbb{Z}\\cap(\\alpha,\\beta))\n\\Longleftrightarrow\n\\forall m\\in\\mathbb{Z}\\;(m\\le \\alpha\\lor \\beta\\le m).\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\n\\[\n\\underbrace{m\\le \\alpha}_{\\text{integer at or left of the interval}}\n\\qquad\\text{or}\\qquad\n\\underbrace{\\beta\\le m}_{\\text{integer at or right of the interval}}.\n\\]\n\n\n  \\item[\\exists-condition.]\n  \\[\n\\exists \\alpha,\\beta\\in\\mathbb{R}\\;\n\\bigl(\\beta-\\alpha>1\\land\n\\forall m\\in\\mathbb{Z}\\;(m\\le \\alpha\\lor \\beta\\le m)\\bigr).\n\\]\n\\[\n\\neg\\exists m\\;(m\\in\\mathbb{Z}\\cap(\\alpha,\\beta))\n\\Longleftrightarrow\n\\forall m\\in\\mathbb{Z}\\;(m\\le \\alpha\\lor \\beta\\le m).\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nOpen intervals longer than one unit cannot fit between consecutive integers.\nAt least one integer must lie strictly inside.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n\\item \\hyperref[def:reals]{Real Numbers}.\n\\item \\hyperref[def:integers]{Integers}.\n\\item \\hyperref[def:open-interval]{Open Interval}.\n\\item \\hyperref[lem:integer-ceiling-lemma]{Integer Ceiling Lemma}.\n\\end{itemize}\n\\end{dependencies}\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

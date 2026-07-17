@@ -1,0 +1,28 @@
+\begin{definitionbox}{Definition (Boundary Point)}
+\begin{definition}[Boundary Point]
+\label{def:boundary-point}
+Let $A\subseteq\mathbb{R}$ and $x\in\mathbb{R}$.  The point $x$ is a
+boundary point of $A$ if every open ball centered at $x$ meets both $A$ and
+its complement; that is,
+\[
+  (\forall r>0)(B_r(x)\cap A\neq\varnothing)
+\]
+and
+\[
+  (\forall r>0)(B_r(x)\cap(\mathbb{R}\setminus A)\neq\varnothing).
+\]
+\end{definition}
+\end{definitionbox}
+\begin{remark*}[Standard quantified statement]
+\[
+x \text{ is a boundary point of } E \Longleftrightarrow \forall r>0\;(B_{r}(x)\cap E\neq\emptyset \;\land\; B_{r}(x)\cap(\mathbb{R}\setminus E)\neq\emptyset).
+\]
+\end{remark*}
+\begin{remark*}[Interpretation]
+A boundary point of $E$ is approached from both sides: every ball around it meets both $E$ and its complement.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:open-ball]{Open Ball on the Real Line}
+\end{itemize}
+\end{dependencies}

@@ -1,0 +1,98 @@
+\begin{proposition}[Union Is Bounded Above Exactly When Both Pieces Are]
+\label{prop:union-bounded-above-iff-pieces-bounded-above}
+Let $A,B\subseteq\mathbb{R}$. The union $A\cup B$ is bounded above if and
+only if both $A$ and $B$ are bounded above; equivalently,
+\[
+\left(\exists u\in\mathbb{R}\ \forall x\in A\cup B,\ x\leq u\right)
+\Longleftrightarrow
+\left[
+\left(\exists u_A\in\mathbb{R}\ \forall a\in A,\ a\leq u_A\right)
+\land
+\left(\exists u_B\in\mathbb{R}\ \forall b\in B,\ b\leq u_B\right)
+\right].
+\]
+\hyperref[prf:union-bounded-above-iff-pieces-bounded-above]{Go to proof.}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\bigl[(\exists u\in\mathbb{R})(\forall x\in A\cup B)(x\leq u)\bigr]
+\Longleftrightarrow
+\bigl[(\exists u_A\in\mathbb{R})(\forall a\in A)(a\leq u_A)\bigr]
+\land
+\bigl[(\exists u_B\in\mathbb{R})(\forall b\in B)(b\leq u_B)\bigr].
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\qquad U=A\cup B,\\
+&\operatorname{BoundedAbove}(U,P)
+\Longleftrightarrow
+\operatorname{BoundedAbove}(A,P)\land\operatorname{BoundedAbove}(B,P).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+The equivalence fails precisely if one side holds and the other does not.
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\qquad U=A\cup B,\\
+&\operatorname{BoundedAbove}(U,P)\oplus
+\bigl(\operatorname{BoundedAbove}(A,P)\land\operatorname{BoundedAbove}(B,P)\bigr).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
+The forward direction could fail only if a bound for the union did not bound a
+piece.  The reverse direction could fail only if bounds for both pieces did not
+combine into a bound for the union.
+
+
+  \item[\operatorname{BoundedAbove}.]
+
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\qquad U=A\cup B,\\
+&\operatorname{BoundedAbove}(U,P)\oplus
+\bigl(\operatorname{BoundedAbove}(A,P)\land\operatorname{BoundedAbove}(B,P)\bigr).
+\end{aligned}
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\qquad U=A\cup B,\\
+&\operatorname{BoundedAbove}(U,P)
+\Longleftrightarrow
+\operatorname{BoundedAbove}(A,P)\land\operatorname{BoundedAbove}(B,P).
+\end{aligned}
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Use subset inheritance for the forward direction and
+\hyperref[lem:union-preserves-upper-bounds]{Union Preserves Upper Bounds} for
+the reverse direction.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+\item \hyperref[def:reals]{Real Numbers}.
+\item \hyperref[def:ordered-set]{Ordered Set}.
+\item \hyperref[def:subset]{Subset}.
+\item \hyperref[def:union]{Union}.
+\item \hyperref[def:bounded-above]{Bounded Above}.
+\item \hyperref[lem:union-preserves-upper-bounds]{Union Preserves Upper Bounds}.
+\item \hyperref[lem:subsets-preserve-upper-bounds]{Subsets Preserve Upper Bounds}.
+\end{itemize}
+\end{dependencies}
+

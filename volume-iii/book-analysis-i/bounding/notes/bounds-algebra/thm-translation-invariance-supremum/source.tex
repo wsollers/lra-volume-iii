@@ -1,0 +1,114 @@
+\begin{theorem}[Translation Invariance of the Supremum]
+\label{thm:translation-invariance-supremum}
+Let $A\subseteq\mathbb{R}$ be nonempty and bounded above, and let
+$c\in\mathbb{R}$.  Then $A+c:=\{a+c:a\in A\}$ is nonempty and bounded above,
+and
+\[
+  \sup(A+c)=\sup A+c.
+\]
+\hyperref[prf:translation-invariance-supremum]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+A\neq\varnothing,\quad A\text{ bounded above},\quad c\in\mathbb{R}
+\quad\Longrightarrow\quad
+\sup\{a+c:a\in A\}=\sup A+c.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad A+c=\{a+c:a\in A\},\\
+&\operatorname{LeastUpperBound}(s,A,P)
+\Longrightarrow
+\operatorname{LeastUpperBound}(s+c,A+c,P).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\sup(A+c)\ne \sup A+c
+\]
+is impossible under the stated hypotheses.
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad A+c=\{a+c:a\in A\},\\
+&\operatorname{LeastUpperBound}(s,A,P)\land
+\neg\operatorname{LeastUpperBound}(s+c,A+c,P)
+\end{aligned}
+\]
+is a contradictory configuration.
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+The formula could fail only if translation either failed to preserve upper bounds or failed to preserve leastness. Adding the same real number to every comparison preserves the order, so neither failure mode can occur.
+
+
+  \item[\operatorname{LeastUpperBound}.]
+  \[
+\sup(A+c)\ne \sup A+c
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad A+c=\{a+c:a\in A\},\\
+&\operatorname{LeastUpperBound}(s,A,P)\land
+\neg\operatorname{LeastUpperBound}(s+c,A+c,P)
+\end{aligned}
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+\[
+\begin{aligned}
+\forall a\in A\;(a\leq s)
+&\Longleftrightarrow
+\forall a\in A\;(a+c\leq s+c),\\
+\forall u\,[\operatorname{UpperBound}(u,A)\Longrightarrow s\leq u]
+&\Longleftrightarrow
+\forall v\,[\operatorname{UpperBound}(v,A+c)\Longrightarrow s+c\leq v].
+\end{aligned}
+\]
+
+
+  \item[\operatorname{LeastUpperBound}.]
+  \[
+\sup(A+c)\ne \sup A+c
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad A+c=\{a+c:a\in A\},\\
+&\operatorname{LeastUpperBound}(s,A,P)\land
+\neg\operatorname{LeastUpperBound}(s+c,A+c,P)
+\end{aligned}
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Translation shifts the entire set and all of its ceilings by the same amount. The least ceiling therefore shifts by exactly that amount.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:reals]{Real Numbers}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:addition-on-r]{Addition on $\mathbb{R}$}
+  \item \hyperref[def:set-arithmetic-images]{Set Arithmetic Images}
+  \item \hyperref[def:real-upper-bound]{Upper Bound}
+  \item \hyperref[def:supremum]{Supremum}
+\end{itemize}
+\end{dependencies}
+

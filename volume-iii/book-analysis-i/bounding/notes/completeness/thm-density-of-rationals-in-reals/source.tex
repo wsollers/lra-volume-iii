@@ -1,0 +1,105 @@
+\begin{theorem}[Density of the Rationals]
+\label{thm:density-of-rationals-in-reals}
+For every $a,b\in\mathbb{R}$ with $a<b$, there exists $q\in\mathbb{Q}$ such
+that
+\[
+  a<q<b.
+\]
+Equivalently,
+\[
+  (\forall a,b\in\mathbb{R})
+  \bigl[a<b\Longrightarrow(\exists q\in\mathbb{Q})(a<q<b)\bigr].
+\]
+\hyperref[prf:density-of-rationals-in-reals]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a,b\in\mathbb{R}\;\bigl(a<b\Longrightarrow \exists q\in\mathbb{Q}\;(a<q<b)\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad \mathbb{Q}\subseteq\mathbb{R},\qquad
+D_{\mathbb{Q}}=\mathsf{OrderDenseSet}(\mathbb{Q},P_{\mathbb{R}}),\qquad
+\operatorname{IsOrderDenseSubset}(\mathbb{Q},P_{\mathbb{R}})\Longleftrightarrow
+\forall a,b\in\mathbb{R}\;\bigl(a<b\Longrightarrow \exists q\in\mathbb{Q}\;(a<q<b)\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\exists a,b\in\mathbb{R}\;\bigl(a<b\land \forall q\in\mathbb{Q}\;(q\le a\lor b\le q)\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad \mathbb{Q}\subseteq\mathbb{R},\qquad
+D_{\mathbb{Q}}=\mathsf{OrderDenseSet}(\mathbb{Q},P_{\mathbb{R}}),\qquad
+\neg\operatorname{IsOrderDenseSubset}(\mathbb{Q},P_{\mathbb{R}})\Longleftrightarrow
+\exists a,b\in\mathbb{R}\;\bigl(a<b\land \forall q\in\mathbb{Q}\;(q\le a\lor b\le q)\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
+The theorem would fail precisely if some nonempty real interval contained no rational number.
+
+
+  \item[\operatorname{IsOrderDenseSubset}.]
+  \[
+\exists a,b\in\mathbb{R}\;\bigl(a<b\land \forall q\in\mathbb{Q}\;(q\le a\lor b\le q)\bigr).
+\]
+\[
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad \mathbb{Q}\subseteq\mathbb{R},\qquad
+D_{\mathbb{Q}}=\mathsf{OrderDenseSet}(\mathbb{Q},P_{\mathbb{R}}),\qquad
+\neg\operatorname{IsOrderDenseSubset}(\mathbb{Q},P_{\mathbb{R}})\Longleftrightarrow
+\exists a,b\in\mathbb{R}\;\bigl(a<b\land \forall q\in\mathbb{Q}\;(q\le a\lor b\le q)\bigr).
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
+\[
+\neg\operatorname{IsOrderDenseSubset}(\mathbb{Q},\mathbb{R})
+=
+\underbrace{\exists a,b\in\mathbb{R}\;(a<b)}_{\text{nonempty real interval}}
+\;\land\;
+\underbrace{\forall q\in\mathbb{Q}\;(q\le a\lor b\le q)}_{\text{no rational lies inside}}.
+\]
+
+
+  \item[\operatorname{IsOrderDenseSubset}.]
+  \[
+\exists a,b\in\mathbb{R}\;\bigl(a<b\land \forall q\in\mathbb{Q}\;(q\le a\lor b\le q)\bigr).
+\]
+\[
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad \mathbb{Q}\subseteq\mathbb{R},\qquad
+D_{\mathbb{Q}}=\mathsf{OrderDenseSet}(\mathbb{Q},P_{\mathbb{R}}),\qquad
+\neg\operatorname{IsOrderDenseSubset}(\mathbb{Q},P_{\mathbb{R}})\Longleftrightarrow
+\exists a,b\in\mathbb{R}\;\bigl(a<b\land \forall q\in\mathbb{Q}\;(q\le a\lor b\le q)\bigr).
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Rational numbers penetrate every real interval. The theorem does not say that every real number is rational; it says that rational numbers are never separated from a real interval by a positive order gap. This is the interval form of rational density in the real line.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+\item \hyperref[def:reals]{Real Numbers}.
+\item \hyperref[def:rationals]{Rational Numbers}.
+\item \hyperref[def:ordered-set]{Ordered Set}.
+\item \hyperref[def:subset]{Subset}.
+\item \hyperref[def:order-dense-subset]{Order Dense Subset}.
+\item \hyperref[thm:archimedean-property]{Archimedean Property}.
+\end{itemize}
+\end{dependencies}
+

@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "lem:rational-difference-preserves-rationality",
+  "kind": "lemma",
+  "title": "Rational Difference Preserves Rationality",
+  "source": {
+    "label": "lem:rational-difference-preserves-rationality",
+    "kind": "lemma",
+    "title": "Rational Difference Preserves Rationality",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "completeness",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-density.tex",
+    "source_line_start": 377,
+    "source_line_end": 409,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-rational-difference-preserves-rationality",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-rational-difference-preserves-rationality/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-rational-difference-preserves-rationality/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-rational-difference-preserves-rationality",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-rational-difference-preserves-rationality/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-rational-difference-preserves-rationality/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-density.tex",
+      "label": "lem:rational-difference-preserves-rationality",
+      "environment_kind": "lemma",
+      "source_line_start": 377,
+      "source_line_end": 409,
+      "current_tex": "\\begin{lemma}[Rational Difference Preserves Rationality]\n\\label{lem:rational-difference-preserves-rationality}\nFor every $r,q\\in\\mathbb{Q}$,\n\\[\n  r-q\\in\\mathbb{Q}.\n\\]\n\\hyperref[prf:rational-difference-preserves-rationality]{\\textit{Go to proof.}}\n\\end{lemma}\n\\end{lemmabox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\forall r,q\\in\\mathbb{Q}\\;(r-q\\in\\mathbb{Q}).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\nr\\in\\mathbb{Q}\\land q\\in\\mathbb{Q}\\Longrightarrow r-q\\in\\mathbb{Q}.\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nSubtraction is addition of the additive inverse, and rational numbers are\nclosed under both operations.\n\\end{remark*}\n\n\\begin{dependencies}\n\\hyperref[def:subtraction-on-q]{Definition~\\ref*{def:subtraction-on-q}},\n\\hyperref[thm:q-is-a-field]{Theorem~\\ref*{thm:q-is-a-field}}.\n\\end{dependencies}\n\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

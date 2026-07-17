@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "prop:open-nested-intervals-need-not-have-nonempty-intersection",
+  "kind": "proposition",
+  "title": "Open Nested Intervals Need Not Have Nonempty Intersection",
+  "source": {
+    "label": "prop:open-nested-intervals-need-not-have-nonempty-intersection",
+    "kind": "proposition",
+    "title": "Open Nested Intervals Need Not Have Nonempty Intersection",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "completeness",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-nested-interval-property.tex",
+    "source_line_start": 1127,
+    "source_line_end": 1253,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/prop-open-nested-intervals-need-not-have-nonempty-intersection",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/prop-open-nested-intervals-need-not-have-nonempty-intersection/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/prop-open-nested-intervals-need-not-have-nonempty-intersection/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/prop-open-nested-intervals-need-not-have-nonempty-intersection",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/prop-open-nested-intervals-need-not-have-nonempty-intersection/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/prop-open-nested-intervals-need-not-have-nonempty-intersection/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-nested-interval-property.tex",
+      "label": "prop:open-nested-intervals-need-not-have-nonempty-intersection",
+      "environment_kind": "proposition",
+      "source_line_start": 1127,
+      "source_line_end": 1253,
+      "current_tex": "\\begin{proposition}[Open Nested Intervals Need Not Have Nonempty Intersection]\n\\label{prop:open-nested-intervals-need-not-have-nonempty-intersection}\nThere exists a sequence $(I_n)_{n\\in\\mathbb{N}}$ of nonempty bounded open\nintervals in $\\mathbb{R}$ such that\n\\[\n  (\\forall n\\in\\mathbb{N})(I_{n+1}\\subseteq I_n),\n\\]\nbut\n\\[\n  \\bigcap_{n=1}^{\\infty}I_n=\\varnothing.\n\\]\nOne such sequence is\n\\[\n  I_n=\\left(0,\\frac{1}{n}\\right).\n\\]\n\\hyperref[prf:open-nested-intervals-need-not-have-nonempty-intersection]{Go to proof.}\n\\end{proposition}\n\\end{propositionbox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\exists (a_n)\\subseteq\\mathbb{R}\\;\\exists (b_n)\\subseteq\\mathbb{R}\\;\n\\left[\n\\begin{aligned}\n&\\forall n\\in\\mathbb{N}\\;(a_n<b_n)\n\\land\n\\forall n\\in\\mathbb{N}\\;((a_{n+1},b_{n+1})\\subseteq (a_n,b_n))\\\\\n&\\land\n\\forall x\\in\\mathbb{R}\\;\\exists n\\in\\mathbb{N}\\;(x\\notin(a_n,b_n))\n\\end{aligned}\n\\right].\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\n\\exists F\\;\\exists\\mathcal{I}\\;\\exists C\\;\\bigl(\n\\mathcal{I}=\\mathsf{IndexedFamily}(F,\\mathbb{N},\\mathbb{R})\n\\land C=\\bigcap_{n=1}^{\\infty}I_n\n\\land \\Phi=\\mathsf{OpenBoundedInterval}\n\\land\n\\operatorname{MembersSatisfy}(\\mathcal{I},\\Phi,\\mathbb{R})\n\\land\n\\operatorname{Nested}(\\mathcal{I},\\subseteq)\n\\land\n\\operatorname{IsEmpty}(C)\n\\bigr).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\n\\forall (a_n),(b_n)\\;\\forall\\mathcal{I}\\;\n\\left[\n\\mathcal{I}=\\mathsf{IndexedFamily}((a_n,b_n),\\mathbb{N},\\mathbb{R})\n\\land\n\\operatorname{MembersSatisfy}(\\mathcal{I},\\mathsf{OpenBoundedInterval},\\mathbb{R})\n\\land\n\\operatorname{Nested}(\\mathcal{I},\\subseteq)\n\\Longrightarrow\n\\exists x\\in\\mathbb{R}\\;\\forall n\\in\\mathbb{N}\\;(x\\in(a_n,b_n))\n\\right].\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negation predicate reading]\n\\[\n\\forall (a_n),(b_n)\\;\\forall\\mathcal{I}\\;\n\\left[\n\\mathcal{I}=\\mathsf{IndexedFamily}((a_n,b_n),\\mathbb{N},\\mathbb{R})\n\\land\n\\operatorname{MembersSatisfy}(\\mathcal{I},\\mathsf{OpenBoundedInterval},\\mathbb{R})\n\\land\n\\operatorname{Nested}(\\mathcal{I},\\subseteq)\n\\Longrightarrow\n\\exists x\\in\\mathbb{R}\\;\\forall n\\in\\mathbb{N}\\;(x\\in(a_n,b_n))\n\\right].\n\\]\n\nThe negation predicate reading is the predicate-level form of the displayed negated statement.\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\n  Failure is witnessed by the displayed negated or contrapositive condition.\n\n  \\item[\\operatorname{MembersSatisfy} / \\operatorname{Nested}.]\n  \\[\n\\forall (a_n),(b_n)\\;\\forall\\mathcal{I}\\;\n\\left[\n\\mathcal{I}=\\mathsf{IndexedFamily}((a_n,b_n),\\mathbb{N},\\mathbb{R})\n\\land\n\\operatorname{MembersSatisfy}(\\mathcal{I},\\mathsf{OpenBoundedInterval},\\mathbb{R})\n\\land\n\\operatorname{Nested}(\\mathcal{I},\\subseteq)\n\\Longrightarrow\n\\exists x\\in\\mathbb{R}\\;\\forall n\\in\\mathbb{N}\\;(x\\in(a_n,b_n))\n\\right].\n\\]\n\\[\n\\exists F\\;\\exists\\mathcal{I}\\;\\exists C\\;\\bigl(\n\\mathcal{I}=\\mathsf{IndexedFamily}(F,\\mathbb{N},\\mathbb{R})\n\\land C=\\bigcap_{n=1}^{\\infty}I_n\n\\land \\Phi=\\mathsf{OpenBoundedInterval}\n\\land\n\\operatorname{MembersSatisfy}(\\mathcal{I},\\Phi,\\mathbb{R})\n\\land\n\\operatorname{Nested}(\\mathcal{I},\\subseteq)\n\\land\n\\operatorname{IsEmpty}(C)\n\\bigr).\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nOpen intervals can lose the limiting endpoint that every closed truncation\nwould retain.\n\\end{remark*}\n\n\\begin{dependencies}\n\\hyperref[def:open-interval]{Open Interval};\n\\hyperref[def:bounded-subset-of-r]{Bounded Subset of the Real Line}.\n\\end{dependencies}\n\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

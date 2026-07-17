@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "lem:subsets-preserve-upper-bounds",
+  "kind": "lemma",
+  "title": "Subsets Preserve Upper Bounds",
+  "source": {
+    "label": "lem:subsets-preserve-upper-bounds",
+    "kind": "lemma",
+    "title": "Subsets Preserve Upper Bounds",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "bounds-algebra",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-set-operations-and-bounds.tex",
+    "source_line_start": 489,
+    "source_line_end": 572,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/lem-subsets-preserve-upper-bounds",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/lem-subsets-preserve-upper-bounds/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/lem-subsets-preserve-upper-bounds/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/lem-subsets-preserve-upper-bounds",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/lem-subsets-preserve-upper-bounds/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/lem-subsets-preserve-upper-bounds/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-set-operations-and-bounds.tex",
+      "label": "lem:subsets-preserve-upper-bounds",
+      "environment_kind": "lemma",
+      "source_line_start": 489,
+      "source_line_end": 572,
+      "current_tex": "\\begin{lemma}[Subsets Preserve Upper Bounds]\n\\label{lem:subsets-preserve-upper-bounds}\nLet $C\\subseteq A\\subseteq\\mathbb{R}$. Every upper bound of $A$ is an\nupper bound of $C$; that is, for every $u\\in\\mathbb{R}$,\n\\[\n\\left(\\forall a\\in A,\\ a\\leq u\\right)\n\\Longrightarrow\n(\\forall c\\in C,\\ c\\leq u).\n\\]\nConsequently, every subset of a set bounded above is bounded above.\n\\hyperref[prf:subsets-preserve-upper-bounds]{Go to proof.}\n\\end{lemma}\n\\end{lemmabox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\nC\\subseteq A\\land(\\forall a\\in A)(a\\leq u)\n\\Longrightarrow\n(\\forall c\\in C)(c\\leq u).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad C\\subseteq A\\subseteq\\mathbb{R},\\\\\n&\\operatorname{UpperBound}(u,A,P)\n\\Longrightarrow \\operatorname{UpperBound}(u,C,P).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\nC\\subseteq A,\\quad (\\forall a\\in A)(a\\leq u),\\quad\n(\\exists c\\in C)(u<c).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negation predicate reading]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad C\\subseteq A\\subseteq\\mathbb{R},\\\\\n&\\operatorname{UpperBound}(u,A,P)\\land\\neg\\operatorname{UpperBound}(u,C,P).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n\\item[Exposition.]\nA failure would require a counterexample in $C$ that is not already a\ncounterexample in $A$.\n\n\n  \\item[\\operatorname{UpperBound}.]\n  \\[\nC\\subseteq A,\\quad (\\forall a\\in A)(a\\leq u),\\quad\n(\\exists c\\in C)(u<c).\n\\]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad C\\subseteq A\\subseteq\\mathbb{R},\\\\\n&\\operatorname{UpperBound}(u,A,P)\\land\\neg\\operatorname{UpperBound}(u,C,P).\n\\end{aligned}\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nSince $C\\subseteq A$, every $c\\in C$ is an element of $A$.  The upper-bound\ncondition on $A$ therefore applies directly to $c$.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n\\item \\hyperref[def:reals]{Real Numbers}.\n\\item \\hyperref[def:ordered-set]{Ordered Set}.\n\\item \\hyperref[def:subset]{Subset}.\n\\item \\hyperref[def:real-upper-bound]{Upper Bound}.\n\\end{itemize}\n\\end{dependencies}\n\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

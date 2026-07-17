@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "def:open-ball",
+  "kind": "definition",
+  "title": "Open Ball on the Real Line",
+  "source": {
+    "label": "def:open-ball",
+    "kind": "definition",
+    "title": "Open Ball on the Real Line",
+    "book": "book-analysis-i",
+    "chapter": "structure-of-real-line",
+    "section": "neighborhoods-and-balls",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/structure-of-real-line/notes/neighborhoods-and-balls/notes-neighborhoods-and-balls.tex",
+    "source_line_start": 8,
+    "source_line_end": 40,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/structure-of-real-line/notes/neighborhoods-and-balls/def-open-ball",
+      "artifact": "volume-iii/book-analysis-i/structure-of-real-line/notes/neighborhoods-and-balls/def-open-ball/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/structure-of-real-line/notes/neighborhoods-and-balls/def-open-ball/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/structure-of-real-line/notes/neighborhoods-and-balls/def-open-ball",
+    "artifact": "volume-iii/book-analysis-i/structure-of-real-line/notes/neighborhoods-and-balls/def-open-ball/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/structure-of-real-line/notes/neighborhoods-and-balls/def-open-ball/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/structure-of-real-line/notes/neighborhoods-and-balls/notes-neighborhoods-and-balls.tex",
+      "label": "def:open-ball",
+      "environment_kind": "definition",
+      "source_line_start": 8,
+      "source_line_end": 40,
+      "current_tex": "\\begin{definitionbox}{Definition (Open Ball on the Real Line)}\n\\begin{definition}[Open Ball on the Real Line]\n\\label{def:open-ball}\nLet $x\\in\\mathbb{R}$ and let $r>0$.  The \\emph{open ball} of radius $r$\ncentered at $x$ is\n\\[\n  B_r(x):=\\{y\\in\\mathbb{R}:d(x,y)<r\\}.\n\\]\nSince $d(x,y)=|x-y|$,\n\\[\n  B_r(x)\n  =\n  \\{y\\in\\mathbb{R}:|x-y|<r\\}\n  =\n  (x-r,x+r).\n\\]\n\\end{definition}\n\\end{definitionbox}\n\\begin{remark*}[Standard quantified statement]\n\\[\nB_{r}(x)=\\{\\,y\\in\\mathbb{R} : d(y,x)<r\\,\\}=(x-r,x+r).\n\\]\n\\end{remark*}\n\\begin{remark*}[Interpretation]\nA ball on the line is just a symmetric open interval: all points strictly within distance $r$ of $x$. Writing balls as intervals keeps the chapter inside the metric topology of $\\mathbb{R}$.\n\\end{remark*}\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:distance-on-real-line]{Distance on the Real Line}\n  \\item \\hyperref[def:open-interval]{Open Interval}\n\\end{itemize}\n\\end{dependencies}\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

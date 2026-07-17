@@ -1,0 +1,129 @@
+\begin{theorem}[Decreasing Image Sends Supremum to Infimum]
+\label{thm:decreasing-image-supremum-to-infimum}
+Let $I\subseteq\mathbb{R}$ be an interval, let $A\subseteq I$ be nonempty and
+bounded above, and suppose $s:=\sup A\in I$.  If $f\colon I\to\mathbb{R}$ is
+decreasing and continuous at $s$ relative to $I$, then
+$f[A]:=\{f(a):a\in A\}$ is bounded below, and
+\[
+  \inf f[A]=f(\sup A).
+\]
+\hyperref[prf:decreasing-image-supremum-to-infimum]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+A\neq\varnothing,\quad s=\sup A\in I,\quad f\text{ decreasing and continuous at }s
+\Longrightarrow
+\inf\{f(a):a\in A\}=f(s).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\begin{aligned}
+&A\subseteq I,\qquad f\colon I\to\mathbb{R},\qquad
+B=f(A)=\{f(a):a\in A\},\\
+&P_I=\mathsf{OrderedSet}(I,\leq),\qquad
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\\
+&\operatorname{LeastUpperBound}(s,A,P_I)\land
+\operatorname{OrderReversing}(f,P_I,P_{\mathbb{R}})\land
+\operatorname{IsContinuous}(f,s,I,\mathbb{R})
+\Longrightarrow
+\operatorname{GreatestLowerBound}(f(s),B,P_{\mathbb{R}}).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\inf f(A)\neq f(\sup A)
+\]
+is impossible under the stated hypotheses.
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\begin{aligned}
+&A\subseteq I,\qquad f\colon I\to\mathbb{R},\qquad
+B=f(A)=\{f(a):a\in A\},\\
+&P_I=\mathsf{OrderedSet}(I,\leq),\qquad
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\\
+&\operatorname{LeastUpperBound}(s,A,P_I)\land
+\operatorname{OrderReversing}(f,P_I,P_{\mathbb{R}})\land
+\operatorname{IsContinuous}(f,s,I,\mathbb{R})\land
+\neg\operatorname{GreatestLowerBound}(f(s),B,P_{\mathbb{R}}).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
+The equality can fail if $f$ is not decreasing, if $\sup A$ is outside the
+domain, or if $f$ is not continuous at the upper endpoint.
+
+
+  \item[\operatorname{LeastUpperBound} / \operatorname{OrderReversing}.]
+  \[
+\inf f(A)\neq f(\sup A)
+\]
+\[
+\begin{aligned}
+&A\subseteq I,\qquad f\colon I\to\mathbb{R},\qquad
+B=f(A)=\{f(a):a\in A\},\\
+&P_I=\mathsf{OrderedSet}(I,\leq),\qquad
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\\
+&\operatorname{LeastUpperBound}(s,A,P_I)\land
+\operatorname{OrderReversing}(f,P_I,P_{\mathbb{R}})\land
+\operatorname{IsContinuous}(f,s,I,\mathbb{R})\land
+\neg\operatorname{GreatestLowerBound}(f(s),B,P_{\mathbb{R}}).
+\end{aligned}
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
+Decreasingness gives $f(s)\leq f(a)$ for every $a\in A$.  Approximation of
+$s$ from below and continuity at $s$ make this lower bound sharp.
+
+
+  \item[\operatorname{LeastUpperBound} / \operatorname{OrderReversing}.]
+  \[
+\inf f(A)\neq f(\sup A)
+\]
+\[
+\begin{aligned}
+&A\subseteq I,\qquad f\colon I\to\mathbb{R},\qquad
+B=f(A)=\{f(a):a\in A\},\\
+&P_I=\mathsf{OrderedSet}(I,\leq),\qquad
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\\
+&\operatorname{LeastUpperBound}(s,A,P_I)\land
+\operatorname{OrderReversing}(f,P_I,P_{\mathbb{R}})\land
+\operatorname{IsContinuous}(f,s,I,\mathbb{R})\land
+\neg\operatorname{GreatestLowerBound}(f(s),B,P_{\mathbb{R}}).
+\end{aligned}
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+A decreasing continuous function sends the upper endpoint of the original set
+to the lower endpoint of the image.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:reals]{Real Numbers}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:function]{Function}
+  \item \hyperref[def:function-decreasing]{Decreasing Function}
+  \item \hyperref[def:supremum]{Supremum}
+  \item \hyperref[def:infimum]{Infimum}
+  \item \hyperref[def:continuous-at-point]{Continuity at a Point}
+\end{itemize}
+\end{dependencies}
+

@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "lem:minimum-of-positive-numbers-is-positive",
+  "kind": "lemma",
+  "title": "Minimum of Positive Numbers Is Positive",
+  "source": {
+    "label": "lem:minimum-of-positive-numbers-is-positive",
+    "kind": "lemma",
+    "title": "Minimum of Positive Numbers Is Positive",
+    "book": "book-analysis-i",
+    "chapter": "structure-of-real-line",
+    "section": "order-distance-length",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/structure-of-real-line/notes/order-distance-length/notes-epsilon-algebra.tex",
+    "source_line_start": 9,
+    "source_line_end": 70,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/structure-of-real-line/notes/order-distance-length/lem-minimum-of-positive-numbers-is-positive",
+      "artifact": "volume-iii/book-analysis-i/structure-of-real-line/notes/order-distance-length/lem-minimum-of-positive-numbers-is-positive/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/structure-of-real-line/notes/order-distance-length/lem-minimum-of-positive-numbers-is-positive/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/structure-of-real-line/notes/order-distance-length/lem-minimum-of-positive-numbers-is-positive",
+    "artifact": "volume-iii/book-analysis-i/structure-of-real-line/notes/order-distance-length/lem-minimum-of-positive-numbers-is-positive/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/structure-of-real-line/notes/order-distance-length/lem-minimum-of-positive-numbers-is-positive/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/structure-of-real-line/notes/order-distance-length/notes-epsilon-algebra.tex",
+      "label": "lem:minimum-of-positive-numbers-is-positive",
+      "environment_kind": "lemma",
+      "source_line_start": 9,
+      "source_line_end": 70,
+      "current_tex": "\\begin{lemmabox}{Lemma (Minimum of Positive Numbers Is Positive)}\n\\begin{lemma}[Minimum of Positive Numbers Is Positive]\n\\label{lem:minimum-of-positive-numbers-is-positive}\nFor every $a,b\\in\\mathbb{R}$,\n\\[\n  (a>0\\land b>0)\n  \\Longrightarrow\n  \\min\\{a,b\\}>0.\n\\]\n\\hyperref[prf:minimum-of-positive-numbers-is-positive]{Go to proof.}\n\\end{lemma}\n\\end{lemmabox}\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\forall a,b\\in\\mathbb{R}\\;\\bigl((a>0\\land b>0)\\Longrightarrow \\min\\{a,b\\}>0\\bigr).\n\\]\n\\end{remark*}\n\\begin{remark*}[Predicate reading]\n\\[\nm=\\min\\{a,b\\},\\qquad\n\\operatorname{Positive}(a,\\mathbb{R})\\land\\operatorname{Positive}(b,\\mathbb{R})\n\\Longrightarrow \\operatorname{Positive}(m,\\mathbb{R}).\n\\]\n\\end{remark*}\n\\begin{remark*}[Negated quantified statement]\n\\[\n\\exists a,b\\in\\mathbb{R}\\;\\bigl(a>0\\land b>0\\land \\min\\{a,b\\}\\leq 0\\bigr).\n\\]\n\\end{remark*}\n\\begin{remark*}[Negation predicate reading]\n\\[\nm=\\min\\{a,b\\},\\qquad\n\\operatorname{Positive}(a,\\mathbb{R})\\land\\operatorname{Positive}(b,\\mathbb{R})\\land\n\\neg\\operatorname{Positive}(m,\\mathbb{R}).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\n  Failure is witnessed by the displayed negated or contrapositive condition.\n\n  \\item[\\operatorname{Positive}.]\n  \\[\n\\exists a,b\\in\\mathbb{R}\\;\\bigl(a>0\\land b>0\\land \\min\\{a,b\\}\\leq 0\\bigr).\n\\]\n\\[\nm=\\min\\{a,b\\},\\qquad\n\\operatorname{Positive}(a,\\mathbb{R})\\land\\operatorname{Positive}(b,\\mathbb{R})\\land\n\\neg\\operatorname{Positive}(m,\\mathbb{R}).\n\\]\n\\end{description}\n\\end{remark*}\n\\begin{remark*}[Interpretation]\nChoosing the smaller of two positive bounds still leaves a positive bound.\n\\end{remark*}\n\\begin{dependencies}\n\\hyperref[def:real-ordered-field]{Complete Ordered Field};\n\\hyperref[thm:ineq-transitivity-strict]{Transitivity of Strict Inequality}.\n\\end{dependencies}\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

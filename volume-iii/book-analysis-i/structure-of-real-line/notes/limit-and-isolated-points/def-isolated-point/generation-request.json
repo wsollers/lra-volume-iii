@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "def:isolated-point",
+  "kind": "definition",
+  "title": "Isolated Point",
+  "source": {
+    "label": "def:isolated-point",
+    "kind": "definition",
+    "title": "Isolated Point",
+    "book": "book-analysis-i",
+    "chapter": "structure-of-real-line",
+    "section": "limit-and-isolated-points",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/structure-of-real-line/notes/limit-and-isolated-points/notes-limit-and-isolated-points.tex",
+    "source_line_start": 76,
+    "source_line_end": 121,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/structure-of-real-line/notes/limit-and-isolated-points/def-isolated-point",
+      "artifact": "volume-iii/book-analysis-i/structure-of-real-line/notes/limit-and-isolated-points/def-isolated-point/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/structure-of-real-line/notes/limit-and-isolated-points/def-isolated-point/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/structure-of-real-line/notes/limit-and-isolated-points/def-isolated-point",
+    "artifact": "volume-iii/book-analysis-i/structure-of-real-line/notes/limit-and-isolated-points/def-isolated-point/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/structure-of-real-line/notes/limit-and-isolated-points/def-isolated-point/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/structure-of-real-line/notes/limit-and-isolated-points/notes-limit-and-isolated-points.tex",
+      "label": "def:isolated-point",
+      "environment_kind": "definition",
+      "source_line_start": 76,
+      "source_line_end": 121,
+      "current_tex": "\\begin{definitionbox}{Definition (Isolated Point)}\n\\begin{definition}[Isolated Point]\n\\label{def:isolated-point}\nLet $A\\subseteq\\mathbb{R}$ and $x\\in\\mathbb{R}$.  The point $x$ is an\n\\emph{isolated point} of $A$ if\n\\[\n  x\\in A\n\\]\nand there exists $r>0$ such that\n\\[\n  B_r(x)\\cap A=\\{x\\}.\n\\]\nEquivalently,\n\\[\n  x\\in A\n  \\quad\\text{and}\\quad\n  (\\exists r>0)(\\forall a\\in A)\n  \\bigl(|a-x|<r\\Longrightarrow a=x\\bigr).\n\\]\n\\end{definition}\n\\end{definitionbox}\n\\begin{remark*}[Standard quantified statement]\n\\[\nx \\text{ is an isolated point of } E\n\\Longleftrightarrow\nx\\in E \\land \\exists r>0\\;\\forall y\\in E\\;\\bigl(|y-x|<r \\Longrightarrow y=x\\bigr).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\nE\\subseteq\\mathbb{R},\\qquad x\\in E,\\qquad\n\\operatorname{IsIsolated}(x,E,\\mathbb{R})\n\\Longleftrightarrow\n\\exists r>0\\;\\forall y\\in E\\;\\bigl(|y-x|<r \\Longrightarrow y=x\\bigr).\n\\]\n\\end{remark*}\n\\begin{remark*}[Interpretation]\nAn isolated point sits in $E$ but stands apart: some ball around it contains no other point of $E$. A point of $E$ is either isolated or a limit point of $E$, never both.\n\\end{remark*}\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:open-ball]{Open Ball on the Real Line}\n\\end{itemize}\n\\end{dependencies}\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

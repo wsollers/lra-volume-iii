@@ -8,9 +8,14 @@ The absolute value of a difference turns $\mathbb{R}$ into a metric space. Lengt
 \begin{definitionbox}{Definition (Distance on the Real Line)}
 \begin{definition}[Distance on the Real Line]
 \label{def:distance-on-real-line}
-The \emph{distance} on $\mathbb{R}$ is the map $d:\mathbb{R}\times\mathbb{R}\to\mathbb{R}$ given by
+The \emph{distance} on $\mathbb{R}$ is the map
 \[
-d(x,y)=|x-y|.
+  d:\mathbb{R}\times\mathbb{R}\longrightarrow\mathbb{R}
+\]
+defined by
+\[
+  d(x,y)=|x-y|
+  \qquad(x,y\in\mathbb{R}).
 \]
 \end{definition}
 \end{definitionbox}
@@ -37,22 +42,23 @@ The distance between two points is the length of the segment joining them. It is
 \begin{definitionbox}{Definition (Length of a Bounded Interval)}
 \begin{definition}[Length of a Bounded Interval]
 \label{def:length-of-interval}
-Let $a,b\in\mathbb{R}$ with $a\le b$. The \emph{length} of any bounded interval with endpoints $a$ and $b$ is
+Let $a,b\in\mathbb{R}$ with $a\leq b$.  The \emph{length} of any bounded
+interval with endpoints $a$ and $b$ is
 \[
-\ell=b-a.
+  \ell=b-a=d(a,b).
 \]
 \end{definition}
 \end{definitionbox}
 \begin{remark*}[Standard quantified statement]
 \[
-\forall a,b\in\mathbb{R}\;\bigl(a\le b \Longrightarrow \ell([a,b])=b-a=d(a,b)\bigr).
+\forall a,b\in\mathbb{R}\;\bigl(a\leq b \Longrightarrow \ell([a,b])=b-a=d(a,b)\bigr).
 \]
 \end{remark*}
 \begin{remark*}[Predicate reading]
 \[
 \operatorname{Length}([a,b],\,b-a)
 \Longleftrightarrow
-a\le b.
+a\leq b.
 \]
 \end{remark*}
 \begin{remark*}[Interpretation]
@@ -66,18 +72,32 @@ Length depends only on the endpoints, not on whether they are included. It is th
 \begin{theorembox}{Theorem (The Distance Function Is a Metric)}
 \begin{theorem}[The Distance Function Is a Metric]
 \label{thm:distance-is-a-metric}
-The map $d(x,y)=|x-y|$ satisfies, for all $x,y,z\in\mathbb{R}$: (i) $d(x,y)\ge 0$ with $d(x,y)=0$ iff $x=y$; (ii) $d(x,y)=d(y,x)$; and (iii) $d(x,z)\le d(x,y)+d(y,z)$. Hence $(\mathbb{R},d)$ is a metric space.
+Let $d:\mathbb{R}\times\mathbb{R}\longrightarrow\mathbb{R}$ be defined by
+$d(x,y)=|x-y|$.  Then, for all $x,y,z\in\mathbb{R}$,
+\[
+  d(x,y)\geq0,
+  \qquad
+  d(x,y)=0\Longleftrightarrow x=y,
+\]
+\[
+  d(x,y)=d(y,x),
+\]
+and
+\[
+  d(x,z)\leq d(x,y)+d(y,z).
+\]
+Hence $(\mathbb{R},d)$ is a metric space.
 \hyperref[prf:distance-is-a-metric]{Go to proof.}
 \end{theorem}
 \end{theorembox}
 \begin{remark*}[Standard quantified statement]
 \[
-\forall x,y,z\in\mathbb{R}\;\bigl(d(x,y)\ge 0\ \land\ (d(x,y)=0\Leftrightarrow x=y)\ \land\ d(x,y)=d(y,x)\ \land\ d(x,z)\le d(x,y)+d(y,z)\bigr).
+\forall x,y,z\in\mathbb{R}\;\bigl(d(x,y)\geq 0\ \land\ (d(x,y)=0\Longleftrightarrow x=y)\ \land\ d(x,y)=d(y,x)\ \land\ d(x,z)\leq d(x,y)+d(y,z)\bigr).
 \]
 \end{remark*}
 \begin{remark*}[Predicate reading]
 \[
-d:\mathbb{R}\times\mathbb{R}\to\mathbb{R},\qquad
+d:\mathbb{R}\times\mathbb{R}\longrightarrow\mathbb{R},\qquad
 \mathsf{MetricSpace}(\mathbb{R},d)
 \Longleftrightarrow
 \text{$d$ satisfies nonnegativity, identity of indiscernibles, symmetry, and the triangle inequality.}
@@ -95,8 +115,23 @@ The three metric axioms are exactly the properties of $|\cdot|$: nonnegativity w
 
 \begin{theorembox}{Theorem (Real Line Structural Order Facts)}
 \begin{theorem}[Real Line Structural Order Facts]\label{thm:real-line-structural-order-facts}
-The real numbers are linearly ordered, form an ordered field, and satisfy the
-least upper bound property.
+The real line has the following structural properties: $\mathbb{R}$ is
+linearly ordered by $\leq$, $\mathbb{R}$ is an ordered field, and
+$\mathbb{R}$ satisfies the least upper bound property.  Explicitly, whenever
+$A\subseteq\mathbb{R}$ is nonempty and bounded above in $\mathbb{R}$, there
+exists $s\in\mathbb{R}$ such that
+\[
+  (\forall a\in A)(a\leq s)
+\]
+and
+\[
+  (\forall u\in\mathbb{R})
+  \left[
+  (\forall a\in A)(a\leq u)
+  \Longrightarrow
+  s\leq u
+  \right].
+\]
 \hyperref[prf:real-line-structural-order-facts]{Go to proof.}
 \end{theorem}
 \end{theorembox}

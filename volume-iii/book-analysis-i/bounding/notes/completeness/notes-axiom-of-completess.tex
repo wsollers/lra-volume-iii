@@ -25,21 +25,28 @@ and it underlies every major theorem in analysis.
 \begin{definitionbox}{Definition (Least Upper Bound Property)}
 \begin{definition}[Least Upper Bound Property]
 \label{def:least-upper-bound-property}
-Let $(S,\le)$ be an ordered set. The set $S$ has the \emph{Least Upper Bound Property} if and only if every nonempty subset of $S$ that is bounded above in $S$ has a supremum in $S$.
+Let $(S,\le)$ be a partially ordered set.  The set $S$ has the
+\emph{least upper bound property} if every nonempty subset of $S$ that is
+bounded above in $S$ has a supremum in $S$.
 \end{definition}
 \end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
 \begin{aligned}
-&\text{Let }(S,\le)\text{ be an ordered set}.\\
-&S\text{ has the Least Upper Bound Property}\\
-&\Longleftrightarrow
+&\operatorname{HasLeastUpperBoundProperty}(P)
+\Longleftrightarrow
 \forall A\subseteq S\;
 \Bigl[
 \bigl(A\neq\varnothing \land \exists u\in S\;\forall x\in A\;(x\le u)\bigr)
-\rightarrow
-\exists s\in S\;\operatorname{LeastUpperBound}(s,A)
+\Longrightarrow
+\exists s\in S\;
+\Bigl[
+(\forall a\in A)(a\leq s)
+\land
+\forall u\in S\;
+\bigl((\forall a\in A)(a\leq u)\Rightarrow s\leq u\bigr)
+\Bigr]
 \Bigr].
 \end{aligned}
 \]
@@ -47,7 +54,7 @@ Let $(S,\le)$ be an ordered set. The set $S$ has the \emph{Least Upper Bound Pro
 
 \begin{remark*}[Predicate reading]
 \[
-S\in\mathbf{Set},\qquad P=\mathsf{OrderedSet}(S,\leq),\qquad
+S\in\mathbf{Set},\qquad P=\mathsf{PartiallyOrderedSet}(S,\leq),\qquad
 \operatorname{HasLeastUpperBoundProperty}(P)\coloneqq
 \forall A\subseteq S\;
 \Bigl[
@@ -61,7 +68,7 @@ S\in\mathbf{Set},\qquad P=\mathsf{OrderedSet}(S,\leq),\qquad
 \begin{remark*}[Negated quantified statement]
 \[
 \begin{aligned}
-&\text{Let }(S,\le)\text{ be an ordered set}.\\
+&\text{Let }(S,\le)\text{ be a partially ordered set}.\\
 &S\text{ does not have the Least Upper Bound Property}\\
 &\Longleftrightarrow
 \exists A\subseteq S\;
@@ -78,7 +85,7 @@ A\neq\varnothing
 
 \begin{remark*}[Negation predicate reading]
 \[
-S\in\mathbf{Set},\qquad P=\mathsf{OrderedSet}(S,\leq),\qquad
+S\in\mathbf{Set},\qquad P=\mathsf{PartiallyOrderedSet}(S,\leq),\qquad
 \neg\operatorname{HasLeastUpperBoundProperty}(P)\Longleftrightarrow
 \exists A\subseteq S\;
 \Bigl[
@@ -94,13 +101,15 @@ A\neq\varnothing
 \begin{remark*}[Failure modes]
 \begin{description}
   \item[Exposition.]
-The property fails when there is a nonempty subset of the ambient ordered set that has at least one upper bound but has no least upper bound inside that same ambient set.
+The property fails when there is a nonempty subset of the ambient partially
+ordered set that has at least one upper bound but has no least upper bound
+inside that same ambient set.
 
 
   \item[\operatorname{LeastUpperBound} / \operatorname{HasLeastUpperBoundProperty}.]
   \[
 \begin{aligned}
-&\text{Let }(S,\le)\text{ be an ordered set}.\\
+&\text{Let }(S,\le)\text{ be a partially ordered set}.\\
 &S\text{ does not have the Least Upper Bound Property}\\
 &\Longleftrightarrow
 \exists A\subseteq S\;
@@ -114,7 +123,7 @@ A\neq\varnothing
 \end{aligned}
 \]
 \[
-S\in\mathbf{Set},\qquad P=\mathsf{OrderedSet}(S,\leq),\qquad
+S\in\mathbf{Set},\qquad P=\mathsf{PartiallyOrderedSet}(S,\leq),\qquad
 \neg\operatorname{HasLeastUpperBoundProperty}(P)\Longleftrightarrow
 \exists A\subseteq S\;
 \Bigl[
@@ -145,7 +154,7 @@ A\neq\varnothing
   \item[\operatorname{LeastUpperBound} / \operatorname{HasLeastUpperBoundProperty}.]
   \[
 \begin{aligned}
-&\text{Let }(S,\le)\text{ be an ordered set}.\\
+&\text{Let }(S,\le)\text{ be a partially ordered set}.\\
 &S\text{ does not have the Least Upper Bound Property}\\
 &\Longleftrightarrow
 \exists A\subseteq S\;
@@ -159,7 +168,7 @@ A\neq\varnothing
 \end{aligned}
 \]
 \[
-S\in\mathbf{Set},\qquad P=\mathsf{OrderedSet}(S,\leq),\qquad
+S\in\mathbf{Set},\qquad P=\mathsf{PartiallyOrderedSet}(S,\leq),\qquad
 \neg\operatorname{HasLeastUpperBoundProperty}(P)\Longleftrightarrow
 \exists A\subseteq S\;
 \Bigl[
@@ -179,7 +188,7 @@ The Least Upper Bound Property says that upper-bounded nonempty subsets do not p
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:partially-ordered-set]{Partially Ordered Set}
   \item \hyperref[def:subset]{Subset}
   \item \hyperref[def:real-upper-bound]{Upper Bound}
   \item \hyperref[def:supremum]{Supremum}

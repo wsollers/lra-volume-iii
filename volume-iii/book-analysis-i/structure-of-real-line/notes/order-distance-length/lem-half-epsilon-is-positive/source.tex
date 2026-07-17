@@ -1,0 +1,55 @@
+\begin{lemmabox}{Lemma (Half Epsilon Is Positive)}
+\begin{lemma}[Half Epsilon Is Positive]
+\label{lem:half-epsilon-is-positive}
+For every $\varepsilon\in\mathbb{R}$,
+\[
+  \varepsilon>0
+  \Longrightarrow
+  \frac{\varepsilon}{2}>0.
+\]
+\hyperref[prf:half-epsilon-is-positive]{Go to proof.}
+\end{lemma}
+\end{lemmabox}
+\begin{remark*}[Standard quantified statement]
+\[
+\forall \varepsilon\in\mathbb{R}\;\bigl(\varepsilon>0\Longrightarrow \varepsilon/2>0\bigr).
+\]
+\end{remark*}
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Positive}(\varepsilon,\mathbb{R})\Longrightarrow
+\operatorname{Positive}(\varepsilon/2,\mathbb{R}).
+\]
+\end{remark*}
+\begin{remark*}[Negated quantified statement]
+\[
+\exists\varepsilon\in\mathbb{R}\;\bigl(\varepsilon>0\land \varepsilon/2\leq 0\bigr).
+\]
+\end{remark*}
+\begin{remark*}[Negation predicate reading]
+\[
+\operatorname{Positive}(\varepsilon,\mathbb{R})\land\neg\operatorname{Positive}(\varepsilon/2,\mathbb{R}).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  Failure is witnessed by the displayed negated or contrapositive condition.
+
+  \item[\operatorname{Positive}.]
+  \[
+\exists\varepsilon\in\mathbb{R}\;\bigl(\varepsilon>0\land \varepsilon/2\leq 0\bigr).
+\]
+\[
+\operatorname{Positive}(\varepsilon,\mathbb{R})\land\neg\operatorname{Positive}(\varepsilon/2,\mathbb{R}).
+\]
+\end{description}
+\end{remark*}
+\begin{remark*}[Interpretation]
+Halving a positive tolerance produces a smaller positive tolerance.
+\end{remark*}
+\begin{dependencies}
+\hyperref[def:real-ordered-field]{Complete Ordered Field};
+\hyperref[thm:ineq-multiply-positive]{Multiplication by a Positive Scalar Preserves Strict Inequality}.
+\end{dependencies}

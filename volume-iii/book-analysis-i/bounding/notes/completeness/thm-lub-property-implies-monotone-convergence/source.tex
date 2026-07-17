@@ -1,0 +1,80 @@
+\begin{theorem}[Least Upper Bound Property Implies Monotone Convergence]
+\label{thm:lub-property-implies-monotone-convergence}
+Let $F$ be a linearly ordered field satisfying the least upper bound property.
+Let $(x_n)_{n\in\mathbb{N}}$ be a sequence in $F$.  If
+\[
+  (\forall n\in\mathbb{N})(x_n\leq x_{n+1})
+\]
+and
+\[
+  (\exists M\in F)(\forall n\in\mathbb{N})(x_n\leq M),
+\]
+then the set
+\[
+  X:=\{x_n:n\in\mathbb{N}\}
+\]
+has a supremum $s\in F$, and
+\[
+  (\forall\varepsilon\in F)\left[
+  \varepsilon>0
+  \Longrightarrow
+  (\exists N\in\mathbb{N})(\forall n\in\mathbb{N})
+  \bigl(n\geq N\Longrightarrow |x_n-s|<\varepsilon\bigr)
+  \right].
+\]
+Consequently,
+\[
+  \lim_{n\longrightarrow\infty}x_n=s=\sup\{x_n:n\in\mathbb{N}\}.
+\]
+Dually, if
+\[
+  (\forall n\in\mathbb{N})(x_{n+1}\leq x_n)
+\]
+and
+\[
+  (\exists m\in F)(\forall n\in\mathbb{N})(m\leq x_n),
+\]
+then
+\[
+  \lim_{n\longrightarrow\infty}x_n=\inf\{x_n:n\in\mathbb{N}\}.
+\]
+
+\smallskip
+\noindent
+\hyperref[prf:lub-property-implies-monotone-convergence]{\textit{Go to proof.}}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{HasLeastUpperBoundProperty}(\mathbb{R})
+\Longrightarrow
+\forall (x_n)\subseteq\mathbb{R}\;
+\bigl(
+  \operatorname{Monotone}((x_n),\mathsf{OrderedSet}(\mathbb{R},\leq))
+  \land
+  \operatorname{Bounded}(x_n)
+  \Longrightarrow
+  \operatorname{ConvergesTo}(x_n)
+\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The least upper bound property supplies the missing limit for a bounded
+monotone sequence: the supremum or infimum of its range becomes the sequence
+limit.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:real-sequence]{Real Sequence}
+  \item \hyperref[def:sequence]{Sequence}
+  \item \hyperref[def:convergent-sequence]{Convergent Sequence}
+  \item \hyperref[def:monotone-sequence]{Monotone Sequence}
+  \item \hyperref[def:bounded-sequence]{Bounded Sequence}
+  \item \hyperref[def:least-upper-bound-property]{Least Upper Bound Property}
+  \item \hyperref[thm:monotone-convergence-theorem]{Monotone Convergence Theorem}
+\end{itemize}
+\end{dependencies}
+

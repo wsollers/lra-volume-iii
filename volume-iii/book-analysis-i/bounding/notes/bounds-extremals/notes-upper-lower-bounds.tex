@@ -2,34 +2,32 @@
 
 \begin{remark*}[Exposition]
 Bounds are the first level of extremal information.  They compare one
-candidate element with every element of a nonempty set, but they do not
+candidate element with every element of a set, but they do not
 require the candidate to be sharp or to belong to the set.
 \end{remark*}
 
 \begin{figure}[htbp]
   \centering
   \input{volume-iii/book-analysis-i/bounding/notes/bounds-extremals/figure-upper-lower-bound-combinations}
-  \caption{Upper and lower bound conditions on a nonempty set.}
+  \caption{Upper and lower bound conditions on a set.}
   \label{fig:upper-lower-bound-combinations}
 \end{figure}
 
 \begin{definitionbox}{Bound}
 \begin{definition}[Bound]
 \label{def:bound}
-Let $(S,\leq)$ be an ordered set, let $A\subseteq S$ be nonempty, and let
-$b\in S$.  A \emph{bound} of $A$ means a one-sided comparison between $b$
-and every element of $A$: either $x\leq b$ for all $x\in A$, or $b\leq x$
-for all $x\in A$.
+Let $(S,\leq)$ be an ordered set, let $A\subseteq S$, and let $b\in S$.
+The element $b$ is a \emph{bound} of $A$ if $b$ is either an upper bound or
+a lower bound of $A$; that is, if $a\leq b$ for every $a\in A$, or
+$b\leq a$ for every $a\in A$.
 \end{definition}
 \end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
-  A\neq\varnothing
-  \quad\text{and}\quad
-  \bigl[(\forall x\in A)(x\leq b)
+  \bigl[(\forall a\in A)(a\leq b)
   \ \text{or}\ 
-  (\forall x\in A)(b\leq x)\bigr].
+  (\forall a\in A)(b\leq a)\bigr].
 \]
 \end{remark*}
 
@@ -44,8 +42,6 @@ for all $x\in A$.
 
 \begin{remark*}[Negated quantified statement]
 \[
-  A=\varnothing
-  \quad\text{or}\quad
   \bigl[(\exists x\in A)(b<x)
   \ \text{and}\ 
   (\exists y\in A)(y<b)\bigr].
@@ -64,17 +60,8 @@ for all $x\in A$.
 \begin{remark*}[Failure modes]
 \begin{description}
   \item[Exposition.]
-  A candidate bound can fail because the set is empty or because the
-  candidate does not control the set from either side.
-
-  \item[\operatorname{EmptySet}.]
-  The bounded-comparison statement is stated for nonempty sets.
-  \[
-    A=\varnothing.
-  \]
-  \[
-    \operatorname{EmptySet}(A).
-  \]
+  A candidate bound fails only when it does not control the set from either
+  side.
 
   \item[\operatorname{UpperBound} / \operatorname{LowerBound}.]
   The candidate lies strictly between two elements of $A$.
@@ -95,6 +82,12 @@ A bound is a one-sided comparison witness.  It need not be sharp and it
 need not belong to the set being bounded.
 \end{remark*}
 
+\begin{remark*}[Empty-set convention]
+If $A=\varnothing$, then every $b\in S$ is both an upper bound and a lower
+bound of $A$, because the universal statements over $A$ are vacuously true.
+This is intentional: nonemptiness is not part of being a bound.
+\end{remark*}
+
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:ordered-set]{Ordered Set}
@@ -107,17 +100,15 @@ need not belong to the set being bounded.
 \begin{definitionbox}{Upper Bound in the Real Line}
 \begin{definition}[Upper Bound in the Real Line]
 \label{def:real-upper-bound}
-Let $A\subseteq\mathbb{R}$ be nonempty and let $u\in\mathbb{R}$.  The
-element $u$ is an \emph{upper bound} of $A$ in the real line if every element
-of $A$ is less than or equal to $u$.
+Let $A\subseteq\mathbb{R}$ and let $u\in\mathbb{R}$.  The element $u$ is an
+\emph{upper bound} of $A$ in the real line if every element of $A$ is less
+than or equal to $u$.
 \end{definition}
 \end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
-  A\neq\varnothing
-  \quad\text{and}\quad
-  (\forall x\in A)(x\leq u).
+  (\forall a\in A)(a\leq u).
 \]
 \end{remark*}
 
@@ -130,9 +121,7 @@ of $A$ is less than or equal to $u$.
 
 \begin{remark*}[Negated quantified statement]
 \[
-  A=\varnothing
-  \quad\text{or}\quad
-  (\exists x\in A)(u<x).
+  (\exists a\in A)(u<a).
 \]
 \end{remark*}
 
@@ -149,22 +138,13 @@ of $A$ is less than or equal to $u$.
   Upper-bound failure means the candidate does not sit above the whole
   set in the ambient order.
 
-  \item[\operatorname{EmptySet}.]
-  The definition is stated for nonempty subsets.
-  \[
-    A=\varnothing.
-  \]
-  \[
-    \operatorname{EmptySet}(A).
-  \]
-
   \item[\operatorname{UpperBound}.]
   Some element of $A$ lies strictly above the proposed upper bound.
   \[
-    (\exists x\in A)(u<x).
+    (\exists a\in A)(u<a).
   \]
   \[
-    P=\mathsf{OrderedSet}(S,\leq),\qquad
+    P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
     \neg\operatorname{UpperBound}(u,A,P).
   \]
 \end{description}
@@ -173,6 +153,11 @@ of $A$ is less than or equal to $u$.
 \begin{remark*}[Interpretation]
 An upper bound controls every element of the set from above, but it may
 lie outside the set and need not be the least such control.
+\end{remark*}
+
+\begin{remark*}[Empty-set convention]
+If $A=\varnothing$, then every $u\in\mathbb{R}$ is an upper bound of $A$.
+The statement $(\forall a\in A)(a\leq u)$ is then vacuously true.
 \end{remark*}
 
 \begin{dependencies}
@@ -187,17 +172,15 @@ lie outside the set and need not be the least such control.
 \begin{definitionbox}{Lower Bound in the Real Line}
 \begin{definition}[Lower Bound in the Real Line]
 \label{def:real-lower-bound}
-Let $A\subseteq\mathbb{R}$ be nonempty and let $\ell\in\mathbb{R}$.  The
-element $\ell$ is a \emph{lower bound} of $A$ in the real line if every
+Let $A\subseteq\mathbb{R}$ and let $\ell\in\mathbb{R}$.  The element
+$\ell$ is a \emph{lower bound} of $A$ in the real line if every
 element of $A$ is greater than or equal to $\ell$.
 \end{definition}
 \end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
-  A\neq\varnothing
-  \quad\text{and}\quad
-  (\forall x\in A)(\ell\leq x).
+  (\forall a\in A)(\ell\leq a).
 \]
 \end{remark*}
 
@@ -210,9 +193,7 @@ element of $A$ is greater than or equal to $\ell$.
 
 \begin{remark*}[Negated quantified statement]
 \[
-  A=\varnothing
-  \quad\text{or}\quad
-  (\exists x\in A)(x<\ell).
+  (\exists a\in A)(a<\ell).
 \]
 \end{remark*}
 
@@ -229,22 +210,13 @@ element of $A$ is greater than or equal to $\ell$.
   Lower-bound failure means the candidate does not sit below the whole
   set in the ambient order.
 
-  \item[\operatorname{EmptySet}.]
-  The definition is stated for nonempty subsets.
-  \[
-    A=\varnothing.
-  \]
-  \[
-    \operatorname{EmptySet}(A).
-  \]
-
   \item[\operatorname{LowerBound}.]
   Some element of $A$ lies strictly below the proposed lower bound.
   \[
-    (\exists x\in A)(x<\ell).
+    (\exists a\in A)(a<\ell).
   \]
   \[
-    P=\mathsf{OrderedSet}(S,\leq),\qquad
+    P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
     \neg\operatorname{LowerBound}(\ell,A,P).
   \]
 \end{description}
@@ -253,6 +225,11 @@ element of $A$ is greater than or equal to $\ell$.
 \begin{remark*}[Interpretation]
 A lower bound controls every element of the set from below, but it may
 lie outside the set and need not be the greatest such control.
+\end{remark*}
+
+\begin{remark*}[Empty-set convention]
+If $A=\varnothing$, then every $\ell\in\mathbb{R}$ is a lower bound of $A$.
+The statement $(\forall a\in A)(\ell\leq a)$ is then vacuously true.
 \end{remark*}
 
 \begin{dependencies}
@@ -267,40 +244,38 @@ lie outside the set and need not be the greatest such control.
 \begin{definitionbox}{Bounded Above}
 \begin{definition}[Bounded Above]
 \label{def:bounded-above}
-Let $(S,\leq)$ be an ordered set and let $A\subseteq S$ be nonempty.  The
-set $A$ is \emph{bounded above} if it has at least one upper bound in $S$.
+Let $A\subseteq\mathbb{R}$.  The set $A$ is \emph{bounded above} if it has
+at least one upper bound in $\mathbb{R}$.
 \end{definition}
 \end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
-  (\exists u\in S)(\forall x\in A)(x\leq u).
+  (\exists u\in\mathbb{R})(\forall a\in A)(a\leq u).
 \]
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
 \[
-  P=\mathsf{OrderedSet}(S,\leq),\qquad A\subseteq S,\qquad
-  \operatorname{IsNonempty}(A),\qquad
+  P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad
   \operatorname{BoundedAbove}(A,P)
   \Longleftrightarrow
-  (\exists u\in S)\operatorname{UpperBound}(u,A,P).
+  (\exists u\in\mathbb{R})\operatorname{UpperBound}(u,A,P).
 \]
 \end{remark*}
 
 \begin{remark*}[Negated quantified statement]
 \[
-  (\forall u\in S)(\exists x\in A)(u<x).
+  (\forall u\in\mathbb{R})(\exists a\in A)(u<a).
 \]
 \end{remark*}
 
 \begin{remark*}[Negation predicate reading]
 \[
-  P=\mathsf{OrderedSet}(S,\leq),\qquad A\subseteq S,\qquad
-  \operatorname{IsNonempty}(A),\qquad
+  P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad
   \neg\operatorname{BoundedAbove}(A,P)
   \Longleftrightarrow
-  (\forall u\in S)\neg\operatorname{UpperBound}(u,A,P).
+  (\forall u\in\mathbb{R})\neg\operatorname{UpperBound}(u,A,P).
 \]
 \end{remark*}
 
@@ -310,22 +285,13 @@ set $A$ is \emph{bounded above} if it has at least one upper bound in $S$.
   Bounded-above failure means there is no single element of the ambient
   ordered set that lies above all elements of $A$.
 
-  \item[\operatorname{EmptySet}.]
-  The definition is stated for nonempty subsets.
-  \[
-    A=\varnothing.
-  \]
-  \[
-    \operatorname{EmptySet}(A).
-  \]
-
   \item[\operatorname{BoundedAbove}.]
   Every proposed upper-bound candidate is defeated by a larger element of $A$.
   \[
-    (\forall u\in S)(\exists x\in A)(u<x).
+    (\forall u\in\mathbb{R})(\exists a\in A)(u<a).
   \]
   \[
-    P=\mathsf{OrderedSet}(S,\leq),\qquad
+    P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
     \neg\operatorname{BoundedAbove}(A,P).
   \]
 \end{description}
@@ -334,6 +300,11 @@ set $A$ is \emph{bounded above} if it has at least one upper bound in $S$.
 \begin{remark*}[Interpretation]
 A set is bounded above when at least one ambient element controls the set
 from above.  No least upper bound is asserted here.
+\end{remark*}
+
+\begin{remark*}[Empty-set convention]
+The empty set is bounded above in $\mathbb{R}$: every real number is an upper
+bound of $\varnothing$, so an upper bound exists.
 \end{remark*}
 
 \begin{dependencies}
@@ -347,40 +318,38 @@ from above.  No least upper bound is asserted here.
 \begin{definitionbox}{Bounded Below}
 \begin{definition}[Bounded Below]
 \label{def:bounded-below}
-Let $(S,\leq)$ be an ordered set and let $A\subseteq S$ be nonempty.  The
-set $A$ is \emph{bounded below} if it has at least one lower bound in $S$.
+Let $A\subseteq\mathbb{R}$.  The set $A$ is \emph{bounded below} if it has
+at least one lower bound in $\mathbb{R}$.
 \end{definition}
 \end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
-  (\exists \ell\in S)(\forall x\in A)(\ell\leq x).
+  (\exists \ell\in\mathbb{R})(\forall a\in A)(\ell\leq a).
 \]
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
 \[
-  P=\mathsf{OrderedSet}(S,\leq),\qquad A\subseteq S,\qquad
-  \operatorname{IsNonempty}(A),\qquad
+  P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad
   \operatorname{BoundedBelow}(A,P)
   \Longleftrightarrow
-  (\exists \ell\in S)\operatorname{LowerBound}(\ell,A,P).
+  (\exists \ell\in\mathbb{R})\operatorname{LowerBound}(\ell,A,P).
 \]
 \end{remark*}
 
 \begin{remark*}[Negated quantified statement]
 \[
-  (\forall \ell\in S)(\exists x\in A)(x<\ell).
+  (\forall \ell\in\mathbb{R})(\exists a\in A)(a<\ell).
 \]
 \end{remark*}
 
 \begin{remark*}[Negation predicate reading]
 \[
-  P=\mathsf{OrderedSet}(S,\leq),\qquad A\subseteq S,\qquad
-  \operatorname{IsNonempty}(A),\qquad
+  P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad
   \neg\operatorname{BoundedBelow}(A,P)
   \Longleftrightarrow
-  (\forall \ell\in S)\neg\operatorname{LowerBound}(\ell,A,P).
+  (\forall \ell\in\mathbb{R})\neg\operatorname{LowerBound}(\ell,A,P).
 \]
 \end{remark*}
 
@@ -390,22 +359,13 @@ set $A$ is \emph{bounded below} if it has at least one lower bound in $S$.
   Bounded-below failure means there is no single element of the ambient
   ordered set that lies below all elements of $A$.
 
-  \item[\operatorname{EmptySet}.]
-  The definition is stated for nonempty subsets.
-  \[
-    A=\varnothing.
-  \]
-  \[
-    \operatorname{EmptySet}(A).
-  \]
-
   \item[\operatorname{BoundedBelow}.]
   Every proposed lower-bound candidate is defeated by a smaller element of $A$.
   \[
-    (\forall \ell\in S)(\exists x\in A)(x<\ell).
+    (\forall \ell\in\mathbb{R})(\exists a\in A)(a<\ell).
   \]
   \[
-    P=\mathsf{OrderedSet}(S,\leq),\qquad
+    P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
     \neg\operatorname{BoundedBelow}(A,P).
   \]
 \end{description}
@@ -414,6 +374,11 @@ set $A$ is \emph{bounded below} if it has at least one lower bound in $S$.
 \begin{remark*}[Interpretation]
 A set is bounded below when at least one ambient element controls the set
 from below.  No greatest lower bound is asserted here.
+\end{remark*}
+
+\begin{remark*}[Empty-set convention]
+The empty set is bounded below in $\mathbb{R}$: every real number is a lower
+bound of $\varnothing$, so a lower bound exists.
 \end{remark*}
 
 \begin{dependencies}
@@ -427,21 +392,20 @@ from below.  No greatest lower bound is asserted here.
 \begin{definitionbox}{Bounded Set}
 \begin{definition}[Bounded Set]
 \label{def:bounded}
-Let $(S,\leq)$ be an ordered set and let $A\subseteq S$ be nonempty.  The
-set $A$ is \emph{bounded} if it is bounded above and bounded below.
+Let $A\subseteq\mathbb{R}$.  The set $A$ is \emph{bounded} if it is bounded
+above and bounded below.
 \end{definition}
 \end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
-  (\exists \ell,u\in S)(\forall x\in A)(\ell\leq x\leq u).
+  (\exists \ell,u\in\mathbb{R})(\forall a\in A)(\ell\leq a\leq u).
 \]
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
 \[
-  P=\mathsf{OrderedSet}(S,\leq),\qquad A\subseteq S,\qquad
-  \operatorname{IsNonempty}(A),\qquad
+  P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad
   \operatorname{Bounded}(A,P)
   \Longleftrightarrow
   \operatorname{BoundedBelow}(A,P)\land\operatorname{BoundedAbove}(A,P).
@@ -450,14 +414,13 @@ set $A$ is \emph{bounded} if it is bounded above and bounded below.
 
 \begin{remark*}[Negated quantified statement]
 \[
-  (\forall \ell,u\in S)(\exists x\in A)(x<\ell\ \text{or}\ u<x).
+  \neg(\exists \ell,u\in\mathbb{R})(\forall a\in A)(\ell\leq a\leq u).
 \]
 \end{remark*}
 
 \begin{remark*}[Negation predicate reading]
 \[
-  P=\mathsf{OrderedSet}(S,\leq),\qquad A\subseteq S,\qquad
-  \operatorname{IsNonempty}(A),\qquad
+  P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad
   \neg\operatorname{Bounded}(A,P)
   \Longleftrightarrow
   \neg\operatorname{BoundedBelow}(A,P)\lor\neg\operatorname{BoundedAbove}(A,P).
@@ -467,25 +430,16 @@ set $A$ is \emph{bounded} if it is bounded above and bounded below.
 \begin{remark*}[Failure modes]
 \begin{description}
   \item[Exposition.]
-  Boundedness fails when the set is outside the nonempty scope or when at
-  least one of the two one-sided bounding requirements fails.
-
-  \item[\operatorname{EmptySet}.]
-  The definition is stated for nonempty subsets.
-  \[
-    A=\varnothing.
-  \]
-  \[
-    \operatorname{EmptySet}(A).
-  \]
+  Boundedness fails when at least one of the two one-sided bounding
+  requirements fails.
 
   \item[\operatorname{Bounded}.]
   The set is unbounded above or unbounded below.
   \[
-    \neg(\exists \ell,u\in S)(\forall x\in A)(\ell\leq x\leq u).
+    \neg(\exists \ell,u\in\mathbb{R})(\forall a\in A)(\ell\leq a\leq u).
   \]
   \[
-    P=\mathsf{OrderedSet}(S,\leq),\qquad
+    P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
     \neg\operatorname{Bounded}(A,P).
   \]
 \end{description}
@@ -495,6 +449,13 @@ set $A$ is \emph{bounded} if it is bounded above and bounded below.
 Boundedness is the conjunction of boundedness below and boundedness above.
 It records two-sided containment in the ambient order, not the existence of
 best bounds.
+\end{remark*}
+
+\begin{remark*}[Empty-set convention]
+The empty set is bounded in $\mathbb{R}$: it is both bounded above and
+bounded below, vacuously.  Nonemptiness is a separate hypothesis and should be
+stated explicitly when it is needed, for example in supremum and infimum
+existence statements.
 \end{remark*}
 
 \begin{dependencies}

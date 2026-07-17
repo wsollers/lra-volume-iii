@@ -1,0 +1,98 @@
+\begin{proposition}[Boundedness Is Necessary in the Nested Interval Theorem]
+\label{prop:boundedness-is-necessary-in-nested-interval-theorem}
+There exists a sequence $(I_n)_{n\in\mathbb{N}}$ of nonempty closed unbounded
+intervals in $\mathbb{R}$ such that
+\[
+  (\forall n\in\mathbb{N})(I_{n+1}\subseteq I_n),
+\]
+but
+\[
+  \bigcap_{n=1}^{\infty}I_n=\varnothing.
+\]
+For example,
+\[
+  I_n=[n,\infty).
+\]
+\hyperref[prf:boundedness-is-necessary-in-nested-interval-theorem]{Go to proof.}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\exists I_n\;
+\bigl(
+\operatorname{NestedClosedIntervals}(I_n)
+\land
+\neg\operatorname{IsBoundedInterval}(I_n)
+\land
+\bigcap_{n=1}^{\infty}I_n=\varnothing
+\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+F=(I_n)_{n\in\mathbb{N}},\qquad C=\bigcap_{n=1}^{\infty}I_n,\qquad
+\neg\operatorname{IsBoundedInterval}(I_n,\mathbb{R})
+\quad\text{can make}\quad
+\operatorname{IsNonempty}(C)
+\text{ fail.}
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\forall I_n\;
+\left[
+\operatorname{NestedClosedIntervals}(I_n)
+\Longrightarrow
+\bigcap_{n=1}^{\infty}I_n\ne\varnothing
+\right].
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+C=\bigcap_{n=1}^{\infty}I_n,\qquad F=(I_n)_{n\in\mathbb{N}},\qquad
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),
+\]
+\[
+C=\varnothing
+\Longrightarrow
+\neg\operatorname{NestedClosedBoundedIntervals}(F,P_{\mathbb{R}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  Failure is witnessed by the displayed negated or contrapositive condition.
+
+  \item[\operatorname{NestedClosedIntervals}.]
+  \[
+\forall I_n\;
+\left[
+\operatorname{NestedClosedIntervals}(I_n)
+\Longrightarrow
+\bigcap_{n=1}^{\infty}I_n\ne\varnothing
+\right].
+\]
+\[
+C=\bigcap_{n=1}^{\infty}I_n,\qquad F=(I_n)_{n\in\mathbb{N}},\qquad
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Nested closed bounded intervals cannot keep shrinking or relocating in a way
+that loses every real point. The endpoint lemmas convert containment into
+monotone endpoint control, and completeness supplies a real point that survives
+all stages at once.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[def:closed-interval]{Closed Interval}.
+\end{dependencies}
+
+\input{volume-iii/book-analysis-i/bounding/notes/completeness/figure-nested-intervals}

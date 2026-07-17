@@ -1,0 +1,79 @@
+\begin{lemma}[Left Endpoints Are Bounded Above by Right Endpoints]
+\label{lem:left-endpoints-bounded-above-by-right-endpoints}
+Let $(a_n)$ and $(b_n)$ be sequences in $\mathbb{R}$ such that
+\[
+  (\forall n\in\mathbb{N})(a_n\leq b_n)
+\]
+and
+\[
+  (\forall n\in\mathbb{N})([a_{n+1},b_{n+1}]\subseteq [a_n,b_n]).
+\]
+Then
+\[
+  (\forall m,n\in\mathbb{N})(a_n\leq b_m).
+\]
+Consequently, every $b_m$ is an upper bound of $\{a_n:n\in\mathbb{N}\}$, and
+every $a_n$ is a lower bound of $\{b_m:m\in\mathbb{N}\}$.
+\]
+\hyperref[prf:left-endpoints-bounded-above-by-right-endpoints]{Go to proof.}
+\end{lemma}
+\end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall m,n\in\mathbb{N}\;(a_n\le b_m).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+F=([a_n,b_n])_{n\in\mathbb{N}},\qquad P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),
+\]
+\[
+\operatorname{NestedClosedIntervals}(F,P_{\mathbb{R}})
+\Longrightarrow
+\forall m,n\in\mathbb{N}\;(a_n\le b_m).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\exists m,n\in\mathbb{N}\;(b_m<a_n).
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+F=([a_n,b_n])_{n\in\mathbb{N}},\qquad P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),
+\]
+\[
+\exists m,n\in\mathbb{N}\;(b_m<a_n)
+\Longrightarrow
+\neg\operatorname{NestedClosedIntervals}(F,P_{\mathbb{R}}).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  Failure is witnessed by the displayed negated or contrapositive condition.
+
+  \item[\mathsf{OrderedSet}.]
+  \[
+\exists m,n\in\mathbb{N}\;(b_m<a_n).
+\]
+\[
+F=([a_n,b_n])_{n\in\mathbb{N}},\qquad P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Every left endpoint lies below every right endpoint, even when the two
+endpoints come from different stages of the nested family.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[def:closed-interval]{Closed Interval}.
+\end{dependencies}
+

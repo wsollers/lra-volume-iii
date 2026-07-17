@@ -1,0 +1,30 @@
+\begin{definitionbox}{Definition (Interior Point)}
+\begin{definition}[Interior Point]
+\label{def:interior-point}
+Let $A\subseteq\mathbb{R}$ and $x\in\mathbb{R}$.  The point $x$ is an
+interior point of $A$ if there exists $r>0$ such that
+\[
+  B_r(x)\subseteq A.
+\]
+Equivalently,
+\[
+  x\text{ is an interior point of }A
+  \Longleftrightarrow
+  (\exists r>0)(\forall y\in\mathbb{R})
+  \bigl(|x-y|<r\Longrightarrow y\in A\bigr).
+\]
+\end{definition}
+\end{definitionbox}
+\begin{remark*}[Standard quantified statement]
+\[
+x \text{ is an interior point of } E \Longleftrightarrow \exists r>0\;(B_{r}(x)\subseteq E).
+\]
+\end{remark*}
+\begin{remark*}[Interpretation]
+An interior point of $E$ sits inside $E$ with room to spare: a whole ball around it lies in $E$.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:open-ball]{Open Ball on the Real Line}
+\end{itemize}
+\end{dependencies}

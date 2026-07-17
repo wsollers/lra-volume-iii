@@ -1,0 +1,81 @@
+\begin{lemma}[Nested Closed Intervals Have Ordered Endpoints]
+\label{lem:nested-closed-intervals-have-ordered-endpoints}
+Let $(a_n)$ and $(b_n)$ be sequences in $\mathbb{R}$ satisfying
+\[
+  (\forall n\in\mathbb{N})(a_n\leq b_n)
+\]
+and
+\[
+  (\forall n\in\mathbb{N})([a_{n+1},b_{n+1}]\subseteq [a_n,b_n]).
+\]
+Then, for all $m,n\in\mathbb{N}$,
+\[
+  n\leq m
+  \Longrightarrow
+  a_n\leq a_m\leq b_m\leq b_n.
+\]
+\hyperref[prf:nested-closed-intervals-have-ordered-endpoints]{Go to proof.}
+\end{lemma}
+\end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall n\in\mathbb{N}\;
+\Bigl([a_{n+1},b_{n+1}]\subseteq [a_n,b_n]
+\Longrightarrow
+a_n\le a_{n+1}\le b_{n+1}\le b_n\Bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+[a_{n+1},b_{n+1}]\subseteq [a_n,b_n]
+\Longrightarrow
+a_n\le a_{n+1}\le b_{n+1}\le b_n.
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\exists n\in\mathbb{N}\;
+\Bigl([a_{n+1},b_{n+1}]\subseteq [a_n,b_n]\land
+(a_{n+1}<a_n\lor b_n<b_{n+1})\Bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+(a_{n+1}<a_n\lor b_n<b_{n+1})
+\Longrightarrow
+[a_{n+1},b_{n+1}]\not\subseteq [a_n,b_n].
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  Failure is witnessed by the displayed negated or contrapositive condition.
+
+  \item[\exists-condition.]
+  \[
+\exists n\in\mathbb{N}\;
+\Bigl([a_{n+1},b_{n+1}]\subseteq [a_n,b_n]\land
+(a_{n+1}<a_n\lor b_n<b_{n+1})\Bigr).
+\]
+\[
+(a_{n+1}<a_n\lor b_n<b_{n+1})
+\Longrightarrow
+[a_{n+1},b_{n+1}]\not\subseteq [a_n,b_n].
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+One-step nesting of closed intervals moves the left endpoint to the right
+and the right endpoint to the left.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[def:closed-interval]{Closed Interval}.
+\end{dependencies}
+

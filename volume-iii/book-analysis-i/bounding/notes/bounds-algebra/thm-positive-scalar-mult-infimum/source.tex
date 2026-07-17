@@ -1,0 +1,114 @@
+\begin{theorem}[Positive Scalar Multiplication of the Infimum]
+\label{thm:positive-scalar-mult-infimum}
+Let $A\subseteq\mathbb{R}$ be nonempty and bounded below, and let
+$k\in\mathbb{R}$ satisfy $k>0$.  Then $kA:=\{ka:a\in A\}$ is nonempty and
+bounded below, and
+\[
+  \inf(kA)=k\inf A.
+\]
+\hyperref[prf:positive-scalar-mult-infimum]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+k\in\mathbb{R},\quad k>0,\quad A\neq\varnothing,\quad A\text{ bounded below}
+\quad\Longrightarrow\quad
+\inf\{ka:a\in A\}=k\inf A.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad kA=\{ka:a\in A\},\\
+&\operatorname{GreatestLowerBound}(t,A,P)\land k>0
+\Longrightarrow
+\operatorname{GreatestLowerBound}(kt,kA,P).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+k>0,\quad \inf(kA)\neq k\inf A
+\]
+is impossible under the stated hypotheses.
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad kA=\{ka:a\in A\},\\
+&\operatorname{GreatestLowerBound}(t,A,P)\land k>0\land
+\neg\operatorname{GreatestLowerBound}(kt,kA,P).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+The formula could fail only if positive multiplication failed to preserve lower
+bounds or greatestness among lower bounds.
+
+
+  \item[\operatorname{GreatestLowerBound}.]
+  \[
+k>0,\quad \inf(kA)\neq k\inf A
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad kA=\{ka:a\in A\},\\
+&\operatorname{GreatestLowerBound}(t,A,P)\land k>0\land
+\neg\operatorname{GreatestLowerBound}(kt,kA,P).
+\end{aligned}
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+\[
+(\forall a\in A)(t\leq a)
+\Longleftrightarrow
+(\forall a\in A)(kt\leq ka)
+\qquad(k>0).
+\]
+
+
+  \item[\operatorname{GreatestLowerBound}.]
+  \[
+k>0,\quad \inf(kA)\neq k\inf A
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad kA=\{ka:a\in A\},\\
+&\operatorname{GreatestLowerBound}(t,A,P)\land k>0\land
+\neg\operatorname{GreatestLowerBound}(kt,kA,P).
+\end{aligned}
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Positive scaling stretches the floor of the set by the same factor.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:reals]{Real Numbers}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:multiplication-on-r]{Multiplication on $\mathbb{R}$}
+  \item \hyperref[def:displacement-dilation-reflection]{Displacement, Dilation, and Reflection}
+  \item \hyperref[def:real-lower-bound]{Lower Bound}
+  \item \hyperref[def:infimum]{Infimum}
+  \item \hyperref[prop:lower-bound-comparison-with-the-infimum]{Lower Bound Comparison with the Infimum}
+  \item \hyperref[prop:positive-dilation-preserves-lower-bounds]{Positive Dilation Preserves Lower Bounds}
+  \item \hyperref[thm:ineq-nonstrict-multiply-positive]{Multiplication by a Positive Scalar Preserves Nonstrict Inequality}
+\end{itemize}
+\end{dependencies}
+
+

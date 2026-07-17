@@ -1,0 +1,321 @@
+schema_version: lra.semantic-artifact/1.0
+identity:
+  label: lem:choosing-a-smaller-positive-number
+  kind: lemma
+  title: Choosing a Smaller Positive Number
+  canonical_name: Choosing a Smaller Positive Number
+  status: draft
+  atomicity:
+    status: atomic
+    concepts_detected:
+    - Choosing a Smaller Positive Number
+    owning_concept: Choosing a Smaller Positive Number
+    split_reason: null
+location:
+  repository: wsollers/lra-volume-iii
+  commit: 77009ab9cde1bf3c2eef193c4d03a256afc4ccde
+  volume: iii
+  book: book-analysis-i
+  chapter: structure-of-real-line
+  topic: order-distance-length
+  source_file: volume-iii/book-analysis-i/structure-of-real-line/notes/order-distance-length/notes-epsilon-algebra.tex
+  source_line_start: 249
+  source_line_end: 315
+  source_hash: sha256:2c3fd5a29c9e71e99505f0268657683ee20596e860d82f41872e92e447096ee5
+classification:
+  mathematical_domain: real analysis
+  artifact_form: lemma
+  logical_shape: source-decorated quantified statement
+  logical_framework: mathematical_vernacular
+  language_level: object_language
+context:
+- id: R
+  kind: ambient_space
+  name: \mathbb{R}
+  ontology_id: null
+  construction: real line with the source-declared structure
+  ast:
+    kind: constant
+    name: \mathbb{R}
+parameters:
+- id: \varepsilon
+  symbol: \varepsilon
+  role: element
+  type:
+    kind: constant
+    name: \mathbb{R}
+  implicit: false
+- id: c
+  symbol: c
+  role: element
+  type:
+    kind: constant
+    name: \mathbb{R}
+  implicit: false
+assumptions: []
+statement:
+  canonical_prose: Codex-local extraction of the source statement for Choosing a Smaller
+    Positive Number.
+  canonical_latex: '\varepsilon>0\land c>0
+
+    \Longrightarrow
+
+    \exists\delta\in\mathbb{R}\;(0<\delta<\varepsilon\land 0<\delta<c).'
+  semantic_ast: &id001
+    kind: implies
+    left:
+      kind: and
+      left:
+        kind: relation
+        relation: '>'
+        left:
+          kind: variable
+          binder_id: \varepsilon
+        right:
+          kind: constant
+          name: '0'
+      right:
+        kind: relation
+        relation: '>'
+        left:
+          kind: variable
+          binder_id: c
+        right:
+          kind: constant
+          name: '0'
+    right:
+      kind: membership
+      element:
+        kind: raw_latex
+        latex: \exists\delta
+      set:
+        kind: raw_latex
+        latex: \mathbb{R}(0<\delta<\varepsilon\land 0<\delta<c)
+logical_forms:
+  standard_quantified:
+    latex: '\forall \varepsilon,c\in\mathbb{R}\;
+
+      \bigl((\varepsilon>0\land c>0)\Longrightarrow
+
+      \exists\delta\in\mathbb{R}\;(0<\delta<\varepsilon\land 0<\delta<c)\bigr).'
+    ast:
+      kind: membership
+      element:
+        kind: variable
+        binder_id: c
+      set:
+        kind: raw_latex
+        latex: \mathbb{R}\bigl((\varepsilon>0\land c>0)\Longrightarrow \exists\delta\in\mathbb{R}(0<\delta<\varepsilon\land
+          0<\delta<c)\bigr)
+  predicate_reading:
+    latex: '\varepsilon>0\land c>0
+
+      \Longrightarrow
+
+      \exists\delta\in\mathbb{R}\;(0<\delta<\varepsilon\land 0<\delta<c).'
+    ast:
+      kind: implies
+      left:
+        kind: and
+        left:
+          kind: relation
+          relation: '>'
+          left:
+            kind: variable
+            binder_id: \varepsilon
+          right:
+            kind: constant
+            name: '0'
+        right:
+          kind: relation
+          relation: '>'
+          left:
+            kind: variable
+            binder_id: c
+          right:
+            kind: constant
+            name: '0'
+      right:
+        kind: membership
+        element:
+          kind: raw_latex
+          latex: \exists\delta
+        set:
+          kind: raw_latex
+          latex: \mathbb{R}(0<\delta<\varepsilon\land 0<\delta<c)
+    registry_predicates: []
+    registry_structures: []
+  negation:
+    mechanical:
+      latex: '\exists \varepsilon,c\in\mathbb{R}\;
+
+        \bigl(\varepsilon>0\land c>0\land
+
+        \forall\delta\in\mathbb{R}\;(\delta\leq 0\lor \delta\geq\varepsilon\lor \delta\geq
+        c)\bigr).'
+      ast:
+        kind: not
+        operand: *id001
+    approved_normal_form:
+      latex: \exists \varepsilon,c\in\mathbb{R}\bigl(\varepsilon>0\land c>0\land \forall\delta\in\mathbb{R}(\delta\leq
+        0\lor \delta\geq\varepsilon\lor \delta\geq c)\bigr)
+      ast:
+        kind: exists
+        binder:
+          binder_id: \varepsilon
+          symbol: \varepsilon
+          domain: &id002
+            kind: constant
+            name: \mathbb{R}
+        restriction: null
+        body:
+          kind: exists
+          binder:
+            binder_id: c
+            symbol: c
+            domain: *id002
+          restriction: null
+          body:
+            kind: and
+            left:
+              kind: relation
+              relation: '>'
+              left:
+                kind: variable
+                binder_id: \varepsilon
+              right:
+                kind: constant
+                name: '0'
+            right:
+              kind: and
+              left:
+                kind: relation
+                relation: '>'
+                left:
+                  kind: variable
+                  binder_id: c
+                right:
+                  kind: constant
+                  name: '0'
+              right:
+                kind: membership
+                element:
+                  kind: raw_latex
+                  latex: \forall\delta
+                set:
+                  kind: raw_latex
+                  latex: \mathbb{R}(\delta\leq 0\lor \delta\geq\varepsilon\lor \delta\geq
+                    c)
+    normalization_requires: []
+  contrapositive: null
+  equivalent_forms: []
+semantics:
+  witness_dependencies: []
+  vacuity_behavior: []
+  definedness:
+    mode: source_context
+    conditions: []
+    obligations: []
+  uniqueness_conditions: []
+  equality_cases: []
+  edge_cases: []
+failure_analysis:
+  applicability_failures: []
+  statement_failures:
+  - id: fail-source-negation
+    description: Failure is witnessed by the source negated quantified statement when
+      present.
+    minimal_failure_shape: '\exists \varepsilon,c\in\mathbb{R}\;
+
+      \bigl(\varepsilon>0\land c>0\land
+
+      \forall\delta\in\mathbb{R}\;(\delta\leq 0\lor \delta\geq\varepsilon\lor \delta\geq
+      c)\bigr).'
+    source_failure_modes: "\\begin{description}\n  \\item[Exposition.]\n  Failure\
+      \ is witnessed by the displayed negated or contrapositive condition.\n\n  \\\
+      item[\\exists-condition.]\n  \\[\n\\exists \\varepsilon,c\\in\\mathbb{R}\\;\n\
+      \\bigl(\\varepsilon>0\\land c>0\\land\n\\forall\\delta\\in\\mathbb{R}\\;(\\\
+      delta\\leq 0\\lor \\delta\\geq\\varepsilon\\lor \\delta\\geq c)\\bigr).\n\\\
+      ]\n\\[\n\\varepsilon>0\\land c>0\\land\n\\forall\\delta\\in\\mathbb{R}\\;(\\\
+      delta\\leq 0\\lor \\delta\\geq\\varepsilon\\lor \\delta\\geq c).\n\\]\n\\end{description}"
+  counterexample_shape: '\exists \varepsilon,c\in\mathbb{R}\;
+
+    \bigl(\varepsilon>0\land c>0\land
+
+    \forall\delta\in\mathbb{R}\;(\delta\leq 0\lor \delta\geq\varepsilon\lor \delta\geq
+    c)\bigr).'
+relationships:
+  dependency_edges:
+  - kind: uses_reference
+    target: lem:minimum-of-positive-numbers-is-positive
+    display: Minimum of Positive Numbers Is Positive
+    notes: Listed in the source dependency block.
+  - kind: uses_reference
+    target: lem:half-epsilon-is-positive
+    display: Half Epsilon Is Positive
+    notes: Listed in the source dependency block.
+  ontology_edges: []
+  provenance_edges: []
+  proof_edges:
+  - kind: proved_by
+    target: prf:choosing-a-smaller-positive-number
+    display: Go to proof.
+    notes: null
+notation:
+  introduced: []
+  used:
+  - symbol: \mathbb{R}
+    meaning: the real line
+  local_conventions: []
+exposition:
+  interpretation: 'Given two positive constraints, one can choose a single positive
+    tolerance
+
+    strictly below both.'
+  exposition: []
+  examples: []
+  non_examples: []
+  common_confusions: []
+verification:
+  canonical_proof: null
+  formalizations: []
+  external_library_crosswalks: []
+  proof_vault_records: []
+provenance:
+  origin:
+    kind: explicit_source_statement
+    source_status: single_primary_statement
+    primary_source_statement:
+      role: primary_statement
+      source_id: null
+      label: lem:choosing-a-smaller-positive-number
+      citation: null
+      page_range: null
+      evidence: Generated from the local LaTeX formal environment and its routed source
+        decorations.
+      notes: Codex-authored local semantic extraction; not externally reviewed.
+    component_sources: []
+    derivation_rule: null
+    requires_review: true
+  explicit_from_source:
+  - '\forall \varepsilon,c\in\mathbb{R}\;
+
+    \bigl((\varepsilon>0\land c>0)\Longrightarrow
+
+    \exists\delta\in\mathbb{R}\;(0<\delta<\varepsilon\land 0<\delta<c)\bigr).'
+  normalized_from_source:
+  - '\varepsilon>0\land c>0
+
+    \Longrightarrow
+
+    \exists\delta\in\mathbb{R}\;(0<\delta<\varepsilon\land 0<\delta<c).'
+  inferred_from_registry: []
+  generated_by_analysis:
+  - Codex local semantic payload generation from source decorations
+  unresolved: []
+governance:
+  governance_repository: wsollers/lra-governance
+  governance_commit: 01c642757dc85341c556df8e914642aed2531058
+  registry_commit: 01c642757dc85341c556df8e914642aed2531058
+  schema_commit: 01c642757dc85341c556df8e914642aed2531058
+  renderer_contract: governed-tex-v1

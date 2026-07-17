@@ -1,0 +1,45 @@
+\begin{theorembox}{Theorem (Closed Bounded Intervals Are Compact)}
+\begin{theorem}[Closed Bounded Intervals Are Compact]
+\label{thm:closed-bounded-interval-compact}
+Let $a,b\in\mathbb{R}$ with $a\leq b$.  Then the interval
+\[
+  [a,b]:=\{x\in\mathbb{R}:a\leq x\leq b\}
+\]
+is compact.  Explicitly, for every family $\mathcal{U}$ of open subsets of
+$\mathbb{R}$,
+\[
+  [a,b]\subseteq\bigcup_{U\in\mathcal{U}}U
+\]
+implies that there exists a finite subfamily $\mathcal{V}\subseteq\mathcal{U}$
+such that
+\[
+  [a,b]\subseteq\bigcup_{V\in\mathcal{V}}V.
+\]
+\hyperref[prf:closed-bounded-interval-compact]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+\begin{remark*}[Standard quantified statement]
+\[
+\forall a,b\in\mathbb{R}\;\bigl(a\leq b \Longrightarrow [a,b]\text{ is compact}\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+I=[a,b]\subseteq\mathbb{R},\qquad
+\operatorname{IsClosedInterval}(I,\mathbb{R})\land
+\operatorname{IsBoundedInterval}(I,\mathbb{R})
+\Longrightarrow
+\operatorname{IsCompact}(I,\mathbb{R}).
+\]
+\end{remark*}
+\begin{remark*}[Interpretation]
+This is the hard half. The standard proof uses completeness directly: let $S$ be the set of $x\in[a,b]$ such that $[a,x]$ has a finite subcover, and show $\sup S=b$ is attained. Bisection (the nested-interval method) gives the same result. Either route shows completeness is what makes the line compact in the large.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:compact-set]{Compact Set in $\mathbb{R}$}
+  \item \hyperref[def:closed-interval]{Closed Interval}
+  \item \hyperref[thm:lub-property-r]{Least-Upper-Bound Property}
+\end{itemize}
+\end{dependencies}

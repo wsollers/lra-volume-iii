@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "cor:nested-intervals-vanishing-length-have-unique-point",
+  "kind": "corollary",
+  "title": "Nested Intervals with Vanishing Length Have Unique Point",
+  "source": {
+    "label": "cor:nested-intervals-vanishing-length-have-unique-point",
+    "kind": "corollary",
+    "title": "Nested Intervals with Vanishing Length Have Unique Point",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "completeness",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-nested-interval-property.tex",
+    "source_line_start": 785,
+    "source_line_end": 898,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/cor-nested-intervals-vanishing-length-have-unique-point",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/cor-nested-intervals-vanishing-length-have-unique-point/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/cor-nested-intervals-vanishing-length-have-unique-point/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/cor-nested-intervals-vanishing-length-have-unique-point",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/cor-nested-intervals-vanishing-length-have-unique-point/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/cor-nested-intervals-vanishing-length-have-unique-point/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-nested-interval-property.tex",
+      "label": "cor:nested-intervals-vanishing-length-have-unique-point",
+      "environment_kind": "corollary",
+      "source_line_start": 785,
+      "source_line_end": 898,
+      "current_tex": "\\begin{corollary}[Nested Intervals with Vanishing Length Have Unique Point]\n\\label{cor:nested-intervals-vanishing-length-have-unique-point}\nLet $(a_n)$ and $(b_n)$ be sequences in $\\mathbb{R}$ such that\n\\[\n  (\\forall n\\in\\mathbb{N})(a_n\\leq b_n),\n\\]\n\\[\n  (\\forall n\\in\\mathbb{N})([a_{n+1},b_{n+1}]\\subseteq [a_n,b_n]),\n\\]\nand\n\\[\n  (\\forall\\varepsilon>0)(\\exists N\\in\\mathbb{N})(\\forall n\\in\\mathbb{N})\n  \\bigl(n\\geq N\\Longrightarrow 0\\leq b_n-a_n<\\varepsilon\\bigr).\n\\]\nThen there exists a unique $x\\in\\mathbb{R}$ such that\n\\[\n  (\\forall n\\in\\mathbb{N})(a_n\\leq x\\leq b_n).\n\\]\nEquivalently,\n\\[\n  \\bigcap_{n=1}^{\\infty}[a_n,b_n]=\\{x\\}.\n\\]\nMoreover,\n\\[\n  x=\\sup\\{a_n:n\\in\\mathbb{N}\\}=\\inf\\{b_n:n\\in\\mathbb{N}\\}.\n\\]\n\\hyperref[prf:nested-intervals-vanishing-length-have-unique-point]{Go to proof.}\n\\end{corollary}\n\\end{corollarybox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\lim_{n\\longrightarrow\\infty}(b_n-a_n)=0\n\\Longrightarrow\n\\exists x\\in\\mathbb{R}\\;\\forall y\\in\\mathbb{R}\\;\n\\left(y\\in\\bigcap_{n=1}^{\\infty}[a_n,b_n]\\Longleftrightarrow y=x\\right).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\nF=([a_n,b_n])_{n\\in\\mathbb{N}},\\qquad\nd\\colon\\mathbb{N}\\longrightarrow\\mathbb{R},\\qquad d_n=b_n-a_n,\n\\]\n\\[\nP_{\\mathbb{R}}=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad X=\\mathbb{R},\\qquad\n\\operatorname{NestedClosedBoundedIntervals}(F,P_{\\mathbb{R}})\n\\land\n\\operatorname{ConvergesTo}(d,0,X)\n\\Longrightarrow\n\\exists x\\in\\mathbb{R}\\;\n\\left(\\bigcap_{n=1}^{\\infty}[a_n,b_n]=\\{x\\}\\right).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\n\\operatorname{NestedClosedBoundedIntervals}([a_n,b_n])\n\\land\n\\lim_{n\\longrightarrow\\infty}(b_n-a_n)=0\n\\land\n\\forall x\\in\\mathbb{R}\\;\\exists y\\in\\mathbb{R}\\;\n\\left(y\\in\\bigcap_{n=1}^{\\infty}[a_n,b_n]\\land y\\ne x\\right).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negation predicate reading]\n\\[\nF=([a_n,b_n])_{n\\in\\mathbb{N}},\\qquad\nd\\colon\\mathbb{N}\\longrightarrow\\mathbb{R},\\qquad d_n=b_n-a_n,\n\\]\n\\[\nP_{\\mathbb{R}}=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad X=\\mathbb{R},\\qquad\n\\neg\\exists x\\in\\mathbb{R}\\;\n\\left(\\bigcap_{n=1}^{\\infty}[a_n,b_n]=\\{x\\}\\right)\n\\Longrightarrow\n\\neg\\operatorname{NestedClosedBoundedIntervals}(F,P_{\\mathbb{R}})\n\\lor\n\\neg\\operatorname{ConvergesTo}(d,0,X).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\n  Failure is witnessed by the displayed negated or contrapositive condition.\n\n  \\item[\\operatorname{NestedClosedBoundedIntervals}.]\n  \\[\n\\operatorname{NestedClosedBoundedIntervals}([a_n,b_n])\n\\land\n\\lim_{n\\longrightarrow\\infty}(b_n-a_n)=0\n\\land\n\\forall x\\in\\mathbb{R}\\;\\exists y\\in\\mathbb{R}\\;\n\\left(y\\in\\bigcap_{n=1}^{\\infty}[a_n,b_n]\\land y\\ne x\\right).\n\\]\n\\[\nF=([a_n,b_n])_{n\\in\\mathbb{N}},\\qquad\nd\\colon\\mathbb{N}\\longrightarrow\\mathbb{R},\\qquad d_n=b_n-a_n,\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nWhen nested lengths tend to zero, the surviving intersection cannot contain\ntwo distinct points.\n\\end{remark*}\n\n\\begin{dependencies}\n\\hyperref[def:closed-interval]{Closed Interval};\n\\hyperref[def:bounded-subset-of-r]{Bounded Subset of the Real Line}.\n\\end{dependencies}\n\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

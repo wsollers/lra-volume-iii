@@ -1,0 +1,113 @@
+\begin{proposition}[Positive Dilation Preserves Lower Bounds]
+\label{prop:positive-dilation-preserves-lower-bounds}
+Let $A\subseteq\mathbb{R}$, let $\lambda>0$, and let
+$\ell\in\mathbb{R}$.  If $\ell$ is a lower bound of $A$, then
+$\lambda\ell$ is a lower bound of $\lambda A$; that is,
+\[
+\left(\forall a\in A,\ \ell\leq a\right)
+\Longrightarrow
+\left(\forall x\in\lambda A,\ \lambda\ell\leq x\right).
+\]
+\hyperref[prf:positive-dilation-preserves-lower-bounds]{Go to proof.}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\lambda>0\land(\forall a\in A)(\ell\leq a)
+\Longrightarrow
+(\forall x\in\lambda A)(\lambda\ell\leq x).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+A\subseteq\mathbb{R},\qquad \lambda A=\{\lambda a:a\in A\},\\
+&\lambda>0\land\operatorname{LowerBound}(\ell,A,P)
+\Longrightarrow\operatorname{LowerBound}(\lambda\ell,\lambda A,P).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\lambda>0,\qquad(\forall a\in A)(\ell\leq a),\qquad
+(\exists y\in\lambda A)(y<\lambda\ell).
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+A\subseteq\mathbb{R},\qquad \lambda A=\{\lambda a:a\in A\},\\
+&\lambda>0\land\operatorname{LowerBound}(\ell,A,P)\land
+\neg\operatorname{LowerBound}(\lambda\ell,\lambda A,P).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
+A failure would require a positively dilated point below the positively
+dilated lower bound.
+
+
+  \item[\operatorname{LowerBound}.]
+  \[
+\lambda>0,\qquad(\forall a\in A)(\ell\leq a),\qquad
+(\exists y\in\lambda A)(y<\lambda\ell).
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+A\subseteq\mathbb{R},\qquad \lambda A=\{\lambda a:a\in A\},\\
+&\lambda>0\land\operatorname{LowerBound}(\ell,A,P)\land
+\neg\operatorname{LowerBound}(\lambda\ell,\lambda A,P).
+\end{aligned}
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
+Write $y=\lambda a$ with $a\in A$.  Since $\ell\leq a$ and $\lambda>0$,
+$\lambda\ell\leq\lambda a$.
+
+
+  \item[\operatorname{LowerBound}.]
+  \[
+\lambda>0,\qquad(\forall a\in A)(\ell\leq a),\qquad
+(\exists y\in\lambda A)(y<\lambda\ell).
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+A\subseteq\mathbb{R},\qquad \lambda A=\{\lambda a:a\in A\},\\
+&\lambda>0\land\operatorname{LowerBound}(\ell,A,P)\land
+\neg\operatorname{LowerBound}(\lambda\ell,\lambda A,P).
+\end{aligned}
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Positive dilation preserves lower-bound information for the same reason it
+preserves upper-bound information: order is not reversed.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:reals]{Real Numbers}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:multiplication-on-r]{Multiplication on $\mathbb{R}$}
+  \item \hyperref[def:displacement-dilation-reflection]{Displacement, Dilation, and Reflection}
+  \item \hyperref[def:real-lower-bound]{Lower Bound}
+\end{itemize}
+\end{dependencies}
+

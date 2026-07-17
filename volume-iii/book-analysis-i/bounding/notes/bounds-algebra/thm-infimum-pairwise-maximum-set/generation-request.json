@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "thm:infimum-pairwise-maximum-set",
+  "kind": "theorem",
+  "title": "Infimum of the Pairwise Maximum Set",
+  "source": {
+    "label": "thm:infimum-pairwise-maximum-set",
+    "kind": "theorem",
+    "title": "Infimum of the Pairwise Maximum Set",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "bounds-algebra",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-lattice-operations-and-bounds.tex",
+    "source_line_start": 265,
+    "source_line_end": 376,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-infimum-pairwise-maximum-set",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-infimum-pairwise-maximum-set/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-infimum-pairwise-maximum-set/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-infimum-pairwise-maximum-set",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-infimum-pairwise-maximum-set/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-infimum-pairwise-maximum-set/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-lattice-operations-and-bounds.tex",
+      "label": "thm:infimum-pairwise-maximum-set",
+      "environment_kind": "theorem",
+      "source_line_start": 265,
+      "source_line_end": 376,
+      "current_tex": "\\begin{theorem}[Infimum of the Pairwise Maximum Set]\n\\label{thm:infimum-pairwise-maximum-set}\nLet $A,B\\subseteq\\mathbb{R}$ be nonempty and bounded below. Then $A\\vee B$\nis bounded below and\n\\[\n\\inf(A\\vee B)=\\max\\{\\inf A,\\inf B\\}.\n\\]\n\\hyperref[prf:infimum-pairwise-maximum-set]{Go to proof.}\n\\end{theorem}\n\\end{theorembox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\nA,B\\neq\\varnothing,\\quad A,B\\text{ bounded below}\n\\quad\\Longrightarrow\\quad\n\\inf(A\\vee B)=\\max\\{\\inf A,\\inf B\\}.\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A,B\\subseteq\\mathbb{R},\\\\\n&M=A\\vee B,\\qquad L=\\max\\{t_A,t_B\\},\\\\\n&\\operatorname{GreatestLowerBound}(t_A,A,P)\\land\\operatorname{GreatestLowerBound}(t_B,B,P)\n\\Longrightarrow\n\\operatorname{GreatestLowerBound}(L,M,P).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\n\\inf(A\\vee B)\\neq\\max\\{\\inf A,\\inf B\\}\n\\]\nis impossible under the stated hypotheses.\n\\end{remark*}\n\n\\begin{remark*}[Negation predicate reading]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A,B\\subseteq\\mathbb{R},\\\\\n&M=A\\vee B,\\qquad L=\\max\\{t_A,t_B\\},\\\\\n&\\operatorname{GreatestLowerBound}(t_A,A,P)\\land\\operatorname{GreatestLowerBound}(t_B,B,P)\\land\n\\neg\\operatorname{GreatestLowerBound}(L,M,P).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n\\item[Exposition.]\nThe formula could fail only if the larger of the two lower thresholds were not\na lower bound for all pairwise maxima, or if pairwise maxima could not approach\nthat threshold from above.\n\n\n  \\item[\\operatorname{GreatestLowerBound}.]\n  \\[\n\\inf(A\\vee B)\\neq\\max\\{\\inf A,\\inf B\\}\n\\]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A,B\\subseteq\\mathbb{R},\\\\\n&M=A\\vee B,\\qquad L=\\max\\{t_A,t_B\\},\\\\\n&\\operatorname{GreatestLowerBound}(t_A,A,P)\\land\\operatorname{GreatestLowerBound}(t_B,B,P)\\land\n\\neg\\operatorname{GreatestLowerBound}(L,M,P).\n\\end{aligned}\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n\\item[Exposition.]\nEvery pairwise maximum is at least both lower thresholds, hence at least their\nmaximum.  Approximation of the two infima gives pairwise maxima arbitrarily\nclose to the larger lower threshold.\n\n\n  \\item[\\operatorname{GreatestLowerBound}.]\n  \\[\n\\inf(A\\vee B)\\neq\\max\\{\\inf A,\\inf B\\}\n\\]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A,B\\subseteq\\mathbb{R},\\\\\n&M=A\\vee B,\\qquad L=\\max\\{t_A,t_B\\},\\\\\n&\\operatorname{GreatestLowerBound}(t_A,A,P)\\land\\operatorname{GreatestLowerBound}(t_B,B,P)\\land\n\\neg\\operatorname{GreatestLowerBound}(L,M,P).\n\\end{aligned}\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nFor pairwise maxima, the lower edge is forced up to the larger of the two\nindividual lower edges.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:reals]{Real Numbers}\n  \\item \\hyperref[def:ordered-set]{Ordered Set}\n  \\item \\hyperref[def:subset]{Subset}\n  \\item \\hyperref[def:pairwise-maximum-minimum-sets]{Pairwise Maximum and Minimum Sets}\n  \\item \\hyperref[def:maximum]{Maximum}\n  \\item \\hyperref[def:infimum]{Infimum}\n\\end{itemize}\n\\end{dependencies}\n\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

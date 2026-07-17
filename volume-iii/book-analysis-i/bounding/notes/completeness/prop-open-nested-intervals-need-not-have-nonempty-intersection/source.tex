@@ -1,0 +1,126 @@
+\begin{proposition}[Open Nested Intervals Need Not Have Nonempty Intersection]
+\label{prop:open-nested-intervals-need-not-have-nonempty-intersection}
+There exists a sequence $(I_n)_{n\in\mathbb{N}}$ of nonempty bounded open
+intervals in $\mathbb{R}$ such that
+\[
+  (\forall n\in\mathbb{N})(I_{n+1}\subseteq I_n),
+\]
+but
+\[
+  \bigcap_{n=1}^{\infty}I_n=\varnothing.
+\]
+One such sequence is
+\[
+  I_n=\left(0,\frac{1}{n}\right).
+\]
+\hyperref[prf:open-nested-intervals-need-not-have-nonempty-intersection]{Go to proof.}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\exists (a_n)\subseteq\mathbb{R}\;\exists (b_n)\subseteq\mathbb{R}\;
+\left[
+\begin{aligned}
+&\forall n\in\mathbb{N}\;(a_n<b_n)
+\land
+\forall n\in\mathbb{N}\;((a_{n+1},b_{n+1})\subseteq (a_n,b_n))\\
+&\land
+\forall x\in\mathbb{R}\;\exists n\in\mathbb{N}\;(x\notin(a_n,b_n))
+\end{aligned}
+\right].
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\exists F\;\exists\mathcal{I}\;\exists C\;\bigl(
+\mathcal{I}=\mathsf{IndexedFamily}(F,\mathbb{N},\mathbb{R})
+\land C=\bigcap_{n=1}^{\infty}I_n
+\land \Phi=\mathsf{OpenBoundedInterval}
+\land
+\operatorname{MembersSatisfy}(\mathcal{I},\Phi,\mathbb{R})
+\land
+\operatorname{Nested}(\mathcal{I},\subseteq)
+\land
+\operatorname{IsEmpty}(C)
+\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\forall (a_n),(b_n)\;\forall\mathcal{I}\;
+\left[
+\mathcal{I}=\mathsf{IndexedFamily}((a_n,b_n),\mathbb{N},\mathbb{R})
+\land
+\operatorname{MembersSatisfy}(\mathcal{I},\mathsf{OpenBoundedInterval},\mathbb{R})
+\land
+\operatorname{Nested}(\mathcal{I},\subseteq)
+\Longrightarrow
+\exists x\in\mathbb{R}\;\forall n\in\mathbb{N}\;(x\in(a_n,b_n))
+\right].
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\forall (a_n),(b_n)\;\forall\mathcal{I}\;
+\left[
+\mathcal{I}=\mathsf{IndexedFamily}((a_n,b_n),\mathbb{N},\mathbb{R})
+\land
+\operatorname{MembersSatisfy}(\mathcal{I},\mathsf{OpenBoundedInterval},\mathbb{R})
+\land
+\operatorname{Nested}(\mathcal{I},\subseteq)
+\Longrightarrow
+\exists x\in\mathbb{R}\;\forall n\in\mathbb{N}\;(x\in(a_n,b_n))
+\right].
+\]
+
+The negation predicate reading is the predicate-level form of the displayed negated statement.
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  Failure is witnessed by the displayed negated or contrapositive condition.
+
+  \item[\operatorname{MembersSatisfy} / \operatorname{Nested}.]
+  \[
+\forall (a_n),(b_n)\;\forall\mathcal{I}\;
+\left[
+\mathcal{I}=\mathsf{IndexedFamily}((a_n,b_n),\mathbb{N},\mathbb{R})
+\land
+\operatorname{MembersSatisfy}(\mathcal{I},\mathsf{OpenBoundedInterval},\mathbb{R})
+\land
+\operatorname{Nested}(\mathcal{I},\subseteq)
+\Longrightarrow
+\exists x\in\mathbb{R}\;\forall n\in\mathbb{N}\;(x\in(a_n,b_n))
+\right].
+\]
+\[
+\exists F\;\exists\mathcal{I}\;\exists C\;\bigl(
+\mathcal{I}=\mathsf{IndexedFamily}(F,\mathbb{N},\mathbb{R})
+\land C=\bigcap_{n=1}^{\infty}I_n
+\land \Phi=\mathsf{OpenBoundedInterval}
+\land
+\operatorname{MembersSatisfy}(\mathcal{I},\Phi,\mathbb{R})
+\land
+\operatorname{Nested}(\mathcal{I},\subseteq)
+\land
+\operatorname{IsEmpty}(C)
+\bigr).
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Open intervals can lose the limiting endpoint that every closed truncation
+would retain.
+\end{remark*}
+
+\begin{dependencies}
+\hyperref[def:open-interval]{Open Interval};
+\hyperref[def:bounded-subset-of-r]{Bounded Subset of the Real Line}.
+\end{dependencies}
+

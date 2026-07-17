@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "thm:archimedean-property",
+  "kind": "theorem",
+  "title": "Archimedean Property",
+  "source": {
+    "label": "thm:archimedean-property",
+    "kind": "theorem",
+    "title": "Archimedean Property",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "completeness",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-archimedean-property.tex",
+    "source_line_start": 30,
+    "source_line_end": 147,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/thm-archimedean-property",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/thm-archimedean-property/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/thm-archimedean-property/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/thm-archimedean-property",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/thm-archimedean-property/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/thm-archimedean-property/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-archimedean-property.tex",
+      "label": "thm:archimedean-property",
+      "environment_kind": "theorem",
+      "source_line_start": 30,
+      "source_line_end": 147,
+      "current_tex": "\\begin{theorem}[Archimedean Property]\n\\label{thm:archimedean-property}\nFor every $x,y\\in\\mathbb{R}$, if $x>0$ and $y>0$, then there exists\n$n\\in\\mathbb{N}$ such that\n\\[\n  nx>y.\n\\]\nEquivalently,\n\\[\n  (\\forall x,y\\in\\mathbb{R})\n  \\bigl[(x>0\\land y>0)\\Longrightarrow(\\exists n\\in\\mathbb{N})(nx>y)\\bigr].\n\\]\n\n\\smallskip\n\\noindent\n\\hyperref[prf:archimedean-property]{\\textit{Go to proof.}}\n\\end{theorem}\n\\end{theorembox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\forall x\\in\\mathbb{R}\\;\\exists n\\in\\mathbb{N}\\;(n>x).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\nP_{\\mathbb{R}}=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad\n\\operatorname{HasArchimedeanProperty}(P_{\\mathbb{R}})\\Longleftrightarrow\n\\forall x\\in\\mathbb{R}\\;\\exists n\\in\\mathbb{N}\\;(n>x).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\n\\exists x\\in\\mathbb{R}\\;\\forall n\\in\\mathbb{N}\\;(n\\le x).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negation predicate reading]\n\\[\nP_{\\mathbb{R}}=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad\n\\neg\\operatorname{HasArchimedeanProperty}(P_{\\mathbb{R}})\\Longleftrightarrow\n\\exists x\\in\\mathbb{R}\\;\\forall n\\in\\mathbb{N}\\;(n\\le x).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\nThe theorem fails exactly when the natural numbers are bounded above by some real number.\n\n\n  \\item[\\operatorname{HasArchimedeanProperty}.]\n  \\[\n\\exists x\\in\\mathbb{R}\\;\\forall n\\in\\mathbb{N}\\;(n\\le x).\n\\]\n\\[\nP_{\\mathbb{R}}=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad\n\\neg\\operatorname{HasArchimedeanProperty}(P_{\\mathbb{R}})\\Longleftrightarrow\n\\exists x\\in\\mathbb{R}\\;\\forall n\\in\\mathbb{N}\\;(n\\le x).\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\n\\[\n\\neg\\operatorname{HasArchimedeanProperty}(\\mathbb{R})\n=\n\\underbrace{\\exists x\\in\\mathbb{R}}_{\\text{real upper bound}}\n\\;\\underbrace{\\forall n\\in\\mathbb{N}\\;(n\\le x)}_{\\text{all natural numbers remain below it}}.\n\\]\n\n\n  \\item[\\operatorname{HasArchimedeanProperty}.]\n  \\[\n\\exists x\\in\\mathbb{R}\\;\\forall n\\in\\mathbb{N}\\;(n\\le x).\n\\]\n\\[\nP_{\\mathbb{R}}=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad\n\\neg\\operatorname{HasArchimedeanProperty}(P_{\\mathbb{R}})\\Longleftrightarrow\n\\exists x\\in\\mathbb{R}\\;\\forall n\\in\\mathbb{N}\\;(n\\le x).\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nThe Archimedean Property says that the natural numbers do not stop below any real ceiling. No real number is so large that every natural number remains below it. In this chapter, the result is a consequence of completeness: a bounded copy of $\\mathbb{N}$ would have a supremum, and that supremum is contradicted by shifting one natural number upward.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n\\item \\hyperref[def:reals]{Real Numbers}.\n\\item \\hyperref[def:natural-numbers]{Natural Numbers}.\n\\item \\hyperref[def:ordered-set]{Ordered Set}.\n\\item \\hyperref[def:supremum]{Supremum}.\n\\item \\hyperref[ax:completeness-of-reals]{Completeness of the Reals}.\n\\end{itemize}\n\\end{dependencies}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

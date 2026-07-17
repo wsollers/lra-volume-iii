@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "def:displacement-dilation-reflection",
+  "kind": "definition",
+  "title": "Displacement, Dilation, and Reflection",
+  "source": {
+    "label": "def:displacement-dilation-reflection",
+    "kind": "definition",
+    "title": "Displacement, Dilation, and Reflection",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "bounds-algebra",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-bound-algebra.tex",
+    "source_line_start": 8,
+    "source_line_end": 145,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/def-displacement-dilation-reflection",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/def-displacement-dilation-reflection/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/def-displacement-dilation-reflection/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/def-displacement-dilation-reflection",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/def-displacement-dilation-reflection/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/def-displacement-dilation-reflection/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-bound-algebra.tex",
+      "label": "def:displacement-dilation-reflection",
+      "environment_kind": "definition",
+      "source_line_start": 8,
+      "source_line_end": 145,
+      "current_tex": "\\begin{definition}[Displacement, Dilation, and Reflection]\n\\label{def:displacement-dilation-reflection}\nLet $A\\subseteq\\mathbb{R}$. For $c,\\lambda\\in\\mathbb{R}$, the\n\\textbf{displacement} of $A$ by $c$, the \\textbf{dilation} of $A$ by\n$\\lambda$, and the \\textbf{reflection} of $A$ through the origin are\ndefined, respectively, by\n\\[\nA+c:=\\{a+c:a\\in A\\},\n\\qquad\n\\lambda A:=\\{\\lambda a:a\\in A\\},\n\\qquad\n-A:=\\{-a:a\\in A\\}.\n\\]\n\\end{definition}\n\\end{definitionbox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\nx\\in A+c\\Longleftrightarrow(\\exists a\\in A)(x=a+c),\n\\qquad\nx\\in\\lambda A\\Longleftrightarrow(\\exists a\\in A)(x=\\lambda a),\n\\qquad\nx\\in -A\\Longleftrightarrow(\\exists a\\in A)(x=-a).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\n\\begin{aligned}\n&A\\subseteq\\mathbb{R},\\qquad A+c=\\{a+c:a\\in A\\},\\qquad\n\\lambda A=\\{\\lambda a:a\\in A\\},\\qquad -A=\\{-a:a\\in A\\},\\\\\n&\\varphi_c\\colon A\\to A+c,\\qquad\n\\varphi_\\lambda\\colon A\\to\\lambda A,\\qquad\n\\varphi_-\\colon A\\to -A,\\\\\n&\\operatorname{FunctionalRelation}(\\varphi_c,A,A+c),\\qquad\n\\operatorname{FunctionalRelation}(\\varphi_\\lambda,A,\\lambda A),\\qquad\n\\operatorname{FunctionalRelation}(\\varphi_-,A,-A),\\\\\n&\\varphi_c(a)=a+c,\\qquad \\varphi_\\lambda(a)=\\lambda a,\\qquad \\varphi_-(a)=-a,\\\\\n&\\operatorname{ReplacementImage}(A+c,A,\\varphi_c),\\qquad\n\\operatorname{ReplacementImage}(\\lambda A,A,\\varphi_\\lambda),\\qquad\n\\operatorname{ReplacementImage}(-A,A,\\varphi_-).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\nx\\notin A+c\\Longleftrightarrow(\\forall a\\in A)(x\\neq a+c),\n\\qquad\nx\\notin\\lambda A\\Longleftrightarrow(\\forall a\\in A)(x\\neq\\lambda a).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negation predicate reading]\n\\[\n\\begin{aligned}\n&A\\subseteq\\mathbb{R},\\qquad A+c=\\{a+c:a\\in A\\},\\qquad\n\\varphi_c\\colon A\\to A+c,\\qquad\n\\operatorname{FunctionalRelation}(\\varphi_c,A,A+c),\\qquad \\varphi_c(a)=a+c,\\\\\n&\\neg\\operatorname{ReplacementImage}(B,A,\\varphi_c)\n\\end{aligned}\n\\quad\\text{means}\\quad\n(\\exists x)\\bigl[x\\in B\\triangle(A+c)\\bigr],\n\\]\nand similarly for dilation and reflection.\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n\\item[Exposition.]\nThe definition fails only if the image set omits an actual transformed point\nor contains a point that is not produced by transforming an element of $A$.\n\n\n  \\item[\\operatorname{FunctionalRelation} / \\operatorname{ReplacementImage}.]\n  \\[\nx\\notin A+c\\Longleftrightarrow(\\forall a\\in A)(x\\neq a+c),\n\\qquad\nx\\notin\\lambda A\\Longleftrightarrow(\\forall a\\in A)(x\\neq\\lambda a).\n\\]\n\\[\n\\begin{aligned}\n&A\\subseteq\\mathbb{R},\\qquad A+c=\\{a+c:a\\in A\\},\\qquad\n\\varphi_c\\colon A\\to A+c,\\qquad\n\\operatorname{FunctionalRelation}(\\varphi_c,A,A+c),\\qquad \\varphi_c(a)=a+c,\\\\\n&\\neg\\operatorname{ReplacementImage}(B,A,\\varphi_c)\n\\end{aligned}\n\\quad\\text{means}\\quad\n(\\exists x)\\bigl[x\\in B\\triangle(A+c)\\bigr],\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n\\item[Exposition.]\nEvery membership claim in a transformed set decomposes into an original element\nand the transformation rule that produced the new point.\n\n\n  \\item[\\operatorname{FunctionalRelation} / \\operatorname{ReplacementImage}.]\n  \\[\nx\\notin A+c\\Longleftrightarrow(\\forall a\\in A)(x\\neq a+c),\n\\qquad\nx\\notin\\lambda A\\Longleftrightarrow(\\forall a\\in A)(x\\neq\\lambda a).\n\\]\n\\[\n\\begin{aligned}\n&A\\subseteq\\mathbb{R},\\qquad A+c=\\{a+c:a\\in A\\},\\qquad\n\\varphi_c\\colon A\\to A+c,\\qquad\n\\operatorname{FunctionalRelation}(\\varphi_c,A,A+c),\\qquad \\varphi_c(a)=a+c,\\\\\n&\\neg\\operatorname{ReplacementImage}(B,A,\\varphi_c)\n\\end{aligned}\n\\quad\\text{means}\\quad\n(\\exists x)\\bigl[x\\in B\\triangle(A+c)\\bigr],\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nDisplacement slides the set, dilation stretches or collapses it, and reflection\nis the special dilation that reverses the real line.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:reals]{Real Numbers}\n  \\item \\hyperref[def:subset]{Subset}\n  \\item \\hyperref[def:function]{Function}\n  \\item \\hyperref[def:functional-relation]{Functional Relation}\n  \\item \\hyperref[def:image-set]{Image Set}\n  \\item \\hyperref[def:addition-on-r]{Addition on $\\mathbb{R}$}\n  \\item \\hyperref[def:subtraction-on-r]{Subtraction on $\\mathbb{R}$}\n  \\item \\hyperref[def:multiplication-on-r]{Multiplication on $\\mathbb{R}$}\n\\end{itemize}\n\\end{dependencies}\n\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

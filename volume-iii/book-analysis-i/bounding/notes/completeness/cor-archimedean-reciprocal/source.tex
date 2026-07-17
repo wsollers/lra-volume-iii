@@ -1,0 +1,108 @@
+\begin{corollary}[The Reciprocal Sequence Converges to Zero]
+\label{cor:archimedean-reciprocal}
+For every $\varepsilon\in\mathbb{R}$ with $\varepsilon>0$, there exists
+$N\in\mathbb{N}$ such that, for every $n\in\mathbb{N}$,
+\[
+  n\geq N
+  \Longrightarrow
+  \left|\frac{1}{n}-0\right|<\varepsilon.
+\]
+Hence,
+\[
+  \lim_{n\longrightarrow\infty}\frac{1}{n}=0.
+\]
+
+\smallskip
+\noindent
+\hyperref[prf:archimedean-reciprocal]{\textit{Go to proof.}}
+\end{corollary}
+\end{corollarybox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y\in\mathbb{R}\;\bigl(x>0\Longrightarrow \exists n\in\mathbb{N}\;(nx>y)\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+\operatorname{HasArchimedeanProperty}(P_{\mathbb{R}})
+\Longrightarrow
+\forall x,y\in\mathbb{R}\;\bigl(x>0\Longrightarrow \exists n\in\mathbb{N}\;(nx>y)\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\exists x,y\in\mathbb{R}\;\bigl(x>0\land \forall n\in\mathbb{N}\;(nx\le y)\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\exists x,y\in\mathbb{R}\;\bigl(x>0\land \forall n\in\mathbb{N}\;(nx\le y)\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+The corollary fails when a positive real step size has all of its natural multiples bounded above by some real threshold.
+
+
+  \item[\operatorname{HasArchimedeanProperty}.]
+  \[
+\exists x,y\in\mathbb{R}\;\bigl(x>0\land \forall n\in\mathbb{N}\;(nx\le y)\bigr).
+\]
+\[
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+\operatorname{HasArchimedeanProperty}(P_{\mathbb{R}})
+\Longrightarrow
+\forall x,y\in\mathbb{R}\;\bigl(x>0\Longrightarrow \exists n\in\mathbb{N}\;(nx>y)\bigr).
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+\[
+\underbrace{\exists x\in\mathbb{R}\;(x>0)}_{\text{positive step size}}
+\;\land\;
+\underbrace{\exists y\in\mathbb{R}\;\forall n\in\mathbb{N}\;(nx\le y)}_{\text{all natural multiples stay bounded}}.
+\]
+
+
+  \item[\operatorname{HasArchimedeanProperty}.]
+  \[
+\exists x,y\in\mathbb{R}\;\bigl(x>0\land \forall n\in\mathbb{N}\;(nx\le y)\bigr).
+\]
+\[
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+\operatorname{HasArchimedeanProperty}(P_{\mathbb{R}})
+\Longrightarrow
+\forall x,y\in\mathbb{R}\;\bigl(x>0\Longrightarrow \exists n\in\mathbb{N}\;(nx>y)\bigr).
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Any fixed positive real step eventually passes any real threshold when repeated enough times. The statement is the Archimedean Property applied after rescaling by the positive number $x$: growth by units becomes growth by steps of size $x$.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+\item \hyperref[def:reals]{Real Numbers}.
+\item \hyperref[def:natural-numbers]{Natural Numbers}.
+\item \hyperref[def:ordered-set]{Ordered Set}.
+\item \hyperref[thm:archimedean-property]{Archimedean Property}.
+\end{itemize}
+\end{dependencies}
+
+\input{volume-iii/book-analysis-i/bounding/notes/completeness/figure-archimedean-integer-step}
+
+
+
+
+

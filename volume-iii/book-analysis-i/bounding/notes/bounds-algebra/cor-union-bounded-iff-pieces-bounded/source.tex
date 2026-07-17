@@ -1,0 +1,90 @@
+\begin{corollary}[Union Is Bounded Exactly When Both Pieces Are]
+\label{cor:union-bounded-iff-pieces-bounded}
+Let $A,B\subseteq\mathbb{R}$. The union $A\cup B$ is bounded if and only
+if both $A$ and $B$ are bounded; that is,
+\[
+A\cup B\text{ is bounded}
+\Longleftrightarrow
+\bigl(A\text{ is bounded}\land B\text{ is bounded}\bigr).
+\]
+\hyperref[prf:union-bounded-iff-pieces-bounded]{Go to proof.}
+\end{corollary}
+\end{corollarybox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\operatorname{Bounded}(A\cup B)
+\Longleftrightarrow
+\operatorname{Bounded}(A)\land\operatorname{Bounded}(B).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\qquad U=A\cup B,\\
+&\operatorname{Bounded}(U,P)
+\Longleftrightarrow
+\operatorname{Bounded}(A,P)\land\operatorname{Bounded}(B,P).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+The two-sided boundedness equivalence fails if either the upper or lower
+one-sided equivalence fails.
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\qquad U=A\cup B,\\
+&\operatorname{Bounded}(U,P)\oplus
+\bigl(\operatorname{Bounded}(A,P)\land\operatorname{Bounded}(B,P)\bigr).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
+Two-sided boundedness fails exactly through an upper-bound failure or a
+lower-bound failure.
+
+
+  \item[\operatorname{Bounded}.]
+
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\qquad U=A\cup B,\\
+&\operatorname{Bounded}(U,P)\oplus
+\bigl(\operatorname{Bounded}(A,P)\land\operatorname{Bounded}(B,P)\bigr).
+\end{aligned}
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\qquad U=A\cup B,\\
+&\operatorname{Bounded}(U,P)
+\Longleftrightarrow
+\operatorname{Bounded}(A,P)\land\operatorname{Bounded}(B,P).
+\end{aligned}
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Apply the bounded-above and bounded-below union equivalences separately.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+\item \hyperref[def:reals]{Real Numbers}.
+\item \hyperref[def:ordered-set]{Ordered Set}.
+\item \hyperref[def:subset]{Subset}.
+\item \hyperref[def:union]{Union}.
+\item \hyperref[def:bounded]{Bounded Set}.
+\item \hyperref[prop:union-bounded-above-iff-pieces-bounded-above]{Union Is Bounded Above Exactly When Both Pieces Are}.
+\item \hyperref[prop:union-bounded-below-iff-pieces-bounded-below]{Union Is Bounded Below Exactly When Both Pieces Are}.
+\end{itemize}
+\end{dependencies}
+

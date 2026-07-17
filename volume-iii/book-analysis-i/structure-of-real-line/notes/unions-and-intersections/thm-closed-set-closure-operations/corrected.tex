@@ -1,0 +1,37 @@
+\begin{theorembox}{Theorem (Closure Laws for Closed Sets)}
+\begin{theorem}[Closure Laws for Closed Sets]
+\label{thm:closed-set-closure-operations}
+The following statements hold in $\mathbb{R}$:
+\begin{enumerate}[label=(\roman*)]
+  \item The sets $\varnothing$ and $\mathbb{R}$ are closed.
+  \item If $\{F_\lambda\}_{\lambda\in\Lambda}$ is any family of closed subsets
+  of $\mathbb{R}$, then
+  \[
+    \bigcap_{\lambda\in\Lambda}F_\lambda
+  \]
+  is closed.
+  \item If $n\in\mathbb{N}$ and $F_1,\ldots,F_n\subseteq\mathbb{R}$ are
+  closed, then
+  \[
+    \bigcup_{k=1}^{n}F_k
+  \]
+  is closed.
+\end{enumerate}
+\hyperref[prf:closed-set-closure-operations]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+\begin{remark*}[Standard quantified statement]
+\[
+\Bigl(\forall i\in I\;F_i\text{ closed}\Bigr)\Longrightarrow \Bigl(\bigcap_{i\in I} F_{i}\Bigr) \text{ closed};\qquad
+\Bigl(\bigwedge_{k=1}^{n} F_k\text{ closed}\Bigr)\Longrightarrow \Bigl(\bigcup_{k=1}^{n} F_{k}\Bigr) \text{ closed}.
+\]
+\end{remark*}
+\begin{remark*}[Interpretation]
+The roles of union and intersection swap relative to open sets: closed sets are stable under arbitrary intersection but only finite union. The asymmetry mirrors the open case under De~Morgan's laws.
+\end{remark*}
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:closed-set]{Closed Set in $\mathbb{R}$}
+  \item \hyperref[thm:open-set-closure-operations]{Unions and Finite Intersections of Open Sets}
+\end{itemize}
+\end{dependencies}

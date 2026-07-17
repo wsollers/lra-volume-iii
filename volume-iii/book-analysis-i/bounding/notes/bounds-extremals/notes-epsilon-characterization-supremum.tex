@@ -15,20 +15,32 @@
 \begin{definitionbox}{Definition (Epsilon Characterization of Supremum)}
 \begin{definition}[Epsilon Characterization of Supremum]
 \label{def:epsilon-characterization-of-supremum}
-Let $A\subseteq\mathbb{R}$ and let $s\in\mathbb{R}$. The element $s$ satisfies the \emph{epsilon characterization of the supremum} of $A$ if and only if $s$ is an upper bound of $A$ and for every $\varepsilon>0$ there exists $a\in A$ such that $s-\varepsilon<a$.
+Let $A\subseteq\mathbb{R}$ be nonempty and bounded above, and let
+$s\in\mathbb{R}$.  Then $s=\sup A$ if and only if $s$ is an upper bound of
+$A$ and for every $\varepsilon>0$ there exists $a\in A$ such that
+$s-\varepsilon<a$.
 \end{definition}
 \end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
 \begin{aligned}
-&\text{Let } A\subseteq\mathbb{R} \text{ and } s\in\mathbb{R}.\\
-&s \text{ satisfies the epsilon characterization of } \sup A\\
+&\text{Let } A\subseteq\mathbb{R} \text{ be nonempty and bounded above, and let } s\in\mathbb{R}.\\
+&s=\sup A\\
 &\Longleftrightarrow
-\Bigl[\forall x\in A\;(x\le s)\Bigr]
+\Bigl[\forall a\in A\;(a\le s)\Bigr]
 \land
 \Bigl[\forall \varepsilon>0\;\exists a\in A\;(s-\varepsilon<a)\Bigr].
 \end{aligned}
+\]
+\[
+s=\sup A
+\Longleftrightarrow
+\left[
+(\forall a\in A)(a\leq s)
+\land
+(\forall\varepsilon>0)(\exists a\in A)(s-\varepsilon<a\leq s)
+\right].
 \]
 \end{remark*}
 
@@ -42,7 +54,7 @@ Let $A\subseteq\mathbb{R}$ and let $s\in\mathbb{R}$. The element $s$ satisfies t
 \Longleftrightarrow
 \operatorname{UpperBound}(s,A,P)
 \land
-\forall \varepsilon>0\;\exists a\in A\;(s-\varepsilon<a).
+(\forall \varepsilon>0)(\exists a\in A)(s-\varepsilon<a\leq s).
 \end{aligned}
 \]
 \end{remark*}
@@ -174,20 +186,32 @@ This condition says that $s$ caps the set from above while points of $A$ approac
 \begin{definitionbox}{Definition (Epsilon Characterization of Infimum)}
 \begin{definition}[Epsilon Characterization of Infimum]
 \label{def:epsilon-characterization-of-infimum}
-Let $A\subseteq\mathbb{R}$ and let $t\in\mathbb{R}$. The element $t$ satisfies the \emph{epsilon characterization of the infimum} of $A$ if and only if $t$ is a lower bound of $A$ and for every $\varepsilon>0$ there exists $a\in A$ such that $a<t+\varepsilon$.
+Let $A\subseteq\mathbb{R}$ be nonempty and bounded below, and let
+$i\in\mathbb{R}$.  Then $i=\inf A$ if and only if $i$ is a lower bound of
+$A$ and for every $\varepsilon>0$ there exists $a\in A$ such that
+$a<i+\varepsilon$.
 \end{definition}
 \end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
 \begin{aligned}
-&\text{Let } A\subseteq\mathbb{R} \text{ and } t\in\mathbb{R}.\\
-&t \text{ satisfies the epsilon characterization of } \inf A\\
+&\text{Let } A\subseteq\mathbb{R} \text{ be nonempty and bounded below, and let } i\in\mathbb{R}.\\
+&i=\inf A\\
 &\Longleftrightarrow
-\Bigl[\forall x\in A\;(t\le x)\Bigr]
+\Bigl[\forall a\in A\;(i\le a)\Bigr]
 \land
-\Bigl[\forall \varepsilon>0\;\exists a\in A\;(a<t+\varepsilon)\Bigr].
+\Bigl[\forall \varepsilon>0\;\exists a\in A\;(a<i+\varepsilon)\Bigr].
 \end{aligned}
+\]
+\[
+i=\inf A
+\Longleftrightarrow
+\left[
+(\forall a\in A)(i\leq a)
+\land
+(\forall\varepsilon>0)(\exists a\in A)(i\leq a<i+\varepsilon)
+\right].
 \]
 \end{remark*}
 
@@ -195,13 +219,13 @@ Let $A\subseteq\mathbb{R}$ and let $t\in\mathbb{R}$. The element $t$ satisfies t
 \[
 \begin{aligned}
 &P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\\
-&\operatorname{EpsilonCharacterizationOfInfimum}(t,A,P)
+&\operatorname{EpsilonCharacterizationOfInfimum}(i,A,P)
 \Longleftrightarrow
-\operatorname{GreatestLowerBound}(t,A,P)
+\operatorname{GreatestLowerBound}(i,A,P)
 \Longleftrightarrow
-\operatorname{LowerBound}(t,A,P)
+\operatorname{LowerBound}(i,A,P)
 \land
-\forall \varepsilon>0\;\exists a\in A\;(a<t+\varepsilon).
+(\forall \varepsilon>0)(\exists a\in A)(i\leq a<i+\varepsilon).
 \end{aligned}
 \]
 \end{remark*}
@@ -209,12 +233,12 @@ Let $A\subseteq\mathbb{R}$ and let $t\in\mathbb{R}$. The element $t$ satisfies t
 \begin{remark*}[Negated quantified statement]
 \[
 \begin{aligned}
-&\text{Let } A\subseteq\mathbb{R} \text{ and } t\in\mathbb{R}.\\
-&t \text{ does not satisfy the epsilon characterization of } \inf A\\
+&\text{Let } A\subseteq\mathbb{R} \text{ and } i\in\mathbb{R}.\\
+&i \text{ does not satisfy the epsilon characterization of } \inf A\\
 &\Longleftrightarrow
-\Bigl[\exists x\in A\;(x<t)\Bigr]
+\Bigl[\exists x\in A\;(x<i)\Bigr]
 \lor
-\Bigl[\exists \varepsilon_0>0\;\forall a\in A\;(t+\varepsilon_0\le a)\Bigr].
+\Bigl[\exists \varepsilon_0>0\;\forall a\in A\;(i+\varepsilon_0\le a)\Bigr].
 \end{aligned}
 \]
 \end{remark*}
@@ -223,10 +247,10 @@ Let $A\subseteq\mathbb{R}$ and let $t\in\mathbb{R}$. The element $t$ satisfies t
 \[
 \begin{aligned}
 &P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\\
-&\neg\operatorname{EpsilonCharacterizationOfInfimum}(t,A,P)\Longleftrightarrow
-\Bigl[\exists x\in A\;(x<t)\Bigr]
+&\neg\operatorname{EpsilonCharacterizationOfInfimum}(i,A,P)\Longleftrightarrow
+\Bigl[\exists x\in A\;(x<i)\Bigr]
 \lor
-\Bigl[\exists \varepsilon_0>0\;\forall a\in A\;(t+\varepsilon_0\le a)\Bigr].
+\Bigl[\exists \varepsilon_0>0\;\forall a\in A\;(i+\varepsilon_0\le a)\Bigr].
 \end{aligned}
 \]
 \end{remark*}
@@ -234,27 +258,27 @@ Let $A\subseteq\mathbb{R}$ and let $t\in\mathbb{R}$. The element $t$ satisfies t
 \begin{remark*}[Failure modes]
 \begin{description}
   \item[Exposition.]
-The characterization fails either because $t$ is not a lower bound of $A$, or because $A$ remains at least some positive distance above $t$.
+The characterization fails either because $i$ is not a lower bound of $A$, or because $A$ remains at least some positive distance above $i$.
 
 
   \item[\operatorname{EpsilonCharacterizationOfInfimum}.]
   \[
 \begin{aligned}
-&\text{Let } A\subseteq\mathbb{R} \text{ and } t\in\mathbb{R}.\\
-&t \text{ does not satisfy the epsilon characterization of } \inf A\\
+&\text{Let } A\subseteq\mathbb{R} \text{ and } i\in\mathbb{R}.\\
+&i \text{ does not satisfy the epsilon characterization of } \inf A\\
 &\Longleftrightarrow
-\Bigl[\exists x\in A\;(x<t)\Bigr]
+\Bigl[\exists x\in A\;(x<i)\Bigr]
 \lor
-\Bigl[\exists \varepsilon_0>0\;\forall a\in A\;(t+\varepsilon_0\le a)\Bigr].
+\Bigl[\exists \varepsilon_0>0\;\forall a\in A\;(i+\varepsilon_0\le a)\Bigr].
 \end{aligned}
 \]
 \[
 \begin{aligned}
 &P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\\
-&\neg\operatorname{EpsilonCharacterizationOfInfimum}(t,A,P)\Longleftrightarrow
-\Bigl[\exists x\in A\;(x<t)\Bigr]
+&\neg\operatorname{EpsilonCharacterizationOfInfimum}(i,A,P)\Longleftrightarrow
+\Bigl[\exists x\in A\;(x<i)\Bigr]
 \lor
-\Bigl[\exists \varepsilon_0>0\;\forall a\in A\;(t+\varepsilon_0\le a)\Bigr].
+\Bigl[\exists \varepsilon_0>0\;\forall a\in A\;(i+\varepsilon_0\le a)\Bigr].
 \end{aligned}
 \]
 \end{description}
@@ -264,39 +288,39 @@ The characterization fails either because $t$ is not a lower bound of $A$, or be
 \begin{description}
   \item[Exposition.]
 \[
-\neg\operatorname{EpsilonCharacterizationOfInfimum}(t,A,\mathbb{R})
+\neg\operatorname{EpsilonCharacterizationOfInfimum}(i,A,\mathbb{R})
 =
-\underbrace{\exists x\in A\;(x<t)}_{\text{lower-bound failure}}
+\underbrace{\exists x\in A\;(x<i)}_{\text{lower-bound failure}}
 \;\lor\;
-\underbrace{\exists \varepsilon_0>0\;\forall a\in A\;(t+\varepsilon_0\le a)}_{\text{positive gap above }t}.
+\underbrace{\exists \varepsilon_0>0\;\forall a\in A\;(i+\varepsilon_0\le a)}_{\text{positive gap above }i}.
 \]
 
 
   \item[\operatorname{EpsilonCharacterizationOfInfimum}.]
   \[
 \begin{aligned}
-&\text{Let } A\subseteq\mathbb{R} \text{ and } t\in\mathbb{R}.\\
-&t \text{ does not satisfy the epsilon characterization of } \inf A\\
+&\text{Let } A\subseteq\mathbb{R} \text{ and } i\in\mathbb{R}.\\
+&i \text{ does not satisfy the epsilon characterization of } \inf A\\
 &\Longleftrightarrow
-\Bigl[\exists x\in A\;(x<t)\Bigr]
+\Bigl[\exists x\in A\;(x<i)\Bigr]
 \lor
-\Bigl[\exists \varepsilon_0>0\;\forall a\in A\;(t+\varepsilon_0\le a)\Bigr].
+\Bigl[\exists \varepsilon_0>0\;\forall a\in A\;(i+\varepsilon_0\le a)\Bigr].
 \end{aligned}
 \]
 \[
 \begin{aligned}
 &P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\\
-&\neg\operatorname{EpsilonCharacterizationOfInfimum}(t,A,P)\Longleftrightarrow
-\Bigl[\exists x\in A\;(x<t)\Bigr]
+&\neg\operatorname{EpsilonCharacterizationOfInfimum}(i,A,P)\Longleftrightarrow
+\Bigl[\exists x\in A\;(x<i)\Bigr]
 \lor
-\Bigl[\exists \varepsilon_0>0\;\forall a\in A\;(t+\varepsilon_0\le a)\Bigr].
+\Bigl[\exists \varepsilon_0>0\;\forall a\in A\;(i+\varepsilon_0\le a)\Bigr].
 \end{aligned}
 \]
 \end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
-This condition says that $t$ sits below the set while points of $A$ approach $t$ from above at every positive scale. The lower-bound clause prevents $A$ from crossing below $t$, and the epsilon clause prevents $t$ from sitting strictly below the set with a positive gap. Geometrically, $t$ is a floor that the set presses against arbitrarily closely from above.
+This condition says that $i$ sits below the set while points of $A$ approach $i$ from above at every positive scale. The lower-bound clause prevents $A$ from crossing below $i$, and the epsilon clause prevents $i$ from sitting strictly below the set with a positive gap. Geometrically, $i$ is a floor that the set presses against arbitrarily closely from above.
 
 
 The epsilon characterizations are one way to prove the sharpness part of a
@@ -322,35 +346,37 @@ Infima}.
 \begin{lemma}[Supremum Strict Upper Approximation]
 \label{lem:supremum-strict-upper-approximation}
 Let $A\subseteq\mathbb{R}$ be nonempty and bounded above, and let
-$s=\sup A$. If $u<s$, then there exists $a\in A$ such that
+$s=\sup A$.  For every $x\in\mathbb{R}$ with $x<s$, there exists
+$a\in A$ such that
 \[
-u<a\le s.
+x<a\le s.
 \]
 \hyperref[prf:supremum-strict-upper-approximation]{Go to proof.}
 \end{lemma}
 \end{lemmabox}
 \begin{remark*}[Standard quantified statement]
 \[
-\forall A\subseteq\mathbb{R}\;\forall u,s\in\mathbb{R}\;
-\bigl((A\ne\varnothing\land s=\sup A\land u<s)\Rightarrow
-\exists a\in A\;(u<a\le s)\bigr).
+\forall x\in\mathbb{R},\qquad
+x<\sup A
+\Rightarrow
+(\exists a\in A)(x<a\leq\sup A).
 \]
 \end{remark*}
 \begin{remark*}[Predicate reading]
 \[
-u<\sup A\Rightarrow A\cap(u,\sup A]\ne\varnothing.
+x<\sup A\Rightarrow A\cap(x,\sup A]\ne\varnothing.
 \]
 \end{remark*}
 \begin{remark*}[Negated quantified statement]
 \[
-\exists A\subseteq\mathbb{R}\;\exists u,s\in\mathbb{R}\;
-\bigl(A\ne\varnothing\land s=\sup A\land u<s\land
-\forall a\in A\;(a\le u\lor s<a)\bigr).
+\exists A\subseteq\mathbb{R}\;\exists x,s\in\mathbb{R}\;
+\bigl(A\ne\varnothing\land s=\sup A\land x<s\land
+\forall a\in A\;(a\le x\lor s<a)\bigr).
 \]
 \end{remark*}
 \begin{remark*}[Negation predicate reading]
 \[
-u<\sup A\land A\cap(u,\sup A]=\varnothing.
+x<\sup A\land A\cap(x,\sup A]=\varnothing.
 \]
 \end{remark*}
 
@@ -361,12 +387,12 @@ u<\sup A\land A\cap(u,\sup A]=\varnothing.
 
   \item[\varnothing.]
   \[
-\exists A\subseteq\mathbb{R}\;\exists u,s\in\mathbb{R}\;
-\bigl(A\ne\varnothing\land s=\sup A\land u<s\land
-\forall a\in A\;(a\le u\lor s<a)\bigr).
+\exists A\subseteq\mathbb{R}\;\exists x,s\in\mathbb{R}\;
+\bigl(A\ne\varnothing\land s=\sup A\land x<s\land
+\forall a\in A\;(a\le x\lor s<a)\bigr).
 \]
 \[
-u<\sup A\land A\cap(u,\sup A]=\varnothing.
+x<\sup A\land A\cap(x,\sup A]=\varnothing.
 \]
 \end{description}
 \end{remark*}
@@ -388,35 +414,37 @@ Every number strictly below a supremum is crossed by some element of the set.
 \begin{lemma}[Infimum Strict Lower Approximation]
 \label{lem:infimum-strict-lower-approximation}
 Let $A\subseteq\mathbb{R}$ be nonempty and bounded below, and let
-$t=\inf A$. If $t<v$, then there exists $a\in A$ such that
+$i=\inf A$.  For every $x\in\mathbb{R}$ with $i<x$, there exists
+$a\in A$ such that
 \[
-t\le a<v.
+i\le a<x.
 \]
 \hyperref[prf:infimum-strict-lower-approximation]{Go to proof.}
 \end{lemma}
 \end{lemmabox}
 \begin{remark*}[Standard quantified statement]
 \[
-\forall A\subseteq\mathbb{R}\;\forall t,v\in\mathbb{R}\;
-\bigl((A\ne\varnothing\land t=\inf A\land t<v)\Rightarrow
-\exists a\in A\;(t\le a<v)\bigr).
+\forall x\in\mathbb{R},\qquad
+\inf A<x
+\Rightarrow
+(\exists a\in A)(\inf A\leq a<x).
 \]
 \end{remark*}
 \begin{remark*}[Predicate reading]
 \[
-\inf A<v\Rightarrow A\cap[\inf A,v)\ne\varnothing.
+\inf A<x\Rightarrow A\cap[\inf A,x)\ne\varnothing.
 \]
 \end{remark*}
 \begin{remark*}[Negated quantified statement]
 \[
-\exists A\subseteq\mathbb{R}\;\exists t,v\in\mathbb{R}\;
-\bigl(A\ne\varnothing\land t=\inf A\land t<v\land
-\forall a\in A\;(a<t\lor v\le a)\bigr).
+\exists A\subseteq\mathbb{R}\;\exists i,x\in\mathbb{R}\;
+\bigl(A\ne\varnothing\land i=\inf A\land i<x\land
+\forall a\in A\;(a<i\lor x\le a)\bigr).
 \]
 \end{remark*}
 \begin{remark*}[Negation predicate reading]
 \[
-\inf A<v\land A\cap[\inf A,v)=\varnothing.
+\inf A<x\land A\cap[\inf A,x)=\varnothing.
 \]
 \end{remark*}
 
@@ -427,12 +455,12 @@ t\le a<v.
 
   \item[\varnothing.]
   \[
-\exists A\subseteq\mathbb{R}\;\exists t,v\in\mathbb{R}\;
-\bigl(A\ne\varnothing\land t=\inf A\land t<v\land
-\forall a\in A\;(a<t\lor v\le a)\bigr).
+\exists A\subseteq\mathbb{R}\;\exists i,x\in\mathbb{R}\;
+\bigl(A\ne\varnothing\land i=\inf A\land i<x\land
+\forall a\in A\;(a<i\lor x\le a)\bigr).
 \]
 \[
-\inf A<v\land A\cap[\inf A,v)=\varnothing.
+\inf A<x\land A\cap[\inf A,x)=\varnothing.
 \]
 \end{description}
 \end{remark*}

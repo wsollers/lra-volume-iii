@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "thm:open-set-closure-operations",
+  "kind": "theorem",
+  "title": "Unions and Finite Intersections of Open Sets",
+  "source": {
+    "label": "thm:open-set-closure-operations",
+    "kind": "theorem",
+    "title": "Unions and Finite Intersections of Open Sets",
+    "book": "book-analysis-i",
+    "chapter": "structure-of-real-line",
+    "section": "open-sets",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/structure-of-real-line/notes/open-sets/notes-open-sets.tex",
+    "source_line_start": 137,
+    "source_line_end": 173,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/structure-of-real-line/notes/open-sets/thm-open-set-closure-operations",
+      "artifact": "volume-iii/book-analysis-i/structure-of-real-line/notes/open-sets/thm-open-set-closure-operations/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/structure-of-real-line/notes/open-sets/thm-open-set-closure-operations/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/structure-of-real-line/notes/open-sets/thm-open-set-closure-operations",
+    "artifact": "volume-iii/book-analysis-i/structure-of-real-line/notes/open-sets/thm-open-set-closure-operations/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/structure-of-real-line/notes/open-sets/thm-open-set-closure-operations/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/structure-of-real-line/notes/open-sets/notes-open-sets.tex",
+      "label": "thm:open-set-closure-operations",
+      "environment_kind": "theorem",
+      "source_line_start": 137,
+      "source_line_end": 173,
+      "current_tex": "\\begin{theorembox}{Theorem (Unions and Finite Intersections of Open Sets)}\n\\begin{theorem}[Unions and Finite Intersections of Open Sets]\n\\label{thm:open-set-closure-operations}\nThe following statements hold in $\\mathbb{R}$:\n\\begin{enumerate}[label=(\\roman*)]\n  \\item The sets $\\varnothing$ and $\\mathbb{R}$ are open.\n  \\item If $\\{U_\\lambda\\}_{\\lambda\\in\\Lambda}$ is any family of open subsets\n  of $\\mathbb{R}$, then\n  \\[\n    \\bigcup_{\\lambda\\in\\Lambda}U_\\lambda\n  \\]\n  is open.\n  \\item If $n\\in\\mathbb{N}$ and $U_1,\\ldots,U_n\\subseteq\\mathbb{R}$ are open,\n  then\n  \\[\n    \\bigcap_{k=1}^{n}U_k\n  \\]\n  is open.\n\\end{enumerate}\n\\hyperref[prf:open-set-closure-operations]{Go to proof.}\n\\end{theorem}\n\\end{theorembox}\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\Bigl(\\forall i\\in I\\;U_i\\text{ open}\\Bigr)\\Longrightarrow \\Bigl(\\bigcup_{i\\in I} U_{i}\\Bigr) \\text{ open};\\qquad\n\\Bigl(\\bigwedge_{k=1}^{n} U_k\\text{ open}\\Bigr)\\Longrightarrow \\Bigl(\\bigcap_{k=1}^{n} U_{k}\\Bigr) \\text{ open}.\n\\]\n\\end{remark*}\n\\begin{remark*}[Interpretation]\nOpenness is preserved by arbitrary unions but only finite intersections. The infinite intersection $\\bigcap_n(-1/n,1/n)=\\{0\\}$ shows why ``finite'' cannot be dropped: a shrinking family of open intervals can close down onto a single point.\n\\end{remark*}\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:open-set]{Open Set in $\\mathbb{R}$}\n\\end{itemize}\n\\end{dependencies}\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

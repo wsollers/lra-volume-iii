@@ -1,0 +1,127 @@
+\begin{theorem}[Supremum of the Absolute-Value Image]
+\label{thm:supremum-absolute-value-image}
+Let $A\subseteq\mathbb{R}$ be nonempty and bounded. Then
+\[
+  \sup |A|=\max\{|\sup A|,|\inf A|\},
+  \qquad
+  |A|=\{|a|:a\in A\}.
+\]
+\hyperref[prf:supremum-absolute-value-image]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+A\neq\varnothing,\quad A\text{ bounded}
+\quad\Longrightarrow\quad
+\sup\{|a|:a\in A\}=\max\{|\sup A|,|\inf A|\}.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad C=\{|a|:a\in A\},\\
+&M=\max\{|s|,|t|\},\\
+&\operatorname{LeastUpperBound}(s,A,P)\land \operatorname{GreatestLowerBound}(t,A,P)
+\Longrightarrow
+\operatorname{LeastUpperBound}(M,C,P).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\sup |A|\ne \max\{|\sup A|,|\inf A|\}
+\]
+is impossible under the stated hypotheses.
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad C=\{|a|:a\in A\},\\
+&M=\max\{|s|,|t|\},\\
+&\operatorname{LeastUpperBound}(s,A,P)\land \operatorname{GreatestLowerBound}(t,A,P)
+\land
+\neg\operatorname{LeastUpperBound}(M,C,P)
+\end{aligned}
+\]
+is a contradictory configuration.
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+The formula could fail only if the farthest absolute-value size were not achieved at one of the two extremal thresholds. Since every $a\in A$ lies between $\inf A$ and $\sup A$, its distance from zero is bounded by the larger endpoint magnitude.
+
+
+  \item[\operatorname{LeastUpperBound} / \operatorname{GreatestLowerBound}.]
+  \[
+\sup |A|\ne \max\{|\sup A|,|\inf A|\}
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad C=\{|a|:a\in A\},\\
+&M=\max\{|s|,|t|\},\\
+&\operatorname{LeastUpperBound}(s,A,P)\land \operatorname{GreatestLowerBound}(t,A,P)
+\land
+\neg\operatorname{LeastUpperBound}(M,C,P)
+\end{aligned}
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+\[
+\inf A\le a\le \sup A
+\Longrightarrow
+|a|\le \max\{|\sup A|,|\inf A|\}.
+\]
+
+
+  \item[\operatorname{LeastUpperBound} / \operatorname{GreatestLowerBound}.]
+  \[
+\sup |A|\ne \max\{|\sup A|,|\inf A|\}
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad C=\{|a|:a\in A\},\\
+&M=\max\{|s|,|t|\},\\
+&\operatorname{LeastUpperBound}(s,A,P)\land \operatorname{GreatestLowerBound}(t,A,P)
+\land
+\neg\operatorname{LeastUpperBound}(M,C,P)
+\end{aligned}
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The absolute-value image measures distance from the origin. For a bounded subset of the real line, the largest possible distance is controlled by whichever extremal endpoint lies farther from zero.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:reals]{Real Numbers}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:absolute-value]{Absolute Value}
+  \item \hyperref[def:real-upper-bound]{Upper Bound}
+  \item \hyperref[def:real-lower-bound]{Lower Bound}
+  \item \hyperref[def:bounded]{Bounded Set}
+  \item \hyperref[def:supremum]{Supremum}
+  \item \hyperref[def:infimum]{Infimum}
+  \item \hyperref[def:maximum]{Maximum}
+  \item \hyperref[def:epsilon-characterization-of-supremum]{Epsilon Characterization of Supremum}
+  \item \hyperref[def:epsilon-characterization-of-infimum]{Epsilon Characterization of Infimum}
+  \item \hyperref[prop:every-element-lies-below-the-supremum]{Every Element Lies Below the Supremum}
+  \item \hyperref[prop:every-element-lies-above-the-infimum]{Every Element Lies Above the Infimum}
+  \item \hyperref[thm:infimum-less-than-supremum]{Infimum Is Less Than or Equal to the Supremum}
+\end{itemize}
+\end{dependencies}
+
+
+
+

@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "lem:choosing-a-smaller-positive-number",
+  "kind": "lemma",
+  "title": "Choosing a Smaller Positive Number",
+  "source": {
+    "label": "lem:choosing-a-smaller-positive-number",
+    "kind": "lemma",
+    "title": "Choosing a Smaller Positive Number",
+    "book": "book-analysis-i",
+    "chapter": "structure-of-real-line",
+    "section": "order-distance-length",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/structure-of-real-line/notes/order-distance-length/notes-epsilon-algebra.tex",
+    "source_line_start": 249,
+    "source_line_end": 315,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/structure-of-real-line/notes/order-distance-length/lem-choosing-a-smaller-positive-number",
+      "artifact": "volume-iii/book-analysis-i/structure-of-real-line/notes/order-distance-length/lem-choosing-a-smaller-positive-number/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/structure-of-real-line/notes/order-distance-length/lem-choosing-a-smaller-positive-number/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/structure-of-real-line/notes/order-distance-length/lem-choosing-a-smaller-positive-number",
+    "artifact": "volume-iii/book-analysis-i/structure-of-real-line/notes/order-distance-length/lem-choosing-a-smaller-positive-number/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/structure-of-real-line/notes/order-distance-length/lem-choosing-a-smaller-positive-number/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/structure-of-real-line/notes/order-distance-length/notes-epsilon-algebra.tex",
+      "label": "lem:choosing-a-smaller-positive-number",
+      "environment_kind": "lemma",
+      "source_line_start": 249,
+      "source_line_end": 315,
+      "current_tex": "\\begin{lemmabox}{Lemma (Choosing a Smaller Positive Number)}\n\\begin{lemma}[Choosing a Smaller Positive Number]\n\\label{lem:choosing-a-smaller-positive-number}\nFor every $\\varepsilon,c\\in\\mathbb{R}$, if $\\varepsilon>0$ and $c>0$, then\nthere exists $\\delta\\in\\mathbb{R}$ such that\n\\[\n  0<\\delta<\\varepsilon\n  \\qquad\\text{and}\\qquad\n  0<\\delta<c.\n\\]\n\\hyperref[prf:choosing-a-smaller-positive-number]{Go to proof.}\n\\end{lemma}\n\\end{lemmabox}\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\forall \\varepsilon,c\\in\\mathbb{R}\\;\n\\bigl((\\varepsilon>0\\land c>0)\\Longrightarrow\n\\exists\\delta\\in\\mathbb{R}\\;(0<\\delta<\\varepsilon\\land 0<\\delta<c)\\bigr).\n\\]\n\\end{remark*}\n\\begin{remark*}[Predicate reading]\n\\[\n\\varepsilon>0\\land c>0\n\\Longrightarrow\n\\exists\\delta\\in\\mathbb{R}\\;(0<\\delta<\\varepsilon\\land 0<\\delta<c).\n\\]\n\\end{remark*}\n\\begin{remark*}[Negated quantified statement]\n\\[\n\\exists \\varepsilon,c\\in\\mathbb{R}\\;\n\\bigl(\\varepsilon>0\\land c>0\\land\n\\forall\\delta\\in\\mathbb{R}\\;(\\delta\\leq 0\\lor \\delta\\geq\\varepsilon\\lor \\delta\\geq c)\\bigr).\n\\]\n\\end{remark*}\n\\begin{remark*}[Negation predicate reading]\n\\[\n\\varepsilon>0\\land c>0\\land\n\\forall\\delta\\in\\mathbb{R}\\;(\\delta\\leq 0\\lor \\delta\\geq\\varepsilon\\lor \\delta\\geq c).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\n  Failure is witnessed by the displayed negated or contrapositive condition.\n\n  \\item[\\exists-condition.]\n  \\[\n\\exists \\varepsilon,c\\in\\mathbb{R}\\;\n\\bigl(\\varepsilon>0\\land c>0\\land\n\\forall\\delta\\in\\mathbb{R}\\;(\\delta\\leq 0\\lor \\delta\\geq\\varepsilon\\lor \\delta\\geq c)\\bigr).\n\\]\n\\[\n\\varepsilon>0\\land c>0\\land\n\\forall\\delta\\in\\mathbb{R}\\;(\\delta\\leq 0\\lor \\delta\\geq\\varepsilon\\lor \\delta\\geq c).\n\\]\n\\end{description}\n\\end{remark*}\n\\begin{remark*}[Interpretation]\nGiven two positive constraints, one can choose a single positive tolerance\nstrictly below both.\n\\end{remark*}\n\\begin{dependencies}\n\\hyperref[lem:minimum-of-positive-numbers-is-positive]{Minimum of Positive Numbers Is Positive};\n\\hyperref[lem:half-epsilon-is-positive]{Half Epsilon Is Positive}.\n\\end{dependencies}\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

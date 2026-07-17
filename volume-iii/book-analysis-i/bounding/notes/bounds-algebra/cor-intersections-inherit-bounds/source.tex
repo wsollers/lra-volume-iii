@@ -1,0 +1,112 @@
+\begin{corollary}[Intersections Inherit Bounds]
+\label{cor:intersections-inherit-bounds}
+Let $A,B\subseteq\mathbb{R}$. Every upper bound of $A$ or of $B$ is an
+upper bound of $A\cap B$, and every lower bound of $A$ or of $B$ is a
+lower bound of $A\cap B$; that is, for all $u,\ell\in\mathbb{R}$,
+\[
+\left[
+(\forall a\in A,\ a\leq u)
+\lor
+(\forall b\in B,\ b\leq u)
+\right]
+\Longrightarrow
+(\forall x\in A\cap B,\ x\leq u),
+\]
+and
+\[
+\left[
+(\forall a\in A,\ \ell\leq a)
+\lor
+(\forall b\in B,\ \ell\leq b)
+\right]
+\Longrightarrow
+(\forall x\in A\cap B,\ \ell\leq x).
+\]
+\hyperref[prf:intersections-inherit-bounds]{Go to proof.}
+\end{corollary}
+\end{corollarybox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\begin{aligned}
+&\bigl[(\forall a\in A)(a\leq u)\lor(\forall b\in B)(b\leq u)\bigr]
+\Longrightarrow(\forall x\in A\cap B)(x\leq u),\\
+&\bigl[(\forall a\in A)(\ell\leq a)\lor(\forall b\in B)(\ell\leq b)\bigr]
+\Longrightarrow(\forall x\in A\cap B)(\ell\leq x).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\qquad C=A\cap B,\\
+&\operatorname{UpperBound}(u,A,P)\Longrightarrow\operatorname{UpperBound}(u,C,P),\\
+&\operatorname{UpperBound}(u,B,P)\Longrightarrow\operatorname{UpperBound}(u,C,P),\\
+&\operatorname{LowerBound}(\ell,A,P)\Longrightarrow\operatorname{LowerBound}(\ell,C,P),\\
+&\operatorname{LowerBound}(\ell,B,P)\Longrightarrow\operatorname{LowerBound}(\ell,C,P).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+A failure would be a failure of subset inheritance for $A\cap B\subseteq A$.
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\qquad C=A\cap B,\\
+&\operatorname{UpperBound}(u,A,P)\land
+\neg\operatorname{UpperBound}(u,C,P)
+\end{aligned}
+\]
+is contradictory, and the same holds for lower bounds.
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
+Intersection can lose elements, but it cannot introduce an element outside the
+parent set $A$.
+
+
+  \item[\operatorname{UpperBound} / \operatorname{LowerBound}.]
+
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\qquad C=A\cap B,\\
+&\operatorname{UpperBound}(u,A,P)\land
+\neg\operatorname{UpperBound}(u,C,P)
+\end{aligned}
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\qquad C=A\cap B,\\
+&\operatorname{UpperBound}(u,A,P)\Longrightarrow\operatorname{UpperBound}(u,C,P),\\
+&\operatorname{LowerBound}(\ell,A,P)\Longrightarrow\operatorname{LowerBound}(\ell,C,P).
+\end{aligned}
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Apply subset inheritance to $C=A\cap B$.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+\item \hyperref[def:reals]{Real Numbers}.
+\item \hyperref[def:ordered-set]{Ordered Set}.
+\item \hyperref[def:subset]{Subset}.
+\item \hyperref[def:intersection]{Intersection}.
+\item \hyperref[def:real-upper-bound]{Upper Bound}.
+\item \hyperref[def:real-lower-bound]{Lower Bound}.
+\item \hyperref[def:bounded-above]{Bounded Above}.
+\item \hyperref[def:bounded-below]{Bounded Below}.
+\item \hyperref[def:bounded]{Bounded Set}.
+\item \hyperref[lem:subsets-preserve-upper-bounds]{Subsets Preserve Upper Bounds}.
+\item \hyperref[lem:subsets-preserve-lower-bounds]{Subsets Preserve Lower Bounds}.
+\end{itemize}
+\end{dependencies}
+

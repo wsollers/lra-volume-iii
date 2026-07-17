@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "lem:nonzero-rational-product-preserves-irrationality",
+  "kind": "lemma",
+  "title": "Nonzero Rational Product Preserves Irrationality",
+  "source": {
+    "label": "lem:nonzero-rational-product-preserves-irrationality",
+    "kind": "lemma",
+    "title": "Nonzero Rational Product Preserves Irrationality",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "completeness",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-density.tex",
+    "source_line_start": 410,
+    "source_line_end": 447,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-nonzero-rational-product-preserves-irrationality",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-nonzero-rational-product-preserves-irrationality/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-nonzero-rational-product-preserves-irrationality/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-nonzero-rational-product-preserves-irrationality",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-nonzero-rational-product-preserves-irrationality/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-nonzero-rational-product-preserves-irrationality/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-density.tex",
+      "label": "lem:nonzero-rational-product-preserves-irrationality",
+      "environment_kind": "lemma",
+      "source_line_start": 410,
+      "source_line_end": 447,
+      "current_tex": "\\begin{lemma}[Nonzero Rational Product Preserves Irrationality]\n\\label{lem:nonzero-rational-product-preserves-irrationality}\nFor every $q\\in\\mathbb{Q}\\setminus\\{0\\}$ and every\n$x\\in\\mathbb{R}\\setminus\\mathbb{Q}$,\n\\[\n  qx\\in\\mathbb{R}\\setminus\\mathbb{Q}.\n\\]\n\\hyperref[prf:nonzero-rational-product-preserves-irrationality]{\\textit{Go to proof.}}\n\\end{lemma}\n\\end{lemmabox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\forall q\\in\\mathbb{Q}\\setminus\\{0\\}\\;\\forall x\\in\\mathbb{R}\\setminus\\mathbb{Q}\\;\n\\bigl(qx\\in\\mathbb{R}\\setminus\\mathbb{Q}\\bigr).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\nq\\in\\mathbb{Q}\\setminus\\{0\\}\\land x\\in\\mathbb{R}\\setminus\\mathbb{Q}\n\\Longrightarrow qx\\in\\mathbb{R}\\setminus\\mathbb{Q}.\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nMultiplying an irrational by a nonzero rational cannot make it rational,\nbecause division by the same nonzero rational would recover the original\nirrational as a rational number.\n\\end{remark*}\n\n\\begin{dependencies}\n\\hyperref[thm:q-is-a-field]{Theorem~\\ref*{thm:q-is-a-field}},\n\\hyperref[thm:reciprocal-on-q-well-defined]{Theorem~\\ref*{thm:reciprocal-on-q-well-defined}},\n\\hyperref[thm:q-embeds-into-r]{Theorem~\\ref*{thm:q-embeds-into-r}}.\n\\end{dependencies}\n\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

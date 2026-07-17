@@ -1,0 +1,60 @@
+\begin{lemmabox}{Lemma (Epsilon Splitting)}
+\begin{lemma}[Epsilon Splitting]
+\label{lem:epsilon-splitting}
+For every $\varepsilon\in\mathbb{R}$,
+\[
+  \varepsilon>0
+  \Longrightarrow
+  \frac{\varepsilon}{2}+\frac{\varepsilon}{2}=\varepsilon.
+\]
+\hyperref[prf:epsilon-splitting]{Go to proof.}
+\end{lemma}
+\end{lemmabox}
+\begin{remark*}[Standard quantified statement]
+\[
+\forall \varepsilon\in\mathbb{R}\;\bigl(\varepsilon>0\Longrightarrow
+\varepsilon/2+\varepsilon/2=\varepsilon\bigr).
+\]
+\end{remark*}
+\begin{remark*}[Predicate reading]
+\[
+\operatorname{Positive}(\varepsilon,\mathbb{R})\Longrightarrow
+\varepsilon/2+\varepsilon/2=\varepsilon.
+\]
+\end{remark*}
+\begin{remark*}[Negated quantified statement]
+\[
+\exists\varepsilon\in\mathbb{R}\;\bigl(\varepsilon>0\land
+\varepsilon/2+\varepsilon/2\ne\varepsilon\bigr).
+\]
+\end{remark*}
+\begin{remark*}[Negation predicate reading]
+\[
+\operatorname{Positive}(\varepsilon,\mathbb{R})\land
+\varepsilon/2+\varepsilon/2\ne\varepsilon.
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  Failure is witnessed by the displayed negated or contrapositive condition.
+
+  \item[\operatorname{Positive}.]
+  \[
+\exists\varepsilon\in\mathbb{R}\;\bigl(\varepsilon>0\land
+\varepsilon/2+\varepsilon/2\ne\varepsilon\bigr).
+\]
+\[
+\operatorname{Positive}(\varepsilon,\mathbb{R})\land
+\varepsilon/2+\varepsilon/2\ne\varepsilon.
+\]
+\end{description}
+\end{remark*}
+\begin{remark*}[Interpretation]
+The standard two-error estimate assigns half the tolerance to each error term.
+\end{remark*}
+\begin{dependencies}
+\hyperref[def:real-ordered-field]{Complete Ordered Field}.
+\end{dependencies}
+\input{volume-iii/book-analysis-i/structure-of-real-line/notes/order-distance-length/figure-epsilon-splitting}

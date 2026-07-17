@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "thm:translation-invariance-infimum",
+  "kind": "theorem",
+  "title": "Translation Invariance of the Infimum",
+  "source": {
+    "label": "thm:translation-invariance-infimum",
+    "kind": "theorem",
+    "title": "Translation Invariance of the Infimum",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "bounds-algebra",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-algebra-of-supremum-infimum.tex",
+    "source_line_start": 365,
+    "source_line_end": 477,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-translation-invariance-infimum",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-translation-invariance-infimum/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-translation-invariance-infimum/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-translation-invariance-infimum",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-translation-invariance-infimum/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-translation-invariance-infimum/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-algebra-of-supremum-infimum.tex",
+      "label": "thm:translation-invariance-infimum",
+      "environment_kind": "theorem",
+      "source_line_start": 365,
+      "source_line_end": 477,
+      "current_tex": "\\begin{theorem}[Translation Invariance of the Infimum]\n\\label{thm:translation-invariance-infimum}\nLet $A\\subseteq\\mathbb{R}$ be nonempty and bounded below, and let\n$c\\in\\mathbb{R}$.  Then $A+c:=\\{a+c:a\\in A\\}$ is nonempty and bounded below,\nand\n\\[\n  \\inf(A+c)=\\inf A+c.\n\\]\n\\hyperref[prf:translation-invariance-infimum]{Go to proof.}\n\\end{theorem}\n\\end{theorembox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\nA\\neq\\varnothing,\\quad A\\text{ bounded below}\n\\quad\\Longrightarrow\\quad\n\\inf\\{a+c:a\\in A\\}=\\inf A+c.\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A\\subseteq\\mathbb{R},\\qquad A+c=\\{a+c:a\\in A\\},\\\\\n&\\operatorname{GreatestLowerBound}(t,A,P)\n\\Longrightarrow\n\\operatorname{GreatestLowerBound}(t+c,A+c,P).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\n\\inf(A+c)\\neq\\inf A+c\n\\]\nis impossible under the stated hypotheses.\n\\end{remark*}\n\n\\begin{remark*}[Negation predicate reading]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A\\subseteq\\mathbb{R},\\qquad A+c=\\{a+c:a\\in A\\},\\\\\n&\\operatorname{GreatestLowerBound}(t,A,P)\\land\n\\neg\\operatorname{GreatestLowerBound}(t+c,A+c,P).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\nThe formula could fail only if translation failed to preserve lower bounds or\nfailed to preserve greatestness among lower bounds.\n\n\n  \\item[\\operatorname{GreatestLowerBound}.]\n  \\[\n\\inf(A+c)\\neq\\inf A+c\n\\]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A\\subseteq\\mathbb{R},\\qquad A+c=\\{a+c:a\\in A\\},\\\\\n&\\operatorname{GreatestLowerBound}(t,A,P)\\land\n\\neg\\operatorname{GreatestLowerBound}(t+c,A+c,P).\n\\end{aligned}\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\n\\[\n(\\forall a\\in A)(t\\leq a)\n\\Longleftrightarrow\n(\\forall a\\in A)(t+c\\leq a+c).\n\\]\n\n\n  \\item[\\operatorname{GreatestLowerBound}.]\n  \\[\n\\inf(A+c)\\neq\\inf A+c\n\\]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A\\subseteq\\mathbb{R},\\qquad A+c=\\{a+c:a\\in A\\},\\\\\n&\\operatorname{GreatestLowerBound}(t,A,P)\\land\n\\neg\\operatorname{GreatestLowerBound}(t+c,A+c,P).\n\\end{aligned}\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nTranslation shifts every floor by the same amount, so the greatest floor shifts\nby that amount.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:reals]{Real Numbers}\n  \\item \\hyperref[def:ordered-set]{Ordered Set}\n  \\item \\hyperref[def:subset]{Subset}\n  \\item \\hyperref[def:addition-on-r]{Addition on $\\mathbb{R}$}\n  \\item \\hyperref[def:set-arithmetic-images]{Set Arithmetic Images}\n  \\item \\hyperref[def:real-lower-bound]{Lower Bound}\n  \\item \\hyperref[def:infimum]{Infimum}\n\\end{itemize}\n\\end{dependencies}\n\n\n\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

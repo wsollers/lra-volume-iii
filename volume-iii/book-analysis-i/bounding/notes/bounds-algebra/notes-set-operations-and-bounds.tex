@@ -7,18 +7,27 @@ transport.
 \begin{lemmabox}{Lemma (Union Preserves Upper Bounds)}
 \begin{lemma}[Union Preserves Upper Bounds]
 \label{lem:union-preserves-upper-bounds}
-Let $A,B\subseteq\mathbb{R}$.  If $u_A$ is an upper bound of $A$ and
-$u_B$ is an upper bound of $B$, then $\max\{u_A,u_B\}$ is an upper bound
-of $A\cup B$.
+Let $A,B\subseteq\mathbb{R}$. For every $u\in\mathbb{R}$, if $u$ is an
+upper bound of both $A$ and $B$, then $u$ is an upper bound of
+$A\cup B$; that is,
+\[
+\left[
+(\forall a\in A,\ a\leq u)
+\land
+(\forall b\in B,\ b\leq u)
+\right]
+\Longrightarrow
+(\forall x\in A\cup B,\ x\leq u).
+\]
 \hyperref[prf:union-preserves-upper-bounds]{Go to proof.}
 \end{lemma}
 \end{lemmabox}
 
 \begin{remark*}[Standard quantified statement]
 \[
-(\forall a\in A)(a\leq u_A)\land(\forall b\in B)(b\leq u_B)
+\bigl[(\forall a\in A)(a\leq u)\land(\forall b\in B)(b\leq u)\bigr]
 \Longrightarrow
-(\forall x\in A\cup B)(x\leq \max\{u_A,u_B\}).
+(\forall x\in A\cup B)(x\leq u).
 \]
 \end{remark*}
 
@@ -26,18 +35,18 @@ of $A\cup B$.
 \[
 \begin{aligned}
 &P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\\
-&U=A\cup B,\qquad m=\max\{u_A,u_B\},\\
-&\operatorname{UpperBound}(u_A,A,P)\land\operatorname{UpperBound}(u_B,B,P)
-\Longrightarrow \operatorname{UpperBound}(m,U,P).
+&U=A\cup B,\\
+&\operatorname{UpperBound}(u,A,P)\land\operatorname{UpperBound}(u,B,P)
+\Longrightarrow \operatorname{UpperBound}(u,U,P).
 \end{aligned}
 \]
 \end{remark*}
 
 \begin{remark*}[Negated quantified statement]
 \[
-(\forall a\in A)(a\leq u_A),\quad
-(\forall b\in B)(b\leq u_B),\quad
-(\exists x\in A\cup B)(\max\{u_A,u_B\}<x).
+(\forall a\in A)(a\leq u),\quad
+(\forall b\in B)(b\leq u),\quad
+(\exists x\in A\cup B)(u<x).
 \]
 \end{remark*}
 
@@ -45,9 +54,9 @@ of $A\cup B$.
 \[
 \begin{aligned}
 &P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\\
-&U=A\cup B,\qquad m=\max\{u_A,u_B\},\\
-&\operatorname{UpperBound}(u_A,A,P)\land\operatorname{UpperBound}(u_B,B,P)\land
-\neg\operatorname{UpperBound}(m,U,P).
+&U=A\cup B,\\
+&\operatorname{UpperBound}(u,A,P)\land\operatorname{UpperBound}(u,B,P)\land
+\neg\operatorname{UpperBound}(u,U,P).
 \end{aligned}
 \]
 \end{remark*}
@@ -55,31 +64,30 @@ of $A\cup B$.
 \begin{remark*}[Failure modes]
 \begin{description}
 \item[Exposition.]
-A failure would require a union element larger than both proposed upper
-bounds.
+A failure would require a union element larger than the proposed common
+upper bound.
 
 
   \item[\operatorname{UpperBound}.]
   \[
-(\forall a\in A)(a\leq u_A),\quad
-(\forall b\in B)(b\leq u_B),\quad
-(\exists x\in A\cup B)(\max\{u_A,u_B\}<x).
+(\forall a\in A)(a\leq u),\quad
+(\forall b\in B)(b\leq u),\quad
+(\exists x\in A\cup B)(u<x).
 \]
 \[
 \begin{aligned}
 &P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\\
-&U=A\cup B,\qquad m=\max\{u_A,u_B\},\\
-&\operatorname{UpperBound}(u_A,A,P)\land\operatorname{UpperBound}(u_B,B,P)\land
-\neg\operatorname{UpperBound}(m,U,P).
+&U=A\cup B,\\
+&\operatorname{UpperBound}(u,A,P)\land\operatorname{UpperBound}(u,B,P)\land
+\neg\operatorname{UpperBound}(u,U,P).
 \end{aligned}
 \]
 \end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
-Every $x\in A\cup B$ lies in $A$ or in $B$.  In the first case
-$x\leq u_A\leq\max\{u_A,u_B\}$; in the second case
-$x\leq u_B\leq\max\{u_A,u_B\}$.
+Every $x\in A\cup B$ lies in $A$ or in $B$.  In either case the common
+upper-bound hypothesis gives $x\leq u$.
 \end{remark*}
 
 \begin{dependencies}
@@ -88,7 +96,6 @@ $x\leq u_B\leq\max\{u_A,u_B\}$.
 \item \hyperref[def:ordered-set]{Ordered Set}.
 \item \hyperref[def:subset]{Subset}.
 \item \hyperref[def:union]{Union}.
-\item \hyperref[def:maximum]{Maximum}.
 \item \hyperref[def:real-upper-bound]{Upper Bound}.
 \end{itemize}
 \end{dependencies}
@@ -96,18 +103,27 @@ $x\leq u_B\leq\max\{u_A,u_B\}$.
 \begin{lemmabox}{Lemma (Union Preserves Lower Bounds)}
 \begin{lemma}[Union Preserves Lower Bounds]
 \label{lem:union-preserves-lower-bounds}
-Let $A,B\subseteq\mathbb{R}$.  If $\ell_A$ is a lower bound of $A$ and
-$\ell_B$ is a lower bound of $B$, then $\min\{\ell_A,\ell_B\}$ is a lower
-bound of $A\cup B$.
+Let $A,B\subseteq\mathbb{R}$. For every $\ell\in\mathbb{R}$, if $\ell$ is
+a lower bound of both $A$ and $B$, then $\ell$ is a lower bound of
+$A\cup B$; that is,
+\[
+\left[
+(\forall a\in A,\ \ell\leq a)
+\land
+(\forall b\in B,\ \ell\leq b)
+\right]
+\Longrightarrow
+(\forall x\in A\cup B,\ \ell\leq x).
+\]
 \hyperref[prf:union-preserves-lower-bounds]{Go to proof.}
 \end{lemma}
 \end{lemmabox}
 
 \begin{remark*}[Standard quantified statement]
 \[
-(\forall a\in A)(\ell_A\leq a)\land(\forall b\in B)(\ell_B\leq b)
+\bigl[(\forall a\in A)(\ell\leq a)\land(\forall b\in B)(\ell\leq b)\bigr]
 \Longrightarrow
-(\forall x\in A\cup B)(\min\{\ell_A,\ell_B\}\leq x).
+(\forall x\in A\cup B)(\ell\leq x).
 \]
 \end{remark*}
 
@@ -115,18 +131,18 @@ bound of $A\cup B$.
 \[
 \begin{aligned}
 &P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\\
-&U=A\cup B,\qquad m=\min\{\ell_A,\ell_B\},\\
-&\operatorname{LowerBound}(\ell_A,A,P)\land\operatorname{LowerBound}(\ell_B,B,P)
-\Longrightarrow \operatorname{LowerBound}(m,U,P).
+&U=A\cup B,\\
+&\operatorname{LowerBound}(\ell,A,P)\land\operatorname{LowerBound}(\ell,B,P)
+\Longrightarrow \operatorname{LowerBound}(\ell,U,P).
 \end{aligned}
 \]
 \end{remark*}
 
 \begin{remark*}[Negated quantified statement]
 \[
-(\forall a\in A)(\ell_A\leq a),\quad
-(\forall b\in B)(\ell_B\leq b),\quad
-(\exists x\in A\cup B)(x<\min\{\ell_A,\ell_B\}).
+(\forall a\in A)(\ell\leq a),\quad
+(\forall b\in B)(\ell\leq b),\quad
+(\exists x\in A\cup B)(x<\ell).
 \]
 \end{remark*}
 
@@ -134,9 +150,9 @@ bound of $A\cup B$.
 \[
 \begin{aligned}
 &P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\\
-&U=A\cup B,\qquad m=\min\{\ell_A,\ell_B\},\\
-&\operatorname{LowerBound}(\ell_A,A,P)\land\operatorname{LowerBound}(\ell_B,B,P)\land
-\neg\operatorname{LowerBound}(m,U,P).
+&U=A\cup B,\\
+&\operatorname{LowerBound}(\ell,A,P)\land\operatorname{LowerBound}(\ell,B,P)\land
+\neg\operatorname{LowerBound}(\ell,U,P).
 \end{aligned}
 \]
 \end{remark*}
@@ -144,31 +160,30 @@ bound of $A\cup B$.
 \begin{remark*}[Failure modes]
 \begin{description}
 \item[Exposition.]
-A failure would require a union element smaller than both proposed lower
-bounds.
+A failure would require a union element smaller than the proposed common
+lower bound.
 
 
   \item[\operatorname{LowerBound}.]
   \[
-(\forall a\in A)(\ell_A\leq a),\quad
-(\forall b\in B)(\ell_B\leq b),\quad
-(\exists x\in A\cup B)(x<\min\{\ell_A,\ell_B\}).
+(\forall a\in A)(\ell\leq a),\quad
+(\forall b\in B)(\ell\leq b),\quad
+(\exists x\in A\cup B)(x<\ell).
 \]
 \[
 \begin{aligned}
 &P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\\
-&U=A\cup B,\qquad m=\min\{\ell_A,\ell_B\},\\
-&\operatorname{LowerBound}(\ell_A,A,P)\land\operatorname{LowerBound}(\ell_B,B,P)\land
-\neg\operatorname{LowerBound}(m,U,P).
+&U=A\cup B,\\
+&\operatorname{LowerBound}(\ell,A,P)\land\operatorname{LowerBound}(\ell,B,P)\land
+\neg\operatorname{LowerBound}(\ell,U,P).
 \end{aligned}
 \]
 \end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
-Every $x\in A\cup B$ lies in $A$ or in $B$.  In either case the appropriate
-lower bound lies below $x$, and $\min\{\ell_A,\ell_B\}$ lies below that lower
-bound.
+Every $x\in A\cup B$ lies in $A$ or in $B$.  In either case the common
+lower-bound hypothesis gives $\ell\leq x$.
 \end{remark*}
 
 \begin{dependencies}
@@ -177,7 +192,6 @@ bound.
 \item \hyperref[def:ordered-set]{Ordered Set}.
 \item \hyperref[def:subset]{Subset}.
 \item \hyperref[def:union]{Union}.
-\item \hyperref[def:minimum]{Minimum}.
 \item \hyperref[def:real-lower-bound]{Lower Bound}.
 \end{itemize}
 \end{dependencies}
@@ -185,19 +199,28 @@ bound.
 \begin{propositionbox}{Proposition (Union Is Bounded Above Exactly When Both Pieces Are)}
 \begin{proposition}[Union Is Bounded Above Exactly When Both Pieces Are]
 \label{prop:union-bounded-above-iff-pieces-bounded-above}
-Let $A,B\subseteq\mathbb{R}$ be nonempty.  Then $A\cup B$ is bounded above
-if and only if $A$ is bounded above and $B$ is bounded above.
+Let $A,B\subseteq\mathbb{R}$. The union $A\cup B$ is bounded above if and
+only if both $A$ and $B$ are bounded above; equivalently,
+\[
+\left(\exists u\in\mathbb{R}\ \forall x\in A\cup B,\ x\leq u\right)
+\Longleftrightarrow
+\left[
+\left(\exists u_A\in\mathbb{R}\ \forall a\in A,\ a\leq u_A\right)
+\land
+\left(\exists u_B\in\mathbb{R}\ \forall b\in B,\ b\leq u_B\right)
+\right].
+\]
 \hyperref[prf:union-bounded-above-iff-pieces-bounded-above]{Go to proof.}
 \end{proposition}
 \end{propositionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
-A\neq\varnothing,\quad B\neq\varnothing
-\quad\Longrightarrow\quad
-\operatorname{BoundedAbove}(A\cup B)
+\bigl[(\exists u\in\mathbb{R})(\forall x\in A\cup B)(x\leq u)\bigr]
 \Longleftrightarrow
-\operatorname{BoundedAbove}(A)\land\operatorname{BoundedAbove}(B).
+\bigl[(\exists u_A\in\mathbb{R})(\forall a\in A)(a\leq u_A)\bigr]
+\land
+\bigl[(\exists u_B\in\mathbb{R})(\forall b\in B)(b\leq u_B)\bigr].
 \]
 \end{remark*}
 
@@ -275,19 +298,28 @@ the reverse direction.
 \begin{propositionbox}{Proposition (Union Is Bounded Below Exactly When Both Pieces Are)}
 \begin{proposition}[Union Is Bounded Below Exactly When Both Pieces Are]
 \label{prop:union-bounded-below-iff-pieces-bounded-below}
-Let $A,B\subseteq\mathbb{R}$ be nonempty.  Then $A\cup B$ is bounded below
-if and only if $A$ is bounded below and $B$ is bounded below.
+Let $A,B\subseteq\mathbb{R}$. The union $A\cup B$ is bounded below if and
+only if both $A$ and $B$ are bounded below; equivalently,
+\[
+\left(\exists \ell\in\mathbb{R}\ \forall x\in A\cup B,\ \ell\leq x\right)
+\Longleftrightarrow
+\left[
+\left(\exists \ell_A\in\mathbb{R}\ \forall a\in A,\ \ell_A\leq a\right)
+\land
+\left(\exists \ell_B\in\mathbb{R}\ \forall b\in B,\ \ell_B\leq b\right)
+\right].
+\]
 \hyperref[prf:union-bounded-below-iff-pieces-bounded-below]{Go to proof.}
 \end{proposition}
 \end{propositionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
-A\neq\varnothing,\quad B\neq\varnothing
-\quad\Longrightarrow\quad
-\operatorname{BoundedBelow}(A\cup B)
+\bigl[(\exists \ell\in\mathbb{R})(\forall x\in A\cup B)(\ell\leq x)\bigr]
 \Longleftrightarrow
-\operatorname{BoundedBelow}(A)\land\operatorname{BoundedBelow}(B).
+\bigl[(\exists \ell_A\in\mathbb{R})(\forall a\in A)(\ell_A\leq a)\bigr]
+\land
+\bigl[(\exists \ell_B\in\mathbb{R})(\forall b\in B)(\ell_B\leq b)\bigr].
 \]
 \end{remark*}
 
@@ -365,16 +397,19 @@ the reverse direction.
 \begin{corollarybox}{Corollary (Union Is Bounded Exactly When Both Pieces Are)}
 \begin{corollary}[Union Is Bounded Exactly When Both Pieces Are]
 \label{cor:union-bounded-iff-pieces-bounded}
-Let $A,B\subseteq\mathbb{R}$ be nonempty.  Then $A\cup B$ is bounded if and
-only if $A$ is bounded and $B$ is bounded.
+Let $A,B\subseteq\mathbb{R}$. The union $A\cup B$ is bounded if and only
+if both $A$ and $B$ are bounded; that is,
+\[
+A\cup B\text{ is bounded}
+\Longleftrightarrow
+\bigl(A\text{ is bounded}\land B\text{ is bounded}\bigr).
+\]
 \hyperref[prf:union-bounded-iff-pieces-bounded]{Go to proof.}
 \end{corollary}
 \end{corollarybox}
 
 \begin{remark*}[Standard quantified statement]
 \[
-A\neq\varnothing,\quad B\neq\varnothing
-\quad\Longrightarrow\quad
 \operatorname{Bounded}(A\cup B)
 \Longleftrightarrow
 \operatorname{Bounded}(A)\land\operatorname{Bounded}(B).
@@ -453,8 +488,14 @@ Apply the bounded-above and bounded-below union equivalences separately.
 \begin{lemmabox}{Lemma (Subsets Preserve Upper Bounds)}
 \begin{lemma}[Subsets Preserve Upper Bounds]
 \label{lem:subsets-preserve-upper-bounds}
-Let $C\subseteq A\subseteq\mathbb{R}$.  If $u$ is an upper bound of $A$,
-then $u$ is an upper bound of $C$.
+Let $C\subseteq A\subseteq\mathbb{R}$. Every upper bound of $A$ is an
+upper bound of $C$; that is, for every $u\in\mathbb{R}$,
+\[
+\left(\forall a\in A,\ a\leq u\right)
+\Longrightarrow
+(\forall c\in C,\ c\leq u).
+\]
+Consequently, every subset of a set bounded above is bounded above.
 \hyperref[prf:subsets-preserve-upper-bounds]{Go to proof.}
 \end{lemma}
 \end{lemmabox}
@@ -531,8 +572,14 @@ condition on $A$ therefore applies directly to $c$.
 \begin{lemmabox}{Lemma (Subsets Preserve Lower Bounds)}
 \begin{lemma}[Subsets Preserve Lower Bounds]
 \label{lem:subsets-preserve-lower-bounds}
-Let $C\subseteq A\subseteq\mathbb{R}$.  If $\ell$ is a lower bound of $A$,
-then $\ell$ is a lower bound of $C$.
+Let $C\subseteq A\subseteq\mathbb{R}$. Every lower bound of $A$ is a
+lower bound of $C$; that is, for every $\ell\in\mathbb{R}$,
+\[
+\left(\forall a\in A,\ \ell\leq a\right)
+\Longrightarrow
+(\forall c\in C,\ \ell\leq c).
+\]
+Consequently, every subset of a set bounded below is bounded below.
 \hyperref[prf:subsets-preserve-lower-bounds]{Go to proof.}
 \end{lemma}
 \end{lemmabox}
@@ -609,15 +656,40 @@ one.
 \begin{corollarybox}{Corollary (Intersections Inherit Bounds)}
 \begin{corollary}[Intersections Inherit Bounds]
 \label{cor:intersections-inherit-bounds}
-Let $A,B\subseteq\mathbb{R}$.  Every upper bound of $A$ is an upper bound
-of $A\cap B$, and every lower bound of $A$ is a lower bound of $A\cap B$.
+Let $A,B\subseteq\mathbb{R}$. Every upper bound of $A$ or of $B$ is an
+upper bound of $A\cap B$, and every lower bound of $A$ or of $B$ is a
+lower bound of $A\cap B$; that is, for all $u,\ell\in\mathbb{R}$,
+\[
+\left[
+(\forall a\in A,\ a\leq u)
+\lor
+(\forall b\in B,\ b\leq u)
+\right]
+\Longrightarrow
+(\forall x\in A\cap B,\ x\leq u),
+\]
+and
+\[
+\left[
+(\forall a\in A,\ \ell\leq a)
+\lor
+(\forall b\in B,\ \ell\leq b)
+\right]
+\Longrightarrow
+(\forall x\in A\cap B,\ \ell\leq x).
+\]
 \hyperref[prf:intersections-inherit-bounds]{Go to proof.}
 \end{corollary}
 \end{corollarybox}
 
 \begin{remark*}[Standard quantified statement]
 \[
-A\cap B\subseteq A.
+\begin{aligned}
+&\bigl[(\forall a\in A)(a\leq u)\lor(\forall b\in B)(b\leq u)\bigr]
+\Longrightarrow(\forall x\in A\cap B)(x\leq u),\\
+&\bigl[(\forall a\in A)(\ell\leq a)\lor(\forall b\in B)(\ell\leq b)\bigr]
+\Longrightarrow(\forall x\in A\cap B)(\ell\leq x).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -626,7 +698,9 @@ A\cap B\subseteq A.
 \begin{aligned}
 &P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\qquad C=A\cap B,\\
 &\operatorname{UpperBound}(u,A,P)\Longrightarrow\operatorname{UpperBound}(u,C,P),\\
-&\operatorname{LowerBound}(\ell,A,P)\Longrightarrow\operatorname{LowerBound}(\ell,C,P).
+&\operatorname{UpperBound}(u,B,P)\Longrightarrow\operatorname{UpperBound}(u,C,P),\\
+&\operatorname{LowerBound}(\ell,A,P)\Longrightarrow\operatorname{LowerBound}(\ell,C,P),\\
+&\operatorname{LowerBound}(\ell,B,P)\Longrightarrow\operatorname{LowerBound}(\ell,C,P).
 \end{aligned}
 \]
 \end{remark*}
@@ -684,6 +758,9 @@ Apply subset inheritance to $C=A\cap B$.
 \item \hyperref[def:intersection]{Intersection}.
 \item \hyperref[def:real-upper-bound]{Upper Bound}.
 \item \hyperref[def:real-lower-bound]{Lower Bound}.
+\item \hyperref[def:bounded-above]{Bounded Above}.
+\item \hyperref[def:bounded-below]{Bounded Below}.
+\item \hyperref[def:bounded]{Bounded Set}.
 \item \hyperref[lem:subsets-preserve-upper-bounds]{Subsets Preserve Upper Bounds}.
 \item \hyperref[lem:subsets-preserve-lower-bounds]{Subsets Preserve Lower Bounds}.
 \end{itemize}
@@ -692,16 +769,32 @@ Apply subset inheritance to $C=A\cap B$.
 \begin{corollarybox}{Corollary (Differences Inherit Bounds)}
 \begin{corollary}[Differences Inherit Bounds]
 \label{cor:differences-inherit-bounds}
-Let $A,B\subseteq\mathbb{R}$.  Every upper bound of $A$ is an upper bound
+Let $A,B\subseteq\mathbb{R}$. Every upper bound of $A$ is an upper bound
 of $A\setminus B$, and every lower bound of $A$ is a lower bound of
-$A\setminus B$.
+$A\setminus B$; that is, for all $u,\ell\in\mathbb{R}$,
+\[
+\left(\forall a\in A,\ a\leq u\right)
+\Longrightarrow
+(\forall x\in A\setminus B,\ x\leq u),
+\]
+and
+\[
+\left(\forall a\in A,\ \ell\leq a\right)
+\Longrightarrow
+(\forall x\in A\setminus B,\ \ell\leq x).
+\]
 \hyperref[prf:differences-inherit-bounds]{Go to proof.}
 \end{corollary}
 \end{corollarybox}
 
 \begin{remark*}[Standard quantified statement]
 \[
-A\setminus B\subseteq A.
+\begin{aligned}
+&(\forall a\in A)(a\leq u)
+\Longrightarrow(\forall x\in A\setminus B)(x\leq u),\\
+&(\forall a\in A)(\ell\leq a)
+\Longrightarrow(\forall x\in A\setminus B)(\ell\leq x).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -769,6 +862,9 @@ Apply subset inheritance to $C=A\setminus B$.
 \item \hyperref[def:set-difference]{Set Difference}.
 \item \hyperref[def:real-upper-bound]{Upper Bound}.
 \item \hyperref[def:real-lower-bound]{Lower Bound}.
+\item \hyperref[def:bounded-above]{Bounded Above}.
+\item \hyperref[def:bounded-below]{Bounded Below}.
+\item \hyperref[def:bounded]{Bounded Set}.
 \item \hyperref[lem:subsets-preserve-upper-bounds]{Subsets Preserve Upper Bounds}.
 \item \hyperref[lem:subsets-preserve-lower-bounds]{Subsets Preserve Lower Bounds}.
 \end{itemize}
@@ -777,46 +873,63 @@ Apply subset inheritance to $C=A\setminus B$.
 \begin{corollarybox}{Corollary (Complements Inherit Ambient Bounds)}
 \begin{corollary}[Complements Inherit Ambient Bounds]
 \label{cor:complements-inherit-ambient-bounds}
-Let $A\subseteq E\subseteq\mathbb{R}$, and take complements relative to
-$E$.  Every upper bound of $E$ is an upper bound of $E\setminus A$, and
-every lower bound of $E$ is a lower bound of $E\setminus A$.
+Let $A\subseteq S\subseteq\mathbb{R}$. Every upper bound of $S$ is an
+upper bound of the relative complement $S\setminus A$, and every lower
+bound of $S$ is a lower bound of $S\setminus A$; that is, for all
+$u,\ell\in\mathbb{R}$,
+\[
+\left(\forall s\in S,\ s\leq u\right)
+\Longrightarrow
+(\forall x\in S\setminus A,\ x\leq u),
+\]
+and
+\[
+\left(\forall s\in S,\ \ell\leq s\right)
+\Longrightarrow
+(\forall x\in S\setminus A,\ \ell\leq x).
+\]
 \hyperref[prf:complements-inherit-ambient-bounds]{Go to proof.}
 \end{corollary}
 \end{corollarybox}
 
 \begin{remark*}[Standard quantified statement]
 \[
-E\setminus A\subseteq E.
+\begin{aligned}
+&(\forall s\in S)(s\leq u)
+\Longrightarrow(\forall x\in S\setminus A)(x\leq u),\\
+&(\forall s\in S)(\ell\leq s)
+\Longrightarrow(\forall x\in S\setminus A)(\ell\leq x).
+\end{aligned}
 \]
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
 \[
 \begin{aligned}
-&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq E\subseteq\mathbb{R},\qquad C=E\setminus A,\\
-&\operatorname{UpperBound}(u,E,P)\Longrightarrow\operatorname{UpperBound}(u,C,P),\\
-&\operatorname{LowerBound}(\ell,E,P)\Longrightarrow\operatorname{LowerBound}(\ell,C,P).
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq S\subseteq\mathbb{R},\qquad C=S\setminus A,\\
+&\operatorname{UpperBound}(u,S,P)\Longrightarrow\operatorname{UpperBound}(u,C,P),\\
+&\operatorname{LowerBound}(\ell,S,P)\Longrightarrow\operatorname{LowerBound}(\ell,C,P).
 \end{aligned}
 \]
 \end{remark*}
 
 \begin{remark*}[Negated quantified statement]
 \[
-\operatorname{UpperBound}(u,E)\land\neg\operatorname{UpperBound}(u,E\setminus A)
+\operatorname{UpperBound}(u,S)\land\neg\operatorname{UpperBound}(u,S\setminus A)
 \]
 or
 \[
-\operatorname{LowerBound}(\ell,E)\land\neg\operatorname{LowerBound}(\ell,E\setminus A).
+\operatorname{LowerBound}(\ell,S)\land\neg\operatorname{LowerBound}(\ell,S\setminus A).
 \]
 \end{remark*}
 
 \begin{remark*}[Negation predicate reading]
 \[
 \begin{aligned}
-&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq E\subseteq\mathbb{R},\qquad C=E\setminus A,\\
-&\bigl(\operatorname{UpperBound}(u,E,P)\land\neg\operatorname{UpperBound}(u,C,P)\bigr)\\
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq S\subseteq\mathbb{R},\qquad C=S\setminus A,\\
+&\bigl(\operatorname{UpperBound}(u,S,P)\land\neg\operatorname{UpperBound}(u,C,P)\bigr)\\
 &\qquad{}\lor
-\bigl(\operatorname{LowerBound}(\ell,E,P)\land\neg\operatorname{LowerBound}(\ell,C,P)\bigr).
+\bigl(\operatorname{LowerBound}(\ell,S,P)\land\neg\operatorname{LowerBound}(\ell,C,P)\bigr).
 \end{aligned}
 \]
 \end{remark*}
@@ -825,27 +938,27 @@ or
 \begin{description}
 \item[Exposition.]
 The complement does not inherit bounds from $A$; it inherits them from the
-ambient set $E$.
+ambient set $S$.
 
 
   \item[\operatorname{UpperBound} / \operatorname{LowerBound}.]
   \[
-\operatorname{UpperBound}(u,E)\land\neg\operatorname{UpperBound}(u,E\setminus A)
+\operatorname{UpperBound}(u,S)\land\neg\operatorname{UpperBound}(u,S\setminus A)
 \]
 \[
 \begin{aligned}
-&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq E\subseteq\mathbb{R},\qquad C=E\setminus A,\\
-&\bigl(\operatorname{UpperBound}(u,E,P)\land\neg\operatorname{UpperBound}(u,C,P)\bigr)\\
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq S\subseteq\mathbb{R},\qquad C=S\setminus A,\\
+&\bigl(\operatorname{UpperBound}(u,S,P)\land\neg\operatorname{UpperBound}(u,C,P)\bigr)\\
 &\qquad{}\lor
-\bigl(\operatorname{LowerBound}(\ell,E,P)\land\neg\operatorname{LowerBound}(\ell,C,P)\bigr).
+\bigl(\operatorname{LowerBound}(\ell,S,P)\land\neg\operatorname{LowerBound}(\ell,C,P)\bigr).
 \end{aligned}
 \]
 \end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
-Every point of $E\setminus A$ is a point of $E$, so every ambient bound of
-$E$ applies to the complement.
+Every point of $S\setminus A$ is a point of $S$, so every ambient bound of
+$S$ applies to the complement.
 \end{remark*}
 
 \begin{dependencies}
@@ -857,6 +970,9 @@ $E$ applies to the complement.
 \item \hyperref[def:set-difference]{Set Difference}.
 \item \hyperref[def:real-upper-bound]{Upper Bound}.
 \item \hyperref[def:real-lower-bound]{Lower Bound}.
+\item \hyperref[def:bounded-above]{Bounded Above}.
+\item \hyperref[def:bounded-below]{Bounded Below}.
+\item \hyperref[def:bounded]{Bounded Set}.
 \item \hyperref[lem:subsets-preserve-upper-bounds]{Subsets Preserve Upper Bounds}.
 \item \hyperref[lem:subsets-preserve-lower-bounds]{Subsets Preserve Lower Bounds}.
 \end{itemize}

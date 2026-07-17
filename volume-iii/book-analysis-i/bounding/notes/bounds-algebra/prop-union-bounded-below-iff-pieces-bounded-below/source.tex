@@ -1,0 +1,98 @@
+\begin{proposition}[Union Is Bounded Below Exactly When Both Pieces Are]
+\label{prop:union-bounded-below-iff-pieces-bounded-below}
+Let $A,B\subseteq\mathbb{R}$. The union $A\cup B$ is bounded below if and
+only if both $A$ and $B$ are bounded below; equivalently,
+\[
+\left(\exists \ell\in\mathbb{R}\ \forall x\in A\cup B,\ \ell\leq x\right)
+\Longleftrightarrow
+\left[
+\left(\exists \ell_A\in\mathbb{R}\ \forall a\in A,\ \ell_A\leq a\right)
+\land
+\left(\exists \ell_B\in\mathbb{R}\ \forall b\in B,\ \ell_B\leq b\right)
+\right].
+\]
+\hyperref[prf:union-bounded-below-iff-pieces-bounded-below]{Go to proof.}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\bigl[(\exists \ell\in\mathbb{R})(\forall x\in A\cup B)(\ell\leq x)\bigr]
+\Longleftrightarrow
+\bigl[(\exists \ell_A\in\mathbb{R})(\forall a\in A)(\ell_A\leq a)\bigr]
+\land
+\bigl[(\exists \ell_B\in\mathbb{R})(\forall b\in B)(\ell_B\leq b)\bigr].
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\qquad U=A\cup B,\\
+&\operatorname{BoundedBelow}(U,P)
+\Longleftrightarrow
+\operatorname{BoundedBelow}(A,P)\land\operatorname{BoundedBelow}(B,P).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+The equivalence fails precisely if one side holds and the other does not.
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\qquad U=A\cup B,\\
+&\operatorname{BoundedBelow}(U,P)\oplus
+\bigl(\operatorname{BoundedBelow}(A,P)\land\operatorname{BoundedBelow}(B,P)\bigr).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
+The forward direction could fail only if a lower bound for the union did not
+bound a piece.  The reverse direction could fail only if lower bounds for both
+pieces did not combine into a lower bound for the union.
+
+
+  \item[\operatorname{BoundedBelow}.]
+
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\qquad U=A\cup B,\\
+&\operatorname{BoundedBelow}(U,P)\oplus
+\bigl(\operatorname{BoundedBelow}(A,P)\land\operatorname{BoundedBelow}(B,P)\bigr).
+\end{aligned}
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A,B\subseteq\mathbb{R},\qquad U=A\cup B,\\
+&\operatorname{BoundedBelow}(U,P)
+\Longleftrightarrow
+\operatorname{BoundedBelow}(A,P)\land\operatorname{BoundedBelow}(B,P).
+\end{aligned}
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Use subset inheritance for the forward direction and
+\hyperref[lem:union-preserves-lower-bounds]{Union Preserves Lower Bounds} for
+the reverse direction.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+\item \hyperref[def:reals]{Real Numbers}.
+\item \hyperref[def:ordered-set]{Ordered Set}.
+\item \hyperref[def:subset]{Subset}.
+\item \hyperref[def:union]{Union}.
+\item \hyperref[def:bounded-below]{Bounded Below}.
+\item \hyperref[lem:union-preserves-lower-bounds]{Union Preserves Lower Bounds}.
+\item \hyperref[lem:subsets-preserve-lower-bounds]{Subsets Preserve Lower Bounds}.
+\end{itemize}
+\end{dependencies}
+

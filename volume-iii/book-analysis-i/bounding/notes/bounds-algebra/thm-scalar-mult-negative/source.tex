@@ -1,0 +1,120 @@
+\begin{theorem}[Scalar Multiplication by a Negative Scalar]
+\label{thm:scalar-mult-negative}
+Let $A\subseteq\mathbb{R}$ be nonempty and bounded below, and let
+$k\in\mathbb{R}$ satisfy $k<0$.  Then $kA:=\{ka:a\in A\}$ is nonempty and
+bounded above, and
+\[
+  \sup(kA)=k\inf A.
+\]
+\hyperref[prf:scalar-mult-negative]{Go to proof.}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+A\neq\varnothing,\quad A\text{ bounded below},\quad k\in\mathbb{R},\quad k<0
+\quad\Longrightarrow\quad
+\sup\{ka:a\in A\}=k\inf A.
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad kA=\{ka:a\in A\},\\
+&\operatorname{GreatestLowerBound}(t,A,P)\land k<0
+\Longrightarrow
+\operatorname{LeastUpperBound}(kt,kA,P).
+\end{aligned}
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+k<0,\quad \sup(kA)\ne k\inf A
+\]
+is impossible under the stated hypotheses.
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad kA=\{ka:a\in A\},\\
+&\operatorname{GreatestLowerBound}(t,A,P)\land k<0\land
+\neg\operatorname{LeastUpperBound}(kt,kA,P)
+\end{aligned}
+\]
+is a contradictory configuration.
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+The formula could fail only if negative multiplication did not reverse lower bounds into upper bounds, or if the extremal value lost its leastness after reversal. Multiplication by a negative scalar reverses order exactly, so the infimum of $A$ becomes the supremum of $kA$.
+
+
+  \item[\operatorname{GreatestLowerBound} / \operatorname{LeastUpperBound}.]
+  \[
+k<0,\quad \sup(kA)\ne k\inf A
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad kA=\{ka:a\in A\},\\
+&\operatorname{GreatestLowerBound}(t,A,P)\land k<0\land
+\neg\operatorname{LeastUpperBound}(kt,kA,P)
+\end{aligned}
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+\[
+\begin{aligned}
+\forall a\in A\;(t\leq a)
+&\Longleftrightarrow
+\forall a\in A\;(ka\leq kt),\\
+\operatorname{LowerBound}(v,A)
+&\Longleftrightarrow
+\operatorname{UpperBound}(kv,kA)
+\qquad(k<0).
+\end{aligned}
+\]
+
+
+  \item[\operatorname{GreatestLowerBound} / \operatorname{LeastUpperBound}.]
+  \[
+k<0,\quad \sup(kA)\ne k\inf A
+\]
+\[
+\begin{aligned}
+&P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad kA=\{ka:a\in A\},\\
+&\operatorname{GreatestLowerBound}(t,A,P)\land k<0\land
+\neg\operatorname{LeastUpperBound}(kt,kA,P)
+\end{aligned}
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Negative scaling reflects the set and changes floors into ceilings. The lowest point threshold of $A$ becomes the highest point threshold of the reflected and scaled set.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:reals]{Real Numbers}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:multiplication-on-r]{Multiplication on $\mathbb{R}$}
+  \item \hyperref[def:displacement-dilation-reflection]{Displacement, Dilation, and Reflection}
+  \item \hyperref[def:real-lower-bound]{Lower Bound}
+  \item \hyperref[def:real-upper-bound]{Upper Bound}
+  \item \hyperref[def:infimum]{Infimum}
+  \item \hyperref[def:supremum]{Supremum}
+  \item \hyperref[prop:negative-dilation-sends-lower-to-upper-bounds]{Negative Dilation Sends Lower Bounds to Upper Bounds}
+  \item \hyperref[thm:scalar-mult-positive]{Scalar Multiplication by a Positive Scalar}
+  \item \hyperref[thm:negation-exchange-sup-inf]{Negation Exchanges Supremum and Infimum}
+\end{itemize}
+\end{dependencies}
+

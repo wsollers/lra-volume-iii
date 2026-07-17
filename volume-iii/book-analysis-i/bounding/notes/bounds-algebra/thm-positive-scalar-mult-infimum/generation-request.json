@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "thm:positive-scalar-mult-infimum",
+  "kind": "theorem",
+  "title": "Positive Scalar Multiplication of the Infimum",
+  "source": {
+    "label": "thm:positive-scalar-mult-infimum",
+    "kind": "theorem",
+    "title": "Positive Scalar Multiplication of the Infimum",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "bounds-algebra",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-algebra-of-supremum-infimum.tex",
+    "source_line_start": 595,
+    "source_line_end": 709,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-positive-scalar-mult-infimum",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-positive-scalar-mult-infimum/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-positive-scalar-mult-infimum/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-positive-scalar-mult-infimum",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-positive-scalar-mult-infimum/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/thm-positive-scalar-mult-infimum/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-algebra-of-supremum-infimum.tex",
+      "label": "thm:positive-scalar-mult-infimum",
+      "environment_kind": "theorem",
+      "source_line_start": 595,
+      "source_line_end": 709,
+      "current_tex": "\\begin{theorem}[Positive Scalar Multiplication of the Infimum]\n\\label{thm:positive-scalar-mult-infimum}\nLet $A\\subseteq\\mathbb{R}$ be nonempty and bounded below, and let\n$k\\in\\mathbb{R}$ satisfy $k>0$.  Then $kA:=\\{ka:a\\in A\\}$ is nonempty and\nbounded below, and\n\\[\n  \\inf(kA)=k\\inf A.\n\\]\n\\hyperref[prf:positive-scalar-mult-infimum]{Go to proof.}\n\\end{theorem}\n\\end{theorembox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\nk\\in\\mathbb{R},\\quad k>0,\\quad A\\neq\\varnothing,\\quad A\\text{ bounded below}\n\\quad\\Longrightarrow\\quad\n\\inf\\{ka:a\\in A\\}=k\\inf A.\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A\\subseteq\\mathbb{R},\\qquad kA=\\{ka:a\\in A\\},\\\\\n&\\operatorname{GreatestLowerBound}(t,A,P)\\land k>0\n\\Longrightarrow\n\\operatorname{GreatestLowerBound}(kt,kA,P).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\n\\[\nk>0,\\quad \\inf(kA)\\neq k\\inf A\n\\]\nis impossible under the stated hypotheses.\n\\end{remark*}\n\n\\begin{remark*}[Negation predicate reading]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A\\subseteq\\mathbb{R},\\qquad kA=\\{ka:a\\in A\\},\\\\\n&\\operatorname{GreatestLowerBound}(t,A,P)\\land k>0\\land\n\\neg\\operatorname{GreatestLowerBound}(kt,kA,P).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\nThe formula could fail only if positive multiplication failed to preserve lower\nbounds or greatestness among lower bounds.\n\n\n  \\item[\\operatorname{GreatestLowerBound}.]\n  \\[\nk>0,\\quad \\inf(kA)\\neq k\\inf A\n\\]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A\\subseteq\\mathbb{R},\\qquad kA=\\{ka:a\\in A\\},\\\\\n&\\operatorname{GreatestLowerBound}(t,A,P)\\land k>0\\land\n\\neg\\operatorname{GreatestLowerBound}(kt,kA,P).\n\\end{aligned}\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\n\\[\n(\\forall a\\in A)(t\\leq a)\n\\Longleftrightarrow\n(\\forall a\\in A)(kt\\leq ka)\n\\qquad(k>0).\n\\]\n\n\n  \\item[\\operatorname{GreatestLowerBound}.]\n  \\[\nk>0,\\quad \\inf(kA)\\neq k\\inf A\n\\]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A\\subseteq\\mathbb{R},\\qquad kA=\\{ka:a\\in A\\},\\\\\n&\\operatorname{GreatestLowerBound}(t,A,P)\\land k>0\\land\n\\neg\\operatorname{GreatestLowerBound}(kt,kA,P).\n\\end{aligned}\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nPositive scaling stretches the floor of the set by the same factor.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:reals]{Real Numbers}\n  \\item \\hyperref[def:ordered-set]{Ordered Set}\n  \\item \\hyperref[def:subset]{Subset}\n  \\item \\hyperref[def:multiplication-on-r]{Multiplication on $\\mathbb{R}$}\n  \\item \\hyperref[def:displacement-dilation-reflection]{Displacement, Dilation, and Reflection}\n  \\item \\hyperref[def:real-lower-bound]{Lower Bound}\n  \\item \\hyperref[def:infimum]{Infimum}\n  \\item \\hyperref[prop:lower-bound-comparison-with-the-infimum]{Lower Bound Comparison with the Infimum}\n  \\item \\hyperref[prop:positive-dilation-preserves-lower-bounds]{Positive Dilation Preserves Lower Bounds}\n  \\item \\hyperref[thm:ineq-nonstrict-multiply-positive]{Multiplication by a Positive Scalar Preserves Nonstrict Inequality}\n\\end{itemize}\n\\end{dependencies}\n\n\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

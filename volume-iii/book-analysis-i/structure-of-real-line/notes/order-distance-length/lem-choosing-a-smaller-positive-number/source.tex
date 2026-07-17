@@ -1,0 +1,66 @@
+\begin{lemmabox}{Lemma (Choosing a Smaller Positive Number)}
+\begin{lemma}[Choosing a Smaller Positive Number]
+\label{lem:choosing-a-smaller-positive-number}
+For every $\varepsilon,c\in\mathbb{R}$, if $\varepsilon>0$ and $c>0$, then
+there exists $\delta\in\mathbb{R}$ such that
+\[
+  0<\delta<\varepsilon
+  \qquad\text{and}\qquad
+  0<\delta<c.
+\]
+\hyperref[prf:choosing-a-smaller-positive-number]{Go to proof.}
+\end{lemma}
+\end{lemmabox}
+\begin{remark*}[Standard quantified statement]
+\[
+\forall \varepsilon,c\in\mathbb{R}\;
+\bigl((\varepsilon>0\land c>0)\Longrightarrow
+\exists\delta\in\mathbb{R}\;(0<\delta<\varepsilon\land 0<\delta<c)\bigr).
+\]
+\end{remark*}
+\begin{remark*}[Predicate reading]
+\[
+\varepsilon>0\land c>0
+\Longrightarrow
+\exists\delta\in\mathbb{R}\;(0<\delta<\varepsilon\land 0<\delta<c).
+\]
+\end{remark*}
+\begin{remark*}[Negated quantified statement]
+\[
+\exists \varepsilon,c\in\mathbb{R}\;
+\bigl(\varepsilon>0\land c>0\land
+\forall\delta\in\mathbb{R}\;(\delta\leq 0\lor \delta\geq\varepsilon\lor \delta\geq c)\bigr).
+\]
+\end{remark*}
+\begin{remark*}[Negation predicate reading]
+\[
+\varepsilon>0\land c>0\land
+\forall\delta\in\mathbb{R}\;(\delta\leq 0\lor \delta\geq\varepsilon\lor \delta\geq c).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  Failure is witnessed by the displayed negated or contrapositive condition.
+
+  \item[\exists-condition.]
+  \[
+\exists \varepsilon,c\in\mathbb{R}\;
+\bigl(\varepsilon>0\land c>0\land
+\forall\delta\in\mathbb{R}\;(\delta\leq 0\lor \delta\geq\varepsilon\lor \delta\geq c)\bigr).
+\]
+\[
+\varepsilon>0\land c>0\land
+\forall\delta\in\mathbb{R}\;(\delta\leq 0\lor \delta\geq\varepsilon\lor \delta\geq c).
+\]
+\end{description}
+\end{remark*}
+\begin{remark*}[Interpretation]
+Given two positive constraints, one can choose a single positive tolerance
+strictly below both.
+\end{remark*}
+\begin{dependencies}
+\hyperref[lem:minimum-of-positive-numbers-is-positive]{Minimum of Positive Numbers Is Positive};
+\hyperref[lem:half-epsilon-is-positive]{Half Epsilon Is Positive}.
+\end{dependencies}

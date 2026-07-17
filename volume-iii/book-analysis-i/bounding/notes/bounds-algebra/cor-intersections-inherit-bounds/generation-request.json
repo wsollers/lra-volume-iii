@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "cor:intersections-inherit-bounds",
+  "kind": "corollary",
+  "title": "Intersections Inherit Bounds",
+  "source": {
+    "label": "cor:intersections-inherit-bounds",
+    "kind": "corollary",
+    "title": "Intersections Inherit Bounds",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "bounds-algebra",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-set-operations-and-bounds.tex",
+    "source_line_start": 657,
+    "source_line_end": 769,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/cor-intersections-inherit-bounds",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/cor-intersections-inherit-bounds/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/cor-intersections-inherit-bounds/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/cor-intersections-inherit-bounds",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/cor-intersections-inherit-bounds/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/cor-intersections-inherit-bounds/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-set-operations-and-bounds.tex",
+      "label": "cor:intersections-inherit-bounds",
+      "environment_kind": "corollary",
+      "source_line_start": 657,
+      "source_line_end": 769,
+      "current_tex": "\\begin{corollary}[Intersections Inherit Bounds]\n\\label{cor:intersections-inherit-bounds}\nLet $A,B\\subseteq\\mathbb{R}$. Every upper bound of $A$ or of $B$ is an\nupper bound of $A\\cap B$, and every lower bound of $A$ or of $B$ is a\nlower bound of $A\\cap B$; that is, for all $u,\\ell\\in\\mathbb{R}$,\n\\[\n\\left[\n(\\forall a\\in A,\\ a\\leq u)\n\\lor\n(\\forall b\\in B,\\ b\\leq u)\n\\right]\n\\Longrightarrow\n(\\forall x\\in A\\cap B,\\ x\\leq u),\n\\]\nand\n\\[\n\\left[\n(\\forall a\\in A,\\ \\ell\\leq a)\n\\lor\n(\\forall b\\in B,\\ \\ell\\leq b)\n\\right]\n\\Longrightarrow\n(\\forall x\\in A\\cap B,\\ \\ell\\leq x).\n\\]\n\\hyperref[prf:intersections-inherit-bounds]{Go to proof.}\n\\end{corollary}\n\\end{corollarybox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\begin{aligned}\n&\\bigl[(\\forall a\\in A)(a\\leq u)\\lor(\\forall b\\in B)(b\\leq u)\\bigr]\n\\Longrightarrow(\\forall x\\in A\\cap B)(x\\leq u),\\\\\n&\\bigl[(\\forall a\\in A)(\\ell\\leq a)\\lor(\\forall b\\in B)(\\ell\\leq b)\\bigr]\n\\Longrightarrow(\\forall x\\in A\\cap B)(\\ell\\leq x).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A,B\\subseteq\\mathbb{R},\\qquad C=A\\cap B,\\\\\n&\\operatorname{UpperBound}(u,A,P)\\Longrightarrow\\operatorname{UpperBound}(u,C,P),\\\\\n&\\operatorname{UpperBound}(u,B,P)\\Longrightarrow\\operatorname{UpperBound}(u,C,P),\\\\\n&\\operatorname{LowerBound}(\\ell,A,P)\\Longrightarrow\\operatorname{LowerBound}(\\ell,C,P),\\\\\n&\\operatorname{LowerBound}(\\ell,B,P)\\Longrightarrow\\operatorname{LowerBound}(\\ell,C,P).\n\\end{aligned}\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negated quantified statement]\nA failure would be a failure of subset inheritance for $A\\cap B\\subseteq A$.\n\\end{remark*}\n\n\\begin{remark*}[Negation predicate reading]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A,B\\subseteq\\mathbb{R},\\qquad C=A\\cap B,\\\\\n&\\operatorname{UpperBound}(u,A,P)\\land\n\\neg\\operatorname{UpperBound}(u,C,P)\n\\end{aligned}\n\\]\nis contradictory, and the same holds for lower bounds.\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n\\item[Exposition.]\nIntersection can lose elements, but it cannot introduce an element outside the\nparent set $A$.\n\n\n  \\item[\\operatorname{UpperBound} / \\operatorname{LowerBound}.]\n\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A,B\\subseteq\\mathbb{R},\\qquad C=A\\cap B,\\\\\n&\\operatorname{UpperBound}(u,A,P)\\land\n\\neg\\operatorname{UpperBound}(u,C,P)\n\\end{aligned}\n\\]\n\\[\n\\begin{aligned}\n&P=\\mathsf{OrderedSet}(\\mathbb{R},\\leq),\\qquad A,B\\subseteq\\mathbb{R},\\qquad C=A\\cap B,\\\\\n&\\operatorname{UpperBound}(u,A,P)\\Longrightarrow\\operatorname{UpperBound}(u,C,P),\\\\\n&\\operatorname{LowerBound}(\\ell,A,P)\\Longrightarrow\\operatorname{LowerBound}(\\ell,C,P).\n\\end{aligned}\n\\]\n\\end{description}\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nApply subset inheritance to $C=A\\cap B$.\n\\end{remark*}\n\n\\begin{dependencies}\n\\begin{itemize}\n\\item \\hyperref[def:reals]{Real Numbers}.\n\\item \\hyperref[def:ordered-set]{Ordered Set}.\n\\item \\hyperref[def:subset]{Subset}.\n\\item \\hyperref[def:intersection]{Intersection}.\n\\item \\hyperref[def:real-upper-bound]{Upper Bound}.\n\\item \\hyperref[def:real-lower-bound]{Lower Bound}.\n\\item \\hyperref[def:bounded-above]{Bounded Above}.\n\\item \\hyperref[def:bounded-below]{Bounded Below}.\n\\item \\hyperref[def:bounded]{Bounded Set}.\n\\item \\hyperref[lem:subsets-preserve-upper-bounds]{Subsets Preserve Upper Bounds}.\n\\item \\hyperref[lem:subsets-preserve-lower-bounds]{Subsets Preserve Lower Bounds}.\n\\end{itemize}\n\\end{dependencies}\n\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

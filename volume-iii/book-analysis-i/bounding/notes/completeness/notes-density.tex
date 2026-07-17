@@ -10,67 +10,73 @@
 \begin{definitionbox}{Definition (Dense Subset)}
 \begin{definition}[Dense Subset]
 \label{def:dense-subset}
-Let $D\subseteq S\subseteq\mathbb{R}$. The set $D$ is \emph{dense in} $S$ if and only if for every $x\in S$ and every $\varepsilon>0$ there exists $d\in D$ such that $|x-d|<\varepsilon$.
+Let $(X,\tau)$ be a topological space and let $D\subseteq X$.  The set
+$D$ is \emph{dense in} $X$ if $\overline{D}=X$.  Equivalently, every
+nonempty open subset of $X$ intersects $D$.
 \end{definition}
 \end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
 \begin{aligned}
-&\text{Let }D\subseteq S\subseteq\mathbb{R}.\\
-&D\text{ is dense in }S
+&\overline{D}=X
 \Longleftrightarrow
-\forall x\in S\;\forall \varepsilon>0\;\exists d\in D\;\bigl(|x-d|<\varepsilon\bigr).
+\forall U\in\tau\;
+\bigl(U\neq\varnothing\Longrightarrow \exists d\in D\;(d\in U)\bigr).
 \end{aligned}
 \]
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
 \[
-D\subseteq S\subseteq\mathbb{R},\qquad
-\operatorname{IsDense}(D,S)\coloneqq
-\forall x\in S\;\forall \varepsilon>0\;\exists d\in D\;\bigl(|x-d|<\varepsilon\bigr).
+X\in\mathbf{Set},\qquad D\subseteq X,\qquad
+\operatorname{DenseSubset}(D,X,\tau)\coloneqq
+\overline{D}=X
+\Longleftrightarrow
+\forall U\in\tau\;
+\bigl(U\neq\varnothing\Longrightarrow \exists d\in D\;(d\in U)\bigr).
 \]
 \end{remark*}
 
 \begin{remark*}[Negated quantified statement]
 \[
 \begin{aligned}
-&\text{Let }D\subseteq S\subseteq\mathbb{R}.\\
-&D\text{ is not dense in }S
+&\text{Let }(X,\tau)\text{ be a topological space and }D\subseteq X.\\
+&D\text{ is not dense in }X
 \Longleftrightarrow
-\exists x\in S\;\exists \varepsilon_0>0\;\forall d\in D\;\bigl(|x-d|\ge \varepsilon_0\bigr).
+\exists U\in\tau\;\bigl(U\neq\varnothing\land U\cap D=\varnothing\bigr).
 \end{aligned}
 \]
 \end{remark*}
 
 \begin{remark*}[Negation predicate reading]
 \[
-D\subseteq S\subseteq\mathbb{R},\qquad
-\neg\operatorname{IsDense}(D,S)\Longleftrightarrow
-\exists x\in S\;\exists \varepsilon_0>0\;\forall d\in D\;\bigl(|x-d|\ge \varepsilon_0\bigr).
+X\in\mathbf{Set},\qquad D\subseteq X,\qquad
+\neg\operatorname{DenseSubset}(D,X,\tau)\Longleftrightarrow
+\exists U\in\tau\;\bigl(U\neq\varnothing\land U\cap D=\varnothing\bigr).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
 \begin{description}
 \item[Exposition.]
-Density fails when some point of $S$ has a positive-radius neighborhood that contains no point of $D$.
+Density fails when some nonempty open subset of $X$ contains no point of
+$D$.
 
 
-  \item[\operatorname{IsDense}.]
+  \item[\operatorname{DenseSubset}.]
   \[
 \begin{aligned}
-&\text{Let }D\subseteq S\subseteq\mathbb{R}.\\
-&D\text{ is not dense in }S
+&\text{Let }(X,\tau)\text{ be a topological space and }D\subseteq X.\\
+&D\text{ is not dense in }X
 \Longleftrightarrow
-\exists x\in S\;\exists \varepsilon_0>0\;\forall d\in D\;\bigl(|x-d|\ge \varepsilon_0\bigr).
+\exists U\in\tau\;\bigl(U\neq\varnothing\land U\cap D=\varnothing\bigr).
 \end{aligned}
 \]
 \[
-D\subseteq S\subseteq\mathbb{R},\qquad
-\neg\operatorname{IsDense}(D,S)\Longleftrightarrow
-\exists x\in S\;\exists \varepsilon_0>0\;\forall d\in D\;\bigl(|x-d|\ge \varepsilon_0\bigr).
+X\in\mathbf{Set},\qquad D\subseteq X,\qquad
+\neg\operatorname{DenseSubset}(D,X,\tau)\Longleftrightarrow
+\exists U\in\tau\;\bigl(U\neq\varnothing\land U\cap D=\varnothing\bigr).
 \]
 \end{description}
 \end{remark*}
@@ -79,110 +85,110 @@ D\subseteq S\subseteq\mathbb{R},\qquad
 \begin{description}
 \item[Exposition.]
 \[
-\neg\operatorname{IsDense}(D,S)
+\neg\operatorname{DenseSubset}(D,X,\tau)
 =
-\underbrace{\exists x\in S}_{\text{point not approximated}}
-\;\underbrace{\exists \varepsilon_0>0}_{\text{positive exclusion radius}}
-\;\underbrace{\forall d\in D\;\bigl(|x-d|\ge \varepsilon_0\bigr)}_{\text{no point of }D\text{ enters the neighborhood}}.
+\underbrace{\exists U\in\tau\;(U\neq\varnothing)}_{\text{nonempty open set}}
+\;\land\;
+\underbrace{U\cap D=\varnothing}_{\text{no point of }D\text{ lies in }U}.
 \]
 
 
-  \item[\operatorname{IsDense}.]
+  \item[\operatorname{DenseSubset}.]
   \[
 \begin{aligned}
-&\text{Let }D\subseteq S\subseteq\mathbb{R}.\\
-&D\text{ is not dense in }S
+&\text{Let }(X,\tau)\text{ be a topological space and }D\subseteq X.\\
+&D\text{ is not dense in }X
 \Longleftrightarrow
-\exists x\in S\;\exists \varepsilon_0>0\;\forall d\in D\;\bigl(|x-d|\ge \varepsilon_0\bigr).
+\exists U\in\tau\;\bigl(U\neq\varnothing\land U\cap D=\varnothing\bigr).
 \end{aligned}
 \]
 \[
-D\subseteq S\subseteq\mathbb{R},\qquad
-\neg\operatorname{IsDense}(D,S)\Longleftrightarrow
-\exists x\in S\;\exists \varepsilon_0>0\;\forall d\in D\;\bigl(|x-d|\ge \varepsilon_0\bigr).
+X\in\mathbf{Set},\qquad D\subseteq X,\qquad
+\neg\operatorname{DenseSubset}(D,X,\tau)\Longleftrightarrow
+\exists U\in\tau\;\bigl(U\neq\varnothing\land U\cap D=\varnothing\bigr).
 \]
 \end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
-Density is an approximation property inside $S$. It does not say that every point of $S$ already belongs to $D$; it says that points of $D$ occur arbitrarily close to every point of $S$. Thus $D$ can be a proper subset of $S$ while still leaving no positive-width gap inside $S$.
+Density says that no nonempty open part of $X$ misses $D$.  It does not
+say that every point of $X$ belongs to $D$; it says that $D$ is
+topologically unavoidable inside $X$.
 \end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:reals]{Real Numbers}
-  \item \hyperref[def:real-chapter-absolute-value-on-r]{Absolute Value on $\mathbb{R}$}
   \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:intersection]{Intersection}
 \end{itemize}
 \end{dependencies}
 \input{volume-iii/book-analysis-i/bounding/notes/completeness/figure-dense-subset}
 \begin{definitionbox}{Definition (Order Dense Subset)}
 \begin{definition}[Order Dense Subset]
 \label{def:order-dense-subset}
-Let $X$ be a linearly ordered set and let $A\subseteq X$. The subset $A$ is \emph{order dense in} $X$ if and only if for every $a,b\in X$ with $a<b$ there exists $c\in A$ such that $a<c<b$.
+Let $(S,\leq)$ be a linearly ordered set and let $D\subseteq S$.  The set
+$D$ is \emph{order dense in} $S$ if between every two elements $x<y$ of
+$S$ there lies an element of $D$.
 \end{definition}
 \end{definitionbox}
 
 \begin{remark*}[Standard quantified statement]
 \[
 \begin{aligned}
-&\text{Let }X\text{ be a linearly ordered set and }A\subseteq X.\\
-&A\text{ is order dense in }X
+&\operatorname{OrderDenseSubset}(D,P)
 \Longleftrightarrow
-\forall a,b\in X\;\bigl(a<b\rightarrow \exists c\in A\;(a<c<b)\bigr).
+\forall x,y\in S\;\bigl(x<y\Longrightarrow \exists d\in D\;(x<d<y)\bigr).
 \end{aligned}
 \]
 \end{remark*}
 
 \begin{remark*}[Predicate reading]
 \[
-X\in\mathbf{Set},\qquad A\subseteq X,\qquad P_X=\mathsf{OrderedSet}(X,\leq),\qquad
-D_A=\mathsf{OrderDenseSet}(A,P_X),\qquad
-\operatorname{IsOrderDenseSubset}(A,P_X)\coloneqq
-\forall a,b\in X\;\bigl(a<b\rightarrow \exists c\in A\;(a<c<b)\bigr).
+S\in\mathbf{Set},\qquad D\subseteq S,\qquad P=\mathsf{TotallyOrderedSet}(S,\leq),\qquad
+\operatorname{OrderDenseSubset}(D,P)\coloneqq
+\forall x,y\in S\;\bigl(x<y\Longrightarrow \exists d\in D\;(x<d<y)\bigr).
 \]
 \end{remark*}
 
 \begin{remark*}[Negated quantified statement]
 \[
 \begin{aligned}
-&\text{Let }X\text{ be a linearly ordered set and }A\subseteq X.\\
-&A\text{ is not order dense in }X
+&\text{Let }(S,\leq)\text{ be a linearly ordered set and }D\subseteq S.\\
+&D\text{ is not order dense in }S
 \Longleftrightarrow
-\exists a,b\in X\;\bigl(a<b\land \forall c\in A\;(c\le a\lor b\le c)\bigr).
+\exists x,y\in S\;\bigl(x<y\land \forall d\in D\;(d\leq x\lor y\leq d)\bigr).
 \end{aligned}
 \]
 \end{remark*}
 
 \begin{remark*}[Negation predicate reading]
 \[
-X\in\mathbf{Set},\qquad A\subseteq X,\qquad P_X=\mathsf{OrderedSet}(X,\leq),\qquad
-D_A=\mathsf{OrderDenseSet}(A,P_X),\qquad
-\neg\operatorname{IsOrderDenseSubset}(A,P_X)\Longleftrightarrow
-\exists a,b\in X\;\bigl(a<b\land \forall c\in A\;(c\le a\lor b\le c)\bigr).
+S\in\mathbf{Set},\qquad D\subseteq S,\qquad P=\mathsf{TotallyOrderedSet}(S,\leq),\qquad
+\neg\operatorname{OrderDenseSubset}(D,P)\Longleftrightarrow
+\exists x,y\in S\;\bigl(x<y\land \forall d\in D\;(d\leq x\lor y\leq d)\bigr).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
 \begin{description}
 \item[Exposition.]
-Order density fails when there is a nonempty open interval of $X$ that contains no point of $A$.
+Order density fails when there is a nonempty open interval of $S$ that
+contains no point of $D$.
 
 
-  \item[\operatorname{IsOrderDenseSubset}.]
+  \item[\operatorname{OrderDenseSubset}.]
   \[
 \begin{aligned}
-&\text{Let }X\text{ be a linearly ordered set and }A\subseteq X.\\
-&A\text{ is not order dense in }X
+&\text{Let }(S,\leq)\text{ be a linearly ordered set and }D\subseteq S.\\
+&D\text{ is not order dense in }S
 \Longleftrightarrow
-\exists a,b\in X\;\bigl(a<b\land \forall c\in A\;(c\le a\lor b\le c)\bigr).
+\exists x,y\in S\;\bigl(x<y\land \forall d\in D\;(d\leq x\lor y\leq d)\bigr).
 \end{aligned}
 \]
 \[
-X\in\mathbf{Set},\qquad A\subseteq X,\qquad P_X=\mathsf{OrderedSet}(X,\leq),\qquad
-D_A=\mathsf{OrderDenseSet}(A,P_X),\qquad
-\neg\operatorname{IsOrderDenseSubset}(A,P_X)\Longleftrightarrow
-\exists a,b\in X\;\bigl(a<b\land \forall c\in A\;(c\le a\lor b\le c)\bigr).
+S\in\mathbf{Set},\qquad D\subseteq S,\qquad P=\mathsf{TotallyOrderedSet}(S,\leq),\qquad
+\neg\operatorname{OrderDenseSubset}(D,P)\Longleftrightarrow
+\exists x,y\in S\;\bigl(x<y\land \forall d\in D\;(d\leq x\lor y\leq d)\bigr).
 \]
 \end{description}
 \end{remark*}
@@ -191,34 +197,36 @@ D_A=\mathsf{OrderDenseSet}(A,P_X),\qquad
 \begin{description}
 \item[Exposition.]
 \[
-\neg\operatorname{IsOrderDenseSubset}(A,X)
+\neg\operatorname{OrderDenseSubset}(D,P)
 =
-\underbrace{\exists a,b\in X\;(a<b)}_{\text{nonempty interval}}
+\underbrace{\exists x,y\in S\;(x<y)}_{\text{nonempty interval}}
 \;\land\;
-\underbrace{\forall c\in A\;(c\le a\lor b\le c)}_{\text{no point of }A\text{ lies between }a\text{ and }b}.
+\underbrace{\forall d\in D\;(d\leq x\lor y\leq d)}_{\text{no point of }D\text{ lies between }x\text{ and }y}.
 \]
 
 
-  \item[\operatorname{IsOrderDenseSubset}.]
+  \item[\operatorname{OrderDenseSubset}.]
   \[
 \begin{aligned}
-&\text{Let }X\text{ be a linearly ordered set and }A\subseteq X.\\
-&A\text{ is not order dense in }X
+&\text{Let }(S,\leq)\text{ be a linearly ordered set and }D\subseteq S.\\
+&D\text{ is not order dense in }S
 \Longleftrightarrow
-\exists a,b\in X\;\bigl(a<b\land \forall c\in A\;(c\le a\lor b\le c)\bigr).
+\exists x,y\in S\;\bigl(x<y\land \forall d\in D\;(d\leq x\lor y\leq d)\bigr).
 \end{aligned}
 \]
 \[
-X\in\mathbf{Set},\qquad A\subseteq X,\qquad P_X=\mathsf{OrderedSet}(X,\leq),\qquad
-D_A=\mathsf{OrderDenseSet}(A,P_X),\qquad
-\neg\operatorname{IsOrderDenseSubset}(A,P_X)\Longleftrightarrow
-\exists a,b\in X\;\bigl(a<b\land \forall c\in A\;(c\le a\lor b\le c)\bigr).
+S\in\mathbf{Set},\qquad D\subseteq S,\qquad P=\mathsf{TotallyOrderedSet}(S,\leq),\qquad
+\neg\operatorname{OrderDenseSubset}(D,P)\Longleftrightarrow
+\exists x,y\in S\;\bigl(x<y\land \forall d\in D\;(d\leq x\lor y\leq d)\bigr).
 \]
 \end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
-Order density is an interval-penetration property. It ignores metric distance and asks only whether every ordered gap contains a point of the subset. A subset can therefore be order dense in $X$ precisely when no nonempty open interval of $X$ is missed entirely by that subset.
+Order density is an interval-penetration property. It ignores metric distance
+and asks only whether every ordered gap contains a point of the subset. A
+subset can therefore be order dense in $S$ precisely when no nonempty open
+interval of $S$ is missed entirely by that subset.
 \end{remark*}
 
 \begin{dependencies}
@@ -230,14 +238,23 @@ Order density is an interval-penetration property. It ignores metric distance an
 \begin{theorembox}{Theorem (Density of the Rationals)}
 \begin{theorem}[Density of the Rationals]
 \label{thm:density-of-rationals-in-reals}
-For every $a,b\in\mathbb{R}$ with $a<b$, there exists $q\in\mathbb{Q}$ such that $a<q<b$.
+For every $a,b\in\mathbb{R}$ with $a<b$, there exists $q\in\mathbb{Q}$ such
+that
+\[
+  a<q<b.
+\]
+Equivalently,
+\[
+  (\forall a,b\in\mathbb{R})
+  \bigl[a<b\Longrightarrow(\exists q\in\mathbb{Q})(a<q<b)\bigr].
+\]
 \hyperref[prf:density-of-rationals-in-reals]{Go to proof.}
 \end{theorem}
 \end{theorembox}
 
 \begin{remark*}[Standard quantified statement]
 \[
-\forall a,b\in\mathbb{R}\;\bigl(a<b\rightarrow \exists q\in\mathbb{Q}\;(a<q<b)\bigr).
+\forall a,b\in\mathbb{R}\;\bigl(a<b\Longrightarrow \exists q\in\mathbb{Q}\;(a<q<b)\bigr).
 \]
 \end{remark*}
 
@@ -246,7 +263,7 @@ For every $a,b\in\mathbb{R}$ with $a<b$, there exists $q\in\mathbb{Q}$ such that
 P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad \mathbb{Q}\subseteq\mathbb{R},\qquad
 D_{\mathbb{Q}}=\mathsf{OrderDenseSet}(\mathbb{Q},P_{\mathbb{R}}),\qquad
 \operatorname{IsOrderDenseSubset}(\mathbb{Q},P_{\mathbb{R}})\Longleftrightarrow
-\forall a,b\in\mathbb{R}\;\bigl(a<b\rightarrow \exists q\in\mathbb{Q}\;(a<q<b)\bigr).
+\forall a,b\in\mathbb{R}\;\bigl(a<b\Longrightarrow \exists q\in\mathbb{Q}\;(a<q<b)\bigr).
 \]
 \end{remark*}
 
@@ -327,9 +344,9 @@ Rational numbers penetrate every real interval. The theorem does not say that ev
 \begin{lemmabox}{Lemma (Rational Translation Preserves Rationality)}
 \begin{lemma}[Rational Translation Preserves Rationality]
 \label{lem:rational-translation-preserves-rationality}
-If $r,q\in\mathbb{Q}$, then
+For every $r,q\in\mathbb{Q}$,
 \[
-r+q\in\mathbb{Q}.
+  r+q\in\mathbb{Q}.
 \]
 \hyperref[prf:rational-translation-preserves-rationality]{\textit{Go to proof.}}
 \end{lemma}
@@ -359,9 +376,9 @@ rational keeps it rational.
 \begin{lemmabox}{Lemma (Rational Difference Preserves Rationality)}
 \begin{lemma}[Rational Difference Preserves Rationality]
 \label{lem:rational-difference-preserves-rationality}
-If $r,q\in\mathbb{Q}$, then
+For every $r,q\in\mathbb{Q}$,
 \[
-r-q\in\mathbb{Q}.
+  r-q\in\mathbb{Q}.
 \]
 \hyperref[prf:rational-difference-preserves-rationality]{\textit{Go to proof.}}
 \end{lemma}
@@ -392,10 +409,10 @@ closed under both operations.
 \begin{lemmabox}{Lemma (Nonzero Rational Product Preserves Irrationality)}
 \begin{lemma}[Nonzero Rational Product Preserves Irrationality]
 \label{lem:nonzero-rational-product-preserves-irrationality}
-If $q\in\mathbb{Q}\setminus\{0\}$ and
-$x\in\mathbb{R}\setminus\mathbb{Q}$, then
+For every $q\in\mathbb{Q}\setminus\{0\}$ and every
+$x\in\mathbb{R}\setminus\mathbb{Q}$,
 \[
-qx\in\mathbb{R}\setminus\mathbb{Q}.
+  qx\in\mathbb{R}\setminus\mathbb{Q}.
 \]
 \hyperref[prf:nonzero-rational-product-preserves-irrationality]{\textit{Go to proof.}}
 \end{lemma}
@@ -430,9 +447,9 @@ irrational as a rational number.
 \begin{lemmabox}{Lemma (Rational Translation Preserves Irrationality)}
 \begin{lemma}[Rational Translation Preserves Irrationality]
 \label{lem:rational-translation-preserves-irrationality}
-If $q\in\mathbb{Q}$ and $x\in\mathbb{R}\setminus\mathbb{Q}$, then
+For every $q\in\mathbb{Q}$ and every $x\in\mathbb{R}\setminus\mathbb{Q}$,
 \[
-q+x\in\mathbb{R}\setminus\mathbb{Q}.
+  q+x\in\mathbb{R}\setminus\mathbb{Q}.
 \]
 \hyperref[prf:rational-translation-preserves-irrationality]{\textit{Go to proof.}}
 \end{lemma}
@@ -467,8 +484,9 @@ subtracting the rational translation would make the original number rational.
 There exist irrational numbers $x,y\in\mathbb{R}\setminus\mathbb{Q}$ such
 that
 \[
-x-y\in\mathbb{Q}.
+  x-y\in\mathbb{Q}.
 \]
+For example, one may take $x=y=\sqrt{2}$.
 \hyperref[prf:irrational-minus-irrational-need-not-be-irrational]{\textit{Go to proof.}}
 \end{lemma}
 \end{lemmabox}
@@ -499,9 +517,9 @@ difference.
 \begin{lemmabox}{Lemma (Rational Minus Irrational Is Irrational)}
 \begin{lemma}[Rational Minus Irrational Is Irrational]
 \label{lem:rational-minus-irrational-is-irrational}
-If $q\in\mathbb{Q}$ and $x\in\mathbb{R}\setminus\mathbb{Q}$, then
+For every $q\in\mathbb{Q}$ and every $x\in\mathbb{R}\setminus\mathbb{Q}$,
 \[
-q-x\in\mathbb{R}\setminus\mathbb{Q}.
+  q-x\in\mathbb{R}\setminus\mathbb{Q}.
 \]
 \hyperref[prf:rational-minus-irrational-is-irrational]{\textit{Go to proof.}}
 \end{lemma}
@@ -533,9 +551,9 @@ hypothesis on $x$.
 \begin{lemmabox}{Lemma (Irrational Plus Rational Is Irrational)}
 \begin{lemma}[Irrational Plus Rational Is Irrational]
 \label{lem:irrational-plus-rational-is-irrational}
-If $x\in\mathbb{R}\setminus\mathbb{Q}$ and $q\in\mathbb{Q}$, then
+For every $x\in\mathbb{R}\setminus\mathbb{Q}$ and every $q\in\mathbb{Q}$,
 \[
-x+q\in\mathbb{R}\setminus\mathbb{Q}.
+  x+q\in\mathbb{R}\setminus\mathbb{Q}.
 \]
 \hyperref[prf:irrational-plus-rational-is-irrational]{\textit{Go to proof.}}
 \end{lemma}
@@ -566,9 +584,9 @@ This is the commuted form of rational translation preserving irrationality.
 \begin{lemmabox}{Lemma (Irrational Minus Rational Is Irrational)}
 \begin{lemma}[Irrational Minus Rational Is Irrational]
 \label{lem:irrational-minus-rational-is-irrational}
-If $x\in\mathbb{R}\setminus\mathbb{Q}$ and $q\in\mathbb{Q}$, then
+For every $x\in\mathbb{R}\setminus\mathbb{Q}$ and every $q\in\mathbb{Q}$,
 \[
-x-q\in\mathbb{R}\setminus\mathbb{Q}.
+  x-q\in\mathbb{R}\setminus\mathbb{Q}.
 \]
 \hyperref[prf:irrational-minus-rational-is-irrational]{\textit{Go to proof.}}
 \end{lemma}
@@ -609,14 +627,24 @@ an irrational remains irrational.
 \begin{theorembox}{Theorem (Density of the Irrationals)}
 \begin{theorem}[Density of the Irrationals]
 \label{thm:density-of-irrationals-in-reals}
-For every $a,b\in\mathbb{R}$ with $a<b$, there exists $s\in\mathbb{R}\setminus\mathbb{Q}$ such that $a<s<b$.
+For every $a,b\in\mathbb{R}$ with $a<b$, there exists
+$s\in\mathbb{R}\setminus\mathbb{Q}$ such that
+\[
+  a<s<b.
+\]
+Equivalently,
+\[
+  (\forall a,b\in\mathbb{R})
+  \bigl[a<b\Longrightarrow
+  (\exists s\in\mathbb{R}\setminus\mathbb{Q})(a<s<b)\bigr].
+\]
 \hyperref[prf:density-of-irrationals-in-reals]{Go to proof.}
 \end{theorem}
 \end{theorembox}
 
 \begin{remark*}[Standard quantified statement]
 \[
-\forall a,b\in\mathbb{R}\;\bigl(a<b\rightarrow \exists s\in\mathbb{R}\setminus\mathbb{Q}\;(a<s<b)\bigr).
+\forall a,b\in\mathbb{R}\;\bigl(a<b\Longrightarrow \exists s\in\mathbb{R}\setminus\mathbb{Q}\;(a<s<b)\bigr).
 \]
 \end{remark*}
 
@@ -625,7 +653,7 @@ For every $a,b\in\mathbb{R}$ with $a<b$, there exists $s\in\mathbb{R}\setminus\m
 P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad I=\mathbb{R}\setminus\mathbb{Q},\qquad
 D_I=\mathsf{OrderDenseSet}(I,P_{\mathbb{R}}),\qquad
 \operatorname{IsOrderDenseSubset}(I,P_{\mathbb{R}})\Longleftrightarrow
-\forall a,b\in\mathbb{R}\;\bigl(a<b\rightarrow \exists s\in\mathbb{R}\setminus\mathbb{Q}\;(a<s<b)\bigr).
+\forall a,b\in\mathbb{R}\;\bigl(a<b\Longrightarrow \exists s\in\mathbb{R}\setminus\mathbb{Q}\;(a<s<b)\bigr).
 \]
 \end{remark*}
 
@@ -710,10 +738,10 @@ Irrational numbers also penetrate every real interval. One way to see the result
 \begin{theorembox}{Theorem (An Irrational Between Any Two Rationals)}
 \begin{theorem}[An Irrational Between Any Two Rationals]
 \label{thm:irrational-between-any-two-rationals}
-If $r,s\in\mathbb{Q}$ and $r<s$, then there exists
+For every $r,s\in\mathbb{Q}$, if $r<s$, then there exists
 $x\in\mathbb{R}\setminus\mathbb{Q}$ such that
 \[
-r<x<s.
+  r<x<s.
 \]
 \hyperref[prf:irrational-between-any-two-rationals]{\textit{Go to proof.}}
 \end{theorem}
@@ -722,7 +750,7 @@ r<x<s.
 \begin{remark*}[Standard quantified statement]
 \[
 \forall r,s\in\mathbb{Q}\;
-\bigl(r<s\rightarrow
+\bigl(r<s\Longrightarrow
 \exists x\in\mathbb{R}\setminus\mathbb{Q}\;(r<x<s)\bigr).
 \]
 \end{remark*}
@@ -746,10 +774,10 @@ are rational.
 \begin{theorembox}{Theorem (A Rational Between Any Two Irrationals)}
 \begin{theorem}[A Rational Between Any Two Irrationals]
 \label{thm:rational-between-any-two-irrationals}
-If $x,y\in\mathbb{R}\setminus\mathbb{Q}$ and $x<y$, then there exists
+For every $x,y\in\mathbb{R}\setminus\mathbb{Q}$, if $x<y$, then there exists
 $q\in\mathbb{Q}$ such that
 \[
-x<q<y.
+  x<q<y.
 \]
 \hyperref[prf:rational-between-any-two-irrationals]{\textit{Go to proof.}}
 \end{theorem}
@@ -758,7 +786,7 @@ x<q<y.
 \begin{remark*}[Standard quantified statement]
 \[
 \forall x,y\in\mathbb{R}\setminus\mathbb{Q}\;
-\bigl(x<y\rightarrow \exists q\in\mathbb{Q}\;(x<q<y)\bigr).
+\bigl(x<y\Longrightarrow \exists q\in\mathbb{Q}\;(x<q<y)\bigr).
 \]
 \end{remark*}
 
@@ -781,10 +809,10 @@ are irrational.
 \begin{lemmabox}{Lemma (Small Irrational Positive Number)}
 \begin{lemma}[Small Irrational Positive Number]
 \label{lem:small-irrational-positive-number}
-For every $\varepsilon>0$, there exists
+For every $\varepsilon\in\mathbb{R}$ with $\varepsilon>0$, there exists
 $\eta\in\mathbb{R}\setminus\mathbb{Q}$ such that
 \[
-0<\eta<\varepsilon.
+  0<\eta<\varepsilon.
 \]
 \hyperref[prf:small-irrational-positive-number]{\textit{Go to proof.}}
 \end{lemma}
@@ -809,16 +837,17 @@ an irrational positive number as small as desired.
 \begin{corollarybox}{Corollary (No Adjacent Real Numbers)}
 \begin{corollary}[No Adjacent Real Numbers]
 \label{cor:no-adjacent-real-numbers}
-If $a,b\in\mathbb{R}$ and $a<b$, then there exists $c\in\mathbb{R}$ such that
+For every $a,b\in\mathbb{R}$, if $a<b$, then there exists
+$c\in\mathbb{R}$ such that
 \[
-a<c<b.
+  a<c<b.
 \]
 \hyperref[prf:no-adjacent-real-numbers]{Go to proof.}
 \end{corollary}
 \end{corollarybox}
 \begin{remark*}[Standard quantified statement]
 \[
-\forall a,b\in\mathbb{R}\;\bigl(a<b\Rightarrow
+\forall a,b\in\mathbb{R}\;\bigl(a<b\Longrightarrow
 \exists c\in\mathbb{R}\;(a<c<b)\bigr).
 \]
 \end{remark*}
@@ -874,7 +903,15 @@ contains another real point.
 
 \begin{theorembox}{Theorem (No Immediate Successors in $\mathbb{R}$)}
 \begin{theorem}[No Immediate Successors in $\mathbb{R}$]\label{thm:no-immediate-successors-in-r}
-For every $a\in\mathbb{R}$, there is no least real number greater than $a$.
+For every $a\in\mathbb{R}$, there is no least real number greater than $a$:
+\[
+  \neg(\exists m\in\mathbb{R})
+  \left[
+  a<m
+  \land
+  (\forall x\in\mathbb{R})(a<x\Longrightarrow m\leq x)
+  \right].
+\]
 \hyperref[prf:no-immediate-successors-in-r]{Go to proof.}
 \end{theorem}
 \end{theorembox}
@@ -883,7 +920,7 @@ For every $a\in\mathbb{R}$, there is no least real number greater than $a$.
 \[
 \forall a\in\mathbb{R}\;
 \neg\exists m\in\mathbb{R}\;
-\bigl(a<m\land \forall x\in\mathbb{R}\;(a<x\rightarrow m\le x)\bigr).
+\bigl(a<m\land \forall x\in\mathbb{R}\;(a<x\Longrightarrow m\le x)\bigr).
 \]
 \end{remark*}
 
@@ -895,7 +932,7 @@ D_{\mathbb{R}}=\mathsf{OrderDenseSet}(\mathbb{R},P_{\mathbb{R}}),\qquad
 \Longrightarrow
 \forall a\in\mathbb{R}\;
 \neg\exists m\in\mathbb{R}\;
-\bigl(a<m\land \forall x\in\mathbb{R}\;(a<x\rightarrow m\le x)\bigr).
+\bigl(a<m\land \forall x\in\mathbb{R}\;(a<x\Longrightarrow m\le x)\bigr).
 \]
 \end{remark*}
 
@@ -912,7 +949,15 @@ on that side; the order on $\mathbb{R}$ has no next element.
 
 \begin{theorembox}{Theorem (No Immediate Predecessors in $\mathbb{R}$)}
 \begin{theorem}[No Immediate Predecessors in $\mathbb{R}$]\label{thm:no-immediate-predecessors-in-r}
-For every $a\in\mathbb{R}$, there is no greatest real number less than $a$.
+For every $a\in\mathbb{R}$, there is no greatest real number less than $a$:
+\[
+  \neg(\exists m\in\mathbb{R})
+  \left[
+  m<a
+  \land
+  (\forall x\in\mathbb{R})(x<a\Longrightarrow x\leq m)
+  \right].
+\]
 \hyperref[prf:no-immediate-predecessors-in-r]{Go to proof.}
 \end{theorem}
 \end{theorembox}
@@ -921,7 +966,7 @@ For every $a\in\mathbb{R}$, there is no greatest real number less than $a$.
 \[
 \forall a\in\mathbb{R}\;
 \neg\exists m\in\mathbb{R}\;
-\bigl(m<a\land \forall x\in\mathbb{R}\;(x<a\rightarrow x\le m)\bigr).
+\bigl(m<a\land \forall x\in\mathbb{R}\;(x<a\Longrightarrow x\le m)\bigr).
 \]
 \end{remark*}
 
@@ -933,7 +978,7 @@ D_{\mathbb{R}}=\mathsf{OrderDenseSet}(\mathbb{R},P_{\mathbb{R}}),\qquad
 \Longrightarrow
 \forall a\in\mathbb{R}\;
 \neg\exists m\in\mathbb{R}\;
-\bigl(m<a\land \forall x\in\mathbb{R}\;(x<a\rightarrow x\le m)\bigr).
+\bigl(m<a\land \forall x\in\mathbb{R}\;(x<a\Longrightarrow x\le m)\bigr).
 \]
 \end{remark*}
 
@@ -952,7 +997,13 @@ on that side; the order on $\mathbb{R}$ has no previous element.
 \begin{corollarybox}{Corollary (Rational and Irrational Points in Every Open Interval)}
 \begin{corollary}[Rational and Irrational Points in Every Open Interval]
 \label{cor:every-open-interval-contains-rational-and-irrational}
-Every open interval in $\mathbb{R}$ contains both a rational number and an irrational number.
+For every $a,b\in\mathbb{R}$ with $a<b$, there exist
+$q\in\mathbb{Q}$ and $s\in\mathbb{R}\setminus\mathbb{Q}$ such that
+\[
+  a<q<b
+  \qquad\text{and}\qquad
+  a<s<b.
+\]
 \hyperref[prf:every-open-interval-contains-rational-and-irrational]{Go to proof.}
 \end{corollary}
 \end{corollarybox}
@@ -961,7 +1012,7 @@ Every open interval in $\mathbb{R}$ contains both a rational number and an irrat
 \[
 \forall a,b\in\mathbb{R}\;
 \Bigl[
-a<b\rightarrow
+a<b\Longrightarrow
 \bigl(\exists q\in\mathbb{Q}\;(a<q<b)\land \exists s\in\mathbb{R}\setminus\mathbb{Q}\;(a<s<b)\bigr)
 \Bigr].
 \]

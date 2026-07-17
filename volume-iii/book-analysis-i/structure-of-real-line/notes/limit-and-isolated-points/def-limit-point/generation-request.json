@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "def:limit-point",
+  "kind": "definition",
+  "title": "Limit Point",
+  "source": {
+    "label": "def:limit-point",
+    "kind": "definition",
+    "title": "Limit Point",
+    "book": "book-analysis-i",
+    "chapter": "structure-of-real-line",
+    "section": "limit-and-isolated-points",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/structure-of-real-line/notes/limit-and-isolated-points/notes-limit-and-isolated-points.tex",
+    "source_line_start": 8,
+    "source_line_end": 76,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/structure-of-real-line/notes/limit-and-isolated-points/def-limit-point",
+      "artifact": "volume-iii/book-analysis-i/structure-of-real-line/notes/limit-and-isolated-points/def-limit-point/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/structure-of-real-line/notes/limit-and-isolated-points/def-limit-point/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/structure-of-real-line/notes/limit-and-isolated-points/def-limit-point",
+    "artifact": "volume-iii/book-analysis-i/structure-of-real-line/notes/limit-and-isolated-points/def-limit-point/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/structure-of-real-line/notes/limit-and-isolated-points/def-limit-point/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/structure-of-real-line/notes/limit-and-isolated-points/notes-limit-and-isolated-points.tex",
+      "label": "def:limit-point",
+      "environment_kind": "definition",
+      "source_line_start": 8,
+      "source_line_end": 76,
+      "current_tex": "\\begin{definitionbox}{Definition (Limit Point)}\n\\begin{definition}[Limit Point]\n\\label{def:limit-point}\nLet $A\\subseteq\\mathbb{R}$ and $x\\in\\mathbb{R}$.  The point $x$ is a\n\\emph{limit point} of $A$ if every deleted open ball centered at $x$ contains\na point of $A$; that is,\n\\[\n  (\\forall r>0)\\bigl((B_r(x)\\setminus\\{x\\})\\cap A\\neq\\varnothing\\bigr).\n\\]\nEquivalently,\n\\[\n  (\\forall r>0)(\\exists a\\in A)(0<|a-x|<r).\n\\]\n\\end{definition}\n\\end{definitionbox}\n\\begin{remark*}[Standard quantified statement]\n\\[\nx \\text{ is a limit point of } E \\Longleftrightarrow \\forall r>0\\;\\exists y\\in E\\;(0<|y-x|<r).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\nE\\subseteq\\mathbb{R},\\qquad x\\in\\mathbb{R},\\qquad\n\\operatorname{IsCluster}(x,E,\\mathbb{R})\n\\Longleftrightarrow\n\\forall r>0\\;\\exists y\\in E\\;(0<|y-x|<r).\n\\]\n\\end{remark*}\n\\begin{remark*}[Negated quantified statement]\n\\[\nx \\text{ is not a limit point of } E \\Longleftrightarrow \\exists r>0\\;\\forall y\\in E\\;(y=x \\lor |y-x|\\geq r).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Negation predicate reading]\n\\[\nx \\text{ is not a limit point of } E \\Longleftrightarrow \\exists r>0\\;\\forall y\\in E\\;(y=x \\lor |y-x|\\geq r).\n\\]\n\nThe negation predicate reading is the predicate-level form of the displayed negated statement.\n\\end{remark*}\n\n\\begin{remark*}[Failure modes]\n\\begin{description}\n  \\item[Exposition.]\n  Failure is witnessed by the displayed negated or contrapositive condition.\n\n  \\item[\\operatorname{IsCluster}.]\n  \\[\nx \\text{ is not a limit point of } E \\Longleftrightarrow \\exists r>0\\;\\forall y\\in E\\;(y=x \\lor |y-x|\\geq r).\n\\]\n\\[\nE\\subseteq\\mathbb{R},\\qquad x\\in\\mathbb{R},\\qquad\n\\operatorname{IsCluster}(x,E,\\mathbb{R})\n\\Longleftrightarrow\n\\forall r>0\\;\\exists y\\in E\\;(0<|y-x|<r).\n\\]\n\\end{description}\n\\end{remark*}\n\\begin{remark*}[Interpretation]\nEvery punctured ball around a limit point meets $E$: the set accumulates at $x$. The strict inequality $0<|y-x|$ excludes $x$ itself, so $x$ need not belong to $E$ to be a limit point. This is the exact condition under which a sequence in $E$ can converge to $x$.\n\\end{remark*}\n\\begin{dependencies}\n\\begin{itemize}\n  \\item \\hyperref[def:open-ball]{Open Ball on the Real Line}\n\\end{itemize}\n\\end{dependencies}\n"
+    }
+  },
+  "creation_mode": "prompt"
+}

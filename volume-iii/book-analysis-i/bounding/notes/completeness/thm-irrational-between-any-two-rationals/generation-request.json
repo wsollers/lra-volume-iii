@@ -1,0 +1,46 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "thm:irrational-between-any-two-rationals",
+  "kind": "theorem",
+  "title": "An Irrational Between Any Two Rationals",
+  "source": {
+    "label": "thm:irrational-between-any-two-rationals",
+    "kind": "theorem",
+    "title": "An Irrational Between Any Two Rationals",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "completeness",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-density.tex",
+    "source_line_start": 739,
+    "source_line_end": 774,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/thm-irrational-between-any-two-rationals",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/thm-irrational-between-any-two-rationals/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/thm-irrational-between-any-two-rationals/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/thm-irrational-between-any-two-rationals",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/thm-irrational-between-any-two-rationals/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/thm-irrational-between-any-two-rationals/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-density.tex",
+      "label": "thm:irrational-between-any-two-rationals",
+      "environment_kind": "theorem",
+      "source_line_start": 739,
+      "source_line_end": 774,
+      "current_tex": "\\begin{theorem}[An Irrational Between Any Two Rationals]\n\\label{thm:irrational-between-any-two-rationals}\nFor every $r,s\\in\\mathbb{Q}$, if $r<s$, then there exists\n$x\\in\\mathbb{R}\\setminus\\mathbb{Q}$ such that\n\\[\n  r<x<s.\n\\]\n\\hyperref[prf:irrational-between-any-two-rationals]{\\textit{Go to proof.}}\n\\end{theorem}\n\\end{theorembox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\forall r,s\\in\\mathbb{Q}\\;\n\\bigl(r<s\\Longrightarrow\n\\exists x\\in\\mathbb{R}\\setminus\\mathbb{Q}\\;(r<x<s)\\bigr).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\nr,s\\in\\mathbb{Q}\\land r<s\n\\Longrightarrow \\exists x\\in\\mathbb{R}\\setminus\\mathbb{Q}\\;(r<x<s).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nThis is the density of the irrationals restricted to intervals whose endpoints\nare rational.\n\\end{remark*}\n\n\\begin{dependencies}\n\\hyperref[thm:density-of-irrationals-in-reals]{Density of the Irrationals}.\n\\end{dependencies}\n\n"
+    }
+  },
+  "creation_mode": "prompt"
+}
