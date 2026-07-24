@@ -1,0 +1,182 @@
+schema_version: lra.semantic-artifact/1.0
+identity:
+  label: thm:supremum-dilation
+  kind: theorem
+  title: Supremum of a Dilation
+  canonical_name: Supremum of a Dilation
+  status: local_draft
+  atomicity:
+    status: requires_review
+    concepts_detected: []
+    owning_concept: Supremum of a Dilation
+    split_reason: null
+location:
+  repository: lra-volume-iii
+  commit: 452b31457c8447874ce61a2f0431f9520bfaff4d
+  volume: iii
+  book: book-analysis-i
+  chapter: bounding
+  topic: bounds-algebra
+  source_file: volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-algebra-of-supremum-infimum.tex
+  source_line_start: 1575
+  source_line_end: 1589
+  source_hash: sha256:e3d5ba3ff0168fa4ec3079012de8868d7f3c68414c06c7bef9749f5921b6e124
+classification:
+  mathematical_domain: bounding
+  artifact_form: theorem
+  logical_shape: local parser draft
+  logical_framework: mathematical_vernacular
+  language_level: mixed
+context: []
+parameters:
+- id: f A
+  symbol: f A
+- id: lambda
+  symbol: lambda
+- id: lambda<0. endcases
+  symbol: lambda<0. endcases
+- id: lambda=0
+  symbol: lambda=0
+- id: lambda>0
+  symbol: lambda>0
+- id: sup(lambda A)= begincases lambdasup A
+  symbol: sup(lambda A)= begincases lambdasup A
+assumptions: []
+statement:
+  canonical_prose: Supremum of a Dilation
+  canonical_latex: "\\begin{theorem}[Supremum of a Dilation]\n\\label{thm:supremum-dilation}\n\
+    Let $A\\subseteq\\mathbb{R}$ be nonempty and bounded, and let\n$\\lambda\\in\\\
+    mathbb{R}$.  Then $\\lambda A:=\\{\\lambda a:a\\in A\\}$ is nonempty\nand bounded\
+    \ above, and\n\\[\n  \\sup(\\lambda A)=\n  \\begin{cases}\n    \\lambda\\sup A,\
+    \ & \\lambda>0,\\\\\n    0, & \\lambda=0,\\\\\n    \\lambda\\inf A, & \\lambda<0.\n\
+    \  \\end{cases}\n\\]\n\\hyperref[prf:supremum-dilation]{Go to proof.}\n\\end{theorem}"
+  semantic_ast: &id001
+    kind: relation
+    relation: \in
+    left: &id002
+      kind: tuple
+      elements:
+      - kind: variable
+        binder_id: sup(lambda A)= begincases lambdasup A
+      - kind: variable
+        binder_id: lambda>0
+      - kind: constant
+        name: '0'
+      - kind: variable
+        binder_id: lambda=0
+      - kind: variable
+        binder_id: lambda
+    right: &id003
+      kind: tuple
+      elements:
+      - kind: variable
+        binder_id: f A
+      - kind: variable
+        binder_id: lambda<0. endcases
+logical_forms:
+  standard_quantified:
+    latex: "\\sup(\\lambda A)=\n  \\begin{cases}\n    \\lambda\\sup A, & \\lambda>0,\\\
+      \\\n    0, & \\lambda=0,\\\\\n    \\lambda\\inf A, & \\lambda<0.\n  \\end{cases}"
+    ast: *id001
+    parser_witnesses:
+      original_latex: "\\sup(\\lambda A)=\n  \\begin{cases}\n    \\lambda\\sup A,\
+        \ & \\lambda>0,\\\\\n    0, & \\lambda=0,\\\\\n    \\lambda\\inf A, & \\lambda<0.\n\
+        \  \\end{cases}"
+      hand_parser:
+        available: true
+        ast:
+          kind: relation
+          relation: \in
+          left:
+            kind: tuple
+            elements:
+            - kind: variable
+              binder_id: sup(lambda A)= begincases lambdasup A
+            - kind: variable
+              binder_id: lambda>0
+            - kind: constant
+              name: '0'
+            - kind: variable
+              binder_id: lambda=0
+            - kind: variable
+              binder_id: lambda
+          right:
+            kind: tuple
+            elements:
+            - kind: variable
+              binder_id: f A
+            - kind: variable
+              binder_id: lambda<0. endcases
+      lark_parser:
+        available: false
+        error: 'could not parse controlled formula: ''\\sup(\\lambda A)=\n  \\begin{cases}\n    \\lambda\\sup
+          A, & \\lambda>0,\\\\\n    0, & \\lambda=0,\\\\\n    \\lambda\\inf A, & \\lambda<0.\n  \\end{cases}'''
+      parsers_agree: false
+  predicate_reading: null
+  negation:
+    mechanical:
+      latex: "\\neg\\left(\\sup(\\lambda A)=\n  \\begin{cases}\n    \\lambda\\sup\
+        \ A, & \\lambda>0,\\\\\n    0, & \\lambda=0,\\\\\n    \\lambda\\inf A, & \\\
+        lambda<0.\n  \\end{cases}\\right)"
+      ast:
+        kind: not
+        operand: *id001
+    approved_normal_form:
+      latex: null
+      ast:
+        kind: relation
+        relation: \notin
+        left: *id002
+        right: *id003
+    normalization_requires: []
+  contrapositive: null
+  equivalent_forms: []
+semantics:
+  codex_local_reference: true
+  local_draft: true
+failure_analysis:
+  applicability_failures: []
+  statement_failures:
+  - id: statement-failure
+    description: Draft failure semantics require semantic review.
+relationships:
+  dependency_edges: []
+  ontology_edges: []
+  provenance_edges: []
+  proof_edges: []
+notation: {}
+exposition:
+  summary: Codex-local draft semantic validation payload generated from routed source.
+verification:
+  canonical_proof: null
+  formalizations: []
+  external_library_crosswalks: []
+  proof_vault_records: []
+provenance:
+  origin:
+    kind: normalized_source_statement
+    source_status: single_primary_statement
+    primary_source_statement:
+      role: primary
+      source_id: null
+      label: thm:supremum-dilation
+      citation: null
+      page_range: null
+      evidence: routed source environment
+      notes: Codex-local draft; requires semantic review.
+    component_sources: []
+    derivation_rule: null
+    requires_review: true
+  explicit_from_source:
+  - formal environment and attached support blocks
+  normalized_from_source:
+  - ASTs are generated by local governed parsers when available
+  inferred_from_registry: []
+  generated_by_analysis:
+  - Codex local materialize-local mode
+  unresolved: []
+governance:
+  governance_repository: lra-governance
+  governance_commit: e73467db2ba332f6f9dbc2d8f0857a1c1553d6c4
+  registry_commit: e73467db2ba332f6f9dbc2d8f0857a1c1553d6c4
+  schema_commit: e73467db2ba332f6f9dbc2d8f0857a1c1553d6c4

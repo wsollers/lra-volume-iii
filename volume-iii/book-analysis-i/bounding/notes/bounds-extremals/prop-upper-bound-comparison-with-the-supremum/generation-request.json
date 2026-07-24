@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "prop:upper-bound-comparison-with-the-supremum",
+  "kind": "proposition",
+  "title": "Upper-Bound Comparison with the Supremum",
+  "source": {
+    "label": "prop:upper-bound-comparison-with-the-supremum",
+    "kind": "proposition",
+    "title": "Upper-Bound Comparison with the Supremum",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "bounds-extremals",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-suprema-infima.tex",
+    "source_line_start": 942,
+    "source_line_end": 959,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/prop-upper-bound-comparison-with-the-supremum",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/prop-upper-bound-comparison-with-the-supremum/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/prop-upper-bound-comparison-with-the-supremum/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/prop-upper-bound-comparison-with-the-supremum",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/prop-upper-bound-comparison-with-the-supremum/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/prop-upper-bound-comparison-with-the-supremum/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-suprema-infima.tex",
+      "label": "prop:upper-bound-comparison-with-the-supremum",
+      "environment_kind": "proposition",
+      "source_line_start": 942,
+      "source_line_end": 959,
+      "current_tex": "\\begin{proposition}[Upper-Bound Comparison with the Supremum]\n\\label{prop:upper-bound-comparison-with-the-supremum}\nLet $A\\subseteq\\mathbb{R}$ be nonempty and bounded above, and let\n$s=\\sup A$. For every $u\\in\\mathbb{R}$,\n\\[\n  u\\text{ is an upper bound of }A\n  \\Longleftrightarrow\n  s\\leq u.\n\\]\nEquivalently,\n\\[\n  (\\forall a\\in A)(a\\leq u)\n  \\Longleftrightarrow\n  s\\leq u.\n\\]\n\n\\hyperref[prf:upper-bound-comparison-with-the-supremum]{Go to proof.}\n\\end{proposition}",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "def:epsilon-characterization-of-supremum",
+  "kind": "definition",
+  "title": "Epsilon Characterization of the Supremum",
+  "source": {
+    "label": "def:epsilon-characterization-of-supremum",
+    "kind": "definition",
+    "title": "Epsilon Characterization of the Supremum",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "bounds-extremals",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-epsilon-characterization-supremum.tex",
+    "source_line_start": 16,
+    "source_line_end": 41,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/def-epsilon-characterization-of-supremum",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/def-epsilon-characterization-of-supremum/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/def-epsilon-characterization-of-supremum/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/def-epsilon-characterization-of-supremum",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/def-epsilon-characterization-of-supremum/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/def-epsilon-characterization-of-supremum/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-epsilon-characterization-supremum.tex",
+      "label": "def:epsilon-characterization-of-supremum",
+      "environment_kind": "definition",
+      "source_line_start": 16,
+      "source_line_end": 41,
+      "current_tex": "\\begin{definition}[Epsilon Characterization of the Supremum]\n\\label{def:epsilon-characterization-of-supremum}\nLet $A\\subseteq\\mathbb{R}$ be nonempty and bounded above, and let\n$s\\in\\mathbb{R}$. Then\n\\[\n  s=\\sup A\n\\]\nif and only if both of the following conditions hold:\n\\[\n  (\\forall a\\in A)(a\\leq s),\n\\]\nand\n\\[\n  (\\forall\\varepsilon>0)(\\exists a\\in A)(s-\\varepsilon<a).\n\\]\nEquivalently,\n\\[\n  s=\\sup A\n  \\Longleftrightarrow\n  \\left[\n    (\\forall a\\in A)(a\\leq s)\n    \\land\n    (\\forall\\varepsilon>0)(\\exists a\\in A)(s-\\varepsilon<a\\leq s)\n  \\right].\n\\]\n\\end{definition}",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

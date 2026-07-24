@@ -1,0 +1,240 @@
+schema_version: lra.semantic-artifact/1.0
+identity:
+  label: prop:positive-dilation-preserves-upper-bounds
+  kind: proposition
+  title: Positive Dilation Preserves Upper Bounds
+  canonical_name: Positive Dilation Preserves Upper Bounds
+  status: local_draft
+  atomicity:
+    status: requires_review
+    concepts_detected: []
+    owning_concept: Positive Dilation Preserves Upper Bounds
+    split_reason: null
+location:
+  repository: lra-volume-iii
+  commit: 452b31457c8447874ce61a2f0431f9520bfaff4d
+  volume: iii
+  book: book-analysis-i
+  chapter: bounding
+  topic: bounds-algebra
+  source_file: volume-iii/book-analysis-i/bounding/notes/bounds-algebra/notes-bound-algebra.tex
+  source_line_start: 360
+  source_line_end: 371
+  source_hash: sha256:d7d69ff19991eb41faa0a1288e5da7ea0115ddc1f50c729c0eddfdac461acb32
+classification:
+  mathematical_domain: bounding
+  artifact_form: proposition
+  logical_shape: local parser draft
+  logical_framework: mathematical_vernacular
+  language_level: mixed
+context: []
+parameters:
+- id: A
+  symbol: A
+- id: lambda A
+  symbol: lambda A
+- id: lambda u
+  symbol: lambda u
+- id: u
+  symbol: u
+assumptions: []
+statement:
+  canonical_prose: Positive Dilation Preserves Upper Bounds
+  canonical_latex: '\begin{proposition}[Positive Dilation Preserves Upper Bounds]
+
+    \label{prop:positive-dilation-preserves-upper-bounds}
+
+    Let $A\subseteq\mathbb{R}$, let $\lambda>0$, and let $u\in\mathbb{R}$.
+
+    If $u$ is an upper bound of $A$, then $\lambda u$ is an upper bound of
+
+    $\lambda A$; that is,
+
+    \[
+
+    \left(\forall a\in A,\ a\leq u\right)
+
+    \Longrightarrow
+
+    \left(\forall x\in\lambda A,\ x\leq \lambda u\right).
+
+    \]
+
+    \hyperref[prf:positive-dilation-preserves-upper-bounds]{Go to proof.}
+
+    \end{proposition}'
+  semantic_ast: &id001
+    kind: implies
+    left: &id002
+      kind: forall
+      binder:
+        binder_id: a
+        symbol: a
+        domain:
+          kind: variable
+          binder_id: A
+      restriction: null
+      body:
+        kind: relation
+        relation: \leq
+        left:
+          kind: variable
+          binder_id: a
+        right:
+          kind: variable
+          binder_id: u
+    right:
+      kind: forall
+      binder: &id003
+        binder_id: x
+        symbol: x
+        domain:
+          kind: variable
+          binder_id: lambda A
+      restriction: null
+      body:
+        kind: relation
+        relation: \leq
+        left: &id004
+          kind: variable
+          binder_id: x
+        right: &id005
+          kind: variable
+          binder_id: lambda u
+logical_forms:
+  standard_quantified:
+    latex: '\left(\forall a\in A,\ a\leq u\right)
+
+      \Longrightarrow
+
+      \left(\forall x\in\lambda A,\ x\leq \lambda u\right).'
+    ast: *id001
+    parser_witnesses:
+      original_latex: '\left(\forall a\in A,\ a\leq u\right)
+
+        \Longrightarrow
+
+        \left(\forall x\in\lambda A,\ x\leq \lambda u\right).'
+      hand_parser:
+        available: true
+        ast:
+          kind: implies
+          left:
+            kind: forall
+            binder:
+              binder_id: a
+              symbol: a
+              domain:
+                kind: variable
+                binder_id: A
+            restriction: null
+            body:
+              kind: relation
+              relation: \leq
+              left:
+                kind: variable
+                binder_id: a
+              right:
+                kind: variable
+                binder_id: u
+          right:
+            kind: forall
+            binder:
+              binder_id: x
+              symbol: x
+              domain:
+                kind: variable
+                binder_id: lambda A
+            restriction: null
+            body:
+              kind: relation
+              relation: \leq
+              left:
+                kind: variable
+                binder_id: x
+              right:
+                kind: variable
+                binder_id: lambda u
+      lark_parser:
+        available: false
+        error: 'could not parse controlled formula: ''\\left(\\forall a\\in A,\\ a\\leq
+          u\\right)\n\\Longrightarrow\n\\left(\\forall x\\in\\lambda A,\\ x\\leq \\lambda
+          u\\right).'''
+      parsers_agree: false
+  predicate_reading: null
+  negation:
+    mechanical:
+      latex: '\neg\left(\left(\forall a\in A,\ a\leq u\right)
+
+        \Longrightarrow
+
+        \left(\forall x\in\lambda A,\ x\leq \lambda u\right).\right)'
+      ast:
+        kind: not
+        operand: *id001
+    approved_normal_form:
+      latex: null
+      ast:
+        kind: and
+        left: *id002
+        right:
+          kind: exists
+          binder: *id003
+          restriction: null
+          body:
+            kind: relation
+            relation: '>'
+            left: *id004
+            right: *id005
+    normalization_requires: []
+  contrapositive: null
+  equivalent_forms: []
+semantics:
+  codex_local_reference: true
+  local_draft: true
+failure_analysis:
+  applicability_failures: []
+  statement_failures:
+  - id: statement-failure
+    description: Draft failure semantics require semantic review.
+relationships:
+  dependency_edges: []
+  ontology_edges: []
+  provenance_edges: []
+  proof_edges: []
+notation: {}
+exposition:
+  summary: Codex-local draft semantic validation payload generated from routed source.
+verification:
+  canonical_proof: null
+  formalizations: []
+  external_library_crosswalks: []
+  proof_vault_records: []
+provenance:
+  origin:
+    kind: normalized_source_statement
+    source_status: single_primary_statement
+    primary_source_statement:
+      role: primary
+      source_id: null
+      label: prop:positive-dilation-preserves-upper-bounds
+      citation: null
+      page_range: null
+      evidence: routed source environment
+      notes: Codex-local draft; requires semantic review.
+    component_sources: []
+    derivation_rule: null
+    requires_review: true
+  explicit_from_source:
+  - formal environment and attached support blocks
+  normalized_from_source:
+  - ASTs are generated by local governed parsers when available
+  inferred_from_registry: []
+  generated_by_analysis:
+  - Codex local materialize-local mode
+  unresolved: []
+governance:
+  governance_repository: lra-governance
+  governance_commit: e73467db2ba332f6f9dbc2d8f0857a1c1553d6c4
+  registry_commit: e73467db2ba332f6f9dbc2d8f0857a1c1553d6c4
+  schema_commit: e73467db2ba332f6f9dbc2d8f0857a1c1553d6c4

@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "def:maximum",
+  "kind": "definition",
+  "title": "Maximum",
+  "source": {
+    "label": "def:maximum",
+    "kind": "definition",
+    "title": "Maximum",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "bounds-extremals",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-maxima-minima.tex",
+    "source_line_start": 17,
+    "source_line_end": 26,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/def-maximum",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/def-maximum/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/def-maximum/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/def-maximum",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/def-maximum/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/def-maximum/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-maxima-minima.tex",
+      "label": "def:maximum",
+      "environment_kind": "definition",
+      "source_line_start": 17,
+      "source_line_end": 26,
+      "current_tex": "\\begin{definition}[Maximum]\n\\label{def:maximum}\nLet $A\\subseteq\\mathbb{R}$ and let $m\\in\\mathbb{R}$. The number $m$ is the\n\\emph{maximum} of $A$, written $m=\\max A$, if\n\\[\n  m\\in A\n  \\land\n  (\\forall a\\in A)(a\\leq m).\n\\]\n\\end{definition}",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

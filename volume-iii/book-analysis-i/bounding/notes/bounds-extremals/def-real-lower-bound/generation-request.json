@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "def:real-lower-bound",
+  "kind": "definition",
+  "title": "Lower Bound in the Real Line",
+  "source": {
+    "label": "def:real-lower-bound",
+    "kind": "definition",
+    "title": "Lower Bound in the Real Line",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "bounds-extremals",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-upper-lower-bounds.tex",
+    "source_line_start": 179,
+    "source_line_end": 186,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/def-real-lower-bound",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/def-real-lower-bound/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/def-real-lower-bound/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/def-real-lower-bound",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/def-real-lower-bound/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/def-real-lower-bound/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-upper-lower-bounds.tex",
+      "label": "def:real-lower-bound",
+      "environment_kind": "definition",
+      "source_line_start": 179,
+      "source_line_end": 186,
+      "current_tex": "\\begin{definition}[Lower Bound in the Real Line]\n\\label{def:real-lower-bound}\nLet $A\\subseteq\\mathbb{R}$ and let $\\ell\\in\\mathbb{R}$. The number $\\ell$\nis a \\emph{lower bound} of $A$ if\n\\[\n  (\\forall a\\in A)(\\ell\\leq a).\n\\]\n\\end{definition}",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

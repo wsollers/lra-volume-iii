@@ -13,7 +13,7 @@
     "book_root": "volume-iii-bounds-sequences-and-series.tex",
     "source_file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-density.tex",
     "source_line_start": 552,
-    "source_line_end": 584,
+    "source_line_end": 559,
     "artifact_package": {
       "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-irrational-plus-rational-is-irrational",
       "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/lem-irrational-plus-rational-is-irrational/artifact.yaml",
@@ -38,8 +38,9 @@
       "label": "lem:irrational-plus-rational-is-irrational",
       "environment_kind": "lemma",
       "source_line_start": 552,
-      "source_line_end": 584,
-      "current_tex": "\\begin{lemma}[Irrational Plus Rational Is Irrational]\n\\label{lem:irrational-plus-rational-is-irrational}\nFor every $x\\in\\mathbb{R}\\setminus\\mathbb{Q}$ and every $q\\in\\mathbb{Q}$,\n\\[\n  x+q\\in\\mathbb{R}\\setminus\\mathbb{Q}.\n\\]\n\\hyperref[prf:irrational-plus-rational-is-irrational]{\\textit{Go to proof.}}\n\\end{lemma}\n\\end{lemmabox}\n\n\\begin{remark*}[Standard quantified statement]\n\\[\n\\forall x\\in\\mathbb{R}\\setminus\\mathbb{Q}\\;\\forall q\\in\\mathbb{Q}\\;\n\\bigl(x+q\\in\\mathbb{R}\\setminus\\mathbb{Q}\\bigr).\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Predicate reading]\n\\[\nx\\in\\mathbb{R}\\setminus\\mathbb{Q}\\land q\\in\\mathbb{Q}\n\\Longrightarrow x+q\\in\\mathbb{R}\\setminus\\mathbb{Q}.\n\\]\n\\end{remark*}\n\n\\begin{remark*}[Interpretation]\nThis is the commuted form of rational translation preserving irrationality.\n\\end{remark*}\n\n\\begin{dependencies}\n\\hyperref[lem:rational-translation-preserves-irrationality]{Rational Translation Preserves Irrationality}.\n\\end{dependencies}\n\n"
+      "source_line_end": 559,
+      "current_tex": "\\begin{lemma}[Irrational Plus Rational Is Irrational]\n\\label{lem:irrational-plus-rational-is-irrational}\nFor every $x\\in\\mathbb{R}\\setminus\\mathbb{Q}$ and every $q\\in\\mathbb{Q}$,\n\\[\n  x+q\\in\\mathbb{R}\\setminus\\mathbb{Q}.\n\\]\n\\hyperref[prf:irrational-plus-rational-is-irrational]{\\textit{Go to proof.}}\n\\end{lemma}",
+      "formalizations": []
     }
   },
   "creation_mode": "prompt"

@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "def:least-upper-bound-property",
+  "kind": "definition",
+  "title": "Least Upper Bound Property",
+  "source": {
+    "label": "def:least-upper-bound-property",
+    "kind": "definition",
+    "title": "Least Upper Bound Property",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "completeness",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-axiom-of-completess.tex",
+    "source_line_start": 26,
+    "source_line_end": 31,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/def-least-upper-bound-property",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/def-least-upper-bound-property/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/def-least-upper-bound-property/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/def-least-upper-bound-property",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/def-least-upper-bound-property/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/def-least-upper-bound-property/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-axiom-of-completess.tex",
+      "label": "def:least-upper-bound-property",
+      "environment_kind": "definition",
+      "source_line_start": 26,
+      "source_line_end": 31,
+      "current_tex": "\\begin{definition}[Least Upper Bound Property]\n\\label{def:least-upper-bound-property}\nLet $(S,\\le)$ be a partially ordered set.  The set $S$ has the\n\\emph{least upper bound property} if every nonempty subset of $S$ that is\nbounded above in $S$ has a supremum in $S$.\n\\end{definition}",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

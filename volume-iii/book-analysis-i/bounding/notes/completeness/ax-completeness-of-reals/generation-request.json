@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "ax:completeness-of-reals",
+  "kind": "axiom",
+  "title": "Completeness of $\\mathbb{R}$",
+  "source": {
+    "label": "ax:completeness-of-reals",
+    "kind": "axiom",
+    "title": "Completeness of $\\mathbb{R}$",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "completeness",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-axiom-of-completess.tex",
+    "source_line_start": 204,
+    "source_line_end": 207,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/ax-completeness-of-reals",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/ax-completeness-of-reals/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/ax-completeness-of-reals/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/completeness/ax-completeness-of-reals",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/completeness/ax-completeness-of-reals/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/completeness/ax-completeness-of-reals/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/completeness/notes-axiom-of-completess.tex",
+      "label": "ax:completeness-of-reals",
+      "environment_kind": "axiom",
+      "source_line_start": 204,
+      "source_line_end": 207,
+      "current_tex": "\\begin{axiom}[Completeness of $\\mathbb{R}$]\n\\label{ax:completeness-of-reals}\nThe ordered field $\\mathbb{R}$ has the Least Upper Bound Property.\n\\end{axiom}",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

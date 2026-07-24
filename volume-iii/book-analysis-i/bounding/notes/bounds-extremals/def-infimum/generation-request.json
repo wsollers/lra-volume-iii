@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "def:infimum",
+  "kind": "definition",
+  "title": "Infimum",
+  "source": {
+    "label": "def:infimum",
+    "kind": "definition",
+    "title": "Infimum",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "bounds-extremals",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-suprema-infima.tex",
+    "source_line_start": 141,
+    "source_line_end": 159,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/def-infimum",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/def-infimum/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/def-infimum/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/def-infimum",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/def-infimum/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/def-infimum/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-suprema-infima.tex",
+      "label": "def:infimum",
+      "environment_kind": "definition",
+      "source_line_start": 141,
+      "source_line_end": 159,
+      "current_tex": "\\begin{definition}[Infimum]\n\\label{def:infimum}\nLet $(S,\\leq)$ be a partially ordered set, let $A\\subseteq S$, and let\n$i\\in S$. The element $i$ is the \\emph{infimum} of $A$, written\n$i=\\inf A$, if\n\\[\n  (\\forall a\\in A)(i\\leq a)\n\\]\nand\n\\[\n  (\\forall \\ell\\in S)\n  \\left[\n    (\\forall a\\in A)(\\ell\\leq a)\n    \\Longrightarrow\n    \\ell\\leq i\n  \\right].\n\\]\nThus, $i$ is the greatest lower bound of $A$ in $S$.\n\\end{definition}",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

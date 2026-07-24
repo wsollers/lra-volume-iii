@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "prop:lower-bound-property-of-infimum",
+  "kind": "proposition",
+  "title": "Lower-Bound Property of the Infimum",
+  "source": {
+    "label": "prop:lower-bound-property-of-infimum",
+    "kind": "proposition",
+    "title": "Lower-Bound Property of the Infimum",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "bounds-extremals",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-suprema-infima.tex",
+    "source_line_start": 523,
+    "source_line_end": 532,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/prop-lower-bound-property-of-infimum",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/prop-lower-bound-property-of-infimum/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/prop-lower-bound-property-of-infimum/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/prop-lower-bound-property-of-infimum",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/prop-lower-bound-property-of-infimum/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/prop-lower-bound-property-of-infimum/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-suprema-infima.tex",
+      "label": "prop:lower-bound-property-of-infimum",
+      "environment_kind": "proposition",
+      "source_line_start": 523,
+      "source_line_end": 532,
+      "current_tex": "\\begin{proposition}[Lower-Bound Property of the Infimum]\n\\label{prop:lower-bound-property-of-infimum}\nLet $(S,\\leq)$ be a partially ordered set, let $A\\subseteq S$, and suppose\nthat $i=\\inf A$ exists in $S$. Then $i$ is a lower bound of $A$; that is,\n\\[\n  (\\forall x\\in A)(i\\leq x).\n\\]\n\n\\hyperref[prf:lower-bound-property-of-infimum]{Go to proof.}\n\\end{proposition}",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "lem:supremum-strict-upper-approximation",
+  "kind": "lemma",
+  "title": "Supremum Strict Upper Approximation",
+  "source": {
+    "label": "lem:supremum-strict-upper-approximation",
+    "kind": "lemma",
+    "title": "Supremum Strict Upper Approximation",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "bounds-extremals",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-epsilon-characterization-supremum.tex",
+    "source_line_start": 384,
+    "source_line_end": 393,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/lem-supremum-strict-upper-approximation",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/lem-supremum-strict-upper-approximation/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/lem-supremum-strict-upper-approximation/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/lem-supremum-strict-upper-approximation",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/lem-supremum-strict-upper-approximation/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/lem-supremum-strict-upper-approximation/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-epsilon-characterization-supremum.tex",
+      "label": "lem:supremum-strict-upper-approximation",
+      "environment_kind": "lemma",
+      "source_line_start": 384,
+      "source_line_end": 393,
+      "current_tex": "\\begin{lemma}[Supremum Strict Upper Approximation]\n\\label{lem:supremum-strict-upper-approximation}\nLet $A\\subseteq\\mathbb{R}$ be nonempty and bounded above, and let\n$s=\\sup A$.  For every $x\\in\\mathbb{R}$ with $x<s$, there exists\n$a\\in A$ such that\n\\[\nx<a\\le s.\n\\]\n\\hyperref[prf:supremum-strict-upper-approximation]{Go to proof.}\n\\end{lemma}",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

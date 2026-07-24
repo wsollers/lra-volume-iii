@@ -1,0 +1,127 @@
+schema_version: lra.semantic-artifact/1.0
+identity:
+  label: thm:monotone-convergence-implies-lub-property
+  kind: theorem
+  title: Monotone Convergence Implies Least Upper Bound Property
+  canonical_name: Monotone Convergence Implies Least Upper Bound Property
+  status: local_draft
+  atomicity:
+    status: requires_review
+    concepts_detected: []
+    owning_concept: Monotone Convergence Implies Least Upper Bound Property
+    split_reason: null
+location:
+  repository: lra-volume-iii
+  commit: 452b31457c8447874ce61a2f0431f9520bfaff4d
+  volume: iii
+  book: book-analysis-i
+  chapter: bounding
+  topic: completeness
+  source_file: volume-iii/book-analysis-i/bounding/notes/completeness/notes-completeness-equivalences.tex
+  source_line_start: 94
+  source_line_end: 138
+  source_hash: sha256:4ac1770830f1626fe06da116241c44a1d3fd251f1e74d3153ea46e3abcb273e6
+classification:
+  mathematical_domain: bounding
+  artifact_form: theorem
+  logical_shape: local parser draft
+  logical_framework: mathematical_vernacular
+  language_level: mixed
+context: []
+parameters: []
+assumptions: []
+statement:
+  canonical_prose: Monotone Convergence Implies Least Upper Bound Property
+  canonical_latex: "\\begin{theorem}[Monotone Convergence Implies Least Upper Bound\
+    \ Property]\n\\label{thm:monotone-convergence-implies-lub-property}\nLet $F$ be\
+    \ an Archimedean linearly ordered field.  Suppose that every\nincreasing sequence\
+    \ in $F$ that is bounded above converges in $F$; explicitly,\nsuppose that for\
+    \ every sequence $(x_n)_{n\\in\\mathbb{N}}$ in $F$,\n\\[\n  \\left[(\\forall n\\\
+    in\\mathbb{N})(x_n\\leq x_{n+1})\\right]\n  \\land\n  \\left[(\\exists M\\in F)(\\\
+    forall n\\in\\mathbb{N})(x_n\\leq M)\\right]\n\\]\nimplies that there exists $L\\\
+    in F$ such that\n\\[\n  (\\forall\\varepsilon\\in F)\\left[\n  \\varepsilon>0\n\
+    \  \\Longrightarrow\n  (\\exists N\\in\\mathbb{N})(\\forall n\\in\\mathbb{N})\n\
+    \  \\bigl(n\\geq N\\Longrightarrow |x_n-L|<\\varepsilon\\bigr)\n  \\right].\n\\\
+    ]\nThen $F$ has the least upper bound property.  That is, for every\n$A\\subseteq\
+    \ F$,\n\\[\n  \\left[\n  A\\neq\\varnothing\n  \\land\n  (\\exists u\\in F)(\\\
+    forall a\\in A)(a\\leq u)\n  \\right]\n\\]\nimplies that there exists $s\\in F$\
+    \ satisfying\n\\[\n  (\\forall a\\in A)(a\\leq s)\n\\]\nand\n\\[\n  (\\forall\
+    \ u\\in F)\\left[\n  (\\forall a\\in A)(a\\leq u)\n  \\Longrightarrow\n  s\\leq\
+    \ u\n  \\right].\n\\]\n\n\\smallskip\n\\noindent\n\\hyperref[prf:monotone-convergence-implies-lub-property]{\\\
+    textit{Go to proof.}}\n\\end{theorem}"
+logical_forms:
+  standard_quantified:
+    latex: "(\\forall\\varepsilon\\in F)\\left[\n  \\varepsilon>0\n  \\Longrightarrow\n\
+      \  (\\exists N\\in\\mathbb{N})(\\forall n\\in\\mathbb{N})\n  \\bigl(n\\geq N\\\
+      Longrightarrow |x_n-L|<\\varepsilon\\bigr)\n  \\right]."
+    parser_witnesses:
+      original_latex: "(\\forall\\varepsilon\\in F)\\left[\n  \\varepsilon>0\n  \\\
+        Longrightarrow\n  (\\exists N\\in\\mathbb{N})(\\forall n\\in\\mathbb{N})\n\
+        \  \\bigl(n\\geq N\\Longrightarrow |x_n-L|<\\varepsilon\\bigr)\n  \\right]."
+      hand_parser:
+        available: false
+        error: 'unsupported formula fragment: (\forall\varepsilon\in F)[ \varepsilon>0
+          \Longrightarrow \exists N\in\mathbb{N}(\forall n\in\mathbb{N}) (n\geq N\Longrightarrow
+          |x_n-L|<\varepsilon) ]'
+      lark_parser:
+        available: false
+        error: 'could not parse controlled formula: ''(\\forall\\varepsilon\\in F)\\left[\n  \\varepsilon>0\n  \\Longrightarrow\n  (\\exists
+          N\\in\\mathbb{N})(\\forall n\\in\\mathbb{N})\n  \\bigl(n\\geq N\\Longrightarrow
+          |x_n-L|<\\varepsilon\\bigr)\n  \\right].'''
+      parsers_agree: false
+  predicate_reading: null
+  negation:
+    mechanical: null
+    approved_normal_form: null
+    normalization_requires: []
+  contrapositive: null
+  equivalent_forms: []
+semantics:
+  codex_local_reference: true
+  local_draft: true
+failure_analysis:
+  applicability_failures: []
+  statement_failures:
+  - id: statement-failure
+    description: Draft failure semantics require semantic review.
+relationships:
+  dependency_edges: []
+  ontology_edges: []
+  provenance_edges: []
+  proof_edges: []
+notation: {}
+exposition:
+  summary: Codex-local draft semantic validation payload generated from routed source.
+verification:
+  canonical_proof: null
+  formalizations: []
+  external_library_crosswalks: []
+  proof_vault_records: []
+provenance:
+  origin:
+    kind: normalized_source_statement
+    source_status: single_primary_statement
+    primary_source_statement:
+      role: primary
+      source_id: null
+      label: thm:monotone-convergence-implies-lub-property
+      citation: null
+      page_range: null
+      evidence: routed source environment
+      notes: Codex-local draft; requires semantic review.
+    component_sources: []
+    derivation_rule: null
+    requires_review: true
+  explicit_from_source:
+  - formal environment and attached support blocks
+  normalized_from_source:
+  - ASTs are generated by local governed parsers when available
+  inferred_from_registry: []
+  generated_by_analysis:
+  - Codex local materialize-local mode
+  unresolved: []
+governance:
+  governance_repository: lra-governance
+  governance_commit: e73467db2ba332f6f9dbc2d8f0857a1c1553d6c4
+  registry_commit: e73467db2ba332f6f9dbc2d8f0857a1c1553d6c4
+  schema_commit: e73467db2ba332f6f9dbc2d8f0857a1c1553d6c4

@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "lem:subset-inclusion-preserves-lower-bounds",
+  "kind": "lemma",
+  "title": "Subset Inclusion Preserves Lower Bounds",
+  "source": {
+    "label": "lem:subset-inclusion-preserves-lower-bounds",
+    "kind": "lemma",
+    "title": "Subset Inclusion Preserves Lower Bounds",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "bounds-extremals",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-suprema-infima.tex",
+    "source_line_start": 692,
+    "source_line_end": 704,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/lem-subset-inclusion-preserves-lower-bounds",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/lem-subset-inclusion-preserves-lower-bounds/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/lem-subset-inclusion-preserves-lower-bounds/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/lem-subset-inclusion-preserves-lower-bounds",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/lem-subset-inclusion-preserves-lower-bounds/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/lem-subset-inclusion-preserves-lower-bounds/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-suprema-infima.tex",
+      "label": "lem:subset-inclusion-preserves-lower-bounds",
+      "environment_kind": "lemma",
+      "source_line_start": 692,
+      "source_line_end": 704,
+      "current_tex": "\\begin{lemma}[Subset Inclusion Preserves Lower Bounds]\n\\label{lem:subset-inclusion-preserves-lower-bounds}\nLet $(S,\\leq)$ be a partially ordered set, let $A,B\\subseteq S$, and suppose\nthat $A\\subseteq B$. If $\\ell\\in S$ is a lower bound of $B$, then $\\ell$ is\na lower bound of $A$; equivalently,\n\\[\n  \\left[(\\forall b\\in B)(\\ell\\leq b)\\right]\n  \\Longrightarrow\n  \\left[(\\forall a\\in A)(\\ell\\leq a)\\right].\n\\]\n\n\\hyperref[prf:subset-inclusion-preserves-lower-bounds]{Go to proof.}\n\\end{lemma}",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

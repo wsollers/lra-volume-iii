@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "def:bounded-above",
+  "kind": "definition",
+  "title": "Bounded Above",
+  "source": {
+    "label": "def:bounded-above",
+    "kind": "definition",
+    "title": "Bounded Above",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "bounds-extremals",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-upper-lower-bounds.tex",
+    "source_line_start": 253,
+    "source_line_end": 260,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/def-bounded-above",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/def-bounded-above/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/def-bounded-above/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/def-bounded-above",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/def-bounded-above/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/def-bounded-above/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-upper-lower-bounds.tex",
+      "label": "def:bounded-above",
+      "environment_kind": "definition",
+      "source_line_start": 253,
+      "source_line_end": 260,
+      "current_tex": "\\begin{definition}[Bounded Above]\n\\label{def:bounded-above}\nLet $A\\subseteq\\mathbb{R}$. The set $A$ is \\emph{bounded above} if there\nexists an upper bound of $A$ in $\\mathbb{R}$; equivalently,\n\\[\n  (\\exists u\\in\\mathbb{R})(\\forall a\\in A)(a\\leq u).\n\\]\n\\end{definition}",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

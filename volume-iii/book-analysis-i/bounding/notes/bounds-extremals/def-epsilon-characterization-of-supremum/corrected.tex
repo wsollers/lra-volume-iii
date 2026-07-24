@@ -1,0 +1,26 @@
+\begin{definition}[Epsilon Characterization of the Supremum]
+\label{def:epsilon-characterization-of-supremum}
+Let $A\subseteq\mathbb{R}$ be nonempty and bounded above, and let
+$s\in\mathbb{R}$. Then
+\[
+  s=\sup A
+\]
+if and only if both of the following conditions hold:
+\[
+  (\forall a\in A)(a\leq s),
+\]
+and
+\[
+  (\forall\varepsilon>0)(\exists a\in A)(s-\varepsilon<a).
+\]
+Equivalently,
+\[
+  s=\sup A
+  \Longleftrightarrow
+  \left[
+    (\forall a\in A)(a\leq s)
+    \land
+    (\forall\varepsilon>0)(\exists a\in A)(s-\varepsilon<a\leq s)
+  \right].
+\]
+\end{definition}

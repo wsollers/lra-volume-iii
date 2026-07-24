@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "lem:infimum-strict-lower-approximation",
+  "kind": "lemma",
+  "title": "Infimum Strict Lower Approximation",
+  "source": {
+    "label": "lem:infimum-strict-lower-approximation",
+    "kind": "lemma",
+    "title": "Infimum Strict Lower Approximation",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "bounds-extremals",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-epsilon-characterization-supremum.tex",
+    "source_line_start": 452,
+    "source_line_end": 461,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/lem-infimum-strict-lower-approximation",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/lem-infimum-strict-lower-approximation/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/lem-infimum-strict-lower-approximation/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/lem-infimum-strict-lower-approximation",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/lem-infimum-strict-lower-approximation/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/lem-infimum-strict-lower-approximation/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-epsilon-characterization-supremum.tex",
+      "label": "lem:infimum-strict-lower-approximation",
+      "environment_kind": "lemma",
+      "source_line_start": 452,
+      "source_line_end": 461,
+      "current_tex": "\\begin{lemma}[Infimum Strict Lower Approximation]\n\\label{lem:infimum-strict-lower-approximation}\nLet $A\\subseteq\\mathbb{R}$ be nonempty and bounded below, and let\n$i=\\inf A$.  For every $x\\in\\mathbb{R}$ with $i<x$, there exists\n$a\\in A$ such that\n\\[\ni\\le a<x.\n\\]\n\\hyperref[prf:infimum-strict-lower-approximation]{Go to proof.}\n\\end{lemma}",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "def:bounded",
+  "kind": "definition",
+  "title": "Bounded Set",
+  "source": {
+    "label": "def:bounded",
+    "kind": "definition",
+    "title": "Bounded Set",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "bounds-extremals",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-upper-lower-bounds.tex",
+    "source_line_start": 407,
+    "source_line_end": 418,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/def-bounded",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/def-bounded/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/def-bounded/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/def-bounded",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/def-bounded/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/def-bounded/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-upper-lower-bounds.tex",
+      "label": "def:bounded",
+      "environment_kind": "definition",
+      "source_line_start": 407,
+      "source_line_end": 418,
+      "current_tex": "\\begin{definition}[Bounded Set]\n\\label{def:bounded}\nLet $A\\subseteq\\mathbb{R}$. The set $A$ is \\emph{bounded} if it is bounded\nabove and bounded below; equivalently,\n\\[\n  (\\exists \\ell,u\\in\\mathbb{R})(\\forall a\\in A)(\\ell\\leq a\\leq u).\n\\]\nEquivalently, $A$ is bounded if\n\\[\n  (\\exists M\\geq 0)(\\forall a\\in A)(|a|\\leq M).\n\\]\n\\end{definition}",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

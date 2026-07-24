@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "prop:infimum-need-not-belong-to-the-set",
+  "kind": "proposition",
+  "title": "Infimum Need Not Belong to the Set",
+  "source": {
+    "label": "prop:infimum-need-not-belong-to-the-set",
+    "kind": "proposition",
+    "title": "Infimum Need Not Belong to the Set",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "bounds-extremals",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-suprema-infima.tex",
+    "source_line_start": 1400,
+    "source_line_end": 1408,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/prop-infimum-need-not-belong-to-the-set",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/prop-infimum-need-not-belong-to-the-set/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/prop-infimum-need-not-belong-to-the-set/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/prop-infimum-need-not-belong-to-the-set",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/prop-infimum-need-not-belong-to-the-set/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/prop-infimum-need-not-belong-to-the-set/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-suprema-infima.tex",
+      "label": "prop:infimum-need-not-belong-to-the-set",
+      "environment_kind": "proposition",
+      "source_line_start": 1400,
+      "source_line_end": 1408,
+      "current_tex": "\\begin{proposition}[Infimum Need Not Belong to the Set]\n\\label{prop:infimum-need-not-belong-to-the-set}\nThere exists a nonempty bounded-below set $A\\subseteq\\mathbb{R}$ such that\n\\[\n  \\inf A\\notin A.\n\\]\n\n\\hyperref[prf:infimum-need-not-belong-to-the-set]{Go to proof.}\n\\end{proposition}",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

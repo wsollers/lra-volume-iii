@@ -1,0 +1,152 @@
+schema_version: lra.semantic-artifact/1.0
+identity:
+  label: cor:nested-intervals-vanishing-length-have-unique-point
+  kind: corollary
+  title: Nested Intervals with Vanishing Length Have Unique Point
+  canonical_name: Nested Intervals with Vanishing Length Have Unique Point
+  status: local_draft
+  atomicity:
+    status: requires_review
+    concepts_detected: []
+    owning_concept: Nested Intervals with Vanishing Length Have Unique Point
+    split_reason: null
+location:
+  repository: lra-volume-iii
+  commit: 452b31457c8447874ce61a2f0431f9520bfaff4d
+  volume: iii
+  book: book-analysis-i
+  chapter: bounding
+  topic: completeness
+  source_file: volume-iii/book-analysis-i/bounding/notes/completeness/notes-nested-interval-property.tex
+  source_line_start: 784
+  source_line_end: 811
+  source_hash: sha256:320d471dd3a79a11121cf73effa4c59e496f4819d175350b6fb7435501af7274
+classification:
+  mathematical_domain: bounding
+  artifact_form: corollary
+  logical_shape: local parser draft
+  logical_framework: mathematical_vernacular
+  language_level: mixed
+context: []
+parameters:
+- id: (forallvarepsilon>0)exists N
+  symbol: (forallvarepsilon>0)exists N
+- id: mathbbN(forall ninmathbbN) (ngeq NLongrightarrow 0leq b_n-a_n<varepsilon)
+  symbol: mathbbN(forall ninmathbbN) (ngeq NLongrightarrow 0leq b_n-a_n<varepsilon)
+assumptions: []
+statement:
+  canonical_prose: Nested Intervals with Vanishing Length Have Unique Point
+  canonical_latex: "\\begin{corollary}[Nested Intervals with Vanishing Length Have\
+    \ Unique Point]\n\\label{cor:nested-intervals-vanishing-length-have-unique-point}\n\
+    Let $(a_n)$ and $(b_n)$ be sequences in $\\mathbb{R}$ such that\n\\[\n  (\\forall\
+    \ n\\in\\mathbb{N})(a_n\\leq b_n),\n\\]\n\\[\n  (\\forall n\\in\\mathbb{N})([a_{n+1},b_{n+1}]\\\
+    subseteq [a_n,b_n]),\n\\]\nand\n\\[\n  (\\forall\\varepsilon>0)(\\exists N\\in\\\
+    mathbb{N})(\\forall n\\in\\mathbb{N})\n  \\bigl(n\\geq N\\Longrightarrow 0\\leq\
+    \ b_n-a_n<\\varepsilon\\bigr).\n\\]\nThen there exists a unique $x\\in\\mathbb{R}$\
+    \ such that\n\\[\n  (\\forall n\\in\\mathbb{N})(a_n\\leq x\\leq b_n).\n\\]\nEquivalently,\n\
+    \\[\n  \\bigcap_{n=1}^{\\infty}[a_n,b_n]=\\{x\\}.\n\\]\nMoreover,\n\\[\n  x=\\\
+    sup\\{a_n:n\\in\\mathbb{N}\\}=\\inf\\{b_n:n\\in\\mathbb{N}\\}.\n\\]\n\\hyperref[prf:nested-intervals-vanishing-length-have-unique-point]{Go\
+    \ to proof.}\n\\end{corollary}"
+  semantic_ast: &id001
+    kind: relation
+    relation: \in
+    left: &id002
+      kind: variable
+      binder_id: (forallvarepsilon>0)exists N
+    right: &id003
+      kind: variable
+      binder_id: mathbbN(forall ninmathbbN) (ngeq NLongrightarrow 0leq b_n-a_n<varepsilon)
+logical_forms:
+  standard_quantified:
+    latex: "(\\forall\\varepsilon>0)(\\exists N\\in\\mathbb{N})(\\forall n\\in\\mathbb{N})\n\
+      \  \\bigl(n\\geq N\\Longrightarrow 0\\leq b_n-a_n<\\varepsilon\\bigr)."
+    ast: *id001
+    parser_witnesses:
+      original_latex: "(\\forall\\varepsilon>0)(\\exists N\\in\\mathbb{N})(\\forall\
+        \ n\\in\\mathbb{N})\n  \\bigl(n\\geq N\\Longrightarrow 0\\leq b_n-a_n<\\varepsilon\\\
+        bigr)."
+      hand_parser:
+        available: true
+        ast:
+          kind: relation
+          relation: \in
+          left:
+            kind: variable
+            binder_id: (forallvarepsilon>0)exists N
+          right:
+            kind: variable
+            binder_id: mathbbN(forall ninmathbbN) (ngeq NLongrightarrow 0leq b_n-a_n<varepsilon)
+      lark_parser:
+        available: false
+        error: 'could not parse controlled formula: ''(\\forall\\varepsilon>0)(\\exists
+          N\\in\\mathbb{N})(\\forall n\\in\\mathbb{N})\n  \\bigl(n\\geq N\\Longrightarrow
+          0\\leq b_n-a_n<\\varepsilon\\bigr).'''
+      parsers_agree: false
+  predicate_reading: null
+  negation:
+    mechanical:
+      latex: "\\neg\\left((\\forall\\varepsilon>0)(\\exists N\\in\\mathbb{N})(\\forall\
+        \ n\\in\\mathbb{N})\n  \\bigl(n\\geq N\\Longrightarrow 0\\leq b_n-a_n<\\varepsilon\\\
+        bigr).\\right)"
+      ast:
+        kind: not
+        operand: *id001
+    approved_normal_form:
+      latex: null
+      ast:
+        kind: relation
+        relation: \notin
+        left: *id002
+        right: *id003
+    normalization_requires: []
+  contrapositive: null
+  equivalent_forms: []
+semantics:
+  codex_local_reference: true
+  local_draft: true
+failure_analysis:
+  applicability_failures: []
+  statement_failures:
+  - id: statement-failure
+    description: Draft failure semantics require semantic review.
+relationships:
+  dependency_edges: []
+  ontology_edges: []
+  provenance_edges: []
+  proof_edges: []
+notation: {}
+exposition:
+  summary: Codex-local draft semantic validation payload generated from routed source.
+verification:
+  canonical_proof: null
+  formalizations: []
+  external_library_crosswalks: []
+  proof_vault_records: []
+provenance:
+  origin:
+    kind: normalized_source_statement
+    source_status: single_primary_statement
+    primary_source_statement:
+      role: primary
+      source_id: null
+      label: cor:nested-intervals-vanishing-length-have-unique-point
+      citation: null
+      page_range: null
+      evidence: routed source environment
+      notes: Codex-local draft; requires semantic review.
+    component_sources: []
+    derivation_rule: null
+    requires_review: true
+  explicit_from_source:
+  - formal environment and attached support blocks
+  normalized_from_source:
+  - ASTs are generated by local governed parsers when available
+  inferred_from_registry: []
+  generated_by_analysis:
+  - Codex local materialize-local mode
+  unresolved: []
+governance:
+  governance_repository: lra-governance
+  governance_commit: e73467db2ba332f6f9dbc2d8f0857a1c1553d6c4
+  registry_commit: e73467db2ba332f6f9dbc2d8f0857a1c1553d6c4
+  schema_commit: e73467db2ba332f6f9dbc2d8f0857a1c1553d6c4

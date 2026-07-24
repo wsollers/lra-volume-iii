@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "def:epsilon-characterization-of-infimum",
+  "kind": "definition",
+  "title": "Epsilon Characterization of the Infimum",
+  "source": {
+    "label": "def:epsilon-characterization-of-infimum",
+    "kind": "definition",
+    "title": "Epsilon Characterization of the Infimum",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "bounds-extremals",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-epsilon-characterization-supremum.tex",
+    "source_line_start": 206,
+    "source_line_end": 231,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/def-epsilon-characterization-of-infimum",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/def-epsilon-characterization-of-infimum/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/def-epsilon-characterization-of-infimum/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/def-epsilon-characterization-of-infimum",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/def-epsilon-characterization-of-infimum/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/def-epsilon-characterization-of-infimum/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-epsilon-characterization-supremum.tex",
+      "label": "def:epsilon-characterization-of-infimum",
+      "environment_kind": "definition",
+      "source_line_start": 206,
+      "source_line_end": 231,
+      "current_tex": "\\begin{definition}[Epsilon Characterization of the Infimum]\n\\label{def:epsilon-characterization-of-infimum}\nLet $A\\subseteq\\mathbb{R}$ be nonempty and bounded below, and let\n$i\\in\\mathbb{R}$. Then\n\\[\n  i=\\inf A\n\\]\nif and only if both of the following conditions hold:\n\\[\n  (\\forall a\\in A)(i\\leq a),\n\\]\nand\n\\[\n  (\\forall\\varepsilon>0)(\\exists a\\in A)(a<i+\\varepsilon).\n\\]\nEquivalently,\n\\[\n  i=\\inf A\n  \\Longleftrightarrow\n  \\left[\n    (\\forall a\\in A)(i\\leq a)\n    \\land\n    (\\forall\\varepsilon>0)(\\exists a\\in A)(i\\leq a<i+\\varepsilon)\n  \\right].\n\\]\n\\end{definition}",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

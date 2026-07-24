@@ -1,0 +1,250 @@
+schema_version: lra.semantic-artifact/1.0
+identity:
+  label: def:epsilon-characterization-of-infimum
+  kind: definition
+  title: Epsilon Characterization of the Infimum
+  canonical_name: Epsilon Characterization of the Infimum
+  status: local_draft
+  atomicity:
+    status: requires_review
+    concepts_detected: []
+    owning_concept: Epsilon Characterization of the Infimum
+    split_reason: null
+location:
+  repository: lra-volume-iii
+  commit: 452b31457c8447874ce61a2f0431f9520bfaff4d
+  volume: iii
+  book: book-analysis-i
+  chapter: bounding
+  topic: bounds-extremals
+  source_file: volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-epsilon-characterization-supremum.tex
+  source_line_start: 206
+  source_line_end: 231
+  source_hash: sha256:9291955960639c02e15e9376a93d0216d417cc3b7d4a68043c9c406b07c2e5ab
+classification:
+  mathematical_domain: bounding
+  artifact_form: definition
+  logical_shape: local parser draft
+  logical_framework: mathematical_vernacular
+  language_level: mixed
+context: []
+parameters:
+- id: (forallvarepsilon>0)exists a
+  symbol: (forallvarepsilon>0)exists a
+- id: A
+  symbol: A
+- id: f A
+  symbol: f A
+- id: i
+  symbol: i
+- id: i=
+  symbol: i=
+- id: ileq a<i+varepsilon
+  symbol: ileq a<i+varepsilon
+assumptions: []
+statement:
+  canonical_prose: Epsilon Characterization of the Infimum
+  canonical_latex: "\\begin{definition}[Epsilon Characterization of the Infimum]\n\
+    \\label{def:epsilon-characterization-of-infimum}\nLet $A\\subseteq\\mathbb{R}$\
+    \ be nonempty and bounded below, and let\n$i\\in\\mathbb{R}$. Then\n\\[\n  i=\\\
+    inf A\n\\]\nif and only if both of the following conditions hold:\n\\[\n  (\\\
+    forall a\\in A)(i\\leq a),\n\\]\nand\n\\[\n  (\\forall\\varepsilon>0)(\\exists\
+    \ a\\in A)(a<i+\\varepsilon).\n\\]\nEquivalently,\n\\[\n  i=\\inf A\n  \\Longleftrightarrow\n\
+    \  \\left[\n    (\\forall a\\in A)(i\\leq a)\n    \\land\n    (\\forall\\varepsilon>0)(\\\
+    exists a\\in A)(i\\leq a<i+\\varepsilon)\n  \\right].\n\\]\n\\end{definition}"
+  semantic_ast: &id001
+    kind: iff
+    left: &id002
+      kind: relation
+      relation: \in
+      left: &id008
+        kind: variable
+        binder_id: i=
+      right: &id009
+        kind: variable
+        binder_id: f A
+    right: &id010
+      kind: and
+      left:
+        kind: forall
+        binder: &id003
+          binder_id: a
+          symbol: a
+          domain:
+            kind: variable
+            binder_id: A
+        restriction: null
+        body:
+          kind: relation
+          relation: \leq
+          left: &id004
+            kind: variable
+            binder_id: i
+          right: &id005
+            kind: variable
+            binder_id: a
+      right:
+        kind: relation
+        relation: \in
+        left: &id006
+          kind: variable
+          binder_id: (forallvarepsilon>0)exists a
+        right: &id007
+          kind: application
+          function: A
+          arguments:
+          - kind: variable
+            binder_id: ileq a<i+varepsilon
+logical_forms:
+  standard_quantified:
+    latex: "i=\\inf A\n  \\Longleftrightarrow\n  \\left[\n    (\\forall a\\in A)(i\\\
+      leq a)\n    \\land\n    (\\forall\\varepsilon>0)(\\exists a\\in A)(i\\leq a<i+\\\
+      varepsilon)\n  \\right]."
+    ast: *id001
+    parser_witnesses:
+      original_latex: "i=\\inf A\n  \\Longleftrightarrow\n  \\left[\n    (\\forall\
+        \ a\\in A)(i\\leq a)\n    \\land\n    (\\forall\\varepsilon>0)(\\exists a\\\
+        in A)(i\\leq a<i+\\varepsilon)\n  \\right]."
+      hand_parser:
+        available: true
+        ast:
+          kind: iff
+          left:
+            kind: relation
+            relation: \in
+            left:
+              kind: variable
+              binder_id: i=
+            right:
+              kind: variable
+              binder_id: f A
+          right:
+            kind: and
+            left:
+              kind: forall
+              binder:
+                binder_id: a
+                symbol: a
+                domain:
+                  kind: variable
+                  binder_id: A
+              restriction: null
+              body:
+                kind: relation
+                relation: \leq
+                left:
+                  kind: variable
+                  binder_id: i
+                right:
+                  kind: variable
+                  binder_id: a
+            right:
+              kind: relation
+              relation: \in
+              left:
+                kind: variable
+                binder_id: (forallvarepsilon>0)exists a
+              right:
+                kind: application
+                function: A
+                arguments:
+                - kind: variable
+                  binder_id: ileq a<i+varepsilon
+      lark_parser:
+        available: false
+        error: 'could not parse controlled formula: ''i=\\inf A\n  \\Longleftrightarrow\n  \\left[\n    (\\forall
+          a\\in A)(i\\leq a)\n    \\land\n    (\\forall\\varepsilon>0)(\\exists a\\in
+          A)(i\\leq a<i+\\varepsilon)\n  \\right].'''
+      parsers_agree: false
+  predicate_reading: null
+  negation:
+    mechanical:
+      latex: "\\neg\\left(i=\\inf A\n  \\Longleftrightarrow\n  \\left[\n    (\\forall\
+        \ a\\in A)(i\\leq a)\n    \\land\n    (\\forall\\varepsilon>0)(\\exists a\\\
+        in A)(i\\leq a<i+\\varepsilon)\n  \\right].\\right)"
+      ast:
+        kind: not
+        operand: *id001
+    approved_normal_form:
+      latex: null
+      ast:
+        kind: or
+        left:
+          kind: and
+          left: *id002
+          right:
+            kind: or
+            left:
+              kind: exists
+              binder: *id003
+              restriction: null
+              body:
+                kind: relation
+                relation: '>'
+                left: *id004
+                right: *id005
+            right:
+              kind: relation
+              relation: \notin
+              left: *id006
+              right: *id007
+        right:
+          kind: and
+          left:
+            kind: relation
+            relation: \notin
+            left: *id008
+            right: *id009
+          right: *id010
+    normalization_requires: []
+  contrapositive: null
+  equivalent_forms: []
+semantics:
+  codex_local_reference: true
+  local_draft: true
+failure_analysis:
+  applicability_failures: []
+  statement_failures:
+  - id: statement-failure
+    description: Draft failure semantics require semantic review.
+relationships:
+  dependency_edges: []
+  ontology_edges: []
+  provenance_edges: []
+  proof_edges: []
+notation: {}
+exposition:
+  summary: Codex-local draft semantic validation payload generated from routed source.
+verification:
+  canonical_proof: null
+  formalizations: []
+  external_library_crosswalks: []
+  proof_vault_records: []
+provenance:
+  origin:
+    kind: normalized_source_statement
+    source_status: single_primary_statement
+    primary_source_statement:
+      role: primary
+      source_id: null
+      label: def:epsilon-characterization-of-infimum
+      citation: null
+      page_range: null
+      evidence: routed source environment
+      notes: Codex-local draft; requires semantic review.
+    component_sources: []
+    derivation_rule: null
+    requires_review: true
+  explicit_from_source:
+  - formal environment and attached support blocks
+  normalized_from_source:
+  - ASTs are generated by local governed parsers when available
+  inferred_from_registry: []
+  generated_by_analysis:
+  - Codex local materialize-local mode
+  unresolved: []
+governance:
+  governance_repository: lra-governance
+  governance_commit: e73467db2ba332f6f9dbc2d8f0857a1c1553d6c4
+  registry_commit: e73467db2ba332f6f9dbc2d8f0857a1c1553d6c4
+  schema_commit: e73467db2ba332f6f9dbc2d8f0857a1c1553d6c4

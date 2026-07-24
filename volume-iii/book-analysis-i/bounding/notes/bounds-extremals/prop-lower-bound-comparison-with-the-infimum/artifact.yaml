@@ -1,0 +1,231 @@
+schema_version: lra.semantic-artifact/1.0
+identity:
+  label: prop:lower-bound-comparison-with-the-infimum
+  kind: proposition
+  title: Lower-Bound Comparison with the Infimum
+  canonical_name: Lower-Bound Comparison with the Infimum
+  status: local_draft
+  atomicity:
+    status: requires_review
+    concepts_detected: []
+    owning_concept: Lower-Bound Comparison with the Infimum
+    split_reason: null
+location:
+  repository: lra-volume-iii
+  commit: 452b31457c8447874ce61a2f0431f9520bfaff4d
+  volume: iii
+  book: book-analysis-i
+  chapter: bounding
+  topic: bounds-extremals
+  source_file: volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-suprema-infima.tex
+  source_line_start: 1037
+  source_line_end: 1054
+  source_hash: sha256:dfb11c1d3e0c459810b83d7a803c34749d0ac7781842ebf9cccd6e8c87750b56
+classification:
+  mathematical_domain: bounding
+  artifact_form: proposition
+  logical_shape: local parser draft
+  logical_framework: mathematical_vernacular
+  language_level: mixed
+context: []
+parameters:
+- id: A
+  symbol: A
+- id: ell
+  symbol: ell
+- id: i
+  symbol: i
+assumptions: []
+statement:
+  canonical_prose: Lower-Bound Comparison with the Infimum
+  canonical_latex: "\\begin{proposition}[Lower-Bound Comparison with the Infimum]\n\
+    \\label{prop:lower-bound-comparison-with-the-infimum}\nLet $A\\subseteq\\mathbb{R}$\
+    \ be nonempty and bounded below, and let\n$i=\\inf A$. For every $\\ell\\in\\\
+    mathbb{R}$,\n\\[\n  \\ell\\text{ is a lower bound of }A\n  \\Longleftrightarrow\n\
+    \  \\ell\\leq i.\n\\]\nEquivalently,\n\\[\n  (\\forall a\\in A)(\\ell\\leq a)\n\
+    \  \\Longleftrightarrow\n  \\ell\\leq i.\n\\]\n\n\\hyperref[prf:lower-bound-comparison-with-the-infimum]{Go\
+    \ to proof.}\n\\end{proposition}"
+  semantic_ast: &id001
+    kind: iff
+    left: &id002
+      kind: forall
+      binder: &id005
+        binder_id: a
+        symbol: a
+        domain:
+          kind: variable
+          binder_id: A
+      restriction: null
+      body:
+        kind: relation
+        relation: \leq
+        left: &id006
+          kind: variable
+          binder_id: ell
+        right: &id007
+          kind: variable
+          binder_id: a
+    right: &id008
+      kind: relation
+      relation: \leq
+      left: &id003
+        kind: variable
+        binder_id: ell
+      right: &id004
+        kind: variable
+        binder_id: i
+logical_forms:
+  standard_quantified:
+    latex: "(\\forall a\\in A)(\\ell\\leq a)\n  \\Longleftrightarrow\n  \\ell\\leq\
+      \ i."
+    ast: *id001
+    parser_witnesses:
+      original_latex: "(\\forall a\\in A)(\\ell\\leq a)\n  \\Longleftrightarrow\n\
+        \  \\ell\\leq i."
+      hand_parser:
+        available: true
+        ast:
+          kind: iff
+          left:
+            kind: forall
+            binder:
+              binder_id: a
+              symbol: a
+              domain:
+                kind: variable
+                binder_id: A
+            restriction: null
+            body:
+              kind: relation
+              relation: \leq
+              left:
+                kind: variable
+                binder_id: ell
+              right:
+                kind: variable
+                binder_id: a
+          right:
+            kind: relation
+            relation: \leq
+            left:
+              kind: variable
+              binder_id: ell
+            right:
+              kind: variable
+              binder_id: i
+      lark_parser:
+        available: true
+        ast:
+          kind: iff
+          left:
+            kind: forall
+            binder:
+              binder_id: a
+              symbol: a
+              domain:
+                kind: variable
+                binder_id: A
+            restriction: null
+            body:
+              kind: relation
+              relation: \leq
+              left:
+                kind: variable
+                binder_id: ell
+              right:
+                kind: variable
+                binder_id: a
+          right:
+            kind: relation
+            relation: \leq
+            left:
+              kind: variable
+              binder_id: ell
+            right:
+              kind: variable
+              binder_id: i
+      parsers_agree: true
+  predicate_reading: null
+  negation:
+    mechanical:
+      latex: "\\neg\\left((\\forall a\\in A)(\\ell\\leq a)\n  \\Longleftrightarrow\n\
+        \  \\ell\\leq i.\\right)"
+      ast:
+        kind: not
+        operand: *id001
+    approved_normal_form:
+      latex: null
+      ast:
+        kind: or
+        left:
+          kind: and
+          left: *id002
+          right:
+            kind: relation
+            relation: '>'
+            left: *id003
+            right: *id004
+        right:
+          kind: and
+          left:
+            kind: exists
+            binder: *id005
+            restriction: null
+            body:
+              kind: relation
+              relation: '>'
+              left: *id006
+              right: *id007
+          right: *id008
+    normalization_requires: []
+  contrapositive: null
+  equivalent_forms: []
+semantics:
+  codex_local_reference: true
+  local_draft: true
+failure_analysis:
+  applicability_failures: []
+  statement_failures:
+  - id: statement-failure
+    description: Draft failure semantics require semantic review.
+relationships:
+  dependency_edges: []
+  ontology_edges: []
+  provenance_edges: []
+  proof_edges: []
+notation: {}
+exposition:
+  summary: Codex-local draft semantic validation payload generated from routed source.
+verification:
+  canonical_proof: null
+  formalizations: []
+  external_library_crosswalks: []
+  proof_vault_records: []
+provenance:
+  origin:
+    kind: normalized_source_statement
+    source_status: single_primary_statement
+    primary_source_statement:
+      role: primary
+      source_id: null
+      label: prop:lower-bound-comparison-with-the-infimum
+      citation: null
+      page_range: null
+      evidence: routed source environment
+      notes: Codex-local draft; requires semantic review.
+    component_sources: []
+    derivation_rule: null
+    requires_review: true
+  explicit_from_source:
+  - formal environment and attached support blocks
+  normalized_from_source:
+  - ASTs are generated by local governed parsers when available
+  inferred_from_registry: []
+  generated_by_analysis:
+  - Codex local materialize-local mode
+  unresolved: []
+governance:
+  governance_repository: lra-governance
+  governance_commit: e73467db2ba332f6f9dbc2d8f0857a1c1553d6c4
+  registry_commit: e73467db2ba332f6f9dbc2d8f0857a1c1553d6c4
+  schema_commit: e73467db2ba332f6f9dbc2d8f0857a1c1553d6c4

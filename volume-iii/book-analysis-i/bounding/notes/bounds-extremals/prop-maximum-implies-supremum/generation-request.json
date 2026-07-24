@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "prop:maximum-implies-supremum",
+  "kind": "proposition",
+  "title": "Maximum Implies Supremum",
+  "source": {
+    "label": "prop:maximum-implies-supremum",
+    "kind": "proposition",
+    "title": "Maximum Implies Supremum",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "bounds-extremals",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-maxima-minima.tex",
+    "source_line_start": 361,
+    "source_line_end": 369,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/prop-maximum-implies-supremum",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/prop-maximum-implies-supremum/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/prop-maximum-implies-supremum/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/prop-maximum-implies-supremum",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/prop-maximum-implies-supremum/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/prop-maximum-implies-supremum/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-maxima-minima.tex",
+      "label": "prop:maximum-implies-supremum",
+      "environment_kind": "proposition",
+      "source_line_start": 361,
+      "source_line_end": 369,
+      "current_tex": "\\begin{proposition}[Maximum Implies Supremum]\n\\label{prop:maximum-implies-supremum}\nLet $A\\subseteq\\mathbb{R}$ and let $m\\in\\mathbb{R}$. If $m=\\max A$, then\n\\[\n  m=\\sup A.\n\\]\n\n\\hyperref[prf:maximum-implies-supremum]{Go to proof.}\n\\end{proposition}",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

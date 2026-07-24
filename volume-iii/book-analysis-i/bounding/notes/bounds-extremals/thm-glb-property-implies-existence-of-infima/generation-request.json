@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "thm:glb-property-implies-existence-of-infima",
+  "kind": "theorem",
+  "title": "Greatest-Lower-Bound Property Implies Existence of Infima",
+  "source": {
+    "label": "thm:glb-property-implies-existence-of-infima",
+    "kind": "theorem",
+    "title": "Greatest-Lower-Bound Property Implies Existence of Infima",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "bounds-extremals",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-suprema-infima.tex",
+    "source_line_start": 1635,
+    "source_line_end": 1655,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/thm-glb-property-implies-existence-of-infima",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/thm-glb-property-implies-existence-of-infima/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/thm-glb-property-implies-existence-of-infima/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/thm-glb-property-implies-existence-of-infima",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/thm-glb-property-implies-existence-of-infima/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/thm-glb-property-implies-existence-of-infima/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-suprema-infima.tex",
+      "label": "thm:glb-property-implies-existence-of-infima",
+      "environment_kind": "theorem",
+      "source_line_start": 1635,
+      "source_line_end": 1655,
+      "current_tex": "\\begin{theorem}[Greatest-Lower-Bound Property Implies Existence of Infima]\n\\label{thm:glb-property-implies-existence-of-infima}\nLet $A\\subseteq\\mathbb{R}$ be nonempty and bounded below. Then there\nexists a unique $i\\in\\mathbb{R}$ such that\n\\[\n  i=\\inf A.\n\\]\nEquivalently,\n\\[\n  (\\forall A\\subseteq\\mathbb{R})\n  \\left[\n    A\\neq\\varnothing\n    \\land\n    (\\exists \\ell\\in\\mathbb{R})(\\forall a\\in A)(\\ell\\leq a)\n    \\Longrightarrow\n    (\\exists!i\\in\\mathbb{R})(i=\\inf A)\n  \\right].\n\\]\n\n\\hyperref[prf:glb-property-implies-existence-of-infima]{Go to proof.}\n\\end{theorem}",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

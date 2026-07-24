@@ -13,12 +13,31 @@
 % =========================================================
 
 \begin{definitionbox}{Definition (Epsilon Characterization of Supremum)}
-\begin{definition}[Epsilon Characterization of Supremum]
+\begin{definition}[Epsilon Characterization of the Supremum]
 \label{def:epsilon-characterization-of-supremum}
 Let $A\subseteq\mathbb{R}$ be nonempty and bounded above, and let
-$s\in\mathbb{R}$.  Then $s=\sup A$ if and only if $s$ is an upper bound of
-$A$ and for every $\varepsilon>0$ there exists $a\in A$ such that
-$s-\varepsilon<a$.
+$s\in\mathbb{R}$. Then
+\[
+  s=\sup A
+\]
+if and only if both of the following conditions hold:
+\[
+  (\forall a\in A)(a\leq s),
+\]
+and
+\[
+  (\forall\varepsilon>0)(\exists a\in A)(s-\varepsilon<a).
+\]
+Equivalently,
+\[
+  s=\sup A
+  \Longleftrightarrow
+  \left[
+    (\forall a\in A)(a\leq s)
+    \land
+    (\forall\varepsilon>0)(\exists a\in A)(s-\varepsilon<a\leq s)
+  \right].
+\]
 \end{definition}
 \end{definitionbox}
 
@@ -184,12 +203,31 @@ This condition says that $s$ caps the set from above while points of $A$ approac
 \input{volume-iii/book-analysis-i/bounding/notes/bounds-extremals/figure-epsilon-characterization-supremum}
 
 \begin{definitionbox}{Definition (Epsilon Characterization of Infimum)}
-\begin{definition}[Epsilon Characterization of Infimum]
+\begin{definition}[Epsilon Characterization of the Infimum]
 \label{def:epsilon-characterization-of-infimum}
 Let $A\subseteq\mathbb{R}$ be nonempty and bounded below, and let
-$i\in\mathbb{R}$.  Then $i=\inf A$ if and only if $i$ is a lower bound of
-$A$ and for every $\varepsilon>0$ there exists $a\in A$ such that
-$a<i+\varepsilon$.
+$i\in\mathbb{R}$. Then
+\[
+  i=\inf A
+\]
+if and only if both of the following conditions hold:
+\[
+  (\forall a\in A)(i\leq a),
+\]
+and
+\[
+  (\forall\varepsilon>0)(\exists a\in A)(a<i+\varepsilon).
+\]
+Equivalently,
+\[
+  i=\inf A
+  \Longleftrightarrow
+  \left[
+    (\forall a\in A)(i\leq a)
+    \land
+    (\forall\varepsilon>0)(\exists a\in A)(i\leq a<i+\varepsilon)
+  \right].
+\]
 \end{definition}
 \end{definitionbox}
 

@@ -1,0 +1,172 @@
+schema_version: lra.semantic-artifact/1.0
+identity:
+  label: cor:archimedean-reciprocal
+  kind: corollary
+  title: The Reciprocal Sequence Converges to Zero
+  canonical_name: The Reciprocal Sequence Converges to Zero
+  status: local_draft
+  atomicity:
+    status: requires_review
+    concepts_detected: []
+    owning_concept: The Reciprocal Sequence Converges to Zero
+    split_reason: null
+location:
+  repository: lra-volume-iii
+  commit: 452b31457c8447874ce61a2f0431f9520bfaff4d
+  volume: iii
+  book: book-analysis-i
+  chapter: bounding
+  topic: completeness
+  source_file: volume-iii/book-analysis-i/bounding/notes/completeness/notes-archimedean-property.tex
+  source_line_start: 249
+  source_line_end: 266
+  source_hash: sha256:c5540d2e74bce4c8708adb478084f6b7b108decdfb8770ccb2989ce98514c4b7
+classification:
+  mathematical_domain: bounding
+  artifact_form: corollary
+  logical_shape: local parser draft
+  logical_framework: mathematical_vernacular
+  language_level: mixed
+context: []
+parameters:
+- id: N
+  symbol: N
+- id: n
+  symbol: n
+- id: varepsilon
+  symbol: varepsilon
+- id: '|frac1n-0|'
+  symbol: '|frac1n-0|'
+assumptions: []
+statement:
+  canonical_prose: The Reciprocal Sequence Converges to Zero
+  canonical_latex: "\\begin{corollary}[The Reciprocal Sequence Converges to Zero]\n\
+    \\label{cor:archimedean-reciprocal}\nFor every $\\varepsilon\\in\\mathbb{R}$ with\
+    \ $\\varepsilon>0$, there exists\n$N\\in\\mathbb{N}$ such that, for every $n\\\
+    in\\mathbb{N}$,\n\\[\n  n\\geq N\n  \\Longrightarrow\n  \\left|\\frac{1}{n}-0\\\
+    right|<\\varepsilon.\n\\]\nHence,\n\\[\n  \\lim_{n\\longrightarrow\\infty}\\frac{1}{n}=0.\n\
+    \\]\n\n\\smallskip\n\\noindent\n\\hyperref[prf:archimedean-reciprocal]{\\textit{Go\
+    \ to proof.}}\n\\end{corollary}"
+  semantic_ast: &id001
+    kind: implies
+    left: &id002
+      kind: relation
+      relation: \geq
+      left:
+        kind: variable
+        binder_id: n
+      right:
+        kind: variable
+        binder_id: N
+    right:
+      kind: relation
+      relation: <
+      left: &id003
+        kind: variable
+        binder_id: '|frac1n-0|'
+      right: &id004
+        kind: variable
+        binder_id: varepsilon
+logical_forms:
+  standard_quantified:
+    latex: "n\\geq N\n  \\Longrightarrow\n  \\left|\\frac{1}{n}-0\\right|<\\varepsilon."
+    ast: *id001
+    parser_witnesses:
+      original_latex: "n\\geq N\n  \\Longrightarrow\n  \\left|\\frac{1}{n}-0\\right|<\\\
+        varepsilon."
+      hand_parser:
+        available: true
+        ast:
+          kind: implies
+          left:
+            kind: relation
+            relation: \geq
+            left:
+              kind: variable
+              binder_id: n
+            right:
+              kind: variable
+              binder_id: N
+          right:
+            kind: relation
+            relation: <
+            left:
+              kind: variable
+              binder_id: '|frac1n-0|'
+            right:
+              kind: variable
+              binder_id: varepsilon
+      lark_parser:
+        available: false
+        error: 'could not parse controlled formula: ''n\\geq N\n  \\Longrightarrow\n  \\left|\\frac{1}{n}-0\\right|<\\varepsilon.'''
+      parsers_agree: false
+  predicate_reading: null
+  negation:
+    mechanical:
+      latex: "\\neg\\left(n\\geq N\n  \\Longrightarrow\n  \\left|\\frac{1}{n}-0\\\
+        right|<\\varepsilon.\\right)"
+      ast:
+        kind: not
+        operand: *id001
+    approved_normal_form:
+      latex: null
+      ast:
+        kind: and
+        left: *id002
+        right:
+          kind: relation
+          relation: \geq
+          left: *id003
+          right: *id004
+    normalization_requires: []
+  contrapositive: null
+  equivalent_forms: []
+semantics:
+  codex_local_reference: true
+  local_draft: true
+failure_analysis:
+  applicability_failures: []
+  statement_failures:
+  - id: statement-failure
+    description: Draft failure semantics require semantic review.
+relationships:
+  dependency_edges: []
+  ontology_edges: []
+  provenance_edges: []
+  proof_edges: []
+notation: {}
+exposition:
+  summary: Codex-local draft semantic validation payload generated from routed source.
+verification:
+  canonical_proof: null
+  formalizations: []
+  external_library_crosswalks: []
+  proof_vault_records: []
+provenance:
+  origin:
+    kind: normalized_source_statement
+    source_status: single_primary_statement
+    primary_source_statement:
+      role: primary
+      source_id: null
+      label: cor:archimedean-reciprocal
+      citation: null
+      page_range: null
+      evidence: routed source environment
+      notes: Codex-local draft; requires semantic review.
+    component_sources: []
+    derivation_rule: null
+    requires_review: true
+  explicit_from_source:
+  - formal environment and attached support blocks
+  normalized_from_source:
+  - ASTs are generated by local governed parsers when available
+  inferred_from_registry: []
+  generated_by_analysis:
+  - Codex local materialize-local mode
+  unresolved: []
+governance:
+  governance_repository: lra-governance
+  governance_commit: e73467db2ba332f6f9dbc2d8f0857a1c1553d6c4
+  registry_commit: e73467db2ba332f6f9dbc2d8f0857a1c1553d6c4
+  schema_commit: e73467db2ba332f6f9dbc2d8f0857a1c1553d6c4

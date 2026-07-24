@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "prop:order-comparison-of-suprema",
+  "kind": "proposition",
+  "title": "Order Comparison of Suprema",
+  "source": {
+    "label": "prop:order-comparison-of-suprema",
+    "kind": "proposition",
+    "title": "Order Comparison of Suprema",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "bounds-extremals",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-suprema-infima.tex",
+    "source_line_start": 1441,
+    "source_line_end": 1453,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/prop-order-comparison-of-suprema",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/prop-order-comparison-of-suprema/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/prop-order-comparison-of-suprema/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/prop-order-comparison-of-suprema",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/prop-order-comparison-of-suprema/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/prop-order-comparison-of-suprema/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-suprema-infima.tex",
+      "label": "prop:order-comparison-of-suprema",
+      "environment_kind": "proposition",
+      "source_line_start": 1441,
+      "source_line_end": 1453,
+      "current_tex": "\\begin{proposition}[Order Comparison of Suprema]\n\\label{prop:order-comparison-of-suprema}\nLet $A,B\\subseteq\\mathbb{R}$ be nonempty and bounded above. Suppose that\n\\[\n  (\\forall a\\in A)(\\exists b\\in B)(a\\leq b).\n\\]\nThen\n\\[\n  \\sup A\\leq\\sup B.\n\\]\n\n\\hyperref[prf:order-comparison-of-suprema]{Go to proof.}\n\\end{proposition}",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "def:bound",
+  "kind": "definition",
+  "title": "Bound",
+  "source": {
+    "label": "def:bound",
+    "kind": "definition",
+    "title": "Bound",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "bounds-extremals",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-upper-lower-bounds.tex",
+    "source_line_start": 17,
+    "source_line_end": 27,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/def-bound",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/def-bound/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/def-bound/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/def-bound",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/def-bound/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/def-bound/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-upper-lower-bounds.tex",
+      "label": "def:bound",
+      "environment_kind": "definition",
+      "source_line_start": 17,
+      "source_line_end": 27,
+      "current_tex": "\\begin{definition}[Bound]\n\\label{def:bound}\nLet $(S,\\leq)$ be a partially ordered set, let $A\\subseteq S$, and let\n$b\\in S$. The element $b$ is a \\emph{bound} of $A$ if it is either an\nupper bound or a lower bound of $A$; equivalently,\n\\[\n  \\bigl[(\\forall a\\in A)(a\\leq b)\\bigr]\n  \\lor\n  \\bigl[(\\forall a\\in A)(b\\leq a)\\bigr].\n\\]\n\\end{definition}",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

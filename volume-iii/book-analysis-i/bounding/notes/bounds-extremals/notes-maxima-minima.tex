@@ -16,9 +16,13 @@ itself.
 \begin{definitionbox}{Maximum}
 \begin{definition}[Maximum]
 \label{def:maximum}
-Let $A\subseteq\mathbb{R}$.  An element $m\in A$ is the \emph{maximum}
-of $A$, written $m=\max A$, if every element of $A$ is less than or equal
-to $m$.
+Let $A\subseteq\mathbb{R}$ and let $m\in\mathbb{R}$. The number $m$ is the
+\emph{maximum} of $A$, written $m=\max A$, if
+\[
+  m\in A
+  \land
+  (\forall a\in A)(a\leq m).
+\]
 \end{definition}
 \end{definitionbox}
 
@@ -101,9 +105,13 @@ that can attain the upper bound.
 \begin{definitionbox}{Minimum}
 \begin{definition}[Minimum]
 \label{def:minimum}
-Let $A\subseteq\mathbb{R}$.  An element $n\in A$ is the \emph{minimum}
-of $A$, written $n=\min A$, if every element of $A$ is greater than or
-equal to $n$.
+Let $A\subseteq\mathbb{R}$ and let $n\in\mathbb{R}$. The number $n$ is the
+\emph{minimum} of $A$, written $n=\min A$, if
+\[
+  n\in A
+  \land
+  (\forall a\in A)(n\leq a).
+\]
 \end{definition}
 \end{definitionbox}
 
@@ -186,8 +194,11 @@ that can attain the lower bound.
 \begin{propositionbox}{Uniqueness of the Maximum}
 \begin{proposition}[Uniqueness of the Maximum]
 \label{prop:uniqueness-of-the-maximum}
-Let $A\subseteq\mathbb{R}$.  If $m_{1},m_{2}\in A$ are both maxima of
-$A$, then $m_{1}=m_{2}$.
+Let $A\subseteq\mathbb{R}$. If $m_1,m_2\in\mathbb{R}$ are both maxima of
+$A$, then
+\[
+  m_1=m_2.
+\]
 
 \hyperref[prf:uniqueness-of-the-maximum]{Go to proof.}
 \end{proposition}
@@ -266,9 +277,13 @@ two distinct real elements.
 \begin{propositionbox}{Uniqueness of the Minimum}
 \begin{proposition}[Uniqueness of the Minimum]
 \label{prop:uniqueness-of-the-minimum}
-Let $A\subseteq\mathbb{R}$.  If $n_{1},n_{2}\in A$ are both minima of
-$A$, then $n_{1}=n_{2}$.
-\hyperref[prf:uniqueness-of-the-minimum]{\textit{Go to proof.}}
+Let $A\subseteq\mathbb{R}$. If $n_1,n_2\in\mathbb{R}$ are both minima of
+$A$, then
+\[
+  n_1=n_2.
+\]
+
+\hyperref[prf:uniqueness-of-the-minimum]{Go to proof.}
 \end{proposition}
 \end{propositionbox}
 
@@ -345,7 +360,10 @@ at two distinct real elements.
 \begin{propositionbox}{Maximum Implies Supremum}
 \begin{proposition}[Maximum Implies Supremum]
 \label{prop:maximum-implies-supremum}
-Let $A\subseteq\mathbb{R}$.  If $m=\max A$, then $m=\sup A$.
+Let $A\subseteq\mathbb{R}$ and let $m\in\mathbb{R}$. If $m=\max A$, then
+\[
+  m=\sup A.
+\]
 
 \hyperref[prf:maximum-implies-supremum]{Go to proof.}
 \end{proposition}
@@ -423,8 +441,12 @@ any upper bound must lie above the attained element.
 \begin{propositionbox}{Minimum Implies Infimum}
 \begin{proposition}[Minimum Implies Infimum]
 \label{prop:minimum-implies-infimum}
-Let $A\subseteq\mathbb{R}$.  If $n=\min A$, then $n=\inf A$.
-\hyperref[prf:minimum-implies-infimum]{\textit{Go to proof.}}
+Let $A\subseteq\mathbb{R}$ and let $n\in\mathbb{R}$. If $n=\min A$, then
+\[
+  n=\inf A.
+\]
+
+\hyperref[prf:minimum-implies-infimum]{Go to proof.}
 \end{proposition}
 \end{propositionbox}
 
@@ -498,10 +520,13 @@ any lower bound must lie below the attained element.
 \end{dependencies}
 
 \begin{propositionbox}{Supremum in the Set is the Maximum}
-\begin{proposition}[Supremum in the Set is the Maximum]
+\begin{proposition}[Supremum in the Set Is the Maximum]
 \label{prop:supremum-in-the-set-is-the-maximum}
-Let $A\subseteq\mathbb{R}$ and suppose $s=\sup A$.  If $s\in A$, then
-$s=\max A$.
+Let $A\subseteq\mathbb{R}$ be nonempty and bounded above, and let
+$s=\sup A$. If $s\in A$, then
+\[
+  s=\max A.
+\]
 
 \hyperref[prf:supremum-in-the-set-is-the-maximum]{Go to proof.}
 \end{proposition}
@@ -583,11 +608,15 @@ maximum.
 \end{dependencies}
 
 \begin{propositionbox}{Infimum in the Set is the Minimum}
-\begin{proposition}[Infimum in the Set is the Minimum]
+\begin{proposition}[Infimum in the Set Is the Minimum]
 \label{prop:infimum-in-the-set-is-the-minimum}
-Let $A\subseteq\mathbb{R}$ and suppose $i=\inf A$.  If $i\in A$, then
-$i=\min A$.
-\hyperref[prf:infimum-in-the-set-is-the-minimum]{\textit{Go to proof.}}
+Let $A\subseteq\mathbb{R}$ be nonempty and bounded below, and let
+$i=\inf A$. If $i\in A$, then
+\[
+  i=\min A.
+\]
+
+\hyperref[prf:infimum-in-the-set-is-the-minimum]{Go to proof.}
 \end{proposition}
 \end{propositionbox}
 

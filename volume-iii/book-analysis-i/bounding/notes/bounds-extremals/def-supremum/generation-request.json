@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "def:supremum",
+  "kind": "definition",
+  "title": "Supremum",
+  "source": {
+    "label": "def:supremum",
+    "kind": "definition",
+    "title": "Supremum",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "bounds-extremals",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-suprema-infima.tex",
+    "source_line_start": 25,
+    "source_line_end": 43,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/def-supremum",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/def-supremum/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/def-supremum/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/def-supremum",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/def-supremum/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/def-supremum/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-suprema-infima.tex",
+      "label": "def:supremum",
+      "environment_kind": "definition",
+      "source_line_start": 25,
+      "source_line_end": 43,
+      "current_tex": "\\begin{definition}[Supremum]\n\\label{def:supremum}\nLet $(S,\\leq)$ be a partially ordered set, let $A\\subseteq S$, and let\n$s\\in S$. The element $s$ is the \\emph{supremum} of $A$, written\n$s=\\sup A$, if\n\\[\n  (\\forall a\\in A)(a\\leq s)\n\\]\nand\n\\[\n  (\\forall u\\in S)\n  \\left[\n    (\\forall a\\in A)(a\\leq u)\n    \\Longrightarrow\n    s\\leq u\n  \\right].\n\\]\nThus, $s$ is the least upper bound of $A$ in $S$.\n\\end{definition}",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

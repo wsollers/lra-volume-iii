@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "prop:every-element-lies-below-the-supremum",
+  "kind": "proposition",
+  "title": "Every Element Lies Below the Supremum",
+  "source": {
+    "label": "prop:every-element-lies-below-the-supremum",
+    "kind": "proposition",
+    "title": "Every Element Lies Below the Supremum",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "bounds-extremals",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-suprema-infima.tex",
+    "source_line_start": 1132,
+    "source_line_end": 1141,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/prop-every-element-lies-below-the-supremum",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/prop-every-element-lies-below-the-supremum/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/prop-every-element-lies-below-the-supremum/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/prop-every-element-lies-below-the-supremum",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/prop-every-element-lies-below-the-supremum/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/prop-every-element-lies-below-the-supremum/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-suprema-infima.tex",
+      "label": "prop:every-element-lies-below-the-supremum",
+      "environment_kind": "proposition",
+      "source_line_start": 1132,
+      "source_line_end": 1141,
+      "current_tex": "\\begin{proposition}[Every Element Lies Below the Supremum]\n\\label{prop:every-element-lies-below-the-supremum}\nLet $A\\subseteq\\mathbb{R}$ be nonempty and bounded above, and let\n$s=\\sup A$. Then\n\\[\n  (\\forall x\\in A)(x\\leq s).\n\\]\n\n\\hyperref[prf:every-element-lies-below-the-supremum]{Go to proof.}\n\\end{proposition}",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

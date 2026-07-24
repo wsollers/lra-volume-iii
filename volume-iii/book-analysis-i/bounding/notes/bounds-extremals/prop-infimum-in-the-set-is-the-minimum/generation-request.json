@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "prop:infimum-in-the-set-is-the-minimum",
+  "kind": "proposition",
+  "title": "Infimum in the Set Is the Minimum",
+  "source": {
+    "label": "prop:infimum-in-the-set-is-the-minimum",
+    "kind": "proposition",
+    "title": "Infimum in the Set Is the Minimum",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "bounds-extremals",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-maxima-minima.tex",
+    "source_line_start": 611,
+    "source_line_end": 620,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/prop-infimum-in-the-set-is-the-minimum",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/prop-infimum-in-the-set-is-the-minimum/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/prop-infimum-in-the-set-is-the-minimum/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/prop-infimum-in-the-set-is-the-minimum",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/prop-infimum-in-the-set-is-the-minimum/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/prop-infimum-in-the-set-is-the-minimum/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-maxima-minima.tex",
+      "label": "prop:infimum-in-the-set-is-the-minimum",
+      "environment_kind": "proposition",
+      "source_line_start": 611,
+      "source_line_end": 620,
+      "current_tex": "\\begin{proposition}[Infimum in the Set Is the Minimum]\n\\label{prop:infimum-in-the-set-is-the-minimum}\nLet $A\\subseteq\\mathbb{R}$ be nonempty and bounded below, and let\n$i=\\inf A$. If $i\\in A$, then\n\\[\n  i=\\min A.\n\\]\n\n\\hyperref[prf:infimum-in-the-set-is-the-minimum]{Go to proof.}\n\\end{proposition}",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

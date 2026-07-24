@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "thm:infimum-less-than-supremum",
+  "kind": "theorem",
+  "title": "Infimum Is Less Than or Equal to the Supremum",
+  "source": {
+    "label": "thm:infimum-less-than-supremum",
+    "kind": "theorem",
+    "title": "Infimum Is Less Than or Equal to the Supremum",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "bounds-extremals",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-suprema-infima.tex",
+    "source_line_start": 1278,
+    "source_line_end": 1286,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/thm-infimum-less-than-supremum",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/thm-infimum-less-than-supremum/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/thm-infimum-less-than-supremum/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/thm-infimum-less-than-supremum",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/thm-infimum-less-than-supremum/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/thm-infimum-less-than-supremum/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-suprema-infima.tex",
+      "label": "thm:infimum-less-than-supremum",
+      "environment_kind": "theorem",
+      "source_line_start": 1278,
+      "source_line_end": 1286,
+      "current_tex": "\\begin{theorem}[Infimum Is Less Than or Equal to the Supremum]\n\\label{thm:infimum-less-than-supremum}\nLet $A\\subseteq\\mathbb{R}$ be nonempty and bounded. Then\n\\[\n  \\inf A\\leq\\sup A.\n\\]\n\n\\hyperref[prf:infimum-less-than-supremum]{Go to proof.}\n\\end{theorem}",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

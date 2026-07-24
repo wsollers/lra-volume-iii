@@ -1,0 +1,26 @@
+\begin{definition}[Epsilon Characterization of the Infimum]
+\label{def:epsilon-characterization-of-infimum}
+Let $A\subseteq\mathbb{R}$ be nonempty and bounded below, and let
+$i\in\mathbb{R}$. Then
+\[
+  i=\inf A
+\]
+if and only if both of the following conditions hold:
+\[
+  (\forall a\in A)(i\leq a),
+\]
+and
+\[
+  (\forall\varepsilon>0)(\exists a\in A)(a<i+\varepsilon).
+\]
+Equivalently,
+\[
+  i=\inf A
+  \Longleftrightarrow
+  \left[
+    (\forall a\in A)(i\leq a)
+    \land
+    (\forall\varepsilon>0)(\exists a\in A)(i\leq a<i+\varepsilon)
+  \right].
+\]
+\end{definition}

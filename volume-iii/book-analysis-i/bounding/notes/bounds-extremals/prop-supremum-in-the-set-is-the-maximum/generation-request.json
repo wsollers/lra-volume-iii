@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "prop:supremum-in-the-set-is-the-maximum",
+  "kind": "proposition",
+  "title": "Supremum in the Set Is the Maximum",
+  "source": {
+    "label": "prop:supremum-in-the-set-is-the-maximum",
+    "kind": "proposition",
+    "title": "Supremum in the Set Is the Maximum",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "bounds-extremals",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-maxima-minima.tex",
+    "source_line_start": 523,
+    "source_line_end": 532,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/prop-supremum-in-the-set-is-the-maximum",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/prop-supremum-in-the-set-is-the-maximum/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/prop-supremum-in-the-set-is-the-maximum/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/prop-supremum-in-the-set-is-the-maximum",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/prop-supremum-in-the-set-is-the-maximum/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/prop-supremum-in-the-set-is-the-maximum/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-maxima-minima.tex",
+      "label": "prop:supremum-in-the-set-is-the-maximum",
+      "environment_kind": "proposition",
+      "source_line_start": 523,
+      "source_line_end": 532,
+      "current_tex": "\\begin{proposition}[Supremum in the Set Is the Maximum]\n\\label{prop:supremum-in-the-set-is-the-maximum}\nLet $A\\subseteq\\mathbb{R}$ be nonempty and bounded above, and let\n$s=\\sup A$. If $s\\in A$, then\n\\[\n  s=\\max A.\n\\]\n\n\\hyperref[prf:supremum-in-the-set-is-the-maximum]{Go to proof.}\n\\end{proposition}",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

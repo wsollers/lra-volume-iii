@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "def:bounded-below",
+  "kind": "definition",
+  "title": "Bounded Below",
+  "source": {
+    "label": "def:bounded-below",
+    "kind": "definition",
+    "title": "Bounded Below",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "bounds-extremals",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-upper-lower-bounds.tex",
+    "source_line_start": 330,
+    "source_line_end": 337,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/def-bounded-below",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/def-bounded-below/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/def-bounded-below/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/def-bounded-below",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/def-bounded-below/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/def-bounded-below/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-upper-lower-bounds.tex",
+      "label": "def:bounded-below",
+      "environment_kind": "definition",
+      "source_line_start": 330,
+      "source_line_end": 337,
+      "current_tex": "\\begin{definition}[Bounded Below]\n\\label{def:bounded-below}\nLet $A\\subseteq\\mathbb{R}$. The set $A$ is \\emph{bounded below} if there\nexists a lower bound of $A$ in $\\mathbb{R}$; equivalently,\n\\[\n  (\\exists \\ell\\in\\mathbb{R})(\\forall a\\in A)(\\ell\\leq a).\n\\]\n\\end{definition}",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

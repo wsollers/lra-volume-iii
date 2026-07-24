@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "thm:lub-property-implies-existence-of-suprema",
+  "kind": "theorem",
+  "title": "Least-Upper-Bound Property Implies Existence of Suprema",
+  "source": {
+    "label": "thm:lub-property-implies-existence-of-suprema",
+    "kind": "theorem",
+    "title": "Least-Upper-Bound Property Implies Existence of Suprema",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "bounds-extremals",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-suprema-infima.tex",
+    "source_line_start": 1532,
+    "source_line_end": 1552,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/thm-lub-property-implies-existence-of-suprema",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/thm-lub-property-implies-existence-of-suprema/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/thm-lub-property-implies-existence-of-suprema/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/thm-lub-property-implies-existence-of-suprema",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/thm-lub-property-implies-existence-of-suprema/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/thm-lub-property-implies-existence-of-suprema/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-suprema-infima.tex",
+      "label": "thm:lub-property-implies-existence-of-suprema",
+      "environment_kind": "theorem",
+      "source_line_start": 1532,
+      "source_line_end": 1552,
+      "current_tex": "\\begin{theorem}[Least-Upper-Bound Property Implies Existence of Suprema]\n\\label{thm:lub-property-implies-existence-of-suprema}\nLet $A\\subseteq\\mathbb{R}$ be nonempty and bounded above. Then there\nexists a unique $s\\in\\mathbb{R}$ such that\n\\[\n  s=\\sup A.\n\\]\nEquivalently,\n\\[\n  (\\forall A\\subseteq\\mathbb{R})\n  \\left[\n    A\\neq\\varnothing\n    \\land\n    (\\exists u\\in\\mathbb{R})(\\forall a\\in A)(a\\leq u)\n    \\Longrightarrow\n    (\\exists!s\\in\\mathbb{R})(s=\\sup A)\n  \\right].\n\\]\n\n\\hyperref[prf:lub-property-implies-existence-of-suprema]{Go to proof.}\n\\end{theorem}",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

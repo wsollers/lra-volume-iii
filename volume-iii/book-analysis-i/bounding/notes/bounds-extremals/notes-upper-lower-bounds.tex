@@ -16,10 +16,14 @@ require the candidate to be sharp or to belong to the set.
 \begin{definitionbox}{Bound}
 \begin{definition}[Bound]
 \label{def:bound}
-Let $(S,\leq)$ be an ordered set, let $A\subseteq S$, and let $b\in S$.
-The element $b$ is a \emph{bound} of $A$ if $b$ is either an upper bound or
-a lower bound of $A$; that is, if $a\leq b$ for every $a\in A$, or
-$b\leq a$ for every $a\in A$.
+Let $(S,\leq)$ be a partially ordered set, let $A\subseteq S$, and let
+$b\in S$. The element $b$ is a \emph{bound} of $A$ if it is either an
+upper bound or a lower bound of $A$; equivalently,
+\[
+  \bigl[(\forall a\in A)(a\leq b)\bigr]
+  \lor
+  \bigl[(\forall a\in A)(b\leq a)\bigr].
+\]
 \end{definition}
 \end{definitionbox}
 
@@ -100,9 +104,11 @@ This is intentional: nonemptiness is not part of being a bound.
 \begin{definitionbox}{Upper Bound in the Real Line}
 \begin{definition}[Upper Bound in the Real Line]
 \label{def:real-upper-bound}
-Let $A\subseteq\mathbb{R}$ and let $u\in\mathbb{R}$.  The element $u$ is an
-\emph{upper bound} of $A$ in the real line if every element of $A$ is less
-than or equal to $u$.
+Let $A\subseteq\mathbb{R}$ and let $u\in\mathbb{R}$. The number $u$ is an
+\emph{upper bound} of $A$ if
+\[
+  (\forall a\in A)(a\leq u).
+\]
 \end{definition}
 \end{definitionbox}
 
@@ -172,9 +178,11 @@ The statement $(\forall a\in A)(a\leq u)$ is then vacuously true.
 \begin{definitionbox}{Lower Bound in the Real Line}
 \begin{definition}[Lower Bound in the Real Line]
 \label{def:real-lower-bound}
-Let $A\subseteq\mathbb{R}$ and let $\ell\in\mathbb{R}$.  The element
-$\ell$ is a \emph{lower bound} of $A$ in the real line if every
-element of $A$ is greater than or equal to $\ell$.
+Let $A\subseteq\mathbb{R}$ and let $\ell\in\mathbb{R}$. The number $\ell$
+is a \emph{lower bound} of $A$ if
+\[
+  (\forall a\in A)(\ell\leq a).
+\]
 \end{definition}
 \end{definitionbox}
 
@@ -244,8 +252,11 @@ The statement $(\forall a\in A)(\ell\leq a)$ is then vacuously true.
 \begin{definitionbox}{Bounded Above}
 \begin{definition}[Bounded Above]
 \label{def:bounded-above}
-Let $A\subseteq\mathbb{R}$.  The set $A$ is \emph{bounded above} if it has
-at least one upper bound in $\mathbb{R}$.
+Let $A\subseteq\mathbb{R}$. The set $A$ is \emph{bounded above} if there
+exists an upper bound of $A$ in $\mathbb{R}$; equivalently,
+\[
+  (\exists u\in\mathbb{R})(\forall a\in A)(a\leq u).
+\]
 \end{definition}
 \end{definitionbox}
 
@@ -318,8 +329,11 @@ bound of $\varnothing$, so an upper bound exists.
 \begin{definitionbox}{Bounded Below}
 \begin{definition}[Bounded Below]
 \label{def:bounded-below}
-Let $A\subseteq\mathbb{R}$.  The set $A$ is \emph{bounded below} if it has
-at least one lower bound in $\mathbb{R}$.
+Let $A\subseteq\mathbb{R}$. The set $A$ is \emph{bounded below} if there
+exists a lower bound of $A$ in $\mathbb{R}$; equivalently,
+\[
+  (\exists \ell\in\mathbb{R})(\forall a\in A)(\ell\leq a).
+\]
 \end{definition}
 \end{definitionbox}
 
@@ -392,8 +406,15 @@ bound of $\varnothing$, so a lower bound exists.
 \begin{definitionbox}{Bounded Set}
 \begin{definition}[Bounded Set]
 \label{def:bounded}
-Let $A\subseteq\mathbb{R}$.  The set $A$ is \emph{bounded} if it is bounded
-above and bounded below.
+Let $A\subseteq\mathbb{R}$. The set $A$ is \emph{bounded} if it is bounded
+above and bounded below; equivalently,
+\[
+  (\exists \ell,u\in\mathbb{R})(\forall a\in A)(\ell\leq a\leq u).
+\]
+Equivalently, $A$ is bounded if
+\[
+  (\exists M\geq 0)(\forall a\in A)(|a|\leq M).
+\]
 \end{definition}
 \end{definitionbox}
 

@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "prop:uniqueness-of-the-maximum",
+  "kind": "proposition",
+  "title": "Uniqueness of the Maximum",
+  "source": {
+    "label": "prop:uniqueness-of-the-maximum",
+    "kind": "proposition",
+    "title": "Uniqueness of the Maximum",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "bounds-extremals",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-maxima-minima.tex",
+    "source_line_start": 195,
+    "source_line_end": 204,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/prop-uniqueness-of-the-maximum",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/prop-uniqueness-of-the-maximum/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/prop-uniqueness-of-the-maximum/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/prop-uniqueness-of-the-maximum",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/prop-uniqueness-of-the-maximum/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/prop-uniqueness-of-the-maximum/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-maxima-minima.tex",
+      "label": "prop:uniqueness-of-the-maximum",
+      "environment_kind": "proposition",
+      "source_line_start": 195,
+      "source_line_end": 204,
+      "current_tex": "\\begin{proposition}[Uniqueness of the Maximum]\n\\label{prop:uniqueness-of-the-maximum}\nLet $A\\subseteq\\mathbb{R}$. If $m_1,m_2\\in\\mathbb{R}$ are both maxima of\n$A$, then\n\\[\n  m_1=m_2.\n\\]\n\n\\hyperref[prf:uniqueness-of-the-maximum]{Go to proof.}\n\\end{proposition}",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

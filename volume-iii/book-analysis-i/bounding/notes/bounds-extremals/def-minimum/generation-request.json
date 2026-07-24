@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "def:minimum",
+  "kind": "definition",
+  "title": "Minimum",
+  "source": {
+    "label": "def:minimum",
+    "kind": "definition",
+    "title": "Minimum",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "bounds-extremals",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-maxima-minima.tex",
+    "source_line_start": 106,
+    "source_line_end": 115,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/def-minimum",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/def-minimum/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/def-minimum/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/def-minimum",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/def-minimum/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/def-minimum/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-maxima-minima.tex",
+      "label": "def:minimum",
+      "environment_kind": "definition",
+      "source_line_start": 106,
+      "source_line_end": 115,
+      "current_tex": "\\begin{definition}[Minimum]\n\\label{def:minimum}\nLet $A\\subseteq\\mathbb{R}$ and let $n\\in\\mathbb{R}$. The number $n$ is the\n\\emph{minimum} of $A$, written $n=\\min A$, if\n\\[\n  n\\in A\n  \\land\n  (\\forall a\\in A)(n\\leq a).\n\\]\n\\end{definition}",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

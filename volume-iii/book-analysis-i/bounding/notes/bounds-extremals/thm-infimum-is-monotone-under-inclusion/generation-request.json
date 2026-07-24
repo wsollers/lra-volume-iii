@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "thm:infimum-is-monotone-under-inclusion",
+  "kind": "theorem",
+  "title": "Infimum Is Antitone Under Inclusion",
+  "source": {
+    "label": "thm:infimum-is-monotone-under-inclusion",
+    "kind": "theorem",
+    "title": "Infimum Is Antitone Under Inclusion",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "bounds-extremals",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-suprema-infima.tex",
+    "source_line_start": 860,
+    "source_line_end": 869,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/thm-infimum-is-monotone-under-inclusion",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/thm-infimum-is-monotone-under-inclusion/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/thm-infimum-is-monotone-under-inclusion/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/thm-infimum-is-monotone-under-inclusion",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/thm-infimum-is-monotone-under-inclusion/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/thm-infimum-is-monotone-under-inclusion/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-suprema-infima.tex",
+      "label": "thm:infimum-is-monotone-under-inclusion",
+      "environment_kind": "theorem",
+      "source_line_start": 860,
+      "source_line_end": 869,
+      "current_tex": "\\begin{theorem}[Infimum Is Antitone Under Inclusion]\n\\label{thm:infimum-is-monotone-under-inclusion}\nLet $A,B\\subseteq\\mathbb{R}$ be nonempty and bounded below. If\n$A\\subseteq B$, then\n\\[\n  \\inf B\\leq\\inf A.\n\\]\n\n\\hyperref[prf:infimum-is-monotone-under-inclusion]{Go to proof.}\n\\end{theorem}",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

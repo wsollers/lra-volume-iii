@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "prop:minimum-implies-infimum",
+  "kind": "proposition",
+  "title": "Minimum Implies Infimum",
+  "source": {
+    "label": "prop:minimum-implies-infimum",
+    "kind": "proposition",
+    "title": "Minimum Implies Infimum",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "bounds-extremals",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-maxima-minima.tex",
+    "source_line_start": 442,
+    "source_line_end": 450,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/prop-minimum-implies-infimum",
+      "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/prop-minimum-implies-infimum/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/prop-minimum-implies-infimum/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/prop-minimum-implies-infimum",
+    "artifact": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/prop-minimum-implies-infimum/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/prop-minimum-implies-infimum/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/bounding/notes/bounds-extremals/notes-maxima-minima.tex",
+      "label": "prop:minimum-implies-infimum",
+      "environment_kind": "proposition",
+      "source_line_start": 442,
+      "source_line_end": 450,
+      "current_tex": "\\begin{proposition}[Minimum Implies Infimum]\n\\label{prop:minimum-implies-infimum}\nLet $A\\subseteq\\mathbb{R}$ and let $n\\in\\mathbb{R}$. If $n=\\min A$, then\n\\[\n  n=\\inf A.\n\\]\n\n\\hyperref[prf:minimum-implies-infimum]{Go to proof.}\n\\end{proposition}",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}
