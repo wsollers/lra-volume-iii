@@ -29,9 +29,8 @@ Let $A \subseteq \mathbb{R}$ and let $f:A \to \mathbb{R}$. The function $f$ is u
 
 \begin{remark*}[Predicate reading]
 \[
-  f\colon A\to\mathbb{R},\\
-
 \begin{aligned}
+  f\colon A\to\mathbb{R},\\
 \operatorname{IsUniformlyContinuous}(f,A,\mathbb R,\mathbb R)
 &\Longleftrightarrow
 \forall \varepsilon > 0 \; \exists \delta > 0 \; \forall x,u \in A\\
@@ -56,12 +55,13 @@ Let $A \subseteq \mathbb{R}$ and let $f:A \to \mathbb{R}$. The function $f$ is u
 
 \begin{remark*}[Negation predicate reading]
 \[
+\begin{aligned}
   f\colon A\to\mathbb{R},\\
-
 \neg \operatorname{IsUniformlyContinuous}(f,A,\mathbb R,\mathbb R)
 \Longleftrightarrow
 \exists \varepsilon > 0 \; \forall \delta > 0 \; \exists x,u \in A \;
 (|x-u| < \delta \land |f(x)-f(u)| \ge \varepsilon).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -185,12 +185,11 @@ Uniform continuity demands that a single proximity scale $\delta$ answers any pr
 
 \begin{remark*}[Predicate reading]
 \[
+\begin{aligned}
   f\colon A\to\mathbb{R},\qquad
   g\colon A\to\mathbb{R},\qquad
   cf\colon A\to\mathbb{R},\qquad
   fg\colon A\to\mathbb{R},\\
-
-\begin{aligned}
 &\forall A \subseteq \mathbb{R}\; \forall f,g : A \to \mathbb{R}\; \forall c \in \mathbb{R}:\\
 &\qquad\bigl(\operatorname{IsUniformlyContinuous}(f,A,\mathbb R,\mathbb R) \land \operatorname{IsUniformlyContinuous}(g,A,\mathbb R,\mathbb R)\bigr) \Longrightarrow \bigl(\operatorname{IsUniformlyContinuous}(f+g,A,\mathbb R,\mathbb R) \land \operatorname{IsUniformlyContinuous}(f-g,A,\mathbb R,\mathbb R) \land \operatorname{IsUniformlyContinuous}(cf,A,\mathbb R,\mathbb R)\bigr),\\
 &\exists A \subseteq \mathbb{R}\; \exists f,g : A \to \mathbb{R}:\quad \operatorname{IsUniformlyContinuous}(f,A,\mathbb R,\mathbb R) \land \operatorname{IsUniformlyContinuous}(g,A,\mathbb R,\mathbb R) \land \neg \operatorname{IsUniformlyContinuous}(fg,A,\mathbb R,\mathbb R).
@@ -243,11 +242,10 @@ Let $A \subseteq \mathbb{R}$ be bounded, and let $f,g:A \to \mathbb{R}$ be unifo
 
 \begin{remark*}[Predicate reading]
 \[
+\begin{aligned}
   f\colon A\to\mathbb{R},\qquad
   g\colon A\to\mathbb{R},\qquad
   fg\colon A\to\mathbb{R},\\
-
-\begin{aligned}
 &\text{Assume } A \subseteq \mathbb{R} \text{ is bounded and } f,g:A \to \mathbb{R}.\\
 &\operatorname{IsUniformlyContinuous}(f,A,\mathbb R,\mathbb R) \land \operatorname{IsUniformlyContinuous}(g,A,\mathbb R,\mathbb R)\\
 &\qquad\Longrightarrow \operatorname{IsUniformlyContinuous}(fg,A,\mathbb R,\mathbb R),\\
@@ -342,12 +340,13 @@ Let $A \subseteq \mathbb{R}$ and let $f:A \to \mathbb{R}$. Then $f$ is uniformly
 
 \begin{remark*}[Predicate reading]
 \[
+\begin{aligned}
   f\colon A\to\mathbb{R},\\
-
 \operatorname{IsUniformlyContinuous}(f,A,\mathbb R,\mathbb R)
 \Longleftrightarrow
 \forall x_n,y_n:\mathbb{N} \to A\;
 \bigl(|x_n - y_n| \to 0 \Rightarrow |f(x_n) - f(y_n)| \to 0\bigr).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -371,9 +370,8 @@ Let $A \subseteq \mathbb{R}$ and let $f:A \to \mathbb{R}$. Then $f$ is uniformly
 
 \begin{remark*}[Negation predicate reading]
 \[
-  f\colon A\to\mathbb{R},\\
-
 \begin{aligned}
+  f\colon A\to\mathbb{R},\\
 &\exists A \subseteq \mathbb{R}\;\exists f:A \to \mathbb{R}:\\
 &\quad \Bigl(\operatorname{IsUniformlyContinuous}(f,A,\mathbb R,\mathbb R) \land \exists x_n,y_n:\mathbb{N}\to A\;
 \bigl(|x_n - y_n| \to 0 \land \neg(|f(x_n) - f(y_n)| \to 0)\bigr)\Bigr)\\
@@ -500,9 +498,10 @@ Let $a,b \in \mathbb{R}$ with $a<b$ and let $f:[a,b]\to\mathbb{R}$ be continuous
 
 \begin{remark*}[Predicate reading]
 \[
+\begin{aligned}
   f\colon A\to\mathbb{R},\\
-
 \operatorname{IsContinuous}(f,[a,b],\mathbb R,\mathbb R) \Rightarrow \operatorname{IsUniformlyContinuous}(f,[a,b],\mathbb R,\mathbb R).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -518,9 +517,10 @@ Let $a,b \in \mathbb{R}$ with $a<b$ and let $f:[a,b]\to\mathbb{R}$ be continuous
 
 \begin{remark*}[Negation predicate reading]
 \[
+\begin{aligned}
   f\colon A\to\mathbb{R},\\
-
 \operatorname{IsContinuous}(f,[a,b],\mathbb R,\mathbb R) \land \neg \operatorname{IsUniformlyContinuous}(f,[a,b],\mathbb R,\mathbb R).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -580,9 +580,10 @@ Let $S \subseteq \mathbb{R}$, let $f:S \to \mathbb{R}$, and let $(x_n)$ be a seq
 
 \begin{remark*}[Predicate reading]
 \[
+\begin{aligned}
   f\colon A\to\mathbb{R},\\
-
 \operatorname{IsUniformlyContinuous}(f,S,\mathbb R,\mathbb R) \land \operatorname{IsCauchy}(x_n,\mathbb{R}) \;\Rightarrow\; \operatorname{IsCauchy}(f(x_n),\mathbb{R}).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -620,9 +621,10 @@ Let $A \subseteq \mathbb{R}$, let $f:A \to \mathbb{R}$, and let $K>0$. The funct
 
 \begin{remark*}[Predicate reading]
 \[
+\begin{aligned}
   f\colon A\to\mathbb{R},\\
-
 \operatorname{IsLipschitz}(f,A,\mathbb{R},\mathbb{R},\mathbb{R}) \coloneqq (K>0) \land \forall x,u \in A\;\bigl(|f(x)-f(u)| \le K|x-u|\bigr).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -637,11 +639,12 @@ Let $A \subseteq \mathbb{R}$, let $f:A \to \mathbb{R}$, and let $K>0$. The funct
 
 \begin{remark*}[Negation predicate reading]
 \[
+\begin{aligned}
   f\colon A\to\mathbb{R},\\
-
 \neg \operatorname{IsLipschitz}(f,A,\mathbb{R},\mathbb{R},\mathbb{R}) \Longleftrightarrow
 \neg(A\subseteq\mathbb{R})\lor\neg(f:A\to\mathbb{R})\lor(K\le 0)\lor
 \exists x,u \in A\;\bigl(|f(x)-f(u)| > K|x-u|\bigr).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -732,9 +735,10 @@ Let $A \subseteq \mathbb{R}$ and $f:A \to \mathbb{R}$. If there exists $K \ge 0$
 
 \begin{remark*}[Predicate reading]
 \[
+\begin{aligned}
   f\colon A\to\mathbb{R},\\
-
 \bigl[\exists K \ge 0\; \operatorname{IsLipschitz}(f,A,\mathbb{R},\mathbb{R},\mathbb{R})\bigr] \Rightarrow \operatorname{IsUniformlyContinuous}(f,A,\mathbb R,\mathbb R).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -804,13 +808,12 @@ Let $A\subseteq \mathbb{R}$ and let $f,g:A\to\mathbb{R}$ be Lipschitz with const
 
 \begin{remark*}[Predicate reading]
 \[
+\begin{aligned}
   f\colon A\to\mathbb{R},\qquad
   g\colon A\to\mathbb{R},\qquad
   cf\colon A\to\mathbb{R},\qquad
   h\colon A\to\mathbb{R},\qquad
   fg\colon A\to\mathbb{R},\\
-
-\begin{aligned}
 &\operatorname{IsLipschitz}(f,A,\mathbb{R},\mathbb{R},\mathbb{R})\land \operatorname{IsLipschitz}(g,A,\mathbb{R},\mathbb{R},\mathbb{R}) \\
 &\Longrightarrow \Bigl[\forall c\in\mathbb{R}:\operatorname{IsLipschitz}(cf,A,\mathbb{R},\mathbb{R},\mathbb{R})\Bigr]\\
 &\qquad\land \operatorname{IsLipschitz}(f+g,A,\mathbb{R},\mathbb{R},\mathbb{R})\land \operatorname{IsLipschitz}(f-g,A,\mathbb{R},\mathbb{R},\mathbb{R})\\
@@ -857,9 +860,10 @@ Any such pair $(\alpha,K)$ is called a bi-Lipschitz constant pair for $f$ on $A$
 
 \begin{remark*}[Predicate reading]
 \[
+\begin{aligned}
   f\colon A\to\mathbb{R},\\
-
 \operatorname{IsBiLipschitz}(f,A,\mathbb{R},\mathbb{R},\mathbb{R},\mathbb{R}) \coloneqq \left(0<\alpha\le K\right) \land \forall x,u\in A\; \left(\alpha|x-u|\le |f(x)-f(u)|\le K|x-u|\right).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -876,9 +880,10 @@ Any such pair $(\alpha,K)$ is called a bi-Lipschitz constant pair for $f$ on $A$
 
 \begin{remark*}[Negation predicate reading]
 \[
+\begin{aligned}
   f\colon A\to\mathbb{R},\\
-
 \neg\operatorname{IsBiLipschitz}(f,A,\mathbb{R},\mathbb{R},\mathbb{R},\mathbb{R}) \Longleftrightarrow \neg(0<\alpha\le K) \lor \exists x,u\in A\; \left(|f(x)-f(u)|<\alpha|x-u| \lor |f(x)-f(u)|>K|x-u|\right).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -972,11 +977,12 @@ $\alpha |x-y| \le |f(x)-f(y)| \le K |x-y|$ for all $x,y \in A$. Then $f$ is inje
 
 \begin{remark*}[Predicate reading]
 \[
+\begin{aligned}
   f\colon A\to\mathbb{R},\\
-
 \operatorname{IsBiLipschitz}(f,A,\mathbb{R},\mathbb{R},\mathbb{R},\mathbb{R})
 \Rightarrow
 \bigl(\operatorname{Injective}(f,A,\mathbb{R}) \land \operatorname{IsBiLipschitz}(f^{-1},f(A),1/K,1/\alpha,c,C)\bigr).
+\end{aligned}
 \]
 \end{remark*}
 

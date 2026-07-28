@@ -33,12 +33,13 @@ $L$ is the \textbf{right-hand limit} of $f$ at $c$ if
 
 \begin{remark*}[Predicate reading]
 \[
+\begin{aligned}
   f\colon A\to\mathbb{R},\\
-
   \operatorname{RightLimit}(L,f,c,\mathbb{R},\mathbb{R})
   \;\coloneqq\;
   \forall\varepsilon>0\;\exists\delta>0\;\forall x\in A\;
   0<x-c<\delta\Rightarrow |f(x)-L|<\varepsilon.
+\end{aligned}
 \]
 \end{remark*}
 
@@ -51,9 +52,10 @@ $L$ is the \textbf{right-hand limit} of $f$ at $c$ if
 
 \begin{remark*}[Negation predicate reading]
 \[
+\begin{aligned}
   f\colon A\to\mathbb{R},\\
-
   \neg\,\operatorname{RightLimit}(L,f,c,\mathbb{R},\mathbb{R}).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -131,12 +133,13 @@ $L$ is the \textbf{left-hand limit} of $f$ at $c$ if
 
 \begin{remark*}[Predicate reading]
 \[
+\begin{aligned}
   f\colon A\to\mathbb{R},\\
-
   \operatorname{LeftLimit}(L,f,c,\mathbb{R},\mathbb{R})
   \;\coloneqq\;
   \forall\varepsilon>0\;\exists\delta>0\;\forall x\in A\;
   0<c-x<\delta\Rightarrow |f(x)-L|<\varepsilon.
+\end{aligned}
 \]
 \end{remark*}
 
@@ -149,9 +152,10 @@ $L$ is the \textbf{left-hand limit} of $f$ at $c$ if
 
 \begin{remark*}[Negation predicate reading]
 \[
+\begin{aligned}
   f\colon A\to\mathbb{R},\\
-
   \neg\,\operatorname{LeftLimit}(L,f,c,\mathbb{R},\mathbb{R}).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -238,12 +242,13 @@ $x_n\to c$, one has $f(x_n)\to L$.
 
 \begin{remark*}[Predicate reading]
 \[
+\begin{aligned}
   f\colon A\to\mathbb{R},\\
-
   \operatorname{RightLimit}(L,f,c,\mathbb{R},\mathbb{R})
   \;\Longleftrightarrow\;
   \forall (x_n)\subseteq A\cap(c,\infty)\;
   x_n\to c\Rightarrow f(x_n)\to L.
+\end{aligned}
 \]
 \end{remark*}
 
@@ -291,12 +296,13 @@ $x_n\to c$, one has $f(x_n)\to L$.
 
 \begin{remark*}[Predicate reading]
 \[
+\begin{aligned}
   f\colon A\to\mathbb{R},\\
-
   \operatorname{LeftLimit}(L,f,c,\mathbb{R},\mathbb{R})
   \;\Longleftrightarrow\;
   \forall (x_n)\subseteq A\cap(-\infty,c)\;
   x_n\to c\Rightarrow f(x_n)\to L.
+\end{aligned}
 \]
 \end{remark*}
 
@@ -347,11 +353,12 @@ $\lim_{x\to c^-}f(x)=L$.
 
 \begin{remark*}[Predicate reading]
 \[
+\begin{aligned}
   f\colon A\to\mathbb{R},\\
-
   \operatorname{TendsTo}(f,c,L,\mathbb{R},\mathbb{R})
   \;\Longleftrightarrow\;
   \operatorname{RightLimit}(L,f,c,\mathbb{R},\mathbb{R})\wedge\operatorname{LeftLimit}(L,f,c,\mathbb{R},\mathbb{R}).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -372,11 +379,12 @@ $\lim_{x\to c^-}f(x)=L$.
 
 \begin{remark*}[Negation predicate reading]
 \[
+\begin{aligned}
   f\colon A\to\mathbb{R},\\
-
   \neg\,\operatorname{TendsTo}(f,c,L,\mathbb{R},\mathbb{R})
   \;\Longleftrightarrow\;
   \neg\,\operatorname{RightLimit}(L,f,c,\mathbb{R},\mathbb{R})\vee\neg\,\operatorname{LeftLimit}(L,f,c,\mathbb{R},\mathbb{R}).
+\end{aligned}
 \]
 \end{remark*}
 

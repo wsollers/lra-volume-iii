@@ -37,11 +37,12 @@ $E\subseteq A$. The oscillation of $f$ on $E$ is the extended real number
 
 \begin{remark*}[Predicate reading]
 \[
+\begin{aligned}
   f\colon A\to\mathbb{R},\\
-
 \operatorname{Oscillation}(\omega,f,E,\mathbb{R})
 \coloneqq
 \omega=\sup\{\,|f(x_1)-f(x_2)|:x_1,x_2\in E\,\}.
+\end{aligned}
 \]
 \end{remark*}
 
@@ -59,11 +60,12 @@ $E\subseteq A$. The oscillation of $f$ on $E$ is the extended real number
 
 \begin{remark*}[Negation predicate reading]
 \[
+\begin{aligned}
   f\colon A\to\mathbb{R},\\
-
 \neg\operatorname{Oscillation}(\omega,f,E,\mathbb{R})
 \Longleftrightarrow
 \omega\ne\sup\{\,|f(x_1)-f(x_2)|:x_1,x_2\in E\,\}.
+\end{aligned}
 \]
 \end{remark*}
 
@@ -168,11 +170,12 @@ with $\omega(f;A)$ denoting the oscillation of $f$ on the set $A$. Because the f
 
 \begin{remark*}[Predicate reading]
 \[
+\begin{aligned}
   f\colon A\to\mathbb{R},\\
-
 \operatorname{Oscillation}(\omega,f,x_0,\mathbb{R}) \coloneqq
 \lim_{\delta \to 0^+} \omega\bigl(f;\,U_\delta(x_0)\cap E\bigr) = \omega,
 \quad U_\delta(x_0)=\{x \in \mathbb{R}: |x-x_0|<\delta\}.
+\end{aligned}
 \]
 \end{remark*}
 
@@ -191,13 +194,14 @@ with $\omega(f;A)$ denoting the oscillation of $f$ on the set $A$. Because the f
 
 \begin{remark*}[Negation predicate reading]
 \[
+\begin{aligned}
   f\colon A\to\mathbb{R},\\
-
 \neg\operatorname{Oscillation}(\omega,f,x_0,\mathbb{R})
 \Longleftrightarrow
 \Bigl[\exists \delta_0>0:\, U_{\delta_0}(x_0)\cap E = \varnothing\Bigr]
 \lor
 \Bigl(\exists \varepsilon_0>0\; \forall \delta>0\; \exists r\;(0<r<\delta \land |\omega(f;U_r(x_0)\cap E)-\omega| \ge \varepsilon_0)\Bigr).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -296,9 +300,10 @@ Let $A \subseteq \mathbb{R}$, let $f \colon A \to \mathbb{R}$, and let $c \in A$
 
 \begin{remark*}[Predicate reading]
 \[
+\begin{aligned}
   f\colon A\to\mathbb{R},\\
-
 \operatorname{IsContinuous}(f,c,\mathbb{R},\mathbb{R}) \Longleftrightarrow \operatorname{Oscillation}(0,f,c,\mathbb{R}).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -317,9 +322,10 @@ Let $A \subseteq \mathbb{R}$, let $f \colon A \to \mathbb{R}$, and let $c \in A$
 
 \begin{remark*}[Negation predicate reading]
 \[
+\begin{aligned}
   f\colon A\to\mathbb{R},\\
-
 \neg\bigl(\operatorname{IsContinuous}(f,c,\mathbb{R},\mathbb{R}) \Longleftrightarrow \operatorname{Oscillation}(0,f,c,\mathbb{R})\bigr).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -416,10 +422,9 @@ x\in D(f)
 
 \begin{remark*}[Predicate reading]
 \[
+\begin{aligned}
   f\colon A\to\mathbb{R},\qquad
   x\colon A\to\mathbb{R},\\
-
-\begin{aligned}
 &x\in D(f)
 \Longleftrightarrow
 \operatorname{IsDiscontinuous}(f,x,\mathbb{R},\mathbb{R})\\
@@ -444,10 +449,9 @@ x\in D(f)
 
 \begin{remark*}[Negation predicate reading]
 \[
+\begin{aligned}
   f\colon A\to\mathbb{R},\qquad
   x\colon A\to\mathbb{R},\\
-
-\begin{aligned}
 \exists x\in E\;\Bigl(
 &\exists \omega\;(\operatorname{IsDiscontinuous}(f,x,\mathbb{R},\mathbb{R})\land \operatorname{Oscillation}(f,x,\omega,\mathbb{R})\land \omega=0)\;\lor\\
 &\exists \omega\;(\neg\operatorname{IsDiscontinuous}(f,x,\mathbb{R},\mathbb{R})\land \operatorname{Oscillation}(f,x,\omega,\mathbb{R})\land \omega>0)\;\lor\\

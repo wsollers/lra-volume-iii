@@ -27,12 +27,13 @@ then $f$ has a \emph{strict relative minimum} at $c$.
 
 \begin{remark*}[Predicate reading]
 \[
+\begin{aligned}
   f\colon A\to\mathbb{R},\\
-
 \operatorname{IsLocalMinimum}(f,c,A)
 \;\Longleftrightarrow\;
 \exists \delta > 0\;\forall x \in A\;
 \bigl(\operatorname{Within}(x, c, \delta) \implies f(c) \leq f(x)\bigr).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -74,12 +75,13 @@ then $f$ has a \emph{strict relative maximum} at $c$.
 
 \begin{remark*}[Predicate reading]
 \[
+\begin{aligned}
   f\colon A\to\mathbb{R},\\
-
 \operatorname{IsLocalMaximum}(f,c,A)
 \;\Longleftrightarrow\;
 \exists \delta > 0\;\forall x \in A\;
 \bigl(\operatorname{Within}(x, c, \delta) \implies f(x) \leq f(c)\bigr).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -112,11 +114,12 @@ Let $A \subseteq \mathbb{R}$, let $f : A \to \mathbb{R}$, and let $c \in A$. We 
 
 \begin{remark*}[Predicate reading]
 \[
+\begin{aligned}
   f\colon A\to\mathbb{R},\\
-
 \operatorname{IsLocalExtremum}(f,c,A)
 \;\Longleftrightarrow\;
 \operatorname{IsLocalMinimum}(f,c,A) \;\lor\; \operatorname{IsLocalMaximum}(f,c,A).
+\end{aligned}
 \]
 \end{remark*}
 

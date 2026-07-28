@@ -34,11 +34,12 @@ In this case $f'_-(c) = L$.
 
 \begin{remark*}[Predicate reading]
 \[
+\begin{aligned}
   f\colon A\to\mathbb{R},\\
-
 \operatorname{LeftDerivative}(L,f,c,\mathbb{R},\mathbb{R})
 \;\Longleftrightarrow\;
 \operatorname{LeftLimit}\!\left(\lambda x.\,\frac{f(x)-f(c)}{x-c},\, c,\, L\right).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -51,9 +52,10 @@ In this case $f'_-(c) = L$.
 
 \begin{remark*}[Negation predicate reading]
 \[
+\begin{aligned}
   f\colon A\to\mathbb{R},\\
-
 \forall L \in \mathbb{R}\;\lnot\operatorname{LeftDerivative}(L,f,c,\mathbb{R},\mathbb{R}).
+\end{aligned}
 \]
 No finite $L$ is the left-hand limit of the difference quotient.
 \end{remark*}
@@ -111,11 +113,12 @@ In this case $f'_+(c) = L$.
 
 \begin{remark*}[Predicate reading]
 \[
+\begin{aligned}
   f\colon A\to\mathbb{R},\\
-
 \operatorname{RightDerivative}(L,f,c,\mathbb{R},\mathbb{R})
 \;\Longleftrightarrow\;
 \operatorname{RightLimit}\!\left(\lambda x.\,\frac{f(x)-f(c)}{x-c},\, c,\, L\right).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -128,9 +131,10 @@ In this case $f'_+(c) = L$.
 
 \begin{remark*}[Negation predicate reading]
 \[
+\begin{aligned}
   f\colon A\to\mathbb{R},\\
-
 \forall L \in \mathbb{R}\;\lnot\operatorname{RightDerivative}(L,f,c,\mathbb{R},\mathbb{R}).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -199,9 +203,10 @@ That is: either a one-sided derivative fails to exist, or both exist but are une
 
 \begin{remark*}[Negation predicate reading]
 \[
+\begin{aligned}
   f\colon A\to\mathbb{R},\\
-
 \neg\,\operatorname{Derivative}(D,f,a,\mathbb{R},\mathbb{R}).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -239,6 +244,7 @@ This theorem decomposes differentiability at an interior point into two one-side
 \phantomsection\label{ex:abs-corner}
 For \(f(x)=|x|\) at \(c=0\), the one-sided difference quotients are
 \[
+\begin{aligned}
   \frac{|x|-0}{x-0}
   =
   \frac{|x|}{x}
@@ -247,6 +253,7 @@ For \(f(x)=|x|\) at \(c=0\), the one-sided difference quotients are
     -1, & x<0,\\
     1, & x>0.
   \end{cases}
+\end{aligned}
 \]
 Thus \(f'_-(0)=-1\) and \(f'_+(0)=1\). The two values disagree, so the
 two-sided derivative does not exist at \(0\), even though \(f\) is continuous

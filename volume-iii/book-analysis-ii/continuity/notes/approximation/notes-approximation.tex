@@ -50,11 +50,12 @@ Then there exists a step function $s_\varepsilon:[a,b]\to\mathbb{R}$ such that
 
 \begin{remark*}[Negation predicate reading]
 \[
+\begin{aligned}
   s\colon A\to\mathbb{R},\\
-
 \forall s:[a,b]\to\mathbb{R}\;
 \Bigl(\operatorname{IsStepFunction}(s,[a,b]) \Rightarrow
 \exists x\in[a,b]\;(|f(x)-s(x)|\ge\varepsilon)\Bigr).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -145,13 +146,14 @@ for every $k\in\{1,\ldots,m\}$.
 
 \begin{remark*}[Predicate reading]
 \[
+\begin{aligned}
   g\colon A\to\mathbb{R},\\
-
 \operatorname{IsPiecewiseLinear}(g,[a,b]) \coloneqq
 \exists m \in \mathbb{N}\;\Bigl(m \ge 1 \land
 \exists x_0,\ldots,x_m \in [a,b]\;
 \bigl[a=x_0 < \cdots < x_m = b \land
 \forall k \in \{1,\ldots,m\}\; g|_{[x_{k-1},x_k]} \text{ is affine}\bigr]\Bigr).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -172,8 +174,8 @@ for every $k\in\{1,\ldots,m\}$.
 
 \begin{remark*}[Negation predicate reading]
 \[
+\begin{aligned}
   g\colon A\to\mathbb{R},\\
-
 \neg\operatorname{IsPiecewiseLinear}(g,[a,b])
 \Longleftrightarrow
 \forall m \in \mathbb{N}\;\Bigl(m \ge 1 \Rightarrow
@@ -181,6 +183,7 @@ for every $k\in\{1,\ldots,m\}$.
 \bigl[a=x_0 < \cdots < x_m = b
 \Rightarrow
 \exists k \in \{1,\ldots,m\}\; g|_{[x_{k-1},x_k]} \text{ is not affine}\bigr]\Bigr).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -335,12 +338,13 @@ Let $f:[a,b]\to\mathbb{R}$ be continuous. For every $\varepsilon>0$ there exists
 
 \begin{remark*}[Predicate reading]
 \[
+\begin{aligned}
   f\colon A\to\mathbb{R},\\
-
 \operatorname{IsContinuous}(f,[a,b],\mathbb{R},\mathbb{R})
 \Longrightarrow
 \forall \varepsilon>0\;\exists p\in\mathbb{R}[x]\;
 \bigl(\|f-p\|_{\infty,[a,b]}<\varepsilon\bigr).
+\end{aligned}
 \]
 \end{remark*}
 

@@ -87,12 +87,13 @@ Let $I \subseteq \mathbb{R}$ be an interval, let $f:I \to \mathbb{R}$ be monoton
 
 \begin{remark*}[Predicate reading]
 \[
+\begin{aligned}
   f\colon A\to\mathbb{R},\qquad
   c\colon A\to\mathbb{R},\\
-
 \operatorname{IsContinuous}(f,c,\mathbb{R},\mathbb{R})
 \Longleftrightarrow
 \bigl(\operatorname{LeftLimit}(f,c,f(c),\mathbb{R},\mathbb{R}) \land \operatorname{RightLimit}(f,c,f(c),\mathbb{R},\mathbb{R})\bigr).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -111,14 +112,15 @@ Let $I \subseteq \mathbb{R}$ be an interval, let $f:I \to \mathbb{R}$ be monoton
 
 \begin{remark*}[Negation predicate reading]
 \[
+\begin{aligned}
   f\colon A\to\mathbb{R},\qquad
   c\colon A\to\mathbb{R},\\
-
 \neg\operatorname{IsContinuous}(f,c,\mathbb{R},\mathbb{R})
 \Longleftrightarrow
 \left(\exists L^{-}\,[\operatorname{LeftLimit}(f,c,L^{-},\mathbb{R},\mathbb{R}) \land L^{-} < f(c)]\right)
 \lor
 \left(\exists L^{+}\,[\operatorname{RightLimit}(f,c,L^{+},\mathbb{R},\mathbb{R}) \land f(c) < L^{+}]\right).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -223,9 +225,9 @@ j_f(c)\coloneqq f(c^+)-f(c^-).
 
 \begin{remark*}[Predicate reading]
 \[
+\begin{aligned}
   f\colon A\to\mathbb{R},\qquad
   c\colon A\to\mathbb{R},\\
-
 \operatorname{IsInterval}(I,\mathbb{R})
 \land \operatorname{OrderPreserving}(f,I,\mathsf{OrderedSet}(\mathbb{R},\leq))
 \land \operatorname{IsInterior}(c,I,\mathbb{R})
@@ -233,6 +235,7 @@ j_f(c)\coloneqq f(c^+)-f(c^-).
 \bigl(\operatorname{LeftLimit}(f,c,L_-,\mathbb{R},\mathbb{R})
 \land \operatorname{RightLimit}(f,c,L_+,\mathbb{R},\mathbb{R})
 \land j=L_+-L_-\bigr).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -257,9 +260,9 @@ j_f(c)\coloneqq f(c^+)-f(c^-).
 
 \begin{remark*}[Negation predicate reading]
 \[
+\begin{aligned}
   f\colon A\to\mathbb{R},\qquad
   c\colon A\to\mathbb{R},\\
-
 \neg\operatorname{IsInterval}(I,\mathbb{R})
 \lor \neg\operatorname{OrderPreserving}(f,I,\mathsf{OrderedSet}(\mathbb{R},\leq))
 \lor \neg\operatorname{IsInterior}(c,I,\mathbb{R})
@@ -268,6 +271,7 @@ j_f(c)\coloneqq f(c^+)-f(c^-).
 \bigl(\neg\operatorname{LeftLimit}(f,c,L_-,\mathbb{R},\mathbb{R})
 \lor \neg\operatorname{RightLimit}(f,c,L_+,\mathbb{R},\mathbb{R})
 \lor j\ne L_+-L_-\bigr).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -389,11 +393,12 @@ Let $I \subseteq \mathbb{R}$ be an interval, let $f:I \to \mathbb{R}$ be monoton
 
 \begin{remark*}[Predicate reading]
 \[
+\begin{aligned}
   f\colon A\to\mathbb{R},\qquad
   a\colon A\to\mathbb{R},\qquad
   I\subseteq\mathbb{R},\\
-
 \operatorname{Monotone}\bigl(f,\mathsf{OrderedSet}(I,\leq)\bigr) \land \operatorname{IsDiscontinuous}(f,a,\mathbb{R},\mathbb{R}) \Longrightarrow \exists L^{-},L^{+} \in \mathbb{R} \; \bigl(\operatorname{LeftLimit}(f,a,L^{-},\mathbb{R},\mathbb{R}) \land \operatorname{RightLimit}(f,a,L^{+},\mathbb{R},\mathbb{R})\bigr).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -430,9 +435,9 @@ a\ne b\land
 
 \begin{remark*}[Predicate reading]
 \[
+\begin{aligned}
   f\colon A\to\mathbb{R},\qquad
   I\subseteq\mathbb{R},\\
-
 \operatorname{Monotone}\bigl(f,\mathsf{OrderedSet}(I,\leq)\bigr)\land
 \begin{cases}
 a,b\in I,\\
@@ -442,6 +447,7 @@ a\neq b,\\
 \end{cases}
 \Longrightarrow
 (f(a^-),f(a^+))\cap(f(b^-),f(b^+))=\varnothing.
+\end{aligned}
 \]
 \end{remark*}
 
@@ -471,10 +477,11 @@ Let $I \subseteq \mathbb{R}$ be an interval and let $f:I\to\mathbb{R}$ be monoto
 
 \begin{remark*}[Predicate reading]
 \[
+\begin{aligned}
   f\colon A\to\mathbb{R},\qquad
   I\subseteq\mathbb{R},\\
-
 \operatorname{Monotone}\bigl(f,\mathsf{OrderedSet}(I,\leq)\bigr) \Longrightarrow \#\{c \in I : \operatorname{IsDiscontinuous}(f,c,\mathbb{R},\mathbb{R})\} \le \aleph_0.
+\end{aligned}
 \]
 \end{remark*}
 
@@ -505,11 +512,12 @@ Let $f:[a,b]\to\mathbb{R}$ be monotone. Then the set $\{x\in[a,b]:f \text{ is co
 
 \begin{remark*}[Predicate reading]
 \[
+\begin{aligned}
   f\colon A\to\mathbb{R},\\
-
 \operatorname{Monotone}\bigl(f,\mathsf{OrderedSet}([a,b],\leq)\bigr)
 \Longrightarrow
 \operatorname{IsDense}\bigl(\{x\in[a,b]:\operatorname{IsContinuous}(f,x,\mathbb{R},\mathbb{R})\},[a,b]\bigr).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -524,11 +532,12 @@ Let $f:[a,b]\to\mathbb{R}$ be monotone. Then the set $\{x\in[a,b]:f \text{ is co
 
 \begin{remark*}[Negation predicate reading]
 \[
+\begin{aligned}
   f\colon A\to\mathbb{R},\\
-
 \exists u,v\in[a,b]\;
 \Bigl(u<v \land
 \forall c\in(u,v)\;\neg\operatorname{IsContinuous}(f,c,\mathbb{R},\mathbb{R})\Bigr).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -585,11 +594,12 @@ Let $f:[a,b]\to\mathbb{R}$ be continuous on $[a,b]$. Then $f$ is injective if an
 
 \begin{remark*}[Predicate reading]
 \[
+\begin{aligned}
   f\colon A\to\mathbb{R},\\
-
 \operatorname{IsContinuous}(f,[a,b],\mathbb{R},\mathbb{R}) \Longrightarrow
 \bigl(\operatorname{Injective}(f,A,\mathbb{R}) \Longleftrightarrow
 \operatorname{StrictlyMonotone}(f,[a,b])\bigr).
+\end{aligned}
 \]
 \end{remark*}
 

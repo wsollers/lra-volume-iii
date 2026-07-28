@@ -157,9 +157,8 @@ Let $A \subseteq \mathbb{R}$, let $f : A \to \mathbb{R}$, and let $c \in A$. The
 
 \begin{remark*}[Predicate reading]
 \[
-  f\colon A\to\mathbb{R},\\
-
 \begin{aligned}
+  f\colon A\to\mathbb{R},\\
 \operatorname{IsContinuous}(f,\mathsf{Point}(c,A),\mathbb R,\mathbb R)
 &\Longleftrightarrow
 \forall \varepsilon>0\;\exists \delta>0\;\forall x\in A\;
@@ -186,12 +185,13 @@ Let $A \subseteq \mathbb{R}$, let $f : A \to \mathbb{R}$, and let $c \in A$. The
 
 \begin{remark*}[Negation predicate reading]
 \[
+\begin{aligned}
   f\colon A\to\mathbb{R},\\
-
 \neg\operatorname{IsContinuous}(f,\mathsf{Point}(c,A),\mathbb R,\mathbb R)
 \Longleftrightarrow
 \exists \varepsilon_0>0\;\forall \delta>0\;\exists x\in A\;
 \bigl(|x-c|<\delta \land |f(x)-f(c)| \ge \varepsilon_0\bigr).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -289,12 +289,13 @@ f\bigl(A \cap I_\delta(c)\bigr) \subseteq I_\varepsilon(f(c)).
 
 \begin{remark*}[Predicate reading]
 \[
+\begin{aligned}
   f\colon A\to\mathbb{R},\\
-
 \operatorname{IsContinuous}(f,\mathsf{Point}(c,A),\mathbb R,\mathbb R)
 \Longleftrightarrow
 \forall \varepsilon > 0\; \exists \delta > 0:\;
 f\bigl(A \cap I_\delta(c)\bigr) \subseteq I_\varepsilon(f(c)).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -310,12 +311,13 @@ f\bigl(A \cap I_\delta(c)\bigr) \subseteq I_\varepsilon(f(c)).
 
 \begin{remark*}[Negation predicate reading]
 \[
+\begin{aligned}
   f\colon A\to\mathbb{R},\\
-
 \operatorname{IsDiscontinuous}(f,\mathsf{Point}(c,A),\mathbb R,\mathbb R)
 \Longleftrightarrow
 \exists \varepsilon_{0} > 0\; \forall \delta > 0:\;
 f\bigl(A \cap I_\delta(c)\bigr) \nsubseteq I_{\varepsilon_0}(f(c)).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -412,14 +414,15 @@ Let $A \subseteq \mathbb{R}$, let $c \in A$, and let $f \colon A \to \mathbb{R}$
 
 \begin{remark*}[Predicate reading]
 \[
+\begin{aligned}
   f\colon A\to\mathbb{R},\\
-
 \operatorname{IsContinuous}(f,\mathsf{Point}(c,A),\mathbb R,\mathbb R)
 \Longleftrightarrow
 \forall x_n\;
 \Bigl(\mathsf{Sequence}(x_n, A)
 \land \operatorname{ConvergesTo}(x_n,c,\mathbb R)
 \Rightarrow \operatorname{ConvergesTo}(f(x_n),f(c),\mathbb R)\Bigr).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -436,14 +439,15 @@ Let $A \subseteq \mathbb{R}$, let $c \in A$, and let $f \colon A \to \mathbb{R}$
 
 \begin{remark*}[Negation predicate reading]
 \[
+\begin{aligned}
   f\colon A\to\mathbb{R},\\
-
 \neg\operatorname{IsContinuous}(f,\mathsf{Point}(c,A),\mathbb R,\mathbb R)
 \Longleftrightarrow
 \exists x_n\;
 \Bigl(\mathsf{Sequence}(x_n, A)
 \land \operatorname{ConvergesTo}(x_n,c,\mathbb R)
 \land \neg\operatorname{ConvergesTo}(f(x_n),f(c),\mathbb R)\Bigr).
+\end{aligned}
 \]
 \end{remark*}
 

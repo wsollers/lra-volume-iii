@@ -30,9 +30,10 @@ Let $A \subseteq \mathbb{R}$ and $f \colon A \to \mathbb{R}$. The function $f$ i
 
 \begin{remark*}[Predicate reading]
 \[
+\begin{aligned}
   f\colon A\to\mathbb{R},\\
-
 \operatorname{Bounded}(f,A) \coloneqq \exists M>0 \; \forall x \in A \; (|f(x)| \le M).
+\end{aligned}
 \]
 
 
@@ -150,9 +151,10 @@ Let $a<b$ and let $f:[a,b]\to\mathbb{R}$ be continuous on $[a,b]$. Then there ex
 
 \begin{remark*}[Predicate reading]
 \[
+\begin{aligned}
   f\colon A\to\mathbb{R},\\
-
 \operatorname{IsContinuous}(f,[a,b],\mathbb{R},\mathbb{R}) \Longrightarrow \operatorname{Bounded}(f,[a,b]).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -168,9 +170,10 @@ Let $a<b$ and let $f:[a,b]\to\mathbb{R}$ be continuous on $[a,b]$. Then there ex
 
 \begin{remark*}[Negation predicate reading]
 \[
+\begin{aligned}
   f\colon A\to\mathbb{R},\\
-
 \operatorname{IsContinuous}(f,[a,b],\mathbb{R},\mathbb{R}) \land \neg\operatorname{Bounded}(f,[a,b]).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -402,10 +405,11 @@ Let $a,b \in \mathbb{R}$ with $a<b$, and let $f:[a,b] \to \mathbb{R}$ be continu
 
 \begin{remark*}[Predicate reading]
 \[
+\begin{aligned}
   f\colon A\to\mathbb{R},\\
-
 \operatorname{IsContinuous}(f,[a,b],\mathbb{R},\mathbb{R}) \Longrightarrow \exists x_m,x_M\in [a,b]\;
 \bigl(\operatorname{GreatestElement}(f(x_M),f([a,b]),\mathsf{OrderedSet}(\mathbb{R},\leq)) \land \operatorname{LeastElement}(f(x_m),f([a,b]),\mathsf{OrderedSet}(\mathbb{R},\leq))\bigr).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -667,9 +671,10 @@ f([a,b])=[\min_{[a,b]} f,\max_{[a,b]} f].
 
 \begin{remark*}[Predicate reading]
 \[
+\begin{aligned}
   f\colon A\to\mathbb{R},\\
-
 \operatorname{IsContinuous}(f,[a,b],\mathbb{R},\mathbb{R}) \Longrightarrow f([a,b])=[\min_{[a,b]} f,\max_{[a,b]} f].
+\end{aligned}
 \]
 \end{remark*}
 
@@ -714,11 +719,12 @@ Let $I \subseteq \mathbb{R}$ be an interval and let $f:I \to \mathbb{R}$ be cont
 
 \begin{remark*}[Predicate reading]
 \[
+\begin{aligned}
   f\colon A\to\mathbb{R},\\
-
 \operatorname{IsContinuous}(f,I,\mathbb{R},\mathbb{R})
 \Longrightarrow
 \mathsf{Interval}(f(I),\mathbb{R},\mathbb{R},\mathbb{R}).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -742,10 +748,11 @@ y\notin f(I).
 
 \begin{remark*}[Negation predicate reading]
 \[
+\begin{aligned}
   f\colon A\to\mathbb{R},\\
-
 \mathsf{Interval}(I,\mathbb{R},\mathbb{R},\mathbb{R})\land\operatorname{IsContinuous}(f,I,\mathbb{R},\mathbb{R})
 \land\neg\mathsf{Interval}(f(I),\mathbb{R},\mathbb{R},\mathbb{R}).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -837,8 +844,8 @@ Let $a,b\in\mathbb{R}$ satisfy $a<b$, let $f:[a,b]\to\mathbb{R}$ be continuous, 
 
 \begin{remark*}[Negation predicate reading]
 \[
+\begin{aligned}
   f\colon A\to\mathbb{R},\\
-
 \operatorname{IsContinuous}(f,[a,b],\mathbb{R},\mathbb{R})
 \land
 \Bigl(\forall x\in[a,b]\; f(x)\neq c\Bigr)
@@ -848,6 +855,7 @@ Let $a,b\in\mathbb{R}$ satisfy $a<b$, let $f:[a,b]\to\mathbb{R}$ be continuous, 
 \lor
 \bigl(\forall x\in[a,b]\; f(x)<c\bigr)
 \Bigr].
+\end{aligned}
 \]
 \end{remark*}
 

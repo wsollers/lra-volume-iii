@@ -30,11 +30,13 @@ The condition \(f\in C^1(I)\) is strictly stronger than differentiability. A fun
 \phantomsection\label{ex:x2sin}
 Let
 \[
+\begin{aligned}
   f(x)=
   \begin{cases}
     x^2\sin(1/x), & x\neq 0,\\
     0, & x=0.
   \end{cases}
+\end{aligned}
 \]
 At the origin,
 \[
@@ -71,9 +73,10 @@ Let \(I\subseteq\mathbb{R}\) be an interval, let \(k\in\mathbb{N}\), and let \(f
 
 \begin{remark*}[Predicate reading]
 \[
+\begin{aligned}
   f\colon A\to\mathbb{R},\\
-
   \operatorname{IsClassC}(f,k,I).
+\end{aligned}
 \]
 For a fixed interval \(I\), the classes are nested:
 \[
@@ -94,16 +97,20 @@ For a fixed interval \(I\), the classes are nested:
 
 \begin{remark*}[Negation predicate reading]
 \[
+\begin{aligned}
   f\colon A\to\mathbb{R},\\
   f'\colon A\to\mathbb{R}.
+\end{aligned}
 \]
 
 \(\neg\operatorname{IsClassC}(f,k,I)\): somewhere the \(k\)-th derivative
 either does not exist or exists but is not continuous. A single point where
 the top derivative is discontinuous certifies \(f\notin C^k(I)\).
 \[
+\begin{aligned}
   f\colon I\to\mathbb{R},\\
   \operatorname{IsClassC}(f,k,I).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -165,9 +172,10 @@ function out of \(C^\infty\).
 
 \begin{remark*}[Negation predicate reading]
 \[
+\begin{aligned}
   f\colon A\to\mathbb{R},\\
-
 \neg\,\operatorname{IsClassC}(f,k,I).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -224,14 +232,18 @@ Let \(I\subseteq\mathbb{R}\) be an interval and let \(f:I\to\mathbb{R}\). The fu
 
 \begin{remark*}[Predicate reading]
 \[
+\begin{aligned}
   f\colon A\to\mathbb{R},\\
   f'\colon A\to\mathbb{R}.
+\end{aligned}
 \]
 
-The displayed quantified statement is the predicate-level form of $label: its hypotheses name the input conditions, and its conclusion names the asserted structure or relation.
+The displayed quantified statement is the predicate-level form of label: its hypotheses name the input conditions, and its conclusion names the asserted structure or relation.
 \[
+\begin{aligned}
   f\colon I\to\mathbb{R},\\
   \operatorname{IsClassC}(f,k,I).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -296,11 +308,13 @@ These separators prove every displayed containment is a genuine drop.
 \begin{remark*}[Interpretation]
 The inclusions are definitional; strictness is witnessed by examples. On any nondegenerate interval, translated and rescaled copies of \(x\mapsto x^k|x|\) separate \(C^k\) from \(C^{k+1}\). Translated copies of the flat function
 \[
+\begin{aligned}
   f(x)=
   \begin{cases}
     e^{-1/x^2}, & x\neq 0,\\
     0, & x=0,
   \end{cases}
+\end{aligned}
 \]
 separate \(C^\infty\) from \(C^\omega\): all derivatives at the flat point vanish, so the Taylor series is identically zero, while the function is positive on one side of that point.
 
@@ -349,14 +363,14 @@ there exists \(L\geq 0\) such that
 
 \begin{remark*}[Predicate reading]
 \[
+\begin{aligned}
   f'\colon A\to\mathbb{R},\\
-
   f\colon A\to\mathbb{R},\\
-
   f\in C^{1,1}(I)
   \Longleftrightarrow
   \operatorname{IsClassC}(f,1,I)\land
   \exists L\geq0:\operatorname{IsLipschitz}(f',I,\mathbb{R},\mathbb{R},L).
+\end{aligned}
 \]
 The smallest admissible \(L\) is the Lipschitz constant of \(f'\):
 \[
@@ -375,9 +389,10 @@ The smallest admissible \(L\) is the Lipschitz constant of \(f'\):
 
 \begin{remark*}[Negation predicate reading]
 \[
+\begin{aligned}
   f\colon A\to\mathbb{R},\\
-
 \neg\,\operatorname{IsClassC}(f,k,I).
+\end{aligned}
 \]
 \end{remark*}
 
