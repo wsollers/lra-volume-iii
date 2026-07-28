@@ -95,7 +95,7 @@ Thus, $s$ is the least upper bound of $A$ in $S$.
   The set may be empty; $s$ may fail to be an upper bound; or $s$ may be an
   upper bound that is not least among upper bounds.
 
-  \item[\operatorname{LeastUpperBound} / \operatorname{UpperBound}.]
+  \item[\(\operatorname{LeastUpperBound} / \operatorname{UpperBound}.\)]
   The first clause is a domain failure.  The second is a bound failure.  The
   third is a sharpness failure witnessed by a strictly smaller upper bound.
   \[
@@ -211,7 +211,7 @@ Thus, $i$ is the greatest lower bound of $A$ in $S$.
   The set may be empty; $i$ may fail to be a lower bound; or $i$ may be a
   lower bound that is not greatest among lower bounds.
 
-  \item[\operatorname{GreatestLowerBound} / \operatorname{LowerBound}.]
+  \item[\(\operatorname{GreatestLowerBound} / \operatorname{LowerBound}.\)]
   The first clause is a domain failure.  The second is a bound failure.  The
   third is a sharpness failure witnessed by a strictly larger lower bound.
   \[
@@ -312,7 +312,7 @@ $s,t\in S$ are both suprema of $A$, then
   Failure would require two distinct least upper bounds for the same
   nonempty set.
 
-  \item[\operatorname{LeastUpperBound}.]
+  \item[\(\operatorname{LeastUpperBound}.\)]
   Each candidate is an upper bound and each lies below every upper bound;
   applying these minimality clauses to the other candidate gives both
   $s\leq t$ and $t\leq s$.
@@ -404,7 +404,7 @@ $i,j\in S$ are both infima of $A$, then
   Failure would require two distinct greatest lower bounds for the same
   nonempty set.
 
-  \item[\operatorname{GreatestLowerBound}.]
+  \item[\(\operatorname{GreatestLowerBound}.\)]
   Each candidate is a lower bound and each lies above every lower bound;
   applying these maximality clauses to the other candidate gives both
   $i\leq j$ and $j\leq i$.
@@ -498,7 +498,7 @@ The negation predicate reading is the predicate-level form of the displayed nega
   \quad\text{and}\quad
   (\exists x\in A)(s<x).
 \]
-  \item[\operatorname{LeastUpperBound}.]
+  \item[\(\operatorname{LeastUpperBound}.\)]
   This is exactly the first clause in the definition of supremum.
   \[
     \operatorname{LeastUpperBound}(s,A,P)
@@ -587,7 +587,7 @@ The negation predicate reading is the predicate-level form of the displayed nega
   \quad\text{and}\quad
   (\exists x\in A)(x<i).
 \]
-  \item[\operatorname{GreatestLowerBound}.]
+  \item[\(\operatorname{GreatestLowerBound}.\)]
   This is exactly the first clause in the definition of infimum.
   \[
     \operatorname{GreatestLowerBound}(i,A,P)
@@ -680,7 +680,7 @@ A\subseteq B,\quad \operatorname{UpperBound}(u,B,P),
   \quad\text{and}\quad
   (\exists x\in A)(u<x).
 \]
-  \item[\operatorname{UpperBound}.]
+  \item[\(\operatorname{UpperBound}.\)]
   Any counterexample $x\in A$ is also an element of $B$, contradicting the
   upper-bound hypothesis for $B$.
   \[
@@ -774,7 +774,7 @@ A\subseteq B,\quad \operatorname{LowerBound}(\ell,B,P),
   \quad\text{and}\quad
   (\exists x\in A)(x<\ell).
 \]
-  \item[\operatorname{LowerBound}.]
+  \item[\(\operatorname{LowerBound}.\)]
   Any counterexample $x\in A$ lies in $B$, contradicting the lower-bound
   hypothesis for $B$.
   \[
@@ -860,7 +860,7 @@ The negation predicate reading is the predicate-level form of the displayed nega
 A\subseteq B,\quad \operatorname{LeastUpperBound}(s_A,A,P),\quad
   \operatorname{LeastUpperBound}(s_B,B,P),\quad s_B<s_A.
 \]
-  \item[\operatorname{LeastUpperBound}.]
+  \item[\(\operatorname{LeastUpperBound}.\)]
   The value $\sup B$ bounds $B$, hence bounds $A$; since $\sup A$ is least
   among upper bounds of $A$, $\sup A\leq\sup B$.
   \[
@@ -947,7 +947,7 @@ The negation predicate reading is the predicate-level form of the displayed nega
 A\subseteq B,\quad \operatorname{GreatestLowerBound}(i_A,A,P),\quad
   \operatorname{GreatestLowerBound}(i_B,B,P),\quad i_A<i_B.
 \]
-  \item[\operatorname{GreatestLowerBound}.]
+  \item[\(\operatorname{GreatestLowerBound}.\)]
   The value $\inf B$ bounds $B$ below, hence bounds $A$ below; since
   $\inf A$ is greatest among lower bounds of $A$, $\inf B\leq\inf A$.
   \[
@@ -1047,7 +1047,7 @@ The negation predicate reading is the predicate-level form of the displayed nega
   (\exists u)\bigl[(\operatorname{UpperBound}(u,A,P)\land u<s)
   \lor(s\leq u\land\neg\operatorname{UpperBound}(u,A,P))\bigr].
 \]
-  \item[\operatorname{LeastUpperBound} / \operatorname{UpperBound}.]
+  \item[\(\operatorname{LeastUpperBound} / \operatorname{UpperBound}.\)]
   Leastness gives the forward implication.  The fact that $s$ bounds $A$
   gives the reverse implication by transitivity.
   \[
@@ -1151,7 +1151,7 @@ The negation predicate reading is the predicate-level form of the displayed nega
   (\exists \ell)\bigl[(\operatorname{LowerBound}(\ell,A,P)\land i<\ell)
   \lor(\ell\leq i\land\neg\operatorname{LowerBound}(\ell,A,P))\bigr].
 \]
-  \item[\operatorname{GreatestLowerBound} / \operatorname{LowerBound}.]
+  \item[\(\operatorname{GreatestLowerBound} / \operatorname{LowerBound}.\)]
   Greatestness gives the forward implication.  The fact that $i$ bounds
   $A$ below gives the reverse implication by transitivity.
   \[
@@ -1235,7 +1235,7 @@ The negation predicate reading is the predicate-level form of the displayed nega
 \[
   \operatorname{LeastUpperBound}(s,A,P)\quad\text{and}\quad(\exists x\in A)(s<x).
 \]
-  \item[\operatorname{LeastUpperBound}.]
+  \item[\(\operatorname{LeastUpperBound}.\)]
   This is the upper-bound clause in the definition of supremum.
   \[
     \operatorname{LeastUpperBound}(s,A,P)\quad\text{and}\quad(\exists x\in A)(s<x).
@@ -1311,7 +1311,7 @@ The negation predicate reading is the predicate-level form of the displayed nega
 \[
   \operatorname{GreatestLowerBound}(i,A,P)\quad\text{and}\quad(\exists x\in A)(x<i).
 \]
-  \item[\operatorname{GreatestLowerBound}.]
+  \item[\(\operatorname{GreatestLowerBound}.\)]
   This is the lower-bound clause in the definition of infimum.
   \[
     \operatorname{GreatestLowerBound}(i,A,P)\quad\text{and}\quad(\exists x\in A)(x<i).
@@ -1393,7 +1393,7 @@ The negation predicate reading is the predicate-level form of the displayed nega
 \operatorname{GreatestLowerBound}(i,A,P),\quad \operatorname{LeastUpperBound}(s,A,P),
   \quad\text{and}\quad s<i.
 \]
-  \item[\operatorname{GreatestLowerBound} / \operatorname{LeastUpperBound}.]
+  \item[\(\operatorname{GreatestLowerBound} / \operatorname{LeastUpperBound}.\)]
   Choose $a\in A$.  Then $i\leq a$ because $i$ is a lower bound, and
   $a\leq s$ because $s$ is an upper bound.
   \[
@@ -1571,7 +1571,7 @@ The negation predicate reading is the predicate-level form of the displayed nega
   \quad\text{and}\quad
   \sup B<\sup A.
 \]
-  \item[\operatorname{LeastUpperBound}.]
+  \item[\(\operatorname{LeastUpperBound}.\)]
   Every element of $B$ lies below $\sup B$, so every element of $A$ also
   lies below $\sup B$.  Thus $\sup B$ is an upper bound for $A$.
   \[
@@ -1679,7 +1679,7 @@ S\neq\varnothing,\quad
   \quad\text{and}\quad
   (\forall s\in\mathbb{R})\neg\operatorname{LeastUpperBound}(s,S,P).
 \]
-  \item[\operatorname{BoundedAbove} / \operatorname{LeastUpperBound}.]
+  \item[\(\operatorname{BoundedAbove} / \operatorname{LeastUpperBound}.\)]
   The hypotheses separate domain nonemptiness from one-sided boundedness.
   The conclusion asserts existence of the sharp upper bound.
   \[
@@ -1790,7 +1790,7 @@ S\neq\varnothing,\quad
   \quad\text{and}\quad
   (\forall i\in\mathbb{R})\neg\operatorname{GreatestLowerBound}(i,S,P).
 \]
-  \item[\operatorname{BoundedBelow} / \operatorname{GreatestLowerBound}.]
+  \item[\(\operatorname{BoundedBelow} / \operatorname{GreatestLowerBound}.\)]
   Apply the least upper bound property to $-S$ or argue by the order-dual
   form of completeness.
   \[
@@ -1898,7 +1898,7 @@ A\neq\varnothing,\quad \operatorname{Bounded}(A,P),
   \ \text{or}\
   (\forall i\in\mathbb{R})\neg\operatorname{GreatestLowerBound}(i,A,P)\bigr].
 \]
-  \item[\operatorname{LeastUpperBound} / \operatorname{GreatestLowerBound}.]
+  \item[\(\operatorname{LeastUpperBound} / \operatorname{GreatestLowerBound}.\)]
 \[
 A\neq\varnothing,\quad \operatorname{Bounded}(A,P),
   \quad\text{and}\quad
