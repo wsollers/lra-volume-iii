@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "prop:closedness-is-necessary-in-nested-interval-theorem",
+  "kind": "proposition",
+  "title": "Closedness Is Necessary in the Nested Interval Theorem",
+  "source": {
+    "label": "prop:closedness-is-necessary-in-nested-interval-theorem",
+    "kind": "proposition",
+    "title": "Closedness Is Necessary in the Nested Interval Theorem",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "completeness",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/completeness/notes/completeness/notes-nested-interval-property.tex",
+    "source_line_start": 1253,
+    "source_line_end": 1269,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/completeness/notes/completeness/prop-closedness-is-necessary-in-nested-interval-theorem",
+      "artifact": "volume-iii/book-analysis-i/completeness/notes/completeness/prop-closedness-is-necessary-in-nested-interval-theorem/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/completeness/notes/completeness/prop-closedness-is-necessary-in-nested-interval-theorem/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/completeness/notes/completeness/prop-closedness-is-necessary-in-nested-interval-theorem",
+    "artifact": "volume-iii/book-analysis-i/completeness/notes/completeness/prop-closedness-is-necessary-in-nested-interval-theorem/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/completeness/notes/completeness/prop-closedness-is-necessary-in-nested-interval-theorem/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/completeness/notes/completeness/notes-nested-interval-property.tex",
+      "label": "prop:closedness-is-necessary-in-nested-interval-theorem",
+      "environment_kind": "proposition",
+      "source_line_start": 1253,
+      "source_line_end": 1269,
+      "current_tex": "\\begin{proposition}[Closedness Is Necessary in the Nested Interval Theorem]\n\\label{prop:closedness-is-necessary-in-nested-interval-theorem}\nThere exists a sequence $(I_n)_{n\\in\\mathbb{N}}$ of nonempty bounded intervals\nin $\\mathbb{R}$, not all of which are closed, such that\n\\[\n  (\\forall n\\in\\mathbb{N})(I_{n+1}\\subseteq I_n),\n\\]\nbut\n\\[\n  \\bigcap_{n=1}^{\\infty}I_n=\\varnothing.\n\\]\nFor example,\n\\[\n  I_n=\\left(0,\\frac{1}{n}\\right].\n\\]\n\\hyperref[prf:closedness-is-necessary-in-nested-interval-theorem]{Go to proof.}\n\\end{proposition}",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

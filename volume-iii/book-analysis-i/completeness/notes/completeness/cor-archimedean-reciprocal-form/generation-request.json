@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "cor:archimedean-reciprocal-form",
+  "kind": "corollary",
+  "title": "Archimedean Reciprocal Form",
+  "source": {
+    "label": "cor:archimedean-reciprocal-form",
+    "kind": "corollary",
+    "title": "Archimedean Reciprocal Form",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "completeness",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/completeness/notes/completeness/notes-archimedean-property.tex",
+    "source_line_start": 148,
+    "source_line_end": 163,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/completeness/notes/completeness/cor-archimedean-reciprocal-form",
+      "artifact": "volume-iii/book-analysis-i/completeness/notes/completeness/cor-archimedean-reciprocal-form/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/completeness/notes/completeness/cor-archimedean-reciprocal-form/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/completeness/notes/completeness/cor-archimedean-reciprocal-form",
+    "artifact": "volume-iii/book-analysis-i/completeness/notes/completeness/cor-archimedean-reciprocal-form/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/completeness/notes/completeness/cor-archimedean-reciprocal-form/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/completeness/notes/completeness/notes-archimedean-property.tex",
+      "label": "cor:archimedean-reciprocal-form",
+      "environment_kind": "corollary",
+      "source_line_start": 148,
+      "source_line_end": 163,
+      "current_tex": "\\begin{corollary}[Archimedean Reciprocal Form]\n\\label{cor:archimedean-reciprocal-form}\nFor every $\\varepsilon\\in\\mathbb{R}$ with $\\varepsilon>0$, there exists\n$n\\in\\mathbb{N}$ such that\n\\[\n  0<\\frac{1}{n}<\\varepsilon.\n\\]\nEquivalently,\n\\[\n  (\\forall\\varepsilon>0)(\\exists n\\in\\mathbb{N})\\left(\\frac{1}{n}<\\varepsilon\\right).\n\\]\n\n\\smallskip\n\\noindent\n\\hyperref[prf:archimedean-reciprocal-form]{\\textit{Go to proof.}}\n\\end{corollary}",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

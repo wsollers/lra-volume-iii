@@ -1,0 +1,154 @@
+% Lean mapping note:
+% Ordinary IsSupremum s A is ambient-order supremum.  Relative notions below
+% name the text-side version where upper and lower bounds are restricted to an
+% ambient carrier S.
+
+\begin{remark*}[Exposition]
+The definitions of upper bound, lower bound, supremum, and infimum always
+take place inside some ambient ordered universe.  In the ordinary notation
+$s=\sup A$, the ambient type is usually left implicit: for a set of real
+numbers, upper bounds are real upper bounds; for a set of rational numbers,
+upper bounds are rational upper bounds.
+
+Sometimes the ambient carrier matters enough to be named explicitly.  If
+$A\subseteq S\subseteq T$ and $T$ is ordered, an element $u\in S$ is a
+\emph{relative upper bound of $A$ in $S$} if every element of $A$ lies below
+$u$.  Similarly, $\ell\in S$ is a \emph{relative lower bound of $A$ in $S$}
+if $\ell$ lies below every element of $A$.
+\end{remark*}
+
+\begin{definitionbox}{Relative Bounds}
+\begin{definition}[Relative Bounds]
+\label{def:relative-bounds}
+Let $(T,\leq)$ be an ordered set, let $A\subseteq T$, and let $S\subseteq T$.
+An element $u\in S$ is a \emph{relative upper bound of $A$ in $S$} if
+\[
+  (\forall a\in A)(a\leq u).
+\]
+An element $\ell\in S$ is a \emph{relative lower bound of $A$ in $S$} if
+\[
+  (\forall a\in A)(\ell\leq a).
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  u\in S\land(\forall a\in A)(a\leq u),
+  \qquad
+  \ell\in S\land(\forall a\in A)(\ell\leq a).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  P=\mathsf{OrderedSet}(T,\leq),\qquad A\subseteq T,\qquad S\subseteq T,
+\]
+\[
+  \mathsf{RelativeUpperBound}(u,A,S,P)
+  :=u\in S\land(\forall a\in A)(a\leq u),
+\]
+\[
+  \mathsf{RelativeLowerBound}(\ell,A,S,P)
+  :=\ell\in S\land(\forall a\in A)(\ell\leq a).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Relative bounds are ordinary bounds with an explicit restriction on which
+candidates may serve as bounds.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:ordered-set]{Ordered Set}
+  \item \hyperref[def:subset]{Subset}
+  \item \hyperref[def:real-upper-bound]{Upper Bound}
+  \item \hyperref[def:real-lower-bound]{Lower Bound}
+\end{itemize}
+\end{dependencies}
+
+\begin{definitionbox}{Relative Supremum and Infimum}
+\begin{definition}[Relative Supremum and Infimum]
+\label{def:relative-supremum-infimum}
+Let $(T,\leq)$ be an ordered set, let $A\subseteq T$, and let $S\subseteq T$.
+An element $s\in S$ is the \emph{relative supremum of $A$ in $S$} if $s$ is a
+relative upper bound of $A$ in $S$ and
+\[
+  (\forall u\in S)\left[
+    (\forall a\in A)(a\leq u)\Longrightarrow s\leq u
+  \right].
+\]
+An element $i\in S$ is the \emph{relative infimum of $A$ in $S$} if $i$ is a
+relative lower bound of $A$ in $S$ and
+\[
+  (\forall \ell\in S)\left[
+    (\forall a\in A)(\ell\leq a)\Longrightarrow \ell\leq i
+  \right].
+\]
+\end{definition}
+\end{definitionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  s\in S\land(\forall a\in A)(a\leq s)\land
+  (\forall u\in S)\left[
+    (\forall a\in A)(a\leq u)\Longrightarrow s\leq u
+  \right],
+\]
+\[
+  i\in S\land(\forall a\in A)(i\leq a)\land
+  (\forall \ell\in S)\left[
+    (\forall a\in A)(\ell\leq a)\Longrightarrow \ell\leq i
+  \right].
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  P=\mathsf{OrderedSet}(T,\leq),\qquad A\subseteq T,\qquad S\subseteq T,
+\]
+\[
+  \mathsf{RelativeSupremum}(s,A,S,P)
+  :=
+  \mathsf{RelativeUpperBound}(s,A,S,P)
+  \land
+  (\forall u\in S)
+  \bigl(\mathsf{RelativeUpperBound}(u,A,S,P)\Rightarrow s\leq u\bigr),
+\]
+\[
+  \mathsf{RelativeInfimum}(i,A,S,P)
+  :=
+  \mathsf{RelativeLowerBound}(i,A,S,P)
+  \land
+  (\forall \ell\in S)
+  \bigl(\mathsf{RelativeLowerBound}(\ell,A,S,P)\Rightarrow \ell\leq i\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Relative suprema and infima are sharp bounds after restricting the allowed
+bound candidates to the ambient carrier $S$.
+By default, the ambient set $S$ is assumed to contain the set under discussion:
+$A\subseteq S$.  The definitions above can still be stated syntactically with
+an arbitrary ambient set $S\subseteq T$ when it is useful to isolate which
+candidates are allowed to serve as bounds.
+
+The same ordered data can have different sharp bounds depending on the
+ambient carrier.  For example,
+\[
+  A=\{q\in\mathbb{Q}:q^2<2\}
+\]
+has no relative supremum in $\mathbb{Q}$, but it has supremum $\sqrt{2}$ when
+viewed as a subset of $\mathbb{R}$.  This is not a contradiction: the allowed
+upper bounds changed from rational candidates to real candidates.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:supremum]{Supremum}
+  \item \hyperref[def:infimum]{Infimum}
+  \item \hyperref[def:real-upper-bound]{Upper Bound}
+  \item \hyperref[def:real-lower-bound]{Lower Bound}
+\end{itemize}
+\end{dependencies}

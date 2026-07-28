@@ -3,7 +3,7 @@ display_title: ''
 volume: volume-iii
 status: in-progress
 dependencies:
-  prior: ''
+  prior: completeness
   next: ''
 path: volume-iii/book-analysis-i/sequences
 book: book-analysis-i

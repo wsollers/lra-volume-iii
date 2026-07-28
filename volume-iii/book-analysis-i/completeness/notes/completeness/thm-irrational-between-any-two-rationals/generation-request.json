@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "thm:irrational-between-any-two-rationals",
+  "kind": "theorem",
+  "title": "An Irrational Between Any Two Rationals",
+  "source": {
+    "label": "thm:irrational-between-any-two-rationals",
+    "kind": "theorem",
+    "title": "An Irrational Between Any Two Rationals",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "completeness",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/completeness/notes/completeness/notes-density.tex",
+    "source_line_start": 739,
+    "source_line_end": 747,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/completeness/notes/completeness/thm-irrational-between-any-two-rationals",
+      "artifact": "volume-iii/book-analysis-i/completeness/notes/completeness/thm-irrational-between-any-two-rationals/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/completeness/notes/completeness/thm-irrational-between-any-two-rationals/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/completeness/notes/completeness/thm-irrational-between-any-two-rationals",
+    "artifact": "volume-iii/book-analysis-i/completeness/notes/completeness/thm-irrational-between-any-two-rationals/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/completeness/notes/completeness/thm-irrational-between-any-two-rationals/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/completeness/notes/completeness/notes-density.tex",
+      "label": "thm:irrational-between-any-two-rationals",
+      "environment_kind": "theorem",
+      "source_line_start": 739,
+      "source_line_end": 747,
+      "current_tex": "\\begin{theorem}[An Irrational Between Any Two Rationals]\n\\label{thm:irrational-between-any-two-rationals}\nFor every $r,s\\in\\mathbb{Q}$, if $r<s$, then there exists\n$x\\in\\mathbb{R}\\setminus\\mathbb{Q}$ such that\n\\[\n  r<x<s.\n\\]\n\\hyperref[prf:irrational-between-any-two-rationals]{\\textit{Go to proof.}}\n\\end{theorem}",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "lem:integer-ceiling-lemma",
+  "kind": "lemma",
+  "title": "Integer Ceiling Lemma",
+  "source": {
+    "label": "lem:integer-ceiling-lemma",
+    "kind": "lemma",
+    "title": "Integer Ceiling Lemma",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "completeness",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/completeness/notes/completeness/notes-archimedean-property.tex",
+    "source_line_start": 565,
+    "source_line_end": 583,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/completeness/notes/completeness/lem-integer-ceiling-lemma",
+      "artifact": "volume-iii/book-analysis-i/completeness/notes/completeness/lem-integer-ceiling-lemma/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/completeness/notes/completeness/lem-integer-ceiling-lemma/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/completeness/notes/completeness/lem-integer-ceiling-lemma",
+    "artifact": "volume-iii/book-analysis-i/completeness/notes/completeness/lem-integer-ceiling-lemma/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/completeness/notes/completeness/lem-integer-ceiling-lemma/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/completeness/notes/completeness/notes-archimedean-property.tex",
+      "label": "lem:integer-ceiling-lemma",
+      "environment_kind": "lemma",
+      "source_line_start": 565,
+      "source_line_end": 583,
+      "current_tex": "\\begin{lemma}[Integer Ceiling Lemma]\n\\label{lem:integer-ceiling-lemma}\nFor every $x\\in\\mathbb{R}$, there exists a unique $m\\in\\mathbb{Z}$ such that\n\\[\n  m-1<x\\leq m.\n\\]\nEquivalently,\n\\[\n  (\\forall x\\in\\mathbb{R})(\\exists!m\\in\\mathbb{Z})(m-1<x\\leq m).\n\\]\nThe unique integer $m$ is denoted by\n\\[\n  m=\\lceil x\\rceil.\n\\]\n\n\\smallskip\n\\noindent\n\\hyperref[prf:integer-ceiling-lemma]{\\textit{Go to proof.}}\n\\end{lemma}",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

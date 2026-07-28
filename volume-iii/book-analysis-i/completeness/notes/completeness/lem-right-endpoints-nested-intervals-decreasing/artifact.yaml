@@ -1,0 +1,184 @@
+schema_version: lra.semantic-artifact/1.0
+identity:
+  label: lem:right-endpoints-nested-intervals-decreasing
+  kind: lemma
+  title: Right Endpoints of Nested Intervals Are Decreasing
+  canonical_name: Right Endpoints of Nested Intervals Are Decreasing
+  status: local_draft
+  atomicity:
+    status: requires_review
+    concepts_detected: []
+    owning_concept: Right Endpoints of Nested Intervals Are Decreasing
+    split_reason: null
+location:
+  repository: lra-volume-iii
+  commit: 452b31457c8447874ce61a2f0431f9520bfaff4d
+  volume: iii
+  book: book-analysis-i
+  chapter: bounding
+  topic: completeness
+  source_file: volume-iii/book-analysis-i/completeness/notes/completeness/notes-nested-interval-property.tex
+  source_line_start: 178
+  source_line_end: 193
+  source_hash: sha256:4dc7fbe140aaa5865c7e98c10ba7b7fd9f15d4f3d43a2bf88a8f1f0c2af5b17c
+classification:
+  mathematical_domain: bounding
+  artifact_form: lemma
+  logical_shape: local parser draft
+  logical_framework: mathematical_vernacular
+  language_level: mixed
+context: []
+parameters:
+- id: a_n
+  symbol: a_n
+- id: a_n+1
+  symbol: a_n+1
+- id: b_n
+  symbol: b_n
+- id: b_n+1
+  symbol: b_n+1
+- id: mathbbN
+  symbol: mathbbN
+assumptions: []
+statement:
+  canonical_prose: Right Endpoints of Nested Intervals Are Decreasing
+  canonical_latex: "\\begin{lemma}[Right Endpoints of Nested Intervals Are Decreasing]\n\
+    \\label{lem:right-endpoints-nested-intervals-decreasing}\nLet $(a_n)$ and $(b_n)$\
+    \ be sequences in $\\mathbb{R}$ such that\n\\[\n  (\\forall n\\in\\mathbb{N})(a_n\\\
+    leq b_n)\n\\]\nand\n\\[\n  (\\forall n\\in\\mathbb{N})([a_{n+1},b_{n+1}]\\subseteq\
+    \ [a_n,b_n]).\n\\]\nThen\n\\[\n  (\\forall n\\in\\mathbb{N})(b_{n+1}\\leq b_n).\n\
+    \\]\n\\hyperref[prf:right-endpoints-nested-intervals-decreasing]{Go to proof.}\n\
+    \\end{lemma}"
+  semantic_ast: &id001
+    kind: forall
+    binder: &id002
+      binder_id: n
+      symbol: n
+      domain:
+        kind: variable
+        binder_id: mathbbN
+    restriction: null
+    body: &id003
+      kind: relation
+      relation: \subseteq
+      left:
+        kind: tuple
+        elements:
+        - kind: variable
+          binder_id: a_n+1
+        - kind: variable
+          binder_id: b_n+1
+      right:
+        kind: tuple
+        elements:
+        - kind: variable
+          binder_id: a_n
+        - kind: variable
+          binder_id: b_n
+logical_forms:
+  standard_quantified:
+    latex: (\forall n\in\mathbb{N})([a_{n+1},b_{n+1}]\subseteq [a_n,b_n]).
+    ast: *id001
+    parser_witnesses:
+      original_latex: (\forall n\in\mathbb{N})([a_{n+1},b_{n+1}]\subseteq [a_n,b_n]).
+      hand_parser:
+        available: true
+        ast:
+          kind: forall
+          binder:
+            binder_id: n
+            symbol: n
+            domain:
+              kind: variable
+              binder_id: mathbbN
+          restriction: null
+          body:
+            kind: relation
+            relation: \subseteq
+            left:
+              kind: tuple
+              elements:
+              - kind: variable
+                binder_id: a_n+1
+              - kind: variable
+                binder_id: b_n+1
+            right:
+              kind: tuple
+              elements:
+              - kind: variable
+                binder_id: a_n
+              - kind: variable
+                binder_id: b_n
+      lark_parser:
+        available: false
+        error: 'could not parse controlled formula: ''(\\forall n\\in\\mathbb{N})([a_{n+1},b_{n+1}]\\subseteq
+          [a_n,b_n]).'''
+      parsers_agree: false
+  predicate_reading: null
+  negation:
+    mechanical:
+      latex: \neg\left((\forall n\in\mathbb{N})([a_{n+1},b_{n+1}]\subseteq [a_n,b_n]).\right)
+      ast:
+        kind: not
+        operand: *id001
+    approved_normal_form:
+      latex: null
+      ast:
+        kind: exists
+        binder: *id002
+        restriction: null
+        body:
+          kind: not
+          operand: *id003
+    normalization_requires: []
+  contrapositive: null
+  equivalent_forms: []
+semantics:
+  codex_local_reference: true
+  local_draft: true
+failure_analysis:
+  applicability_failures: []
+  statement_failures:
+  - id: statement-failure
+    description: Draft failure semantics require semantic review.
+relationships:
+  dependency_edges: []
+  ontology_edges: []
+  provenance_edges: []
+  proof_edges: []
+notation: {}
+exposition:
+  summary: Codex-local draft semantic validation payload generated from routed source.
+verification:
+  canonical_proof: null
+  formalizations: []
+  external_library_crosswalks: []
+  proof_vault_records: []
+provenance:
+  origin:
+    kind: normalized_source_statement
+    source_status: single_primary_statement
+    primary_source_statement:
+      role: primary
+      source_id: null
+      label: lem:right-endpoints-nested-intervals-decreasing
+      citation: null
+      page_range: null
+      evidence: routed source environment
+      notes: Codex-local draft; requires semantic review.
+    component_sources: []
+    derivation_rule: null
+    requires_review: true
+  explicit_from_source:
+  - formal environment and attached support blocks
+  normalized_from_source:
+  - ASTs are generated by local governed parsers when available
+  inferred_from_registry: []
+  generated_by_analysis:
+  - Codex local materialize-local mode
+  unresolved: []
+governance:
+  governance_repository: lra-governance
+  governance_commit: e73467db2ba332f6f9dbc2d8f0857a1c1553d6c4
+  registry_commit: e73467db2ba332f6f9dbc2d8f0857a1c1553d6c4
+  schema_commit: e73467db2ba332f6f9dbc2d8f0857a1c1553d6c4

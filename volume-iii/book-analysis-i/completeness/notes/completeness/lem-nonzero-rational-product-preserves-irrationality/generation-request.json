@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "lem:nonzero-rational-product-preserves-irrationality",
+  "kind": "lemma",
+  "title": "Nonzero Rational Product Preserves Irrationality",
+  "source": {
+    "label": "lem:nonzero-rational-product-preserves-irrationality",
+    "kind": "lemma",
+    "title": "Nonzero Rational Product Preserves Irrationality",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "completeness",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/completeness/notes/completeness/notes-density.tex",
+    "source_line_start": 410,
+    "source_line_end": 418,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/completeness/notes/completeness/lem-nonzero-rational-product-preserves-irrationality",
+      "artifact": "volume-iii/book-analysis-i/completeness/notes/completeness/lem-nonzero-rational-product-preserves-irrationality/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/completeness/notes/completeness/lem-nonzero-rational-product-preserves-irrationality/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/completeness/notes/completeness/lem-nonzero-rational-product-preserves-irrationality",
+    "artifact": "volume-iii/book-analysis-i/completeness/notes/completeness/lem-nonzero-rational-product-preserves-irrationality/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/completeness/notes/completeness/lem-nonzero-rational-product-preserves-irrationality/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/completeness/notes/completeness/notes-density.tex",
+      "label": "lem:nonzero-rational-product-preserves-irrationality",
+      "environment_kind": "lemma",
+      "source_line_start": 410,
+      "source_line_end": 418,
+      "current_tex": "\\begin{lemma}[Nonzero Rational Product Preserves Irrationality]\n\\label{lem:nonzero-rational-product-preserves-irrationality}\nFor every $q\\in\\mathbb{Q}\\setminus\\{0\\}$ and every\n$x\\in\\mathbb{R}\\setminus\\mathbb{Q}$,\n\\[\n  qx\\in\\mathbb{R}\\setminus\\mathbb{Q}.\n\\]\n\\hyperref[prf:nonzero-rational-product-preserves-irrationality]{\\textit{Go to proof.}}\n\\end{lemma}",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

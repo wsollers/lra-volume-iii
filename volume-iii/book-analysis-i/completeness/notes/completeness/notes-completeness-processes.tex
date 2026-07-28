@@ -1,0 +1,37 @@
+% Lean mapping note:
+% LRA.VolumeIII.Analysis.Completeness.CompletenessProcesses
+% IncreasingBoundedProcessesConverge, DecreasingBoundedProcessesConverge,
+% IncreasingBoundedProcessHasLimit, DecreasingBoundedProcessHasLimit,
+% ShrinkingNestedIntervalProcessHasUniqueLimit,
+% ArchimedeanReciprocalProcessTendsToZero.
+
+\begin{remark*}[Exposition]
+Completeness is often used before the full language of sequence theory has
+been developed.  This chapter therefore records several
+\emph{process-level completeness consequences}: arguments that are shaped like
+sequences but are used as controlled approximation procedures.
+\end{remark*}
+
+\begin{remark*}[Process-level completeness consequences]
+The following consequences are bridges from the least-upper-bound axiom to the
+later sequence chapter.
+\begin{itemize}
+  \item A bounded increasing process has a limiting endpoint, namely the
+  supremum of the values already produced.
+  \item A bounded decreasing process has a limiting endpoint, namely the
+  infimum of the values already produced.
+  \item A shrinking nested closed interval process determines a unique real
+  point when the lengths shrink to zero.
+  \item The Archimedean reciprocal process $1/n$ tends to zero in the
+  epsilon sense used by approximation arguments.
+\end{itemize}
+\end{remark*}
+
+\begin{remark*}[Boundary with the Sequences chapter]
+These statements deliberately do not replace the full machinery of sequences.
+The mature vocabulary of convergence, Cauchy sequences, subsequences,
+Bolzano--Weierstrass, and the systematic algebra of limits belongs to
+\hyperref[chap:sequences]{Sequences}.  Here the goal is narrower: completeness
+guarantees that monotone or nested approximation processes do not aim at a
+missing real number.
+\end{remark*}

@@ -1,0 +1,207 @@
+subject: completeness
+display_title: Completeness
+volume: volume-iii
+status: in-progress
+dependencies:
+  prior: bounding
+  next: sequences
+path: volume-iii/book-analysis-i/completeness
+book: book-analysis-i
+lean_module: LRA.VolumeIII.Analysis.Completeness
+lean_files:
+- Completeness/AxiomOfCompleteness.lean
+- Completeness/NestedIntervalProperty.lean
+- Completeness/ArchimedeanProperty.lean
+- Completeness/OrderSeparation.lean
+- Completeness/Density.lean
+- Completeness/CompletenessProcesses.lean
+- Completeness/CompletenessEquivalences.lean
+environments:
+- label: thm:archimedean-property
+  type: thm
+  file: notes\completeness\notes-archimedean-property.tex
+  display_title: Archimedean Property
+  proof_file: proofs\completeness\prf-archimedean-property.tex
+- label: cor:archimedean-reciprocal-form
+  type: cor
+  file: notes\completeness\notes-archimedean-property.tex
+  display_title: Archimedean Reciprocal Form
+  proof_file: proofs\completeness\prf-archimedean-reciprocal-form.tex
+- label: cor:archimedean-reciprocal
+  type: cor
+  file: notes\completeness\notes-archimedean-property.tex
+  display_title: Archimedean Scaling Form
+  proof_file: proofs\completeness\prf-archimedean-reciprocal.tex
+- label: lem:integer-part-lemma
+  type: lem
+  file: notes\completeness\notes-archimedean-property.tex
+  display_title: Integer Part Lemma
+  proof_file: proofs\completeness\prf-integer-part-lemma.tex
+- label: lem:archimedean-integer-part-lemma
+  type: lem
+  file: notes\completeness\notes-archimedean-property.tex
+  display_title: Archimedean Integer Part Lemma
+  proof_file: proofs\completeness\prf-archimedean-integer-part-lemma.tex
+- label: lem:integer-ceiling-lemma
+  type: lem
+  file: notes\completeness\notes-archimedean-property.tex
+  display_title: Integer Ceiling Lemma
+  proof_file: proofs\completeness\prf-integer-ceiling-lemma.tex
+- label: lem:integer-above-lemma
+  type: lem
+  file: notes\completeness\notes-archimedean-property.tex
+  display_title: Integer Above Lemma
+  proof_file: proofs\completeness\prf-integer-above-lemma.tex
+- label: lem:unit-length-interval-contains-integer
+  type: lem
+  file: notes\completeness\notes-archimedean-property.tex
+  display_title: Unit-Length Interval Contains an Integer
+  proof_file: proofs\completeness\prf-unit-length-interval-contains-integer.tex
+- label: def:least-upper-bound-property
+  type: def
+  file: notes\completeness\notes-axiom-of-completeness.tex
+  display_title: Least Upper Bound Property
+  proof_file: null
+- label: ax:completeness-of-reals
+  type: ax
+  file: notes\completeness\notes-axiom-of-completeness.tex
+  display_title: Completeness of $\mathbb{R}$
+  proof_file: null
+- label: thm:lub-property-implies-monotone-convergence
+  type: thm
+  file: notes\completeness\notes-completeness-equivalences.tex
+  display_title: Least Upper Bound Property Implies Monotone Convergence
+  proof_file: proofs\completeness\prf-lub-property-implies-monotone-convergence.tex
+- label: thm:monotone-convergence-implies-lub-property
+  type: thm
+  file: notes\completeness\notes-completeness-equivalences.tex
+  display_title: Monotone Convergence Implies Least Upper Bound Property
+  proof_file: proofs\completeness\prf-monotone-convergence-implies-lub-property.tex
+- label: thm:lub-property-equivalent-monotone-convergence
+  type: thm
+  file: notes\completeness\notes-completeness-equivalences.tex
+  display_title: Least Upper Bound Property Equivalent to Monotone Convergence
+  proof_file: proofs\completeness\prf-lub-property-equivalent-monotone-convergence.tex
+- label: thm:lub-property-equivalent-nested-interval-property
+  type: thm
+  file: notes\completeness\notes-completeness-equivalences.tex
+  display_title: Least Upper Bound Property Equivalent to Nested Intervals
+  proof_file: proofs\completeness\prf-lub-property-equivalent-nested-interval-property.tex
+- label: thm:standard-completeness-equivalences
+  type: thm
+  file: notes\completeness\notes-completeness-equivalences.tex
+  display_title: Standard Completeness Equivalences
+  proof_file: proofs\completeness\prf-standard-completeness-equivalences.tex
+- label: thm:order-separation-by-supremum
+  type: thm
+  file: notes\completeness\notes-order-separation.tex
+  display_title: Order Separation by Supremum
+  proof_file: proofs\completeness\prf-order-separation-by-supremum.tex
+- label: thm:dedekind-cut-property
+  type: thm
+  file: notes\completeness\notes-order-separation.tex
+  display_title: Dedekind Cut Property
+  proof_file: proofs\completeness\prf-dedekind-cut-property.tex
+- label: cor:no-gaps-in-r
+  type: cor
+  file: notes\completeness\notes-order-separation.tex
+  display_title: No Gaps in $\mathbb{R}$
+  proof_file: proofs\completeness\prf-no-gaps-in-r.tex
+- label: def:dense-subset
+  type: def
+  file: notes\completeness\notes-density.tex
+  display_title: Dense Subset
+  proof_file: null
+- label: def:order-dense-subset
+  type: def
+  file: notes\completeness\notes-density.tex
+  display_title: Order Dense Subset
+  proof_file: null
+- label: thm:density-of-rationals-in-reals
+  type: thm
+  file: notes\completeness\notes-density.tex
+  display_title: Density of the Rationals
+  proof_file: proofs\completeness\prf-density-of-rationals-in-reals.tex
+- label: lem:rational-translation-preserves-rationality
+  type: lem
+  file: notes\completeness\notes-density.tex
+  display_title: Rational Translation Preserves Rationality
+  proof_file: proofs\completeness\prf-rational-translation-preserves-rationality.tex
+- label: lem:rational-difference-preserves-rationality
+  type: lem
+  file: notes\completeness\notes-density.tex
+  display_title: Rational Difference Preserves Rationality
+  proof_file: proofs\completeness\prf-rational-difference-preserves-rationality.tex
+- label: lem:nonzero-rational-product-preserves-irrationality
+  type: lem
+  file: notes\completeness\notes-density.tex
+  display_title: Nonzero Rational Product Preserves Irrationality
+  proof_file: proofs\completeness\prf-nonzero-rational-product-preserves-irrationality.tex
+- label: lem:rational-translation-preserves-irrationality
+  type: lem
+  file: notes\completeness\notes-density.tex
+  display_title: Rational Translation Preserves Irrationality
+  proof_file: proofs\completeness\prf-rational-translation-preserves-irrationality.tex
+- label: lem:irrational-minus-irrational-need-not-be-irrational
+  type: lem
+  file: notes\completeness\notes-density.tex
+  display_title: Irrational Minus Irrational Need Not Be Irrational
+  proof_file: proofs\completeness\prf-irrational-minus-irrational-need-not-be-irrational.tex
+- label: lem:rational-minus-irrational-is-irrational
+  type: lem
+  file: notes\completeness\notes-density.tex
+  display_title: Rational Minus Irrational Is Irrational
+  proof_file: proofs\completeness\prf-rational-minus-irrational-is-irrational.tex
+- label: lem:irrational-plus-rational-is-irrational
+  type: lem
+  file: notes\completeness\notes-density.tex
+  display_title: Irrational Plus Rational Is Irrational
+  proof_file: proofs\completeness\prf-irrational-plus-rational-is-irrational.tex
+- label: lem:irrational-minus-rational-is-irrational
+  type: lem
+  file: notes\completeness\notes-density.tex
+  display_title: Irrational Minus Rational Is Irrational
+  proof_file: proofs\completeness\prf-irrational-minus-rational-is-irrational.tex
+- label: thm:density-of-irrationals-in-reals
+  type: thm
+  file: notes\completeness\notes-density.tex
+  display_title: Density of the Irrationals
+  proof_file: proofs\completeness\prf-density-of-irrationals-in-reals.tex
+- label: thm:irrational-between-any-two-rationals
+  type: thm
+  file: notes\completeness\notes-density.tex
+  display_title: An Irrational Between Any Two Rationals
+  proof_file: proofs\completeness\prf-irrational-between-any-two-rationals.tex
+- label: thm:rational-between-any-two-irrationals
+  type: thm
+  file: notes\completeness\notes-density.tex
+  display_title: A Rational Between Any Two Irrationals
+  proof_file: proofs\completeness\prf-rational-between-any-two-irrationals.tex
+- label: lem:small-irrational-positive-number
+  type: lem
+  file: notes\completeness\notes-density.tex
+  display_title: Small Irrational Positive Number
+  proof_file: proofs\completeness\prf-small-irrational-positive-number.tex
+- label: cor:no-adjacent-real-numbers
+  type: cor
+  file: notes\completeness\notes-density.tex
+  display_title: No Adjacent Real Numbers
+  proof_file: proofs\completeness\prf-no-adjacent-real-numbers.tex
+- label: cor:every-open-interval-contains-rational-and-irrational
+  type: cor
+  file: notes\completeness\notes-density.tex
+  display_title: Rational and Irrational Points in Every Open Interval
+  proof_file: null
+- label: thm:nested-interval-theorem
+  type: thm
+  file: notes\completeness\notes-nested-interval-property.tex
+  display_title: Nested Interval Property
+  proof_file: null
+proof_files:
+- proofs\completeness\prf-order-separation-by-supremum.tex
+- proofs\completeness\prf-dedekind-cut-property.tex
+- proofs\completeness\prf-no-gaps-in-r.tex
+- proofs\completeness\prf-no-adjacent-real-numbers.tex
+sections:
+- subject: completeness
+  display_title: Completeness

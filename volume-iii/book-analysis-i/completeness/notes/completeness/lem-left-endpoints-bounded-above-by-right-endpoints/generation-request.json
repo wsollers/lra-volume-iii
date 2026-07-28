@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "lem:left-endpoints-bounded-above-by-right-endpoints",
+  "kind": "lemma",
+  "title": "Left Endpoints Are Bounded Above by Right Endpoints",
+  "source": {
+    "label": "lem:left-endpoints-bounded-above-by-right-endpoints",
+    "kind": "lemma",
+    "title": "Left Endpoints Are Bounded Above by Right Endpoints",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "completeness",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/completeness/notes/completeness/notes-nested-interval-property.tex",
+    "source_line_start": 266,
+    "source_line_end": 283,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/completeness/notes/completeness/lem-left-endpoints-bounded-above-by-right-endpoints",
+      "artifact": "volume-iii/book-analysis-i/completeness/notes/completeness/lem-left-endpoints-bounded-above-by-right-endpoints/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/completeness/notes/completeness/lem-left-endpoints-bounded-above-by-right-endpoints/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/completeness/notes/completeness/lem-left-endpoints-bounded-above-by-right-endpoints",
+    "artifact": "volume-iii/book-analysis-i/completeness/notes/completeness/lem-left-endpoints-bounded-above-by-right-endpoints/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/completeness/notes/completeness/lem-left-endpoints-bounded-above-by-right-endpoints/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/completeness/notes/completeness/notes-nested-interval-property.tex",
+      "label": "lem:left-endpoints-bounded-above-by-right-endpoints",
+      "environment_kind": "lemma",
+      "source_line_start": 266,
+      "source_line_end": 283,
+      "current_tex": "\\begin{lemma}[Left Endpoints Are Bounded Above by Right Endpoints]\n\\label{lem:left-endpoints-bounded-above-by-right-endpoints}\nLet $(a_n)$ and $(b_n)$ be sequences in $\\mathbb{R}$ such that\n\\[\n  (\\forall n\\in\\mathbb{N})(a_n\\leq b_n)\n\\]\nand\n\\[\n  (\\forall n\\in\\mathbb{N})([a_{n+1},b_{n+1}]\\subseteq [a_n,b_n]).\n\\]\nThen\n\\[\n  (\\forall m,n\\in\\mathbb{N})(a_n\\leq b_m).\n\\]\nConsequently, every $b_m$ is an upper bound of $\\{a_n:n\\in\\mathbb{N}\\}$, and\nevery $a_n$ is a lower bound of $\\{b_m:m\\in\\mathbb{N}\\}$.\n\\hyperref[prf:left-endpoints-bounded-above-by-right-endpoints]{Go to proof.}\n\\end{lemma}",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

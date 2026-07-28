@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "cor:nested-interval-intersection-contains-endpoint-infimum",
+  "kind": "corollary",
+  "title": "Nested Interval Intersection Contains the Endpoint Infimum",
+  "source": {
+    "label": "cor:nested-interval-intersection-contains-endpoint-infimum",
+    "kind": "corollary",
+    "title": "Nested Interval Intersection Contains the Endpoint Infimum",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "completeness",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/completeness/notes/completeness/notes-nested-interval-property.tex",
+    "source_line_start": 685,
+    "source_line_end": 701,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/completeness/notes/completeness/cor-nested-interval-intersection-contains-endpoint-infimum",
+      "artifact": "volume-iii/book-analysis-i/completeness/notes/completeness/cor-nested-interval-intersection-contains-endpoint-infimum/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/completeness/notes/completeness/cor-nested-interval-intersection-contains-endpoint-infimum/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/completeness/notes/completeness/cor-nested-interval-intersection-contains-endpoint-infimum",
+    "artifact": "volume-iii/book-analysis-i/completeness/notes/completeness/cor-nested-interval-intersection-contains-endpoint-infimum/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/completeness/notes/completeness/cor-nested-interval-intersection-contains-endpoint-infimum/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/completeness/notes/completeness/notes-nested-interval-property.tex",
+      "label": "cor:nested-interval-intersection-contains-endpoint-infimum",
+      "environment_kind": "corollary",
+      "source_line_start": 685,
+      "source_line_end": 701,
+      "current_tex": "\\begin{corollary}[Nested Interval Intersection Contains the Endpoint Infimum]\n\\label{cor:nested-interval-intersection-contains-endpoint-infimum}\nLet $(a_n)$ and $(b_n)$ satisfy the hypotheses of the Nested Interval Theorem,\nand define\n\\[\n  \\beta:=\\inf\\{b_n:n\\in\\mathbb{N}\\}.\n\\]\nThen\n\\[\n  (\\forall n\\in\\mathbb{N})(a_n\\leq\\beta\\leq b_n).\n\\]\nTherefore,\n\\[\n  \\beta\\in \\bigcap_{n=1}^{\\infty}[a_n,b_n].\n\\]\n\\hyperref[prf:nested-interval-intersection-contains-endpoint-infimum]{Go to proof.}\n\\end{corollary}",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

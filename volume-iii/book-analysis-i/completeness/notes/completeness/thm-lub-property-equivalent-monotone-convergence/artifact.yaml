@@ -1,0 +1,198 @@
+schema_version: lra.semantic-artifact/1.0
+identity:
+  label: thm:lub-property-equivalent-monotone-convergence
+  kind: theorem
+  title: Least Upper Bound Property Equivalent to Monotone Convergence
+  canonical_name: Least Upper Bound Property Equivalent to Monotone Convergence
+  status: local_draft
+  atomicity:
+    status: requires_review
+    concepts_detected: []
+    owning_concept: Least Upper Bound Property Equivalent to Monotone Convergence
+    split_reason: null
+location:
+  repository: lra-volume-iii
+  commit: 452b31457c8447874ce61a2f0431f9520bfaff4d
+  volume: iii
+  book: book-analysis-i
+  chapter: bounding
+  topic: completeness
+  source_file: volume-iii/book-analysis-i/completeness/notes/completeness/notes-completeness-equivalences.tex
+  source_line_start: 174
+  source_line_end: 190
+  source_hash: sha256:a97b4d70a732676b7731145ba1020c09baff3164d0ae778f67baa969d8384b19
+classification:
+  mathematical_domain: bounding
+  artifact_form: theorem
+  logical_shape: local parser draft
+  logical_framework: mathematical_vernacular
+  language_level: mixed
+context: []
+parameters:
+- id: beginenumerate[label=(roman*)] item Every nonempty subset of $F$ that is bounded
+    above has a least upper bound in $F$. item Every increasing sequence in $F$ that
+    is bounded above converges in $F$. item Every decreasing sequence in $F$ that
+    is bounded below converges in $F$. endenumerate smallskip noindent hyperref[prf:lub-property-equivalent-monotone-convergence]textitGo
+    to proof. endtheorem
+  symbol: beginenumerate[label=(roman*)] item Every nonempty subset of $F$ that is
+    bounded above has a least upper bound in $F$. item Every increasing sequence in
+    $F$ that is bounded above converges in $F$. item Every decreasing sequence in
+    $F$ that is bounded below converges in $F$. endenumerate smallskip noindent hyperref[prf:lub-property-equivalent-monotone-convergence]textitGo
+    to proof. endtheorem
+- id: begintheorem[Least Upper Bound Property Equivalent to Monotone Convergence]
+    Let $F$ be an Archimedean linearly ordered field. The following statements are
+    equivalent
+  symbol: begintheorem[Least Upper Bound Property Equivalent to Monotone Convergence]
+    Let $F$ be an Archimedean linearly ordered field. The following statements are
+    equivalent
+assumptions: []
+statement:
+  canonical_prose: Least Upper Bound Property Equivalent to Monotone Convergence
+  canonical_latex: "\\begin{theorem}[Least Upper Bound Property Equivalent to Monotone\
+    \ Convergence]\n\\label{thm:lub-property-equivalent-monotone-convergence}\nLet\
+    \ $F$ be an Archimedean linearly ordered field.  The following statements are\n\
+    equivalent:\n\\begin{enumerate}[label=(\\roman*)]\n  \\item Every nonempty subset\
+    \ of $F$ that is bounded above has a least upper\n  bound in $F$.\n  \\item Every\
+    \ increasing sequence in $F$ that is bounded above converges in\n  $F$.\n  \\\
+    item Every decreasing sequence in $F$ that is bounded below converges in\n  $F$.\n\
+    \\end{enumerate}\n\n\\smallskip\n\\noindent\n\\hyperref[prf:lub-property-equivalent-monotone-convergence]{\\\
+    textit{Go to proof.}}\n\\end{theorem}"
+  semantic_ast: &id001
+    kind: relation
+    relation: \colon
+    left:
+      kind: variable
+      binder_id: begintheorem[Least Upper Bound Property Equivalent to Monotone Convergence]
+        Let $F$ be an Archimedean linearly ordered field. The following statements
+        are equivalent
+    right:
+      kind: variable
+      binder_id: beginenumerate[label=(roman*)] item Every nonempty subset of $F$
+        that is bounded above has a least upper bound in $F$. item Every increasing
+        sequence in $F$ that is bounded above converges in $F$. item Every decreasing
+        sequence in $F$ that is bounded below converges in $F$. endenumerate smallskip
+        noindent hyperref[prf:lub-property-equivalent-monotone-convergence]textitGo
+        to proof. endtheorem
+logical_forms:
+  standard_quantified:
+    latex: "\\begin{theorem}[Least Upper Bound Property Equivalent to Monotone Convergence]\n\
+      \\label{thm:lub-property-equivalent-monotone-convergence}\nLet $F$ be an Archimedean\
+      \ linearly ordered field.  The following statements are\nequivalent:\n\\begin{enumerate}[label=(\\\
+      roman*)]\n  \\item Every nonempty subset of $F$ that is bounded above has a\
+      \ least upper\n  bound in $F$.\n  \\item Every increasing sequence in $F$ that\
+      \ is bounded above converges in\n  $F$.\n  \\item Every decreasing sequence\
+      \ in $F$ that is bounded below converges in\n  $F$.\n\\end{enumerate}\n\n\\\
+      smallskip\n\\noindent\n\\hyperref[prf:lub-property-equivalent-monotone-convergence]{\\\
+      textit{Go to proof.}}\n\\end{theorem}"
+    ast: *id001
+    parser_witnesses:
+      original_latex: "\\begin{theorem}[Least Upper Bound Property Equivalent to Monotone\
+        \ Convergence]\n\\label{thm:lub-property-equivalent-monotone-convergence}\n\
+        Let $F$ be an Archimedean linearly ordered field.  The following statements\
+        \ are\nequivalent:\n\\begin{enumerate}[label=(\\roman*)]\n  \\item Every nonempty\
+        \ subset of $F$ that is bounded above has a least upper\n  bound in $F$.\n\
+        \  \\item Every increasing sequence in $F$ that is bounded above converges\
+        \ in\n  $F$.\n  \\item Every decreasing sequence in $F$ that is bounded below\
+        \ converges in\n  $F$.\n\\end{enumerate}\n\n\\smallskip\n\\noindent\n\\hyperref[prf:lub-property-equivalent-monotone-convergence]{\\\
+        textit{Go to proof.}}\n\\end{theorem}"
+      hand_parser:
+        available: true
+        ast:
+          kind: relation
+          relation: \colon
+          left:
+            kind: variable
+            binder_id: begintheorem[Least Upper Bound Property Equivalent to Monotone
+              Convergence] Let $F$ be an Archimedean linearly ordered field. The following
+              statements are equivalent
+          right:
+            kind: variable
+            binder_id: beginenumerate[label=(roman*)] item Every nonempty subset of
+              $F$ that is bounded above has a least upper bound in $F$. item Every
+              increasing sequence in $F$ that is bounded above converges in $F$. item
+              Every decreasing sequence in $F$ that is bounded below converges in
+              $F$. endenumerate smallskip noindent hyperref[prf:lub-property-equivalent-monotone-convergence]textitGo
+              to proof. endtheorem
+      lark_parser:
+        available: false
+        error: 'could not parse controlled formula: ''\\begin{theorem}[Least Upper
+          Bound Property Equivalent to Monotone Convergence]\n\\label{thm:lub-property-equivalent-monotone-convergence}\nLet
+          $F$ be an Archimedean linearly ordered field.  The following statements
+          are\nequivalent:\n\\begin{enumerate}[label=(\\roman*)]\n  \\item Every nonempty
+          subset of $F$ that is bounded above has a least upper\n  bound in $F$.\n  \\item
+          Every increasing sequence in $F$ that is bounded above converges in\n  $F$.\n  \\item
+          Every decreasing sequence in $F$ that is bounded below converges in\n  $F$.\n\\end{enumerate}\n\n\\smallskip\n\\noindent\n\\hyperref[prf:lub-property-equivalent-monotone-convergence]{\\textit{Go
+          to proof.}}\n\\end{theorem}'''
+      parsers_agree: false
+  predicate_reading: null
+  negation:
+    mechanical:
+      latex: "\\neg\\left(\\begin{theorem}[Least Upper Bound Property Equivalent to\
+        \ Monotone Convergence]\n\\label{thm:lub-property-equivalent-monotone-convergence}\n\
+        Let $F$ be an Archimedean linearly ordered field.  The following statements\
+        \ are\nequivalent:\n\\begin{enumerate}[label=(\\roman*)]\n  \\item Every nonempty\
+        \ subset of $F$ that is bounded above has a least upper\n  bound in $F$.\n\
+        \  \\item Every increasing sequence in $F$ that is bounded above converges\
+        \ in\n  $F$.\n  \\item Every decreasing sequence in $F$ that is bounded below\
+        \ converges in\n  $F$.\n\\end{enumerate}\n\n\\smallskip\n\\noindent\n\\hyperref[prf:lub-property-equivalent-monotone-convergence]{\\\
+        textit{Go to proof.}}\n\\end{theorem}\\right)"
+      ast:
+        kind: not
+        operand: *id001
+    approved_normal_form:
+      latex: null
+      ast:
+        kind: not
+        operand: *id001
+    normalization_requires: []
+  contrapositive: null
+  equivalent_forms: []
+semantics:
+  codex_local_reference: true
+  local_draft: true
+failure_analysis:
+  applicability_failures: []
+  statement_failures:
+  - id: statement-failure
+    description: Draft failure semantics require semantic review.
+relationships:
+  dependency_edges: []
+  ontology_edges: []
+  provenance_edges: []
+  proof_edges: []
+notation: {}
+exposition:
+  summary: Codex-local draft semantic validation payload generated from routed source.
+verification:
+  canonical_proof: null
+  formalizations: []
+  external_library_crosswalks: []
+  proof_vault_records: []
+provenance:
+  origin:
+    kind: normalized_source_statement
+    source_status: single_primary_statement
+    primary_source_statement:
+      role: primary
+      source_id: null
+      label: thm:lub-property-equivalent-monotone-convergence
+      citation: null
+      page_range: null
+      evidence: routed source environment
+      notes: Codex-local draft; requires semantic review.
+    component_sources: []
+    derivation_rule: null
+    requires_review: true
+  explicit_from_source:
+  - formal environment and attached support blocks
+  normalized_from_source:
+  - ASTs are generated by local governed parsers when available
+  inferred_from_registry: []
+  generated_by_analysis:
+  - Codex local materialize-local mode
+  unresolved: []
+governance:
+  governance_repository: lra-governance
+  governance_commit: e73467db2ba332f6f9dbc2d8f0857a1c1553d6c4
+  registry_commit: e73467db2ba332f6f9dbc2d8f0857a1c1553d6c4
+  schema_commit: e73467db2ba332f6f9dbc2d8f0857a1c1553d6c4

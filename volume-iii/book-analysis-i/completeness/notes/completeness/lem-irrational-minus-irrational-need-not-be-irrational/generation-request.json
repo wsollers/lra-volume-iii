@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "lem:irrational-minus-irrational-need-not-be-irrational",
+  "kind": "lemma",
+  "title": "Irrational Minus Irrational Need Not Be Irrational",
+  "source": {
+    "label": "lem:irrational-minus-irrational-need-not-be-irrational",
+    "kind": "lemma",
+    "title": "Irrational Minus Irrational Need Not Be Irrational",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "completeness",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/completeness/notes/completeness/notes-density.tex",
+    "source_line_start": 482,
+    "source_line_end": 491,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/completeness/notes/completeness/lem-irrational-minus-irrational-need-not-be-irrational",
+      "artifact": "volume-iii/book-analysis-i/completeness/notes/completeness/lem-irrational-minus-irrational-need-not-be-irrational/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/completeness/notes/completeness/lem-irrational-minus-irrational-need-not-be-irrational/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/completeness/notes/completeness/lem-irrational-minus-irrational-need-not-be-irrational",
+    "artifact": "volume-iii/book-analysis-i/completeness/notes/completeness/lem-irrational-minus-irrational-need-not-be-irrational/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/completeness/notes/completeness/lem-irrational-minus-irrational-need-not-be-irrational/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/completeness/notes/completeness/notes-density.tex",
+      "label": "lem:irrational-minus-irrational-need-not-be-irrational",
+      "environment_kind": "lemma",
+      "source_line_start": 482,
+      "source_line_end": 491,
+      "current_tex": "\\begin{lemma}[Irrational Minus Irrational Need Not Be Irrational]\n\\label{lem:irrational-minus-irrational-need-not-be-irrational}\nThere exist irrational numbers $x,y\\in\\mathbb{R}\\setminus\\mathbb{Q}$ such\nthat\n\\[\n  x-y\\in\\mathbb{Q}.\n\\]\nFor example, one may take $x=y=\\sqrt{2}$.\n\\hyperref[prf:irrational-minus-irrational-need-not-be-irrational]{\\textit{Go to proof.}}\n\\end{lemma}",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

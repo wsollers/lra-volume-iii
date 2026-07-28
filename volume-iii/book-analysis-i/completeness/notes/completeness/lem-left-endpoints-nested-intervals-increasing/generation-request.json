@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "lem:left-endpoints-nested-intervals-increasing",
+  "kind": "lemma",
+  "title": "Left Endpoints of Nested Intervals Are Increasing",
+  "source": {
+    "label": "lem:left-endpoints-nested-intervals-increasing",
+    "kind": "lemma",
+    "title": "Left Endpoints of Nested Intervals Are Increasing",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "completeness",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/completeness/notes/completeness/notes-nested-interval-property.tex",
+    "source_line_start": 90,
+    "source_line_end": 105,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/completeness/notes/completeness/lem-left-endpoints-nested-intervals-increasing",
+      "artifact": "volume-iii/book-analysis-i/completeness/notes/completeness/lem-left-endpoints-nested-intervals-increasing/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/completeness/notes/completeness/lem-left-endpoints-nested-intervals-increasing/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/completeness/notes/completeness/lem-left-endpoints-nested-intervals-increasing",
+    "artifact": "volume-iii/book-analysis-i/completeness/notes/completeness/lem-left-endpoints-nested-intervals-increasing/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/completeness/notes/completeness/lem-left-endpoints-nested-intervals-increasing/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/completeness/notes/completeness/notes-nested-interval-property.tex",
+      "label": "lem:left-endpoints-nested-intervals-increasing",
+      "environment_kind": "lemma",
+      "source_line_start": 90,
+      "source_line_end": 105,
+      "current_tex": "\\begin{lemma}[Left Endpoints of Nested Intervals Are Increasing]\n\\label{lem:left-endpoints-nested-intervals-increasing}\nLet $(a_n)$ and $(b_n)$ be sequences in $\\mathbb{R}$ such that\n\\[\n  (\\forall n\\in\\mathbb{N})(a_n\\leq b_n)\n\\]\nand\n\\[\n  (\\forall n\\in\\mathbb{N})([a_{n+1},b_{n+1}]\\subseteq [a_n,b_n]).\n\\]\nThen\n\\[\n  (\\forall n\\in\\mathbb{N})(a_n\\leq a_{n+1}).\n\\]\n\\hyperref[prf:left-endpoints-nested-intervals-increasing]{Go to proof.}\n\\end{lemma}",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

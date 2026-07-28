@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "thm:nested-interval-theorem",
+  "kind": "theorem",
+  "title": "Nested Interval Theorem",
+  "source": {
+    "label": "thm:nested-interval-theorem",
+    "kind": "theorem",
+    "title": "Nested Interval Theorem",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "completeness",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/completeness/notes/completeness/notes-nested-interval-property.tex",
+    "source_line_start": 462,
+    "source_line_end": 491,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/completeness/notes/completeness/thm-nested-interval-theorem",
+      "artifact": "volume-iii/book-analysis-i/completeness/notes/completeness/thm-nested-interval-theorem/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/completeness/notes/completeness/thm-nested-interval-theorem/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/completeness/notes/completeness/thm-nested-interval-theorem",
+    "artifact": "volume-iii/book-analysis-i/completeness/notes/completeness/thm-nested-interval-theorem/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/completeness/notes/completeness/thm-nested-interval-theorem/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/completeness/notes/completeness/notes-nested-interval-property.tex",
+      "label": "thm:nested-interval-theorem",
+      "environment_kind": "theorem",
+      "source_line_start": 462,
+      "source_line_end": 491,
+      "current_tex": "\\begin{theorem}[Nested Interval Theorem]\n\\label{thm:nested-interval-theorem}\nLet $(a_n)$ and $(b_n)$ be sequences in $\\mathbb{R}$ such that\n\\[\n  (\\forall n\\in\\mathbb{N})(a_n\\leq b_n)\n\\]\nand\n\\[\n  (\\forall n\\in\\mathbb{N})([a_{n+1},b_{n+1}]\\subseteq [a_n,b_n]).\n\\]\nDefine\n\\[\n  \\alpha:=\\sup\\{a_n:n\\in\\mathbb{N}\\},\n  \\qquad\n  \\beta:=\\inf\\{b_n:n\\in\\mathbb{N}\\}.\n\\]\nThen\n\\[\n  \\alpha\\leq\\beta\n\\]\nand\n\\[\n  \\bigcap_{n=1}^{\\infty}[a_n,b_n]\\neq\\varnothing.\n\\]\nIn particular, there exists $x\\in\\mathbb{R}$ such that\n\\[\n  (\\forall n\\in\\mathbb{N})(a_n\\leq x\\leq b_n).\n\\]\n\\hyperref[prf:nested-interval-theorem]{Go to proof.}\n\\end{theorem}",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

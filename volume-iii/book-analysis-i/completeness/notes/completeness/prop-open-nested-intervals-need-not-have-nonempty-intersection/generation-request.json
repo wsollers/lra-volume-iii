@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "prop:open-nested-intervals-need-not-have-nonempty-intersection",
+  "kind": "proposition",
+  "title": "Open Nested Intervals Need Not Have Nonempty Intersection",
+  "source": {
+    "label": "prop:open-nested-intervals-need-not-have-nonempty-intersection",
+    "kind": "proposition",
+    "title": "Open Nested Intervals Need Not Have Nonempty Intersection",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "completeness",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/completeness/notes/completeness/notes-nested-interval-property.tex",
+    "source_line_start": 1126,
+    "source_line_end": 1142,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/completeness/notes/completeness/prop-open-nested-intervals-need-not-have-nonempty-intersection",
+      "artifact": "volume-iii/book-analysis-i/completeness/notes/completeness/prop-open-nested-intervals-need-not-have-nonempty-intersection/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/completeness/notes/completeness/prop-open-nested-intervals-need-not-have-nonempty-intersection/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/completeness/notes/completeness/prop-open-nested-intervals-need-not-have-nonempty-intersection",
+    "artifact": "volume-iii/book-analysis-i/completeness/notes/completeness/prop-open-nested-intervals-need-not-have-nonempty-intersection/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/completeness/notes/completeness/prop-open-nested-intervals-need-not-have-nonempty-intersection/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/completeness/notes/completeness/notes-nested-interval-property.tex",
+      "label": "prop:open-nested-intervals-need-not-have-nonempty-intersection",
+      "environment_kind": "proposition",
+      "source_line_start": 1126,
+      "source_line_end": 1142,
+      "current_tex": "\\begin{proposition}[Open Nested Intervals Need Not Have Nonempty Intersection]\n\\label{prop:open-nested-intervals-need-not-have-nonempty-intersection}\nThere exists a sequence $(I_n)_{n\\in\\mathbb{N}}$ of nonempty bounded open\nintervals in $\\mathbb{R}$ such that\n\\[\n  (\\forall n\\in\\mathbb{N})(I_{n+1}\\subseteq I_n),\n\\]\nbut\n\\[\n  \\bigcap_{n=1}^{\\infty}I_n=\\varnothing.\n\\]\nOne such sequence is\n\\[\n  I_n=\\left(0,\\frac{1}{n}\\right).\n\\]\n\\hyperref[prf:open-nested-intervals-need-not-have-nonempty-intersection]{Go to proof.}\n\\end{proposition}",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

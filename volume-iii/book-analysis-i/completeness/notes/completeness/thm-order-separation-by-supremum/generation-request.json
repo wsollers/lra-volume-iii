@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "thm:order-separation-by-supremum",
+  "kind": "theorem",
+  "title": "Order Separation by Supremum",
+  "source": {
+    "label": "thm:order-separation-by-supremum",
+    "kind": "theorem",
+    "title": "Order Separation by Supremum",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "completeness",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/completeness/notes/completeness/notes-order-separation.tex",
+    "source_line_start": 2,
+    "source_line_end": 18,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/completeness/notes/completeness/thm-order-separation-by-supremum",
+      "artifact": "volume-iii/book-analysis-i/completeness/notes/completeness/thm-order-separation-by-supremum/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/completeness/notes/completeness/thm-order-separation-by-supremum/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/completeness/notes/completeness/thm-order-separation-by-supremum",
+    "artifact": "volume-iii/book-analysis-i/completeness/notes/completeness/thm-order-separation-by-supremum/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/completeness/notes/completeness/thm-order-separation-by-supremum/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/completeness/notes/completeness/notes-order-separation.tex",
+      "label": "thm:order-separation-by-supremum",
+      "environment_kind": "theorem",
+      "source_line_start": 2,
+      "source_line_end": 18,
+      "current_tex": "\\begin{theorem}[Order Separation by Supremum]\n\\label{thm:order-separation-by-supremum}\nLet $A,B\\subseteq\\mathbb{R}$ be nonempty sets such that\n\\[\n  (\\forall a\\in A)(\\forall b\\in B)(a\\leq b).\n\\]\nThen $A$ is bounded above, $B$ is bounded below, and the real number\n$c:=\\sup A$ separates $A$ from $B$; that is,\n\\[\n  (\\forall a\\in A)(\\forall b\\in B)(a\\leq c\\leq b).\n\\]\nIn particular,\n\\[\n  \\sup A\\leq\\inf B.\n\\]\n\\hyperref[prf:order-separation-by-supremum]{Go to proof.}\n\\end{theorem}",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

@@ -1,0 +1,47 @@
+{
+  "schema_version": "lra.semantic-validation-artifact-request/1.0",
+  "label": "cor:every-open-interval-contains-rational-and-irrational",
+  "kind": "corollary",
+  "title": "Rational and Irrational Points in Every Open Interval",
+  "source": {
+    "label": "cor:every-open-interval-contains-rational-and-irrational",
+    "kind": "corollary",
+    "title": "Rational and Irrational Points in Every Open Interval",
+    "book": "book-analysis-i",
+    "chapter": "bounding",
+    "section": "completeness",
+    "book_root": "volume-iii-bounds-sequences-and-series.tex",
+    "source_file": "volume-iii/book-analysis-i/completeness/notes/completeness/notes-density.tex",
+    "source_line_start": 998,
+    "source_line_end": 1008,
+    "artifact_package": {
+      "directory": "volume-iii/book-analysis-i/completeness/notes/completeness/cor-every-open-interval-contains-rational-and-irrational",
+      "artifact": "volume-iii/book-analysis-i/completeness/notes/completeness/cor-every-open-interval-contains-rational-and-irrational/artifact.yaml",
+      "corrected_tex": "volume-iii/book-analysis-i/completeness/notes/completeness/cor-every-open-interval-contains-rational-and-irrational/corrected.tex",
+      "exists": false
+    }
+  },
+  "suggested_package": {
+    "directory": "volume-iii/book-analysis-i/completeness/notes/completeness/cor-every-open-interval-contains-rational-and-irrational",
+    "artifact": "volume-iii/book-analysis-i/completeness/notes/completeness/cor-every-open-interval-contains-rational-and-irrational/artifact.yaml",
+    "corrected_tex": "volume-iii/book-analysis-i/completeness/notes/completeness/cor-every-open-interval-contains-rational-and-irrational/corrected.tex",
+    "exists": false
+  },
+  "llm_packet": {
+    "task": {
+      "mode": "generate_semantic_artifact",
+      "requested_action": "create_artifact_package"
+    },
+    "source": {
+      "repository_root": "F:\\repos\\lra-volume-iii",
+      "file": "volume-iii/book-analysis-i/completeness/notes/completeness/notes-density.tex",
+      "label": "cor:every-open-interval-contains-rational-and-irrational",
+      "environment_kind": "corollary",
+      "source_line_start": 998,
+      "source_line_end": 1008,
+      "current_tex": "\\begin{corollary}[Rational and Irrational Points in Every Open Interval]\n\\label{cor:every-open-interval-contains-rational-and-irrational}\nFor every $a,b\\in\\mathbb{R}$ with $a<b$, there exist\n$q\\in\\mathbb{Q}$ and $s\\in\\mathbb{R}\\setminus\\mathbb{Q}$ such that\n\\[\n  a<q<b\n  \\qquad\\text{and}\\qquad\n  a<s<b.\n\\]\n\\hyperref[prf:every-open-interval-contains-rational-and-irrational]{Go to proof.}\n\\end{corollary}",
+      "formalizations": []
+    }
+  },
+  "creation_mode": "prompt"
+}

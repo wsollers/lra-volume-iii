@@ -1,0 +1,727 @@
+% =========================================================
+% Archimedean Property
+% =========================================================
+% Lean mapping note:
+% ArchimedeanProperty, ArchimedeanReciprocalForm,
+% ArchimedeanReciprocalProperty,
+% ArchimedeanReciprocalProcessTendsToZero.
+
+\begin{remark*}[Interpretation]
+The Archimedean Property states that the natural numbers are unbounded in
+$\mathbb{R}$. That conclusion is not a formal consequence of the ordered-field
+axioms alone. There exist ordered fields satisfying all ordered-field axioms in
+which the natural numbers are bounded above, so the statement must be justified
+from stronger structure.
+
+The needed structure is completeness. If $\mathbb{N}$ were bounded above in
+$\mathbb{R}$, then the Least Upper Bound Property would produce a supremum
+$\alpha \in \mathbb{R}$ for $\mathbb{N}$. But then $\alpha - 1$ cannot be an
+upper bound, so there exists $n \in \mathbb{N}$ with $n > \alpha - 1$. Hence
+$n+1 > \alpha$, contradicting the fact that $\alpha$ is an upper bound of
+$\mathbb{N}$.
+
+\smallskip
+\noindent
+\hyperref[prf:archimedean-property]{\textit{Go to proof.}}
+\end{remark*}
+
+
+
+
+\begin{theorembox}{Theorem (Archimedean Property)}
+\begin{theorem}[Archimedean Property]
+\label{thm:archimedean-property}
+For every $x,y\in\mathbb{R}$, if $x>0$ and $y>0$, then there exists
+$n\in\mathbb{N}$ such that
+\[
+  nx>y.
+\]
+Equivalently,
+\[
+  (\forall x,y\in\mathbb{R})
+  \bigl[(x>0\land y>0)\Longrightarrow(\exists n\in\mathbb{N})(nx>y)\bigr].
+\]
+
+\smallskip
+\noindent
+\hyperref[prf:archimedean-property]{\textit{Go to proof.}}
+\end{theorem}
+\end{theorembox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x\in\mathbb{R}\;\exists n\in\mathbb{N}\;(n>x).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+\operatorname{HasArchimedeanProperty}(P_{\mathbb{R}})\Longleftrightarrow
+\forall x\in\mathbb{R}\;\exists n\in\mathbb{N}\;(n>x).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\exists x\in\mathbb{R}\;\forall n\in\mathbb{N}\;(n\le x).
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+\neg\operatorname{HasArchimedeanProperty}(P_{\mathbb{R}})\Longleftrightarrow
+\exists x\in\mathbb{R}\;\forall n\in\mathbb{N}\;(n\le x).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+\[
+\neg\operatorname{HasArchimedeanProperty}(\mathbb{R})
+=
+\underbrace{\exists x\in\mathbb{R}}_{\text{real upper bound}}
+\;\underbrace{\forall n\in\mathbb{N}\;(n\le x)}_{\text{all natural numbers remain below it}}.
+\]
+
+
+  \item[\(\operatorname{HasArchimedeanProperty}.\)]
+  \[
+\exists x\in\mathbb{R}\;\forall n\in\mathbb{N}\;(n\le x).
+\]
+\[
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+\neg\operatorname{HasArchimedeanProperty}(P_{\mathbb{R}})\Longleftrightarrow
+\exists x\in\mathbb{R}\;\forall n\in\mathbb{N}\;(n\le x).
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The Archimedean Property says that the natural numbers do not stop below any real ceiling. No real number is so large that every natural number remains below it. In this chapter, the result is a consequence of completeness: a bounded copy of $\mathbb{N}$ would have a supremum, and that supremum is contradicted by shifting one natural number upward.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+\item \hyperref[def:reals]{Real Numbers}.
+\item \hyperref[def:natural-numbers]{Natural Numbers}.
+\item \hyperref[def:ordered-set]{Ordered Set}.
+\item \hyperref[def:supremum]{Supremum}.
+\item \hyperref[ax:completeness-of-reals]{Completeness of the Reals}.
+\end{itemize}
+\end{dependencies}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{corollarybox}{Corollary (Archimedean Reciprocal Form)}
+\begin{corollary}[Archimedean Reciprocal Form]
+\label{cor:archimedean-reciprocal-form}
+For every $\varepsilon\in\mathbb{R}$ with $\varepsilon>0$, there exists
+$n\in\mathbb{N}$ such that
+\[
+  0<\frac{1}{n}<\varepsilon.
+\]
+Equivalently,
+\[
+  (\forall\varepsilon>0)(\exists n\in\mathbb{N})\left(\frac{1}{n}<\varepsilon\right).
+\]
+
+\smallskip
+\noindent
+\hyperref[prf:archimedean-reciprocal-form]{\textit{Go to proof.}}
+\end{corollary}
+\end{corollarybox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall \varepsilon\in\mathbb{R}\;
+\bigl(\varepsilon>0\Longrightarrow
+\exists n\in\mathbb{N}\;(0<1/n<\varepsilon)\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+\operatorname{HasArchimedeanProperty}(P_{\mathbb{R}})
+\Longrightarrow
+\forall \varepsilon>0\;\exists n\in\mathbb{N}\;(0<1/n<\varepsilon).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\exists \varepsilon>0\;\forall n\in\mathbb{N}\;\left(\frac{1}{n}\ge \varepsilon\right).
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\exists \varepsilon>0\;\forall n\in\mathbb{N}\;(1/n\ge \varepsilon).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+\[
+\underbrace{\varepsilon>0}_{\text{positive scale}}
+\qquad\text{and}\qquad
+\underbrace{\forall n\in\mathbb{N}\;(1/n\ge\varepsilon)}_{\text{reciprocals never pass below it}}.
+\]
+
+
+  \item[\exists-condition.]
+  \[
+\exists \varepsilon>0\;\forall n\in\mathbb{N}\;\left(\frac{1}{n}\ge \varepsilon\right).
+\]
+\[
+\exists \varepsilon>0\;\forall n\in\mathbb{N}\;(1/n\ge \varepsilon).
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+The reciprocals of the natural numbers descend below every positive real
+tolerance.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+\item \hyperref[def:reals]{Real Numbers}.
+\item \hyperref[def:natural-numbers]{Natural Numbers}.
+\item \hyperref[def:ordered-set]{Ordered Set}.
+\item \hyperref[thm:archimedean-property]{Archimedean Property}.
+\end{itemize}
+\end{dependencies}
+
+
+
+\begin{corollarybox}{Corollary (The Reciprocal Sequence Converges to Zero)}
+\begin{corollary}[The Reciprocal Sequence Converges to Zero]
+\label{cor:archimedean-reciprocal}
+For every $\varepsilon\in\mathbb{R}$ with $\varepsilon>0$, there exists
+$N\in\mathbb{N}$ such that, for every $n\in\mathbb{N}$,
+\[
+  n\geq N
+  \Longrightarrow
+  \left|\frac{1}{n}-0\right|<\varepsilon.
+\]
+Hence,
+\[
+  \lim_{n\longrightarrow\infty}\frac{1}{n}=0.
+\]
+
+\smallskip
+\noindent
+\hyperref[prf:archimedean-reciprocal]{\textit{Go to proof.}}
+\end{corollary}
+\end{corollarybox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x,y\in\mathbb{R}\;\bigl(x>0\Longrightarrow \exists n\in\mathbb{N}\;(nx>y)\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+\operatorname{HasArchimedeanProperty}(P_{\mathbb{R}})
+\Longrightarrow
+\forall x,y\in\mathbb{R}\;\bigl(x>0\Longrightarrow \exists n\in\mathbb{N}\;(nx>y)\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\exists x,y\in\mathbb{R}\;\bigl(x>0\land \forall n\in\mathbb{N}\;(nx\le y)\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\exists x,y\in\mathbb{R}\;\bigl(x>0\land \forall n\in\mathbb{N}\;(nx\le y)\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+\[
+\underbrace{\exists x\in\mathbb{R}\;(x>0)}_{\text{positive step size}}
+\;\land\;
+\underbrace{\exists y\in\mathbb{R}\;\forall n\in\mathbb{N}\;(nx\le y)}_{\text{all natural multiples stay bounded}}.
+\]
+
+
+  \item[\(\operatorname{HasArchimedeanProperty}.\)]
+  \[
+\exists x,y\in\mathbb{R}\;\bigl(x>0\land \forall n\in\mathbb{N}\;(nx\le y)\bigr).
+\]
+\[
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad
+\operatorname{HasArchimedeanProperty}(P_{\mathbb{R}})
+\Longrightarrow
+\forall x,y\in\mathbb{R}\;\bigl(x>0\Longrightarrow \exists n\in\mathbb{N}\;(nx>y)\bigr).
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Any fixed positive real step eventually passes any real threshold when repeated enough times. The statement is the Archimedean Property applied after rescaling by the positive number $x$: growth by units becomes growth by steps of size $x$.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+\item \hyperref[def:reals]{Real Numbers}.
+\item \hyperref[def:natural-numbers]{Natural Numbers}.
+\item \hyperref[def:ordered-set]{Ordered Set}.
+\item \hyperref[thm:archimedean-property]{Archimedean Property}.
+\end{itemize}
+\end{dependencies}
+
+\input{volume-iii/book-analysis-i/completeness/notes/completeness/figure-archimedean-integer-step}
+
+
+
+
+
+\begin{lemmabox}{Lemma (Integer Part Lemma)}
+\begin{lemma}[Integer Part Lemma]
+\label{lem:integer-part-lemma}
+For every $x\in\mathbb{R}$ satisfying $x\geq0$, there exists a unique
+$n\in\mathbb{N}_0$ such that
+\[
+  n\leq x<n+1.
+\]
+Equivalently,
+\[
+  (\forall x\in\mathbb{R})
+  \left[x\geq0\Longrightarrow(\exists!n\in\mathbb{N}_0)(n\leq x<n+1)\right].
+\]
+
+\smallskip
+\noindent
+\hyperref[prf:integer-part-lemma]{\textit{Go to proof.}}
+\end{lemma}
+\end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x\in\mathbb{R}\;\exists m\in\mathbb{Z}\;(m\le x<m+1).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+m=\lfloor x\rfloor\Longleftrightarrow
+m\in\mathbb{Z}\land m\le x<m+1.
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\exists x\in\mathbb{R}\;\forall m\in\mathbb{Z}\;(x<m\lor m+1\le x).
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\neg\exists m\in\mathbb{Z}\;(m=\lfloor x\rfloor)
+\Longleftrightarrow
+\forall m\in\mathbb{Z}\;(x<m\lor m+1\le x).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+\[
+\underbrace{x<m}_{\text{integer starts too high}}
+\qquad\text{or}\qquad
+\underbrace{m+1\le x}_{\text{integer interval ends too low}}.
+\]
+
+
+  \item[\exists-condition.]
+  \[
+\exists x\in\mathbb{R}\;\forall m\in\mathbb{Z}\;(x<m\lor m+1\le x).
+\]
+\[
+\neg\exists m\in\mathbb{Z}\;(m=\lfloor x\rfloor)
+\Longleftrightarrow
+\forall m\in\mathbb{Z}\;(x<m\lor m+1\le x).
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Every real number has an integer part: the real line is tiled by consecutive
+unit intervals whose left endpoints are integers.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+\item \hyperref[def:reals]{Real Numbers}.
+\item \hyperref[def:integers]{Integers}.
+\item \hyperref[thm:archimedean-property]{Archimedean Property}.
+\end{itemize}
+\end{dependencies}
+
+
+
+\begin{lemmabox}{Lemma (Archimedean Integer Part Lemma)}
+\begin{lemma}[Archimedean Integer Part Lemma]
+\label{lem:archimedean-integer-part-lemma}
+For every $x\in\mathbb{R}$, there exists a unique integer $m\in\mathbb{Z}$
+such that
+\[
+  m\leq x<m+1.
+\]
+Equivalently,
+\[
+  (\forall x\in\mathbb{R})(\exists!m\in\mathbb{Z})(m\leq x<m+1).
+\]
+
+\smallskip
+\noindent
+\hyperref[prf:archimedean-integer-part-lemma]{\textit{Go to proof.}}
+\end{lemma}
+\end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x\in\mathbb{R}\;\exists m\in\mathbb{Z}\;(m-1\le x<m).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+m=\lfloor x\rfloor+1
+\Longleftrightarrow
+m\in\mathbb{Z}\land m-1\le x<m.
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\exists x\in\mathbb{R}\;\forall m\in\mathbb{Z}\;(x<m-1\lor m\le x).
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\neg\exists m\in\mathbb{Z}\;(m=\lfloor x\rfloor+1)
+\Longleftrightarrow
+\forall m\in\mathbb{Z}\;(x<m-1\lor m\le x).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+\[
+\underbrace{x<m-1}_{\text{right endpoint too high}}
+\qquad\text{or}\qquad
+\underbrace{m\le x}_{\text{right endpoint not above }x}.
+\]
+
+
+  \item[\exists-condition.]
+  \[
+\exists x\in\mathbb{R}\;\forall m\in\mathbb{Z}\;(x<m-1\lor m\le x).
+\]
+\[
+\neg\exists m\in\mathbb{Z}\;(m=\lfloor x\rfloor+1)
+\Longleftrightarrow
+\forall m\in\mathbb{Z}\;(x<m-1\lor m\le x).
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This is the integer-part lemma with the endpoint shifted by one.  It produces
+the first integer strictly above $x$ when the unit interval is written with its
+integer endpoint on the right.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+\item \hyperref[def:reals]{Real Numbers}.
+\item \hyperref[def:integers]{Integers}.
+\item \hyperref[lem:integer-part-lemma]{Integer Part Lemma}.
+\end{itemize}
+\end{dependencies}
+
+
+
+\begin{lemmabox}{Lemma (Integer Ceiling Lemma)}
+\begin{lemma}[Integer Ceiling Lemma]
+\label{lem:integer-ceiling-lemma}
+For every $x\in\mathbb{R}$, there exists a unique $m\in\mathbb{Z}$ such that
+\[
+  m-1<x\leq m.
+\]
+Equivalently,
+\[
+  (\forall x\in\mathbb{R})(\exists!m\in\mathbb{Z})(m-1<x\leq m).
+\]
+The unique integer $m$ is denoted by
+\[
+  m=\lceil x\rceil.
+\]
+
+\smallskip
+\noindent
+\hyperref[prf:integer-ceiling-lemma]{\textit{Go to proof.}}
+\end{lemma}
+\end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x\in\mathbb{R}\;\exists m\in\mathbb{Z}\;(x<m\le x+1).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+m=\lfloor x\rfloor+1
+\Longleftrightarrow
+m\in\mathbb{Z}\land x<m\le x+1.
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\exists x\in\mathbb{R}\;\forall m\in\mathbb{Z}\;(m\le x\lor x+1<m).
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\neg\exists m\in\mathbb{Z}\;(m=\lfloor x\rfloor+1)
+\Longleftrightarrow
+\forall m\in\mathbb{Z}\;(m\le x\lor x+1<m).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+\[
+\underbrace{m\le x}_{\text{not strictly above }x}
+\qquad\text{or}\qquad
+\underbrace{x+1<m}_{\text{overshoots one unit}}.
+\]
+
+
+  \item[\exists-condition.]
+  \[
+\exists x\in\mathbb{R}\;\forall m\in\mathbb{Z}\;(m\le x\lor x+1<m).
+\]
+\[
+\neg\exists m\in\mathbb{Z}\;(m=\lfloor x\rfloor+1)
+\Longleftrightarrow
+\forall m\in\mathbb{Z}\;(m\le x\lor x+1<m).
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+There is always an integer just above a real number, and it can be chosen no
+farther than one unit above that number.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+\item \hyperref[def:reals]{Real Numbers}.
+\item \hyperref[def:integers]{Integers}.
+\item \hyperref[lem:archimedean-integer-part-lemma]{Archimedean Integer Part Lemma}.
+\end{itemize}
+\end{dependencies}
+
+
+
+\begin{lemmabox}{Lemma (Integer Above Lemma)}
+\begin{lemma}[Integer Above Lemma]
+\label{lem:integer-above-lemma}
+For every $x\in\mathbb{R}$, there exists $n\in\mathbb{N}$ such that
+\[
+  x<n.
+\]
+Equivalently,
+\[
+  (\forall x\in\mathbb{R})(\exists n\in\mathbb{N})(x<n).
+\]
+
+\smallskip
+\noindent
+\hyperref[prf:integer-above-lemma]{\textit{Go to proof.}}
+\end{lemma}
+\end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall x\in\mathbb{R}\;\exists m\in\mathbb{Z}\;(x<m).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+m\in\mathbb{Z}\land x<m.
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\exists x\in\mathbb{R}\;\forall m\in\mathbb{Z}\;(m\le x).
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\neg\exists m\in\mathbb{Z}\;(x<m)
+\Longleftrightarrow
+\forall m\in\mathbb{Z}\;(m\le x).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+\[
+\underbrace{\exists x\in\mathbb{R}}_{\text{candidate upper bound}}
+\;\underbrace{\forall m\in\mathbb{Z}\;(m\le x)}_{\text{no integer lies above it}}.
+\]
+
+
+  \item[\exists-condition.]
+  \[
+\exists x\in\mathbb{R}\;\forall m\in\mathbb{Z}\;(m\le x).
+\]
+\[
+\neg\exists m\in\mathbb{Z}\;(x<m)
+\Longleftrightarrow
+\forall m\in\mathbb{Z}\;(m\le x).
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Integers are unbounded above in the real line. The Integer Ceiling Lemma gives
+the sharper version with $m$ no farther than one unit above $x$.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+\item \hyperref[def:reals]{Real Numbers}.
+\item \hyperref[def:integers]{Integers}.
+\item \hyperref[lem:integer-ceiling-lemma]{Integer Ceiling Lemma}.
+\end{itemize}
+\end{dependencies}
+
+
+
+\begin{lemmabox}{Lemma (Unit-Length Interval Contains an Integer)}
+\begin{lemma}[Unit-Length Interval Contains an Integer]
+\label{lem:unit-length-interval-contains-integer}
+For every $x\in\mathbb{R}$, there exists $m\in\mathbb{Z}$ such that
+\[
+  x\leq m\leq x+1.
+\]
+Equivalently,
+\[
+  (\forall x\in\mathbb{R})([x,x+1]\cap\mathbb{Z}\neq\varnothing).
+\]
+
+\smallskip
+\noindent
+\hyperref[prf:unit-length-interval-contains-integer]{\textit{Go to proof.}}
+\end{lemma}
+\end{lemmabox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+\forall \alpha,\beta\in\mathbb{R}\;
+\bigl(\beta-\alpha>1\Longrightarrow
+\exists m\in\mathbb{Z}\;(\alpha<m<\beta)\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+m\in\mathbb{Z}\cap(\alpha,\beta)
+\Longleftrightarrow
+m\in\mathbb{Z}\land \alpha<m<\beta.
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+\exists \alpha,\beta\in\mathbb{R}\;
+\bigl(\beta-\alpha>1\land
+\forall m\in\mathbb{Z}\;(m\le \alpha\lor \beta\le m)\bigr).
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+\neg\exists m\;(m\in\mathbb{Z}\cap(\alpha,\beta))
+\Longleftrightarrow
+\forall m\in\mathbb{Z}\;(m\le \alpha\lor \beta\le m).
+\]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+\[
+\underbrace{m\le \alpha}_{\text{integer at or left of the interval}}
+\qquad\text{or}\qquad
+\underbrace{\beta\le m}_{\text{integer at or right of the interval}}.
+\]
+
+
+  \item[\exists-condition.]
+  \[
+\exists \alpha,\beta\in\mathbb{R}\;
+\bigl(\beta-\alpha>1\land
+\forall m\in\mathbb{Z}\;(m\le \alpha\lor \beta\le m)\bigr).
+\]
+\[
+\neg\exists m\;(m\in\mathbb{Z}\cap(\alpha,\beta))
+\Longleftrightarrow
+\forall m\in\mathbb{Z}\;(m\le \alpha\lor \beta\le m).
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+Open intervals longer than one unit cannot fit between consecutive integers.
+At least one integer must lie strictly inside.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+\item \hyperref[def:reals]{Real Numbers}.
+\item \hyperref[def:integers]{Integers}.
+\item \hyperref[def:open-interval]{Open Interval}.
+\item \hyperref[lem:integer-ceiling-lemma]{Integer Ceiling Lemma}.
+\end{itemize}
+\end{dependencies}
