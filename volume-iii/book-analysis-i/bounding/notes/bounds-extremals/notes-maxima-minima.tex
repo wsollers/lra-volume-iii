@@ -89,7 +89,7 @@ A maximum is an upper bound that is attained by the set itself.  The
 attainment condition separates maximum from supremum.
 \end{remark*}
 
-\begin{remark*}[Empty-set convention]
+\begin{remark*}[Exposition]
 The empty set has no maximum, since there is no element $m\in\varnothing$
 that can attain the upper bound.
 \end{remark*}
@@ -178,7 +178,7 @@ A minimum is a lower bound that is attained by the set itself.  The
 attainment condition separates minimum from infimum.
 \end{remark*}
 
-\begin{remark*}[Empty-set convention]
+\begin{remark*}[Exposition]
 The empty set has no minimum, since there is no element $n\in\varnothing$
 that can attain the lower bound.
 \end{remark*}
@@ -692,5 +692,127 @@ minimum.
   \item \hyperref[def:subset]{Subset}
   \item \hyperref[def:infimum]{Infimum}
   \item \hyperref[def:minimum]{Minimum}
+\end{itemize}
+\end{dependencies}
+
+\begin{corollarybox}{A Set Has a Maximum If and Only If Its Supremum Belongs to the Set}
+\begin{corollary}[A Set Has a Maximum If and Only If Its Supremum Belongs to the Set]
+\label{cor:maximum-iff-supremum-in-the-set}
+Let $A\subseteq\mathbb{R}$ be nonempty and bounded above, and let $s=\sup A$.
+Then
+\[
+  A\text{ has a maximum}
+  \Longleftrightarrow
+  s\in A,
+\]
+and when this holds, $\max A = s$.
+\hyperref[prf:maximum-iff-supremum-in-the-set]{\textit{Go to proof.}}
+\end{corollary}
+\end{corollarybox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  A\neq\varnothing,\quad\operatorname{LeastUpperBound}(s,A,P)
+  \quad\Longrightarrow\quad
+  \bigl[(\exists m\in\mathbb{R})\operatorname{GreatestElement}(m,A,P)
+  \Longleftrightarrow s\in A\bigr].
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad
+  A\neq\varnothing\land\operatorname{LeastUpperBound}(s,A,P)
+  \Longrightarrow
+  \bigl[(\exists m)\operatorname{GreatestElement}(m,A,P)\leftrightarrow s\in A\bigr].
+\]
+\end{remark*}
+
+\begin{remark*}[Negated quantified statement]
+\[
+  A\neq\varnothing,\quad\operatorname{LeastUpperBound}(s,A,P),
+  \quad\text{and}\quad
+  \bigl[(\exists m\in\mathbb{R})\operatorname{GreatestElement}(m,A,P)\land s\notin A\bigr]
+  \ \text{or}\
+  \bigl[s\in A\land(\forall m\in\mathbb{R})\neg\operatorname{GreatestElement}(m,A,P)\bigr].
+\]
+\end{remark*}
+
+\begin{remark*}[Negation predicate reading]
+\[
+  A\neq\varnothing,\quad\operatorname{LeastUpperBound}(s,A,P),
+  \quad\text{and}\quad
+  \bigl[(\exists m\in\mathbb{R})\operatorname{GreatestElement}(m,A,P)\land s\notin A\bigr]
+  \ \text{or}\
+  \bigl[s\in A\land(\forall m\in\mathbb{R})\neg\operatorname{GreatestElement}(m,A,P)\bigr].
+\]
+
+The negation predicate reading is the predicate-level form of the displayed negated statement.
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.]
+  Failure would mean a maximum exists while the supremum lies outside the
+  set, or the supremum lies in the set while no maximum exists.
+
+  
+\[
+A\neq\varnothing,\quad\operatorname{LeastUpperBound}(s,A,P),
+  \quad\text{and}\quad
+  \bigl[(\exists m\in\mathbb{R})\operatorname{GreatestElement}(m,A,P)\land s\notin A\bigr]
+  \ \text{or}\
+  \bigl[s\in A\land(\forall m\in\mathbb{R})\neg\operatorname{GreatestElement}(m,A,P)\bigr].
+\]
+
+\[
+A\neq\varnothing,\quad\operatorname{LeastUpperBound}(s,A,P),
+  \quad\text{and}\quad
+  \bigl[(\exists m\in\mathbb{R})\operatorname{GreatestElement}(m,A,P)\land s\notin A\bigr]
+  \ \text{or}\
+  \bigl[s\in A\land(\forall m\in\mathbb{R})\neg\operatorname{GreatestElement}(m,A,P)\bigr].
+\]
+  \item[\operatorname{GreatestElement} / \operatorname{LeastUpperBound}.]
+\[
+A\neq\varnothing,\quad\operatorname{LeastUpperBound}(s,A,P),
+  \quad\text{and}\quad
+  \bigl[(\exists m\in\mathbb{R})\operatorname{GreatestElement}(m,A,P)\land s\notin A\bigr]
+  \ \text{or}\
+  \bigl[s\in A\land(\forall m\in\mathbb{R})\neg\operatorname{GreatestElement}(m,A,P)\bigr].
+\]
+
+\[
+A\neq\varnothing,\quad\operatorname{LeastUpperBound}(s,A,P),
+  \quad\text{and}\quad
+  \bigl[(\exists m\in\mathbb{R})\operatorname{GreatestElement}(m,A,P)\land s\notin A\bigr]
+  \ \text{or}\
+  \bigl[s\in A\land(\forall m\in\mathbb{R})\neg\operatorname{GreatestElement}(m,A,P)\bigr].
+\]
+  The forward direction combines \hyperref[prop:maximum-implies-supremum]{Maximum
+  Implies Supremum} with \hyperref[prop:uniqueness-of-the-supremum]{Uniqueness
+  of the Supremum}: any maximum is a supremum, and suprema are unique, so it
+  must equal $s$ and hence $s\in A$. The reverse direction is
+  \hyperref[prop:supremum-in-the-set-is-the-maximum]{Supremum in the Set Is
+  the Maximum}.
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This packages the two one-directional propositions above into a single
+if-and-only-if: ``attained'' and ``supremum'' coincide exactly at set
+membership. It is worth stating as its own corollary because later
+arguments often need to move freely in either direction (e.g. showing a
+maximum exists by exhibiting the supremum inside the set, or ruling out a
+maximum by showing the supremum lies outside it) rather than reaching for
+the one-directional propositions and re-deriving the missing half by hand.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:maximum]{Maximum}
+  \item \hyperref[def:supremum]{Supremum}
+  \item \hyperref[prop:maximum-implies-supremum]{Maximum Implies Supremum}
+  \item \hyperref[prop:supremum-in-the-set-is-the-maximum]{Supremum in the Set Is the Maximum}
+  \item \hyperref[prop:uniqueness-of-the-supremum]{Uniqueness of the Supremum}
 \end{itemize}
 \end{dependencies}

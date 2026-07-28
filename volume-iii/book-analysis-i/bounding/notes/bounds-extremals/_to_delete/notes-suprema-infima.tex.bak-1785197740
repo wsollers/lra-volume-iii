@@ -122,7 +122,7 @@ Thus, $s$ is the least upper bound of $A$ in $S$.
 A supremum is the least upper bound: it combines upper-bound control with leastness among all upper bounds.
 \end{remark*}
 
-\begin{remark*}[Exposition]
+\begin{remark*}[Empty-set convention]
 Nonemptiness is a standing hypothesis for real suprema in this section.  The
 empty set is bounded above in $\mathbb{R}$, but it has no real supremum:
 every real number is an upper bound of $\varnothing$, and $\mathbb{R}$ has no
@@ -238,7 +238,7 @@ Thus, $i$ is the greatest lower bound of $A$ in $S$.
 An infimum is the greatest lower bound: it combines lower-bound control with greatestness among all lower bounds.
 \end{remark*}
 
-\begin{remark*}[Exposition]
+\begin{remark*}[Empty-set convention]
 Nonemptiness is a standing hypothesis for real infima in this section.  The
 empty set is bounded below in $\mathbb{R}$, but it has no real infimum:
 every real number is a lower bound of $\varnothing$, and $\mathbb{R}$ has no
@@ -492,24 +492,17 @@ The negation predicate reading is the predicate-level form of the displayed nega
   \item[Exposition.]
   Failure would mean that a supremum is not an upper bound.
 
-  
-\[
-\operatorname{LeastUpperBound}(s,A,P)
-  \quad\text{and}\quad
-  (\exists x\in A)(s<x).
-\]
-  \item[\operatorname{LeastUpperBound}.]
+  \item[\operatorname{LeastUpperBound} / \operatorname{GreatestLowerBound}.]
   This is exactly the first clause in the definition of supremum.
   \[
     \operatorname{LeastUpperBound}(s,A,P)
     \quad\text{and}\quad
     (\exists x\in A)(s<x).
   \]
-
-\[
-    \operatorname{LeastUpperBound}(s,A,P)
-    \quad\text{and}\quad
-    (\exists x\in A)(s<x).
+  \[
+    P=\mathsf{OrderedSet}(S,\leq),\qquad
+    \operatorname{GreatestLowerBound}(i,A,P)\land
+    \operatorname{GreatestLowerBound}(j,A,P)\land i\neq j.
   \]
 \end{description}
 \end{remark*}
@@ -581,12 +574,6 @@ The negation predicate reading is the predicate-level form of the displayed nega
   \item[Exposition.]
   Failure would mean that an infimum is not a lower bound.
 
-  
-\[
-\operatorname{GreatestLowerBound}(i,A,P)
-  \quad\text{and}\quad
-  (\exists x\in A)(x<i).
-\]
   \item[\operatorname{GreatestLowerBound}.]
   This is exactly the first clause in the definition of infimum.
   \[
@@ -594,11 +581,10 @@ The negation predicate reading is the predicate-level form of the displayed nega
     \quad\text{and}\quad
     (\exists x\in A)(x<i).
   \]
-
-\[
-    \operatorname{GreatestLowerBound}(i,A,P)
-    \quad\text{and}\quad
-    (\exists x\in A)(x<i).
+  \[
+    P=\mathsf{OrderedSet}(S,\leq),\qquad
+    \operatorname{GreatestLowerBound}(i,A,P)\land
+    \operatorname{GreatestLowerBound}(j,A,P)\land i\neq j.
   \]
 \end{description}
 \end{remark*}
@@ -674,13 +660,7 @@ The negation predicate reading is the predicate-level form of the displayed nega
   Failure would require a counterexample in the smaller set even though
   the larger set is already bounded by $u$.
 
-  
-\[
-A\subseteq B,\quad \operatorname{UpperBound}(u,B,P),
-  \quad\text{and}\quad
-  (\exists x\in A)(u<x).
-\]
-  \item[\operatorname{UpperBound}.]
+  \item[\operatorname{UpperBound} / \operatorname{GreatestLowerBound}.]
   Any counterexample $x\in A$ is also an element of $B$, contradicting the
   upper-bound hypothesis for $B$.
   \[
@@ -688,11 +668,10 @@ A\subseteq B,\quad \operatorname{UpperBound}(u,B,P),
     \quad\text{and}\quad
     (\exists x\in A)(u<x).
   \]
-
-\[
-    A\subseteq B,\quad \operatorname{UpperBound}(u,B,P),
-    \quad\text{and}\quad
-    (\exists x\in A)(u<x).
+  \[
+    P=\mathsf{OrderedSet}(S,\leq),\qquad
+    \operatorname{GreatestLowerBound}(i,A,P)\land
+    \operatorname{GreatestLowerBound}(j,A,P)\land i\neq j.
   \]
 \end{description}
 \end{remark*}
@@ -768,13 +747,7 @@ The negation predicate reading is the predicate-level form of the displayed nega
   Failure would require a smaller-set counterexample to a lower bound that
   already works on the larger set.
 
-  
-\[
-A\subseteq B,\quad \operatorname{LowerBound}(\ell,B,P),
-  \quad\text{and}\quad
-  (\exists x\in A)(x<\ell).
-\]
-  \item[\operatorname{LowerBound}.]
+  \item[\operatorname{LowerBound} / \operatorname{GreatestLowerBound}.]
   Any counterexample $x\in A$ lies in $B$, contradicting the lower-bound
   hypothesis for $B$.
   \[
@@ -782,11 +755,10 @@ A\subseteq B,\quad \operatorname{LowerBound}(\ell,B,P),
     \quad\text{and}\quad
     (\exists x\in A)(x<\ell).
   \]
-
-\[
-    A\subseteq B,\quad \operatorname{LowerBound}(\ell,B,P),
-    \quad\text{and}\quad
-    (\exists x\in A)(x<\ell).
+  \[
+    P=\mathsf{OrderedSet}(S,\leq),\qquad
+    \operatorname{GreatestLowerBound}(i,A,P)\land
+    \operatorname{GreatestLowerBound}(j,A,P)\land i\neq j.
   \]
 \end{description}
 \end{remark*}
@@ -855,22 +827,17 @@ The negation predicate reading is the predicate-level form of the displayed nega
   \item[Exposition.]
   Failure would mean enlarging a nonempty set lowers its least upper bound.
 
-  
-\[
-A\subseteq B,\quad \operatorname{LeastUpperBound}(s_A,A,P),\quad
-  \operatorname{LeastUpperBound}(s_B,B,P),\quad s_B<s_A.
-\]
-  \item[\operatorname{LeastUpperBound}.]
+  \item[\operatorname{LeastUpperBound} / \operatorname{GreatestLowerBound}.]
   The value $\sup B$ bounds $B$, hence bounds $A$; since $\sup A$ is least
   among upper bounds of $A$, $\sup A\leq\sup B$.
   \[
     A\subseteq B,\quad \operatorname{LeastUpperBound}(s_A,A,P),\quad
     \operatorname{LeastUpperBound}(s_B,B,P),\quad s_B<s_A.
   \]
-
-\[
-    A\subseteq B,\quad \operatorname{LeastUpperBound}(s_A,A,P),\quad
-    \operatorname{LeastUpperBound}(s_B,B,P),\quad s_B<s_A.
+  \[
+    P=\mathsf{OrderedSet}(S,\leq),\qquad
+    \operatorname{GreatestLowerBound}(i,A,P)\land
+    \operatorname{GreatestLowerBound}(j,A,P)\land i\neq j.
   \]
 \end{description}
 \end{remark*}
@@ -942,11 +909,6 @@ The negation predicate reading is the predicate-level form of the displayed nega
   Failure would mean enlarging a nonempty set raises its greatest lower
   bound.
 
-  
-\[
-A\subseteq B,\quad \operatorname{GreatestLowerBound}(i_A,A,P),\quad
-  \operatorname{GreatestLowerBound}(i_B,B,P),\quad i_A<i_B.
-\]
   \item[\operatorname{GreatestLowerBound}.]
   The value $\inf B$ bounds $B$ below, hence bounds $A$ below; since
   $\inf A$ is greatest among lower bounds of $A$, $\inf B\leq\inf A$.
@@ -954,10 +916,10 @@ A\subseteq B,\quad \operatorname{GreatestLowerBound}(i_A,A,P),\quad
     A\subseteq B,\quad \operatorname{GreatestLowerBound}(i_A,A,P),\quad
     \operatorname{GreatestLowerBound}(i_B,B,P),\quad i_A<i_B.
   \]
-
-\[
-    A\subseteq B,\quad \operatorname{GreatestLowerBound}(i_A,A,P),\quad
-    \operatorname{GreatestLowerBound}(i_B,B,P),\quad i_A<i_B.
+  \[
+    P=\mathsf{OrderedSet}(S,\leq),\qquad
+    \operatorname{GreatestLowerBound}(i,A,P)\land
+    \operatorname{GreatestLowerBound}(j,A,P)\land i\neq j.
   \]
 \end{description}
 \end{remark*}
@@ -1040,13 +1002,6 @@ The negation predicate reading is the predicate-level form of the displayed nega
   Failure would mean an upper bound below the supremum, or a number above
   the supremum that fails to bound the set.
 
-  
-\[
-\operatorname{LeastUpperBound}(s,A,P)
-  \quad\text{and}\quad
-  (\exists u)\bigl[(\operatorname{UpperBound}(u,A,P)\land u<s)
-  \lor(s\leq u\land\neg\operatorname{UpperBound}(u,A,P))\bigr].
-\]
   \item[\operatorname{LeastUpperBound} / \operatorname{UpperBound}.]
   Leastness gives the forward implication.  The fact that $s$ bounds $A$
   gives the reverse implication by transitivity.
@@ -1056,12 +1011,10 @@ The negation predicate reading is the predicate-level form of the displayed nega
     (\exists u)\bigl[(\operatorname{UpperBound}(u,A,P)\land u<s)
     \lor(s\leq u\land\neg\operatorname{UpperBound}(u,A,P))\bigr].
   \]
-
-\[
-    \operatorname{LeastUpperBound}(s,A,P)
-    \quad\text{and}\quad
-    (\exists u)\bigl[(\operatorname{UpperBound}(u,A,P)\land u<s)
-    \lor(s\leq u\land\neg\operatorname{UpperBound}(u,A,P))\bigr].
+  \[
+    P=\mathsf{OrderedSet}(S,\leq),\qquad
+    \operatorname{GreatestLowerBound}(i,A,P)\land
+    \operatorname{GreatestLowerBound}(j,A,P)\land i\neq j.
   \]
 \end{description}
 \end{remark*}
@@ -1144,13 +1097,6 @@ The negation predicate reading is the predicate-level form of the displayed nega
   Failure would mean a lower bound above the infimum, or a number below the
   infimum that fails to bound the set below.
 
-  
-\[
-\operatorname{GreatestLowerBound}(i,A,P)
-  \quad\text{and}\quad
-  (\exists \ell)\bigl[(\operatorname{LowerBound}(\ell,A,P)\land i<\ell)
-  \lor(\ell\leq i\land\neg\operatorname{LowerBound}(\ell,A,P))\bigr].
-\]
   \item[\operatorname{GreatestLowerBound} / \operatorname{LowerBound}.]
   Greatestness gives the forward implication.  The fact that $i$ bounds
   $A$ below gives the reverse implication by transitivity.
@@ -1160,12 +1106,10 @@ The negation predicate reading is the predicate-level form of the displayed nega
     (\exists \ell)\bigl[(\operatorname{LowerBound}(\ell,A,P)\land i<\ell)
     \lor(\ell\leq i\land\neg\operatorname{LowerBound}(\ell,A,P))\bigr].
   \]
-
-\[
-    \operatorname{GreatestLowerBound}(i,A,P)
-    \quad\text{and}\quad
-    (\exists \ell)\bigl[(\operatorname{LowerBound}(\ell,A,P)\land i<\ell)
-    \lor(\ell\leq i\land\neg\operatorname{LowerBound}(\ell,A,P))\bigr].
+  \[
+    P=\mathsf{OrderedSet}(S,\leq),\qquad
+    \operatorname{GreatestLowerBound}(i,A,P)\land
+    \operatorname{GreatestLowerBound}(j,A,P)\land i\neq j.
   \]
 \end{description}
 \end{remark*}
@@ -1231,18 +1175,15 @@ The negation predicate reading is the predicate-level form of the displayed nega
   \item[Exposition.]
   Failure would mean the supremum is not an upper bound.
 
-  
-\[
-  \operatorname{LeastUpperBound}(s,A,P)\quad\text{and}\quad(\exists x\in A)(s<x).
-\]
-  \item[\operatorname{LeastUpperBound}.]
+  \item[\operatorname{LeastUpperBound} / \operatorname{GreatestLowerBound}.]
   This is the upper-bound clause in the definition of supremum.
   \[
     \operatorname{LeastUpperBound}(s,A,P)\quad\text{and}\quad(\exists x\in A)(s<x).
   \]
-
-\[
-    \operatorname{LeastUpperBound}(s,A,P)\quad\text{and}\quad(\exists x\in A)(s<x).
+  \[
+    P=\mathsf{OrderedSet}(S,\leq),\qquad
+    \operatorname{GreatestLowerBound}(i,A,P)\land
+    \operatorname{GreatestLowerBound}(j,A,P)\land i\neq j.
   \]
 \end{description}
 \end{remark*}
@@ -1307,18 +1248,15 @@ The negation predicate reading is the predicate-level form of the displayed nega
   \item[Exposition.]
   Failure would mean the infimum is not a lower bound.
 
-  
-\[
-  \operatorname{GreatestLowerBound}(i,A,P)\quad\text{and}\quad(\exists x\in A)(x<i).
-\]
   \item[\operatorname{GreatestLowerBound}.]
   This is the lower-bound clause in the definition of infimum.
   \[
     \operatorname{GreatestLowerBound}(i,A,P)\quad\text{and}\quad(\exists x\in A)(x<i).
   \]
-
-\[
-    \operatorname{GreatestLowerBound}(i,A,P)\quad\text{and}\quad(\exists x\in A)(x<i).
+  \[
+    P=\mathsf{OrderedSet}(S,\leq),\qquad
+    \operatorname{GreatestLowerBound}(i,A,P)\land
+    \operatorname{GreatestLowerBound}(j,A,P)\land i\neq j.
   \]
 \end{description}
 \end{remark*}
@@ -1388,11 +1326,6 @@ The negation predicate reading is the predicate-level form of the displayed nega
   Failure would put the greatest lower bound strictly above the least upper
   bound of the same nonempty set.
 
-  
-\[
-\operatorname{GreatestLowerBound}(i,A,P),\quad \operatorname{LeastUpperBound}(s,A,P),
-  \quad\text{and}\quad s<i.
-\]
   \item[\operatorname{GreatestLowerBound} / \operatorname{LeastUpperBound}.]
   Choose $a\in A$.  Then $i\leq a$ because $i$ is a lower bound, and
   $a\leq s$ because $s$ is an upper bound.
@@ -1400,10 +1333,10 @@ The negation predicate reading is the predicate-level form of the displayed nega
     \operatorname{GreatestLowerBound}(i,A,P),\quad \operatorname{LeastUpperBound}(s,A,P),
     \quad\text{and}\quad s<i.
   \]
-
-\[
-    \operatorname{GreatestLowerBound}(i,A,P),\quad \operatorname{LeastUpperBound}(s,A,P),
-    \quad\text{and}\quad s<i.
+  \[
+    P=\mathsf{OrderedSet}(S,\leq),\qquad
+    \operatorname{GreatestLowerBound}(i,A,P)\land
+    \operatorname{GreatestLowerBound}(j,A,P)\land i\neq j.
   \]
 \end{description}
 \end{remark*}
@@ -1565,13 +1498,7 @@ The negation predicate reading is the predicate-level form of the displayed nega
   Failure would mean $A$ reaches higher in supremum than $B$ even though
   each element of $A$ is dominated by an element of $B$.
 
-  
-\[
-[\forall x\in A\,\exists y\in B\,(x\leq y)]
-  \quad\text{and}\quad
-  \sup B<\sup A.
-\]
-  \item[\operatorname{LeastUpperBound}.]
+  \item[\operatorname{GreatestLowerBound}.]
   Every element of $B$ lies below $\sup B$, so every element of $A$ also
   lies below $\sup B$.  Thus $\sup B$ is an upper bound for $A$.
   \[
@@ -1579,11 +1506,10 @@ The negation predicate reading is the predicate-level form of the displayed nega
     \quad\text{and}\quad
     \sup B<\sup A.
   \]
-
-\[
-    [\forall x\in A\,\exists y\in B\,(x\leq y)]
-    \quad\text{and}\quad
-    \sup B<\sup A.
+  \[
+    P=\mathsf{OrderedSet}(S,\leq),\qquad
+    \operatorname{GreatestLowerBound}(i,A,P)\land
+    \operatorname{GreatestLowerBound}(j,A,P)\land i\neq j.
   \]
 \end{description}
 \end{remark*}
@@ -1672,13 +1598,6 @@ The negation predicate reading is the predicate-level form of the displayed nega
   bounded above; outside complete ordered settings, the existence clause
   can fail.
 
-  
-\[
-S\neq\varnothing,\quad
-  \operatorname{BoundedAbove}(S,P),
-  \quad\text{and}\quad
-  (\forall s\in\mathbb{R})\neg\operatorname{LeastUpperBound}(s,S,P).
-\]
   \item[\operatorname{BoundedAbove} / \operatorname{LeastUpperBound}.]
   The hypotheses separate domain nonemptiness from one-sided boundedness.
   The conclusion asserts existence of the sharp upper bound.
@@ -1688,12 +1607,10 @@ S\neq\varnothing,\quad
     \quad\text{and}\quad
     (\forall s\in\mathbb{R})\neg\operatorname{LeastUpperBound}(s,S,P).
   \]
-
-\[
-    S\neq\varnothing,\quad
-    \operatorname{BoundedAbove}(S,P),
-    \quad\text{and}\quad
-    (\forall s\in\mathbb{R})\neg\operatorname{LeastUpperBound}(s,S,P).
+  \[
+    P=\mathsf{OrderedSet}(S,\leq),\qquad
+    \operatorname{GreatestLowerBound}(i,A,P)\land
+    \operatorname{GreatestLowerBound}(j,A,P)\land i\neq j.
   \]
 \end{description}
 \end{remark*}
@@ -1783,13 +1700,6 @@ The negation predicate reading is the predicate-level form of the displayed nega
   In $\mathbb{R}$ the theorem cannot fail once the set is nonempty and
   bounded below.
 
-  
-\[
-S\neq\varnothing,\quad
-  \operatorname{BoundedBelow}(S,P),
-  \quad\text{and}\quad
-  (\forall i\in\mathbb{R})\neg\operatorname{GreatestLowerBound}(i,S,P).
-\]
   \item[\operatorname{BoundedBelow} / \operatorname{GreatestLowerBound}.]
   Apply the least upper bound property to $-S$ or argue by the order-dual
   form of completeness.
@@ -1799,12 +1709,10 @@ S\neq\varnothing,\quad
     \quad\text{and}\quad
     (\forall i\in\mathbb{R})\neg\operatorname{GreatestLowerBound}(i,S,P).
   \]
-
-\[
-    S\neq\varnothing,\quad
-    \operatorname{BoundedBelow}(S,P),
-    \quad\text{and}\quad
-    (\forall i\in\mathbb{R})\neg\operatorname{GreatestLowerBound}(i,S,P).
+  \[
+    P=\mathsf{OrderedSet}(S,\leq),\qquad
+    \operatorname{GreatestLowerBound}(i,A,P)\land
+    \operatorname{GreatestLowerBound}(j,A,P)\land i\neq j.
   \]
 \end{description}
 \end{remark*}
@@ -1822,120 +1730,5 @@ An infimum is the greatest lower bound: it combines lower-bound control with gre
   \item \hyperref[def:real-lower-bound]{Lower Bound}
   \item \hyperref[def:bounded-below]{Bounded Below}
   \item \hyperref[def:infimum]{Infimum}
-\end{itemize}
-\end{dependencies}
-
-\begin{corollarybox}{Bounded Set Has Both a Supremum and an Infimum}
-\begin{corollary}[Bounded Set Has Both a Supremum and an Infimum]
-\label{cor:bounded-set-has-supremum-and-infimum}
-Let $A\subseteq\mathbb{R}$ be nonempty and bounded. Then there exist unique
-$s,i\in\mathbb{R}$ such that
-\[
-  s=\sup A \qquad\text{and}\qquad i=\inf A.
-\]
-\hyperref[prf:bounded-set-has-supremum-and-infimum]{\textit{Go to proof.}}
-\end{corollary}
-\end{corollarybox}
-
-\begin{remark*}[Standard quantified statement]
-\[
-  A\neq\varnothing,\quad
-  (\exists u\in\mathbb{R})(\forall a\in A)(a\leq u),\quad
-  (\exists \ell\in\mathbb{R})(\forall a\in A)(\ell\leq a)
-  \quad\Longrightarrow\quad
-  (\exists! s\in\mathbb{R})\operatorname{LeastUpperBound}(s,A,P)
-  \ \text{and}\
-  (\exists! i\in\mathbb{R})\operatorname{GreatestLowerBound}(i,A,P).
-\]
-\end{remark*}
-
-\begin{remark*}[Predicate reading]
-\[
-  P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad
-  A\neq\varnothing\land\operatorname{Bounded}(A,P)
-  \Longrightarrow
-  (\exists! s)\operatorname{LeastUpperBound}(s,A,P)\land(\exists! i)\operatorname{GreatestLowerBound}(i,A,P).
-\]
-\end{remark*}
-
-\begin{remark*}[Negated quantified statement]
-\[
-  A\neq\varnothing,\quad \operatorname{Bounded}(A,P),
-  \quad\text{and}\quad
-  \bigl[(\forall s\in\mathbb{R})\neg\operatorname{LeastUpperBound}(s,A,P)
-  \ \text{or}\
-  (\forall i\in\mathbb{R})\neg\operatorname{GreatestLowerBound}(i,A,P)\bigr].
-\]
-\end{remark*}
-
-\begin{remark*}[Negation predicate reading]
-\[
-  A\neq\varnothing,\quad \operatorname{Bounded}(A,P),
-  \quad\text{and}\quad
-  \bigl[(\forall s\in\mathbb{R})\neg\operatorname{LeastUpperBound}(s,A,P)
-  \ \text{or}\
-  (\forall i\in\mathbb{R})\neg\operatorname{GreatestLowerBound}(i,A,P)\bigr].
-\]
-
-The negation predicate reading is the predicate-level form of the displayed negated statement.
-\end{remark*}
-
-\begin{remark*}[Failure modes]
-\begin{description}
-  \item[Exposition.]
-\[
-  \mathbb{R}
-\]
-  In $\mathbb{R}$, neither existence clause can fail once the set is
-  nonempty and bounded on the relevant side; this corollary simply records
-  that both hold simultaneously when the set is bounded on both sides.
-
-  
-\[
-A\neq\varnothing,\quad \operatorname{Bounded}(A,P),
-  \quad\text{and}\quad
-  \bigl[(\forall s\in\mathbb{R})\neg\operatorname{LeastUpperBound}(s,A,P)
-  \ \text{or}\
-  (\forall i\in\mathbb{R})\neg\operatorname{GreatestLowerBound}(i,A,P)\bigr].
-\]
-  \item[\operatorname{LeastUpperBound} / \operatorname{GreatestLowerBound}.]
-\[
-A\neq\varnothing,\quad \operatorname{Bounded}(A,P),
-  \quad\text{and}\quad
-  \bigl[(\forall s\in\mathbb{R})\neg\operatorname{LeastUpperBound}(s,A,P)
-  \ \text{or}\
-  (\forall i\in\mathbb{R})\neg\operatorname{GreatestLowerBound}(i,A,P)\bigr].
-\]
-
-\[
-A\neq\varnothing,\quad \operatorname{Bounded}(A,P),
-  \quad\text{and}\quad
-  \bigl[(\forall s\in\mathbb{R})\neg\operatorname{LeastUpperBound}(s,A,P)
-  \ \text{or}\
-  (\forall i\in\mathbb{R})\neg\operatorname{GreatestLowerBound}(i,A,P)\bigr].
-\]
-  Apply \hyperref[thm:lub-property-implies-existence-of-suprema]{Least Upper
-  Bound Property Implies Existence of Suprema} to the upper-bound half of
-  $\operatorname{Bounded}(A,P)$, and
-  \hyperref[thm:glb-property-implies-existence-of-infima]{Greatest Lower
-  Bound Property Implies Existence of Infima} to the lower-bound half.
-\end{description}
-\end{remark*}
-
-\begin{remark*}[Interpretation]
-This is nothing more than the two existence theorems applied side by side:
-a set that is bounded on both sides is exactly a set for which both the
-supremum and the infimum are guaranteed to exist, each uniquely. It is
-stated separately here because ``bounded'' (both-sided) is the hypothesis
-that shows up constantly in later chapters, and it is worth having the
-combined conclusion on hand as its own citable result rather than
-re-deriving it from the two one-sided theorems every time.
-\end{remark*}
-
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:bounded]{Bounded Set}
-  \item \hyperref[thm:lub-property-implies-existence-of-suprema]{Least Upper Bound Property Implies Existence of Suprema}
-  \item \hyperref[thm:glb-property-implies-existence-of-infima]{Greatest Lower Bound Property Implies Existence of Infima}
 \end{itemize}
 \end{dependencies}

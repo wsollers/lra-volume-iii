@@ -30,7 +30,7 @@ nonempty open subset of $X$ intersects $D$.
 \begin{remark*}[Predicate reading]
 \[
 X\in\mathbf{Set},\qquad D\subseteq X,\qquad
-\operatorname{IsDense}(D,X,\tau)\coloneqq
+\operatorname{DenseSubset}(D,X,\tau)\coloneqq
 \overline{D}=X
 \Longleftrightarrow
 \forall U\in\tau\;
@@ -52,7 +52,7 @@ X\in\mathbf{Set},\qquad D\subseteq X,\qquad
 \begin{remark*}[Negation predicate reading]
 \[
 X\in\mathbf{Set},\qquad D\subseteq X,\qquad
-\neg\operatorname{IsDense}(D,X,\tau)\Longleftrightarrow
+\neg\operatorname{DenseSubset}(D,X,\tau)\Longleftrightarrow
 \exists U\in\tau\;\bigl(U\neq\varnothing\land U\cap D=\varnothing\bigr).
 \]
 \end{remark*}
@@ -60,16 +60,11 @@ X\in\mathbf{Set},\qquad D\subseteq X,\qquad
 \begin{remark*}[Failure modes]
 \begin{description}
 \item[Exposition.]
-\[
-\neg\operatorname{IsDense}(D,X,\tau)
-=
-\underbrace{\exists U\in\tau\;(U\neq\varnothing)}_{\text{nonempty open set}}
-\;\land\;
-\underbrace{U\cap D=\varnothing}_{\text{no point of }D\text{ lies in }U}.
-\]
+Density fails when some nonempty open subset of $X$ contains no point of
+$D$.
 
 
-  \item[\operatorname{IsDense}.]
+  \item[\operatorname{DenseSubset}.]
   \[
 \begin{aligned}
 &\text{Let }(X,\tau)\text{ be a topological space and }D\subseteq X.\\
@@ -80,7 +75,36 @@ X\in\mathbf{Set},\qquad D\subseteq X,\qquad
 \]
 \[
 X\in\mathbf{Set},\qquad D\subseteq X,\qquad
-\neg\operatorname{IsDense}(D,X,\tau)\Longleftrightarrow
+\neg\operatorname{DenseSubset}(D,X,\tau)\Longleftrightarrow
+\exists U\in\tau\;\bigl(U\neq\varnothing\land U\cap D=\varnothing\bigr).
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
+\[
+\neg\operatorname{DenseSubset}(D,X,\tau)
+=
+\underbrace{\exists U\in\tau\;(U\neq\varnothing)}_{\text{nonempty open set}}
+\;\land\;
+\underbrace{U\cap D=\varnothing}_{\text{no point of }D\text{ lies in }U}.
+\]
+
+
+  \item[\operatorname{DenseSubset}.]
+  \[
+\begin{aligned}
+&\text{Let }(X,\tau)\text{ be a topological space and }D\subseteq X.\\
+&D\text{ is not dense in }X
+\Longleftrightarrow
+\exists U\in\tau\;\bigl(U\neq\varnothing\land U\cap D=\varnothing\bigr).
+\end{aligned}
+\]
+\[
+X\in\mathbf{Set},\qquad D\subseteq X,\qquad
+\neg\operatorname{DenseSubset}(D,X,\tau)\Longleftrightarrow
 \exists U\in\tau\;\bigl(U\neq\varnothing\land U\cap D=\varnothing\bigr).
 \]
 \end{description}
@@ -111,7 +135,7 @@ $S$ there lies an element of $D$.
 \begin{remark*}[Standard quantified statement]
 \[
 \begin{aligned}
-&\operatorname{IsOrderDenseSubset}(D,P)
+&\operatorname{OrderDenseSubset}(D,P)
 \Longleftrightarrow
 \forall x,y\in S\;\bigl(x<y\Longrightarrow \exists d\in D\;(x<d<y)\bigr).
 \end{aligned}
@@ -121,7 +145,7 @@ $S$ there lies an element of $D$.
 \begin{remark*}[Predicate reading]
 \[
 S\in\mathbf{Set},\qquad D\subseteq S,\qquad P=\mathsf{TotallyOrderedSet}(S,\leq),\qquad
-\operatorname{IsOrderDenseSubset}(D,P)\coloneqq
+\operatorname{OrderDenseSubset}(D,P)\coloneqq
 \forall x,y\in S\;\bigl(x<y\Longrightarrow \exists d\in D\;(x<d<y)\bigr).
 \]
 \end{remark*}
@@ -140,7 +164,7 @@ S\in\mathbf{Set},\qquad D\subseteq S,\qquad P=\mathsf{TotallyOrderedSet}(S,\leq)
 \begin{remark*}[Negation predicate reading]
 \[
 S\in\mathbf{Set},\qquad D\subseteq S,\qquad P=\mathsf{TotallyOrderedSet}(S,\leq),\qquad
-\neg\operatorname{IsOrderDenseSubset}(D,P)\Longleftrightarrow
+\neg\operatorname{OrderDenseSubset}(D,P)\Longleftrightarrow
 \exists x,y\in S\;\bigl(x<y\land \forall d\in D\;(d\leq x\lor y\leq d)\bigr).
 \]
 \end{remark*}
@@ -148,16 +172,11 @@ S\in\mathbf{Set},\qquad D\subseteq S,\qquad P=\mathsf{TotallyOrderedSet}(S,\leq)
 \begin{remark*}[Failure modes]
 \begin{description}
 \item[Exposition.]
-\[
-\neg\operatorname{IsOrderDenseSubset}(D,P)
-=
-\underbrace{\exists x,y\in S\;(x<y)}_{\text{nonempty interval}}
-\;\land\;
-\underbrace{\forall d\in D\;(d\leq x\lor y\leq d)}_{\text{no point of }D\text{ lies between }x\text{ and }y}.
-\]
+Order density fails when there is a nonempty open interval of $S$ that
+contains no point of $D$.
 
 
-  \item[\operatorname{IsOrderDenseSubset}.]
+  \item[\operatorname{OrderDenseSubset}.]
   \[
 \begin{aligned}
 &\text{Let }(S,\leq)\text{ be a linearly ordered set and }D\subseteq S.\\
@@ -168,7 +187,36 @@ S\in\mathbf{Set},\qquad D\subseteq S,\qquad P=\mathsf{TotallyOrderedSet}(S,\leq)
 \]
 \[
 S\in\mathbf{Set},\qquad D\subseteq S,\qquad P=\mathsf{TotallyOrderedSet}(S,\leq),\qquad
-\neg\operatorname{IsOrderDenseSubset}(D,P)\Longleftrightarrow
+\neg\operatorname{OrderDenseSubset}(D,P)\Longleftrightarrow
+\exists x,y\in S\;\bigl(x<y\land \forall d\in D\;(d\leq x\lor y\leq d)\bigr).
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
+\[
+\neg\operatorname{OrderDenseSubset}(D,P)
+=
+\underbrace{\exists x,y\in S\;(x<y)}_{\text{nonempty interval}}
+\;\land\;
+\underbrace{\forall d\in D\;(d\leq x\lor y\leq d)}_{\text{no point of }D\text{ lies between }x\text{ and }y}.
+\]
+
+
+  \item[\operatorname{OrderDenseSubset}.]
+  \[
+\begin{aligned}
+&\text{Let }(S,\leq)\text{ be a linearly ordered set and }D\subseteq S.\\
+&D\text{ is not order dense in }S
+\Longleftrightarrow
+\exists x,y\in S\;\bigl(x<y\land \forall d\in D\;(d\leq x\lor y\leq d)\bigr).
+\end{aligned}
+\]
+\[
+S\in\mathbf{Set},\qquad D\subseteq S,\qquad P=\mathsf{TotallyOrderedSet}(S,\leq),\qquad
+\neg\operatorname{OrderDenseSubset}(D,P)\Longleftrightarrow
 \exists x,y\in S\;\bigl(x<y\land \forall d\in D\;(d\leq x\lor y\leq d)\bigr).
 \]
 \end{description}
@@ -232,6 +280,25 @@ D_{\mathbb{Q}}=\mathsf{OrderDenseSet}(\mathbb{Q},P_{\mathbb{R}}),\qquad
 \neg\operatorname{IsOrderDenseSubset}(\mathbb{Q},P_{\mathbb{R}})\Longleftrightarrow
 \exists a,b\in\mathbb{R}\;\bigl(a<b\land \forall q\in\mathbb{Q}\;(q\le a\lor b\le q)\bigr).
 \]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
+The theorem would fail precisely if some nonempty real interval contained no rational number.
+
+
+  \item[\operatorname{IsOrderDenseSubset}.]
+  \[
+\exists a,b\in\mathbb{R}\;\bigl(a<b\land \forall q\in\mathbb{Q}\;(q\le a\lor b\le q)\bigr).
+\]
+\[
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad \mathbb{Q}\subseteq\mathbb{R},\qquad
+D_{\mathbb{Q}}=\mathsf{OrderDenseSet}(\mathbb{Q},P_{\mathbb{R}}),\qquad
+\neg\operatorname{IsOrderDenseSubset}(\mathbb{Q},P_{\mathbb{R}})\Longleftrightarrow
+\exists a,b\in\mathbb{R}\;\bigl(a<b\land \forall q\in\mathbb{Q}\;(q\le a\lor b\le q)\bigr).
+\]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]
@@ -608,6 +675,25 @@ D_I=\mathsf{OrderDenseSet}(I,P_{\mathbb{R}}),\qquad
 \begin{remark*}[Failure modes]
 \begin{description}
 \item[Exposition.]
+The theorem would fail precisely if some nonempty real interval contained no irrational number.
+
+
+  \item[\operatorname{IsOrderDenseSubset}.]
+  \[
+\exists a,b\in\mathbb{R}\;\bigl(a<b\land \forall s\in\mathbb{R}\setminus\mathbb{Q}\;(s\le a\lor b\le s)\bigr).
+\]
+\[
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad I=\mathbb{R}\setminus\mathbb{Q},\qquad
+D_I=\mathsf{OrderDenseSet}(I,P_{\mathbb{R}}),\qquad
+\neg\operatorname{IsOrderDenseSubset}(I,P_{\mathbb{R}})\Longleftrightarrow
+\exists a,b\in\mathbb{R}\;\bigl(a<b\land \forall s\in\mathbb{R}\setminus\mathbb{Q}\;(s\le a\lor b\le s)\bigr).
+\]
+\end{description}
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
 \[
 \neg\operatorname{IsOrderDenseSubset}(\mathbb{R}\setminus\mathbb{Q},\mathbb{R})
 =
@@ -968,6 +1054,37 @@ D_I=\mathsf{OrderDenseSet}(I,P_{\mathbb{R}}),\qquad
 \operatorname{IsOrderDenseSubset}(I,P_{\mathbb{R}})
 \Bigr].
 \]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+\item[Exposition.]
+The corollary fails if a nonempty real interval misses all rational points or misses all irrational points.
+
+
+  \item[\operatorname{IsOrderDenseSubset}.]
+  \[
+\exists a,b\in\mathbb{R}\;
+\Bigl[
+a<b\land
+\bigl(
+\forall q\in\mathbb{Q}\;(q\le a\lor b\le q)
+\lor
+\forall s\in\mathbb{R}\setminus\mathbb{Q}\;(s\le a\lor b\le s)
+\bigr)
+\Bigr].
+\]
+\[
+P_{\mathbb{R}}=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad I=\mathbb{R}\setminus\mathbb{Q},\qquad
+D_{\mathbb{Q}}=\mathsf{OrderDenseSet}(\mathbb{Q},P_{\mathbb{R}}),\qquad
+D_I=\mathsf{OrderDenseSet}(I,P_{\mathbb{R}}),\qquad
+\neg\Bigl[
+\operatorname{IsOrderDenseSubset}(\mathbb{Q},P_{\mathbb{R}})
+\land
+\operatorname{IsOrderDenseSubset}(I,P_{\mathbb{R}})
+\Bigr].
+\]
+\end{description}
 \end{remark*}
 
 \begin{remark*}[Failure modes]

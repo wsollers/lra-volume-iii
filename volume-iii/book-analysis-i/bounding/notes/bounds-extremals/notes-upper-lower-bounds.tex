@@ -86,7 +86,7 @@ A bound is a one-sided comparison witness.  It need not be sharp and it
 need not belong to the set being bounded.
 \end{remark*}
 
-\begin{remark*}[Empty-set convention]
+\begin{remark*}[Exposition]
 If $A=\varnothing$, then every $b\in S$ is both an upper bound and a lower
 bound of $A$, because the universal statements over $A$ are vacuously true.
 This is intentional: nonemptiness is not part of being a bound.
@@ -161,7 +161,7 @@ An upper bound controls every element of the set from above, but it may
 lie outside the set and need not be the least such control.
 \end{remark*}
 
-\begin{remark*}[Empty-set convention]
+\begin{remark*}[Exposition]
 If $A=\varnothing$, then every $u\in\mathbb{R}$ is an upper bound of $A$.
 The statement $(\forall a\in A)(a\leq u)$ is then vacuously true.
 \end{remark*}
@@ -235,7 +235,7 @@ A lower bound controls every element of the set from below, but it may
 lie outside the set and need not be the greatest such control.
 \end{remark*}
 
-\begin{remark*}[Empty-set convention]
+\begin{remark*}[Exposition]
 If $A=\varnothing$, then every $\ell\in\mathbb{R}$ is a lower bound of $A$.
 The statement $(\forall a\in A)(\ell\leq a)$ is then vacuously true.
 \end{remark*}
@@ -313,7 +313,7 @@ A set is bounded above when at least one ambient element controls the set
 from above.  No least upper bound is asserted here.
 \end{remark*}
 
-\begin{remark*}[Empty-set convention]
+\begin{remark*}[Exposition]
 The empty set is bounded above in $\mathbb{R}$: every real number is an upper
 bound of $\varnothing$, so an upper bound exists.
 \end{remark*}
@@ -390,7 +390,7 @@ A set is bounded below when at least one ambient element controls the set
 from below.  No greatest lower bound is asserted here.
 \end{remark*}
 
-\begin{remark*}[Empty-set convention]
+\begin{remark*}[Exposition]
 The empty set is bounded below in $\mathbb{R}$: every real number is a lower
 bound of $\varnothing$, so a lower bound exists.
 \end{remark*}
@@ -472,7 +472,7 @@ It records two-sided containment in the ambient order, not the existence of
 best bounds.
 \end{remark*}
 
-\begin{remark*}[Empty-set convention]
+\begin{remark*}[Exposition]
 The empty set is bounded in $\mathbb{R}$: it is both bounded above and
 bounded below, vacuously.  Nonemptiness is a separate hypothesis and should be
 stated explicitly when it is needed, for example in supremum and infimum
@@ -485,5 +485,50 @@ existence statements.
   \item \hyperref[def:subset]{Subset}
   \item \hyperref[def:bounded-above]{Bounded Above}
   \item \hyperref[def:bounded-below]{Bounded Below}
+\end{itemize}
+\end{dependencies}
+
+
+\begin{propositionbox}{Bounded Set Is Equivalent to an Absolute-Value Bound}
+\begin{proposition}[Bounded Set Is Equivalent to an Absolute-Value Bound]
+\label{prop:bounded-iff-absolute-value-bound}
+Let $A\subseteq\mathbb{R}$. Then $A$ is bounded if and only if there exists
+$M\geq 0$ such that
+\[
+  (\forall a\in A)(|a|\leq M).
+\]
+\hyperref[prf:bounded-iff-absolute-value-bound]{\textit{Go to proof.}}
+\end{proposition}
+\end{propositionbox}
+
+\begin{remark*}[Standard quantified statement]
+\[
+  \operatorname{Bounded}(A)
+  \Longleftrightarrow
+  (\exists M\geq 0)(\forall a\in A)(|a|\leq M).
+\]
+\end{remark*}
+
+\begin{remark*}[Predicate reading]
+\[
+  P=\mathsf{OrderedSet}(\mathbb{R},\leq),\qquad A\subseteq\mathbb{R},\qquad
+  \operatorname{Bounded}(A,P)
+  \Longleftrightarrow
+  (\exists M\geq 0)(\forall a\in A)(|a|\leq M).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This reconciles the two-sided definition of boundedness (an upper bound and
+a lower bound separately) with the single-number absolute-value bound used
+throughout analysis. Take $M=\max(|u|,|\ell|)$ for any upper bound $u$ and
+lower bound $\ell$ to pass from the two-sided form to the absolute-value
+form, and take $u=M,\ \ell=-M$ to pass back.
+\end{remark*}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:bounded]{Bounded Set}
+  \item \hyperref[def:real-chapter-absolute-value-on-r]{Absolute Value on $\mathbb{R}$}
 \end{itemize}
 \end{dependencies}

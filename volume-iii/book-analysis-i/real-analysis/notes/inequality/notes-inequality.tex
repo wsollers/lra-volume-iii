@@ -1305,6 +1305,21 @@ x>0\Rightarrow x^n>0.
 \operatorname{Positive}(x)\land\neg\operatorname{Positive}(x^n).
 \]
 \end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.] The named branch below records the displayed negation of the predicate.
+  \item[\(\operatorname{Positive}\) fails.] The predicate fails exactly in the displayed negation case:
+  \[
+  \exists x\in\mathbb{R}\;\exists n\in\mathbb{N}\;
+  \bigl(x>0\land x^n\le 0\bigr).
+  \]
+  In predicate-reading form this is recorded as
+  \[
+  \operatorname{Positive}(x)\land\neg\operatorname{Positive}(x^n).
+  \]
+\end{description}
+\end{remark*}
 \begin{remark*}[Interpretation]
 Repeated multiplication of a positive real by itself remains positive.
 \end{remark*}
@@ -1344,6 +1359,21 @@ x^n<y^n.
 \[
 0<x<y\land y^n\le x^n.
 \]
+\end{remark*}
+
+\begin{remark*}[Failure modes]
+\begin{description}
+  \item[Exposition.] The named branch below records the displayed negation of the predicate.
+  \item[Displayed condition.] The predicate fails exactly in the displayed negation case:
+  \[
+  \exists x,y\in\mathbb{R}\;\exists n\in\mathbb{N}\;
+  \bigl(0<x<y\land y^n\le x^n\bigr).
+  \]
+  In predicate-reading form this is recorded as
+  \[
+  0<x<y\land y^n\le x^n.
+  \]
+\end{description}
 \end{remark*}
 \begin{remark*}[Interpretation]
 Integer powers are strictly increasing on the positive real axis.
