@@ -138,13 +138,14 @@ The value is denoted \((\mathrm{HK})\int_a^b f\).
 
 \begin{remark*}[Predicate reading]
 \[
+\begin{aligned}
   f\colon [a,b]\to\mathbb{R},\\
-
 \operatorname{HasDefiniteIntegral}(f,[a,b],\operatorname{HenstockKurzweilCriterion},A)
 \Longleftrightarrow
 \forall\varepsilon>0\ \exists\delta:[a,b]\to(0,\infty)\ \forall(P,\xi)\,
 \bigl(\operatorname{IsDeltaFine}((P,\xi),\delta,[a,b])
 \Rightarrow |S(f,P,\xi)-A|<\varepsilon\bigr).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -260,12 +261,14 @@ F'(\xi)=f(\xi)
 
 \begin{remark*}[Predicate reading]
 \[
+\begin{aligned}
   F\colon [a,b]\to\mathbb{R},\\
 \operatorname{Derivative}(f(\xi),F,\xi,\mathbb{R},\mathbb{R})
 \Longrightarrow
 \forall\varepsilon>0\ \exists\delta(\xi)>0\ \forall u,v\,
 \bigl(u\le \xi\le v\land u,v\in(\xi-\delta(\xi),\xi+\delta(\xi))
 \Rightarrow |F(v)-F(u)-f(\xi)(v-u)|\le \varepsilon(v-u)\bigr).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -399,6 +402,7 @@ guarantee that a valid adaptive partition exists.
 
 \begin{remark*}[Interpretation]
 \[
+\begin{aligned}
 \begin{array}{c|c|c}
 \text{Integral} & \text{Patch} & \text{Remaining defect}\\
 \hline
@@ -417,6 +421,7 @@ guarantee that a valid adaptive partition exists.
 \text{Lebesgue} & \text{measure level sets} &
 \text{abstract machinery required}
 \end{array}
+\end{aligned}
 \]
 The thread is the right-hand column: every integral is a direct response to a
 specific defect.

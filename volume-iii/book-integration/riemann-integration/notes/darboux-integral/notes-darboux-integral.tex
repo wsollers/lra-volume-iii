@@ -147,12 +147,13 @@ A bounded function \(f\) is Darboux-integrable if and only if for every
 
 \begin{remark*}[Predicate reading]
 \[
+\begin{aligned}
   f\colon [a,b]\to\mathbb{R},\\
-
 \operatorname{IsIntegrable}(f,[a,b],\operatorname{DarbouxCriterion})
 \Longleftrightarrow
 \forall\varepsilon>0\ \exists P\,
 \bigl(U(f,P)-L(f,P)<\varepsilon\bigr).
+\end{aligned}
 \]
 \end{remark*}
 
@@ -469,6 +470,7 @@ follows from the equivalence theorem.
 \begin{remark*}[Interpretation]
 Darboux exposes two separate defects:
 \[
+\begin{aligned}
 \begin{array}{c|c|c}
 \text{Residual defect} & \text{Successor} & \text{Change}\\
 \hline
@@ -477,6 +479,7 @@ Darboux exposes two separate defects:
 \text{domain slabs see every bad set} & \text{Lebesgue / HK} &
 \text{measure bad sets or adapt fineness}
 \end{array}
+\end{aligned}
 \]
 Stieltjes is therefore a sideways generalization, not the final repair of
 Riemann's domain-partition limitation.

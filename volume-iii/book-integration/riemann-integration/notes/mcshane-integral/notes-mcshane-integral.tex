@@ -23,6 +23,7 @@ lets HK integrate every derivative.
 
 \begin{remark*}[Interpretation]
 \[
+\begin{aligned}
 \begin{array}{c|c|c|c}
 \text{Integral} & \text{Gauge} & \text{Tag position} & \text{Class on }[a,b]\\
 \hline
@@ -31,6 +32,7 @@ lets HK integrate every derivative.
 \text{McShane} & \delta(x) & \xi_i\in[a,b]\text{ and }I_i\subset B(\xi_i,\delta(\xi_i)) &
 \mathcal L
 \end{array}
+\end{aligned}
 \]
 Both use a variable gauge. The difference is not the step-size field; it is
 whether the tag must sit inside the interval whose height it supplies.
@@ -138,13 +140,14 @@ where
 
 \begin{remark*}[Predicate reading]
 \[
+\begin{aligned}
   f\colon [a,b]\to\mathbb{R},\\
-
 \operatorname{HasDefiniteIntegral}(f,[a,b],\operatorname{McShaneCriterion},A)
 \Longleftrightarrow
 \forall\varepsilon>0\ \exists\delta:[a,b]\to(0,\infty)\ \forall(P,\xi)\,
 \bigl(\operatorname{IsDeltaFine}((P,\xi),\delta,[a,b])
 \Rightarrow |S(f,P,\xi)-A|<\varepsilon\bigr).
+\end{aligned}
 \]
 \end{remark*}
 
