@@ -21,6 +21,7 @@
 Let $E \subseteq \mathbb{R}$ and $a \in E$. A set $U \subseteq \mathbb{R}$ is a neighborhood of $a$ in $E$ if and only if there exists $\delta > 0$ such that $U = E \cap (a-\delta, a+\delta)$. Equivalently, every neighborhood of $a$ in $E$ is a set of the form $U_E(a) := E \cap (a-\delta, a+\delta)$ for some $\delta > 0$.
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:relative-neighborhood}{lra-lean}{LRA.VolumeIII.Analysis.Continuity.PointContinuity}{RelativeNeighborhood}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -142,6 +143,7 @@ Let $A \subseteq \mathbb{R}$, let $f : A \to \mathbb{R}$, and let $c \in A$. The
 \]
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:continuous-at-point}{lra-lean}{LRA.VolumeIII.Analysis.Continuity.PointContinuity}{ContinuousAtPoint}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -276,6 +278,7 @@ f\bigl(A \cap I_\delta(c)\bigr) \subseteq I_\varepsilon(f(c)).
 \]
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:continuous-at-point-nbhd}{lra-lean}{LRA.VolumeIII.Analysis.Continuity.PointContinuity}{ContinuousAtPointNbhd}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -400,6 +403,7 @@ Continuity at $c$ demands that every output tolerance around $f(c)$ has a matchi
 Let $A \subseteq \mathbb{R}$, let $c \in A$, and let $f \colon A \to \mathbb{R}$. The function $f$ is continuous at $c$ if and only if for every sequence $(x_n)_{n\in\mathbb{N}}$ in $A$, the convergence $\lim_{n\to\infty} x_n = c$ implies $\lim_{n\to\infty} f(x_n) = f(c)$.
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:continuous-at-point-seq}{lra-lean}{LRA.VolumeIII.Analysis.Continuity.PointContinuity}{ContinuousAtPointSeq}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -517,4 +521,50 @@ The sequential characterization asserts that information about $f$ near $c$ is c
 
 \begin{dependencies}
 \hyperref[def:continuous-at-point]{Definition~\ref*{def:continuous-at-point}}.
+\end{dependencies}
+
+% Lean-aligned additions inserted for Volume III Lean-to-TeX handoff.
+% Lean-aligned addition: thm:continuous-at-point-iff-nbhd
+\begin{theorem}[Continuity at a Point via Neighborhoods]
+\label{thm:continuous-at-point-iff-nbhd}
+A function is continuous at $c$ if and only if for every neighborhood $V$ of $f(c)$ there is a neighborhood $U$ of $c$ such that $x\in U\cap A$ implies $f(x)\in V$.
+
+\smallskip
+\noindent
+\hyperref[prf:continuous-at-point-iff-nbhd]{\textit{Go to proof.}}
+\end{theorem}
+\LeanFormalizes{thm:continuous-at-point-iff-nbhd}{lra-lean}{LRA.VolumeIII.Analysis.Continuity.PointContinuity}{ContinuousAtPointIffNbhd}{pending}
+
+\begin{remark*}[Standard quantified statement]
+A function is continuous at $c$ if and only if for every neighborhood $V$ of $f(c)$ there is a neighborhood $U$ of $c$ such that $x\in U\cap A$ implies $f(x)\in V$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This formal object records a Lean-aligned addition in the local language of this section.
+\end{remark*}
+
+\begin{dependencies}
+\NoLocalDependencies
+\end{dependencies}
+% Lean-aligned addition: thm:continuous-at-point-iff-seq
+\begin{theorem}[Continuity at a Point via Sequences]
+\label{thm:continuous-at-point-iff-seq}
+A function is continuous at $c$ if and only if every sequence in the domain converging to $c$ has image sequence converging to $f(c)$.
+
+\smallskip
+\noindent
+\hyperref[prf:continuous-at-point-iff-seq]{\textit{Go to proof.}}
+\end{theorem}
+\LeanFormalizes{thm:continuous-at-point-iff-seq}{lra-lean}{LRA.VolumeIII.Analysis.Continuity.PointContinuity}{ContinuousAtPointIffSeq}{pending}
+
+\begin{remark*}[Standard quantified statement]
+A function is continuous at $c$ if and only if every sequence in the domain converging to $c$ has image sequence converging to $f(c)$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This formal object records a Lean-aligned addition in the local language of this section.
+\end{remark*}
+
+\begin{dependencies}
+\NoLocalDependencies
 \end{dependencies}

@@ -27,6 +27,7 @@ injective, then $g\circ f:A\to C$ is injective.
 \hyperref[prf:composition-injective]{\textit{Go to proof.}}
 \end{proposition}
 \end{propositionbox}
+\LeanFormalizes{prop:composition-injective}{lra-lean}{LRA.VolumeIII.Analysis.Functions.AlgebraOfFunctions}{CompositionInjective}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -106,6 +107,7 @@ is surjective, then \(g\circ f:A\to C\) is surjective.
 \hyperref[prf:composition-surjective]{\textit{Go to proof.}}
 \end{proposition}
 \end{propositionbox}
+\LeanFormalizes{prop:composition-surjective}{lra-lean}{LRA.VolumeIII.Analysis.Functions.AlgebraOfFunctions}{CompositionSurjective}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -149,6 +151,7 @@ bijective, then $g\circ f:A\to C$ is bijective.
 \hyperref[prf:composition-bijective]{\textit{Go to proof.}}
 \end{corollary}
 \end{corollarybox}
+\LeanFormalizes{cor:composition-bijective}{lra-lean}{LRA.VolumeIII.Analysis.Functions.AlgebraOfFunctions}{CompositionBijective}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -247,6 +250,7 @@ If \(f:A\to B\) is bijective, then \(f^{-1}:B\to A\) is bijective.
 \hyperref[prf:inverse-bijection]{\textit{Go to proof.}}
 \end{proposition}
 \end{propositionbox}
+\LeanFormalizes{prop:inverse-bijection}{lra-lean}{LRA.VolumeIII.Analysis.Functions.AlgebraOfFunctions}{InverseBijection}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -298,6 +302,7 @@ Let $f:A\to B$, $S,T\subseteq B$. Then:
 \hyperref[prf:preimage-union-intersection]{\textit{Go to proof.}}
 \end{proposition}
 \end{propositionbox}
+\LeanFormalizes{prop:preimage-union-intersection}{lra-lean}{LRA.VolumeIII.Analysis.Functions.AlgebraOfFunctions}{PreimageUnionIntersection}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -361,4 +366,78 @@ measurable sets are measurable).
 \begin{itemize}
   \item \hyperref[def:function]{Function}
 \end{itemize}
+\end{dependencies}
+
+% Lean-aligned additions inserted for Volume III Lean-to-TeX handoff.
+% Lean-aligned addition: def:is-injective-on
+\begin{definition}[Injective on a Set]
+\label{def:is-injective-on}
+A function $f:A\to B$ is \emph{injective on $A$} if $x,y\in A$ and $f(x)=f(y)$ imply $x=y$.
+\end{definition}
+\LeanFormalizes{def:is-injective-on}{lra-lean}{LRA.VolumeIII.Analysis.Functions.AlgebraOfFunctions}{IsInjectiveOn}{pending}
+
+\begin{remark*}[Standard quantified statement]
+A function $f:A\to B$ is \emph{injective on $A$} if $x,y\in A$ and $f(x)=f(y)$ imply $x=y$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This formal object records a Lean-aligned addition in the local language of this section.
+\end{remark*}
+
+\begin{dependencies}
+\NoLocalDependencies
+\end{dependencies}
+% Lean-aligned addition: def:is-surjective-on
+\begin{definition}[Surjective from One Set onto Another]
+\label{def:is-surjective-on}
+A function $f:A\to B$ is \emph{surjective from $A$ onto $B$} if for every $b\in B$ there exists $a\in A$ such that $f(a)=b$.
+\end{definition}
+\LeanFormalizes{def:is-surjective-on}{lra-lean}{LRA.VolumeIII.Analysis.Functions.AlgebraOfFunctions}{IsSurjectiveOn}{pending}
+
+\begin{remark*}[Standard quantified statement]
+A function $f:A\to B$ is \emph{surjective from $A$ onto $B$} if for every $b\in B$ there exists $a\in A$ such that $f(a)=b$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This formal object records a Lean-aligned addition in the local language of this section.
+\end{remark*}
+
+\begin{dependencies}
+\NoLocalDependencies
+\end{dependencies}
+% Lean-aligned addition: def:is-bijective-on
+\begin{definition}[Bijective between Sets]
+\label{def:is-bijective-on}
+A function $f:A\to B$ is \emph{bijective from $A$ to $B$} if it is injective on $A$ and surjective from $A$ onto $B$.
+\end{definition}
+\LeanFormalizes{def:is-bijective-on}{lra-lean}{LRA.VolumeIII.Analysis.Functions.AlgebraOfFunctions}{IsBijectiveOn}{pending}
+
+\begin{remark*}[Standard quantified statement]
+A function $f:A\to B$ is \emph{bijective from $A$ to $B$} if it is injective on $A$ and surjective from $A$ onto $B$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This formal object records a Lean-aligned addition in the local language of this section.
+\end{remark*}
+
+\begin{dependencies}
+\NoLocalDependencies
+\end{dependencies}
+% Lean-aligned addition: def:is-inverse-function-of
+\begin{definition}[Inverse Function Relation]
+\label{def:is-inverse-function-of}
+A function $g:B\to A$ is an \emph{inverse function} of $f:A\to B$ if $g(f(a))=a$ for every $a\in A$ and $f(g(b))=b$ for every $b\in B$.
+\end{definition}
+\LeanFormalizes{def:is-inverse-function-of}{lra-lean}{LRA.VolumeIII.Analysis.Functions.AlgebraOfFunctions}{IsInverseFunctionOf}{pending}
+
+\begin{remark*}[Standard quantified statement]
+A function $g:B\to A$ is an \emph{inverse function} of $f:A\to B$ if $g(f(a))=a$ for every $a\in A$ and $f(g(b))=b$ for every $b\in B$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This formal object records a Lean-aligned addition in the local language of this section.
+\end{remark*}
+
+\begin{dependencies}
+\NoLocalDependencies
 \end{dependencies}

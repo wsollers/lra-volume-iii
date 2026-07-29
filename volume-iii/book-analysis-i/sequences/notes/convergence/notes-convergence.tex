@@ -127,6 +127,7 @@ contains all but finitely many terms of $(x_n)$; that is,
 \]
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:convergent-sequence-neighborhood}{lra-lean}{LRA.VolumeIII.Analysis.Sequences.Convergence}{ConvergesToNbhd}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -247,6 +248,7 @@ statements are equivalent.
 \hyperref[prf:equivalence-of-convergence-formulations]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:equivalence-of-convergence-formulations}{lra-lean}{LRA.VolumeIII.Analysis.Sequences.Convergence}{EquivalenceOfConvergenceFormulations}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -295,17 +297,22 @@ the sense of \hyperref[def:m-tail]{Definition~\ref*{def:m-tail}}.
 \end{itemize}
 \end{dependencies}
 
+% Lean-aligned additions inserted for Volume III Lean-to-TeX handoff.
+% Lean-aligned addition: def:centered-interval
+\begin{definition}[Centered Interval]
+\label{def:centered-interval}
+For $c\in\mathbb R$ and $\varepsilon>0$, the \emph{centered interval} of radius $\varepsilon$ about $c$ is $(c-\varepsilon,c+\varepsilon)$.
+\end{definition}
+\LeanFormalizes{def:centered-interval}{lra-lean}{LRA.VolumeIII.Analysis.Sequences.Convergence}{CenteredInterval}{pending}
 
+\begin{remark*}[Standard quantified statement]
+For $c\in\mathbb R$ and $\varepsilon>0$, the \emph{centered interval} of radius $\varepsilon$ about $c$ is $(c-\varepsilon,c+\varepsilon)$.
+\end{remark*}
 
+\begin{remark*}[Interpretation]
+This formal object records a Lean-aligned addition in the local language of this section.
+\end{remark*}
 
-
-
-
-
-
-
-
-
-
-
-
+\begin{dependencies}
+\NoLocalDependencies
+\end{dependencies}

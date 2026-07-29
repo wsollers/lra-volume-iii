@@ -23,6 +23,7 @@ y \in A \cap (c,c+\delta),
 we have $f(x) \leq f(c) \leq f(y)$.
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:increasing-at-a-point}{lra-lean}{LRA.VolumeIII.Analysis.Differentiation.GraphReading}{IsIncreasingAt}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -62,6 +63,7 @@ y \in A \cap (c,c+\delta),
 we have $f(x) \geq f(c) \geq f(y)$.
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:decreasing-at-a-point}{lra-lean}{LRA.VolumeIII.Analysis.Differentiation.GraphReading}{IsDecreasingAt}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -100,6 +102,7 @@ then $f$ is constant on $I$.
 \hyperref[prf:zero-derivative-implies-constant]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:zero-derivative-implies-constant}{lra-lean}{LRA.VolumeIII.Analysis.Differentiation.GraphReading}{ZeroDerivativeImpliesConstant}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -156,6 +159,7 @@ then there exists $C \in \mathbb{R}$ such that $f(x) = g(x) + C$ for all $x \in 
 \hyperref[prf:equal-derivatives-constant-difference]{Go to proof.}
 \end{corollary}
 \end{corollarybox}
+\LeanFormalizes{cor:equal-derivatives-constant-difference}{lra-lean}{LRA.VolumeIII.Analysis.Differentiation.GraphReading}{EqualDerivativesConstantDifference}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -211,6 +215,7 @@ f'(x) \geq 0 \qquad \text{for all } x \in I.
 \hyperref[prf:nondecreasing-iff-nonneg-derivative]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:nondecreasing-iff-nonneg-derivative}{lra-lean}{LRA.VolumeIII.Analysis.Differentiation.MeanValueTheorem}{NondecreasingIffNonnegDerivative}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -258,6 +263,7 @@ f'(x) \leq 0 \qquad \text{for all } x \in I.
 \hyperref[prf:nonincreasing-iff-nonpos-derivative]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:nonincreasing-iff-nonpos-derivative}{lra-lean}{LRA.VolumeIII.Analysis.Differentiation.GraphReading}{NonincreasingIffNonposDerivative}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -418,6 +424,7 @@ then $f$ has a relative maximum at $c$.
 \hyperref[prf:first-derivative-test-maximum]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:first-derivative-test-maximum}{lra-lean}{LRA.VolumeIII.Analysis.Differentiation.GraphReading}{FirstDerivativeTestMaximum}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \begin{align*}
@@ -469,6 +476,7 @@ then $f$ has a relative minimum at $c$.
 \hyperref[prf:first-derivative-test-minimum]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:first-derivative-test-minimum}{lra-lean}{LRA.VolumeIII.Analysis.Differentiation.GraphReading}{FirstDerivativeTestMinimum}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \begin{align*}
@@ -502,4 +510,24 @@ If the derivative changes from nonpositive to nonnegative at $c$, the graph fall
   \item \hyperref[def:relative-minimum]{Definition: Relative Minimum}
   \item \hyperref[thm:first-derivative-test-maximum]{Theorem: First Derivative Test: Relative Maximum}
 \end{itemize}
+\end{dependencies}
+
+% Lean-aligned additions inserted for Volume III Lean-to-TeX handoff.
+% Lean-aligned addition: def:order-reversing
+\begin{definition}[Order-Reversing Function on a Set]
+\label{def:order-reversing}
+A function $f:A\to\mathbb R$ is \emph{order-reversing} on $A$ if $x,y\in A$ and $x\le y$ imply $f(y)\le f(x)$.
+\end{definition}
+\LeanFormalizes{def:order-reversing}{lra-lean}{LRA.VolumeIII.Analysis.Differentiation.GraphReading}{OrderReversing}{pending}
+
+\begin{remark*}[Standard quantified statement]
+A function $f:A\to\mathbb R$ is \emph{order-reversing} on $A$ if $x,y\in A$ and $x\le y$ imply $f(y)\le f(x)$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This formal object records a Lean-aligned addition in the local language of this section.
+\end{remark*}
+
+\begin{dependencies}
+\NoLocalDependencies
 \end{dependencies}

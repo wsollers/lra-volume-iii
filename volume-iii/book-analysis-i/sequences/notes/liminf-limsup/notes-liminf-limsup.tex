@@ -94,6 +94,7 @@ supremum sequence. The \textbf{limit superior} of $(x_n)$ is
 \]
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:limsup-sequence}{lra-lean}{LRA.VolumeIII.Analysis.Sequences.LiminfLimsup}{LimsupSeq}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -138,6 +139,7 @@ infimum sequence. The \textbf{limit inferior} of $(x_n)$ is
 \]
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:liminf-sequence}{lra-lean}{LRA.VolumeIII.Analysis.Sequences.LiminfLimsup}{LiminfSeq}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -183,6 +185,7 @@ supremum sequence. Then $(s_n)$ is decreasing.
 \hyperref[prf:tail-suprema-are-decreasing]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:tail-suprema-are-decreasing}{lra-lean}{LRA.VolumeIII.Analysis.Sequences.LiminfLimsup}{TailSupremaAreDecreasing}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -228,6 +231,7 @@ infimum sequence. Then $(i_n)$ is increasing.
 \hyperref[prf:tail-infima-are-increasing]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:tail-infima-are-increasing}{lra-lean}{LRA.VolumeIII.Analysis.Sequences.LiminfLimsup}{TailInfimaAreIncreasing}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -275,6 +279,7 @@ Let $(x_n)$ be a bounded real sequence. Then
 \hyperref[prf:liminf-below-limsup]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:liminf-below-limsup}{lra-lean}{LRA.VolumeIII.Analysis.Sequences.LiminfLimsup}{LiminfBelowLimsup}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -317,6 +322,7 @@ $x_n\to L$ if and only if
 \hyperref[prf:convergence-iff-liminf-equals-limsup]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:convergence-iff-liminf-equals-limsup}{lra-lean}{LRA.VolumeIII.Analysis.Sequences.LiminfLimsup}{ConvergenceIffLiminfEqualsLimsup}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -374,6 +380,7 @@ to $S$.
 \hyperref[prf:limsup-largest-subsequential-limit]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:limsup-largest-subsequential-limit}{lra-lean}{LRA.VolumeIII.Analysis.Sequences.LiminfLimsup}{LimsupLargestSubsequentialLimit}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -434,6 +441,7 @@ equal to $I$.
 \hyperref[prf:liminf-smallest-subsequential-limit]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:liminf-smallest-subsequential-limit}{lra-lean}{LRA.VolumeIII.Analysis.Sequences.LiminfLimsup}{LiminfSmallestSubsequentialLimit}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -496,6 +504,7 @@ if and only if $(x_n)$ has two distinct subsequential limits.
 \hyperref[prf:oscillation-criterion-via-liminf-limsup]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:oscillation-criterion-via-liminf-limsup}{lra-lean}{LRA.VolumeIII.Analysis.Sequences.LiminfLimsup}{OscillationCriterionViaLiminfLimsup}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -567,6 +576,7 @@ $N\in\mathbb{N}$ such that $x_n\le y_n$ for every $n\ge N$, then
 \hyperref[prf:limsup-comparison-under-eventual-order]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:limsup-comparison-under-eventual-order}{lra-lean}{LRA.VolumeIII.Analysis.Sequences.LiminfLimsup}{LimsupComparisonUnderEventualOrder}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -624,6 +634,7 @@ $N\in\mathbb{N}$ such that $x_n\le y_n$ for every $n\ge N$, then
 \hyperref[prf:liminf-comparison-under-eventual-order]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:liminf-comparison-under-eventual-order}{lra-lean}{LRA.VolumeIII.Analysis.Sequences.LiminfLimsup}{LiminfComparisonUnderEventualOrder}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -689,6 +700,7 @@ then
 \hyperref[prf:limsup-squeeze-under-eventual-order]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:limsup-squeeze-under-eventual-order}{lra-lean}{LRA.VolumeIII.Analysis.Sequences.LiminfLimsup}{LimsupSqueezeUnderEventualOrder}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -756,6 +768,7 @@ then
 \hyperref[prf:liminf-squeeze-under-eventual-order]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:liminf-squeeze-under-eventual-order}{lra-lean}{LRA.VolumeIII.Analysis.Sequences.LiminfLimsup}{LiminfSqueezeUnderEventualOrder}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -804,4 +817,50 @@ For any convergent sequence $x_n\to L$, both envelopes collapse to $L$.
 \begin{itemize}
   \item \hyperref[thm:liminf-comparison-under-eventual-order]{Liminf Comparison Under Eventual Order}
 \end{itemize}
+\end{dependencies}
+
+% Lean-aligned additions inserted for Volume III Lean-to-TeX handoff.
+% Lean-aligned addition: thm:limsup-neg-eq-neg-liminf
+\begin{theorem}[Limsup of a Negated Sequence]
+\label{thm:limsup-neg-eq-neg-liminf}
+For every real sequence $(x_n)$ for which the two quantities are defined, $\limsup_{n\to\infty}(-x_n)=-\liminf_{n\to\infty}x_n$.
+
+\smallskip
+\noindent
+\hyperref[prf:limsup-neg-eq-neg-liminf]{\textit{Go to proof.}}
+\end{theorem}
+\LeanFormalizes{thm:limsup-neg-eq-neg-liminf}{lra-lean}{LRA.VolumeIII.Analysis.Sequences.LiminfLimsup}{LimsupNegEqNegLiminf}{pending}
+
+\begin{remark*}[Standard quantified statement]
+For every real sequence $(x_n)$ for which the two quantities are defined, $\limsup_{n\to\infty}(-x_n)=-\liminf_{n\to\infty}x_n$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This formal object records a Lean-aligned addition in the local language of this section.
+\end{remark*}
+
+\begin{dependencies}
+\NoLocalDependencies
+\end{dependencies}
+% Lean-aligned addition: thm:liminf-neg-eq-neg-limsup
+\begin{theorem}[Liminf of a Negated Sequence]
+\label{thm:liminf-neg-eq-neg-limsup}
+For every real sequence $(x_n)$ for which the two quantities are defined, $\liminf_{n\to\infty}(-x_n)=-\limsup_{n\to\infty}x_n$.
+
+\smallskip
+\noindent
+\hyperref[prf:liminf-neg-eq-neg-limsup]{\textit{Go to proof.}}
+\end{theorem}
+\LeanFormalizes{thm:liminf-neg-eq-neg-limsup}{lra-lean}{LRA.VolumeIII.Analysis.Sequences.LiminfLimsup}{LiminfNegEqNegLimsup}{pending}
+
+\begin{remark*}[Standard quantified statement]
+For every real sequence $(x_n)$ for which the two quantities are defined, $\liminf_{n\to\infty}(-x_n)=-\limsup_{n\to\infty}x_n$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This formal object records a Lean-aligned addition in the local language of this section.
+\end{remark*}
+
+\begin{dependencies}
+\NoLocalDependencies
 \end{dependencies}

@@ -44,6 +44,7 @@ Let $(S,\le)$ be a partially ordered set.  The set $S$ has the
 bounded above in $S$ has a supremum in $S$.
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:least-upper-bound-property}{lra-lean}{LRA.VolumeIII.Analysis.Completeness.AxiomOfCompleteness}{HasLeastUpperBoundProperty}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -304,4 +305,50 @@ ordered fields such as $\mathbb{Q}$.
   \item \hyperref[def:subset]{Subset}
   \item \hyperref[def:least-upper-bound-property]{Least Upper Bound Property}
 \end{itemize}
+\end{dependencies}
+
+% Lean-aligned additions inserted for Volume III Lean-to-TeX handoff.
+% Lean-aligned addition: thm:exists-unique-nonneg-sqrt
+\begin{theorem}[Existence and Uniqueness of Nonnegative Square Roots]
+\label{thm:exists-unique-nonneg-sqrt}
+For every $a\in\mathbb R$ with $a\ge0$, there is a unique $b\in\mathbb R$ such that $b\ge0$ and $b^2=a$.
+
+\smallskip
+\noindent
+\hyperref[prf:exists-unique-nonneg-sqrt]{\textit{Go to proof.}}
+\end{theorem}
+\LeanFormalizes{thm:exists-unique-nonneg-sqrt}{lra-lean}{LRA.VolumeIII.Analysis.Completeness.CompletenessAdditions}{ExistsUniqueNonnegSqrt}{pending}
+
+\begin{remark*}[Standard quantified statement]
+For every $a\in\mathbb R$ with $a\ge0$, there is a unique $b\in\mathbb R$ such that $b\ge0$ and $b^2=a$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This formal object records a Lean-aligned addition in the local language of this section.
+\end{remark*}
+
+\begin{dependencies}
+\NoLocalDependencies
+\end{dependencies}
+% Lean-aligned addition: thm:rationals-lack-lub-property
+\begin{theorem}[Rationals Lack the Least Upper Bound Property]
+\label{thm:rationals-lack-lub-property}
+The ordered field $\mathbb Q$ does not have the least upper bound property. In particular, the set $\{q\in\mathbb Q:q^2<2\}$ is nonempty and bounded above in $\mathbb Q$, but it has no least upper bound in $\mathbb Q$.
+
+\smallskip
+\noindent
+\hyperref[prf:rationals-lack-lub-property]{\textit{Go to proof.}}
+\end{theorem}
+\LeanFormalizes{thm:rationals-lack-lub-property}{lra-lean}{LRA.VolumeIII.Analysis.Completeness.CompletenessAdditions}{RationalsLackLubProperty}{pending}
+
+\begin{remark*}[Standard quantified statement]
+The ordered field $\mathbb Q$ does not have the least upper bound property. In particular, the set $\{q\in\mathbb Q:q^2<2\}$ is nonempty and bounded above in $\mathbb Q$, but it has no least upper bound in $\mathbb Q$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This formal object records a Lean-aligned addition in the local language of this section.
+\end{remark*}
+
+\begin{dependencies}
+\NoLocalDependencies
 \end{dependencies}

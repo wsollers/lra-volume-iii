@@ -31,6 +31,7 @@ An element $\ell\in S$ is a \emph{relative lower bound of $A$ in $S$} if
 \]
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:relative-bounds}{lra-lean}{LRA.VolumeIII.Analysis.Completeness.CompletenessAdditions}{RationalCutLowerAtSqrtTwo}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -151,4 +152,96 @@ upper bounds changed from rational candidates to real candidates.
   \item \hyperref[def:real-upper-bound]{Upper Bound}
   \item \hyperref[def:real-lower-bound]{Lower Bound}
 \end{itemize}
+\end{dependencies}
+
+% Lean-aligned additions inserted for Volume III Lean-to-TeX handoff.
+% Lean-aligned addition: thm:ordinary-infimum-in-s-is-relative-infimum
+\begin{theorem}[Ordinary Infimum in the Ambient Set Is a Relative Infimum]
+\label{thm:ordinary-infimum-in-s-is-relative-infimum}
+Let $A\subseteq S\subseteq\mathbb R$. If $i=\inf A$ as an ordinary infimum in $\mathbb R$ and $i\in S$, then $i$ is the relative infimum of $A$ in the ambient set $S$.
+
+\smallskip
+\noindent
+\hyperref[prf:ordinary-infimum-in-s-is-relative-infimum]{\textit{Go to proof.}}
+\end{theorem}
+
+\begin{remark*}[Standard quantified statement]
+Let $A\subseteq S\subseteq\mathbb R$. If $i=\inf A$ as an ordinary infimum in $\mathbb R$ and $i\in S$, then $i$ is the relative infimum of $A$ in the ambient set $S$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This formal object records a Lean-aligned addition in the local language of this section.
+\end{remark*}
+
+\begin{dependencies}
+\NoLocalDependencies
+\end{dependencies}
+% Lean-aligned addition: def:rationals-with-square-less-than-two-in-r
+\begin{definition}[Rational Square-Less-Than-Two Set in the Reals]
+\label{def:rationals-with-square-less-than-two-in-r}
+Let
+\[
+  R_{<\sqrt2}:=\{x\in\mathbb R:(\exists q\in\mathbb Q)\, x=q \text{ and } q^2<2\}.
+\]
+This is the set of rationals whose square is less than $2$, viewed as a subset of $\mathbb R$.
+\end{definition}
+\LeanFormalizes{def:rationals-with-square-less-than-two-in-r}{lra-lean}{LRA.VolumeIII.Analysis.Bounding.RelativeBounds}{RationalsWithSquareLessThanTwoInR}{pending}
+
+\begin{remark*}[Standard quantified statement]
+Let
+\[
+  R_{<\sqrt2}:=\{x\in\mathbb R:(\exists q\in\mathbb Q)\, x=q \text{ and } q^2<2\}.
+\]
+This is the set of rationals whose square is less than $2$, viewed as a subset of $\mathbb R$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This formal object records a Lean-aligned addition in the local language of this section.
+\end{remark*}
+
+\begin{dependencies}
+\NoLocalDependencies
+\end{dependencies}
+% Lean-aligned addition: thm:no-relative-supremum-of-rationals-example
+\begin{theorem}[No Relative Supremum for the Rational Square-Less-Than-Two Set]
+\label{thm:no-relative-supremum-of-rationals-example}
+The set $R_{<\sqrt2}$ has no relative supremum when the ambient set is the embedded copy of $\mathbb Q$ in $\mathbb R$.
+
+\smallskip
+\noindent
+\hyperref[prf:no-relative-supremum-of-rationals-example]{\textit{Go to proof.}}
+\end{theorem}
+\LeanFormalizes{thm:no-relative-supremum-of-rationals-example}{lra-lean}{LRA.VolumeIII.Analysis.Bounding.RelativeBounds}{NoRelativeSupremumOfRationalsExample}{pending}
+
+\begin{remark*}[Standard quantified statement]
+The set $R_{<\sqrt2}$ has no relative supremum when the ambient set is the embedded copy of $\mathbb Q$ in $\mathbb R$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This formal object records a Lean-aligned addition in the local language of this section.
+\end{remark*}
+
+\begin{dependencies}
+\NoLocalDependencies
+\end{dependencies}
+% Lean-aligned addition: thm:relative-supremum-of-rationals-in-r-example
+\begin{theorem}[Relative Supremum of the Rational Square-Less-Than-Two Set in the Reals]
+\label{thm:relative-supremum-of-rationals-in-r-example}
+The same set $R_{<\sqrt2}$ has relative supremum $\sqrt2$ when the ambient set is all of $\mathbb R$.
+
+\smallskip
+\noindent
+\hyperref[prf:relative-supremum-of-rationals-in-r-example]{\textit{Go to proof.}}
+\end{theorem}
+
+\begin{remark*}[Standard quantified statement]
+The same set $R_{<\sqrt2}$ has relative supremum $\sqrt2$ when the ambient set is all of $\mathbb R$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This formal object records a Lean-aligned addition in the local language of this section.
+\end{remark*}
+
+\begin{dependencies}
+\NoLocalDependencies
 \end{dependencies}

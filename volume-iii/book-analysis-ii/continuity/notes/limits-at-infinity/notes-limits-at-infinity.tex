@@ -15,6 +15,7 @@ $x>M$. The point $-\infty$ is adherent to $X$ if and only if for every
 $M\in\mathbb{R}$ there exists $x\in X$ such that $x<M$.
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:infinite-adherent-points}{lra-lean}{LRA.VolumeIII.Analysis.Continuity.LimitsAtInfinityBase}{PlusInftyAdherent}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -156,6 +157,8 @@ Let $X \subseteq \mathbb{R}$ be such that for every $M \in \mathbb{R}$ there exi
 for every $\varepsilon > 0$ there exists $M \in \mathbb{R}$ such that for every $x \in X$, $x > M$ implies $|f(x) - L| < \varepsilon$.
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:limit-at-infinity}{lra-lean}{LRA.VolumeIII.Analysis.Continuity.LimitsAtInfinityAdditions}{TendsToInfty}{pending}
+\LeanFormalizes{def:limit-at-infinity}{lra-lean}{LRA.VolumeIII.Analysis.Continuity.LimitsAtInfinityAdditions}{TendsToNegInfty}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -241,4 +244,196 @@ The limit at $+\infty$ demands that eventually the function values stay within a
 
 \begin{dependencies}
 \hyperref[def:infinite-adherent-points]{Definition~\ref*{def:infinite-adherent-points}}.
+\end{dependencies}
+
+% Lean-aligned additions inserted for Volume III Lean-to-TeX handoff.
+% Lean-aligned addition: thm:limit-at-neg-infinity-iff-reflection
+\begin{theorem}[Limit at Negative Infinity by Reflection]
+\label{thm:limit-at-neg-infinity-iff-reflection}
+A function $f$ has limit $L$ as $x\to -\infty$ if and only if the reflected function $x\mapsto f(-x)$ has limit $L$ as $x\to +\infty$.
+
+\smallskip
+\noindent
+\hyperref[prf:limit-at-neg-infinity-iff-reflection]{\textit{Go to proof.}}
+\end{theorem}
+\LeanFormalizes{thm:limit-at-neg-infinity-iff-reflection}{lra-lean}{LRA.VolumeIII.Analysis.Continuity.LimitsAtInfinityAdditions}{LimitAtNegInfinityIffReflection}{pending}
+
+\begin{remark*}[Standard quantified statement]
+A function $f$ has limit $L$ as $x\to -\infty$ if and only if the reflected function $x\mapsto f(-x)$ has limit $L$ as $x\to +\infty$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This formal object records a Lean-aligned addition in the local language of this section.
+\end{remark*}
+
+\begin{dependencies}
+\NoLocalDependencies
+\end{dependencies}
+% Lean-aligned addition: thm:tendsto-infty-add
+\begin{theorem}[Sum Law for Limits at Positive Infinity]
+\label{thm:tendsto-infty-add}
+If $f(x)\to L$ and $g(x)\to M$ as $x\to+\infty$, then $(f+g)(x)\to L+M$ as $x\to+\infty$.
+
+\smallskip
+\noindent
+\hyperref[prf:tendsto-infty-add]{\textit{Go to proof.}}
+\end{theorem}
+\LeanFormalizes{thm:tendsto-infty-add}{lra-lean}{LRA.VolumeIII.Analysis.Continuity.LimitsAtInfinityAdditions}{TendstoInftyAdd}{pending}
+
+\begin{remark*}[Standard quantified statement]
+If $f(x)\to L$ and $g(x)\to M$ as $x\to+\infty$, then $(f+g)(x)\to L+M$ as $x\to+\infty$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This formal object records a Lean-aligned addition in the local language of this section.
+\end{remark*}
+
+\begin{dependencies}
+\NoLocalDependencies
+\end{dependencies}
+% Lean-aligned addition: thm:tendsto-infty-sub
+\begin{theorem}[Difference Law for Limits at Positive Infinity]
+\label{thm:tendsto-infty-sub}
+If $f(x)\to L$ and $g(x)\to M$ as $x\to+\infty$, then $(f-g)(x)\to L-M$ as $x\to+\infty$.
+
+\smallskip
+\noindent
+\hyperref[prf:tendsto-infty-sub]{\textit{Go to proof.}}
+\end{theorem}
+\LeanFormalizes{thm:tendsto-infty-sub}{lra-lean}{LRA.VolumeIII.Analysis.Continuity.LimitsAtInfinityAdditions}{TendstoInftySub}{pending}
+
+\begin{remark*}[Standard quantified statement]
+If $f(x)\to L$ and $g(x)\to M$ as $x\to+\infty$, then $(f-g)(x)\to L-M$ as $x\to+\infty$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This formal object records a Lean-aligned addition in the local language of this section.
+\end{remark*}
+
+\begin{dependencies}
+\NoLocalDependencies
+\end{dependencies}
+% Lean-aligned addition: thm:tendsto-infty-scalar
+\begin{theorem}[Scalar Law for Limits at Positive Infinity]
+\label{thm:tendsto-infty-scalar}
+If $f(x)\to L$ as $x\to+\infty$ and $\alpha\in\mathbb R$, then $(\alpha f)(x)\to\alpha L$ as $x\to+\infty$.
+
+\smallskip
+\noindent
+\hyperref[prf:tendsto-infty-scalar]{\textit{Go to proof.}}
+\end{theorem}
+\LeanFormalizes{thm:tendsto-infty-scalar}{lra-lean}{LRA.VolumeIII.Analysis.Continuity.LimitsAtInfinityAdditions}{TendstoInftyScalar}{pending}
+
+\begin{remark*}[Standard quantified statement]
+If $f(x)\to L$ as $x\to+\infty$ and $\alpha\in\mathbb R$, then $(\alpha f)(x)\to\alpha L$ as $x\to+\infty$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This formal object records a Lean-aligned addition in the local language of this section.
+\end{remark*}
+
+\begin{dependencies}
+\NoLocalDependencies
+\end{dependencies}
+% Lean-aligned addition: thm:tendsto-infty-mul
+\begin{theorem}[Product Law for Limits at Positive Infinity]
+\label{thm:tendsto-infty-mul}
+If $f(x)\to L$ and $g(x)\to M$ as $x\to+\infty$, then $(fg)(x)\to LM$ as $x\to+\infty$.
+
+\smallskip
+\noindent
+\hyperref[prf:tendsto-infty-mul]{\textit{Go to proof.}}
+\end{theorem}
+\LeanFormalizes{thm:tendsto-infty-mul}{lra-lean}{LRA.VolumeIII.Analysis.Continuity.LimitsAtInfinityAdditions}{TendstoInftyMul}{pending}
+
+\begin{remark*}[Standard quantified statement]
+If $f(x)\to L$ and $g(x)\to M$ as $x\to+\infty$, then $(fg)(x)\to LM$ as $x\to+\infty$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This formal object records a Lean-aligned addition in the local language of this section.
+\end{remark*}
+
+\begin{dependencies}
+\NoLocalDependencies
+\end{dependencies}
+% Lean-aligned addition: thm:tendsto-infty-div
+\begin{theorem}[Quotient Law for Limits at Positive Infinity]
+\label{thm:tendsto-infty-div}
+If $f(x)\to L$ and $g(x)\to M$ as $x\to+\infty$, $M\ne0$, and $g$ is eventually nonzero, then $(f/g)(x)\to L/M$ as $x\to+\infty$.
+
+\smallskip
+\noindent
+\hyperref[prf:tendsto-infty-div]{\textit{Go to proof.}}
+\end{theorem}
+\LeanFormalizes{thm:tendsto-infty-div}{lra-lean}{LRA.VolumeIII.Analysis.Continuity.LimitsAtInfinityAdditions}{TendstoInftyDiv}{pending}
+
+\begin{remark*}[Standard quantified statement]
+If $f(x)\to L$ and $g(x)\to M$ as $x\to+\infty$, $M\ne0$, and $g$ is eventually nonzero, then $(f/g)(x)\to L/M$ as $x\to+\infty$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This formal object records a Lean-aligned addition in the local language of this section.
+\end{remark*}
+
+\begin{dependencies}
+\NoLocalDependencies
+\end{dependencies}
+% Lean-aligned addition: thm:sequential-criterion-tendsto-infty
+\begin{theorem}[Sequential Criterion for Limits at Positive Infinity]
+\label{thm:sequential-criterion-tendsto-infty}
+A function $f$ has limit $L$ as $x\to+\infty$ if and only if $f(x_n)\to L$ for every sequence $(x_n)$ in the domain that escapes to $+\infty$.
+
+\smallskip
+\noindent
+\hyperref[prf:sequential-criterion-tendsto-infty]{\textit{Go to proof.}}
+\end{theorem}
+\LeanFormalizes{thm:sequential-criterion-tendsto-infty}{lra-lean}{LRA.VolumeIII.Analysis.Continuity.LimitsAtInfinityAdditions}{SequentialCriterionTendstoInfty}{pending}
+
+\begin{remark*}[Standard quantified statement]
+A function $f$ has limit $L$ as $x\to+\infty$ if and only if $f(x_n)\to L$ for every sequence $(x_n)$ in the domain that escapes to $+\infty$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This formal object records a Lean-aligned addition in the local language of this section.
+\end{remark*}
+
+\begin{dependencies}
+\NoLocalDependencies
+\end{dependencies}
+% Lean-aligned addition: def:escapes-to-infty
+\begin{definition}[Sequence Escaping to Positive Infinity]
+\label{def:escapes-to-infty}
+A real sequence $(x_n)$ \emph{escapes to $+\infty$} if for every $M\in\mathbb R$ there exists $N$ such that $n\ge N$ implies $x_n>M$.
+\end{definition}
+\LeanFormalizes{def:escapes-to-infty}{lra-lean}{LRA.VolumeIII.Analysis.Continuity.LimitsAtInfinityAdditions}{EscapesToInfty}{pending}
+
+\begin{remark*}[Standard quantified statement]
+A real sequence $(x_n)$ \emph{escapes to $+\infty$} if for every $M\in\mathbb R$ there exists $N$ such that $n\ge N$ implies $x_n>M$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This formal object records a Lean-aligned addition in the local language of this section.
+\end{remark*}
+
+\begin{dependencies}
+\NoLocalDependencies
+\end{dependencies}
+% Lean-aligned addition: def:minus-infty-adherent
+\begin{definition}[Negative Infinity Adherent Point]
+\label{def:minus-infty-adherent}
+The ideal point $-\infty$ is adherent to a set $A\subseteq\mathbb R$ if for every $M\in\mathbb R$ there exists $x\in A$ with $x<M$.
+\end{definition}
+\LeanFormalizes{def:minus-infty-adherent}{lra-lean}{LRA.VolumeIII.Analysis.Continuity.LimitsAtInfinityBase}{MinusInftyAdherent}{pending}
+
+\begin{remark*}[Standard quantified statement]
+The ideal point $-\infty$ is adherent to a set $A\subseteq\mathbb R$ if for every $M\in\mathbb R$ there exists $x\in A$ with $x<M$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This formal object records a Lean-aligned addition in the local language of this section.
+\end{remark*}
+
+\begin{dependencies}
+\NoLocalDependencies
 \end{dependencies}

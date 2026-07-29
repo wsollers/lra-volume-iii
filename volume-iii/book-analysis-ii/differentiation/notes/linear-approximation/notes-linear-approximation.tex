@@ -24,6 +24,7 @@ is called a \textbf{first-order approximation} to $f$ at $a$ with coefficient
 $L$.
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:first-order-approximation-at-a-point}{lra-lean}{LRA.VolumeIII.Analysis.Differentiation.LinearApproximation}{HasLinearApproximation}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -211,3 +212,27 @@ is the first Taylor formula with Peano remainder. Taylor expansion extends
 the same idea to higher powers of $h$: keep more main terms and demand a
 smaller remainder.
 \end{exposition}
+
+% Lean-aligned additions inserted for Volume III Lean-to-TeX handoff.
+% Lean-aligned addition: thm:linear-approximation-slope-eq-derivative
+\begin{theorem}[Linear Approximation Slope Equals the Derivative]
+\label{thm:linear-approximation-slope-eq-derivative}
+If $f(x)=f(c)+m(x-c)+o(x-c)$ as $x\to c$, then $f$ is differentiable at $c$ and $f'(c)=m$.
+
+\smallskip
+\noindent
+\hyperref[prf:linear-approximation-slope-eq-derivative]{\textit{Go to proof.}}
+\end{theorem}
+\LeanFormalizes{thm:linear-approximation-slope-eq-derivative}{lra-lean}{LRA.VolumeIII.Analysis.Differentiation.LinearApproximation}{LinearApproximationSlopeEqDerivative}{pending}
+
+\begin{remark*}[Standard quantified statement]
+If $f(x)=f(c)+m(x-c)+o(x-c)$ as $x\to c$, then $f$ is differentiable at $c$ and $f'(c)=m$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This formal object records a Lean-aligned addition in the local language of this section.
+\end{remark*}
+
+\begin{dependencies}
+\NoLocalDependencies
+\end{dependencies}

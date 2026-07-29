@@ -62,6 +62,7 @@ If \(P'\) refines \(P\), then
 \hyperref[prf:darboux-refinement-squeeze]{\textit{Go to proof.}}
 \end{lemma}
 \end{lemmabox}
+\LeanFormalizes{lem:darboux-refinement-squeeze}{lra-lean}{LRA.VolumeIII.Analysis.Integration.DarbouxIntegral}{darboux_refinement_squeeze}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -102,6 +103,7 @@ The lower and upper integrals are
 The function \(f\) is \emph{Darboux-integrable} if \(\underline I=\overline I\).
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:darboux-integrability}{lra-lean}{LRA.VolumeIII.Analysis.Integration.DarbouxIntegral}{IsDarbouxIntegrable}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -135,6 +137,7 @@ A bounded function \(f\) is Darboux-integrable if and only if for every
 \hyperref[prf:darboux-criterion]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:darboux-criterion}{lra-lean}{LRA.VolumeIII.Analysis.Integration.DarbouxIntegral}{darboux_criterion}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -184,6 +187,7 @@ integrability are equivalent, and the integral values agree.
 \hyperref[prf:riemann-darboux-equivalence]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:riemann-darboux-equivalence}{lra-lean}{LRA.VolumeIII.Analysis.Integration.DarbouxIntegral}{riemann_darboux_equivalence}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -215,6 +219,7 @@ Every continuous function \(f:[a,b]\to\mathbb R\) is Darboux-integrable.
 \hyperref[prf:continuous-darboux-integrable]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:continuous-darboux-integrable}{lra-lean}{LRA.VolumeIII.Analysis.Integration.DarbouxIntegral}{continuous_darboux_integrable}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -242,6 +247,7 @@ Every monotone function \(f:[a,b]\to\mathbb R\) is Darboux-integrable.
 \hyperref[prf:monotone-darboux-integrable]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:monotone-darboux-integrable}{lra-lean}{LRA.VolumeIII.Analysis.Integration.DarbouxIntegral}{monotone_darboux_integrable}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -274,6 +280,7 @@ discontinuities, then \(f\) is Darboux-integrable.
 \hyperref[prf:finite-discontinuities-darboux-integrable]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:finite-discontinuities-darboux-integrable}{lra-lean}{LRA.VolumeIII.Analysis.Integration.DarbouxIntegral}{finite_discontinuities_darboux_integrable}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -313,6 +320,7 @@ If \(f\) and \(g\) are Darboux-integrable on \([a,b]\), then
 \hyperref[prf:darboux-integrable-linear-combinations]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:darboux-integrable-linear-combinations}{lra-lean}{LRA.VolumeIII.Analysis.Integration.DarbouxIntegral}{darboux_integrable_linear_combinations}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -342,6 +350,7 @@ Darboux-integrable on \([a,b]\).
 \hyperref[prf:darboux-integrable-products]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:darboux-integrable-products}{lra-lean}{LRA.VolumeIII.Analysis.Integration.DarbouxIntegral}{darboux_integrable_products}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -372,6 +381,7 @@ Darboux-integrable on \([a,b]\).
 \hyperref[prf:darboux-integrable-absolute-value]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:darboux-integrable-absolute-value}{lra-lean}{LRA.VolumeIII.Analysis.Integration.DarbouxIntegral}{darboux_integrable_absolute_value}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -403,6 +413,7 @@ interval containing \(f([a,b])\), and \(f\) is bounded, then
 \hyperref[prf:darboux-integrable-continuous-composition]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:darboux-integrable-continuous-composition}{lra-lean}{LRA.VolumeIII.Analysis.Integration.DarbouxIntegral}{darboux_integrable_continuous_composition}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -484,3 +495,44 @@ Darboux exposes two separate defects:
 Stieltjes is therefore a sideways generalization, not the final repair of
 Riemann's domain-partition limitation.
 \end{remark*}
+
+% Lean-aligned additions inserted for Volume III Lean-to-TeX handoff.
+% Lean-aligned addition: def:upper-darboux-sum
+\begin{definition}[Upper Darboux Sum]
+\label{def:upper-darboux-sum}
+For a bounded function $f$ on $[a,b]$ and a partition $P$, the \emph{upper Darboux sum} is the sum over the subintervals of the subinterval length times the supremum of $f$ on that subinterval.
+\end{definition}
+
+\begin{remark*}[Standard quantified statement]
+For a bounded function $f$ on $[a,b]$ and a partition $P$, the \emph{upper Darboux sum} is the sum over the subintervals of the subinterval length times the supremum of $f$ on that subinterval.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This formal object records a Lean-aligned addition in the local language of this section.
+\end{remark*}
+
+\begin{dependencies}
+\NoLocalDependencies
+\end{dependencies}
+% Lean-aligned addition: thm:dirichlet-not-darboux-integrable
+\begin{theorem}[Dirichlet Function Is Not Darboux Integrable]
+\label{thm:dirichlet-not-darboux-integrable}
+The Dirichlet function, equal to $1$ on rational points and $0$ on irrational points of $[0,1]$, is not Darboux-integrable on $[0,1]$.
+
+\smallskip
+\noindent
+\hyperref[prf:dirichlet-not-darboux-integrable]{\textit{Go to proof.}}
+\end{theorem}
+\LeanFormalizes{thm:dirichlet-not-darboux-integrable}{lra-lean}{LRA.VolumeIII.Analysis.Integration.DarbouxIntegral}{dirichlet_not_darboux_integrable}{pending}
+
+\begin{remark*}[Standard quantified statement]
+The Dirichlet function, equal to $1$ on rational points and $0$ on irrational points of $[0,1]$, is not Darboux-integrable on $[0,1]$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This formal object records a Lean-aligned addition in the local language of this section.
+\end{remark*}
+
+\begin{dependencies}
+\NoLocalDependencies
+\end{dependencies}

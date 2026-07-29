@@ -83,6 +83,7 @@ Equivalently,
 \]
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:integration-partition}{lra-lean}{LRA.VolumeIII.Analysis.Integration.Partitions}{IntegrationPartition}{pending}
 
 \begin{remark*}[Standard quantified statement]
 A partition \(P\) of \([a,b]\) is a finite increasing list
@@ -111,6 +112,7 @@ The \(i\)-th slab has width
 \]
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:subinterval-width-integration}{lra-lean}{LRA.VolumeIII.Analysis.Integration.Partitions}{SubintervalWidth}{pending}
 
 \begin{remark*}[Standard quantified statement]
 For a partition \(P=\{x_0,\ldots,x_n\}\), the \(i\)-th subinterval width is
@@ -167,6 +169,7 @@ with points \(\xi_i\in[x_{i-1},x_i]\). The tag is the point where the height
 \(f(\xi_i)\) is sampled.
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:tagged-partition-integration}{lra-lean}{LRA.VolumeIII.Analysis.Integration.Partitions}{TaggedPartitionIntegration}{pending}
 
 \begin{remark*}[Standard quantified statement]
 A tagged partition of \([a,b]\) is a partition
@@ -194,6 +197,7 @@ A partition \(P'\) \emph{refines} \(P\) when \(P\subseteq P'\). Refinement adds
 cut-points; it does not move or delete existing cut-points.
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:partition-refinement}{lra-lean}{LRA.VolumeIII.Analysis.Integration.Partitions}{RefinesPartition}{pending}
 
 \begin{remark*}[Standard quantified statement]
 A partition \(P'\) refines a partition \(P\) if
@@ -221,6 +225,7 @@ order the finite set \(P\cup P'\) increasingly.
 \hyperref[prf:common-refinement-partitions]{\textit{Go to proof.}}
 \end{lemma}
 \end{lemmabox}
+\LeanFormalizes{lem:common-refinement-partitions}{lra-lean}{LRA.VolumeIII.Analysis.Integration.Partitions}{common_refinement_partitions}{pending}
 
 \begin{remark*}[Standard quantified statement]
 For any two partitions \(P\) and \(P'\) of \([a,b]\), there exists a

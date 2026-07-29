@@ -28,6 +28,8 @@ if and only if for every $\varepsilon>0$ there exists $\delta>0$ such that
   |f(x)|\leq \varepsilon |g(x)|.
 \]
 \end{definition}
+\LeanFormalizes{def:little-o-at-a-point}{lra-lean}{LRA.VolumeIII.Analysis.RealAnalysis.AsymptoticAndInequalityAdditions}{IsBigOAt}{pending}
+\LeanFormalizes{def:little-o-at-a-point}{lra-lean}{LRA.VolumeIII.Analysis.RealAnalysis.AsymptoticNotation}{IsLittleOAt}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -79,6 +81,8 @@ if and only if for every $\varepsilon>0$ there exists $R>0$ such that
   |f(x)|\leq \varepsilon |g(x)|.
 \]
 \end{definition}
+\LeanFormalizes{def:little-o-at-infinity}{lra-lean}{LRA.VolumeIII.Analysis.RealAnalysis.AsymptoticAndInequalityAdditions}{IsBigOAtTop}{pending}
+\LeanFormalizes{def:little-o-at-infinity}{lra-lean}{LRA.VolumeIII.Analysis.RealAnalysis.AsymptoticNotation}{IsLittleOAtTop}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -127,6 +131,7 @@ if and only if for every $\varepsilon>0$ there exists $\delta>0$ such that
   |r(h)|\leq \varepsilon |h|.
 \]
 \end{definition}
+\LeanFormalizes{def:increment-little-o}{lra-lean}{LRA.VolumeIII.Analysis.RealAnalysis.AsymptoticNotation}{IsIncrementLittleO}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -251,4 +256,27 @@ only changes the constant in the epsilon estimate.
 \begin{itemize}
   \item \hyperref[def:little-o-at-a-point]{Little-o at a Point}
 \end{itemize}
+\end{dependencies}
+
+% Lean-aligned additions inserted for Volume III Lean-to-TeX handoff.
+% Lean-aligned addition: thm:little-o-implies-big-o-at-top
+\begin{theorem}[Little-o Implies Big-O at Infinity]
+\label{thm:little-o-implies-big-o-at-top}
+If $f(x)=o(g(x))$ as $x\to+\infty$, then $f(x)=O(g(x))$ as $x\to+\infty$.
+
+\smallskip
+\noindent
+\hyperref[prf:little-o-implies-big-o-at-top]{\textit{Go to proof.}}
+\end{theorem}
+
+\begin{remark*}[Standard quantified statement]
+If $f(x)=o(g(x))$ as $x\to+\infty$, then $f(x)=O(g(x))$ as $x\to+\infty$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This formal object records a Lean-aligned addition in the local language of this section.
+\end{remark*}
+
+\begin{dependencies}
+\NoLocalDependencies
 \end{dependencies}

@@ -25,6 +25,7 @@ Then, for all $m,n\in\mathbb{N}$,
 \hyperref[prf:nested-closed-intervals-have-ordered-endpoints]{Go to proof.}
 \end{lemma}
 \end{lemmabox}
+\LeanFormalizes{lem:nested-closed-intervals-have-ordered-endpoints}{lra-lean}{LRA.VolumeIII.Analysis.Completeness.NestedIntervalProperty}{NestedClosedIntervalsHaveOrderedEndpoints}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -602,6 +603,7 @@ Therefore,
 \hyperref[prf:nested-interval-intersection-contains-endpoint-supremum]{Go to proof.}
 \end{corollary}
 \end{corollarybox}
+\LeanFormalizes{cor:nested-interval-intersection-contains-endpoint-supremum}{lra-lean}{LRA.VolumeIII.Analysis.Completeness.NestedIntervalProperty}{NestedIntervalIntersectionContainsEndpointSupremum}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -701,6 +703,7 @@ Therefore,
 \hyperref[prf:nested-interval-intersection-contains-endpoint-infimum]{Go to proof.}
 \end{corollary}
 \end{corollarybox}
+\LeanFormalizes{cor:nested-interval-intersection-contains-endpoint-infimum}{lra-lean}{LRA.VolumeIII.Analysis.Completeness.NestedIntervalProperty}{NestedIntervalIntersectionContainsEndpointInfimum}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -1039,6 +1042,7 @@ Then
 \hyperref[prf:unique-point-in-nested-intervals-is-endpoint-limit]{Go to proof.}
 \end{corollary}
 \end{corollarybox}
+\LeanFormalizes{cor:unique-point-in-nested-intervals-is-endpoint-limit}{lra-lean}{LRA.VolumeIII.Analysis.Completeness.NestedIntervalProperty}{UniquePointInNestedIntervalsIsEndpointLimit}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -1458,3 +1462,23 @@ all stages at once.
 \end{dependencies}
 
 \input{volume-iii/book-analysis-i/completeness/notes/completeness/figure-nested-intervals}
+
+% Lean-aligned additions inserted for Volume III Lean-to-TeX handoff.
+% Lean-aligned addition: def:is-nested-closed-interval-family
+\begin{definition}[Nested Closed Interval Family]
+\label{def:is-nested-closed-interval-family}
+A family $([a_n,b_n])_{n\in\mathbb N}$ is a \emph{nested closed interval family} if $a_n\le b_n$ for every $n$ and $[a_{n+1},b_{n+1}]\subseteq [a_n,b_n]$ for every $n$.
+\end{definition}
+\LeanFormalizes{def:is-nested-closed-interval-family}{lra-lean}{LRA.VolumeIII.Analysis.Completeness.NestedIntervalProperty}{IsNestedClosedIntervalFamily}{pending}
+
+\begin{remark*}[Standard quantified statement]
+A family $([a_n,b_n])_{n\in\mathbb N}$ is a \emph{nested closed interval family} if $a_n\le b_n$ for every $n$ and $[a_{n+1},b_{n+1}]\subseteq [a_n,b_n]$ for every $n$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This formal object records a Lean-aligned addition in the local language of this section.
+\end{remark*}
+
+\begin{dependencies}
+\NoLocalDependencies
+\end{dependencies}

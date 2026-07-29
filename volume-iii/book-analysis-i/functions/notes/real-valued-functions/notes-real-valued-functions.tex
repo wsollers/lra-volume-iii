@@ -39,6 +39,7 @@ real number
 \]
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:at-point-operation}{lra-lean}{LRA.VolumeIII.Analysis.Functions.PointwiseOperationsRelations}{AtPointOperation}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -80,6 +81,7 @@ function \(F:A\to\mathbb{R}\) defined by
 \]
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:pointwise-operation-on-set}{lra-lean}{LRA.VolumeIII.Analysis.Functions.PointwiseOperationsRelations}{PointwiseOperationOnSet}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -126,6 +128,7 @@ relation on \(\mathbb{R}\).  The relation \(R\) holds at \(x\) for
 holds.
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:at-point-relation}{lra-lean}{LRA.VolumeIII.Analysis.Functions.PointwiseOperationsRelations}{AtPointRelation}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -165,6 +168,7 @@ relation \(R\) holds pointwise on \(A\) for \(f_1,\ldots,f_n\) if
 \]
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:pointwise-relation-on-set}{lra-lean}{LRA.VolumeIII.Analysis.Functions.PointwiseOperationsRelations}{PointwiseRelationOnSet}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -209,6 +213,7 @@ in \(A\) for \(f_1,\ldots,f_n\) if there exists \(\delta>0\) such that
 \]
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:pointwise-relation-near-point}{lra-lean}{LRA.VolumeIII.Analysis.Functions.PointwiseOperationsRelations}{PointwiseRelationNearPoint}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -252,6 +257,8 @@ operation.  If \(F\) is the pointwise operation determined by
 \hyperref[prf:pointwise-operation-evaluation]{Go to proof.}
 \end{proposition}
 \end{propositionbox}
+\LeanFormalizes{prop:pointwise-operation-evaluation}{lra-lean}{LRA.VolumeIII.Analysis.Functions.PointwiseAlgebra}{FunctionAlgebraClosure}{pending}
+\LeanFormalizes{prop:pointwise-operation-evaluation}{lra-lean}{LRA.VolumeIII.Analysis.Functions.PointwiseOperationsRelations}{PointwiseOperationEvaluation}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -282,6 +289,7 @@ and let \(R\) be an \(n\)-variable relation on \(\mathbb{R}\).  Then
 \hyperref[prf:pointwise-relation-evaluation]{Go to proof.}
 \end{proposition}
 \end{propositionbox}
+\LeanFormalizes{prop:pointwise-relation-evaluation}{lra-lean}{LRA.VolumeIII.Analysis.Functions.PointwiseOperationsRelations}{PointwiseRelationEvaluation}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -318,6 +326,7 @@ relation on \(\mathbb{R}\).  Then \(R\) holds pointwise near \(c\) in
 \hyperref[prf:pointwise-relation-near-unpacking]{Go to proof.}
 \end{proposition}
 \end{propositionbox}
+\LeanFormalizes{prop:pointwise-relation-near-unpacking}{lra-lean}{LRA.VolumeIII.Analysis.Functions.PointwiseOperationsRelations}{PointwiseRelationNearUnpacking}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -387,6 +396,7 @@ pointwise difference $f-g:X\to\mathbb{R}$ is the function defined by
 \]
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:pointwise-difference-of-functions}{lra-lean}{LRA.VolumeIII.Analysis.Functions.PointwiseAlgebra}{PointwiseDiff}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -418,6 +428,7 @@ pointwise product $fg:X\to\mathbb{R}$ is the function defined by
 \]
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:pointwise-product-of-functions}{lra-lean}{LRA.VolumeIII.Analysis.Functions.PointwiseAlgebra}{PointwiseProd}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -450,6 +461,7 @@ Let $X\subseteq\mathbb{R}$, let $f:X\to\mathbb{R}$, and let
 \]
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:pointwise-scalar-multiple-of-a-function}{lra-lean}{LRA.VolumeIII.Analysis.Functions.PointwiseAlgebra}{PointwiseScalarMul}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -481,6 +493,7 @@ absolute value $|f|:X\to\mathbb{R}$ is the function defined by
 \]
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:pointwise-absolute-value-of-a-function}{lra-lean}{LRA.VolumeIII.Analysis.Functions.PointwiseAlgebra}{PointwiseAbs}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -512,6 +525,7 @@ pointwise maximum $\max(f,g):X\to\mathbb{R}$ is the function defined by
 \]
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:pointwise-maximum-of-two-functions}{lra-lean}{LRA.VolumeIII.Analysis.Functions.PointwiseAlgebra}{PointwiseMax}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -542,6 +556,7 @@ pointwise minimum \(\min(f,g):X\to\mathbb{R}\) is the function defined by
 \]
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:pointwise-minimum-of-two-functions}{lra-lean}{LRA.VolumeIII.Analysis.Functions.PointwiseAlgebra}{PointwiseMin}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -653,6 +668,8 @@ Let \(A\subseteq\mathbb{R}\), let \(f,g:A\to\mathbb{R}\), and let
 \hyperref[prf:function-algebra-closure]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:function-algebra-closure}{lra-lean}{LRA.VolumeIII.Analysis.Functions.LinearCombinations}{LinearCombinationClosure}{pending}
+\LeanFormalizes{thm:function-algebra-closure}{lra-lean}{LRA.VolumeIII.Analysis.Functions.PointwiseAlgebra}{FunctionAlgebraClosure}{pending}
 
 \begin{remark*}[Standard quantified statement]
 Each listed function assigns to every \(x\in A\) a real number by applying the
@@ -680,6 +697,7 @@ well-defined function.
 \hyperref[prf:function-quotient-closure]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:function-quotient-closure}{lra-lean}{LRA.VolumeIII.Analysis.Functions.PointwiseAlgebra}{FunctionQuotientClosure}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -724,6 +742,7 @@ and
 \hyperref[prf:pointwise-max-min-absolute-value-formulas]{Go to proof.}
 \end{proposition}
 \end{propositionbox}
+\LeanFormalizes{prop:pointwise-max-min-absolute-value-formulas}{lra-lean}{LRA.VolumeIII.Analysis.Functions.PointwiseAlgebra}{PointwiseMaxMinAbsoluteValueFormulas}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -760,6 +779,7 @@ Let \(A\subseteq\mathbb{R}\) and let \(f,g:A\to\mathbb{R}\).  For every
 \hyperref[prf:pointwise-max-min-bounds]{Go to proof.}
 \end{proposition}
 \end{propositionbox}
+\LeanFormalizes{prop:pointwise-max-min-bounds}{lra-lean}{LRA.VolumeIII.Analysis.Functions.PointwiseAlgebra}{PointwiseMaxMinBounds}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -790,6 +810,7 @@ formula \((f/g)(x)=f(x)/g(x)\) does not define a function \(A\to\mathbb{R}\).
 \hyperref[prf:quotient-undefined-when-denominator-vanishes]{Go to proof.}
 \end{proposition}
 \end{propositionbox}
+\LeanFormalizes{prop:quotient-undefined-when-denominator-vanishes}{lra-lean}{LRA.VolumeIII.Analysis.Functions.PointwiseAlgebra}{QuotientUndefinedWhenDenominatorVanishes}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -833,6 +854,7 @@ functions \(f\) and \(g\) are equal on \(A\) if
 \]
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:pointwise-equality-on-set}{lra-lean}{LRA.VolumeIII.Analysis.Functions.PointwiseOrder}{PointwiseEq}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -914,6 +936,7 @@ functions \(A\to\mathbb{R}\), defined pointwise, is a partial order:
 \hyperref[prf:pointwise-order-laws]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:pointwise-order-laws}{lra-lean}{LRA.VolumeIII.Analysis.Functions.PointwiseOrder}{PointwiseOrderLaws}{pending}
 
 \begin{remark*}[Standard quantified statement]
 Each order law is obtained by fixing \(x\in A\) and applying the
@@ -949,6 +972,7 @@ Let \(A\subseteq\mathbb{R}\) and let \(f,g:A\to\mathbb{R}\).  If
 \hyperref[prf:strict-pointwise-order-implies-weak]{Go to proof.}
 \end{proposition}
 \end{propositionbox}
+\LeanFormalizes{prop:strict-pointwise-order-implies-weak}{lra-lean}{LRA.VolumeIII.Analysis.Functions.PointwiseOrder}{StrictPointwiseOrderImpliesWeak}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -990,6 +1014,7 @@ then \(f_1+f_2\leq g_1+g_2\) on \(A\).
 \hyperref[prf:pointwise-order-arithmetic]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:pointwise-order-arithmetic}{lra-lean}{LRA.VolumeIII.Analysis.Functions.PointwiseOrder}{PointwiseOrderArithmetic}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -1034,6 +1059,7 @@ Let \(A\subseteq\mathbb{R}\).  If \(0\leq f_1\leq g_1\) and
 \hyperref[prf:pointwise-product-order-nonnegative]{Go to proof.}
 \end{proposition}
 \end{propositionbox}
+\LeanFormalizes{prop:pointwise-product-order-nonnegative}{lra-lean}{LRA.VolumeIII.Analysis.Functions.PointwiseOrder}{PointwiseProductOrderNonnegative}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -1068,6 +1094,7 @@ Let \(A\subseteq\mathbb{R}\) and let \(f,g:A\to\mathbb{R}\).  If
 \hyperref[prf:reciprocal-order-reversal]{Go to proof.}
 \end{proposition}
 \end{propositionbox}
+\LeanFormalizes{prop:reciprocal-order-reversal}{lra-lean}{LRA.VolumeIII.Analysis.Functions.PointwiseOrder}{ReciprocalOrderReversal}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -1111,6 +1138,7 @@ Let \(A\subseteq\mathbb{R}\).  If \(0\leq f_1\leq g_1\) and
 \hyperref[prf:quotient-order-sign-controlled]{Go to proof.}
 \end{proposition}
 \end{propositionbox}
+\LeanFormalizes{prop:quotient-order-sign-controlled}{lra-lean}{LRA.VolumeIII.Analysis.Functions.PointwiseOrder}{QuotientOrderSignControlled}{pending}
 
 \begin{remark*}[Standard quantified statement]
 For each \(x\in A\), the hypotheses give
@@ -1144,6 +1172,7 @@ for arbitrary real-valued functions with nonzero denominators.
 \hyperref[prf:no-unconditional-quotient-order-law]{Go to proof.}
 \end{proposition}
 \end{propositionbox}
+\LeanFormalizes{prop:no-unconditional-quotient-order-law}{lra-lean}{LRA.VolumeIII.Analysis.Functions.PointwiseOrder}{NoUnconditionalQuotientOrderLaw}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -1192,6 +1221,7 @@ $\alpha f+\beta g:X\to\mathbb{R}$ is the function defined by
 \]
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:linear-combination-of-real-valued-functions}{lra-lean}{LRA.VolumeIII.Analysis.Functions.LinearCombinations}{LinearCombo}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -1223,6 +1253,7 @@ function.
 \hyperref[prf:linear-combination-closure]{\textit{Go to proof.}}
 \end{proposition}
 \end{propositionbox}
+\LeanFormalizes{prop:linear-combination-closure}{lra-lean}{LRA.VolumeIII.Analysis.Functions.LinearCombinations}{LinearCombinationClosure}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -1255,6 +1286,7 @@ If \(f,g:X\to\mathbb{R}\) are bounded on \(X\), and
 \hyperref[prf:bounded-linear-combination]{\textit{Go to proof.}}
 \end{proposition}
 \end{propositionbox}
+\LeanFormalizes{prop:bounded-linear-combination}{lra-lean}{LRA.VolumeIII.Analysis.Functions.LinearCombinations}{BoundedLinearCombination}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -1287,6 +1319,8 @@ whenever $f,g\in\mathcal{C}$ and $\alpha,\beta\in\mathbb{R}$,
 whenever both sides are defined.
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:real-linear-rule}{lra-lean}{LRA.VolumeIII.Analysis.Functions.LinearCombinations}{IsClosedUnderLinearCombinations}{pending}
+\LeanFormalizes{def:real-linear-rule}{lra-lean}{LRA.VolumeIII.Analysis.Functions.LinearCombinations}{IsRealLinearRule}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -1325,6 +1359,7 @@ whenever the displayed expressions are defined.
 \hyperref[prf:real-linear-rule-test]{\textit{Go to proof.}}
 \end{proposition}
 \end{propositionbox}
+\LeanFormalizes{prop:real-linear-rule-test}{lra-lean}{LRA.VolumeIII.Analysis.Functions.LinearCombinations}{RealLinearRuleTest}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -1356,6 +1391,7 @@ the displayed terms are defined.
 \hyperref[prf:real-linear-rule-basic-values]{\textit{Go to proof.}}
 \end{corollary}
 \end{corollarybox}
+\LeanFormalizes{cor:real-linear-rule-basic-values}{lra-lean}{LRA.VolumeIII.Analysis.Functions.LinearCombinations}{RealLinearRuleBasicValues}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -1391,6 +1427,7 @@ $f$ is bounded above on $A$ if there exists $M\in\mathbb{R}$ such that
 \]
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:function-bounded-above}{lra-lean}{LRA.VolumeIII.Analysis.Functions.BoundedFunctions}{FunctionBoundedAbove}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -1480,6 +1517,7 @@ $f$ is bounded below on $A$ if there exists $m\in\mathbb{R}$ such that
 \]
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:function-bounded-below}{lra-lean}{LRA.VolumeIII.Analysis.Functions.BoundedFunctions}{FunctionBoundedBelow}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -1569,6 +1607,7 @@ $f$ is bounded on $A$ if there exists $B>0$ such that
 \]
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:function-bounded}{lra-lean}{LRA.VolumeIII.Analysis.Functions.BoundedFunctions}{FunctionBounded}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -1673,6 +1712,7 @@ if there exist \(\delta>0\) and \(B>0\) such that
 \]
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:function-bounded-near-point}{lra-lean}{LRA.VolumeIII.Analysis.Functions.BoundedFunctions}{FunctionBoundedNear}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -1711,6 +1751,7 @@ such that
 \]
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:function-bounded-away-from-zero}{lra-lean}{LRA.VolumeIII.Analysis.Functions.BoundedFunctions}{FunctionBoundedAwayFromZero}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -1799,6 +1840,7 @@ Let \(A\subseteq\mathbb{R}\), let \(c\in\mathbb{R}\), and let
 \]
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:function-bounded-away-from-zero-near}{lra-lean}{LRA.VolumeIII.Analysis.Functions.BoundedFunctions}{FunctionBoundedAwayFromZeroNear}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -1837,6 +1879,7 @@ bounded on \(A\) if there exists \(B>0\) such that
 \]
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:uniformly-bounded-family}{lra-lean}{LRA.VolumeIII.Analysis.Functions.BoundedFunctions}{UniformlyBoundedFamily}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -1870,6 +1913,7 @@ bounded on \(A\) if and only if \(|f|\) is bounded above on \(A\).
 \hyperref[prf:bounded-iff-absolute-value-bounded-above]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:bounded-iff-absolute-value-bounded-above}{lra-lean}{LRA.VolumeIII.Analysis.Functions.BoundedFunctions}{BoundedIffAbsoluteValueBoundedAbove}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -1898,6 +1942,8 @@ bounded on \(A\), then \(f|_S\) is bounded on \(S\).
 \hyperref[prf:boundedness-restriction]{Go to proof.}
 \end{proposition}
 \end{propositionbox}
+\LeanFormalizes{prop:boundedness-restriction}{lra-lean}{LRA.VolumeIII.Analysis.Functions.BoundedFunctions}{BoundednessRestriction}{pending}
+\LeanFormalizes{prop:boundedness-restriction}{lra-lean}{LRA.VolumeIII.Analysis.Functions.MonotoneConstantFunctions}{MonotonicityRestriction}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -1927,6 +1973,7 @@ that \(g\) is unbounded on \(B\).
 \hyperref[prf:boundedness-not-preserved-under-extension]{Go to proof.}
 \end{proposition}
 \end{propositionbox}
+\LeanFormalizes{prop:boundedness-not-preserved-under-extension}{lra-lean}{LRA.VolumeIII.Analysis.Functions.BoundedFunctions}{BoundednessNotPreservedUnderExtension}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -1992,6 +2039,7 @@ If \(f:A\to\mathbb{R}\) is bounded away from zero on \(A\), then
 \hyperref[prf:bounded-away-from-zero-implies-nonzero]{Go to proof.}
 \end{proposition}
 \end{propositionbox}
+\LeanFormalizes{prop:bounded-away-from-zero-implies-nonzero}{lra-lean}{LRA.VolumeIII.Analysis.Functions.BoundedFunctions}{BoundedAwayFromZeroImpliesNonzero}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -2020,6 +2068,7 @@ there exists \(\delta>0\) such that \(f(x)\neq0\) whenever \(x\in A\) and
 \hyperref[prf:bounded-away-from-zero-near-implies-nonzero-near]{Go to proof.}
 \end{proposition}
 \end{propositionbox}
+\LeanFormalizes{prop:bounded-away-from-zero-near-implies-nonzero-near}{lra-lean}{LRA.VolumeIII.Analysis.Functions.BoundedFunctions}{BoundedAwayFromZeroNearImpliesNonzeroNear}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -2049,6 +2098,7 @@ bounded on \(A\).
 \hyperref[prf:bounded-away-from-zero-gives-bounded-reciprocal]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:bounded-away-from-zero-gives-bounded-reciprocal}{lra-lean}{LRA.VolumeIII.Analysis.Functions.BoundedFunctions}{BoundedAwayFromZeroGivesBoundedReciprocal}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -2085,6 +2135,7 @@ If \(f:A\to\mathbb{R}\) is bounded away from zero near \(c\) in \(A\), then
 \hyperref[prf:local-bounded-away-from-zero-gives-local-bounded-reciprocal]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:local-bounded-away-from-zero-gives-local-bounded-reciprocal}{lra-lean}{LRA.VolumeIII.Analysis.Functions.BoundedFunctions}{LocalBoundedAwayFromZeroGivesLocalBoundedReciprocal}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -2114,6 +2165,7 @@ Let \((f_n)\) be uniformly bounded on \(A\).  If \(f_n(x)\to f(x)\) for each
 \hyperref[prf:uniform-boundedness-transfer-under-pointwise-limit]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:uniform-boundedness-transfer-under-pointwise-limit}{lra-lean}{LRA.VolumeIII.Analysis.Functions.BoundedFunctions}{UniformBoundednessTransferUnderPointwiseLimit}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -2160,6 +2212,8 @@ Let \(A\subseteq\mathbb{R}\), let \(f,g:A\to\mathbb{R}\) be bounded on
 \hyperref[prf:bounded-function-algebra-closure]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:bounded-function-algebra-closure}{lra-lean}{LRA.VolumeIII.Analysis.Functions.BoundedFunctions}{BoundedFunctionAlgebraClosure}{pending}
+\LeanFormalizes{thm:bounded-function-algebra-closure}{lra-lean}{LRA.VolumeIII.Analysis.Functions.MonotoneConstantFunctions}{MonotoneFunctionAlgebra}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -2198,6 +2252,7 @@ If \(f\) and \(g\) are bounded on \(A\), then \(f+g\) is bounded on \(A\).
 \hyperref[prf:bounded-sum]{Go to proof.}
 \end{corollary}
 \end{corollarybox}
+\LeanFormalizes{cor:bounded-sum}{lra-lean}{LRA.VolumeIII.Analysis.Functions.BoundedFunctions}{BoundedSum}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -2223,6 +2278,7 @@ If \(f\) and \(g\) are bounded on \(A\), then \(f-g\) is bounded on \(A\).
 \hyperref[prf:bounded-difference]{Go to proof.}
 \end{corollary}
 \end{corollarybox}
+\LeanFormalizes{cor:bounded-difference}{lra-lean}{LRA.VolumeIII.Analysis.Functions.BoundedFunctions}{BoundedDifference}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -2248,6 +2304,7 @@ If \(f\) and \(g\) are bounded on \(A\), then \(fg\) is bounded on \(A\).
 \hyperref[prf:bounded-product]{Go to proof.}
 \end{corollary}
 \end{corollarybox}
+\LeanFormalizes{cor:bounded-product}{lra-lean}{LRA.VolumeIII.Analysis.Functions.BoundedFunctions}{BoundedProduct}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -2274,6 +2331,7 @@ If \(f\) is bounded on \(A\) and \(\lambda\in\mathbb{R}\), then
 \hyperref[prf:bounded-scalar-multiple]{Go to proof.}
 \end{corollary}
 \end{corollarybox}
+\LeanFormalizes{cor:bounded-scalar-multiple}{lra-lean}{LRA.VolumeIII.Analysis.Functions.BoundedFunctions}{BoundedScalarMultiple}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -2298,6 +2356,7 @@ If \(f\) is bounded on \(A\), then \(|f|\) is bounded on \(A\).
 \hyperref[prf:bounded-absolute-value]{Go to proof.}
 \end{corollary}
 \end{corollarybox}
+\LeanFormalizes{cor:bounded-absolute-value}{lra-lean}{LRA.VolumeIII.Analysis.Functions.BoundedFunctions}{BoundedAbsoluteValue}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -2323,6 +2382,7 @@ If \(f\) and \(g\) are bounded on \(A\), then \(\max(f,g)\) and
 \hyperref[prf:bounded-max-min]{Go to proof.}
 \end{corollary}
 \end{corollarybox}
+\LeanFormalizes{cor:bounded-max-min}{lra-lean}{LRA.VolumeIII.Analysis.Functions.BoundedFunctions}{BoundedMaxMin}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -2352,6 +2412,7 @@ pointwise addition and multiplication, is a commutative ring with unity.
 \hyperref[prf:bounded-functions-form-commutative-ring]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:bounded-functions-form-commutative-ring}{lra-lean}{LRA.VolumeIII.Analysis.Functions.BoundedFunctions}{BoundedFunctionsFormCommutativeRing}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -2380,6 +2441,7 @@ pointwise addition and scalar multiplication, is a real vector space.
 \hyperref[prf:bounded-functions-form-real-vector-space]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:bounded-functions-form-real-vector-space}{lra-lean}{LRA.VolumeIII.Analysis.Functions.BoundedFunctions}{BoundedFunctionsFormRealVectorSpace}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -2408,6 +2470,7 @@ bounded away from zero on \(A\), then \(f/g\) is bounded on \(A\).
 \hyperref[prf:bounded-away-quotient]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:bounded-away-quotient}{lra-lean}{LRA.VolumeIII.Analysis.Functions.BoundedFunctions}{BoundedAwayQuotient}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -2444,6 +2507,7 @@ then \(f/g\) is bounded on \(A\).
 \hyperref[prf:bounded-quotient-by-bounded-away-denominator]{Go to proof.}
 \end{corollary}
 \end{corollarybox}
+\LeanFormalizes{cor:bounded-quotient-by-bounded-away-denominator}{lra-lean}{LRA.VolumeIII.Analysis.Functions.BoundedFunctions}{BoundedQuotientByBoundedAwayDenominator}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -2642,6 +2706,7 @@ is bounded above on \(A\).
 \hyperref[prf:function-supremum-existence]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:function-supremum-existence}{lra-lean}{LRA.VolumeIII.Analysis.Functions.SupInfOfFunctions}{FunctionSupremumExistence}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -2671,6 +2736,7 @@ is bounded below on \(A\).
 \hyperref[prf:function-infimum-existence]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:function-infimum-existence}{lra-lean}{LRA.VolumeIII.Analysis.Functions.SupInfOfFunctions}{FunctionInfimumExistence}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -2702,6 +2768,7 @@ If \(f\leq g\) on \(A\) and both suprema exist, then
 \hyperref[prf:supremum-monotone-under-pointwise-order]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:supremum-monotone-under-pointwise-order}{lra-lean}{LRA.VolumeIII.Analysis.Functions.SupInfOfFunctions}{SupremumMonotoneUnderPointwiseOrder}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -2732,6 +2799,7 @@ If \(f\leq g\) on \(A\) and both infima exist, then
 \hyperref[prf:infimum-monotone-under-pointwise-order]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:infimum-monotone-under-pointwise-order}{lra-lean}{LRA.VolumeIII.Analysis.Functions.SupInfOfFunctions}{InfimumMonotoneUnderPointwiseOrder}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -2760,6 +2828,7 @@ There exist \(f,g:A\to\mathbb{R}\) such that \(\sup_A f\leq\sup_A g\) but
 \hyperref[prf:supremum-monotonicity-converse-fails]{Go to proof.}
 \end{proposition}
 \end{propositionbox}
+\LeanFormalizes{prop:supremum-monotonicity-converse-fails}{lra-lean}{LRA.VolumeIII.Analysis.Functions.SupInfOfFunctions}{SupremumMonotonicityConverseFails}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -2819,6 +2888,7 @@ for every \(x\in A\),
 \hyperref[prf:pointwise-supremum-evaluation]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:pointwise-supremum-evaluation}{lra-lean}{LRA.VolumeIII.Analysis.Functions.SupInfOfFunctions}{PointwiseSupremumEvaluation}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -2852,6 +2922,7 @@ for every \(x\in A\),
 \hyperref[prf:pointwise-infimum-evaluation]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:pointwise-infimum-evaluation}{lra-lean}{LRA.VolumeIII.Analysis.Functions.SupInfOfFunctions}{PointwiseInfimumEvaluation}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -2882,6 +2953,7 @@ If \(f\) and \(g\) are bounded above on \(A\), then
 \hyperref[prf:supremum-subadditivity]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:supremum-subadditivity}{lra-lean}{LRA.VolumeIII.Analysis.Functions.SupInfOfFunctions}{SupremumSubadditivity}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -2934,6 +3006,7 @@ If \(f\) and \(g\) are bounded below on \(A\), then
 \hyperref[prf:infimum-superadditivity]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:infimum-superadditivity}{lra-lean}{LRA.VolumeIII.Analysis.Functions.SupInfOfFunctions}{InfimumSuperadditivity}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -2964,6 +3037,7 @@ If \(\inf_A f\) exists, then
 \hyperref[prf:supremum-negation]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:supremum-negation}{lra-lean}{LRA.VolumeIII.Analysis.Functions.SupInfOfFunctions}{SupremumNegation}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -2991,6 +3065,7 @@ If \(\sup_A f\) exists, then
 \hyperref[prf:infimum-negation]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:infimum-negation}{lra-lean}{LRA.VolumeIII.Analysis.Functions.SupInfOfFunctions}{InfimumNegation}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -3022,6 +3097,7 @@ If \(f\) has the required supremum and infimum on \(A\), then
 \hyperref[prf:supremum-scalar-multiple]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:supremum-scalar-multiple}{lra-lean}{LRA.VolumeIII.Analysis.Functions.SupInfOfFunctions}{SupremumScalarMultiple}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -3056,6 +3132,7 @@ If \(f\) has the required supremum and infimum on \(A\), then
 \hyperref[prf:infimum-scalar-multiple]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:infimum-scalar-multiple}{lra-lean}{LRA.VolumeIII.Analysis.Functions.SupInfOfFunctions}{InfimumScalarMultiple}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -3087,6 +3164,7 @@ If \(I\) is finite, then
 \hyperref[prf:finite-family-pointwise-supremum-is-maximum]{Go to proof.}
 \end{corollary}
 \end{corollarybox}
+\LeanFormalizes{cor:finite-family-pointwise-supremum-is-maximum}{lra-lean}{LRA.VolumeIII.Analysis.Functions.SupInfOfFunctions}{FiniteFamilyPointwiseSupremumIsMaximum}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -3127,6 +3205,7 @@ If \(I\) is finite, then
 \hyperref[prf:finite-family-pointwise-infimum-is-minimum]{Go to proof.}
 \end{corollary}
 \end{corollarybox}
+\LeanFormalizes{cor:finite-family-pointwise-infimum-is-minimum}{lra-lean}{LRA.VolumeIII.Analysis.Functions.SupInfOfFunctions}{FiniteFamilyPointwiseInfimumIsMinimum}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -3234,6 +3313,7 @@ maximum at a point where neither \(f\) nor \(g\) attains its maximum.
 \hyperref[prf:common-extremum-converse-fails]{Go to proof.}
 \end{proposition}
 \end{propositionbox}
+\LeanFormalizes{prop:common-extremum-converse-fails}{lra-lean}{LRA.VolumeIII.Analysis.Functions.ExtremumPoints}{CommonExtremumConverseFails}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -3291,6 +3371,7 @@ $x^*\in A$ is a maximum point of $f$ on $A$ if
 \]
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:function-maximum-point}{lra-lean}{LRA.VolumeIII.Analysis.Functions.ExtremumPoints}{FunctionMaximumPoint}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -3409,6 +3490,7 @@ $x_*\in A$ is a minimum point of $f$ on $A$ if
 \]
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:function-minimum-point}{lra-lean}{LRA.VolumeIII.Analysis.Functions.ExtremumPoints}{FunctionMinimumPoint}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -3562,6 +3644,7 @@ $f$ is increasing on $A$ if
 \]
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:function-increasing}{lra-lean}{LRA.VolumeIII.Analysis.Functions.MonotoneConstantFunctions}{FunctionIncreasing}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -3652,6 +3735,7 @@ $f$ is strictly increasing on $A$ if
 \]
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:function-strictly-increasing}{lra-lean}{LRA.VolumeIII.Analysis.Functions.MonotoneConstantFunctions}{FunctionStrictlyIncreasing}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -3741,6 +3825,7 @@ increasing on \(A\).
 \hyperref[prf:strictly-increasing-implies-increasing]{\textit{Go to proof.}}
 \end{proposition}
 \end{propositionbox}
+\LeanFormalizes{prop:strictly-increasing-implies-increasing}{lra-lean}{LRA.VolumeIII.Analysis.Functions.MonotoneConstantFunctions}{StrictlyIncreasingImpliesIncreasing}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -3772,6 +3857,7 @@ $f$ is decreasing on $A$ if
 \]
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:function-decreasing}{lra-lean}{LRA.VolumeIII.Analysis.Functions.MonotoneConstantFunctions}{FunctionDecreasing}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -3861,6 +3947,7 @@ $f$ is strictly decreasing on $A$ if
 \]
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:function-strictly-decreasing}{lra-lean}{LRA.VolumeIII.Analysis.Functions.MonotoneConstantFunctions}{FunctionStrictlyDecreasing}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -3950,6 +4037,7 @@ decreasing on \(A\).
 \hyperref[prf:strictly-decreasing-implies-decreasing]{\textit{Go to proof.}}
 \end{proposition}
 \end{propositionbox}
+\LeanFormalizes{prop:strictly-decreasing-implies-decreasing}{lra-lean}{LRA.VolumeIII.Analysis.Functions.MonotoneConstantFunctions}{StrictlyDecreasingImpliesDecreasing}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -3977,6 +4065,7 @@ Let $A\subseteq\mathbb{R}$ and let $f:A\to\mathbb{R}$.  The function
 $f$ is monotone on $A$ if $f$ is increasing on $A$ or decreasing on $A$.
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:function-monotone}{lra-lean}{LRA.VolumeIII.Analysis.Functions.MonotoneConstantFunctions}{FunctionMonotone}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -4084,6 +4173,7 @@ on \(A\).  If \(f\) is decreasing on \(A\), then \(-f\) is increasing on
 \hyperref[prf:negation-reverses-monotonicity]{\textit{Go to proof.}}
 \end{proposition}
 \end{propositionbox}
+\LeanFormalizes{prop:negation-reverses-monotonicity}{lra-lean}{LRA.VolumeIII.Analysis.Functions.MonotoneConstantFunctions}{NegationReversesMonotonicity}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -4115,6 +4205,7 @@ corresponding monotonicity on \(A\).
 \hyperref[prf:positive-scalar-multiples-preserve-monotonicity]{\textit{Go to proof.}}
 \end{proposition}
 \end{propositionbox}
+\LeanFormalizes{prop:positive-scalar-multiples-preserve-monotonicity}{lra-lean}{LRA.VolumeIII.Analysis.Functions.MonotoneConstantFunctions}{PositiveScalarMultiplesPreserveMonotonicity}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -4145,6 +4236,7 @@ strictly decreasing on its domain.
 \hyperref[prf:monotone-need-not-be-strict]{\textit{Go to proof.}}
 \end{proposition}
 \end{propositionbox}
+\LeanFormalizes{prop:monotone-need-not-be-strict}{lra-lean}{LRA.VolumeIII.Analysis.Functions.MonotoneConstantFunctions}{MonotoneNeedNotBeStrict}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -4175,6 +4267,7 @@ $f$ is constant on $A$ if
 \]
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:function-constant}{lra-lean}{LRA.VolumeIII.Analysis.Functions.MonotoneConstantFunctions}{FunctionConstant}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -4262,6 +4355,7 @@ that \(f(x)=k\) for every \(x\in A\).
 \hyperref[prf:constant-function-characterization]{\textit{Go to proof.}}
 \end{proposition}
 \end{propositionbox}
+\LeanFormalizes{prop:constant-function-characterization}{lra-lean}{LRA.VolumeIII.Analysis.Functions.MonotoneConstantFunctions}{ConstantFunctionCharacterization}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -4349,4 +4443,108 @@ Flat functions satisfy both weak monotonicity directions.
   \item \hyperref[def:function-increasing]{Increasing Function}
   \item \hyperref[def:function-decreasing]{Decreasing Function}
 \end{itemize}
+\end{dependencies}
+
+% Lean-aligned additions inserted for Volume III Lean-to-TeX handoff.
+% Lean-aligned addition: thm:strictly-monotone-implies-injective
+\begin{theorem}[Strict Monotonicity Implies Injectivity]
+\label{thm:strictly-monotone-implies-injective}
+A strictly increasing or strictly decreasing real-valued function on a set is injective on that set.
+
+\smallskip
+\noindent
+\hyperref[prf:strictly-monotone-implies-injective]{\textit{Go to proof.}}
+\end{theorem}
+\LeanFormalizes{thm:strictly-monotone-implies-injective}{lra-lean}{LRA.VolumeIII.Analysis.Functions.MonotoneConstantFunctions}{StrictlyMonotoneImpliesInjective}{pending}
+
+\begin{remark*}[Standard quantified statement]
+A strictly increasing or strictly decreasing real-valued function on a set is injective on that set.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This formal object records a Lean-aligned addition in the local language of this section.
+\end{remark*}
+
+\begin{dependencies}
+\NoLocalDependencies
+\end{dependencies}
+% Lean-aligned addition: thm:composition-of-monotone-functions
+\begin{theorem}[Composition of Monotone Functions]
+\label{thm:composition-of-monotone-functions}
+The composition of two monotone functions with the same monotonicity direction is increasing, while the composition of one increasing and one decreasing function is decreasing.
+
+\smallskip
+\noindent
+\hyperref[prf:composition-of-monotone-functions]{\textit{Go to proof.}}
+\end{theorem}
+\LeanFormalizes{thm:composition-of-monotone-functions}{lra-lean}{LRA.VolumeIII.Analysis.Functions.MonotoneConstantFunctions}{CompositionOfMonotoneFunctions}{pending}
+
+\begin{remark*}[Standard quantified statement]
+The composition of two monotone functions with the same monotonicity direction is increasing, while the composition of one increasing and one decreasing function is decreasing.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This formal object records a Lean-aligned addition in the local language of this section.
+\end{remark*}
+
+\begin{dependencies}
+\NoLocalDependencies
+\end{dependencies}
+% Lean-aligned addition: thm:inverse-of-strictly-monotone-bijection-is-strictly-monotone
+\begin{theorem}[Inverse of a Strictly Monotone Bijection]
+\label{thm:inverse-of-strictly-monotone-bijection-is-strictly-monotone}
+The inverse of a strictly monotone bijection is strictly monotone in the same order direction as the original function.
+
+\smallskip
+\noindent
+\hyperref[prf:inverse-of-strictly-monotone-bijection-is-strictly-monotone]{\textit{Go to proof.}}
+\end{theorem}
+\LeanFormalizes{thm:inverse-of-strictly-monotone-bijection-is-strictly-monotone}{lra-lean}{LRA.VolumeIII.Analysis.Functions.MonotoneConstantFunctions}{InverseOfStrictlyMonotoneBijectionIsStrictlyMonotone}{pending}
+
+\begin{remark*}[Standard quantified statement]
+The inverse of a strictly monotone bijection is strictly monotone in the same order direction as the original function.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This formal object records a Lean-aligned addition in the local language of this section.
+\end{remark*}
+
+\begin{dependencies}
+\NoLocalDependencies
+\end{dependencies}
+% Lean-aligned addition: def:pointwise-le
+\begin{definition}[Pointwise Weak Order of Functions]
+\label{def:pointwise-le}
+For functions $f,g:A\to\mathbb R$, write $f\le g$ pointwise on $A$ if $f(x)\le g(x)$ for every $x\in A$.
+\end{definition}
+\LeanFormalizes{def:pointwise-le}{lra-lean}{LRA.VolumeIII.Analysis.Functions.PointwiseOrder}{PointwiseLe}{pending}
+
+\begin{remark*}[Standard quantified statement]
+For functions $f,g:A\to\mathbb R$, write $f\le g$ pointwise on $A$ if $f(x)\le g(x)$ for every $x\in A$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This formal object records a Lean-aligned addition in the local language of this section.
+\end{remark*}
+
+\begin{dependencies}
+\NoLocalDependencies
+\end{dependencies}
+% Lean-aligned addition: def:pointwise-lt
+\begin{definition}[Pointwise Strict Order of Functions]
+\label{def:pointwise-lt}
+For functions $f,g:A\to\mathbb R$, write $f<g$ pointwise on $A$ if $f(x)<g(x)$ for every $x\in A$.
+\end{definition}
+\LeanFormalizes{def:pointwise-lt}{lra-lean}{LRA.VolumeIII.Analysis.Functions.PointwiseOrder}{PointwiseLt}{pending}
+
+\begin{remark*}[Standard quantified statement]
+For functions $f,g:A\to\mathbb R$, write $f<g$ pointwise on $A$ if $f(x)<g(x)$ for every $x\in A$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This formal object records a Lean-aligned addition in the local language of this section.
+\end{remark*}
+
+\begin{dependencies}
+\NoLocalDependencies
 \end{dependencies}

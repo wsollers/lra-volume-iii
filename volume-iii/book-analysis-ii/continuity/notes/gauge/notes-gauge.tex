@@ -16,6 +16,7 @@
 Let $a<b$ and set $I=[a,b]$. A finite ordered set $P=\{x_0,\ldots,x_n\}$ with $n\in\mathbb{N}$ and $n\ge 1$ is a partition of $I$ if and only if $x_0=a$, $x_n=b$, and $x_0<x_1<\cdots<x_n$. In this case the closed subintervals $[x_{i-1},x_i]$ for $i=1,\ldots,n$ subdivide $I$.
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:interval-partition}{lra-lean}{LRA.VolumeIII.Analysis.Continuity.Gauge}{IntervalPartition}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -133,6 +134,7 @@ A partition records the finite list of nodes that slice a closed interval into a
 Let $a,b \in \mathbb{R}$ with $a < b$. A list $\dot{\mathcal{P}}=\{([x_{i-1},x_i],t_i)\}_{i=1}^n$ is a tagged partition of $[a,b]$ if and only if the subintervals determine a partition $P=\{[x_{i-1},x_i]\}_{i=1}^n$ of $[a,b]$ with $a=x_0 < x_1 < \cdots < x_n=b$, and each tag satisfies $t_i \in [x_{i-1},x_i]$ for $i=1,\ldots,n$. Equivalently, a tagged partition is exactly a partition $P$ of $[a,b]$ together with one tag chosen inside every subinterval of $P$.
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:tagged-partition}{lra-lean}{LRA.VolumeIII.Analysis.Continuity.Gauge}{TaggedPartition}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -255,6 +257,7 @@ A tagged partition augments the usual subdivision of a closed interval by select
 Let $a,b \in \mathbb{R}$ with $a<b$ and set $I=[a,b]$. A gauge on $I$ is a function $\delta:I\to(0,\infty)$.
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:gauge}{lra-lean}{LRA.VolumeIII.Analysis.Continuity.Gauge}{IsGauge}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -369,6 +372,7 @@ A gauge assigns to each point of the closed interval a positive radius, encoding
 Let $[a,b]$ be a closed interval, let $\delta:[a,b]\to(0,\infty)$ be a gauge, and let $\dot{\mathcal{P}}=\{([x_{i-1},x_i],t_i)\}_{i=1}^n$ be a tagged partition of $[a,b]$. The tagged partition $\dot{\mathcal{P}}$ is $\delta$-fine if and only if for every $i \in \{1,\dots,n\}$ and every $x \in [x_{i-1},x_i]$ the inequality $|x-t_i|<\delta(t_i)$ holds.
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:delta-fine-partition}{lra-lean}{LRA.VolumeIII.Analysis.Continuity.Gauge}{IsDeltaFine}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -456,6 +460,7 @@ Let $\dot{\mathcal{P}}=\{([x_{i-1},x_i],t_i)\}_{i=1}^n$ be a tagged partition of
 \hyperref[prf:every-point-covered-by-tag]{Go to proof.}
 \end{lemma}
 \end{lemmabox}
+\LeanFormalizes{lem:every-point-covered-by-tag}{lra-lean}{LRA.VolumeIII.Analysis.Continuity.Gauge}{EveryPointCoveredByTag}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -496,6 +501,7 @@ admits a $\delta$-fine tagged partition of $[a,b]$.
 \hyperref[prf:cousins-theorem]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:cousins-theorem}{lra-lean}{LRA.VolumeIII.Analysis.Continuity.Gauge}{CousinsTheorem}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -679,4 +685,28 @@ so $|f(x)-f(u)|\leq\varepsilon$.
 \hyperref[def:gauge]{Definition~\ref*{def:gauge}},
 \hyperref[def:tagged-partition]{Definition~\ref*{def:tagged-partition}},
 \hyperref[def:delta-fine-partition]{Definition~\ref*{def:delta-fine-partition}}.
+\end{dependencies}
+
+% Lean-aligned additions inserted for Volume III Lean-to-TeX handoff.
+% Lean-aligned addition: thm:common-refinement-exists
+\begin{theorem}[Common Refinement Exists]
+\label{thm:common-refinement-exists}
+Any two interval partitions of the same compact interval $[a,b]$ have a common refinement.
+
+\smallskip
+\noindent
+\hyperref[prf:common-refinement-exists]{\textit{Go to proof.}}
+\end{theorem}
+\LeanFormalizes{thm:common-refinement-exists}{lra-lean}{LRA.VolumeIII.Analysis.Continuity.Gauge}{CommonRefinementExists}{pending}
+
+\begin{remark*}[Standard quantified statement]
+Any two interval partitions of the same compact interval $[a,b]$ have a common refinement.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This formal object records a Lean-aligned addition in the local language of this section.
+\end{remark*}
+
+\begin{dependencies}
+\NoLocalDependencies
 \end{dependencies}

@@ -23,6 +23,7 @@ is a \textbf{strictly increasing index map} if
 \]
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:strictly-increasing-index-map}{lra-lean}{LRA.VolumeIII.Analysis.Sequences.Subsequences}{IsStrictlyIncreasingIndexMap}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -111,6 +112,7 @@ sequence $(x_{\sigma(k)})_{k\in\mathbb{N}}$, where
 $\sigma:\mathbb{N}\to\mathbb{N}$ is a strictly increasing index map.
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:subsequence-of-sequence}{lra-lean}{LRA.VolumeIII.Analysis.Sequences.Subsequences}{IsSubsequenceOf}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -215,6 +217,7 @@ subsequence $(x_{\sigma(k)})$ such that
 \]
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:subsequential-limit}{lra-lean}{LRA.VolumeIII.Analysis.Sequences.Subsequences}{IsSubsequentialLimit}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -276,6 +279,7 @@ $\sigma:\mathbb{N}\to\mathbb{N}$ and a real number $L$ such that
 \]
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:has-convergent-subsequence}{lra-lean}{LRA.VolumeIII.Analysis.Sequences.Subsequences}{HasConvergentSubsequence}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -332,6 +336,7 @@ Then
 \hyperref[prf:subsequence-indices-dominate-identity]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:subsequence-indices-dominate-identity}{lra-lean}{LRA.VolumeIII.Analysis.Sequences.Subsequences}{SubsequenceIndicesDominateIdentity}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -384,6 +389,7 @@ then every subsequence of $(x_n)$ converges to $L$.
 \hyperref[prf:subsequences-preserve-limits]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:subsequences-preserve-limits}{lra-lean}{LRA.VolumeIII.Analysis.Sequences.Subsequences}{SubsequencesPreserveLimits}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -444,6 +450,7 @@ then $L$ is the only possible subsequential limit of $(x_n)$.
 \hyperref[prf:subsequential-limit-of-convergent-sequence]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:subsequential-limit-of-convergent-sequence}{lra-lean}{LRA.VolumeIII.Analysis.Sequences.Subsequences}{SubsequentialLimitOfConvergentSequence}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -498,6 +505,7 @@ limits, then $(x_n)$ does not converge.
 \hyperref[prf:divergence-by-two-subsequential-limits]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:divergence-by-two-subsequential-limits}{lra-lean}{LRA.VolumeIII.Analysis.Sequences.Subsequences}{DivergenceByTwoSubsequentialLimits}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -555,6 +563,7 @@ Every subsequence of a bounded real sequence is bounded.
 \hyperref[prf:boundedness-passes-to-subsequences]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:boundedness-passes-to-subsequences}{lra-lean}{LRA.VolumeIII.Analysis.Sequences.Subsequences}{BoundednessPassesToSubsequences}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -613,6 +622,8 @@ subsequence of a decreasing real sequence is decreasing.
 \hyperref[prf:monotonicity-passes-to-subsequences]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:monotonicity-passes-to-subsequences}{lra-lean}{LRA.VolumeIII.Analysis.Sequences.Subsequences}{MonotonicityPassesToSubsequencesDecr}{pending}
+\LeanFormalizes{thm:monotonicity-passes-to-subsequences}{lra-lean}{LRA.VolumeIII.Analysis.Sequences.Subsequences}{MonotonicityPassesToSubsequencesIncr}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -673,6 +684,7 @@ Every subsequence of a subsequence of $(x_n)$ is a subsequence of $(x_n)$.
 \hyperref[prf:subsequence-of-subsequence]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:subsequence-of-subsequence}{lra-lean}{LRA.VolumeIII.Analysis.Sequences.Subsequences}{SubsequenceOfSubsequence}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -733,6 +745,7 @@ holds for every $k\ge K$.
 \hyperref[prf:eventual-properties-pass-to-subsequences]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:eventual-properties-pass-to-subsequences}{lra-lean}{LRA.VolumeIII.Analysis.Sequences.Subsequences}{EventualPropertiesPassToSubsequences}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -792,6 +805,7 @@ $P(\sigma(k))$ holds for every $k\in\mathbb{N}$.
 \hyperref[prf:frequent-properties-yield-subsequences]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:frequent-properties-yield-subsequences}{lra-lean}{LRA.VolumeIII.Analysis.Sequences.Subsequences}{FrequentPropertiesYieldSubsequences}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -851,6 +865,7 @@ $m\le L\le M$.
 \hyperref[prf:subsequential-limits-respect-bounds]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:subsequential-limits-respect-bounds}{lra-lean}{LRA.VolumeIII.Analysis.Sequences.Subsequences}{SubsequentialLimitsRespectBounds}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -910,6 +925,7 @@ $(x_{\sigma(k)})$ there exists $K\in\mathbb{N}$ such that
 \hyperref[prf:squeeze-passes-to-subsequences]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:squeeze-passes-to-subsequences}{lra-lean}{LRA.VolumeIII.Analysis.Sequences.Subsequences}{SqueezePassesToSubsequences}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -966,6 +982,7 @@ Every real sequence has a monotone subsequence.
 \hyperref[prf:monotone-subsequence-theorem]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:monotone-subsequence-theorem}{lra-lean}{LRA.VolumeIII.Analysis.Sequences.Subsequences}{MonotoneSubsequenceTheorem}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -1030,6 +1047,8 @@ Every bounded real sequence has a convergent subsequence.
 \hyperref[prf:bolzano-weierstrass-sequences]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:bolzano-weierstrass-sequences}{lra-lean}{LRA.VolumeIII.Analysis.Completeness.CompletenessEquivalences}{StandardCompletenessEquivalences}{pending}
+\LeanFormalizes{thm:bolzano-weierstrass-sequences}{lra-lean}{LRA.VolumeIII.Analysis.Sequences.Subsequences}{BolzanoWeierstrassSequences}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -1085,6 +1104,7 @@ convergent subsequence whose limit belongs to $[a,b]$.
 \hyperref[prf:sequential-compactness-closed-bounded-interval]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:sequential-compactness-closed-bounded-interval}{lra-lean}{LRA.VolumeIII.Analysis.Sequences.Subsequences}{SequentialCompactnessClosedBoundedInterval}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -1127,4 +1147,50 @@ limit inside the interval.
   \item \hyperref[thm:bolzano-weierstrass-sequences]{Bolzano-Weierstrass Theorem for Sequences}
   \item \hyperref[thm:subsequential-limits-respect-bounds]{Subsequential Limits Respect Bounds}
 \end{itemize}
+\end{dependencies}
+
+% Lean-aligned additions inserted for Volume III Lean-to-TeX handoff.
+% Lean-aligned addition: thm:subsequence-principle
+\begin{theorem}[Subsequence Principle]
+\label{thm:subsequence-principle}
+A sequence $(x_n)$ converges to $L$ if and only if every subsequence of $(x_n)$ has a further subsequence that converges to $L$.
+
+\smallskip
+\noindent
+\hyperref[prf:subsequence-principle]{\textit{Go to proof.}}
+\end{theorem}
+\LeanFormalizes{thm:subsequence-principle}{lra-lean}{LRA.VolumeIII.Analysis.Sequences.Subsequences}{SubsequencePrinciple}{pending}
+
+\begin{remark*}[Standard quantified statement]
+A sequence $(x_n)$ converges to $L$ if and only if every subsequence of $(x_n)$ has a further subsequence that converges to $L$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This formal object records a Lean-aligned addition in the local language of this section.
+\end{remark*}
+
+\begin{dependencies}
+\NoLocalDependencies
+\end{dependencies}
+% Lean-aligned addition: thm:bounded-sequence-converges-iff-unique-subsequential-limit
+\begin{theorem}[Bounded Sequence Convergence and Unique Subsequential Limit]
+\label{thm:bounded-sequence-converges-iff-unique-subsequential-limit}
+A bounded real sequence converges to $L$ if and only if $L$ is its unique subsequential limit.
+
+\smallskip
+\noindent
+\hyperref[prf:bounded-sequence-converges-iff-unique-subsequential-limit]{\textit{Go to proof.}}
+\end{theorem}
+\LeanFormalizes{thm:bounded-sequence-converges-iff-unique-subsequential-limit}{lra-lean}{LRA.VolumeIII.Analysis.Sequences.Subsequences}{BoundedSequenceConvergesIffUniqueSubsequentialLimit}{pending}
+
+\begin{remark*}[Standard quantified statement]
+A bounded real sequence converges to $L$ if and only if $L$ is its unique subsequential limit.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This formal object records a Lean-aligned addition in the local language of this section.
+\end{remark*}
+
+\begin{dependencies}
+\NoLocalDependencies
 \end{dependencies}

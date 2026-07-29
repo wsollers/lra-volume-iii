@@ -13,6 +13,7 @@ Let $I, J \subseteq \mathbb{R}$ be intervals, let $f : I \to \mathbb{R}$ and $g 
 \hyperref[prf:chain-rule]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:chain-rule}{lra-lean}{LRA.VolumeIII.Analysis.Differentiation.ChainRule}{ChainRule}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -71,6 +72,7 @@ and
 \hyperref[prf:leibniz-rule]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:leibniz-rule}{lra-lean}{LRA.VolumeIII.Analysis.Differentiation.ChainRule}{LeibnizRule}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -206,3 +208,33 @@ The partitions of \(3\) produce the three terms
 The middle coefficient \(3\) counts the three ways to choose which
 differentiation contributes the second-derivative block of \(g\).
 \end{exposition}
+
+% Lean-aligned additions inserted for Volume III Lean-to-TeX handoff.
+% Lean-aligned addition: thm:faa-di-bruno-second-order
+\begin{theorem}[Second-Order Faa di Bruno Formula]
+\label{thm:faa-di-bruno-second-order}
+If $f$ and $g$ are twice differentiable where required, then
+\[
+  (f\circ g)''(x)=f''(g(x))(g'(x))^2+f'(g(x))g''(x).
+\]
+
+\smallskip
+\noindent
+\hyperref[prf:faa-di-bruno-second-order]{\textit{Go to proof.}}
+\end{theorem}
+\LeanFormalizes{thm:faa-di-bruno-second-order}{lra-lean}{LRA.VolumeIII.Analysis.Differentiation.ChainRule}{FaaDiBrunoSecondOrder}{pending}
+
+\begin{remark*}[Standard quantified statement]
+If $f$ and $g$ are twice differentiable where required, then
+\[
+  (f\circ g)''(x)=f''(g(x))(g'(x))^2+f'(g(x))g''(x).
+\]
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This formal object records a Lean-aligned addition in the local language of this section.
+\end{remark*}
+
+\begin{dependencies}
+\NoLocalDependencies
+\end{dependencies}

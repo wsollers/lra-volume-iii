@@ -136,6 +136,7 @@ The mesh of a finite partition records the length of the widest subinterval and 
 Let $[a,b] \subseteq \mathbb{R}$ and let $P$ and $Q$ be partitions of $[a,b]$. Then $Q$ is a refinement of $P$ if and only if every point of $P$ is also a point of $Q$; equivalently, $P \subseteq Q$.
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:refinement-of-partition}{lra-lean}{LRA.VolumeIII.Analysis.Continuity.Gauge}{IsRefinementOf}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -216,6 +217,7 @@ Refinement formalizes the idea of subdividing an interval more finely without lo
 Let $a<b$ and let $P$ and $Q$ be partitions of $[a,b]$. Their common refinement is the partition $R$ obtained by taking the union of their node sets, so $R = P \cup Q$ as sets of points in $[a,b]$.
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:common-refinement}{lra-lean}{LRA.VolumeIII.Analysis.Continuity.Gauge}{HasCommonRefinement}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[

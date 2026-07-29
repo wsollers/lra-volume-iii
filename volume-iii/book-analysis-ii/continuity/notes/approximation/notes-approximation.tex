@@ -21,6 +21,7 @@ Then there exists a step function $s_\varepsilon:[a,b]\to\mathbb{R}$ such that
 \hyperref[prf:step-function-approximation]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:step-function-approximation}{lra-lean}{LRA.VolumeIII.Analysis.Continuity.Approximation}{StepFunctionApproximation}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -128,6 +129,7 @@ $a=x_0<x_1<\cdots<x_m=b$ such that $g|_{[x_{k-1},x_k]}$ is affine
 for every $k\in\{1,\ldots,m\}$.
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:piecewise-linear-function}{lra-lean}{LRA.VolumeIII.Analysis.Continuity.Approximation}{IsPiecewiseLinear}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -283,6 +285,7 @@ nodes that covers the whole interval.
 Let $f\colon[a,b]\to\mathbb{R}$ be continuous and let $\varepsilon>0$. Then there exists a continuous piecewise linear function $\ell_\varepsilon\colon[a,b]\to\mathbb{R}$ such that $\sup_{x\in[a,b]}|f(x)-\ell_\varepsilon(x)|<\varepsilon$. \hyperref[prf:piecewise-linear-approximation]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:piecewise-linear-approximation}{lra-lean}{LRA.VolumeIII.Analysis.Continuity.Approximation}{PiecewiseLinearApproximation}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -326,6 +329,7 @@ Let $f:[a,b]\to\mathbb{R}$ be continuous. For every $\varepsilon>0$ there exists
 \hyperref[prf:weierstrass-approximation]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:weierstrass-approximation}{lra-lean}{LRA.VolumeIII.Analysis.Continuity.Approximation}{WeierstrassApproximation}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -418,6 +422,7 @@ The nth Bernstein polynomial samples f at the uniformly spaced nodes k/n, weight
 Let $f:[0,1]\to\mathbb{R}$ be continuous, and for each $n\in\mathbb{N}$ let $B_n$ denote the $n$th Bernstein polynomial of $f$. Then for every $\varepsilon>0$ there exists $n_\varepsilon\in\mathbb{N}$ such that $\|f-B_n\|_\infty<\varepsilon$ for all $n\ge n_\varepsilon$. \hyperref[prf:bernstein-approximation]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:bernstein-approximation}{lra-lean}{LRA.VolumeIII.Analysis.Continuity.Approximation}{BernsteinApproximation}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -443,4 +448,24 @@ The theorem asserts that the Bernstein polynomials of a continuous function on $
 
 \begin{dependencies}
 \hyperref[def:continuous-at-point]{Definition (Continuity at a Point)}, \hyperref[def:bernstein-polynomial]{Definition (Bernstein Polynomial)}.
+\end{dependencies}
+
+% Lean-aligned additions inserted for Volume III Lean-to-TeX handoff.
+% Lean-aligned addition: def:is-step-function
+\begin{definition}[Step Function on an Interval]
+\label{def:is-step-function}
+A function $g:[a,b]\to\mathbb R$ is a \emph{step function} if there is a finite partition $a=x_0<x_1<\cdots<x_n=b$ and constants $c_1,\ldots,c_n$ such that $g(x)=c_i$ for every $x\in(x_{i-1},x_i)$.
+\end{definition}
+\LeanFormalizes{def:is-step-function}{lra-lean}{LRA.VolumeIII.Analysis.Continuity.Approximation}{IsStepFunction}{pending}
+
+\begin{remark*}[Standard quantified statement]
+A function $g:[a,b]\to\mathbb R$ is a \emph{step function} if there is a finite partition $a=x_0<x_1<\cdots<x_n=b$ and constants $c_1,\ldots,c_n$ such that $g(x)=c_i$ for every $x\in(x_{i-1},x_i)$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This formal object records a Lean-aligned addition in the local language of this section.
+\end{remark*}
+
+\begin{dependencies}
+\NoLocalDependencies
 \end{dependencies}

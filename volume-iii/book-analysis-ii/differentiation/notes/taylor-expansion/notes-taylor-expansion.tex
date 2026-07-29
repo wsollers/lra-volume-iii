@@ -155,6 +155,7 @@ $x\in(a,b)$, there exists $c$ strictly between $a$ and $x$ such that
 \hyperref[prf:taylor-theorem-lagrange-remainder]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:taylor-theorem-lagrange-remainder}{lra-lean}{LRA.VolumeIII.Analysis.Differentiation.TaylorExpansion}{TaylorTheoremLagrangeRemainder}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -224,6 +225,7 @@ $n$ in a neighbourhood of $a$. If $f^{(n)}$ is continuous at $a$, then
 \hyperref[prf:taylor-expansion-peano-remainder]{\textit{Go to proof.}}
 \end{corollary}
 \end{corollarybox}
+\LeanFormalizes{cor:taylor-expansion-peano-remainder}{lra-lean}{LRA.VolumeIII.Analysis.Differentiation.TaylorExpansion}{TaylorExpansionPeanoRemainder}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -266,6 +268,7 @@ Let $f$ be differentiable at $c$. Then, as $h\to 0$,
 \hyperref[prf:first-order-peano-remainder]{Go to proof.}
 \end{corollary}
 \end{corollarybox}
+\LeanFormalizes{cor:first-order-peano-remainder}{lra-lean}{LRA.VolumeIII.Analysis.Differentiation.TaylorExpansion}{FirstOrderPeanoRemainder}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -378,4 +381,28 @@ The Taylor series sees only derivative data at the center, and all of that data 
   \item \hyperref[def:maclaurin-polynomial]{Definition: Maclaurin Polynomial}
   \item \hyperref[thm:smoothness-tower]{Theorem: The Smoothness Tower}
 \end{itemize}
+\end{dependencies}
+
+% Lean-aligned additions inserted for Volume III Lean-to-TeX handoff.
+% Lean-aligned addition: thm:flat-function-properties
+\begin{theorem}[Flat Function Properties]
+\label{thm:flat-function-properties}
+The smooth function that is $0$ at the origin and agrees with $e^{-1/x^2}$ away from the origin has all derivatives equal to $0$ at the origin, but is not identically zero on any neighborhood of the origin.
+
+\smallskip
+\noindent
+\hyperref[prf:flat-function-properties]{\textit{Go to proof.}}
+\end{theorem}
+\LeanFormalizes{thm:flat-function-properties}{lra-lean}{LRA.VolumeIII.Analysis.Differentiation.TaylorExpansion}{FlatFunctionProperties}{pending}
+
+\begin{remark*}[Standard quantified statement]
+The smooth function that is $0$ at the origin and agrees with $e^{-1/x^2}$ away from the origin has all derivatives equal to $0$ at the origin, but is not identically zero on any neighborhood of the origin.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This formal object records a Lean-aligned addition in the local language of this section.
+\end{remark*}
+
+\begin{dependencies}
+\NoLocalDependencies
 \end{dependencies}

@@ -11,6 +11,7 @@ Let $I\subseteq\mathbb{R}$ be an interval and let $f:I\to\mathbb{R}$. The functi
 \]
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:convex-function}{lra-lean}{LRA.VolumeIII.Analysis.Differentiation.DerivativeGeometry}{IsConvexOn}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -47,6 +48,7 @@ Convexity is defined by chords, not derivatives. The graph lies below the line s
 Let $I\subseteq\mathbb{R}$ be an interval and let $f:I\to\mathbb{R}$. The function $f$ is \emph{concave} on $I$ if $-f$ is convex on $I$.
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:concave-function}{lra-lean}{LRA.VolumeIII.Analysis.Differentiation.DerivativeGeometry}{IsConcaveOn}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -72,6 +74,7 @@ Concavity is the downward-bending counterpart of convexity. Equivalently, the gr
 Let $I\subseteq\mathbb{R}$ be an interval, let $f:I\to\mathbb{R}$, and let $c\in I$ be an interior point. The point $c$ is an \emph{inflection point} of $f$ if $f$ changes convexity at $c$: there is a neighbourhood $(c-\delta,c+\delta)\subseteq I$ such that $f$ is convex on one side of $c$ and concave on the other side.
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:inflection-point}{lra-lean}{LRA.VolumeIII.Analysis.Differentiation.DerivativeGeometry}{IsInflection}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[

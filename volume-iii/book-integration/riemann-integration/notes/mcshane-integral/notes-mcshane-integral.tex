@@ -71,6 +71,8 @@ Unlike an HK tagged partition, the tag \(\xi_i\) is not required to lie in
 \([u_i,v_i]\).
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:mcshane-fine-tagged-partition}{lra-lean}{LRA.VolumeIII.Analysis.Integration.McShaneIntegral}{IsMcShaneDeltaFine}{pending}
+\LeanFormalizes{def:mcshane-fine-tagged-partition}{lra-lean}{LRA.VolumeIII.Analysis.Integration.McShaneIntegral}{McShaneTaggedPartition}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -127,6 +129,7 @@ where
 \]
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:mcshane-integral}{lra-lean}{LRA.VolumeIII.Analysis.Integration.McShaneIntegral}{HasMcShaneIntegral}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -179,6 +182,7 @@ class.
 \hyperref[prf:riemann-mcshane-hk-inclusions]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:riemann-mcshane-hk-inclusions}{lra-lean}{LRA.VolumeIII.Analysis.Integration.McShaneIntegral}{riemann_mcshane_hk_inclusions}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -211,6 +215,7 @@ and the McShane and Lebesgue integral values agree.
 \hyperref[prf:mcshane-equals-lebesgue]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:mcshane-equals-lebesgue}{lra-lean}{LRA.VolumeIII.Analysis.Integration.McShaneIntegral}{mcshane_equals_lebesgue}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -291,3 +296,45 @@ McShane reveals that gauge machinery and Lebesgue size are compatible. The
 next volume builds the measure-theoretic machinery that this chapter has only
 anticipated through measure-zero diagnostics and gauge-sum comparisons.
 \end{remark*}
+
+% Lean-aligned additions inserted for Volume III Lean-to-TeX handoff.
+% Lean-aligned addition: def:is-mc-shane-integrable
+\begin{definition}[McShane Integrability]
+\label{def:is-mc-shane-integrable}
+A function $f:[a,b]\to\mathbb R$ is \emph{McShane integrable} if there exists $L\in\mathbb R$ satisfying the McShane integral criterion on $[a,b]$.
+\end{definition}
+\LeanFormalizes{def:is-mc-shane-integrable}{lra-lean}{LRA.VolumeIII.Analysis.Integration.McShaneIntegral}{IsMcShaneIntegrable}{pending}
+
+\begin{remark*}[Standard quantified statement]
+A function $f:[a,b]\to\mathbb R$ is \emph{McShane integrable} if there exists $L\in\mathbb R$ satisfying the McShane integral criterion on $[a,b]$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This formal object records a Lean-aligned addition in the local language of this section.
+\end{remark*}
+
+\begin{dependencies}
+\NoLocalDependencies
+\end{dependencies}
+% Lean-aligned addition: thm:hk-strictly-wider-than-mcshane
+\begin{theorem}[Henstock--Kurzweil Is Strictly Wider Than McShane]
+\label{thm:hk-strictly-wider-than-mcshane}
+There is a Henstock--Kurzweil integrable function that is not McShane integrable.
+
+\smallskip
+\noindent
+\hyperref[prf:hk-strictly-wider-than-mcshane]{\textit{Go to proof.}}
+\end{theorem}
+\LeanFormalizes{thm:hk-strictly-wider-than-mcshane}{lra-lean}{LRA.VolumeIII.Analysis.Integration.McShaneIntegral}{hk_strictly_wider_than_mcshane}{pending}
+
+\begin{remark*}[Standard quantified statement]
+There is a Henstock--Kurzweil integrable function that is not McShane integrable.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This formal object records a Lean-aligned addition in the local language of this section.
+\end{remark*}
+
+\begin{dependencies}
+\NoLocalDependencies
+\end{dependencies}

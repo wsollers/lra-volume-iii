@@ -21,6 +21,8 @@ such that
 \]
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:compact-set}{lra-lean}{LRA.VolumeIII.Analysis.StructureOfRealLine.Compactness}{IsCompactSet}{pending}
+\LeanFormalizes{def:compact-set}{lra-lean}{LRA.VolumeIII.Analysis.StructureOfRealLine.CompactnessAdditions}{IsCompactR}{pending}
 \begin{remark*}[Standard quantified statement]
 \[
 K \text{ compact} \Longleftrightarrow \forall \{U_i\}_{i\in I}\Bigl(\bigl(\forall i\in I\;U_i \text{ open}\bigr)\land K\subseteq\textstyle\bigcup_{i\in I}U_i \Longrightarrow \exists \text{finite } J\subseteq I\;K\subseteq\textstyle\bigcup_{i\in J}U_i\Bigr).
@@ -114,4 +116,90 @@ This is the easy half of Heine--Borel and holds the same way in every metric spa
   \item \hyperref[def:closed-set]{Closed Set in $\mathbb{R}$}
   \item \hyperref[def:bounded-subset-of-r]{Bounded Subset of the Real Line}
 \end{itemize}
+\end{dependencies}
+
+% Lean-aligned additions inserted for Volume III Lean-to-TeX handoff.
+% Lean-aligned addition: thm:is-compact-set-iff-is-compact-r
+\begin{theorem}[Book Compactness Predicate Equivalence]
+\label{thm:is-compact-set-iff-is-compact-r}
+The open-cover compactness predicate for subsets of $\mathbb R$ agrees with the compactness predicate used in the real-line structure chapter.
+
+\smallskip
+\noindent
+\hyperref[prf:is-compact-set-iff-is-compact-r]{\textit{Go to proof.}}
+\end{theorem}
+\LeanFormalizes{thm:is-compact-set-iff-is-compact-r}{lra-lean}{LRA.VolumeIII.Analysis.StructureOfRealLine.Compactness}{IsCompactSetIffIsCompactR}{pending}
+
+\begin{remark*}[Standard quantified statement]
+The open-cover compactness predicate for subsets of $\mathbb R$ agrees with the compactness predicate used in the real-line structure chapter.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This formal object records a Lean-aligned addition in the local language of this section.
+\end{remark*}
+
+\begin{dependencies}
+\NoLocalDependencies
+\end{dependencies}
+% Lean-aligned addition: thm:is-closed-set-iff-is-closed-r
+\begin{theorem}[Book Closedness Predicate Equivalence]
+\label{thm:is-closed-set-iff-is-closed-r}
+The closed-set predicate defined by complements of open subsets of $\mathbb R$ agrees with the closedness predicate used in the compactness development.
+
+\smallskip
+\noindent
+\hyperref[prf:is-closed-set-iff-is-closed-r]{\textit{Go to proof.}}
+\end{theorem}
+\LeanFormalizes{thm:is-closed-set-iff-is-closed-r}{lra-lean}{LRA.VolumeIII.Analysis.StructureOfRealLine.Compactness}{IsClosedSetIffIsClosedR}{pending}
+
+\begin{remark*}[Standard quantified statement]
+The closed-set predicate defined by complements of open subsets of $\mathbb R$ agrees with the closedness predicate used in the compactness development.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This formal object records a Lean-aligned addition in the local language of this section.
+\end{remark*}
+
+\begin{dependencies}
+\NoLocalDependencies
+\end{dependencies}
+% Lean-aligned addition: def:is-seq-compact-r
+\begin{definition}[Sequential Compactness on the Real Line]
+\label{def:is-seq-compact-r}
+A set $K\subseteq\mathbb R$ is \emph{sequentially compact} if every sequence with values in $K$ has a subsequence converging to a point of $K$.
+\end{definition}
+\LeanFormalizes{def:is-seq-compact-r}{lra-lean}{LRA.VolumeIII.Analysis.StructureOfRealLine.CompactnessAdditions}{IsSeqCompactR}{pending}
+
+\begin{remark*}[Standard quantified statement]
+A set $K\subseteq\mathbb R$ is \emph{sequentially compact} if every sequence with values in $K$ has a subsequence converging to a point of $K$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This formal object records a Lean-aligned addition in the local language of this section.
+\end{remark*}
+
+\begin{dependencies}
+\NoLocalDependencies
+\end{dependencies}
+% Lean-aligned addition: thm:sequential-compactness-iff-open-cover-compactness
+\begin{theorem}[Sequential Compactness and Open-Cover Compactness on the Real Line]
+\label{thm:sequential-compactness-iff-open-cover-compactness}
+For subsets of $\mathbb R$, sequential compactness is equivalent to open-cover compactness.
+
+\smallskip
+\noindent
+\hyperref[prf:sequential-compactness-iff-open-cover-compactness]{\textit{Go to proof.}}
+\end{theorem}
+\LeanFormalizes{thm:sequential-compactness-iff-open-cover-compactness}{lra-lean}{LRA.VolumeIII.Analysis.StructureOfRealLine.CompactnessAdditions}{SequentialCompactnessIffOpenCoverCompactness}{pending}
+
+\begin{remark*}[Standard quantified statement]
+For subsets of $\mathbb R$, sequential compactness is equivalent to open-cover compactness.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This formal object records a Lean-aligned addition in the local language of this section.
+\end{remark*}
+
+\begin{dependencies}
+\NoLocalDependencies
 \end{dependencies}

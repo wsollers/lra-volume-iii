@@ -157,6 +157,7 @@ Let $A\subseteq \mathbb{R}$, let $x_0$ be a limit point of $A$, and let $f:A\to\
 \hyperref[prf:limsup-geq-liminf-function]{Go to proof.}
 \end{proposition}
 \end{propositionbox}
+\LeanFormalizes{prop:limsup-geq-liminf-function}{lra-lean}{LRA.VolumeIII.Analysis.Continuity.MonotoneFunctions}{LiminfLeLimsup}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -197,6 +198,7 @@ Let $A \subseteq \mathbb{R}$, let $f \colon A \to \mathbb{R}$, let $x_0$ be a li
 \hyperref[prf:limsup-liminf-limit-criterion]{Go to proof.}
 \end{proposition}
 \end{propositionbox}
+\LeanFormalizes{prop:limsup-liminf-limit-criterion}{lra-lean}{LRA.VolumeIII.Analysis.Continuity.MonotoneFunctions}{TendstoIffLimsupEqLiminf}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -303,4 +305,23 @@ The two-sided limit of a real-valued function at a finite limit point exists pre
 
 \begin{dependencies}
 \hyperref[def:limsup-liminf-function]{Definition~\ref*{def:limsup-liminf-function}}
+\end{dependencies}
+
+% Lean-aligned additions inserted for Volume III Lean-to-TeX handoff.
+% Lean-aligned addition: def:liminf-at
+\begin{definition}[Lower Limit of a Function at a Point]
+\label{def:liminf-at}
+For a real-valued function $f$ near an adherent point $c$, the lower limit $\liminf_{x\to c}f(x)$ is the supremum of lower eventual bounds for $f$ near $c$, equivalently the lower envelope complementary to $\limsup_{x\to c}f(x)$.
+\end{definition}
+
+\begin{remark*}[Standard quantified statement]
+For a real-valued function $f$ near an adherent point $c$, the lower limit $\liminf_{x\to c}f(x)$ is the supremum of lower eventual bounds for $f$ near $c$, equivalently the lower envelope complementary to $\limsup_{x\to c}f(x)$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This formal object records a Lean-aligned addition in the local language of this section.
+\end{remark*}
+
+\begin{dependencies}
+\NoLocalDependencies
 \end{dependencies}

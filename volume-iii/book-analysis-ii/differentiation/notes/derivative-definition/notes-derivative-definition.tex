@@ -20,6 +20,7 @@ Let $A \subseteq \mathbb{R}$, let $f: A \to \mathbb{R}$ be a real-valued functio
 \]
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:derivative-at-a-point}{lra-lean}{LRA.VolumeIII.Analysis.Differentiation.DerivativeDefinition}{Derivative}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -119,6 +120,7 @@ Let $A \subseteq \mathbb{R}$, let $f: A \to \mathbb{R}$, and let $c \in A$ be a 
 \]
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:topological-definition-of-derivative-at-a-point}{lra-lean}{LRA.VolumeIII.Analysis.Differentiation.DerivativeDefinition}{DerivativeTop}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -196,6 +198,7 @@ Let $A \subseteq \mathbb{R}$, let $f : A \to \mathbb{R}$, and let $c \in A$ be a
 \]
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:sequential-definition-of-derivative-at-a-point}{lra-lean}{LRA.VolumeIII.Analysis.Differentiation.DerivativeDefinition}{DerivativeSeq}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -295,6 +298,7 @@ Let $f : A \to \mathbb{R}$ and $c \in A$ be a limit point of $A$. The following 
 \hyperref[prf:derivative-equivalence]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:derivative-equivalence}{lra-lean}{LRA.VolumeIII.Analysis.Differentiation.DerivativeDefinition}{DerivativeEquivalence}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -484,6 +488,7 @@ Let $f : A \to \mathbb{R}$ and $c \in A$. If $f$ is differentiable at $c$, then 
 \hyperref[prf:differentiable-implies-continuous]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:differentiable-implies-continuous}{lra-lean}{LRA.VolumeIII.Analysis.Differentiation.DerivativeDefinition}{DifferentiableImpliesContinuous}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -638,6 +643,7 @@ Let $f : A \to \mathbb{R}$ and $c \in A$. If $f$ is differentiable at $c$, its d
 \hyperref[prf:uniqueness-of-the-derivative]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:uniqueness-of-the-derivative}{lra-lean}{LRA.VolumeIII.Analysis.Differentiation.DerivativeDefinition}{DerivativeUnique}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -775,4 +781,24 @@ A constant function has zero change across every secant line, so its instantaneo
 \begin{itemize}
   \item \hyperref[def:derivative-at-a-point]{Derivative at a Point}
 \end{itemize}
+\end{dependencies}
+
+% Lean-aligned additions inserted for Volume III Lean-to-TeX handoff.
+% Lean-aligned addition: def:is-differentiable
+\begin{definition}[Differentiability at a Point]
+\label{def:is-differentiable}
+A function $f$ is \emph{differentiable at $c$} if the difference quotient $(f(x)-f(c))/(x-c)$ has a finite limit as $x\to c$.
+\end{definition}
+\LeanFormalizes{def:is-differentiable}{lra-lean}{LRA.VolumeIII.Analysis.Differentiation.DerivativeDefinition}{IsDifferentiable}{pending}
+
+\begin{remark*}[Standard quantified statement]
+A function $f$ is \emph{differentiable at $c$} if the difference quotient $(f(x)-f(c))/(x-c)$ has a finite limit as $x\to c$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This formal object records a Lean-aligned addition in the local language of this section.
+\end{remark*}
+
+\begin{dependencies}
+\NoLocalDependencies
 \end{dependencies}

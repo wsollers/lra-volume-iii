@@ -22,6 +22,7 @@ Let $(x_n)$ be a real sequence. The sequence $(x_n)$ is
 \]
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:increasing-sequence}{lra-lean}{LRA.VolumeIII.Analysis.Sequences.Monotonicity}{IsIncreasing}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -115,6 +116,7 @@ Let $(x_n)$ be a real sequence. The sequence $(x_n)$ is
 \]
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:decreasing-sequence}{lra-lean}{LRA.VolumeIII.Analysis.Sequences.Monotonicity}{IsDecreasing}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -207,6 +209,7 @@ Let $(x_n)$ be a real sequence. The sequence $(x_n)$ is
 \]
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:strictly-increasing-sequence}{lra-lean}{LRA.VolumeIII.Analysis.Sequences.Monotonicity}{IsStrictlyIncreasing}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -300,6 +303,7 @@ Let $(x_n)$ be a real sequence. The sequence $(x_n)$ is
 \]
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:strictly-decreasing-sequence}{lra-lean}{LRA.VolumeIII.Analysis.Sequences.Monotonicity}{IsStrictlyDecreasing}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -388,6 +392,7 @@ Let $(x_n)$ be a real sequence. The sequence $(x_n)$ is
 \textbf{monotone} if it is increasing or decreasing.
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:monotone-sequence}{lra-lean}{LRA.VolumeIII.Analysis.Sequences.Monotonicity}{IsMonotoneSeq}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -496,6 +501,7 @@ Let $(x_n)$ be a real sequence. The sequence $(x_n)$ is
 \]
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:eventually-increasing-sequence}{lra-lean}{LRA.VolumeIII.Analysis.Sequences.Monotonicity}{IsEventuallyIncreasing}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -586,6 +592,7 @@ Let $(x_n)$ be a real sequence. The sequence $(x_n)$ is
 \]
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:eventually-decreasing-sequence}{lra-lean}{LRA.VolumeIII.Analysis.Sequences.Monotonicity}{IsEventuallyDecreasing}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -672,6 +679,7 @@ Let $(x_n)$ be a real sequence. The sequence $(x_n)$ is
 decreasing.
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:eventually-monotone-sequence}{lra-lean}{LRA.VolumeIII.Analysis.Sequences.Monotonicity}{IsEventuallyMonotone}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -794,6 +802,9 @@ Let $(x_n)$ be a real sequence.
 \hyperref[prf:monotone-convergence-theorem]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:monotone-convergence-theorem}{lra-lean}{LRA.VolumeIII.Analysis.Completeness.CompletenessEquivalences}{StandardCompletenessEquivalences}{pending}
+\LeanFormalizes{thm:monotone-convergence-theorem}{lra-lean}{LRA.VolumeIII.Analysis.Sequences.Monotonicity}{MonotoneConvergenceTheoremDecreasing}{pending}
+\LeanFormalizes{thm:monotone-convergence-theorem}{lra-lean}{LRA.VolumeIII.Analysis.Sequences.Monotonicity}{MonotoneConvergenceTheoremIncreasing}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -970,6 +981,8 @@ Let $(x_n)$ be a real sequence.
 \hyperref[prf:strict-monotonicity-implies-monotonicity]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:strict-monotonicity-implies-monotonicity}{lra-lean}{LRA.VolumeIII.Analysis.Sequences.Monotonicity}{StrictDecreasingImpliesDecreasing}{pending}
+\LeanFormalizes{thm:strict-monotonicity-implies-monotonicity}{lra-lean}{LRA.VolumeIII.Analysis.Sequences.Monotonicity}{StrictIncreasingImpliesIncreasing}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -1041,6 +1054,9 @@ Let $(x_n)$ be a real sequence.
 \hyperref[prf:bounded-monotone-sequence-equivalences]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:bounded-monotone-sequence-equivalences}{lra-lean}{LRA.VolumeIII.Analysis.Sequences.Monotonicity}{BoundedMonotoneSequenceEquivalences}{pending}
+\LeanFormalizes{thm:bounded-monotone-sequence-equivalences}{lra-lean}{LRA.VolumeIII.Analysis.Sequences.Monotonicity}{BoundedMonotoneSequenceEquivalencesDecr}{pending}
+\LeanFormalizes{thm:bounded-monotone-sequence-equivalences}{lra-lean}{LRA.VolumeIII.Analysis.Sequences.Monotonicity}{BoundedMonotoneSequenceEquivalencesIncr}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -1124,6 +1140,9 @@ Let $(x_n)$ be a real sequence.
 \hyperref[prf:eventually-monotone-convergence-theorem]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:eventually-monotone-convergence-theorem}{lra-lean}{LRA.VolumeIII.Analysis.Sequences.Monotonicity}{EventuallyMonotoneConvergenceTheorem}{pending}
+\LeanFormalizes{thm:eventually-monotone-convergence-theorem}{lra-lean}{LRA.VolumeIII.Analysis.Sequences.Monotonicity}{EventuallyMonotoneConvergenceTheoremDecr}{pending}
+\LeanFormalizes{thm:eventually-monotone-convergence-theorem}{lra-lean}{LRA.VolumeIII.Analysis.Sequences.Monotonicity}{EventuallyMonotoneConvergenceTheoremIncr}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -1205,6 +1224,8 @@ Let $(x_n)$ be a real sequence.
 \hyperref[prf:unbounded-monotone-divergence]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:unbounded-monotone-divergence}{lra-lean}{LRA.VolumeIII.Analysis.Sequences.Monotonicity}{UnboundedMonotoneDivergenceNeg}{pending}
+\LeanFormalizes{thm:unbounded-monotone-divergence}{lra-lean}{LRA.VolumeIII.Analysis.Sequences.Monotonicity}{UnboundedMonotoneDivergencePos}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -1289,6 +1310,12 @@ Let $(x_n)$ be a real sequence and let $c,\alpha\in\mathbb{R}$.
 \hyperref[prf:algebraic-transformations-preserve-monotonicity]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:algebraic-transformations-preserve-monotonicity}{lra-lean}{LRA.VolumeIII.Analysis.Sequences.Monotonicity}{NegationReversesDecreasing}{pending}
+\LeanFormalizes{thm:algebraic-transformations-preserve-monotonicity}{lra-lean}{LRA.VolumeIII.Analysis.Sequences.Monotonicity}{NegationReversesIncreasing}{pending}
+\LeanFormalizes{thm:algebraic-transformations-preserve-monotonicity}{lra-lean}{LRA.VolumeIII.Analysis.Sequences.Monotonicity}{NegativeScalarReversesIncreasing}{pending}
+\LeanFormalizes{thm:algebraic-transformations-preserve-monotonicity}{lra-lean}{LRA.VolumeIII.Analysis.Sequences.Monotonicity}{PositiveScalarPreservesIncreasing}{pending}
+\LeanFormalizes{thm:algebraic-transformations-preserve-monotonicity}{lra-lean}{LRA.VolumeIII.Analysis.Sequences.Monotonicity}{TranslationPreservesDecreasing}{pending}
+\LeanFormalizes{thm:algebraic-transformations-preserve-monotonicity}{lra-lean}{LRA.VolumeIII.Analysis.Sequences.Monotonicity}{TranslationPreservesIncreasing}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -1345,4 +1372,50 @@ special case $\alpha=-1$.
   \item \hyperref[def:increasing-sequence]{Increasing Sequence}
   \item \hyperref[def:decreasing-sequence]{Decreasing Sequence}
 \end{itemize}
+\end{dependencies}
+
+% Lean-aligned additions inserted for Volume III Lean-to-TeX handoff.
+% Lean-aligned addition: thm:increasing-bounded-below-by-first-term
+\begin{theorem}[Increasing Sequences Are Bounded Below by the First Term]
+\label{thm:increasing-bounded-below-by-first-term}
+If $(x_n)$ is increasing, then $x_1\le x_n$ for every $n$; hence the sequence is bounded below by its first term.
+
+\smallskip
+\noindent
+\hyperref[prf:increasing-bounded-below-by-first-term]{\textit{Go to proof.}}
+\end{theorem}
+\LeanFormalizes{thm:increasing-bounded-below-by-first-term}{lra-lean}{LRA.VolumeIII.Analysis.Sequences.Monotonicity}{IncreasingBoundedBelowByFirstTerm}{pending}
+
+\begin{remark*}[Standard quantified statement]
+If $(x_n)$ is increasing, then $x_1\le x_n$ for every $n$; hence the sequence is bounded below by its first term.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This formal object records a Lean-aligned addition in the local language of this section.
+\end{remark*}
+
+\begin{dependencies}
+\NoLocalDependencies
+\end{dependencies}
+% Lean-aligned addition: thm:decreasing-bounded-above-by-first-term
+\begin{theorem}[Decreasing Sequences Are Bounded Above by the First Term]
+\label{thm:decreasing-bounded-above-by-first-term}
+If $(x_n)$ is decreasing, then $x_n\le x_1$ for every $n$; hence the sequence is bounded above by its first term.
+
+\smallskip
+\noindent
+\hyperref[prf:decreasing-bounded-above-by-first-term]{\textit{Go to proof.}}
+\end{theorem}
+\LeanFormalizes{thm:decreasing-bounded-above-by-first-term}{lra-lean}{LRA.VolumeIII.Analysis.Sequences.Monotonicity}{DecreasingBoundedAboveByFirstTerm}{pending}
+
+\begin{remark*}[Standard quantified statement]
+If $(x_n)$ is decreasing, then $x_n\le x_1$ for every $n$; hence the sequence is bounded above by its first term.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This formal object records a Lean-aligned addition in the local language of this section.
+\end{remark*}
+
+\begin{dependencies}
+\NoLocalDependencies
 \end{dependencies}

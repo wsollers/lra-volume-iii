@@ -24,6 +24,7 @@ For a tagged partition \((P,\xi)\), define
 \]
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:riemann-sum}{lra-lean}{LRA.VolumeIII.Analysis.Integration.RiemannIntegral}{RiemannSum}{pending}
 
 \begin{remark*}[Standard quantified statement]
 For every tagged partition \((P,\xi)\) of \([a,b]\),
@@ -55,6 +56,7 @@ A function \(f:[a,b]\to\mathbb R\) is \emph{Riemann-integrable} with value
 \]
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:riemann-integral}{lra-lean}{LRA.VolumeIII.Analysis.Integration.RiemannIntegral}{HasRiemannIntegral}{pending}
 
 \begin{remark*}[Standard quantified statement]
 A function \(f:[a,b]\to\mathbb R\) is Riemann-integrable with value \(L\) if
@@ -119,6 +121,7 @@ Every continuous function \(f:[a,b]\to\mathbb R\) is Riemann-integrable.
 \hyperref[prf:continuous-riemann-integrable]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:continuous-riemann-integrable}{lra-lean}{LRA.VolumeIII.Analysis.Integration.RiemannIntegral}{continuous_riemann_integrable}{pending}
 
 \begin{remark*}[Standard quantified statement]
 For every continuous function \(f:[a,b]\to\mathbb R\), there exists
@@ -153,6 +156,7 @@ If \(f\) and \(g\) are Riemann-integrable on \([a,b]\), then
 \hyperref[prf:riemann-integral-linearity]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:riemann-integral-linearity}{lra-lean}{LRA.VolumeIII.Analysis.Integration.RiemannIntegral}{riemann_integral_linearity}{pending}
 
 \begin{remark*}[Standard quantified statement]
 If \(f\) and \(g\) are Riemann-integrable on \([a,b]\), then for all
@@ -188,6 +192,7 @@ for every \(x\in[a,b]\), then
 \hyperref[prf:riemann-integral-monotonicity]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:riemann-integral-monotonicity}{lra-lean}{LRA.VolumeIII.Analysis.Integration.RiemannIntegral}{riemann_integral_monotonicity}{pending}
 
 \begin{remark*}[Standard quantified statement]
 If \(f\) and \(g\) are Riemann-integrable on \([a,b]\) and
@@ -220,6 +225,7 @@ Riemann-integrable and
 \hyperref[prf:riemann-integral-triangle-inequality]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:riemann-integral-triangle-inequality}{lra-lean}{LRA.VolumeIII.Analysis.Integration.RiemannIntegral}{riemann_integral_triangle_inequality}{pending}
 
 \begin{remark*}[Standard quantified statement]
 If \(f\) is Riemann-integrable on \([a,b]\), then \(|f|\) is
@@ -252,6 +258,7 @@ it is Riemann-integrable on \([a,c]\) and \([c,b]\), and in that case
 \hyperref[prf:riemann-integral-interval-additivity]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:riemann-integral-interval-additivity}{lra-lean}{LRA.VolumeIII.Analysis.Integration.RiemannIntegral}{riemann_integral_interval_additivity}{pending}
 
 \begin{remark*}[Standard quantified statement]
 For \(c\in[a,b]\), the function \(f\) is Riemann-integrable on \([a,b]\) if
@@ -288,6 +295,7 @@ A bounded function is Riemann-integrable if and only if for every
 \hyperref[prf:riemann-cauchy-criterion]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:riemann-cauchy-criterion}{lra-lean}{LRA.VolumeIII.Analysis.Integration.RiemannIntegral}{riemann_cauchy_criterion}{pending}
 
 \begin{remark*}[Standard quantified statement]
 A bounded function \(f:[a,b]\to\mathbb R\) is Riemann-integrable if and only
@@ -330,3 +338,67 @@ refinement lets the tags move again. There is no single upper or lower
 quantity improving under refinement. Darboux supplies exactly that missing
 monotone control.
 \end{remark*}
+
+% Lean-aligned additions inserted for Volume III Lean-to-TeX handoff.
+% Lean-aligned addition: def:is-riemann-integrable
+\begin{definition}[Riemann Integrability]
+\label{def:is-riemann-integrable}
+A function $f:[a,b]\to\mathbb R$ is \emph{Riemann-integrable} if there exists $L\in\mathbb R$ such that the Riemann integral of $f$ over $[a,b]$ exists and equals $L$.
+\end{definition}
+\LeanFormalizes{def:is-riemann-integrable}{lra-lean}{LRA.VolumeIII.Analysis.Integration.RiemannIntegral}{IsRiemannIntegrable}{pending}
+
+\begin{remark*}[Standard quantified statement]
+A function $f:[a,b]\to\mathbb R$ is \emph{Riemann-integrable} if there exists $L\in\mathbb R$ such that the Riemann integral of $f$ over $[a,b]$ exists and equals $L$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This formal object records a Lean-aligned addition in the local language of this section.
+\end{remark*}
+
+\begin{dependencies}
+\NoLocalDependencies
+\end{dependencies}
+% Lean-aligned addition: thm:thomae-riemann-integrable-zero
+\begin{theorem}[Thomae Function Is Riemann Integrable with Integral Zero]
+\label{thm:thomae-riemann-integrable-zero}
+Thomae's function on $[0,1]$, equal to $0$ at irrational points and to $1/q$ at a rational point written in lowest terms as $p/q$, is Riemann-integrable with integral $0$.
+
+\smallskip
+\noindent
+\hyperref[prf:thomae-riemann-integrable-zero]{\textit{Go to proof.}}
+\end{theorem}
+\LeanFormalizes{thm:thomae-riemann-integrable-zero}{lra-lean}{LRA.VolumeIII.Analysis.Integration.RiemannIntegral}{thomae_riemann_integrable_zero}{pending}
+
+\begin{remark*}[Standard quantified statement]
+Thomae's function on $[0,1]$, equal to $0$ at irrational points and to $1/q$ at a rational point written in lowest terms as $p/q$, is Riemann-integrable with integral $0$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This formal object records a Lean-aligned addition in the local language of this section.
+\end{remark*}
+
+\begin{dependencies}
+\NoLocalDependencies
+\end{dependencies}
+% Lean-aligned addition: thm:riemann-integral-interval-additivity-value
+\begin{theorem}[Value Form of Riemann Integral Interval Additivity]
+\label{thm:riemann-integral-interval-additivity-value}
+If $a\le c\le b$ and the Riemann integrals over $[a,b]$, $[a,c]$, and $[c,b]$ have values $L_{ab}$, $L_{ac}$, and $L_{cb}$, then $L_{ab}=L_{ac}+L_{cb}$.
+
+\smallskip
+\noindent
+\hyperref[prf:riemann-integral-interval-additivity-value]{\textit{Go to proof.}}
+\end{theorem}
+\LeanFormalizes{thm:riemann-integral-interval-additivity-value}{lra-lean}{LRA.VolumeIII.Analysis.Integration.RiemannIntegral}{riemann_integral_interval_additivity_value}{pending}
+
+\begin{remark*}[Standard quantified statement]
+If $a\le c\le b$ and the Riemann integrals over $[a,b]$, $[a,c]$, and $[c,b]$ have values $L_{ab}$, $L_{ac}$, and $L_{cb}$, then $L_{ab}=L_{ac}+L_{cb}$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This formal object records a Lean-aligned addition in the local language of this section.
+\end{remark*}
+
+\begin{dependencies}
+\NoLocalDependencies
+\end{dependencies}

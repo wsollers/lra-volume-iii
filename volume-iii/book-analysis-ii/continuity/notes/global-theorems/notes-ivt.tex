@@ -16,6 +16,7 @@
 Let $A \subseteq \mathbb{R}$ and $f \colon A \to \mathbb{R}$. The function $f$ is bounded on $A$ if and only if there exists a constant $M>0$ such that $|f(x)| \le M$ for every $x \in A$.
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:bounded-on-a-set}{lra-lean}{LRA.VolumeIII.Analysis.Continuity.GlobalTheorems}{BoundedOnSet}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -138,6 +139,7 @@ Let $a<b$ and let $f:[a,b]\to\mathbb{R}$ be continuous on $[a,b]$. Then there ex
 \hyperref[prf:boundedness-theorem]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:boundedness-theorem}{lra-lean}{LRA.VolumeIII.Analysis.Continuity.GlobalTheorems}{BoundednessTheorem}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -251,6 +253,7 @@ Continuity ties nearby inputs to nearby outputs, and the compact interval $[a,b]
 Let $A \subseteq \mathbb{R}$ and let $f \colon A \to \mathbb{R}$. A point $x^{*} \in A$ is an absolute maximum of $f$ on $A$ if and only if $f(x^{*}) \ge f(x)$ for every $x \in A$. A point $x_{*} \in A$ is an absolute minimum of $f$ on $A$ if and only if $f(x_{*}) \le f(x)$ for every $x \in A$.
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:absolute-extrema}{lra-lean}{LRA.VolumeIII.Analysis.Continuity.GlobalTheorems}{IsAbsoluteMaximum}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -393,6 +396,7 @@ Let $a,b \in \mathbb{R}$ with $a<b$, and let $f:[a,b] \to \mathbb{R}$ be continu
 \hyperref[prf:extreme-value-theorem]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:extreme-value-theorem}{lra-lean}{LRA.VolumeIII.Analysis.Continuity.GlobalTheorems}{ExtremeValueTheorem}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -478,6 +482,7 @@ Let $a,b \in \mathbb{R}$ with $a<b$ and let $f:[a,b]\to\mathbb{R}$ be continuous
 \hyperref[prf:location-of-roots]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:location-of-roots}{lra-lean}{LRA.VolumeIII.Analysis.Continuity.GlobalTheorems}{LocationOfRoots}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -550,6 +555,7 @@ Continuity forces the image of the interval $[a,b]$ to contain every intermediat
 Let $I \subseteq \mathbb{R}$ be an interval, let $f \colon I \to \mathbb{R}$ be continuous on $I$, and choose $a,b \in I$ with $f(a) < k < f(b)$. Then there exists $c \in I$ such that $\min\{a,b\} < c < \max\{a,b\}$ and $f(c) = k$. \hyperref[prf:bolzano-intermediate-value]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:bolzano-intermediate-value}{lra-lean}{LRA.VolumeIII.Analysis.Continuity.GlobalTheorems}{BolzanoIntermediateValue}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -654,6 +660,7 @@ Let $f:[a,b]\to\mathbb{R}$ be continuous. Then $f([a,b])=[\min_{[a,b]} f,\max_{[
 \hyperref[prf:image-of-closed-bounded-interval]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:image-of-closed-bounded-interval}{lra-lean}{LRA.VolumeIII.Analysis.Continuity.GlobalTheorems}{ImageOfClosedBoundedInterval}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -698,6 +705,7 @@ Let $I \subseteq \mathbb{R}$ be an interval and let $f:I \to \mathbb{R}$ be cont
 \hyperref[prf:preservation-of-intervals]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:preservation-of-intervals}{lra-lean}{LRA.VolumeIII.Analysis.Continuity.GlobalTheorems}{PreservationOfIntervals}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -921,4 +929,64 @@ A continuous function on a compact interval cannot oscillate across a level c wi
 
 \begin{dependencies}
 \hyperref[thm:bolzano-intermediate-value]{Bolzano's Intermediate Value Theorem}.
+\end{dependencies}
+
+% Lean-aligned additions inserted for Volume III Lean-to-TeX handoff.
+% Lean-aligned addition: def:continuous-on
+\begin{definition}[Continuity on a Set]
+\label{def:continuous-on}
+Let $A\subseteq\mathbb R$. A function $f:A\to\mathbb R$ is \emph{continuous on $A$} if $f$ is continuous at every point of $A$.
+\end{definition}
+\LeanFormalizes{def:continuous-on}{lra-lean}{LRA.VolumeIII.Analysis.Continuity.GlobalTheorems}{ContinuousOn}{pending}
+
+\begin{remark*}[Standard quantified statement]
+Let $A\subseteq\mathbb R$. A function $f:A\to\mathbb R$ is \emph{continuous on $A$} if $f$ is continuous at every point of $A$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This formal object records a Lean-aligned addition in the local language of this section.
+\end{remark*}
+
+\begin{dependencies}
+\NoLocalDependencies
+\end{dependencies}
+% Lean-aligned addition: def:is-absolute-minimum
+\begin{definition}[Absolute Minimum on a Set]
+\label{def:is-absolute-minimum}
+Let $f:A\to\mathbb R$. A point $x_0\in A$ is an \emph{absolute minimum point} of $f$ on $A$ if $f(x_0)\le f(x)$ for every $x\in A$.
+\end{definition}
+\LeanFormalizes{def:is-absolute-minimum}{lra-lean}{LRA.VolumeIII.Analysis.Continuity.GlobalTheorems}{IsAbsoluteMinimum}{pending}
+
+\begin{remark*}[Standard quantified statement]
+Let $f:A\to\mathbb R$. A point $x_0\in A$ is an \emph{absolute minimum point} of $f$ on $A$ if $f(x_0)\le f(x)$ for every $x\in A$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This formal object records a Lean-aligned addition in the local language of this section.
+\end{remark*}
+
+\begin{dependencies}
+\NoLocalDependencies
+\end{dependencies}
+% Lean-aligned addition: thm:continuous-implies-darboux-property
+\begin{theorem}[Continuous Functions Have the Darboux Property]
+\label{thm:continuous-implies-darboux-property}
+If $f$ is continuous on an interval $I$, $a,b\in I$, and $y$ lies between $f(a)$ and $f(b)$, then there exists $c$ between $a$ and $b$ with $f(c)=y$.
+
+\smallskip
+\noindent
+\hyperref[prf:continuous-implies-darboux-property]{\textit{Go to proof.}}
+\end{theorem}
+\LeanFormalizes{thm:continuous-implies-darboux-property}{lra-lean}{LRA.VolumeIII.Analysis.Continuity.GlobalTheorems}{ContinuousImpliesDarbouxProperty}{pending}
+
+\begin{remark*}[Standard quantified statement]
+If $f$ is continuous on an interval $I$, $a,b\in I$, and $y$ lies between $f(a)$ and $f(b)$, then there exists $c$ between $a$ and $b$ with $f(c)=y$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This formal object records a Lean-aligned addition in the local language of this section.
+\end{remark*}
+
+\begin{dependencies}
+\NoLocalDependencies
 \end{dependencies}

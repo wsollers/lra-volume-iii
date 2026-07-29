@@ -29,6 +29,7 @@ The total variation of \(\alpha\) on \([a,b]\) is
 \]
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:total-variation}{lra-lean}{LRA.VolumeIII.Analysis.Integration.RiemannStieltjes}{VariationSums}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -60,6 +61,7 @@ The function \(\alpha\) has \emph{bounded variation} on \([a,b]\) if
 Geometrically, this says the ruler has finite total up-and-down travel.
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:bounded-variation-integration}{lra-lean}{LRA.VolumeIII.Analysis.Integration.RiemannStieltjes}{HasBoundedVariation}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -87,6 +89,7 @@ If \(\alpha\) is monotone on \([a,b]\), then \(\alpha\) has bounded variation.
 \hyperref[prf:monotone-bounded-variation]{\textit{Go to proof.}}
 \end{proposition}
 \end{propositionbox}
+\LeanFormalizes{prop:monotone-bounded-variation}{lra-lean}{LRA.VolumeIII.Analysis.Integration.RiemannStieltjes}{monotone_bounded_variation}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -125,6 +128,7 @@ When these sums have a tag-independent limit as \(\|P\|\to0\), the limit is
 denoted \(\int_a^b f\,d\alpha\).
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:riemann-stieltjes-integral}{lra-lean}{LRA.VolumeIII.Analysis.Integration.RiemannStieltjes}{HasRiemannStieltjesIntegral}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -158,6 +162,7 @@ If \(f\) is continuous on \([a,b]\) and \(\alpha\) has bounded variation, then
 \hyperref[prf:rs-continuous-bv-existence]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:rs-continuous-bv-existence}{lra-lean}{LRA.VolumeIII.Analysis.Integration.RiemannStieltjes}{rs_continuous_bv_existence}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -202,6 +207,7 @@ d
 \hyperref[prf:rs-bilinearity]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:rs-bilinearity}{lra-lean}{LRA.VolumeIII.Analysis.Integration.RiemannStieltjes}{rs_bilinearity}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -241,6 +247,7 @@ If \(c\in[a,b]\) and the relevant Riemann--Stieltjes integrals exist, then
 \hyperref[prf:rs-interval-additivity]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:rs-interval-additivity}{lra-lean}{LRA.VolumeIII.Analysis.Integration.RiemannStieltjes}{rs_interval_additivity}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -279,6 +286,7 @@ exists under the same Riemann--Stieltjes convention, and
 \hyperref[prf:rs-integration-by-parts]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:rs-integration-by-parts}{lra-lean}{LRA.VolumeIII.Analysis.Integration.RiemannStieltjes}{rs_integration_by_parts}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -311,6 +319,7 @@ If \(\alpha\in C^1([a,b])\) and \(f\) is Riemann-integrable on \([a,b]\), then
 \hyperref[prf:rs-c1-reduction]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:rs-c1-reduction}{lra-lean}{LRA.VolumeIII.Analysis.Integration.RiemannStieltjes}{rs_c1_reduction}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -346,6 +355,7 @@ If \(\alpha\) is constant except for finitely many jumps at points \(c_k\) and
 \hyperref[prf:rs-step-integrator-finite-sum]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:rs-step-integrator-finite-sum}{lra-lean}{LRA.VolumeIII.Analysis.Integration.RiemannStieltjes}{rs_step_integrator_finite_sum}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -430,3 +440,45 @@ motion forces a different limiting mode: an \(L^2\) or probabilistic limit
 rather than a pathwise Riemann--Stieltjes limit. That is the structural reason
 Ito integration is not just Stieltjes integration with a rougher integrator.
 \end{remark*}
+
+% Lean-aligned additions inserted for Volume III Lean-to-TeX handoff.
+% Lean-aligned addition: def:is-riemann-stieltjes-integrable
+\begin{definition}[Riemann--Stieltjes Integrability]
+\label{def:is-riemann-stieltjes-integrable}
+A function $f$ is \emph{Riemann--Stieltjes integrable with respect to $\alpha$ on $[a,b]$} if there exists $L\in\mathbb R$ such that the Riemann--Stieltjes integral of $f$ with integrator $\alpha$ over $[a,b]$ exists and equals $L$.
+\end{definition}
+\LeanFormalizes{def:is-riemann-stieltjes-integrable}{lra-lean}{LRA.VolumeIII.Analysis.Integration.RiemannStieltjes}{IsRiemannStieltjesIntegrable}{pending}
+
+\begin{remark*}[Standard quantified statement]
+A function $f$ is \emph{Riemann--Stieltjes integrable with respect to $\alpha$ on $[a,b]$} if there exists $L\in\mathbb R$ such that the Riemann--Stieltjes integral of $f$ with integrator $\alpha$ over $[a,b]$ exists and equals $L$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This formal object records a Lean-aligned addition in the local language of this section.
+\end{remark*}
+
+\begin{dependencies}
+\NoLocalDependencies
+\end{dependencies}
+% Lean-aligned addition: thm:rs-shared-jump-failure-witness
+\begin{theorem}[Shared-Jump Failure Witness for Riemann--Stieltjes Integration]
+\label{thm:rs-shared-jump-failure-witness}
+When the integrand and integrator share a jump inside the interval, the Riemann--Stieltjes sums can depend on the tag choice and need not converge to a unique value.
+
+\smallskip
+\noindent
+\hyperref[prf:rs-shared-jump-failure-witness]{\textit{Go to proof.}}
+\end{theorem}
+\LeanFormalizes{thm:rs-shared-jump-failure-witness}{lra-lean}{LRA.VolumeIII.Analysis.Integration.RiemannStieltjes}{rs_shared_jump_failure_witness}{pending}
+
+\begin{remark*}[Standard quantified statement]
+When the integrand and integrator share a jump inside the interval, the Riemann--Stieltjes sums can depend on the tag choice and need not converge to a unique value.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This formal object records a Lean-aligned addition in the local language of this section.
+\end{remark*}
+
+\begin{dependencies}
+\NoLocalDependencies
+\end{dependencies}

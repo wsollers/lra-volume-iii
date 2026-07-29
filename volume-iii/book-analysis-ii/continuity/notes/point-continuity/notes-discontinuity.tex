@@ -14,6 +14,7 @@
 Let $A \subseteq \mathbb{R}$, let $f \colon A \to \mathbb{R}$, and let $a \in A$. The function $f$ is discontinuous at $a$ if and only if $f$ is not continuous at $a$.
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:point-of-discontinuity}{lra-lean}{LRA.VolumeIII.Analysis.Continuity.PointContinuity}{PointOfDiscontinuity}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -140,6 +141,7 @@ A point of discontinuity is detected by the breakdown of the usual epsilon-delta
 Let $A \subseteq \mathbb{R}$, let $f:A \to \mathbb{R}$, and let $c \in A$. The function $f$ is discontinuous at $c$ if and only if there exists a sequence $(x_n)_{n\in\mathbb{N}} \subseteq A$ such that $x_n \to c$ while $f(x_n) \not\to f(c)$.
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:sequential-discontinuity-at-a-point}{lra-lean}{LRA.VolumeIII.Analysis.Continuity.PointContinuity}{SequentialDiscontinuity}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -245,6 +247,7 @@ A discontinuity at $c$ can be certified by a single sequence approaching $c$ who
 Let $A \subseteq \mathbb{R}$, let $f \colon A \to \mathbb{R}$, and let $c \in A$. The function $f$ is discontinuous at $c$ if and only if there exists a neighborhood $V$ of $f(c)$ such that for every neighborhood $U$ of $c$ relative to $A$ there exists $x \in U \cap A$ with $f(x) \notin V$.
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:neighborhood-discontinuity-at-a-point}{lra-lean}{LRA.VolumeIII.Analysis.Continuity.PointContinuity}{NeighborhoodDiscontinuity}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -453,6 +456,7 @@ Let $A \subseteq \mathbb{R}$, let $f:A \to \mathbb{R}$, and let $x_0 \in A$ with
 \end{enumerate}
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:types-of-discontinuity-at-a-point}{lra-lean}{LRA.VolumeIII.Analysis.Continuity.PointContinuity}{IsEssentialDiscontinuity}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -606,4 +610,108 @@ Removable discontinuities can be healed by redefining $f(x_0)$. Jump discontinui
   \item \hyperref[def:left-hand-limit]{Left-Hand Limit}
   \item \hyperref[def:right-hand-limit]{Right-Hand Limit}
 \end{itemize}
+\end{dependencies}
+
+% Lean-aligned additions inserted for Volume III Lean-to-TeX handoff.
+% Lean-aligned addition: thm:discontinuity-iff-sequential
+\begin{theorem}[Sequential Characterization of Discontinuity]
+\label{thm:discontinuity-iff-sequential}
+A function is discontinuous at $c$ if and only if there exists a sequence in the domain converging to $c$ whose image sequence does not converge to $f(c)$.
+
+\smallskip
+\noindent
+\hyperref[prf:discontinuity-iff-sequential]{\textit{Go to proof.}}
+\end{theorem}
+\LeanFormalizes{thm:discontinuity-iff-sequential}{lra-lean}{LRA.VolumeIII.Analysis.Continuity.PointContinuity}{DiscontinuityIffSequential}{pending}
+
+\begin{remark*}[Standard quantified statement]
+A function is discontinuous at $c$ if and only if there exists a sequence in the domain converging to $c$ whose image sequence does not converge to $f(c)$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This formal object records a Lean-aligned addition in the local language of this section.
+\end{remark*}
+
+\begin{dependencies}
+\NoLocalDependencies
+\end{dependencies}
+% Lean-aligned addition: thm:discontinuity-iff-neighborhood
+\begin{theorem}[Neighborhood Characterization of Discontinuity]
+\label{thm:discontinuity-iff-neighborhood}
+A function is discontinuous at $c$ if and only if some neighborhood of $f(c)$ has no domain-neighborhood of $c$ whose image stays inside it.
+
+\smallskip
+\noindent
+\hyperref[prf:discontinuity-iff-neighborhood]{\textit{Go to proof.}}
+\end{theorem}
+\LeanFormalizes{thm:discontinuity-iff-neighborhood}{lra-lean}{LRA.VolumeIII.Analysis.Continuity.PointContinuity}{DiscontinuityIffNeighborhood}{pending}
+
+\begin{remark*}[Standard quantified statement]
+A function is discontinuous at $c$ if and only if some neighborhood of $f(c)$ has no domain-neighborhood of $c$ whose image stays inside it.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This formal object records a Lean-aligned addition in the local language of this section.
+\end{remark*}
+
+\begin{dependencies}
+\NoLocalDependencies
+\end{dependencies}
+% Lean-aligned addition: def:is-removable-discontinuity
+\begin{definition}[Removable Discontinuity]
+\label{def:is-removable-discontinuity}
+A discontinuity of $f$ at $c$ is \emph{removable} if $\lim_{x\to c}f(x)$ exists but is different from the assigned value $f(c)$ or $f(c)$ is not assigned.
+\end{definition}
+\LeanFormalizes{def:is-removable-discontinuity}{lra-lean}{LRA.VolumeIII.Analysis.Continuity.PointContinuity}{IsRemovableDiscontinuity}{pending}
+
+\begin{remark*}[Standard quantified statement]
+A discontinuity of $f$ at $c$ is \emph{removable} if $\lim_{x\to c}f(x)$ exists but is different from the assigned value $f(c)$ or $f(c)$ is not assigned.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This formal object records a Lean-aligned addition in the local language of this section.
+\end{remark*}
+
+\begin{dependencies}
+\NoLocalDependencies
+\end{dependencies}
+% Lean-aligned addition: def:is-jump-discontinuity
+\begin{definition}[Jump Discontinuity]
+\label{def:is-jump-discontinuity}
+A discontinuity of $f$ at $c$ is a \emph{jump discontinuity} if the one-sided limits at $c$ both exist and are finite but are unequal.
+\end{definition}
+\LeanFormalizes{def:is-jump-discontinuity}{lra-lean}{LRA.VolumeIII.Analysis.Continuity.PointContinuity}{IsJumpDiscontinuity}{pending}
+
+\begin{remark*}[Standard quantified statement]
+A discontinuity of $f$ at $c$ is a \emph{jump discontinuity} if the one-sided limits at $c$ both exist and are finite but are unequal.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This formal object records a Lean-aligned addition in the local language of this section.
+\end{remark*}
+
+\begin{dependencies}
+\NoLocalDependencies
+\end{dependencies}
+% Lean-aligned addition: thm:jump-subset-essential
+\begin{theorem}[Jump Discontinuities Are Essential]
+\label{thm:jump-subset-essential}
+Every jump discontinuity is an essential discontinuity; in particular, it is not removable.
+
+\smallskip
+\noindent
+\hyperref[prf:jump-subset-essential]{\textit{Go to proof.}}
+\end{theorem}
+\LeanFormalizes{thm:jump-subset-essential}{lra-lean}{LRA.VolumeIII.Analysis.Continuity.PointContinuity}{JumpSubsetEssential}{pending}
+
+\begin{remark*}[Standard quantified statement]
+Every jump discontinuity is an essential discontinuity; in particular, it is not removable.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This formal object records a Lean-aligned addition in the local language of this section.
+\end{remark*}
+
+\begin{dependencies}
+\NoLocalDependencies
 \end{dependencies}

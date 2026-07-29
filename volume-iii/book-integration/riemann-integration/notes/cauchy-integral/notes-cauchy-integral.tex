@@ -24,6 +24,7 @@ For \(f:[a,b]\to\mathbb R\) and \(P=\{a=x_0<\cdots<x_n=b\}\), define
 \]
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:cauchy-sum}{lra-lean}{LRA.VolumeIII.Analysis.Integration.CauchyIntegral}{CauchySum}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -54,6 +55,7 @@ The function \(f\) is \emph{Cauchy-integrable} with value \(L\) if
 The value \(L\) is denoted \(\int_a^b f(x)\,dx\).
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:cauchy-integral}{lra-lean}{LRA.VolumeIII.Analysis.Integration.CauchyIntegral}{HasCauchyIntegral}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -85,6 +87,7 @@ If \(f(x)=c\) on \([a,b]\), then \(\int_a^b c\,dx=c(b-a)\).
 \hyperref[prf:cauchy-integral-constant]{\textit{Go to proof.}}
 \end{proposition}
 \end{propositionbox}
+\LeanFormalizes{prop:cauchy-integral-constant}{lra-lean}{LRA.VolumeIII.Analysis.Integration.CauchyIntegral}{cauchy_integral_constant}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -119,6 +122,7 @@ If \(f\) and \(g\) are Cauchy-integrable on \([a,b]\), then
 \hyperref[prf:cauchy-integral-linearity]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:cauchy-integral-linearity}{lra-lean}{LRA.VolumeIII.Analysis.Integration.CauchyIntegral}{cauchy_integral_linearity}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -153,6 +157,7 @@ for every \(x\in[a,b]\), then
 \hyperref[prf:cauchy-integral-monotonicity]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:cauchy-integral-monotonicity}{lra-lean}{LRA.VolumeIII.Analysis.Integration.CauchyIntegral}{cauchy_integral_monotonicity}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -185,6 +190,7 @@ If \(f\) is continuous on \([a,b]\), \(m=\min_{[a,b]}f\), and
 \hyperref[prf:cauchy-integral-bounds]{\textit{Go to proof.}}
 \end{corollary}
 \end{corollarybox}
+\LeanFormalizes{cor:cauchy-integral-bounds}{lra-lean}{LRA.VolumeIII.Analysis.Integration.CauchyIntegral}{cauchy_integral_bounds}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -216,6 +222,7 @@ If \(f\) and \(|f|\) are Cauchy-integrable on \([a,b]\), then
 \hyperref[prf:cauchy-integral-triangle-inequality]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:cauchy-integral-triangle-inequality}{lra-lean}{LRA.VolumeIII.Analysis.Integration.CauchyIntegral}{cauchy_integral_triangle_inequality}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -249,6 +256,7 @@ then
 \hyperref[prf:cauchy-integral-interval-additivity]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:cauchy-integral-interval-additivity}{lra-lean}{LRA.VolumeIII.Analysis.Integration.CauchyIntegral}{cauchy_integral_interval_additivity}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -308,6 +316,7 @@ Every continuous function \(f:[a,b]\to\mathbb R\) is Cauchy-integrable.
 \hyperref[prf:continuous-cauchy-integrable]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:continuous-cauchy-integrable}{lra-lean}{LRA.VolumeIII.Analysis.Integration.CauchyIntegral}{continuous_cauchy_integrable}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -372,6 +381,7 @@ limit as the left-endpoint sums as \(\|P\|\to 0\).
 \hyperref[prf:cauchy-tag-independence]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:cauchy-tag-independence}{lra-lean}{LRA.VolumeIII.Analysis.Integration.CauchyIntegral}{cauchy_tag_independence}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -400,4 +410,46 @@ definition of integrability.
   \item \hyperref[thm:continuous-cauchy-integrable]{Continuous Functions Are Cauchy-Integrable}
   \item \hyperref[def:cauchy-sum]{Cauchy Sum}
 \end{itemize}
+\end{dependencies}
+
+% Lean-aligned additions inserted for Volume III Lean-to-TeX handoff.
+% Lean-aligned addition: def:is-cauchy-integrable
+\begin{definition}[Cauchy Integrability]
+\label{def:is-cauchy-integrable}
+A function $f:[a,b]\to\mathbb R$ is \emph{Cauchy-integrable} if there exists $L\in\mathbb R$ such that its Cauchy integral over $[a,b]$ exists and equals $L$.
+\end{definition}
+\LeanFormalizes{def:is-cauchy-integrable}{lra-lean}{LRA.VolumeIII.Analysis.Integration.CauchyIntegral}{IsCauchyIntegrable}{pending}
+
+\begin{remark*}[Standard quantified statement]
+A function $f:[a,b]\to\mathbb R$ is \emph{Cauchy-integrable} if there exists $L\in\mathbb R$ such that its Cauchy integral over $[a,b]$ exists and equals $L$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This formal object records a Lean-aligned addition in the local language of this section.
+\end{remark*}
+
+\begin{dependencies}
+\NoLocalDependencies
+\end{dependencies}
+% Lean-aligned addition: thm:cauchy-step-function-failure-witness
+\begin{theorem}[Step-Function Failure Witness for the Cauchy Integral]
+\label{thm:cauchy-step-function-failure-witness}
+There exists a step function for which Cauchy's tag-free integral construction fails to be well-defined, exhibiting the need for tagged Riemann sums.
+
+\smallskip
+\noindent
+\hyperref[prf:cauchy-step-function-failure-witness]{\textit{Go to proof.}}
+\end{theorem}
+\LeanFormalizes{thm:cauchy-step-function-failure-witness}{lra-lean}{LRA.VolumeIII.Analysis.Integration.CauchyIntegral}{cauchy_step_function_failure_witness}{pending}
+
+\begin{remark*}[Standard quantified statement]
+There exists a step function for which Cauchy's tag-free integral construction fails to be well-defined, exhibiting the need for tagged Riemann sums.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This formal object records a Lean-aligned addition in the local language of this section.
+\end{remark*}
+
+\begin{dependencies}
+\NoLocalDependencies
 \end{dependencies}

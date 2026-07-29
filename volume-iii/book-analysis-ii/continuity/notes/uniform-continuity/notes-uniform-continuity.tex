@@ -16,6 +16,7 @@
 Let $A \subseteq \mathbb{R}$ and let $f:A \to \mathbb{R}$. The function $f$ is uniformly continuous on $A$ if and only if for every $\varepsilon > 0$ there exists $\delta > 0$ such that for all $x,u \in A$ the implication $|x-u| < \delta \Rightarrow |f(x)-f(u)| < \varepsilon$ holds.
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:uniform-continuity}{lra-lean}{LRA.VolumeIII.Analysis.Continuity.UniformContinuity}{IsUniformlyContinuous}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -149,6 +150,7 @@ Uniform continuity demands that a single proximity scale $\delta$ answers any pr
 \hyperref[prf:algebra-of-uniform-continuity-general]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:algebra-of-uniform-continuity-general}{lra-lean}{LRA.VolumeIII.Analysis.Continuity.UniformContinuity}{UcComp}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -224,6 +226,7 @@ Let $A \subseteq \mathbb{R}$ be bounded, and let $f,g:A \to \mathbb{R}$ be unifo
 \hyperref[prf:algebra-of-uniform-continuity-bounded]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:algebra-of-uniform-continuity-bounded}{lra-lean}{LRA.VolumeIII.Analysis.Continuity.UniformContinuity}{UcAdd}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -324,6 +327,7 @@ Let $A \subseteq \mathbb{R}$ and let $f:A \to \mathbb{R}$. Then $f$ is uniformly
 \hyperref[prf:sequential-uniform-continuity]{Go to proof.}
 \end{proposition}
 \end{propositionbox}
+\LeanFormalizes{prop:sequential-uniform-continuity}{lra-lean}{LRA.VolumeIII.Analysis.Continuity.UniformContinuity}{UcIffSequential}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -485,6 +489,7 @@ Let $a,b \in \mathbb{R}$ with $a<b$ and let $f:[a,b]\to\mathbb{R}$ be continuous
 \hyperref[prf:heine-cantor]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:heine-cantor}{lra-lean}{LRA.VolumeIII.Analysis.Continuity.GlobalTheorems}{HeineCantor}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -566,6 +571,7 @@ Let $S \subseteq \mathbb{R}$, let $f:S \to \mathbb{R}$, and let $(x_n)$ be a seq
 \hyperref[prf:uniform-continuity-cauchy]{Go to proof.}
 \end{proposition}
 \end{propositionbox}
+\LeanFormalizes{prop:uniform-continuity-cauchy}{lra-lean}{LRA.VolumeIII.Analysis.Continuity.UniformContinuity}{UcMapsCauchyToCauchy}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -608,6 +614,7 @@ Uniform continuity controls the change in $f(x)$ solely through the distance bet
 Let $A \subseteq \mathbb{R}$, let $f:A \to \mathbb{R}$, and let $K>0$. The function $f$ satisfies the Lipschitz condition on $A$ with constant $K$ if and only if $|f(x)-f(u)| \le K|x-u|$ for every $x,u \in A$.
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:lipschitz-condition}{lra-lean}{LRA.VolumeIII.Analysis.Continuity.UniformContinuity}{IsLipschitzOn}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -723,6 +730,8 @@ Let $A \subseteq \mathbb{R}$ and $f:A \to \mathbb{R}$. If there exists $K \ge 0$
 \hyperref[prf:lipschitz-implies-uc]{Go to proof.}
 \end{proposition}
 \end{propositionbox}
+\LeanFormalizes{prop:lipschitz-implies-uc}{lra-lean}{LRA.VolumeIII.Analysis.Continuity.UniformContinuity}{LipschitzImpliesUc}{pending}
+\LeanFormalizes{prop:lipschitz-implies-uc}{lra-lean}{LRA.VolumeIII.Analysis.Continuity.UniformContinuity}{SqrtUcNotLipschitz}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -846,6 +855,7 @@ Let $A\subseteq \mathbb{R}$ and let $f:A\to\mathbb{R}$. The map $f$ is bi-Lipsch
 Any such pair $(\alpha,K)$ is called a bi-Lipschitz constant pair for $f$ on $A$.
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:bi-lipschitz}{lra-lean}{LRA.VolumeIII.Analysis.Continuity.UniformContinuity}{IsBiLipschitzOn}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -961,6 +971,7 @@ $\alpha |x-y| \le |f(x)-f(y)| \le K |x-y|$ for all $x,y \in A$. Then $f$ is inje
 \hyperref[prf:bilipschitz-inverse-is-lipschitz]{Go to proof.}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:bilipschitz-inverse-is-lipschitz}{lra-lean}{LRA.VolumeIII.Analysis.Continuity.UniformContinuity}{BiLipschitzInverseIsLipschitz}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -992,4 +1003,28 @@ A bi-Lipschitz bound simultaneously controls the expansion and contraction of $f
 
 \begin{dependencies}
 \hyperref[def:lipschitz-condition]{Definition~\ref*{def:lipschitz-condition}}; \hyperref[def:bi-lipschitz]{Definition~\ref*{def:bi-lipschitz}}.
+\end{dependencies}
+
+% Lean-aligned additions inserted for Volume III Lean-to-TeX handoff.
+% Lean-aligned addition: thm:uc-mul-of-bounded
+\begin{theorem}[Product of Bounded Uniformly Continuous Functions]
+\label{thm:uc-mul-of-bounded}
+If $f$ and $g$ are uniformly continuous and bounded on a set $A\subseteq\mathbb R$, then their pointwise product $fg$ is uniformly continuous on $A$.
+
+\smallskip
+\noindent
+\hyperref[prf:uc-mul-of-bounded]{\textit{Go to proof.}}
+\end{theorem}
+\LeanFormalizes{thm:uc-mul-of-bounded}{lra-lean}{LRA.VolumeIII.Analysis.Continuity.UniformContinuity}{UcMulOfBounded}{pending}
+
+\begin{remark*}[Standard quantified statement]
+If $f$ and $g$ are uniformly continuous and bounded on a set $A\subseteq\mathbb R$, then their pointwise product $fg$ is uniformly continuous on $A$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This formal object records a Lean-aligned addition in the local language of this section.
+\end{remark*}
+
+\begin{dependencies}
+\NoLocalDependencies
 \end{dependencies}

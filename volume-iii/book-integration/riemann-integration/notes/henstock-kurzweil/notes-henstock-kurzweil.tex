@@ -49,6 +49,7 @@ A \emph{gauge} on \([a,b]\) is a function
 \]
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:gauge-on-interval}{lra-lean}{LRA.VolumeIII.Analysis.Integration.HenstockKurzweil}{IsGaugeOn}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -79,6 +80,7 @@ A tagged partition \((P,\xi)\) is \emph{\(\delta\)-fine} if
 \]
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:delta-fine-tagged-partition}{lra-lean}{LRA.VolumeIII.Analysis.Integration.HenstockKurzweil}{IsHKDeltaFine}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -125,6 +127,7 @@ with value \(A\) if
 The value is denoted \((\mathrm{HK})\int_a^b f\).
 \end{definition}
 \end{definitionbox}
+\LeanFormalizes{def:henstock-kurzweil-integral}{lra-lean}{LRA.VolumeIII.Analysis.Integration.HenstockKurzweil}{HasHKIntegral}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -169,6 +172,7 @@ partition of \([a,b]\).
 \hyperref[prf:cousin]{\textit{Go to proof.}}
 \end{lemma}
 \end{lemmabox}
+\LeanFormalizes{lem:cousin}{lra-lean}{LRA.VolumeIII.Analysis.Integration.HenstockKurzweil}{cousins_lemma}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -210,6 +214,7 @@ same value.
 \hyperref[prf:riemann-integrable-implies-hk-integrable]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:riemann-integrable-implies-hk-integrable}{lra-lean}{LRA.VolumeIII.Analysis.Integration.HenstockKurzweil}{riemann_integrable_implies_hk_integrable}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -248,6 +253,7 @@ If \(F\) is differentiable at \(\xi\) with \(F'(\xi)=f(\xi)\), then for every
 \hyperref[prf:hk-straddle]{\textit{Go to proof.}}
 \end{lemma}
 \end{lemmabox}
+\LeanFormalizes{lem:hk-straddle}{lra-lean}{LRA.VolumeIII.Analysis.Integration.HenstockKurzweil}{hk_straddle}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -294,6 +300,7 @@ If \(F:[a,b]\to\mathbb R\) is differentiable at every point and \(F'=f\), then
 \hyperref[prf:hk-fundamental-theorem]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:hk-fundamental-theorem}{lra-lean}{LRA.VolumeIII.Analysis.Integration.HenstockKurzweil}{hk_fundamental_theorem}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -326,6 +333,7 @@ integrable.
 \hyperref[prf:continuous-hk-integrable]{\textit{Go to proof.}}
 \end{theorem}
 \end{theorembox}
+\LeanFormalizes{thm:continuous-hk-integrable}{lra-lean}{LRA.VolumeIII.Analysis.Integration.HenstockKurzweil}{continuous_hk_integrable}{pending}
 
 \begin{remark*}[Standard quantified statement]
 \[
@@ -426,3 +434,45 @@ guarantee that a valid adaptive partition exists.
 The thread is the right-hand column: every integral is a direct response to a
 specific defect.
 \end{remark*}
+
+% Lean-aligned additions inserted for Volume III Lean-to-TeX handoff.
+% Lean-aligned addition: def:is-h-k-integrable
+\begin{definition}[Henstock--Kurzweil Integrability]
+\label{def:is-h-k-integrable}
+A function $f:[a,b]\to\mathbb R$ is \emph{Henstock--Kurzweil integrable} if there exists $L\in\mathbb R$ satisfying the Henstock--Kurzweil integral criterion on $[a,b]$.
+\end{definition}
+\LeanFormalizes{def:is-h-k-integrable}{lra-lean}{LRA.VolumeIII.Analysis.Integration.HenstockKurzweil}{IsHKIntegrable}{pending}
+
+\begin{remark*}[Standard quantified statement]
+A function $f:[a,b]\to\mathbb R$ is \emph{Henstock--Kurzweil integrable} if there exists $L\in\mathbb R$ satisfying the Henstock--Kurzweil integral criterion on $[a,b]$.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This formal object records a Lean-aligned addition in the local language of this section.
+\end{remark*}
+
+\begin{dependencies}
+\NoLocalDependencies
+\end{dependencies}
+% Lean-aligned addition: thm:hk-strictly-wider-than-lebesgue-witness
+\begin{theorem}[Henstock--Kurzweil Strictly Extends Lebesgue Integrability]
+\label{thm:hk-strictly-wider-than-lebesgue-witness}
+There is a function that is Henstock--Kurzweil integrable but not Lebesgue integrable, for example the derivative of $x^2\sin(1/x^2)$ with its natural value at the origin.
+
+\smallskip
+\noindent
+\hyperref[prf:hk-strictly-wider-than-lebesgue-witness]{\textit{Go to proof.}}
+\end{theorem}
+\LeanFormalizes{thm:hk-strictly-wider-than-lebesgue-witness}{lra-lean}{LRA.VolumeIII.Analysis.Integration.HenstockKurzweil}{hk_strictly_wider_than_lebesgue_witness}{pending}
+
+\begin{remark*}[Standard quantified statement]
+There is a function that is Henstock--Kurzweil integrable but not Lebesgue integrable, for example the derivative of $x^2\sin(1/x^2)$ with its natural value at the origin.
+\end{remark*}
+
+\begin{remark*}[Interpretation]
+This formal object records a Lean-aligned addition in the local language of this section.
+\end{remark*}
+
+\begin{dependencies}
+\NoLocalDependencies
+\end{dependencies}
