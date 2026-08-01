@@ -66,6 +66,32 @@ Approximation
 \end{tabular}
 \end{toolkitbox}
 
+\begin{remark*}[Common analysis qualifiers]
+Several recurrent analysis phrases specify where a condition must hold.
+They differ only in the ambient notion of largeness or smallness:
+\begin{itemize}
+  \item \emph{Eventually} means that a condition holds on a tail. For a
+        predicate $P$ on $\mathbb{N}$, this is
+        $\exists N\in\mathbb{N}\;\forall n\geq N,\;P(n)$; see
+        \hyperref[def:inf-often-eventually]{Infinitely Often / Eventually}.
+  \item \emph{For all sufficiently large $n$} is the same tail condition:
+        there exists $N\in\mathbb{N}$ such that the assertion holds for every
+        $n\geq N$.
+  \item \emph{Infinitely often} means that no tail misses the condition:
+        $\forall N\in\mathbb{N}\;\exists n\geq N,\;P(n)$.
+  \item \emph{For all sufficiently large $x$} means that there exists
+        $R\in\mathbb{R}$ such that the assertion holds for every $x\geq R$ in
+        the domain under discussion.
+  \item \emph{For all sufficiently small nonzero $h$} means that there exists
+        $\eta>0$ such that the assertion holds whenever
+        $0<|h|<\eta$.
+  \item \emph{Almost everywhere} means that the assertion may fail only on a
+        set of \hyperref[def:measure-zero]{measure zero}. In symbols, a
+        property $P(x)$ holds almost everywhere on $A$ when
+        $\{x\in A:\neg P(x)\}$ has measure zero.
+\end{itemize}
+\end{remark*}
+
 Many proofs in analysis are not isolated inventions. They prove recurring
 structural properties: a definition is independent of choices, an object
 exists, there is only one possible object, an operation respects addition and
@@ -80,7 +106,7 @@ representatives of equivalence classes, selected sequences, selected
 partitions, or selected approximations. The goal is to prove that different
 allowed choices give the same output.
 \[
-  x\sim x' \Rightarrow F(x)=F(x').
+  x\sim x' \Longrightarrow F(x)=F(x').
 \]
 
 \begin{remark}[Proof sketch]
@@ -130,7 +156,7 @@ must satisfy the stated property.
 
 Uniqueness proves that at most one object can satisfy a property:
 \[
-  P(x_1)\land P(x_2)\Rightarrow x_1=x_2.
+  P(x_1)\land P(x_2)\Longrightarrow x_1=x_2.
 \]
 It does not by itself prove existence. It only proves that two successful
 candidates cannot be distinct.
@@ -369,7 +395,7 @@ larger than every other upper bound. Infimum proofs reverse the direction.
   \operatorname{UpperBound}(s,A)
   \land
   \forall u\in S\,
-  \bigl(\operatorname{UpperBound}(u,A)\Rightarrow s\leq u\bigr),
+  \bigl(\operatorname{UpperBound}(u,A)\Longrightarrow s\leq u\bigr),
 \]
 \[
   \operatorname{GreatestLowerBound}(i,A)
@@ -377,7 +403,7 @@ larger than every other upper bound. Infimum proofs reverse the direction.
   \operatorname{LowerBound}(i,A)
   \land
   \forall l\in S\,
-  \bigl(\operatorname{LowerBound}(l,A)\Rightarrow l\leq i\bigr).
+  \bigl(\operatorname{LowerBound}(l,A)\Longrightarrow l\leq i\bigr).
 \]
 
 \begin{remark}[Proof sketch]
@@ -395,9 +421,9 @@ larger than every other upper bound. Infimum proofs reverse the direction.
 
 Monotonicity proves order preservation or order reversal:
 \[
-  x\leq y \Rightarrow f(x)\leq f(y),
+  x\leq y \Longrightarrow f(x)\leq f(y),
   \qquad
-  x\leq y \Rightarrow f(y)\leq f(x).
+  x\leq y \Longrightarrow f(y)\leq f(x).
 \]
 The proof begins with an arbitrary ordered pair and carries that order through
 the definitions.
@@ -418,11 +444,11 @@ Closure proves that a class is stable under an operation. One starts with
 objects already known to belong to the class, combines them, and then verifies
 that the result still satisfies the defining property.
 \[
-  P(x)\land P(y)\Rightarrow P(x\star y).
+  P(x)\land P(y)\Longrightarrow P(x\star y).
 \]
 For closure under scalar operations, the same pattern becomes
 \[
-  P(x)\Rightarrow P(c\star x)
+  P(x)\Longrightarrow P(c\star x)
 \]
 for every admissible scalar or parameter $c$.
 
