@@ -1,0 +1,71 @@
+subject: darboux-integral
+display_title: The Darboux Integral
+volume: volume-iii
+status: in-progress
+dependencies:
+  prior: riemann-integral
+  next: measure-zero
+path: volume-iii/book-integration/darboux-integral
+book: book-integration
+environments:
+- label: def:darboux-sums
+  type: def
+  file: notes\darboux-integral\notes-darboux-integral.tex
+  display_title: Lower and Upper Darboux Sums
+  proof_file: null
+- label: lem:darboux-refinement-squeeze
+  type: lem
+  file: notes\darboux-integral\notes-darboux-integral.tex
+  display_title: Darboux Sums Under Refinement
+  proof_file: proofs\darboux-integral\prf-darboux-refinement-squeeze.tex
+- label: def:darboux-integrability
+  type: def
+  file: notes\darboux-integral\notes-darboux-integral.tex
+  display_title: Darboux Integrability
+  proof_file: null
+- label: thm:darboux-criterion
+  type: thm
+  file: notes\darboux-integral\notes-darboux-integral.tex
+  display_title: Darboux Criterion
+  proof_file: proofs\darboux-integral\prf-darboux-criterion.tex
+- label: thm:riemann-darboux-equivalence
+  type: thm
+  file: notes\darboux-integral\notes-darboux-integral.tex
+  display_title: Equivalence of Riemann and Darboux Integrability
+  proof_file: proofs\darboux-integral\prf-riemann-darboux-equivalence.tex
+- label: thm:continuous-darboux-integrable
+  type: thm
+  file: notes\darboux-integral\notes-darboux-integral.tex
+  display_title: Continuous Functions Are Darboux-Integrable
+  proof_file: proofs\darboux-integral\prf-continuous-darboux-integrable.tex
+- label: thm:monotone-darboux-integrable
+  type: thm
+  file: notes\darboux-integral\notes-darboux-integral.tex
+  display_title: Monotone Functions Are Darboux-Integrable
+  proof_file: proofs\darboux-integral\prf-monotone-darboux-integrable.tex
+- label: thm:finite-discontinuities-darboux-integrable
+  type: thm
+  file: notes\darboux-integral\notes-darboux-integral.tex
+  display_title: Bounded Functions with Finitely Many Discontinuities Are Darboux-Integrable
+  proof_file: proofs\darboux-integral\prf-finite-discontinuities-darboux-integrable.tex
+- label: thm:darboux-integrable-linear-combinations
+  type: thm
+  file: notes\darboux-integral\notes-darboux-integral.tex
+  display_title: Sums and Scalar Multiples of Darboux-Integrable Functions
+  proof_file: proofs\darboux-integral\prf-darboux-integrable-linear-combinations.tex
+- label: thm:darboux-integrable-products
+  type: thm
+  file: notes\darboux-integral\notes-darboux-integral.tex
+  display_title: Products of Darboux-Integrable Functions
+  proof_file: proofs\darboux-integral\prf-darboux-integrable-products.tex
+- label: thm:darboux-integrable-absolute-value
+  type: thm
+  file: notes\darboux-integral\notes-darboux-integral.tex
+  display_title: Absolute Values of Darboux-Integrable Functions
+  proof_file: proofs\darboux-integral\prf-darboux-integrable-absolute-value.tex
+- label: thm:darboux-integrable-continuous-composition
+  type: thm
+  file: notes\darboux-integral\notes-darboux-integral.tex
+  display_title: Continuous Images of Darboux-Integrable Functions
+  proof_file: proofs\darboux-integral\prf-darboux-integrable-continuous-composition.tex
+proof_files: []

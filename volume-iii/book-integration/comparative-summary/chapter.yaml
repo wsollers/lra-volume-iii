@@ -1,0 +1,11 @@
+subject: comparative-summary
+display_title: Comparative Summary of Integration Theories
+volume: volume-iii
+status: in-progress
+dependencies:
+  prior: mcshane-integral
+  next: ''
+path: volume-iii/book-integration/comparative-summary
+book: book-integration
+environments: []
+proof_files: []

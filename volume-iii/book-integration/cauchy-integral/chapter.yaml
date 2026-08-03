@@ -1,0 +1,66 @@
+subject: cauchy-integral
+display_title: The Cauchy Integral
+volume: volume-iii
+status: in-progress
+dependencies:
+  prior: partitions
+  next: riemann-integral
+path: volume-iii/book-integration/cauchy-integral
+book: book-integration
+environments:
+- label: def:cauchy-sum
+  type: def
+  file: notes\cauchy-integral\notes-cauchy-integral.tex
+  display_title: Left-Endpoint Cauchy Sum
+  proof_file: null
+- label: def:cauchy-integral
+  type: def
+  file: notes\cauchy-integral\notes-cauchy-integral.tex
+  display_title: Cauchy Integral
+  proof_file: null
+- label: prop:cauchy-integral-constant
+  type: prop
+  file: notes\cauchy-integral\notes-cauchy-integral.tex
+  display_title: Cauchy Integral of a Constant
+  proof_file: proofs\cauchy-integral\prf-cauchy-integral-constant.tex
+- label: thm:cauchy-integral-linearity
+  type: thm
+  file: notes\cauchy-integral\notes-cauchy-integral.tex
+  display_title: Linearity of the Cauchy Integral
+  proof_file: proofs\cauchy-integral\prf-cauchy-integral-linearity.tex
+- label: thm:cauchy-integral-monotonicity
+  type: thm
+  file: notes\cauchy-integral\notes-cauchy-integral.tex
+  display_title: Monotonicity of the Cauchy Integral
+  proof_file: proofs\cauchy-integral\prf-cauchy-integral-monotonicity.tex
+- label: cor:cauchy-integral-bounds
+  type: cor
+  file: notes\cauchy-integral\notes-cauchy-integral.tex
+  display_title: Bounds for the Cauchy Integral
+  proof_file: proofs\cauchy-integral\prf-cauchy-integral-bounds.tex
+- label: thm:cauchy-integral-triangle-inequality
+  type: thm
+  file: notes\cauchy-integral\notes-cauchy-integral.tex
+  display_title: Triangle Inequality for the Cauchy Integral
+  proof_file: proofs\cauchy-integral\prf-cauchy-integral-triangle-inequality.tex
+- label: thm:cauchy-integral-interval-additivity
+  type: thm
+  file: notes\cauchy-integral\notes-cauchy-integral.tex
+  display_title: Interval Additivity for the Cauchy Integral
+  proof_file: proofs\cauchy-integral\prf-cauchy-integral-interval-additivity.tex
+- label: def:interval-oscillation-integration
+  type: def
+  file: notes\cauchy-integral\notes-cauchy-integral.tex
+  display_title: Oscillation on an Interval
+  proof_file: null
+- label: thm:continuous-cauchy-integrable
+  type: thm
+  file: notes\cauchy-integral\notes-cauchy-integral.tex
+  display_title: Continuous Functions Are Cauchy-Integrable
+  proof_file: proofs\cauchy-integral\prf-continuous-cauchy-integrable.tex
+- label: thm:cauchy-tag-independence
+  type: thm
+  file: notes\cauchy-integral\notes-cauchy-integral.tex
+  display_title: Tag Independence for Continuous Functions
+  proof_file: proofs\cauchy-integral\prf-cauchy-tag-independence.tex
+proof_files: []

@@ -1,0 +1,27 @@
+subject: mcshane-integral
+display_title: The McShane Integral
+volume: volume-iii
+status: in-progress
+dependencies:
+  prior: henstock-kurzweil
+  next: comparative-summary
+path: volume-iii/book-integration/mcshane-integral
+book: book-integration
+environments:
+- label: def:mcshane-fine-tagged-partition
+  type: def
+  file: notes\mcshane-integral\notes-mcshane-integral.tex
+  display_title: McShane-Fine Tagged Partition
+  proof_file: null
+- label: def:mcshane-integral
+  type: def
+  file: notes\mcshane-integral\notes-mcshane-integral.tex
+  display_title: McShane Integral
+  proof_file: null
+- label: thm:riemann-mcshane-hk-inclusions
+  type: thm
+  file: notes\mcshane-integral\notes-mcshane-integral.tex
+  display_title: Riemann Integrable Implies McShane Integrable Implies Henstock--Kurzweil
+    Integrable
+  proof_file: proofs\mcshane-integral\prf-riemann-mcshane-hk-inclusions.tex
+proof_files: []

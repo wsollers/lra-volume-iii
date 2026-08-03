@@ -1,0 +1,41 @@
+subject: partitions
+display_title: Partitions and Tags
+volume: volume-iii
+status: in-progress
+dependencies:
+  prior: ''
+  next: cauchy-integral
+path: volume-iii/book-integration/partitions
+book: book-integration
+environments:
+- label: def:integration-partition
+  type: def
+  file: notes\partitions\notes-partitions.tex
+  display_title: Partition of a Compact Interval
+  proof_file: null
+- label: def:subinterval-width-integration
+  type: def
+  file: notes\partitions\notes-partitions.tex
+  display_title: Subinterval Width
+  proof_file: null
+- label: def:partition-mesh
+  type: def
+  file: notes\partitions\notes-partitions.tex
+  display_title: Mesh of a Partition
+  proof_file: null
+- label: def:tagged-partition-integration
+  type: def
+  file: notes\partitions\notes-partitions.tex
+  display_title: Tagged Partition
+  proof_file: null
+- label: def:partition-refinement
+  type: def
+  file: notes\partitions\notes-partitions.tex
+  display_title: Refinement of a Partition
+  proof_file: null
+- label: lem:common-refinement-partitions
+  type: lem
+  file: notes\partitions\notes-partitions.tex
+  display_title: Common Refinement of Two Partitions
+  proof_file: proofs\partitions\prf-common-refinement-partitions.tex
+proof_files: []

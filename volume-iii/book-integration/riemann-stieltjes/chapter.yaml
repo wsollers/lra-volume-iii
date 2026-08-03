@@ -1,0 +1,61 @@
+subject: riemann-stieltjes
+display_title: The Riemann--Stieltjes Integral
+volume: volume-iii
+status: in-progress
+dependencies:
+  prior: measure-zero
+  next: henstock-kurzweil
+path: volume-iii/book-integration/riemann-stieltjes
+book: book-integration
+environments:
+- label: def:total-variation
+  type: def
+  file: notes\riemann-stieltjes\notes-riemann-stieltjes.tex
+  display_title: Total Variation
+  proof_file: null
+- label: def:bounded-variation-integration
+  type: def
+  file: notes\riemann-stieltjes\notes-riemann-stieltjes.tex
+  display_title: Bounded Variation
+  proof_file: null
+- label: prop:monotone-bounded-variation
+  type: prop
+  file: notes\riemann-stieltjes\notes-riemann-stieltjes.tex
+  display_title: Monotone Functions Have Bounded Variation
+  proof_file: proofs\riemann-stieltjes\prf-monotone-bounded-variation.tex
+- label: def:riemann-stieltjes-integral
+  type: def
+  file: notes\riemann-stieltjes\notes-riemann-stieltjes.tex
+  display_title: Riemann--Stieltjes Integral
+  proof_file: null
+- label: thm:rs-continuous-bv-existence
+  type: thm
+  file: notes\riemann-stieltjes\notes-riemann-stieltjes.tex
+  display_title: Continuous Integrand and BV Integrator
+  proof_file: proofs\riemann-stieltjes\prf-rs-continuous-bv-existence.tex
+- label: thm:rs-bilinearity
+  type: thm
+  file: notes\riemann-stieltjes\notes-riemann-stieltjes.tex
+  display_title: Bilinearity of the Riemann--Stieltjes Integral
+  proof_file: proofs\riemann-stieltjes\prf-rs-bilinearity.tex
+- label: thm:rs-interval-additivity
+  type: thm
+  file: notes\riemann-stieltjes\notes-riemann-stieltjes.tex
+  display_title: Interval Additivity for the Riemann--Stieltjes Integral
+  proof_file: proofs\riemann-stieltjes\prf-rs-interval-additivity.tex
+- label: thm:rs-integration-by-parts
+  type: thm
+  file: notes\riemann-stieltjes\notes-riemann-stieltjes.tex
+  display_title: Riemann--Stieltjes Integration by Parts
+  proof_file: proofs\riemann-stieltjes\prf-rs-integration-by-parts.tex
+- label: thm:rs-c1-reduction
+  type: thm
+  file: notes\riemann-stieltjes\notes-riemann-stieltjes.tex
+  display_title: Reduction to Riemann Integration for a C1 Integrator
+  proof_file: proofs\riemann-stieltjes\prf-rs-c1-reduction.tex
+- label: thm:rs-step-integrator-finite-sum
+  type: thm
+  file: notes\riemann-stieltjes\notes-riemann-stieltjes.tex
+  display_title: Step Integrators Give Finite Sums
+  proof_file: proofs\riemann-stieltjes\prf-rs-step-integrator-finite-sum.tex
+proof_files: []

@@ -1,0 +1,51 @@
+subject: henstock-kurzweil
+display_title: The Henstock--Kurzweil Integral
+volume: volume-iii
+status: in-progress
+dependencies:
+  prior: riemann-stieltjes
+  next: mcshane-integral
+path: volume-iii/book-integration/henstock-kurzweil
+book: book-integration
+environments:
+- label: def:gauge-on-interval
+  type: def
+  file: notes\henstock-kurzweil\notes-henstock-kurzweil.tex
+  display_title: Gauge on an Interval
+  proof_file: null
+- label: def:delta-fine-tagged-partition
+  type: def
+  file: notes\henstock-kurzweil\notes-henstock-kurzweil.tex
+  display_title: Delta-Fine Tagged Partition
+  proof_file: null
+- label: def:henstock-kurzweil-integral
+  type: def
+  file: notes\henstock-kurzweil\notes-henstock-kurzweil.tex
+  display_title: Henstock--Kurzweil Integral
+  proof_file: null
+- label: lem:cousin
+  type: lem
+  file: notes\henstock-kurzweil\notes-henstock-kurzweil.tex
+  display_title: Cousin's Lemma
+  proof_file: proofs\henstock-kurzweil\prf-cousin.tex
+- label: thm:riemann-integrable-implies-hk-integrable
+  type: thm
+  file: notes\henstock-kurzweil\notes-henstock-kurzweil.tex
+  display_title: Riemann Integrable Implies Henstock--Kurzweil Integrable
+  proof_file: proofs\henstock-kurzweil\prf-riemann-integrable-implies-hk-integrable.tex
+- label: lem:hk-straddle
+  type: lem
+  file: notes\henstock-kurzweil\notes-henstock-kurzweil.tex
+  display_title: Straddle Lemma
+  proof_file: proofs\henstock-kurzweil\prf-hk-straddle.tex
+- label: thm:hk-fundamental-theorem
+  type: thm
+  file: notes\henstock-kurzweil\notes-henstock-kurzweil.tex
+  display_title: Fundamental Theorem for the Henstock--Kurzweil Integral
+  proof_file: proofs\henstock-kurzweil\prf-hk-fundamental-theorem.tex
+- label: thm:continuous-hk-integrable
+  type: thm
+  file: notes\henstock-kurzweil\notes-henstock-kurzweil.tex
+  display_title: Continuous Functions Are Henstock--Kurzweil Integrable
+  proof_file: proofs\henstock-kurzweil\prf-continuous-hk-integrable.tex
+proof_files: []

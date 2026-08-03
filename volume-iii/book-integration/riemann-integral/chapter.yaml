@@ -1,0 +1,51 @@
+subject: riemann-integral
+display_title: The Riemann Integral
+volume: volume-iii
+status: in-progress
+dependencies:
+  prior: cauchy-integral
+  next: darboux-integral
+path: volume-iii/book-integration/riemann-integral
+book: book-integration
+environments:
+- label: def:riemann-sum
+  type: def
+  file: notes\riemann-integral\notes-riemann-integral.tex
+  display_title: Riemann Sum
+  proof_file: null
+- label: def:riemann-integral
+  type: def
+  file: notes\riemann-integral\notes-riemann-integral.tex
+  display_title: Riemann Integral
+  proof_file: null
+- label: thm:continuous-riemann-integrable
+  type: thm
+  file: notes\riemann-integral\notes-riemann-integral.tex
+  display_title: Continuous Functions Are Riemann-Integrable
+  proof_file: proofs\riemann-integral\prf-continuous-riemann-integrable.tex
+- label: thm:riemann-integral-linearity
+  type: thm
+  file: notes\riemann-integral\notes-riemann-integral.tex
+  display_title: Linearity of the Riemann Integral
+  proof_file: proofs\riemann-integral\prf-riemann-integral-linearity.tex
+- label: thm:riemann-integral-monotonicity
+  type: thm
+  file: notes\riemann-integral\notes-riemann-integral.tex
+  display_title: Monotonicity of the Riemann Integral
+  proof_file: proofs\riemann-integral\prf-riemann-integral-monotonicity.tex
+- label: thm:riemann-integral-triangle-inequality
+  type: thm
+  file: notes\riemann-integral\notes-riemann-integral.tex
+  display_title: Triangle Inequality for the Riemann Integral
+  proof_file: proofs\riemann-integral\prf-riemann-integral-triangle-inequality.tex
+- label: thm:riemann-integral-interval-additivity
+  type: thm
+  file: notes\riemann-integral\notes-riemann-integral.tex
+  display_title: Interval Additivity for the Riemann Integral
+  proof_file: proofs\riemann-integral\prf-riemann-integral-interval-additivity.tex
+- label: thm:riemann-cauchy-criterion
+  type: thm
+  file: notes\riemann-integral\notes-riemann-integral.tex
+  display_title: Cauchy Criterion for Riemann Integrability
+  proof_file: proofs\riemann-integral\prf-riemann-cauchy-criterion.tex
+proof_files: []
