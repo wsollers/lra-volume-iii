@@ -28,9 +28,7 @@ Equivalently, $\ln x$ is defined by the integral
   \ln x \;:=\; \int_1^x \frac{1}{t}\, dt.
 \]
 \end{definition}
-\end{definitionbox}
-
-\begin{remark*}[Standard quantified statement]
+\end{definitionbox}\begin{remark*}[Standard quantified statement]
 \[
   \forall x > 0 :\; e^{\ln x} = x.
   \qquad
@@ -38,49 +36,43 @@ Equivalently, $\ln x$ is defined by the integral
 \]
 \end{remark*}
 
-\begin{remark*}[Predicate reading]
+\begin{remark*}[Definition predicate reading]
 \[
-  y=\ln x
+  \operatorname{NaturalLog}(x, y)
   \;\colonequiv\;
   x > 0 \;\wedge\; e^y = x
   \;\colonequiv\;
   x > 0 \;\wedge\; y = \int_1^x \frac{1}{t}\,dt.
 \]
+\end{remark*}
 
-
+\begin{remark*}[Definition predicate reading]
 \[
-  \operatorname{TendsTo}\!\left(\frac{\ln(1+x)}{x},\,0,\,1,\,\mathbb R,\,\mathbb R\right)
+  \operatorname{FunctionLimit}\!\left(\frac{\ln(1+x)}{x},\,0,\,1\right)
   \;\colonequiv\;
   \forall\varepsilon>0,\;\exists\delta>0,\;\forall x:\;
-  \bigl(
-    \operatorname{IsPuncturedCenteredOpenInterval}(I^\times_\delta(0),I_\delta(0),0,\delta,\mathbb R)
-    \wedge
-    \operatorname{Within}(x,I^\times_\delta(0),\mathbb R)
-  \bigr)
+  \operatorname{InputTolerance}(x,0,\delta)
   \Rightarrow
-  \bigl(
-    \operatorname{IsCenteredOpenInterval}(I_\varepsilon(1),1,\varepsilon,\mathbb R)
-    \wedge
-    \operatorname{Within}\!\left(\frac{\ln(1+x)}{x},I_\varepsilon(1),\mathbb R\right)
-  \bigr).
+  \operatorname{OutputTolerance}\!\left(\frac{\ln(1+x)}{x},1,\varepsilon\right).
 \]
 \end{remark*}
 
 \begin{remark*}[Negated quantified statement]
 \[
-  \neg(y=\ln x)
+  \neg\,\operatorname{NaturalLog}(x,y)
   \;\iff\;
-  x \leq 0 \;\vee\; (x>0 \wedge y\neq\ln x).
+  x \leq 0 \;\vee\; e^y \neq x.
 \]
 \end{remark*}
 
-\begin{remark*}[Interpretation]
+\begin{remark*}[Two definitions, same function]
 The inverse-of-exponential definition requires $e^x$ to be
 established first. The integral definition is self-contained and
 is preferred when building analysis from scratch. Both yield the
 same function.
+\end{remark*}
 
-
+\begin{remark*}[Key properties]
 \begin{enumerate}[label=(\roman*)]
   \item $\ln 1 = 0$;\; $\ln e = 1$.
   \item \textbf{Functional equation:} $\ln(xy) = \ln x + \ln y$
@@ -92,25 +84,27 @@ same function.
     $\ln x \to -\infty$ as $x \to 0^+$.
   \item $(\ln x)' = 1/x$ for all $x > 0$.
 \end{enumerate}
+\end{remark*}
 
-
+\begin{remark*}[General logarithm]
 For $a > 0$, $a \neq 1$, the \textbf{logarithm base $a$} is
 $\log_a x := \ln x / \ln a$. The common logarithm is $\log_{10}$;
 the binary logarithm is $\log_2$.
 \end{remark*}
-
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:exponential]{Exponential Function}
-  \item \hyperref[def:riemann-integral]{Riemann Integral}
-\end{itemize}
-\end{dependencies}
 
 % ---------------------------------------------------------
 % Proposition --- Fundamental Logarithmic Limit
 % ---------------------------------------------------------
 
 \begin{propositionbox}{Proposition (Fundamental Logarithmic Limit)}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:exponential]{Exponential Function}
+  \item \hyperref[prop:inverse-bijection]{Inverse Bijection}
+  \item \hyperref[thm:continuous-inverse-theorem]{Continuous Inverse Theorem}
+\end{itemize}
+\end{dependencies}
 \begin{proposition}[Fundamental Logarithmic Limit]
 \label{prop:limit-logarithm-fundamental}
 \[
@@ -118,13 +112,9 @@ the binary logarithm is $\log_2$.
 \]
 
 \smallskip\noindent
-
-
 \hyperref[prf:limit-logarithm-fundamental]{\textit{Go to proof.}}
 \end{proposition}
-\end{propositionbox}
-
-\begin{remark*}[Standard quantified statement]
+\end{propositionbox}\begin{remark*}[Standard quantified statement]
 \[
   \forall\varepsilon > 0,\;
   \exists\delta > 0 :\;
@@ -143,32 +133,33 @@ the binary logarithm is $\log_2$.
 \]
 \end{remark*}
 
-\begin{remark*}[Interpretation]
+\begin{remark*}[Equivalence with exponential limit]
 The fundamental exponential limit $\lim(e^x-1)/x = 1$ and the
 fundamental logarithmic limit $\lim\ln(1+x)/x = 1$ are equivalent:
 each follows from the other via the substitution $x \leftrightarrow
 e^x - 1$. Both express the first-order Taylor approximation of the
 respective function at $0$.
+\end{remark*}
 
-
+\begin{remark*}[Proof strategy]
 From the series: $\ln(1+x) = x - x^2/2 + x^3/3 - \cdots$ (valid
 for $|x| < 1$). Dividing by $x$ gives $1 - x/2 + x^2/3 - \cdots
 \to 1$ as $x \to 0$ by continuity of power series.
 \end{remark*}
-
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:exponential]{Exponential Function}
-  \item \hyperref[prop:inverse-bijection]{Inverse Bijection}
-  \item \hyperref[thm:continuous-inverse-theorem]{Continuous Inverse Theorem}
-\end{itemize}
-\end{dependencies}
 
 % ---------------------------------------------------------
 % Proposition --- Every Power Dominates the Logarithm
 % ---------------------------------------------------------
 
 \begin{propositionbox}{Proposition (Every Power Dominates the Logarithm)}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:natural-logarithm]{Natural Logarithm}
+  \item \hyperref[prop:limit-exponential-fundamental]{Fundamental Exponential Limit}
+  \item \hyperref[def:limit-function]{Function Limit}
+\end{itemize}
+\end{dependencies}
 \begin{proposition}[Every Power Dominates the Logarithm]
 \label{prop:power-dominates-log}
 For every $r > 0$:
@@ -179,13 +170,9 @@ For every $r > 0$:
 \]
 
 \smallskip\noindent
-
-
 \hyperref[prf:power-dominates-log]{\textit{Go to proof.}}
 \end{proposition}
-\end{propositionbox}
-
-\begin{remark*}[Standard quantified statement]
+\end{propositionbox}\begin{remark*}[Standard quantified statement]
 \[
   \forall r > 0 :\;
   \lim_{x \to \infty} x^{-r} \ln x = 0
@@ -194,17 +181,12 @@ For every $r > 0$:
 \]
 \end{remark*}
 
-\begin{remark*}[Predicate reading]
+\begin{remark*}[Definition predicate reading]
 \[
   \operatorname{LimitAtInfinity}(x^{-r}\ln x,\,+\infty,\,0)
   \;\colonequiv\;
   \forall\varepsilon>0,\;\exists M\in\mathbb{R},\;\forall x:\;
-  x>M \Rightarrow
-  \bigl(
-    \operatorname{IsCenteredOpenInterval}(I_\varepsilon(0),0,\varepsilon,\mathbb R)
-    \wedge
-    \operatorname{Within}(x^{-r}\ln x,I_\varepsilon(0),\mathbb R)
-  \bigr).
+  x>M \Rightarrow \operatorname{OutputTolerance}(x^{-r}\ln x,0,\varepsilon).
 \]
 \end{remark*}
 
@@ -217,12 +199,13 @@ For every $r > 0$:
 \]
 \end{remark*}
 
-\begin{remark*}[Interpretation]
+\begin{remark*}[Proof strategy]
 For the first: substitute $x = e^t$ to get $t/e^{rt} \to 0$ by
 exponential dominance. For the second: substitute $x = 1/t$ and
 reduce to the first: $x^r \ln x = (-\ln t)/t^r \to 0$.
+\end{remark*}
 
-
+\begin{remark*}[Significance]
 These limits establish the position of $\ln x$ in the growth
 hierarchy: $\ln x$ is dominated by every positive power. Combined
 with the exponential dominance result, the full ordering is
@@ -233,13 +216,6 @@ integrability arguments near $0$.
 \end{remark*}
 
 \begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:natural-logarithm]{Natural Logarithm}
-  \item \hyperref[prop:limit-exponential-fundamental]{Fundamental Exponential Limit}
-  \item \hyperref[def:limit-function]{Function Limit}
-\end{itemize}
-
-
 \begin{itemize}
   \item \hyperref[def:natural-logarithm]{Natural Logarithm}
   \item \hyperref[def:power-function]{Power Function}

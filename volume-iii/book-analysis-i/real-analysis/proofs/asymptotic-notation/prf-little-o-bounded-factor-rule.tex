@@ -16,20 +16,27 @@ If $f(x)=o(g(x))$ as $x\to a$ and $m$ is bounded near $a$, then
 
 \begin{proof}[Professional Standard Proof]
 \LRAProofBodyStart
-TODO: professional standard proof for little-o-bounded-factor-rule.
+Let $\varepsilon>0$. Since $m$ is bounded near $a$, choose $M>0$ and a
+punctured neighbourhood on which $|m(x)|\leq M$. Since $f=o(g)$, choose a
+smaller punctured neighbourhood on which
+$|f(x)|\leq(\varepsilon/M)|g(x)|$. Then
+\[
+  |m(x)f(x)|\leq M|f(x)|\leq \varepsilon |g(x)|.
+\]
+Thus $mf=o(g)$.
 \end{proof}
 
 \begin{proof}[Detailed Learning Proof]
 \LRAProofBodyStart
-TODO: detailed learning proof for little-o-bounded-factor-rule.
+The bounded factor can cost only a fixed multiplicative constant. If
+$|m(x)|\leq M$ near $a$, ask the little-o estimate for $f$ to be
+$\varepsilon/M$ instead of $\varepsilon$. Multiplying the two estimates gives
+the final tolerance $\varepsilon$.
 \end{proof}
-
-\begin{remark*}[Proof structure]
-\end{remark*}
 
 \begin{dependencies}
 \begin{itemize}
-  \item TODO: add dependencies for this proof.
+  \item \hyperref[def:little-o-at-a-point]{Little-o at a Point}
 \end{itemize}
 \end{dependencies}
 

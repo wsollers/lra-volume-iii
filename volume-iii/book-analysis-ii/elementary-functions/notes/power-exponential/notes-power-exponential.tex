@@ -25,9 +25,7 @@ and $x > 0$, the \textbf{real power} is defined by
   x^r \;:=\; e^{r \ln x}.
 \]
 \end{definition}
-\end{definitionbox}
-
-\begin{remark*}[Standard quantified statement]
+\end{definitionbox}\begin{remark*}[Standard quantified statement]
 \[
   \forall r \in \mathbb{R},\; \forall x > 0 :\; x^r = e^{r\ln x}.
 \]
@@ -35,14 +33,15 @@ For $r \in \mathbb{N}$ this reduces to the $r$-fold product
 $x \cdot x \cdots x$.
 \end{remark*}
 
-\begin{remark*}[Predicate reading]
+\begin{remark*}[Definition predicate reading]
 \[
-  x^r=e^{r\ln x}
-  \qquad (x>0,\ r\in\mathbb{R}).
+  \operatorname{RealPower}(x, r, y)
+  \;\colonequiv\;
+  x > 0 \;\wedge\; y = e^{r \ln x}.
 \]
 \end{remark*}
 
-\begin{remark*}[Interpretation]
+\begin{remark*}[Laws of exponents]
 For $x, y > 0$ and $r, s \in \mathbb{R}$:
 \[
   x^r \cdot x^s = x^{r+s}, \quad
@@ -53,25 +52,28 @@ For $x, y > 0$ and $r, s \in \mathbb{R}$:
 \]
 Each follows from the corresponding property of the exponential via
 the definition $x^r = e^{r\ln x}$.
+\end{remark*}
 
-
+\begin{remark*}[Interpretation]
 Defining $x^r := e^{r\ln x}$ unifies all three cases --- integer,
 rational, irrational exponents --- into a single formula and makes
 differentiability of $x^r$ immediate from that of $e^x$ and $\ln x$
 via the chain rule: $(x^r)' = rx^{r-1}$.
 \end{remark*}
 
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:exponential]{Exponential Function}
-  \item \hyperref[def:natural-logarithm]{Natural Logarithm}
-\end{itemize}
-\end{dependencies}
-
 % ---------------------------------------------------------
 % Definition --- The Number e
 % ---------------------------------------------------------
 \begin{definitionbox}{Definition (The Number $e$)}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:two-sided-inverse]{Integer Powers in a Field}
+  \item \hyperref[def:exponential]{Exponential Function}
+  \item \hyperref[def:natural-logarithm]{Natural Logarithm}
+  \item \hyperref[def:multiplication-on-r]{Multiplication on $\mathbb{R}$}
+\end{itemize}
+\end{dependencies}
 \begin{definition}[The Number $e$]
 \label{def:number-e}
 The \textbf{Euler number} is
@@ -101,14 +103,6 @@ fundamental logarithmic limit. Both representations are in common use.
 
 \begin{dependencies}
 \begin{itemize}
-  \item \hyperref[def:two-sided-inverse]{Integer Powers in a Field}
-  \item \hyperref[def:exponential]{Exponential Function}
-  \item \hyperref[def:natural-logarithm]{Natural Logarithm}
-  \item \hyperref[def:multiplication-on-r]{Multiplication on $\mathbb{R}$}
-\end{itemize}
-
-
-\begin{itemize}
   \item \hyperref[def:sequence]{Sequence}
   \item \hyperref[def:convergent-sequence]{Convergent Sequence}
 \end{itemize}
@@ -127,9 +121,7 @@ is defined by the absolutely convergent power series
   \qquad x \in \mathbb{R}.
 \]
 \end{definition}
-\end{definitionbox}
-
-\begin{remark*}[Standard quantified statement]
+\end{definitionbox}\begin{remark*}[Standard quantified statement]
 \[
   \forall x \in \mathbb{R} :\;
   e^x = \sum_{n=0}^\infty \frac{x^n}{n!},
@@ -138,13 +130,15 @@ is defined by the absolutely convergent power series
 \]
 \end{remark*}
 
-\begin{remark*}[Predicate reading]
+\begin{remark*}[Definition predicate reading]
 \[
-  e^x=\exp(x)=\sum_{n=0}^\infty \frac{x^n}{n!}.
+  \operatorname{Exponential}(x, y)
+  \;\colonequiv\;
+  y = \sum_{n=0}^\infty \frac{x^n}{n!}.
 \]
 \end{remark*}
 
-\begin{remark*}[Interpretation]
+\begin{remark*}[Key properties]
 \begin{enumerate}[label=(\roman*)]
   \item $e^0 = 1$;\; $e^1 = e$.
   \item \textbf{Functional equation:} $e^{x+y} = e^x \cdot e^y$
@@ -154,25 +148,28 @@ is defined by the absolutely convergent power series
     $\mathbb{R} \to (0,\infty)$.
   \item $(e^x)' = e^x$ --- the exponential is its own derivative.
 \end{enumerate}
+\end{remark*}
 
-
+\begin{remark*}[General exponential]
 For $a > 0$, $a \neq 1$: $a^x := e^{x\ln a}$. Strictly increasing
 if $a > 1$, strictly decreasing if $0 < a < 1$. $(a^x)' = a^x \ln a$.
 Only $e^x$ is its own derivative.
 \end{remark*}
-
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:sequence]{Sequence}
-  \item \hyperref[def:convergent-sequence]{Convergent Sequence}
-\end{itemize}
-\end{dependencies}
 
 % ---------------------------------------------------------
 % Proposition --- Fundamental Exponential Limit
 % ---------------------------------------------------------
 
 \begin{propositionbox}{Proposition (Fundamental Exponential Limit)}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:number-e]{The Number $e$}
+  \item \hyperref[def:two-sided-inverse]{Integer Powers in a Field}
+  \item \hyperref[def:sequence]{Sequence}
+  \item \hyperref[def:convergent-sequence]{Convergent Sequence}
+\end{itemize}
+\end{dependencies}
 \begin{proposition}[Fundamental Exponential Limit]
 \label{prop:limit-exponential-fundamental}
 \[
@@ -180,13 +177,9 @@ Only $e^x$ is its own derivative.
 \]
 
 \smallskip\noindent
-
-
 \hyperref[prf:limit-exponential-fundamental]{\textit{Go to proof.}}
 \end{proposition}
-\end{propositionbox}
-
-\begin{remark*}[Standard quantified statement]
+\end{propositionbox}\begin{remark*}[Standard quantified statement]
 \[
   \forall\varepsilon > 0,\;
   \exists\delta > 0 :\;
@@ -195,22 +188,14 @@ Only $e^x$ is its own derivative.
 \]
 \end{remark*}
 
-\begin{remark*}[Predicate reading]
+\begin{remark*}[Definition predicate reading]
 \[
-  \operatorname{TendsTo}\!\left(\frac{e^x-1}{x},\,0,\,1,\,\mathbb R,\,\mathbb R\right)
+  \operatorname{FunctionLimit}\!\left(\frac{e^x-1}{x},\,0,\,1\right)
   \;\colonequiv\;
   \forall\varepsilon>0,\;\exists\delta>0,\;\forall x:\;
-  \bigl(
-    \operatorname{IsPuncturedCenteredOpenInterval}(I^\times_\delta(0),I_\delta(0),0,\delta,\mathbb R)
-    \wedge
-    \operatorname{Within}(x,I^\times_\delta(0),\mathbb R)
-  \bigr)
+  \operatorname{InputTolerance}(x,0,\delta)
   \Rightarrow
-  \bigl(
-    \operatorname{IsCenteredOpenInterval}(I_\varepsilon(1),1,\varepsilon,\mathbb R)
-    \wedge
-    \operatorname{Within}\!\left(\frac{e^x-1}{x},I_\varepsilon(1),\mathbb R\right)
-  \bigr).
+  \operatorname{OutputTolerance}\!\left(\frac{e^x-1}{x},1,\varepsilon\right).
 \]
 \end{remark*}
 
@@ -230,20 +215,19 @@ by continuity of power series at their center. Combined with the
 functional equation, this implies $(e^x)' = e^x$ everywhere.
 \end{remark*}
 
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:number-e]{The Number $e$}
-  \item \hyperref[def:two-sided-inverse]{Integer Powers in a Field}
-  \item \hyperref[def:sequence]{Sequence}
-  \item \hyperref[def:convergent-sequence]{Convergent Sequence}
-\end{itemize}
-\end{dependencies}
-
 % ---------------------------------------------------------
 % Proposition --- Compound Interest Limit
 % ---------------------------------------------------------
 
 \begin{propositionbox}{Proposition (Compound Interest Limit)}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:exponential]{Exponential Function}
+  \item \hyperref[def:limit-function]{Function Limit}
+  \item \hyperref[def:derivative-at-a-point]{Derivative at a Point}
+\end{itemize}
+\end{dependencies}
 \begin{proposition}[Compound Interest Limit]
 \label{prop:limit-compound-interest}
 \[
@@ -251,13 +235,9 @@ functional equation, this implies $(e^x)' = e^x$ everywhere.
 \]
 
 \smallskip\noindent
-
-
 \hyperref[prf:limit-compound-interest]{\textit{Go to proof.}}
 \end{proposition}
-\end{propositionbox}
-
-\begin{remark*}[Standard quantified statement]
+\end{propositionbox}\begin{remark*}[Standard quantified statement]
 \[
   \forall\varepsilon>0,\;\exists M>0:\;
   x>M \Rightarrow
@@ -265,17 +245,12 @@ functional equation, this implies $(e^x)' = e^x$ everywhere.
 \]
 \end{remark*}
 
-\begin{remark*}[Predicate reading]
+\begin{remark*}[Definition predicate reading]
 \[
   \operatorname{LimitAtInfinity}\!\left(\left(1+\tfrac{1}{x}\right)^x,\,+\infty,\,e\right)
   \;\colonequiv\;
   \forall\varepsilon>0,\;\exists M\in\mathbb{R},\;\forall x:\;
-  x>M \Rightarrow
-  \bigl(
-    \operatorname{IsCenteredOpenInterval}(I_\varepsilon(e),e,\varepsilon,\mathbb R)
-    \wedge
-    \operatorname{Within}\!\left(\left(1+\tfrac{1}{x}\right)^x,I_\varepsilon(e),\mathbb R\right)
-  \bigr).
+  x>M \Rightarrow \operatorname{OutputTolerance}\!\left(\left(1+\tfrac{1}{x}\right)^x,e,\varepsilon\right).
 \]
 \end{remark*}
 
@@ -288,26 +263,28 @@ functional equation, this implies $(e^x)' = e^x$ everywhere.
 \]
 \end{remark*}
 
-\begin{remark*}[Interpretation]
+\begin{remark*}[Proof strategy]
 Write $(1+1/x)^x = e^{x\ln(1+1/x)}$. Set $t = 1/x \to 0^+$ and use
 the fundamental logarithmic limit $\ln(1+t)/t \to 1$. Then
 $x\ln(1+1/x) = \ln(1+t)/t \to 1$, so $(1+1/x)^x = e^{x\ln(1+1/x)}
 \to e^1 = e$ by continuity of the exponential.
 \end{remark*}
 
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:exponential]{Exponential Function}
-  \item \hyperref[def:limit-function]{Function Limit}
-  \item \hyperref[def:derivative-at-a-point]{Derivative at a Point}
-\end{itemize}
-\end{dependencies}
-
 % ---------------------------------------------------------
 % Proposition --- Exponential Dominates Every Power
 % ---------------------------------------------------------
 
 \begin{propositionbox}{Proposition (Exponential Dominates Every Power)}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:number-e]{The Number $e$}
+  \item \hyperref[def:exponential]{Exponential Function}
+  \item \hyperref[def:natural-logarithm]{Natural Logarithm}
+  \item \hyperref[prop:limit-logarithm-fundamental]{Fundamental Logarithmic Limit}
+  \item \hyperref[def:limit-at-infinity]{Limit at Infinity}
+\end{itemize}
+\end{dependencies}
 \begin{proposition}[Exponential Dominates Every Power]
 \label{prop:exponential-dominates-power}
 For every $r > 0$:
@@ -316,29 +293,20 @@ For every $r > 0$:
 \]
 
 \smallskip\noindent
-
-
 \hyperref[prf:exponential-dominates-power]{\textit{Go to proof.}}
 \end{proposition}
-\end{propositionbox}
-
-\begin{remark*}[Standard quantified statement]
+\end{propositionbox}\begin{remark*}[Standard quantified statement]
 \[
   \forall r > 0 :\; \lim_{x \to \infty} x^r e^{-x} = 0.
 \]
 \end{remark*}
 
-\begin{remark*}[Predicate reading]
+\begin{remark*}[Definition predicate reading]
 \[
   \operatorname{LimitAtInfinity}(x^r e^{-x},\,+\infty,\,0)
   \;\colonequiv\;
   \forall\varepsilon>0,\;\exists M\in\mathbb{R},\;\forall x:\;
-  x>M \Rightarrow
-  \bigl(
-    \operatorname{IsCenteredOpenInterval}(I_\varepsilon(0),0,\varepsilon,\mathbb R)
-    \wedge
-    \operatorname{Within}(x^r e^{-x},I_\varepsilon(0),\mathbb R)
-  \bigr).
+  x>M \Rightarrow \operatorname{OutputTolerance}(x^r e^{-x},0,\varepsilon).
 \]
 \end{remark*}
 
@@ -351,11 +319,12 @@ For every $r > 0$:
 \]
 \end{remark*}
 
-\begin{remark*}[Interpretation]
+\begin{remark*}[Proof strategy]
 Pick integer $n > r$. The series bound $e^x \geq x^n/n!$ gives
 $x^r/e^x \leq n!\, x^{r-n} \to 0$ since $r - n < 0$.
+\end{remark*}
 
-
+\begin{remark*}[Growth hierarchy]
 For any $r > 0$:
 \[
   \ln x \;\ll\; x^r \;\ll\; e^x
@@ -367,15 +336,6 @@ dominated convergence arguments, and comparison tests.
 \end{remark*}
 
 \begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:number-e]{The Number $e$}
-  \item \hyperref[def:exponential]{Exponential Function}
-  \item \hyperref[def:natural-logarithm]{Natural Logarithm}
-  \item \hyperref[prop:limit-logarithm-fundamental]{Fundamental Logarithmic Limit}
-  \item \hyperref[def:limit-at-infinity]{Limit at Infinity}
-\end{itemize}
-
-
 \begin{itemize}
   \item \hyperref[def:power-function]{Power Function}
   \item \hyperref[def:exponential]{Exponential Function}

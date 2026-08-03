@@ -23,10 +23,10 @@ Let $(x_n) \subseteq \mathbb{R}$ and let $M \in \mathbb{N}$. The
 \]
 \end{remark*}
 
-\begin{remark*}[Predicate reading]
+\begin{remark*}[Definition predicate reading]
 \[
-y=\mathsf{TailSequence}(x,M,\mathbb{N},\mathbb{R})
-\Longleftrightarrow
+\operatorname{TailSequence}(x_n,M,y_k)
+\;:=\;
 \forall k \in \mathbb{N}\;\bigl(y_k = x_{M+k-1}\bigr).
 \]
 \end{remark*}
@@ -90,15 +90,17 @@ $(x_n)$ converges. Moreover, in this case,
 \]
 \end{remark*}
 
-\begin{remark*}[Predicate reading]
+\begin{remark*}[Theorem predicate reading]
 \[
-\Bigl(\exists L\in\mathbb{R}\,\operatorname{ConvergesTo}(x_n,L)\Bigr)
+\operatorname{TailConvergenceInvariant}(x_n,m)
+\;:=\;
+\Bigl(\exists L\in\mathbb{R}\,\operatorname{ConvergentSequence}(x_n,L)\Bigr)
 \Longleftrightarrow
-\Bigl(\exists L\in\mathbb{R}\,\operatorname{ConvergesTo}(x_{m+n},L)\Bigr).
+\Bigl(\exists L\in\mathbb{R}\,\operatorname{ConvergentSequence}(x_{m+n},L)\Bigr).
 \]
 \end{remark*}
 
-\begin{remark*}[Interpretation]
+\begin{remark*}[Contrapositive quantified statement]
 \[
 \begin{aligned}
 &\forall (x_n) \subseteq \mathbb{R} \;\forall m \in \mathbb{N}\\
@@ -109,13 +111,17 @@ $(x_n)$ converges. Moreover, in this case,
 \Bigr).
 \end{aligned}
 \]
+\end{remark*}
 
-
+\begin{remark*}[Contrapositive predicate reading]
 \[
+\lnot\operatorname{TailConvergenceInvariant}(x_n,m)
+\;:=\;
 \bigl((x_n)\text{ diverges}\Longleftrightarrow (x_{m+n})_{n\in\mathbb{N}}\text{ diverges}\bigr).
 \]
+\end{remark*}
 
-
+\begin{remark*}[Interpretation]
 Convergence is a \emph{tail property}: it depends only on the
 eventual behavior of the sequence, not on any finite initial
 segment. Discarding the first $m$ terms neither creates nor
@@ -189,11 +195,7 @@ then $\displaystyle\lim_{n \to \infty} x_n = L$.
 \]
 \end{remark*}
 
-\begin{remark*}[Predicate reading]
-The displayed quantified statement is the predicate-level form of $label: its hypotheses name the input conditions, and its conclusion names the asserted structure or relation.
-\end{remark*}
-
-\begin{remark*}[Interpretation]
+\begin{remark*}[Contrapositive quantified statement]
 \[
 \begin{aligned}
 &\forall (x_n) \subseteq \mathbb{R} \;\forall L \in \mathbb{R}
@@ -208,16 +210,20 @@ The displayed quantified statement is the predicate-level form of $label: its hy
 \Bigr).
 \end{aligned}
 \]
+\end{remark*}
 
-
+\begin{remark*}[Contrapositive predicate reading]
 \[
+\operatorname{NotDominatedByNullError}(x_n,L,a_n)
+\;:=\;
 \lim_{n\to\infty}a_n\neq 0
 \lor
 \forall c>0\,\forall m\in\mathbb{N}\,\exists n\ge m
 \bigl(|x_n-L|>c\,a_n\bigr).
 \]
+\end{remark*}
 
-
+\begin{remark*}[Interpretation]
 The theorem is a \emph{domination principle}: it is not necessary to
 verify the $\varepsilon$-$N$ condition directly for $(x_n)$. It
 suffices to find a null sequence $(a_n)$ -- one converging to zero --
@@ -280,15 +286,15 @@ exists. If $L<1$, then $(x_n)$ converges and
 \]
 \end{remark*}
 
-\begin{remark*}[Predicate reading]
+\begin{remark*}[Theorem predicate reading]
 \[
 \bigl(
-\operatorname{ConvergesTo}\bigl(x_{n+1}/x_n,L\bigr)
+\operatorname{ConvergentSequence}\bigl(x_{n+1}/x_n,L\bigr)
 \land
 L<1
 \bigr)
 \Longrightarrow
-\operatorname{IsNull}(x_n).
+\operatorname{NullSequence}(x_n).
 \]
 \end{remark*}
 
@@ -309,27 +315,22 @@ L<1
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{ConvergesTo}\bigl(x_{n+1}/x_n,L\bigr)
+\operatorname{ConvergentSequence}\bigl(x_{n+1}/x_n,L\bigr)
 \land
 L<1
 \land
-\neg\operatorname{ConvergesTo}(x_n,0).
+\operatorname{NotConvergentTo}(x_n,0).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-\begin{description}
-  \item[Exposition.]
 A failure would be a positive sequence whose consecutive ratios settle below
 one in the limit but whose terms do not tend to zero. The theorem says this
 cannot happen: once the ratio limit is less than one, some tail has ratios
 bounded by a fixed number $r<1$, forcing geometric decay.
-\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure modes]
-\begin{description}
-  \item[Exposition.]
+\begin{remark*}[Failure mode decomposition]
 \[
 \underbrace{(x_n)\subseteq(0,\infty)}_{\text{positive terms}}
 \quad
@@ -340,7 +341,6 @@ bounded by a fixed number $r<1$, forcing geometric decay.
 The positive-term hypothesis makes each ratio meaningful. The strict gap
 $L<1$ gives a tail on which $x_{n+1}\le r x_n$ for some $r<1$, and repeated
 iteration then gives domination by a null geometric sequence.
-\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]

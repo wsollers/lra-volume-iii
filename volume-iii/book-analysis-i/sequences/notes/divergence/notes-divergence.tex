@@ -30,9 +30,9 @@ $x_n\to L$.
 \]
 \end{remark*}
 
-\begin{remark*}[Predicate reading]
+\begin{remark*}[Definition predicate reading]
 \[
-\operatorname{IsDivergent}(x_n)
+\operatorname{DivergentSequence}(x_n)
 \coloneqq
 \forall L\in\mathbb{R}\;\exists \varepsilon>0\;\forall N\in\mathbb{N}
 \;\exists n\ge N\;\bigl(|x_n-L|\ge\varepsilon\bigr).
@@ -50,9 +50,9 @@ $x_n\to L$.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{IsDivergent}(x_n)
+\neg\operatorname{DivergentSequence}(x_n)
 \Longleftrightarrow
-\exists L\in\mathbb{R}\;\operatorname{ConvergesTo}(x_n,L).
+\exists L\in\mathbb{R}\;\operatorname{ConvergentSequence}(x_n,L).
 \]
 \end{remark*}
 
@@ -93,7 +93,7 @@ x_n\to+\infty
 \]
 \end{remark*}
 
-\begin{remark*}[Predicate reading]
+\begin{remark*}[Definition predicate reading]
 \[
 \operatorname{DivergesToPositiveInfinity}(x_n)
 \coloneqq
@@ -148,7 +148,7 @@ x_n\to-\infty
 \]
 \end{remark*}
 
-\begin{remark*}[Predicate reading]
+\begin{remark*}[Definition predicate reading]
 \[
 \operatorname{DivergesToNegativeInfinity}(x_n)
 \coloneqq
@@ -213,12 +213,12 @@ and does not diverge to $-\infty$.
 \]
 \end{remark*}
 
-\begin{remark*}[Predicate reading]
+\begin{remark*}[Definition predicate reading]
 \[
 \begin{aligned}
-\operatorname{IsOscillatory}(x_n)
+\operatorname{OscillatorySequence}(x_n)
 \coloneqq\;&
-\operatorname{IsDivergent}(x_n)\\
+\operatorname{DivergentSequence}(x_n)\\
 &\land\;\neg\operatorname{DivergesToPositiveInfinity}(x_n)\\
 &\land\;\neg\operatorname{DivergesToNegativeInfinity}(x_n).
 \end{aligned}
@@ -274,13 +274,13 @@ then $(x_n)$ is divergent.
 \]
 \end{remark*}
 
-\begin{remark*}[Predicate reading]
+\begin{remark*}[Definition predicate reading]
 \[
 \operatorname{DivergesToPositiveInfinity}(x_n)
 \lor
 \operatorname{DivergesToNegativeInfinity}(x_n)
 \Longrightarrow
-\operatorname{IsDivergent}(x_n).
+\operatorname{DivergentSequence}(x_n).
 \]
 \end{remark*}
 
@@ -332,17 +332,17 @@ $L,K\in\mathbb{R}$ with $L\ne K$, then $(x_n)$ is divergent.
 \]
 \end{remark*}
 
-\begin{remark*}[Predicate reading]
+\begin{remark*}[Definition predicate reading]
 \[
 \begin{aligned}
 &\exists L,K\in\mathbb{R}\;
 \bigl(
   L\ne K
-  \land \operatorname{IsClusterValue}(x_n,L)
-  \land \operatorname{IsClusterValue}(x_n,K)
+  \land \operatorname{SubsequentialLimit}(x_n,L)
+  \land \operatorname{SubsequentialLimit}(x_n,K)
 \bigr)\\
 &\quad\Longrightarrow
-\operatorname{IsDivergent}(x_n).
+\operatorname{DivergentSequence}(x_n).
 \end{aligned}
 \]
 \end{remark*}
@@ -397,13 +397,13 @@ $x_{\sigma(k)}\to+\infty$.
 \]
 \end{remark*}
 
-\begin{remark*}[Predicate reading]
+\begin{remark*}[Definition predicate reading]
 \[
-\neg\operatorname{BoundedAbove}(x_n)
+\neg\operatorname{BoundedAboveSequence}(x_n)
 \Longrightarrow
 \exists \sigma\;
 \bigl(
-  \operatorname{StrictOrderPreserving}(\sigma)
+  \operatorname{StrictlyIncreasing}(\sigma)
   \land
   \operatorname{DivergesToPositiveInfinity}(x_{\sigma(k)})
 \bigr).
@@ -459,13 +459,13 @@ $x_{\sigma(k)}\to-\infty$.
 \]
 \end{remark*}
 
-\begin{remark*}[Predicate reading]
+\begin{remark*}[Definition predicate reading]
 \[
-\neg\operatorname{BoundedBelow}(x_n)
+\neg\operatorname{BoundedBelowSequence}(x_n)
 \Longrightarrow
 \exists \sigma\;
 \bigl(
-  \operatorname{StrictOrderPreserving}(\sigma)
+  \operatorname{StrictlyIncreasing}(\sigma)
   \land
   \operatorname{DivergesToNegativeInfinity}(x_{\sigma(k)})
 \bigr).
@@ -525,17 +525,17 @@ subsequential limits of $(x_n)$.
 \]
 \end{remark*}
 
-\begin{remark*}[Predicate reading]
+\begin{remark*}[Definition predicate reading]
 \[
-\operatorname{Bounded}(x_n)
+\operatorname{BoundedSequence}(x_n)
 \land
-\operatorname{IsDivergent}(x_n)
+\operatorname{DivergentSequence}(x_n)
 \Longrightarrow
 \exists L,K\in\mathbb{R}\;
 \bigl(
   L\ne K
-  \land \operatorname{IsClusterValue}(x_n,L)
-  \land \operatorname{IsClusterValue}(x_n,K)
+  \land \operatorname{SubsequentialLimit}(x_n,L)
+  \land \operatorname{SubsequentialLimit}(x_n,K)
 \bigr).
 \]
 \end{remark*}

@@ -33,16 +33,12 @@ A sequence that converges to some $L \in \mathbb{R}$ is called
 \]
 \end{remark*}
 
-\begin{remark*}[Predicate reading]
+\begin{remark*}[Definition predicate reading]
 \[
-\operatorname{ConvergesTo}(x_n,L,\mathbb R)
+\operatorname{ConvergentSequence}(x_n, L)
 \;:=\;
 \forall \varepsilon > 0 \;\exists N \in \mathbb{N} \;\forall n \ge N
-\;\bigl(
-  \operatorname{IsCenteredOpenInterval}(I_\varepsilon(L),L,\varepsilon,\mathbb R)
-  \wedge
-  \operatorname{Within}(x_n,I_\varepsilon(L),\mathbb R)
-\bigr).
+\;\operatorname{OutputTolerance}(x_n, L, \varepsilon).
 \]
 \end{remark*}
 
@@ -59,7 +55,7 @@ x_n \not\to L
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{ConvergesTo}(x_n,L)
+\operatorname{NotConvergentTo}(x_n,L)
 \;:=\;
 \exists \varepsilon > 0 \;\forall N \in \mathbb{N} \;\exists n \ge N
 \;\bigl(|x_n - L| \ge \varepsilon\bigr).
@@ -67,18 +63,13 @@ x_n \not\to L
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-\begin{description}
-  \item[Exposition.]
 Failure of convergence to a fixed $L$ means that some positive tolerance
 cannot be controlled on any tail. The escaped terms may oscillate, drift
 monotonically away, or grow without bound, but all such behavior is
 captured by the same persistent-tolerance obstruction.
-\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure modes]
-\begin{description}
-  \item[Exposition.]
+\begin{remark*}[Failure mode decomposition]
 The negation decomposes into a single structural obstruction:
 \[
 \underbrace{\exists \varepsilon > 0}_{\text{a fixed tolerance}}
@@ -89,7 +80,6 @@ The negation decomposes into a single structural obstruction:
 The sequence fails to converge to $L$ not by drifting away once, but
 by returning outside the $\varepsilon$-interval infinitely often regardless
 of how far along the tail one looks.
-\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -102,7 +92,7 @@ strictly stronger and generally false condition. The condition
 $|x_n - L| < \varepsilon$ is the membership assertion $x_n \in (L -
 \varepsilon,\, L + \varepsilon)$; convergence is therefore the statement
 that the tail of the sequence is eventually contained in every
-centered $\varepsilon$-interval about $L$.
+$\varepsilon$-neighborhood of $L$.
 \end{remark*}
 
 \begin{dependencies}
@@ -111,24 +101,24 @@ centered $\varepsilon$-interval about $L$.
 \end{itemize}
 \end{dependencies}
 
-\begin{definitionbox}{Definition (Convergence --- Centered Interval Formulation)}
+\begin{definitionbox}{Definition (Convergence --- Neighborhood Formulation)}
 % ---------------------------------------------------------
-% Definition: Convergence --- Centered Interval Formulation
+% Definition: Convergence --- Neighborhood Formulation
 % Label: def:convergent-sequence-neighborhood
 % ---------------------------------------------------------
-\begin{definition}[Convergence --- Centered Interval Formulation]
+\begin{definition}[Convergence --- Neighborhood Formulation]
 \label{def:convergent-sequence-neighborhood}
 
 Let $(x_n) \subseteq \mathbb{R}$ and let $L \in \mathbb{R}$. The sequence
 $(x_n)$ \textbf{converges} to $L$ if for every $\varepsilon > 0$ the
-centered open interval
+$\varepsilon$-neighborhood
 \[
-    I_\varepsilon(L) \;:=\; (L - \varepsilon,\, L + \varepsilon)
+    V_\varepsilon(L) \;:=\; (L - \varepsilon,\, L + \varepsilon)
 \]
 contains all but finitely many terms of $(x_n)$; that is,
 \[
     \forall \varepsilon > 0 \;\exists N \in \mathbb{N} \;\forall n \ge N
-    \;\bigl(x_n \in I_\varepsilon(L)\bigr).
+    \;\bigl(x_n \in V_\varepsilon(L)\bigr).
 \]
 \end{definition}
 \end{definitionbox}
@@ -141,18 +131,18 @@ contains all but finitely many terms of $(x_n)$; that is,
     x_n \to L
     \;\Longleftrightarrow\;
     \forall \varepsilon > 0 \;\exists N \in \mathbb{N} \;\forall n \ge N
-    \;\bigl(x_n \in I_\varepsilon(L)\bigr)
+    \;\bigl(x_n \in V_\varepsilon(L)\bigr)
 \Bigr).
 \end{aligned}
 \]
 \end{remark*}
 
-\begin{remark*}[Predicate reading]
+\begin{remark*}[Definition predicate reading]
 \[
-\operatorname{ConvergesTo}(x_n,L,\mathbb R)
+\operatorname{ConvergentSequence}(x_n, L)
 \;:=\;
 \forall \varepsilon > 0 \;\exists N \in \mathbb{N} \;\forall n \ge N
-\;\bigl(x_n \in I_\varepsilon(L)\bigr).
+\;\bigl(x_n \in V_\varepsilon(L)\bigr).
 \]
 \end{remark*}
 
@@ -162,55 +152,49 @@ contains all but finitely many terms of $(x_n)$; that is,
 x_n \not\to L
 \;\Longleftrightarrow\;
 &\;\exists \varepsilon > 0 \;\forall N \in \mathbb{N} \;\exists n \ge N\\
-&\quad\bigl(x_n \notin I_\varepsilon(L)\bigr).
+&\quad\bigl(x_n \notin V_\varepsilon(L)\bigr).
 \end{aligned}
 \]
 \end{remark*}
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{ConvergesTo}(x_n,L,\mathbb R)
+\operatorname{NotConvergentTo}(x_n,L)
 \;:=\;
 \exists \varepsilon > 0 \;\forall N \in \mathbb{N} \;\exists n \ge N
-\;\bigl(x_n \notin I_\varepsilon(L)\bigr).
+\;\bigl(x_n \notin V_\varepsilon(L)\bigr).
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-\begin{description}
-  \item[Exposition.]
-Failure of the centered interval formulation is exactly failure to trap a
-tail in every centered interval about $L$. Different examples may escape by
+Failure of the neighborhood formulation is exactly failure to trap a
+tail in every neighborhood of $L$. Different examples may escape by
 oscillation, by monotone drift, or by unbounded growth, but the formal
-failure is always the existence of one interval that every tail
+failure is always the existence of one neighborhood that every tail
 misses at least once.
-\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure modes]
-\begin{description}
-  \item[Exposition.]
+\begin{remark*}[Failure mode decomposition]
 \[
-\underbrace{\exists \varepsilon > 0}_{\text{a fixed centered interval}}
+\underbrace{\exists \varepsilon > 0}_{\text{a fixed neighborhood}}
 \;\underbrace{\forall N \in \mathbb{N}}_{\text{no tail suffices}}
 \;\underbrace{\exists n \ge N}_{\text{terms escape infinitely often}}
-\;\underbrace{x_n \notin I_\varepsilon(L)}_{\text{outside every candidate interval}}.
+\;\underbrace{x_n \notin V_\varepsilon(L)}_{\text{outside every candidate neighborhood}}.
 \]
-The sequence fails to converge to $L$ precisely when some centered interval
+The sequence fails to converge to $L$ precisely when some neighborhood
 of $L$ contains only finitely many terms: infinitely many terms lie
 permanently outside it.
-\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
-The centered interval formulation reframes convergence as a set-containment
+The neighborhood formulation reframes convergence as a set-containment
 condition rather than an inequality condition. The assertion $x_n \in
-I_\varepsilon(L)$ is identical to $|x_n - L| < \varepsilon$; the two
+V_\varepsilon(L)$ is identical to $|x_n - L| < \varepsilon$; the two
 definitions are logically equivalent and the choice between them is one
-of language, not content. The local-set language is the natural
+of language, not content. The neighborhood language is the natural
 bridge to the topological formulation: in a general topological space,
-open sets replace centered $\varepsilon$-intervals and the definition reads
-identically with $I_\varepsilon(L)$ replaced by any open set $U$
+open sets replace $\varepsilon$-neighborhoods and the definition reads
+identically with $V_\varepsilon(L)$ replaced by any open set $U$
 containing $L$. The phrase \emph{all but finitely many terms} is the
 canonical prose compression of the quantifier block $\exists N \in
 \mathbb{N} \;\forall n \ge N$, and is standard in the literature.
@@ -219,7 +203,7 @@ canonical prose compression of the quantifier block $\exists N \in
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:convergent-sequence]{Convergence of a Sequence}
-  \item \hyperref[def:epsilon-neighbourhood]{Centered Open Interval}
+  \item \hyperref[def:epsilon-neighbourhood]{$\varepsilon$-neighbourhood}
 \end{itemize}
 \end{dependencies}
 
@@ -249,7 +233,7 @@ statements are equivalent.
     \item $\forall \varepsilon > 0 \;\exists K \in \mathbb{N} \;\forall n \ge K
           \;\bigl(L - \varepsilon < x_n < L + \varepsilon\bigr)$.
     \item $\forall \varepsilon > 0 \;\exists K \in \mathbb{N} \;\forall n \ge K
-          \;\bigl(x_n \in I_\varepsilon(L)\bigr)$.
+          \;\bigl(x_n \in V_\varepsilon(L)\bigr)$.
 \end{enumerate}
 
 \smallskip
@@ -271,12 +255,13 @@ statements are equivalent.
 \]
 \end{remark*}
 
-\begin{remark*}[Predicate reading]
+\begin{remark*}[Theorem predicate reading]
 \[
-\operatorname{ConvergesTo}(x_n,L,\mathbb{R})
+\operatorname{EquivalentConvergenceForms}(x_n,L)
+\;:=\;
+\operatorname{ConvergentSequence}(x_n,L)
 \Longleftrightarrow
-\forall \varepsilon > 0 \;\exists K \in \mathbb{N} \;\forall n \ge K
-\;\bigl(x_n \in I_\varepsilon(L)\bigr).
+\operatorname{NeighborhoodConvergentSequence}(x_n,L).
 \]
 \end{remark*}
 
@@ -288,8 +273,8 @@ absolute value formulation. Condition (c) makes the interval
 structure explicit by expanding $|x_n - L| < \varepsilon$ into its
 equivalent double inequality $L - \varepsilon < x_n < L +
 \varepsilon$; this is useful in proofs where upper and lower bounds
-are handled separately. Condition (d) is the centered interval
-formulation: $x_n \in I_\varepsilon(L)$ is identical to conditions
+are handled separately. Condition (d) is the neighborhood
+formulation: $x_n \in V_\varepsilon(L)$ is identical to conditions
 (b) and (c) but frames convergence as set membership, which is the
 natural language for the topological generalization. The index $K$
 plays the same role as $N$ in the base definition
@@ -301,9 +286,14 @@ the sense of \hyperref[def:m-tail]{Definition~\ref*{def:m-tail}}.
 \begin{dependencies}
 \begin{itemize}
   \item \hyperref[def:convergent-sequence]{Convergence of a Sequence}
-  \item \hyperref[def:convergent-sequence-neighborhood]{Convergence --- Centered Interval Formulation}
+  \item \hyperref[def:convergent-sequence-neighborhood]{Convergence --- Neighborhood Formulation}
 \end{itemize}
 \end{dependencies}
+
+
+
+
+
 
 
 

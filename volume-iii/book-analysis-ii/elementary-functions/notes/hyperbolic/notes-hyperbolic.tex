@@ -29,9 +29,7 @@ Additional: $\operatorname{sech} x := 1/\cosh x$,\;
 $\operatorname{csch} x := 1/\sinh x$,\;
 $\coth x := \cosh x / \sinh x$.
 \end{definition}
-\end{definitionbox}
-
-\begin{remark*}[Standard quantified statement]
+\end{definitionbox}\begin{remark*}[Standard quantified statement]
 \[
   \forall x \in \mathbb{R} :\;
   \cosh x = \frac{e^x + e^{-x}}{2} \geq 1,\;
@@ -40,39 +38,44 @@ $\coth x := \cosh x / \sinh x$.
 \]
 \end{remark*}
 
-\begin{remark*}[Predicate reading]
+\begin{remark*}[Definition predicate reading]
 \[
-  y=\cosh x
+  \operatorname{HyperbolicCosh}(x,y)
   \;\colonequiv\;
-  y = \frac{e^x + e^{-x}}{2},
+  y = \frac{e^x + e^{-x}}{2}.
   \qquad
-  y=\sinh x
+  \operatorname{HyperbolicSinh}(x,y)
   \;\colonequiv\;
   y = \frac{e^x - e^{-x}}{2}.
 \]
 \[
-  y=\tanh x
+  \operatorname{HyperbolicTanh}(x,y)
   \;\colonequiv\;
   \cosh x \neq 0 \;\wedge\; y = \frac{\sinh x}{\cosh x}.
 \]
+\end{remark*}
 
-
+\begin{remark*}[Definition predicate reading]
 \[
-  \cosh^2 x-\sinh^2 x=1.
+  \operatorname{HyperbolicPythagorean}(x)
+  \;\colonequiv\;
+  \operatorname{HyperbolicCosh}(x,c)
+  \;\wedge\; \operatorname{HyperbolicSinh}(x,s)
+  \;\wedge\; c^2 - s^2 = 1.
 \]
 \end{remark*}
 
 \begin{remark*}[Negated quantified statement]
 \[
-  y\neq\tanh x
+  \neg\,\operatorname{HyperbolicTanh}(x,y)
   \;\iff\;
   y \neq \frac{\sinh x}{\cosh x}.
 \]
-Note $\cosh x > 0$ for all $x$, so $\tanh$ is defined on all of
-$\mathbb{R}$.
+Note $\cosh x > 0$ for all $x$, so $\operatorname{HyperbolicTanh}$
+is defined on all of $\mathbb{R}$.
 \end{remark*}
 
-\begin{remark*}[Interpretation]
+\begin{remark*}[Contrast with trigonometric functions]
 \begin{center}
 \begin{tabular}{@{}ll@{}}
 \textbf{Trigonometric} & \textbf{Hyperbolic} \\
@@ -87,17 +90,18 @@ The minus sign in $\cosh^2 - \sinh^2 = 1$ versus $\cos^2 + \sin^2 =
 1$ reflects the substitution $x \mapsto ix$ in Euler's formula.
 \end{remark*}
 
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:exponential]{Exponential Function}
-\end{itemize}
-\end{dependencies}
-
 % ---------------------------------------------------------
 % Proposition --- Hyperbolic Pythagorean Identity
 % ---------------------------------------------------------
 
 \begin{propositionbox}{Proposition (Hyperbolic Pythagorean Identity)}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:exponential]{Exponential Function}
+  \item \hyperref[thm:r-is-a-field]{$\mathbb{R}$ Is a Field}
+\end{itemize}
+\end{dependencies}
 \begin{proposition}[Hyperbolic Pythagorean Identity]
 \label{prop:hyperbolic-pythagorean}
 For all $x \in \mathbb{R}$:
@@ -106,13 +110,9 @@ For all $x \in \mathbb{R}$:
 \]
 
 \smallskip\noindent
-
-
 \hyperref[prf:hyperbolic-pythagorean]{\textit{Go to proof.}}
 \end{proposition}
-\end{propositionbox}
-
-\begin{remark*}[Standard quantified statement]
+\end{propositionbox}\begin{remark*}[Standard quantified statement]
 \[
   \forall x \in \mathbb{R} :\; \cosh^2 x - \sinh^2 x = 1.
 \]
@@ -127,7 +127,7 @@ For all $x \in \mathbb{R}$:
 The negation has no witness --- the identity holds universally.
 \end{remark*}
 
-\begin{remark*}[Interpretation]
+\begin{remark*}[Proof]
 Direct computation:
 \[
   \cosh^2 x - \sinh^2 x
@@ -136,18 +136,19 @@ Direct computation:
 \]
 \end{remark*}
 
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:exponential]{Exponential Function}
-  \item \hyperref[thm:r-is-a-field]{$\mathbb{R}$ Is a Field}
-\end{itemize}
-\end{dependencies}
-
 % ---------------------------------------------------------
 % Proposition --- Addition Formulas
 % ---------------------------------------------------------
 
 \begin{propositionbox}{Proposition (Addition Formulas for Hyperbolic Functions)}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:hyperbolic]{Hyperbolic Functions}
+  \item \hyperref[def:exponential]{Exponential Function}
+  \item \hyperref[thm:r-is-a-field]{$\mathbb{R}$ Is a Field}
+\end{itemize}
+\end{dependencies}
 \begin{proposition}[Addition Formulas for Hyperbolic Functions]
 \label{prop:hyperbolic-addition}
 For all $x, y \in \mathbb{R}$:
@@ -158,13 +159,9 @@ For all $x, y \in \mathbb{R}$:
 \]
 
 \smallskip\noindent
-
-
 \hyperref[prf:hyperbolic-addition]{\textit{Go to proof.}}
 \end{proposition}
-\end{propositionbox}
-
-\begin{remark*}[Standard quantified statement]
+\end{propositionbox}\begin{remark*}[Standard quantified statement]
 \[
   \forall x,y\in\mathbb{R}:\;
   \sinh(x+y) = \sinh x\cosh y + \cosh x\sinh y
@@ -173,8 +170,10 @@ For all $x, y \in \mathbb{R}$:
 \]
 \end{remark*}
 
-\begin{remark*}[Predicate reading]
+\begin{remark*}[Definition predicate reading]
 \[
+  \operatorname{HyperbolicAddition}(x,y)
+  \;\colonequiv\;
   \sinh(x+y) = \sinh x\cosh y + \cosh x\sinh y
   \;\wedge\;
   \cosh(x+y) = \cosh x\cosh y + \sinh x\sinh y.
@@ -191,11 +190,12 @@ For all $x, y \in \mathbb{R}$:
 The negation has no witness.
 \end{remark*}
 
-\begin{remark*}[Interpretation]
+\begin{remark*}[Proof strategy]
 Substitute the definitions and expand, or note the formulas follow
 from $e^{x+y} = e^x e^y$ by taking even and odd parts.
+\end{remark*}
 
-
+\begin{remark*}[Comparison with trigonometric addition formulas]
 The $\sinh$ formula matches $\sin(x+y)$ exactly. The $\cosh$ formula
 differs from $\cos(x+y)$ only in the sign of the last term:
 $+\sinh x\sinh y$ versus $-\sin x\sin y$. The sign difference is a
@@ -203,19 +203,20 @@ direct consequence of $\cosh^2 - \sinh^2 = 1$ versus
 $\cos^2 + \sin^2 = 1$.
 \end{remark*}
 
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:hyperbolic]{Hyperbolic Functions}
-  \item \hyperref[def:exponential]{Exponential Function}
-  \item \hyperref[thm:r-is-a-field]{$\mathbb{R}$ Is a Field}
-\end{itemize}
-\end{dependencies}
-
 % ---------------------------------------------------------
 % Proposition --- Limits of tanh
 % ---------------------------------------------------------
 
 \begin{propositionbox}{Proposition (Limits of $\tanh$)}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:hyperbolic]{Hyperbolic Functions}
+  \item \hyperref[def:exponential]{Exponential Function}
+  \item \hyperref[def:addition-on-r]{Addition on $\mathbb{R}$}
+  \item \hyperref[def:multiplication-on-r]{Multiplication on $\mathbb{R}$}
+\end{itemize}
+\end{dependencies}
 \begin{proposition}[Limits of $\tanh$]
 \label{prop:tanh-limits}
 \[
@@ -225,13 +226,9 @@ $\cos^2 + \sin^2 = 1$.
 \]
 
 \smallskip\noindent
-
-
 \hyperref[prf:tanh-limits]{\textit{Go to proof.}}
 \end{proposition}
-\end{propositionbox}
-
-\begin{remark*}[Standard quantified statement]
+\end{propositionbox}\begin{remark*}[Standard quantified statement]
 \[
   \operatorname{LimitAtInfinity}(\tanh x,\,+\infty,\,1)
   \;\wedge\;
@@ -239,17 +236,12 @@ $\cos^2 + \sin^2 = 1$.
 \]
 \end{remark*}
 
-\begin{remark*}[Predicate reading]
+\begin{remark*}[Definition predicate reading]
 \[
   \operatorname{LimitAtInfinity}(\tanh x,\,+\infty,\,1)
   \;\colonequiv\;
   \forall\varepsilon>0,\;\exists M\in\mathbb{R},\;\forall x:\;
-  x>M \Rightarrow
-  \bigl(
-    \operatorname{IsCenteredOpenInterval}(I_\varepsilon(1),1,\varepsilon,\mathbb R)
-    \wedge
-    \operatorname{Within}(\tanh x,I_\varepsilon(1),\mathbb R)
-  \bigr).
+  x>M \Rightarrow \operatorname{OutputTolerance}(\tanh x,1,\varepsilon).
 \]
 \end{remark*}
 
@@ -262,26 +254,26 @@ $\cos^2 + \sin^2 = 1$.
 \]
 \end{remark*}
 
-\begin{remark*}[Interpretation]
+\begin{remark*}[Proof strategy]
 Write $\tanh x = (1 - e^{-2x})/(1 + e^{-2x})$. As $x \to +\infty$,
 $e^{-2x} \to 0$, giving $\tanh x \to 1$. The limit at $-\infty$
 follows by oddness: $\tanh(-x) = -\tanh(x)$.
 \end{remark*}
-
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:hyperbolic]{Hyperbolic Functions}
-  \item \hyperref[def:exponential]{Exponential Function}
-  \item \hyperref[def:addition-on-r]{Addition on $\mathbb{R}$}
-  \item \hyperref[def:multiplication-on-r]{Multiplication on $\mathbb{R}$}
-\end{itemize}
-\end{dependencies}
 
 % ---------------------------------------------------------
 % Definition --- Inverse Hyperbolic Functions
 % ---------------------------------------------------------
 
 \begin{definitionbox}{Definition}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:hyperbolic]{Hyperbolic Functions}
+  \item \hyperref[def:exponential]{Exponential Function}
+  \item \hyperref[def:limit-at-infinity]{Limit at Infinity}
+  \item \hyperref[thm:limit-quotient]{Limit of a Quotient}
+\end{itemize}
+\end{dependencies}
 \begin{definition}[Inverse Hyperbolic Functions]
 \label{def:inverse-hyperbolic}
 Since $\sinh$ is strictly increasing and bijective $\mathbb{R} \to
@@ -305,9 +297,7 @@ Explicit logarithmic formulas:
   \quad |x| < 1.
 \end{align*}
 \end{definition}
-\end{definitionbox}
-
-\begin{remark*}[Standard quantified statement]
+\end{definitionbox}\begin{remark*}[Standard quantified statement]
 \[
   \forall x\in\mathbb{R}:\;
   \sinh(\operatorname{arcsinh} x)=x
@@ -323,16 +313,16 @@ Explicit logarithmic formulas:
 \]
 \end{remark*}
 
-\begin{remark*}[Predicate reading]
+\begin{remark*}[Definition predicate reading]
 \[
-  x=\operatorname{arcsinh} y
+  \operatorname{Arcsinh}(y,x)
   \;\colonequiv\;
   x\in\mathbb{R} \;\wedge\; \sinh x = y
   \;\colonequiv\;
   x = \ln\!\left(y+\sqrt{y^2+1}\right).
 \]
 \[
-  x=\operatorname{arctanh} y
+  \operatorname{Arctanh}(y,x)
   \;\colonequiv\;
   |y|<1 \;\wedge\; \tanh x = y
   \;\colonequiv\;
@@ -342,18 +332,19 @@ Explicit logarithmic formulas:
 
 \begin{remark*}[Negated quantified statement]
 \[
-  \neg(x=\operatorname{arctanh} y)
+  \neg\,\operatorname{Arctanh}(y,x)
   \;\iff\;
-  |y|\geq 1 \;\vee\; (|y|<1 \wedge x\neq\operatorname{arctanh} y).
+  |y|\geq 1 \;\vee\; \tanh x \neq y.
 \]
 \end{remark*}
 
-\begin{remark*}[Interpretation]
+\begin{remark*}[Derivation of $\operatorname{arcsinh}$]
 Set $y = \sinh x = (e^x - e^{-x})/2$ and let $u = e^x > 0$. Then
 $y = (u - 1/u)/2$, so $u^2 - 2yu - 1 = 0$. The positive root is
 $u = y + \sqrt{y^2+1}$, giving $x = \ln(y+\sqrt{y^2+1})$.
+\end{remark*}
 
-
+\begin{remark*}[Derivatives]
 $(\operatorname{arcsinh} x)' = 1/\sqrt{x^2+1}$;\;
 $(\operatorname{arccosh} x)' = 1/\sqrt{x^2-1}$ for $x > 1$;\;
 $(\operatorname{arctanh} x)' = 1/(1-x^2)$ for $|x| < 1$.
@@ -362,14 +353,6 @@ $\cosh$, and $\tanh$ respectively.
 \end{remark*}
 
 \begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:hyperbolic]{Hyperbolic Functions}
-  \item \hyperref[def:exponential]{Exponential Function}
-  \item \hyperref[def:limit-at-infinity]{Limit at Infinity}
-  \item \hyperref[thm:limit-quotient]{Limit of a Quotient}
-\end{itemize}
-
-
 \begin{itemize}
   \item \hyperref[def:hyperbolic]{Hyperbolic Functions}
   \item \hyperref[def:natural-logarithm]{Natural Logarithm}

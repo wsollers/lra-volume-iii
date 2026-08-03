@@ -29,13 +29,13 @@ $M\in\mathbb{R}$ there exists $x\in X$ such that $x<M$.
 \]
 \end{remark*}
 
-\begin{remark*}[Predicate reading]
+\begin{remark*}[Definition predicate reading]
 \[
 \begin{aligned}
-\left(+\infty\in\operatorname{Closure}_{\overline{\mathbb{R}}}(X)\right)
+\operatorname{PlusInfAdherent}(X)
 &\coloneqq
 \forall M\in\mathbb{R}\;\exists x\in X\;(x>M),\\
-\left(-\infty\in\operatorname{Closure}_{\overline{\mathbb{R}}}(X)\right)
+\operatorname{MinusInfAdherent}(X)
 &\coloneqq
 \forall M\in\mathbb{R}\;\exists x\in X\;(x<M).
 \end{aligned}
@@ -58,33 +58,27 @@ $M\in\mathbb{R}$ there exists $x\in X$ such that $x<M$.
 \begin{remark*}[Negation predicate reading]
 \[
 \begin{aligned}
-\neg\left(+\infty\in\operatorname{Closure}_{\overline{\mathbb{R}}}(X)\right)
+\neg\operatorname{PlusInfAdherent}(X)
 &\Longleftrightarrow
-\operatorname{BoundedAbove}(X,\mathbb{R},\le),\\
-\neg\left(-\infty\in\operatorname{Closure}_{\overline{\mathbb{R}}}(X)\right)
+\exists M\in\mathbb{R}\;\forall x\in X\;(x\le M),\\
+\neg\operatorname{MinusInfAdherent}(X)
 &\Longleftrightarrow
-\operatorname{BoundedBelow}(X,\mathbb{R},\le).
+\exists M\in\mathbb{R}\;\forall x\in X\;(x\ge M).
 \end{aligned}
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-\begin{description}
-  \item[Exposition.]
 Infinite adherence fails at $+\infty$ exactly when $X$ is bounded above,
 and fails at $-\infty$ exactly when $X$ is bounded below.
-\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure modes]
-\begin{description}
-  \item[Exposition.]
+\begin{remark*}[Failure mode decomposition]
 \[
 \underbrace{\exists M\in\mathbb{R}\;\forall x\in X\;(x\le M)}_{\text{finite upper bound}}
 \qquad
 \underbrace{\exists M\in\mathbb{R}\;\forall x\in X\;(x\ge M)}_{\text{finite lower bound}}.
 \]
-\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -93,14 +87,7 @@ $\overline{\mathbb{R}}$: finite adherence uses balls; infinite
 adherence uses rays.
 \end{remark*}
 
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:subset]{Subset}
-  \item \hyperref[def:reals]{Real Numbers}
-  \item \hyperref[def:extended-real-numbers]{Extended Real Numbers}
-  \item \hyperref[def:ray]{Ray}
-\end{itemize}
-\end{dependencies}
+\NoLocalDependencies
 \begin{definitionbox}{Definition (Limit at Infinity)}
 \begin{definition}[Limit at Infinity]
 \label{def:limit-at-infinity}
@@ -119,7 +106,7 @@ for every $\varepsilon > 0$ there exists $M \in \mathbb{R}$ such that for every 
 \]
 \end{remark*}
 
-\begin{remark*}[Predicate reading]
+\begin{remark*}[Definition predicate reading]
 \[
 \operatorname{LimitAtInfinity}(f,+\infty,L) \coloneqq \forall \varepsilon > 0\ \exists M \in \mathbb{R}\ \forall x \in X\ (x > M \Rightarrow |f(x) - L| < \varepsilon).
 \]
@@ -142,25 +129,19 @@ for every $\varepsilon > 0$ there exists $M \in \mathbb{R}$ such that for every 
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-\begin{description}
-  \item[Exposition.]
 The definition fails only when there is a fixed tolerance $\varepsilon_0$ that the function cannot satisfy on any tail of $X$, meaning every attempt to choose $M$ leaves some point $x > M$ with $|f(x) - L| \ge \varepsilon_0$.
-\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure modes]
-\begin{description}
-  \item[Exposition.]
+\begin{remark*}[Failure mode decomposition]
 \[
 \underbrace{\exists \varepsilon_0 > 0}_{\text{fixed tolerance}}
 \underbrace{\forall M \in \mathbb{R}}_{\text{no tail succeeds}}
 \underbrace{\exists x \in X\ (x > M \land |f(x) - L| \ge \varepsilon_0)}_{\text{far-point violation}}.
 \]
-\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
-The limit at $+\infty$ demands that eventually the function values stay within any prescribed accuracy of $L$. Intuitively, once $x$ is large enough, the graph of $f$ must lie in the horizontal band of height $\varepsilon$ around $L$. Failure occurs when some positive tolerance is violated infinitely often by points escaping to $+\infty$. This definition treats unbounded domains using the same epsilon control that governs finite limits, capturing the long-range behavior of $f$ with respect to the ideal point at infinity.
+The limit at $+\infty$ demands that eventually the function values stay within any prescribed accuracy of $L$. Intuitively, once $x$ is large enough, the graph of $f$ must lie in the horizontal band of height $\varepsilon$ around $L$. Failure occurs when some positive tolerance is violated infinitely often by points escaping to $+\infty$. This definition allows us to treat unbounded domains using the same epsilon control that governs finite limits, capturing the long-range behavior of $f$ with respect to the ideal point at infinity.
 \end{remark*}
 
 \begin{dependencies}

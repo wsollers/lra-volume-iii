@@ -244,6 +244,7 @@
 \newcommand{\StructureMetadata}[1]{}       % future Knowledge Explorer structure blueprint metadata
 \newcommand{\ClassificationMetadata}[1]{}  % future Knowledge Explorer classification metadata
 \newcommand{\SyntacticMetadata}[1]{}       % future Knowledge Explorer syntactic object metadata
+\newcommand{\SourceVariantOf}[4]{}         % target label, author, book/source, relation kind
 \newcommand{\LRAWorkedExampleFor}[1]{}     % comma-separated formal labels this worked example illustrates
 \newcommand{\LRAWorkedExampleUses}[1]{}    % comma-separated formal labels used in the worked example
 \newcommand{\LRAWorkedExampleTags}[1]{}    % comma-separated explorer tags for worked-example search/filtering
@@ -253,6 +254,7 @@
 % ============================================================
 % Default: complete digital/PDF edition.
 % Print edition may be enabled either by:
+%   LRA_EDITION=print latexmk -lualatex volume-i.tex
 %   LRA_PRINT_EDITION=1 latexmk -lualatex volume-i.tex
 % or by command-line TeX injection:
 %   lualatex "\def\LRAPrintEditionRequested{1}\input{volume-i.tex}"
@@ -266,8 +268,11 @@
 \fi
 \ifdefined\directlua
   \directlua{
+    local edition = os.getenv("LRA_EDITION")
     local v = os.getenv("LRA_PRINT_EDITION")
-    if v and v ~= "" and v ~= "0" and v:lower() ~= "false" and v:lower() ~= "no" then
+    if edition and edition:lower() == "print" then
+      tex.sprint("\\global\\LRAPrintEditiontrue")
+    elseif v and v ~= "" and v ~= "0" and v:lower() ~= "false" and v:lower() ~= "no" then
       tex.sprint("\\global\\LRAPrintEditiontrue")
     end
   }

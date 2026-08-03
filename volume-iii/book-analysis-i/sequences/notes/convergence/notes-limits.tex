@@ -29,11 +29,13 @@ $L = K$.
 \]
 \end{remark*}
 
-\begin{remark*}[Predicate reading]
+\begin{remark*}[Theorem predicate reading]
 \[
-\bigl(\operatorname{ConvergesTo}(x_n,L,\mathbb{R})
+\operatorname{UniqueSequentialLimit}(x_n,L,K)
+\;:=\;
+\bigl(\operatorname{ConvergentSequence}(x_n,L)
 \land
-\operatorname{ConvergesTo}(x_n,K,\mathbb{R})\bigr)
+\operatorname{ConvergentSequence}(x_n,K)\bigr)
 \Longrightarrow L=K.
 \]
 \end{remark*}
@@ -54,25 +56,22 @@ $L = K$.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\operatorname{ConvergesTo}(x_n,L,\mathbb{R})
+\lnot\operatorname{UniqueSequentialLimit}(x_n,L,K)
+\;:=\;
+\operatorname{ConvergentSequence}(x_n,L)
 \land
-\operatorname{ConvergesTo}(x_n,K,\mathbb{R})
+\operatorname{ConvergentSequence}(x_n,K)
 \land L\neq K.
 \]
 \end{remark*}
 
 \begin{remark*}[Failure modes]
-\begin{description}
-  \item[Exposition.]
 The only failure mode is the existence of one real sequence with two
 distinct real limits. In $\mathbb{R}$ this is impossible because
 distinct real numbers can be separated by disjoint neighborhoods.
-\end{description}
 \end{remark*}
 
-\begin{remark*}[Failure modes]
-\begin{description}
-  \item[Exposition.]
+\begin{remark*}[Failure mode decomposition]
 \[
 \underbrace{\exists (x_n) \subseteq \mathbb{R}}_{\text{some sequence}}
 \;\underbrace{x_n \to L \;\land\; x_n \to K}_{\text{converges to two values}}
@@ -84,7 +83,6 @@ topological spaces where distinct points cannot be separated by disjoint
 open sets. The proof that it cannot occur in $\mathbb{R}$ is precisely
 an argument that $\mathbb{R}$ has enough room to separate any two
 distinct points by disjoint $\varepsilon$-neighborhoods.
-\end{description}
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -143,12 +141,12 @@ $L\le M$.
 \]
 \end{remark*}
 
-\begin{remark*}[Predicate reading]
+\begin{remark*}[Theorem predicate reading]
 \[
 \bigl(
-\operatorname{ConvergesTo}(x_n,L)
+\operatorname{ConvergentSequence}(x_n,L)
 \land
-\operatorname{ConvergesTo}(y_n,M)
+\operatorname{ConvergentSequence}(y_n,M)
 \land
 \operatorname{Eventually}(x_n,\;x_n\le y_n)
 \bigr)
@@ -206,12 +204,12 @@ $N\in\mathbb{N}$ such that $x_n<y_n$ for every $n\ge N$.
 \]
 \end{remark*}
 
-\begin{remark*}[Predicate reading]
+\begin{remark*}[Theorem predicate reading]
 \[
 \bigl(
-\operatorname{ConvergesTo}(x_n,A)
+\operatorname{ConvergentSequence}(x_n,A)
 \land
-\operatorname{ConvergesTo}(y_n,B)
+\operatorname{ConvergentSequence}(y_n,B)
 \land
 A<B
 \bigr)
@@ -282,21 +280,21 @@ Suppose that $x_n\to A$ and $y_n\to B$.
 \]
 \end{remark*}
 
-\begin{remark*}[Predicate reading]
+\begin{remark*}[Theorem predicate reading]
 \[
 \begin{aligned}
 &\bigl(
-\operatorname{ConvergesTo}(x_n,A)
+\operatorname{ConvergentSequence}(x_n,A)
 \land
-\operatorname{ConvergesTo}(y_n,B)
+\operatorname{ConvergentSequence}(y_n,B)
 \land
 \operatorname{Eventually}(x_n,\;x_n<y_n)
 \bigr)
 \Longrightarrow A\le B,\\
 &\bigl(
-\operatorname{ConvergesTo}(x_n,A)
+\operatorname{ConvergentSequence}(x_n,A)
 \land
-\operatorname{ConvergesTo}(y_n,B)
+\operatorname{ConvergentSequence}(y_n,B)
 \land
 \operatorname{Eventually}(x_n,\;x_n>y_n)
 \bigr)
@@ -378,22 +376,22 @@ that $x_n\to A$.
 \]
 \end{remark*}
 
-\begin{remark*}[Predicate reading]
+\begin{remark*}[Theorem predicate reading]
 \[
 \begin{aligned}
-&\operatorname{ConvergesTo}(x_n,A)
+&\operatorname{ConvergentSequence}(x_n,A)
 \land
 \operatorname{Eventually}(x_n,\;x_n\le B)
 \Longrightarrow A\le B,\\
-&\operatorname{ConvergesTo}(x_n,A)
+&\operatorname{ConvergentSequence}(x_n,A)
 \land
 \operatorname{Eventually}(x_n,\;x_n<B)
 \Longrightarrow A\le B,\\
-&\operatorname{ConvergesTo}(x_n,A)
+&\operatorname{ConvergentSequence}(x_n,A)
 \land
 \operatorname{Eventually}(x_n,\;x_n\ge B)
 \Longrightarrow A\ge B,\\
-&\operatorname{ConvergesTo}(x_n,A)
+&\operatorname{ConvergentSequence}(x_n,A)
 \land
 \operatorname{Eventually}(x_n,\;x_n>B)
 \Longrightarrow A\ge B.
@@ -449,11 +447,11 @@ $n\ge N_0$, then $x_n\to L$.
 \]
 \end{remark*}
 
-\begin{remark*}[Predicate reading]
+\begin{remark*}[Theorem predicate reading]
 \[
 \operatorname{Eventually}(x_n,\;L\le x_n\le L)
 \Longrightarrow
-\operatorname{ConvergesTo}(x_n,L).
+\operatorname{ConvergentSequence}(x_n,L).
 \]
 \end{remark*}
 
@@ -508,17 +506,17 @@ $n\ge N_0$, then $x_n\to L$.
 \]
 \end{remark*}
 
-\begin{remark*}[Predicate reading]
+\begin{remark*}[Theorem predicate reading]
 \[
 \bigl(
-\operatorname{ConvergesTo}(a_n,L)
+\operatorname{ConvergentSequence}(a_n,L)
 \land
-\operatorname{ConvergesTo}(b_n,L)
+\operatorname{ConvergentSequence}(b_n,L)
 \land
 \operatorname{Eventually}(x_n,\;a_n\le x_n\le b_n)
 \bigr)
 \Longrightarrow
-\operatorname{ConvergesTo}(x_n,L).
+\operatorname{ConvergentSequence}(x_n,L).
 \]
 \end{remark*}
 
@@ -570,15 +568,15 @@ $|x_n-L|\le u_n$ for every $n\ge N_0$, then $x_n\to L$.
 \]
 \end{remark*}
 
-\begin{remark*}[Predicate reading]
+\begin{remark*}[Theorem predicate reading]
 \[
 \bigl(
-\operatorname{ConvergesTo}(u_n,0)
+\operatorname{ConvergentSequence}(u_n,0)
 \land
 \operatorname{Eventually}(x_n,\;|x_n-L|\le u_n)
 \bigr)
 \Longrightarrow
-\operatorname{ConvergesTo}(x_n,L).
+\operatorname{ConvergentSequence}(x_n,L).
 \]
 \end{remark*}
 
@@ -595,5 +593,6 @@ sequence.
   \item \hyperref[thm:sequence-squeeze-theorem]{Sequence Squeeze Theorem}
 \end{itemize}
 \end{dependencies}
+
 
 

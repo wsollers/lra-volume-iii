@@ -32,9 +32,9 @@ is a \textbf{strictly increasing index map} if
 \]
 \end{remark*}
 
-\begin{remark*}[Predicate reading]
+\begin{remark*}[Definition predicate reading]
 \[
-\operatorname{StrictOrderPreserving}(\sigma)
+\operatorname{StrictlyIncreasing}(\sigma)
 \coloneqq
 \forall k,\ell\in\mathbb{N}\;(k<\ell\Longrightarrow \sigma(k)<\sigma(\ell)).
 \]
@@ -50,7 +50,7 @@ is a \textbf{strictly increasing index map} if
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{StrictOrderPreserving}(\sigma)
+\neg\operatorname{StrictlyIncreasing}(\sigma)
 \Longleftrightarrow
 \exists k,\ell\in\mathbb{N}\;(k<\ell\land \sigma(\ell)\le \sigma(k)).
 \]
@@ -98,13 +98,13 @@ $\sigma:\mathbb{N}\to\mathbb{N}$ is a strictly increasing index map.
 \]
 \end{remark*}
 
-\begin{remark*}[Predicate reading]
+\begin{remark*}[Definition predicate reading]
 \[
-\operatorname{IsSubsequence}(y_k,x_n)
+\operatorname{Subsequence}(y_k,x_n)
 \coloneqq
 \exists \sigma\;
 \bigl(
-  \operatorname{StrictOrderPreserving}(\sigma)
+  \operatorname{StrictlyIncreasing}(\sigma)
   \land
   \forall k\in\mathbb{N}\;(y_k=x_{\sigma(k)})
 \bigr).
@@ -128,7 +128,7 @@ $\sigma:\mathbb{N}\to\mathbb{N}$ is a strictly increasing index map.
 
 \begin{remark*}[Negation predicate reading]
 \[
-\neg\operatorname{IsSubsequence}(y_k,x_n).
+\neg\operatorname{Subsequence}(y_k,x_n).
 \]
 \end{remark*}
 
@@ -176,15 +176,15 @@ subsequence $(x_{\sigma(k)})$ such that
 \]
 \end{remark*}
 
-\begin{remark*}[Predicate reading]
+\begin{remark*}[Definition predicate reading]
 \[
-\operatorname{IsClusterValue}(x_n,L)
+\operatorname{SubsequentialLimit}(x_n,L)
 \coloneqq
 \exists \sigma\;
 \bigl(
-  \operatorname{StrictOrderPreserving}(\sigma)
+  \operatorname{StrictlyIncreasing}(\sigma)
   \land
-  \operatorname{ConvergesTo}(x_{\sigma(k)},L)
+  \operatorname{ConvergentSequence}(x_{\sigma(k)},L)
 \bigr).
 \]
 \end{remark*}
@@ -233,11 +233,11 @@ $\sigma:\mathbb{N}\to\mathbb{N}$ and a real number $L$ such that
 \]
 \end{remark*}
 
-\begin{remark*}[Predicate reading]
+\begin{remark*}[Definition predicate reading]
 \[
 \operatorname{HasConvergentSubsequence}(x_n)
 \coloneqq
-\exists L\in\mathbb{R}\;\operatorname{IsClusterValue}(x_n,L).
+\exists L\in\mathbb{R}\;\operatorname{SubsequentialLimit}(x_n,L).
 \]
 \end{remark*}
 
@@ -285,9 +285,9 @@ Then
 \]
 \end{remark*}
 
-\begin{remark*}[Predicate reading]
+\begin{remark*}[Theorem predicate reading]
 \[
-\operatorname{StrictOrderPreserving}(\sigma)
+\operatorname{StrictlyIncreasing}(\sigma)
 \Longrightarrow
 \forall k\in\mathbb{N}\;(k\le\sigma(k)).
 \]
@@ -338,13 +338,13 @@ then every subsequence of $(x_n)$ converges to $L$.
 \]
 \end{remark*}
 
-\begin{remark*}[Predicate reading]
+\begin{remark*}[Theorem predicate reading]
 \[
-\operatorname{ConvergesTo}(x_n,L)
+\operatorname{ConvergentSequence}(x_n,L)
 \land
-\operatorname{StrictOrderPreserving}(\sigma)
+\operatorname{StrictlyIncreasing}(\sigma)
 \Longrightarrow
-\operatorname{ConvergesTo}(x_{\sigma(k)},L).
+\operatorname{ConvergentSequence}(x_{\sigma(k)},L).
 \]
 \end{remark*}
 
@@ -393,11 +393,11 @@ K=L.
 \]
 \end{remark*}
 
-\begin{remark*}[Predicate reading]
+\begin{remark*}[Theorem predicate reading]
 \[
-\operatorname{ConvergesTo}(x_n,L)
+\operatorname{ConvergentSequence}(x_n,L)
 \land
-\operatorname{IsClusterValue}(x_n,K)
+\operatorname{SubsequentialLimit}(x_n,K)
 \Longrightarrow
 K=L.
 \]
@@ -449,15 +449,15 @@ limits, then $(x_n)$ does not converge.
 \]
 \end{remark*}
 
-\begin{remark*}[Predicate reading]
+\begin{remark*}[Theorem predicate reading]
 \[
-\operatorname{IsClusterValue}(x_n,L)
+\operatorname{SubsequentialLimit}(x_n,L)
 \land
-\operatorname{IsClusterValue}(x_n,K)
+\operatorname{SubsequentialLimit}(x_n,K)
 \land
 L\neq K
 \Longrightarrow
-\neg\exists A\in\mathbb{R}\;\operatorname{ConvergesTo}(x_n,A).
+\neg\exists A\in\mathbb{R}\;\operatorname{ConvergentSequence}(x_n,A).
 \]
 \end{remark*}
 
@@ -504,13 +504,13 @@ Every subsequence of a bounded real sequence is bounded.
 \]
 \end{remark*}
 
-\begin{remark*}[Predicate reading]
+\begin{remark*}[Theorem predicate reading]
 \[
-\operatorname{Bounded}(x_n)
+\operatorname{BoundedSequence}(x_n)
 \land
-\operatorname{StrictOrderPreserving}(\sigma)
+\operatorname{StrictlyIncreasing}(\sigma)
 \Longrightarrow
-\operatorname{Bounded}(x_{\sigma(k)}).
+\operatorname{BoundedSequence}(x_{\sigma(k)}).
 \]
 \end{remark*}
 
@@ -558,13 +558,13 @@ subsequence of a decreasing real sequence is decreasing.
 \]
 \end{remark*}
 
-\begin{remark*}[Predicate reading]
+\begin{remark*}[Theorem predicate reading]
 \[
-\operatorname{OrderPreserving}(x_n)
+\operatorname{MonotoneIncreasingSequence}(x_n)
 \land
-\operatorname{StrictOrderPreserving}(\sigma)
+\operatorname{StrictlyIncreasing}(\sigma)
 \Longrightarrow
-\operatorname{OrderPreserving}(x_{\sigma(k)}).
+\operatorname{MonotoneIncreasingSequence}(x_{\sigma(k)}).
 \]
 \end{remark*}
 
@@ -611,13 +611,13 @@ Every subsequence of a subsequence of $(x_n)$ is a subsequence of $(x_n)$.
 \]
 \end{remark*}
 
-\begin{remark*}[Predicate reading]
+\begin{remark*}[Theorem predicate reading]
 \[
-\operatorname{StrictOrderPreserving}(\sigma)
+\operatorname{StrictlyIncreasing}(\sigma)
 \land
-\operatorname{StrictOrderPreserving}(\tau)
+\operatorname{StrictlyIncreasing}(\tau)
 \Longrightarrow
-\operatorname{IsSubsequence}(x_{\sigma(\tau(k))},x_n).
+\operatorname{Subsequence}(x_{\sigma(\tau(k))},x_n).
 \]
 \end{remark*}
 
@@ -665,11 +665,11 @@ holds for every $k\ge K$.
 \]
 \end{remark*}
 
-\begin{remark*}[Predicate reading]
+\begin{remark*}[Theorem predicate reading]
 \[
 \operatorname{Eventually}(x_n,P)
 \land
-\operatorname{StrictOrderPreserving}(\sigma)
+\operatorname{StrictlyIncreasing}(\sigma)
 \Longrightarrow
 \operatorname{Eventually}(x_{\sigma(k)},P).
 \]
@@ -721,11 +721,11 @@ $P(\sigma(k))$ holds for every $k\in\mathbb{N}$.
 \]
 \end{remark*}
 
-\begin{remark*}[Predicate reading]
+\begin{remark*}[Theorem predicate reading]
 \[
 \operatorname{Frequently}(x_n,P)
 \Longrightarrow
-\exists \sigma\;\bigl(\operatorname{StrictOrderPreserving}(\sigma)
+\exists \sigma\;\bigl(\operatorname{StrictlyIncreasing}(\sigma)
 \land
 \forall k\in\mathbb{N}\;P(\sigma(k))\bigr).
 \]
@@ -775,9 +775,9 @@ m\le L\le M.
 \]
 \end{remark*}
 
-\begin{remark*}[Predicate reading]
+\begin{remark*}[Theorem predicate reading]
 \[
-\operatorname{IsClusterValue}(x_n,L)
+\operatorname{SubsequentialLimit}(x_n,L)
 \land
 \forall n\in\mathbb{N}\;(m\le x_n\le M)
 \Longrightarrow
@@ -834,11 +834,11 @@ $(x_{\sigma(k)})$ there exists $K\in\mathbb{N}$ such that
 \]
 \end{remark*}
 
-\begin{remark*}[Predicate reading]
+\begin{remark*}[Theorem predicate reading]
 \[
 \operatorname{Eventually}(x_n,\;a_n\le x_n\le b_n)
 \land
-\operatorname{StrictOrderPreserving}(\sigma)
+\operatorname{StrictlyIncreasing}(\sigma)
 \Longrightarrow
 \operatorname{Eventually}(x_{\sigma(k)},\;a_{\sigma(k)}\le x_{\sigma(k)}\le b_{\sigma(k)}).
 \]
@@ -886,21 +886,13 @@ Every real sequence has a monotone subsequence.
 \]
 \end{remark*}
 
-\begin{remark*}[Predicate reading]
+\begin{remark*}[Theorem predicate reading]
 \[
-\begin{aligned}
-&P=\mathsf{OrderedSet}(\mathbb{N},\leq),\qquad
-Q=\mathsf{OrderedSet}(\mathbb{R},\leq),\\
-&\exists \sigma\;\bigl(
-\operatorname{StrictOrderPreserving}(\sigma,P,P)
+\exists \sigma\;\bigl(
+\operatorname{StrictlyIncreasing}(\sigma)
 \land
-\bigl[
-\operatorname{OrderPreserving}((x_{\sigma(k)}),P,Q)
-\lor
-\operatorname{OrderReversing}((x_{\sigma(k)}),P,Q)
-\bigr]
+\operatorname{MonotoneSequence}(x_{\sigma(k)})
 \bigr).
-\end{aligned}
 \]
 \end{remark*}
 
@@ -949,9 +941,9 @@ Every bounded real sequence has a convergent subsequence.
 \]
 \end{remark*}
 
-\begin{remark*}[Predicate reading]
+\begin{remark*}[Theorem predicate reading]
 \[
-\operatorname{Bounded}(x_n)
+\operatorname{BoundedSequence}(x_n)
 \Longrightarrow
 \operatorname{HasConvergentSubsequence}(x_n).
 \]
@@ -1010,11 +1002,11 @@ convergent subsequence whose limit belongs to $[a,b]$.
 \]
 \end{remark*}
 
-\begin{remark*}[Predicate reading]
+\begin{remark*}[Theorem predicate reading]
 \[
 \bigl[\forall n\in\mathbb{N}\;(a\le x_n\le b)\bigr]
 \Longrightarrow
-\exists L\in[a,b]\;\operatorname{IsClusterValue}(x_n,L).
+\exists L\in[a,b]\;\operatorname{SubsequentialLimit}(x_n,L).
 \]
 \end{remark*}
 

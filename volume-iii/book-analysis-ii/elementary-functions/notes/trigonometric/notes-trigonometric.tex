@@ -30,9 +30,7 @@ $x \in \mathbb{R}$ by the absolutely convergent power series
   \;=\; 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \cdots
 \]
 \end{definition}
-\end{definitionbox}
-
-\begin{remark*}[Standard quantified statement]
+\end{definitionbox}\begin{remark*}[Standard quantified statement]
 \[
   \forall x \in \mathbb{R} :\;
   \sin x = \sum_{n=0}^\infty \frac{(-1)^n x^{2n+1}}{(2n+1)!},
@@ -42,19 +40,19 @@ $x \in \mathbb{R}$ by the absolutely convergent power series
 both absolutely convergent by the ratio test.
 \end{remark*}
 
-\begin{remark*}[Predicate reading]
+\begin{remark*}[Definition predicate reading]
 \[
-  y=\sin x
+  \operatorname{Sine}(x,y)
   \;\colonequiv\;
-  y = \sum_{n=0}^\infty \frac{(-1)^n x^{2n+1}}{(2n+1)!},
+  y = \sum_{n=0}^\infty \frac{(-1)^n x^{2n+1}}{(2n+1)!}.
   \qquad
-  y=\cos x
+  \operatorname{Cosine}(x,y)
   \;\colonequiv\;
   y = \sum_{n=0}^\infty \frac{(-1)^n x^{2n}}{(2n)!}.
 \]
 \end{remark*}
 
-\begin{remark*}[Interpretation]
+\begin{remark*}[Key properties]
 \begin{enumerate}[label=(\roman*)]
   \item $\sin 0 = 0$;\; $\cos 0 = 1$.
   \item $\sin(-x) = -\sin x$ (odd);\; $\cos(-x) = \cos x$ (even).
@@ -63,26 +61,29 @@ both absolutely convergent by the ratio test.
   \item $\sin^2 x + \cos^2 x = 1$ (Pythagorean identity).
   \item Periodic: $\sin(x+2\pi) = \sin x$;\; $\cos(x+2\pi) = \cos x$.
 \end{enumerate}
+\end{remark*}
 
-
+\begin{remark*}[Relationship to $e^{ix}$]
 Euler's formula: $e^{ix} = \cos x + i\sin x$, where $e^{ix}$ is
 defined by the complex exponential series. This gives $\cos x =
 \operatorname{Re}(e^{ix})$ and $\sin x = \operatorname{Im}(e^{ix})$.
 Euler's identity $e^{i\pi} + 1 = 0$ follows immediately.
 \end{remark*}
 
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:power-function]{Power Function}
-  \item \hyperref[def:sequence]{Sequence}
-\end{itemize}
-\end{dependencies}
-
 % ---------------------------------------------------------
 % Proposition --- Pythagorean Identity
 % ---------------------------------------------------------
 
 \begin{propositionbox}{Proposition (Pythagorean Identity)}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:reals]{Real Numbers}
+  \item \hyperref[def:two-sided-inverse]{Integer Powers in a Field}
+  \item \hyperref[def:sequence]{Sequence}
+  \item \hyperref[def:convergent-sequence]{Convergent Sequence}
+\end{itemize}
+\end{dependencies}
 \begin{proposition}[Pythagorean Identity]
 \label{prop:pythagorean-identity}
 For all $x \in \mathbb{R}$:
@@ -91,21 +92,20 @@ For all $x \in \mathbb{R}$:
 \]
 
 \smallskip\noindent
-
-
 \hyperref[prf:pythagorean-identity]{\textit{Go to proof.}}
 \end{proposition}
-\end{propositionbox}
-
-\begin{remark*}[Standard quantified statement]
+\end{propositionbox}\begin{remark*}[Standard quantified statement]
 \[
   \forall x \in \mathbb{R} :\; \sin^2 x + \cos^2 x = 1.
 \]
 \end{remark*}
 
-\begin{remark*}[Predicate reading]
+\begin{remark*}[Definition predicate reading]
 \[
-  \sin^2 x+\cos^2 x=1.
+  \operatorname{PythagoreanIdentity}(x)
+  \;\colonequiv\;
+  \operatorname{Sine}(x,s) \;\wedge\; \operatorname{Cosine}(x,c)
+  \;\wedge\; s^2 + c^2 = 1.
 \]
 \end{remark*}
 
@@ -118,26 +118,25 @@ For all $x \in \mathbb{R}$:
 The negation has no witness --- the identity holds universally.
 \end{remark*}
 
-\begin{remark*}[Interpretation]
+\begin{remark*}[Proof strategy]
 Define $f(x) := \sin^2 x + \cos^2 x$. Then $f'(x) = 2\sin x \cos x
 + 2\cos x(-\sin x) = 0$, so $f$ is constant. Since $f(0) = 0 + 1 =
 1$, the identity follows.
 \end{remark*}
-
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:reals]{Real Numbers}
-  \item \hyperref[def:two-sided-inverse]{Integer Powers in a Field}
-  \item \hyperref[def:sequence]{Sequence}
-  \item \hyperref[def:convergent-sequence]{Convergent Sequence}
-\end{itemize}
-\end{dependencies}
 
 % ---------------------------------------------------------
 % Proposition --- Addition Formulas
 % ---------------------------------------------------------
 
 \begin{propositionbox}{Proposition (Addition Formulas)}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:sine-cosine]{Sine and Cosine}
+  \item \hyperref[def:derivative-at-a-point]{Derivative at a Point}
+  \item \hyperref[thm:zero-derivative-implies-constant]{Zero Derivative Implies Constant}
+\end{itemize}
+\end{dependencies}
 \begin{proposition}[Addition Formulas]
 \label{prop:trig-addition-formulas}
 For all $x, y \in \mathbb{R}$:
@@ -148,13 +147,9 @@ For all $x, y \in \mathbb{R}$:
 \]
 
 \smallskip\noindent
-
-
 \hyperref[prf:trig-addition-formulas]{\textit{Go to proof.}}
 \end{proposition}
-\end{propositionbox}
-
-\begin{remark*}[Standard quantified statement]
+\end{propositionbox}\begin{remark*}[Standard quantified statement]
 \[
   \forall x,y\in\mathbb{R}:\;
   \sin(x+y) = \sin x\cos y + \cos x\sin y
@@ -163,8 +158,10 @@ For all $x, y \in \mathbb{R}$:
 \]
 \end{remark*}
 
-\begin{remark*}[Predicate reading]
+\begin{remark*}[Definition predicate reading]
 \[
+  \operatorname{TrigAddition}(x,y)
+  \;\colonequiv\;
   \sin(x+y) = \sin x\cos y + \cos x\sin y
   \;\wedge\;
   \cos(x+y) = \cos x\cos y - \sin x\sin y.
@@ -181,11 +178,12 @@ For all $x, y \in \mathbb{R}$:
 The negation has no witness.
 \end{remark*}
 
-\begin{remark*}[Interpretation]
+\begin{remark*}[Proof strategy]
 From the Cauchy product: $e^{i(x+y)} = e^{ix}e^{iy}$. Taking real
 and imaginary parts yields both addition formulas simultaneously.
+\end{remark*}
 
-
+\begin{remark*}[Derived identities]
 \begin{align*}
   \sin(2x) &= 2\sin x \cos x \\
   \cos(2x) &= \cos^2 x - \sin^2 x = 1 - 2\sin^2 x = 2\cos^2 x - 1 \\
@@ -194,19 +192,19 @@ and imaginary parts yields both addition formulas simultaneously.
 \end{align*}
 \end{remark*}
 
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:sine-cosine]{Sine and Cosine}
-  \item \hyperref[def:derivative-at-a-point]{Derivative at a Point}
-  \item \hyperref[thm:zero-derivative-implies-constant]{Zero Derivative Implies Constant}
-\end{itemize}
-\end{dependencies}
-
 % ---------------------------------------------------------
 % Definition --- Tangent and other trig functions
 % ---------------------------------------------------------
 
 \begin{definitionbox}{Definition}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:sine-cosine]{Sine and Cosine}
+  \item \hyperref[def:addition-on-r]{Addition on $\mathbb{R}$}
+  \item \hyperref[def:multiplication-on-r]{Multiplication on $\mathbb{R}$}
+\end{itemize}
+\end{dependencies}
 \begin{definition}[Tangent, Cotangent, Secant, Cosecant]
 \label{def:other-trig}
 \[
@@ -218,41 +216,39 @@ and imaginary parts yields both addition formulas simultaneously.
 $\tan x$ and $\sec x$ are defined where $\cos x \neq 0$,
 i.e., $x \neq \pi/2 + k\pi$ for $k \in \mathbb{Z}$.
 \end{definition}
-\end{definitionbox}
-
-\begin{remark*}[Standard quantified statement]
+\end{definitionbox}\begin{remark*}[Standard quantified statement]
 \[
   \forall x\in\mathbb{R},\;\cos x\neq 0:\;
   \tan x = \frac{\sin x}{\cos x}.
 \]
 \end{remark*}
 
-\begin{remark*}[Predicate reading]
+\begin{remark*}[Definition predicate reading]
 \[
-  \tan x=\frac{\sin x}{\cos x}
-  \qquad(\cos x\neq0).
+  \operatorname{Tangent}(x,y)
+  \;\colonequiv\;
+  \cos x \neq 0 \;\wedge\; y = \frac{\sin x}{\cos x}.
 \]
 \end{remark*}
 
-\begin{remark*}[Interpretation]
+\begin{remark*}[Pythagorean identities for $\tan$]
 Dividing $\sin^2 x + \cos^2 x = 1$ by $\cos^2 x$:
 $1 + \tan^2 x = \sec^2 x$.
 Dividing by $\sin^2 x$: $\cot^2 x + 1 = \csc^2 x$.
 \end{remark*}
-
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:sine-cosine]{Sine and Cosine}
-  \item \hyperref[def:addition-on-r]{Addition on $\mathbb{R}$}
-  \item \hyperref[def:multiplication-on-r]{Multiplication on $\mathbb{R}$}
-\end{itemize}
-\end{dependencies}
 
 % ---------------------------------------------------------
 % Definition --- Inverse Trigonometric Functions
 % ---------------------------------------------------------
 
 \begin{definitionbox}{Definition}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:sine-cosine]{Sine and Cosine}
+  \item \hyperref[thm:r-is-a-field]{$\mathbb{R}$ Is a Field}
+\end{itemize}
+\end{dependencies}
 \begin{definition}[Inverse Trigonometric Functions]
 \label{def:inverse-trig}
 \begin{itemize}
@@ -264,9 +260,7 @@ Dividing by $\sin^2 x$: $\cot^2 x + 1 = \csc^2 x$.
     of $\tan\big|_{(-\pi/2,\pi/2)}$.
 \end{itemize}
 \end{definition}
-\end{definitionbox}
-
-\begin{remark*}[Standard quantified statement]
+\end{definitionbox}\begin{remark*}[Standard quantified statement]
 \[
   \forall y\in[-1,1]:\;\sin(\arcsin y)=y.
   \qquad
@@ -274,41 +268,34 @@ Dividing by $\sin^2 x$: $\cot^2 x + 1 = \csc^2 x$.
 \]
 \end{remark*}
 
-\begin{remark*}[Predicate reading]
+\begin{remark*}[Definition predicate reading]
 \[
-  x=\arctan y
+  \operatorname{Arctan}(y,x)
   \;\colonequiv\;
   x\in(-\pi/2,\pi/2) \;\wedge\; \tan x = y.
 \]
+\end{remark*}
 
-
+\begin{remark*}[Definition predicate reading]
 \[
-  \operatorname{TendsTo}\!\left(\frac{\sin x}{x},\,0,\,1,\,\mathbb R,\,\mathbb R\right)
+  \operatorname{FunctionLimit}\!\left(\frac{\sin x}{x},\,0,\,1\right)
   \;\colonequiv\;
   \forall\varepsilon>0,\;\exists\delta>0,\;\forall x:\;
-  \bigl(
-    \operatorname{IsPuncturedCenteredOpenInterval}(I^\times_\delta(0),I_\delta(0),0,\delta,\mathbb R)
-    \wedge
-    \operatorname{Within}(x,I^\times_\delta(0),\mathbb R)
-  \bigr)
+  \operatorname{InputTolerance}(x,0,\delta)
   \Rightarrow
-  \bigl(
-    \operatorname{IsCenteredOpenInterval}(I_\varepsilon(1),1,\varepsilon,\mathbb R)
-    \wedge
-    \operatorname{Within}\!\left(\frac{\sin x}{x},I_\varepsilon(1),\mathbb R\right)
-  \bigr).
+  \operatorname{OutputTolerance}\!\left(\frac{\sin x}{x},1,\varepsilon\right).
 \]
 \end{remark*}
 
 \begin{remark*}[Negated quantified statement]
 \[
-  x\neq\arctan y
+  \neg\,\operatorname{Arctan}(y,x)
   \;\iff\;
   x\notin(-\pi/2,\pi/2) \;\vee\; \tan x \neq y.
 \]
 \end{remark*}
 
-\begin{remark*}[Interpretation]
+\begin{remark*}[Key limits of $\arctan$]
 \[
   \lim_{x \to +\infty} \arctan x = \frac{\pi}{2},
   \qquad
@@ -319,18 +306,20 @@ $\mathbb{R}$; the Monotone Limit Theorem gives the limits as the
 supremum and infimum of its range.
 \end{remark*}
 
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:sine-cosine]{Sine and Cosine}
-  \item \hyperref[thm:r-is-a-field]{$\mathbb{R}$ Is a Field}
-\end{itemize}
-\end{dependencies}
-
 % ---------------------------------------------------------
 % Theorem --- Fundamental Trigonometric Limit
 % ---------------------------------------------------------
 
 \begin{theorembox}{Theorem (Fundamental Trigonometric Limit)}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:sine-cosine]{Sine and Cosine}
+  \item \hyperref[def:other-trig]{Tangent, Cotangent, Secant, Cosecant}
+  \item \hyperref[thm:continuous-inverse-theorem]{Continuous Inverse Theorem}
+  \item \hyperref[def:closed-interval]{Closed Interval}
+\end{itemize}
+\end{dependencies}
 \begin{theorem}[Fundamental Trigonometric Limit]
 \label{thm:fundamental-trig-limit}
 \[
@@ -338,13 +327,9 @@ supremum and infimum of its range.
 \]
 
 \smallskip\noindent
-
-
 \hyperref[prf:fundamental-trig-limit]{\textit{Go to proof.}}
 \end{theorem}
-\end{theorembox}
-
-\begin{remark*}[Standard quantified statement]
+\end{theorembox}\begin{remark*}[Standard quantified statement]
 \[
   \forall\varepsilon > 0,\;
   \exists\delta > 0 :\;
@@ -363,36 +348,37 @@ supremum and infimum of its range.
 \]
 \end{remark*}
 
-\begin{remark*}[Interpretation]
+\begin{remark*}[Proof strategy --- series]
 From the series: $\sin x / x = 1 - x^2/3! + x^4/5! - \cdots \to 1$
 as $x \to 0$ by continuity of power series at their center.
+\end{remark*}
 
-
+\begin{remark*}[Proof strategy --- geometric squeeze]
 For $0 < x < \pi/2$, area comparison of two triangles and a circular
 sector gives $\cos x \leq \sin x / x \leq 1$. Since $\cos x \to 1$
 as $x \to 0^+$, the Squeeze Theorem gives $\sin x / x \to 1$.
 Even symmetry extends this to $x \to 0^-$.
+\end{remark*}
 
-
+\begin{remark*}[Significance]
 This is the statement $(\sin x)'\big|_{x=0} = 1$, which implies
 $(\sin x)' = \cos x$ everywhere. It underlies all trigonometric
 differentiation.
 \end{remark*}
-
-\begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:sine-cosine]{Sine and Cosine}
-  \item \hyperref[def:other-trig]{Tangent, Cotangent, Secant, Cosecant}
-  \item \hyperref[thm:continuous-inverse-theorem]{Continuous Inverse Theorem}
-  \item \hyperref[def:closed-interval]{Closed Interval}
-\end{itemize}
-\end{dependencies}
 
 % ---------------------------------------------------------
 % Proposition --- Second Fundamental Trigonometric Limit
 % ---------------------------------------------------------
 
 \begin{propositionbox}{Proposition (Second Fundamental Trigonometric Limit)}
+
+\begin{dependencies}
+\begin{itemize}
+  \item \hyperref[def:sine-cosine]{Sine and Cosine}
+  \item \hyperref[def:limit-function]{Function Limit}
+  \item \hyperref[thm:squeeze-function-limits]{Squeeze Theorem for Function Limits}
+\end{itemize}
+\end{dependencies}
 \begin{proposition}[Second Fundamental Trigonometric Limit]
 \label{prop:limit-one-minus-cos}
 \[
@@ -400,13 +386,9 @@ differentiation.
 \]
 
 \smallskip\noindent
-
-
 \hyperref[prf:limit-one-minus-cos]{\textit{Go to proof.}}
 \end{proposition}
-\end{propositionbox}
-
-\begin{remark*}[Standard quantified statement]
+\end{propositionbox}\begin{remark*}[Standard quantified statement]
 \[
   \forall\varepsilon>0,\;\exists\delta>0:\;
   0<|x|<\delta \Rightarrow
@@ -414,22 +396,14 @@ differentiation.
 \]
 \end{remark*}
 
-\begin{remark*}[Predicate reading]
+\begin{remark*}[Definition predicate reading]
 \[
-  \operatorname{TendsTo}\!\left(\frac{1-\cos x}{x^2},\,0,\,\tfrac{1}{2},\,\mathbb R,\,\mathbb R\right)
+  \operatorname{FunctionLimit}\!\left(\frac{1-\cos x}{x^2},\,0,\,\tfrac{1}{2}\right)
   \;\colonequiv\;
   \forall\varepsilon>0,\;\exists\delta>0,\;\forall x:\;
-  \bigl(
-    \operatorname{IsPuncturedCenteredOpenInterval}(I^\times_\delta(0),I_\delta(0),0,\delta,\mathbb R)
-    \wedge
-    \operatorname{Within}(x,I^\times_\delta(0),\mathbb R)
-  \bigr)
+  \operatorname{InputTolerance}(x,0,\delta)
   \Rightarrow
-  \bigl(
-    \operatorname{IsCenteredOpenInterval}(I_\varepsilon(\tfrac{1}{2}),\tfrac{1}{2},\varepsilon,\mathbb R)
-    \wedge
-    \operatorname{Within}\!\left(\frac{1-\cos x}{x^2},I_\varepsilon(\tfrac{1}{2}),\mathbb R\right)
-  \bigr).
+  \operatorname{OutputTolerance}\!\left(\frac{1-\cos x}{x^2},\tfrac{1}{2},\varepsilon\right).
 \]
 \end{remark*}
 
@@ -443,7 +417,7 @@ differentiation.
 \]
 \end{remark*}
 
-\begin{remark*}[Interpretation]
+\begin{remark*}[Proof strategy]
 Use the half-angle identity $1 - \cos x = 2\sin^2(x/2)$:
 \[
   \frac{1 - \cos x}{x^2}
@@ -454,13 +428,6 @@ Use the half-angle identity $1 - \cos x = 2\sin^2(x/2)$:
 \end{remark*}
 
 \begin{dependencies}
-\begin{itemize}
-  \item \hyperref[def:sine-cosine]{Sine and Cosine}
-  \item \hyperref[def:limit-function]{Function Limit}
-  \item \hyperref[thm:squeeze-function-limits]{Squeeze Theorem for Function Limits}
-\end{itemize}
-
-
 \begin{itemize}
   \item \hyperref[def:sine-cosine]{Sine and Cosine}
   \item \hyperref[prop:trig-addition-formulas]{Trigonometric Addition Formulas}

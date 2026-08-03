@@ -270,10 +270,6 @@ sequence $(1/x_n)$ defined by
 \]
 \end{remark*}
 
-\begin{remark*}[Predicate reading]
-The displayed quantified statement is the predicate-level form of $label: its hypotheses name the input conditions, and its conclusion names the asserted structure or relation.
-\end{remark*}
-
 \begin{remark*}[Interpretation]
 The reciprocal sequence is defined only when division by each term is legal.
 For limit theorems, a nonzero limit guarantees eventual nonzero behavior, but
@@ -314,10 +310,6 @@ the real sequence $(x_n/y_n)$ defined by
 \left(\left(\frac{x}{y}\right)_n=\frac{x_n}{y_n}\right).
 \end{aligned}
 \]
-\end{remark*}
-
-\begin{remark*}[Predicate reading]
-The displayed quantified statement is the predicate-level form of $label: its hypotheses name the input conditions, and its conclusion names the asserted structure or relation.
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -434,10 +426,6 @@ sequence $(\sqrt{x_n})$ defined by
 \]
 \end{remark*}
 
-\begin{remark*}[Predicate reading]
-The displayed quantified statement is the predicate-level form of $label: its hypotheses name the input conditions, and its conclusion names the asserted structure or relation.
-\end{remark*}
-
 \begin{remark*}[Interpretation]
 The square root sequence is defined term by term on the nonnegative real
 terms. The nonnegativity hypothesis is part of the construction, not a proof
@@ -486,9 +474,9 @@ $\alpha\in\mathbb{R}$. If $x_n\to L$, then $\alpha x_n\to \alpha L$.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{ConvergesTo}(x_n,L)
+\operatorname{ConvergentSequence}(x_n,L)
 \Longrightarrow
-\operatorname{ConvergesTo}(\alpha x_n,\alpha L).
+\operatorname{ConvergentSequence}(\alpha x_n,\alpha L).
 \]
 \end{remark*}
 
@@ -539,12 +527,12 @@ x_n+y_n\to L+M
 \begin{remark*}[Predicate reading]
 \[
 \bigl(
-\operatorname{ConvergesTo}(x_n,L)
+\operatorname{ConvergentSequence}(x_n,L)
 \land
-\operatorname{ConvergesTo}(y_n,M)
+\operatorname{ConvergentSequence}(y_n,M)
 \bigr)
 \Longrightarrow
-\operatorname{ConvergesTo}(x_n+y_n,L+M).
+\operatorname{ConvergentSequence}(x_n+y_n,L+M).
 \]
 \end{remark*}
 
@@ -591,9 +579,9 @@ then $-x_n\to -L$.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{ConvergesTo}(x_n,L)
+\operatorname{ConvergentSequence}(x_n,L)
 \Longrightarrow
-\operatorname{ConvergesTo}(-x_n,-L).
+\operatorname{ConvergentSequence}(-x_n,-L).
 \]
 \end{remark*}
 
@@ -643,12 +631,12 @@ x_n-y_n\to L-M
 \begin{remark*}[Predicate reading]
 \[
 \bigl(
-\operatorname{ConvergesTo}(x_n,L)
+\operatorname{ConvergentSequence}(x_n,L)
 \land
-\operatorname{ConvergesTo}(y_n,M)
+\operatorname{ConvergentSequence}(y_n,M)
 \bigr)
 \Longrightarrow
-\operatorname{ConvergesTo}(x_n-y_n,L-M).
+\operatorname{ConvergentSequence}(x_n-y_n,L-M).
 \]
 \end{remark*}
 
@@ -699,12 +687,12 @@ x_ny_n\to LM
 \begin{remark*}[Predicate reading]
 \[
 \bigl(
-\operatorname{ConvergesTo}(x_n,L)
+\operatorname{ConvergentSequence}(x_n,L)
 \land
-\operatorname{ConvergesTo}(y_n,M)
+\operatorname{ConvergentSequence}(y_n,M)
 \bigr)
 \Longrightarrow
-\operatorname{ConvergesTo}(x_ny_n,LM).
+\operatorname{ConvergentSequence}(x_ny_n,LM).
 \]
 \end{remark*}
 
@@ -752,10 +740,6 @@ L\neq 0 \;\land\; x_n\to L
 \]
 \end{remark*}
 
-\begin{remark*}[Predicate reading]
-The displayed quantified statement is the predicate-level form of $label: its hypotheses name the input conditions, and its conclusion names the asserted structure or relation.
-\end{remark*}
-
 \begin{remark*}[Interpretation]
 A sequence converging to a nonzero number eventually stays away from zero.
 This is the denominator-control result needed for reciprocal and quotient
@@ -799,9 +783,9 @@ then $1/x_n\to 1/L$.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{ConvergesTo}(x_n,L)
+\operatorname{ConvergentSequence}(x_n,L)
 \Longrightarrow
-\operatorname{ConvergesTo}\left(\frac{1}{x_n},\frac{1}{L}\right).
+\operatorname{ConvergentSequence}\left(\frac{1}{x_n},\frac{1}{L}\right).
 \]
 \end{remark*}
 
@@ -814,8 +798,6 @@ on which the denominators stay uniformly separated from zero.
 \begin{itemize}
   \item \hyperref[def:reciprocal-sequence]{Reciprocal Sequence}
   \item \hyperref[thm:nonzero-limit-eventually-nonzero]{Nonzero Limit is Eventually Nonzero}
-  \item \hyperref[thm:reciprocal-of-product-on-r]{Reciprocal of a Product on $\mathbb{R}$}
-  \item \hyperref[thm:absolute-value-of-reciprocal-r]{Absolute Value of a Reciprocal on $\mathbb{R}$}
 \end{itemize}
 \end{dependencies}
 
@@ -855,12 +837,12 @@ x_n\to L \;\land\; y_n\to M
 \begin{remark*}[Predicate reading]
 \[
 \bigl(
-\operatorname{ConvergesTo}(x_n,L)
+\operatorname{ConvergentSequence}(x_n,L)
 \land
-\operatorname{ConvergesTo}(y_n,M)
+\operatorname{ConvergentSequence}(y_n,M)
 \bigr)
 \Longrightarrow
-\operatorname{ConvergesTo}\left(\frac{x_n}{y_n},\frac{L}{M}\right).
+\operatorname{ConvergentSequence}\left(\frac{x_n}{y_n},\frac{L}{M}\right).
 \]
 \end{remark*}
 
@@ -877,63 +859,6 @@ collapsing.
   \item \hyperref[thm:limit-of-a-reciprocal]{Limit of a Reciprocal}
 \end{itemize}
 \end{dependencies}
-
-\subsection*{Error-Track Method for Limit Algebra}
-\label{subsec:error-track-method-limit-algebra}
-
-\begin{exposition}
-The algebra of limits can be read as error propagation with vanishing errors.
-If
-\[
-  x_n=A+\alpha_n,\qquad y_n=B+\beta_n,
-  \qquad \alpha_n\to 0,\quad \beta_n\to 0,
-\]
-then $\alpha_n$ and $\beta_n$ are the moving errors. Sum, product, and quotient
-limits follow by expanding the target expression into a main term plus an
-error expression that tends to zero.
-\end{exposition}
-
-\begin{example*}[Sum]
-If $x_n=A+\alpha_n$ and $y_n=B+\beta_n$, then
-\[
-  x_n+y_n
-  =
-  A+B+(\alpha_n+\beta_n).
-\]
-The new error is $\alpha_n+\beta_n$, which tends to zero by the sum rule for
-null sequences.
-\end{example*}
-
-\begin{example*}[Product]
-The same decomposition gives
-\[
-  x_ny_n
-  =
-  (A+\alpha_n)(B+\beta_n)
-  =
-  AB+A\beta_n+B\alpha_n+\alpha_n\beta_n.
-\]
-The first two error terms are linear in the original errors. The last term is
-second-order and vanishes because a product of null sequences is null.
-\end{example*}
-
-\begin{example*}[Quotient]
-If $B\neq 0$ and $y_n\neq 0$ eventually, then
-\[
-  \frac{x_n}{y_n}-\frac{A}{B}
-  =
-  \frac{B\alpha_n-A\beta_n}{B(B+\beta_n)}.
-\]
-The numerator tends to zero, while the denominator tends to $B^2\neq 0$.
-This is the quotient law in error coordinates.
-\end{example*}
-
-\begin{remark*}[Interpretation]
-The finite error formulas for approximate numbers have the same algebraic
-shape. The passage to limits replaces fixed error bounds by null sequences
-and replaces informal smallness by the assertion that a remainder tends to
-zero.
-\end{remark*}
 
 % ---------------------------------------------------------
 % Theorem --- Limit of a Square
@@ -964,9 +889,9 @@ then $x_n^2\to L^2$.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{ConvergesTo}(x_n,L)
+\operatorname{ConvergentSequence}(x_n,L)
 \Longrightarrow
-\operatorname{ConvergesTo}(x_n^2,L^2).
+\operatorname{ConvergentSequence}(x_n^2,L^2).
 \]
 \end{remark*}
 
@@ -1011,9 +936,9 @@ then $|x_n|\to |L|$.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{ConvergesTo}(x_n,L)
+\operatorname{ConvergentSequence}(x_n,L)
 \Longrightarrow
-\operatorname{ConvergesTo}(|x_n|,|L|).
+\operatorname{ConvergentSequence}(|x_n|,|L|).
 \]
 \end{remark*}
 
@@ -1054,10 +979,6 @@ exists $N\in\mathbb{N}$ such that $0<x_n$ for every $n\ge N$.
 \exists N\in\mathbb{N}\;\forall n\ge N\;(0<x_n).
 \end{aligned}
 \]
-\end{remark*}
-
-\begin{remark*}[Predicate reading]
-The displayed quantified statement is the predicate-level form of $label: its hypotheses name the input conditions, and its conclusion names the asserted structure or relation.
 \end{remark*}
 
 \begin{remark*}[Interpretation]
@@ -1103,9 +1024,9 @@ $0\le L$ and $\sqrt{x_n}\to\sqrt{L}$.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{ConvergesTo}(x_n,L)
+\operatorname{ConvergentSequence}(x_n,L)
 \Longrightarrow
-\operatorname{ConvergesTo}(\sqrt{x_n},\sqrt{L}).
+\operatorname{ConvergentSequence}(\sqrt{x_n},\sqrt{L}).
 \]
 \end{remark*}
 
@@ -1153,9 +1074,9 @@ $p(x_n)\to p(L)$.
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{ConvergesTo}(x_n,L)
+\operatorname{ConvergentSequence}(x_n,L)
 \Longrightarrow
-\operatorname{ConvergesTo}(p(x_n),p(L)).
+\operatorname{ConvergentSequence}(p(x_n),p(L)).
 \]
 \end{remark*}
 
@@ -1216,9 +1137,9 @@ x_n\to L
 
 \begin{remark*}[Predicate reading]
 \[
-\operatorname{ConvergesTo}(x_n,L)
+\operatorname{ConvergentSequence}(x_n,L)
 \Longrightarrow
-\operatorname{ConvergesTo}
+\operatorname{ConvergentSequence}
 \left(\frac{p(x_n)}{q(x_n)},\frac{p(L)}{q(L)}\right).
 \]
 \end{remark*}
