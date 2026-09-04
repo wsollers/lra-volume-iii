@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import argparse
 import re
 import sys
 from pathlib import Path
@@ -42,13 +43,29 @@ def validate_fragment(path: Path) -> list[str]:
     return errors
 
 
-def main() -> int:
-    if not FIGURE_DIR.exists():
-        print(f"figure directory not found: {FIGURE_DIR}", file=sys.stderr)
+def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
+    parser = argparse.ArgumentParser(
+        description="Validate TeX figure fragments for required structure and forbidden document tags."
+    )
+    parser.add_argument(
+        "--figure-dir",
+        type=Path,
+        default=FIGURE_DIR,
+        help="Directory containing figure fragment .tex files. Defaults to tex/figures under the repo root.",
+    )
+    return parser.parse_args(argv)
+
+
+def main(argv: list[str] | None = None) -> int:
+    args = parse_args(argv)
+    figure_dir = args.figure_dir.resolve()
+
+    if not figure_dir.exists():
+        print(f"figure directory not found: {figure_dir}", file=sys.stderr)
         return 1
 
     errors: list[str] = []
-    for path in sorted(FIGURE_DIR.glob("*.tex")):
+    for path in sorted(figure_dir.glob("*.tex")):
         errors.extend(validate_fragment(path))
 
     if errors:
@@ -63,4 +80,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-
